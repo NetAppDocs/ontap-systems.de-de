@@ -1,0 +1,53 @@
+---
+permalink: platform-supplemental/sldiag-use-cli-help.html 
+sidebar: sidebar 
+keywords: command-line, syntax, command, line, name, follow, question, mark, how to use online command-line help 
+summary: 'Sie können die Befehlszeilen-Syntax-Hilfe von der Kommandozeile erhalten, indem Sie den Namen des Befehls gefolgt von help oder das Fragezeichen \(?\) eingeben.' 
+---
+= So verwenden Sie die Online-Hilfe über die Befehlszeile
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Hilfe zur Befehlszeilensyntax in der Befehlszeile erhalten, indem Sie den Namen des Befehls, gefolgt von „help“ oder das Fragezeichen (?) eingeben.
+
+Die in der Syntax-Hilfe verwendeten Schriftarten oder Symbole sind wie folgt:
+
+* *Stichwort*
++
+Gibt den Namen eines Befehls oder einer Option an, die wie angezeigt eingegeben werden muss.
+
+* *< > (kleiner als, größer als Symbole)*
++
+Geben Sie an, dass Sie die Variable, die innerhalb der Symbole identifiziert wird, durch einen Wert ersetzen müssen.
+
+* * (Rohr)*
++
+Zeigt an, dass Sie eines der Elemente auf beiden Seiten des Rohrs auswählen müssen.
+
+* *[ ] (Klammern)*
++
+Geben Sie an, dass das Element in den Klammern optional ist.
+
+* *{ } (geschweifte Klammern)*
++
+Geben Sie an, dass das Element in den geschweiften Klammern erforderlich ist.
+
+
+
+Sie können das Fragezeichen auch in die Befehlszeile für eine Liste aller Befehle eingeben, die auf der aktuellen Administrationsebene (Administration oder erweitert) verfügbar sind.
+
+Das folgende Beispiel zeigt das Ergebnis des Eintretens des Befehls „Umgebungshilfe“ an der Kommandozeile des Storage-Systems. Die Befehlsausgabe zeigt die Syntaxhilfe für die Umgebungsbefehle an.
+
+[listing]
+----
+toaster> environment help
+Usage: environment status |
+[status] [shelf [<adapter>]] |
+[status] [shelf_log] |
+[status] [shelf_stats] |
+[status] [shelf_power_status] |
+[status] [chassis [all | list-sensors | Fan | Power | Temp | Power Supply | RTC Battery | NVRAM4-temperature-7 | NVRAM4-battery-7]]
+----

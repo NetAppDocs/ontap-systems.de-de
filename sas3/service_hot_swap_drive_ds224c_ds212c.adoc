@@ -1,0 +1,200 @@
+---
+permalink: sas3/service-hot-swap-drive-ds224c-ds212c.html 
+sidebar: sidebar 
+keywords: hot-swap, fail, disk, drive, ds224c, ds212c, disk, shelf-nondisruptive, nondisruptive, replace, i/o, hot-swap a disk drive in a ds224c or ds212c disk shelf 
+summary: Sie können ein ausgefallenes Festplattenlaufwerk im laufenden Betrieb in einem DS224C oder DS212C Festplatten-Shelf austauschen. 
+---
+= Hot-Swap-fähige Laufwerke in einem DS224C oder DS212C Festplatten-Shelf – Shelfs mit IOM12/IOM12B-Modulen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können ein ausgefallenes Festplattenlaufwerk im laufenden Betrieb in einem DS224C oder DS212C Festplatten-Shelf austauschen.
+
+.Bevor Sie beginnen
+* Das Festplattenlaufwerk, das Sie installieren, muss vom DS224C oder DS212C Festplatten-Shelf unterstützt werden.
++
+https://hwu.netapp.com["NetApp Hardware Universe"]
+
+* Alle anderen Komponenten im System müssen ordnungsgemäß funktionieren. Wenden Sie sich andernfalls an den technischen Support.
+* Das zu entfernenden Festplattenlaufwerk muss fehlerhaft sein.
++
+Sie können überprüfen, ob das Festplattenlaufwerk ausgefallen ist, indem Sie das ausführen `storage disk show -broken` Befehl. Das ausgefallene Laufwerk wird in der Liste der fehlerhaften Festplattenlaufwerke angezeigt. Falls nicht, sollten Sie warten und den Befehl erneut ausführen.
+
++
+
+NOTE: Abhängig vom Laufwerkstyp und der Kapazität kann es bis zu mehrere Stunden dauern, bis das Festplattenlaufwerk in der Liste der ausgefallenen Festplattenlaufwerke angezeigt wird.
+
+* Wenn Sie eine SED (Self-Encrypting Disk) ersetzen, müssen Sie die Anweisungen zum Ersetzen einer SED in der ONTAP-Dokumentation für Ihre ONTAP-Version befolgen.
++
+Anweisungen in der ONTAP-Dokumentation beschreiben zusätzliche Schritte, die vor und nach dem Austausch einer SED ausgeführt werden müssen.
+
++
+https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html["Übersicht über die NetApp Verschlüsselung mit CLI"]
+
+
+
+.Über diese Aufgabe
+* Sie sollten Maßnahmen ergreifen, um elektrostatische Entladungen (ESD) zu vermeiden:
++
+** Halten Sie das Festplattenlaufwerk in der ESD-Tasche, bis Sie bereit sind, es zu installieren.
+** Öffnen Sie die ESD-Tasche von Hand oder schneiden Sie die Oberseite mit einer Schere ab.
++
+
+NOTE: Setzen Sie kein Metallwerkzeug oder Messer in den ESD-Beutel.
+
+** Tragen Sie stets ein ESD-Handgelenkband, das an einer nicht lackierten Oberfläche am Gehäuse geerdet ist.
++
+Wenn ein Handgelenkband nicht verfügbar ist, berühren Sie eine unlackierte Oberfläche des Speichergehäuses, bevor Sie das Festplattenlaufwerk behandeln.
+
+
+
+* Sie sollten die folgenden Schritte Unternehmen, um die Festplattenlaufwerke sorgfältig zu behandeln:
++
+** Verwenden Sie immer zwei Hände, wenn Sie ein Laufwerk entfernen, installieren oder tragen, um sein Gewicht zu halten.
++
+
+NOTE: Legen Sie keine Hände auf die Festplattenplatinen, die auf der Unterseite des Laufwerkträgers sichtbar sind.
+
+** Sie sollten Festplattenlaufwerke auf gepolsterten Oberflächen platzieren und niemals Festplatten auf einander stapeln.
+** Achten Sie darauf, Festplatten nicht gegen andere Oberflächen zu stoßen.
+
+
+* Festplattenlaufwerke sollten von magnetischen Geräten ferngehalten werden.
++
+
+NOTE: Magnetfelder können alle Daten auf dem Festplattenlaufwerk zerstören und irreparable Schäden an der Schaltung des Festplattenlaufwerks verursachen.
+
+* Als Best Practice empfiehlt es sich, die aktuelle Version des DQP (Disk Qualification Package) vor dem Hot-Swap eines Laufwerks installiert zu haben.
++
+Wenn die aktuelle Version des DQP installiert ist, kann Ihr System neu qualifizierte Festplattenlaufwerke erkennen und verwenden. Dadurch werden Systemereignismeldungen über nicht aktuelle Laufwerksinformationen vermieden. Außerdem wird eine mögliche Verhinderung der Festplattenpartitionierung vermieden, da die Festplattenlaufwerke nicht erkannt werden. Das DQP benachrichtigt Sie auch über nicht aktuelle Festplatten-Firmware.
+
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["NetApp Downloads: Disk Qualification Package"^]
+
+* Als Best Practice wird empfohlen, die aktuellen Versionen der Festplatten-Shelf- (IOM) und Festplatten-Firmware auf dem System zu installieren, bevor neue Festplatten-Shelfs, Shelf-FRU-Komponenten oder SAS-Kabel hinzugefügt werden.
++
+Aktuelle Versionen der Firmware finden Sie auf der NetApp Support Site.
+
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp Downloads: Festplatten-Shelf Firmware"]
+
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["NetApp Downloads: Festplatten-Firmware"]
+
+* Festplatten-Firmware wird auf neuen Festplatten ohne aktuelle Firmware-Versionen automatisch (unterbrechungsfrei) aktualisiert.
++
+
+NOTE: Die Firmware der Festplattenlaufwerke werden alle zwei Minuten überprüft.
+
+* Bei Bedarf können Sie die (blauen) LEDs des Festplatten-Shelfs einschalten, um Hilfe bei der physischen Suche nach dem betroffenen Festplatten-Shelf zu leisten: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
++
+Ein Platten-Shelf hat drei Positionen-LEDs: Eine auf der Bedienkonsole und eine auf jedem IOM12-Modul. Die Standort-LEDs leuchten 30 Minuten lang. Sie können sie ausschalten, indem Sie denselben Befehl eingeben, jedoch die Option „aus“ verwenden.
+
+* Falls erforderlich, finden Sie Informationen über die Bedeutung und Lage der Festplatten-Shelf-LEDs auf der Bedieneranzeige und den FRU-Komponenten.
+
+
+.Schritte
+. Wenn Sie dem Ersatzlaufwerk die Eigentumsrechte für die Festplatte manuell zuweisen möchten, müssen Sie die automatische Laufwerkszuweisung deaktivieren, wenn sie aktiviert ist. Andernfalls fahren Sie mit dem nächsten Schritt fort.
++
+
+NOTE: Sie müssen den Festplattenbesitzer manuell zuweisen, wenn Festplattenlaufwerke im Stack zu beiden Controllern in einem HA-Paar gehören.
+
++
+
+NOTE: Sie weisen den Festplattenbesitzer manuell zu und aktivieren dann die automatische Laufwerkszuweisung später in diesem Verfahren erneut.
+
++
+.. Überprüfen Sie, ob die automatische Laufwerkszuweisung aktiviert ist:``storage disk option show``
++
+Wenn Sie ein HA-Paar haben, können Sie den Befehl an der Konsole eines der beiden Controller eingeben.
+
++
+Wenn die automatische Laufwerkszuweisung aktiviert ist, zeigt die Ausgabe in der Spalte „`Auto Assign`“ „`on`“ (für jeden Controller) „ ein“ an.
+
+.. Wenn die automatische Laufwerkszuweisung aktiviert ist, müssen Sie sie deaktivieren:``storage disk option modify -node _node_name_ -autoassign off``
++
+Sie müssen die automatische Laufwerkszuweisung auf beiden Controllern in einem HA-Paar deaktivieren.
+
+
+
+. Richtig gemahlen.
+. Packen Sie das neue Festplattenlaufwerk aus und legen Sie es auf eine Ebene Fläche in der Nähe des Festplatten-Shelfs.
++
+Speichern Sie alle Verpackungsmaterialien, die Sie verwenden können, wenn Sie das ausgefallene Festplattenlaufwerk zurücksenden.
+
++
+
+NOTE: NetApp setzt voraus, dass sich alle zurückgegebenen Festplatten in einem ESD-Schutzbeutel befinden.
+
+. Ermitteln Sie das ausgefallene Laufwerk aus der Warnmeldung zur Systemkonsole und die LED für leuchtende Warnung (gelb) am Laufwerk.
++
+
+NOTE: Die Aktivitäts-LED (grün) auf einem ausgefallenen Festplattenlaufwerk kann leuchten (leuchtet dauerhaft), was bedeutet, dass das Festplattenlaufwerk zwar über Strom verfügt, aber nicht blinken sollte, was auf I/O-Aktivitäten hinweist. Ein ausgefallenes Festplattenlaufwerk besitzt keine I/O-Aktivität.
+
+. Drücken Sie die Entriegelungstaste auf der Laufwerkseite, und ziehen Sie dann den Nockengriff in die vollständig geöffnete Position, um den Laufwerkantrieb von der mittleren Ebene zu lösen.
++
+Wenn Sie die Entriegelungstaste drücken, öffnet sich der Nockengriff an den Laufwerkfedern teilweise.
+
++
+
+NOTE: Festplattenlaufwerke in einem DS212C Festplatten-Shelf werden horizontal angeordnet, wobei sich die Release-Schaltfläche links auf der Vorderseite des Festplattenlaufwerks befindet. Die Festplattenlaufwerke in einem DS224C Festplatten-Shelf werden vertikal mit der Entriegelungstaste oben an der Laufwerktfläche angeordnet.
+
++
+Im Folgenden werden Festplattenlaufwerke in einem DS212C Festplatten-Shelf angezeigt:
+
++
+image::../media/drw_drive_open_no_bezel.png[das laufwerk drw öffnet keine Blende]
+
++
+Folgende Angaben werden die Laufwerke in einem DS224C Festplatten-Shelf angezeigt:
+
++
+image::../media/2240_removing_disk_no_bezel.png[2240 Entfernen der Festplatte, keine Blende]
+
+. Schieben Sie das Festplattenlaufwerk leicht heraus, damit es sich sicher nach unten drehen kann, und entfernen Sie dann das Festplattenlaufwerk aus dem Festplatten-Shelf.
++
+Eine Festplatte kann bis zu einer Minute dauern, bis sie sicher abgeschaltet ist.
+
++
+
+NOTE: Verwenden Sie bei der Handhabung eines Festplattenlaufwerks immer zwei Hände, um sein Gewicht zu stützen.
+
+. Setzen Sie das Ersatzlaufwerk mit zwei Händen und dem Nockengriff in die offene Position ein, und drücken Sie fest, bis das Laufwerk stoppt.
++
+
+NOTE: Warten Sie mindestens 10 Sekunden, bevor Sie ein neues Festplattenlaufwerk einsetzen. Dadurch erkennt das System, dass ein Festplattenlaufwerk entfernt wurde.
+
++
+
+NOTE: Legen Sie keine Hände auf die Festplattenplatinen, die auf der Unterseite des Laufwerksträger ausgesetzt sind.
+
+. Schließen Sie den Nockengriff, so dass das Laufwerk vollständig in der mittleren Ebene sitzt und der Griff einrastet.
++
+Schließen Sie den Nockengriff langsam, damit er korrekt an der Vorderseite des Festplattenlaufwerks ausgerichtet ist.
+
+. Wenn Sie ein anderes Laufwerk ersetzen, wiederholen Sie die Schritte 3 bis 8.
+. Vergewissern Sie sich, dass die Aktivitäts-LED (grün) des Festplattenlaufwerks leuchtet.
++
+Wenn die Aktivitäts-LED des Festplattenlaufwerks grün leuchtet, bedeutet dies, dass das Laufwerk mit Strom versorgt wird. Wenn die Aktivitäts-LED des Festplattenlaufwerks blinkt, bedeutet dies, dass das Festplattenlaufwerk über ein Netzteil verfügt und I/O-Vorgänge ausgeführt werden. Wenn die Firmware des Festplattenlaufwerks automatisch aktualisiert wird, blinkt die LED.
+
+. Wenn Sie die automatische Laufwerkszuweisung in Schritt 1 deaktiviert haben, weisen Sie manuell den Festplattenbesitzer zu und aktivieren Sie dann bei Bedarf die automatische Laufwerkszuweisung neu:
++
+.. Alle nicht im Besitz befindlichen Festplatten anzeigen:``storage disk show -container-type unassigned``
+.. Weisen Sie jede Festplatte zu:``storage disk assign -disk _disk_name_ -owner _owner_name_``
++
+Sie können das Platzhalterzeichen verwenden, um mehr als eine Festplatte gleichzeitig zuzuweisen.
+
+.. Bei Bedarf die automatische Laufwerkszuweisung erneut aktivieren:``storage disk option modify -node _node_name_ -autoassign on``
++
+Sie müssen die automatische Laufwerkszuweisung auf beiden Controllern in einem HA-Paar neu aktivieren.
+
+
+
+. Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.
++
+Wenden Sie sich an den technischen Support unter https://mysupport.netapp.com/site/global/dashboard["NetApp Support"], 888-463-8277 (Nordamerika), 00-800-44-638277 (Europa) oder +800-800-80-800 (Asien/Pazifik) wenn Sie die RMA-Nummer oder zusätzliche Hilfe beim Ersatzverfahren benötigen.
+
+

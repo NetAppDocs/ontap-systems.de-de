@@ -1,0 +1,400 @@
+---
+permalink: a700s/nvram-or-nvram-dimm-replacement.html 
+sidebar: sidebar 
+keywords: aff a700s, aff, a700s, replace, fail, nvram, card, remove, riser, controller, module, system, id, nvram, dimm, shut, down, reassign, disk, restore, encryption, functionality, complete, replacement, process, replace the nvram module and/or nvram dimms, shut down the impaired controller, shut down the impaired controller, remove the controller module, remove the nvram card, reinstall the controller module and booting the system, reassign disks, restore storage and volume encryption functionality, complete the replacement process 
+summary: Um eine fehlerhafte NVRAM-Karte zu ersetzen, müssen Sie den NVRAM-Riser 1 aus dem Controller-Modul entfernen, die fehlerhafte Karte aus dem Riser entfernen, die neue NVRAM-Karte im Riser installieren und den Riser im Controller-Modul wieder installieren. Da die System-ID von der NVRAM-Karte abgeleitet wird, werden beim Ersetzen des Moduls Festplatten, die zum System gehören, der neuen System-ID neu zugewiesen. 
+---
+= Ersetzen Sie das NVRAM-Modul und die NVRAM-DIMMs - AFF A700s
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um eine fehlerhafte NVRAM-Karte zu ersetzen, müssen Sie den NVRAM-Riser 1 aus dem Controller-Modul entfernen, die fehlerhafte Karte aus dem Riser entfernen, die neue NVRAM-Karte im Riser installieren und den Riser im Controller-Modul wieder installieren. Da die System-ID von der NVRAM-Karte abgeleitet wird, werden beim Ersetzen des Moduls Festplatten, die zum System gehören, der neuen System-ID neu zugewiesen.
+
+.Bevor Sie beginnen
+* Alle Platten-Shelves müssen ordnungsgemäß funktionieren.
+* Wenn sich Ihr System in einem HA-Paar befindet, muss der Partner-Controller den Controller übernehmen können, der dem zu ersetzenden NVRAM-Modul zugeordnet ist.
+* Bei diesem Verfahren wird die folgende Terminologie verwendet:
++
+** Der Controller _Impared_ ist der Controller, an dem Sie Wartungsarbeiten durchführen.
+** Der _Healthy_ Controller ist der HA-Partner des beeinträchtigten Controllers.
+
+
+* Dieses Verfahren umfasst Schritte zur automatischen oder manuellen Neuzuteilung von Festplatten an das Controller-Modul, das dem neuen NVRAM-Modul zugeordnet ist. Sie müssen die Festplatten neu zuweisen, wenn Sie dazu aufgefordert werden. Das Ausfüllen der Neuzuweisung von Festplatte vor dem Giveback kann Probleme verursachen.
+* Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
+* Im Rahmen dieses Verfahrens können Festplatten oder Platten-Shelfs nicht geändert werden.
+
+
+
+
+== Schritt 1: Schalten Sie den beeinträchtigten Regler aus
+
+[role="lead"]
+Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
+
+Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE für die Berechtigung und den Zustand anzeigt, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/index.html["Administrationsübersicht mit der CLI"^].
+
+.Schritte
+. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung: `system node autosupport invoke -node * -type all -message MAINT=_number_of_hours_down_h`
++
+Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Wenn der beeinträchtigte Controller Teil eines HA-Paars ist, deaktivieren Sie das automatische Giveback von der Konsole des gesunden Controllers: `storage failover modify -node local -auto-giveback false`
+. Nehmen Sie den beeinträchtigten Controller zur LOADER-Eingabeaufforderung:
++
+[cols="1,2"]
+|===
+| Wenn der eingeschränkte Controller angezeigt wird... | Dann... 
+
+
+ a| 
+Die LOADER-Eingabeaufforderung
+ a| 
+Wechseln Sie zu Controller-Modul entfernen.
+
+
+
+ a| 
+Warten auf Giveback...
+ a| 
+Drücken Sie Strg-C, und antworten Sie dann `y`.
+
+
+
+ a| 
+Eingabeaufforderung des Systems oder Passwort (Systempasswort eingeben)
+ a| 
+Übernehmen oder stoppen Sie den beeinträchtigten Regler von der gesunden Steuerung: `storage failover takeover -ofnode _impaired_node_name_`
+
+Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drücken Sie Strg-C, und antworten Sie dann `y`.
+
+|===
++
+** Wenn Sie NetApp Storage Encryption verwenden, müssen Sie die MSID mithilfe der Anweisungen im Abschnitt „`Zurückkehren in den ungeschützten Modus`“ des Power Guide „ _ONTAP 9 NetApp Verschlüsselung “ zurückgesetzt haben.
++
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/home.html["ONTAP 9 – NetApp Verschlüsselungsleitfadens"]
+
+
+
+
+
+
+
+== Schritt 2: Entfernen Sie das Controller-Modul
+
+[role="lead"]
+Sie müssen das Controller-Modul aus dem Chassis entfernen, wenn Sie das Controller-Modul ersetzen oder eine Komponente im Controller-Modul ersetzen.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Lösen Sie den Haken- und Schlaufenriemen, mit dem die Kabel am Kabelführungsgerät befestigt sind, und ziehen Sie dann die Systemkabel und SFPs (falls erforderlich) vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren.
++
+Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation des Kabelverwaltungsgeräts die Kabel organisiert sind.
+
+. Trennen Sie das Netzteil des Controller-Moduls von der Quelle, und ziehen Sie dann das Kabel vom Netzteil ab.
+. Entfernen Sie das Kabelführungs-Gerät aus dem Controller-Modul und legen Sie es beiseite.
+. Drücken Sie beide Verriegelungsriegel nach unten, und drehen Sie dann beide Verriegelungen gleichzeitig nach unten.
++
+Das Controller-Modul wird leicht aus dem Chassis entfernt.
+
++
+image::../media/drw_a700s_pcm_remove.png[drw a700s pcm ausbauen]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Verriegelungsverschluss
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Sicherungsstift
+
+|===
+. Schieben Sie das Controller-Modul aus dem Gehäuse.
++
+Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen, während Sie es aus dem Gehäuse schieben.
+
+. Das Steuermodul auf eine stabile, flache Oberfläche legen und den Luftkanal öffnen:
++
+.. Drücken Sie die Verriegelungslaschen an den Seiten des Luftkanals in Richtung der Mitte des Controller-Moduls.
+.. Schieben Sie den Luftkanal in Richtung der Lüftermodule, und drehen Sie ihn dann nach oben in die vollständig geöffnete Position.
++
+image::../media/drw_a700s_open_air_duct.png[freiluftkanal drw a700s]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Verriegelungsklammern für Luftkanäle
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Riser
+
+
+
+ a| 
+image:../media/legend_icon_03.png[""]
+ a| 
+Luftkanal
+
+|===
+
+
+
+
+
+
+== Schritt 3: Entfernen Sie die NVRAM-Karte
+
+[role="lead"]
+Das Ersetzen des NVRAM besteht aus dem Entfernen des NVRAM-Riser 1 aus dem Controller-Modul, dem Trennen der NVRAM-Batterie von der NVRAM-Karte, dem Entfernen der fehlerhaften NVRAM-Karte und dem Installieren der ErsatzNVRAM-Karte und der Neuinstallation des NVRAM-Riser zurück in das Controller-Modul.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Entfernen Sie den NVRAM-Riser 1 aus dem Controller-Modul:
++
+.. Drehen Sie die Riserverriegelung auf der linken Seite des Riser nach oben und zu den Lüftern.
++
+Der NVRAM-Riser hebt sich leicht vom Controller-Modul an.
+
+.. Heben Sie den NVRAM-Riser an, und verschieben Sie ihn in Richtung der Lüfter, so dass die Metalllippe auf dem Riser den Rand des Controller-Moduls entfernt, heben Sie den Riser gerade aus dem Controller-Modul heraus. Legen Sie sie dann auf eine stabile, flache Oberfläche, sodass Sie auf die NVRAM-Karte zugreifen können.
++
+image::../media/drw_a700s_nvme_replace.png[drw a700s nvme ersetzen]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Luftkanal
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Riserkarte 1 Verriegelungsriegel
+
+
+
+ a| 
+image:../media/legend_icon_03.png[""]
+ a| 
+Stecker des NVRAM-Akkukabels, der an die NVRAM-Karte angeschlossen ist
+
+
+
+ a| 
+image:../media/legend_icon_04.png[""]
+ a| 
+Kartenverriegelungshalterung
+
+
+
+ a| 
+image:../media/legend_icon_05.png[""]
+ a| 
+NVRAM-Karte
+
+|===
+
+
+. Entfernen Sie die NVRAM-Karte aus dem Riser-Modul:
++
+.. Drehen Sie das Riser-Modul so, dass Sie auf die NVRAM-Karte zugreifen können.
+.. Trennen Sie das an der NVRAM-Karte angeschlossene NVRAM-Akkukabel.
+.. Drücken Sie die Sperrhalterung an der Seite des NVRAM-Riser, und drehen Sie sie dann in die offene Position.
+.. Entfernen Sie die NVRAM-Karte aus dem Riser-Modul.
+
+
+. Installieren Sie die NVRAM-Karte in den NVRAM-Riser:
++
+.. Richten Sie die Karte an der Kartenführung am Riser-Modul und dem Kartensockel im Riser aus.
+.. Schieben Sie die Karte direkt in den Kartensockel.
++
+
+NOTE: Stellen Sie sicher, dass die Karte vollständig und quadratische Position im Risersteckplatz hat.
+
+.. Schließen Sie das Akkukabel an die Buchse auf der NVRAM-Karte an.
+.. Drehen Sie die Verriegelung in die verriegelte Position, und stellen Sie sicher, dass sie einrastet.
+
+
+. Installieren Sie den Riser in das Controller-Modul:
++
+.. Richten Sie die Lippe des Riser an der Unterseite der Bleche des Controller-Moduls aus.
+.. Führen Sie den Riser entlang der Stifte im Controller-Modul und senken Sie den Riser anschließend in das Controller-Modul.
+.. Drehen Sie die Verriegelung nach unten, und klicken Sie sie in die verriegelte Position.
++
+Bei der Verriegelung ist die Verriegelung bündig mit der Oberseite des Riser und der Riser sitzt im Controller-Modul.
+
+.. Setzen Sie alle SFP-Module wieder ein, die von den PCIe-Karten entfernt wurden.
+
+
+
+
+
+
+== Schritt 4: Installieren Sie das Controller-Modul neu und starten Sie das System
+
+[role="lead"]
+Nachdem Sie eine FRU im Controller-Modul ersetzt haben, müssen Sie das Controller-Modul neu installieren und neu starten.
+
+Bei HA-Paaren mit zwei Controller-Modulen im selben Chassis ist die Sequenz, in der Sie das Controller-Modul installieren, besonders wichtig, da sie versucht, neu zu booten, sobald Sie es vollständig im Chassis einsetzen.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
++
+
+NOTE: Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein, wenn Sie dazu aufgefordert werden.
+
+. Das System nach Bedarf neu einsetzen.
++
+Wenn Sie die Medienkonverter (QSFPs oder SFPs) entfernt haben, sollten Sie diese erneut installieren, wenn Sie Glasfaserkabel verwenden.
+
+. Schließen Sie das Netzkabel an das Netzteil an, setzen Sie die Sicherungshülse des Netzkabels wieder ein, und schließen Sie dann das Netzteil an die Stromquelle an.
+. Führen Sie die Neuinstallation des Controller-Moduls durch:
++
+.. Wenn Sie dies noch nicht getan haben, installieren Sie das Kabelverwaltungsgerät neu.
+.. Drücken Sie das Controller-Modul fest in das Gehäuse, bis es auf die Mittelebene trifft und vollständig sitzt.
++
+Die Verriegelungen steigen, wenn das Controller-Modul voll eingesetzt ist.
+
++
+
+NOTE: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige Kraft verwenden, um Schäden an den Anschlüssen zu vermeiden.
+
++
+Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt. Bereiten Sie sich darauf vor, den Bootvorgang zu unterbrechen.
+
+.. Drehen Sie die Verriegelungsriegel nach oben, und kippen Sie sie so, dass sie die Sicherungsstifte entfernen und dann in die verriegelte Position absenken.
+.. Unterbrechen Sie den Bootvorgang, indem Sie auf drücken `Ctrl-C` Wenn Sie sehen `Press Ctrl-C for Boot Menu`.
+.. Wählen Sie im angezeigten Menü die Option zum Starten im Wartungsmodus aus.
+
+
+
+
+
+
+== Schritt 5: Überprüfen Sie die Änderung der System-ID bei einem HA-System
+
+[role="lead"]
+Sie müssen die Änderung der System-ID beim Booten des Controllers _Replacement_ bestätigen und anschließend überprüfen, ob die Änderung implementiert wurde.
+
+Diese Vorgehensweise gilt nur für Systeme, auf denen ONTAP in einem HA-Paar ausgeführt wird.
+
+. Wenn sich der Controller _Replacement_ im Wartungsmodus befindet (zeigt das an `*>` Eingabeaufforderung, beenden Sie den Wartungsmodus und gehen Sie zur LOADER-Eingabeaufforderung: `halt`
+. Booten Sie an der LOADER-Eingabeaufforderung am _Replacement_-Controller den Controller, und geben Sie ein `y` Wenn Sie aufgrund einer nicht übereinstimmenden System-ID aufgefordert werden, die System-ID außer Kraft zu setzen:``boot_ontap``
+. Warten Sie, bis der `Waiting for giveback...` Die Meldung wird auf der Controller-Konsole „_Replacement_“ angezeigt und überprüfen Sie anschließend vom gesunden Controller, ob die neue Partner-System-ID automatisch zugewiesen wurde: `storage failover show`
++
+In der Befehlsausgabe sollte eine Meldung angezeigt werden, dass sich die System-ID auf dem beeinträchtigten Controller geändert hat und die korrekten alten und neuen IDs angezeigt werden. Im folgenden Beispiel wurde node2 ersetzt und hat eine neue System-ID von 151759706.
+
++
+[listing]
+----
+node1> `storage failover show`
+                                    Takeover
+Node              Partner           Possible     State Description
+------------      ------------      --------     -------------------------------------
+node1             node2             false        System ID changed on partner (Old:
+                                                  151759755, New: 151759706), In takeover
+node2             node1             -            Waiting for giveback (HA mailboxes)
+----
+. Vergewissern Sie sich beim ordnungsgemäßen Controller, dass alle Corestapy gespeichert sind:
++
+.. Ändern Sie die erweiterte Berechtigungsebene: `set -privilege advanced`
++
+Sie können antworten `Y` Wenn Sie aufgefordert werden, den erweiterten Modus fortzusetzen. Die Eingabeaufforderung für den erweiterten Modus wird angezeigt (*>).
+
+.. Speichern von CoreDumps: `system node run -node _local-node-name_ partner savecore`
+.. Warten Sie, bis der Befehl `savecore`abgeschlossen ist, bevor Sie das Giveback ausgeben.
++
+Sie können den folgenden Befehl eingeben, um den Fortschritt des Befehls savecore zu überwachen: `system node run -node _local-node-name_ partner savecore -s`
+
+.. Zurück zur Administratorberechtigungsebene: `set -privilege admin`
+
+
+. Geben Sie den Controller zurück:
++
+.. Geben Sie von dem ordnungsgemäßen Controller den Storage des ersetzten Controllers wieder: `storage failover giveback -ofnode _replacement_node_name_`
++
+Der _Replacement_ -Controller nimmt den Storage wieder in Anspruch und führt den Startvorgang durch.
+
++
+Wenn Sie aufgrund einer nicht übereinstimmenden System-ID aufgefordert werden, die System-ID außer Kraft zu setzen, sollten Sie eingeben `y`.
+
++
+
+NOTE: Wenn das Rückübertragung ein Vetorecht ist, können Sie erwägen, das Vetos außer Kraft zu setzen.
+
++
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["Finden Sie den Hochverfügbarkeits-Leitfaden für Ihre Version von ONTAP 9"]
+
+.. Nachdem das Giveback abgeschlossen ist, bestätigen Sie, dass das HA-Paar sich gesund befindet und ein Takeover möglich ist: `storage failover show`
++
+Die Ausgabe von der `storage failover show` Befehl sollte nicht die in der Partnernachricht geänderte System-ID enthalten.
+
+
+
+. Überprüfen Sie, ob die Festplatten ordnungsgemäß zugewiesen wurden: `storage disk show -ownership`
++
+Die Festplatten, die zum Controller _Replacement_ gehören, sollten die neue System-ID anzeigen. Im folgenden Beispiel zeigen die Festplatten von node1 jetzt die neue System-ID, 1873775277:
+
++
+[listing]
+----
+node1> `storage disk show -ownership`
+
+Disk  Aggregate Home  Owner  DR Home  Home ID    Owner ID  DR Home ID Reserver  Pool
+----- ------    ----- ------ -------- -------    -------    -------  ---------  ---
+1.0.0  aggr0_1  node1 node1  -        1873775277 1873775277  -       1873775277 Pool0
+1.0.1  aggr0_1  node1 node1           1873775277 1873775277  -       1873775277 Pool0
+.
+.
+.
+----
+. Vergewissern Sie sich, dass die erwarteten Volumes für jeden Controller vorhanden sind: `vol show -node node-name`
+. Wenn Sie die automatische Übernahme beim Neustart deaktiviert haben, aktivieren Sie sie vom gesunden Controller: `storage failover modify -node replacement-node-name -onreboot true`
+
+
+
+
+== Schritt 6: Stellen Sie die Funktionen für Storage und Volume Encryption wieder her
+
+[role="lead"]
+Nachdem Sie das Controller-Modul oder das NVRAM-Modul für ein Storage-System ersetzt haben, das Sie zuvor für die Verwendung von Storage oder Volume Encryption konfiguriert haben, müssen Sie zusätzliche Schritte durchführen, um unterbrechungsfreie Verschlüsselungsfunktionen bereitzustellen. Sie können diese Aufgabe auf Storage-Systemen überspringen, auf denen Storage oder Volume Encryption nicht aktiviert ist.
+
+.Schritte
+. Stellen Sie die Speicher- oder Volume Encryption-Funktionalität mithilfe des entsprechenden Verfahrens in wieder her https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html["NetApp Encryption: Übersicht mit CLI"^].
+. Je nachdem, ob Sie integriertes oder externes Verschlüsselungsmanagement verwenden, sollten Sie eines der folgenden Verfahren verwenden:
++
+** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-onboard-key-management-encryption-keys-task.html["Wiederherstellung der integrierten Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"^]
+** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-external-encryption-keys-93-later-task.html["Wiederherstellung der externen Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"^]
+
+
+
+
+
+
+== Schritt 7: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+
+[role="lead"]
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

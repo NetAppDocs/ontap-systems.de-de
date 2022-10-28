@@ -1,0 +1,82 @@
+---
+permalink: a250/power-supply-replace.html 
+sidebar: sidebar 
+keywords: aff a250, replace a power supply 
+summary: 'Beim Austausch eines Netzteils muss das Netzteil \ (PSU\) von der Stromquelle getrennt, das Netzkabel abgezogen, das alte Netzteil entfernt und das Ersatznetzteil installiert werden. Anschließend wird es wieder an die Stromquelle angeschlossen.' 
+---
+= Ersetzen Sie ein Netzteil - AFF A250
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Beim Austausch eines Netzteils muss das Ziellaufwerk (Netzteil) von der Stromquelle getrennt, das Netzkabel abgezogen, das alte Netzteil entfernt und das Ersatznetzteil installiert werden. Anschließend muss das Netzteil wieder an die Stromquelle angeschlossen werden.
+
+* Die Netzteile sind redundant und Hot-Swap-fähig.
+* Dieses Verfahren ist für den Austausch eines Netzteils nach dem anderen beschrieben.
++
+
+NOTE: Als Best Practice empfiehlt es sich, das Netzteil innerhalb von zwei Minuten vom Gehäuse zu ersetzen. Das System funktioniert weiterhin, aber ONTAP sendet Meldungen an die Konsole über das beeinträchtigte Netzteil, bis das Netzteil ersetzt wird.
+
+* Die Netzteile haben einen automatischen Bereich.
++
+
+IMPORTANT: Vermischen Sie PSUs nicht mit unterschiedlichen Effizienzwerten. Immer ersetzen wie für „Gefällt mir“.
+
+
+
+Verwenden Sie das folgende Video oder die tabellarischen Schritte, um das Netzteil auszutauschen:
+
+.Animation - Ersetzen Sie das Netzteil
+video::86487f5e-20ff-43e6-99ae-ac5b015c1aa5[panopto]
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Identifizieren Sie das zu ersetzende Netzteil anhand von Konsolenfehlern oder über die rote Fehler-LED am Netzteil.
+. Trennen Sie das Netzteil:
++
+.. Öffnen Sie die Netzkabelhalterung, und ziehen Sie dann das Netzkabel vom Netzteil ab.
+.. Ziehen Sie das Netzkabel von der Stromversorgung ab.
+
+
+. Drehen Sie den Nockengriff so, dass er verwendet werden kann, um die Stromversorgung aus dem Controller-Modul zu ziehen, während Sie die Verriegelungslasche drücken.
++
+
+CAUTION: Das Netzteil ist kurz. Verwenden Sie immer zwei Hände, um sie zu unterstützen, wenn Sie sie aus dem Controller-Modul entfernen, damit es nicht plötzlich aus dem Controller-Modul schwingen und Sie verletzen.
+
++
+image::../media/drw_a250_replace_psu.png[drw a250 ersetzen sie das netzteil]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Blaue Verriegelungslasche für die Stromversorgung 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Stromversorgung
+
+|===
+. Halten und richten Sie die Kanten des Netzteils mit beiden Händen an der Öffnung im Controller-Modul aus, und drücken Sie dann vorsichtig das Netzteil in das Controller-Modul, bis die Verriegelungslasche einrastet.
++
+Die Netzteile werden nur ordnungsgemäß mit dem internen Anschluss in Kontakt treten und auf eine Weise verriegeln.
+
++
+
+NOTE: Um Schäden am internen Stecker zu vermeiden, sollten Sie beim Einschieben der Stromversorgung in das System keine übermäßige Kraft verwenden.
+
+. Schließen Sie die Verkabelung des Netzteils wieder an:
++
+.. Schließen Sie das Netzkabel wieder an das Netzteil und die Stromversorgung an.
+.. Befestigen Sie das Netzkabel mithilfe der Netzkabelhalterung am Netzteil.
+
+
++
+Sobald die Stromversorgung wiederhergestellt ist, sollte die Status-LED grün leuchten.
+
+. Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"^] Seite für weitere Informationen.
+

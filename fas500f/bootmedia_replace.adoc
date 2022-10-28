@@ -1,0 +1,205 @@
+---
+permalink: fas500f/bootmedia-replace.html 
+sidebar: sidebar 
+keywords: fas500f, replace the boot media 
+summary: Sie finden das ausgefallene Bootmedium im Controller-Modul, indem Sie den Luftkanal am Controller-Modul entfernen, bevor Sie das Boot-Medium ersetzen können. 
+---
+= Ersetzen Sie das Boot-Medium FAS500f
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Zum Austauschen des Startmediums müssen Sie das beeinträchtigte Controller-Modul entfernen, das Ersatzstartmedium installieren und das Boot-Image auf ein USB-Flash-Laufwerk übertragen.
+
+
+
+== Schritt 1: Entfernen Sie das Controller-Modul
+
+Sie müssen das Controller-Modul aus dem Chassis entfernen, wenn Sie eine Komponente im Controller-Modul ersetzen.
+
+Achten Sie darauf, dass Sie die Kabel so kennzeichnen, dass Sie wissen, woher sie stammen.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Trennen Sie die Netzteile des Controller-Moduls von der Quelle.
+. Lösen Sie die Netzkabelhalter, und ziehen Sie anschließend die Kabel von den Netzteilen ab.
+. Setzen Sie den Zeigefinger in den Verriegelungsmechanismus auf beiden Seiten des Controller-Moduls ein, drücken Sie den Hebel mit dem Daumen, und ziehen Sie den Controller vorsichtig einige Zentimeter aus dem Gehäuse.
++
+
+NOTE: Wenn Sie Schwierigkeiten beim Entfernen des Controller-Moduls haben, setzen Sie Ihre Zeigefinger durch die Fingerlöcher von innen (durch Überqueren der Arme).
+
++
+image::../media/drw_a250_pcm_remove_install.png[drw a250 pcm ausbauen]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Hebel
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Verriegelungsmechanismus
+
+|===
+. Fassen Sie die Seiten des Controller-Moduls mit beiden Händen an, ziehen Sie es vorsichtig aus dem Gehäuse heraus und legen Sie es auf eine flache, stabile Oberfläche.
+. Drehen Sie die Daumenschraube auf der Vorderseite des Controller-Moduls gegen den Uhrzeigersinn, und öffnen Sie die Abdeckung des Controller-Moduls.
++
+image::../media/drw_a250_open_controller_module_cover.png[die Abdeckung des drw a250-Controller-Moduls öffnen]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Flügelschraube
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Controller-Modulabdeckung.
+
+|===
+. Heben Sie die Luftkanalabdeckung heraus.
++
+image::../media/drw_a250_remove_airduct_cover.png[drw a250 Luftkanalabdeckung entfernen]
+
+
+
+
+
+== Schritt 2: Ersetzen Sie die Startmedien
+
+Sie finden das ausgefallene Bootmedium im Controller-Modul, indem Sie den Luftkanal am Controller-Modul entfernen, bevor Sie das Boot-Medium ersetzen können.
+
+Um die Schraube zu entfernen, mit der die Bootsmedien befestigt sind, benötigen Sie einen #1 Magnetschraubendreher. Aufgrund der Platzbeschränkungen im Controller-Modul sollten Sie auch einen Magneten haben, um die Schraube darauf zu übertragen, damit Sie sie nicht verlieren.
+
+Sie können das Bootmedium mit dem folgenden Video oder den tabellarischen Schritten ersetzen:
+
+.Animation - Ersetzen Sie das Startmedium
+video::7c2cad51-dd95-4b07-a903-ac5b015c1a6d[panopto]
+. Suchen und ersetzen Sie die gestörten Startmedien vom Controller-Modul.
++
+image::../media/drw_a250_replace_boot_media.png[drw a250 ersetzen Startmedien]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Entfernen Sie die Schraube, mit der das Boot-Medium am Motherboard im Controller-Modul befestigt ist.
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Heben Sie die Boot-Medien aus dem Controller-Modul.
+
+|===
++
+.. Entfernen Sie die Schraube mit dem #1-Magnetschraubendreher aus dem gestörten Boot-Medium und legen Sie sie sicher auf den Magneten.
+.. Heben Sie die gestörten Startmedien vorsichtig direkt aus dem Sockel und legen Sie sie beiseite.
+.. Entfernen Sie die Ersatzstartmedien aus dem antistatischen Versandbeutel, und richten Sie sie am Controller-Modul aus.
+.. Setzen Sie die Schraube mit dem #1-Magnetschraubendreher ein und ziehen Sie sie fest.
++
+
+NOTE: Beim Anziehen der Schraube auf dem Boot-Medium keine Kraft auftragen, da sie möglicherweise knacken kann.
+
+
+
+
+
+
+
+== Schritt 3: Übertragen Sie das Startabbild auf das Startmedium
+
+Der installierte Ersatz-Startdatenträger ist ohne Startabbild, sodass Sie ein Startabbild über ein USB-Flash-Laufwerk übertragen müssen.
+
+* Sie müssen über ein USB-Flash-Laufwerk verfügen, das auf MBR/FAT32 formatiert ist und eine Kapazität von mindestens 4 GB aufweist
+* Eine Kopie der gleichen Bildversion von ONTAP wie der beeinträchtigte Controller. Das entsprechende Image können Sie auf der NetApp Support-Website im Abschnitt * Downloads* herunterladen
++
+** Wenn NVE aktiviert ist, laden Sie das Image mit NetApp Volume Encryption herunter, wie in der Download-Schaltfläche angegeben.
+** Wenn NVE nicht aktiviert ist, laden Sie das Image ohne NetApp Volume Encryption herunter, wie im Download-Button dargestellt.
+
+
+* Wenn Ihr System ein HA-Paar ist, müssen Sie eine Netzwerkverbindung haben.
+* Wenn es sich bei Ihrem System um ein eigenständiges System handelt, benötigen Sie keine Netzwerkverbindung, Sie müssen jedoch beim Wiederherstellen des var-Dateisystems einen zusätzlichen Neustart durchführen.
+
+
+.Schritte
+. Laden Sie das entsprechende Service-Image von der NetApp Support Site auf das USB-Flash-Laufwerk herunter und kopieren Sie es.
+. Laden Sie das Service-Image auf Ihren Arbeitsbereich auf Ihrem Laptop herunter.
+. Entpacken Sie das Service-Image.
++
+
+NOTE: Wenn Sie den Inhalt mit Windows extrahieren, verwenden Sie WinZip nicht zum Extrahieren des Netzboots-Images. Verwenden Sie ein anderes Extraktionstool, wie 7-Zip oder WinRAR.
+
++
+Die Image-Datei „ungezippte Dienste“ enthält zwei Ordner:
+
++
+** `boot`
+** `efi`
+
+
+. Kopieren Sie die `efi` Ordner zum obersten Verzeichnis auf dem USB-Flash-Laufwerk.
++
+Das USB-Flash-Laufwerk sollte den efi-Ordner und die gleiche Service Image (BIOS)-Version des beeinträchtigten Controllers haben.
+
+. Entfernen Sie das USB-Flash-Laufwerk von Ihrem Laptop.
+. Wenn Sie dies noch nicht getan haben, den Luftkanal einbauen.
++
+image::../media/drw_a250_install_airduct_cover.png[drw a250 Einbau der Luftkanalabdeckung]
+
+. Schließen Sie die Abdeckung des Controller-Moduls, und ziehen Sie die Daumenschraube fest.
++
+image::../media/drw_a250_close_controller_module_cover.png[abdeckung des drw a250-Controllermoduls schließen]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Controller-Modulabdeckung
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Flügelschraube
+
+|===
+. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
+. Schließen Sie das Netzkabel an das Netzteil an, und setzen Sie den Netzkabelhalter wieder ein.
+. Stecken Sie das USB-Flash-Laufwerk in den USB-Steckplatz des Controller-Moduls.
++
+Stellen Sie sicher, dass Sie das USB-Flash-Laufwerk in den für USB-Geräte gekennzeichneten Steckplatz und nicht im USB-Konsolenport installieren.
+
+. Drücken Sie das Controller-Modul ganz in das Chassis:
+. Platzieren Sie Ihre Zeigefinger durch die Fingerlöcher von der Innenseite des Verriegelungsmechanismus.
+. Drücken Sie die Daumen auf den orangefarbenen Laschen oben am Verriegelungsmechanismus nach unten, und schieben Sie das Controller-Modul vorsichtig über den Anschlag.
+. Lösen Sie Ihre Daumen von oben auf den Verriegelungs-Mechanismen und drücken Sie weiter, bis die Verriegelungen einrasten.
++
+Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt. Bereiten Sie sich darauf vor, den Bootvorgang zu unterbrechen.
+
++
+Das Controller-Modul sollte vollständig eingesetzt und mit den Kanten des Gehäuses bündig sein.
+
+

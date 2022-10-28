@@ -1,0 +1,40 @@
+---
+permalink: fas9500/controller_replace_overview.html 
+sidebar: sidebar 
+keywords: FAS9500 
+summary: Sie müssen die Voraussetzungen für den Austausch prüfen und die richtige für Ihre Version des ONTAP Betriebssystems auswählen. 
+---
+= Ersetzen Sie das Controller-Modul FAS9500
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um das beeinträchtigte Controller-Modul auszutauschen, müssen Sie den beeinträchtigten Controller herunterfahren, die internen Komponenten in das Ersatzcontrollermodul verschieben, das Ersatzcontrollermodul installieren und den Ersatz-Controller neu starten.
+
+Sie müssen die Voraussetzungen für den Austausch prüfen und die richtige für Ihre Version des ONTAP Betriebssystems auswählen.
+
+* Alle Festplatten-Shelfs müssen ordnungsgemäß funktionieren.
+* Wenn Ihr System ein FlexArray-System ist oder über eine V_StorageAttach-Lizenz verfügt, müssen Sie vor der Durchführung dieses Verfahrens die zusätzlichen erforderlichen Schritte beachten.
+* Wenn sich Ihr System in einem HA-Paar befindet, muss der gesunde Knoten den Knoten übernehmen können, der ersetzt wird (in diesem Verfahren wird „`beeinträchtigter Knoten`“ genannt).
+* Wenn sich Ihr System in einer MetroCluster-Konfiguration befindet, müssen Sie den Abschnitt überprüfen https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/concept_choosing_the_correct_recovery_procedure_parent_concept.html["Auswahl des richtigen Wiederherstellungsverfahrens"^] Um zu bestimmen, ob Sie dieses Verfahren verwenden sollten.
++
+Beachten Sie, dass das Verfahren zum Austausch des Controllers bei einem Node in einer MetroCluster Konfiguration mit vier oder acht Nodes mit dem bei einem HA-Paar identisch ist. Es sind keine MetroCluster-spezifischen Schritte erforderlich, da der Ausfall auf ein HA-Paar beschränkt ist und Storage Failover-Befehle zur unterbrechungsfreien Ausführung während des Austauschs genutzt werden können.
+
+* Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
+* Sie müssen ein Controller-Modul durch ein Controller-Modul desselben Modelltyps ersetzen. Sie können kein System-Upgrade durch einen Austausch des Controller-Moduls durchführen.
+* Im Rahmen dieses Verfahrens können Laufwerke oder Laufwerk-Shelfs nicht geändert werden.
+* In diesem Verfahren wird das Startgerät vom beeinträchtigten Knoten auf den Ersatzknoten verschoben, sodass der Ersatzknoten in derselben ONTAP-Version wie das alte Controller-Modul gestartet wird.
+* Es ist wichtig, dass Sie die Befehle in diesen Schritten auf die richtigen Systeme anwenden:
++
+** Der Knoten „beeinträchtigt“ ist der Knoten, der ersetzt wird.
+** Der Ersatzknoten ist der neue Knoten, der den beeinträchtigten Knoten ersetzt.
+** Der intakten Node ist der noch intakten Node.
+
+
+* Sie müssen die Konsolenausgabe des Knotens immer in einer Textdatei erfassen.
++
+Auf diese Weise erhalten Sie eine Aufzeichnung des Verfahrens, damit Sie Probleme beheben können, die während des Austauschvorgangs auftreten können.
+
+

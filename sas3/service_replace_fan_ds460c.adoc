@@ -1,0 +1,80 @@
+---
+permalink: sas3/service-replace-fan-ds460c.html 
+sidebar: sidebar 
+keywords: ds460c, drive, shelf, fan, module, cooling, disk, replace, replace a fan module in a ds460c disk shelf 
+summary: Jedes DS460C Laufwerk-Shelf umfasst zwei Lüftermodule. Falls ein Lüftermodul ausfällt, müssen Sie es so schnell wie möglich austauschen, um sicherzustellen, dass das Shelf ausreichend gekühlt wird. Wenn Sie das ausgefallene Lüftermodul entfernen, müssen Sie das Festplatten-Shelf nicht einschalten. 
+---
+= Ein Lüftermodul in einem DS460C Platten-Shelf ersetzen – Shelfs durch IOM12/IOM12B-Module
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Jedes DS460C Laufwerk-Shelf umfasst zwei Lüftermodule. Falls ein Lüftermodul ausfällt, müssen Sie es so schnell wie möglich austauschen, um sicherzustellen, dass das Shelf ausreichend gekühlt wird. Wenn Sie das ausgefallene Lüftermodul entfernen, müssen Sie das Festplatten-Shelf nicht einschalten.
+
+Sie müssen sicherstellen, dass Sie das Lüftermodul innerhalb von 30 Minuten entfernen und austauschen, um eine Überhitzung des Systems zu verhindern.
+
+.Schritte
+. Setzen Sie den antistatischen Schutz auf.
+. Packen Sie das neue Lüftermodul aus und legen Sie es auf eine Ebene Fläche in der Nähe des Regals.
++
+Bewahren Sie das gesamte Verpackungsmaterial für die Verwendung auf, wenn Sie den defekten Lüfter zurücksenden.
+
+. Suchen Sie an der Rückseite des Festplatten-Shelf nach den Warn-LEDs, um das Lüftermodul zu finden, das Sie entfernen müssen.
++
+Sie müssen das Lüftermodul, für das die Warn-LED leuchtet, austauschen.
+
++
+image::../media/28_dwg_e2860_de460c_single_fan_canister_with_led_callout.gif[28 dwg e2860 de460c Einzelgebläse mit LED-Legende]
+
++
+|===
+
+
+| Element | LED-Name | Bundesland | Beschreibung 
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Achtung  a| 
+Leuchtet gelb
+ a| 
+Der Lüfter hat einen Fehler
+
+|===
+. Drücken Sie die orangefarbene Lasche, um den Griff des Lüftermoduls zu lösen.
++
+image::../media/28_dwg_e2860_de460c_single_fan_canister_with_orange_tab_callout.gif[28 dwg e2860 de460c Einzelgebläse mit orangefarbener Lasche Legende]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Die Registerkarte, auf der Sie drücken, um den Griff des Lüftermoduls zu lösen 
+|===
+. Ziehen Sie das Lüftermodul mithilfe des Griffs aus dem Shelf heraus.
++
+image::../media/28_dwg_e2860_de460c_fan_canister_handle_with_callout.gif[28 DWG e2860 de460c Gebläsegriff mit Legende]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Griff, um das Lüftermodul heraus zu ziehen 
+|===
+. Schieben Sie das Ersatzlüftermodul vollständig in das Regal und schieben Sie den Griff des Lüftermoduls nach links, bis es mit der orangefarbenen Lasche einrastet.
+. Überprüfen Sie die gelbe Warn-LED am neuen Lüftermodul.
++
+
+NOTE: Nach dem Austausch des Lüftermoduls leuchtet die Warn-LED weiterhin (gelb), während die Firmware überprüft, ob das Lüftermodul ordnungsgemäß installiert wurde. Nach Abschluss dieses Vorgangs erlischt die LED.
+
+. Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.
++
+Wenden Sie sich an den technischen Support unter https://mysupport.netapp.com/site/global/dashboard["NetApp Support"], 888-463-8277 (Nordamerika), 00-800-44-638277 (Europa) oder +800-800-80-800 (Asien/Pazifik) wenn Sie die RMA-Nummer benötigen.
+
+

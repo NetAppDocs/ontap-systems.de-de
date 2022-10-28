@@ -1,0 +1,197 @@
+---
+permalink: fas9500/add_io_module.html 
+sidebar:  
+keywords:  
+summary: Sie können Ihrem System ein I/O-Modul hinzufügen, indem Sie ein vorhandenes I/O-Modul durch ein neues I/O-Modul in einem vollständig bestückten System ersetzen oder ein neues I/O-Modul in einen leeren Steckplatz im Gehäuse hinzufügen. 
+---
+= Fügen Sie ein I/O-Modul hinzu: FAS9500
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Ihrem System ein I/O-Modul hinzufügen, indem Sie entweder einen NIC oder einen Speicheradapter durch einen neuen in einem vollständig bestückten System ersetzen oder einen neuen NIC- oder Speicheradapter in einen leeren Gehäusesteckplatz Ihres Systems hinzufügen.
+
+.Bevor Sie beginnen
+* Prüfen Sie die https://hwu.netapp.com/["NetApp Hardware Universe"] Vergewissern Sie sich, dass das neue I/O-Modul mit Ihrem System und Ihrer Version von ONTAP kompatibel ist.
+* Wenn mehrere Steckplätze verfügbar sind, überprüfen Sie die Steckplatzprioritäten in https://hwu.netapp.com/["NetApp Hardware Universe"] Und verwenden Sie die beste für Ihr I/O-Modul verfügbare Lösung.
+* Damit ein I/O-Modul unterbrechungsfrei hinzugefügt werden kann, müssen Sie den Zielcontroller übernehmen, die Abdeckung für die Steckplatzabdeckung im Zielsteckplatz entfernen oder ein vorhandenes I/O-Modul entfernen, das neue oder das neue I/O-Modul hinzufügen und dann den Zielcontroller zurückgeben.
+* Stellen Sie sicher, dass alle anderen Komponenten ordnungsgemäß funktionieren.
+
+
+
+
+== Option 1: Fügen Sie das I/O-Modul zu einem System mit offenen Steckplätzen hinzu
+
+Sie können ein I/O-Modul in einem leeren Modulsteckplatz in Ihrem System entweder als NIC oder als Speichermodul für die SAS-Speicher-Shelves hinzufügen.
+
+. Herunterfahren-Controller A:
++
+.. Automatisches Giveback deaktivieren: `storage failover modify -node local -auto-giveback false`
+.. Übernehmen des Ziel-Node: `storage failover takeover -ofnode target_node_name`
++
+Die Konsolenverbindung zeigt an, dass der Node nach Abschluss der Übernahme auf die LOADER-Eingabeaufforderung abschaltet.
+
+
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Entfernen Sie die Abdeckung des Zielsteckplatzes:
++
+.. Drücken Sie die Taste mit der Nummerierung und dem Buchstaben.
+.. Drehen Sie die Nockenverriegelung nach unten, bis sie sich in der geöffneten Position befindet.
+.. Entfernen Sie die Abdeckung.
+
+
+. Installieren Sie das E/A-Modul:
++
+.. Richten Sie das E/A-Modul an den Kanten des Schlitzes aus.
+.. Schieben Sie das E/A-Modul in den Steckplatz, bis die vorletzte und nummerierte E/A-Nockenverriegelung mit dem E/A-Nockenstift einrastet.
+.. Drücken Sie die E/A-Nockenverriegelung ganz nach oben, um das Modul zu verriegeln.
+
+
+. Wenn es sich bei dem Ersatz-E/A-Modul um eine NIC handelt, verkabeln Sie das Modul mit den Datenschaltern.
++
+
+NOTE: Stellen Sie sicher, dass alle nicht verwendeten I/O-Steckplätze leer sind, um mögliche thermische Probleme zu vermeiden.
+
+. Starten Sie den Controller von der LOADER-Eingabeaufforderung neu: _Bye_
++
+
+NOTE: Dadurch werden die PCIe-Karten und andere Komponenten neu initialisiert und der Node wird neu gebootet.
+
+. Geben Sie den Node vom Partner-Node zurück. `storage failover giveback -ofnode target_node_name`
+. Automatisches Giveback aktivieren, falls deaktiviert: `storage failover modify -node local -auto-giveback true`
+. Wenn Sie die Steckplätze 3 und/oder 7 für Netzwerke verwenden, verwenden Sie den `storage port modify -node __<node name>__ -port __<port name>__ -mode network` Befehl zum Konvertieren des Steckplatzes für die Netzwerkverwendung.
+. Wiederholen Sie diese Schritte für Controller B.
+. Wenn Sie ein Storage-I/O-Modul installiert haben, installieren und verkabeln Sie Ihre SAS-Shelfs, wie unter beschrieben https://docs.netapp.com/us-en/ontap-systems/sas3/install-hot-add-shelf.html["Hot-Adding eines SAS-Shelfs"^].
+
+
+
+
+== Option 2: Fügen Sie ein I/O-Modul in ein System ohne offene Steckplätze hinzu
+
+Sie müssen ein oder mehrere vorhandene NIC- oder Speichermodule in Ihrem System entfernen, um ein oder mehrere I/O-Module in Ihrem vollständig bestückten System zu installieren.
+
+. Wenn Sie sind:
++
+[cols="1,2"]
+|===
+| Ersetzen einer... | Dann... 
+
+
+ a| 
+NIC-I/O-Modul mit der gleichen Anzahl an Ports
+ a| 
+Die LIFs werden automatisch migriert, wenn das Controller-Modul heruntergefahren wird.
+
+
+
+ a| 
+NIC-I/O-Modul mit weniger Ports
+ a| 
+Die betroffenen LIFs werden permanent einem anderen Home-Port zugewiesen. Siehe https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html["Migrieren eines LIF"^] Weitere Informationen über die Verwendung von System Manager zum permanenten Verschieben der LIFs
+
+
+
+ a| 
+NIC-I/O-Modul mit Speicher-I/O-Modul
+ a| 
+Verwenden Sie System Manager, um die LIFs dauerhaft zu verschiedenen Home Ports zu migrieren, wie in beschrieben https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html["Migrieren eines LIF"^].
+
+|===
+. Herunterfahren von Controller A:
++
+.. Automatisches Giveback deaktivieren: `storage failover modify -node local -auto-giveback false`
+.. Übernehmen des Ziel-Node: `storage failover takeover -ofnode target_node_name`
++
+Die Konsolenverbindung zeigt an, dass der Node nach Abschluss der Übernahme auf die LOADER-Eingabeaufforderung abschaltet.
+
+
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Trennen Sie alle Kabel vom Ziel-E/A-Modul.
+. Entfernen Sie das Ziel-I/O-Modul aus dem Gehäuse:
++
+.. Drücken Sie die Taste mit der Nummerierung und dem Buchstaben.
++
+Die Nockentaste bewegt sich vom Gehäuse weg.
+
+.. Drehen Sie die Nockenverriegelung nach unten, bis sie sich in horizontaler Position befindet.
++
+Das I/O-Modul wird aus dem Gehäuse entfernt und bewegt sich ca. 1/2 Zoll aus dem I/O-Steckplatz.
+
+.. Entfernen Sie das E/A-Modul aus dem Gehäuse, indem Sie an den Zuglaschen an den Seiten der Modulfläche ziehen.
++
+Stellen Sie sicher, dass Sie den Steckplatz verfolgen, in dem sich das I/O-Modul befand.
+
++
+.Animation - Ersetzen eines E/A-Moduls
+video::0903b1f9-187b-4bb8-9548-ae9b0012bb21[panopto]
++
+image::../media/drw_9500_remove_PCIe_module.svg[drw 9500 entfernen das PCIe-Modul]
+
++
+[cols="20%,80%"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[Legende Symbol 01]
+ a| 
+Gerettete und nummerierte E/A-Nockenverriegelung
+
+
+
+ a| 
+image::../media/legend_icon_02.svg[Legende Symbol 02]
+ a| 
+E/A-Nockenverriegelung vollständig entriegelt
+
+|===
+
+
+. Installieren Sie das I/O-Modul in den Zielsteckplatz:
++
+.. Richten Sie das E/A-Modul an den Kanten des Schlitzes aus.
+.. Schieben Sie das E/A-Modul in den Steckplatz, bis die vorletzte und nummerierte E/A-Nockenverriegelung mit dem E/A-Nockenstift einrastet.
+.. Drücken Sie die E/A-Nockenverriegelung ganz nach oben, um das Modul zu verriegeln.
+
+
+. Wiederholen Sie die Schritte zum Entfernen und Installieren, um zusätzliche Module für Controller A auszutauschen
+. Wenn es sich bei dem Ersatz-E/A-Modul um eine NIC handelt, verkabeln Sie das Modul oder die Module mit den Datenschaltern.
+. Booten Sie den BMC neu, und starten Sie dann den Node neu:
++
+.. Ändern Sie von der LOADER-Eingabeaufforderung in den erweiterten Berechtigungsebene: `priv set advanced`
+.. Starten Sie den BMC neu: `sp reboot`
+
+
+. Booten Sie an der LOADER-Eingabeaufforderung den Node neu: `bye`
++
+
+NOTE: Dadurch werden die PCIe-Karten und andere Komponenten neu initialisiert und der Node wird neu gebootet.
+
+. Geben Sie den Node vom Partner-Node zurück. `storage failover giveback -ofnode target_node_name`
+. Automatisches Giveback aktivieren, falls deaktiviert: `storage failover modify -node local -auto-giveback true`
+. Wenn Sie hinzugefügt haben:
++
+[cols="1,2"]
+|===
+| Wenn I/O-Modul ist ein... | Dann... 
+
+
+ a| 
+NIC-Modul in den Steckplätzen 3 oder 7,
+ a| 
+Verwenden Sie die `storage port modify -node *_<node name>__ -port *_<port name>__ -mode network` Befehl für jeden Port.
+
+
+
+ a| 
+Speichermodul
+ a| 
+Installieren und verkabeln Sie Ihre SAS-Shelfs, wie unter beschriebenhttps://docs.netapp.com/us-en/ontap-systems/sas3/install-hot-add-shelf.html["Hot-Adding eines SAS-Shelfs"^].
+
+|===
+. Wiederholen Sie diese Schritte für Controller B.
+

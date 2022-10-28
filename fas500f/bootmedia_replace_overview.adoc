@@ -1,0 +1,25 @@
+---
+permalink: fas500f/bootmedia-replace-overview.html 
+sidebar: sidebar 
+keywords: fas500f, replace the boot media 
+summary: 'Das Boot-Medium speichert einen primären und sekundären Satz von System \(Boot Image\)-Dateien, die das System beim Booten verwendet.' 
+---
+= Überblick über den Austausch von Boot-Medien - FAS500f
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Boot-Medium speichert einen primären und sekundären Satz von Systemdateien (Boot-Image), die das System beim Booten verwendet.
+
+Sie müssen über ein USB-Flash-Laufwerk verfügen, das auf MBR/FAT32 formatiert ist und über die entsprechende Speichermenge verfügt, um die zu speichern `image_xxx.tgz` Datei:
+
+* Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
+* Es ist wichtig, dass Sie die Befehle in diesen Schritten auf dem richtigen Controller anwenden:
++
+** Der Controller _Impared_ ist der Controller, an dem Sie Wartungsarbeiten durchführen.
+** Der _Healthy_ Controller ist der HA-Partner des beeinträchtigten Controllers.
+
+
+

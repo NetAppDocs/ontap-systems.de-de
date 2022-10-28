@@ -1,0 +1,74 @@
+---
+permalink: fas9500/dcpm_NVRAM11_battery_replace.html 
+sidebar: sidebar 
+keywords: FAS9500 
+summary: 'Zum Hot-Swap eines DCPM \\ (De-Stage-Controller-Stromversorgungsmoduls), das den NVRAM11-Akku enthält, müssen Sie das fehlerhafte DCPM-Modul ausfindig machen, es aus dem Gehäuse entfernen und das Ersatzmodul DCPM installieren.' 
+---
+= Ersetzen Sie das Leistungsmodul der Zielsteuerung, das den NVRAM11-Akku FAS9500 enthält
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Zum Hot-Swap eines DCPM-Moduls (De-Stage Controller Power Module), das den NVRAM11-Akku enthält, müssen Sie das fehlerhafte DCPM-Modul suchen, es aus dem Gehäuse entfernen und das Ersatzmodul DCPM installieren.
+
+Vor dem Entfernen des ausgefallenen Moduls aus dem Gehäuse müssen Sie ein Ersatzmodul FÜR DEN DCPM haben und dieses innerhalb von fünf Minuten nach dem Ausbau ersetzen. Sobald das DCPM-Modul aus dem Gehäuse entfernt wird, gibt es keinen Abschaltschutz für das Controller-Modul, das das DCPM-Modul besitzt, außer Failover zum anderen Controller-Modul.
+
+
+
+== Schritt 1: Ersetzen SIE DAS DCPM-Modul
+
+Um das DCPM-Modul in Ihrem System auszutauschen, müssen Sie das fehlerhafte DCPM-Modul aus dem System entfernen und dann durch ein neues DCPM-Modul ersetzen.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Entfernen Sie die Blende auf der Vorderseite des Systems, und stellen Sie sie beiseite.
+. Suchen Sie das fehlerhafte DCPM-Modul an der Vorderseite des Systems, indem Sie die Warn-LED am Modul suchen.
++
+Die LED leuchtet dauerhaft gelb, wenn das Modul defekt ist.
+
++
+
+IMPORTANT: Das DCPM-Modul muss innerhalb von fünf Minuten nach dem Ausbau im Gehäuse ausgetauscht werden, oder der zugehörige Controller wird heruntergefahren.
+
+. Drücken Sie die Sperrtaste für Terrakotta am Modulgriff, und schieben Sie das DCPM-Modul aus dem Gehäuse.
++
+.Animation - DCPM entfernen/installieren
+video::c067cf9d-35b8-4fbe-9573-ae78004c2328[panopto]
++
+image::../media/drw_9500_remove_NV_battery.svg[drw 9500 NV-Batterie entfernen]
+
++
+[cols="20%,80%"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[Legende Symbol 01]
+ a| 
+DCPM-Modul Terra cotta Verriegelungsknopf
+
+|===
+. Richten Sie das Ende des DCPM-Moduls an der Gehäuseöffnung aus, und schieben Sie es dann vorsichtig in das Gehäuse, bis es einrastet.
++
+
+NOTE: Modul und Steckplatz sind codiert. Das Modul nicht in die Öffnung zwingen. Wenn das Modul nicht leicht einarbeitet, richten Sie das Modul aus und schieben Sie es in das Gehäuse.
+
++
+Die Bernstein-LED blinkt beim Einstecken viermal und die grüne LED blinkt auch, wenn der Akku eine Spannung liefert. Ohne Flash wird es wahrscheinlich sein, dass es ersetzt werden muss.
+
+
+
+
+
+== Schritt 2: Entsorgen Sie Batterien
+
+Batterien müssen gemäß den örtlichen Bestimmungen zum Batterierecycling bzw. zur Batterieentsorgung entsorgen. Falls Sie keine Möglichkeit haben, Batterien ordnungsgemäß zu entsorgen, müssen Sie die Akkus gemäß den dem Kit beiliegenden Rücksendeanweisungen an NetApp zurücksenden.
+
+https://library.netapp.com/ecm/ecm_download_file/ECMP12475945["Sicherheitshinweise und gesetzliche Hinweise"^]
+
+
+
+== Schritt 3: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

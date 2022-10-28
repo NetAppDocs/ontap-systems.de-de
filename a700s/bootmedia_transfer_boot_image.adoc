@@ -1,0 +1,247 @@
+---
+permalink: a700s/bootmedia-transfer-boot-image.html 
+sidebar: sidebar 
+keywords: aff a700s, aff, a700s, procedure, secondary, boot, media, restore, fail, image, tgz, file, trasnfer, usb, flash, drive, transfer the boot image to the boot medai using a usb flash drive 
+summary: Dieses Verfahren sollte nur verwendet werden, wenn die Wiederherstellung des sekundären Startmediums fehlgeschlagen ist oder wenn die Datei image.tgz auf dem sekundären Startmedium nicht gefunden wird. 
+---
+= Übertragen Sie das Boot-Image auf das Boot-Medium AFF A700s
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das System-Image auf dem Ersatzstartmedium installieren. Verwenden Sie dazu entweder das Image auf dem zweiten Boot-Medium, das im Controller-Modul installiert ist, die primäre Methode zur Wiederherstellung des System-Images. Oder indem Sie das Boot-Image über ein USB-Flash-Laufwerk auf das Boot-Medium übertragen, wenn die Wiederherstellung des sekundären Startmediums fehlgeschlagen ist oder wenn die Datei image.tgz nicht auf dem sekundären Startmedium gefunden wurde.
+
+
+
+== Option 1: Übertragen Sie Dateien auf das Boot-Medium mit Backup Recovery von dem zweiten Boot-Medium
+
+[role="lead"]
+Sie können das System-Image mithilfe des Images auf dem zweiten Boot-Medium installieren, das im Controller-Modul installiert ist. Dies ist die primäre Methode zur Übertragung der Boot-Mediendateien auf die Ersatz-Boot-Medien in Systemen mit zwei Boot-Medien im Controller-Modul.
+
+Das Image auf dem sekundären Startmedium muss einen enthalten `image.tgz` Datei und darf keine Fehler melden. Wenn die Datei image.tgz fehlt oder das Boot-Medium Fehler meldet, können Sie dieses Verfahren nicht verwenden. Sie müssen das Startabbild mithilfe des Austauschvorgangs für das USB-Flash-Laufwerk auf das Ersatzmedium übertragen.
+
+.Schritte
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Wenn Sie dies noch nicht getan haben, schließen Sie den Luftkanal:
++
+.. Schwenken Sie den Luftkanal bis nach unten zum Controller-Modul.
+.. Schieben Sie den Luftkanal in Richtung der Steigleitungen, bis die Verriegelungslaschen einrasten.
+.. Überprüfen Sie den Luftkanal, um sicherzustellen, dass er richtig sitzt und fest sitzt.
++
+image::../media/drw_a700s_close_air_duct.png[drw a700s schließen den Luftkanal]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Luftkanal
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Riser
+
+|===
+
+
+. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
+. Installieren Sie das Kabelverwaltungsgerät neu und führen Sie das System nach Bedarf wieder ein.
++
+Denken Sie beim Neuinstallieren der Medienkonverter (SFPs) daran, wenn sie entfernt wurden.
+
+. Schließen Sie das Netzteil wieder an, und schließen Sie es an die Stromquelle an.
++
+Vergewissern Sie sich, dass Sie den Sicherungsring des Netzkabels wieder am Netzkabel anbringen.
+
+. Schieben Sie das Controller-Modul vorsichtig ganz in das System, bis sich die Verriegelungshaken des Controller-Moduls erheben, drücken Sie fest auf die Verriegelungshaken, um den Sitz des Controller-Moduls zu beenden, und schwenken Sie dann die Verriegelungshaken in die verriegelte Position über den Stiften des Controller-Moduls.
++
+Der Controller beginnt zu booten, sobald er vollständig im Chassis installiert ist.
+
+. Unterbrechen Sie den Boot-Vorgang, indem Sie Strg-C drücken, um an der LOADER-Eingabeaufforderung zu stoppen.
++
+Wenn Sie diese Meldung verpassen, drücken Sie Strg-C, wählen Sie die Option zum Booten im Wartungsmodus aus, und halten Sie dann den Controller zum Booten in LOADER an.
+
+. Booten Sie an der LOADER-Eingabeaufforderung das Recovery-Image von dem sekundären Boot-Medium: `boot_recovery`
++
+Das Image wird von dem sekundären Boot-Medium heruntergeladen.
+
+. Wenn Sie dazu aufgefordert werden, geben Sie entweder den Namen des Bilds ein oder akzeptieren Sie das Standardbild, das in den Klammern auf dem Bildschirm angezeigt wird.
+. Starten Sie nach der Installation des Images den Wiederherstellungsprozess:
++
+.. Notieren Sie die IP-Adresse des auf dem Bildschirm angezeigten beeinträchtigten Controllers.
+.. Drücken Sie `y` Wenn Sie aufgefordert werden, die Backup-Konfiguration wiederherzustellen.
+.. Drücken Sie `y` Wenn Sie aufgefordert werden, zu bestätigen, dass der Sicherungsvorgang erfolgreich war.
+
+
+. Starten Sie vom Partner-Controller auf der erweiterten Berechtigungsebene die Konfigurationssynchronisierung mit der im vorherigen Schritt aufgezeichneten IP-Adresse: `system node restore-backup -node local -target-address _impaired_node_IP_address_`
+. Nachdem die Konfigurationssynchronisation fehlerfrei abgeschlossen ist, drücken Sie `y` Wenn Sie aufgefordert werden, zu bestätigen, dass der Sicherungsvorgang erfolgreich war.
+. Drücken Sie `y` Wenn Sie gefragt werden, ob Sie die wiederhergestellte Kopie verwenden möchten, drücken Sie dann `y` Wenn Sie dazu aufgefordert werden, den Controller neu zu booten.
+. Beenden Sie die erweiterte Berechtigungsebene auf dem gesunden Controller.
+
+
+
+
+== Option 2: Übertragen Sie das Startabbild über ein USB-Flash-Laufwerk auf das Startmedium
+
+[role="lead"]
+Dieses Verfahren sollte nur verwendet werden, wenn die Wiederherstellung des sekundären Startmediums fehlgeschlagen ist oder wenn die Datei image.tgz auf dem sekundären Startmedium nicht gefunden wird.
+
+* Sie müssen über ein USB-Flash-Laufwerk verfügen, das auf FAT32 formatiert ist und eine Kapazität von mindestens 4 GB aufweist.
+* Eine Kopie der gleichen Bildversion von ONTAP wie der beeinträchtigte Controller. Das entsprechende Image können Sie im Abschnitt „Downloads“ auf der NetApp Support-Website herunterladen
++
+** Wenn NVE aktiviert ist, laden Sie das Image mit NetApp Volume Encryption herunter, wie in der Download-Schaltfläche angegeben.
+** Wenn NVE nicht aktiviert ist, laden Sie das Image ohne NetApp Volume Encryption herunter, wie im Download-Button dargestellt.
+
+
+* Wenn Ihr System ein HA-Paar ist, müssen Sie eine Netzwerkverbindung haben.
+* Wenn es sich bei Ihrem System um ein eigenständiges System handelt, benötigen Sie keine Netzwerkverbindung, Sie müssen jedoch beim Wiederherstellen des var-Dateisystems einen zusätzlichen Neustart durchführen.
+
+
+.Schritte
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Wenn Sie dies noch nicht getan haben, schließen Sie den Luftkanal:
++
+.. Schwenken Sie den Luftkanal bis nach unten zum Controller-Modul.
+.. Schieben Sie den Luftkanal in Richtung der Steigleitungen, bis die Verriegelungslaschen einrasten.
+.. Überprüfen Sie den Luftkanal, um sicherzustellen, dass er richtig sitzt und fest sitzt.
++
+image::../media/drw_a700s_close_air_duct.png[drw a700s schließen den Luftkanal]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Luftkanal
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Riser
+
+|===
+
+
+. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
+. Installieren Sie das Kabelverwaltungsgerät neu und führen Sie das System nach Bedarf wieder ein.
++
+Denken Sie beim Neuinstallieren der Medienkonverter (SFPs) daran, wenn sie entfernt wurden.
+
+. Schließen Sie das Netzteil wieder an, und schließen Sie es an die Stromquelle an.
++
+Vergewissern Sie sich, dass Sie den Sicherungsring des Netzkabels wieder am Netzkabel anbringen.
+
+. Stecken Sie das USB-Flash-Laufwerk in den USB-Steckplatz des Controller-Moduls.
++
+Stellen Sie sicher, dass Sie das USB-Flash-Laufwerk in den für USB-Geräte gekennzeichneten Steckplatz und nicht im USB-Konsolenport installieren.
+
+. Schieben Sie das Controller-Modul vorsichtig ganz in das System, bis sich die Verriegelungshaken des Controller-Moduls erheben, drücken Sie fest auf die Verriegelungshaken, um den Sitz des Controller-Moduls zu beenden, und schwenken Sie dann die Verriegelungshaken in die verriegelte Position über den Stiften des Controller-Moduls.
++
+Der Controller beginnt zu booten, sobald er vollständig im Chassis installiert ist.
+
+. Unterbrechen Sie den Boot-Vorgang, indem Sie Strg-C drücken, um an der LOADER-Eingabeaufforderung zu stoppen.
++
+Wenn Sie diese Meldung verpassen, drücken Sie Strg-C, wählen Sie die Option zum Booten im Wartungsmodus aus, und halten Sie dann den Controller zum Booten in LOADER an.
+
+. Obwohl die Umgebungsvariablen und Bootargs beibehalten werden, sollten Sie überprüfen, ob alle erforderlichen Boot-Umgebungsvariablen und Bootargs für Ihren Systemtyp und die Konfiguration über den richtig eingestellt sind `printenv bootarg name` Führen Sie den Befehl und korrigieren Sie alle Fehler mit dem `setenv variable-name <value>` Befehl.
++
+.. Überprüfen Sie die Boot-Umgebungsvariablen:
++
+*** `bootarg.init.boot_clustered`
+*** `partner-sysid`
+*** `bootarg.init.flash_optimized` Für AFF C190/AFF A220 (All-Flash FAS)
+*** `bootarg.init.san_optimized` Für AFF A220 und All-SAN-Array
+*** `bootarg.init.switchless_cluster.enable`
+
+
+.. Wenn der External Key Manager aktiviert ist, überprüfen Sie die Bootarg-Werte, die im aufgeführt sind `kenv` ASUP-Ausgabe:
++
+*** `bootarg.storageencryption.support <value>`
+*** `bootarg.keymanager.support <value>`
+*** `kmip.init.interface <value>`
+*** `kmip.init.ipaddr <value>`
+*** `kmip.init.netmask <value>`
+*** `kmip.init.gateway <value>`
+
+
+.. Wenn der Onboard Key Manager aktiviert ist, überprüfen Sie die Bootarg-Werte, die im aufgeführt sind `kenv` ASUP-Ausgabe:
++
+*** `bootarg.storageencryption.support <value>`
+*** `bootarg.keymanager.support <value>`
+*** `bootarg.onboard_keymanager <value>`
+
+
+.. Speichern Sie die Umgebungsvariablen, die Sie mit dem geändert haben `savenv` Befehl
+.. Bestätigen Sie Ihre Änderungen mit der `printenv _variable-name_` Befehl.
+
+
+. Starten Sie von der LOADER-Eingabeaufforderung das Recovery-Image vom USB-Flash-Laufwerk: `boot_recovery`
++
+Das Bild wird vom USB-Flash-Laufwerk heruntergeladen.
+
+. Wenn Sie dazu aufgefordert werden, geben Sie entweder den Namen des Bilds ein oder akzeptieren Sie das Standardbild, das in den Klammern auf dem Bildschirm angezeigt wird.
+. Starten Sie nach der Installation des Images den Wiederherstellungsprozess:
++
+.. Notieren Sie die IP-Adresse des auf dem Bildschirm angezeigten beeinträchtigten Controllers.
+.. Drücken Sie `y` Wenn Sie aufgefordert werden, die Backup-Konfiguration wiederherzustellen.
+.. Drücken Sie `y` Wenn Sie aufgefordert werden, zu bestätigen, dass der Sicherungsvorgang erfolgreich war.
+
+
+. Drücken Sie `y` Wenn Sie gefragt werden, ob Sie die wiederhergestellte Kopie verwenden möchten, drücken Sie dann `y` Wenn Sie dazu aufgefordert werden, den Controller neu zu booten.
+. Starten Sie vom Partner-Controller auf der erweiterten Berechtigungsebene die Konfigurationssynchronisierung mit der im vorherigen Schritt aufgezeichneten IP-Adresse: `system node restore-backup -node local -target-address _impaired_node_IP_address_`
+. Nachdem die Konfigurationssynchronisation fehlerfrei abgeschlossen ist, drücken Sie `y` Wenn Sie aufgefordert werden, zu bestätigen, dass der Sicherungsvorgang erfolgreich war.
+. Drücken Sie `y` Wenn Sie gefragt werden, ob Sie die wiederhergestellte Kopie verwenden möchten, drücken Sie dann `y` Wenn Sie dazu aufgefordert werden, den Controller neu zu booten.
+. Vergewissern Sie sich, dass die Umgebungsvariablen wie erwartet festgelegt sind.
++
+.. Nehmen Sie den Controller zur LOADER-Eingabeaufforderung.
++
+In der ONTAP-Eingabeaufforderung können Sie den Befehl „System Node halt -skip-lif-Migration-before-shutdown true -ignore-Quorum-Warns true -emmen-Takeover TRUE“ eingeben.
+
+.. Überprüfen Sie die Einstellungen der Umgebungsvariable mit dem `printenv` Befehl.
+.. Wenn eine Umgebungsvariable nicht wie erwartet festgelegt ist, ändern Sie sie mit dem `setenv __environment-variable-name__ __changed-value__` Befehl.
+.. Speichern Sie Ihre Änderungen mit dem `savenv` Befehl.
+.. Booten Sie den Controller neu.
+
+
+. Wenn der neu gestörte Controller den anzeigt `Waiting for giveback...` Meldung, führen Sie eine Rückgabe vom ordnungsgemäßen Controller durch:
++
+[cols="1,2"]
+|===
+| Ihr System befindet sich in... | Dann... 
+
+
+ a| 
+Ein HA-Paar
+ a| 
+Nachdem der Regler „beeinträchtigt“ den angezeigt hat `Waiting for giveback...` Meldung, führen Sie eine Rückgabe vom ordnungsgemäßen Controller durch:
+
+.. Von der gesunden Steuerung: `storage failover giveback -ofnode partner_node_name`
++
+Der beeinträchtigte Controller nimmt seine Lagerung zurück, beendet den Bootvorgang und startet dann neu und wird wieder vom gesunden Controller übernommen.
+
++
+
+NOTE: Wenn das Rückübertragung ein Vetorecht ist, können Sie erwägen, das Vetos außer Kraft zu setzen.
+
++
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-hacg/home.html["ONTAP 9 High-Availability Configuration Guide"]
+
+.. Überwachen Sie den Status des Giveback-Vorgangs mithilfe von `storage failover show-giveback` Befehl.
+.. Nach Abschluss des Giveback-Vorgangs bestätigen Sie, dass das HA-Paar ordnungsgemäß funktioniert und dass ein Takeover mithilfe des möglich ist `storage failover show` Befehl.
+.. Stellen Sie die automatische Rückgabe wieder her, wenn Sie die Funktion mithilfe des deaktivieren `storage failover modify` Befehl.
+
+
+|===
+. Beenden Sie die erweiterte Berechtigungsebene auf dem gesunden Controller.
+

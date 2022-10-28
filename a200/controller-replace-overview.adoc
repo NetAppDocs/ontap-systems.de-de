@@ -1,0 +1,37 @@
+---
+permalink: a200/controller-replace-overview.html 
+sidebar: sidebar 
+keywords: aff a200, prerequisite, replace the controller module 
+summary: Sie müssen die Voraussetzungen für den Austausch prüfen und die richtige für Ihre Version des ONTAP Betriebssystems auswählen. 
+---
+= Überblick über den Austausch von Controller-Modulen – AFF A200
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen die Voraussetzungen für den Austausch prüfen und die richtige für Ihre Version des ONTAP Betriebssystems auswählen.
+
+.Was Sie und#8217;ll benötigen
+* Alle Festplatten-Shelfs müssen ordnungsgemäß funktionieren.
+* Wenn sich Ihr System in einem HA-Paar befindet, muss der gesunde Controller in der Lage sein, den zu ersetzenden Controller zu übernehmen (in diesem Verfahren als „`beeinträchtigter Knoten`“ bezeichnet).
+
+
+.Über diese Aufgabe
+* Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
+* Ein Controller-Modul muss durch ein Controller-Modul desselben Modelltyps ersetzt werden. Sie können kein System-Upgrade durch einen Austausch des Controller-Moduls durchführen.
+* Im Rahmen dieses Verfahrens können Laufwerke oder Laufwerk-Shelfs nicht geändert werden.
+* In diesem Verfahren wird das Startgerät vom beeinträchtigten Controller auf den Node _Replacement_ verschoben, sodass der Node _Replacement_ in derselben Version von ONTAP wie das alte Controller-Modul gestartet wird.
+* Es ist wichtig, dass Sie die Befehle in diesen Schritten auf die richtigen Systeme anwenden:
++
+** Der Node _imired_ ist der Controller, der ersetzt wird.
+** Der Node _Replacement_ ist der neue Controller, der den beeinträchtigten Controller ersetzt.
+** Der Node _Healthy_ ist der noch funktionsfähige Controller.
+
+
+* Sie müssen die Konsolenausgabe der Controller immer in einer Textdatei erfassen.
++
+Auf diese Weise erhalten Sie eine Aufzeichnung des Verfahrens, damit Sie Probleme beheben können, die während des Austauschvorgangs auftreten können.
+
+

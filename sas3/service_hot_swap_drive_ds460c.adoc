@@ -1,0 +1,260 @@
+---
+permalink: sas3/service-hot-swap-drive-ds460c.html 
+sidebar: sidebar 
+keywords: hot-swap, fail, disk, drive, ds460c, nondisruptive, replace, system, power, serving, data, i/o, hot-swap a disk drive in a ds460c disk shelf 
+summary: Sie können ein ausgefallenes Festplattenlaufwerk in einem DS460C Festplatten-Shelf Hot-Swap verwenden. 
+---
+= Hot-Swap-fähige Festplattenlaufwerke in einem DS460C Festplatten-Shelf – Shelfs mit IOM12/IOM12B-Modulen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können ein ausgefallenes Festplattenlaufwerk in einem DS460C Festplatten-Shelf Hot-Swap verwenden.
+
+.Bevor Sie beginnen
+* Das Ersatzlaufwerk muss von dem DS460C Festplatten-Shelf unterstützt werden.
++
+https://hwu.netapp.com["NetApp Hardware Universe"]
+
+* Alle anderen Komponenten im System müssen ordnungsgemäß funktionieren. Wenden Sie sich andernfalls an den technischen Support.
+* Das zu entfernenden Festplattenlaufwerk muss fehlerhaft sein.
++
+Sie können überprüfen, ob das Festplattenlaufwerk ausgefallen ist, indem Sie das ausführen `storage disk show -broken` Befehl. Das ausgefallene Laufwerk wird in der Liste der fehlerhaften Festplattenlaufwerke angezeigt. Falls nicht, sollten Sie warten und den Befehl erneut ausführen.
+
++
+
+NOTE: Abhängig vom Laufwerkstyp und der Kapazität kann es bis zu mehrere Stunden dauern, bis das Festplattenlaufwerk in der Liste der ausgefallenen Festplattenlaufwerke angezeigt wird.
+
+* Wenn Sie eine SED (Self-Encrypting Disk) ersetzen, müssen Sie die Anweisungen zum Ersetzen einer SED in der ONTAP-Dokumentation für Ihre ONTAP-Version befolgen.
++
+Anweisungen in der ONTAP-Dokumentation beschreiben zusätzliche Schritte, die vor und nach dem Austausch einer SED ausgeführt werden müssen.
+
++
+https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html["Übersicht über die NetApp Verschlüsselung mit CLI"]
+
+
+
+.Über diese Aufgabe
+* Sie sollten Maßnahmen ergreifen, um elektrostatische Entladungen (ESD) zu vermeiden:
++
+** Halten Sie das Festplattenlaufwerk in der ESD-Tasche, bis Sie bereit sind, es zu installieren.
+** Öffnen Sie die ESD-Tasche von Hand oder schneiden Sie die Oberseite mit einer Schere ab.
++
+
+NOTE: Setzen Sie kein Metallwerkzeug oder Messer in den ESD-Beutel.
+
+** Tragen Sie stets ein ESD-Handgelenkband, das an einer nicht lackierten Oberfläche am Gehäuse geerdet ist.
++
+Wenn ein Handgelenkband nicht verfügbar ist, berühren Sie eine unlackierte Oberfläche des Speichergehäuses, bevor Sie das Festplattenlaufwerk behandeln.
+
+
+
+* Sie sollten die folgenden Schritte Unternehmen, um die Festplattenlaufwerke sorgfältig zu behandeln:
++
+** Verwenden Sie immer zwei Hände, wenn Sie ein Laufwerk entfernen, installieren oder tragen, um sein Gewicht zu halten.
++
+
+NOTE: Legen Sie keine Hände auf die Festplattenplatinen, die auf der Unterseite des Laufwerkträgers sichtbar sind.
+
+** Sie sollten Festplattenlaufwerke auf gepolsterten Oberflächen platzieren und niemals Festplatten auf einander stapeln.
+** Achten Sie darauf, Festplatten nicht gegen andere Oberflächen zu stoßen.
+
+
+* Festplattenlaufwerke sollten von magnetischen Geräten ferngehalten werden.
++
+
+NOTE: Magnetfelder können alle Daten auf dem Festplattenlaufwerk zerstören und irreparable Schäden an der Schaltung des Festplattenlaufwerks verursachen.
+
+* Als Best Practice empfiehlt es sich, die aktuelle Version des DQP (Disk Qualification Package) vor dem Hot-Swap eines Laufwerks installiert zu haben.
++
+Wenn die aktuelle Version des DQP installiert ist, kann Ihr System neu qualifizierte Festplattenlaufwerke erkennen und verwenden. Dadurch werden Systemereignismeldungen über nicht aktuelle Laufwerksinformationen vermieden. Außerdem wird eine mögliche Verhinderung der Festplattenpartitionierung vermieden, da die Festplattenlaufwerke nicht erkannt werden. Das DQP benachrichtigt Sie auch über nicht aktuelle Festplatten-Firmware.
+
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["NetApp Downloads: Disk Qualification Package"^]
+
+* Als Best Practice wird empfohlen, die aktuellen Versionen der Festplatten-Shelf- (IOM) und Festplatten-Firmware auf dem System zu installieren, bevor neue Festplatten-Shelfs, Shelf-FRU-Komponenten oder SAS-Kabel hinzugefügt werden.
++
+Aktuelle Versionen der Firmware finden Sie auf der NetApp Support Site.
+
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp Downloads: Festplatten-Shelf Firmware"]
+
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["NetApp Downloads: Festplatten-Firmware"]
+
+* Festplatten-Firmware wird auf neuen Festplatten ohne aktuelle Firmware-Versionen automatisch (unterbrechungsfrei) aktualisiert.
++
+
+NOTE: Die Firmware der Festplattenlaufwerke werden alle zwei Minuten überprüft.
+
+* Bei Bedarf können Sie die (blauen) LEDs des Festplatten-Shelfs einschalten, um Hilfe bei der physischen Suche nach dem betroffenen Festplatten-Shelf zu leisten: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
++
+Ein Platten-Shelf hat drei Positionen-LEDs: Eine auf der Bedienkonsole und eine auf jedem IOM12-Modul. Die Standort-LEDs leuchten 30 Minuten lang. Sie können sie ausschalten, indem Sie denselben Befehl eingeben, jedoch die Option „aus“ verwenden.
+
+* Falls erforderlich, finden Sie Informationen über die Bedeutung und Lage der Festplatten-Shelf-LEDs auf der Bedieneranzeige und den FRU-Komponenten.
+* Das DS460C-Laufwerk-Shelf besteht aus fünf Laufwerksfächer (Laufwerksschublade 1 oben durch Laufwerksschublade 5 unten), die jeweils 12 Laufwerksschächte enthalten.
++
+image::../media/28_dwg_e2860_de460c_front_no_callouts.gif[28 dwg e2860 de460c vorne keine Rufumbrüche]
+
+* Die folgende Abbildung zeigt, wie die Laufwerksanzahl bei jedem Laufwerkschublade im Shelf von 0 bis 11 nummeriert ist.
++
+image::../media/dwg_trafford_drawer_with_hdds_callouts.gif[Dwg trafford Schublade mit hdds-Callouts]
+
+
+
+.Schritte
+. Wenn Sie dem Ersatzlaufwerk die Eigentumsrechte für die Festplatte manuell zuweisen möchten, müssen Sie die automatische Laufwerkszuweisung deaktivieren, wenn sie aktiviert ist. Andernfalls fahren Sie mit dem nächsten Schritt fort.
++
+
+NOTE: Sie müssen den Festplattenbesitzer manuell zuweisen, wenn Festplattenlaufwerke im Stack zu beiden Controllern in einem HA-Paar gehören.
+
++
+
+NOTE: Sie weisen den Festplattenbesitzer manuell zu und aktivieren dann die automatische Laufwerkszuweisung später in diesem Verfahren erneut.
+
++
+.. Überprüfen Sie, ob die automatische Laufwerkszuweisung aktiviert ist:``storage disk option show``
++
+Wenn Sie ein HA-Paar haben, können Sie den Befehl an der Konsole eines der beiden Controller eingeben.
+
++
+Wenn die automatische Laufwerkszuweisung aktiviert ist, zeigt die Ausgabe in der Spalte „`Auto Assign`“ „`on`“ (für jeden Controller) „ ein“ an.
+
+.. Wenn die automatische Laufwerkszuweisung aktiviert ist, müssen Sie sie deaktivieren:``storage disk option modify -node _node_name_ -autoassign off``
++
+Sie müssen die automatische Laufwerkszuweisung auf beiden Controllern in einem HA-Paar deaktivieren.
+
+
+
+. Richtig gemahlen.
+. Packen Sie das neue Festplattenlaufwerk aus und legen Sie es auf eine Ebene Fläche in der Nähe des Festplatten-Shelfs.
++
+Speichern Sie alle Verpackungsmaterialien, die Sie verwenden können, wenn Sie das ausgefallene Festplattenlaufwerk zurücksenden.
+
++
+
+NOTE: NetApp setzt voraus, dass sich alle zurückgegebenen Festplatten in einem ESD-Schutzbeutel befinden.
+
+. Identifizieren Sie das ausgefallene Laufwerk über die Warnmeldung der Systemkonsole und die LED für gelbe Warnung am Laufwerkschublade.
++
+Die 2.5- und 3.5-Zoll-SAS-Laufwerksträger enthalten keine LEDs. Stattdessen müssen Sie die Warn-LEDs in den Laufwerksfächer anzeigen, um zu ermitteln, welches Laufwerk ausfällt.
+
++
+Die Warn-LED (gelb) der Laufwerksschublade blinkt, damit Sie das richtige Laufwerk öffnen können, um zu ermitteln, welches Laufwerk ersetzt werden soll.
+
++
+Die Warn-LED der Laufwerksschublade befindet sich auf der linken Vorderseite eines Laufwerks. Hinter der LED befindet sich ein Warnsymbol am Laufwerkgriff.
+
+. Öffnen Sie die Schublade, die das ausgefallene Laufwerk enthält:
++
+.. Entriegeln Sie die Antriebsschublade, indem Sie an beiden Hebeln ziehen.
+.. Ziehen Sie die Antriebsschublade vorsichtig mit den ausgestreckte Hebeln heraus, bis sie einrastet.
+.. Suchen Sie oben in der Laufwerksschublade nach der Warn-LED, die sich auf der Schublade vor jedem Laufwerk befindet.
+
+
+. Entfernen Sie das fehlerhafte Laufwerk aus dem geöffneten Fach:
++
+.. Ziehen Sie vorsichtig die orangefarbene Entriegelungsriegel vor dem zu entfernenden Laufwerk nach hinten.
++
+image::../media/trafford_drive_rel_button.gif[trafford-Fahrerknopf]
+
++
+[cols="1,3"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Orangefarbener Entriegelungshebel 
+|===
+.. Den Nockengriff öffnen und den Antrieb leicht herausheben.
+.. Warten Sie 30 Sekunden.
+.. Heben Sie den Antrieb mithilfe des Nockengriffs aus dem Regal.
++
+image::../media/92_dwg_de6600_install_or_remove_drive.gif[92-dwg-D6600-Laufwerk installieren oder entfernen]
+
+.. Setzen Sie das Laufwerk auf eine antistatische, gepolsterte Oberfläche, die von Magnetfeldern entfernt ist.
+
+
+. Setzen Sie das Ersatzlaufwerk in die Schublade ein:
++
+.. Den Nockengriff am neuen Antrieb senkrecht anheben.
+.. Richten Sie die beiden angehobenen Tasten auf beiden Seiten des Laufwerkträgers an der entsprechenden Lücke im Laufwerkskanal auf der Laufwerksschublade aus.
++
+image::../media/28_dwg_e2860_de460c_drive_cru.gif[28 DWG e2860 de460c Antrieb Cru]
+
++
+[cols="1,3"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Erhöhte Taste auf der rechten Seite des Laufwerkträgers 
+|===
+.. Senken Sie den Antrieb gerade nach unten, und drehen Sie dann den Nockengriff nach unten, bis das Laufwerk unter dem orangefarbenen Freigaberiegel einrastet.
+.. Schieben Sie die Laufwerkschublade vorsichtig wieder in das Gehäuse.
++
+image:../media/2860_dwg_e2860_de460c_gentle_close.gif[""]
+
++
+
+CAUTION: *Möglicher Verlust des Datenzugriffs:* Schlingen Sie die Schublade niemals aus. Schieben Sie die Schublade langsam hinein, um zu vermeiden, dass die Schublade einrastet und das Speicher-Array beschädigt wird.
+
+.. Schließen Sie die Antriebsschublade, indem Sie beide Hebel in die Mitte schieben.
++
+Die grüne Aktivitäts-LED für das ausgetauschte Laufwerk an der Vorderseite der Laufwerksschublade leuchtet auf, wenn das Laufwerk ordnungsgemäß eingesetzt wird.
+
+
+
+. Wenn Sie ein anderes Laufwerk ersetzen, wiederholen Sie die Schritte 4 bis 7.
+. Überprüfen Sie die Aktivitäts-LED und die Warn-LED am ausgetauschten Laufwerk.
++
+[cols="1,2"]
+|===
+| LED-Status | Beschreibung 
+
+
+ a| 
+Die Aktivitäts-LED leuchtet oder blinkt, und die Warn-LED leuchtet nicht
+ a| 
+Das neue Laufwerk funktioniert ordnungsgemäß.
+
+
+
+ a| 
+Die Aktivitäts-LED leuchtet nicht
+ a| 
+Das Laufwerk ist möglicherweise nicht richtig installiert. Entfernen Sie das Laufwerk, warten Sie 30 Sekunden, und installieren Sie es dann wieder.
+
+
+
+ a| 
+Die Warn-LED leuchtet
+ a| 
+Das neue Laufwerk ist möglicherweise defekt. Tauschen Sie es durch ein anderes neues Laufwerk aus.
+
+
+NOTE: Wenn Sie das erste Laufwerk einsetzen, leuchtet die Warn-LED möglicherweise. Die LED sollte jedoch innerhalb einer Minute ausgeschaltet werden.
+
+|===
+. Wenn Sie die automatische Zuweisung für die Festplatteneigentümer in Schritt 1 deaktiviert haben, weisen Sie manuell den Festplattenbesitzer zu und aktivieren Sie dann die automatische Zuweisung für die Festplatteneigentümer, falls nötig:
++
+.. Alle nicht im Besitz befindlichen Festplatten anzeigen:``storage disk show -container-type unassigned``
+.. Weisen Sie jede Festplatte zu:``storage disk assign -disk _disk_name_ -owner _owner_name_``
++
+Sie können das Platzhalterzeichen verwenden, um mehr als eine Festplatte gleichzeitig zuzuweisen.
+
+.. Automatische Zuweisung der Festplatteneigentümer bei Bedarf erneut aktivieren:``storage disk option modify -node _node_name_ -autoassign on``
++
+Sie müssen die automatische Zuweisung der Festplatteneigentümer auf beiden Controllern in einem HA-Paar erneut aktivieren.
+
+
+
+. Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.
++
+Wenden Sie sich an den technischen Support unter https://mysupport.netapp.com/site/global/dashboard["NetApp Support"], 888-463-8277 (Nordamerika), 00-800-44-638277 (Europa) oder +800-800-80-800 (Asien/Pazifik) wenn Sie die RMA-Nummer oder zusätzliche Hilfe beim Ersatzverfahren benötigen.
+
+

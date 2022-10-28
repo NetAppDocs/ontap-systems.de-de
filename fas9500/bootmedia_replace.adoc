@@ -1,0 +1,213 @@
+---
+permalink: fas9500/bootmedia_replace.html 
+sidebar: sidebar 
+keywords: FAS9500, replace, boot, media, controller, directions. replace boot media, transfer image 
+summary: Sie müssen das Controller-Modul entfernen und öffnen, die Startmedien im Controller suchen und austauschen und dann das Image auf das Ersatzstartmedium übertragen. 
+---
+= Entfernen Sie den Controller, ersetzen Sie die Boot-Medien und übertragen Sie das Boot-Image: FAS9500
+:allow-uri-read: 
+
+
+[role="lead"]
+Sie müssen das Controller-Modul entfernen und öffnen, die Startmedien im Controller suchen und austauschen und dann das Image auf das Ersatzstartmedium übertragen.
+
+
+
+== Schritt 1: Entfernen Sie das Controller-Modul
+
+Um auf Komponenten innerhalb des Controllers zuzugreifen, müssen Sie zuerst das Controller-Modul aus dem System entfernen und dann die Abdeckung am Controller-Modul entfernen.
+
+.Schritte
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Ziehen Sie die Kabel vom beeinträchtigten Controller-Modul ab, und verfolgen Sie, wo die Kabel angeschlossen waren.
+. Schieben Sie die Terrakotta-Taste am Nockengriff nach unten, bis sie entsperrt wird.
++
+.Animation - Controller-Modul entfernen
+video::5e029a19-8acc-4fa1-be5d-ae78004b365a[panopto]
++
+image::../media/drw_9500_remove_PCM_source.svg[drw 9500 PCM-Quelle entfernen]
+
++
+[cols="20%,80%"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[Legende Symbol 01]
+ a| 
+Freigabetaste für den CAM-Griff
+
+
+
+ a| 
+image::../media/legend_icon_02.svg[Legende Symbol 02]
+ a| 
+CAM-Griff
+
+|===
+. Drehen Sie den Nockengriff so, dass er das Controller-Modul vollständig aus dem Gehäuse herausrückt, und schieben Sie dann das Controller-Modul aus dem Gehäuse.
++
+Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen, während Sie es aus dem Gehäuse schieben.
+
+. Setzen Sie die Abdeckung des Controller-Moduls auf eine stabile, flache Oberfläche, drücken Sie die blaue Taste auf der Abdeckung, schieben Sie die Abdeckung auf die Rückseite des Controller-Moduls, und schwenken Sie sie dann nach oben und heben Sie sie vom Controller-Modul ab.
++
+image::../media/drw_9500_PCM_open_source.svg[drw 9500 PCM Open Source]
+
+
+
+[cols="20%,80%"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[Legende Symbol 01]
+ a| 
+Verriegelungstaste für die Controllermodulabdeckung
+
+|===
+
+
+== Schritt 2: Ersetzen Sie die Startmedien
+
+Sie müssen das Startmedium im Controller finden und die Anweisungen befolgen, um es zu ersetzen.
+
+.Schritte
+. Heben Sie den schwarzen Luftkanal auf der Rückseite des Controller-Moduls an, und suchen Sie dann mithilfe der folgenden Abbildung oder der FRU-Karte am Controller-Modul die Bootmedien:
++
+.Animation - Bootmedium ersetzen
+video::16df490c-f94f-498d-bb04-ae78004b3781[panopto]
++
+image::../media/drw_9500_remove_boot_dev_source.svg[drw 9500 entfernen die Startdev-Quelle]
+
++
+[cols="20%,90%"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.svg["Breite = 20"]
+ a| 
+Drücken Sie die Freigabelasche
+
+
+
+ a| 
+image:../media/legend_icon_02.svg["Breite = 20"]
+ a| 
+Boot-Medien
+
+|===
+. Drücken Sie die blaue Taste am Startmediengehäuse, um die Startmedien aus dem Gehäuse zu lösen, und ziehen Sie sie vorsichtig gerade aus der Buchse des Boot-Mediums heraus.
++
+
+NOTE: Drehen oder ziehen Sie die Boot-Medien nicht gerade nach oben, da dadurch der Sockel oder das Boot-Medium beschädigt werden kann.
+
+. Richten Sie die Kanten des Ersatzstartmediums an der Buchse des Boot-Mediums aus, und schieben Sie ihn dann vorsichtig in die Buchse.
+. Überprüfen Sie die Startmedien, um sicherzustellen, dass sie ganz und ganz in der Steckdose sitzt.
++
+Entfernen Sie gegebenenfalls die Startmedien, und setzen Sie sie wieder in den Sockel ein.
+
+. Drücken Sie die Startmedien nach unten, um die Verriegelungstaste am Startmediengehäuse zu betätigen.
+. Bringen Sie die Abdeckung des Controller-Moduls wieder an, indem Sie die Stifte auf dem Deckel an die Schlitze auf dem Motherboard-Träger ausrichten und den Deckel dann in die richtige Position schieben.
+
+
+
+
+== Schritt 3: Übertragen Sie das Startabbild auf das Startmedium
+
+Sie können das System-Image über ein USB-Flash-Laufwerk, auf dem das Image installiert ist, auf dem Ersatzstartmedium installieren. Sie müssen jedoch die wiederherstellen `var` Dateisystem während dieses Verfahrens.
+
+.Bevor Sie beginnen
+* Sie müssen über ein USB-Flash-Laufwerk verfügen, das auf FAT32 formatiert ist und eine Kapazität von mindestens 4 GB aufweist.
+* Eine Kopie der gleichen Bildversion von ONTAP wie der beeinträchtigte Controller. Das entsprechende Image können Sie im Abschnitt „Downloads“ auf der NetApp Support-Website herunterladen
++
+** Wenn NVE aktiviert ist, laden Sie das Image mit NetApp Volume Encryption herunter, wie in der Download-Schaltfläche angegeben.
+** Wenn NVE nicht aktiviert ist, laden Sie das Image ohne NetApp Volume Encryption herunter, wie im Download-Button dargestellt.
+
+
+* Wenn es sich bei Ihrem System um ein eigenständiges System handelt, benötigen Sie keine Netzwerkverbindung, Sie müssen jedoch beim Wiederherstellen des var-Dateisystems einen zusätzlichen Neustart durchführen.
+
+
+.Schritte
+. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
+. Das Controller-Modul nach Bedarf wieder einschalten.
+. Stecken Sie das USB-Flash-Laufwerk in den USB-Steckplatz des Controller-Moduls.
++
+Stellen Sie sicher, dass Sie das USB-Flash-Laufwerk in den für USB-Geräte gekennzeichneten Steckplatz und nicht im USB-Konsolenport installieren.
+
+. Das Controller-Modul ganz in das System schieben, sicherstellen, dass der Nockengriff das USB-Flash-Laufwerk löscht, den Nockengriff fest drücken, um den Sitz des Controller-Moduls zu beenden, und dann den Nockengriff in die geschlossene Position drücken.
++
+Der Node wird gestartet, sobald er vollständig im Chassis installiert ist.
+
+. Unterbrechen Sie den Boot-Vorgang, um an der LOADER-Eingabeaufforderung zu stoppen, indem Sie Strg-C drücken, wenn Sie sehen Starten VON AUTOBOOT drücken Sie Strg-C, um den Vorgang abzubrechen
++
+Wenn Sie diese Meldung verpassen, drücken Sie Strg-C, wählen Sie die Option zum Booten im Wartungsmodus aus, und halten Sie dann den Node zum Booten in LOADER.
+
+. Obwohl die Umgebungsvariablen und Bootargs beibehalten werden, sollten Sie überprüfen, ob alle erforderlichen Boot-Umgebungsvariablen und Bootargs für Ihren Systemtyp und die Konfiguration über den richtig eingestellt sind `printenv bootarg name` Führen Sie den Befehl und korrigieren Sie alle Fehler mit dem `setenv variable-name <value>` Befehl.
++
+.. Überprüfen Sie die Boot-Umgebungsvariablen:
++
+*** bootarg.init.boot_clustered
+*** Partnersysid
+*** bootarg.init.flash_optimized für AFF
+*** bootarg.init.san_optimized für AFF
+*** bootarg.init.switchless_cluster.enable
+
+
+.. Wenn der External Key Manager aktiviert ist, überprüfen Sie die Bootarg-Werte, die im aufgeführt sind `kenv` ASUP-Ausgabe:
++
+*** Bootarg.storageEncryption.Support <value>
+*** Bootarg.keymanager.Support <value>
+*** kmip.init.interface <Wert>
+*** kmip.init.ipaddr <Wert>
+*** kmip.init.netmask <Wert>
+*** kmip.init.gateway <Wert>
+
+
+.. Wenn der Onboard Key Manager aktiviert ist, überprüfen Sie die Bootarg-Werte, die im aufgeführt sind `kenv` ASUP-Ausgabe:
++
+*** Bootarg.storageEncryption.Support <value>
+*** Bootarg.keymanager.Support <value>
+*** Bootarg.Onboard_keymanager <value>
+
+
+.. Speichern Sie die Umgebungsvariablen, die Sie mit dem geändert haben `savenv` Befehl
+.. Bestätigen Sie Ihre Änderungen mit der `printenv variable-name` Befehl.
+
+
+. Legen Sie den Verbindungstyp für das Netzwerk an der LOADER-Eingabeaufforderung fest:
++
+** Wenn Sie DHCP konfigurieren: `ifconfig e0a -auto`
++
+
+NOTE: Der von Ihnen konfigurierte Zielport ist der Zielport, über den Sie während der Wiederherstellung des var-Dateisystems mit dem beeinträchtigten Knoten über eine Netzwerkverbindung kommunizieren. Sie können in diesem Befehl auch den Port E0M verwenden.
+
+** Wenn Sie manuelle Verbindungen konfigurieren: `ifconfig e0a -addr=filer_addr -mask=netmask -gw=gateway-dns=dns_addr-domain=dns_domain`
++
+*** Filer_addr ist die IP-Adresse des Speichersystems.
+*** Netmask ist die Netzwerkmaske des Managementnetzwerks, das mit dem HA-Partner verbunden ist.
+*** Das Gateway ist das Gateway für das Netzwerk.
+*** dns_addr ist die IP-Adresse eines Namensservers in Ihrem Netzwerk.
+*** die dns_Domain ist der Domain Name des Domain Name System (DNS).
++
+Wenn Sie diesen optionalen Parameter verwenden, benötigen Sie keinen vollqualifizierten Domänennamen in der Netzboot-Server-URL. Sie benötigen nur den Hostnamen des Servers.
+
+
+
+
+
++
+
+NOTE: Andere Parameter können für Ihre Schnittstelle erforderlich sein. Sie können Hilfe ifconfig an der Firmware-Eingabeaufforderung für Details eingeben.
+
+. Wenn sich der Controller in einem Stretch- oder Fabric-Attached MetroCluster befindet, müssen Sie die FC-Adapterkonfiguration wiederherstellen:
++
+.. Start in Wartungsmodus: `boot_ontap maint`
+.. Legen Sie die MetroCluster-Ports als Initiatoren fest: `ucadmin modify -m fc -t iniitator adapter_name`
+.. Anhalten, um zum Wartungsmodus zurückzukehren: `halt`
+
+
++
+Die Änderungen werden implementiert, wenn das System gestartet wird.
+
+

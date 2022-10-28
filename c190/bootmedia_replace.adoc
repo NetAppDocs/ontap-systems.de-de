@@ -1,0 +1,210 @@
+---
+permalink: c190/bootmedia-replace.html 
+sidebar: sidebar 
+keywords: aff c190, locate, boot, media, controller, direction, replace 
+summary: Sie müssen das Startmedium im Controller-Modul finden und dann die Anweisungen befolgen, um es auszutauschen. 
+---
+= Ersetzen Sie das Boot-Medium AFF C190
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Zum Austauschen des Startmediums müssen Sie das beeinträchtigte Controller-Modul entfernen, das Ersatzstartmedium installieren und das Boot-Image auf ein USB-Flash-Laufwerk übertragen.
+
+
+
+== Schritt 1: Entfernen Sie die Steuerung
+
+Um auf Komponenten im Controller-Modul zuzugreifen, müssen Sie zunächst das Controller-Modul aus dem System entfernen und dann die Abdeckung am Controller-Modul entfernen.
+
+.Schritte
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Lösen Sie den Haken- und Schlaufenriemen, mit dem die Kabel am Kabelführungsgerät befestigt sind, und ziehen Sie dann die Systemkabel und SFPs (falls erforderlich) vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren.
++
+Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation des Kabelverwaltungsgeräts die Kabel organisiert sind.
+
+. Entfernen Sie die Kabelführungsgeräte von der linken und rechten Seite des Controller-Moduls und stellen Sie sie zur Seite.
++
+image::../media/drw_25xx_cable_management_arm.png[drw 25xx Kabelmanagement-ARM]
+
+. Drücken Sie die Verriegelung am Nockengriff, bis sie loslässt, öffnen Sie den Nockengriff vollständig, um das Controller-Modul aus der Mittelplatine zu lösen, und ziehen Sie das Controller-Modul anschließend mit zwei Händen aus dem Gehäuse heraus.
++
+image::../media/drw_2240_x_opening_cam_latch.png[drw 2240 x Öffnungsnockenverriegelung]
+
+. Drehen Sie das Controller-Modul um und legen Sie es auf eine flache, stabile Oberfläche.
+. Öffnen Sie die Abdeckung, indem Sie die blauen Laschen einschieben, um die Abdeckung zu lösen, und schwenken Sie dann die Abdeckung nach oben und öffnen Sie sie.
++
+image::../media/drw_2600_opening_pcm_cover.png[drw 2600, öffnen der pcm-Abdeckung]
+
+
+
+
+
+== Schritt 2: Ersetzen Sie die Startmedien
+
+Sie müssen das Startmedium im Controller-Modul finden und dann die Anweisungen befolgen, um es auszutauschen.
+
+. Suchen Sie das Boot-Medium mithilfe der folgenden Abbildung oder der FRU-Zuordnung auf dem Controller-Modul:
+. Drücken Sie die blaue Taste am Startmediengehäuse, um die Startmedien aus dem Gehäuse zu lösen, und ziehen Sie sie vorsichtig gerade aus der Buchse des Boot-Mediums heraus.
++
+
+NOTE: Drehen oder ziehen Sie die Boot-Medien nicht gerade nach oben, da dadurch der Sockel oder das Boot-Medium beschädigt werden kann.
+
+. Richten Sie die Kanten des Ersatzstartmediums an der Buchse des Boot-Mediums aus, und schieben Sie ihn dann vorsichtig in die Buchse.
+. Überprüfen Sie die Startmedien, um sicherzustellen, dass sie ganz und ganz in der Steckdose sitzt.
++
+Entfernen Sie gegebenenfalls die Startmedien, und setzen Sie sie wieder in den Sockel ein.
+
+. Drücken Sie die Startmedien nach unten, um die Verriegelungstaste am Startmediengehäuse zu betätigen.
+. Schließen Sie die Abdeckung des Controller-Moduls.
+
+
+
+
+== Schritt 3: Übertragen Sie das Startabbild auf das Startmedium
+
+Sie können das System-Image über ein USB-Flash-Laufwerk, auf dem das Image installiert ist, auf dem Ersatzstartmedium installieren. Sie müssen jedoch die wiederherstellen `var` Dateisystem während dieses Verfahrens.
+
+* Sie müssen über ein USB-Flash-Laufwerk verfügen, das auf FAT32 formatiert ist und eine Kapazität von mindestens 4 GB aufweist.
+* Eine Kopie der gleichen Bildversion von ONTAP wie der beeinträchtigte Controller. Das entsprechende Image können Sie auf der NetApp Support-Website im Abschnitt * Downloads* herunterladen
++
+** Wenn NVE aktiviert ist, laden Sie das Image mit NetApp Volume Encryption herunter, wie in der Download-Schaltfläche angegeben.
+** Wenn NVE nicht aktiviert ist, laden Sie das Image ohne NetApp Volume Encryption herunter, wie im Download-Button dargestellt.
+
+
+* Wenn Ihr System ein HA-Paar ist, müssen Sie eine Netzwerkverbindung haben.
+* Wenn es sich bei Ihrem System um ein eigenständiges System handelt, benötigen Sie keine Netzwerkverbindung, Sie müssen jedoch beim Wiederherstellen des var-Dateisystems einen zusätzlichen Neustart durchführen.
+
+
+.Schritte
+. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
+. Installieren Sie das Kabelverwaltungsgerät neu und führen Sie das System nach Bedarf wieder ein.
++
+Denken Sie beim Neuinstallieren der Medienkonverter (SFPs) daran, wenn sie entfernt wurden.
+
+. Stecken Sie das USB-Flash-Laufwerk in den USB-Steckplatz des Controller-Moduls.
++
+Stellen Sie sicher, dass Sie das USB-Flash-Laufwerk in den für USB-Geräte gekennzeichneten Steckplatz und nicht im USB-Konsolenport installieren.
+
+. Drücken Sie das Controller-Modul ganz in das System, vergewissern Sie sich, dass der Nockengriff das USB-Flash-Laufwerk löscht, drücken Sie den Nockengriff fest, um den Sitz des Controller-Moduls zu beenden, schieben Sie den Nockengriff in die geschlossene Position und ziehen Sie die Daumenschraube fest.
++
+Der Controller beginnt zu booten, sobald er vollständig im Chassis installiert ist.
+
+. Unterbrechen Sie den Boot-Prozess, um an der LOADER-Eingabeaufforderung zu stoppen, indem Sie Strg-C drücken, wenn Sie sehen `Starting AUTOBOOT press Ctrl-C to abort....`
++
+Wenn Sie diese Meldung verpassen, drücken Sie Strg-C, wählen Sie die Option, um in den Wartungsmodus zu booten, und dann `halt` Der Controller zum Booten zu LOADER.
+
+. Starten des Recovery-Images:
++
+`*boot_recovery __ontap_image_name__.tgz*`
+
++
+
+NOTE: Wenn der `image.tgz` Die Datei hat einen anderen Namen als Image.tgz, z. B. `boot_recovery 9_4.tgz`, Sie müssen den anderen Dateinamen in der `boot_recovery` Befehl.
+
++
+Das System startet zum Boot-Menü und fordert Sie zur Eingabe des Boot-Image-Namens auf.
+
+. Geben Sie den Namen des Startabbilds auf dem USB-Flash-Laufwerk ein:
++
+`*__image_name__.tgz*`
+
++
+Nachher `image_name.tgz` Das System wird installiert und fordert Sie auf, die Backup-Konfiguration wiederherzustellen (die) `var` Dateisystem) vom ordnungsgemäßen Controller.
+
+. Stellen Sie die wieder her `var` Filesystem:
++
+[cols="1,2"]
+|===
+| Wenn Ihr System... | Dann... 
+
+
+ a| 
+Eine Netzwerkverbindung
+ a| 
+.. Drücken Sie `*y*` Wenn Sie aufgefordert werden, die Backup-Konfiguration wiederherzustellen.
+.. Stellen Sie den gesunden Controller auf die erweiterte Berechtigungsebene ein:
++
+`*set -privilege advanced*`
+
+.. Führen Sie den Befehl Restore Backup aus:
++
+`*system node restore-backup -node local -target-address _impaired_node_IP_address_*`
+
+.. Zurückkehren des Controllers zur Administratorebene:
++
+`*set -privilege admin*`
+
+.. Drücken Sie `*y*` Wenn Sie aufgefordert werden, die wiederhergestellte Konfiguration zu verwenden.
+.. Drücken Sie `*y*` Wenn Sie dazu aufgefordert werden, den Controller neu zu booten.
+
+
+
+
+ a| 
+Keine Netzwerkverbindung
+ a| 
+.. Drücken Sie `*n*` Wenn Sie aufgefordert werden, die Backup-Konfiguration wiederherzustellen.
+.. Starten Sie das System neu, wenn Sie dazu aufgefordert werden.
+.. Wählen Sie im angezeigten Menü die Option *Flash aktualisieren aus Backup config* (Flash synchronisieren) aus.
++
+Wenn Sie aufgefordert werden, mit der Aktualisierung fortzufahren, drücken Sie `*y*`.
+
+
+
+|===
+. Vergewissern Sie sich, dass die Umgebungsvariablen wie erwartet festgelegt sind.
++
+.. Nehmen Sie den Controller zur LOADER-Eingabeaufforderung.
++
+Sie können den Befehl an der ONTAP-Eingabeaufforderung eingeben `system node halt -skip-lif-migration-before-shutdown true -ignore-quorum-warnings true -inhibit-takeover true`.
+
+.. Überprüfen Sie die Einstellungen der Umgebungsvariable mit dem `printenv` Befehl.
+.. Wenn eine Umgebungsvariable nicht wie erwartet festgelegt ist, ändern Sie sie mit dem `setenv _environment_variable_name changed_value_` Befehl.
+.. Speichern Sie Ihre Änderungen mit dem `saveenv` Befehl.
+.. Booten Sie den Controller neu.
+
+
+. Der nächste Schritt hängt von Ihrer Systemkonfiguration ab:
++
+[cols="1,2"]
+|===
+| Ihr System befindet sich in... | Dann... 
+
+
+ a| 
+Eine eigenständige Konfiguration
+ a| 
+Nachdem der Controller neu gebootet wurde, können Sie das System mit der Verwendung des Systems beginnen.
+
+
+
+ a| 
+Ein HA-Paar
+ a| 
+Nachdem der Regler „beeinträchtigt“ den angezeigt hat `Waiting for Giveback...` Meldung, führen Sie eine Rückgabe vom ordnungsgemäßen Controller durch:
+
+.. Führen Sie ein Giveback vom gesunden Controller durch:
++
+`*storage failover giveback -ofnode _partner_node_name_*`
+
++
+Dadurch wird der Prozess eingeleitet, die Eigentumsrechte an den Aggregaten und Volumes des beeinträchtigten Controllers vom gesunden Controller wieder an den beeinträchtigten Controller zurückzugeben.
+
++
+[NOTE]
+====
+Wenn das Rückübertragung ein Vetorecht ist, können Sie erwägen, das Vetos außer Kraft zu setzen.
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-hacg/home.html["ONTAP 9 High-Availability Configuration Guide"]
+
+====
+.. Überwachen Sie den Status des Giveback-Vorgangs mithilfe von ``storage failover show`-Giveback`, Befehl.
+.. Nach Abschluss des Giveback-Vorgangs bestätigen Sie, dass das HA-Paar ordnungsgemäß funktioniert und dass ein Takeover mithilfe des möglich ist `storage failover show` Befehl.
+.. Stellen Sie die automatische Rückgabe wieder her, wenn Sie die Funktion mithilfe von deaktivieren `storage failover modify` Befehl.
+
+
+|===
+

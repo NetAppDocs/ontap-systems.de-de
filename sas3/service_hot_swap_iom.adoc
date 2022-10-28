@@ -1,0 +1,170 @@
+---
+permalink: sas3/service-hot-swap-iom.html 
+sidebar: sidebar 
+keywords: system, configuration, whether, perform, nondisruptive, iom12, module, hot-swap, disruptive, replacement, hot-swap or replace an iom12/iom12b module, iom12b 
+summary: Ihre Systemkonfiguration legt fest, ob Sie ein unterbrechungsfreies Hot-Swap-Modul IOM12/IOM12B oder einen störenden Austausch von IOM12/IOM12B-Modulen durchführen können, wenn ein IOM12/IOM12B-Modul ausfällt. 
+---
+= Hot-Swap- oder Austausch eines IOM12/IOM12B-Moduls - Einlegeböden mit IOM12/IOM12B-Modulen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ihre Systemkonfiguration legt fest, ob Sie einen unterbrechungsfreien Hot-Swap-fähigen Shelf-IOM oder einen unterbrechungsfreien IOM-Austausch durchführen können, wenn ein Shelf-IOM ausfällt.
+
+Alle anderen Komponenten im System - einschließlich des anderen IOM12/IOM12B-Moduls - müssen ordnungsgemäß funktionieren.
+
+.Über diese Aufgabe
+* Dieses Verfahren gilt für Regale mit IOM12-Modulen und Regalen mit IOM12B-Modulen.
++
+
+NOTE: Dieses Verfahren gilt für EAM-Hot-Swaps oder Ersatz wie für Regal-ähnliche. So können Sie nur ein IOM12-Modul durch ein anderes IOM12-Modul ersetzen oder ein IOM12B-Modul durch ein anderes IOM12B-Modul ersetzen. (Ihr Shelf kann zwei IOM12-Module haben oder zwei IOM12B-Module haben.)
+
+* Die IOM12-Module und die IOM12B-Module zeichnen sich durch ihr Aussehen aus:
++
+Die IOM12-Module zeichnen sich durch ein "IOM12"-Label aus:
+
++
+image::../media/drw_iom12.gif[drw iom12]
+
++
+Die IOM12B-Module zeichnen sich durch einen blauen Streifen und ein „IOM12B“-Label aus:
+
++
+image::../media/iom12b.png[Iom12b]
+
+* Bei Multipath HA oder Multipath) und Quad-Pathed-Konfigurationen (Quad-Path HA oder Quad-Path) können Sie ein Shelf IOM im laufenden Betrieb austauschen (ein Shelf IOM unterbrechungsfrei ersetzen in einem System, das eingeschaltet ist und Daten bereitstellt - I/O läuft).
+* Bei HA-Konfigurationen der FAS2600 Serie und der FAS2700 Serie müssen Sie ein Takeover- und Giveback-Vorgang durchführen, um ein Shelf-IOM in einem System zu ersetzen, das eingeschaltet ist und Daten bereitstellt - I/O läuft.
+* Bei Single-Path-Konfigurationen der FAS2600 Serie müssen Sie das System anhalten, um ein Shelf-IOM zu ersetzen.
++
+
+NOTE: Wenn Sie versuchen, ein Shelf-IOM auf einem Festplatten-Shelf durch eine Single-Path-Verbindung zu tauschen, gehen alle Zugriffe auf die Festplattenlaufwerke im Festplatten-Shelf und alle darunter liegenden Festplatten-Shelfs verloren. Sie könnten auch Ihr gesamtes System herunterbringen.
+
+* Als Best Practice wird empfohlen, die aktuellen Versionen der Festplatten-Shelf- (IOM) und Festplatten-Firmware auf dem System zu installieren, bevor neue Festplatten-Shelfs, Shelf-FRU-Komponenten oder SAS-Kabel hinzugefügt werden.
++
+Aktuelle Versionen der Firmware finden Sie auf der NetApp Support Site.
+
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp Downloads: Festplatten-Shelf Firmware"]
+
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["NetApp Downloads: Festplatten-Firmware"]
+
+* Die Festplatten-Shelf- (IOM)-Firmware wird auf einem neuen Shelf-IOM automatisch mit einer nicht aktuellen Firmware-Version aktualisiert (unterbrechungsfrei).
++
+Shelf IOM Firmware-Prüfungen finden alle zehn Minuten statt. Eine Aktualisierung der IOM-Firmware kann bis zu 30 Minuten dauern.
+
+* Bei Bedarf können Sie die (blauen) LEDs des Festplatten-Shelfs einschalten, um Hilfe bei der physischen Suche nach dem betroffenen Festplatten-Shelf zu leisten: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
++
+Ein Festplatten-Shelf verfügt über drei Standort-LEDs: Eine auf der Bedieneranzeige und eine an jedem Shelf-IOM. Die Standort-LEDs leuchten 30 Minuten lang. Sie können sie ausschalten, indem Sie denselben Befehl eingeben, jedoch die Option „aus“ verwenden.
+
+* Falls erforderlich, finden Sie Informationen über die Bedeutung und Lage der Festplatten-Shelf-LEDs auf der Bedieneranzeige und den FRU-Komponenten.
+
+
+.Schritte
+. Richtig gemahlen.
+. Packen Sie das neue Shelf-IOM aus und stellen Sie es auf eine Ebene Fläche nahe dem Festplatten-Shelf ein.
++
+Speichern Sie alle Verpackungsmaterialien zum Verwenden der Rücksendung des fehlerhaften Shelf-IOM.
+
+. Identifizieren Sie das ausgefallene Shelf-IOM physisch über die Warnmeldung der Systemkonsole und die LED für leuchtende Warnung (gelb) auf dem ausgefallenen Shelf-IOM.
+. Führen Sie eine der folgenden Aktionen auf der Grundlage der Art der Konfiguration aus:
++
+[cols="2*"]
+|===
+| Wenn Sie ein... | Dann... 
+
+
+ a| 
+Multipath HA, Multipath, Quad Path HA oder Quad-Path-Konfiguration
+ a| 
+Fahren Sie mit dem nächsten Schritt fort.
+
+
+
+ a| 
+FAS2600 Series und FAS2700 HA-Single-Path-Konfiguration
+ a| 
+.. Ermitteln Sie den Ziel-Node (der Node, zu dem das ausgefallene Shelf-IOM gehört).
++
+IOM A gehört zu Controller 1. IOM B gehört zu Controller 2.
+
+.. Übernehmen des Ziel-Node: `storage failover takeover -bynode _partner HA node_`
+
+
+
+
+ a| 
+FAS2600 Series – Single-Path-Konfiguration
+ a| 
+.. Fahren Sie das System von der Systemkonsole aus herunter: `halt`
+.. Überprüfen Sie, ob Ihr System angehalten wurde, indem Sie die Konsole des Speichersystems prüfen.
+
+
+|===
+. Trennen Sie die Verkabelung vom Shelf-IOM, das Sie entfernen.
++
+Notieren Sie sich die Shelf-IOM-Ports, mit denen jedes Kabel verbunden ist.
+
+. Drücken Sie die orangefarbene Verriegelung am IOM-Nockengriff des Shelfs, bis sie wieder freigegeben wird. Öffnen Sie dann den Nockengriff vollständig, um das IOM-Shelf aus der mittleren Ebene zu lösen.
++
+image::../media/drw_iom_latch.png[ddw-eam-Riegel]
+
++
+image::../media/drw_iom_open.png[drw iom geöffnet]
+
+. Schieben Sie das Shelf-IOM mithilfe des Nockengriffs aus dem Festplatten-Shelf heraus.
++
+Verwenden Sie bei der Handhabung eines IOM-Regals immer zwei Hände, um sein Gewicht zu unterstützen.
+
+. Warten Sie mindestens 70 Sekunden nach dem Entfernen des Shelf-IOM, bevor Sie das neue Shelf-IOM installieren.
++
+Durch das Warten auf mindestens 70 Sekunden kann der Fahrer die Shelf-ID korrekt registrieren.
+
+. Mit zwei Händen, wobei der Nockengriff des neuen EAM-Regals in der offenen Position steht, stützen und ausrichten Sie die Kanten des neuen EAM-Regals an der Öffnung im Platten-Shelf, und drücken Sie dann das neue Shelf-EAM fest, bis es auf die mittlere Ebene trifft.
++
+
+NOTE: Verwenden Sie keine übermäßige Kraft, wenn Sie das Shelf-IOM in das Festplatten-Shelf schieben, da die Anschlüsse beschädigt werden können.
+
+. Schließen Sie den Nockengriff, so dass die Verriegelung in die verriegelte Position einrastet und das EAM-Shelf fest sitzt.
+. Schließen Sie die Verkabelung wieder an.
++
+Die SAS-Kabelanschlüsse sind keyed. Wenn sie korrekt an einen IOM-Port ausgerichtet sind, klickt der Anschluss an seine Position, und die LNK-LED für den IOM-Port leuchtet grün. Sie stecken einen SAS-Kabelanschluss in einen IOM-Port, wobei die Pull-Lasche nach unten (auf der Unterseite des Connectors) ausgerichtet ist.
+
+. Führen Sie eine der folgenden Aktionen auf der Grundlage der Art der Konfiguration aus:
++
+[cols="2*"]
+|===
+| Wenn Sie ein... | Dann... 
+
+
+ a| 
+Multipath HA, Multipath, Quad Path HA oder Quad-Path-Konfiguration
+ a| 
+Fahren Sie mit dem nächsten Schritt fort.
+
+
+
+ a| 
+FAS2600 Series und FAS2700 HA-Single-Path-Konfiguration
+ a| 
+Geben Sie den Ziel-Node zurück: `storage failover giveback -fromnode partner_HA_node`
+
+
+
+ a| 
+FAS2600 Series – Single-Path-Konfiguration
+ a| 
+Starten Sie das System neu.
+
+|===
+. Vergewissern Sie sich, dass die Links für den Shelf-IOM-Port eingerichtet wurden.
++
+Für jeden Modulport, den Sie verkabelt haben, leuchtet die LNK (grün) LED auf, wenn eine oder mehrere der vier SAS-Lanes eine Verbindung (entweder mit einem Adapter oder einem anderen Festplatten-Shelf) hergestellt haben.
+
+. Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.
++
+Wenden Sie sich an den technischen Support unter https://mysupport.netapp.com/site/global/dashboard["NetApp Support"], 888-463-8277 (Nordamerika), 00-800-44-638277 (Europa) oder +800-800-80-800 (Asien/Pazifik) wenn Sie die RMA-Nummer oder zusätzliche Hilfe beim Ersatzverfahren benötigen.
+
+

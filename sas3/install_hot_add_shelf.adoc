@@ -1,0 +1,548 @@
+---
+permalink: sas3/install-hot-add-shelf.html 
+sidebar: sidebar 
+keywords: hot-add, disk, shelves, shelf, iom12, exist, stack, module, sas, hba, onboard, sas, port, controller, DS460C, transport DS460C, move DS460C, remove drives from DS460C, DS460C drive handling, iom12b 
+summary: Mit IOM12/IOM12B-Modulen können Sie ein oder mehrere Platten-Shelfs in Betrieb nehmen und mit IOM12/IOM12B-Modulen einen Stack oder mehrere Platten-Shelfs mit IOM12/IOM12B-Modulen direkt an einen SAS HBA oder einen integrierten SAS-Port am Controller hinzufügen. 
+---
+= Shelf mit Hot-Add-On – Shelfs mit IOM12/IOM12B-Modulen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mit IOM12/IOM12B-Modulen können Sie ein oder mehrere Platten-Shelfs in Betrieb nehmen und mit IOM12/IOM12B-Modulen einen Stack oder mehrere Platten-Shelfs mit IOM12/IOM12B-Modulen direkt an einen SAS HBA oder einen integrierten SAS-Port am Controller hinzufügen.
+
+Sie können diese Vorgehensweise nicht verwenden, um einen Stack zu mischen: Shelf mit IOM12/IOM12B-Modulen im laufenden Betrieb in einem Shelf mit IOM6-Modulen hinzuzufügen. Wenn Sie einen Stack mischen müssen, verwenden Sie link:iom12-hot-add-mix.html["Hot-Add-IOM12-Shelfs für einen Stack von IOM6-Shelfs"].
+
+
+
+== Anforderungen an Hot-Adding Disk-Shelfs mit IOM12/IOM12B-Modulen
+
+[role="lead"]
+Ihr System muss bestimmte Anforderungen erfüllen, bevor Platten-Shelfs mit IOM12/IOM12B-Modulen im laufenden Betrieb hinzugefügt werden können.
+
+
+
+=== Zustand Ihres Systems
+
+* Ihr System und Ihre Version von ONTAP müssen die Platten-Shelves unterstützen, die Sie hinzufügen können, einschließlich der IOMs, Festplattenlaufwerke und SAS-Kabel.
++
+https://hwu.netapp.com["NetApp Hardware Universe"]
+
+* Ihr System muss mindestens die maximale Anzahl unterstützter Festplattenlaufwerke aufweisen, um die Anzahl der Festplatten-Shelfs, die Sie hinzufügen möchten.
++
+Sie können nach dem Hinzufügen von Platten-Shelves nicht die Höchstzahl der unterstützten Festplattenlaufwerke im System überschritten haben.
+
++
+https://hwu.netapp.com["NetApp Hardware Universe"]
+
+* Wenn Sie einen Stack von einem oder mehreren Platten-Shelves (direkt zu den Plattform-Controllern) Hot-hinzufügen, muss Ihr System über genügend freie PCI SAS HBA- oder integrierte SAS-Ports oder eine Kombination aus beiden verfügen.
++
+[NOTE]
+====
+Wenn Sie einen zusätzlichen PCI SAS-HBA installieren müssen, empfiehlt es sich, 12-GB-SAS-HBAs zu verwenden, um die Controller-to-Stack-Konnektivität mit 12 GB/s zu halten, um eine maximale Performance zu erzielen.
+
+Der Einsatz von 6 Gbit SAS HBAs oder einer Kombination aus 6 Gbit SAS HBAs und 12 Gbit SAS HBAs wird unterstützt, jedoch werden IOM12 Modulverbindungen zu 6 Gbit SAS HBAs auf 6 Gbit/s ausgehandelt, was zu einer niedrigeren Performance führt.
+
+====
+* Ihr System kann keine Fehlermeldungen bei der SAS-Verkabelung haben.
++
+Laden Sie Config Advisor herunter, und führen Sie sie aus, um zu überprüfen, ob die SAS-Verbindungen korrekt verkabelt sind.
+
++
+Sie müssen alle Verkabelungsfehler mithilfe der Korrekturmaßnahmen korrigieren, die durch die Fehlermeldungen bereitgestellt werden.
+
++
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"]
+
+
+
+
+
+=== Mit optischen Mini-SAS-HD-SAS-Kabeln
+
+* Wenn Sie optische Mini-SAS-HD-SAS-Kabel oder eine Kombination aus optischen Mini-SAS-HD-SAS-Kabeln und SAS-Kupferkabeln im Stapel der Platten-Shelves verwenden, müssen Sie die Regeln in erfüllen link:install-cabling-rules.html#mini-sas-hd-sas-optical-cable-rules["Kabelregeln für optische Mini-SAS-HD-SAS-Kabel"].
+* Wenn Sie ein Platten-Shelf mit Mini-SAS HD SAS-optischen Kabeln im laufenden Betrieb zu einem Stapel von Platten-Shelfs hinzufügen, die mit SAS-Kupferkabeln verbunden sind, können Sie vorübergehend beide Kabeltypen im Stack verwenden.
++
+Nachdem Sie das Festplatten-Shelf im laufenden Betrieb hinzugefügt haben, müssen Sie die SAS-Kupferkabel für die übrigen Shelf-zu-Shelf-Verbindungen im Stack und die Controller-zu-Stack-Verbindungen ersetzen, damit der Stack die in angegebenen Regeln erfüllt link:install-cabling-rules.html#mini-sas-hd-sas-optical-cable-rules["Kabelregeln für optische Mini-SAS-HD-SAS-Kabel"]. Das bedeutet, dass Sie die entsprechende Anzahl von Mini-SAS HD SAS optischen Kabeln bestellt haben müssen.
+
+
+
+
+
+== Überlegungen bei Hot-Adding-Platten-Shelfs mit IOM12/IOM12B-Modulen
+
+[role="lead"]
+Vor dem Hot-Adding Disk Shelves sollten Sie sich mit Aspekten und Best Practices dieser Vorgehensweise vertraut machen.
+
+
+
+=== Allgemeine Überlegungen
+
+* Wenn Sie ein Platten-Shelf mit IOM12/IOM12B-Modulen im laufenden Betrieb einem vorhandenen Stack hinzufügen (von Platten-Shelfs mit IOM12/IOM12B-Modulen), können Sie das Platten-Shelf entweder am Ende des logischen ersten oder letzten Platten-Shelfs hinzufügen.
++
+Für HA- und Single-Path-Konfigurationen, die für AFF A200, AFF A220, FAS2600 Series und FAS2700 Systeme anwendbar sind, können Sie Festplatten-Shelfs am Ende des Stacks hinzufügen, ohne dass Controller-Verbindungen vorhanden sind.
+
+* Platten-Shelfs mit IOM12/IOM12B Modulen müssen in einem eigenen Stack gemeinsam sein. Sie können nicht einem Stack mit Shelfs mit IOM6-Modulen oder IOM3-Modulen hinzugefügt werden.
++
+Diese Vorgehensweise unterstützt nicht die gemeinsame Nutzung eines Stacks: Shelf mit IOM12/IOM12B-Modulen werden im laufenden Betrieb in einem Shelf-Stack mit IOM6-Modulen hinzugefügt.
+
+* Ein System kann mehrere Pathing- und Quad-Pathed-Stacks mit IOM12/IOM12B-Modulen haben.
++
+Wenn Sie ein HA-Paar haben, zeigt ONTAP die Systemkonfiguration als an `multipath HA`. Wenn Sie eine Single-Controller-Konfiguration haben, zeigt ONTAP die Systemkonfiguration als an `multipath`.
+
+* Bei diesem Verfahren wird vorausgesetzt, dass Ihre Konfiguration die in-Band ACP verwendet.
++
+Bei Konfigurationen, bei denen ACP in der Band aktiviert ist, wird ACP in-Band automatisch auf Platten-Shelfs aktiviert, die im laufenden Betrieb hinzugefügt werden können. Bei Konfigurationen, bei denen in-Band-ACP nicht aktiviert ist, funktionieren Hot-zusätzliche Festplatten-Shelfs ohne ACP-Funktionen.
+
+* Eine unterbrechungsfreie Stack-Konsolidierung wird nicht unterstützt.
++
+Mithilfe dieses Verfahrens können Festplatten-Shelfs, die im laufenden Betrieb hinzugefügt wurden, nicht von einem anderen Stack in demselben System entfernt werden, wenn das System eingeschaltet ist und Daten bereitstellt (I/O wird ausgeführt).
+
+
+
+
+
+=== Überlegungen zu Best Practices
+
+* Als Best Practice empfiehlt es sich, die aktuelle Version des DQP (Disk Qualification Package) zu installieren, bevor ein Festplatten-Shelf im laufenden Betrieb hinzugefügt wird.
++
+Wenn die aktuelle Version des DQP installiert ist, kann Ihr System neu qualifizierte Festplattenlaufwerke erkennen und verwenden. Dadurch werden Systemereignismeldungen über nicht aktuelle Laufwerksinformationen vermieden. Außerdem wird eine mögliche Verhinderung der Festplattenpartitionierung vermieden, da die Festplattenlaufwerke nicht erkannt werden. Das DQP benachrichtigt Sie auch über nicht aktuelle Festplatten-Firmware.
+
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["NetApp Downloads: Disk Qualification Package"^]
+
+* Als Best Practice wird empfohlen, Config Advisor vor und nach dem Hinzufügen eines Festplatten-Shelfs auszuführen.
++
+Wenn Config Advisor ausgeführt wird, bevor ein Festplatten-Shelf hinzugefügt wird, erhalten Sie einen Snapshot der SAS-Konnektivität, überprüfen die Festplatten-Shelf- (IOM) Firmware-Versionen und können Sie überprüfen, ob die Shelf-IDs, die bereits auf Ihrem System verwendet werden. Wenn Sie Config Advisor nach dem Hinzufügen eines Festplatten-Shelfs ausführen, können Sie überprüfen, ob die SAS-Verbindungen ordnungsgemäß verkabelt sind und dass Shelf-IDs innerhalb der HA-Paar- oder Single-Controller-Konfiguration eindeutig sind.
+
++
+Wenn SAS-Verkabelung oder doppelte Shelf-ID-Fehler generiert werden, folgen Sie den Korrekturmaßnahmen.
+
++
+Zum Download von Config Advisor benötigen Sie Netzwerkzugriff.
+
++
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"]
+
+* Als Best Practice wird empfohlen, die aktuellen Versionen der Festplatten-Shelf- (IOM) und Festplatten-Firmware auf dem System zu installieren, bevor neue Festplatten-Shelfs, Shelf-FRU-Komponenten oder SAS-Kabel hinzugefügt werden.
++
+Aktuelle Versionen der Firmware finden Sie auf der NetApp Support Site.
+
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp Downloads: Festplatten-Shelf Firmware"]
+
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["NetApp Downloads: Festplatten-Firmware"]
+
+
+
+
+
+=== Überlegungen zur Handhabung von SAS-Kabeln
+
+* Überprüfen Sie den SAS-Anschluss, um die richtige Ausrichtung des Anschlusses zu prüfen, bevor Sie ihn anschließen.
++
+Die SAS-Kabelanschlüsse sind codiert. Wenn sie korrekt an einen SAS-Port orientiert sind, klickt der Anschluss an und wenn das Festplatten-Shelf zum Zeitpunkt eingeschaltet ist, leuchtet die Festplatten-Shelf-SAS-Port LNK-LED grün. Bei Festplatten-Shelfs stecken Sie einen SAS-Kabelanschluss mit nach unten (auf der Unterseite des Connectors) gerichteter Zuglasche.
+
++
+Bei Controllern kann die Ausrichtung der SAS-Ports je nach Plattformmodell variieren. Daher variiert die korrekte Ausrichtung des SAS-Kabelsteckers.
+
+* Um eine verminderte Leistung zu vermeiden, dürfen die Kabel nicht verdreht, gefaltet, gequetscht oder treten.
++
+Kabel haben einen minimalen Biegeradius. Die Spezifikationen des Kabelherstellers definieren den minimalen Biegeradius; eine allgemeine Richtlinie für den minimalen Biegeradius ist jedoch das 10-fache des Kabeldurchmessers.
+
+* Die Verwendung von Klettverschlüssen anstelle von Bindebrockeln zur Bündelung und Befestigung von Systemkabeln ermöglicht eine einfachere Kabelanpassung.
+
+
+
+
+=== Überlegungen zur Handhabung von DS460C Laufwerken
+
+* Die Laufwerke sind getrennt vom Shelf-Chassis verpackt.
++
+Sie sollten eine Bestandsaufnahme der Laufwerke durchführen.
+
+* Nachdem Sie die Laufwerke ausgepackt haben, sollten Sie das Verpackungsmaterial für den zukünftigen Einsatz speichern.
++
+
+CAUTION: *Möglicher Verlust des Datenzugriffs:* Wenn Sie in Zukunft das Regal auf einen anderen Teil des Rechenzentrums verschieben oder das Regal an einen anderen Ort transportieren, müssen Sie die Laufwerke aus den Laufwerkschubladen entfernen, um mögliche Schäden an den Antriebshächern und den Laufwerken zu vermeiden.
+
++
+
+NOTE: Halten Sie Festplatten in ihrem ESD-Beutel, bis Sie bereit sind, sie zu installieren.
+
+* Tragen Sie bei der Handhabung der Laufwerke immer ein ESD-Handgelenkband, das auf einer unbemalten Oberfläche des Gehäuses geerdet ist, um statische Entladungen zu vermeiden.
++
+Wenn ein Handgelenkband nicht verfügbar ist, berühren Sie eine unlackierte Oberfläche des Speichergehäuses, bevor Sie das Festplattenlaufwerk behandeln.
+
+
+
+
+
+== Installieren Sie Platten-Shelfs mit IOM12/IOM12B-Modulen für ein Hot-Add
+
+[role="lead"]
+Sie installieren für jedes Festplatten-Shelf, das Sie im laufenden Betrieb hinzufügen, das Festplatten-Shelf in ein Rack, verbinden die Netzkabel, schalten das Festplatten-Shelf ein und legen die Festplatten-Shelf-ID fest, bevor Sie die SAS-Verbindungen verkabeln.
+
+.Schritte
+. Installieren Sie das Rack Mount Kit (für Installationen mit zwei oder vier Pfosten), die mit Ihrem Festplatten-Shelf geliefert wurden. Verwenden Sie dazu den Installationsflyer, der mit dem Kit geliefert wurde.
++
+
+NOTE: Wenn Sie mehrere Platten-Shelfs installieren, sollten Sie diese von unten nach oben im Rack installieren, um für optimale Stabilität zu sorgen.
+
++
+
+NOTE: Montieren Sie das Festplatten-Shelf nicht in ein Telco-Rack, da es aufgrund des Gewichts des Festplatten-Shelfs zu einem Einsturz des Racks mit seinem eigenen Gewicht führen kann.
+
+. Installieren und befestigen Sie das Festplatten-Shelf mit dem im Kit enthaltenen Installationsflyer an den Halterungen und am Rack.
++
+Damit ein Platten-Shelf leichter und leichter zu manövrieren kann, entfernen Sie die Netzteile und I/O-Module (IOMs).
+
++
+Obwohl die Laufwerke getrennt verpackt sind und das Shelf leichter wird, wiegt ein leeres DS460C Shelf noch immer ungefähr 132 kg. Gehen Sie daher beim Verschieben eines Shelfs folgende Vorsicht vor.
+
++
+
+CAUTION: Es wird empfohlen, einen mechanischen Aufzug oder vier Personen mit den Hubgriffen zu verwenden, um ein leeres DS460C-Regal sicher zu bewegen.
+
++
+Ihre DS460C-Sendung wurde mit vier abnehmbaren Hebegriffen (zwei pro Seite) verpackt. Um die Hebegriffe zu verwenden, installieren Sie sie, indem Sie die Laschen der Griffe in die Schlitze an der Seite des Regals einsetzen und nach oben drücken, bis sie einrasten. Wenn Sie dann das Festplatten-Shelf auf die Schienen schieben, lösen Sie mithilfe der Daumenverriegelung jeweils einen Satz von Griffen. Die folgende Abbildung zeigt, wie ein Hubgriff befestigt wird.
+
++
+image::../media/drw_ds460c_handles.gif[drw ds460c Griffe]
+
+. Installieren Sie alle zuvor entfernten Netzteile und IOMs neu, bevor Sie das Festplatten-Shelf in das Rack einbauen.
+. Wenn Sie ein DS460C Festplatten-Shelf installieren, installieren Sie die Laufwerke in den Laufwerkfächer. Andernfalls fahren Sie mit dem nächsten Schritt fort.
++
+[NOTE]
+====
+Tragen Sie stets ein ESD-Handgelenkband, das an einer nicht lackierten Oberfläche am Gehäuse geerdet ist, um statische Entladungen zu vermeiden.
+
+Wenn ein Handgelenkband nicht verfügbar ist, berühren Sie eine unlackierte Oberfläche des Speichergehäuses, bevor Sie das Festplattenlaufwerk behandeln.
+
+====
++
+Wenn Sie ein teilweise bestücktes Shelf erworben haben, das heißt, dass das Shelf weniger als die 60 von ihm unterstützten Laufwerke für jede Schublade enthält, installieren Sie die Laufwerke wie folgt:
+
++
+** Installieren Sie die ersten vier Laufwerke in den vorderen Steckplätzen (0, 3, 6 und 9).
++
+
+NOTE: *Gefahr einer Gerätestörung:* um einen korrekten Luftstrom zu ermöglichen und eine Überhitzung zu vermeiden, müssen die ersten vier Laufwerke immer in die vorderen Schlitze (0, 3, 6 und 9) eingesetzt werden.
+
+** Verteilen Sie bei den verbleibenden Laufwerken gleichmäßig auf alle Fächer.
++
+Die folgende Abbildung zeigt, wie die Laufwerksanzahl bei jedem Laufwerkschublade im Shelf von 0 bis 11 nummeriert ist.
+
++
+image::../media/dwg_trafford_drawer_with_hdds_callouts.gif[Dwg trafford Schublade mit hdds-Callouts]
+
++
+... Öffnen Sie die obere Schublade des Regals.
+... Nehmen Sie ein Laufwerk aus dem ESD-Beutel.
+... Den Nockengriff am Antrieb senkrecht anheben.
+... Richten Sie die beiden angehobenen Tasten auf beiden Seiten des Laufwerkträgers an der entsprechenden Lücke im Laufwerkskanal auf der Laufwerksschublade aus.
++
+image::../media/28_dwg_e2860_de460c_drive_cru.gif[28 DWG e2860 de460c Antrieb Cru]
+
++
+[cols="10,90"]
+|===
+
+
+| image:../media/legend_icon_01.png[""] | Erhöhte Taste auf der rechten Seite des Laufwerkträgers 
+|===
+... Senken Sie den Antrieb gerade nach unten, und drehen Sie dann den Nockengriff nach unten, bis das Laufwerk unter dem orangefarbenen Freigaberiegel einrastet.
+... Wiederholen Sie die vorherigen Teilschritte für jedes Laufwerk in der Schublade.
++
+Stellen Sie sicher, dass die Steckplätze 0, 3, 6 und 9 in jeder Schublade Laufwerke enthalten.
+
+... Schieben Sie die Laufwerkschublade vorsichtig wieder in das Gehäuse.
++
+|===
+
+
+ a| 
+image:../media/2860_dwg_e2860_de460c_gentle_close.gif[""]
+
+
+
+ a| 
+
+CAUTION: *Möglicher Verlust des Datenzugriffs:* Schlingen Sie die Schublade niemals aus. Schieben Sie die Schublade langsam hinein, um zu vermeiden, dass die Schublade einrastet und das Speicher-Array beschädigt wird.
+
+|===
+... Schließen Sie die Antriebsschublade, indem Sie beide Hebel in die Mitte schieben.
+... Wiederholen Sie diese Schritte für jede Schublade im Festplatten-Shelf.
+... Befestigen Sie die Frontverkleidung.
+
+
+
+
+. Wenn Sie mehrere Festplatten-Shelfs hinzufügen, wiederholen Sie die vorherigen Schritte für jedes Festplatten-Shelf, das Sie installieren.
+. Schließen Sie die Netzteile für jedes Festplatten-Shelf an:
++
+.. Schließen Sie die Stromkabel zuerst an die Festplatten-Shelves an, um sie an die Halterung des Netzkabels zu befestigen. Anschließend können Sie die Netzkabel an verschiedene Stromquellen anschließen, um die Stabilität zu gewährleisten.
+.. Schalten Sie die Netzteile für jedes Festplatten-Shelf ein und warten Sie, bis die Festplatten erweitert werden.
+
+
+. Legen Sie die Shelf-ID für jedes Festplatten-Shelf fest, das Sie einer ID hinzufügen möchten, die innerhalb des HA-Paars oder der Single-Controller-Konfiguration eindeutig ist.
++
+Wenn Sie über ein Plattformmodell mit einem internen Festplatten-Shelf verfügen, müssen Shelf-IDs über das interne Festplatten-Shelf und extern verbundene Festplatten-Shelfs eindeutig sein.
+
++
+Sie können die folgenden Unterschritte verwenden, um die Shelf-IDs zu ändern. Weitere detaillierte Anweisungen finden Sie unter link:install-change-shelf-id.html["Ändern Sie eine Shelf-ID"].
+
++
+.. Falls erforderlich, überprüfen Sie, ob die Shelf-IDs bereits verwendet werden, indem Sie Config Advisor ausführen.
++
+Sie können auch die ausführen `storage shelf show -fields shelf-id` Befehl, um eine Liste der bereits verwendeten Shelf-IDs (und Duplikate, falls vorhanden) in Ihrem System anzuzeigen.
+
+.. Greifen Sie auf den Shelf-ID-Knopf hinter der linken Endkappe zu.
+.. Ändern Sie die Shelf-ID in eine gültige ID (00 bis 99).
+.. Schalten Sie das Festplatten-Shelf aus und wieder ein, damit die Shelf-ID übernommen wird.
++
+Warten Sie mindestens 10 Sekunden, bevor Sie das Einschalten wieder einschalten, um den aus- und Wiedereinschalten abzuschließen.
+
++
+Die Shelf-ID blinkt und die LED für die Bedieneranzeige blinkt, bis Sie das Festplatten-Shelf aus- und wieder einschalten.
+
+.. Wiederholen Sie die Subschritte a bis d für jedes Festplatten-Shelf, das Sie im laufenden Betrieb hinzufügen möchten.
+
+
+
+
+
+
+== Verkabeln Sie Platten-Shelfs mit IOM12/IOM12B-Modulen für ein Hot-Add
+
+[role="lead"]
+Sie verkabeln die SAS-Verbindungen --Shelf-to-Shelf und Controller-to-Stack - sofern zutreffend für Hot-Added Platten-Shelfs, damit sie mit dem System verbunden werden können.
+
+Sie müssen die Anforderungen in erfüllt haben link:install-hot-add-shelf.html#requirements-for-hot-adding-disk-shelves-with-iom12iom12b-modules["Anforderungen für Hot-Adding Disk-Shelfs mit IOM12-Modulen"] Und installiert, eingeschaltet und Shelf-IDs für jedes Festplatten-Shelf gemäß Anweisungen in festlegen link:install-hot-add-shelf.html#install-disk-shelves-with-iom12iom12b-modules-for-a-hot-add["Installieren Sie Platten-Shelfs mit IOM12-Modulen für ein Hot-Add-System"].
+
+.Über diese Aufgabe
+* Eine Erläuterung und Beispiele für Shelf-to-Shelf „`standard`“-Verkabelung und Shelf-to-Shelf „`dOuble-wide`“-Verkabelung finden Sie unter link:install-cabling-rules.html#shelf-to-shelf-connection-rules["Verbindungsregeln für Shelf-zu-Shelf-SAS"].
+* Eine Anleitung zum Lesen eines Arbeitsblatts zur Verkabelung von Controller-zu-Stack-Verbindungen finden Sie unter link:install-cabling-worksheets-how-to-read-multipath.html["Lesen eines Arbeitsblatts zur Verkabelung von Controller-zu-Stack-Verbindungen für Multipath-Konnektivität"] Oder link:install-cabling-worksheets-how-to-read-quadpath.html["Lesen eines Arbeitsblatts zur Verkabelung von Controller-zu-Stack-Verbindungen für Quad-Pathed-Konnektivität"].
+* Nachdem Sie die Hot-Added Platten-Shelfs verbunden haben, erkennt ONTAP sie: Dem Festplattenbesitzer wird zugewiesen, wenn die automatische Zuweisung zum Festplattenbesitzer aktiviert ist. Die Festplatten-Shelf- (IOM) Firmware und Festplatten-Firmware sollten bei Bedarf automatisch aktualisiert werden. Wenn während der Konfiguration ACP in der Band aktiviert ist, wird sie auf den im Betrieb hinzugefügten Platten-Shelfs automatisch aktiviert.
++
+
+NOTE: Firmware-Updates können bis zu 30 Minuten dauern.
+
+
+
+.Schritte
+. Wenn Sie den Festplatten-Shelfs, die Sie hinzufügen, manuell zuweisen möchten, müssen Sie die automatische Zuweisung der Festplattenbesitzer deaktivieren, wenn sie aktiviert ist. Andernfalls fahren Sie mit dem nächsten Schritt fort.
++
+Sie müssen die Festplatteneigentümer manuell zuweisen, wenn Festplatten im Stack Eigentum beider Controller in einem HA-Paar sind.
+
++
+Sie deaktivieren die automatische Zuweisung der Festplattenbesitzer, bevor Sie die im laufenden Betrieb hinzugefügten Platten-Shelfs verkabeln und dann später, in Schritt 7, aktivieren Sie sie nach der Verkabelung der Hot-Added Platten-Shelfs neu.
+
++
+.. Überprüfen Sie, ob die automatische Zuweisung für die Festplatteneigentümer aktiviert ist:``storage disk option show``
++
+Wenn Sie ein HA-Paar haben, können Sie den Befehl an der Konsole eines der beiden Controller eingeben.
+
++
+Wenn die automatische Zuweisung für die Festplatteneigentümer aktiviert ist, wird in der Spalte „`Auto Assign`“ in der Ausgabe „`on`“ (für jeden Controller) „ ON“ angezeigt.
+
+.. Wenn die automatische Zuweisung für die Festplatteneigentümer aktiviert ist, müssen Sie sie deaktivieren:``storage disk option modify -node _node_nam_e -autoassign off``
++
+Sie müssen die automatische Zuweisung der Festplattenbesitzer auf beiden Controllern in einem HA-Paar deaktivieren.
+
+
+
+. Wenn Sie einen Stapel an Platten-Shelfs während des laufenden Betrieb direkt zu einem Controller hinzufügen, führen Sie die folgenden Teilschritte durch; anderenfalls fahren Sie mit Schritt 3 fort.
++
+.. Wenn der Stack, den Sie hinzufügen, mehr als nur ein Festplatten-Shelf hat, verkabeln Sie die Shelf-to-Shelf-Verbindungen. Andernfalls fahren Sie mit dem Unterschritt B. fort
++
+[cols="2*"]
+|===
+| Wenn... | Dann... 
+
+
+ a| 
+Sie verkabeln einen Stack mit Multipath HA, Multipath, Single Path HA oder Single-Path-Konnektivität zu den Controllern
+ a| 
+Verbinden Sie die Shelf-zu-Shelf-Verbindungen mit „`standard`“-Konnektivität (unter Verwendung von IOM-Ports 3 und 1):
+
+... Beginnend mit dem logischen ersten Shelf im Stack verbinden Sie IOM A-Port 3 mit Dem IOM A-Port 1 des nächsten Shelfs, bis jedes IOM A im Stack verbunden ist.
+... Wiederholen Sie den Unterschritt i für IOM B.
+
+
+
+
+ a| 
+Sie verkabeln einen Stack mit Quad-Path-HA oder Quad-Path-Konnektivität zu den Controllern
+ a| 
+Verbinden Sie die Shelf-zu-Shelf-Verbindungen mit „`double-wide`“-Konnektivität. Sie verkabeln die Standard-Konnektivität mit den IOM-Ports 3 und 1 sowie anschließend die doppelte breite Konnektivität mit den IOM-Ports 4 und 2.
+
+... Beginnend mit dem logischen ersten Shelf im Stack verbinden Sie IOM A-Port 3 mit Dem IOM A-Port 1 des nächsten Shelfs, bis jedes IOM A im Stack verbunden ist.
+... Beginnend mit dem logischen ersten Shelf im Stack verbinden Sie IOM A-Port 4 mit Dem IOM A-Port 2 des nächsten Shelfs, bis jedes IOM A im Stack verbunden ist.
+... Wiederholen Sie die Unterschritte i und ii für IOM B.
+
+
+|===
+.. Überprüfen Sie die Verkabelungsarbeitsblätter und Beispiele für den Controller-to-Stack-Stack, um zu ermitteln, ob ein ausgefülltes Arbeitsblatt für Ihre Konfiguration vorhanden ist.
++
+link:install-cabling-worksheets-examples-fas2600.html["Verkabelungsarbeitsblätter und Beispiele für Controller-to-Stack für AFF- und FAS-Plattformen mit integriertem Storage"]
+
++
+link:install-cabling-worksheets-examples-multipath.html["Arbeitsblätter und Beispiele für die Verkabelung von Controller und Stack für gängige Multipath HA-Konfigurationen"]
+
++
+link:install-worksheets-examples-quadpath.html["Verkabelungsarbeitsblatt für den Controller-to-Stack und Kabelbeispiel für eine Quad-Path HA-Konfiguration mit zwei Quad-Port SAS HBAs"]
+
+.. Wenn ein ausgefülltes Arbeitsblatt für Ihre Konfiguration vorhanden ist, verkabeln Sie die Controller-to-Stack-Verbindungen mithilfe des ausgefüllten Arbeitsblatts. Gehen Sie andernfalls mit dem nächsten Unterschritt.
+.. Wenn für Ihre Konfiguration kein ausgefülltes Arbeitsblatt vorhanden ist, füllen Sie die entsprechende Worksheet-Vorlage aus und verkabeln Sie dann mithilfe des ausgefüllten Arbeitsblatts die Controller-zu-Stack-Verbindungen.
++
+link:install-cabling-worksheet-template-multipath.html["Vorlage für das Verkabelungsarbeitsblatt für den Controller-zu-Stack für Multipath-Konnektivität"]
+
++
+link:install-cabling-worksheet-template-quadpath.html["Vorlage für Verkabelungsarbeitsblatt für den Controller-zu-Stack für Quad-Pathed-Konnektivität"]
+
+.. Stellen Sie sicher, dass alle Kabel sicher befestigt sind.
+
+
+. Wenn Sie ein oder mehrere Platten-Shelves zu einem vollständigen logischen ersten oder letzten Festplatten-Shelf hinzufügen – eines vorhandenen Stacks führen Sie die entsprechenden Teilschritte für Ihre Konfiguration aus. Anderenfalls wechseln Sie mit dem nächsten Schritt.
++
+
+NOTE: Achten Sie darauf, dass Sie mindestens 70 Sekunden warten, bis Sie ein Kabel trennen und wieder anschließen, und wenn Sie ein Kabel länger ersetzen.
+
++
+[cols="2*"]
+|===
+| Ihr Unternehmen | Dann... 
+
+
+ a| 
+Hot-Adding eines Platten-Shelf am Ende eines Stacks mit Multipath HA, Multipath, Quad-Path-HA oder Quad-Path-Konnektivität zu den Controllern
+ a| 
+.. Trennen Sie alle Kabel von IOM A des Festplatten-Shelf am Ende des Stacks, die mit einem beliebigen Controller verbunden sind. Andernfalls fahren Sie mit subschritt e. fort
++
+Lassen Sie das andere Ende dieser Kabel mit den Controllern verbunden sein, oder ersetzen Sie bei Bedarf die Kabel durch weitere Kabel.
+
+.. Verkabeln Sie die Shelf-zu-Shelf-Verbindungen zwischen IOM A des Festplatten-Shelfs am Ende des Stacks und IOM A des Festplatten-Shelfs, das Sie hinzufügen.
+.. Schließen Sie alle Kabel, die Sie in Unterschritt A entfernt haben, wieder an denselben Port(s) an IOM A des Festplatten-Shelfs, das Sie hinzufügen. Andernfalls fahren Sie mit dem nächsten Unterschritt fort.
+.. Stellen Sie sicher, dass alle Kabel sicher befestigt sind.
+.. Wiederholen Sie die Teilschritte A bis d für IOM B; andernfalls fahren Sie mit Schritt 4 fort.
+
+
+
+
+ a| 
+Hinzufügen eines Festplatten-Shelfs zu einem Ende des Stacks in einer HA- oder Single-Path-Konfiguration mit nur einem Pfad, falls zutreffend für die Systeme AFF A200, AFF A220, FAS2600 Series und FAS2700.
+
+Diese Anweisungen gelten für das Hinzufügen von Hot-to-Stack-Verbindungen am Ende des Stacks, das keine Verbindungen zwischen Controller und Stack aufweist.
+ a| 
+.. Verkabeln Sie die Shelf-zu-Shelf-Verbindung zwischen IOM A des Festplatten-Shelf im Stack und IOM A des Festplatten-Shelf, das Sie hinzufügen.
+.. Überprüfen Sie, ob das Kabel fest befestigt ist.
+.. Wiederholen Sie die für IOM B geltenden Unterschritte
+
+
+|===
+. Wenn Sie ein Platten-Shelf mit optischen Mini-SAS-HD-SAS-Kabeln in einem Stack mit SAS-Kupferkabeln verbundene Platten-Shelfs aufnehmen, ersetzen Sie die SAS-Kupferkabel. Andernfalls fahren Sie mit dem nächsten Schritt fort.
++
+Der Stack muss die im angegebenen Anforderungen erfüllen  for hot-adding disk shelves with IOM12 modules Abschnitt dieses Verfahrens.
+
++
+Ersetzen Sie die Kabel nacheinander, und stellen Sie sicher, dass Sie zwischen dem Trennen eines Kabels und dem Anschließen eines neuen Kabels mindestens 70 Sekunden warten.
+
+. Laden Sie Config Advisor herunter, und führen Sie sie aus, um zu überprüfen, ob die SAS-Verbindungen korrekt verkabelt sind.
++
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"]
+
++
+Wenn SAS-Verkabelungsfehler generiert werden, befolgen Sie die angegebenen Korrekturmaßnahmen.
+
+. Überprüfen Sie die SAS-Konnektivität für jedes Hot-Added Festplatten-Shelf: `storage shelf show -shelf _shelf_name_ -connectivity`
++
+Diesen Befehl müssen Sie für jedes Festplatten-Shelf ausführen, das Sie Hot-Hinzugefügt haben.
+
++
+Beispielsweise wird in der folgenden Ausgabe an 2.5 jedem Controller (in einer FAS8080 Multipath HA-Konfiguration mit einem Quad-Port-SAS-HBA) mit Initiator-Ports 1a und 0d (Port-Paar 1a/0d) verbunden:
+
++
+[listing]
+----
+cluster1::> storage shelf show -shelf 2.5 -connectivity
+
+           Shelf Name: 2.5
+             Stack ID: 2
+             Shelf ID: 5
+            Shelf UID: 40:0a:09:70:02:2a:2b
+        Serial Number: 101033373
+          Module Type: IOM12
+                Model: DS224C
+         Shelf Vendor: NETAPP
+           Disk Count: 24
+      Connection Type: SAS
+          Shelf State: Online
+               Status: Normal
+
+Paths:
+
+Controller     Initiator   Initiator Side Switch Port   Target Side Switch Port   Target Port   TPGN
+------------   ---------   --------------------------   -----------------------   -----------   ------
+stor-8080-1    1a           -                           -                          -             -
+stor-8080-1    0d           -                           -                          -             -
+stor-8080-2    1a           -                           -                          -             -
+stor-8080-2    0d           -                           -                          -             -
+
+Errors:
+------
+-
+----
+. Wenn Sie die automatische Zuweisung für die Festplatteneigentümer in Schritt 1 deaktiviert haben, weisen Sie manuell den Festplattenbesitzer zu und aktivieren Sie dann die automatische Zuweisung für die Festplatteneigentümer, falls nötig:
++
+.. Alle nicht im Besitz befindlichen Festplatten anzeigen:``storage disk show -container-type unassigned``
+.. Weisen Sie jede Festplatte zu:``storage disk assign -disk _disk_name_ -owner _owner_name_``
++
+Sie können das Platzhalterzeichen verwenden, um mehr als eine Festplatte gleichzeitig zuzuweisen.
+
+.. Automatische Zuweisung der Festplatteneigentümer bei Bedarf erneut aktivieren:``storage disk option modify -node _node_name_ -autoassign on``
++
+Sie müssen die automatische Zuweisung der Festplatteneigentümer auf beiden Controllern in einem HA-Paar erneut aktivieren.
+
+
+
+. Wenn Ihre Konfiguration auf ACP in der Band ausgeführt wird, überprüfen Sie, ob ACP in-Band automatisch auf Festplatten-Shelfs aktiviert wurde: `storage shelf acp show`
++
+In der Ausgabe wird „`in-Band`“ für jeden Knoten als „`aktiv`“ aufgeführt.
+
+
+
+
+
+== Verschieben oder Transport von DS460C Shelfs
+
+[role="lead"]
+Wenn Sie in Zukunft DS460C Shelfs zu einem anderen Teil des Datacenters verschieben oder die Shelfs an einen anderen Ort transportieren, müssen Sie die Laufwerke aus den Laufwerkfächer entfernen, um mögliche Beschädigungen der Laufwerkfächer und Laufwerke zu vermeiden.
+
+* Wenn Sie DS460C Shelfs als Teil Ihres Shelf-Hot-Add-Systems installiert haben, haben Sie das Verpackungsmaterial des Laufwerks gespeichert. Verwenden Sie diese, um die Laufwerke vor deren Verschiebung zu verpacken.
++
+Wenn Sie das Verpackungsmaterial nicht gespeichert haben, sollten Sie Antriebe auf gepolsterten Oberflächen platzieren oder eine alternative gepolsterte Verpackung verwenden. Laufwerke nie aufeinander stapeln.
+
+* Tragen Sie vor der Handhabung der Antriebe ein ESD-Handgelenkband, das auf einer unbemalten Oberfläche des Gehäuses geerdet ist.
++
+Wenn ein Handgelenkband nicht verfügbar ist, berühren Sie eine unlackierte Oberfläche des Speichergehäuses, bevor Sie ein Laufwerk handhaben.
+
+* Sie sollten Maßnahmen ergreifen, um Laufwerke sorgfältig zu behandeln:
++
+** Verwenden Sie immer zwei Hände, wenn Sie ein Laufwerk entfernen, installieren oder tragen, um sein Gewicht zu halten.
++
+
+CAUTION: Legen Sie keine Hände auf die Laufwerkplatinen, die auf der Unterseite des Laufwerkträgers ausgesetzt sind.
+
+** Achten Sie darauf, Laufwerke nicht gegen andere Oberflächen zu stoßen.
+** Laufwerke sollten von magnetischen Geräten ferngehalten werden.
++
+
+CAUTION: Magnetfelder können alle Daten auf einem Laufwerk zerstören und irreparable Schäden an der Antriebsschaltung verursachen.
+
+
+
+

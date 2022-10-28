@@ -1,0 +1,59 @@
+---
+permalink: fas9500/fan_swap_out.html 
+sidebar: sidebar 
+keywords:  
+summary: Zum Auswechseln eines Lüftermoduls ohne Unterbrechung des Dienstes müssen Sie eine bestimmte Sequenz von Aufgaben durchführen. 
+---
+= Tauschen Sie einen Lüfter aus – FAS9500
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Zum Auswechseln eines Lüftermoduls ohne Unterbrechung des Dienstes müssen Sie eine bestimmte Sequenz von Aufgaben durchführen.
+
+
+IMPORTANT: Sie müssen das Lüftermodul innerhalb von zwei Minuten nach dem Entfernen aus dem Gehäuse ersetzen. Der Luftstrom des Systems wird unterbrochen, und das Controller-Modul oder die Module werden nach zwei Minuten heruntergefahren, um eine Überhitzung zu vermeiden.
+
+.Schritte
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Entfernen Sie die Blende (falls erforderlich) mit zwei Händen, indem Sie die Öffnungen auf beiden Seiten der Blende fassen und dann zu Ihnen ziehen, bis sich die Blende von den Kugelknöpfen am Rahmen des Chassis löst.
+. Ermitteln Sie das Lüftermodul, das Sie ersetzen müssen, indem Sie die Konsolenfehlermeldungen überprüfen und die Warn-LED an jedem Lüftermodul betrachten.
+. Drücken Sie auf die Terrakotta-Taste am Lüftermodul, und ziehen Sie das Lüftermodul gerade aus dem Gehäuse, um sicherzustellen, dass Sie es mit Ihrer freien Hand unterstützen.
++
+
+IMPORTANT: Die Lüftermodule sind kurz. Unterstützen Sie das Lüftermodul immer mit Ihrer freien Hand, damit es nicht plötzlich vom Gehäuse abfällt und Sie verletzt.
+
++
+.Animation - Lüfter entfernen/installieren
+video::86b0ed39-1083-4b3a-9e9c-ae78004c2ffc[panopto]
++
+image::../media/drw_9500_remove_install_fan.svg[drw 9500 Ausbau des Lüfters]
+
++
+[cols="20%,80%"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[Legende Symbol 01]
+ a| 
+Entriegelungstaste Terra cotta
+
+
+
+ a| 
+image::../media/legend_icon_02.svg[Legende Symbol 02]
+ a| 
+Schieben Sie den Lüfter in das Gehäuse ein-/heraus
+
+|===
+. Setzen Sie das Lüftermodul beiseite.
+. Richten Sie die Kanten des Ersatzlüftermoduls an der Öffnung im Gehäuse aus, und schieben Sie es dann in das Gehäuse, bis es einrastet.
++
+Wenn das Lüftermodul erfolgreich in das Gehäuse eingesetzt wurde, blinkt die gelbe Warn-LED viermal.
+
+. Richten Sie die Blende an den Kugelknöpfen aus, und drücken Sie dann vorsichtig die Blende auf die Kugelbolzen.
+. Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"^] Seite für weitere Informationen.
+

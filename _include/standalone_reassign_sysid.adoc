@@ -1,0 +1,61 @@
+= 
+:allow-uri-read: 
+
+
+In einem eigenständigen System müssen Sie Festplatten manuell der System-ID des neuen Controllers zuweisen, bevor Sie den normalen Betrieb des Systems wieder herstellen.
+
+.Über diese Aufgabe
+
+NOTE: Dieses Verfahren gilt nur für Systeme, die sich in einer eigenständigen Konfiguration befinden.
+
+.Schritte
+. Wenn Sie dies noch nicht getan haben, starten Sie den Node _Replacement_ neu, unterbrechen Sie den Bootvorgang, indem Sie Strg-C drücken, und wählen Sie dann die Option zum Booten in den Wartungsmodus aus dem angezeigten Menü aus.
+. Eingabe ist erforderlich `Y` Wenn Sie aufgefordert werden, die System-ID aufgrund einer nicht übereinstimmenden System-ID zu überschreiben.
+. System-IDs anzeigen: `disk show -a`
+. Notieren Sie sich die alte System-ID, die als Teil der Spalte „Disk Owner“ angezeigt wird.
++
+Im folgenden Beispiel wird die alte System-ID von 118073209 angezeigt:
+
++
+[listing]
+----
+*> disk show -a
+Local System ID: 118065481
+
+  DISK      OWNER                  POOL   SERIAL NUMBER  HOME
+--------    -------------          -----  -------------  -------------
+disk_name    system-1  (118073209)  Pool0  J8XJE9LC       system-1  (118073209)
+disk_name    system-1  (118073209)  Pool0  J8Y478RC       system-1  (118073209)
+.
+.
+.
+
+----
+. Weisen Sie den Festplattenbesitzer neu zu, indem Sie die System-ID-Informationen verwenden, die vom Befehl Disk show abgerufen wurden: `disk reassign -s old system ID disk reassign -s 118073209`
+. Überprüfen Sie, ob die Festplatten ordnungsgemäß zugewiesen wurden: `disk show -a`
++
+Bei den Festplatten, die zum Ersatz-Node gehören, sollte die neue System-ID angezeigt werden. Im folgenden Beispiel werden jetzt die Festplatten von System-1 die neue System-ID, 118065481, angezeigt:
+
++
+[listing]
+----
+*> disk show -a
+Local System ID: 118065481
+
+  DISK      OWNER                  POOL   SERIAL NUMBER  HOME
+--------    -------------          -----  -------------  -------------
+disk_name    system-1  (118065481)  Pool0  J8Y0TDZC       system-1  (118065481)
+disk_name    system-1  (118065481)  Pool0  J8Y0TDZC       system-1  (118065481)
+.
+.
+.
+
+----
+. Wenn Ihr Storage- oder Volume Encryption-System konfiguriert ist, müssen Sie die Funktionen für Storage oder Volume Encryption mithilfe eines der folgenden Verfahren wiederherstellen: Je nachdem, ob Sie integriertes oder externes Verschlüsselungsmanagement verwenden:
++
+** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-onboard-key-management-encryption-keys-task.html["Wiederherstellung der integrierten Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"^]
+** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-external-encryption-keys-93-later-task.html["Wiederherstellung der externen Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"^]
+
+
+. Booten des Node: `boot_ontap`
+

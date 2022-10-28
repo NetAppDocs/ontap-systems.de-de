@@ -1,0 +1,49 @@
+---
+permalink: platform-supplemental/42u-1280mm-replace-pdus.html 
+sidebar: sidebar 
+keywords: replace, fail, PDU, system, cabinet, replace, exist, replace pdu 
+summary: Sie können eine fehlerhafte PDU in Ihrem Systemschrank ersetzen oder eine vorhandene PDU durch eine andere Art von PDU ersetzen. 
+---
+= Tauschen Sie PDUs aus
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eine fehlerhafte PDU in Ihrem Systemschrank ersetzen oder eine vorhandene PDU durch eine andere Art von PDU ersetzen.
+
+Die Ersatz-PDU muss von Ihrem Systemschrank unterstützt werden und die installierten Geräte mit ausreichend Strom versorgen.
+
+https://hwu.netapp.com/["hwu.netapp.com"]
+
+. Schalten Sie die Leistungsschalter an der Ziel-PDU aus, und ziehen Sie dann die alte PDU von der Wechselstromquelle ab.
+. Stecken Sie die Masse in den Systemschrank, und ziehen Sie die Netzkabel von den einzelnen Systemkomponenten und der PDU ab.
+. Entfernen Sie zuerst die Schrauben vom PDU-Rahmen, die untere Schraube.
++
+
+NOTE: Stellen Sie sicher, dass Sie die PDU mit einer Hand stützen, während Sie die letzte Schraube von der Oberseite der PDU entfernen. Dadurch wird verhindert, dass die PDU nach dem Entfernen der Schraube zu Ihnen fällt oder fällt.
+
+. Entfernen Sie die alte PDU aus dem Systemschrank.
++
+Achten Sie darauf, dass Sie die Befestigungsschrauben so verfolgen, dass Sie sie bei der Installation der Ersatz-PDU wiederverwenden können.
+
+. Entfernen Sie die Halterungen von der alten PDU, und setzen Sie sie an der Rückseite der PDU-Ersatzeinheit ein.
+. Richten Sie den Steckplatz an der Montagehalterung der PDU während der Unterstützung der Ersatz-PDU an den oberen Löchern des Rahmens auf der Innenseite des Systemschranks aus, und befestigen Sie die PDU dann mithilfe der Befestigungsschrauben der alten PDU am Rahmen des Systemschranks.
+. Befestigen Sie die Unterseite der PDU am Rahmen des Systemschranks, und ziehen Sie dann alle Befestigungsschrauben fest.
+. Stellen Sie sicher, dass sich alle Netzschalter oder Leistungsschalter in der Position aus befinden.
++
+Wenn sich die Leistungsschalter nicht in der Position aus befinden, drücken Sie einen kleinen Schraubendreher oder gerade Papierclip in den Schlitz rechts neben dem Etikett aus, um den Leistungsschalter zu lösen und den Stromkreis auszuschalten.
+
+. Schließen Sie die Systemstromkabel an die PDU an, und stecken Sie jede Komponente direkt über die Komponente in die PDU-Steckdose.
++
+
+TIP: Eine Best Practice besteht darin, die Gesamtlast über die PDU-Filialen zu verteilen, wodurch jede Verzweigung so gleichmäßig wie möglich belastet wird.
+
+. Verriegeln Sie den Stecker jedes Komponentenstromkabels mit dem Kabelhalter über ihm, indem Sie die gekrümmte Kante des Kabelhalters über die Steckerschulter schieben.
+. Schließen Sie das PDU-Netzkabel an die Wechselstromquelle an.
+. Schalten Sie die PDU-Netzschalter oder PDU-Leistungsschalter ein.
++
+Bei PDU-Leistungsschaltern ist die Taste eingeschaltet, wenn sie bündig mit dem PDU-Rahmen ist.
+
+

@@ -1,0 +1,34 @@
+= 
+:allow-uri-read: 
+
+
+[role="lead"]
+Sie können ein ausgefallenes Laufwerk unterbrechungsfrei ersetzen, während I/O gerade läuft. Das Verfahren zum Austausch einer SSD gilt für nicht rotierende Laufwerke, und das Verfahren zum Austausch einer Festplatte betrifft rotierende Laufwerke.
+
+Wenn ein Laufwerk ausfällt, meldet die Plattform eine Warnmeldung an die Systemkonsole und gibt an, welches Laufwerk ausgefallen ist. Darüber hinaus leuchten die Fehler-LED auf der Bedieneranzeige und die Fehler-LED am ausgefallenen Laufwerk.
+
+.Bevor Sie beginnen
+* Befolgen Sie die Best Practice, und installieren Sie die aktuelle Version des DQP (Disk Qualification Package), bevor Sie ein Laufwerk ersetzen.
+* Identifizieren Sie das ausgefallene Laufwerk, indem Sie den ausführen `storage disk show -broken` Befehl über die Systemkonsole.
++
+Das ausgefallene Laufwerk wird in der Liste der ausgefallenen Laufwerke angezeigt. Falls nicht, sollten Sie warten und dann den Befehl erneut ausführen.
+
++
+
+NOTE: Abhängig vom Laufwerkstyp und der Kapazität kann es bis zu mehrere Stunden dauern, bis das Laufwerk in der Liste der ausgefallenen Laufwerke angezeigt wird.
+
+* Legen Sie fest, ob die SED-Authentifizierung aktiviert ist.
++
+Wie Sie die Festplatte austauschen, hängt davon ab, wie das Festplattenlaufwerk verwendet wird. Wenn die SED-Authentifizierung aktiviert ist, müssen Sie die SED-Ersatzanweisungen im verwenden https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/home.html["ONTAP 9 – NetApp Verschlüsselungsleitfadens"]. In diesen Anweisungen werden zusätzliche Schritte beschrieben, die vor und nach dem Austausch einer SED ausgeführt werden müssen.
+
+* Stellen Sie sicher, dass das Ersatzlaufwerk von Ihrer Plattform unterstützt wird. Siehe https://hwu.netapp.com["NetApp Hardware Universe"].
+* Stellen Sie sicher, dass alle anderen Komponenten im System ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+
+
+Die Festplatten-Firmware wird bei neuen Laufwerken, die nicht über aktuelle Firmware-Versionen verfügen, automatisch (unterbrechungsfrei) aktualisiert.
+
+Beim Austausch mehrerer Festplattenlaufwerke müssen Sie eine Minute zwischen dem Entfernen jedes ausgefallenen Laufwerks und dem Einsetzen des Ersatzlaufwerks warten, damit das Storage-System die Existenz jeder neuen Festplatte erkennen kann.
+
+Ersetzen Sie das ausgefallene Laufwerk, indem Sie die entsprechende Option für die Laufwerke auswählen, die von Ihrer Plattform unterstützt werden.
+
+Sie können auch wählen, um die zu sehen https://www.youtube.com/embed/Ziqg9HL8oYQ?rel=0["_Video des ausgefallenen Laufwerks ersetzen_"^] Dies zeigt einen Überblick über das Verfahren zum Austausch integrierter Laufwerke.

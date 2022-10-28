@@ -1,0 +1,380 @@
+---
+permalink: a250/controller-replace-move-hardware.html 
+sidebar: sidebar 
+keywords: aff a250, move the hardware components 
+summary: Um die Hardware des Controller-Moduls zu ersetzen, müssen Sie das beeinträchtigte Controller-Modul entfernen, die FRU-Komponenten in das Ersatzcontrollermodul verschieben, das Ersatzcontrollermodul im Gehäuse installieren und das System dann in den Wartungsmodus booten. 
+---
+= Tauschen Sie die Hardware des Controller-Moduls - AFF A250 aus
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um die Hardware des Controller-Moduls zu ersetzen, müssen Sie den beeinträchtigten Controller entfernen, die FRU-Komponenten in das Ersatzcontrollermodul verschieben, das Ersatzcontrollermodul im Gehäuse installieren und das System dann in den Wartungsmodus booten.
+
+
+
+== Schritt 1: Entfernen Sie das Controller-Modul
+
+[role="lead"]
+Sie müssen das Controller-Modul aus dem Chassis entfernen, wenn Sie eine Komponente im Controller-Modul ersetzen.
+
+Achten Sie darauf, dass Sie die Kabel so kennzeichnen, dass Sie wissen, woher sie stammen.
+
+Verwenden Sie das folgende Video oder die tabellarischen Schritte, um ein Controller-Modul zu ersetzen:
+
+.Animation - ein Controller-Modul ersetzen
+video::ab0ebe6b-e891-489c-aab4-ac5b015c8f01[panopto]
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Trennen Sie die Netzteile des Controller-Moduls von der Quelle.
+. Lösen Sie die Netzkabelhalter, und ziehen Sie anschließend die Kabel von den Netzteilen ab.
+. Setzen Sie den Zeigefinger in den Verriegelungsmechanismus auf beiden Seiten des Controller-Moduls ein, drücken Sie den Hebel mit dem Daumen, und ziehen Sie den Controller vorsichtig einige Zentimeter aus dem Gehäuse.
++
+
+NOTE: Wenn Sie Schwierigkeiten beim Entfernen des Controller-Moduls haben, setzen Sie Ihre Zeigefinger durch die Fingerlöcher von innen (durch Überqueren der Arme).
+
++
+image::../media/drw_a250_pcm_remove_install.png[drw a250 pcm ausbauen]
+
++
+[cols="1,3"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Hebel 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Verriegelungsmechanismus
+
+|===
+. Fassen Sie die Seiten des Controller-Moduls mit beiden Händen an, ziehen Sie es vorsichtig aus dem Gehäuse heraus und legen Sie es auf eine flache, stabile Oberfläche.
+. Drehen Sie die Daumenschraube auf der Vorderseite des Controller-Moduls gegen den Uhrzeigersinn, und öffnen Sie die Abdeckung des Controller-Moduls.
++
+image::../media/drw_a250_open_controller_module_cover.png[die Abdeckung des drw a250-Controller-Moduls öffnen]
+
++
+[cols="1,3"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Flügelschraube 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Controller-Modulabdeckung.
+
+|===
+. Heben Sie die Luftkanalabdeckung heraus.
++
+image::../media/drw_a250_remove_airduct_cover.png[drw a250 Luftkanalabdeckung entfernen]
+
+
+
+
+
+== Schritt 2: Das Netzteil bewegen
+
+[role="lead"]
+Wenn Sie ein Controller-Modul ersetzen, müssen Sie das Netzteil vom beeinträchtigten Controller-Modul in das Ersatzcontrollermodul verschieben.
+
+. Trennen Sie das Netzteil.
+. Öffnen Sie die Netzkabelhalterung, und ziehen Sie dann das Netzkabel vom Netzteil ab.
+. Ziehen Sie das Netzkabel von der Stromversorgung ab.
+. Drehen Sie den Nockengriff so, dass er verwendet werden kann, um die Stromversorgung aus dem Controller-Modul zu ziehen, während Sie die Verriegelungslasche drücken.
++
+
+CAUTION: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige Kraft verwenden, um Schäden an den Anschlüssen zu vermeiden.
+
++
+Das Netzteil ist kurz. Verwenden Sie immer zwei Hände, um sie zu unterstützen, wenn Sie sie aus dem Controller-Modul entfernen, damit es nicht plötzlich aus dem Controller-Modul schwingen und Sie verletzen.
+
++
+image::../media/drw_a250_replace_psu.png[drw a250 ersetzen sie das netzteil]
+
++
+[cols="1,3"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Blaue Verriegelungslasche für die Stromversorgung 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Stromversorgung
+
+|===
+. Stellen Sie das Netzteil auf das neue Controller-Modul, und installieren Sie es.
+. Halten und richten Sie die Kanten des Netzteils mit beiden Händen an der Öffnung im Controller-Modul aus, und drücken Sie dann vorsichtig das Netzteil in das Controller-Modul, bis die Verriegelungslasche einrastet.
++
+Die Netzteile werden nur ordnungsgemäß mit dem internen Anschluss in Kontakt treten und auf eine Weise verriegeln.
+
++
+
+CAUTION: Um Schäden am internen Stecker zu vermeiden, sollten Sie beim Einschieben der Stromversorgung in das System keine übermäßige Kraft verwenden.
+
+
+
+
+
+== Schritt 3: Bewegen Sie die Lüfter
+
+[role="lead"]
+Sie müssen die Lüfter vom beeinträchtigten Controller-Modul in das Ersatzmodul verschieben, wenn ein ausgefallenes Controller-Modul ersetzt wird.
+
+. Entfernen Sie das Lüftermodul, indem Sie die Seite des Lüftermoduls einklemmen und dann das Lüftermodul gerade aus dem Controller-Modul herausheben.
++
+image::../media/drw_a250_replace_fan.png[drw a250 Lüfter austauschen]
+
++
+[cols="1,3"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Lüftermodul 
+|===
+. Schieben Sie das Lüftermodul in das Ersatzcontrollermodul, richten Sie die Kanten des Lüftermoduls an der Öffnung im Controller-Modul aus, und schieben Sie dann das Lüftermodul in.
+. Wiederholen Sie diese Schritte für die übrigen Lüftermodule.
+
+
+
+
+== Schritt 4: Verschieben Sie die Startmedien
+
+[role="lead"]
+Im AFF A250 befindet sich ein Boot-Medium unter dem Luftkanal im Controller-Modul. Sie müssen es vom beeinträchtigten Controller-Modul auf das Ersatzcontrollermodul verschieben.
+
+Um die Schraube zu entfernen, mit der die Bootsmedien befestigt sind, benötigen Sie einen #1 Magnetschraubendreher. Aufgrund der Platzbeschränkungen im Controller-Modul sollten Sie auch einen Magneten haben, um die Schraube darauf zu übertragen, damit Sie sie nicht verlieren.
+
+. Suchen und verschieben Sie die Startmedien vom Controller-Modul mit eingeschränkter Speicherfunktion in das Ersatzcontrollermodul.
++
+image::../media/drw_a250_replace_boot_media.png[drw a250 ersetzen Startmedien]
+
++
+[cols="1,3"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Entfernen Sie die Schraube, mit der das Boot-Medium am Motherboard im beeinträchtigten Controller-Modul befestigt ist. 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Heben Sie die Startmedien aus dem beeinträchtigten Controller-Modul.
+
+|===
++
+.. Entfernen Sie die Schraube mit dem #1-Magnetschraubendreher aus dem Startmedium und legen Sie sie sicher auf den Magneten.
+.. Heben Sie die Startmedien vorsichtig direkt aus der Steckdose und richten Sie sie an ihrem Platz im Ersatzcontrollermodul aus.
+.. Setzen Sie die Schraube mit dem #1-Magnetschraubendreher ein und ziehen Sie sie fest.
++
+
+NOTE: Beim Anziehen der Schraube auf dem Boot-Medium keine Kraft auftragen, da sie möglicherweise knacken kann.
+
+
+
+
+
+
+
+== Schritt 5: Verschieben Sie die DIMMs
+
+[role="lead"]
+Um die DIMMs zu verschieben, suchen und verschieben Sie sie vom beeinträchtigten Controller in den Ersatz-Controller und befolgen Sie die spezifischen Schritte.
+
+image::../media/drw_a250_dimm_replace.png[drw a250 dimm Ersetzen]
+
+
+NOTE: Installieren Sie jedes DIMM in demselben Steckplatz, in dem es im beeinträchtigten Controller-Modul belegt ist.
+
+. Schieben Sie die DIMM-Auswurfklammern langsam auf beiden Seiten des DIMM auseinander, und schieben Sie das DIMM aus dem Steckplatz.
++
+
+NOTE: Halten Sie das DIMM an den Kanten, um einen Druck auf die Komponenten auf der DIMM-Leiterplatte zu vermeiden.
+
+. Suchen Sie den entsprechenden DIMM-Steckplatz am Ersatzcontroller-Modul.
+. Vergewissern Sie sich, dass sich die DIMM-Auswurfklammern am DIMM-Sockel in der geöffneten Position befinden, und setzen Sie das DIMM-Auswerfer anschließend in den Sockel ein.
++
+Die DIMMs passen eng in die Steckdose. Falls nicht, setzen Sie das DIMM erneut ein, um es mit dem Sockel neu auszurichten.
+
+. Prüfen Sie das DIMM visuell, um sicherzustellen, dass es gleichmäßig ausgerichtet und vollständig in den Sockel eingesetzt ist.
+. Wiederholen Sie diese Schritte für das restliche DIMM.
+
+
+
+
+== Schritt 6: Verschieben Sie eine Mezzanine-Karte
+
+[role="lead"]
+Um eine Mezzanine-Karte zu verschieben, müssen Sie die Verkabelung und alle QSFPs und SFPs aus den Ports entfernen, die Mezzanine-Karte auf den Ersatz-Controller verschieben, QSFPs und SFPs wieder an den Ports installieren und die Ports verkabeln.
+
+. Suchen Sie die Mezzanine-Karten aus Ihrem Controller-Modul mit eingeschränkter Kartenfunktion und verschieben Sie sie.
++
+image::../media/drw_a250_replace_mezz_card.png[drw a250 ersetzen sie die mezz-Karte]
+
++
+[cols="1,3"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Entfernen Sie die Schrauben an der Vorderseite des Controller-Moduls. 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Lösen Sie die Schraube im Controller-Modul.
+
+
+
+ a| 
+image:../media/legend_icon_03.png[""]
+ a| 
+Verschieben Sie die Mezzanine-Karte.
+
+|===
+. Trennen Sie alle Kabel, die mit der Mezzanine-Karte verbunden sind.
++
+Achten Sie darauf, dass Sie die Kabel so kennzeichnen, dass Sie wissen, woher sie stammen.
+
++
+.. Entfernen Sie alle SFP- oder QSFP-Module, die sich möglicherweise in der Mezzanine-Karte enthalten haben, und legen Sie sie beiseite.
+.. Entfernen Sie mit dem #1-Magnetschraubendreher die Schrauben von der Vorderseite des beeinträchtigten Controller-Moduls und von der Mezzanine-Karte, und legen Sie sie sicher auf den Magneten.
+.. Heben Sie die Mezzanine-Karte vorsichtig aus der Steckdose, und bringen Sie sie in die gleiche Position im Ersatz-Controller.
+.. Richten Sie die Mezzanine-Karte vorsichtig an der Stelle des Ersatz-Controllers aus.
+.. Setzen Sie mit dem #1-Magnetschraubendreher die Schrauben an der Vorderseite des Ersatzcontrollermoduls und der Zusatzkarte ein und ziehen Sie sie fest.
++
+
+NOTE: Beim Anziehen der Schraube auf der Mezzanine-Karte keine Kraft auftragen; Sie können sie knacken.
+
+
+
+. Wiederholen Sie diese Schritte, wenn sich im Controller-Modul eine weitere Zusatzkarte befindet.
+. Setzen Sie die SFP- oder QSFP-Module ein, die entfernt wurden, auf die Mezzanine-Karte.
+
+
+
+
+== Schritt 7: Die NV-Batterie bewegen
+
+[role="lead"]
+Beim Austausch des Controller-Moduls müssen Sie den NV-Akku vom beeinträchtigten Controller-Modul in das Ersatzcontrollermodul verschieben.
+
+. Suchen Sie den NVMEM-Akku aus dem beeinträchtigten Controller-Modul und verschieben Sie ihn in das Ersatz-Controller-Modul.
++
+image::../media/drw_a250_replace_nvmem_batt.png[drw a250 ersetzen nvmem Batt]
+
++
+[cols="1,3"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Drücken Sie den Clip auf der Vorderseite des Batteriesteckers. 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Trennen Sie das Akkukabel von der Steckdose.
+
+
+
+ a| 
+image:../media/legend_icon_03.png[""]
+ a| 
+Fassen Sie den Akku an, und drücken Sie die blaue Verriegelungslasche, die mit DRUCKTASTE markiert ist.
+
+
+
+ a| 
+image:../media/legend_icon_04.png[""]
+ a| 
+Heben Sie den Akku aus dem Halter und dem Controller-Modul.
+
+|===
+. Suchen Sie den Batteriestecker, und drücken Sie den Clip auf der Vorderseite des Batteriesteckers, um den Stecker aus der Steckdose zu lösen.
+. Fassen Sie den Akku an, und drücken Sie die blaue Verriegelungslasche, die mit DRUCKTASTE gekennzeichnet ist, und heben Sie den Akku aus dem Halter und dem Controller-Modul heraus.
+. Suchen Sie den entsprechenden NV-Batteriehalter am Ersatzcontroller-Modul und richten Sie den NV-Akku an der Batteriehalterung aus.
+. Stecken Sie den NV-Batteriestecker in die Buchse.
+. Schieben Sie den Akku entlang der Seitenwand aus Metall nach unten, bis die Halterungen an der Seitenwand in die Steckplätze am Akkupack einhaken und der Akkupack einrastet und in die Öffnung an der Seitenwand einrastet.
+. Drücken Sie den Akku fest nach unten, um sicherzustellen, dass er fest eingerastet ist.
+
+
+
+
+== Schritt 8: Installieren Sie das Controller-Modul
+
+[role="lead"]
+Nachdem alle Komponenten vom beeinträchtigten Controller-Modul in das Ersatzcontrollermodul verschoben wurden, müssen Sie das Ersatzcontrollermodul in das Gehäuse installieren und es dann in den Wartungsmodus booten.
+
+Sie können die folgenden Abbildungen oder die schriftlichen Schritte verwenden, um das Ersatzcontroller-Modul im Gehäuse zu installieren.
+
+. Wenn Sie dies noch nicht getan haben, den Luftkanal einbauen.
++
+image::../media/drw_a250_install_airduct_cover.png[drw a250 Einbau der Luftkanalabdeckung]
+
+. Schließen Sie die Abdeckung des Controller-Moduls, und ziehen Sie die Daumenschraube fest.
++
+image::../media/drw_a250_close_controller_module_cover.png[abdeckung des drw a250-Controllermoduls schließen]
+
++
+[cols="1,3"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Controller-Modulabdeckung 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Flügelschraube
+
+|===
+. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
++
+
+NOTE: Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein, wenn Sie dazu aufgefordert werden.
+
+. Verkabeln Sie nur die Management- und Konsolen-Ports, sodass Sie auf das System zugreifen können, um die Aufgaben in den folgenden Abschnitten auszuführen.
++
+
+NOTE: Sie schließen die übrigen Kabel später in diesem Verfahren an das Controller-Modul an.
+
+. Setzen Sie das Controller-Modul in das Chassis ein:
+. Stellen Sie sicher, dass die Arms des Verriegelungsmechanismus in der vollständig ausgestreckten Position verriegelt sind.
+. Richten Sie das Controller-Modul mit beiden Händen aus und schieben Sie es vorsichtig in die Arms des Verriegelungsmechanismus, bis es anhält.
+. Platzieren Sie Ihre Zeigefinger durch die Fingerlöcher von der Innenseite des Verriegelungsmechanismus.
+. Drücken Sie die Daumen auf den orangefarbenen Laschen oben am Verriegelungsmechanismus nach unten, und schieben Sie das Controller-Modul vorsichtig über den Anschlag.
+. Lösen Sie Ihre Daumen von oben auf den Verriegelungs-Mechanismen und drücken Sie weiter, bis die Verriegelungen einrasten.
++
+Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt. Bereiten Sie sich darauf vor, den Bootvorgang zu unterbrechen.
+
++
+Das Controller-Modul sollte vollständig eingesetzt und mit den Kanten des Gehäuses bündig sein.
+
+

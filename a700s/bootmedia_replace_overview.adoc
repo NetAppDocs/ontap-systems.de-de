@@ -1,0 +1,26 @@
+---
+permalink: a700s/bootmedia-replace-overview.html 
+sidebar: sidebar 
+keywords: aff a700s, aff, a700s, primary, boot, media, store, ontap, image, system, restore, primary, media, secondary, usb, flash, drive, replace, replace the boot media 
+summary: Das primäre Boot-Medium speichert das ONTAP Boot-Image, das das System beim Booten verwendet. Sie können das primäre Startmedienabbild wiederherstellen, indem Sie das ONTAP-Image auf dem sekundären Startmedium oder falls erforderlich über ein USB-Flash-Laufwerk verwenden. 
+---
+= Überblick über den Austausch von Boot-Medien - AFF A700s
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das primäre Boot-Medium speichert das ONTAP Boot-Image, das das System beim Booten verwendet. Sie können das primäre Startmedienabbild wiederherstellen, indem Sie das ONTAP-Image auf dem sekundären Startmedium oder falls erforderlich über ein USB-Flash-Laufwerk verwenden.
+
+Wenn das sekundäre Startmedium ausgefallen ist oder die Datei image.tgz fehlt, müssen Sie das primäre Startmedium über ein USB-Flash-Laufwerk wiederherstellen. Das Laufwerk muss in FAT32 formatiert sein und über die entsprechende Menge Speicherplatz verfügen, um die Datei image_xxx.tgz zu speichern.
+
+* Der Ersatzprozess stellt das var-Dateisystem vom sekundären Bootmedium oder USB-Flash-Laufwerk auf den primären Bootmedium wieder her.
+* Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
+* Es ist wichtig, dass Sie die Befehle in diesen Schritten auf dem richtigen Controller anwenden:
++
+** Der Controller _Impared_ ist der Controller, an dem Sie Wartungsarbeiten durchführen.
+** Der _Healthy_ Controller ist der HA-Partner des beeinträchtigten Controllers.
+
+
+

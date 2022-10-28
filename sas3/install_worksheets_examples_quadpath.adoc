@@ -1,0 +1,47 @@
+---
+permalink: sas3/install-worksheets-examples-quadpath.html 
+sidebar: sidebar 
+keywords: complete, controller-to-stack, cabling, cable, worksheet, quad-path, ha, configuration, ha, configuration, sas, hba, controller-to-stack cabling worksheet and cabling example for a quad-path ha configuration with two quad-port sas hbas 
+summary: Sie können das ausgefüllte Verkabelungsarbeitsblatt für den Controller-to-Stack und ein Verkabelungsbeispiel für eine Quad-Path HA-Konfiguration mit zwei SAS HBAs mit vier Ports verwenden. 
+---
+= Verkabelungsarbeitsblatt für den Controller-to-Stack und Kabelbeispiel für eine Quad-Path HA-Konfiguration mit zwei Quad-Port-SAS-HBAs – Shelfs mit IOM12/IOM12B-Modulen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das ausgefüllte Verkabelungsarbeitsblatt für den Controller-to-Stack und ein Verkabelungsbeispiel für eine Quad-Path HA-Konfiguration mit zwei SAS HBAs mit vier Ports verwenden.
+
+* Bei Bedarf können Sie sich auf beziehen link:install-cabling-rules.html["Regeln für die SAS-Verkabelung"] Weitere Informationen zu unterstützten Konfigurationen finden Sie auf der Konvention zur Nummerierung von Controller-Steckplätzen, Shelf-to-Shelf-Konnektivität und Controller/Shelf-Konnektivität (einschließlich der Verwendung von Port-Paaren).
+* Bei Bedarf können Sie sich auf beziehen link:install-cabling-worksheets-how-to-read-quadpath.html["Lesen eines Arbeitsblatts zur Verkabelung von Controller-zu-Stack-Verbindungen für Quad-Pathed-Konnektivität"].
+* Im Verkabelungsbeispiel werden Kabel zwischen Controller und Stack als fest oder gestrichelt angezeigt, um die Verbindungen von Controller A und C-Port von Controller B und D-Port zu unterscheiden.
++
+image::../media/drw_controller_to_stack_cable_type_key.gif[drw-Controller-zu-Stack-Kabelschlüssel]
+
+* Kabel in den Verkabelungsbeispielen und den entsprechenden Port-Paaren in den Worksheets werden farbcodiert, um die Konnektivität zu jedem Stack im HA-Paar zu unterscheiden.
++
+image::../media/drw_controller_to_stack_cable_color_key_non2600.gif[drw-Controller für Stapeln des Farbschlüssels nicht 2600]
+
+* Das Verkabelungsbeispiel unterscheidet visuell die beiden Sätze von multipathed Kabeln, die erforderlich sind, um Quad-pathed Verbindungen für jeden Controller zu jedem Stack in einer HA-Paar- oder Single-Controller-Konfiguration zu erreichen.
++
+Der erste Satz multipathed Cabling wird als "`multipated`" bezeichnet. Der zweite Satz multipathed Cabling wird als "`Quad-pathed`" bezeichnet. Der zweite Kabelsatz wird als „`Quad-pathed`“ bezeichnet, da dieser Kabelsatz die Quad-Pathed-Konnektivität bietet.
+
++
+image::../media/drw_controller_to_stack_quad_pathed_connectivity_key.gif[drw-Controller zum Stapeln des Quad-Pathed-Konnektivitätsschlüssels]
+
+* Im Beispiel des Arbeitsblatts werden Portpaare angezeigt, die für mehrpathige Kabel oder Quad-Pathed-Kabel zum jeweiligen Stack bestimmt sind.
++
+Jedes Anschlusspaar, das für multipathed Cabling bestimmt ist, ist durch ein Oval umgeben, das die Farbe ist, die mit dem Stapel verbunden ist, mit dem es verkabelt ist. Jedes Port-Paar, das für Quad-Pathed-Kabel bestimmt ist, wird durch ein Rechteck umkreist, das die Farbe ist, die dem Stack zugeordnet ist, mit dem er verkabelt ist.
+
+
+
+
+
+== Quad Path HA mit zwei Quad-Port SAS HBAs und zwei Multi-Shelf-Stacks
+
+Im folgenden Arbeitsblatt und Verkabelungsbeispiel werden Portpaare 1a/2b (multipathed) und 2a/1d (Quad-pathed) für Stack 1 und Port-Paare 1c/2d (multipathed) und 2c/1b (Quad-pathed) für stapel2 verwendet.
+
+image::../media/drw_worksheet_qpha_slots_1_and_2_two_4porthbas_two_stacks_nau.gif[drw-Arbeitsblatt qpha-Steckplätze 1 und 2 zwei 4-porthbas-Stapel nau]
+
+image::../media/drw_qpha_slots_1_and_2_two_4porthbas_two_stacks_nau.gif[drw qpha Steckplätze 1 und 2 4-porthbas zwei Stapel nau]

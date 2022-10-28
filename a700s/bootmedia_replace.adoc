@@ -1,0 +1,167 @@
+---
+permalink: a700s/bootmedia-replace.html 
+sidebar: sidebar 
+keywords: aff a700s, aff, a700s, locate, fail, boot, media, controller, module, pcie, led, replace, replace the boot media 
+summary: Sie müssen das ausgefallene Boot-Medium im Controller-Modul finden, indem Sie das mittlere PCIe-Modul am Controller-Modul entfernen, das ausgefallene Boot-Medium mit der LED neben dem Boot-Medium suchen und dann das Boot-Medium ersetzen. 
+---
+= Setzen Sie das Boot-Medium AFF A700s wieder ein
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen das Controller-Modul aus dem Chassis entfernen, öffnen und dann das ausgefallene Boot-Medium ersetzen.
+
+
+
+== Schritt 1: Entfernen Sie das Controller-Modul
+
+[role="lead"]
+Sie müssen das Controller-Modul aus dem Chassis entfernen, wenn Sie das Controller-Modul ersetzen oder eine Komponente im Controller-Modul ersetzen.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Lösen Sie den Haken- und Schlaufenriemen, mit dem die Kabel am Kabelführungsgerät befestigt sind, und ziehen Sie dann die Systemkabel und SFPs (falls erforderlich) vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren.
++
+Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation des Kabelverwaltungsgeräts die Kabel organisiert sind.
+
+. Trennen Sie das Netzteil des Controller-Moduls von der Quelle, und ziehen Sie dann das Kabel vom Netzteil ab.
+. Entfernen Sie das Kabelführungs-Gerät aus dem Controller-Modul und legen Sie es beiseite.
+. Drücken Sie beide Verriegelungsriegel nach unten, und drehen Sie dann beide Verriegelungen gleichzeitig nach unten.
++
+Das Controller-Modul wird leicht aus dem Chassis entfernt.
+
++
+image::../media/drw_a700s_pcm_remove.png[drw a700s pcm ausbauen]
+
+
+
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Verriegelungsverschluss
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Sicherungsstift
+
+|===
+. Schieben Sie das Controller-Modul aus dem Gehäuse.
++
+Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen, während Sie es aus dem Gehäuse schieben.
+
+. Das Steuermodul auf eine stabile, flache Oberfläche legen und den Luftkanal öffnen:
++
+.. Drücken Sie die Verriegelungslaschen an den Seiten des Luftkanals in Richtung der Mitte des Controller-Moduls.
+.. Schieben Sie den Luftkanal in Richtung der Lüftermodule, und drehen Sie ihn dann nach oben in die vollständig geöffnete Position.
+
+
+
+
+image::../media/drw_a700s_open_air_duct.png[freiluftkanal drw a700s]
+
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Verriegelungsklammern für Luftkanäle
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Riser
+
+
+
+ a| 
+image:../media/legend_icon_03.png[""]
+ a| 
+Luftkanal
+
+|===
+
+
+== Schritt 2: Ersetzen Sie die Startmedien - AFF A700s
+
+[role="lead"]
+Sie müssen das ausgefallene Startmedium im Controller-Modul finden, indem Sie das mittlere PCIe-Modul am Controller-Modul entfernen, das ausgefallene Startmedium suchen und dann das Boot-Medium ersetzen.
+
+Sie benötigen einen Kreuzschlitzschraubendreher, um die Schraube zu entfernen, mit der die Bootmedien befestigt sind.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Suchen Sie das Startmedium:
++
+.. Öffnen Sie den Luftkanal, falls erforderlich.
+.. Entfernen Sie bei Bedarf die Riserkarte 2, das mittlere PCIe-Modul, indem Sie die Sperrklinke entriegeln und dann den Riser aus dem Controller-Modul entfernen.
++
+image::../media/drw_a700s_boot_media_replace.png[drw a700s Bootmedium ersetzen]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Luftkanal
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Riser 2 (mittleres PCIe-Modul)
+
+
+
+ a| 
+image:../media/legend_icon_03.png[""]
+ a| 
+Schraube für Boot-Medien
+
+
+
+ a| 
+image:../media/legend_icon_04.png[""]
+ a| 
+Boot-Medien
+
+|===
+
+
+. Suchen Sie das ausgefallene Startmedium.
+. Entfernen Sie die Boot-Medien aus dem Controller-Modul:
++
+.. Entfernen Sie mit einem #1 Kreuzschlitzschraubendreher die Schraube, mit der das Bootmedium befestigt ist, und setzen Sie die Schraube an einem sicheren Ort beiseite.
+.. Fassen Sie die Seiten des Startmediums an, drehen Sie die Startmedien vorsichtig nach oben, ziehen Sie dann die Startmedien gerade aus dem Sockel und legen Sie sie beiseite.
+
+
+. Richten Sie die Kanten des Ersatzstartmediums an der Buchse des Boot-Mediums aus, und schieben Sie ihn dann vorsichtig in die Buchse.
+. Überprüfen Sie die Startmedien, um sicherzustellen, dass sie ganz und ganz in der Steckdose sitzt.
++
+Entfernen Sie gegebenenfalls die Startmedien, und setzen Sie sie wieder in den Sockel ein.
+
+. Drehen Sie das Boot-Medium nach unten, bis es mit der Hauptplatine bündig ist.
+. Befestigen Sie die Boot-Medien mit der Schraube.
++
+
+NOTE: Ziehen Sie die Schraube nicht zu fest. Dadurch kann die Boot-Media-Leiterplatte knacken.
+
+. Setzen Sie den Riser wieder in das Controller-Modul ein.
+. Luftkanal schließen:
++
+.. Den Luftkanal nach unten drehen.
+.. Schieben Sie den Luftkanal in Richtung der Steigleitungen, bis er einrastet.
+
+
+

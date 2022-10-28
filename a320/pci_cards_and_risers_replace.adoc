@@ -1,0 +1,214 @@
+---
+permalink: a320/pci-cards-and-risers-replace.html 
+sidebar: sidebar 
+keywords: aff, a320, aff a320, replace, pcie, card, disconnect, cable, card, sfp, qsfp, module, riser, reinstall, shut, down, controller, operation, diagnostic, complete, process, replace a pcie card, shut down the impaired controller, remove the controller module, replace a pcie card, install the controller module, restore the controller module to operation after running diagnostics, complete the replacement process 
+summary: Um eine PCIe-Karte zu ersetzen, müssen Sie die Kabel von den Karten trennen, die SFP- und QSFP-Module von den Karten entfernen, bevor Sie den Riser entfernen, den Riser neu installieren und dann die SFP- und QSFP-Module neu installieren, bevor Sie die Karten verkabeln. 
+---
+= Ersetzen Sie eine PCIe-Karte - AFF A320
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um eine PCIe-Karte zu ersetzen, müssen Sie die Kabel von den Karten trennen, die SFP- und QSFP-Module von den Karten entfernen, bevor Sie den Riser entfernen, den Riser neu installieren und dann die SFP- und QSFP-Module neu installieren, bevor Sie die Karten verkabeln.
+
+* Sie können dieses Verfahren bei allen Versionen von ONTAP verwenden, die von Ihrem System unterstützt werden
+* Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+
+
+
+
+== Schritt 1: Schalten Sie den beeinträchtigten Regler aus
+
+Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
+
+.Über diese Aufgabe
+* Wenn Sie NetApp Storage Encryption verwenden, müssen Sie die MSID mithilfe der Anweisungen im Abschnitt „`Zurückkehren in den ungeschützten Modus`“ des Power Guide „ _ONTAP 9 NetApp Verschlüsselung “ zurückgesetzt haben.
++
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/home.html["ONTAP 9 – NetApp Verschlüsselungsleitfadens"^]
+
+* Wenn Sie über ein SAN-System verfügen, müssen Sie Ereignismeldungen geprüft haben (`event log show`) Für beeinträchtigte Controller SCSI-Blade.
++
+Jeder Prozess des SCSI-Blades sollte sich im Quorum mit den anderen Nodes im Cluster befinden. Probleme müssen behoben werden, bevor Sie mit dem Austausch fortfahren.
+
+* Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE für die Berechtigung und den Zustand anzeigt, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/index.html["Administrationsübersicht mit der CLI"^].
+* Wenn Sie über eine MetroCluster-Konfiguration verfügen, müssen Sie bestätigt haben, dass der MetroCluster-Konfigurationsstatus konfiguriert ist und dass die Nodes in einem aktivierten und normalen Zustand vorliegen (`metrocluster node show`).
+
+
+.Schritte
+. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deaktivieren Sie das automatische Giveback von der Konsole des gesunden Controllers: `storage failover modify –node local -auto-giveback false`
++
+
+NOTE: Wenn Sie sehen _Möchten Sie Auto-Giveback deaktivieren?_, geben Sie ein `y`.
+
+. Nehmen Sie den beeinträchtigten Controller zur LOADER-Eingabeaufforderung:
++
+[cols="1,2"]
+|===
+| Wenn der eingeschränkte Controller angezeigt wird... | Dann... 
+
+
+ a| 
+Die LOADER-Eingabeaufforderung
+ a| 
+Wechseln Sie zu Controller-Modul entfernen.
+
+
+
+ a| 
+Warten auf Giveback...
+ a| 
+Drücken Sie Strg-C, und antworten Sie dann `y` Wenn Sie dazu aufgefordert werden.
+
+
+
+ a| 
+Eingabeaufforderung des Systems oder Passwort (Systempasswort eingeben)
+ a| 
+Übernehmen oder stoppen Sie den beeinträchtigten Regler von der gesunden Steuerung: `storage failover takeover -ofnode _impaired_node_name_`
+
+Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drücken Sie Strg-C, und antworten Sie dann `y`.
+
+|===
+
+
+
+
+== Schritt 2: Entfernen Sie das Controller-Modul
+
+[role="lead"]
+Um auf Komponenten im Controller-Modul zuzugreifen, müssen Sie das Controller-Modul aus dem Gehäuse entfernen.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Trennen Sie das Netzteil des Controller-Moduls von der Stromversorgung.
+. Lösen Sie den Haken- und Schlaufenriemen, mit dem die Kabel am Kabelführungsgerät befestigt sind, und ziehen Sie dann die Systemkabel und SFPs (falls erforderlich) vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren.
++
+image::../media/drw_a320_controller_cable_unplug_animated_gif.png[das drw a320-Controllerkabel trennen das animierte GIF-Kabel]
+
++
+Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation des Kabelverwaltungsgeräts die Kabel organisiert sind.
+
+. Entfernen Sie die Kabelführungsgeräte von der linken und rechten Seite des Controller-Moduls und stellen Sie sie zur Seite.
+. Entfernen Sie das Controller-Modul aus dem Chassis:
++
+image::../media/drw_a320_controller_remove_animated_gif.png[drw a320-Controller entfernen animiertes gif]
+
++
+.. Setzen Sie den Zeigefinger in den Verriegelungsmechanismus auf beiden Seiten des Controller-Moduls ein.
+.. Drücken Sie auf die orangefarbene Lasche oben am Verriegelungsmechanismus nach unten, bis der Rastbolzen am Gehäuse entfernt wird.
+
+
++
+Der Haken des Verriegelungsmechanismus sollte fast senkrecht sein und sich vom Chassispindel frei sein.
+
++
+.. Ziehen Sie das Controller-Modul vorsichtig einige Zentimeter zu Ihnen, damit Sie die Seiten des Controller-Moduls erfassen können.
+.. Ziehen Sie das Controller-Modul vorsichtig mit beiden Händen aus dem Gehäuse und legen Sie es auf eine flache, stabile Oberfläche.
+
+
+
+
+
+
+== Schritt 3: Ersetzen Sie eine PCIe-Karte
+
+[role="lead"]
+Sie müssen den PCIe-Riser mit der ausgefallenen PCIe-Karte aus dem Controller-Modul entfernen, die ausgefallene PCIe-Karte aus dem Riser entfernen, die Ersatz-PCIe-Karte im Riser installieren und dann den Riser wieder im Controller-Modul installieren.
+
+image::../media/drw_a320_pci_card_replace_animated_gif.png[drw a320 pci-Karte ersetzt animierte gif-Karte]
+
+. Entfernen Sie die Abdeckung über den PCIe-Riserern, indem Sie die blaue Rändelschraube auf der Abdeckung lösen, die Abdeckung zu Ihnen schieben, die Abdeckung nach oben drehen, sie vom Controller-Modul anheben und dann beiseite stellen.
+. Entfernen Sie den Riser mit der ausgefallenen PCIe-Karte:
++
+.. Entfernen Sie alle SFP- oder QSFP-Module, die sich möglicherweise in den PCIe-Karten enthalten haben.
+.. Setzen Sie den Zeigefinger in die Öffnung auf der linken Seite des Steigmoduls und fassen Sie den Riser mit Ihrem Daumen an.
+.. Heben Sie den Riser gerade aus dem Sockel und legen Sie ihn beiseite.
+
+
+. Setzen Sie die Karte im Riser wieder ein:
++
+.. Setzen Sie den Riser auf eine stabile Oberfläche, und drehen Sie dann den Riser so, dass Sie auf die PCIe-Karte zugreifen können.
+.. Setzen Sie die Daumen direkt unter der unteren Kante der PCIe-Karte auf beiden Seiten des Sockels, und drücken Sie dann vorsichtig nach oben, um die Karte aus dem Sockel zu lösen.
+.. Schieben Sie die Karte aus dem Riser heraus und legen Sie sie beiseite.
+.. Richten Sie die Ersatzkartenverkleidung am Riser-Rand und am äußeren Rand der Karte an der Ausrichtungsführung auf der linken Seite des Riser aus.
+.. Schieben Sie die Karte vorsichtig so weit, bis der Kartenanschluss am Risersteckplatz ausgerichtet ist, und drücken Sie dann vorsichtig die Karte in den Sockel.
+
+
+. Installieren Sie den Riser wieder im Controller-Modul:
++
+.. Richten Sie den Riser über der Öffnung aus, damit sich die Vorderkanten des Riser direkt über den Öffnungen im Riserschacht befinden.
+.. Richten Sie den hinteren Rand des Riser so aus, dass sich die Stifte an der Unterseite des Riser über den Löchern im Bleche-Metall im hinteren Riserschacht befinden.
+.. Tragen Sie sogar noch nach unten Druck auf, um den Riseraufnehmer gerade nach unten in den Sockel des Controller-Moduls zu setzen.
+.. Setzen Sie die PCIe-Riser-Abdeckung wieder am Controller-Modul ein.
+
+
+
+
+
+
+== Sep 4: Installieren Sie das Controller-Modul
+
+[role="lead"]
+Nachdem Sie die Komponente im Controller-Modul ersetzt haben, müssen Sie das Controller-Modul wieder in das Gehäuse einsetzen und dann im Wartungsmodus booten.
+
+. Wenn Sie dies noch nicht getan haben, schließen Sie den Luftkanal auf der Rückseite des Controller-Moduls und setzen Sie die Abdeckung wieder über die PCIe-Karten ein.
+. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
++
+image::../media/drw_a320_controller_install_animated_gif.png[drw a320-Controller installieren animierte gif-Datei]
+
++
+
+NOTE: Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein, wenn Sie dazu aufgefordert werden.
+
+. Verkabeln Sie nur die Management- und Konsolen-Ports, sodass Sie auf das System zugreifen können, um die Aufgaben in den folgenden Abschnitten auszuführen.
++
+
+NOTE: Sie schließen die übrigen Kabel später in diesem Verfahren an das Controller-Modul an.
+
+. Führen Sie die Neuinstallation des Controller-Moduls durch:
++
+.. Stellen Sie sicher, dass die Verriegelungsarme in der ausgestreckten Position verriegelt sind.
+.. Drücken Sie das Controller-Modul mithilfe der Entriegelungshebel in den Chassis-Schacht, bis der Anschlag einrastet.
+.. Drücken Sie die orangefarbenen Laschen oben am Verriegelungsmechanismus nach unten und halten Sie sie gedrückt.
+.. Schieben Sie das Controller-Modul vorsichtig in den Gehäuseschacht, bis es bündig an den Kanten des Chassis liegt.
++
+
+NOTE: Die Arms des Verriegelungsmechanismus lassen sich in das Gehäuse schieben.
+
++
+Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt.
+
+.. Lösen Sie die Verriegelungen, um das Controller-Modul einrasten zu lassen.
+.. Stromversorgung wieder einschalten.
+.. Wenn Sie dies noch nicht getan haben, installieren Sie das Kabelverwaltungsgerät neu.
+.. Unterbrechen Sie den normalen Bootvorgang, indem Sie auf drücken `Ctrl-C`.
+
+
+
+
+
+
+== Schritt 5: Stellen Sie das Controller-Modul wieder in Betrieb
+
+[role="lead"]
+Nach Abschluss der Diagnose müssen Sie das System erneut einschalten, das Controller-Modul zurückgeben und dann die automatische Rückgabe aktivieren.
+
+. Das System nach Bedarf neu einsetzen.
++
+Wenn Sie die Medienkonverter (QSFPs oder SFPs) entfernt haben, sollten Sie diese erneut installieren, wenn Sie Glasfaserkabel verwenden.
+
+. Wiederherstellung des normalen Betriebs des Controllers durch Zurückgeben des Speichers: `storage failover giveback -ofnode _impaired_node_name_`
+. Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut: `storage failover modify -node local -auto-giveback true`
+
+
+
+
+== Schritt 6: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+
+[role="lead"]
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

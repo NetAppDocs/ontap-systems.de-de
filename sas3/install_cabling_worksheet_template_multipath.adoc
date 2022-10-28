@@ -1,0 +1,81 @@
+---
+permalink: sas3/install-cabling-worksheet-template-multipath.html 
+sidebar: sidebar 
+keywords: complete, completing, worksheet, template, controller, sas, port, pair, cable, controller, disk, shelves, iom12, module, achieve, multipathed, connectivity, ha, pair, single-controller, configuration, worksheet, connection, controller-to-stack cabling worksheet template for multipathed connectivity 
+summary: Durch Ausfüllen der Worksheet-Vorlage können Sie die SAS-Port-Paare des Controllers definieren, mit denen Controller mit IOM12/IOM12B-Modulen verbunden werden können. So wird eine Multipath-Konnektivität in einem HA-Paar oder einer Single-Controller-Konfiguration erreicht. Sie können auch das ausgefüllte Arbeitsblatt verwenden, um sich durch die multipathed Verbindungen für Ihre Konfiguration zu führen. 
+---
+= Controller-zu-Stack-Verkabelungsarbeitsblatt für multipathed Connectivity - Regale mit IOM12/IOM12B-Modulen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Durch Ausfüllen der Worksheet-Vorlage können Sie die SAS-Port-Paare des Controllers definieren, mit denen Controller mit IOM12/IOM12B-Modulen verbunden werden können. So wird eine Multipath-Konnektivität in einem HA-Paar oder einer Single-Controller-Konfiguration erreicht. Sie können auch das ausgefüllte Arbeitsblatt verwenden, um sich durch die multipathed Verbindungen für Ihre Konfiguration zu führen.
+
+Wenn Sie über eine Plattform mit internem Storage verfügen, z. B. FAS2600 Serie, AFF A200, FAS2700 Serie, AFF A220, Verwenden Sie später Folgendes (diese Plattformen verwenden ein einzigartiges Arbeitsblatt):
+
+link:install-cabling-worksheets-examples-fas2600.html["Verkabelungsarbeitsblätter und Beispiele für Plattformen mit internem Storage für den Controller-to-Stack-Stack"]
+
+.Über diese Aufgabe
+* Diese Prozedur und Arbeitsblattvorlage können für die Verkabelung von Multipath HA- oder Multipath-Konfigurationen mit einem oder mehreren Stacks angewendet werden.
++
+Beispiele für abgeschlossene Worksheets finden Sie für Multipath HA- und Multipath-Konfigurationen.
+
++
+Für die Arbeitsblattbeispiele wird eine Konfiguration mit zwei Quad-Port-SAS-HBAs und zwei Stacks an Platten-Shelfs mit IOM12/IOM12B-Modulen verwendet.
+
+* Die Arbeitsblattvorlage ermöglicht bis zu sechs Stapel. Bei Bedarf müssen weitere Spalten hinzugefügt werden.
+* Bei Bedarf können Sie sich auf die beziehen link:install-cabling-rules.html["Regeln für die SAS-Verkabelung"] Weitere Informationen zu unterstützten Konfigurationen finden Sie auf der Konvention zur Nummerierung von Controller-Steckplätzen, Shelf-to-Shelf-Konnektivität und Controller/Shelf-Konnektivität (einschließlich Verwendung von Port-Paaren).
+* Falls erforderlich, können Sie nach dem Ausfüllen des Arbeitsblatts auf lesen link:install-cabling-worksheets-how-to-read-multipath.html["Lesen eines Arbeitsblatts zur Verkabelung von Controller-zu-Stack-Verbindungen für Multipath-Konnektivität"]
+
+
+image::../media/drw_worksheet_mpha_template.gif[dmw-Arbeitsblatt mpha-Vorlage]
+
+.Schritte
+. Listen Sie in den Feldern über den grauen Feldern alle SAS A-Ports auf Ihrem System und dann alle SAS C-Ports auf Ihrem System in einer Reihe von Steckplätzen (0, 1, 2, 3 usw.) auf.
++
+Beispiel: 1a, 2a, 1c, 2c
+
+. Führen Sie in den grauen Feldern alle SAS B-Ports auf Ihrem System und dann alle SAS-D-Ports auf Ihrem System in einer Reihe von Steckplätzen (0, 1, 2, 3 usw.) auf.
++
+Beispiel: 1b, 2b, 1d, 2d
+
+. Schreiben Sie in den Feldern unter den grauen Feldern die Liste der D- und B-Anschlüsse neu, so dass der erste Port in der Liste an das Ende der Liste verschoben wird.
++
+Beispiel: 2b, 1d, 2d, 1b
+
+. Kreis (bestimmen) ein Portpaar für jeden Stack.
++
+Wenn alle Portpaare zur Verkabelung der Stacks in Ihrem System verwendet werden, setzen Sie Portpaare in der Reihenfolge ein, in der sie im Arbeitsblatt definiert sind (aufgelistet).
+
++
+In einer Multipath HA-Konfiguration mit acht SAS-Ports und vier Stacks ist das Port-Paar 1a/2b mit Stack 1 verkabelt, das Port-Paar 2a/1d ist mit Stack 2 verbunden, das Port-Paar 1c/2d ist mit stapel3 verkabelt, und das Port-Paar 2c/1b ist mit Stack 4 verbunden.
+
++
+image::../media/drw_worksheet_mpha_slots_1_and_2_two_4porthbas_two_stacks.gif[drw-Arbeitsblatt mpha-Steckplätze 1 und 2 4-porthbas-Stapel]
+
++
+Wenn nicht alle Portpaare zur Verkabelung der Stacks in Ihrem System benötigt werden, überspringen Sie Portpaare (verwenden Sie jedes andere Portpaar).
+
++
+Beispielsweise ist bei einer Multipath HA-Konfiguration mit acht SAS-Ports und zwei Stacks das Port-Paar 1a/2b mit Stack 1 verbunden und das Port-Paar 1c/2d wird mit Stack 2 verbunden. Wenn später zwei weitere Stacks im laufenden Betrieb hinzugefügt werden, ist das Port-Paar 2a/1d mit Stack 3 verbunden, und das Port-Paar 2c/1b wird mit Stack 4 verbunden.
+
++
+
+NOTE: Wenn Sie mehr Port-Paare haben, als Sie die Stacks in Ihrem System verkabeln müssen, sollten Sie die Best Practice Port-Paare überspringen, um die SAS-Ports auf Ihrem System zu optimieren. Durch die Optimierung von SAS-Ports optimieren Sie die Performance Ihres Systems.
+
++
+image::../media/drw_worksheet_mpha_skipped_template.gif[drw-Arbeitsblatt mpha-Vorlage übersprungen]
+
++
+Sie können das ausgefüllte Arbeitsblatt verwenden, um das System zu verkabeln.
+
+. Wenn Sie eine Single-Controller-(Multipath-)Konfiguration haben, geben Sie die Informationen für Controller 2 durch.
++
+image::../media/drw_worksheet_mp_template.gif[dmw-Arbeitsblatt mp-Vorlage]
+
++
+Sie können das ausgefüllte Arbeitsblatt verwenden, um das System zu verkabeln.
+
+

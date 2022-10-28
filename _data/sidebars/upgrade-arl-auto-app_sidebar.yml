@@ -1,0 +1,120 @@
+---
+prefix: upgrade-arl-auto-app
+entries:
+- title: Nutzen Sie Aggregatverschiebung, um ein Upgrade der Controller-Hardware durchzuführen
+  entries:
+  - title: Überblick
+    url: "/using_aggregate_relocation_to_upgrade_controller_hardware_overview.html"
+  - title: Automatisierung des Controller-Upgrades
+    url: "/automating_the_controller_upgrade_process.html"
+- title: Entscheiden Sie, ob Sie den Leitfaden für die Aggregatverschiebung verwenden
+  url: "/deciding_whether_to_use_the_aggregate_relocation_guide.html"
+- title: Die erforderlichen Tools und Dokumentationen
+  url: "/required_tools_and_documentation.html"
+- title: Richtlinien für das Controller-Upgrade mit ARL
+  url: "/guidelines_for_upgrading_controllers_with_arl.html"
+- title: Überprüfen Sie den Systemzustand der MetroCluster-Konfiguration
+  url: "/verifying_the_health_of_the_metrocluster_configuration.html"
+- title: Prüfen Sie auf MetroCluster-Konfigurationsfehler
+  url: "/checking_for_metrocluster_configuration_errors.html"
+- title: Überprüfung von UmschalttaFunktionen, Healing und Switchback
+  url: "/verifying_switchover,_healing,_and_switchback.html"
+- title: Überblick über das ARL Upgrade
+  url: "/overview_of_the_arl_upgrade.html"
+- title: Aktualisieren Sie das Node-Paar
+  url: "/upgrading_the_node_pair.html"
+- title: Phase 1 bereitet auf Upgrade vor
+  entries:
+  - title: Überblick
+    url: "/stage_1_preparing_for_upgrade_overview.html"
+  - title: Bereiten Sie die Knoten für ein Upgrade vor
+    url: "/preparing_the_nodes_for_upgrade.html"
+  - title: Holen Sie sich eine IP-Adresse eines externen Verschlüsselungsmanagementservers
+      für die Speicherverschlüsselung
+    url: "/getting_an_ip_address_of_an_external_key_management_server_for_storage_encryption.html"
+- title: Stufe 2 Verschiebung und Rücktritt von Knoten1
+  entries:
+  - title: Überblick
+    url: "/stage_2_relocating_and_retiring_node1_overview.html"
+  - title: Verschieben von Aggregaten ohne Root-Wurzeln und NAS-Daten-LIFs, die sich
+      im Besitz von node1 befinden, auf Knoten 2
+    url: "/relocating_non-root_aggregates_and_nas_data_lifs_owned_by_node1_to_node2.html"
+  - title: Verschiebung ausgefallener oder Vetos von Aggregaten
+    url: "/relocating_failed_or_vetoed_aggregates.html"
+  - title: Node1 ausmustern
+    url: "/retiring_node1.html"
+  - title: Vorbereitungen für den Netzboot
+    url: "/preparing_for_netboot.html"
+- title: Stufe 3 Installieren und Booten Nr. 3
+  entries:
+  - title: Überblick
+    url: "/stage_3_installing_and_booting_node3_overview.html"
+  - title: Installieren und booten Sie node3
+    url: "/installing_and_booting_node3.html"
+  - title: Legen Sie die FC- oder UTA/UTA2-Konfiguration auf node3 fest
+    url: "/setting_the_fc_or_uta_uta2_configuration_on_node3.html"
+  - title: Überprüfen Sie die Installation von node3
+    url: "/verifying_the_node3_installation.html"
+  - title: Wiederherstellung der Key-Manager-Konfiguration auf Knoten 3
+    url: "/restoring_key-manager_configuration_on_node3.html"
+  - title: Verschieben Sie Aggregate ohne Root-Root-Fehler und NAS-Daten-LIFs, die
+      sich im Besitz von node1 befinden, von node2 auf node3
+    url: "/moving_non-root_aggregates_and_nas_data_lifs_owned_by_node1_from_node2_to_node3.html"
+- title: Stufe 4 Verlagerung und Rücktritt node2
+  entries:
+  - title: Überblick
+    url: "/stage_4_relocating_and_retiring_node2_overview.html"
+  - title: Verschieben von Aggregaten und NAS-Daten-LIFs ohne Root-Wurzeln von Knoten
+      2 auf Knoten 3
+    url: "/relocating_non-root_aggregates_and_nas_data_lifs_from_node2_to_node3.html"
+  - title: Node2 ausmustern
+    url: "/retiring_node2.html"
+- title: Phase 5 Installation und Boot node4
+  entries:
+  - title: Überblick
+    url: "/stage_5_installing_and_booting_node4_overview.html"
+  - title: installieren und booten sie node4
+    url: "/installing_and_booting_node4.html"
+  - title: Legen Sie die FC- oder UTA/UTA2-Konfiguration auf node4 fest
+    url: "/setting_the_fc_or_uta_uta2_configuration_on_node4.html"
+  - title: Überprüfen Sie die installation von node4
+    url: "/verifying_the_node4_installation.html"
+  - title: Wiederherstellen der Key-Manager-Konfiguration auf node4
+    url: "/restoring_key-manager_configuration_on_node4.html"
+  - title: Verschieben Sie Aggregate ohne Root-Root-Fehler und NAS-Daten-LIFs, die
+      sich im Besitz von node2 befinden, von node3 auf node4
+    url: "/moving_non-root_aggregates_and_nas_data_lifs_owned_by_node2_from_node3_to_node4.html"
+- title: 'Phase 6: Das Upgrade abschließen'
+  entries:
+  - title: Überblick
+    url: "/stage_6_completing_the_upgrade_overview.html"
+  - title: Schließen Sie das Upgrade für die MetroCluster FC-Konfiguration ab
+    url: "/completing_the_upgrade_for_metrocluster_fc_configuration.html"
+  - title: Stellen Sie sicher, dass die neuen Controller ordnungsgemäß eingerichtet
+      sind
+    url: "/ensuring_that_the_new_controllers_are_set_up_correctly.html"
+  - title: Richten Sie Storage Encryption auf dem neuen Controller-Modul ein
+    url: "/setting_up_storage_encryption_on_the_new_controller_module.html"
+  - title: Richten Sie NetApp Volume Encryption auf dem neuen Controller-Modul ein
+    url: "/setting_up_netapp_volume_encryption_on_the_new_controller_module.html"
+  - title: Ausmustern des alten Systems
+    url: "/decommissioning_the_old_system.html"
+  - title: Setzen Sie den SnapMirror Betrieb fort
+    url: "/resuming_snapmirror_operations.html"
+- title: Fehlerbehebung
+  entries:
+  - title: Überblick
+    url: "/troubleshooting_overview.html"
+  - title: Fehler bei der Aggregatverschiebung
+    url: "/aggregate_relocation_failures.html"
+  - title: Prüfen Sie, ob Aggregate Relocation Failure vorhanden sind
+    url: "/checking_for_aggregate_relocation_failure.html"
+  - title: Aggregate, die ursprünglich auf node1 waren, gehören node4 nach Abschluss
+      des Upgrades
+    url: "/aggregates_originally_on_node1_are_owned_by_node4_after_completion_of_the_upgrade.html"
+  - title: Neustarts, Panikspiele oder Energiezyklen
+    url: "/reboots_panics_or_power_cycles.html"
+  - title: Probleme, die in mehreren Phasen des Verfahrens auftreten können
+    url: "/issues_that_can_arise_in_multiple_stages_of_the_procedure.html"
+  - title: Fehler bei der LIF-Migration
+    url: "/lif_migration_failure.html"

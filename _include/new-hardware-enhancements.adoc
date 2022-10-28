@@ -1,0 +1,78 @@
+= 
+:allow-uri-read: 
+
+
+Die Hardware-Upgrade-Verfahren wurden in ONTAP 9.8 mit der Einführung der automatischen Port-Platzierung vereinfacht. Wenn Sie ein System mit ONTAP 9.8 aktualisieren, müssen Sie die korrekte Vorgehensweise verwenden, um die Funktion zur Anbringung von Ports zu berücksichtigen.
+
+Lesen Sie die folgende Tabelle, um die verfügbaren Upgrade-Verfahren zu sehen. Weitere Einzelheiten finden Sie in den einzelnen Anleitungen, um festzustellen, ob das Verfahren angemessen ist.
+
+Weitere MetroCluster-spezifische Verfahren finden Sie unter https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["Wahl einer Upgrade- oder Aktualisierungsmethode"].
+
+[cols="4*"]
+|===
+| ONTAP-Version | Standort | Unterbrechungsfrei | Unterstützung von MetroCluster 
+
+
+ a| 
+9.8 auf 9.0.x
+ a| 
+https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade/upgrade-decide-to-use-this-guide.html["Controller Hardware Upgrade Express Guide"] (Vorhandener physischer Storage wird verschoben)
+ a| 
+Nein
+ a| 
+Nein
+
+
+
+ a| 
+https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade/upgrade-decide-to-use-this-guide.html["Controller Hardware Upgrade Express Guide"] (Verschieben von Volumes in neuen Storage)
+ a| 
+Ja.
+ a| 
+Nein
+
+
+
+ a| 
+9.8
+ a| 
+https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade/upgrade-decide-to-use-this-guide.html["Verwenden von Befehlen „`sSystem Controller replace`“ zum Upgrade der Controller-Hardware unter ONTAP 9.8"]
+ a| 
+Ja.
+ a| 
+Ja (FC)
+
+
+
+ a| 
+9.8
+ a| 
+https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/index.html["Verwenden Sie Aggregate Relocation, um Controller Hardware mit ONTAP 9.8 oder höher manuell zu aktualisieren"]
+ a| 
+Ja.
+ a| 
+Ja (FC)
+
+
+
+ a| 
+9.7 bis 9.5
+ a| 
+https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto/index.html["Verwenden von Befehlen „`sSystem Controller replace`“ zum Aktualisieren der Controller-Hardware unter ONTAP 9.5 auf ONTAP 9.7"]
+ a| 
+Ja.
+ a| 
+Ja (FC)
+
+
+
+ a| 
+9.7 und früher
+ a| 
+https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/index.html["Aktualisieren von Controllern mit Aggregatverschiebung, um die Controller-Hardware mit ONTAP 9.7 und früher manuell zu aktualisieren"]
+ a| 
+Ja.
+ a| 
+Ja (FC)
+
+|===

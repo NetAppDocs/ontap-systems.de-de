@@ -1,0 +1,110 @@
+---
+permalink: a300/power-supply-swap-out.html 
+sidebar: sidebar 
+keywords: aff a300, swap out a power supply 
+summary: Beim Austausch eines Netzteils müssen Sie das alte Netzteil ausschalten, trennen und entfernen sowie das neue Netzteil installieren, anschließen und einschalten. 
+---
+= Tauschen Sie ein Netzteil aus – AFF A300
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Beim Austausch eines Netzteils müssen Sie das alte Netzteil ausschalten, trennen und entfernen sowie das neue Netzteil installieren, anschließen und einschalten.
+
+Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+
+* Die Netzteile sind redundant und Hot-Swap-fähig.
+* Dieses Verfahren ist für den Austausch eines Netzteils nach dem anderen beschrieben.
++
+
+NOTE: Als Best Practice empfiehlt es sich, das Netzteil innerhalb von zwei Minuten vom Gehäuse zu ersetzen. Das System funktioniert weiterhin, aber ONTAP sendet Meldungen an die Konsole über das beeinträchtigte Netzteil, bis das Netzteil ersetzt wird.
+
+* Die Anzahl der Netzteile im System hängt vom Modell ab.
+* Die Netzteile haben einen automatischen Bereich.
++
+.. Identifizieren Sie das zu ersetzenden Netzteil anhand von Konsolenfehlern oder über die LEDs an den Netzteilen.
+.. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+.. Schalten Sie das Netzteil aus und trennen Sie die Netzkabel:
++
+... Schalten Sie den Netzschalter am Netzteil aus.
+... Öffnen Sie die Netzkabelhalterung, und ziehen Sie dann das Netzkabel vom Netzteil ab.
+... Ziehen Sie das Netzkabel von der Stromversorgung ab.
+
+
+.. Drücken Sie die Freigabehebel am Handgriff der Netzteilkamera nach unten, und senken Sie dann den Nockengriff in die vollständig geöffnete Position, um das Netzteil von der Mittelebene zu lösen.
++
+image::../media/drw_rxl_psu.png[drw rxl-netzteil]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Stromversorgung 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Freigabehebel am CAM-Griff
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Ein/aus- und Fehler-LEDs
+
+
+
+ a| 
+image:../media/legend_icon_04.png[""]
+ a| 
+CAM-Griff
+
+
+
+ a| 
+image:../media/legend_icon_05.png[""]
+ a| 
+Verriegelungsmechanismus der Stromversorgungskabel
+
+|===
+.. Schieben Sie die Stromversorgung mit dem Nockengriff aus dem System heraus.
++
+
+CAUTION: Wenn Sie ein Netzteil entfernen, verwenden Sie immer zwei Hände, um sein Gewicht zu stützen.
+
+.. Stellen Sie sicher, dass sich der ein-/Ausschalter des neuen Netzteils in der Stellung aus befindet.
+.. Halten und richten Sie die Kanten des Netzteils mit beiden Händen an der Öffnung im Systemgehäuse aus, und drücken Sie dann vorsichtig das Netzteil mithilfe des Nockengriffs in das Gehäuse.
++
+Die Netzteile sind codiert und können nur auf eine Weise installiert werden.
+
++
+
+NOTE: Beim Einschieben des Netzteils in das System keine übermäßige Kraft verwenden. Sie können den Anschluss beschädigen.
+
+.. Drücken Sie den Nockengriff fest auf die Stromversorgung, um ihn vollständig in das Gehäuse zu setzen, und schieben Sie dann den Nockengriff in die geschlossene Position, um sicherzustellen, dass der Nockengriffriegel in seine verriegelte Position einrastet.
+.. Schließen Sie die Verkabelung des Netzteils wieder an:
++
+... Schließen Sie das Netzkabel wieder an das Netzteil und die Stromversorgung an.
+... Befestigen Sie das Netzkabel mithilfe der Netzkabelhalterung am Netzteil.
+
+
+
+
++
+Sobald die Stromversorgung wiederhergestellt ist, sollte die Status-LED grün leuchten.
+
++
+.. Schalten Sie das neue Netzteil ein, und überprüfen Sie dann den Betrieb der Aktivitäts-LEDs für das Netzteil.
++
+Die Netzteil-LEDs leuchten, wenn das Netzteil online geschaltet wird.
+
+.. Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"^] Seite für weitere Informationen.
+
+
+

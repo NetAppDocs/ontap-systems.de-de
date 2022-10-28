@@ -1,0 +1,179 @@
+---
+permalink: a320/bootmedia-transfer-boot-image.html 
+sidebar: sidebar 
+keywords: aff, a320, aff a320, replacement, boot, media, install, image, transfer, usb, flash, drive, transfer the boot image to the boot media using a usb flash drive 
+summary: Das installierte Ersatzstartmedium verfügt nicht über ein Startabbild. Sie müssen also ein Startabbild über ein USB-Flash-Laufwerk übertragen. 
+---
+= Übertragen Sie das Startabbild über ein USB-Flash-Laufwerk AFF A320 auf das Startmedium
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das installierte Ersatzstartmedium verfügt nicht über ein Startabbild. Sie müssen also ein Startabbild über ein USB-Flash-Laufwerk übertragen.
+
+* Sie müssen über ein USB-Flash-Laufwerk verfügen, das auf MBR/FAT32 formatiert ist und eine Kapazität von mindestens 4 GB aufweist
+* Eine Kopie der gleichen Bildversion von ONTAP wie der beeinträchtigte Controller. Das entsprechende Image können Sie im Abschnitt „Downloads“ auf der NetApp Support-Website herunterladen
++
+** Wenn NVE aktiviert ist, laden Sie das Image mit NetApp Volume Encryption herunter, wie in der Download-Schaltfläche angegeben.
+** Wenn NVE nicht aktiviert ist, laden Sie das Image ohne NetApp Volume Encryption herunter, wie im Download-Button dargestellt.
+
+
+* Wenn Ihr System ein HA-Paar ist, müssen Sie eine Netzwerkverbindung haben.
+* Wenn es sich bei Ihrem System um ein eigenständiges System handelt, benötigen Sie keine Netzwerkverbindung, Sie müssen jedoch beim Wiederherstellen des var-Dateisystems einen zusätzlichen Neustart durchführen.
++
+.. Laden Sie das entsprechende Service-Image von der NetApp Support Site auf das USB-Flash-Laufwerk herunter und kopieren Sie es.
++
+... Laden Sie das Service-Image auf Ihren Arbeitsbereich auf Ihrem Laptop herunter.
+... Entpacken Sie das Service-Image.
++
+
+NOTE: Wenn Sie den Inhalt mit Windows extrahieren, verwenden Sie winzip nicht zum Extrahieren des Netzboots-Images. Verwenden Sie ein anderes Extraktionstool, wie 7-Zip oder WinRAR.
+
++
+Die Image-Datei „ungezippte Dienste“ enthält zwei Ordner:
+
++
+**** Booten
+**** efi
+
+
+... kopieren Sie den efi-Ordner in das oberste Verzeichnis auf dem USB-Flash-Laufwerk.
++
+Das USB-Flash-Laufwerk sollte den efi-Ordner und die gleiche Service Image (BIOS)-Version des beeinträchtigten Controllers haben.
+
+... Entfernen Sie das USB-Flash-Laufwerk von Ihrem Laptop.
+
+
+.. Wenn Sie dies noch nicht getan haben, schließen Sie den Luftkanal.
+.. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
+.. Installieren Sie das Kabelverwaltungsgerät neu und führen Sie das System nach Bedarf wieder ein.
++
+Denken Sie beim Neuinstallieren der Medienkonverter (SFPs oder QSFPs) daran, wenn sie entfernt wurden.
+
+.. Schließen Sie das Netzkabel an das Netzteil an, und setzen Sie den Netzkabelhalter wieder ein.
+.. Stecken Sie das USB-Flash-Laufwerk in den USB-Steckplatz des Controller-Moduls.
++
+Stellen Sie sicher, dass Sie das USB-Flash-Laufwerk in den für USB-Geräte gekennzeichneten Steckplatz und nicht im USB-Konsolenport installieren.
+
+.. Führen Sie die Neuinstallation des Controller-Moduls durch:
++
+image::../media/drw_a320_controller_install_animated_gif.png[drw a320-Controller installieren animierte gif-Datei]
+
++
+... Stellen Sie sicher, dass die Verriegelungsarme in der ausgestreckten Position verriegelt sind.
+... Drücken Sie das Controller-Modul mithilfe der Entriegelungshebel in den Chassis-Schacht, bis der Anschlag einrastet.
++
+
+NOTE: Drücken Sie den Verriegelungsmechanismus nicht oben in den Verriegelungsarmen nach unten. Dabei den Verriegelungsmechanismus anheben und das Einschieben des Controller-Moduls in das Gehäuse untersagen.
+
+... Drücken Sie die orangefarbenen Laschen oben am Verriegelungsmechanismus nach unten und halten Sie sie gedrückt.
+... Schieben Sie das Controller-Modul vorsichtig in den Gehäuseschacht, bis es bündig an den Kanten des Chassis liegt.
++
+
+NOTE: Die Arms des Verriegelungsmechanismus lassen sich in das Gehäuse schieben.
+
++
+Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt.
+
+... Lösen Sie die Verriegelungen, um das Controller-Modul einrasten zu lassen.
+... Wenn Sie dies noch nicht getan haben, installieren Sie das Kabelverwaltungsgerät neu.
+
+
+.. Unterbrechen Sie den Boot-Vorgang, indem Sie Strg-C drücken, um an der LOADER-Eingabeaufforderung zu stoppen.
++
+Wenn Sie diese Meldung verpassen, drücken Sie Strg-C, wählen Sie die Option zum Booten im Wartungsmodus aus, und halten Sie dann den Controller zum Booten in LOADER an.
+
+.. Obwohl die Umgebungsvariablen und Bootargs beibehalten werden, sollten Sie überprüfen, ob alle erforderlichen Boot-Umgebungsvariablen und Bootargs für Ihren Systemtyp und die Konfiguration über den richtig eingestellt sind `printenv bootarg name` Führen Sie den Befehl und korrigieren Sie alle Fehler mit dem `setenv variable-name <value>` Befehl.
++
+... Überprüfen Sie die Boot-Umgebungsvariablen:
++
+**** `bootarg.init.boot_clustered`
+**** `partner-sysid`
+**** `bootarg.init.flash_optimized` Für AFF C190/AFF A220 (All-Flash FAS)
+**** `bootarg.init.san_optimized` Für AFF A220 und All-SAN-Array
+**** `bootarg.init.switchless_cluster.enable`
+
+
+... Wenn der External Key Manager aktiviert ist, überprüfen Sie die Bootarg-Werte, die im aufgeführt sind `kenv` ASUP-Ausgabe:
++
+**** `bootarg.storageencryption.support <value>`
+**** `bootarg.keymanager.support <value>`
+**** `kmip.init.interface <value>`
+**** `kmip.init.ipaddr <value>`
+**** `kmip.init.netmask <value>`
+**** `kmip.init.gateway <value>`
+
+
+... Wenn der Onboard Key Manager aktiviert ist, überprüfen Sie die Bootarg-Werte, die im aufgeführt sind `kenv` ASUP-Ausgabe:
++
+**** `bootarg.storageencryption.support <value>`
+**** `bootarg.keymanager.support <value>`
+**** `bootarg.onboard_keymanager <value>`
+
+
+... Speichern Sie die Umgebungsvariablen, die Sie mit dem geändert haben `savenv` Befehl
+... Bestätigen Sie Ihre Änderungen mit der `printenv _variable-name_` Befehl.
+
+
+.. Starten Sie von der LOADER-Eingabeaufforderung das Recovery-Image vom USB-Flash-Laufwerk: `boot_recovery`
++
+Das Bild wird vom USB-Flash-Laufwerk heruntergeladen.
+
+.. Wenn Sie dazu aufgefordert werden, geben Sie entweder den Namen des Bilds ein oder akzeptieren Sie das Standardbild, das in den Klammern auf dem Bildschirm angezeigt wird.
+.. Starten Sie nach der Installation des Images den Wiederherstellungsprozess:
++
+... Notieren Sie die IP-Adresse des auf dem Bildschirm angezeigten beeinträchtigten Controllers.
+... Drücken Sie `y` Wenn Sie aufgefordert werden, die Backup-Konfiguration wiederherzustellen.
+... Drücken Sie `y` Bei Aufforderung zum Überschreiben von /etc/ssh/ssh_Host_dsa_Key.
+
+
+.. Starten Sie vom Partner-Controller auf der erweiterten Berechtigungsebene die Konfigurationssynchronisierung mit der im vorherigen Schritt aufgezeichneten IP-Adresse: `system node restore-backup -node local -target-address _impaired_node_IP_address_`
+.. Wenn die Wiederherstellung erfolgreich ist, drücken Sie `y` Auf dem Controller mit eingeschränkter Funktion, wenn Sie dazu aufgefordert werden, die wiederhergestellte Kopie zu verwenden?
+.. Drücken Sie `y` Wenn Sie sehen, dass der Sicherungsvorgang erfolgreich war, und drücken Sie dann `y` Wenn Sie dazu aufgefordert werden, den Controller neu zu booten.
+.. Vergewissern Sie sich, dass die Umgebungsvariablen wie erwartet festgelegt sind.
++
+... Nehmen Sie den Controller zur LOADER-Eingabeaufforderung.
++
+Über die ONTAP Eingabeaufforderung können Sie den Befehl System Node stop -skip-lif-Migration-before-shutdown true -ignore-Quorum-Warns TRUE -emmen-Takeover TRUE ausgeben.
+
+... Überprüfen Sie die Einstellungen der Umgebungsvariable mit dem `printenv` Befehl.
+... Wenn eine Umgebungsvariable nicht wie erwartet festgelegt ist, ändern Sie sie mit dem `setenv __environment-variable-name__ __changed-value__` Befehl.
+... Speichern Sie Ihre Änderungen mit dem `savenv` Befehl.
+... Booten Sie den Controller neu.
+
+
+.. Wenn der neu gestörte Controller den anzeigt `Waiting for giveback...` Meldung, führen Sie eine Rückgabe vom ordnungsgemäßen Controller durch:
++
+[cols="1,2"]
+|===
+| Ihr System befindet sich in... | Dann... 
+
+
+ a| 
+Ein HA-Paar
+ a| 
+Nachdem der Regler „beeinträchtigt“ den angezeigt hat `Waiting for giveback...` Meldung, führen Sie eine Rückgabe vom ordnungsgemäßen Controller durch:
+
+... Von der gesunden Steuerung: `storage failover giveback -ofnode partner_node_name`
++
+Der beeinträchtigte Controller nimmt seine Lagerung zurück, beendet den Bootvorgang und startet dann neu und wird wieder vom gesunden Controller übernommen.
+
++
+
+NOTE: Wenn das Rückübertragung ein Vetorecht ist, können Sie erwägen, das Vetos außer Kraft zu setzen.
+
++
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-hacg/home.html["ONTAP 9 High-Availability Configuration Guide"]
+
+... Überwachen Sie den Status des Giveback-Vorgangs mithilfe von `storage failover show-giveback` Befehl.
+... Nach Abschluss des Giveback-Vorgangs bestätigen Sie, dass das HA-Paar ordnungsgemäß funktioniert und dass ein Takeover mithilfe des möglich ist `storage failover show` Befehl.
+... Stellen Sie das automatische Giveback wieder her, wenn Sie es mithilfe des Storage Failover modify-Befehls deaktiviert haben.
+
+
+|===
+.. Beenden Sie die erweiterte Berechtigungsebene auf dem gesunden Controller.
+
+
+

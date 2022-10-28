@@ -1,0 +1,382 @@
+---
+permalink: fas9500/dimm_replace.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Sie müssen ein DIMM im Controller-Modul ersetzen, wenn Ihr System eine steigende Anzahl korrigierbarer Fehlerkorrekturcodes (ECC) registriert; andernfalls wird eine Systempanik verursacht.' 
+---
+= Ersetzen Sie ein DIMM - FAS9500
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen ein DIMM im Controller-Modul ersetzen, wenn Ihr System eine steigende Anzahl korrigierbarer Fehlerkorrekturcodes (ECC) registriert; andernfalls wird eine Systempanik verursacht.
+
+Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+
+Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
+
+
+
+== Schritt 1: Fahren Sie den Knoten mit beeinträchtigten Knoten herunter
+
+Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
+
+.Über diese Aufgabe
+* Wenn Sie NetApp Storage Encryption verwenden, müssen Sie die MSID mithilfe der Anweisungen im Abschnitt „`Zurückkehren in den ungeschützten Modus`“ des Power Guide „ _ONTAP 9 NetApp Verschlüsselung “ zurückgesetzt haben.
++
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/home.html["ONTAP 9 – NetApp Verschlüsselungsleitfadens"^]
+
+* Wenn Sie über ein SAN-System verfügen, müssen Sie Ereignismeldungen geprüft haben (`event log show`) Für beeinträchtigte Controller SCSI-Blade.
++
+Jeder Prozess des SCSI-Blades sollte sich im Quorum mit den anderen Nodes im Cluster befinden. Probleme müssen behoben werden, bevor Sie mit dem Austausch fortfahren.
+
+* Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE für die Berechtigung und den Zustand anzeigt, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/index.html["Administrationsübersicht mit der CLI"^].
+* Wenn Sie über eine MetroCluster-Konfiguration verfügen, müssen Sie bestätigt haben, dass der MetroCluster-Konfigurationsstatus konfiguriert ist und dass die Nodes in einem aktivierten und normalen Zustand vorliegen (`metrocluster node show`).
+
+
+.Schritte
+. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deaktivieren Sie das automatische Giveback von der Konsole des gesunden Controllers: `storage failover modify –node local -auto-giveback false`
++
+
+NOTE: Wenn Sie sehen _Möchten Sie Auto-Giveback deaktivieren?_, geben Sie ein `y`.
+
+. Nehmen Sie den beeinträchtigten Controller zur LOADER-Eingabeaufforderung:
++
+[cols="1,2"]
+|===
+| Wenn der eingeschränkte Controller angezeigt wird... | Dann... 
+
+
+ a| 
+Die LOADER-Eingabeaufforderung
+ a| 
+Wechseln Sie zu Controller-Modul entfernen.
+
+
+
+ a| 
+Warten auf Giveback...
+ a| 
+Drücken Sie Strg-C, und antworten Sie dann `y` Wenn Sie dazu aufgefordert werden.
+
+
+
+ a| 
+Eingabeaufforderung des Systems oder Passwort (Systempasswort eingeben)
+ a| 
+Übernehmen oder stoppen Sie den beeinträchtigten Regler von der gesunden Steuerung: `storage failover takeover -ofnode _impaired_node_name_`
+
+Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drücken Sie Strg-C, und antworten Sie dann `y`.
+
+|===
+
+
+
+
+== Schritt 2: Entfernen Sie das Controller-Modul
+
+Um auf Komponenten innerhalb des Controllers zuzugreifen, müssen Sie zuerst das Controller-Modul aus dem System entfernen und dann die Abdeckung am Controller-Modul entfernen.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Ziehen Sie die Kabel vom beeinträchtigten Controller-Modul ab, und verfolgen Sie, wo die Kabel angeschlossen waren.
+. Schieben Sie die Terrakotta-Taste am Nockengriff nach unten, bis sie entsperrt wird.
++
+.Animation - Entfernen Sie den Controller
+video::5e029a19-8acc-4fa1-be5d-ae78004b365a[panopto]
++
+image::../media/drw_9500_remove_PCM.svg[drw 9500 PCM entfernen]
+
++
+[cols="20%,80%"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[Legende Symbol 01]
+ a| 
+Freigabetaste für den CAM-Griff
+
+
+
+ a| 
+image::../media/legend_icon_02.svg[Legende Symbol 02]
+ a| 
+CAM-Griff
+
+|===
+. Drehen Sie den Nockengriff so, dass er das Controller-Modul vollständig aus dem Gehäuse herausrückt, und schieben Sie dann das Controller-Modul aus dem Gehäuse.
++
+Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen, während Sie es aus dem Gehäuse schieben.
+
+. Setzen Sie die Abdeckung des Controller-Moduls auf eine stabile, flache Oberfläche, drücken Sie die blaue Taste auf der Abdeckung, schieben Sie die Abdeckung auf die Rückseite des Controller-Moduls, und schwenken Sie sie dann nach oben und heben Sie sie vom Controller-Modul ab.
++
+image::../media/drw_9500_PCM_open.svg[drw 9500 PCM offen]
+
++
+[cols="20%,80%"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[Legende Symbol 01]
+ a| 
+Verriegelungstaste für die Controllermodulabdeckung
+
+|===
+
+
+
+
+== Schritt 3: Ersetzen Sie die DIMMs
+
+Um die DIMMs auszutauschen, suchen Sie sie im Controller und befolgen Sie die Schritte in der jeweiligen Reihenfolge.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Suchen Sie die DIMMs auf dem Controller-Modul.
++
+image::../media/drw_9500_DIMM_map.svg[ddw 9500 DIMM-Karte]
+
+. Werfen Sie das DIMM aus dem Steckplatz, indem Sie die beiden DIMM-Auswerferlaschen auf beiden Seiten des DIMM langsam auseinander drücken und dann das DIMM aus dem Steckplatz schieben.
++
+
+IMPORTANT: Halten Sie das DIMM vorsichtig an den Rändern, um Druck auf die Komponenten auf der DIMM-Leiterplatte zu vermeiden.
+
++
+.Animation - DIMMs ersetzen
+video::d62a4c7c-8296-4d60-9981-ae78004b36f7[panopto]
++
+image::../media/drw_9500_replace_PCM_dimms.svg[drw 9500 Austauschen der PCM-dimms]
+
++
+[cols="20%,80%"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[Legende Symbol 01]
+ a| 
+DIMM-Auswerferlaschen
+
+
+
+ a| 
+image::../media/legend_icon_02.svg[Legende Symbol 02]
+ a| 
+DIMM
+
+|===
+. Entfernen Sie das Ersatz-DIMM aus dem antistatischen Versandbeutel, halten Sie das DIMM an den Ecken und richten Sie es am Steckplatz aus.
++
+Die Kerbe zwischen den Stiften am DIMM sollte mit der Lasche im Sockel aufliegen.
+
+. Vergewissern Sie sich, dass sich die DIMM-Auswerferlaschen am Anschluss in der geöffneten Position befinden und setzen Sie das DIMM-Auswerfer anschließend in den Steckplatz ein.
++
+Das DIMM passt eng in den Steckplatz, sollte aber leicht einpassen. Falls nicht, richten Sie das DIMM-Modul mit dem Steckplatz aus und setzen Sie es wieder ein.
+
++
+
+IMPORTANT: Prüfen Sie das DIMM visuell, um sicherzustellen, dass es gleichmäßig ausgerichtet und vollständig in den Steckplatz eingesetzt ist.
+
+. Drücken Sie vorsichtig, aber fest auf die Oberseite des DIMM, bis die Auswurfklammern über den Kerben an den Enden des DIMM einrasten.
+. Schließen Sie die Abdeckung des Controller-Moduls.
+
+
+
+
+== Schritt 4: Installieren Sie den Controller
+
+Nachdem Sie die Komponenten im Controller-Modul installiert haben, müssen Sie das Controller-Modul wieder in das Systemgehäuse installieren und das Betriebssystem booten.
+
+Bei HA-Paaren mit zwei Controller-Modulen im selben Chassis ist die Sequenz, in der Sie das Controller-Modul installieren, besonders wichtig, da sie versucht, neu zu booten, sobald Sie es vollständig im Chassis einsetzen.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Wenn dies noch nicht geschehen ist, bringen Sie die Abdeckung am Controller-Modul wieder an.
++
+image::../media/drw_9500_PCM_open.svg[drw 9500 PCM offen]
+
++
+[cols="20%,80%"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[Legende Symbol 01]
+ a| 
+Verriegelungstaste für die Controllermodulabdeckung
+
+|===
+. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
++
+.Animation - Controller installieren
+video::f2aa14b4-0d95-4109-b410-ae78004b35c9[panopto]
++
+image::../media/drw_9500_remove_PCM.svg[drw 9500 PCM entfernen]
+
++
+[cols="20%,80%"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[Legende Symbol 01]
+ a| 
+Freigabetaste für den CAM-Griff
+
+
+
+ a| 
+image::../media/legend_icon_02.svg[Legende Symbol 02]
+ a| 
+CAM-Griff
+
+|===
++
+
+NOTE: Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein, wenn Sie dazu aufgefordert werden.
+
+. Verkabeln Sie nur die Management- und Konsolen-Ports, sodass Sie auf das System zugreifen können, um die Aufgaben in den folgenden Abschnitten auszuführen.
++
+
+NOTE: Sie schließen die übrigen Kabel später in diesem Verfahren an das Controller-Modul an.
+
+. Führen Sie die Neuinstallation des Controller-Moduls durch:
++
+.. Wenn Sie dies noch nicht getan haben, installieren Sie das Kabelverwaltungsgerät neu.
+.. Drücken Sie das Controller-Modul fest in das Gehäuse, bis es auf die Mittelebene trifft und vollständig sitzt.
++
+Die Verriegelungen steigen, wenn das Controller-Modul voll eingesetzt ist.
+
++
+
+IMPORTANT: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige Kraft verwenden, um Schäden an den Anschlüssen zu vermeiden.
+
++
+Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt. Bereiten Sie sich darauf vor, den Bootvorgang zu unterbrechen.
+
+.. Drehen Sie die Verriegelungsriegel nach oben, und kippen Sie sie so, dass sie die Sicherungsstifte entfernen und dann in die verriegelte Position absenken.
+.. Unterbrechen Sie den Bootvorgang, indem Sie auf drücken `Ctrl-C` Wenn Sie sehen, drücken Sie Strg-C für das Startmenü.
+.. Wählen Sie im angezeigten Menü die Option zum Starten im Wartungsmodus aus.
+
+
+
+
+
+
+== Schritt 5: Führen Sie die Diagnose auf Systemebene aus
+
+Nach der Installation eines neuen DIMM sollten Sie die Diagnose ausführen.
+
+Ihr System muss die LOADER-Eingabeaufforderung aufweisen, um die Diagnose auf Systemebene zu starten.
+
+Alle Befehle in den Diagnoseverfahren werden vom Node ausgegeben, auf dem die Komponente ersetzt wird.
+
+. Wenn der Node, der gewartet werden soll, nicht an der LOADER-Eingabeaufforderung steht, führen Sie die folgenden Schritte aus:
++
+.. Wählen Sie im angezeigten Menü die Option Wartungsmodus.
+.. Nachdem der Node im Wartungsmodus gebootet wurde, beenden Sie den Node: `halt`
++
+Nachdem Sie den Befehl ausgegeben haben, sollten Sie warten, bis das System an der LOADER-Eingabeaufforderung angehalten wird.
+
++
+
+IMPORTANT: Während des Startvorgangs können Sie sicher reagieren `y` Zu Eingabeaufforderungen.
+
++
+*** Wenn eine Eingabeaufforderung eine Warnung angezeigt wird, dass beim Aufrufen des Wartungsmodus in einer HA-Konfiguration Sie sicherstellen müssen, dass der gesunde Node weiterhin ausgefallen ist.
+
+
+
+
+. Rufen Sie an der LOADER-Eingabeaufforderung die speziellen Treiber auf, die speziell für die Diagnose auf Systemebene entwickelt wurden, um ordnungsgemäß zu funktionieren: `boot_diags`
++
+Während des Startvorgangs können Sie sicher reagieren `y` Zu den Aufforderungen, bis die Eingabeaufforderung für den Wartungsmodus (*>) angezeigt wird.
+
+. Führen Sie eine Diagnose für den Systemspeicher aus: `sldiag device run -dev mem`
+. Stellen Sie sicher, dass keine Hardwareprobleme durch den Austausch der DIMMs entstanden sind: `sldiag device status -dev mem -long -state failed`
++
+Die Diagnose auf Systemebene gibt die Eingabeaufforderung zurück, wenn keine Testfehler auftreten oder den vollständigen Status von Fehlern, die durch das Testen der Komponente entstehen, angezeigt wird.
+
+. Fahren Sie auf der Grundlage des Ergebnisses des vorhergehenden Schritts fort:
++
+[cols="1,2"]
+|===
+| Wenn die Diagnose auf Systemebene testet... | Dann... 
+
+
+ a| 
+Wurden ohne Fehler abgeschlossen
+ a| 
+.. Löschen Sie die Statusprotokolle: `sldiag device clearstatus`
+.. Überprüfen Sie, ob das Protokoll gelöscht wurde: `sldiag device status`
++
+Die folgende Standardantwort wird angezeigt:
+
++
+SLDIAG: Es sind keine Protokollnachrichten vorhanden.
+
+.. Beenden des Wartungsmodus: `halt`
++
+Auf dem Node wird die LOADER-Eingabeaufforderung angezeigt.
+
+.. Booten des Node über die LOADER-Eingabeaufforderung: `bye`
+.. Zurückkehren des Node in den normalen Betrieb:
+
+
+|===
++
+[cols="1,2"]
+|===
+| Wenn Ihr Knoten in... | Dann... 
+
+
+ a| 
+Ein HA-Paar
+ a| 
+Geben Sie zurück: `storage failover giveback -ofnode replacement_node_name`
+
+
+NOTE: Wenn Sie die automatische Rückgabe deaktivieren, aktivieren Sie sie mit dem Befehl Storage Failover modify erneut.
+
+
+
+ a| 
+Es kam zu einigen Testfehlern
+ a| 
+Bestimmen Sie die Ursache des Problems:
+
+.. Beenden des Wartungsmodus: `halt`
++
+Nachdem Sie den Befehl ausgegeben haben, warten Sie, bis das System an der LOADER-Eingabeaufforderung angehalten wird.
+
+.. Überprüfen Sie, ob Sie alle Aspekte, die bei der Ausführung von Diagnose auf Systemebene zu beachten sind, dass die Kabel sicher angeschlossen sind und die Hardwarekomponenten ordnungsgemäß im Storage-System installiert wurden.
+.. Booten Sie das zu betreuende Controller-Modul, und unterbrechen Sie den Boot, indem Sie auf drücken `Ctrl-C` Wenn Sie dazu aufgefordert werden, zum Startmenü zu gelangen:
++
+*** Wenn Sie zwei Controller-Module im Chassis haben, setzen Sie das Controller-Modul vollständig ein, das Sie im Chassis warten.
++
+Das Controller-Modul wird bei vollem Sitz hochgestartet.
+
+*** Wenn Sie ein Controller-Modul im Chassis haben, schließen Sie die Netzteile an und schalten Sie sie dann ein.
+
+
+.. Wählen Sie aus dem Menü die Option Start in den Wartungsmodus.
+.. Beenden Sie den Wartungsmodus, indem Sie den folgenden Befehl eingeben: `halt`
++
+Nachdem Sie den Befehl ausgegeben haben, warten Sie, bis das System an der LOADER-Eingabeaufforderung angehalten wird.
+
+.. Führen Sie den Diagnosetest auf Systemebene erneut aus.
+
+
+|===
+
+
+
+
+== Schritt 6: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

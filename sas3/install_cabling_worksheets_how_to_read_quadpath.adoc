@@ -1,0 +1,74 @@
+---
+permalink: sas3/install-cabling-worksheets-how-to-read-quadpath.html 
+sidebar: sidebar 
+keywords: example, guide, read, apply, complete, worksheet, stack, disk, shelves, shelf, iom12, quad-pathed, connectivity, how to read a worksheet to cable controller-to-stack connections for quad-pathed connectivity 
+summary: Mit diesem Beispiel können Sie die Vorgehensweise zum Lesen und Anwenden eines ausgefüllten Arbeitsblatts zur Verkabelung von Plattenregalen mit IOM12/IOM12B-Modulen für Quad-Pathed-Konnektivität erläutern. 
+---
+= Lesen eines Arbeitsblatts zur Verkabelung von Controller-zu-Stack-Verbindungen für Quad-Pathed-Konnektivität - Regale mit IOM12/IOM12B-Modulen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mit diesem Beispiel können Sie die Vorgehensweise zum Lesen und Anwenden eines ausgefüllten Arbeitsblatts zur Verkabelung von Plattenregalen mit IOM12/IOM12B-Modulen für Quad-Pathed-Konnektivität erläutern.
+
+.Über diese Aufgabe
+* Gehen Sie wie folgt vor, um ein Arbeitsblatt und eine Verkabelung zu lesen, um Verbindungen zwischen Controller und Stack zu verkabeln.
++
+Die in diesem Beispiel verwendete Konfiguration ist eine Quad-Path HA-Konfiguration mit zwei Quad-Port SAS HBAs auf jedem Controller und zwei Stacks an Festplatten-Shelfs mit IOM12-Modulen.
+
+* Wenn Sie eine Single-Controller-Konfiguration haben, überspringen Sie die Unterschritte b und d für die Verkabelung zu einem zweiten Controller.
+* Bei Bedarf können Sie sich auf beziehen link:install-cabling-rules.html["Regeln für die SAS-Verkabelung"] Weitere Informationen zur Nummerierung der Controller-Steckplätze, Shelf-zu-Shelf-Konnektivität und Controller/Shelf-Konnektivität (einschließlich der Verwendung von Port-Paaren)
+
+
+image::../media/drw_worksheet_qpha_slots_1_and_2_two_4porthbas_two_stacks_nau.gif[drw-Arbeitsblatt qpha-Steckplätze 1 und 2 zwei 4-porthbas-Stapel nau]
+
+image::../media/drw_qpha_slots_1_and_2_two_4porthbas_two_stacks_nau.gif[drw qpha Steckplätze 1 und 2 4-porthbas zwei Stapel nau]
+
+.Schritte
+. Kabel-Port-Paar 1a/2b an jedem Controller zu Stack 1:
++
+Dies ist die Multipath-Verkabelung für Stack 1.
+
++
+.. Kabel-Controller 1-Port 1a zu Stack 1, erstes Shelf-IOM A-Port 1.
+.. Verkabeln Sie Controller 2-Port 1a mit Stack 1, erster Shelf-IOM B-Port 1.
+.. Kabel-Controller 1-Port 2b zu Stack 1, letzter Shelf IOM B-Port 3.
+.. Kabel-Controller 2-Port 2b zu Stack 1, letztes Shelf IOM A-Port 3.
+
+
+. Kabel-Port-Paar 2a/1d an jedem Controller zu Stack 1:
++
+Dies ist die Quad-Pathed-Verkabelung für Stack 1. Nach Fertigstellung verfügt Stack 1 über Quad-Pathed-Konnektivität zu jedem Controller.
+
++
+.. Kabel-Controller 1 Port 2a mit Stack 1, erstes Shelf IOM A-Port 2.
+.. Kabel-Controller 2-Port 2a mit Stack 1, erster Shelf IOM B-Port 2.
+.. Kabel-Controller 1-Port-1d zu Stack 1, letzter Shelf-IOM B-Port 4.
+.. Kabel-Controller 2-Port-1d zu Stack 1, letztes Shelf-IOM A-Port 4.
+
+
+. Kabel-Port-Paar 1c/2d auf jedem Controller zu Stack 2:
++
+Dies ist die Multipath-Verkabelung für Stack 2.
+
++
+.. Kabel-Controller 1-Port 1c zu Stack 2, erstes Shelf-IOM A-Port 1.
+.. Kabel-Controller 2-Port 1c zu Stack 2, erster Shelf-IOM B-Port 1.
+.. Kabel-Controller 1-Port 2d zu Stack 2, letzter Shelf IOM B-Port 3.
+.. Kabel-Controller 2-Port 2d zu Stack 2, letztes Shelf IOM A-Port 3.
+
+
+. Kabel-Port-Paar 2c/1b an jedem Controller zu Stack 2:
++
+Dies ist die Quad-Pathed-Verkabelung für Stack 2. Nach Fertigstellung verfügt Stack 2 über Quad-Pathed-Konnektivität zu jedem Controller.
+
++
+.. Kabel-Controller 1 Port 2c an Stack 2, erstes Shelf-IOM A-Port 2.
+.. Kabel-Controller 2-Port 2 zu Stack 2, erster Shelf-IOM B-Port 2.
+.. Verkabeln Sie Controller 1 Port 1b zu Stack 2, letzter Shelf IOM B-Port 4.
+.. Verkabeln Sie Controller 2, Port 1b zu Stack 2, letztes Shelf IOM A-Port 4.
+
+
+

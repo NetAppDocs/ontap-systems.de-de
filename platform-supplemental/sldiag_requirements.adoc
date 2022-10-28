@@ -1,0 +1,90 @@
+---
+permalink: platform-supplemental/sldiag-requirements.html 
+sidebar: sidebar 
+keywords: system-level, diagnostic, test, run, time, system, requirement, system, memory, general, nic, sas, fc-al, cna, interconnect, requirement for running system-level diagnostic 
+summary: Abhängig von den laufenden Diagnosetests auf Systemebene müssen Sie die Zeit- und Systemhardwareanforderungen kennen. 
+---
+= Anforderungen für die Ausführung der Diagnose auf Systemebene
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Abhängig von den laufenden Diagnosetests auf Systemebene müssen Sie die Zeit- und Systemhardwareanforderungen kennen.
+
+Jede dokumentierte Aufgabe hat geringe Unterschiede; verwenden Sie das empfohlene Verfahren für die Aufgabe.
+
+Bei der Ausführung der Diagnose auf Systemebene müssen die folgenden Anforderungen erfüllt werden. Andernfalls schlägt ein Teil der Tests fehl, und im Statusbericht werden Fehlermeldungen angezeigt:
+
+
+
+== Allgemeine Anforderungen
+
+* Jedes zu testnde System muss sich in einem eigenen Netzwerk befinden.
++
+Der Test der Netzwerkschnittstelle weist allen verfügbaren Netzwerkschnittstellen eines Speichersystems eindeutige, statische IP-Adressen ab 172.25.150.23 zu. Dies führt dazu, dass die Ports der Netzwerkschnittstelle auf verschiedenen Storage Controllern derselben IP-Adresse zugewiesen werden. Wenn sich alle zu testenden Systeme auf demselben Netzwerk befinden, werden doppelte ip-Adresswarnmeldungen auf den verbundenen Konsolen angezeigt. Diese Warnmeldungen wirken sich nicht auf die Testergebnisse aus.
+
+
+
+
+
+== Anforderungen an den Systemspeicher
+
+* Sie müssen bei der Ausführung von Speichertests die Zeit beiseite legen; je größer die Speicherkapazität des Storage-Systems, desto länger dauert es.
+
+
+
+
+== NIC-Anforderungen
+
+* Alle benachbarten Netzwerk-Schnittstellen-Ports des Systems müssen mit einem Standard-Ethernet-Kabel verbunden sein, um eine optimale Leistung zu erzielen.
++
+Beispiele für angrenzende Ports sind e0a und e0b oder e2c und e2d.
+
++
+
+NOTE: Die E0M- und E0P-Ports können aufgrund einer internen Switch-Verbindung nicht miteinander verbunden werden. In Systemen mit E0M und E0P-Ports sind die effizientesten Kombinationen E0M mit e0a und E0P mit e0b.
+
+* Wenn mehrere Netzwerkschnittstellen auf dem System vorhanden sind, müssen Sie den Diagnosetest auf NIC-Systemebene mehrmals ausführen, sodass jeder Lauf auf maximal zwei Paare beschränkt wird.
+
+
+
+
+== SAS-Anforderungen erfüllt
+
+* Wenn Sie die Diagnosetests auf SAS-Systemebene ausführen, müssen benachbarte SAS-Ports verbunden werden, um eine optimale Performance zu erzielen. Storage Shelfs müssen von den Ports getrennt werden.
++
+
+NOTE: Verbindungen zwischen benachbarten SAS-Ports sind für Systeme mit Data ONTAP 8.2 nicht mehr erforderlich. Für Systeme mit nicht verbundenen SAS-Ports wird jedoch nur der interne Loopback-Test ausgeführt.
+
+
+
+
+
+== FC-AL-Anforderungen erfüllt
+
+* Wenn Sie die FC-AL-Diagnosetests auf Systemebene ausführen, müssen Sie Loopback-Abzüge an FC-AL-Schnittstellen auf dem Motherboard oder den Erweiterungsadaptern haben, um eine optimale Leistung zu erzielen. Alle anderen Kabel für Speicher- oder Fibre Channel-Netzwerke müssen von den Ports getrennt werden.
++
+
+NOTE: Während der Einsatz von Loopback-Hauben an FC-AL-Schnittstellen nicht mehr Anforderungen an Systeme mit Data ONTAP 8.2 sind, wird auch der Umfang der Testabdeckung auf der Schnittstelle reduziert.
+
+
+
+
+
+== CNA-Anforderungen
+
+* Die Verwendung von Loopback-Hauben ist keine Voraussetzung für die Ausführung von Diagnosetests auf Systemebene CNA.
+
+
+
+
+== Interconnect-Anforderungen erfüllen
+
+* Beide Plattform-Controller-Module in einem Dual-Controller-System müssen sich im Wartungsmodus befinden, damit der Diagnosetest auf Systemebene ausgeführt wird.
++
+
+NOTE: Sie erhalten eine Warnmeldung, wenn Sie versuchen, den Diagnosetest auf Systemebene mit anderen Diagnosetests auf Systemebene auszuführen.
+
+

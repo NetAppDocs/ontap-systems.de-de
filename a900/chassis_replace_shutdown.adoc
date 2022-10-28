@@ -1,0 +1,62 @@
+---
+permalink: a900/chassis_replace_shutdown.html 
+sidebar: sidebar 
+keywords: aff a900, shutdown the controllers 
+summary: Zum Austausch des Chassis müssen Sie die Controller herunterfahren. 
+---
+= Schalten Sie den Regler für beeinträchtigte AFF A900 aus
+:allow-uri-read: 
+
+
+[role="lead"]
+Sie müssen den Controller oder den Controller im Chassis herunterfahren, bevor Sie sie in das neue Chassis verschieben.
+
+.Über diese Aufgabe
+* Wenn Sie ein Cluster mit mehr als zwei Controllern haben, muss es sich im Quorum befinden. Wenn das Cluster nicht im Quorum ist oder ein guter Controller angezeigt wird `false` Um die Berechtigung und den Zustand zu erhalten, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/index.html["Administrationsübersicht mit der CLI"^].
+* Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+
+
+.Schritte
+. Wenn Ihr System über zwei Controller-Module verfügt, deaktivieren Sie das HA-Paar.
++
+[cols="1,2"]
+|===
+| Wenn Ihr System Clustered ONTAP mit... | Dann... 
+
+
+ a| 
+Zwei Controller im Cluster
+ a| 
+`cluster ha modify -configured false` `storage failover modify -node node0 -enabled false`
+
+
+
+ a| 
+Mehr als zwei Controller im Cluster
+ a| 
+`storage failover modify -node node0 -enabled false`
+
+|===
+. Halten Sie den Regler an, und drücken Sie `y` Wenn Sie aufgefordert werden, den Stopp zu bestätigen: `system node halt -node _node_name_`
++
+Die Bestätigungsmeldung sieht wie folgt aus:
+
++
+[listing]
+----
+Warning: This operation will cause controller "node-name" to be marked as unhealthy. Unhealthy nodes do not participate in quorum voting. If the controller goes out of service and one more controller goes out of service there will be a data serving failure for the entire cluster. This will cause a client disruption. Use "cluster show" to verify cluster state. If possible bring other nodes online to improve the resiliency of this cluster.
+
+Do you want to continue? {y|n}:
+----
++
+
+NOTE: Sie müssen ein sauberes System herunterfahren, bevor Sie das Chassis ersetzen, um nicht geschriebene Daten im nicht-flüchtigen Speicher (NVMEM/NVRAM) zu verlieren. Wenn die NVMEM/NVRAM-LED abhängig vom System blinkt, befinden sich Inhalte im NVMEM/NVRAM, die nicht auf die Festplatte gespeichert wurden. Sie müssen den Controller neu booten und Beginn dieses Verfahrens. Bei wiederholten Versuchen, den Controller ordnungsgemäß herunterzufahren, ist zu beachten, dass keine Daten verloren gehen, die nicht auf der Festplatte gespeichert wurden.
+
+. Halten Sie gegebenenfalls den zweiten Controller an, um eine mögliche Quorum-Fehlermeldung in einer HA-Paar-Konfiguration zu vermeiden: `system node halt -node _second_node_name_ -ignore-quorum-warnings true -skip-lif-migration-before-shutdown true`
++
+Antwort `y` Wenn Sie dazu aufgefordert werden.
+
+

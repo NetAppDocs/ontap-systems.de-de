@@ -1,0 +1,38 @@
+= 
+:allow-uri-read: 
+
+
+[cols="25h,~,~"]
+|===
+| Funktionalität | Beschreibung und wo man mehr erfahren kann | Verfügbar ab 
+
+
+ a| 
+Erweiterte Plattformunterstützung für NS224 Festplatten-Shelfs
+ a| 
+Die folgenden Plattformen unterstützen NS224 Laufwerk-Shelfs:
+
+* AFF A800/AFF ASA A800
+* AFF A700/AFF ASA A700
+* AFF A250/AFF ASA A250
+* FAS500f
+
+ a| 
+ONTAP 9.8
+
+
+
+ a| 
+Hot-zusätzliche 12-GB-SAS-Shelfs zu 6-GB-SAS-Storage-Stacks
+ a| 
+Ein einziger Wechsel von 6 GB zu 12 GB in einem SAS-Storage-Stack wird jetzt unterstützt. Somit können bestehende 6-GB-Stacks mit 12-GB-Shelfs erweitert werden.
+
+https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-ds-mix-hotadd/home.html["Hot-Adding-Shelfs mit IOM12-Modulen werden in einem Shelf-Stack mit IOM6-Modulen ausgeführt"]
+ a| 
+ONTAP 9.7P4
+
+ONTAP 9.6P9
+
+ONTAP 9.5P14
+
+|===

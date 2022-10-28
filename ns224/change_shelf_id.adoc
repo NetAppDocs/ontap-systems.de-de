@@ -1,0 +1,104 @@
+---
+permalink: ns224/change-shelf-id.html 
+sidebar: sidebar 
+keywords: ns224, shelves, shelf, ns224 shelves, change, shelf, id, system, ontap, unown, spare, offline, aggregate, change an ns224 drive shelf id 
+summary: 'Sie können eine Shelf-ID in einem System ändern, wenn ONTAP noch nicht ausgeführt wird oder wenn Sie ein Shelf im laufenden Betrieb hinzufügen, bevor Sie es mit dem System verbunden werden. Sie können auch eine Shelf-ID ändern, wenn die ONTAP in Betrieb ist \ (Controller-Module sind für Daten verfügbar\) und alle Laufwerke im Shelf ohne Besitzer, Ersatzteile oder ein Teil des inaktiven Aggregats\(s\) sind.' 
+---
+= Shelf-ID ändern – NS224-Einschübe
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eine Shelf-ID in einem System ändern, wenn ONTAP noch nicht ausgeführt wird oder wenn Sie ein Shelf im laufenden Betrieb hinzufügen, bevor Sie es mit dem System verbunden werden. Sie können auch eine Shelf-ID ändern, wenn ONTAP in Betrieb ist (Controller-Module sind für Daten verfügbar) und alle Laufwerke im Shelf ohne Besitzer, Ersatzteile oder einen Teil des Offline-Aggregats sind.
+
+.Bevor Sie beginnen
+* Wenn ONTAP aktiviert ist und ausgeführt wird (Controller-Module sind verfügbar, um Daten bereitzustellen), müssen Sie überprüfen, dass alle Laufwerke im Shelf nicht im Besitz von Ersatzteilen oder als Teil des Offline-Aggregats sind.
++
+Sie können den Status der Laufwerke mit überprüfen `storage disk show -shelf _shelf_number_` Befehl. Ausgabe im `Container Type` Spalte sollte angezeigt werden `spare` Oder `broken` Wenn es sich um ein ausgefallenes Laufwerk handelt. Darüber hinaus der `Container Name` Und `Owner` Spalten sollten einen Strich haben.
+
+* Sie benötigen einen Büroklammer mit einer Seite gerade oder einem schmal gekippten Kugelschreiber.
++
+Sie verwenden den Büroklammer oder Kugelschreiber, um durch die kleine Öffnung rechts neben den LEDs im Bedienerdisplay (ODP) auf die Shelf-ID-Taste zuzugreifen.
+
+
+
+.Über diese Aufgabe
+* Gültige Shelf-ID: 00 bis 99.
+* Shelf-IDs müssen innerhalb eines HA-Paars eindeutig sein.
+* Sie müssen ein Shelf aus- und wieder einschalten (trennen Sie beide Netzkabel, warten Sie die entsprechende Zeit, und schließen Sie sie anschließend wieder an), damit die Shelf-ID wirksam wird.
++
+Wie lange Sie warten, bevor Sie die Netzkabel wieder einstecken, hängt vom Zustand von ONTAP ab, wie im Folgenden in diesem Verfahren beschrieben.
+
++
+
+NOTE: Die NS224-Shelves haben keine Netzschalter an den Netzteilen.
+
+
+
+.Schritte
+. Schalten Sie das Shelf ein, wenn es nicht bereits eingeschaltet ist.
++
+Sie schließen die Netzkabel zuerst an das Shelf an, sichern sie an der Halterung des Netzkabels, und schließen dann die Netzkabel an verschiedene Stromquellen an, um für Ausfallsicherheit zu sorgen.
+
+. Entfernen Sie die linke Endkappe, um die kleine Öffnung rechts neben den LEDs zu finden.
+. Ändern Sie die erste Nummer der Shelf-ID:
++
+.. Stecken Sie den Büroklammer oder Kugelschreiber in das kleine Loch.
+.. Halten Sie die Taste gedrückt, bis die erste Ziffer auf der digitalen Anzeige blinkt, und lassen Sie dann die Taste los.
++
+Es kann bis zu 15 Sekunden dauern, bis die Ziffer blinkt. Dadurch wird der Programmiermodus für die Shelf-ID aktiviert.
+
++
+
+NOTE: Wenn die ID länger als 15 Sekunden dauert, halten Sie die Taste erneut gedrückt, und drücken Sie sie vollständig.
+
+.. Drücken Sie die Taste und lassen Sie sie los, um die Nummer so lange zu drücken, bis Sie die gewünschte Zahl von 0 auf 9 erreicht haben.
++
+Jede Presse- und Freigabedauer kann eine Sekunde lang sein.
+
++
+Die erste Ziffer blinkt weiterhin.
+
+
+
+. Ändern Sie die zweite Nummer der Shelf-ID:
++
+.. Halten Sie die Taste gedrückt, bis die zweite Ziffer auf der digitalen Anzeige blinkt.
++
+Es kann bis zu drei Sekunden dauern, bis die Ziffer blinkt.
+
++
+Die erste Ziffer auf dem digitalen Display hört auf zu blinken.
+
+.. Drücken Sie die Taste und lassen Sie sie los, um die Nummer so lange zu drücken, bis Sie die gewünschte Zahl von 0 auf 9 erreicht haben.
++
+Die zweite Ziffer blinkt weiterhin.
+
+
+
+. Halten Sie die Taste gedrückt, bis die zweite Ziffer nicht mehr blinkt, und beenden Sie den Programmiermodus.
++
+Es kann bis zu drei Sekunden dauern, bis die Ziffer nicht mehr blinkt.
+
++
+Beide Ziffern auf der digitalen Anzeige blinken, und die gelbe LED auf dem ODP beginnt nach ca. fünf Sekunden zu leuchten, und Sie werden benachrichtigt, dass die ausstehende Shelf-ID noch nicht wirksam wurde.
+
+. Schalten Sie das Shelf aus und wieder ein, damit die Shelf-ID übernommen wird.
++
+Sie müssen das Netzkabel von beiden Netzteilen am Shelf trennen, die entsprechende Zeit warten und sie dann wieder an die Netzteile anschließen, um den aus- und Wiedereinschalten abzuschließen.
+
++
+Sobald das Netzkabel angeschlossen ist, wird ein Netzteil eingeschaltet. Die zweifarbige LED sollte grün leuchten.
+
++
+** Wenn ONTAP noch nicht läuft oder Sie ein Shelf im laufenden Betrieb hinzufügen (das noch nicht mit dem System verbunden war), warten Sie mindestens 10 Sekunden.
+** Wenn ONTAP ausgeführt wird (Controller Daten bereitstellen) und alle Laufwerke im Shelf nicht im Besitz von Ersatzteilen oder als Teil des Offline-Aggregats sind, warten Sie mindestens 70 Sekunden.
++
+Diese Zeit ermöglicht es ONTAP, die alte Shelf-Adresse ordnungsgemäß zu löschen und die Kopie der neuen Shelf-Adresse zu aktualisieren.
+
+
+
+. Die linke Endkappe austauschen.
+

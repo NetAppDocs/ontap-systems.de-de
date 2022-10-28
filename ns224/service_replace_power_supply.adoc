@@ -1,0 +1,85 @@
+---
+permalink: ns224/service-replace-power-supply.html 
+sidebar: sidebar 
+keywords: ns224, shelves, shelf, ns224 shelves, replace, fail, power, supply, nondisruptive, drive, i/o, progress, hot-swap, hot-swap a power supply 
+summary: Sie können ein ausgefallenes Netzteil unterbrechungsfrei in einem NS224-Laufwerk-Shelf ersetzen, das eingeschaltet ist, und während I/O gerade läuft. 
+---
+= Hot-Swap eines Netzteils – NS224-Einschübe
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können ein ausgefallenes Netzteil unterbrechungsfrei in einem NS224-Laufwerk-Shelf ersetzen, das eingeschaltet ist, und während I/O gerade läuft.
+
+.Über diese Aufgabe
+* Mischen Sie keine Netzteile mit unterschiedlichen Effizienzwerten. Immer ersetzen wie für „Gefällt mir“.
+* Wenn Sie mehrere Netzteile ersetzen, müssen Sie dies nacheinander durchführen, damit das Shelf die Stromversorgung aufrecht erhält.
+* *Best Practice:* die beste Praxis ist, das Netzteil innerhalb von zwei Minuten nach dem Entfernen aus dem NSM-Modul zu ersetzen.
++
+Wenn Sie die zwei Minuten überschreiten, wird das Shelf weiterhin ausgeführt. ONTAP sendet jedoch Meldungen an die Konsole über das beeinträchtigte Netzteil, bis das Netzteil ersetzt wird.
+
+* *Best Practice:* die Best Practice besteht darin, aktuelle Versionen der NSM-Firmware (NVMe Shelf Module) und der Laufwerk-Firmware auf dem System zu haben, bevor FRU-Komponenten ersetzt werden.
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp Downloads: Festplatten-Shelf Firmware"^]
+
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["NetApp Downloads: Festplatten-Firmware"^]
+
++
+[NOTE]
+====
+Stellen Sie die Firmware nicht auf eine Version zurück, die Ihr Shelf und seine Komponenten nicht unterstützt.
+
+====
+* Bei Bedarf können Sie die blauen LEDs am Shelf einschalten, um die physische Suche nach dem betroffenen Shelf zu erleichtern: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
++
+Wenn Sie den nicht kennen `shelf_name` Führen Sie den aus `storage shelf show` Befehl.
+
++
+Ein Regal hat drei Positionen-LEDs: Eine auf dem Bedienfeld und eine auf jedem NSM-Modul. Die Standort-LEDs leuchten 30 Minuten lang. Sie können sie ausschalten, indem Sie denselben Befehl eingeben, jedoch die Option „aus“ verwenden.
+
+* Wenn Sie das Ersatznetzteil auspacken, bewahren Sie alle Verpackungsmaterialien auf, wenn Sie das defekte Netzteil zurücksenden.
++
+Wenn Sie die RMA-Nummer oder zusätzliche Hilfe beim Ersatzverfahren benötigen, wenden Sie sich an den technischen Support unter https://mysupport.netapp.com/site/global/dashboard["NetApp Support"^], 888-463-8277 (Nordamerika), 00-800-44-638277 (Europa) oder +800-800-80-800 (Asien/Pazifik).
+
+* Sie können das folgende Video oder die geschriebenen Schritte zum Austausch eines Netzteils verwenden.
++
+.Animation - Hot-Swap eines Netzteils in einem NS224-Laufwerk-Shelf
+video::5794da63-99aa-425a-825f-aa86002f154d[panopto]
+
+
+.Schritte
+. Richtig gemahlen.
+. Identifizieren Sie das ausgefallene Netzteil physisch.
++
+Das System protokolliert eine Warnmeldung an die Systemkonsole und gibt an, welche Stromversorgung fehlgeschlagen ist. Darüber hinaus leuchten die Fehler-LED auf der Anzeige des Shelf-Bedieners und die zweifarbige LED am ausgefallenen Netzteil leuchtet rot.
+
+. Ziehen Sie das Netzkabel vom Netzteil ab, indem Sie den Netzkabelhalter öffnen und dann das Netzkabel vom Netzteil trennen.
++
+Die Netzteile haben keinen Netzschalter.
+
+. Entfernen Sie das ausgefallene Netzteil:
++
+.. Drehen Sie den Kurvengriff in die offene (horizontale) Position, und greifen Sie ihn dann an.
+.. Drücken Sie mit dem Daumen auf die blaue Lasche, um den Verriegelungsmechanismus zu lösen.
+.. Ziehen Sie das Netzteil aus dem NSM-Modul, während Sie die andere Hand verwenden, um das Gewicht zu unterstützen.
+
+
+. Setzen Sie das Ersatznetzteil ein:
++
+.. Stützen und richten Sie die Kanten des Netzteils mit beiden Händen an der Öffnung im NSM-Modul aus.
+.. Schieben Sie das Netzteil vorsichtig in das NSM-Modul, bis der Verriegelungsmechanismus einrastet.
++
+
+NOTE: Verwenden Sie keine übermäßige Kraft, oder Sie können den internen Stecker beschädigen.
+
+.. Drehen Sie den Nockengriff in die geschlossene Position.
+
+
+. Schließen Sie das Netzkabel an das Netzteil an, und befestigen Sie das Netzkabel mit der Netzkabelhalterung.
++
+Bei ordnungsgemäßer Funktion leuchtet die zweifarbige LED des Netzteils grün.
+
+

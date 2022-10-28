@@ -1,0 +1,31 @@
+---
+permalink: c190/bootmedia-replace-overview.html 
+sidebar: sidebar 
+keywords: AFF c190, nondisruptive, disruptive, replace the boot media 
+summary: 'Das Boot-Medium speichert einen primären und sekundären Satz von System \(Boot Image\)-Dateien, die das System beim Booten verwendet. Je nach Netzwerkkonfiguration können Sie entweder einen unterbrechungsfreien oder störenden Austausch durchführen.' 
+---
+= Übersicht über den Austausch von Boot-Medien - AFF C190
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Boot-Medium speichert einen primären und sekundären Satz von Systemdateien (Boot-Image), die das System beim Booten verwendet. Je nach Netzwerkkonfiguration können Sie entweder einen unterbrechungsfreien oder störenden Austausch durchführen.
+
+Sie müssen über ein USB-Flash-Laufwerk verfügen, das auf FAT32 formatiert ist, und über die entsprechende Speichermenge, um die zu speichern `image_xxx.tgz` Datei:
+
+* Bei den unterbrechungsfreien und mit Unterbrechungen verbundenen Methoden zum Austausch von Boot-Medien müssen Sie das var Dateisystem wiederherstellen:
++
+** Um den unterbrechungsfreien Austausch zu gewährleisten, muss das HA-Paar mit einem Netzwerk verbunden sein, um das var Filesystem wiederherzustellen.
+** Um den Austausch zu unterbrechen, benötigen Sie keine Netzwerkverbindung zur Wiederherstellung des var-Dateisystems. Der Vorgang muss jedoch zwei Neustarts erfordern.
+
+
+* Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
+* Es ist wichtig, dass Sie die Befehle in diesen Schritten auf dem richtigen Controller anwenden:
++
+** Der Controller _Impared_ ist der Controller, an dem Sie Wartungsarbeiten durchführen.
+** Der _Healthy_ Controller ist der HA-Partner des beeinträchtigten Controllers.
+
+
+

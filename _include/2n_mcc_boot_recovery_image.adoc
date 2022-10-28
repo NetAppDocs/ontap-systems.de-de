@@ -1,0 +1,34 @@
+= 
+:allow-uri-read: 
+
+
+Sie müssen das ONTAP-Image vom USB-Laufwerk booten und die Umgebungsvariablen überprüfen.
+
+Dieses Verfahren gilt für Systeme in einer MetroCluster-Konfiguration mit zwei Nodes.
+
+.Schritte
+. Starten Sie von der LOADER-Eingabeaufforderung das Recovery-Image vom USB-Flash-Laufwerk: `boot_recovery`
++
+Das Bild wird vom USB-Flash-Laufwerk heruntergeladen.
+
+. Wenn Sie dazu aufgefordert werden, geben Sie entweder den Namen des Bilds ein oder akzeptieren Sie das Standardbild, das in den Klammern auf dem Bildschirm angezeigt wird.
+. Starten Sie nach der Installation des Images den Wiederherstellungsprozess:
++
+.. Drücken Sie `n` Wenn Sie aufgefordert werden, die Backup-Konfiguration wiederherzustellen.
+.. Drücken Sie `y` Wenn Sie aufgefordert werden, einen Neustart durchzuführen, um die neu installierte Software zu verwenden.
++
+Sie sollten darauf vorbereitet sein, den Bootvorgang zu unterbrechen, wenn Sie dazu aufgefordert werden.
+
+
+
+. Drücken Sie beim Systemstart auf `Ctrl-C` Nachdem Sie den gesehen haben `Press Ctrl-C for Boot Menu` Meldung. Und wenn das Startmenü angezeigt wird, wählen Sie Option 6.
+. Vergewissern Sie sich, dass die Umgebungsvariablen wie erwartet festgelegt sind.
++
+.. Nehmen Sie den Node zur LOADER-Eingabeaufforderung.
+.. Überprüfen Sie die Einstellungen der Umgebungsvariable mit dem `printenv` Befehl.
+.. Wenn eine Umgebungsvariable nicht wie erwartet festgelegt ist, ändern Sie sie mit dem `setenv __environment-variable-name__ __changed-value__` Befehl.
+.. Speichern Sie Ihre Änderungen mit dem `savenv` Befehl.
+.. Booten Sie den Node neu.
+
+
+

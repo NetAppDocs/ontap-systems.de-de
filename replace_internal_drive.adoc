@@ -1,0 +1,40 @@
+---
+permalink: a200/replace_internal_drive.html 
+sidebar: sidebar 
+keywords: AFF A200 
+summary: Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann. 
+---
+= Ausgefallenes Laufwerk ersetzen – AFF A200
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen ein DIMM im Controller-Modul ersetzen, wenn Ihr System eine steigende Anzahl korrigierbarer Fehlerkorrekturcodes (ECC) registriert; andernfalls wird eine Systempanik verursacht.
+
+.Bevor Sie beginnen
+* Als Best Practice empfiehlt es sich, die aktuelle Version des DQP (Disk Qualification Package) zu installieren, bevor ein Laufwerk Hot-Swap durchgeführt wird.
+* Identifizieren Sie das ausgefallene Laufwerk, indem Sie den ausführen `storage disk show -broken` Befehl über die Systemkonsole. Das ausgefallene Laufwerk wird in der Liste der ausgefallenen Laufwerke angezeigt. Falls nicht, sollten Sie warten und dann den Befehl erneut ausführen.
+* Wie Sie die Festplatte austauschen, hängt davon ab, wie das Festplattenlaufwerk verwendet wird. Wenn die SED-Authentifizierung aktiviert ist, müssen Sie die SED-Ersatzanweisungen im verwenden https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/home.html["ONTAP 9 – NetApp Verschlüsselungsleitfadens"]. In diesen Anweisungen werden zusätzliche Schritte beschrieben, die vor und nach dem Austausch einer SED ausgeführt werden müssen.
+* Das Ersatzlaufwerk muss von Ihrer Plattform unterstützt werden. Siehe https://hwu.netapp.com["NetApp Hardware Universe"].
+* Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+
+
+Die Festplatten-Firmware wird bei neuen Laufwerken, die nicht über aktuelle Firmware-Versionen verfügen, automatisch (unterbrechungsfrei) aktualisiert.
+
+Beim Austausch mehrerer Festplattenlaufwerke müssen Sie eine Minute zwischen dem Entfernen jedes ausgefallenen Laufwerks und dem Einsetzen des Ersatzlaufwerks warten, damit das Storage-System die Existenz jeder neuen Festplatte erkennen kann.
+
+[role="tabbed-block"]
+====
+.Option 1: SSD ersetzen
+--
+Nicht aufgelöste Direktive in <stdin> - include:../_include/drive_hotswap_sas.adoc[]
+
+--
+.Option 2: Festplatte ersetzen
+--
+Nicht aufgelöste Richtlinie in <stdin> - include:../_include/drive_hotswap_sas.adoc.adoc[]
+
+--
+====

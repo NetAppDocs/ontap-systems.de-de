@@ -1,0 +1,217 @@
+---
+permalink: a320/bootmedia-replace.html 
+sidebar: sidebar 
+keywords: aff, a320, aff a320, boot, media, store, primary, secondary, set, system, boot, image, file, replace, replace the boot media 
+summary: 'Das Boot-Medium speichert einen primären und sekundären Satz von System \(Boot Image\)-Dateien, die das System beim Booten verwendet.' 
+---
+= Ersetzen Sie die Startmedien - AFF A320
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+Zum Austauschen des Startmediums müssen Sie das beeinträchtigte Controller-Modul entfernen, das Ersatzstartmedium installieren und das Boot-Image auf ein USB-Flash-Laufwerk übertragen.
+
+
+
+== Schritt 1: Entfernen Sie das Controller-Modul
+
+[role="lead"]
+Um auf Komponenten im Controller-Modul zuzugreifen, müssen Sie das Controller-Modul aus dem Gehäuse entfernen.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Trennen Sie das Netzteil des Controller-Moduls von der Stromversorgung.
+. Lösen Sie den Haken- und Schlaufenriemen, mit dem die Kabel am Kabelführungsgerät befestigt sind, und ziehen Sie dann die Systemkabel und SFPs (falls erforderlich) vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren.
++
+image::../media/drw_a320_controller_cable_unplug_animated_gif.png[das drw a320-Controllerkabel trennen das animierte GIF-Kabel]
+
++
+Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation des Kabelverwaltungsgeräts die Kabel organisiert sind.
+
+. Entfernen Sie die Kabelführungsgeräte von der linken und rechten Seite des Controller-Moduls und stellen Sie sie zur Seite.
+. Entfernen Sie das Controller-Modul aus dem Chassis:
++
+image::../media/drw_a320_controller_remove_animated_gif.png[drw a320-Controller entfernen animiertes gif]
+
++
+.. Setzen Sie den Zeigefinger in den Verriegelungsmechanismus auf beiden Seiten des Controller-Moduls ein.
+.. Drücken Sie auf die orangefarbene Lasche oben am Verriegelungsmechanismus nach unten, bis der Rastbolzen am Gehäuse entfernt wird.
++
+Der Haken des Verriegelungsmechanismus sollte fast senkrecht sein und sich vom Chassispindel frei sein.
+
+.. Ziehen Sie das Controller-Modul vorsichtig einige Zentimeter zu Ihnen, damit Sie die Seiten des Controller-Moduls erfassen können.
+.. Ziehen Sie das Controller-Modul vorsichtig mit beiden Händen aus dem Gehäuse und legen Sie es auf eine flache, stabile Oberfläche.
+
+
+
+
+
+
+== Schritt 2: Ersetzen Sie die Startmedien
+
+[role="lead"]
+Sie müssen das Startmedium im Controller-Modul finden und dann die Anweisungen befolgen, um es auszutauschen.
+
+. Öffnen Sie den Luftkanal, und suchen Sie das Boot-Medium mithilfe der folgenden Abbildung oder der FRU-Zuordnung auf dem Controller-Modul:
+. Suchen und entfernen Sie die Startmedien aus dem Controller-Modul:
++
+image::../media/drw_a320_boot_media_replace_animated_gif.png[drw a320-Startmedien ersetzen animierte gif-Medien]
+
++
+.. Drücken Sie die blaue Taste am Ende des Startmediums, bis der Lip auf dem Boot-Medium die blaue Taste löscht.
+.. Drehen Sie das Startmedium nach oben, und ziehen Sie das Startmedium vorsichtig aus dem Sockel.
++
+... Überprüfen Sie die Startmedien, um sicherzustellen, dass sie ganz und ganz in der Steckdose sitzt.
+
+
+
+
++
+Entfernen Sie gegebenenfalls die Startmedien, und setzen Sie sie wieder in den Sockel ein.
+
+. Sperren Sie das Boot-Medium:
++
+.. Drehen Sie das Startmedium nach unten zur Hauptplatine.
+.. Platzieren Sie einen Finger am Ende des Startmediums mit der blauen Taste und drücken Sie das Bootmedium-Ende nach unten, um die blaue Verriegelungstaste zu berühren.
+.. Heben Sie beim Drücken auf die Startmedien die blaue Verriegelungstaste an, um die Boot-Medien zu verriegeln.
+
+
+. Schließen Sie den Luftkanal.
+
+
+
+
+== Schritt 3: Übertragen Sie das Startabbild über ein USB-Flash-Laufwerk auf die Startmedien
+
+[role="lead"]
+Das installierte Ersatzstartmedium verfügt nicht über ein Startabbild. Sie müssen also ein Startabbild über ein USB-Flash-Laufwerk übertragen.
+
+* Sie müssen über ein USB-Flash-Laufwerk verfügen, das auf MBR/FAT32 formatiert ist und eine Kapazität von mindestens 4 GB aufweist
+* Eine Kopie der gleichen Bildversion von ONTAP wie der beeinträchtigte Controller. Das entsprechende Image können Sie im Abschnitt „Downloads“ auf der NetApp Support-Website herunterladen
++
+** Wenn NVE aktiviert ist, laden Sie das Image mit NetApp Volume Encryption herunter, wie in der Download-Schaltfläche angegeben.
+** Wenn NVE nicht aktiviert ist, laden Sie das Image ohne NetApp Volume Encryption herunter, wie im Download-Button dargestellt.
+
+
+* Wenn Ihr System ein HA-Paar ist, müssen Sie eine Netzwerkverbindung haben.
+* Wenn es sich bei Ihrem System um ein eigenständiges System handelt, benötigen Sie keine Netzwerkverbindung, Sie müssen jedoch beim Wiederherstellen des var-Dateisystems einen zusätzlichen Neustart durchführen.
++
+.. Laden Sie das entsprechende Service-Image von der NetApp Support Site auf das USB-Flash-Laufwerk herunter und kopieren Sie es.
++
+... Laden Sie das Service-Image auf Ihren Arbeitsbereich auf Ihrem Laptop herunter.
+... Entpacken Sie das Service-Image.
++
+
+NOTE: Wenn Sie den Inhalt mit Windows extrahieren, verwenden Sie winzip nicht zum Extrahieren des Netzboots-Images. Verwenden Sie ein anderes Extraktionstool, wie 7-Zip oder WinRAR.
+
++
+Die Image-Datei „ungezippte Dienste“ enthält zwei Ordner:
+
++
+**** Booten
+**** efi
+
+
+... kopieren Sie den efi-Ordner in das oberste Verzeichnis auf dem USB-Flash-Laufwerk.
++
+Das USB-Flash-Laufwerk sollte den efi-Ordner und die gleiche Service Image (BIOS)-Version des beeinträchtigten Controllers haben.
+
+... Entfernen Sie das USB-Flash-Laufwerk von Ihrem Laptop.
+
+
+.. Wenn Sie dies noch nicht getan haben, schließen Sie den Luftkanal.
+.. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
+.. Installieren Sie das Kabelverwaltungsgerät neu und führen Sie das System nach Bedarf wieder ein.
++
+Denken Sie beim Neuinstallieren der Medienkonverter (SFPs oder QSFPs) daran, wenn sie entfernt wurden.
+
+.. Schließen Sie das Netzkabel an das Netzteil an, und setzen Sie den Netzkabelhalter wieder ein.
+.. Stecken Sie das USB-Flash-Laufwerk in den USB-Steckplatz des Controller-Moduls.
++
+Stellen Sie sicher, dass Sie das USB-Flash-Laufwerk in den für USB-Geräte gekennzeichneten Steckplatz und nicht im USB-Konsolenport installieren.
+
+.. Führen Sie die Neuinstallation des Controller-Moduls durch:
++
+... Stellen Sie sicher, dass die Verriegelungsarme in der ausgestreckten Position verriegelt sind.
+... Drücken Sie das Controller-Modul mithilfe der Entriegelungshebel in den Chassis-Schacht, bis der Anschlag einrastet.
++
+
+NOTE: Drücken Sie den Verriegelungsmechanismus nicht oben in den Verriegelungsarmen nach unten. Dabei den Verriegelungsmechanismus anheben und das Einschieben des Controller-Moduls in das Gehäuse untersagen.
+
+... Drücken Sie die orangefarbenen Laschen oben am Verriegelungsmechanismus nach unten und halten Sie sie gedrückt.
+... Schieben Sie das Controller-Modul vorsichtig in den Gehäuseschacht, bis es bündig an den Kanten des Chassis liegt.
++
+
+NOTE: Die Arms des Verriegelungsmechanismus lassen sich in das Gehäuse schieben.
+
++
+Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt.
+
+... Lösen Sie die Verriegelungen, um das Controller-Modul einrasten zu lassen.
+... Wenn Sie dies noch nicht getan haben, installieren Sie das Kabelverwaltungsgerät neu.
+
+
+.. Unterbrechen Sie den Boot-Vorgang, indem Sie Strg-C drücken, um an der LOADER-Eingabeaufforderung zu stoppen.
++
+Wenn Sie diese Meldung verpassen, drücken Sie Strg-C, wählen Sie die Option zum Booten im Wartungsmodus aus, und halten Sie dann den Node zum Booten in LOADER.
+
+.. Starten Sie von der LOADER-Eingabeaufforderung das Recovery-Image vom USB-Flash-Laufwerk: `boot_recovery`
++
+Das Bild wird vom USB-Flash-Laufwerk heruntergeladen.
+
+.. Wenn Sie dazu aufgefordert werden, geben Sie entweder den Namen des Bilds ein oder akzeptieren Sie das Standardbild, das in den Klammern auf dem Bildschirm angezeigt wird.
+.. Starten Sie nach der Installation des Images den Wiederherstellungsprozess:
++
+... Notieren Sie die IP-Adresse des Node, der auf dem Bildschirm angezeigt wird.
+... Drücken Sie `y` Wenn Sie aufgefordert werden, die Backup-Konfiguration wiederherzustellen.
+... Drücken Sie `y` Bei Aufforderung zum Überschreiben von /etc/ssh/ssh_Host_dsa_Key.
+
+
+.. Starten Sie vom Partner-Node auf der erweiterten Berechtigungsebene die Konfigurationssynchronisierung mit der im vorherigen Schritt aufgezeichneten IP-Adresse: `system node restore-backup -node local -target-address _impaired_node_IP_address_`
+.. Wenn die Wiederherstellung erfolgreich ist, drücken Sie `y` Wenn Sie auf dem Knoten mit eingeschränkter Funktion aufgefordert werden, die wiederhergestellte Kopie zu verwenden?
+.. Drücken Sie `y` Wenn Sie sehen, dass der Sicherungsvorgang erfolgreich war, und drücken Sie dann `y` Wenn Sie zum Neubooten des Node aufgefordert werden.
+.. Vergewissern Sie sich, dass die Umgebungsvariablen wie erwartet festgelegt sind.
++
+... Nehmen Sie den Node zur LOADER-Eingabeaufforderung.
++
+Über die ONTAP Eingabeaufforderung können Sie den Befehl System Node stop -skip-lif-Migration-before-shutdown true -ignore-Quorum-Warns TRUE -emmen-Takeover TRUE ausgeben.
+
+... Überprüfen Sie die Einstellungen der Umgebungsvariable mit dem `printenv` Befehl.
+... Wenn eine Umgebungsvariable nicht wie erwartet festgelegt ist, ändern Sie sie mit dem `setenv __environment-variable-name__ __changed-value__` Befehl.
+... Speichern Sie Ihre Änderungen mit dem `savenv` Befehl.
+... Booten Sie den Node neu.
+
+
+.. Wenn der neu gebootete Knoten angezeigt wird `Waiting for giveback...` Meldung, führen Sie ein Giveback vom gesunden Knoten aus:
++
+[cols="1,2"]
+|===
+| Ihr System befindet sich in... | Dann... 
+
+
+ a| 
+Ein HA-Paar
+ a| 
+Nachdem der Knoten „beeinträchtigt“ den angezeigt hat `Waiting for giveback...` Meldung, führen Sie ein Giveback vom gesunden Knoten aus:
+
+... Über den gesunden Knoten: `storage failover giveback -ofnode partner_node_name`
++
+Der beeinträchtigte Node nimmt seinen Storage zurück, beendet den Booten und startet dann neu und wird erneut vom gesunden Node übernommen.
+
++
+
+NOTE: Wenn das Rückübertragung ein Vetorecht ist, können Sie erwägen, das Vetos außer Kraft zu setzen.
+
++
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-hacg/home.html["ONTAP 9 High-Availability Configuration Guide"]
+
+... Überwachen Sie den Status des Giveback-Vorgangs mithilfe von `storage failover show-giveback` Befehl.
+... Nach Abschluss des Giveback-Vorgangs bestätigen Sie, dass das HA-Paar ordnungsgemäß funktioniert und dass ein Takeover mithilfe des möglich ist `storage failover show` Befehl.
+... Stellen Sie das automatische Giveback wieder her, wenn Sie es mithilfe des Storage Failover modify-Befehls deaktiviert haben.
+
+
+|===
+.. Beenden Sie die erweiterte Berechtigungsebene auf dem gesunden Node.
+
+
+

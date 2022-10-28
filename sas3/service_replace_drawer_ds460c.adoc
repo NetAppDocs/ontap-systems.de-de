@@ -1,0 +1,562 @@
+---
+permalink: sas3/service-replace-drawer-ds460c.html 
+sidebar: sidebar 
+keywords: i/o activity, power, off, shelf, replacing, replace, drive, drawer, disk, replace a drive drawer in a ds460c disk shelf, dcm2, dcm 
+summary: 'Wenn Sie eine Laufwerksschublade in einem Shelf ersetzen, müssen Sie entweder das gesamte Storage-System (HA-Paar) anhalten. Auf diese Weise können Sie Datenaggregate auf dem Shelf aufbewahren. Alternativ können Sie das HA-Paar aktiv halten. Allerdings müssen sämtliche Daten aus den Datenaggregaten auf den Festplattenlaufwerken verschoben und offline sein sowie die Datenaggregate löschen. Wenn jedoch das Regal ein Wurzelaggregat enthält, müssen Sie das HA-Paar anhalten.' 
+---
+= Ersetzen Sie eine Laufwerksschublade in einem DS460C Festplatten-Shelf – Shelfs durch IOM12/IOM12B-Module
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie eine Laufwerksschublade in einem Shelf ersetzen, müssen Sie entweder das gesamte Storage-System (HA-Paar) anhalten. Auf diese Weise können Sie Datenaggregate auf dem Shelf aufbewahren. Alternativ können Sie das HA-Paar aktiv halten. Allerdings müssen sämtliche Daten aus den Datenaggregaten auf den Festplattenlaufwerken verschoben und offline sein sowie die Datenaggregate löschen. Wenn jedoch das Regal ein Wurzelaggregat enthält, müssen Sie das HA-Paar anhalten.
+
+Sie benötigen folgende Elemente für dieses Verfahren:
+
+* Antistatischer Schutz
++
+
+NOTE: *Möglicher Hardwareschaden:* um elektrostatische Entladungsschäden am Laufwerkshelf zu verhindern, verwenden Sie bei der Handhabung von Regalkomponenten einen geeigneten antistatischen Schutz.
+
+* Ersatzlauffach
+* Linke und rechte Kabelketten austauschen
+* Taschenlampe
+
+
+.Über diese Aufgabe
+* Dieses Verfahren gilt für Regale mit DCM-Antriebsschubladen und/oder DCM2-Laufwerkschubladen. (Die Shelfs verfügen außerdem über zwei IOM12-Module oder zwei IOM12B-Module.)
++
+Wenn ein DCM- oder DCM2-Laufwerkschublade ausfällt, erhalten Sie ein DCM- oder DCM2-Laufwerkschublade, um es auszutauschen.
+
+
+
+[NOTE]
+====
+Wenn Sie eine ausgefallene Laufwerksschublade ersetzen, führt dies zu einer Kombination aus IOM12 Modulen und einer beliebigen Anzahl von DCM2-Laufwerksfächer, Sie müssen die IOM12 FW auf Version 0300 oder höher aktualisieren, da die IOM12-Module eine FW-Version benötigen, die DCM2-Laufwerkschubladen unterstützt.
+
+Das IOM12 FW Upgrade kann vor oder nach dem Austausch einer Laufwerkschublade durchgeführt werden. Bei diesem Verfahren wird die FW im Rahmen der Vorbereitung für den Austausch der Schublade aktualisiert.
+
+====
+* Die DCM-Antriebs-Schubladen und die DCM2-Antriebkästen lassen sich durch ihr Aussehen unterscheiden:
++
+Die DCM-Antriebs-Schubladen sehen wie folgt aus:
+
++
+image::../media/28_dwg_e2860_de460c_front_no_callouts.gif[28 dwg e2860 de460c vorne keine Rufumbrüche]
+
++
+Die DCM2-Antriebs-Schubladen zeichnen sich durch einen blauen Streifen und das Label "DCM2" aus:
+
++
+image::../media/dcm2.png[Dcm2]
+
+
+
+
+
+== Bereiten Sie den Austausch eines Laufwerksschubs vor
+
+[role="Lead"]
+Bevor Sie eine Laufwerksschublade ersetzen, müssen Sie sicherstellen, dass Sie bei Bedarf die IOM12 FW aktualisieren und entweder das HA-Paar anhalten, um Datenaggregate auf dem Shelf zu halten. Alternativ können Sie das HA-Paar aktiv halten. Allerdings müssen sämtliche Daten aus den Datenaggregaten auf den Festplattenlaufwerken verschoben und offline sein sowie die Datenaggregate löschen. Wenn jedoch das Regal ein Wurzelaggregat enthält, müssen Sie das HA-Paar anhalten. Abschließend müssen Sie das Regal ausschalten.
+
+.Schritte
+. Ermitteln Sie, ob beim Austausch der ausgefallenen Laufwerksschublade eine Kombination aus IOM12 Modulen und einer beliebigen Anzahl von DCM2-Laufwerksschubladen ergibt.
+. Wenn das Shelf über eine Kombination aus IOM12 Modulen und einer beliebigen Anzahl von DCM2-Laufwerksfächer verfügt, müssen Sie das IOM12 FW auf Version 0300 oder höher aktualisieren; andernfalls mit dem nächsten Schritt fortfahren.
++
+Aktuelle Versionen der Firmware finden Sie auf der NetApp Support Site.
+
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp Downloads: Festplatten-Shelf Firmware"]
+
+. Wenn das Shelf das Root-Aggregat aus einem Controller im HA-Paar enthält oder wenn Sie das HA-Paar anhalten möchten (anstatt das HA-Paar in Betrieb zu halten), führen Sie die folgenden Teilschritte durch. Andernfalls fahren Sie mit dem nächsten Schritt fort.
++
+
+NOTE: Datenaggregate können beim Anhalten des HA-Paars auf dem Shelf bleiben.
+
++
+.. Halten Sie beide Controller im HA-Paar am Stoppen.
+.. Überprüfen Sie, ob Ihr HA-Paar durch Überprüfen der Speichersystemkonsole angehalten wurde.
+.. Schalten Sie das Shelf aus.
+.. Gehen Sie zum Abschnitt,  the cable chains.
+
+
+. Wenn Sie sich dafür entscheiden, das HA-Paar am Laufen zu halten, führen Sie die folgenden Teilschritte aus:
++
+
+NOTE: Wenn Sie versuchen, eine Schublade durch Aggregate im Festplatten-Shelf zu ersetzen, kann dies zu einer Systemunterbrechung und mehreren fehlerhaften Festplatten führen.
+
++
+.. Verschieben Sie alle Daten von den Datenaggregaten auf den Festplatten.
++
+Daten umfassen unter anderem Volumes und LUNs, sind aber nicht darauf beschränkt.
+
+.. OFine und löschen Sie die Aggregate, damit die Festplatten zu Reserveträgern werden:
++
+Befehle können aus der Clustershell eines der beiden Controller eingegeben werden.
+
++
+`storage aggregate offline -aggregate _aggregate_name_`
+
++
+`storage aggregate delete -aggregate _aggregate_name_`
+
+.. Überprüfen Sie, ob die Festplatten keine Aggregate haben (es handelt sich um Ersatzlaufwerke):
++
+... Geben Sie in der Clustershell eines der Controller den folgenden Befehl ein: `storage disk show -shelf _shelf_number_`
+... Überprüfen Sie die Ausgabe, um zu überprüfen, ob die Festplatten-Laufwerke Ersatzteile sind.
++
+Festplatten, die Ersatzteile sind, werden angezeigt `spare` Im `Container Type` Spalte.
+
++
+
+NOTE: Wenn Sie Festplattenlaufwerke im Shelf ausgefallen sind, `broken` Wird im angezeigt `Container Type` Spalte.
+
+
+
+.. Schalten Sie das Shelf aus.
+
+
+
+
+
+
+== Die Kabelketten entfernen
+
+[role="lead"]
+Die linken und rechten Kabelketten für jede Laufwerksschublade im DS460C-Laufwerkseinschub ermöglichen es, die Schubladen ein- und auszuschieben. Bevor Sie eine Laufwerksschublade entfernen können, müssen Sie beide Kabelketten entfernen.
+
+.Bevor Sie beginnen
+* Sie haben den abgeschlossen  to replace a drive drawer Schritte, damit Ihr HA-Paar angehalten wird oder Sie alle Daten aus den Datenaggregaten auf den Festplatten verschoben haben, und die Datenaggregate in den Offline- bzw. löschten, damit die Festplatten zu Spares werden können.
+* Sie haben das Regal ausgeschaltet.
+* Sie haben die folgenden Punkte erhalten:
++
+** Antistatischer Schutz
++
+
+NOTE: *Möglicher Hardwareschaden:* um elektrostatische Entladungsschäden am Regal zu verhindern, verwenden Sie beim Umgang mit Regalkomponenten einen geeigneten antistatischen Schutz.
+
+** Taschenlampe
+
+
+
+
+Jede Antriebsschublade hat linke und rechte Kabelketten. Die Metallenden an den Kabelketten schieben sich wie folgt in die entsprechenden vertikalen und horizontalen Halterungen innerhalb des Gehäuses:
+
+* Die vertikalen Halterungen links und rechts verbinden die Kabelkette mit der Mittelplatine des Gehäuses.
+* Die linken und rechten horizontalen Halterungen verbinden die Kabelkette mit der jeweiligen Schublade.
+
+
+.Schritte
+. Setzen Sie den antistatischen Schutz auf.
+. Entfernen Sie das rechte Lüftermodul von der Rückseite des Festplatten-Shelfs wie folgt:
++
+.. Drücken Sie die orangefarbene Lasche, um den Griff des Lüftermoduls zu lösen.
++
+Die Abbildung zeigt den Griff des Lüftermoduls, erweitert und von der orangefarbenen Lasche links gelöst.
+
++
+image::../media/28_dwg_e2860_de460c_fan_canister_handle_with_callout.gif[28 DWG e2860 de460c Gebläsegriff mit Legende]
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Griff Lüftermodul 
+|===
+.. Ziehen Sie das Lüftermodul mithilfe des Griffs aus dem Festplatten-Shelf und legen Sie es beiseite.
+
+
+. Stellen Sie manuell fest, welche der fünf Kabelketten getrennt werden sollen.
++
+Die Abbildung zeigt die rechte Seite des Festplatten-Shelf, während das Lüftermodul entfernt wurde. Wenn das Lüftermodul entfernt wurde, sehen Sie die fünf Kabelketten und die vertikalen und horizontalen Anschlüsse für jede Schublade. Die Rufbereitungen für Laufwerksschublade 1 werden zur Verfügung gestellt.
+
++
+image::../media/2860_dwg_full_back_view_chain_connectors.gif[2860 DWG-Kettenanschlüsse mit voller Rücksicht]
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Kabelkette 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Vertikaler Anschluss (an die Mittelebene angeschlossen)
+
+
+
+ a| 
+image:../media/legend_icon_03.png[""]
+ a| 
+Horizontaler Anschluss (an die Laufwerksschublade angeschlossen)
+
+|===
++
+Die obere Kabelkette ist an der Antriebsschublade 1 befestigt. Die untere Kabelkette ist an der Antriebsschublade 5 befestigt.
+
+. Bewegen Sie mit dem Finger die Kabelkette auf der rechten Seite nach links.
+. Befolgen Sie diese Schritte, um eine der rechten Kabelketten von der entsprechenden vertikalen Halterung zu trennen.
++
+.. Suchen Sie mithilfe einer Taschenlampe den orangefarbenen Ring am Ende der Kabelkette, der mit der vertikalen Halterung im Gehäuse verbunden ist.
++
+image::../media/2860_dwg_vertical_ring_for_chain.gif[2860 dwg senkrechter Ring für Kette]
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Orangefarbener Ring an der vertikalen Halterung 
+|===
+.. Trennen Sie den vertikalen Anschluss (der mit der Mittelplatine verbunden ist), indem Sie vorsichtig auf die Mitte des orangen Rings drücken und die linke Seite des Kabels aus dem Gehäuse ziehen.
+.. Ziehen Sie zum Abziehen der Kabelkette vorsichtig den Finger zu Ihnen, der etwa 2.5 cm lang ist, aber lassen Sie den Kabelkettenanschluss in der vertikalen Halterung.
+
+
+. Führen Sie die folgenden Schritte aus, um das andere Ende der Kabelkette zu trennen:
++
+.. Suchen Sie mit einer Taschenlampe den orangefarbenen Ring am Ende der Kabelkette, der an der horizontalen Halterung im Gehäuse befestigt ist.
++
+Die Abbildung zeigt den horizontalen Stecker auf der rechten Seite und die Kabelkette ist getrennt und teilweise auf der linken Seite herausgezogen.
+
++
+image::../media/2860_dwg_horiz_ring_for_chain.gif[2860 dwg Horizring für Kette]
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Orangefarbener Ring an horizontaler Halterung 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Kabelkette
+
+|===
+.. Stecken Sie Ihren Finger vorsichtig in den orangefarbenen Ring.
++
+Die Abbildung zeigt den orangefarbenen Ring an der horizontalen Halterung, der nach unten gedrückt wird, so dass der Rest der Kabelkette aus dem Gehäuse gezogen werden kann.
+
+.. Ziehen Sie den Finger zu sich, um die Kabelkette abzuziehen.
+
+
+. Ziehen Sie die gesamte Kabelkette vorsichtig aus dem Festplatten-Shelf heraus.
+. Entfernen Sie das linke Lüftermodul von der Rückseite des Laufwerks-Shelfs.
+. Gehen Sie folgendermaßen vor, um die linke Kabelkette von der vertikalen Halterung zu trennen:
++
+.. Suchen Sie mit einer Taschenlampe den orangefarbenen Ring am Ende der Kabelkette, die an der vertikalen Halterung befestigt ist.
+.. Stecken Sie Ihren Finger in den orangefarbenen Ring.
+.. Ziehen Sie zum Abziehen der Kabelkette den Finger ungefähr 2.5 cm zu Ihnen, lassen Sie den Kabelkettenanschluss jedoch innerhalb der vertikalen Halterung.
+
+
+. Trennen Sie die linke Kabelkette von der horizontalen Halterung, und ziehen Sie die gesamte Kabelkette aus dem Laufwerkshelf.
+
+
+
+
+== Entfernen Sie eine Laufwerksschublade
+
+[role="lead"]
+Nachdem Sie die rechten und linken Kabelketten entfernt haben, können Sie die Laufwerksschublade aus dem Laufwerk-Shelf entfernen. Durch das Entfernen einer Laufwerkschublade kann der Schubladenteil des Ausschubs herausgezogen, die Laufwerke entfernt und die Laufwerkschublade entfernt werden.
+
+.Bevor Sie beginnen
+* Sie haben die rechte und linke Kabelkette für die Laufwerksschublade entfernt.
+* Sie haben die rechten und linken Lüftermodule ersetzt.
+
+
+.Schritte
+. Entfernen Sie die Blende von der Vorderseite des Laufwerks-Shelf.
+. Entriegeln Sie die Antriebsschublade, indem Sie an beiden Hebeln herausziehen.
+. Ziehen Sie die Antriebsschublade vorsichtig mit den ausgestreckte Hebeln heraus, bis sie einrastet. Entfernen Sie das Laufwerkschublade nicht vollständig aus dem Festplatten-Shelf.
+. Entfernen Sie die Laufwerke aus der Laufwerkschublade:
++
+.. Ziehen Sie vorsichtig die orangefarbene Freigabeklinke zurück, die auf der mittleren Vorderseite jedes Laufwerks sichtbar ist. Die folgende Abbildung zeigt den orangefarbenen Entriegelungshebel für jedes Laufwerk.
++
+image::../media/28_dwg_e2860_drive_latches_top_view.gif[28-g-E2860-Antriebs-Riegel, Ansicht von oben]
+
+.. Heben Sie den Antriebsgriff senkrecht an.
+.. Heben Sie das Laufwerk mit dem Griff aus der Laufwerkschublade.
++
+image::../media/92_dwg_de6600_install_or_remove_drive.gif[92-dwg-D6600-Laufwerk installieren oder entfernen]
+
+.. Setzen Sie das Laufwerk auf eine flache, statische Oberfläche und nicht an magnetischen Geräten.
++
+
+NOTE: *Möglicher Verlust des Datenzugriffs:* Magnetfelder können alle Daten auf dem Laufwerk zerstören und irreparable Schäden an der Antriebsschaltung verursachen. Um den Verlust des Datenzugriffs und die Beschädigung der Laufwerke zu vermeiden, sollten Laufwerke immer von magnetischen Geräten ferngehalten werden.
+
+
+
+. Führen Sie die folgenden Schritte aus, um das Laufwerksfach zu entfernen:
++
+.. Stellen Sie den Kunststofffreigabehebel auf beiden Seiten der Antriebsschublade ein.
++
+image::../media/92_pht_de6600_drive_drawer_release_lever.gif[92 Auslösehebel der prt-D6600-Laufwerkschublade]
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Freigabehebel der Antriebsschublade 
+|===
+.. Öffnen Sie beide Freigabehebel, indem Sie die Verriegelungen zu Ihnen ziehen.
+.. Halten Sie die beiden Freigabehebel fest, und ziehen Sie die Laufwerkschublade zu sich hin.
+.. Entfernen Sie die Laufwerkschublade aus dem Festplatten-Shelf.
+
+
+
+
+
+
+== Setzen Sie eine Laufwerksschublade ein
+
+[role="lead"]
+Wenn Sie eine Laufwerksschublade in ein Laufwerk-Shelf einbauen, schieben Sie die Schublade in den leeren Steckplatz, installieren Sie die Laufwerke und ersetzen Sie die Frontblende.
+
+.Bevor Sie beginnen
+* Sie haben die folgenden Punkte erhalten:
++
+** Ersatzlauffach
+** Taschenlampe
+
+
+
+
+.Schritte
+. Von der Vorderseite des Laufwerksregals, eine Taschenlampe in den leeren Schubladenschlitz erstrahlen, und suchen Sie den Lock-out Tumbler für diesen Schlitz.
++
+Die austarre Trommel-Baugruppe ist eine Sicherheitsfunktion, die verhindert, dass mehr als eine Laufwerkschublade gleichzeitig geöffnet werden kann.
+
++
+image::../media/92_pht_de6600_lock_out_tumbler_detail.gif[92 pht-D6600 versperrt die Trommler-Details]
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Schleuder-Tumbler 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Führung der Schublade
+
+|===
+. Positionieren Sie die Ersatzlaufschublade vor dem leeren Steckplatz und leicht rechts neben der Mitte.
++
+Durch eine leichte Positionierung der Schublade rechts neben der Mitte wird sichergestellt, dass der Verriegelungsbecher und die Führung der Schublade korrekt eingerastet sind.
+
+. Schieben Sie die Laufwerkschublade in den Schlitz, und stellen Sie sicher, dass die Führung der Schublade unter den verriegelten Tumbler rutscht.
++
+
+NOTE: *Gefahr von Geräteschäden:* ein Schaden tritt auf, wenn die Schubladenführung nicht unter den verriegelten Tumbler rutscht.
+
+. Schieben Sie die Laufwerkschublade vorsichtig ganz nach innen, bis die Verriegelung vollständig einrastet.
++
+
+NOTE: *Risiko von Geräteschäden:* Stoppen Sie die Antriebsklade auf, wenn Sie einen übermäßigen Widerstand oder eine starke Bindung spüren. Schieben Sie die Schublade mit den Freigabehebel an der Vorderseite der Schublade nach außen. Setzen Sie anschließend die Schublade wieder in den Schlitz ein, und stellen Sie sicher, dass sie frei nach innen und außen rutscht.
+
+. Führen Sie die folgenden Schritte aus, um die Laufwerke in der Laufwerksschublade wieder einzusetzen:
++
+.. Entriegeln Sie die Laufwerkschublade, indem Sie an beiden Hebeln an der Vorderseite der Schublade herausziehen.
+.. Ziehen Sie die Antriebsschublade vorsichtig mit den ausgestreckte Hebeln heraus, bis sie einrastet. Entfernen Sie das Laufwerkschublade nicht vollständig aus dem Festplatten-Shelf.
+.. Heben Sie den Griff auf dem Laufwerk, das Sie installieren, senkrecht an.
+.. Richten Sie die beiden angehobenen Tasten auf beiden Seiten des Laufwerks an den Kerben auf der Schublade aus.
++
+Die Abbildung zeigt die rechte Ansicht eines Laufwerks und zeigt die Position der angehobenen Tasten an.
+
++
+image::../media/28_dwg_e2860_de460c_drive_cru.gif[28 DWG e2860 de460c Antrieb Cru]
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Angehobene Taste auf der rechten Seite des Antriebs. 
+|===
+.. Senken Sie das Laufwerk gerade nach unten, und drehen Sie dann den Laufwerkgriff nach unten, bis das Laufwerk einrastet.
++
+Wenn Sie ein teilweise bestücktes Shelf haben, das bedeutet, dass die Schublade, in der Sie Ihre Laufwerke neu installieren, weniger als die von ihm unterstützten 12 Laufwerke hat, installieren Sie die ersten vier Laufwerke in die vorderen Steckplätze (0, 3, 6 und 9).
+
++
+
+NOTE: *Gefahr einer Gerätestörung:* um einen korrekten Luftstrom zu ermöglichen und eine Überhitzung zu vermeiden, müssen die ersten vier Laufwerke immer in die vorderen Schlitze (0, 3, 6 und 9) eingesetzt werden.
+
++
+image::../media/92_dwg_de6600_install_or_remove_drive.gif[92-dwg-D6600-Laufwerk installieren oder entfernen]
+
+.. Wiederholen Sie diese Teilschritte, um alle Laufwerke neu zu installieren.
+
+
+. Schieben Sie die Schublade wieder in das Laufwerk-Shelf, indem Sie sie aus der Mitte schieben und beide Hebel schließen.
++
+
+NOTE: *Gefahr einer Gerätestörung:* Verschließen Sie die Antriebsschublade durch Drücken beider Hebel vollständig. Sie müssen die Laufwerkschublade vollständig schließen, um einen ordnungsgemäßen Luftstrom zu gewährleisten und eine Überhitzung zu vermeiden.
+
+. Befestigen Sie die Blende an der Vorderseite des Festplatten-Shelf.
+
+
+
+
+== Die Kabelketten befestigen
+
+[role="lead"]
+Der letzte Schritt beim Einbau einer Laufwerkschublade ist das Befestigen der linken und rechten Ersatzkabelketten am Laufwerk-Shelf. Beim Anschließen einer Kabelkette die Reihenfolge umkehren, die Sie beim Trennen der Kabelkette verwendet haben. Sie müssen den horizontalen Stecker der Kette in die horizontale Halterung im Gehäuse stecken, bevor Sie den vertikalen Anschluss der Kette in die vertikale Halterung im Gehäuse einsetzen.
+
+.Bevor Sie beginnen
+* Sie haben die Laufwerksschublade und alle Laufwerke ersetzt.
+* Sie haben zwei Ersatzkabelketten, die LINKS und RECHTS gekennzeichnet sind (am horizontalen Anschluss neben der Laufwerksschublade).
+
+
+image::../media/28_dwg_e2860_de460c_cable_chain_left.gif[28 DWG e2860 de460c Kabelkette links]
+
+[cols="4*"]
+|===
+| Legende | Kabelkette | Stecker | Stellt eine Verbindung her 
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Links  a| 
+Vertikale Märkte
+ a| 
+Midplane
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Links
+ a| 
+Horizontal
+ a| 
+Laufwerksschublade
+
+|===
+image:../media/28_dwg_e2860_de460c_cable_chain_right.gif[""]
+
+[cols="4*"]
+|===
+| Legende | Kabelkette | Stecker | Stellt eine Verbindung her 
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Richtig  a| 
+Horizontal
+ a| 
+Laufwerksschublade
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Richtig
+ a| 
+Vertikale Märkte
+ a| 
+Midplane
+
+|===
+.Schritte
+. Gehen Sie folgendermaßen vor, um die linke Kabelkette anzubringen:
++
+.. Suchen Sie die horizontalen und vertikalen Anschlüsse an der linken Kabelkette und die entsprechenden horizontalen und vertikalen Halterungen im Gehäuse.
+.. Richten Sie beide Kabelkettenanschlüsse an den entsprechenden Halterungen aus.
+.. Schieben Sie den horizontalen Stecker der Kabelkette unter die Führungsschiene auf der horizontalen Halterung und schieben Sie ihn so weit wie möglich hinein.
++
+Die Abbildung zeigt die Führungsschiene auf der linken Seite für die zweite Laufwerksschublade im Gehäuse.
+
++
+image::../media/2860_dwg_guide_rail.gif[2860-m-Führungsschiene]
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Führungsschiene 
+|===
++
+[NOTE]
+====
+*Gefahr einer Gerätestörung:* Verstecken Sie den Stecker unter die Führungsschiene an der Halterung. Wenn der Stecker oben auf der Führungsschiene sitzt, können Probleme auftreten, wenn das System läuft.
+
+====
+.. Schieben Sie den vertikalen Anschluss der linken Kabelkette in die vertikale Halterung.
+.. Nachdem Sie beide Enden der Kabelkette wieder angeschlossen haben, ziehen Sie die Kabelkette vorsichtig an, um zu überprüfen, ob beide Stecker verriegelt sind.
++
+[NOTE]
+====
+*Gefahr einer Fehlfunktion des Geräts:* Wenn die Stecker nicht verriegelt sind, kann sich die Kabelkette beim Schubladenbetrieb lösen.
+
+====
+
+
+. Installieren Sie das linke Lüftermodul wieder.
+. Führen Sie die folgenden Schritte aus, um die rechte Kabelkette wieder anzubringen:
++
+.. Suchen Sie die horizontalen und vertikalen Anschlüsse der Kabelkette und die entsprechenden horizontalen und vertikalen Halterungen im Gehäuse.
+.. Richten Sie beide Kabelkettenanschlüsse an den entsprechenden Halterungen aus.
+.. Schieben Sie den horizontalen Stecker der Kabelkette unter die Führungsschiene auf der horizontalen Halterung und schieben Sie ihn so weit wie möglich hinein.
++
+[NOTE]
+====
+*Gefahr einer Gerätestörung:* Verstecken Sie den Stecker unter die Führungsschiene an der Halterung. Wenn der Stecker oben auf der Führungsschiene sitzt, können Probleme auftreten, wenn das System läuft.
+
+====
+.. Schieben Sie den vertikalen Anschluss der rechten Kabelkette in die vertikale Halterung.
+.. Nachdem Sie beide Enden der Kabelkette wieder angeschlossen haben, ziehen Sie die Kabelkette vorsichtig an, um zu überprüfen, ob beide Stecker verriegelt sind.
++
+[NOTE]
+====
+*Gefahr einer Fehlfunktion des Geräts:* Wenn die Stecker nicht verriegelt sind, kann sich die Kabelkette beim Schubladenbetrieb lösen.
+
+====
+
+
+. Bauen Sie das rechte Lüftermodul wieder ein.
+. Leistung erneut anwenden:
++
+.. Schalten Sie beide Netzschalter am Laufwerk-Shelf ein.
+.. Vergewissern Sie sich, dass beide Lüfter aufleuchten und die gelbe LED auf der Rückseite der Lüfter ausgeschaltet ist.
+
+
+. Wenn Sie das HA-Paar angehalten haben, Booten von ONTAP auf beiden Controllern; ansonsten fahren Sie mit dem nächsten Schritt fort.
+. Wenn Sie Daten aus dem Shelf verschoben und die Datenaggregate gelöscht hatten, können Sie jetzt die freien Festplatten im Shelf zur Aggregaterstellung oder -Erweiterung verwenden.
++
+https://docs.netapp.com/us-en/ontap/disks-aggregates/aggregate-creation-workflow-concept.html["Aggregat-Erstellung"]
+
++
+https://docs.netapp.com/us-en/ontap/disks-aggregates/aggregate-expansion-workflow-concept.html["Aggregat-Erweiterungs-Workflow"]
+
+

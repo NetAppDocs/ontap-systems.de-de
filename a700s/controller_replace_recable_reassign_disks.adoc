@@ -1,0 +1,118 @@
+---
+permalink: a700s/controller-replace-recable-reassign-disks.html 
+sidebar: sidebar 
+keywords: aff a700s, how to recable the system, how to reassign disks 
+summary: Sie müssen den Speicher neu zuweisen und die Neuzuweisung der Festplatte bestätigen. 
+---
+= Das System neu zuordnen und Festplatten neu zuweisen - AFF A700s
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um den Ersatzvorgang abzuschließen und den Betrieb des Systems wiederherzustellen, müssen Sie den Storage erneut herstellen, die NetApp Storage Encryption Konfiguration (falls erforderlich) wiederherstellen und die Lizenzen für den neuen Controller installieren. Vor der Wiederherstellung des Systembetriebs müssen Sie eine Reihe von Aufgaben ausführen.
+
+
+
+== Schritt 1: Das System erneut einsetzen
+
+Nach Ausführung der Diagnose müssen Sie die Speicher- und Netzwerkverbindungen des Controller-Moduls wieder herstellen können.
+
+.Schritte
+. Das System neu aufführen.
+. Überprüfen Sie anhand von, ob die Verkabelung korrekt ist https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"].
++
+.. Laden Sie Config Advisor herunter und installieren Sie es.
+.. Geben Sie die Informationen für das Zielsystem ein, und klicken Sie auf Daten erfassen.
+.. Klicken Sie auf die Registerkarte Verkabelung, und überprüfen Sie die Ausgabe. Stellen Sie sicher, dass alle Festplatten-Shelfs angezeigt werden und alle Festplatten in der Ausgabe angezeigt werden. So beheben Sie mögliche Verkabelungsprobleme.
+.. Überprüfen Sie die andere Verkabelung, indem Sie auf die entsprechende Registerkarte klicken und dann die Ausgabe von Config Advisor überprüfen.
+
+
+
+
+
+
+== Schritt 2: Festplatten neu zuweisen
+
+Wenn sich das Storage-System in einem HA-Paar befindet, wird die System-ID des neuen Controller-Moduls automatisch den Festplatten zugewiesen, wenn die Rückgabe am Ende des Verfahrens stattfindet. Sie müssen die Änderung der System-ID beim Booten des Controllers _Replacement_ bestätigen und anschließend überprüfen, ob die Änderung implementiert wurde.
+
+Diese Vorgehensweise gilt nur für Systeme, auf denen ONTAP in einem HA-Paar ausgeführt wird.
+
+. Wenn sich der Controller _Replacement_ im Wartungsmodus befindet (zeigt das an `*>` Eingabeaufforderung, beenden Sie den Wartungsmodus und gehen Sie zur LOADER-Eingabeaufforderung: `halt`
+. Booten Sie an der LOADER-Eingabeaufforderung am _Replacement_-Controller den Controller, und geben Sie ein `y` Wenn Sie aufgrund einer nicht übereinstimmenden System-ID aufgefordert werden, die System-ID außer Kraft zu setzen:``boot_ontap``
+. Warten Sie, bis der `Waiting for giveback...` Die Meldung wird auf der Controller-Konsole „_Replacement_“ angezeigt und überprüfen Sie anschließend vom gesunden Controller, ob die neue Partner-System-ID automatisch zugewiesen wurde: `storage failover show`
++
+In der Befehlsausgabe sollte eine Meldung angezeigt werden, dass sich die System-ID auf dem beeinträchtigten Controller geändert hat und die korrekten alten und neuen IDs angezeigt werden. Im folgenden Beispiel wurde node2 ersetzt und hat eine neue System-ID von 151759706.
+
++
+[listing]
+----
+node1> `storage failover show`
+                                    Takeover
+Node              Partner           Possible     State Description
+------------      ------------      --------     -------------------------------------
+node1             node2             false        System ID changed on partner (Old:
+                                                  151759755, New: 151759706), In takeover
+node2             node1             -            Waiting for giveback (HA mailboxes)
+----
+. Vergewissern Sie sich beim ordnungsgemäßen Controller, dass alle Corestapy gespeichert sind:
++
+.. Ändern Sie die erweiterte Berechtigungsebene: `set -privilege advanced`
++
+Sie können antworten `Y` Wenn Sie aufgefordert werden, den erweiterten Modus fortzusetzen. Die Eingabeaufforderung für den erweiterten Modus wird angezeigt (*>).
+
+.. Speichern von CoreDumps: `system node run -node _local-node-name_ partner savecore`
+.. Warten Sie, bis der Befehl `savecore`abgeschlossen ist, bevor Sie das Giveback ausgeben.
++
+Sie können den folgenden Befehl eingeben, um den Fortschritt des Befehls savecore zu überwachen: `system node run -node _local-node-name_ partner savecore -s`
+
+.. Zurück zur Administratorberechtigungsebene: `set -privilege admin`
+
+
+. Wenn Ihr Storage- oder Volume Encryption-System konfiguriert ist, müssen Sie die Funktionen für Storage oder Volume Encryption mithilfe eines der folgenden Verfahren wiederherstellen: Je nachdem, ob Sie integriertes oder externes Verschlüsselungsmanagement verwenden:
++
+** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-onboard-key-management-encryption-keys-task.html["Wiederherstellung der integrierten Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"^]
+** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-external-encryption-keys-93-later-task.html["Wiederherstellung der externen Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"^]
+
+
+. Geben Sie den Controller zurück:
++
+.. Geben Sie von dem ordnungsgemäßen Controller den Storage des ersetzten Controllers wieder: `storage failover giveback -ofnode _replacement_node_name_`
++
+Der _Replacement_ -Controller nimmt den Storage wieder in Anspruch und führt den Startvorgang durch.
+
++
+Wenn Sie aufgrund einer nicht übereinstimmenden System-ID aufgefordert werden, die System-ID außer Kraft zu setzen, sollten Sie eingeben `y`.
+
++
+
+NOTE: Wenn das Rückübertragung ein Vetorecht ist, können Sie erwägen, das Vetos außer Kraft zu setzen.
+
++
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["Finden Sie die Inhalte zur Hochverfügbarkeitskonfiguration Ihrer Version von ONTAP 9"]
+
+.. Nachdem das Giveback abgeschlossen ist, bestätigen Sie, dass das HA-Paar sich gesund befindet und ein Takeover möglich ist: `storage failover show`
++
+Die Ausgabe von der `storage failover show` Befehl sollte nicht die in der Partnernachricht geänderte System-ID enthalten.
+
+
+
+. Überprüfen Sie, ob die Festplatten ordnungsgemäß zugewiesen wurden: `storage disk show -ownership`
++
+Die Festplatten, die zum Controller _Replacement_ gehören, sollten die neue System-ID anzeigen. Im folgenden Beispiel zeigen die Festplatten von node1 jetzt die neue System-ID, 1873775277:
+
++
+[listing]
+----
+node1> `storage disk show -ownership`
+
+Disk  Aggregate Home  Owner  DR Home  Home ID    Owner ID  DR Home ID Reserver  Pool
+----- ------    ----- ------ -------- -------    -------    -------  ---------  ---
+1.0.0  aggr0_1  node1 node1  -        1873775277 1873775277  -       1873775277 Pool0
+1.0.1  aggr0_1  node1 node1           1873775277 1873775277  -       1873775277 Pool0
+.
+.
+.
+----
+

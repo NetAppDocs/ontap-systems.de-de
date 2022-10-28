@@ -1,0 +1,33 @@
+---
+permalink: platform-supplemental/sldiag-introduction.html 
+sidebar: sidebar 
+keywords: system-level, diagnostic, command-line, interface, test, search, hardware, problem, storage, system, component, operating, identify, faulty, component, introduction, introduction to system-level diagnostic 
+summary: Die Diagnose auf Systemebene bietet eine Befehlszeilenschnittstelle für Tests, mit denen Sie nach Hardware-Problemen auf unterstützten Storage-Systemen suchen und diese ermitteln. Mit der Diagnose auf Systemebene können Sie überprüfen, ob eine bestimmte Komponente ordnungsgemäß funktioniert oder fehlerhafte Komponenten identifiziert werden. 
+---
+= Einführung‑Systemstanddiagnostik
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Diagnose auf Systemebene bietet eine Befehlszeilenschnittstelle für Tests, mit denen Sie nach Hardware-Problemen auf unterstützten Storage-Systemen suchen und diese ermitteln. Mit der Diagnose auf Systemebene können Sie überprüfen, ob eine bestimmte Komponente ordnungsgemäß funktioniert oder fehlerhafte Komponenten identifiziert werden.
+
+Die Diagnose auf Systemebene ist nur für unterstützte Storage-Systeme verfügbar. Der Eingabe der Diagnose auf Systemebene in der Befehlszeilenschnittstelle von nicht unterstützten Storage-Systemen generiert eine Fehlermeldung.
+
+Die Diagnose auf Systemebene wird nach einer der folgenden gängigen Fehlerbehebungssituationen ausgeführt:
+
+* Erstinstallation des Systems
+* Ergänzung oder Austausch von Hardwarekomponenten
+* Durch nicht geklärte Hardwarefehler verursachte Systempanik
+* Der Zugriff auf ein bestimmtes Gerät wird unterbrochen oder das Gerät ist nicht mehr verfügbar
+* Die Systemreaktionszeit wird zu langsam
+
+
+Um eine Diagnose auf Systemebene auszuführen, müssen Sie bereits Data ONTAP ausführen, da Sie in Data ONTAP die Option *Wartungsmodus Boot* erreichen müssen. Um diese Option zu erreichen, gibt es verschiedene Ansätze, aber dies ist der empfohlene Ansatz in den in diesem Leitfaden dokumentierten Vorgehensweisen. Einige Hardwarekomponenten in Ihrem System erfordern möglicherweise einen bestimmten Ansatz. Dies wäre im entsprechenden FRU-Flyer (Field Replaceable Unit) dokumentiert. Dieses Handbuch stellt keine detaillierten Definitionen bestimmter Befehle, Unterbefehle, Tests oder Bedingungen bereit.
+
+Sobald der Befehl eingegeben wurde, werden die Tests im Hintergrund ausgeführt und das bestandene oder fehlgeschlagene Ergebnis der Tests im internen speicherbasierten Protokoll mit fester Größe protokolliert. Bei einigen Tests handelt es sich um Dienstprogramme, die einfach abgeschlossen statt bestanden oder fehlgeschlagen sind. Nachdem Sie die entsprechenden Tests durchgeführt haben, können Sie anhand der in diesem Handbuch dokumentierten Verfahren den Statusbericht erstellen. Wenn die Testergebnisse den erfolgreichen Abschluss der Diagnose auf Systemebene zeigen, wird das Protokoll als Best Practice empfohlen.
+
+Bei Testfehlern helfen die Statusberichte dem technischen Support, entsprechende Empfehlungen zu geben. Der Fehler kann durch eine Neuinstallation der FRU behoben werden, indem sichergestellt wird, dass die Kabel angeschlossen sind, oder durch Aktivieren spezifischer Tests, die vom technischen Support empfohlen werden, und dann durch erneute Ausführung dieser Tests. Wenn der Fehler nicht behoben werden kann, tritt ein Hardwarefehler auf, und die betroffene Hardware muss ausgetauscht werden.
+
+Es gibt keine Fehlermeldungen, die weitere Definitionen oder Erläuterungen benötigen.

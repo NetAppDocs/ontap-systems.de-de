@@ -1,0 +1,620 @@
+---
+permalink: a800/install-detailed-guide.html 
+sidebar: sidebar 
+keywords: aff a800, detailed installation 
+summary: Dieser Abschnitt enthält detaillierte Schritt-für-Schritt-Anleitungen zur Installation eines AFF A800 Systems. 
+---
+= Detaillierte Schritte – AFF A800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Dieser Abschnitt enthält detaillierte Schritt-für-Schritt-Anleitungen zur Installation eines AFF A800 Systems.
+
+
+
+== Schritt 1: Installation vorbereiten
+
+Um Ihr AFF A800 System zu installieren, müssen Sie ein Konto erstellen und das System registrieren. Außerdem müssen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp für Ihr System inventarisieren und bestimmte Netzwerkinformationen erfassen.
+
+Sie müssen Zugriff auf die haben link:https://hwu.netapp.com["NetApp Hardware Universe"^] (HWU) enthält Informationen zu den Standortanforderungen sowie zusätzliche Informationen zu Ihrem konfigurierten System. Möglicherweise möchten Sie auch Zugriff auf den haben link:http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["Versionshinweise zu Ihrer Version von ONTAP"^] Weitere Informationen zu diesem System.
+
+Folgendes müssen Sie an Ihrer Website angeben:
+
+* Rack-Platz für das Storage-System
+* Kreuzschlitzschraubendreher #2
+* Zusätzliche Netzwerkkabel zum Anschließen des Systems an den Netzwerk-Switch und Laptop oder die Konsole über einen Webbrowser
++
+.. Packen Sie den Inhalt aller Boxen aus.
+.. Notieren Sie die Seriennummer des Systems von den Controllern.
++
+image::../media/drw_ssn_label.png[drw ssn-Etikett]
+
+
+
+
+
+.Schritte
+. Richten Sie Ihr Konto ein:
++
+.. Melden Sie sich bei Ihrem bestehenden Konto an oder erstellen Sie ein Konto.
+.. Registrieren (link:https://mysupport.netapp.com/eservice/registerSNoAction.do?moduleName=RegisterMyProduct["NetApp Produktregistrierung"^]) Ihr System.
+
+
+. Herunterladen und installieren link:https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"^] Auf Ihrem Laptop.
+. Notieren Sie sich die Anzahl und die Kabeltypen, die Sie erhalten haben.
++
+In der folgenden Tabelle sind die Kabeltypen aufgeführt, die Sie möglicherweise erhalten können. Wenn Sie ein Kabel erhalten, das nicht in der Tabelle aufgeführt ist, lesen Sie die link:https://hwu.netapp.com["NetApp Hardware Universe"^] Um das Kabel zu lokalisieren und dessen Verwendung zu identifizieren.
+
++
+[cols="1,2,1,2"]
+|===
+| Steckverbindertyp | Teilenummer und Länge | Kabeltyp... | Für... 
+
+
+ a| 
+100-GbE-Kabel
+ a| 
+X6211A-05 (112-00595), 0,5 m
+ a| 
+image:../media/oie_cable100_gbe_qsfp28.png[""]
+ a| 
+HA Interconnect
+
+
+
+ a| 
+X6211A-05 (112-00595), 0,5 m;
+
+X6211-1 (112-00573), 1 m
+ a| 
+Cluster Interconnect-Netzwerk
+
+
+
+ a| 
+X6211-2 (112-00574), 2 m;
+
+X6211-5 (112-00576), 5 m
+ a| 
+Storage, Daten
+
+
+
+ a| 
+10-GbE-Kabel
+ a| 
+X6566B-3-R6 (112-00300), 3 m;
+
+X6566B-5-R6 (112-00301), 5 m
+ a| 
+Daten
+
+
+
+ a| 
+25-GbE-Kabel
+ a| 
+X66240A-2 (112-00598), 2 m;
+
+X66240A-5 (112-00600), 5 m
+ a| 
+Daten
+
+
+
+ a| 
+RJ-45 (je nach Bestellung)
+ a| 
+Keine Angabe
+ a| 
+image:../media/oie_cable_rj45.png[""]
+ a| 
+Vereinfachtes
+
+
+
+ a| 
+Fibre Channel
+ a| 
+X66250-2 (112-00342) 2 m;
+
+X66250-5 (112-00344) 5 m;
+
+X66250-15 (112-00346) 15m;
+
+X66250-30 (112-00347) 30 m
+ a| 
+image:../media/oie_cable_fc_optical.png[""]
+ a| 
+
+
+
+ a| 
+Micro-USB-Konsolenkabel
+ a| 
+Keine Angabe
+ a| 
+image:../media/oie_cable_micro_usb.png[""]
+ a| 
+Konsolenverbindung während der Software-Einrichtung
+
+
+
+ a| 
+Stromkabel
+ a| 
+Keine Angabe
+ a| 
+image:../media/oie_cable_power.png[""]
+ a| 
+System einschalten
+
+|===
+. Laden Sie die herunter, und füllen Sie die aus link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2839002["Cluster-Konfigurationsdokument"^].
+
+
+
+
+== Schritt 2: Installieren Sie die Hardware
+
+Sie müssen das System je nach Bedarf in einem 4-Säulen-Rack oder NetApp Systemschrank installieren.
+
+.Schritte
+. Installieren Sie die Schienensatz nach Bedarf.
++
+link:../com.netapp.doc.hw-rail-superrail/home.html["Installieren von SuperRail in einem Vierpolige-Rack"^]
+
+. Installieren und sichern Sie das System anhand der im Schienensatz enthaltenen Anweisungen.
++
+
+NOTE: Sie müssen sich der Sicherheitsbedenken im Zusammenhang mit dem Gewicht des Systems bewusst sein.
+
++
+image::../media/drw_affa800_weight_caution.png[drw affa800 Gewicht Achtung]
+
+. Schließen Sie Kabelmanagement-Geräte (wie abgebildet) an.
++
+image::../media/drw_affa800_install_cable_mgmt.png[drw affa800 installieren Sie die Kabelführung]
+
+. Bringen Sie die Blende auf die Vorderseite des Systems an.
+
+
+
+
+== Schritt 3: Kabelcontroller
+
+Die Cluster Ihrer Plattform müssen über die Switch-Methode mit zwei Nodes oder die Netzwerkmethode für Cluster Interconnect verkabelt werden. Optional ist die Verkabelung zu den Fibre Channel- oder iSCSI-Hostnetzwerken oder Direct-Attached Storage möglich. Diese Verkabelung ist nicht exklusiv; Sie können Kabel zu einem Host-Netzwerk und Speicher haben.
+
+
+
+=== Erforderliche Verkabelung: Controller mit einem Cluster verkabeln
+
+Verkabeln Sie die Controller über eine Switch-Methode mit zwei Nodes oder über das Cluster Interconnect-Netzwerk mit einem Cluster.
+
+
+
+==== Option 1: Verkabeln eines 2-Node-Clusters ohne Switches
+
+Management-Netzwerk-Ports auf den Controllern sind mit Switches verbunden. Die HA Interconnect- und Cluster Interconnect-Ports sind an beiden Controllern verkabelt.
+
+Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.
+
+Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
+
+image::../media/oie_cable_pull_tab_up.png[ziehen Sie die Lasche des oie-Kabels nach oben]
+
+
+NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
+
+.Schritte
+. Verwenden Sie die Animation oder die tabellarischen Schritte, um die Verkabelung zwischen den Controllern und den Switches abzuschließen:
++
+.Animation – Verkabeln Sie einen 2-Node-Cluster ohne Switches
+video::edc42447-f721-4cbe-b080-ab0c0123a139[panopto]
++
+[cols="10,90"]
+|===
+| Schritt | Führen Sie die Ausführung an jedem Controller-Modul aus 
+
+
+ a| 
+image:../media/oie_legend_icon_1_dp.png[""]
+ a| 
+HA Interconnect Ports verkabeln:
+
+** e0b bis e0b
+** e1b bis e1bimage:../media/drw_affa800_ha_pair_cabling.png[""]
+
+
+
+
+ a| 
+image:../media/oie_legend_icon_2_lg.png[""]
+ a| 
+Verkabeln Sie die Cluster-Interconnect-Ports:
+
+** e0a an e0a
+** e1a bis e1aimage:../media/drw_affa800_tnsc_clust_cabling.png[""]
+
+
+
+
+ a| 
+image:../media/oie_legend_icon_3_lp.png[""]
+ a| 
+Verkabeln Sie die Management-Ports mit den Management-Netzwerk-Switches image:../media/drw_affa800_mgmt_cabling.png[""]
+
+
+
+ a| 
+image:../media/oie_legend_icon_attn_symbol.png[""]
+ a| 
+Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
+
+|===
+. Informationen zur Durchführung optionaler Verkabelung finden Sie unter:
++
+**  1: Connect to a Fibre Channel host
+**  2: Connect to a 10GbE host
+**  3: Connect to a single direct-attached NS224 drive shelf
+**  4: Connect to two direct-attached NS224 drive shelves
+
+
+. Informationen zum Abschließen der Einrichtung des Systems finden Sie unter link:install-detailed-guide.html#step-4-complete-system-setup-and-configuration["Schritt 4: System-Setup und -Konfiguration abschließen"].
+
+
+
+
+==== Option 2: Kabel ein geschalteter Cluster
+
+Cluster Interconnect- und Management-Netzwerk-Ports an den Controllern sind mit Switches verbunden, während die HA Interconnect Ports an beiden Controllern verkabelt sind.
+
+Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.
+
+Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
+
+image::../media/oie_cable_pull_tab_up.png[ziehen Sie die Lasche des oie-Kabels nach oben]
+
+
+NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
+
+.Schritte
+. Verwenden Sie die Animation oder die tabellarischen Schritte, um die Verkabelung zwischen den Controllern und den Switches abzuschließen:
++
+.Animation - Verkabeln Sie ein geschalteter Cluster
+video::49e48140-4c5a-4395-a7d7-ab0c0123a10e[panopto]
++
+[cols="10,90"]
+|===
+| Schritt | Führen Sie die Ausführung an jedem Controller-Modul aus 
+
+
+ a| 
+image:../media/oie_legend_icon_1_dp.png[""]
+ a| 
+HA Interconnect Ports verkabeln:
+
+** e0b bis e0b
+** e1b bis e1bimage:../media/drw_affa800_ha_pair_cabling.png[""]
+
+
+
+
+ a| 
+image:../media/oie_legend_icon_2_lg.png[""]
+ a| 
+Verkabeln Sie die Cluster-Interconnect-Ports mit den 100-GbE-Cluster-Interconnect-Switches. ** e0a ** e1aimage:../media/drw_affa800_switched_clust_cabling.png[""]
+
+
+
+ a| 
+image:../media/oie_legend_icon_3_lp.png[""]
+ a| 
+Verkabeln Sie die Management-Ports mit den Management-Netzwerk-Switches image:../media/drw_affa800_mgmt_cabling.png[""]
+
+
+
+ a| 
+image:../media/oie_legend_icon_attn_symbol.png[""]
+ a| 
+Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
+
+|===
+. Informationen zur Durchführung optionaler Verkabelung finden Sie unter:
++
+**  1: Connect to a Fibre Channel host
+**  2: Connect to a 10GbE host
+**  3: Connect to a single direct-attached NS224 drive shelf
+**  4: Connect to two direct-attached NS224 drive shelves
+
+
+. Informationen zum Abschließen der Einrichtung des Systems finden Sie unter link:install-detailed-guide.html#step-4-complete-system-setup-and-configuration["Schritt 4: System-Setup und -Konfiguration abschließen"].
+
+
+
+
+=== Optionale Verkabelung: Kabelkonfigurationsabhängige Optionen
+
+Sie verfügen über eine konfigurationsabhängige optionale Verkabelung mit den Fibre Channel- oder iSCSI-Hostnetzwerken oder dem Direct-Attached Storage. Diese Verkabelung ist nicht exklusiv; Sie können die Verkabelung zu einem Host-Netzwerk und Speicher haben.
+
+
+
+==== Option 1: Kabel zu einem Fibre Channel-Hostnetzwerk
+
+Fibre Channel-Ports auf den Controllern sind mit Fibre Channel Host-Netzwerk-Switches verbunden.
+
+Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.
+
+Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
+
+image::../media/oie_cable_pull_tab_up.png[ziehen Sie die Lasche des oie-Kabels nach oben]
+
+
+NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
+
+[cols="10,90"]
+|===
+| Schritt | Führen Sie die Ausführung an jedem Controller-Modul aus 
+
+
+ a| 
+1
+ a| 
+Verkabeln Sie die Ports 2a bis 2d mit den FC-Host-Switches.image:../media/drw_affa800_fc_host_cabling.png[""]
+
+
+
+ a| 
+2
+ a| 
+Um andere optionale Kabel durchzuführen, wählen Sie aus:
+
+*  3: Connect to a single direct-attached NS224 drive shelf
+*  4: Connect to two direct-attached NS224 drive shelves
+
+
+
+
+ a| 
+3
+ a| 
+Informationen zum Abschließen der Einrichtung des Systems finden Sie unter link:install-detailed-guide.html#step-4-complete-system-setup-and-configuration["Schritt 4: System-Setup und -Konfiguration abschließen"].
+
+|===
+
+
+==== Option 2: Kabel zu einem 10-GbE-Hostnetzwerk
+
+10-GbE-Ports auf den Controllern sind mit 10-GbE-Host-Netzwerk-Switches verbunden.
+
+Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.
+
+Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
+
+image::../media/oie_cable_pull_tab_up.png[ziehen Sie die Lasche des oie-Kabels nach oben]
+
+
+NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
+
+[cols="10,90"]
+|===
+| Schritt | Führen Sie die Ausführung an jedem Controller-Modul aus 
+
+
+ a| 
+1
+ a| 
+Verkabeln Sie die Ports e4a über e4d mit den 10 GbE Host Netzwerk-Switches.image:../media/drw_affa800_10gbe_host_cabling.png[""]
+
+
+
+ a| 
+2
+ a| 
+Um andere optionale Kabel durchzuführen, wählen Sie aus:
+
+*  3: Connect to a single direct-attached NS224 drive shelf
+*  4: Connect to two direct-attached NS224 drive shelves
+
+
+
+
+ a| 
+3
+ a| 
+Informationen zum Abschließen der Einrichtung des Systems finden Sie unter link:install-detailed-guide.html#step-4-complete-system-setup-and-configuration["Schritt 4: System-Setup und -Konfiguration abschließen"].
+
+|===
+
+
+==== Option 3: Controller mit einem einzelnen Festplatten-Shelf verkabeln
+
+Sie müssen jeden Controller mit den NSM-Modulen am NS224-Laufwerk-Shelf verkabeln.
+
+Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
+
+image::../media/oie_cable_pull_tab_up.png[ziehen Sie die Lasche des oie-Kabels nach oben]
+
+
+NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
+
+Verwenden Sie die Animation oder die tabellarischen Schritte, um Ihre Controller mit einem einzelnen Shelf zu verkabeln:
+
+.Animation – Verkabeln Sie die Controller mit einem einzelnen Laufwerk-Shelf
+video::09dade4f-00bd-4d41-97d7-ab0c0123a0b4[panopto]
+[cols="10,90"]
+|===
+| Schritt | Führen Sie die Ausführung an jedem Controller-Modul aus 
+
+
+ a| 
+image:../media/oie_legend_icon_1_mb.png[""]
+ a| 
+Controller A am Shelf verkabeln: image:../media/drw_affa800_1shelf_cabling_a.png[""]
+
+
+
+ a| 
+image:../media/oie_legend_icon_2_lo.png[""]
+ a| 
+Controller B am Shelf verkabeln: image:../media/drw_affa800_1shelf_cabling_b.png[""]
+
+|===
+Informationen zum Abschließen der Einrichtung des Systems finden Sie unter link:install-detailed-guide.html#step-4-complete-system-setup-and-configuration["Schritt 4: System-Setup und -Konfiguration abschließen"].
+
+
+
+==== Option 4: Controller mit zwei Festplatten-Shelfs verkabeln
+
+Sie müssen jeden Controller an beiden NS224 Laufwerk-Shelfs mit den NSM-Modulen verkabeln.
+
+Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
+
+image::../media/oie_cable_pull_tab_up.png[ziehen Sie die Lasche des oie-Kabels nach oben]
+
+
+NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
+
+Verwenden Sie die Animation oder die tabellarischen Schritte, um Ihre Controller mit zwei Laufwerk-Shelfs zu verkabeln:
+
+.Animation – Verkabeln Sie die Controller mit zwei Laufwerk-Shelfs
+video::fe50ac38-9375-4e6b-85af-ab0c0123a0e0[panopto]
+[cols="10,90"]
+|===
+| Schritt | Führen Sie die Ausführung an jedem Controller-Modul aus 
+
+
+ a| 
+image:../media/oie_legend_icon_1_mb.png[""]
+ a| 
+Verbinden Sie Controller A mit den Shelfs: image:../media/drw_affa800_2shelf_cabling_a.png[""]
+
+
+
+ a| 
+image:../media/oie_legend_icon_2_lo.png[""]
+ a| 
+Controller B mit den Shelfs verkabeln: image:../media/drw_affa800_2shelf_cabling_b.png[""]
+
+|===
+Informationen zum Abschließen der Einrichtung des Systems finden Sie unter link:install-detailed-guide.html#step-4-complete-system-setup-and-configuration["Schritt 4: System-Setup und -Konfiguration abschließen"].
+
+
+
+== Schritt 4: System-Setup und -Konfiguration abschließen
+
+Führen Sie die Systemeinrichtung und -Konfiguration mithilfe der Cluster-Erkennung mit nur einer Verbindung zum Switch und Laptop durch, oder indem Sie direkt einen Controller im System verbinden und dann eine Verbindung zum Management-Switch herstellen.
+
+
+
+=== Option 1: Führen Sie die Systemeinrichtung und -Konfiguration durch, wenn die Netzwerkerkennung aktiviert ist
+
+Wenn die Netzwerkerkennung auf Ihrem Laptop aktiviert ist, können Sie das System mit der automatischen Cluster-Erkennung einrichten und konfigurieren.
+
+.Schritte
+. Schließen Sie die Stromkabel an die Controller-Netzteile an, und schließen Sie sie dann an Stromquellen auf verschiedenen Stromkreisen an.
++
+Das System beginnt zu booten. Das erste Booten kann bis zu acht Minuten dauern.
+
+. Stellen Sie sicher, dass die Netzwerkerkennung auf Ihrem Laptop aktiviert ist.
++
+Weitere Informationen finden Sie in der Online-Hilfe Ihres Notebooks.
+
+. Schließen Sie Ihren Laptop mithilfe der Animation an den Management-Switch an:
++
+.Animation - Verbinden Sie Ihren Laptop mit dem Management-Switch
+video::d61f983e-f911-4b76-8b3a-ab1b0066909b[panopto]
+. Wählen Sie ein ONTAP-Symbol aus, um es zu ermitteln:
++
+image::../media/drw_autodiscovery_controler_select.png[wählen sie den drw-Kontroller für die automatische Ermittlung aus]
+
++
+.. Öffnen Sie Den Datei-Explorer.
+.. Klicken Sie im linken Fensterbereich auf *Netzwerk*.
+.. Klicken Sie mit der rechten Maustaste, und wählen Sie *Aktualisieren*.
+.. Doppelklicken Sie auf das ONTAP-Symbol, und akzeptieren Sie alle auf dem Bildschirm angezeigten Zertifikate.
++
+
+NOTE: XXXXX ist die Seriennummer des Systems für den Ziel-Node.
+
++
+System Manager wird geöffnet.
+
+
+
+. Konfigurieren Sie das System mithilfe von System Manager geführten Setups anhand der Daten, die Sie im erfasst haben link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["ONTAP Konfigurationsleitfaden"^].
+. Überprüfen Sie den Systemzustand Ihres Systems, indem Sie Config Advisor ausführen.
+. Wechseln Sie nach Abschluss der Erstkonfiguration mit dem link:https://www.netapp.com/data-management/oncommand-system-documentation/["ONTAP  ONTAP System Manager; Dokumentationsressourcen"^] Seite für Informationen über das Konfigurieren zusätzlicher Funktionen in ONTAP.
+
+
+
+
+=== Option 2: Führen Sie die Systemeinrichtung und -Konfiguration durch, wenn die Netzwerkerkennung nicht aktiviert ist
+
+Wenn die Netzwerkerkennung auf Ihrem Laptop nicht aktiviert ist, müssen Sie die Konfiguration und das Setup mit dieser Aufgabe abschließen.
+
+.Schritte
+. Laptop oder Konsole verkabeln und konfigurieren:
++
+.. Stellen Sie den Konsolenport des Laptops oder der Konsole auf 115,200 Baud mit N-8-1 ein.
++
+
+NOTE: Informationen zur Konfiguration des Konsolenport finden Sie in der Online-Hilfe Ihres Laptops oder der Konsole.
+
+.. Schließen Sie das Konsolenkabel an den Laptop oder die Konsole an, und schließen Sie den Konsolenport am Controller mithilfe des im Lieferumfang des Systems verwendeten Konsolenkabels an.
++
+image::../media/drw_console_connect_affa800.png[drw-Konsolenverbindung affa800]
+
+.. Verbinden Sie den Laptop oder die Konsole mit dem Switch im Management-Subnetz.
++
+image::../media/drw_client_mgmt_subnet_affa800.png[drw Client Management Subnetz afa800]
+
+.. Weisen Sie dem Laptop oder der Konsole eine TCP/IP-Adresse zu. Verwenden Sie dabei eine Adresse, die sich im Management-Subnetz befindet.
+
+
+. Schließen Sie die Stromkabel an die Controller-Netzteile an, und schließen Sie sie dann an Stromquellen auf verschiedenen Stromkreisen an.
++
+Das System beginnt zu booten. Das erste Booten kann bis zu acht Minuten dauern.
+
+. Weisen Sie einem der Nodes eine erste Node-Management-IP-Adresse zu.
++
+[cols="1,2"]
+|===
+| Wenn das Managementnetzwerk DHCP enthält... | Dann... 
+
+
+ a| 
+Konfiguriert
+ a| 
+Notieren Sie die IP-Adresse, die den neuen Controllern zugewiesen ist.
+
+
+
+ a| 
+Nicht konfiguriert
+ a| 
+.. Öffnen Sie eine Konsolensitzung mit PuTTY, einem Terminalserver oder dem entsprechenden Betrag für Ihre Umgebung.
++
+
+NOTE: Überprüfen Sie die Online-Hilfe Ihres Laptops oder Ihrer Konsole, wenn Sie nicht wissen, wie PuTTY konfiguriert werden soll.
+
+.. Geben Sie die Management-IP-Adresse ein, wenn Sie dazu aufgefordert werden.
+
+
+|===
+. Konfigurieren Sie das Cluster unter System Manager auf Ihrem Laptop oder Ihrer Konsole:
++
+.. Rufen Sie die Node-Management-IP-Adresse im Browser auf.
++
+
+NOTE: Das Format für die Adresse ist +https://x.x.x.x+.
+
+.. Konfigurieren Sie das System anhand der Daten, die Sie im erfasst haben link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["ONTAP Konfigurationsleitfaden"^].
+
+
+. Überprüfen Sie den Systemzustand Ihres Systems, indem Sie Config Advisor ausführen.
+. Wechseln Sie nach Abschluss der Erstkonfiguration mit dem link:https://www.netapp.com/data-management/oncommand-system-documentation/["ONTAP  ONTAP System Manager; Dokumentationsressourcen"^] Seite für Informationen über das Konfigurieren zusätzlicher Funktionen in ONTAP.
+

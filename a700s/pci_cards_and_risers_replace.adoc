@@ -1,0 +1,304 @@
+---
+permalink: a700s/pci-cards-and-risers-replace.html 
+sidebar: sidebar 
+keywords: aff a700s, aff, a700s, replace, pcie, card, disconnect, cable, riser, shut, down, reinstall, complete, replacement, process, replace a pcie card, shut down the impaired controller, remove the controller module, replace a pcie card, reinstall the controller module, complete the replacement process 
+summary: Um eine PCIe-Karte zu ersetzen, müssen Sie die Kabel von den Karten im Riser trennen, den Riser entfernen, den Riser ersetzen und die Karten in diesem Riser neu einstecken. 
+---
+= Ersetzen Sie eine PCIe-Karte: AFF A700s
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um eine PCIe-Karte zu ersetzen, müssen Sie die Kabel von den Karten im Riser trennen, den Riser entfernen, den Riser ersetzen und die Karten in diesem Riser neu einstecken.
+
+* Sie können dieses Verfahren bei allen Versionen von ONTAP verwenden, die von Ihrem System unterstützt werden
+* Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+
+
+
+
+== Schritt 1: Schalten Sie den beeinträchtigten Regler aus
+
+[role="lead"]
+Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
+
+Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE für die Berechtigung und den Zustand anzeigt, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/index.html["Administrationsübersicht mit der CLI"^].
+
+.Schritte
+. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung: `system node autosupport invoke -node * -type all -message MAINT=_number_of_hours_down_h`
++
+Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Wenn der beeinträchtigte Controller Teil eines HA-Paars ist, deaktivieren Sie das automatische Giveback von der Konsole des gesunden Controllers: `storage failover modify -node local -auto-giveback false`
+. Nehmen Sie den beeinträchtigten Controller zur LOADER-Eingabeaufforderung:
++
+[cols="1,2"]
+|===
+| Wenn der eingeschränkte Controller angezeigt wird... | Dann... 
+
+
+ a| 
+Die LOADER-Eingabeaufforderung
+ a| 
+Wechseln Sie zu Controller-Modul entfernen.
+
+
+
+ a| 
+Warten auf Giveback...
+ a| 
+Drücken Sie Strg-C, und antworten Sie dann `y`.
+
+
+
+ a| 
+Eingabeaufforderung des Systems oder Passwort (Systempasswort eingeben)
+ a| 
+Übernehmen oder stoppen Sie den beeinträchtigten Regler von der gesunden Steuerung: `storage failover takeover -ofnode _impaired_node_name_`
+
+Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drücken Sie Strg-C, und antworten Sie dann `y`.
+
+|===
+
+
+
+
+== Schritt 2: Entfernen Sie das Controller-Modul
+
+[role="lead"]
+Sie müssen das Controller-Modul aus dem Chassis entfernen, wenn Sie das Controller-Modul ersetzen oder eine Komponente im Controller-Modul ersetzen.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Lösen Sie den Haken- und Schlaufenriemen, mit dem die Kabel am Kabelführungsgerät befestigt sind, und ziehen Sie dann die Systemkabel und SFPs (falls erforderlich) vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren.
++
+Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation des Kabelverwaltungsgeräts die Kabel organisiert sind.
+
+. Trennen Sie das Netzteil des Controller-Moduls von der Quelle, und ziehen Sie dann das Kabel vom Netzteil ab.
+. Entfernen Sie das Kabelführungs-Gerät aus dem Controller-Modul und legen Sie es beiseite.
+. Drücken Sie beide Verriegelungsriegel nach unten, und drehen Sie dann beide Verriegelungen gleichzeitig nach unten.
++
+Das Controller-Modul wird leicht aus dem Chassis entfernt.
+
++
+image::../media/drw_a700s_pcm_remove.png[drw a700s pcm ausbauen]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Verriegelungsverschluss
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Sicherungsstift
+
+|===
+. Schieben Sie das Controller-Modul aus dem Gehäuse.
++
+Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen, während Sie es aus dem Gehäuse schieben.
+
+. Das Steuermodul auf eine stabile, flache Oberfläche legen und den Luftkanal öffnen:
++
+.. Drücken Sie die Verriegelungslaschen an den Seiten des Luftkanals in Richtung der Mitte des Controller-Moduls.
+.. Schieben Sie den Luftkanal in Richtung der Lüftermodule, und drehen Sie ihn dann nach oben in die vollständig geöffnete Position.
++
+image::../media/drw_a700s_open_air_duct.png[freiluftkanal drw a700s]
+
+
+
++
+[cols="1,3"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Verriegelungsklammern für Luftkanäle
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Riser
+
+
+
+ a| 
+image:../media/legend_icon_03.png[""]
+ a| 
+Luftkanal
+
+|===
+
+
+
+
+== Schritt 3: Ersetzen Sie eine PCIe-Karte
+
+[role="lead"]
+Um eine PCIe-Karte zu ersetzen, müssen Sie die Verkabelung und alle SFPs von den Ports auf den PCIe-Karten im Ziel-Riser entfernen, den Riser aus dem Controller-Modul entfernen, die PCIe-Karte herausnehmen und austauschen, den Riser neu installieren und wieder einsetzen.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Entfernen Sie den PCIe-Riser aus dem Controller-Modul:
++
+.. Entfernen Sie alle SFP-Module, die sich möglicherweise in den PCIe-Karten enthalten sind.
+.. Drehen Sie die Modulverriegelung auf der linken Seite des Riser nach oben und in Richtung der Lüftermodule.
++
+Der PCIe-Riser hebt sich leicht vom Controller-Modul an.
+
+.. Heben Sie den PCIe-Riser an, und verschieben Sie ihn zu den Lüftern, sodass die Metalllippe auf dem Riser den Rand des Controller-Moduls entfernt, den Riser aus dem Controller-Modul herausheben und dann auf einer stabilen, flachen Oberfläche platzieren.
++
+image::../media/drw_a700s_pcie_replace.png[drw a700s pcie ersetzen]
+
++
+[cols="1,3"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Luftkanal
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Riserverriegelung
+
+
+
+ a| 
+image:../media/legend_icon_03.png[""]
+ a| 
+Kartenverriegelungshalterung
+
+
+
+ a| 
+image:../media/legend_icon_04.png[""]
+ a| 
+Riser 2 (mittlerer Riser) und PCI-Karten in den Riser-Steckplätzen 2 und 3.
+
+|===
+
+
+. Entfernen Sie die PCIe-Karte aus dem Riser:
++
+.. Drehen Sie den Riser so, dass Sie auf die PCIe-Karte zugreifen können.
+.. Drücken Sie die Sicherungshalterung an der Seite des PCIe-Riser und drehen Sie sie dann in die offene Position.
+.. Entfernen Sie die PCIe-Karte aus dem Riser.
+
+
+. Installieren Sie die PCIe-Karte in den gleichen Steckplatz im PCIe-Riser:
++
+.. Richten Sie die Karte mit der Kartenführung am Riser und dem Kartensockel im Riser aus, und schieben Sie sie anschließend in den Sockel im Riser.
++
+
+NOTE: Stellen Sie sicher, dass die Karte vollständig und quadratische Position im Risersteckplatz hat.
+
+.. Schwenken Sie die Verriegelungsverriegelung, bis sie in die verriegelte Position einrastet.
+
+
+. Installieren Sie den Riser in das Controller-Modul:
++
+.. Richten Sie die Lippe des Riser an der Unterseite der Bleche des Controller-Moduls aus.
+.. Führen Sie den Riser entlang der Stifte im Controller-Modul und senken Sie den Riser anschließend in das Controller-Modul.
+.. Drehen Sie die Verriegelung nach unten, und klicken Sie sie in die verriegelte Position.
++
+Bei der Verriegelung ist die Verriegelung bündig mit der Oberseite des Riser und der Riser sitzt im Controller-Modul.
+
+.. Setzen Sie alle SFP-Module wieder ein, die von den PCIe-Karten entfernt wurden.
+
+
+
+
+
+
+== Schritt 4: Installieren Sie das Controller-Modul neu
+
+[role="lead"]
+Nachdem Sie eine Komponente im Controller-Modul ausgetauscht haben, müssen Sie das Controller-Modul im Systemgehäuse neu installieren und starten.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Wenn Sie dies noch nicht getan haben, schließen Sie den Luftkanal:
++
+.. Schwenken Sie den Luftkanal bis nach unten zum Controller-Modul.
+.. Schieben Sie den Luftkanal in Richtung der Steigleitungen, bis die Verriegelungslaschen einrasten.
+.. Überprüfen Sie den Luftkanal, um sicherzustellen, dass er richtig sitzt und fest sitzt.
++
+image::../media/drw_a700s_close_air_duct.png[drw a700s schließen den Luftkanal]
+
++
+[cols="1,3"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Verriegelungslaschen
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Stößel schieben
+
+|===
+
+
+. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
++
+
+NOTE: Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein, wenn Sie dazu aufgefordert werden.
+
+. Das System nach Bedarf neu einsetzen.
++
+Wenn Sie die Medienkonverter (QSFPs oder SFPs) entfernt haben, sollten Sie diese erneut installieren, wenn Sie Glasfaserkabel verwenden.
+
+. Schließen Sie das Netzkabel an das Netzteil an, setzen Sie die Sicherungshülse des Netzkabels wieder ein, und schließen Sie dann das Netzteil an die Stromquelle an.
+. Führen Sie die Neuinstallation des Controller-Moduls durch:
++
+.. Wenn Sie dies noch nicht getan haben, installieren Sie das Kabelverwaltungsgerät neu.
+.. Drücken Sie das Controller-Modul fest in das Gehäuse, bis es auf die Mittelebene trifft und vollständig sitzt.
++
+Die Verriegelungen steigen, wenn das Controller-Modul voll eingesetzt ist.
+
++
+
+NOTE: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige Kraft verwenden, um Schäden an den Anschlüssen zu vermeiden.
+
++
+Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt.
+
+.. Drehen Sie die Verriegelungsriegel nach oben, und kippen Sie sie so, dass sie die Sicherungsstifte entfernen und dann in die verriegelte Position absenken.
+
+
+. Wenn Ihr System für 10-GbE-Cluster-Interconnect und Datenverbindungen auf 40-GbE-NICs oder Onboard-Ports konfiguriert ist, konvertieren Sie diese Ports mithilfe des cadmin-Befehls aus dem Wartungsmodus in 10-GbE-Verbindungen.
++
+
+NOTE: Achten Sie darauf, den Wartungsmodus nach Abschluss der Konvertierung zu beenden.
+
+. Wiederherstellung des normalen Betriebs des Controllers durch Zurückgeben des Speichers: `storage failover giveback -ofnode _impaired_node_name_`
+. Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut: `storage failover modify -node local -auto-giveback true`
+
+
+
+
+== Schritt 5: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+
+[role="lead"]
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

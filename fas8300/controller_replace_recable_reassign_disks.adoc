@@ -1,0 +1,268 @@
+---
+permalink: fas8300/controller-replace-recable-reassign-disks.html 
+sidebar: sidebar 
+keywords: fas8300, fas8700, how to recable the system, how to reassign disks 
+summary: Sie müssen den Speicher neu zuweisen und die Neuzuweisung der Festplatte bestätigen. 
+---
+= Können Sie das System neu zuordnen und Festplatten neu zuweisen – FAS8300 und FAS8700
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vor der Wiederherstellung des Systembetriebs müssen Sie eine Reihe von Aufgaben ausführen.
+
+
+
+== Schritt 1: Das System erneut einsetzen
+
+Nach Ausführung der Diagnose müssen Sie die Speicher- und Netzwerkverbindungen des Controller-Moduls wieder herstellen können.
+
+.Schritte
+. Das System neu aufführen.
+. Überprüfen Sie anhand von, ob die Verkabelung korrekt ist https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"].
++
+.. Laden Sie Config Advisor herunter und installieren Sie es.
+.. Geben Sie die Informationen für das Zielsystem ein, und klicken Sie auf Daten erfassen.
+.. Klicken Sie auf die Registerkarte Verkabelung, und überprüfen Sie die Ausgabe. Stellen Sie sicher, dass alle Festplatten-Shelfs angezeigt werden und alle Festplatten in der Ausgabe angezeigt werden. So beheben Sie mögliche Verkabelungsprobleme.
+.. Überprüfen Sie die andere Verkabelung, indem Sie auf die entsprechende Registerkarte klicken und dann die Ausgabe von Config Advisor überprüfen.
+
+
+
+
+
+
+== Schritt 2: Festplatten neu zuweisen
+
+Wenn sich das Storage-System in einem HA-Paar befindet, wird die System-ID des neuen Controller-Moduls automatisch den Festplatten zugewiesen, wenn die Rückgabe am Ende des Verfahrens stattfindet. In einem eigenständigen System müssen Sie die ID manuell den Festplatten zuweisen.
+
+Sie müssen das richtige Verfahren für Ihre Konfiguration verwenden:
+
+[cols="1,2"]
+|===
+| Controller-Redundanz | Gehen Sie dann wie folgt vor: 
+
+
+ a| 
+HA-Paar
+ a| 
+ 1: Verify the system ID change on an HA system]
+
+
+
+ a| 
+MetroCluster Konfiguration mit zwei Nodes
+ a| 
+ 2: Manually reassign the system ID on systems in a two-node MetroCluster configuration
+
+|===
+
+
+=== Option 1: Überprüfen Sie die Änderung der System-ID bei einem HA-System
+
+Sie müssen die Änderung der System-ID beim Booten des Controllers _Replacement_ bestätigen und anschließend überprüfen, ob die Änderung implementiert wurde.
+
+Diese Vorgehensweise gilt nur für Systeme, auf denen ONTAP in einem HA-Paar ausgeführt wird.
+
+. Wenn sich der Controller _Replacement_ im Wartungsmodus befindet (zeigt das an `*>` Eingabeaufforderung, beenden Sie den Wartungsmodus und gehen Sie zur LOADER-Eingabeaufforderung: `halt`
+. Booten Sie an der LOADER-Eingabeaufforderung am _Replacement_-Controller den Controller, und geben Sie ein `y` Wenn Sie aufgrund einer nicht übereinstimmenden System-ID aufgefordert werden, die System-ID außer Kraft zu setzen:
+. Warten Sie, bis der `Waiting for giveback...` Die Meldung wird auf der Controller-Konsole „_Replacement_“ angezeigt und überprüfen Sie anschließend vom gesunden Controller, ob die neue Partner-System-ID automatisch zugewiesen wurde: `storage failover show`
++
+In der Befehlsausgabe sollte eine Meldung angezeigt werden, dass sich die System-ID auf dem beeinträchtigten Controller geändert hat und die korrekten alten und neuen IDs angezeigt werden. Im folgenden Beispiel wurde node2 ersetzt und hat eine neue System-ID von 151759706.
+
++
+[listing]
+----
+node1> `storage failover show`
+                                    Takeover
+Node              Partner           Possible     State Description
+------------      ------------      --------     -------------------------------------
+node1             node2             false        System ID changed on partner (Old:
+                                                  151759755, New: 151759706), In takeover
+node2             node1             -            Waiting for giveback (HA mailboxes)
+----
+. Vergewissern Sie sich beim ordnungsgemäßen Controller, dass alle Corestapy gespeichert sind:
++
+.. Ändern Sie die erweiterte Berechtigungsebene: `set -privilege advanced`
++
+Sie können antworten `Y` Wenn Sie aufgefordert werden, den erweiterten Modus fortzusetzen. Die Eingabeaufforderung für den erweiterten Modus wird angezeigt (*>).
+
+.. Speichern von CoreDumps: `system node run -node _local-node-name_ partner savecore`
+.. Warten Sie, bis der Befehl `savecore`abgeschlossen ist, bevor Sie das Giveback ausgeben.
++
+Sie können den folgenden Befehl eingeben, um den Fortschritt des Befehls savecore zu überwachen: `system node run -node _local-node-name_ partner savecore -s`
+
+.. Zurück zur Administratorberechtigungsebene: `set -privilege admin`
+
+
+. Wenn Ihr Storage- oder Volume Encryption-System konfiguriert ist, müssen Sie die Funktionen für Storage oder Volume Encryption mithilfe eines der folgenden Verfahren wiederherstellen: Je nachdem, ob Sie integriertes oder externes Verschlüsselungsmanagement verwenden:
++
+** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-onboard-key-management-encryption-keys-task.html["Wiederherstellung der integrierten Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"^]
+** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-external-encryption-keys-93-later-task.html["Wiederherstellung der externen Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"^]
+
+
+. Geben Sie den Controller zurück:
++
+.. Geben Sie von dem ordnungsgemäßen Controller den Storage des ersetzten Controllers wieder: `storage failover giveback -ofnode _replacement_node_name_`
++
+Der _Replacement_ -Controller nimmt den Storage wieder in Anspruch und führt den Startvorgang durch.
+
++
+Wenn Sie aufgrund einer nicht übereinstimmenden System-ID aufgefordert werden, die System-ID außer Kraft zu setzen, sollten Sie eingeben `y`.
+
++
+
+NOTE: Wenn das Rückübertragung ein Vetorecht ist, können Sie erwägen, das Vetos außer Kraft zu setzen.
+
++
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["Finden Sie den Hochverfügbarkeits-Leitfaden für Ihre Version von ONTAP 9"]
+
+.. Nachdem das Giveback abgeschlossen ist, bestätigen Sie, dass das HA-Paar sich gesund befindet und ein Takeover möglich ist: `storage failover show`
++
+Die Ausgabe von der `storage failover show` Befehl sollte nicht die in der Partnernachricht geänderte System-ID enthalten.
+
+
+
+. Überprüfen Sie, ob die Festplatten ordnungsgemäß zugewiesen wurden: `storage disk show -ownership`
++
+Die Festplatten, die zum Controller _Replacement_ gehören, sollten die neue System-ID anzeigen. Im folgenden Beispiel zeigen die Festplatten von node1 jetzt die neue System-ID, 1873775277:
+
++
+[listing]
+----
+node1> `storage disk show -ownership`
+
+Disk  Aggregate Home  Owner  DR Home  Home ID    Owner ID  DR Home ID Reserver  Pool
+----- ------    ----- ------ -------- -------    -------    -------  ---------  ---
+1.0.0  aggr0_1  node1 node1  -        1873775277 1873775277  -       1873775277 Pool0
+1.0.1  aggr0_1  node1 node1           1873775277 1873775277  -       1873775277 Pool0
+.
+.
+.
+----
+
+
+
+
+=== Option 2: Manuelle Neuzuweisung der System-ID an Systemen in einer MetroCluster Konfiguration mit zwei Nodes
+
+Bei einer MetroCluster-Konfiguration mit zwei Knoten, in der ONTAP ausgeführt wird, müssen Sie Festplatten manuell der System-ID des neuen Controllers zuweisen, bevor Sie den normalen Betrieb des Systems zurückgeben.
+
+Dieses Verfahren gilt nur für Systeme in einer MetroCluster-Konfiguration mit zwei Nodes, auf denen ONTAP ausgeführt wird.
+
+Sie müssen sicherstellen, dass Sie die Befehle in diesem Verfahren auf dem richtigen Node eingeben:
+
+* Der Node _Impared_ ist der Knoten, auf dem Sie Wartungsarbeiten durchführen.
+* Der Node _Replacement_ ist der neue Node, der den beeinträchtigten Knoten im Rahmen dieses Verfahrens ersetzt.
+* Der Node _Healthy_ ist der DR-Partner des beeinträchtigten Knotens.
+
+
+.Schritte
+. Falls Sie dies noch nicht getan haben, starten Sie den Node _Replacement_ neu, unterbrechen Sie den Bootvorgang, indem Sie eingeben `Ctrl-C`, Und wählen Sie dann die Option zum Starten in den Wartungsmodus aus dem angezeigten Menü.
++
+Eingabe ist erforderlich `Y` Wenn Sie aufgefordert werden, die System-ID aufgrund einer nicht übereinstimmenden System-ID zu überschreiben.
+
+. Zeigen Sie die alten System-IDs vom gesunden Knoten an: ``metrocluster node show -fields node-systemid`,dr-Partner-System`
++
+In diesem Beispiel ist der Node_B_1 der alte Node mit der alten System-ID von 118073209:
+
++
+[listing]
+----
+dr-group-id cluster         node                 node-systemid dr-partner-systemid
+ ----------- --------------------- -------------------- ------------- -------------------
+ 1           Cluster_A             Node_A_1             536872914     118073209
+ 1           Cluster_B             Node_B_1             118073209     536872914
+ 2 entries were displayed.
+----
+. Zeigen Sie die neue System-ID an der Eingabeaufforderung für den Wartungsmodus auf dem Knoten „beeinträchtigt“ an: `disk show`
++
+In diesem Beispiel lautet die neue System-ID 118065481:
+
++
+[listing]
+----
+Local System ID: 118065481
+    ...
+    ...
+----
+. Weisen Sie die Eigentumsrechte an der Festplatte (für FAS Systeme) oder an der LUN-Eigentumsrechte (für FlexArray Systeme) neu zu. Verwenden Sie dazu die System-ID-Informationen, die Sie über den Befehl „Festplatte anzeigen“ erhalten haben: `disk reassign -s old system ID`
++
+Im Fall des vorhergehenden Beispiels lautet der Befehl: `disk reassign -s 118073209`
+
++
+Sie können antworten `Y` Wenn Sie dazu aufgefordert werden, fortzufahren.
+
+. Überprüfen Sie, ob die Festplatten (oder FlexArray LUNs) korrekt zugeordnet sind: `disk show -a`
++
+Vergewissern Sie sich, dass die Festplatten, die zum Node _Replacement_ gehören, die neue System-ID für den Node _Replacement_ anzeigen. Im folgenden Beispiel zeigen die Festplatten von System-1 jetzt die neue System-ID, 118065481:
+
++
+[listing]
+----
+*> disk show -a
+Local System ID: 118065481
+
+  DISK     OWNER                 POOL   SERIAL NUMBER  HOME
+-------    -------------         -----  -------------  -------------
+disk_name   system-1  (118065481) Pool0  J8Y0TDZC       system-1  (118065481)
+disk_name   system-1  (118065481) Pool0  J8Y09DXC       system-1  (118065481)
+.
+.
+.
+----
+. Vergewissern Sie sich am gesunden Knoten, dass alle Corestapy gespeichert sind:
++
+.. Ändern Sie die erweiterte Berechtigungsebene: `set -privilege advanced`
++
+Sie können antworten `Y` Wenn Sie aufgefordert werden, den erweiterten Modus fortzusetzen. Die Eingabeaufforderung für den erweiterten Modus wird angezeigt (*>).
+
+.. Vergewissern Sie sich, dass die Corestapes gespeichert sind: `system node run -node _local-node-name_ partner savecore`
++
+Wenn die Befehlsausgabe angibt, dass savecore gerade ist, warten Sie, bis savecore abgeschlossen ist, bevor Sie das Giveback ausgeben. Sie können den Fortschritt des Savecore mit dem überwachen `system node run -node _local-node-name_ partner savecore -s command`.</info>.
+
+.. Zurück zur Administratorberechtigungsebene: `set -privilege admin`
+
+
+. Wenn sich der Node _Replacement_ im Wartungsmodus befindet (mit der Eingabeaufforderung *>), beenden Sie den Wartungsmodus, und wechseln Sie zur LOADER-Eingabeaufforderung: `halt`
+. Starten Sie den Node _Replacement_: `boot_ontap`
+. Nachdem der Node _Replacement_ vollständig gestartet wurde, führen Sie einen Wechsel zurück durch: `metrocluster switchback`
+. Überprüfen Sie die MetroCluster Konfiguration: `metrocluster node show - fields configuration-state`
++
+[listing]
+----
+node1_siteA::> metrocluster node show -fields configuration-state
+
+dr-group-id            cluster node           configuration-state
+-----------            ---------------------- -------------- -------------------
+1 node1_siteA          node1mcc-001           configured
+1 node1_siteA          node1mcc-002           configured
+1 node1_siteB          node1mcc-003           configured
+1 node1_siteB          node1mcc-004           configured
+
+4 entries were displayed.
+----
+. Überprüfen Sie den Betrieb der MetroCluster-Konfiguration in Data ONTAP:
++
+.. Überprüfen Sie auf beiden Clustern auf Zustandswarnmeldungen: `system health alert show`
+.. Vergewissern Sie sich, dass die MetroCluster konfiguriert ist und sich im normalen Modus befindet: `metrocluster show`
+.. Durchführen einer MetroCluster-Prüfung: `metrocluster check run`
+.. Ergebnisse der MetroCluster-Prüfung anzeigen: `metrocluster check show`
+.. Nutzen Sie Config Advisor. Wechseln Sie zur Config Advisor-Seite auf der NetApp Support Site unter http://support.netapp.com/NOW/download/tools/config_advisor/["support.netapp.com/NOW/download/tools/config_advisor/"].
++
+Überprüfen Sie nach dem Ausführen von Config Advisor die Ausgabe des Tools und befolgen Sie die Empfehlungen in der Ausgabe, um die erkannten Probleme zu beheben.
+
+
+
+. Simulation eines Switchover-Vorgangs:
++
+.. Ändern Sie von der Eingabeaufforderung eines beliebigen Node auf die erweiterte Berechtigungsebene: `set -privilege advanced`
++
+Sie müssen mit reagieren `y` Wenn Sie dazu aufgefordert werden, den erweiterten Modus fortzusetzen und die Eingabeaufforderung für den erweiterten Modus (*>) anzuzeigen.
+
+.. Führen Sie den Wechsel zurück mit dem Parameter -Simulate durch: `metrocluster switchover -simulate`
+.. Zurück zur Administratorberechtigungsebene: `set -privilege admin`
+
+
+
