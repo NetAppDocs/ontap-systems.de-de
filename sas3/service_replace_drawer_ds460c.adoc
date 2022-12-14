@@ -13,6 +13,7 @@ summary: 'Wenn Sie eine Laufwerksschublade in einem Shelf ersetzen, müssen Sie 
 [role="lead"]
 Wenn Sie eine Laufwerksschublade in einem Shelf ersetzen, müssen Sie entweder das gesamte Storage-System (HA-Paar) anhalten. Auf diese Weise können Sie Datenaggregate auf dem Shelf aufbewahren. Alternativ können Sie das HA-Paar aktiv halten. Allerdings müssen sämtliche Daten aus den Datenaggregaten auf den Festplattenlaufwerken verschoben und offline sein sowie die Datenaggregate löschen. Wenn jedoch das Regal ein Wurzelaggregat enthält, müssen Sie das HA-Paar anhalten.
 
+.Bevor Sie beginnen
 Sie benötigen folgende Elemente für dieses Verfahren:
 
 * Antistatischer Schutz
@@ -79,7 +80,7 @@ NOTE: Datenaggregate können beim Anhalten des HA-Paars auf dem Shelf bleiben.
 .. Halten Sie beide Controller im HA-Paar am Stoppen.
 .. Überprüfen Sie, ob Ihr HA-Paar durch Überprüfen der Speichersystemkonsole angehalten wurde.
 .. Schalten Sie das Shelf aus.
-.. Gehen Sie zum Abschnitt,  the cable chains.
+.. Gehen Sie zum Abschnitt, <<Die Kabelketten entfernen>>.
 
 
 . Wenn Sie sich dafür entscheiden, das HA-Paar am Laufen zu halten, führen Sie die folgenden Teilschritte aus:
@@ -128,7 +129,7 @@ NOTE: Wenn Sie Festplattenlaufwerke im Shelf ausgefallen sind, `broken` Wird im 
 Die linken und rechten Kabelketten für jede Laufwerksschublade im DS460C-Laufwerkseinschub ermöglichen es, die Schubladen ein- und auszuschieben. Bevor Sie eine Laufwerksschublade entfernen können, müssen Sie beide Kabelketten entfernen.
 
 .Bevor Sie beginnen
-* Sie haben den abgeschlossen  to replace a drive drawer Schritte, damit Ihr HA-Paar angehalten wird oder Sie alle Daten aus den Datenaggregaten auf den Festplatten verschoben haben, und die Datenaggregate in den Offline- bzw. löschten, damit die Festplatten zu Spares werden können.
+* Sie haben den abgeschlossen <<Bereiten Sie den Austausch eines Laufwerksschubs vor>> Schritte, damit Ihr HA-Paar angehalten wird oder Sie alle Daten aus den Datenaggregaten auf den Festplatten verschoben haben, und die Datenaggregate in den Offline- bzw. löschten, damit die Festplatten zu Spares werden können.
 * Sie haben das Regal ausgeschaltet.
 * Sie haben die folgenden Punkte erhalten:
 +
@@ -142,6 +143,7 @@ NOTE: *Möglicher Hardwareschaden:* um elektrostatische Entladungsschäden am Re
 
 
 
+.Über diese Aufgabe
 Jede Antriebsschublade hat linke und rechte Kabelketten. Die Metallenden an den Kabelketten schieben sich wie folgt in die entsprechenden vertikalen und horizontalen Halterungen innerhalb des Gehäuses:
 
 * Die vertikalen Halterungen links und rechts verbinden die Kabelkette mit der Mittelplatine des Gehäuses.

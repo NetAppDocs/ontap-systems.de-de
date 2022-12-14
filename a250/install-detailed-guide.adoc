@@ -24,6 +24,7 @@ Sie müssen Zugriff auf die haben link:https://hwu.netapp.com["NetApp Hardware U
 
 NOTE: Kunden mit besonderen Anforderungen an die Stromversorgung müssen die HWU bezüglich ihrer Konfigurationsoptionen prüfen.
 
+.Was Sie brauchen
 Folgendes müssen Sie an Ihrer Website angeben:
 
 * Rack-Platz für das Storage-System
@@ -176,6 +177,7 @@ Verkabeln Sie die Controller über eine Switch-Methode mit zwei Nodes oder über
 
 Die Management-, Fibre Channel- und Daten- oder Host-Netzwerk-Ports der Controller-Module sind mit Switches verbunden. Die Cluster Interconnect-Ports sind an beiden Controller-Modulen verkabelt.
 
+.Bevor Sie beginnen
 Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.
 
 Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
@@ -228,6 +230,7 @@ Informationen zum Abschließen der Einrichtung des Systems finden Sie unter link
 
 Alle Ports auf den Controllern sind mit Switches verbunden; Cluster Interconnect, Management, Fibre Channel und Daten- oder Host-Netzwerk-Switches.
 
+.Bevor Sie beginnen
 Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.
 
 Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
@@ -286,6 +289,7 @@ Sie verfügen über eine konfigurationsabhängige optionale Verkabelung mit den 
 
 Fibre Channel-Ports auf den Controllern sind mit Fibre Channel Host-Netzwerk-Switches verbunden.
 
+.Bevor Sie beginnen
 Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.
 
 Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
@@ -312,8 +316,8 @@ Verkabeln Sie die Ports 2a bis 2d mit den FC-Host-Switches.image:../media/drw_af
  a| 
 Um andere optionale Kabel durchzuführen, wählen Sie aus:
 
-*  2: Cable to a 25GbE data or host network
-*  3: Cable the controllers to a single drive shelf
+* <<Option 2: Kabel zu einem 25-GbE-Daten- oder Hostnetzwerk>>
+* <<Option 3: Controller mit einem einzelnen Festplatten-Shelf verkabeln>>
 
 
 
@@ -330,6 +334,7 @@ Informationen zum Abschließen der Einrichtung des Systems finden Sie unter link
 
 25-GbE-Ports auf den Controllern sind mit 25-GbE-Daten oder Host-Netzwerk-Switches verbunden.
 
+.Bevor Sie beginnen
 Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.
 
 Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
@@ -356,8 +361,8 @@ Verkabeln Sie die Ports e4a über e4d mit den 10 GbE Host Netzwerk-Switches.imag
  a| 
 Um andere optionale Kabel durchzuführen, wählen Sie aus:
 
-*  1: Cable to a Fibre Channel host network
-*  3: Cable the controllers to a single drive shelf
+* <<Option 1: Kabel zu einem Fibre Channel-Hostnetzwerk>>
+* <<Option 3: Controller mit einem einzelnen Festplatten-Shelf verkabeln>>
 
 
 
@@ -374,6 +379,7 @@ Informationen zum Abschließen der Einrichtung des Systems finden Sie unter link
 
 Verkabeln Sie jeden Controller mit den NSM-Modulen am NS224-Festplatten-Shelf.
 
+.Bevor Sie beginnen
 Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
 
 image::../media/oie_cable_pull_tab_up.png[ziehen Sie die Lasche des oie-Kabels nach oben]

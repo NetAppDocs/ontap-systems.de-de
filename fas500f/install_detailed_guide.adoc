@@ -21,6 +21,7 @@ Um Ihr FAS500f-System zu installieren, müssen Sie ein Konto erstellen und das S
 
 Sie müssen Zugriff auf die haben link:https://hwu.netapp.com["NetApp Hardware Universe"^] (HWU) enthält Informationen zu den Standortanforderungen sowie zusätzliche Informationen zu Ihrem konfigurierten System. Möglicherweise möchten Sie auch Zugriff auf den haben link:http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["Versionshinweise zu Ihrer Version von ONTAP"^] Weitere Informationen zu diesem System.
 
+.Was Sie brauchen
 Folgendes müssen Sie an Ihrer Website angeben:
 
 * Rack-Platz für das Storage-System
@@ -175,6 +176,7 @@ Verkabeln Sie die Controller über eine Switch-Methode mit zwei Nodes oder über
 
 Die Management-, Fibre Channel- und Daten- oder Host-Netzwerk-Ports der Controller-Module sind mit Switches verbunden. Die Cluster Interconnect-Ports sind an beiden Controller-Modulen verkabelt.
 
+.Bevor Sie beginnen
 Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.
 
 Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
@@ -229,6 +231,7 @@ Informationen zum Abschließen der Einrichtung des Systems finden Sie unter link
 
 Alle Ports auf den Controllern sind mit Switches verbunden; Cluster Interconnect, Management, Fibre Channel und Daten- oder Host-Netzwerk-Switches.
 
+.Bevor Sie beginnen
 Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.
 
 Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
@@ -287,6 +290,7 @@ Sie verfügen über eine konfigurationsabhängige optionale Verkabelung mit den 
 
 Fibre Channel-Ports auf den Controllern sind mit Fibre Channel Host-Netzwerk-Switches verbunden.
 
+.Bevor Sie beginnen
 Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.
 
 Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
@@ -315,8 +319,8 @@ image::../media/drw_affa250_fc_host_cabling.png[drw affa250 fc-Hostkabel]
  a| 
 Um andere optionale Kabel durchzuführen, wählen Sie aus:
 
-*  2: Cable to a 25GbE data or host network
-*  3: Cable the controllers to a single drive shelf
+* <<Option 2: Kabel zu einem 25-GbE-Daten- oder Hostnetzwerk>>
+* <<Option 3: Controller mit einem einzelnen Festplatten-Shelf verkabeln>>
 
 
 
@@ -333,6 +337,7 @@ Informationen zum Abschließen der Einrichtung des Systems finden Sie unter link
 
 25-GbE-Ports auf den Controllern sind mit 25-GbE-Daten oder Host-Netzwerk-Switches verbunden.
 
+.Bevor Sie beginnen
 Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.
 
 Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
@@ -361,8 +366,8 @@ image::../media/drw_affa250_25gbe_host_cabling.png[drw affa250 25-gbe-Hostkabel]
  a| 
 Um andere optionale Kabel durchzuführen, wählen Sie aus:
 
-*  1: Cable to a Fibre Channel host network
-*  3: Cable the controllers to a single drive shelf
+* <<Option 1: Kabel zu einem Fibre Channel-Hostnetzwerk>>
+* <<Option 3: Controller mit einem einzelnen Festplatten-Shelf verkabeln>>
 
 
 

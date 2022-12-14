@@ -4,6 +4,7 @@
 
 Sie müssen neue Lizenzen für den Node _Replacement_ installieren, wenn der beeinträchtigte Knoten ONTAP-Funktionen verwendete, die eine Standard-Lizenz (Node-locked) erfordern. Bei Standardlizenzen sollte jeder Node im Cluster über seinen eigenen Schlüssel für die Funktion verfügen.
 
+.Über diese Aufgabe
 Bis Sie Lizenzschlüssel installieren, sind Funktionen, für die Standardlizenzen erforderlich sind, weiterhin für den Node _Replacement_ verfügbar. Wenn der beeinträchtigte Knoten jedoch der einzige Node im Cluster war, der eine Lizenz für die Funktion besitzt, sind keine Konfigurationsänderungen an der Funktion zulässig. Durch die Verwendung nicht lizenzierter Funktionen auf dem Knoten können Sie möglicherweise nicht mit Ihrer Lizenzvereinbarung einverstanden sein. Sie sollten daher den Ersatzlizenzschlüssel oder die Schlüssel so schnell wie möglich auf dem Node _Replacement_ installieren.
 
 Die Lizenzschlüssel müssen im 28-stelligen Format vorliegen.

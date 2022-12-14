@@ -4023,7 +4023,6 @@
   <block id="483a752599520b0534872ca3822c9083" category="list-text">Vergewissern Sie sich, dass die erwarteten Volumes für jeden Controller vorhanden sind:<block ref="6931ff74d75f98d072d2434c71cfc1e4" prefix=" " category="inline-code"></block></block>
   <block id="ea22b9523724a1472e9a6474903abd69" category="list-text">Wenn Sie die automatische Übernahme beim Neustart deaktiviert haben, aktivieren Sie sie vom gesunden Controller:<block ref="5f447b86ccb3d9573dccd053b419efda" prefix=" " category="inline-code"></block></block>
   <block id="13bebe2596a4000b53c1d171e85d4669" category="doc">Vollständige Systemwiederherstellung - AFF C190</block>
-  <block id="86c3969f421b58d4b4b270ed1fb7b003" category="section-title">Schritt 1: Lizenzen für den Ersatz-Controller in ONTAP installieren</block>
   <block id="8ba332a9944c2e6a66e36aee66689593" category="section-title">Schritt 2: LIFs werden überprüft und die Seriennummer wird registriert</block>
   <block id="c8ba643914db1664b5eb486f2f97cf94" category="doc">Stellen Sie OKM, NSE und NVE nach Bedarf wieder her – AFF C190</block>
   <block id="d5d1d7f0ba452ea37dcd299489e09eff" category="doc">Senden Sie das fehlerhafte Teil an NetApp - AFF C190 zurück</block>
@@ -4624,7 +4623,6 @@
   <block id="82b742085f424ab9b6b3cdea2a76ee8d" category="paragraph">Mit zwei Controllern im Cluster</block>
   <block id="f810400e8f6c8db0e850e30403d338b7" category="paragraph">Mit mehr als zwei Controllern im Cluster</block>
   <block id="ebc7476a478f335dcc4ca03640d92275" category="doc">Tauschen Sie das Startmedium aus – AFF A200</block>
-  <block id="a711863513c11f3a6d86294acc7be0ba" category="list-title">Was Sie und#8217;ll benötigen</block>
   <block id="5cae28c48acee98f2baac425290bbe14" category="list-text"><block ref="5febc3d23fb96d5ced3d61bafc5158de" prefix="" category="inline-code"></block> Ist die IP-Adresse des Storage-Systems.</block>
   <block id="881a30a5eb497e5f1a74adafa0d2fe0d" category="list-text"><block ref="3f5c8adfe42894248788ef03028cca0b" prefix="" category="inline-code"></block> Ist die Netzwerkmaske des Management-Netzwerks, die mit dem HA-Partner verbunden ist.</block>
   <block id="f902be9386ed1a89086bfd6000dab684" category="list-text"><block ref="3e21ab62fb17400301d9f0156b6c3031" prefix="" category="inline-code"></block> Ist das Gateway für das Netzwerk.</block>
@@ -7337,4 +7335,12 @@
   <block id="f6caefdbf5b7d345e721affd6b6d9bab" category="sidebar">AFF A220 DIMM</block>
   <block id="9e493c35f280e1be11ab7f0f286f498b" category="sidebar">AFF A220 Laufwerk</block>
   <block id="ca55628a813bde8148e26c974fb5bd2e" category="sidebar">AFF A220 Echtzeitbatterie</block>
+  <block id="8c4271e6faf2cea4cfc8e5b7108d8ee9" category="paragraph-title">Verfahren</block>
+  <block id="6bcc4bf7321499602cc726d01ccea765" category="paragraph-title">Überprüfen Sie, ob sich die System-ID auf einem HA-System ändert</block>
+  <block id="354b2998d28fedeb0bad97fc9be9b342" category="paragraph-title">Weisen Sie die System-ID in einer MetroCluster Konfiguration mit zwei Nodes neu zu</block>
+  <block id="9826dc7dca2ce77788236ffc0e442de8" category="section-title">Schritt: Überprüfen Sie den HA-Status des Controller-Moduls und legen Sie ihn fest</block>
+  <block id="48023daa3129599e2b4aa0dbaefd201f" category="paragraph-title">Informationen zu diesen Aufgaben</block>
+  <block id="d59db7846bd10b6d60d21543df9faa9e" category="paragraph-title">Was Sie benötigen</block>
+  <block id="7d60346fb854755b0fc4b8486f2e5769" category="section-title">Schritt 1: Lizenzen für den _Replacement_ Controller in ONTAP installieren</block>
+  <block id="541648f14089765ba6e8c3198be32507" category="section-title">Schritt 2: Ersetzen Sie die Startmedien</block>
 </blocks>

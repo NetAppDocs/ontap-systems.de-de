@@ -23,6 +23,7 @@ Sie müssen das Caching-Modul im Controller-Modul ersetzen, wenn das System eine
 [role="lead"]
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 
+.Über diese Aufgabe
 Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE für die Berechtigung und den Zustand anzeigt, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren.
 
 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/home.html["ONTAP 9 – Systemadministrationshandbuch"^]
@@ -248,6 +249,7 @@ Die Diagnose auf Systemebene gibt die Eingabeaufforderung zurück, wenn keine Te
 
 
 
+[role="lead"]
 . Fahren Sie auf der Grundlage des Ergebnisses des vorhergehenden Schritts fort:
 
 

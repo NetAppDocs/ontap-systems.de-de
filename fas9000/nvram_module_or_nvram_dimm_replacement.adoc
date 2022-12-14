@@ -397,6 +397,7 @@ Wählen Sie eine der folgenden Optionen aus, um Anweisungen zur Neuzuweisung von
 ====
 .Option 1: ID überprüfen (HA-Paar)
 --
+.Überprüfen Sie, ob sich die System-ID auf einem HA-System ändert
 [role="lead"]
 Sie müssen die Änderung der System-ID beim Booten des Node _Replacement_ bestätigen und anschließend überprüfen, ob die Änderung implementiert wurde.
 
@@ -517,9 +518,11 @@ dr-group-id            cluster node           configuration-state
 --
 .Option 2: ID neu zuweisen (MetroCluster-Konfiguration)
 --
+.Weisen Sie die System-ID in einer MetroCluster Konfiguration mit zwei Nodes neu zu
 [role="lead"]
 Bei einer MetroCluster-Konfiguration mit zwei Knoten, in der ONTAP ausgeführt wird, müssen Sie Festplatten manuell der System-ID des neuen Controllers zuweisen, bevor Sie den normalen Betrieb des Systems zurückgeben.
 
+.Über diese Aufgabe
 Dieses Verfahren gilt nur für Systeme in einer MetroCluster-Konfiguration mit zwei Nodes, auf denen ONTAP ausgeführt wird.
 
 Sie müssen sicherstellen, dass Sie die Befehle in diesem Verfahren auf dem richtigen Node eingeben:

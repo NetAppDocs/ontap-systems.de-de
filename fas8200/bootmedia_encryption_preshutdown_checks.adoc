@@ -32,8 +32,8 @@ Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Ca
 . Überprüfen Sie die Version von ONTAP, auf der das System auf dem beeinträchtigten Controller ausgeführt wird, wenn er eingeschaltet ist, oder auf dem Partner-Controller, wenn der beeinträchtigte Controller nicht verfügbar ist, über das `version -v` Befehl:
 +
 ** Wenn <lno-DARE> oder <1Ono-DARE> in der Befehlsausgabe angezeigt wird, unterstützt das System NVE nicht. Fahren Sie mit dem Herunterfahren des Controllers fort.
-** Wenn <lno-DARE> nicht in der Befehlsausgabe angezeigt wird und auf dem System ONTAP 9.5 ausgeführt wird, fahren Sie mit fort  1: Checking NVE or NSE on systems running ONTAP 9.5 and earlier.
-** Wenn <lno-DARE> nicht in der Befehlsausgabe angezeigt wird und auf dem System ONTAP 9.6 oder höher ausgeführt wird, fahren Sie mit fort  2: Checking NVE or NSE on systems running ONTAP 9.6 and later.
+** Wenn <lno-DARE> nicht in der Befehlsausgabe angezeigt wird und auf dem System ONTAP 9.5 ausgeführt wird, fahren Sie mit fort <<Option 1: Prüfen von NVE oder NSE auf Systemen mit ONTAP 9.5 und früher>>.
+** Wenn <lno-DARE> nicht in der Befehlsausgabe angezeigt wird und auf dem System ONTAP 9.6 oder höher ausgeführt wird, fahren Sie mit fort <<Option 2: Prüfen von NVE oder NSE auf Systemen mit ONTAP 9.6 und höher>>.
 
 
 . Wenn der beeinträchtigte Controller Teil einer HA-Konfiguration ist, deaktivieren Sie das automatische Giveback vom ordnungsgemäßen Controller: `storage failover modify -node local -auto-giveback false` Oder `storage failover modify -node local -auto-giveback-after-panic false`

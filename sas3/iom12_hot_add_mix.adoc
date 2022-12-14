@@ -21,7 +21,7 @@ Wenn zusätzlicher Storage benötigt wird, können IOM12/IOM12B-Shelfs (SAS-Shel
 Das HA-Paar, das Single-Controller oder die Stretch-MetroCluster-Konfiguration (System) müssen bestimmte Anforderungen erfüllen, bevor IOM12-/IOM12B-Shelfs in einem Stack aus IOM6-Shelfs hinzugefügt werden.
 
 
-NOTE: Informationen zu an Bridge angeschlossenen MetroCluster-Konfigurationen finden Sie unter  for a hot-add in bridge-attached MetroCluster configurations.
+NOTE: Informationen zu an Bridge angeschlossenen MetroCluster-Konfigurationen finden Sie unter <<Anforderungen für Hot-Add-in-Bridge-MetroCluster-Konfigurationen>>.
 
 * Das System und die ONTAP Version müssen eine Kombination aus IOM6-Shelfs und IOM12/IOM12B-Shelfs im selben Stack (in einem gemischten Stack) unterstützen.
 +
@@ -226,12 +226,14 @@ NOTE: Die Migrationsanweisungen enthalten die Systemanforderungen für IBACP.
 [role="lead"]
 Wenn Sie die Eigentümerschaft der Laufwerke für die IOM12-Shelves manuell zuweisen, müssen Sie die automatische Laufwerkszuweisung deaktivieren, wenn sie aktiviert ist.
 
+.Bevor Sie beginnen
 Sie müssen die Systemanforderungen erfüllt haben.
 
- for a hot-add
+<<Anforderungen für einen Hot-Add-Zusatz>>
 
- for a hot-add in bridge-attached MetroCluster configurations
+<<Anforderungen für Hot-Add-in-Bridge-MetroCluster-Konfigurationen>>
 
+.Über diese Aufgabe
 Bei einem HA-Paar müssen Sie die Eigentümerschaft des Laufwerks manuell zuweisen, wenn Laufwerke im Shelf Eigentum beider Controller-Module sind.
 
 .Schritte
@@ -396,15 +398,15 @@ Wie Sie ein IOM12/IOM12B Shelf mit einem Stack von IOM12-Shelves verkabeln, hän
 .Bevor Sie beginnen
 * Sie müssen die Systemanforderungen erfüllt haben.
 +
- for a hot-add
+<<Anforderungen für einen Hot-Add-Zusatz>>
 
 * Sie müssen das Vorbereitungsverfahren, falls zutreffend, abgeschlossen haben.
 +
- to manually assign drive ownership for a hot-add
+<<Bereiten Sie sich darauf vor, das Laufwerk manuell einem Hot-Add-Vorgang zuzuweisen>>
 
 * Sie müssen die Shelfs installiert und eingeschaltet sowie die Shelf-IDs festlegen.
 +
- shelves for a hot-add
+<<Installation von Shelfs für ein Hot-Add-regale>>
 
 
 
@@ -634,7 +636,7 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 Andernfalls werden Sie mit diesem Verfahren durchgeführt.
 
 +
- the hot-add
+<<Füllen Sie das Hot Add aus>>
 
 +
 
@@ -649,9 +651,10 @@ NOTE: Für alle MetroCluster Konfigurationen ist eine manuelle Laufwerkszuweisun
 [role="lead"]
 Wenn Sie die automatische Laufwerkszuweisung im Rahmen der Vorbereitung für das Hot-Hinzufügen der IOM12/IOM12B-Shelfs zum Stack der IOM6-Shelfs deaktiviert haben, müssen Sie die Laufwerkseigentümer manuell zuweisen und bei Bedarf die automatische Laufwerkszuweisung erneut aktivieren.
 
+.Bevor Sie beginnen
 Sie müssen das Shelf bereits wie im Auftrag des Systems verbunden haben.
 
- shelves for a hot-add
+<<Kabel-Shelfs für ein Hot-Add-Kabel>>
 
 .Schritte
 . Alle Laufwerke ohne Besitzer anzeigen: `storage disk show -container-type unassigned`

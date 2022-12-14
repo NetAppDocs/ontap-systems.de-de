@@ -47,14 +47,14 @@ Sie müssen das richtige Verfahren für Ihre Konfiguration verwenden:
  a| 
 HA-Paar
  a| 
- 1: Verify the system ID change on an HA system]
+<<Option 1: Überprüfen Sie die Änderung der System-ID bei einem HA-System>>]
 
 
 
  a| 
 MetroCluster Konfiguration mit zwei Nodes
  a| 
- 2: Manually reassign the system ID on systems in a two-node MetroCluster configuration
+<<Option 2: Manuelle Neuzuweisung der System-ID an Systemen in einer MetroCluster Konfiguration mit zwei Nodes>>
 
 |===
 
@@ -149,6 +149,7 @@ Disk  Aggregate Home  Owner  DR Home  Home ID    Owner ID  DR Home ID Reserver  
 
 Bei einer MetroCluster-Konfiguration mit zwei Knoten, in der ONTAP ausgeführt wird, müssen Sie Festplatten manuell der System-ID des neuen Controllers zuweisen, bevor Sie den normalen Betrieb des Systems zurückgeben.
 
+.Über diese Aufgabe
 Dieses Verfahren gilt nur für Systeme in einer MetroCluster-Konfiguration mit zwei Nodes, auf denen ONTAP ausgeführt wird.
 
 Sie müssen sicherstellen, dass Sie die Befehle in diesem Verfahren auf dem richtigen Node eingeben:

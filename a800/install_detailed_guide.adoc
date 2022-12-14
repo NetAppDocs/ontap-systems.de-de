@@ -21,6 +21,7 @@ Um Ihr AFF A800 System zu installieren, müssen Sie ein Konto erstellen und das 
 
 Sie müssen Zugriff auf die haben link:https://hwu.netapp.com["NetApp Hardware Universe"^] (HWU) enthält Informationen zu den Standortanforderungen sowie zusätzliche Informationen zu Ihrem konfigurierten System. Möglicherweise möchten Sie auch Zugriff auf den haben link:http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["Versionshinweise zu Ihrer Version von ONTAP"^] Weitere Informationen zu diesem System.
 
+.Was Sie brauchen
 Folgendes müssen Sie an Ihrer Website angeben:
 
 * Rack-Platz für das Storage-System
@@ -200,6 +201,7 @@ Verkabeln Sie die Controller über eine Switch-Methode mit zwei Nodes oder über
 
 Management-Netzwerk-Ports auf den Controllern sind mit Switches verbunden. Die HA Interconnect- und Cluster Interconnect-Ports sind an beiden Controllern verkabelt.
 
+.Bevor Sie beginnen
 Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.
 
 Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
@@ -257,10 +259,10 @@ Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
 |===
 . Informationen zur Durchführung optionaler Verkabelung finden Sie unter:
 +
-**  1: Connect to a Fibre Channel host
-**  2: Connect to a 10GbE host
-**  3: Connect to a single direct-attached NS224 drive shelf
-**  4: Connect to two direct-attached NS224 drive shelves
+** <<Option 1: Connect to a Fibre Channel host>>
+** <<Option 2: Connect to a 10GbE host>>
+** <<Option 3: Connect to a single direct-attached NS224 drive shelf>>
+** <<Option 4: Connect to two direct-attached NS224 drive shelves>>
 
 
 . Informationen zum Abschließen der Einrichtung des Systems finden Sie unter link:install-detailed-guide.html#step-4-complete-system-setup-and-configuration["Schritt 4: System-Setup und -Konfiguration abschließen"].
@@ -272,6 +274,7 @@ Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
 
 Cluster Interconnect- und Management-Netzwerk-Ports an den Controllern sind mit Switches verbunden, während die HA Interconnect Ports an beiden Controllern verkabelt sind.
 
+.Bevor Sie beginnen
 Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.
 
 Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
@@ -325,10 +328,10 @@ Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
 |===
 . Informationen zur Durchführung optionaler Verkabelung finden Sie unter:
 +
-**  1: Connect to a Fibre Channel host
-**  2: Connect to a 10GbE host
-**  3: Connect to a single direct-attached NS224 drive shelf
-**  4: Connect to two direct-attached NS224 drive shelves
+** <<Option 1: Connect to a Fibre Channel host>>
+** <<Option 2: Connect to a 10GbE host>>
+** <<Option 3: Connect to a single direct-attached NS224 drive shelf>>
+** <<Option 4: Connect to two direct-attached NS224 drive shelves>>
 
 
 . Informationen zum Abschließen der Einrichtung des Systems finden Sie unter link:install-detailed-guide.html#step-4-complete-system-setup-and-configuration["Schritt 4: System-Setup und -Konfiguration abschließen"].
@@ -346,6 +349,7 @@ Sie verfügen über eine konfigurationsabhängige optionale Verkabelung mit den 
 
 Fibre Channel-Ports auf den Controllern sind mit Fibre Channel Host-Netzwerk-Switches verbunden.
 
+.Bevor Sie beginnen
 Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.
 
 Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
@@ -372,8 +376,8 @@ Verkabeln Sie die Ports 2a bis 2d mit den FC-Host-Switches.image:../media/drw_af
  a| 
 Um andere optionale Kabel durchzuführen, wählen Sie aus:
 
-*  3: Connect to a single direct-attached NS224 drive shelf
-*  4: Connect to two direct-attached NS224 drive shelves
+* <<Option 3: Connect to a single direct-attached NS224 drive shelf>>
+* <<Option 4: Connect to two direct-attached NS224 drive shelves>>
 
 
 
@@ -390,6 +394,7 @@ Informationen zum Abschließen der Einrichtung des Systems finden Sie unter link
 
 10-GbE-Ports auf den Controllern sind mit 10-GbE-Host-Netzwerk-Switches verbunden.
 
+.Bevor Sie beginnen
 Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.
 
 Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
@@ -416,8 +421,8 @@ Verkabeln Sie die Ports e4a über e4d mit den 10 GbE Host Netzwerk-Switches.imag
  a| 
 Um andere optionale Kabel durchzuführen, wählen Sie aus:
 
-*  3: Connect to a single direct-attached NS224 drive shelf
-*  4: Connect to two direct-attached NS224 drive shelves
+* <<Option 3: Connect to a single direct-attached NS224 drive shelf>>
+* <<Option 4: Connect to two direct-attached NS224 drive shelves>>
 
 
 
@@ -434,6 +439,7 @@ Informationen zum Abschließen der Einrichtung des Systems finden Sie unter link
 
 Sie müssen jeden Controller mit den NSM-Modulen am NS224-Laufwerk-Shelf verkabeln.
 
+.Bevor Sie beginnen
 Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
 
 image::../media/oie_cable_pull_tab_up.png[ziehen Sie die Lasche des oie-Kabels nach oben]
@@ -471,6 +477,7 @@ Informationen zum Abschließen der Einrichtung des Systems finden Sie unter link
 
 Sie müssen jeden Controller an beiden NS224 Laufwerk-Shelfs mit den NSM-Modulen verkabeln.
 
+.Bevor Sie beginnen
 Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
 
 image::../media/oie_cable_pull_tab_up.png[ziehen Sie die Lasche des oie-Kabels nach oben]

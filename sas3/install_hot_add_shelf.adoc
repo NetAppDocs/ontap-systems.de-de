@@ -13,6 +13,7 @@ summary: Mit IOM12/IOM12B-Modulen können Sie ein oder mehrere Platten-Shelfs in
 [role="lead"]
 Mit IOM12/IOM12B-Modulen können Sie ein oder mehrere Platten-Shelfs in Betrieb nehmen und mit IOM12/IOM12B-Modulen einen Stack oder mehrere Platten-Shelfs mit IOM12/IOM12B-Modulen direkt an einen SAS HBA oder einen integrierten SAS-Port am Controller hinzufügen.
 
+.Über diese Aufgabe
 Sie können diese Vorgehensweise nicht verwenden, um einen Stack zu mischen: Shelf mit IOM12/IOM12B-Modulen im laufenden Betrieb in einem Shelf mit IOM6-Modulen hinzuzufügen. Wenn Sie einen Stack mischen müssen, verwenden Sie link:iom12-hot-add-mix.html["Hot-Add-IOM12-Shelfs für einen Stack von IOM6-Shelfs"].
 
 
@@ -321,6 +322,7 @@ Die Shelf-ID blinkt und die LED für die Bedieneranzeige blinkt, bis Sie das Fes
 [role="lead"]
 Sie verkabeln die SAS-Verbindungen --Shelf-to-Shelf und Controller-to-Stack - sofern zutreffend für Hot-Added Platten-Shelfs, damit sie mit dem System verbunden werden können.
 
+.Bevor Sie beginnen
 Sie müssen die Anforderungen in erfüllt haben link:install-hot-add-shelf.html#requirements-for-hot-adding-disk-shelves-with-iom12iom12b-modules["Anforderungen für Hot-Adding Disk-Shelfs mit IOM12-Modulen"] Und installiert, eingeschaltet und Shelf-IDs für jedes Festplatten-Shelf gemäß Anweisungen in festlegen link:install-hot-add-shelf.html#install-disk-shelves-with-iom12iom12b-modules-for-a-hot-add["Installieren Sie Platten-Shelfs mit IOM12-Modulen für ein Hot-Add-System"].
 
 .Über diese Aufgabe
@@ -446,7 +448,7 @@ Diese Anweisungen gelten für das Hinzufügen von Hot-to-Stack-Verbindungen am E
 |===
 . Wenn Sie ein Platten-Shelf mit optischen Mini-SAS-HD-SAS-Kabeln in einem Stack mit SAS-Kupferkabeln verbundene Platten-Shelfs aufnehmen, ersetzen Sie die SAS-Kupferkabel. Andernfalls fahren Sie mit dem nächsten Schritt fort.
 +
-Der Stack muss die im angegebenen Anforderungen erfüllen  for hot-adding disk shelves with IOM12 modules Abschnitt dieses Verfahrens.
+Der Stack muss die im angegebenen Anforderungen erfüllen <<Anforderungen für Hot-Adding Disk-Shelfs mit IOM12-Modulen>> Abschnitt dieses Verfahrens.
 
 +
 Ersetzen Sie die Kabel nacheinander, und stellen Sie sicher, dass Sie zwischen dem Trennen eines Kabels und dem Anschließen eines neuen Kabels mindestens 70 Sekunden warten.

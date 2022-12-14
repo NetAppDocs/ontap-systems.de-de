@@ -43,7 +43,7 @@ https://hwu.netapp.com["NetApp Hardware Universe"^]
 ====
 Nicht dedizierte RoCE-fähige Ports müssen für den Storage-Einsatz konfiguriert werden (nicht für den Netzwerkeinsatz).
 
- non-dedicated RoCE-capable ports for a hot-add
+<<Vorbereitung nicht dedizierter RoCE-fähiger Ports für ein Hot-Add-on>>
 
 ====
 * Wenn Sie über ein AFF A700 HA-Paar verfügen und das erste NS224-Festplatten-Shelf während des laufenden Betrieb hinzufügen (kein NS224-Festplatten-Shelf in Ihrem HA-Paar vorhanden), müssen Sie in jedem Controller ein Core Dump-Modul (X9170A, NVMe 1 TB SSD) installiert haben, um Core Dumps zu unterstützen (speichern Sie Core-Dateien).
@@ -128,9 +128,10 @@ Sie müssen die Vorbereitungsaufgaben für Ihr HA-Paar abschließen, bevor Sie e
 
 Wenn Ihr HA-Paar nicht dedizierte RoCE-fähige Ports aufweist, die Sie zum Hot-Add eines NS224-Laufwerk-Shelfs verwenden, müssen Sie sicherstellen, dass die Ports für die Storage-Verwendung konfiguriert sind (nicht für die Netzwerknutzung). Je nach Plattformmodell sind die RoCE-fähigen Ports an den Controllern, auf RoCE-fähigen PCIe-Karten, einer Kombination aus beiden oder auf RoCE-fähigen I/O-Modulen integriert.
 
+.Bevor Sie beginnen
 Sie müssen die Systemanforderungen erfüllt haben.
 
- for a hot-add
+<<Anforderungen für einen Hot-Add-Zusatz>>
 
 .Über diese Aufgabe
 * Bei einigen Plattformmodellen wird eine RoCE-fähige PCIe-Karte oder ein I/O-Modul in einem unterstützten Steckplatz an einem Controller installiert. Die Ports werden automatisch für die Storage-Verwendung (statt für das Netzwerk) konfiguriert. Sie sollten jedoch diesen Vorgang abschließen, um zu überprüfen, ob die RoCE-fähigen Ports für die Storage-Nutzung konfiguriert sind.
@@ -250,11 +251,11 @@ Wenn Sie über ein AFF A700, AFF A800 oder AFF A400 HA-Paar mit einem NS224-Lauf
 .Bevor Sie beginnen
 * Sie müssen die Systemanforderungen erfüllt haben.
 +
- for a hot-add
+<<Anforderungen für einen Hot-Add-Zusatz>>
 
 * Sie müssen die Ports auf den RoCE-fähigen PCIe-Karten oder auf den von Ihnen installierten I/O-Modulen aktiviert haben.
 +
- non-dedicated RoCE-capable ports for a hot-add
+<<Vorbereitung nicht dedizierter RoCE-fähiger Ports für ein Hot-Add-on>>
 
 
 
@@ -288,7 +289,7 @@ NOTE: Die Unterschritte setzen voraus, dass das vorhandene Shelf in Steckplatz 3
 ====
 Bei Bedarf können Sie Verkabelungsabbildungen mit einem vorhandenen Single Shelf und dem neu ablsierten Shelf in einer 2-Shelf-Konfiguration verwenden.
 
- a hot-add shelf for an AFF A700 HA pair
+<<Verkabeln Sie ein Hot-Add-Shelf für ein AFF A700 HA-Paar>>
 
 ====
 .. Stellen Sie am Controller A das Kabel von Steckplatz 3 Port b (e3b) in Steckplatz 7 Port b (e7b) um.
@@ -307,7 +308,7 @@ NOTE: Die Unterschritte gehen davon aus, dass das vorhandene Shelf in jedem Cont
 ====
 Bei Bedarf können Sie Verkabelungsabbildungen mit einem vorhandenen Single Shelf und dem neu ablsierten Shelf in einer 2-Shelf-Konfiguration verwenden.
 
- a hot-add shelf for an AFF A800 HA pair
+<<Verkabeln Sie ein Hot-Add-Shelf für ein AFF A800 HA-Paar>>
 
 ====
 .. Bewegen Sie das Kabel an Controller A von Steckplatz 5 Port b (e5b) in Steckplatz 3 Port b (e3b).
@@ -323,7 +324,7 @@ HA-PAAR DER AFF A400
 ====
 Bei Bedarf können Sie Verkabelungsabbildungen mit einem vorhandenen Single Shelf und dem neu ablsierten Shelf in einer 2-Shelf-Konfiguration verwenden.
 
- a hot-add shelf for an AFF A400 HA pair
+<<Verkabeln Sie ein Hot-Add-Shelf für ein AFF A400 HA-Paar>>
 
 ====
 .. Bewegen Sie das Kabel an Controller A von Port e0d nach Steckplatz 5 Port b (e5b).
@@ -346,10 +347,12 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 
 Wenn Sie für das NS224-Festplatten-Shelf, das Sie im laufenden Betrieb hinzufügen, manuell Laufwerk-Eigentumsrechte zuweisen, müssen Sie die automatische Laufwerkszuweisung deaktivieren, wenn diese aktiviert ist.
 
+.Bevor Sie beginnen
 Sie müssen die Systemanforderungen erfüllt haben.
 
- for a hot-add
+<<Anforderungen für einen Hot-Add-Zusatz>>
 
+.Über diese Aufgabe
 Sie müssen die Laufwerkseigentümer manuell zuweisen, wenn Laufwerke im Shelf Eigentum beider Controller-Module des HA-Paars sind.
 
 .Schritte
@@ -376,11 +379,11 @@ Bei der Installation eines neuen NS224-Festplatten-Shelfs muss das Shelf in ein 
 .Bevor Sie beginnen
 * Sie müssen die Systemanforderungen erfüllt haben.
 +
- for a hot-add
+<<Anforderungen für einen Hot-Add-Zusatz>>
 
 * Sie müssen die entsprechenden Vorbereitungsverfahren abgeschlossen haben.
 +
- for a hot-add
+<<Bereiten Sie sich auf ein Hot-Add vor>>
 
 
 
@@ -472,15 +475,15 @@ Wenn zusätzlicher Speicher benötigt wird, können Sie bis zu drei zusätzliche
 .Bevor Sie beginnen
 * Sie müssen die Systemanforderungen erfüllt haben.
 +
- for a hot-add
+<<Anforderungen für einen Hot-Add-Zusatz>>
 
 * Sie müssen die entsprechenden Vorbereitungsverfahren abgeschlossen haben.
 +
- for a hot-add
+<<Bereiten Sie sich auf ein Hot-Add vor>>
 
 * Sie müssen die Shelfs installiert und eingeschaltet sowie die Shelf-IDs festlegen.
 +
- a drive shelf for a hot-add
+<<Installieren Sie ein Laufwerk-Shelf für einen Hot-Add-Zusatz>>
 
 
 
@@ -553,7 +556,7 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 Andernfalls werden Sie mit diesem Verfahren durchgeführt.
 
 +
- the hot-add
+<<Füllen Sie das Hot Add aus>>
 
 
 
@@ -567,18 +570,19 @@ Wenn zusätzlicher Storage benötigt wird, können Sie ein NS224-Festplatten-She
 .Bevor Sie beginnen
 * Sie müssen die Systemanforderungen erfüllt haben.
 +
- for a hot-add
+<<Anforderungen für einen Hot-Add-Zusatz>>
 
 * Sie müssen die entsprechenden Vorbereitungsverfahren abgeschlossen haben.
 +
- for a hot-add
+<<Bereiten Sie sich auf ein Hot-Add vor>>
 
 * Sie müssen die Shelfs installiert und eingeschaltet sowie die Shelf-IDs festlegen.
 +
- a drive shelf for a hot-add
+<<Installieren Sie ein Laufwerk-Shelf für einen Hot-Add-Zusatz>>
 
 
 
+.Über diese Aufgabe
 Wenn Sie von der Rückseite des Plattform-Chassis aus betrachtet werden, ist der RoCE-fähige Karten-Port auf der linken Seite Port „A“ (e1a) und der Port auf der rechten Seite der Port „b“ (e1b).
 
 .Schritte
@@ -605,7 +609,7 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 Andernfalls werden Sie mit diesem Verfahren durchgeführt.
 
 +
- the hot-add
+<<Füllen Sie das Hot Add aus>>
 
 
 
@@ -618,15 +622,15 @@ Wie Sie ein NS224-Laufwerk-Shelf in einem AFF A700 HA-Paar verkabeln, hängt von
 .Bevor Sie beginnen
 * Sie müssen die Systemanforderungen erfüllt haben.
 +
- for a hot-add
+<<Anforderungen für einen Hot-Add-Zusatz>>
 
 * Sie müssen die entsprechenden Vorbereitungsverfahren abgeschlossen haben.
 +
- for a hot-add
+<<Bereiten Sie sich auf ein Hot-Add vor>>
 
 * Sie müssen die Shelfs installiert und eingeschaltet sowie die Shelf-IDs festlegen.
 +
- a drive shelf for a hot-add
+<<Installieren Sie ein Laufwerk-Shelf für einen Hot-Add-Zusatz>>
 
 
 
@@ -706,7 +710,7 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 Andernfalls werden Sie mit diesem Verfahren durchgeführt.
 
 +
- the hot-add
+<<Füllen Sie das Hot Add aus>>
 
 
 
@@ -719,15 +723,15 @@ Wie Sie ein NS224-Laufwerk-Shelf in einem AFF A800 HA-Paar verkabeln, hängt von
 .Bevor Sie beginnen
 * Sie müssen die Systemanforderungen erfüllt haben.
 +
- for a hot-add
+<<Anforderungen für einen Hot-Add-Zusatz>>
 
 * Sie müssen die entsprechenden Vorbereitungsverfahren abgeschlossen haben.
 +
- for a hot-add
+<<Bereiten Sie sich auf ein Hot-Add vor>>
 
 * Sie müssen die Shelfs installiert und eingeschaltet sowie die Shelf-IDs festlegen.
 +
- a drive shelf for a hot-add
+<<Installieren Sie ein Laufwerk-Shelf für einen Hot-Add-Zusatz>>
 
 
 
@@ -811,7 +815,7 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 Andernfalls werden Sie mit diesem Verfahren durchgeführt.
 
 +
- the hot-add
+<<Füllen Sie das Hot Add aus>>
 
 
 
@@ -824,15 +828,15 @@ Wie Sie ein NS224-Laufwerk-Shelf in einem AFF A400 HA-Paar verkabeln, hängt von
 .Bevor Sie beginnen
 * Sie müssen die Systemanforderungen erfüllt haben.
 +
- for a hot-add
+<<Anforderungen für einen Hot-Add-Zusatz>>
 
 * Sie müssen die entsprechenden Vorbereitungsverfahren abgeschlossen haben.
 +
- for a hot-add
+<<Bereiten Sie sich auf ein Hot-Add vor>>
 
 * Sie müssen die Shelfs installiert und eingeschaltet sowie die Shelf-IDs festlegen.
 +
- a drive shelf for a hot-add
+<<Installieren Sie ein Laufwerk-Shelf für einen Hot-Add-Zusatz>>
 
 
 
@@ -902,7 +906,7 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 Andernfalls werden Sie mit diesem Verfahren durchgeführt.
 
 +
- the hot-add
+<<Füllen Sie das Hot Add aus>>
 
 
 
@@ -915,18 +919,19 @@ Wenn zusätzlicher Storage benötigt wird, verkabeln Sie ein zweites NS224-Laufw
 .Bevor Sie beginnen
 * Sie müssen die Systemanforderungen erfüllt haben.
 +
- for a hot-add
+<<Anforderungen für einen Hot-Add-Zusatz>>
 
 * Sie müssen die entsprechenden Vorbereitungsverfahren abgeschlossen haben.
 +
- for a hot-add
+<<Bereiten Sie sich auf ein Hot-Add vor>>
 
 * Sie müssen die Shelfs installiert und eingeschaltet sowie die Shelf-IDs festlegen.
 +
- a drive shelf for a hot-add
+<<Installieren Sie ein Laufwerk-Shelf für einen Hot-Add-Zusatz>>
 
 
 
+.Über diese Aufgabe
 Bei diesem Verfahren wird vorausgesetzt, dass Ihr AFF A320 HA-Paar über ein vorhandenes NS224-Shelf verfügt und dass Sie im laufenden Betrieb ein zweites Shelf hinzufügen.
 
 .Schritte
@@ -953,7 +958,7 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 Andernfalls werden Sie mit diesem Verfahren durchgeführt.
 
 +
- the hot-add
+<<Füllen Sie das Hot Add aus>>
 
 
 
@@ -964,9 +969,10 @@ Andernfalls werden Sie mit diesem Verfahren durchgeführt.
 [role="lead"]
 Wenn Sie die automatische Laufwerkszuweisung im Rahmen der Vorbereitung auf das NS224-Festplatten-Shelf-Hot-Add deaktiviert haben, müssen Sie die Laufwerkseigentümer manuell zuweisen und bei Bedarf die automatische Laufwerkszuweisung erneut aktivieren.
 
+.Bevor Sie beginnen
 Sie müssen das Shelf bereits wie angewiesen über Ihr HA-Paar angeschlossen haben.
 
- a drive shelf for a hot-add
+<<Verkabeln Sie ein Festplatten-Shelf für ein Hot-Add-Kabel>>
 
 .Schritte
 . Alle Laufwerke ohne Besitzer anzeigen: `storage disk show -container-type unassigned`
