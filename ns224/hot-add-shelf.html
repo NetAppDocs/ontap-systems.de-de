@@ -9849,7 +9849,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-15 10:30:30 +0000">11/15/2022</time>
+    <time datetime="2022-12-15 16:07:50 +0000">12/15/2022</time>
     
   
 
@@ -9907,10 +9907,8 @@
 <div class="paragraph">
 <p>Nicht dedizierte RoCE-fähige Ports müssen für den Storage-Einsatz konfiguriert werden (nicht für den Netzwerkeinsatz).</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>non-dedicated RoCE-capable ports for a hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#vorbereitung-nicht-dedizierter-roce-fähiger-ports-für-ein-hot-add-on">Vorbereitung nicht dedizierter RoCE-fähiger Ports für ein Hot-Add-on</a></p>
 </div>
 </td>
 </tr>
@@ -10042,12 +10040,11 @@ Firmware-Updates können bis zu 30 Minuten dauern.
 <p>Wenn Ihr HA-Paar nicht dedizierte RoCE-fähige Ports aufweist, die Sie zum Hot-Add eines NS224-Laufwerk-Shelfs verwenden, müssen Sie sicherstellen, dass die Ports für die Storage-Verwendung konfiguriert sind (nicht für die Netzwerknutzung). Je nach Plattformmodell sind die RoCE-fähigen Ports an den Controllern, auf RoCE-fähigen PCIe-Karten, einer Kombination aus beiden oder auf RoCE-fähigen I/O-Modulen integriert.</p>
 </div>
 <div class="paragraph">
+<div class="title">Bevor Sie beginnen</div>
 <p>Sie müssen die Systemanforderungen erfüllt haben.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>for a hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#anforderungen-für-einen-hot-add-zusatz">Anforderungen für einen Hot-Add-Zusatz</a></p>
 </div>
 <div class="ulist">
 <div class="title">Über diese Aufgabe</div>
@@ -10263,18 +10260,14 @@ Der erste Controller muss den Neustart bereits abgeschlossen haben.
 <ul>
 <li>
 <p>Sie müssen die Systemanforderungen erfüllt haben.</p>
-<div class="literalblock">
-<div class="content">
-<pre>for a hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#anforderungen-für-einen-hot-add-zusatz">Anforderungen für einen Hot-Add-Zusatz</a></p>
 </div>
 </li>
 <li>
 <p>Sie müssen die Ports auf den RoCE-fähigen PCIe-Karten oder auf den von Ihnen installierten I/O-Modulen aktiviert haben.</p>
-<div class="literalblock">
-<div class="content">
-<pre>non-dedicated RoCE-capable ports for a hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#vorbereitung-nicht-dedizierter-roce-fähiger-ports-für-ein-hot-add-on">Vorbereitung nicht dedizierter RoCE-fähiger Ports für ein Hot-Add-on</a></p>
 </div>
 </li>
 </ul>
@@ -10348,10 +10341,8 @@ Die Unterschritte setzen voraus, dass das vorhandene Shelf in Steckplatz 3 an je
 <div class="paragraph">
 <p>Bei Bedarf können Sie Verkabelungsabbildungen mit einem vorhandenen Single Shelf und dem neu ablsierten Shelf in einer 2-Shelf-Konfiguration verwenden.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>a hot-add shelf for an AFF A700 HA pair</pre>
-</div>
+<div class="paragraph">
+<p><a href="#verkabeln-sie-ein-hot-add-shelf-für-ein-aff-a700-ha-paar">Verkabeln Sie ein Hot-Add-Shelf für ein AFF A700 HA-Paar</a></p>
 </div>
 </td>
 </tr>
@@ -10394,10 +10385,8 @@ Die Unterschritte gehen davon aus, dass das vorhandene Shelf in jedem Controller
 <div class="paragraph">
 <p>Bei Bedarf können Sie Verkabelungsabbildungen mit einem vorhandenen Single Shelf und dem neu ablsierten Shelf in einer 2-Shelf-Konfiguration verwenden.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>a hot-add shelf for an AFF A800 HA pair</pre>
-</div>
+<div class="paragraph">
+<p><a href="#verkabeln-sie-ein-hot-add-shelf-für-ein-aff-a800-ha-paar">Verkabeln Sie ein Hot-Add-Shelf für ein AFF A800 HA-Paar</a></p>
 </div>
 </td>
 </tr>
@@ -10428,10 +10417,8 @@ Die Unterschritte gehen davon aus, dass das vorhandene Shelf in jedem Controller
 <div class="paragraph">
 <p>Bei Bedarf können Sie Verkabelungsabbildungen mit einem vorhandenen Single Shelf und dem neu ablsierten Shelf in einer 2-Shelf-Konfiguration verwenden.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>a hot-add shelf for an AFF A400 HA pair</pre>
-</div>
+<div class="paragraph">
+<p><a href="#verkabeln-sie-ein-hot-add-shelf-für-ein-aff-a400-ha-paar">Verkabeln Sie ein Hot-Add-Shelf für ein AFF A400 HA-Paar</a></p>
 </div>
 </td>
 </tr>
@@ -10469,14 +10456,14 @@ Die Unterschritte gehen davon aus, dass das vorhandene Shelf in jedem Controller
 <p>Wenn Sie für das NS224-Festplatten-Shelf, das Sie im laufenden Betrieb hinzufügen, manuell Laufwerk-Eigentumsrechte zuweisen, müssen Sie die automatische Laufwerkszuweisung deaktivieren, wenn diese aktiviert ist.</p>
 </div>
 <div class="paragraph">
+<div class="title">Bevor Sie beginnen</div>
 <p>Sie müssen die Systemanforderungen erfüllt haben.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>for a hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#anforderungen-für-einen-hot-add-zusatz">Anforderungen für einen Hot-Add-Zusatz</a></p>
 </div>
 <div class="paragraph">
+<div class="title">Über diese Aufgabe</div>
 <p>Sie müssen die Laufwerkseigentümer manuell zuweisen, wenn Laufwerke im Shelf Eigentum beider Controller-Module des HA-Paars sind.</p>
 </div>
 <div class="olist arabic">
@@ -10513,18 +10500,14 @@ Die Unterschritte gehen davon aus, dass das vorhandene Shelf in jedem Controller
 <ul>
 <li>
 <p>Sie müssen die Systemanforderungen erfüllt haben.</p>
-<div class="literalblock">
-<div class="content">
-<pre>for a hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#anforderungen-für-einen-hot-add-zusatz">Anforderungen für einen Hot-Add-Zusatz</a></p>
 </div>
 </li>
 <li>
 <p>Sie müssen die entsprechenden Vorbereitungsverfahren abgeschlossen haben.</p>
-<div class="literalblock">
-<div class="content">
-<pre>for a hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#bereiten-sie-sich-auf-ein-hot-add-vor">Bereiten Sie sich auf ein Hot-Add vor</a></p>
 </div>
 </li>
 </ul>
@@ -10678,26 +10661,20 @@ Wenn die ID länger als 15 Sekunden dauert, halten Sie die Taste erneut gedrück
 <ul>
 <li>
 <p>Sie müssen die Systemanforderungen erfüllt haben.</p>
-<div class="literalblock">
-<div class="content">
-<pre>for a hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#anforderungen-für-einen-hot-add-zusatz">Anforderungen für einen Hot-Add-Zusatz</a></p>
 </div>
 </li>
 <li>
 <p>Sie müssen die entsprechenden Vorbereitungsverfahren abgeschlossen haben.</p>
-<div class="literalblock">
-<div class="content">
-<pre>for a hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#bereiten-sie-sich-auf-ein-hot-add-vor">Bereiten Sie sich auf ein Hot-Add vor</a></p>
 </div>
 </li>
 <li>
 <p>Sie müssen die Shelfs installiert und eingeschaltet sowie die Shelf-IDs festlegen.</p>
-<div class="literalblock">
-<div class="content">
-<pre>a drive shelf for a hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#installieren-sie-ein-laufwerk-shelf-für-einen-hot-add-zusatz">Installieren Sie ein Laufwerk-Shelf für einen Hot-Add-Zusatz</a></p>
 </div>
 </li>
 </ul>
@@ -10820,10 +10797,8 @@ Wenn die ID länger als 15 Sekunden dauert, halten Sie die Taste erneut gedrück
 <div class="paragraph">
 <p>Andernfalls werden Sie mit diesem Verfahren durchgeführt.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>the hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#füllen-sie-das-hot-add-aus">Füllen Sie das Hot Add aus</a></p>
 </div>
 </li>
 </ol>
@@ -10839,31 +10814,26 @@ Wenn die ID länger als 15 Sekunden dauert, halten Sie die Taste erneut gedrück
 <ul>
 <li>
 <p>Sie müssen die Systemanforderungen erfüllt haben.</p>
-<div class="literalblock">
-<div class="content">
-<pre>for a hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#anforderungen-für-einen-hot-add-zusatz">Anforderungen für einen Hot-Add-Zusatz</a></p>
 </div>
 </li>
 <li>
 <p>Sie müssen die entsprechenden Vorbereitungsverfahren abgeschlossen haben.</p>
-<div class="literalblock">
-<div class="content">
-<pre>for a hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#bereiten-sie-sich-auf-ein-hot-add-vor">Bereiten Sie sich auf ein Hot-Add vor</a></p>
 </div>
 </li>
 <li>
 <p>Sie müssen die Shelfs installiert und eingeschaltet sowie die Shelf-IDs festlegen.</p>
-<div class="literalblock">
-<div class="content">
-<pre>a drive shelf for a hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#installieren-sie-ein-laufwerk-shelf-für-einen-hot-add-zusatz">Installieren Sie ein Laufwerk-Shelf für einen Hot-Add-Zusatz</a></p>
 </div>
 </li>
 </ul>
 </div>
 <div class="paragraph">
+<div class="title">Über diese Aufgabe</div>
 <p>Wenn Sie von der Rückseite des Plattform-Chassis aus betrachtet werden, ist der RoCE-fähige Karten-Port auf der linken Seite Port „A“ (e1a) und der Port auf der rechten Seite der Port „b“ (e1b).</p>
 </div>
 <div class="olist arabic">
@@ -10907,10 +10877,8 @@ Wenn die ID länger als 15 Sekunden dauert, halten Sie die Taste erneut gedrück
 <div class="paragraph">
 <p>Andernfalls werden Sie mit diesem Verfahren durchgeführt.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>the hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#füllen-sie-das-hot-add-aus">Füllen Sie das Hot Add aus</a></p>
 </div>
 </li>
 </ol>
@@ -10926,26 +10894,20 @@ Wenn die ID länger als 15 Sekunden dauert, halten Sie die Taste erneut gedrück
 <ul>
 <li>
 <p>Sie müssen die Systemanforderungen erfüllt haben.</p>
-<div class="literalblock">
-<div class="content">
-<pre>for a hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#anforderungen-für-einen-hot-add-zusatz">Anforderungen für einen Hot-Add-Zusatz</a></p>
 </div>
 </li>
 <li>
 <p>Sie müssen die entsprechenden Vorbereitungsverfahren abgeschlossen haben.</p>
-<div class="literalblock">
-<div class="content">
-<pre>for a hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#bereiten-sie-sich-auf-ein-hot-add-vor">Bereiten Sie sich auf ein Hot-Add vor</a></p>
 </div>
 </li>
 <li>
 <p>Sie müssen die Shelfs installiert und eingeschaltet sowie die Shelf-IDs festlegen.</p>
-<div class="literalblock">
-<div class="content">
-<pre>a drive shelf for a hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#installieren-sie-ein-laufwerk-shelf-für-einen-hot-add-zusatz">Installieren Sie ein Laufwerk-Shelf für einen Hot-Add-Zusatz</a></p>
 </div>
 </li>
 </ul>
@@ -11106,10 +11068,8 @@ In diesen Unterschritten wird vorausgesetzt, dass Sie die Verkabelung von Shelf-
 <div class="paragraph">
 <p>Andernfalls werden Sie mit diesem Verfahren durchgeführt.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>the hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#füllen-sie-das-hot-add-aus">Füllen Sie das Hot Add aus</a></p>
 </div>
 </li>
 </ol>
@@ -11125,26 +11085,20 @@ In diesen Unterschritten wird vorausgesetzt, dass Sie die Verkabelung von Shelf-
 <ul>
 <li>
 <p>Sie müssen die Systemanforderungen erfüllt haben.</p>
-<div class="literalblock">
-<div class="content">
-<pre>for a hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#anforderungen-für-einen-hot-add-zusatz">Anforderungen für einen Hot-Add-Zusatz</a></p>
 </div>
 </li>
 <li>
 <p>Sie müssen die entsprechenden Vorbereitungsverfahren abgeschlossen haben.</p>
-<div class="literalblock">
-<div class="content">
-<pre>for a hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#bereiten-sie-sich-auf-ein-hot-add-vor">Bereiten Sie sich auf ein Hot-Add vor</a></p>
 </div>
 </li>
 <li>
 <p>Sie müssen die Shelfs installiert und eingeschaltet sowie die Shelf-IDs festlegen.</p>
-<div class="literalblock">
-<div class="content">
-<pre>a drive shelf for a hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#installieren-sie-ein-laufwerk-shelf-für-einen-hot-add-zusatz">Installieren Sie ein Laufwerk-Shelf für einen Hot-Add-Zusatz</a></p>
 </div>
 </li>
 </ul>
@@ -11317,10 +11271,8 @@ Diese Unterschritte gehen davon aus, dass Sie die Verkabelung des Shelf-Ports e0
 <div class="paragraph">
 <p>Andernfalls werden Sie mit diesem Verfahren durchgeführt.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>the hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#füllen-sie-das-hot-add-aus">Füllen Sie das Hot Add aus</a></p>
 </div>
 </li>
 </ol>
@@ -11336,26 +11288,20 @@ Diese Unterschritte gehen davon aus, dass Sie die Verkabelung des Shelf-Ports e0
 <ul>
 <li>
 <p>Sie müssen die Systemanforderungen erfüllt haben.</p>
-<div class="literalblock">
-<div class="content">
-<pre>for a hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#anforderungen-für-einen-hot-add-zusatz">Anforderungen für einen Hot-Add-Zusatz</a></p>
 </div>
 </li>
 <li>
 <p>Sie müssen die entsprechenden Vorbereitungsverfahren abgeschlossen haben.</p>
-<div class="literalblock">
-<div class="content">
-<pre>for a hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#bereiten-sie-sich-auf-ein-hot-add-vor">Bereiten Sie sich auf ein Hot-Add vor</a></p>
 </div>
 </li>
 <li>
 <p>Sie müssen die Shelfs installiert und eingeschaltet sowie die Shelf-IDs festlegen.</p>
-<div class="literalblock">
-<div class="content">
-<pre>a drive shelf for a hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#installieren-sie-ein-laufwerk-shelf-für-einen-hot-add-zusatz">Installieren Sie ein Laufwerk-Shelf für einen Hot-Add-Zusatz</a></p>
 </div>
 </li>
 </ul>
@@ -11480,10 +11426,8 @@ Diese Unterschritte gehen davon aus, dass Sie die Verkabelung des Shelf-Ports e0
 <div class="paragraph">
 <p>Andernfalls werden Sie mit diesem Verfahren durchgeführt.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>the hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#füllen-sie-das-hot-add-aus">Füllen Sie das Hot Add aus</a></p>
 </div>
 </li>
 </ol>
@@ -11499,31 +11443,26 @@ Diese Unterschritte gehen davon aus, dass Sie die Verkabelung des Shelf-Ports e0
 <ul>
 <li>
 <p>Sie müssen die Systemanforderungen erfüllt haben.</p>
-<div class="literalblock">
-<div class="content">
-<pre>for a hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#anforderungen-für-einen-hot-add-zusatz">Anforderungen für einen Hot-Add-Zusatz</a></p>
 </div>
 </li>
 <li>
 <p>Sie müssen die entsprechenden Vorbereitungsverfahren abgeschlossen haben.</p>
-<div class="literalblock">
-<div class="content">
-<pre>for a hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#bereiten-sie-sich-auf-ein-hot-add-vor">Bereiten Sie sich auf ein Hot-Add vor</a></p>
 </div>
 </li>
 <li>
 <p>Sie müssen die Shelfs installiert und eingeschaltet sowie die Shelf-IDs festlegen.</p>
-<div class="literalblock">
-<div class="content">
-<pre>a drive shelf for a hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#installieren-sie-ein-laufwerk-shelf-für-einen-hot-add-zusatz">Installieren Sie ein Laufwerk-Shelf für einen Hot-Add-Zusatz</a></p>
 </div>
 </li>
 </ul>
 </div>
 <div class="paragraph">
+<div class="title">Über diese Aufgabe</div>
 <p>Bei diesem Verfahren wird vorausgesetzt, dass Ihr AFF A320 HA-Paar über ein vorhandenes NS224-Shelf verfügt und dass Sie im laufenden Betrieb ein zweites Shelf hinzufügen.</p>
 </div>
 <div class="olist arabic">
@@ -11567,10 +11506,8 @@ Diese Unterschritte gehen davon aus, dass Sie die Verkabelung des Shelf-Ports e0
 <div class="paragraph">
 <p>Andernfalls werden Sie mit diesem Verfahren durchgeführt.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>the hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#füllen-sie-das-hot-add-aus">Füllen Sie das Hot Add aus</a></p>
 </div>
 </li>
 </ol>
@@ -11585,12 +11522,11 @@ Diese Unterschritte gehen davon aus, dass Sie die Verkabelung des Shelf-Ports e0
 <p>Wenn Sie die automatische Laufwerkszuweisung im Rahmen der Vorbereitung auf das NS224-Festplatten-Shelf-Hot-Add deaktiviert haben, müssen Sie die Laufwerkseigentümer manuell zuweisen und bei Bedarf die automatische Laufwerkszuweisung erneut aktivieren.</p>
 </div>
 <div class="paragraph">
+<div class="title">Bevor Sie beginnen</div>
 <p>Sie müssen das Shelf bereits wie angewiesen über Ihr HA-Paar angeschlossen haben.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>a drive shelf for a hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#verkabeln-sie-ein-festplatten-shelf-für-ein-hot-add-kabel">Verkabeln Sie ein Festplatten-Shelf für ein Hot-Add-Kabel</a></p>
 </div>
 <div class="olist arabic">
 <div class="title">Schritte</div>

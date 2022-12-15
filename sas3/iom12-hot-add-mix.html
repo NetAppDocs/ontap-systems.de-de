@@ -9849,7 +9849,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-15 10:30:30 +0000">11/15/2022</time>
+    <time datetime="2022-12-15 16:07:50 +0000">12/15/2022</time>
     
   
 
@@ -9879,7 +9879,7 @@
 <img src="/us-en/ontap-systems/images/note.svg" alt="Anmerkung">
 </td>
 <td class="content">
-Informationen zu an Bridge angeschlossenen MetroCluster-Konfigurationen finden Sie unter  for a hot-add in bridge-attached MetroCluster configurations.
+Informationen zu an Bridge angeschlossenen MetroCluster-Konfigurationen finden Sie unter <a href="#anforderungen-für-hot-add-in-bridge-metrocluster-konfigurationen">Anforderungen für Hot-Add-in-Bridge-MetroCluster-Konfigurationen</a>.
 </td>
 </tr>
 </table>
@@ -10214,19 +10214,17 @@ Die Migrationsanweisungen enthalten die Systemanforderungen für IBACP.
 <p>Wenn Sie die Eigentümerschaft der Laufwerke für die IOM12-Shelves manuell zuweisen, müssen Sie die automatische Laufwerkszuweisung deaktivieren, wenn sie aktiviert ist.</p>
 </div>
 <div class="paragraph">
+<div class="title">Bevor Sie beginnen</div>
 <p>Sie müssen die Systemanforderungen erfüllt haben.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>for a hot-add</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>for a hot-add in bridge-attached MetroCluster configurations</pre>
-</div>
+<div class="paragraph">
+<p><a href="#anforderungen-für-einen-hot-add-zusatz">Anforderungen für einen Hot-Add-Zusatz</a></p>
 </div>
 <div class="paragraph">
+<p><a href="#anforderungen-für-hot-add-in-bridge-metrocluster-konfigurationen">Anforderungen für Hot-Add-in-Bridge-MetroCluster-Konfigurationen</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Über diese Aufgabe</div>
 <p>Bei einem HA-Paar müssen Sie die Eigentümerschaft des Laufwerks manuell zuweisen, wenn Laufwerke im Shelf Eigentum beider Controller-Module sind.</p>
 </div>
 <div class="olist arabic">
@@ -10532,26 +10530,20 @@ Es wird empfohlen, einen mechanischen Aufzug oder vier Personen mit den Hubgriff
 <ul>
 <li>
 <p>Sie müssen die Systemanforderungen erfüllt haben.</p>
-<div class="literalblock">
-<div class="content">
-<pre>for a hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#anforderungen-für-einen-hot-add-zusatz">Anforderungen für einen Hot-Add-Zusatz</a></p>
 </div>
 </li>
 <li>
 <p>Sie müssen das Vorbereitungsverfahren, falls zutreffend, abgeschlossen haben.</p>
-<div class="literalblock">
-<div class="content">
-<pre>to manually assign drive ownership for a hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#Bereiten Sie sich darauf vor">das Laufwerk manuell einem Hot-Add-Vorgang zuzuweisen</a></p>
 </div>
 </li>
 <li>
 <p>Sie müssen die Shelfs installiert und eingeschaltet sowie die Shelf-IDs festlegen.</p>
-<div class="literalblock">
-<div class="content">
-<pre>shelves for a hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#installation-von-shelfs-für-ein-hot-add-regale">Installation von Shelfs für ein Hot-Add-regale</a></p>
 </div>
 </li>
 </ul>
@@ -10924,10 +10916,8 @@ Achten Sie darauf, dass Sie mindestens 70 Sekunden warten, bis Sie ein Kabel tre
 <div class="paragraph">
 <p>Andernfalls werden Sie mit diesem Verfahren durchgeführt.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>the hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#füllen-sie-das-hot-add-aus">Füllen Sie das Hot Add aus</a></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -10953,12 +10943,11 @@ Für alle MetroCluster Konfigurationen ist eine manuelle Laufwerkszuweisung erfo
 <p>Wenn Sie die automatische Laufwerkszuweisung im Rahmen der Vorbereitung für das Hot-Hinzufügen der IOM12/IOM12B-Shelfs zum Stack der IOM6-Shelfs deaktiviert haben, müssen Sie die Laufwerkseigentümer manuell zuweisen und bei Bedarf die automatische Laufwerkszuweisung erneut aktivieren.</p>
 </div>
 <div class="paragraph">
+<div class="title">Bevor Sie beginnen</div>
 <p>Sie müssen das Shelf bereits wie im Auftrag des Systems verbunden haben.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>shelves for a hot-add</pre>
-</div>
+<div class="paragraph">
+<p><a href="#kabel-shelfs-für-ein-hot-add-kabel">Kabel-Shelfs für ein Hot-Add-Kabel</a></p>
 </div>
 <div class="olist arabic">
 <div class="title">Schritte</div>
