@@ -13,7 +13,7 @@ summary: 'Das NVRAM-Modul besteht aus NVRAM11 und DIMMs und bis zu zwei NVMe SSD
 [role="lead"]
 Das NVRAM-Modul besteht aus NVRAM11 und DIMMs. Ein ausgefallenes NVRAM-Modul oder die DIMMs im NVRAM-Modul können Sie ersetzen. Um ein ausgefallenes NVRAM-Modul zu ersetzen, müssen Sie es aus dem Chassis entfernen, die DIMMs in das Ersatzmodul verschieben und das Ersatz-NVRAM-Modul im Chassis installieren.
 
-Zum Austauschen und NVRAM-DIMM müssen Sie das NVRAMmodul aus dem Gehäuse entfernen, das fehlerhafte DIMM im Modul austauschen und dann das NVRAM-Modul neu installieren.
+Zum Austauschen und NVRAM-DIMM müssen Sie das NVRAM-Modul aus dem Chassis entfernen, das fehlerhafte DIMM im Modul ersetzen und dann das NVRAM-Modul neu installieren.
 
 .Über diese Aufgabe
 Da die System-ID vom NVRAM-Modul abgeleitet wird, werden beim Ersetzen des Moduls Festplatten, die zum System gehören, einer neuen System-ID neu zugewiesen.
@@ -27,7 +27,7 @@ Da die System-ID vom NVRAM-Modul abgeleitet wird, werden beim Ersetzen des Modul
 ** Der gesunde Controller ist der HA-Partner des beeinträchtigten Controllers.
 
 
-* Dieses Verfahren umfasst Schritte zur automatischen oder manuellen Neuzuteilung von Festplatten an das Controller-Modul, das dem neuen NVRAM-Modul zugeordnet ist. Sie müssen die Festplatten neu zuweisen, wenn Sie dazu aufgefordert werden. Das Ausfüllen der Neuzuweisung von Festplatte vor dem Giveback kann Probleme verursachen.
+* Dieses Verfahren umfasst Schritte zur automatischen Neuzuteilung von Festplatten an das Controller-Modul, das dem neuen NVRAM-Modul zugeordnet ist. Sie müssen die Festplatten neu zuweisen, wenn Sie dazu aufgefordert werden. Das Ausfüllen der Neuzuweisung von Festplatte vor dem Giveback kann Probleme verursachen.
 * Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
 * Im Rahmen dieses Verfahrens können Festplatten oder Platten-Shelfs nicht geändert werden.
 
@@ -47,22 +47,18 @@ Fahren Sie den Regler herunter oder übernehmen Sie ihn mit einer der folgenden 
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 
 .Über diese Aufgabe
-* Wenn Sie NetApp Storage Encryption verwenden, müssen Sie die MSID mithilfe der Anweisungen im Abschnitt „`Zurückkehren in den ungeschützten Modus`“ des Power Guide „ _ONTAP 9 NetApp Verschlüsselung “ zurückgesetzt haben.
-+
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/home.html["ONTAP 9 – NetApp Verschlüsselungsleitfadens"^]
-
-* Wenn Sie über ein SAN-System verfügen, müssen Sie Ereignismeldungen geprüft haben (`event log show`) Für beeinträchtigte Controller SCSI-Blade.
+* Wenn Sie NetApp Storage Encryption verwenden, müssen Sie die MSID mithilfe der Anweisungen im zurückgesetzt haben link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/return-seds-unprotected-mode-task.html["SEDs werden in den ungeschützten Modus versetzt"].
+* Wenn Sie über ein SAN-System verfügen, müssen Sie Ereignismeldungen geprüft haben  `cluster kernel-service show`) Für beeinträchtigte Controller SCSI-Blade. Der `cluster kernel-service show` Der Befehl zeigt den Node-Namen, den Quorum-Status dieses Node, den Verfügbarkeitsstatus dieses Node und den Betriebsstatus dieses Node an.
 +
 Jeder Prozess des SCSI-Blades sollte sich im Quorum mit den anderen Nodes im Cluster befinden. Probleme müssen behoben werden, bevor Sie mit dem Austausch fortfahren.
 
-* Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE für die Berechtigung und den Zustand anzeigt, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/index.html["Administrationsübersicht mit der CLI"^].
-* Wenn Sie über eine MetroCluster-Konfiguration verfügen, müssen Sie bestätigt haben, dass der MetroCluster-Konfigurationsstatus konfiguriert ist und dass die Nodes in einem aktivierten und normalen Zustand vorliegen (`metrocluster node show`).
+* Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE für die Berechtigung und den Zustand anzeigt, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^].
 
 
 .Schritte
 . Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
 +
-Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden: `cluster1:> system node autosupport invoke -node * -type all -message MAINT=2h`
 
 . Deaktivieren Sie das automatische Giveback von der Konsole des gesunden Controllers: `storage failover modify –node local -auto-giveback false`
 +
@@ -91,7 +87,7 @@ Drücken Sie Strg-C, und antworten Sie dann `y` Wenn Sie dazu aufgefordert werde
 
 
  a| 
-Eingabeaufforderung des Systems oder Passwort (Systempasswort eingeben)
+Eingabeaufforderung für das System oder Passwort
  a| 
 Übernehmen oder stoppen Sie den beeinträchtigten Regler von der gesunden Steuerung: `storage failover takeover -ofnode _impaired_node_name_`
 
@@ -108,7 +104,7 @@ NOTE: Verwenden Sie dieses Verfahren nicht, wenn sich Ihr System in einer MetroC
 
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 
-* Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE für die Berechtigung und den Zustand anzeigt, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/index.html["Administrationsübersicht mit der CLI"^].
+* Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE für die Berechtigung und den Zustand anzeigt, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^].
 * Wenn Sie über eine MetroCluster-Konfiguration verfügen, müssen Sie bestätigt haben, dass der MetroCluster-Konfigurationsstatus konfiguriert ist und dass die Nodes in einem aktivierten und normalen Zustand vorliegen (`metrocluster node show`).
 
 
@@ -186,14 +182,14 @@ image::../media/drw_a900_move-remove_NVRAM_module.png[drw a900 Move NVRAM-Modul 
  a| 
 image:../media/legend_icon_01.png[""]
  a| 
-Gerettete und nummerierte E/A-Nockenverriegelung
+Vorgeratene und nummerierte Nockenverriegelung
 
 
 
  a| 
 image:../media/legend_icon_02.png[""]
  a| 
-E/A-Riegel vollständig entriegelt
+Nockenverriegelung vollständig entriegelt
 
 |===
 . Setzen Sie das NVRAM-Modul auf eine stabile Fläche und entfernen Sie die Abdeckung vom NVRAM-Modul, indem Sie die blaue Verriegelungstaste auf der Abdeckung nach unten drücken und dann, während Sie die blaue Taste gedrückt halten, den Deckel aus dem NVRAM-Modul schieben.
@@ -223,7 +219,7 @@ DIMM- und DIMM-Auswurfklammern
 . Installieren Sie das Ersatz-NVRAM-Modul in das Chassis:
 +
 .. Richten Sie das Modul an den Kanten der Gehäuseöffnung in Steckplatz 6 aus.
-.. Schieben Sie das Modul vorsichtig in den Steckplatz, bis der vorletzte und nummerierte E/A-Nockenriegel mit dem E/A-Nockenstift einrastet. Drücken Sie dann die E/A-Nockenverriegelung ganz nach oben, um das Modul zu verriegeln.
+.. Schieben Sie das Modul vorsichtig in den Schlitz, bis die vorletzte und nummerierte Nockenverriegelung mit dem Stift der E/A-Nockenwelle einrastet. Drücken Sie dann die Nockenverriegelung ganz nach oben, um das Modul zu verriegeln.
 
 
 
@@ -263,14 +259,14 @@ image::../media/drw_a900_move-remove_NVRAM_module.png[drw a900 Move NVRAM-Modul 
  a| 
 image:../media/legend_icon_01.png[""]
  a| 
-Gerettete und nummerierte E/A-Nockenverriegelung
+Vorgeratene und nummerierte Nockenverriegelung
 
 
 
  a| 
 image:../media/legend_icon_02.png[""]
  a| 
-E/A-Riegel vollständig entriegelt
+nockenverriegelung vollständig entriegelt
 
 |===
 . Setzen Sie das NVRAM-Modul auf eine stabile Fläche und entfernen Sie die Abdeckung vom NVRAM-Modul, indem Sie die blaue Verriegelungstaste auf der Abdeckung nach unten drücken und dann, während Sie die blaue Taste gedrückt halten, den Deckel aus dem NVRAM-Modul schieben.
@@ -301,7 +297,7 @@ DIMM- und DIMM-Auswurfklammern
 . Installieren Sie das NVRAM-Modul in das Chassis:
 +
 .. Richten Sie das Modul an den Kanten der Gehäuseöffnung in Steckplatz 6 aus.
-.. Schieben Sie das Modul vorsichtig in den Steckplatz, bis der vorletzte und nummerierte E/A-Nockenriegel mit dem E/A-Nockenstift einrastet. Drücken Sie dann die E/A-Nockenverriegelung ganz nach oben, um das Modul zu verriegeln.
+.. Schieben Sie das Modul vorsichtig in den Schlitz, bis die vorletzte und nummerierte Nockenverriegelung mit dem Stift der E/A-Nockenwelle einrastet. Drücken Sie dann die Nockenverriegelung ganz nach oben, um das Modul zu verriegeln.
 
 
 
@@ -318,61 +314,28 @@ Nachdem Sie die FRU ersetzt haben, müssen Sie das Controller-Modul neu booten.
 
 
 
-== Schritt 5: Überprüfen Sie den HA-Status des Controller-Moduls und legen Sie ihn fest
-
-Sie müssen die überprüfen `HA` Status des Controller-Moduls und, falls erforderlich, aktualisieren Sie den Status entsprechend Ihrer Systemkonfiguration.
-
-. Überprüfen Sie im Wartungsmodus des Ersatz-Controller-Moduls, ob alle Komponenten gleich angezeigt werden `HA` Bundesland: `ha-config show`
-+
-[cols="1,2"]
-|===
-| Ihr System befindet sich in... | Der HA-Status für alle Komponenten sollte... 
-
-
- a| 
-Ein HA-Paar
- a| 
-Hochverfügbarkeit
-
-
-
- a| 
-MetroCluster FC-Konfiguration mit vier oder mehr Nodes
- a| 
-mcc
-
-
-
- a| 
-Eine MetroCluster IP-Konfiguration
- a| 
-Mccip
-
-|===
-. Wenn der angezeigte Systemzustand des Controller-Moduls nicht mit der Systemkonfiguration übereinstimmt, setzen Sie das ein `HA` Status für das Controller-Modul: `ha-config modify controller _ha-state_`
-. Wenn der angezeigte Systemzustand des Gehäuses nicht mit der Systemkonfiguration übereinstimmt, legen Sie den fest `HA` Status für das Chassis: `ha-config modify chassis _ha-state_`
-
-
-
-
-== Schritt 6: Festplatten neu zuweisen
+== Schritt 5: Festplatten neu zuweisen
 
 [role="lead"]
 Sie müssen die Änderung der System-ID beim Booten des Ersatz-Controllers bestätigen und anschließend überprüfen, ob die Änderung implementiert wurde.
 
-Diese Vorgehensweise gilt nur für Systeme, auf denen ONTAP in einem HA-Paar ausgeführt wird.
+
+NOTE: Diese Vorgehensweise gilt nur für Systeme, auf denen ONTAP in einem HA-Paar ausgeführt wird.
+
+
+CAUTION: Eine Neuzuordnung von Festplatten ist nur erforderlich, wenn das NVRAM-Modul ersetzt wird.
 
 .Schritte
-. Wenn sich der Ersatz-Controller im Wartungsmodus befindet (zeigt das an `*>` Eingabeaufforderung, beenden Sie den Wartungsmodus und gehen Sie zur LOADER-Eingabeaufforderung: `halt`
-. Booten Sie an der LOADER-Eingabeaufforderung auf dem Ersatz-Controller den Controller und geben Sie ein `y` Wenn Sie aufgrund einer nicht übereinstimmenden System-ID aufgefordert werden, die System-ID außer Kraft zu setzen.
-. Warten Sie, bis die Meldung Warten auf Giveback angezeigt wird auf der Ersatz-Controller-Konsole und dann, vom gesunden Controller, überprüfen Sie, ob die neue Partner-System-ID automatisch zugewiesen wurde: `storage failover show`
+. Wenn sich der Ersatz-Controller im Wartungsmodus befindet (zeigt das an `*>` Eingabeaufforderung), beenden Sie den Wartungsmodus und gehen Sie zur LOADER-Eingabeaufforderung: `halt`
+. Booten Sie an der LOADER-Eingabeaufforderung auf dem Ersatz-Controller den Controller und geben Sie „y“ ein, wenn Sie aufgrund von nicht übereinstimmenden System-ID aufgefordert werden, die System-ID außer Kraft zu setzen.
+. Warten Sie, bis Sie auf das Giveback warten... Die Meldung wird auf der Konsole des Controllers mit dem Ersatzmodul angezeigt und anschließend vom gesunden Controller aus überprüfen, ob die neue Partner-System-ID automatisch zugewiesen wurde: `storage failover show`
 +
 In der Befehlsausgabe sollte eine Meldung angezeigt werden, dass sich die System-ID auf dem beeinträchtigten Controller geändert hat und die korrekten alten und neuen IDs angezeigt werden. Im folgenden Beispiel wurde node2 ersetzt und hat eine neue System-ID von 151759706.
 
 +
 [listing]
 ----
-node1> `storage failover show`
+node1:> storage failover show
                                     Takeover
 Node              Partner           Possible     State Description
 ------------      ------------      --------     -------------------------------------
@@ -380,20 +343,6 @@ node1             node2             false        System ID changed on partner (O
                                                   151759755, New: 151759706), In takeover
 node2             node1             -            Waiting for giveback (HA mailboxes)
 ----
-. Vergewissern Sie sich beim ordnungsgemäßen Controller, dass alle Corestapy gespeichert sind:
-+
-.. Ändern Sie die erweiterte Berechtigungsebene: `set -privilege advanced`
-+
-Sie können antworten `Y` Wenn Sie aufgefordert werden, den erweiterten Modus fortzusetzen. Die Eingabeaufforderung für den erweiterten Modus wird angezeigt (*>).
-
-.. Speichern von CoreDumps: `system node run -node local-node-name partner savecore`
-.. Warten Sie, bis der Befehl `savecore`abgeschlossen ist, bevor Sie das Giveback ausgeben.
-+
-Sie können den folgenden Befehl eingeben, um den Fortschritt des Befehls savecore zu überwachen: `system node run -node local-node-name partner savecore -s`
-
-.. Zurück zur Administratorberechtigungsebene: `set -privilege admin`
-
-
 . Geben Sie den Controller zurück:
 +
 .. Geben Sie von dem ordnungsgemäßen Controller den Storage des ersetzten Controllers wieder: `storage failover giveback -ofnode replacement_node_name`
@@ -418,17 +367,17 @@ Die Ausgabe von der `storage failover show` Befehl sollte nicht die in der Partn
 
 . Überprüfen Sie, ob die Festplatten ordnungsgemäß zugewiesen wurden: `storage disk show -ownership`
 +
-Bei den Festplatten, die zum Ersatz-Controller gehören, sollte die neue System-ID angezeigt werden. Im folgenden Beispiel zeigen die Festplatten von node1 jetzt die neue System-ID, 1873775277:
+Bei den Festplatten, die zum Ersatz-Controller gehören, sollte die neue System-ID angezeigt werden. Im folgenden Beispiel zeigen die Festplatten von node1 jetzt die neue System-ID, 151759706:
 
 +
 [listing]
 ----
-node1> `storage disk show -ownership`
+node1:> storage disk show -ownership
 
 Disk  Aggregate Home  Owner  DR Home  Home ID    Owner ID  DR Home ID Reserver  Pool
 ----- ------    ----- ------ -------- -------    -------    -------  ---------  ---
-1.0.0  aggr0_1  node1 node1  -        1873775277 1873775277  -       1873775277 Pool0
-1.0.1  aggr0_1  node1 node1           1873775277 1873775277  -       1873775277 Pool0
+1.0.0  aggr0_1  node1 node1  -        151759706  151759706  -       151759706 Pool0
+1.0.1  aggr0_1  node1 node1           151759706  151759706  -       151759706 Pool0
 .
 .
 .
@@ -465,29 +414,33 @@ dr-group-id            cluster node           configuration-state
 4 entries were displayed.
 ----
 . Vergewissern Sie sich, dass die erwarteten Volumes für jeden Controller vorhanden sind: `vol show -node node-name`
+. Wenn die Speicherverschlüsselung aktiviert ist, müssen Sie ************
 . Wenn Sie die automatische Übernahme beim Neustart deaktiviert haben, aktivieren Sie sie vom gesunden Controller: `storage failover modify -node replacement-node-name -onreboot true`
 
 
 
 
-== Schritt 7: Stellen Sie die Funktionen für Storage und Volume Encryption wieder her
+== Schritt 6: Stellen Sie die Funktionen für Storage und Volume Encryption wieder her
 
 [role="lead"]
-Nachdem Sie das Controller-Modul oder das NVRAM-Modul für ein Storage-System ersetzt haben, das Sie zuvor für die Verwendung von Storage oder Volume Encryption konfiguriert haben, müssen Sie zusätzliche Schritte durchführen, um unterbrechungsfreie Verschlüsselungsfunktionen bereitzustellen. Sie können diese Aufgabe auf Storage-Systemen überspringen, auf denen Storage oder Volume Encryption nicht aktiviert ist.
+Für Storage-Systeme, die Sie zuvor für den Einsatz von Storage oder Volume Encryption konfiguriert haben, müssen Sie zusätzliche Schritte durchführen, um die Funktion für unterbrechungsfreie Verschlüsselung bereitzustellen. Sie können diese Aufgabe auf Storage-Systemen überspringen, auf denen Storage oder Volume Encryption nicht aktiviert ist.
+
+
+NOTE: Dieser Schritt ist beim Austausch eines DIMM nicht erforderlich.
 
 .Schritte
-. Stellen Sie die Speicher- oder Volume Encryption-Funktionalität mithilfe des entsprechenden Verfahrens in wieder her https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html["NetApp Encryption: Übersicht mit CLI"^].
 . Je nachdem, ob Sie integriertes oder externes Verschlüsselungsmanagement verwenden, sollten Sie eines der folgenden Verfahren verwenden:
 +
 ** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-onboard-key-management-encryption-keys-task.html["Wiederherstellung der integrierten Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"^]
 ** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-external-encryption-keys-93-later-task.html["Wiederherstellung der externen Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"^]
 
 
+. SED-MSID zurücksetzen
 
 
 
 
-== Schritt 8: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+== Schritt 7: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 [role="lead"]
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

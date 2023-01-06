@@ -13,7 +13,7 @@ summary: Zum Austausch des Chassis müssen Sie die Controller herunterfahren.
 Sie müssen den Controller oder den Controller im Chassis herunterfahren, bevor Sie sie in das neue Chassis verschieben.
 
 .Über diese Aufgabe
-* Wenn Sie ein Cluster mit mehr als zwei Controllern haben, muss es sich im Quorum befinden. Wenn das Cluster nicht im Quorum ist oder ein guter Controller angezeigt wird `false` Um die Berechtigung und den Zustand zu erhalten, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/index.html["Administrationsübersicht mit der CLI"^].
+* Wenn Sie ein Cluster mit mehr als zwei Controllern haben, muss es sich im Quorum befinden. Wenn das Cluster nicht im Quorum ist oder ein guter Controller angezeigt wird `false` Um die Berechtigung und den Zustand zu erhalten, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^].
 * Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
 +
 Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
