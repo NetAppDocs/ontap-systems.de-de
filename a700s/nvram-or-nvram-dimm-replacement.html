@@ -9849,7 +9849,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-15 16:07:50 +0000">12/15/2022</time>
+    <time datetime="2023-01-06 12:52:26 +0000">01/06/2023</time>
     
   
 
@@ -9907,7 +9907,7 @@
 <p>Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.</p>
 </div>
 <div class="paragraph">
-<p>Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE für die Berechtigung und den Zustand anzeigt, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe <a href="https://docs.netapp.com/us-en/ontap/system-admin/index.html" target="_blank" rel="noopener">"Administrationsübersicht mit der CLI"</a>.</p>
+<p>Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE für die Berechtigung und den Zustand anzeigt, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe <a href="https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum" target="_blank" rel="noopener">"Synchronisieren eines Node mit dem Cluster"</a>.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Schritte</div>
@@ -10472,14 +10472,23 @@ Disk  Aggregate Home  Owner  DR Home  Home ID    Owner ID  DR Home ID Reserver  
 <h2 id="schritt-6-stellen-sie-die-funktionen-für-storage-und-volume-encryption-wieder-her">Schritt 6: Stellen Sie die Funktionen für Storage und Volume Encryption wieder her</h2>
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>Nachdem Sie das Controller-Modul oder das NVRAM-Modul für ein Storage-System ersetzt haben, das Sie zuvor für die Verwendung von Storage oder Volume Encryption konfiguriert haben, müssen Sie zusätzliche Schritte durchführen, um unterbrechungsfreie Verschlüsselungsfunktionen bereitzustellen. Sie können diese Aufgabe auf Storage-Systemen überspringen, auf denen Storage oder Volume Encryption nicht aktiviert ist.</p>
+<p>Für Storage-Systeme, die Sie zuvor für den Einsatz von Storage oder Volume Encryption konfiguriert haben, müssen Sie zusätzliche Schritte durchführen, um die Funktion für unterbrechungsfreie Verschlüsselung bereitzustellen. Sie können diese Aufgabe auf Storage-Systemen überspringen, auf denen Storage oder Volume Encryption nicht aktiviert ist.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap-systems/images/note.svg" alt="Anmerkung">
+</td>
+<td class="content">
+Dieser Schritt ist beim Austausch eines DIMM nicht erforderlich.
+</td>
+</tr>
+</table>
 </div>
 <div class="olist arabic">
 <div class="title">Schritte</div>
 <ol class="arabic">
-<li>
-<p>Stellen Sie die Speicher- oder Volume Encryption-Funktionalität mithilfe des entsprechenden Verfahrens in wieder her <a href="https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html" target="_blank" rel="noopener">"NetApp Encryption: Übersicht mit CLI"</a>.</p>
-</li>
 <li>
 <p>Je nachdem, ob Sie integriertes oder externes Verschlüsselungsmanagement verwenden, sollten Sie eines der folgenden Verfahren verwenden:</p>
 <div class="ulist">
@@ -10492,6 +10501,9 @@ Disk  Aggregate Home  Owner  DR Home  Home ID    Owner ID  DR Home ID Reserver  
 </li>
 </ul>
 </div>
+</li>
+<li>
+<p>SED-MSID zurücksetzen</p>
 </li>
 </ol>
 </div>

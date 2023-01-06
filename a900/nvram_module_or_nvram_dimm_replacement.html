@@ -9849,7 +9849,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-15 16:07:50 +0000">12/15/2022</time>
+    <time datetime="2023-01-06 12:52:26 +0000">01/06/2023</time>
     
   
 
@@ -9865,7 +9865,7 @@
 <p>Das NVRAM-Modul besteht aus NVRAM11 und DIMMs. Ein ausgefallenes NVRAM-Modul oder die DIMMs im NVRAM-Modul können Sie ersetzen. Um ein ausgefallenes NVRAM-Modul zu ersetzen, müssen Sie es aus dem Chassis entfernen, die DIMMs in das Ersatzmodul verschieben und das Ersatz-NVRAM-Modul im Chassis installieren.</p>
 </div>
 <div class="paragraph">
-<p>Zum Austauschen und NVRAM-DIMM müssen Sie das NVRAMmodul aus dem Gehäuse entfernen, das fehlerhafte DIMM im Modul austauschen und dann das NVRAM-Modul neu installieren.</p>
+<p>Zum Austauschen und NVRAM-DIMM müssen Sie das NVRAM-Modul aus dem Chassis entfernen, das fehlerhafte DIMM im Modul ersetzen und dann das NVRAM-Modul neu installieren.</p>
 </div>
 <div class="paragraph">
 <div class="title">Über diese Aufgabe</div>
@@ -9894,7 +9894,7 @@
 </div>
 </li>
 <li>
-<p>Dieses Verfahren umfasst Schritte zur automatischen oder manuellen Neuzuteilung von Festplatten an das Controller-Modul, das dem neuen NVRAM-Modul zugeordnet ist. Sie müssen die Festplatten neu zuweisen, wenn Sie dazu aufgefordert werden. Das Ausfüllen der Neuzuweisung von Festplatte vor dem Giveback kann Probleme verursachen.</p>
+<p>Dieses Verfahren umfasst Schritte zur automatischen Neuzuteilung von Festplatten an das Controller-Modul, das dem neuen NVRAM-Modul zugeordnet ist. Sie müssen die Festplatten neu zuweisen, wenn Sie dazu aufgefordert werden. Das Ausfüllen der Neuzuweisung von Festplatte vor dem Giveback kann Probleme verursachen.</p>
 </li>
 <li>
 <p>Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.</p>
@@ -9925,22 +9925,16 @@
 <div class="title">Über diese Aufgabe</div>
 <ul>
 <li>
-<p>Wenn Sie NetApp Storage Encryption verwenden, müssen Sie die MSID mithilfe der Anweisungen im Abschnitt „<code>Zurückkehren in den ungeschützten Modus</code>“ des Power Guide „ _ONTAP 9 NetApp Verschlüsselung “ zurückgesetzt haben.</p>
-<div class="paragraph">
-<p><a href="https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/home.html" target="_blank" rel="noopener">"ONTAP 9 – NetApp Verschlüsselungsleitfadens"</a></p>
-</div>
+<p>Wenn Sie NetApp Storage Encryption verwenden, müssen Sie die MSID mithilfe der Anweisungen im zurückgesetzt haben <a href="https://docs.netapp.com/us-en/ontap/encryption-at-rest/return-seds-unprotected-mode-task.html">"SEDs werden in den ungeschützten Modus versetzt"</a>.</p>
 </li>
 <li>
-<p>Wenn Sie über ein SAN-System verfügen, müssen Sie Ereignismeldungen geprüft haben (<code>event log show</code>) Für beeinträchtigte Controller SCSI-Blade.</p>
+<p>Wenn Sie über ein SAN-System verfügen, müssen Sie Ereignismeldungen geprüft haben  <code>cluster kernel-service show</code>) Für beeinträchtigte Controller SCSI-Blade. Der <code>cluster kernel-service show</code> Der Befehl zeigt den Node-Namen, den Quorum-Status dieses Node, den Verfügbarkeitsstatus dieses Node und den Betriebsstatus dieses Node an.</p>
 <div class="paragraph">
 <p>Jeder Prozess des SCSI-Blades sollte sich im Quorum mit den anderen Nodes im Cluster befinden. Probleme müssen behoben werden, bevor Sie mit dem Austausch fortfahren.</p>
 </div>
 </li>
 <li>
-<p>Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE für die Berechtigung und den Zustand anzeigt, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe <a href="https://docs.netapp.com/us-en/ontap/system-admin/index.html" target="_blank" rel="noopener">"Administrationsübersicht mit der CLI"</a>.</p>
-</li>
-<li>
-<p>Wenn Sie über eine MetroCluster-Konfiguration verfügen, müssen Sie bestätigt haben, dass der MetroCluster-Konfigurationsstatus konfiguriert ist und dass die Nodes in einem aktivierten und normalen Zustand vorliegen (<code>metrocluster node show</code>).</p>
+<p>Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE für die Berechtigung und den Zustand anzeigt, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe <a href="https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum" target="_blank" rel="noopener">"Synchronisieren eines Node mit dem Cluster"</a>.</p>
 </li>
 </ul>
 </div>
@@ -9950,7 +9944,7 @@
 <li>
 <p>Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung: <code>system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh</code></p>
 <div class="paragraph">
-<p>Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden: <code>cluster1:*&gt; system node autosupport invoke -node * -type all -message MAINT=2h</code></p>
+<p>Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden: <code>cluster1:&gt; system node autosupport invoke -node * -type all -message MAINT=2h</code></p>
 </div>
 </li>
 <li>
@@ -10000,7 +9994,7 @@ Wenn Sie sehen <em>Möchten Sie Auto-Giveback deaktivieren?</em>, geben Sie ein 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Eingabeaufforderung des Systems oder Passwort (Systempasswort eingeben)</p>
+<p>Eingabeaufforderung für das System oder Passwort</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Übernehmen oder stoppen Sie den beeinträchtigten Regler von der gesunden Steuerung: <code>storage failover takeover -ofnode <em>impaired_node_name</em></code></p>
@@ -10037,7 +10031,7 @@ Verwenden Sie dieses Verfahren nicht, wenn sich Ihr System in einer MetroCluster
 <div class="ulist">
 <ul>
 <li>
-<p>Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE für die Berechtigung und den Zustand anzeigt, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe <a href="https://docs.netapp.com/us-en/ontap/system-admin/index.html" target="_blank" rel="noopener">"Administrationsübersicht mit der CLI"</a>.</p>
+<p>Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE für die Berechtigung und den Zustand anzeigt, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe <a href="https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum" target="_blank" rel="noopener">"Synchronisieren eines Node mit dem Cluster"</a>.</p>
 </li>
 <li>
 <p>Wenn Sie über eine MetroCluster-Konfiguration verfügen, müssen Sie bestätigt haben, dass der MetroCluster-Konfigurationsstatus konfiguriert ist und dass die Nodes in einem aktivierten und normalen Zustand vorliegen (<code>metrocluster node show</code>).</p>
@@ -10162,7 +10156,7 @@ Verwenden Sie dieses Verfahren nicht, wenn sich Ihr System in einer MetroCluster
 <p><span class="image"><img src="../media/legend_icon_01.png" alt=""></span></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Gerettete und nummerierte E/A-Nockenverriegelung</p>
+<p>Vorgeratene und nummerierte Nockenverriegelung</p>
 </div></div></td>
 </tr>
 <tr>
@@ -10170,7 +10164,7 @@ Verwenden Sie dieses Verfahren nicht, wenn sich Ihr System in einer MetroCluster
 <p><span class="image"><img src="../media/legend_icon_02.png" alt=""></span></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>E/A-Riegel vollständig entriegelt</p>
+<p>Nockenverriegelung vollständig entriegelt</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -10222,7 +10216,7 @@ Verwenden Sie dieses Verfahren nicht, wenn sich Ihr System in einer MetroCluster
 <p>Richten Sie das Modul an den Kanten der Gehäuseöffnung in Steckplatz 6 aus.</p>
 </li>
 <li>
-<p>Schieben Sie das Modul vorsichtig in den Steckplatz, bis der vorletzte und nummerierte E/A-Nockenriegel mit dem E/A-Nockenstift einrastet. Drücken Sie dann die E/A-Nockenverriegelung ganz nach oben, um das Modul zu verriegeln.</p>
+<p>Schieben Sie das Modul vorsichtig in den Schlitz, bis die vorletzte und nummerierte Nockenverriegelung mit dem Stift der E/A-Nockenwelle einrastet. Drücken Sie dann die Nockenverriegelung ganz nach oben, um das Modul zu verriegeln.</p>
 </li>
 </ol>
 </div>
@@ -10285,7 +10279,7 @@ Verwenden Sie dieses Verfahren nicht, wenn sich Ihr System in einer MetroCluster
 <p><span class="image"><img src="../media/legend_icon_01.png" alt=""></span></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Gerettete und nummerierte E/A-Nockenverriegelung</p>
+<p>Vorgeratene und nummerierte Nockenverriegelung</p>
 </div></div></td>
 </tr>
 <tr>
@@ -10293,7 +10287,7 @@ Verwenden Sie dieses Verfahren nicht, wenn sich Ihr System in einer MetroCluster
 <p><span class="image"><img src="../media/legend_icon_02.png" alt=""></span></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>E/A-Riegel vollständig entriegelt</p>
+<p>nockenverriegelung vollständig entriegelt</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -10348,7 +10342,7 @@ Verwenden Sie dieses Verfahren nicht, wenn sich Ihr System in einer MetroCluster
 <p>Richten Sie das Modul an den Kanten der Gehäuseöffnung in Steckplatz 6 aus.</p>
 </li>
 <li>
-<p>Schieben Sie das Modul vorsichtig in den Steckplatz, bis der vorletzte und nummerierte E/A-Nockenriegel mit dem E/A-Nockenstift einrastet. Drücken Sie dann die E/A-Nockenverriegelung ganz nach oben, um das Modul zu verriegeln.</p>
+<p>Schieben Sie das Modul vorsichtig in den Schlitz, bis die vorletzte und nummerierte Nockenverriegelung mit dem Stift der E/A-Nockenwelle einrastet. Drücken Sie dann die Nockenverriegelung ganz nach oben, um das Modul zu verriegeln.</p>
 </li>
 </ol>
 </div>
@@ -10373,90 +10367,52 @@ Verwenden Sie dieses Verfahren nicht, wenn sich Ihr System in einer MetroCluster
 </div>
 </div>
 <div class="sect1">
-<h2 id="schritt-5-überprüfen-sie-den-ha-status-des-controller-moduls-und-legen-sie-ihn-fest">Schritt 5: Überprüfen Sie den HA-Status des Controller-Moduls und legen Sie ihn fest</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Sie müssen die überprüfen <code>HA</code> Status des Controller-Moduls und, falls erforderlich, aktualisieren Sie den Status entsprechend Ihrer Systemkonfiguration.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Überprüfen Sie im Wartungsmodus des Ersatz-Controller-Moduls, ob alle Komponenten gleich angezeigt werden <code>HA</code> Bundesland: <code>ha-config show</code></p>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 66.6667%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Ihr System befindet sich in&#8230;&#8203;</th>
-<th class="tableblock halign-left valign-top">Der HA-Status für alle Komponenten sollte&#8230;&#8203;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Ein HA-Paar</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Hochverfügbarkeit</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>MetroCluster FC-Konfiguration mit vier oder mehr Nodes</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>mcc</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Eine MetroCluster IP-Konfiguration</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Mccip</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p>Wenn der angezeigte Systemzustand des Controller-Moduls nicht mit der Systemkonfiguration übereinstimmt, setzen Sie das ein <code>HA</code> Status für das Controller-Modul: <code>ha-config modify controller <em>ha-state</em></code></p>
-</li>
-<li>
-<p>Wenn der angezeigte Systemzustand des Gehäuses nicht mit der Systemkonfiguration übereinstimmt, legen Sie den fest <code>HA</code> Status für das Chassis: <code>ha-config modify chassis <em>ha-state</em></code></p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="schritt-6-festplatten-neu-zuweisen">Schritt 6: Festplatten neu zuweisen</h2>
+<h2 id="schritt-5-festplatten-neu-zuweisen">Schritt 5: Festplatten neu zuweisen</h2>
 <div class="sectionbody">
 <div class="paragraph lead">
 <p>Sie müssen die Änderung der System-ID beim Booten des Ersatz-Controllers bestätigen und anschließend überprüfen, ob die Änderung implementiert wurde.</p>
 </div>
-<div class="paragraph">
-<p>Diese Vorgehensweise gilt nur für Systeme, auf denen ONTAP in einem HA-Paar ausgeführt wird.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap-systems/images/note.svg" alt="Anmerkung">
+</td>
+<td class="content">
+Diese Vorgehensweise gilt nur für Systeme, auf denen ONTAP in einem HA-Paar ausgeführt wird.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap-systems/images/caution.svg" alt="Achtung">
+</td>
+<td class="content">
+Eine Neuzuordnung von Festplatten ist nur erforderlich, wenn das NVRAM-Modul ersetzt wird.
+</td>
+</tr>
+</table>
 </div>
 <div class="olist arabic">
 <div class="title">Schritte</div>
 <ol class="arabic">
 <li>
-<p>Wenn sich der Ersatz-Controller im Wartungsmodus befindet (zeigt das an <code>*&gt;</code> Eingabeaufforderung, beenden Sie den Wartungsmodus und gehen Sie zur LOADER-Eingabeaufforderung: <code>halt</code></p>
+<p>Wenn sich der Ersatz-Controller im Wartungsmodus befindet (zeigt das an <code>*&gt;</code> Eingabeaufforderung), beenden Sie den Wartungsmodus und gehen Sie zur LOADER-Eingabeaufforderung: <code>halt</code></p>
 </li>
 <li>
-<p>Booten Sie an der LOADER-Eingabeaufforderung auf dem Ersatz-Controller den Controller und geben Sie ein <code>y</code> Wenn Sie aufgrund einer nicht übereinstimmenden System-ID aufgefordert werden, die System-ID außer Kraft zu setzen.</p>
+<p>Booten Sie an der LOADER-Eingabeaufforderung auf dem Ersatz-Controller den Controller und geben Sie „y“ ein, wenn Sie aufgrund von nicht übereinstimmenden System-ID aufgefordert werden, die System-ID außer Kraft zu setzen.</p>
 </li>
 <li>
-<p>Warten Sie, bis die Meldung Warten auf Giveback angezeigt wird auf der Ersatz-Controller-Konsole und dann, vom gesunden Controller, überprüfen Sie, ob die neue Partner-System-ID automatisch zugewiesen wurde: <code>storage failover show</code></p>
+<p>Warten Sie, bis Sie auf das Giveback warten&#8230;&#8203; Die Meldung wird auf der Konsole des Controllers mit dem Ersatzmodul angezeigt und anschließend vom gesunden Controller aus überprüfen, ob die neue Partner-System-ID automatisch zugewiesen wurde: <code>storage failover show</code></p>
 <div class="paragraph">
 <p>In der Befehlsausgabe sollte eine Meldung angezeigt werden, dass sich die System-ID auf dem beeinträchtigten Controller geändert hat und die korrekten alten und neuen IDs angezeigt werden. Im folgenden Beispiel wurde node2 ersetzt und hat eine neue System-ID von 151759706.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>node1&gt; `storage failover show`
+<pre>node1:&gt; storage failover show
                                     Takeover
 Node              Partner           Possible     State Description
 ------------      ------------      --------     -------------------------------------
@@ -10464,31 +10420,6 @@ node1             node2             false        System ID changed on partner (O
                                                   151759755, New: 151759706), In takeover
 node2             node1             -            Waiting for giveback (HA mailboxes)</pre>
 </div>
-</div>
-</li>
-<li>
-<p>Vergewissern Sie sich beim ordnungsgemäßen Controller, dass alle Corestapy gespeichert sind:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Ändern Sie die erweiterte Berechtigungsebene: <code>set -privilege advanced</code></p>
-<div class="paragraph">
-<p>Sie können antworten <code>Y</code> Wenn Sie aufgefordert werden, den erweiterten Modus fortzusetzen. Die Eingabeaufforderung für den erweiterten Modus wird angezeigt (*&gt;).</p>
-</div>
-</li>
-<li>
-<p>Speichern von CoreDumps: <code>system node run -node local-node-name partner savecore</code></p>
-</li>
-<li>
-<p>Warten Sie, bis der Befehl `savecore`abgeschlossen ist, bevor Sie das Giveback ausgeben.</p>
-<div class="paragraph">
-<p>Sie können den folgenden Befehl eingeben, um den Fortschritt des Befehls savecore zu überwachen: <code>system node run -node local-node-name partner savecore -s</code></p>
-</div>
-</li>
-<li>
-<p>Zurück zur Administratorberechtigungsebene: <code>set -privilege admin</code></p>
-</li>
-</ol>
 </div>
 </li>
 <li>
@@ -10535,16 +10466,16 @@ Wenn das Rückübertragung ein Vetorecht ist, können Sie erwägen, das Vetos au
 <li>
 <p>Überprüfen Sie, ob die Festplatten ordnungsgemäß zugewiesen wurden: <code>storage disk show -ownership</code></p>
 <div class="paragraph">
-<p>Bei den Festplatten, die zum Ersatz-Controller gehören, sollte die neue System-ID angezeigt werden. Im folgenden Beispiel zeigen die Festplatten von node1 jetzt die neue System-ID, 1873775277:</p>
+<p>Bei den Festplatten, die zum Ersatz-Controller gehören, sollte die neue System-ID angezeigt werden. Im folgenden Beispiel zeigen die Festplatten von node1 jetzt die neue System-ID, 151759706:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>node1&gt; `storage disk show -ownership`
+<pre>node1:&gt; storage disk show -ownership
 
 Disk  Aggregate Home  Owner  DR Home  Home ID    Owner ID  DR Home ID Reserver  Pool
 ----- ------    ----- ------ -------- -------    -------    -------  ---------  ---
-1.0.0  aggr0_1  node1 node1  -        1873775277 1873775277  -       1873775277 Pool0
-1.0.1  aggr0_1  node1 node1           1873775277 1873775277  -       1873775277 Pool0
+1.0.0  aggr0_1  node1 node1  -        151759706  151759706  -       151759706 Pool0
+1.0.1  aggr0_1  node1 node1           151759706  151759706  -       151759706 Pool0
 .
 .
 .</pre>
@@ -10597,6 +10528,9 @@ dr-group-id            cluster node           configuration-state
 <p>Vergewissern Sie sich, dass die erwarteten Volumes für jeden Controller vorhanden sind: <code>vol show -node node-name</code></p>
 </li>
 <li>
+<p>Wenn die Speicherverschlüsselung aktiviert ist, müssen Sie <strong><strong></strong><strong></strong></strong>**</p>
+</li>
+<li>
 <p>Wenn Sie die automatische Übernahme beim Neustart deaktiviert haben, aktivieren Sie sie vom gesunden Controller: <code>storage failover modify -node replacement-node-name -onreboot true</code></p>
 </li>
 </ol>
@@ -10604,17 +10538,26 @@ dr-group-id            cluster node           configuration-state
 </div>
 </div>
 <div class="sect1">
-<h2 id="schritt-7-stellen-sie-die-funktionen-für-storage-und-volume-encryption-wieder-her">Schritt 7: Stellen Sie die Funktionen für Storage und Volume Encryption wieder her</h2>
+<h2 id="schritt-6-stellen-sie-die-funktionen-für-storage-und-volume-encryption-wieder-her">Schritt 6: Stellen Sie die Funktionen für Storage und Volume Encryption wieder her</h2>
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>Nachdem Sie das Controller-Modul oder das NVRAM-Modul für ein Storage-System ersetzt haben, das Sie zuvor für die Verwendung von Storage oder Volume Encryption konfiguriert haben, müssen Sie zusätzliche Schritte durchführen, um unterbrechungsfreie Verschlüsselungsfunktionen bereitzustellen. Sie können diese Aufgabe auf Storage-Systemen überspringen, auf denen Storage oder Volume Encryption nicht aktiviert ist.</p>
+<p>Für Storage-Systeme, die Sie zuvor für den Einsatz von Storage oder Volume Encryption konfiguriert haben, müssen Sie zusätzliche Schritte durchführen, um die Funktion für unterbrechungsfreie Verschlüsselung bereitzustellen. Sie können diese Aufgabe auf Storage-Systemen überspringen, auf denen Storage oder Volume Encryption nicht aktiviert ist.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap-systems/images/note.svg" alt="Anmerkung">
+</td>
+<td class="content">
+Dieser Schritt ist beim Austausch eines DIMM nicht erforderlich.
+</td>
+</tr>
+</table>
 </div>
 <div class="olist arabic">
 <div class="title">Schritte</div>
 <ol class="arabic">
-<li>
-<p>Stellen Sie die Speicher- oder Volume Encryption-Funktionalität mithilfe des entsprechenden Verfahrens in wieder her <a href="https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html" target="_blank" rel="noopener">"NetApp Encryption: Übersicht mit CLI"</a>.</p>
-</li>
 <li>
 <p>Je nachdem, ob Sie integriertes oder externes Verschlüsselungsmanagement verwenden, sollten Sie eines der folgenden Verfahren verwenden:</p>
 <div class="ulist">
@@ -10628,12 +10571,15 @@ dr-group-id            cluster node           configuration-state
 </ul>
 </div>
 </li>
+<li>
+<p>SED-MSID zurücksetzen</p>
+</li>
 </ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="schritt-8-senden-sie-das-fehlgeschlagene-teil-an-netapp-zurück">Schritt 8: Senden Sie das fehlgeschlagene Teil an NetApp zurück</h2>
+<h2 id="schritt-7-senden-sie-das-fehlgeschlagene-teil-an-netapp-zurück">Schritt 7: Senden Sie das fehlgeschlagene Teil an NetApp zurück</h2>
 <div class="sectionbody">
 <div class="paragraph lead">
 <p>Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe <a href="https://mysupport.netapp.com/site/info/rma">"Teilerückgabe  Austausch"</a> Seite für weitere Informationen.</p>

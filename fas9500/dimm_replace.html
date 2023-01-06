@@ -9849,7 +9849,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-15 16:07:50 +0000">12/15/2022</time>
+    <time datetime="2023-01-06 12:52:26 +0000">01/06/2023</time>
     
   
 
@@ -9883,22 +9883,16 @@
 <div class="title">Über diese Aufgabe</div>
 <ul>
 <li>
-<p>Wenn Sie NetApp Storage Encryption verwenden, müssen Sie die MSID mithilfe der Anweisungen im Abschnitt „<code>Zurückkehren in den ungeschützten Modus</code>“ des Power Guide „ _ONTAP 9 NetApp Verschlüsselung “ zurückgesetzt haben.</p>
-<div class="paragraph">
-<p><a href="https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/home.html" target="_blank" rel="noopener">"ONTAP 9 – NetApp Verschlüsselungsleitfadens"</a></p>
-</div>
+<p>Wenn Sie NetApp Storage Encryption verwenden, müssen Sie die MSID mithilfe der Anweisungen im zurückgesetzt haben <a href="https://docs.netapp.com/us-en/ontap/encryption-at-rest/return-seds-unprotected-mode-task.html">"SEDs werden in den ungeschützten Modus versetzt"</a>.</p>
 </li>
 <li>
-<p>Wenn Sie über ein SAN-System verfügen, müssen Sie Ereignismeldungen geprüft haben (<code>event log show</code>) Für beeinträchtigte Controller SCSI-Blade.</p>
+<p>Wenn Sie über ein SAN-System verfügen, müssen Sie Ereignismeldungen geprüft haben  <code>cluster kernel-service show</code>) Für beeinträchtigte Controller SCSI-Blade. Der <code>cluster kernel-service show</code> Der Befehl zeigt den Node-Namen, den Quorum-Status dieses Node, den Verfügbarkeitsstatus dieses Node und den Betriebsstatus dieses Node an.</p>
 <div class="paragraph">
 <p>Jeder Prozess des SCSI-Blades sollte sich im Quorum mit den anderen Nodes im Cluster befinden. Probleme müssen behoben werden, bevor Sie mit dem Austausch fortfahren.</p>
 </div>
 </li>
 <li>
-<p>Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE für die Berechtigung und den Zustand anzeigt, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe <a href="https://docs.netapp.com/us-en/ontap/system-admin/index.html" target="_blank" rel="noopener">"Administrationsübersicht mit der CLI"</a>.</p>
-</li>
-<li>
-<p>Wenn Sie über eine MetroCluster-Konfiguration verfügen, müssen Sie bestätigt haben, dass der MetroCluster-Konfigurationsstatus konfiguriert ist und dass die Nodes in einem aktivierten und normalen Zustand vorliegen (<code>metrocluster node show</code>).</p>
+<p>Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE für die Berechtigung und den Zustand anzeigt, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe <a href="https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum" target="_blank" rel="noopener">"Synchronisieren eines Node mit dem Cluster"</a>.</p>
 </li>
 </ul>
 </div>
@@ -9908,7 +9902,7 @@
 <li>
 <p>Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung: <code>system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh</code></p>
 <div class="paragraph">
-<p>Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden: <code>cluster1:*&gt; system node autosupport invoke -node * -type all -message MAINT=2h</code></p>
+<p>Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden: <code>cluster1:&gt; system node autosupport invoke -node * -type all -message MAINT=2h</code></p>
 </div>
 </li>
 <li>
@@ -9958,7 +9952,7 @@ Wenn Sie sehen <em>Möchten Sie Auto-Giveback deaktivieren?</em>, geben Sie ein 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Eingabeaufforderung des Systems oder Passwort (Systempasswort eingeben)</p>
+<p>Eingabeaufforderung für das System oder Passwort</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Übernehmen oder stoppen Sie den beeinträchtigten Regler von der gesunden Steuerung: <code>storage failover takeover -ofnode <em>impaired_node_name</em></code></p>
