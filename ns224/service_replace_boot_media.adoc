@@ -11,17 +11,17 @@ summary: 'Wenn das Boot-Medium in einem NS224-Laufwerk-Shelf in einem HA-Paar, d
 
 
 [role="lead"]
-Wenn das Boot-Medium in einem NS224-Laufwerk-Shelf in einem HA-Paar, das ONTAP 9.7 oder höher ausführt, oder auf dem Shelf wird die NVMe-Shelf-Modul-Firmware (NSM) Version 1.1x oder höher ausgeführt, können Sie die Boot-Medien ersetzen. Der Austausch der Boot-Medien kann unterbrechungsfrei durchgeführt werden, während das Festplatten-Shelf eingeschaltet ist und I/O gerade läuft.
+Wenn das Boot-Medium in einem NS224-Laufwerk-Shelf in einem HA-Paar, auf dem ONTAP 9.7 oder höher ausgeführt wird, ausfällt oder auf dem Shelf die NVMe-Shelf-Modul-Firmware (NSM) Version 0111 oder höher ausgeführt wird, können Sie die Boot-Medien ersetzen. Der Austausch der Boot-Medien kann unterbrechungsfrei durchgeführt werden, während das Festplatten-Shelf eingeschaltet ist und I/O gerade läuft.
 
 .Bevor Sie beginnen
-* Ihr HA-Paar muss bereits ONTAP 9.7 oder höher ausführen, auf dem die unterstützte Mindestversion der NSM-Firmware steht, oder Ihr HA-Paar muss bereits eine Version von ONTAP 9.6 mit NSM-Firmware-Version 1.1x oder höher ausführen.
+* Ihr HA-Paar muss bereits ONTAP 9.7 oder höher ausführen, was die unterstützte Mindestversion der NSM-Firmware hat, oder Ihr HA-Paar muss bereits eine Version von ONTAP 9.6 mit NSM-Firmware-Version 0111 oder höher ausführen.
 +
 Sie können den eingeben `storage shelf show -module` Befehl an der Konsole eines der beiden Controller, um die Version der NSM-Firmware auf Ihrem Shelf zu überprüfen.
 
 +
 [NOTE]
 ====
-Wenn auf Ihrem Shelf keine NSM-Firmware-Version 1.1x oder höher ausgeführt wird, können Sie das Boot-Medium nicht ersetzen, müssen Sie das NSM-Modul ersetzen.
+Wenn im Shelf keine NSM-Firmware-Version 0111 oder höher ausgeführt wird, können Sie das Boot-Medium nicht ersetzen, müssen Sie das NSM-Modul ersetzen.
 
 link:service-replace-nsm100.html["Ersetzen Sie ein NSM-Modul - NS224-Einlegeböden"^]
 
@@ -48,13 +48,15 @@ So bleibt ONTAP genügend Zeit, um das NSM-Entfernungsereignis zu bearbeiten.
 
 * *Best Practice:* die Best Practice besteht darin, aktuelle Versionen der NSM-Firmware (NVMe Shelf Module) und der Laufwerk-Firmware auf dem System zu haben, bevor FRU-Komponenten ersetzt werden.
 +
+https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp Downloads: Festplatten-Shelf Firmware"^]
+
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["NetApp Downloads: Festplatten-Firmware"^]
+
++
 [NOTE]
 ====
 Stellen Sie die Firmware nicht auf eine Version zurück, die Ihr Shelf und seine Komponenten nicht unterstützt.
-
-https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp Downloads: Festplatten-Shelf Firmware"^]
-
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["NetApp Downloads: Festplatten-Firmware"^]
 
 ====
 * Bei Bedarf können Sie die blauen LEDs am Shelf einschalten, um die physische Suche nach dem betroffenen Shelf zu erleichtern: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
@@ -75,6 +77,7 @@ video::20ed85f9-1f80-4e0e-9219-ab4600070d8a[panopto]
 
 
 .Schritte
+. Stellen Sie sicher, dass beide NSM-Module im Shelf dieselbe Version von Firmware ausführen: Version 0200 oder höher.
 . Richtig gemahlen.
 . Trennen Sie die Verkabelung vom NSM-Modul, das die FRU enthält, die Sie ersetzen:
 +
@@ -108,11 +111,7 @@ Wenn Sie mit dem Ziehen beginnen, ziehen sich die Arms des Verriegelungsmechanis
 . Lösen Sie die Flügelschraube der NSM-Modulabdeckung, und öffnen Sie die Abdeckung.
 . Suchen Sie das ausgefallene Startmedium physisch.
 +
-Die Boot-Medien befinden sich an der Wand des Shelf-Chassis gegenüber dem Netzteil. Die gelbe LED (Boot Media Achtung) auf der Platine neben dem Boot-Medienschacht leuchtet auf.
-
-+
-
-NOTE: Die LED leuchtet 10 Minuten lang, nachdem Sie das NSM-Modul aus dem Shelf entfernt haben.
+Die Boot-Medien befinden sich an der Wand des Shelf-Chassis gegenüber dem Netzteil.
 
 . Ersetzen Sie die Startmedien:
 +

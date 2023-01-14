@@ -26,6 +26,7 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 +
 So bleibt ONTAP genügend Zeit, um das NSM-Entfernungsereignis zu bearbeiten.
 
+* Nachdem Sie den RTC-Akku ersetzt haben, installieren Sie das NSM-Modul neu und das Modul startet, wird die Echtzeituhr von ONTAP aktualisiert.
 * *Best Practice:* die Best Practice besteht darin, aktuelle Versionen der NSM-Firmware (NVMe Shelf Module) und der Laufwerk-Firmware auf dem System zu haben, bevor FRU-Komponenten ersetzt werden.
 +
 https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp Downloads: Festplatten-Shelf Firmware"^]
@@ -92,13 +93,6 @@ Wenn Sie mit dem Ziehen beginnen, ziehen sich die Arms des Verriegelungsmechanis
 Das FRU-Etikett auf der NSM-Modulabdeckung zeigt die Position der RTC-Batterie, an der Vorderseite des NSM-Moduls und rechts neben dem Netzteil an.
 
 . Identifizieren Sie die ausgefallene RTC-Batterie physisch.
-+
-Die LED für die Warnung der RTC-Batterie (gelb) auf der Platine neben dem Akkufach leuchtet auf.
-
-+
-
-NOTE: Die LED für den ausgefallenen RTC-Akku leuchtet 10 Minuten lang, nachdem Sie das NSM-Modul aus dem Shelf entfernt haben.
-
 . Tauschen Sie die RTC-Batterie aus:
 +
 .. Entfernen Sie den Akku, indem Sie ihn vorsichtig vom Halter wegschieben, bis er sich in einem geneigten Winkel befindet (geneigt vom Halter entfernt), und heben Sie ihn dann aus dem Halter.
