@@ -325,7 +325,6 @@
   <block id="880c0610027a11af7086ae7e380e12e5" category="list-text">Wenn Ihr System über zwei Controller-Module verfügt, deaktivieren Sie das HA-Paar.</block>
   <block id="d426a3f5c9c0e3362f4ed536e7643c03" category="cell">Wenn Ihr System Clustered ONTAP mit...</block>
   <block id="93ff4b8a35c5f08ad3e97fdc9983948e" category="paragraph">Zwei Controller im Cluster</block>
-  <block id="8d6f30824233e0351fc71f18fbb5c436" category="paragraph"><block ref="272f3c49a4ec1753c70013d06165277b" prefix="" category="inline-code"></block><block ref="2ad2df2fff9b45582f1f35a1de091886" prefix=" " category="inline-code"></block></block>
   <block id="a0540c64b7001eb9739a6eed390808ac" category="paragraph">Mehr als zwei Controller im Cluster</block>
   <block id="b2aa61dcee4d7b77fcd001973469ddde" category="paragraph"><block ref="2ad2df2fff9b45582f1f35a1de091886" prefix="" category="inline-code"></block></block>
   <block id="853a8c6f8383ee1dc5f3826af9ff6797" category="list-text">Halten Sie den Regler an, und drücken Sie<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> Wenn Sie aufgefordert werden, den Stopp zu bestätigen:<block ref="e1f5c50429478cf8a201f7a77cce9c92" prefix=" " category="inline-code"></block></block>
@@ -2652,13 +2651,6 @@
   <block id="ad451e1c6a6a584f53b88b5c73144db7" category="doc">Andere Modelle</block>
   <block id="e727b00944f81e1d0a95c12886ac4641" category="inline-link-macro">Archivierung</block>
   <block id="97a6415da8202d0321d49b92f019e7b1" category="paragraph">Mithilfe dieser Links finden Sie Dokumentationen für andere AFF- und FAS-Plattformen. Die Dokumentation für AFF und FAS Systeme, die das Ende des Hardware Supports erreicht haben, steht dem Kunden im zur Verfügung <block ref="5e4606a12c7b193a6ccb23ff349575d7" category="inline-link-macro-rx"></block>.</block>
-  <block id="07fa61787cd64fafda80a8c62e643a38" category="section-title">Plattform-Modelle</block>
-  <block id="f453086a36d64a5193cd4183c14bcd72" category="inline-link-macro">Dokumentation der AFF 8000 Serie</block>
-  <block id="c651d2f010c85fa1c8605da5e127657e" category="paragraph"><block ref="c651d2f010c85fa1c8605da5e127657e" category="inline-link-macro-rx"></block></block>
-  <block id="71bdc94f19d5947bd1cb6d437f119ba2" category="inline-link-macro">Dokumentation der FAS8000 Serie</block>
-  <block id="2b3a51bca746a221bf4a0af6d3098ccf" category="paragraph"><block ref="2b3a51bca746a221bf4a0af6d3098ccf" category="inline-link-macro-rx"></block></block>
-  <block id="c7e39e875a3a875d9445eace0794b0f5" category="inline-link-macro">Dokumentation der FAS2500 Serie</block>
-  <block id="ebc5a75e4df8077b15f7cef6c123c7db" category="paragraph"><block ref="ebc5a75e4df8077b15f7cef6c123c7db" category="inline-link-macro-rx"></block></block>
   <block id="7a31198e87ee2c9071d7bf63050a7088" category="section-title">Shelf-Modelle</block>
   <block id="dc562a84ed096c677cedf44a7c5df0bf" category="inline-link-macro">Dokumentation des DS2246 Platten-Shelf</block>
   <block id="dd26152c70d312482c21516c3889b669" category="paragraph"><block ref="dd26152c70d312482c21516c3889b669" category="inline-link-macro-rx"></block></block>
@@ -2856,7 +2848,6 @@
   <block id="e81625c6f6813a6e5480c2987f5bd781" category="section-title">Schritt 8: Senden Sie das fehlgeschlagene Teil an NetApp zurück</block>
   <block id="68908cbb53a7b71659933af600697a19" category="summary">Zum Hot-Swap eines DCPM \\ (De-Stage-Controller-Stromversorgungsmoduls), das den NVRAM11-Akku enthält, müssen Sie das fehlerhafte DCPM-Modul ausfindig machen, es aus dem Gehäuse entfernen und das Ersatzmodul DCPM installieren.</block>
   <block id="821b1e6be57f410ab68ac2071fc04df4" category="doc">Ersetzen Sie das Leistungsmodul der Zielsteuerung, das den NVRAM11-Akku FAS9500 enthält</block>
-  <block id="b36f3c4187cae8553973b284879e1c97" category="paragraph">Zum Hot-Swap eines DCPM-Moduls (De-Stage Controller Power Module), das den NVRAM11-Akku enthält, müssen Sie das fehlerhafte DCPM-Modul suchen, es aus dem Gehäuse entfernen und das Ersatzmodul DCPM installieren.</block>
   <block id="9b9f090ead8603008076b06ff01712ce" category="paragraph">Vor dem Entfernen des ausgefallenen Moduls aus dem Gehäuse müssen Sie ein Ersatzmodul FÜR DEN DCPM haben und dieses innerhalb von fünf Minuten nach dem Ausbau ersetzen. Sobald das DCPM-Modul aus dem Gehäuse entfernt wird, gibt es keinen Abschaltschutz für das Controller-Modul, das das DCPM-Modul besitzt, außer Failover zum anderen Controller-Modul.</block>
   <block id="90eb2af5a768fd638c695d0394817a0e" category="section-title">Schritt 1: Ersetzen SIE DAS DCPM-Modul</block>
   <block id="5a00f3de99220093cfa367a074d35fec" category="paragraph">Um das DCPM-Modul in Ihrem System auszutauschen, müssen Sie das fehlerhafte DCPM-Modul aus dem System entfernen und dann durch ein neues DCPM-Modul ersetzen.</block>
@@ -7352,4 +7343,44 @@
   <block id="d067784c8bad4d41a4f87accd50abbc1" category="list-text">Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE anzeigt, um die Berechtigung und den Zustand zu erhalten, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe <block ref="68d9e980b8b4998ef88139d7b7ab8ff6" category="inline-link-macro-rx"></block>.</block>
   <block id="1c0138111ac00fdce24dc38ffd9859d5" category="list-text">Wenn Sie ein Cluster mit mehr als zwei Controllern haben, muss es sich im Quorum befinden. Wenn das Cluster nicht im Quorum ist oder ein guter Controller angezeigt wird<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block> Für die Berechtigung und den Zustand müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe <block ref="68d9e980b8b4998ef88139d7b7ab8ff6" category="inline-link-macro-rx"></block>.</block>
   <block id="305fade7b83ae4e7549b33a3ae1b1fd0" category="doc">Hot-Add-Shelf - NS224-Shelves</block>
+  <block id="859c951ebab21901f2fd6183c53339d5" category="summary">Um ein Modul \ (DCPM\) des Destage-Controllers im laufenden Betrieb auszutauschen, das den NVRAM11-Akku enthält, müssen Sie das fehlerhafte DCPM-Modul ausfindig machen, es aus dem Gehäuse entfernen und das Ersatzmodul DCPM installieren.</block>
+  <block id="8ea19d634d233a26f4f650bd2e2b467c" category="paragraph">Zum Hot-Swap eines Destage-Controller-Stromversorgungsmoduls (DCPM), das den NVRAM11-Akku enthält, müssen Sie das fehlerhafte DCPM-Modul ausfindig machen, es aus dem Gehäuse entfernen und das Ersatzmodul DCPM installieren.</block>
+  <block id="58fb0a507d97ff336e5db5d69ba846e9" category="inline-link">Konvertieren Sie 40-GbE-NIC-Ports für 10-GbE-Konnektivität in mehrere 10-GbE-Ports</block>
+  <block id="8ae73aa056882e7b560f3b52b5764957" category="list-text">Wenn Ihr System für 10-GbE-Cluster Interconnect und Datenverbindungen auf 40-GbE-NICs konfiguriert ist, konvertieren Sie diese Ports mithilfe der in 10-GbE-Verbindungen<block ref="5ec041cdb2bbdf01cd4ea2c400b17495" prefix=" " category="inline-code"></block> Befehl im Wartungsmodus. Siehe<block ref="2d808a662d9493bde97b50913a25a294" category="inline-link-rx"></block> Finden Sie weitere Informationen.</block>
+  <block id="d875f9fec183da794cd6d6245ef00d1d" category="paragraph"><block ref="272f3c49a4ec1753c70013d06165277b" prefix="" category="inline-code"></block></block>
+  <block id="1bb835185391c9f6463cb5dc111090d1" category="paragraph">Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE für die Berechtigung und den Zustand anzeigt, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe <block ref="68d9e980b8b4998ef88139d7b7ab8ff6" category="inline-link-macro-rx"></block>.</block>
+  <block id="aae78f4a3d47a08dddca98a632d4a75f" category="paragraph">Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE für die Berechtigung und den Zustand anzeigt, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren.</block>
+  <block id="68d9e980b8b4998ef88139d7b7ab8ff6" category="paragraph"><block ref="68d9e980b8b4998ef88139d7b7ab8ff6" category="inline-link-macro-rx"></block></block>
+  <block id="3cf0b39ddc0b0c6fbe705a62aacc7d3c" category="list-text">Drücken Sie auf der Vorderseite des Gehäuses die Daumen, um jedes Laufwerk fest einzuschieben, bis Sie einen positiven Stopp spüren. Dadurch wird sichergestellt, dass die Laufwerke fest an der Mittelplatine des Gehäuses sitzen.</block>
+  <block id="7acc547c8acfbe4a745ca72a3e0e83e4" category="image-alt">drw a800-Laufwerk mit IEOPS 960</block>
+  <block id="9fec9d1f051b750c4b137dc68aaa9695" category="list-text">Gehen Sie zur Rückseite des Gehäuses. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.</block>
+  <block id="3caccb46026f8affc6c95f65aa0c8af1" category="list-text">Schieben Sie das Controller-Modul aus dem Gehäuse und legen Sie es auf eine stabile, flache Oberfläche.</block>
+  <block id="9bc9bee1c7c86ea6e815437b4f02ff6c" category="paragraph">Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen, während Sie es aus dem Gehäuse schieben. .</block>
+  <block id="1422875ceb77c2edc7c07474b11b3c6f" category="list-text">Öffnen Sie den Luftkanal des Steuermoduls:</block>
+  <block id="43ae4ee714a69574b12c2b05c54410b5" category="list-text">Drücken Sie die Entriegelungstaste für Terrakotta am Modulgriff, und schieben Sie das DCPM-Modul aus dem Gehäuse.</block>
+  <block id="0721343ac8e5e32a5122775fda62e4d0" category="doc">Wiederherstellen und Überprüfen der Konfiguration – AFF A900</block>
+  <block id="4db8dbc03fb77b9d2fa1dabdeec7a07a" category="list-text">Führen Sie den Diagnosetest auf Systemebene erneut aus. + Wenn der Diagnosetest auf Systemebene erneut fehlschlägt, wenden Sie sich an <block ref="d4b5db761eff3af8abec9c2aa8b19609" category="inline-link-macro-rx"></block>.</block>
+  <block id="22afc2cb7855948b6347ad0d5b8816a7" category="paragraph">Gehen Sie wie folgt vor, wenn die Speicherverschlüsselung aktiviert ist.</block>
+  <block id="2c35abfceaabbce6e9a2f24491d249c0" category="open-title">Option 1: Verwenden Von Onboard Key Manager</block>
+  <block id="86b112e5aa1ced4fbffb09dded147e9f" category="list-text">Starten Sie den Node im Boot-Menü.</block>
+  <block id="e07ae2ef2fbd56f8a3ced5a2ab602ded" category="list-text">Wählen Sie Option 10,<block ref="cdca34dc3d7defb03d741a65d78de01c" prefix=" " category="inline-code"></block>.</block>
+  <block id="5affab7614cb0938ec2fe16dbf6094bd" category="list-text">Geben Sie an der Eingabeaufforderung die integrierte Schlüsselverwaltung-Passphrase für das Cluster ein: Beispiel hier brauchen******</block>
+  <block id="e1abc7408800fce9a7b34d2d5dca8aee" category="list-text">Geben Sie die Backup-Schlüsseldaten ein</block>
+  <block id="99f5c4eee12090497e3ca28e84e49cab" category="admonition">Nach Abschluss der Informationen zur Passphrase kehrt der Knoten zum Boot-Menü zurück.</block>
+  <block id="0a2404583aab34668c1c8004bddabbaa" category="list-text">Option 1 auswählen,<block ref="e6922a1788401c5ef431db829a2c387b" prefix=" " category="inline-code"></block></block>
+  <block id="c566d4828cd295258aa8097a90880602" category="open-title">Option 2: Verwenden Von External Manager</block>
+  <block id="0a05a9975c9259ea331a85366e41d3ce" category="list-text">Wählen Sie Option 11,<block ref="0dd518498ab98fe1fd543910856e6153" prefix=" " category="inline-code"></block>.</block>
+  <block id="b0bab47307c92499e81bac9b25dc3e52" category="list-text">Geben Sie die Informationen zum Management-Zertifikat an den Eingabeaufforderungen: Beispiel brauchen hier*****</block>
+  <block id="453b94e2cc94c331c590159bf6b2d21e" category="admonition">Nachdem die Informationen zum Managementzertifikat abgeschlossen sind, kehrt der Node zum Boot-Menü zurück.</block>
+  <block id="6f7b977f442186b3a2cff79208772851" category="list-text">MSID für die Festplatten zurücksetzen:</block>
+  <block id="55bbcb479d2d67bc8ad4b8a2598ddd48" category="inline-link">Zuweisen eines Datenauthentifizierungsschlüssels zu einem FIPS-Laufwerk oder einer SED (Onboard Key Management)</block>
+  <block id="be8dfb1b8df54a914e06c0a343100004" category="list-text">Wenn Sie integrierte Speicherverschlüsselung verwenden, gehen Sie wie in beschrieben vor<block ref="503b29df34267dc3c3e3b8927894b0ee" category="inline-link-rx"></block></block>
+  <block id="32c3cf2b38ceb59d729e7de2ff67fefc" category="inline-link">Zuweisen eines Datenauthentifizierungsschlüssels zu einem FIPS-Laufwerk oder einer SED (External Key Management)</block>
+  <block id="a785aecc0aa86cd8bf8795e1bc4c3e60" category="list-text">Ich Sie verwenden externen keymanager, folgen Sie dem Verfahren in<block ref="c5282a2eb5b1733e45b98afbe5b54d05" category="inline-link-rx"></block></block>
+  <block id="a5462faa34b6cf806cb49f24d84b02a7" category="list-text">Wenn Ihr System so konfiguriert ist, dass es 10-GbE-Cluster-Interconnect und Datenverbindungen auf 40-GbE-NICs unterstützt 10, konvertieren Sie diese Ports mit dem Befehl nicadmin convert aus dem Wartungsmodus. Siehe<block ref="2d808a662d9493bde97b50913a25a294" category="inline-link-rx"></block> Finden Sie weitere Informationen.</block>
+  <block id="55c99fae85fce446adbb5ceb895cf55e" category="paragraph">Wenn Sie die Netzteile beim Ersetzen eines Gehäuses entfernen, deaktivieren, trennen und dann die vier Netzteile von der Rückseite des alten Gehäuses entfernen.</block>
+  <block id="c56809d9cff2ea190c6fb9d67e804b42" category="paragraph">Sie müssen die sechs Lüftermodule, die sich an der Vorderseite des Gehäuses befinden, entfernen, wenn Sie das Gehäuse austauschen.</block>
+  <block id="63ee7e61fbd30f44f9b9df101a63a845" category="paragraph">Entfernen Sie die beiden abgebachten Controller-Stromversorgungsmodule von der Vorderseite des alten Gehäuses.</block>
+  <block id="1d8e1f6692aa85c8d94c39dda8015fdb" category="paragraph">Sobald das neue Gehäuse im Rack oder Schrank installiert ist, schieben Sie das USB-LED-Modul von der Vorderseite des alten Gehäuses in das neue Gehäuse.</block>
+  <block id="02c98171b36d44757b42c6b5c5d2acb9" category="paragraph">Antwort<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> Wenn die Eingabeaufforderung zum Starten im Wartungsmodus angezeigt wird</block>
 </blocks>

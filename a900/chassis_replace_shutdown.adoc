@@ -30,7 +30,9 @@ Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Ca
  a| 
 Zwei Controller im Cluster
  a| 
-`cluster ha modify -configured false` `storage failover modify -node node0 -enabled false`
+`cluster ha modify -configured false`
+
+`storage failover modify -node node0 -enabled false`
 
 
 
