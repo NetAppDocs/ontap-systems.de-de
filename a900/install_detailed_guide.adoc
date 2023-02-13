@@ -190,6 +190,10 @@ image::../media/drw_9000_cable_management_arms.png[drw 9000 Kabelführungsarme]
 . Bringen Sie die Blende auf die Vorderseite des Systems an.
 
 
+Die folgende Abbildung zeigt, wie ein typisches System aussieht und wo sich die Hauptkomponenten am Lesevorgang des Systems befinden:
+
+image::../media/drw_a900_controller_in _chassis_ID_IEOPS-856.svg[drw a900-Controller in Gehäuse-ID IEOPS 856]
+
 
 
 == Schritt 3: Controller mit Ihrem Netzwerk verbinden
@@ -217,9 +221,9 @@ NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er e
 . Verwenden Sie die Animation oder Abbildung, um die Verkabelung zwischen den Controllern und den Switches abzuschließen:
 +
 .Animation – Verkabeln Sie einen 2-Node-Cluster ohne Switches
-video::7a55b98a-e8b8-41d5-821f-ac5b0032ead0[panopto]
+video::37419c37-f56f-48e5-8e6c-afa600095444[panopto]
 +
-image::../media/drw_a900_tnsc_network_cabling.png[drw a900 tnsc Netzwerkkabel]
+image::../media/drw_a900_tnsc_network_cabling_IEOPS-933.svg[drw a900 tnsc Netzwerkverkabelung IEOPS 933]
 
 +
 |===
@@ -298,9 +302,9 @@ NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er e
 . Verwenden Sie die Animation oder Abbildung, um die Verkabelung zwischen den Controllern und den Switches abzuschließen:
 +
 .Animation - Verkabeln Sie ein geschalteter Cluster
-video::6381b3f1-4ce5-4805-bd0a-ac5b0032f51d[panopto]
+video::61ec11ec-aa30-474a-87a5-afa60008b52b[panopto]
 +
-image::../media/drw_a900_switched_network_cabling.png[drw a900-Switch-Netzwerkkabel]
+image::../media/drw_a900_switched_network_cabling_IEOPS-934.svg[drw a900-Switch-Netzwerkverkabelung IEEPS 934]
 
 +
 |===
@@ -386,9 +390,9 @@ NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er e
 .. Verwenden Sie die folgenden Animationen oder Zeichnungen, um Ihre Controller mit einem einzelnen NS224-Laufwerk-Shelf zu verkabeln.
 +
 .Animation - Kabel ein einziges NS224-Regal
-video::6520eb01-87b3-4520-9109-ac5b0032ea4e[panopto]
+video::8d8b45cd-bd8f-4fab-a4fa-afa5017e7b72[panopto]
 +
-image::../media/drw_a900_NS224_one shelf_cabling.png[drw a900 NS224 eine Shelf-Verkabelung]
+image::../media/drw_a900_NS224_one shelf_cabling_IEOPS-937.svg[drw a900 NS224 One-Shelf-Verkabelung IEOPS 937]
 
 
 
@@ -450,12 +454,12 @@ NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er e
 . Verwenden Sie die folgende Animation oder Abbildung, um Ihre Controller mit zwei NS224 Laufwerk-Shelfs zu verkabeln.
 +
 .Animation - Kabel zwei NS224 Regale
-video::34098e39-73ad-45de-9af7-ac5b0032ea9a[panopto]
+video::ec143c32-9e4b-47e5-893e-afa5017da6b4[panopto]
 +
 image:../media/drw_a900_NS224_line_art_two shelf_cabling.png[""]
 
 +
-image::../media/drw_a900_NS224_two shelf_cabling.png[drw a900 NS224 2-Shelf-Kabel]
+image::../media/drw_a900_NS224_two_shelf_cabling_IEOPS-938.svg[drw a900 NS224 zwei-Shelf-Kabel IEOPS 938]
 
 +
 |===
@@ -514,7 +518,7 @@ Wenn die Netzwerkerkennung auf Ihrem Laptop aktiviert ist, können Sie das Syste
 Die NS224-Einschübe sind auf die Shelf-ID 00 und 01 voreingestellt. Wenn Sie die Shelf-IDs ändern möchten, müssen Sie ein Werkzeug erstellen, um in die Öffnung einzufügen, an der sich die Schaltfläche befindet. Siehe https://docs.netapp.com/us-en/ontap-systems/ns224/change-shelf-id.html["Shelf-ID ändern – NS224-Einschübe"] Detaillierte Anweisungen.
 
 +
-.Animation – legt SAS- oder NVMe-Laufwerk-Shelf-IDs fest
+.Animation – legt NVMe-Laufwerk-Shelf-IDs fest
 video::95a29da1-faa3-4ceb-8a0b-ac7600675aa6[panopto]
 +
 image::../media/drw_a900_oie_change_ns224_shelf ID_IEOPS-836.svg[drw a900 oie-Änderung ns224 Shelf-ID IEOPS 836]
@@ -557,7 +561,7 @@ Taste für die Einstellung der Shelf-ID
 .Animation: Schalten Sie die Stromversorgung der Controller ein
 video::a905e56e-c995-4704-9673-adfa0005a891[panopto]
 +
-image::../media/drw_a900_power-on.png[drw a900 eingeschaltet]
+image::../media/drw_a900_power-on_IEOPS-941.svg[drw a900 Power bei IEOPS 941]
 
 +
 
@@ -629,7 +633,7 @@ NOTE: Informationen zur Konfiguration des Konsolenport finden Sie in der Online-
 
 .. Schließen Sie das Konsolenkabel über das im System gelieferte Konsolenkabel an den Laptop oder die Konsole an den Management Switch im Management-Subnetz.
 +
-image::../media/drw_9000_cable_console_switch_controller.png[controller des drw 9000-Kabelkonsolenschalters]
+image::../media/drw_9000_cable_console_switch_controller_IEOPS-953.svg[drw 9000-Kabelkonsolenschalter-Controller IEOPS 953]
 
 .. Weisen Sie dem Laptop oder der Konsole eine TCP/IP-Adresse zu. Verwenden Sie dabei eine Adresse, die sich im Management-Subnetz befindet.
 
@@ -639,7 +643,7 @@ image::../media/drw_9000_cable_console_switch_controller.png[controller des drw 
 Die NS224-Einschübe sind auf die Shelf-ID 00 und 01 voreingestellt. Wenn Sie die Shelf-IDs ändern möchten, müssen Sie ein Werkzeug erstellen, um in die Öffnung einzufügen, an der sich die Schaltfläche befindet. Siehe https://docs.netapp.com/us-en/ontap-systems/ns224/change-shelf-id.html["Shelf-ID ändern – NS224-Einschübe"] Detaillierte Anweisungen.
 
 +
-.Animation – legt SAS- oder NVMe-Laufwerk-Shelf-IDs fest
+.Animation – legt NVMe-Laufwerk-Shelf-IDs fest
 video::95a29da1-faa3-4ceb-8a0b-ac7600675aa6[panopto]
 +
 image::../media/drw_a900_oie_change_ns224_shelf ID_IEOPS-836.svg[drw a900 oie-Änderung ns224 Shelf-ID IEOPS 836]

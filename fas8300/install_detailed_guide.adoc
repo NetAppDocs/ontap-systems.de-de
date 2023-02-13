@@ -22,9 +22,9 @@ Um Ihr System zu installieren, müssen Sie ein Konto erstellen, das System regis
 
 Sie müssen Zugriff auf das Hardware Universe haben, um Informationen zu den Standortanforderungen sowie zusätzliche Informationen über Ihr konfiguriertes System zu erhalten. Möglicherweise möchten Sie auch Zugriff auf die Versionshinweise für Ihre Version von ONTAP haben, um weitere Informationen zu diesem System zu erhalten.
 
-https://hwu.netapp.com["NetApp Hardware Universe"]
+https://hwu.netapp.com["NetApp Hardware Universe"^]
 
-http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["Finden Sie die Versionshinweise für Ihre Version von ONTAP 9"]
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["Finden Sie die Versionshinweise für Ihre Version von ONTAP 9"^]
 
 Folgendes müssen Sie an Ihrer Website angeben:
 
@@ -41,10 +41,7 @@ image::../media/drw_ssn_label.png[drw ssn-Etikett]
 
 . Notieren Sie sich die Anzahl und die Kabeltypen, die Sie erhalten haben.
 +
-In der folgenden Tabelle sind die Kabeltypen aufgeführt, die Sie möglicherweise erhalten können. Wenn Sie ein Kabel empfangen, das nicht in der Tabelle aufgeführt ist, finden Sie im Hardware Universe das Kabel und dessen Verwendung.
-
-+
-https://hwu.netapp.com["NetApp Hardware Universe"]
+In der folgenden Tabelle sind die Kabeltypen aufgeführt, die Sie möglicherweise erhalten können. Wenn Sie ein Kabel erhalten, das nicht in der Tabelle aufgeführt ist, lesen Sie die https://hwu.netapp.com["NetApp Hardware Universe"^] Um das Kabel zu lokalisieren und dessen Verwendung zu identifizieren.
 
 +
 [cols="1,2,1,2"]
@@ -195,6 +192,9 @@ image::../media/drw_a320_cable_management_arms.png[drw a320 Kabelführungsarme]
 
 [role="lead"]
 Sie können die Controller mithilfe der Switch-freien Cluster-Methode mit zwei Nodes oder des Cluster Interconnect-Netzwerks mit dem Netzwerk verkabeln.
+
+
+NOTE: Wenn die Port-Etiketten auf der Karte nicht sichtbar sind, überprüfen Sie die Ausrichtung der Karteninstallation (der PCIe-Steckersockel befindet sich auf der linken Seite des Kartensteckplatzes in den A400 und FAS8300/8700), und suchen Sie dann nach der Karte, und suchen Sie im nach der Teilenummer https://hwu.netapp.com["NetApp Hardware Universe"^] Für eine Grafik der Blende, in der die Port-Bezeichnungen angezeigt werden. Die Teilenummer der Karte kann über gefunden werden `sysconfig -a` Befehl oder auf der Packliste des Systems.
 
 
 

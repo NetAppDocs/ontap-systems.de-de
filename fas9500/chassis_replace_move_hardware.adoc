@@ -6,9 +6,11 @@ summary: Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionie
 ---
 = Verschieben und ersetzen Sie die Hardware FAS9500
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
 
+
+
+
+== Verschieben und ersetzen Sie die Hardware FAS9500
 
 [role="lead"]
 Um das Gehäuse auszutauschen, müssen Sie die Komponenten aus dem alten Chassis entfernen und im Ersatzgehäuse installieren.
@@ -18,7 +20,7 @@ Um das Gehäuse auszutauschen, müssen Sie die Komponenten aus dem alten Chassis
 == Schritt 1: Entfernen Sie die Netzteile
 
 [role="lead"]
-Wenn Sie die Netzteile entfernen, wenn Sie ein Gehäuse ersetzen, müssen Sie das Gerät ausschalten, trennen und dann das Netzteil vom alten Gehäuse entfernen.
+Wenn Sie die Netzteile beim Ersetzen eines Gehäuses entfernen, deaktivieren, trennen und dann die vier Netzteile von der Rückseite des alten Gehäuses entfernen.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Schalten Sie das Netzteil aus und trennen Sie die Netzkabel:
@@ -58,7 +60,7 @@ Verriegelungsknopf
 == Schritt 2: Entfernen Sie die Lüfter
 
 [role="lead"]
-Um die Lüftermodule beim Austausch des Gehäuses zu entfernen, müssen Sie eine bestimmte Sequenz von Aufgaben durchführen.
+Sie müssen die sechs Lüftermodule, die sich an der Vorderseite des Gehäuses befinden, entfernen, wenn Sie das Gehäuse austauschen.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Entfernen Sie die Blende (falls erforderlich) mit zwei Händen, indem Sie die Öffnungen auf beiden Seiten der Blende fassen und dann zu Ihnen ziehen, bis sich die Blende von den Kugelknöpfen am Rahmen des Chassis löst.
@@ -197,7 +199,7 @@ E/A-Nockenverriegelung vollständig entriegelt
 == Schritt 5: Entfernen Sie das Leistungsmodul des De-Stage-Controllers
 
 [role="lead"]
-Zur Installation des Ersatzgehäuses müssen die Controller-Stromversorgungsmodule aus dem alten Gehäuse entfernt werden.
+Entfernen Sie die beiden abgebachten Controller-Stromversorgungsmodule von der Vorderseite des alten Gehäuses.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Drücken Sie die Sperrtaste für Terrakotta am Modulgriff, und schieben Sie das DCPM-Modul aus dem Gehäuse.
@@ -248,7 +250,7 @@ NOTE: Wenn sich das System in einem Systemschrank befindet, müssen Sie möglich
 == Schritt 7: Bewegen Sie das USB-LED-Modul in das neue Gehäuse
 
 [role="lead"]
-Sobald das neue Gehäuse im Rack oder Schrank installiert ist, müssen Sie das USB-LED-Modul vom alten Gehäuse in das neue Gehäuse verlegen.
+Sobald das neue Gehäuse im Rack oder Schrank installiert ist, schieben Sie das USB-LED-Modul von der Vorderseite des alten Gehäuses in das neue Gehäuse.
 
 .Animation - USB-Modul entfernen/installieren
 video::bc46a3e8-6541-444e-973b-ae78004bf153[panopto]
@@ -271,7 +273,7 @@ image:../media/legend_icon_02.svg["Breite = 20"]
 Schieben Sie es aus dem Chassis heraus.
 
 |===
-. Suchen Sie das USB-LED-Modul an der Vorderseite des alten Gehäuses direkt unter den Netzteilschächten.
+. Suchen Sie das USB-LED-Modul an der Vorderseite des alten Gehäuses direkt unter den DCPM-Modulen.
 . Drücken Sie die schwarze Verriegelungstaste auf der rechten Seite des Moduls, um das Modul aus dem Gehäuse zu lösen, und schieben Sie es dann aus dem alten Gehäuse heraus.
 . Richten Sie die Kanten des Moduls am USB-LED-Schacht an der Unterseite des Ersatzgehäuses aus, und schieben Sie das Modul vorsichtig bis zum Einrasten in das Gehäuse.
 
@@ -381,6 +383,12 @@ Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt
 
 NOTE: Wenn die Eingabeaufforderung nicht angezeigt wird und die Controller-Module beim ONTAP booten, geben Sie ein `halt`, Und geben Sie an der LOADER-Eingabeaufforderung ein `boot_ontap`, Drücken Sie `Ctrl-C` Wenn Sie dazu aufgefordert werden, und wiederholen Sie diesen Schritt.
 
+
+
++
+Antwort `y` Wenn die Eingabeaufforderung zum Starten im Wartungsmodus angezeigt wird
+
++
 .. Wählen Sie im Startmenü die Option Wartungsmodus aus.
 
 
