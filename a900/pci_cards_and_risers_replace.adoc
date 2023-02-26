@@ -120,9 +120,6 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 
 
 --
-====
-
-
 == Schritt 2: E/A-Module ersetzen
 
 [role="lead"]
@@ -178,8 +175,6 @@ E/A-Nockenverriegelung vollständig entriegelt
 . E/A-Modul nach Bedarf wieder aufführen.
 
 
-
-
 == Schritt 3: Starten Sie den Controller nach dem Austausch des E/A-Moduls neu
 
 [role="lead"]
@@ -209,9 +204,9 @@ NOTE: Achten Sie darauf, den Wartungsmodus nach Abschluss der Konvertierung zu b
 . Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut: `storage failover modify -node local -auto-giveback true`
 
 
-
-
-== Schritt 4: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+== Schritt 4: Senden Sie das fehlerhafte Teil an NetApp zurück
 
 [role="lead"]
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.
+
+====

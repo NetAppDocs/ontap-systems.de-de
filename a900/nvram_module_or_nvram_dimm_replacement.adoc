@@ -423,7 +423,7 @@ dr-group-id            cluster node           configuration-state
 == Schritt 6: Stellen Sie die Funktionen für Storage und Volume Encryption wieder her
 
 [role="lead"]
-Gehen Sie wie folgt vor, wenn die Speicherverschlüsselung aktiviert ist.
+Wenn die Speicherverschlüsselung aktiviert ist, gehen Sie wie folgt vor.
 
 [role="tabbed-block"]
 ====
@@ -432,11 +432,23 @@ Gehen Sie wie folgt vor, wenn die Speicherverschlüsselung aktiviert ist.
 .Schritte
 . Starten Sie den Node im Boot-Menü.
 . Wählen Sie Option 10, `Set onboard key management recovery secrets`.
-. Geben Sie an der Eingabeaufforderung die integrierte Schlüsselverwaltung-Passphrase für das Cluster ein: Beispiel hier brauchen******
-. Geben Sie die Backup-Schlüsseldaten ein
+. Geben Sie die Passphrase für den Onboard-Schlüsselmanager ein, den Sie vom Kunden erhalten haben.
+. Fügen Sie an der Eingabeaufforderung die Sicherungsschlüsseldaten aus der Ausgabe von ein `security key-manager backup show` ODER `security key-manager onboard show-backup` Befehl.
++
+Beispiel für Backup-Daten:
+
++
+---------------------------- BEGINNEN SIE MIT DEM BACKUP---------------------------------
+
++
+TmV0QXBWIETLESBKBG9iAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1AAAAAAAAAAAAAAAAAAAAAA1AAAAAAAAAAAAAAAAAAAAAAAA1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA . . . H4nPQM0nrDRYRa9SCv8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
++
+--------------------------------- END-BACKUP--------------------------------------------------
+
 +
 
-NOTE: Nach Abschluss der Informationen zur Passphrase kehrt der Knoten zum Boot-Menü zurück.
+NOTE: Der Node kehrt zum Startmenü zurück.
 
 . Option 1 auswählen, `Normal Boot`
 . Geben Sie nur die CFO-Aggregate mit dem zurück `storage failover giveback -fromnode local -only-cfo-aggregates true` Befehl.
@@ -455,7 +467,7 @@ NOTE: Die Beendigung von CIFS kann zu Datenverlust führen.
 +
 Es werden nur die CFO-Aggregate (Root-Aggregate und Daten-Aggregate im CFO-Stil) angezeigt.
 
-. Wenn Sie ONTAP 9.6 oder höher verwenden, führen Sie die integrierte Synchronisierung des Security Key-Managers aus:
+. Führen Sie die integrierte Synchronisierung des Sicherheitsschlüsselmanagers aus:
 +
 .. Führen Sie die aus `security key-manager onboard sync` Geben Sie bei der entsprechenden Aufforderung die Passphrase ein.
 .. Geben Sie das ein `security key-manager key-query` Befehl zum Anzeigen einer detaillierten Ansicht aller im Onboard-Schlüsselmanager gespeicherten Schlüssel und zur Überprüfung des s `Restored` Spalte = `yes/true` Für alle Authentifizierungsschlüssel.
@@ -478,6 +490,16 @@ Wenn Schnittstellen als aufgeführt werden `false`, Zurücksetzen dieser Schnitt
 
 . Bewegen Sie das Konsolenkabel auf den Ziel-Controller, und führen Sie den aus `version -v` Befehl zum Prüfen der ONTAP-Versionen.
 . Stellen Sie die automatische Rückgabe wieder her, wenn Sie die Funktion mithilfe von deaktivieren `storage failover modify -node local -auto-giveback true` Befehl.
+. Setzen Sie die MSID zurück, wenn sie zuvor festgelegt wurde und zu Beginn dieses Verfahrens erfasst wurde:
++
+.. Weisen Sie einem FIPS-Laufwerk oder einer SED mithilfe des einen Datenauthentifizierungsschlüssel zu `storage encryption disk modify -disk _disk_ID_ -data-key-id _key_ID_` Befehl.
++
+
+NOTE: Sie können das verwenden `security key-manager key query -key-type NSE-AK` Befehl zum Anzeigen von Schlüssel-IDs.
+
+.. Überprüfen Sie, ob die Authentifizierungsschlüssel mit dem zugewiesen wurden `storage encryption disk show` Befehl.
+
+
 
 
 --
@@ -485,7 +507,7 @@ Wenn Schnittstellen als aufgeführt werden `false`, Zurücksetzen dieser Schnitt
 --
 . Starten Sie den Node im Boot-Menü.
 . Wählen Sie Option 11, `Configure node for external key management`.
-. Geben Sie die Informationen zum Management-Zertifikat an den Eingabeaufforderungen: Beispiel brauchen hier*****
+. Geben Sie die Informationen zum Verwaltungszertifikat an den Eingabeaufforderungen ein.
 +
 
 NOTE: Nachdem die Informationen zum Managementzertifikat abgeschlossen sind, kehrt der Node zum Boot-Menü zurück.
@@ -528,18 +550,20 @@ Verwenden Sie die `security key-manager key-query` Befehl zum Überprüfen des `
 . Schließen Sie das Konsolenkabel an den Partner Controller an.
 . Geben Sie den Controller mit dem lokalen Befehl Storage Failover Giveback -abnode zurück.
 . Stellen Sie die automatische Rückgabe wieder her, wenn Sie die Funktion mithilfe von deaktivieren `storage failover modify -node local -auto-giveback true` Befehl.
+. Setzen Sie die MSID zurück, wenn sie zuvor festgelegt wurde und zu Beginn dieses Verfahrens erfasst wurde:
++
+.. Weisen Sie einem FIPS-Laufwerk oder einer SED mithilfe des einen Datenauthentifizierungsschlüssel zu `storage encryption disk modify -disk _disk_ID_ -data-key-id _key_ID_` Befehl.
++
+
+NOTE: Sie können das verwenden `security key-manager key query -key-type NSE-AK` Befehl zum Anzeigen von Schlüssel-IDs.
+
+.. Überprüfen Sie, ob die Authentifizierungsschlüssel mit dem zugewiesen wurden `storage encryption disk show` Befehl.
+
+
 
 
 --
 ====
-. MSID für die Festplatten zurücksetzen:
-+
-.. Wenn Sie integrierte Speicherverschlüsselung verwenden, gehen Sie wie in beschrieben vor https://docs.netapp.com/us-en/ontap/encryption-at-rest/assign-authentication-keys-seds-onboard-task.html["Zuweisen eines Datenauthentifizierungsschlüssels zu einem FIPS-Laufwerk oder einer SED (Onboard Key Management)"^]
-.. Ich Sie verwenden externen keymanager, folgen Sie dem Verfahren in https://docs.netapp.com/us-en/ontap/encryption-at-rest/assign-authentication-keys-seds-external-task.html["Zuweisen eines Datenauthentifizierungsschlüssels zu einem FIPS-Laufwerk oder einer SED (External Key Management)"^]
-
-
-
-
 
 
 == Schritt 7: Senden Sie das fehlgeschlagene Teil an NetApp zurück
