@@ -466,9 +466,6 @@
   <block id="083781fc87756a032121b806b4d18a92" category="paragraph"><block ref="083781fc87756a032121b806b4d18a92" category="inline-link-macro-rx"></block></block>
   <block id="308216007c5ec00e109a42c5068cc3de" category="paragraph">Möglicherweise möchten Sie den Inhalt Ihres Cache-Moduls löschen, bevor Sie es ersetzen.</block>
   <block id="6ec04a396d43adc0bf840cc9e4cce4b3" category="list-text">Obwohl die Daten im Cache-Modul verschlüsselt sind, sollten Sie möglicherweise alle Daten aus dem beeinträchtigten Cache-Modul löschen und überprüfen, ob das Caching-Modul keine Daten hat:</block>
-  <block id="7befdc0c8cc35d0c1711e11bd7feb970" category="list-text">Löschen Sie die Daten im Cache-Modul:<block ref="6daf7f4112fcf7c7be366c44ff70faf2" prefix=" " category="inline-code"></block></block>
-  <block id="236dd84b9226dbf8dfd98a6c46b59972" category="list-text">Stellen Sie sicher, dass die Daten aus dem Caching-Modul gelöscht wurden:<block ref="55030d884a341e8f95d06478b61fbec9" prefix=" " category="inline-code"></block></block>
-  <block id="af41b619bf9d50ddae2454efc001e4dd" category="paragraph">Die Ausgabe sollte den Status des Speichermoduls als gelöscht anzeigen.</block>
   <block id="b1ba38ad947dd1578f31b0197f58b44d" category="paragraph">Fahren Sie mit dem nächsten Schritt fort.</block>
   <block id="b6ea0c6054b7f5b7832dafbb8468dc0f" category="paragraph">Übernehmen oder Anhalten der beeinträchtigten Steuerung:</block>
   <block id="4571f480b4cb6246b64d91e6cacdf34c" category="list-text">Bei einem HA-Paar übernehmen Sie den beeinträchtigten Controller vom gesunden Controller:<block ref="64d2ac6bbd59fb854ec2bed7b2dbe259" prefix=" " category="inline-code"></block></block>
@@ -5197,8 +5194,6 @@
   <block id="4a848babffe3702bffe9efa29dd12c61" category="paragraph">Sie können die Bootmedien mit der folgenden Animation, den Abbildungen oder den schriftlichen Schritten ersetzen.</block>
   <block id="fc68b2259a318d9688e92ea62281a6d1" category="video-title">Animation - Ersetzen Sie das Startmedium</block>
   <block id="05da715fdd840e7fc27dd764386018bc" category="doc">Ersetzen Sie das Caching-Modul FAS8300 und FAS8700</block>
-  <block id="d457ea14ed8ca14254ad1d75e29dce09" category="list-text">Löschen Sie die Daten im Cache-Modul:<block ref="b60bf2b00ff05f3d1169095b57dfe15e" prefix=" " category="inline-code"></block></block>
-  <block id="b9106c27d735907c8812d337029e92be" category="list-text">Stellen Sie sicher, dass die Daten aus dem Caching-Modul gelöscht wurden:<block ref="ff9cd193397cd4b2dc68941ccf3d6f87" prefix=" " category="inline-code"></block></block>
   <block id="852ccbca31b38b90e5621b15b3d30e1b" category="paragraph">Übernehmen oder Anhalten der beeinträchtigten Steuerung:<block ref="64d2ac6bbd59fb854ec2bed7b2dbe259" prefix=" " category="inline-code"></block> Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drücken Sie Strg-C, und antworten Sie dann<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block>.</block>
   <block id="8a653be38ee9a052d5a08a28a70c1d9e" category="paragraph">Um ein Caching-Modul, das als Flash Cache auf dem Etikett des Controllers bezeichnet wird, zu ersetzen, suchen Sie den Steckplatz im Controller und folgen Sie den spezifischen Schritten. Informationen zum Speicherort des Flash Cache finden Sie in der FRU-Zuordnung im Controller-Modul.</block>
   <block id="70edce28424200208b28981e9b221707" category="list-text">Obwohl der Inhalt des Cache-Moduls verschlüsselt ist, empfiehlt es sich, den Inhalt des Moduls vor dem Ersetzen zu löschen. Weitere Informationen finden Sie im<block ref="89de74d6a86df9137b0ef3fb03a43036" category="inline-link-rx"></block> Für Ihr System auf der NetApp Support Site.</block>
@@ -7375,9 +7370,6 @@
   <block id="192e7ded6d54e3ac04596dc33b9c67cf" category="paragraph">Sie können ein I/O-Modul zu einem leeren Modulsteckplatz in Ihrem System hinzufügen.</block>
   <block id="741ade379895992f2a574e8e60de1571" category="section-title">Schritt 2: E/A-Module hinzufügen</block>
   <block id="31ac56c0f673cbef254563f6a8a32626" category="paragraph">Wenn Ihr System vollständig bestückt ist, können Sie ein I/O-Modul in einem I/O-Steckplatz ändern, indem Sie ein vorhandenes I/O-Modul entfernen und es durch ein anderes I/O-Modul ersetzen.</block>
-  <block id="ed4dc030dff8dfc29b5cd17aafe4c26e" category="paragraph">== Schritt 2: E/A-Module ersetzen</block>
-  <block id="abd172307b56cb5c0bccb5323a67b886" category="paragraph">== Schritt 3: Starten Sie den Controller nach dem Austausch des E/A-Moduls neu</block>
-  <block id="fd25e96fa9d35ae62fb86caa243d8698" category="paragraph">== Schritt 4: Senden Sie das fehlerhafte Teil an NetApp zurück</block>
   <block id="74458273e576f4b2da617a6e0e209a5f" category="paragraph">Wenn die Speicherverschlüsselung aktiviert ist, gehen Sie wie folgt vor.</block>
   <block id="23620cc2fa7491aefb480afbef75dac2" category="list-text">Geben Sie die Passphrase für den Onboard-Schlüsselmanager ein, den Sie vom Kunden erhalten haben.</block>
   <block id="15247f97704eb964c60d179c321c1370" category="list-text">Fügen Sie an der Eingabeaufforderung die Sicherungsschlüsseldaten aus der Ausgabe von ein<block ref="6b6f6c1a8bc1fede794cda92ed140953" prefix=" " category="inline-code"></block> ODER<block ref="32ba7af89b7557f6e3e6d80a922080ce" prefix=" " category="inline-code"></block> Befehl.</block>
@@ -7397,4 +7389,9 @@
   <block id="3aa5c10c865ad075f0b3003697aa0a31" category="inline-image-macro">Breite=20 px</block>
   <block id="5574e785cb3feaf25b9cde927c042bd5" category="paragraph"><block ref="5574e785cb3feaf25b9cde927c042bd5" category="inline-image-macro-rx" type="image"></block></block>
   <block id="314032c5f76e6fcf7f32085e64ca9fd1" category="paragraph">Installieren und verkabeln Sie die NS224-Regale, wie in beschrieben<block ref="120b604fa0c5a5c9d522c8314c790770" category="inline-link-rx"></block>.</block>
+  <block id="757216293ea1da04339a2c9b8eaa2641" category="admonition">Die Datei tar.gz muss auf einer FAT32-formatierten Partition mit mindestens 4 GB abgelegt werden. Während FAT32-Partitionen bis zu 2 TB groß sein können, können integrierte Windows-Tools (z. B. DiskPart) FAT32-Partitionen nicht formatieren, die größer als 32 GB sind.</block>
+  <block id="e9d3276fadd16a57346b54cecf613793" category="list-text">Löschen Sie die Daten im Cache-Modul:<block ref="5ffb603e9f437c31dabf66aeb6dc9941" prefix=" " category="inline-code"></block></block>
+  <block id="06dd51a0351c6bc1041f60a7a78358f1" category="admonition">Führen Sie die aus<block ref="77da07d2ad54f11335f6a0e867b30843" prefix=" " category="inline-code"></block> Befehl, wenn Sie die flashcache Geräte-ID nicht kennen.</block>
+  <block id="955a29c530e47b3a4d397e3e2ff7a94a" category="list-text">Stellen Sie sicher, dass die Daten aus dem Caching-Modul gelöscht wurden:<block ref="5a00050b2fc68dfbfe21cffc587aa407" prefix=" " category="inline-code"></block></block>
+  <block id="04f13a81f468108c54934d79ebdf3ceb" category="admonition">Wenn die Port-Etiketten auf der Karte nicht sichtbar sind, überprüfen Sie die Ausrichtung der Karteninstallation (der PCIe-Anschluss befindet sich auf der linken Seite des Kartensteckplatzes in den Karten A400 und FAS8300/8700), und suchen Sie dann nach der Karte nach der Teilenummer im<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block> Für eine Grafik der Blende, in der die Port-Bezeichnungen angezeigt werden. Die Teilenummer der Karte kann über gefunden werden<block ref="432345ed72f5509f18312f01d4f08dff" prefix=" " category="inline-code"></block> Befehl oder auf der Packliste des Systems.</block>
 </blocks>

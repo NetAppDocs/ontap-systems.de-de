@@ -93,6 +93,10 @@ Entfernen Sie gegebenenfalls die Startmedien, und setzen Sie sie wieder in den S
 Sie können das System-Image über ein USB-Flash-Laufwerk, auf dem das Image installiert ist, auf dem Ersatzstartmedium installieren. Sie müssen das var-Dateisystem jedoch während dieses Vorgangs wiederherstellen.
 
 * Sie müssen über ein USB-Flash-Laufwerk verfügen, das auf FAT32 formatiert ist und eine Kapazität von mindestens 4 GB aufweist.
++
+
+NOTE: Die Datei tar.gz muss auf einer FAT32-formatierten Partition mit mindestens 4 GB abgelegt werden. Während FAT32-Partitionen bis zu 2 TB groß sein können, können integrierte Windows-Tools (z. B. DiskPart) FAT32-Partitionen nicht formatieren, die größer als 32 GB sind.
+
 * Eine Kopie der gleichen Bildversion von ONTAP wie der beeinträchtigte Controller. Das entsprechende Image können Sie im Abschnitt „Downloads“ auf der NetApp Support-Website herunterladen
 +
 ** Wenn NVE aktiviert ist, laden Sie das Image mit NetApp Volume Encryption herunter, wie in der Download-Schaltfläche angegeben.

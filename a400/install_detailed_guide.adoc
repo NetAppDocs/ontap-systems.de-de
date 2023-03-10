@@ -197,7 +197,7 @@ image::../media/drw_a320_cable_management_arms.png[drw a320 Kabelführungsarme]
 Sie können die Controller mithilfe der Switch-freien Cluster-Methode mit zwei Nodes oder des Cluster Interconnect-Netzwerks mit dem Netzwerk verkabeln.
 
 
-NOTE: Wenn die Port-Etiketten auf der Karte nicht sichtbar sind, überprüfen Sie die Ausrichtung der Karteninstallation (der PCIe-Steckersockel befindet sich auf der linken Seite des Kartensteckplatzes in den A400 und FAS8300/8700), und suchen Sie dann nach der Karte, und suchen Sie im nach der Teilenummer https://hwu.netapp.com["NetApp Hardware Universe"^] Für eine Grafik der Blende, in der die Port-Bezeichnungen angezeigt werden. Die Teilenummer der Karte kann über gefunden werden `sysconfig -a` Befehl oder auf der Packliste des Systems.
+NOTE: Wenn die Port-Etiketten auf der Karte nicht sichtbar sind, überprüfen Sie die Ausrichtung der Karteninstallation (der PCIe-Anschluss befindet sich auf der linken Seite des Kartensteckplatzes in den Karten A400 und FAS8300/8700), und suchen Sie dann nach der Karte nach der Teilenummer im https://hwu.netapp.com["NetApp Hardware Universe"^] Für eine Grafik der Blende, in der die Port-Bezeichnungen angezeigt werden. Die Teilenummer der Karte kann über gefunden werden `sysconfig -a` Befehl oder auf der Packliste des Systems.
 
 
 NOTE: Wenn Sie eine MetroCluster IP-Konfiguration verkabeln, sind die Ports e0a/e0b zum Hosten von Daten-LIFs verfügbar (normalerweise im standardmäßigen IPSpace).

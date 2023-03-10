@@ -40,11 +40,12 @@ Möglicherweise möchten Sie den Inhalt Ihres Cache-Moduls löschen, bevor Sie e
 .Schritte
 . Obwohl die Daten im Cache-Modul verschlüsselt sind, sollten Sie möglicherweise alle Daten aus dem beeinträchtigten Cache-Modul löschen und überprüfen, ob das Caching-Modul keine Daten hat:
 +
-.. Löschen Sie die Daten im Cache-Modul: `system controller flash-cache secure-erase run -node _node_name_ -device-id _device_id_`
-.. Stellen Sie sicher, dass die Daten aus dem Caching-Modul gelöscht wurden: `system controller flash-cache secure-erase show -node _node_name_`
+.. Löschen Sie die Daten im Cache-Modul: `system controller flash-cache secure-erase run -node _node name_ localhost -device-id _device_number_`
 +
-Die Ausgabe sollte den Status des Speichermoduls als gelöscht anzeigen.
 
+NOTE: Führen Sie die aus `system controller flash-cache show` Befehl, wenn Sie die flashcache Geräte-ID nicht kennen.
+
+.. Stellen Sie sicher, dass die Daten aus dem Caching-Modul gelöscht wurden: `system controller flash-cache secure-erase show`
 
 
 . Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung: `system node autosupport invoke -node * -type all -message MAINT=_number_of_hours_down_h`

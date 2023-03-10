@@ -33,11 +33,12 @@ Möglicherweise möchten Sie den Inhalt Ihres Cache-Moduls löschen, bevor Sie e
 .Schritte
 . Obwohl die Daten im Cache-Modul verschlüsselt sind, sollten Sie möglicherweise alle Daten aus dem beeinträchtigten Cache-Modul löschen und überprüfen, ob das Caching-Modul keine Daten hat:
 +
-.. Löschen Sie die Daten im Cache-Modul: `system controller flash-cache secure-erase run`
-.. Stellen Sie sicher, dass die Daten aus dem Caching-Modul gelöscht wurden: `system controller flash-cache secure-erase show -node node_name`
+.. Löschen Sie die Daten im Cache-Modul: `system controller flash-cache secure-erase run -node _node name_ localhost -device-id _device_number_`
 +
-Die Ausgabe sollte den Status des Speichermoduls als gelöscht anzeigen.
 
+NOTE: Führen Sie die aus `system controller flash-cache show` Befehl, wenn Sie die flashcache Geräte-ID nicht kennen.
+
+.. Stellen Sie sicher, dass die Daten aus dem Caching-Modul gelöscht wurden: `system controller flash-cache secure-erase show`
 
 
 . Wenn der beeinträchtigte Controller Teil eines HA-Paars ist, deaktivieren Sie das automatische Giveback von der Konsole des gesunden Controllers: `storage failover modify -node local -auto-giveback false`
