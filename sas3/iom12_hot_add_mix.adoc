@@ -30,10 +30,13 @@ Sie können die Unterstützung mit einer der folgenden Methoden überprüfen:
 +
 ** Geben Sie das ein ``run local sysconfig`` Befehl, an der Admin-Eingabeaufforderung des jeweiligen Controllers.
 +
-Wenn das Feld SAS2/SAS3 Mixed Stack Support nicht in der Ausgabe angezeigt wird oder keinen Wert hat, unterstützt Ihr System gemischte Stacks nicht.
+Wenn das Feld SAS2/SAS3 Mixed Stack Support nicht in der Ausgabe angezeigt wird oder den Wert „none“ hat, unterstützt Ihr System keine gemischten Stacks.
 
 +
-Wenn im Feld SAS2/SAS3 Mixed Stack Support noch etwas anderes angezeigt wird, wie z. B. alle oder Bridge-Attached, unterstützt Ihr System gemischte Stacks.
+Wenn im Feld SAS2/SAS3 Mixed Stack Support „all“ angezeigt wird, unterstützt Ihr System gemischte Stacks.
+
++
+Wenn im Feld SAS2/SAS3 Mixed Stack Support „Bridge-Attached“ angezeigt wird, unterstützt Ihr System gemischte Stacks nur, wenn die Speichereinschübe über eine ATTO FibreBridge verbunden sind.
 
 ** Rufen Sie Hardware Universe auf, und navigieren Sie zu Ihrer Plattforminformation.
 +
