@@ -6,8 +6,11 @@ summary: Sie können Ihrem System ein I/O-Modul hinzufügen, indem Sie ein vorha
 ---
 = Fügen Sie ein I/O-Modul hinzu – AFF A900
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
 
+[role="lead"]
 Sie können dem System ein I/O-Modul hinzufügen, indem Sie entweder einem System mit leeren Steckplätzen einen neuen I/O-Knoten hinzufügen oder ein E/A-Modul durch ein neues in einem vollständig bestückten System ersetzen.
 
 .Bevor Sie beginnen
@@ -21,14 +24,12 @@ Sie können dem System ein I/O-Modul hinzufügen, indem Sie entweder einem Syste
 
 == Option 1: Fügen Sie das I/O-Modul zu einem System mit offenen Steckplätzen hinzu
 
-[role="lead"]
 Sie können ein I/O-Modul zu einem leeren Modulsteckplatz in Ihrem System hinzufügen.
 
 
 
 == Schritt 1: Fahren Sie den Knoten mit beeinträchtigten Knoten herunter
 
-[role="lead"]
 Fahren Sie den Regler herunter oder übernehmen Sie ihn mit einer der folgenden Optionen.
 
 [role="tabbed-block"]
@@ -168,7 +169,6 @@ NOTE: Dadurch werden die PCIe-Karten und andere Komponenten neu initialisiert un
 
 == Option 2: Fügen Sie ein I/O-Modul in ein System ohne offene Steckplätze hinzu
 
-[role="lead"]
 Wenn Ihr System vollständig bestückt ist, können Sie ein I/O-Modul in einem I/O-Steckplatz ändern, indem Sie ein vorhandenes I/O-Modul entfernen und es durch ein anderes I/O-Modul ersetzen.
 
 . Wenn Sie sind:
@@ -204,7 +204,6 @@ Verwenden Sie System Manager, um die LIFs dauerhaft zu verschiedenen Home Ports 
 
 == Schritt 1: Fahren Sie den Knoten mit beeinträchtigten Knoten herunter
 
-[role="lead"]
 Fahren Sie den Regler herunter oder übernehmen Sie ihn mit einer der folgenden Optionen.
 
 [role="tabbed-block"]
@@ -359,13 +358,7 @@ E/A-Nockenverriegelung vollständig entriegelt
 
 . Wiederholen Sie die Schritte zum Entfernen und Installieren, um zusätzliche Module für Controller A auszutauschen
 . Wenn es sich bei dem Ersatz-E/A-Modul um eine NIC handelt, verkabeln Sie das Modul oder die Module mit den Datenschaltern.
-. Booten Sie den BMC neu, und starten Sie dann den Node neu:
-+
-.. Ändern Sie von der LOADER-Eingabeaufforderung in den erweiterten Berechtigungsebene: `priv set advanced`
-.. Starten Sie den BMC neu: `sp reboot`
-
-
-. Booten Sie an der LOADER-Eingabeaufforderung den Node neu: `bye`
+. Booten Sie den Node neu.
 +
 
 NOTE: Dadurch werden die PCIe-Karten und andere Komponenten neu initialisiert und der Node wird neu gebootet.

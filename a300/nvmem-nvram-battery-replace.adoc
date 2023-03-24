@@ -19,14 +19,12 @@ Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Fall
 
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
-[role="lead"]
 Sie können den beeinträchtigten Controller je nach Hardwarekonfiguration des Speichersystems mithilfe verschiedener Verfahren herunterfahren oder übernehmen.
 
 [role="tabbed-block"]
 ====
 .Option 1: Die meisten Konfigurationen
 --
-[role="lead"]
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 
 .Über diese Aufgabe
@@ -82,7 +80,6 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 --
 .Option 2: Controller befindet sich in einem MetroCluster mit zwei Nodes
 --
-[role="lead"]
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller umschalten, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 
 .Über diese Aufgabe
@@ -181,7 +178,6 @@ mcc1A::> metrocluster operation show
 
 == Schritt 2: Öffnen Sie das Controller-Modul
 
-[role="lead"]
 Um auf Komponenten innerhalb des Controllers zuzugreifen, müssen Sie zuerst das Controller-Modul aus dem System entfernen und dann die Abdeckung am Controller-Modul entfernen.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
@@ -222,7 +218,6 @@ Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen,
 
 == Schritt 3: Ersetzen Sie die NVMEM-Batterie
 
-[role="lead"]
 Um die NVMEM-Batterie in Ihrem System zu ersetzen, müssen Sie die ausgefallene NVMEM-Batterie aus dem System entfernen und durch eine neue NVMEM-Batterie ersetzen.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
@@ -279,7 +274,6 @@ Vergewissern Sie sich, dass der Stecker an der Steckdose einrastet.
 
 == Schritt 4: Installieren Sie den Controller neu
 
-[role="lead"]
 Nachdem Sie eine Komponente im Controller-Modul ausgetauscht haben, müssen Sie das Controller-Modul im Systemgehäuse neu installieren und in einen Zustand versetzen, in dem Sie Diagnosetests auf der ersetzten Komponente ausführen können.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
@@ -315,7 +309,6 @@ NOTE: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige
 
 == Schritt 5: Führen Sie die Diagnose auf Systemebene aus
 
-[role="lead"]
 Nach der Installation einer neuen NVMEM-Batterie sollten Sie die Diagnose ausführen.
 
 Ihr System muss die LOADER-Eingabeaufforderung aufweisen, um die Diagnose auf Systemebene zu starten.
@@ -447,7 +440,6 @@ Nachdem Sie den Befehl ausgegeben haben, warten Sie, bis das System an der LOADE
 
 == Schritt 6 (nur MetroCluster mit zwei Nodes): Aggregate zurückschalten
 
-[role="lead"]
 Nachdem Sie in einer MetroCluster Konfiguration mit zwei Nodes den FRU-Austausch abgeschlossen haben, können Sie den MetroCluster SwitchBack-Vorgang durchführen. Damit wird die Konfiguration in ihren normalen Betriebszustand zurückversetzt, wobei die Synchronisations-Storage Virtual Machines (SVMs) auf dem ehemals beeinträchtigten Standort jetzt aktiv sind und Daten aus den lokalen Festplattenpools bereitstellen.
 
 Dieser Task gilt nur für MetroCluster-Konfigurationen mit zwei Nodes.
@@ -506,5 +498,4 @@ Wenn ein Wechsel eine lange Zeit in Anspruch nimmt, können Sie den Status der i
 
 == Schritt 7: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
-[role="lead"]
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

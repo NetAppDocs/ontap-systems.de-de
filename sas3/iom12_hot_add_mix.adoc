@@ -17,7 +17,6 @@ Wenn zusätzlicher Storage benötigt wird, können IOM12/IOM12B-Shelfs (SAS-Shel
 
 == Anforderungen für einen Hot-Add-Zusatz
 
-[role="lead"]
 Das HA-Paar, das Single-Controller oder die Stretch-MetroCluster-Konfiguration (System) müssen bestimmte Anforderungen erfüllen, bevor IOM12-/IOM12B-Shelfs in einem Stack aus IOM6-Shelfs hinzugefügt werden.
 
 
@@ -86,7 +85,6 @@ Die IOM12-Shelves verwenden Mini-SAS-HD-Anschlüsse. IOM6-Shelfs verwenden QSFP-
 
 == Anforderungen für Hot-Add-in-Bridge-MetroCluster-Konfigurationen
 
-[role="lead"]
 Wenn Sie im laufenden Betrieb IOM12/IOM12B-Shelves zu einem Stack von IOM6-Shelves hinzufügen, die über zwei ATTO FibreBridge Bridges in einer MetroCluster-Konfiguration verbunden sind, muss das System bestimmte Anforderungen erfüllen.
 
 * Wenn in der aktuellen Konfiguration Bridge-SAS-Ports vorhanden sind, sollten die IOM12-Shelves als separater Stack hinzugefügt werden.
@@ -138,7 +136,6 @@ Die IOM12/IOM12B-Einschübe verwenden Mini-SAS-HD-Steckverbinder. IOM6-Shelfs ve
 
 == Überlegungen für einen Hot-Add-Einsatz
 
-[role="lead"]
 Sie sollten sich mit Aspekten und Best Practices dieses Verfahrens vertraut machen, bevor Sie IOM12-/IOM12B-Shelfs im laufenden Betrieb einem Stack von IOM6-Shelfs hinzufügen.
 
 
@@ -226,7 +223,6 @@ NOTE: Die Migrationsanweisungen enthalten die Systemanforderungen für IBACP.
 
 == Bereiten Sie sich darauf vor, das Laufwerk manuell einem Hot-Add-Vorgang zuzuweisen
 
-[role="lead"]
 Wenn Sie die Eigentümerschaft der Laufwerke für die IOM12-Shelves manuell zuweisen, müssen Sie die automatische Laufwerkszuweisung deaktivieren, wenn sie aktiviert ist.
 
 .Bevor Sie beginnen
@@ -257,7 +253,6 @@ Wenn Sie über ein HA-Paar oder eine MetroCluster Konfiguration mit zwei Nodes v
 
 == Installation von Shelfs für ein Hot-Add-regale
 
-[role="lead"]
 Sie installieren das Shelf für jedes Shelf, das Sie im laufenden Betrieb hinzufügen, in ein Rack, verbinden die Netzkabel, schalten das Shelf ein und legen die Shelf-ID fest.
 
 . Installieren Sie das Rack Mount Kit (für Installationen mit zwei oder vier Pfosten), die mit Ihrem Festplatten-Shelf geliefert wurden. Verwenden Sie dazu den Installationsflyer, der mit dem Kit geliefert wurde.
@@ -395,7 +390,6 @@ Sie müssen beide Netzschalter ausschalten, 10 Sekunden warten und dann wieder e
 
 == Kabel-Shelfs für ein Hot-Add-Kabel
 
-[role="lead"]
 Wie Sie ein IOM12/IOM12B Shelf mit einem Stack von IOM12-Shelves verkabeln, hängt davon ab, ob das IOM12-Shelf das erste IOM12/IOM12B-Shelf ist, d. h., es gibt keine anderen IOM12-Shelves im Stack, Oder ob es sich um ein zusätzliches IOM12/IOM12B-Shelf zu einem vorhandenen gemischten Stack handelt, d. h. ein oder mehrere IOM12/IOM12B-Shelves sind bereits im Stack vorhanden. Es hängt auch davon ab, ob der Stack Multipath HA, Multipath-Konnektivität, Single Path HA oder Single Path-Konnektivität bietet.
 
 .Bevor Sie beginnen
@@ -651,7 +645,6 @@ NOTE: Für alle MetroCluster Konfigurationen ist eine manuelle Laufwerkszuweisun
 
 == Füllen Sie das Hot Add aus
 
-[role="lead"]
 Wenn Sie die automatische Laufwerkszuweisung im Rahmen der Vorbereitung für das Hot-Hinzufügen der IOM12/IOM12B-Shelfs zum Stack der IOM6-Shelfs deaktiviert haben, müssen Sie die Laufwerkseigentümer manuell zuweisen und bei Bedarf die automatische Laufwerkszuweisung erneut aktivieren.
 
 .Bevor Sie beginnen

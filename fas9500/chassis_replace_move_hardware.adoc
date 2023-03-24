@@ -6,11 +6,9 @@ summary: Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionie
 ---
 = Verschieben und ersetzen Sie die Hardware FAS9500
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
-
-
-
-== Verschieben und ersetzen Sie die Hardware FAS9500
 
 [role="lead"]
 Um das Gehäuse auszutauschen, müssen Sie die Komponenten aus dem alten Chassis entfernen und im Ersatzgehäuse installieren.
@@ -19,7 +17,6 @@ Um das Gehäuse auszutauschen, müssen Sie die Komponenten aus dem alten Chassis
 
 == Schritt 1: Entfernen Sie die Netzteile
 
-[role="lead"]
 Wenn Sie die Netzteile beim Ersetzen eines Gehäuses entfernen, deaktivieren, trennen und dann die vier Netzteile von der Rückseite des alten Gehäuses entfernen.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
@@ -59,7 +56,6 @@ Verriegelungsknopf
 
 == Schritt 2: Entfernen Sie die Lüfter
 
-[role="lead"]
 Sie müssen die sechs Lüftermodule, die sich an der Vorderseite des Gehäuses befinden, entfernen, wenn Sie das Gehäuse austauschen.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
@@ -101,7 +97,6 @@ Schieben Sie den Lüfter in das Gehäuse ein-/heraus
 
 == Schritt 3: Entfernen Sie das Controller-Modul
 
-[role="lead"]
 Um das Chassis auszutauschen, müssen Sie das Controller-Modul oder die Module aus dem alten Chassis entfernen.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
@@ -142,7 +137,6 @@ Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen,
 
 == Schritt 4: Entfernen Sie die E/A-Module
 
-[role="lead"]
 Um I/O-Module aus dem alten Chassis, einschließlich der NVRAM-Module, zu entfernen, befolgen Sie die spezifischen Abfolge von Schritten. Sie müssen das Modul Flash Cache, falls vorhanden, nicht aus dem NVRAM-Modul entfernen, wenn Sie es in ein neues Chassis verschieben.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
@@ -198,7 +192,6 @@ E/A-Nockenverriegelung vollständig entriegelt
 
 == Schritt 5: Entfernen Sie das Leistungsmodul des De-Stage-Controllers
 
-[role="lead"]
 Entfernen Sie die beiden abgebachten Controller-Stromversorgungsmodule von der Vorderseite des alten Gehäuses.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
@@ -227,7 +220,6 @@ DCPM-Modul Terra cotta Verriegelungsknopf
 
 == Schritt 6: Ersetzen Sie ein Chassis aus dem Rack oder Systemschrank der Ausrüstung
 
-[role="lead"]
 Sie müssen das vorhandene Chassis aus dem Rack oder dem Systemschrank entfernen, bevor Sie das Ersatzgehäuse installieren können.
 
 . Entfernen Sie die Schrauben von den Montagepunkten des Gehäuses.
@@ -249,7 +241,6 @@ NOTE: Wenn sich das System in einem Systemschrank befindet, müssen Sie möglich
 
 == Schritt 7: Bewegen Sie das USB-LED-Modul in das neue Gehäuse
 
-[role="lead"]
 Sobald das neue Gehäuse im Rack oder Schrank installiert ist, schieben Sie das USB-LED-Modul von der Vorderseite des alten Gehäuses in das neue Gehäuse.
 
 .Animation - USB-Modul entfernen/installieren
@@ -297,7 +288,6 @@ NOTE: Modul und Steckplatz sind codiert. Das Modul nicht in die Öffnung zwingen
 
 == Schritt 9: Installieren Sie die Lüfter im Gehäuse
 
-[role="lead"]
 Um die Lüftermodule beim Austausch des Gehäuses zu installieren, müssen Sie eine bestimmte Sequenz von Aufgaben durchführen.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
@@ -313,7 +303,6 @@ Wenn das Lüftermodul erfolgreich in das Gehäuse eingesetzt wurde, blinkt die g
 
 == Schritt 10: E/A-Module installieren
 
-[role="lead"]
 Folgen Sie zum Installieren der I/O-Module, einschließlich der NVRAM/Flash Cache Module aus dem alten Chassis, den entsprechenden Schritten.
 
 Sie müssen das Gehäuse installiert haben, damit Sie die I/O-Module in die entsprechenden Steckplätze im neuen Gehäuse installieren können.
@@ -332,7 +321,6 @@ NOTE: Wenn im alten Chassis leere I/O-Panels vorhanden sind, schieben Sie sie je
 
 == Schritt 11: Installieren Sie die Netzteile
 
-[role="lead"]
 Beim Ersetzen eines Gehäuses installieren Sie die Netzteile beim Installieren eines Gehäuses, indem Sie die Netzteile in das Ersatzgehäuse und den Anschluss an die Stromversorgung anschließen.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
@@ -356,7 +344,6 @@ IMPORTANT: Schließen Sie das Netzkabel nur an das Netzteil an. Schließen Sie d
 
 == Schritt 12: Installieren Sie den Controller
 
-[role="lead"]
 Nachdem Sie das Controller-Modul und alle anderen Komponenten im neuen Chassis installiert haben, booten Sie es in einem Status, wo Sie den Interconnect-Diagnosetest ausführen können.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.

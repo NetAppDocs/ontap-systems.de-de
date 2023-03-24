@@ -37,7 +37,6 @@ Da die System-ID vom NVRAM-Modul abgeleitet wird, werden beim Ersetzen des Modul
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
 .Schritte
-[role="lead"]
 Fahren Sie den Regler herunter oder übernehmen Sie ihn mit einer der folgenden Optionen.
 
 [role="tabbed-block"]
@@ -151,7 +150,6 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 
 == Schritt 2: Ersetzen Sie das NVRAM-Modul
 
-[role="lead"]
 Zum Austauschen des NVRAM-Moduls suchen Sie es in Steckplatz 6 im Chassis und befolgen die spezifische Sequenz von Schritten.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
@@ -228,7 +226,6 @@ DIMM- und DIMM-Auswurfklammern
 
 == Schritt 3: Ersetzen Sie ein NVRAM-DIMM
 
-[role="lead"]
 Um NVRAM-DIMMs im NVRAM-Modul zu ersetzen, müssen Sie das NVRAM-Modul entfernen, das Modul öffnen und dann das Ziel-DIMM ersetzen.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
@@ -306,7 +303,6 @@ DIMM- und DIMM-Auswurfklammern
 
 == Schritt 4: Starten Sie den Controller nach dem FRU-Austausch neu
 
-[role="lead"]
 Nachdem Sie die FRU ersetzt haben, müssen Sie das Controller-Modul neu booten.
 
 . Um ONTAP von der LOADER-Eingabeaufforderung zu booten, geben Sie ein `bye`.
@@ -316,7 +312,6 @@ Nachdem Sie die FRU ersetzt haben, müssen Sie das Controller-Modul neu booten.
 
 == Schritt 5: Festplatten neu zuweisen
 
-[role="lead"]
 Sie müssen die Änderung der System-ID beim Booten des Ersatz-Controllers bestätigen und anschließend überprüfen, ob die Änderung implementiert wurde.
 
 
@@ -414,7 +409,7 @@ dr-group-id            cluster node           configuration-state
 4 entries were displayed.
 ----
 . Vergewissern Sie sich, dass die erwarteten Volumes für jeden Controller vorhanden sind: `vol show -node node-name`
-. Wenn die Speicherverschlüsselung aktiviert ist, müssen Sie ************
+. Wenn die Speicherverschlüsselung aktiviert ist, müssen Sie die Funktion wiederherstellen.
 . Wenn Sie die automatische Übernahme beim Neustart deaktiviert haben, aktivieren Sie sie vom gesunden Controller: `storage failover modify -node replacement-node-name -onreboot true`
 
 
@@ -422,7 +417,6 @@ dr-group-id            cluster node           configuration-state
 
 == Schritt 6: Stellen Sie die Funktionen für Storage und Volume Encryption wieder her
 
-[role="lead"]
 Wenn die Speicherverschlüsselung aktiviert ist, gehen Sie wie folgt vor.
 
 [role="tabbed-block"]
@@ -448,7 +442,7 @@ TmV0QXBWIETLESBKBG9iAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1A
 
 +
 
-NOTE: Der Node kehrt zum Startmenü zurück.
+NOTE: Der Controller kehrt zum Startmenü zurück.
 
 . Option 1 auswählen, `Normal Boot`
 . Geben Sie nur die CFO-Aggregate mit dem zurück `storage failover giveback -fromnode local -only-cfo-aggregates true` Befehl.
@@ -505,12 +499,12 @@ NOTE: Sie können das verwenden `security key-manager key query -key-type NSE-AK
 --
 .Option 2: Verwenden Von External Manager
 --
-. Starten Sie den Node im Boot-Menü.
+. Starten Sie den Controller im Boot-Menü.
 . Wählen Sie Option 11, `Configure node for external key management`.
 . Geben Sie die Informationen zum Verwaltungszertifikat an den Eingabeaufforderungen ein.
 +
 
-NOTE: Nachdem die Informationen zum Managementzertifikat abgeschlossen sind, kehrt der Node zum Boot-Menü zurück.
+NOTE: Der Controller kehrt zum Startmenü zurück, nachdem die Managementzertifikatinformationen abgeschlossen sind.
 
 . Option 1 auswählen, `Normal Boot`
 . Bewegen Sie das Konsolenkabel auf den Partner Controller und geben Sie den Ziel-Controller-Storage mit dem Storage Failover Giveback -vNode local -only-cfo-Aggregates echten lokalen Befehl zurück.
@@ -568,5 +562,4 @@ NOTE: Sie können das verwenden `security key-manager key query -key-type NSE-AK
 
 == Schritt 7: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
-[role="lead"]
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

@@ -21,7 +21,6 @@ Um eine PCIe-Karte zu ersetzen, müssen Sie die Kabel von den Karten im Riser tr
 
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
-[role="lead"]
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 
 Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE anzeigt, um die Berechtigung und den Zustand zu erhalten, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^].
@@ -67,7 +66,6 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 
 == Schritt 2: Entfernen Sie das Controller-Modul
 
-[role="lead"]
 Sie müssen das Controller-Modul aus dem Chassis entfernen, wenn Sie das Controller-Modul ersetzen oder eine Komponente im Controller-Modul ersetzen.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
@@ -145,7 +143,6 @@ Luftkanal
 
 == Schritt 3: Ersetzen Sie eine PCIe-Karte
 
-[role="lead"]
 Um eine PCIe-Karte zu ersetzen, müssen Sie die Verkabelung und alle SFPs von den Ports auf den PCIe-Karten im Ziel-Riser entfernen, den Riser aus dem Controller-Modul entfernen, die PCIe-Karte herausnehmen und austauschen, den Riser neu installieren und wieder einsetzen.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
@@ -228,7 +225,6 @@ Bei der Verriegelung ist die Verriegelung bündig mit der Oberseite des Riser un
 
 == Schritt 4: Installieren Sie das Controller-Modul neu
 
-[role="lead"]
 Nachdem Sie eine Komponente im Controller-Modul ausgetauscht haben, müssen Sie das Controller-Modul im Systemgehäuse neu installieren und starten.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
@@ -300,5 +296,4 @@ NOTE: Achten Sie darauf, den Wartungsmodus nach Abschluss der Konvertierung zu b
 
 == Schritt 5: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
-[role="lead"]
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

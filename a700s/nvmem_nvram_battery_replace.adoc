@@ -19,7 +19,6 @@ Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Fall
 
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
-[role="lead"]
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 
 Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE anzeigt, um die Berechtigung und den Zustand zu erhalten, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^].
@@ -65,7 +64,6 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 
 == Schritt 2: Entfernen Sie das Controller-Modul
 
-[role="lead"]
 Sie müssen das Controller-Modul aus dem Chassis entfernen, wenn Sie das Controller-Modul ersetzen oder eine Komponente im Controller-Modul ersetzen.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
@@ -110,7 +108,6 @@ Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen,
 
 == Schritt 3: Tauschen Sie die NVRAM-Batterie aus
 
-[role="lead"]
 Um die NVRAM-Batterie auszutauschen, müssen Sie den fehlerhaften NVRAM-Akku aus dem Controller-Modul entfernen und die Ersatz-NVRAM-Batterie in das Controller-Modul installieren.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
@@ -146,7 +143,6 @@ Blaue Verriegelungslasche für NVRAM-Batterien
 
 == Schritt 4: Installieren Sie das Controller-Modul neu
 
-[role="lead"]
 Nachdem Sie eine Komponente im Controller-Modul ausgetauscht haben, müssen Sie das Controller-Modul im Systemgehäuse neu installieren und starten.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
@@ -217,5 +213,4 @@ NOTE: Achten Sie darauf, den Wartungsmodus nach Abschluss der Konvertierung zu b
 
 == Schritt 5: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
-[role="lead"]
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

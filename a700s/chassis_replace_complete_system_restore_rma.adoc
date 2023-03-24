@@ -17,7 +17,6 @@ Sie müssen den HA-Status des Chassis überprüfen, Diagnosen ausführen und das
 
 == Schritt: Überprüfen Sie den HA-Status des Chassis und legen Sie diesen fest
 
-[role="lead"]
 Sie müssen den HA-Status des Chassis überprüfen und gegebenenfalls den Status entsprechend Ihrer Systemkonfiguration aktualisieren.
 
 . Zeigen Sie im Wartungsmodus von einem der Controller-Module aus den HA-Status des lokalen Controller-Moduls und des Chassis an: `ha-config show`
@@ -46,7 +45,6 @@ Für den HA-Status kann einer der folgenden Werte vorliegen:
 
 == Schritt 2: Diagnose ausführen
 
-[role="lead"]
 Nachdem Sie eine Komponente im System ausgetauscht haben, sollten Sie Diagnosetests auf dieser Komponente durchführen.
 
 Ihr System muss die LOADER-Eingabeaufforderung aufweisen, um die Diagnose zu starten.
@@ -72,5 +70,4 @@ Nachdem Sie den Befehl ausgegeben haben, sollten Sie warten, bis das System an d
 
 == Schritt 3: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
-[role="lead"]
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

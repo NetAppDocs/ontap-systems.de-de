@@ -17,7 +17,6 @@ Setzen Sie das Ersatzverfahren fort, indem Sie den Speicher neu zuweisen und die
 
 == Schritt 1: Das System erneut einsetzen
 
-[role="lead"]
 Nach Ausführung der Diagnose müssen Sie die Speicher- und Netzwerkverbindungen des Controller-Moduls wieder herstellen können.
 
 .Schritte
@@ -36,10 +35,8 @@ Nach Ausführung der Diagnose müssen Sie die Speicher- und Netzwerkverbindungen
 
 == Schritt 2: Festplatten neu zuweisen
 
-[role="lead"]
 Wenn sich das Storage-System in einem HA-Paar befindet, wird die System-ID des neuen Controller-Moduls automatisch den Festplatten zugewiesen, wenn die Rückgabe am Ende des Verfahrens stattfindet. Sie müssen die Änderung der System-ID beim Booten des Node _Replacement_ bestätigen und anschließend überprüfen, ob die Änderung implementiert wurde.
 
-[role="lead"]
 Diese Vorgehensweise gilt nur für Systeme, auf denen ONTAP in einem HA-Paar ausgeführt wird.
 
 . Wenn sich der Node _Replacement_ im Wartungsmodus befindet (zeigt das an `*>` Eingabeaufforderung, beenden Sie den Wartungsmodus und gehen Sie zur LOADER-Eingabeaufforderung: `halt`

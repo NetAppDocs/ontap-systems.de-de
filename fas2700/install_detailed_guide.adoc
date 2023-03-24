@@ -17,7 +17,6 @@ Dieser Leitfaden enthält detaillierte Schritt-für-Schritt-Anleitungen zur Inst
 
 == Schritt 1: Installation vorbereiten
 
-[role="lead"]
 Um Ihr FAS2700 oder AFF A220 System zu installieren, müssen Sie auf der NetApp Support Site ein Konto erstellen, Ihr System registrieren und die Lizenzschlüssel abrufen. Außerdem müssen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp für Ihr System inventarisieren und bestimmte Netzwerkinformationen erfassen.
 
 Sie müssen Zugriff auf das Hardware Universe haben, um Informationen zu den Standortanforderungen sowie zusätzliche Informationen über Ihr konfiguriertes System zu erhalten. Möglicherweise möchten Sie auch Zugriff auf die Versionshinweise für Ihre Version von ONTAP haben, um weitere Informationen zu diesem System zu erhalten.
@@ -170,7 +169,6 @@ https://library.netapp.com/ecm/ecm_download_file/ECMLP2839002["Cluster-Konfigura
 
 == Schritt 2: Installieren Sie die Hardware
 
-[role="lead"]
 Sie müssen das System je nach Bedarf in einem 4-Säulen-Rack oder NetApp Systemschrank installieren.
 
 .Schritte
@@ -194,14 +192,12 @@ image::../media/drw_cable_management_arm_install.png[drw-Kabelmanagement-ARM-Ins
 
 == Schritt 3: Controller mit Ihrem Netzwerk verbinden
 
-[role="lead"]
 Sie können die Controller mithilfe der Switch-freien Cluster-Methode mit zwei Nodes oder des Cluster Interconnect-Netzwerks mit dem Netzwerk verkabeln.
 
 
 
 === Option 1: Verkabeln eines 2-Node-Clusters ohne Switches, Unified Network-Konfiguration
 
-[role="lead"]
 Managementnetzwerk, UTA2-Datennetzwerk und Management-Ports auf den Controllern werden mit Switches verbunden. Die Cluster Interconnect-Ports sind an beiden Controllern verkabelt.
 
 Sie müssen sich an den Netzwerkadministrator wenden, um Informationen über das Anschließen des Systems an die Switches zu erhalten.
@@ -270,14 +266,13 @@ image:../media/oie_legend_icon_attn_symbol.png[""]
 Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
 
 |===
-. Informationen zum Kabelanschluss des Speichers finden Sie unter link:install_detailed_guide.md#["Verkabelung der Controller mit Laufwerk-Shelfs"]
+. Informationen zum Kabelanschluss des Speichers finden Sie unter <<Schritt 4: Controller mit Laufwerk-Shelfs verkabeln>>
 
 
 
 
 === Option 2: Verkabelung eines Switch-Clusters, Unified-Netzwerk-Konfiguration
 
-[role="lead"]
 Managementnetzwerk, UTA2-Datennetzwerk und Management-Ports auf den Controllern werden mit Switches verbunden. Die Cluster-Interconnect-Ports sind mit den Cluster-Interconnect-Switches verbunden.
 
 Sie müssen sich an den Netzwerkadministrator wenden, um Informationen über das Anschließen des Systems an die Switches zu erhalten.
@@ -348,14 +343,13 @@ image:../media/oie_legend_icon_attn_symbol.png[""]
 Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
 
 |===
-. Informationen zum Kabelanschluss des Speichers finden Sie unter link:install_detailed_guide.md#["Verkabelung der Controller mit Laufwerk-Shelfs"]
+. Informationen zum Kabelanschluss des Speichers finden Sie unter <<Schritt 4: Controller mit Laufwerk-Shelfs verkabeln>>
 
 
 
 
 === Option 3: Verkabelung eines 2-Node-Clusters ohne Switches, Ethernet-Netzwerkkonfiguration
 
-[role="lead"]
 Managementnetzwerk, Ethernet-Datennetzwerk und Management-Ports auf den Controllern sind mit Switches verbunden. Die Cluster Interconnect-Ports sind an beiden Controllern verkabelt.
 
 Sie müssen sich an den Netzwerkadministrator wenden, um Informationen über das Anschließen des Systems an die Switches zu erhalten.
@@ -413,14 +407,13 @@ image:../media/oie_legend_icon_attn_symbol.png[""]
 Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
 
 |===
-. Informationen zum Kabelanschluss des Speichers finden Sie unter link:install_detailed_guide.md#["Verkabelung der Controller mit Laufwerk-Shelfs"]
+. Informationen zum Kabelanschluss des Speichers finden Sie unter <<Schritt 4: Controller mit Laufwerk-Shelfs verkabeln>>
 
 
 
 
 === Option 4: Kabel ein Switch-Cluster, Ethernet-Netzwerk-Konfiguration
 
-[role="lead"]
 Managementnetzwerk, Ethernet-Datennetzwerk und Management-Ports auf den Controllern sind mit Switches verbunden. Die Cluster-Interconnect-Ports sind mit den Cluster-Interconnect-Switches verbunden.
 
 Sie müssen sich an den Netzwerkadministrator wenden, um Informationen über das Anschließen des Systems an die Switches zu erhalten.
@@ -476,21 +469,19 @@ image:../media/oie_legend_icon_attn_symbol.png[""]
 Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
 
 |===
-. Informationen zum Kabelanschluss des Speichers finden Sie unter link:install_detailed_guide.md#["Verkabelung der Controller mit Laufwerk-Shelfs"]
+. Informationen zum Kabelanschluss des Speichers finden Sie unter <<Schritt 4: Controller mit Laufwerk-Shelfs verkabeln>>
 
 
 
 
 == Schritt 4: Controller mit Laufwerk-Shelfs verkabeln
 
-[role="lead"]
 Sie müssen die Controller mithilfe der integrierten Storage-Ports mit den Shelfs verkabeln. NetApp empfiehlt MP-HA-Verkabelung für Systeme mit externem Storage. Wenn Sie ein SAS-Bandlaufwerk haben, können Sie Single-Path-Verkabelung verwenden. Wenn Sie keine externen Shelfs haben, ist die MP-HA-Verkabelung zu internen Laufwerken optional (nicht abgebildet), wenn die SAS-Kabel zusammen mit dem System bestellt werden.
 
 
 
 === Option 1: Kabelspeicherung auf einem HA-Paar mit externen Festplatten-Shelfs
 
-[role="lead"]
 Sie müssen die Shelf-Verbindungen verkabeln und dann beide Controller mit den Laufwerk-Shelfs verkabeln.
 
 Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
@@ -554,23 +545,21 @@ Verbinden Sie jeden Node mit IOM B im Stack
 Wenn Sie über mehr als einen Festplatten-Shelf-Stack verfügen, lesen Sie die „_Installation and Cabling Guide_“ für den Laufwerk-Shelf-Typ.
 
 +
-link:../com.netapp.doc.hw-ds-sas3-icg/home.html["Installation und Verkabelung"]
+https://docs.netapp.com/us-en/ontap-systems/sas3/index.html["Installation und Verkabelung"]
 
-. Informationen zum Abschließen der Einrichtung des Systems finden Sie unter link:install_detailed_guide.md#["Die Systemeinrichtung und -Konfiguration wird abgeschlossen"]
+. Informationen zum Abschließen der Einrichtung des Systems finden Sie unter <<Schritt 5: System-Setup und -Konfiguration abschließen>>
 
 
 
 
 == Schritt 5: System-Setup und -Konfiguration abschließen
 
-[role="lead"]
 Die Einrichtung und Konfiguration des Systems kann mithilfe der Cluster-Erkennung nur mit einer Verbindung zum Switch und Laptop abgeschlossen werden. Sie können auch direkt eine Verbindung zu einem Controller im System herstellen und dann eine Verbindung zum Management Switch herstellen.
 
 
 
 === Option 1: Schließen Sie das System-Setup ab, wenn die Netzwerkerkennung aktiviert ist
 
-[role="lead"]
 Wenn die Netzwerkerkennung auf Ihrem Laptop aktiviert ist, können Sie das System mit der automatischen Cluster-Erkennung einrichten und konfigurieren.
 
 .Schritte
@@ -625,7 +614,6 @@ https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["ONTAP Konfigurati
 
 === Option 2: Abschluss der Systemeinrichtung und -Konfiguration, falls die Netzwerkerkennung nicht aktiviert ist
 
-[role="lead"]
 Wenn die Netzwerkerkennung auf Ihrem Laptop nicht aktiviert ist, müssen Sie die Konfiguration und das Setup mit dieser Aufgabe abschließen.
 
 .Schritte

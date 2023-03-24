@@ -17,7 +17,6 @@ Sie können ein NS224-Festplatten-Shelf im laufenden Betrieb hinzufügen, nachde
 
 == Anforderungen für einen Hot-Add-Zusatz
 
-[role="lead"]
 Ihr HA-Paar muss bestimmte Anforderungen erfüllen, bevor ein NS2224-Laufwerk-Shelf hinzugefügt werden kann.
 
 * Ihr Plattformmodell und Ihre ONTAP-Version müssen NS224-Shelf und Laufwerke unterstützen, die Sie hinzufügen möchten.
@@ -74,7 +73,6 @@ Zum Ändern der Shelf-ID greifen Sie mit dem Büroklammer oder Kugelschreiber au
 
 == Überlegungen für einen Hot-Add-Einsatz
 
-[role="lead"]
 Bevor Sie ein NS224-Festplatten-Shelf im laufenden Betrieb hinzufügen, sollten Sie sich mit Best Practices und Aspekten dieser Vorgehensweise vertraut machen.
 
 * Wenn Sie ein ASA-HA-Paar haben, das NS224-Shelves unterstützt, können Sie dieses Verfahren verwenden.
@@ -119,7 +117,6 @@ NOTE: Firmware-Updates können bis zu 30 Minuten dauern.
 
 == Bereiten Sie sich auf ein Hot-Add vor
 
-[role="lead"]
 Sie müssen die Vorbereitungsaufgaben für Ihr HA-Paar abschließen, bevor Sie ein NS224-Festplatten-Shelf im laufenden Betrieb hinzufügen.
 
 
@@ -373,7 +370,6 @@ Sie müssen die automatische Laufwerkszuweisung auf beiden Controller-Modulen de
 
 == Installieren Sie ein Laufwerk-Shelf für einen Hot-Add-Zusatz
 
-[role="lead"]
 Bei der Installation eines neuen NS224-Festplatten-Shelfs muss das Shelf in ein Rack oder Schrank installiert werden, die Stromkabel (das Shelf wird automatisch eingeschaltet) anschließen und die Shelf-ID eingestellt werden.
 
 .Bevor Sie beginnen
@@ -441,7 +437,6 @@ Wenn die Stromversorgung wiederhergestellt ist, leuchten die LEDs mit zweifarbig
 
 == Verkabeln Sie ein Festplatten-Shelf für ein Hot-Add-Kabel
 
-[role="lead"]
 Sie verkabeln jedes NS224-Laufwerk-Shelf, das Sie im laufenden Betrieb hinzufügen, sodass jedes Shelf zwei Verbindungen zu jedem Controller-Modul im HA-Paar hat. Abhängig von der Anzahl der Shelves, die Sie „Hot-hinzufügen“ und Ihrem Plattformmodell verwenden, können Sie RoCE-fähige Ports an Bord der Controller, auf RoCE-fähigen PCIe-Karten, einer Kombination aus beiden oder auf RoCE-fähigen I/O-Modulen verwenden.
 
 
@@ -564,7 +559,6 @@ Andernfalls werden Sie mit diesem Verfahren durchgeführt.
 
 === Verkabeln Sie ein Hot-Add-Shelf für ein FAS500f- oder AFF A250-HA-Paar
 
-[role="lead"]
 Wenn zusätzlicher Storage benötigt wird, können Sie ein NS224-Festplatten-Shelf zu einem FAS500f- oder AFF A250-HA-Paar hinzufügen.
 
 .Bevor Sie beginnen
@@ -966,7 +960,6 @@ Andernfalls werden Sie mit diesem Verfahren durchgeführt.
 
 == Füllen Sie das Hot Add aus
 
-[role="lead"]
 Wenn Sie die automatische Laufwerkszuweisung im Rahmen der Vorbereitung auf das NS224-Festplatten-Shelf-Hot-Add deaktiviert haben, müssen Sie die Laufwerkseigentümer manuell zuweisen und bei Bedarf die automatische Laufwerkszuweisung erneut aktivieren.
 
 .Bevor Sie beginnen

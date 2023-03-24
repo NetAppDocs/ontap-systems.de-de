@@ -20,7 +20,6 @@ Dieser Artikel enthält Schritt-für-Schritt-Anleitungen zur Installation eines 
 Um Ihr System zu installieren, müssen Sie auf der NetApp Support Site ein Konto erstellen, Ihr System registrieren und Lizenzschlüssel abrufen. Außerdem müssen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp für Ihr System inventarisieren und bestimmte Netzwerkinformationen erfassen.
 
 .Bevor Sie beginnen
-[role="lead"]
 Sie müssen Zugriff auf die haben https://hwu.netapp.com["NetApp Hardware Universe"^] Weitere Informationen zu Standortanforderungen sowie zusätzliche Informationen zu Ihrem konfigurierten System.
 
 Möglicherweise möchten Sie auch Zugriff auf den haben http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["Versionshinweise zu ONTAP 9"^] Für Ihre Version von ONTAP finden Sie weitere Informationen zu diesem System.
@@ -171,7 +170,6 @@ System einschalten
 
 == Schritt 2: Installieren Sie die Hardware
 
-[role="lead"]
 Sie müssen das System je nach Bedarf in einem 4-Säulen-Rack oder NetApp Systemschrank installieren.
 
 . Installieren Sie die Schienensatz nach Bedarf.
@@ -198,14 +196,12 @@ image::../media/drw_a900_controller_in _chassis_ID_IEOPS-856.svg[drw a900-Contro
 
 == Schritt 3: Controller mit Ihrem Netzwerk verbinden
 
-[role="lead"]
 Sie können die Controller mithilfe der Switch-freien Cluster-Methode mit zwei Nodes oder des Cluster Interconnect-Netzwerks mit dem Netzwerk verkabeln.
 
 
 
 === Option 1: Cluster mit zwei Nodes ohne Switches
 
-[role="lead"]
 Managementnetzwerk, Datennetzwerk und Management-Ports auf den Controllern sind mit Switches verbunden. Die Cluster Interconnect-Ports sind an beiden Controllern verkabelt.
 
 .Bevor Sie beginnen
@@ -286,7 +282,6 @@ image:../media/oie_cable_sfp_gbe_copper.png[""]
 
 === Option 2: Cluster mit Switch
 
-[role="lead"]
 Managementnetzwerk, Datennetzwerk und Management-Ports auf den Controllern sind mit Switches verbunden. Die Cluster Interconnect- und HA-Ports sind mit dem Cluster/HA-Switch verbunden.
 
 .Bevor Sie beginnen
@@ -371,7 +366,6 @@ image:../media/oie_cable_sfp_gbe_copper.png[""]
 
 === Option 1: Verbinden Sie die Controller mit einem einzigen NS224-Laufwerk-Shelf in AFF A900
 
-[role="lead"]
 Sie müssen jeden Controller an die NSM-Module am NS224-Laufwerk-Shelf bei einem AFF A900-System verkabeln.
 
 .Bevor Sie beginnen
@@ -436,7 +430,6 @@ image:../media/oie_cable100_gbe_qsfp28.png[""]
 
 === Option 2: Verbinden Sie die Controller mit zwei NS224 Laufwerk-Shelfs in AFF A900
 
-[role="lead"]
 Sie müssen jeden Controller mit den NSM-Modulen der NS224 Laufwerk-Shelfs verkabeln.
 
 .Bevor Sie beginnen
@@ -503,14 +496,12 @@ image:../media/oie_cable100_gbe_qsfp28.png[""]
 
 == Schritt 5: System-Setup und -Konfiguration abschließen
 
-[role="lead"]
 Die Einrichtung und Konfiguration des Systems kann mithilfe der Cluster-Erkennung nur mit einer Verbindung zum Switch und Laptop abgeschlossen werden. Sie können auch direkt eine Verbindung zu einem Controller im System herstellen und dann eine Verbindung zum Management Switch herstellen.
 
 
 
 === Option 1: Wenn die Netzwerkerkennung aktiviert ist
 
-[role="lead"]
 Wenn die Netzwerkerkennung auf Ihrem Laptop aktiviert ist, können Sie das System mit der automatischen Cluster-Erkennung einrichten und konfigurieren.
 
 . Verwenden Sie die folgende Animation oder Zeichnung, um eine oder mehrere Laufwerk-Shelf-IDs festzulegen:
@@ -621,7 +612,6 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 
 === Option 2: Wenn die Netzwerkerkennung nicht aktiviert ist
 
-[role="lead"]
 Wenn Sie keinen Windows- oder Mac-basierten Laptop oder keine Konsole verwenden oder die automatische Erkennung nicht aktiviert ist, müssen Sie die Konfiguration und das Setup mit dieser Aufgabe abschließen.
 
 . Laptop oder Konsole verkabeln und konfigurieren:
@@ -633,7 +623,7 @@ NOTE: Informationen zur Konfiguration des Konsolenport finden Sie in der Online-
 
 .. Schließen Sie das Konsolenkabel über das im System gelieferte Konsolenkabel an den Laptop oder die Konsole an den Management Switch im Management-Subnetz.
 +
-image::../media/drw_9000_cable_console_switch_controller_IEOPS-953.svg[drw 9000-Kabelkonsolenschalter-Controller IEOPS 953]
+image::../media/drw_A900_cable_console_switch_controller_IEOPS-953.svg[drw A900 Kabelkonsolen-Switch-Controller IEOPS 953]
 
 .. Weisen Sie dem Laptop oder der Konsole eine TCP/IP-Adresse zu. Verwenden Sie dabei eine Adresse, die sich im Management-Subnetz befindet.
 

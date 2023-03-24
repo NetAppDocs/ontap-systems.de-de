@@ -32,7 +32,6 @@ Sie sollten vermeiden, von den Regeln zu abweichen; Abweichungen können Zuverl�
 
 == Konfigurationsregeln
 
-[role="lead"]
 Platten-Shelfs mit IOM12-Modulen werden bei spezifischen Typen von HA-Paar- und Single-Controller-Konfigurationen unterstützt.
 
 
@@ -59,7 +58,6 @@ Da der interne Storage Single Path-Konnektivität verwendet, gibt ONTAP gelegent
 
 == Regeln für die Nummerierung von Controller-Steckplätzen
 
-[role="lead"]
 Zum Einsatz von Verkabelungsregeln für alle unterstützten HA-Paare und Single Controller-Konfigurationen wird eine Nummerierungskonvention für Controller-Steckplätze verwendet.
 
 * Für alle HA-Paare und Single Controller-Konfigurationen gilt:
@@ -84,7 +82,6 @@ image::../media/slot0_rules.png[Slot0-Regeln]
 
 == Verbindungsregeln für Shelf-zu-Shelf
 
-[role="lead"]
 Wenn Sie mehr als ein Platten-Shelf in einem Stapel an Platten-Shelfs haben, werden diese über die jeweiligen SAS-Domänen (IOM A und IOM B) mit den entsprechenden Shelf-to-Shelf-Kabeln „`standard`“ oder „`double-wide`“ miteinander verbunden. Ihre Verwendung von Shelf-to-Shelf-Verkabelungen zwischen "`standard`" oder "`double-wide`" hängt von der Konfiguration ab.
 
 
@@ -121,7 +118,6 @@ image::../media/drw_shelf_to_shelf_double_wide.gif[drw-Shelf für doppelt breite
 
 == Verbindungsregeln für Controller zu Stack
 
-[role="lead"]
 Sie können die SAS-Verbindungen von jedem Controller korrekt mit jedem Stack in einem HA-Paar oder in einer Single-Controller-Konfiguration verkabeln, indem Sie verstehen, dass SAS-Platten-Shelves softwarebasierte Platten-Ownership verwenden, wie die Controller-Ports A/C und B/D mit Stacks verbunden sind, Wie die Controller-Ports A/C und B/D in Port-Paaren organisiert sind und wie Plattformen mit internem Storage ihre Controller-Ports mit Stacks verbunden haben.
 
 
@@ -280,7 +276,6 @@ image::../media/drw_fas2600_mpha_domain_example.png[drw fas2600 mpha-Domain-Beis
 
 == Kabelregeln für optische Mini-SAS-HD-SAS-Kabel
 
-[role="lead"]
 Sie können Mini-SAS-HD-SAS-optische Kabel verwenden - Multimode-Aktivkabel (AOC) mit Mini-SAS-HD-zu-Mini-SAS-HD-Anschlüssen und OM4-Breakout-Kabeln mit Mini-SAS-HD-zu-LC-Anschlüssen - für SAS-Verbindungen über große Entfernungen bei bestimmten Konfigurationen mit Platten-Shelves mit IOM12-Modulen.
 
 * Ihre Plattform und Version von ONTAP müssen den Einsatz von Mini-SAS HD SAS optischen Kabeln unterstützen: Multimode-Aktivkabel (AOC) mit Mini-SAS-HD-zu-Mini-SAS-HD-Anschlüssen und Multimode-Breakout-Kabeln (OM4) mit Mini-SAS-HD-zu-LC-Anschlüssen.

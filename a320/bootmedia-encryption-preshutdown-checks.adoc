@@ -39,7 +39,6 @@ Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Ca
 
 == Prüfen Sie NVE oder NSE auf Systemen mit ONTAP 9.6 und höher
 
-[role="lead"]
 Vor dem Herunterfahren des beeinträchtigten Controllers müssen Sie überprüfen, ob im System NetApp Volume Encryption (NVE) oder NetApp Storage Encryption (NSE) aktiviert ist. In diesem Fall müssen Sie die Konfiguration überprüfen.
 
 . Überprüfen Sie, ob NVE für alle Volumes im Cluster verwendet wird: `volume show -is-encrypted true`

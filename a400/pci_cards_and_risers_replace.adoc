@@ -21,14 +21,12 @@ Um eine PCIe- oder Mezzanine-Karte zu ersetzen, müssen Sie die Kabel und alle S
 
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
-[role="lead"]
 Sie können den beeinträchtigten Controller je nach Hardwarekonfiguration des Speichersystems mithilfe verschiedener Verfahren herunterfahren oder übernehmen.
 
 [role="tabbed-block"]
 ====
 .Option 1: Die meisten Konfigurationen
 --
-[role="lead"]
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 
 .Über diese Aufgabe
@@ -84,7 +82,6 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 --
 .Option 2: Controller befindet sich in einem MetroCluster mit zwei Nodes
 --
-[role="lead"]
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller umschalten, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 
 .Über diese Aufgabe
@@ -183,7 +180,6 @@ mcc1A::> metrocluster operation show
 
 == Schritt 2: Entfernen Sie das Controller-Modul
 
-[role="lead"]
 Um auf Komponenten im Controller-Modul zuzugreifen, müssen Sie das Controller-Modul aus dem Gehäuse entfernen.
 
 Sie können die folgenden Animationen, Abbildungen oder die geschriebenen Schritte verwenden, um das Controller-Modul aus dem Gehäuse zu entfernen.
@@ -214,14 +210,13 @@ Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen,
 
 == Schritt 3: Ersetzen Sie eine PCIe-Karte
 
-[role="lead"]
 Um eine PCIe-Karte zu ersetzen, müssen Sie die ausgefallene PCIe-Karte ausfindig machen, den Riser, der die Karte enthält, aus dem Controller-Modul entfernen, die Karte austauschen und dann den PCIe-Riser im Controller-Modul wieder einsetzen.
 
 Sie können die folgende Animation, Illustration oder die geschriebenen Schritte zum Ersetzen einer PCIe-Karte verwenden.
 
 .Animation: Ersetzen Sie eine PCIe-Karte
 video::84339f87-321c-400e-985e-aae10182cd24[panopto]
-image:../media/drw_A400_Replace-PCIe-cards.png[""]
+image:../media/drw_A400_Replace-PCIe-cards_IEOPS-1008.svg["Breite=500 px"]
 
 . Entfernen Sie den Riser mit der auszutauschenden Karte:
 +
@@ -263,14 +258,13 @@ NOTE: Wenn Sie eine Karte in den unteren Steckplatz einsetzen und den Kartenstec
 
 == Schritt 4: Tauschen Sie die Mezzanine-Karte aus
 
-[role="lead"]
 Die Mezzanine-Karte befindet sich unter der Risernummer 3 (Steckplatz 4 und 5). Sie müssen diesen Riser entfernen, um auf die Mezzanine-Karte zuzugreifen, die Mezzanine-Karte austauschen und dann die Riser-Nummer 3 neu installieren. Weitere Informationen finden Sie in der FRU-Zuordnung des Controller-Moduls.
 
 Sie können die Mezzanine-Karte mit der folgenden Animation, Illustration oder den schriftlichen Schritten ersetzen.
 
 .Animation - Ersetzen Sie die Mezzanine-Karte
 video::4e00f5b1-8ca5-4cd6-9881-aadb01578e52[panopto]
-image::../media/drw_A400_Replace-mezz-card.png[drw A400 Austauschen der mezz-Karte]
+image::../media/drw_A400_Replace-mezz-card_IEOPS-1006.svg[drw A400 Ersetzen sie die mezz-Karte IEOPS 1006]
 
 . Entfernen Sie die Risernummer 3 (Steckplätze 4 und 5):
 +
@@ -304,7 +298,6 @@ Der Riser hebt sich leicht vom Controller-Modul auf.
 
 == Schritt 5: Installieren Sie das Controller-Modul
 
-[role="lead"]
 Nachdem Sie die Komponente im Controller-Modul ersetzt haben, müssen Sie das Controller-Modul wieder in das Gehäuse einsetzen und dann im Wartungsmodus booten.
 
 Sie können die folgende Animation, Illustration oder die geschriebenen Schritte zur Installation des Controller-Moduls im Gehäuse verwenden.
@@ -355,7 +348,6 @@ NOTE: Wenn das System im Startmenü stoppt, wählen Sie die Option zum Booten in
 
 == Schritt 6: Stellen Sie das Controller-Modul wieder in Betrieb
 
-[role="lead"]
 Um den Controller wiederherzustellen, müssen Sie das System erneut einspielen, das Controller-Modul zurückgeben und dann das automatische Giveback wieder aktivieren.
 
 . Das System nach Bedarf neu einsetzen.
@@ -370,7 +362,6 @@ Wenn Sie die Medienkonverter (QSFPs oder SFPs) entfernt haben, sollten Sie diese
 
 == Schritt 7: Aggregate in einer MetroCluster Konfiguration mit zwei Nodes zurückwechseln
 
-[role="lead"]
 Nachdem Sie in einer MetroCluster Konfiguration mit zwei Nodes den FRU-Austausch abgeschlossen haben, können Sie den MetroCluster SwitchBack-Vorgang durchführen. Damit wird die Konfiguration in ihren normalen Betriebszustand zurückversetzt, wobei die Synchronisations-Storage Virtual Machines (SVMs) auf dem ehemals beeinträchtigten Standort jetzt aktiv sind und Daten aus den lokalen Festplattenpools bereitstellen.
 
 Dieser Task gilt nur für MetroCluster-Konfigurationen mit zwei Nodes.
@@ -429,5 +420,4 @@ Wenn ein Wechsel eine lange Zeit in Anspruch nimmt, können Sie den Status der i
 
 == Schritt 8: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
-[role="lead"]
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

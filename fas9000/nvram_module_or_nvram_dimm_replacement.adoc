@@ -32,14 +32,12 @@ Das NVRAM-Modul besteht aus NVRAM10 und DIMMs und bis zu zwei NVMe SSD Flash Cac
 
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
-[role="lead"]
 Fahren Sie den Regler herunter oder übernehmen Sie ihn mit einer der folgenden Optionen.
 
 [role="tabbed-block"]
 ====
 .Option 1: Die meisten Systeme
 --
-[role="lead"]
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 
 .Über diese Aufgabe
@@ -95,7 +93,6 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 --
 .Option 2: Controller befindet sich in einem MetroCluster mit zwei Nodes
 --
-[role="lead"]
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller umschalten, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 
 .Über diese Aufgabe
@@ -194,7 +191,6 @@ mcc1A::> metrocluster operation show
 
 == Schritt 2: Ersetzen Sie das NVRAM-Modul
 
-[role="lead"]
 Zum Austauschen des NVRAM-Moduls suchen Sie es in Steckplatz 6 im Chassis und befolgen die spezifische Sequenz von Schritten.
 
 .Schritte
@@ -299,7 +295,6 @@ DIMM- und DIMM-Auswurfklammern
 
 == Schritt 3: Ersetzen Sie ein NVRAM-DIMM
 
-[role="lead"]
 Um NVRAM-DIMMs im NVRAM-Modul zu ersetzen, müssen Sie das NVRAM-Modul entfernen, das Modul öffnen und dann das Ziel-DIMM ersetzen.
 
 .Schritte
@@ -373,7 +368,6 @@ DIMM- und DIMM-Auswurfklammern
 
 == Schritt 4: Starten Sie den Controller nach dem FRU-Austausch neu
 
-[role="lead"]
 Nachdem Sie die FRU ersetzt haben, müssen Sie das Controller-Modul neu booten.
 
 .Schritt
@@ -384,7 +378,6 @@ Nachdem Sie die FRU ersetzt haben, müssen Sie das Controller-Modul neu booten.
 
 == Schritt 5: Festplatten neu zuweisen
 
-[role="lead"]
 Je nachdem, ob Sie über ein HA-Paar oder eine MetroCluster Konfiguration mit zwei Nodes verfügen, müssen Sie entweder die Neuzuweisung von Festplatten an das neue Controller-Modul überprüfen oder die Festplatten manuell neu zuweisen.
 
 Wählen Sie eine der folgenden Optionen aus, um Anweisungen zur Neuzuweisung von Laufwerken an den neuen Controller zu erhalten.
@@ -394,7 +387,6 @@ Wählen Sie eine der folgenden Optionen aus, um Anweisungen zur Neuzuweisung von
 .Option 1: ID überprüfen (HA-Paar)
 --
 .Überprüfen Sie, ob sich die System-ID auf einem HA-System ändert
-[role="lead"]
 Sie müssen die Änderung der System-ID beim Booten des Node _Replacement_ bestätigen und anschließend überprüfen, ob die Änderung implementiert wurde.
 
 Diese Vorgehensweise gilt nur für Systeme, auf denen ONTAP in einem HA-Paar ausgeführt wird.
@@ -515,7 +507,6 @@ dr-group-id            cluster node           configuration-state
 .Option 2: ID neu zuweisen (MetroCluster-Konfiguration)
 --
 .Weisen Sie die System-ID in einer MetroCluster Konfiguration mit zwei Nodes neu zu
-[role="lead"]
 Bei einer MetroCluster-Konfiguration mit zwei Knoten, in der ONTAP ausgeführt wird, müssen Sie Festplatten manuell der System-ID des neuen Controllers zuweisen, bevor Sie den normalen Betrieb des Systems zurückgeben.
 
 .Über diese Aufgabe
@@ -643,7 +634,6 @@ Sie müssen mit reagieren `y` Wenn Sie dazu aufgefordert werden, den erweiterten
 
 == Schritt 6: Stellen Sie die Funktionen für Storage und Volume Encryption wieder her
 
-[role="lead"]
 Für Storage-Systeme, die Sie zuvor für den Einsatz von Storage oder Volume Encryption konfiguriert haben, müssen Sie zusätzliche Schritte durchführen, um die Funktion für unterbrechungsfreie Verschlüsselung bereitzustellen. Sie können diese Aufgabe auf Storage-Systemen überspringen, auf denen Storage oder Volume Encryption nicht aktiviert ist.
 
 
@@ -663,5 +653,4 @@ NOTE: Dieser Schritt ist beim Austausch eines DIMM nicht erforderlich.
 
 == Schritt 7: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
-[role="lead"]
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

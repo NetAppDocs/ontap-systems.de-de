@@ -17,7 +17,6 @@ Sie können das System-Image auf dem Ersatzstartmedium installieren. Verwenden S
 
 == Option 1: Übertragen Sie Dateien auf das Boot-Medium mit Backup Recovery von dem zweiten Boot-Medium
 
-[role="lead"]
 Sie können das System-Image mithilfe des Images auf dem zweiten Boot-Medium installieren, das im Controller-Modul installiert ist. Dies ist die primäre Methode zur Übertragung der Boot-Mediendateien auf die Ersatz-Boot-Medien in Systemen mit zwei Boot-Medien im Controller-Modul.
 
 Das Image auf dem sekundären Startmedium muss einen enthalten `image.tgz` Datei und darf keine Fehler melden. Wenn die Datei image.tgz fehlt oder das Boot-Medium Fehler meldet, können Sie dieses Verfahren nicht verwenden. Sie müssen das Startabbild mithilfe des Austauschvorgangs für das USB-Flash-Laufwerk auf das Ersatzmedium übertragen.
@@ -90,7 +89,6 @@ Das Image wird von dem sekundären Boot-Medium heruntergeladen.
 
 == Option 2: Übertragen Sie das Startabbild über ein USB-Flash-Laufwerk auf das Startmedium
 
-[role="lead"]
 Dieses Verfahren sollte nur verwendet werden, wenn die Wiederherstellung des sekundären Startmediums fehlgeschlagen ist oder wenn die Datei image.tgz auf dem sekundären Startmedium nicht gefunden wird.
 
 * Sie müssen über ein USB-Flash-Laufwerk verfügen, das auf FAT32 formatiert ist und eine Kapazität von mindestens 4 GB aufweist.

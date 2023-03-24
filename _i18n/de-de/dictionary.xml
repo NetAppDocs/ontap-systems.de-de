@@ -493,8 +493,6 @@
   <block id="72bed1a0f807450c817ba40ca198679f" category="list-text">Legen Sie für das Chassis den HA-Status fest:<block ref="4e451bc5c248e72413a1cfcff137fc1b" prefix=" " category="inline-code"></block></block>
   <block id="6c97fa57e091b1cbdae941c425706f24" category="list-text">Falls Sie dies noch nicht getan haben, können Sie den Rest Ihres Systems erneut verwenden.</block>
   <block id="e868d163eb8c93826e8f9ef7d7b0613e" category="list-text">Der nächste Schritt hängt von Ihrer Systemkonfiguration ab.</block>
-  <block id="6561961e36dc0d672367014bb35814b0" category="inline-link-macro">„Abschließen des Ersatzprozesses</block>
-  <block id="65f64a7bdb4d22c25178d4fda4e009b6" category="list-text">Gehen Sie zu <block ref="c0ff5fd751abc2ff7939ebc71dae2951" category="inline-link-macro-rx"></block>.</block>
   <block id="17c7d5cfc1341d03fca63b7c848b5ad1" category="paragraph">Ein HA-Paar mit einem zweiten Controller-Modul</block>
   <block id="156eb6e82c7345080012a8f00d566c5e" category="paragraph">Die LOADER-Eingabeaufforderung wird angezeigt.</block>
   <block id="65262cff88e8431ab037669426699324" category="section-title">Schritt 2: Führen Sie die Diagnose auf Systemebene aus</block>
@@ -1195,7 +1193,6 @@
   <block id="9917929ebe0efccd1e45750eb21caa85" category="paragraph">Sie müssen das System je nach Bedarf in einem 4-Säulen-Rack oder NetApp Systemschrank installieren.</block>
   <block id="847919144516a57af9b46ca0197df49a" category="list-text">Installieren Sie die Schienensatz nach Bedarf.</block>
   <block id="1a24d62ae37ede800baaffb6a6a891c2" category="inline-link-macro">Installieren von SuperRail in einem Vierpolige-Rack</block>
-  <block id="09e80812def315f5cdd1c01dcdfeecd6" category="paragraph"><block ref="09e80812def315f5cdd1c01dcdfeecd6" category="inline-link-macro-rx"></block></block>
   <block id="1d73b4bc0bd82d2084a03bfdfa9c1378" category="list-text">Installieren und sichern Sie das System anhand der im Schienensatz enthaltenen Anweisungen.</block>
   <block id="9f54b5b254fa807cab889d1440acbc05" category="admonition">Sie müssen sich der Sicherheitsbedenken im Zusammenhang mit dem Gewicht des Systems bewusst sein.</block>
   <block id="a0c86487fec36ce37cba5bd44aad6322" category="image-alt">drw affa800 Gewicht Achtung</block>
@@ -2494,8 +2491,6 @@
   <block id="d1ac48d4410d6102fa54b8b3405a83e5" category="paragraph"><block ref="d1ac48d4410d6102fa54b8b3405a83e5" category="inline-image-macro-rx" type="image"></block></block>
   <block id="9dfe7ca4d480fd4e10a0954286489a0f" category="paragraph">Verkabeln Sie die E0M-Ports mit den Management-Netzwerk-Switches mit den RJ45-Kabeln.</block>
   <block id="5d86a652667b386e0b98042631990c02" category="paragraph"><block ref="5d86a652667b386e0b98042631990c02" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="dd1dcd1cd7a28bbfc3b5a581b055bce3" category="inline-link-macro">Verkabelung der Controller mit Laufwerk-Shelfs</block>
-  <block id="564becbb42cc33012e00424619583eca" category="list-text">Verkabeln Sie Ihren Speicher: <block ref="42bf816180738dc1660363ee044d9786" category="inline-link-macro-rx"></block></block>
   <block id="eb9634f2ea796139d7f0aeca3f6ce2d4" category="section-title">Option 2: Verkabelung eines Switch Clusters</block>
   <block id="5b2974409018c6d4642074b9be18209d" category="paragraph">Die optionalen Daten-Ports, optionalen NIC-Karten und Management-Ports der Controller-Module werden mit Switches verbunden. Die Cluster Interconnect/HA-Ports sind mit dem Cluster/HA-Switch verbunden.</block>
   <block id="75a0d3caeb66a7c3aca3b7bc0f0c5985" category="image-alt">drw a320-geschaltete Netzwerkverkabelung, animierte GIF</block>
@@ -2509,8 +2504,6 @@
   <block id="d49bb9b3f4ea10bb2faedd5805957881" category="image-alt">drw a320 EinzelShelf-Verbindungen animiert gif</block>
   <block id="fcc21d6aa5ce2f3d80b7b15b3efd7622" category="paragraph">Controller A mit dem Shelf verkabeln <block ref="97ef6a28616ee1b44c8e319d2e09ad63" category="inline-image-macro-rx" type="image"></block></block>
   <block id="cf09fa2cd4cedb36165538f6f6133b7f" category="paragraph">Controller B am Shelf verkabeln: <block ref="adad54de70c837652052dc8fbe20179a" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="4402c8b8d6c489ed5617a151ffa90726" category="inline-link-macro">Die Systemeinrichtung und -Konfiguration wird abgeschlossen</block>
-  <block id="d183e64634b3038a2447a8af4bc6f415" category="list-text">Informationen zum Abschließen der Einrichtung des Systems finden Sie unter <block ref="cf51f79f23f70e62c97013df347c6a0f" category="inline-link-macro-rx"></block>.</block>
   <block id="e47141e6c8fccf9bfe115e4e18090b8e" category="section-title">Option 2: Controller mit zwei Festplatten-Shelfs verkabeln</block>
   <block id="6bd176ab7852b1804bc6113808615ff6" category="list-text">Sie können die folgende Abbildung bzw. die geschriebenen Schritte verwenden, um die Controller mit zwei Laufwerk-Shelfs zu verkabeln.</block>
   <block id="e49f4a89e69b410e9fd76acc797854aa" category="image-alt">drw a320 2-Schalen-Kabel animiert gif</block>
@@ -2757,7 +2750,6 @@
   <block id="ebc2b7657690ae02a25495dd970c279d" category="list-text">Zeigen Sie mit dem den Status des Steckplatzes an<block ref="3f548e7ceb0e30f546cba4ae1c7f714b" prefix=" " category="inline-code"></block> Befehl.</block>
   <block id="dac273d93724b47a21b755da953f81be" category="paragraph">Der Status des NVMe-Steckplatzes wird angezeigt<block ref="006ec0ed628b8a842343b62d6db2dedc" prefix=" " category="inline-code"></block> In der Bildschirmausgabe des Cache-Moduls, das ersetzt werden muss.</block>
   <block id="9cdb076245d84700443d3aee5a21f0ff" category="inline-link">Befehlsman-Pages</block>
-  <block id="e47fa3700d8c8b185b05f4e09285f497" category="admonition">Siehe<block ref="7dfdd4167a3eb44ee8af382f653a3ce0" category="inline-link-rx"></block> Für Ihre Version von ONTAP.</block>
   <block id="d614131c818f5cecd09732e6431d6f96" category="list-text">Entfernen Sie das Caching-Modul:</block>
   <block id="68607949342d7df39c7770d809d0a5f2" category="image-alt">drw 9500 entfernen flashcache</block>
   <block id="5e8d2460689245ee00f6d51f5db543dc" category="paragraph">Entriegelungstaste Terra cotta.</block>
@@ -2785,8 +2777,6 @@
   <block id="93042cc4c4d4eead8d68941113308dfd" category="list-text">Alle Platten-Shelves müssen ordnungsgemäß funktionieren.</block>
   <block id="cfdacb5b8eea6906da1318b4cc5ee5a2" category="list-text">Wenn sich Ihr System in einem HA-Paar befindet, muss der Partner-Node in der Lage sein, den Node, der dem zu ersetzenden NVRAM-Modul zugeordnet ist, zu übernehmen.</block>
   <block id="105e727cdc375bb7add37bd9f101765d" category="list-text">Bei diesem Verfahren wird die folgende Terminologie verwendet:</block>
-  <block id="566dc57c04b76274e7168e53e1eea041" category="list-text">Der Knoten „beeinträchtigt“ ist der Knoten, auf dem Sie Wartungsarbeiten durchführen.</block>
-  <block id="350cecd9af7d98cbf31c22fbd46e60fe" category="list-text">Der gesunde Knoten ist der HA-Partner des beeinträchtigten Knotens.</block>
   <block id="0f8e7bfea6aa060d757ea5effeaeaf14" category="list-text">Dieses Verfahren umfasst Schritte zur automatischen oder manuellen Neuzuteilung von Festplatten an das Controller-Modul, das dem neuen NVRAM-Modul zugeordnet ist. Sie müssen die Festplatten neu zuweisen, wenn Sie dazu aufgefordert werden. Das Ausfüllen der Neuzuweisung von Festplatte vor dem Giveback kann Probleme verursachen.</block>
   <block id="3dc9d74e0e70274198fc890e3238aa6f" category="list-text">Im Rahmen dieses Verfahrens können Festplatten oder Platten-Shelfs nicht geändert werden.</block>
   <block id="ed8076069cbf889b55cfae7fbfe0fa77" category="section-title">Schritt 2: Ersetzen Sie das NVRAM-Modul</block>
@@ -2814,33 +2804,18 @@
   <block id="1c0152b1bce888fe537c442be9dccb80" category="section-title">Schritt 4: Starten Sie den Controller nach dem FRU-Austausch neu</block>
   <block id="ba7c6b30d321c807ee6ec4c52d399609" category="paragraph">Nachdem Sie die FRU ersetzt haben, müssen Sie das Controller-Modul neu booten.</block>
   <block id="e56984ce184129f6ba4941f5a5d85c7b" category="list-text">Um ONTAP von der LOADER-Eingabeaufforderung zu booten, geben Sie ein<block ref="bfa99df33b137bc8fb5f5407d7e58da8" prefix=" " category="inline-code"></block>.</block>
-  <block id="d2afd23f9efb1f5de6cadd26fcce1cf5" category="section-title">Schritt 5: Überprüfen Sie den HA-Status des Controller-Moduls und legen Sie ihn fest</block>
-  <block id="f95e8e8b229c3aee97b205509f91df66" category="section-title">Schritt 6: Festplatten neu zuweisen</block>
-  <block id="0855873e0fa5bed2d0067d6acae6c0df" category="paragraph">Beim Booten des Ersatzknoten müssen Sie die Änderung der System-ID bestätigen und anschließend überprüfen, ob die Änderung implementiert wurde.</block>
-  <block id="93a4033a981ca86f17e1c02656473521" category="list-text">Wenn sich der Ersatz-Node im Wartungsmodus befindet (zeigt das an<block ref="2cf8a3bab83c4d2618c18eeeca9ebc98" prefix=" " category="inline-code"></block> Eingabeaufforderung), beenden Sie den Wartungsmodus und gehen Sie zur LOADER-Eingabeaufforderung:<block ref="4a1bde0ea8bcda2a591f42646813c477" prefix=" " category="inline-code"></block></block>
   <block id="72dd2309b9e786d12d19350620a3d631" category="list-text">Booten Sie an der LOADER-Eingabeaufforderung beim Ersatz-Node den Node und geben Sie ein<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> Wenn Sie aufgrund einer nicht übereinstimmenden System-ID aufgefordert werden, die System-ID außer Kraft zu setzen.</block>
-  <block id="fbb9a853512346feaa4279f18e3efe8c" category="list-text">Warten Sie, bis der<block ref="fd66c964768074eb90f4f1426229bf3e" prefix=" " category="inline-code"></block> Die Meldung wird auf der Ersatz-Node-Konsole angezeigt und anschließend vom gesunden Node aus überprüfen, ob die neue Partner-System-ID automatisch zugewiesen wurde:<block ref="ddf400f1cb6b8b9330ed6c79c508123c" prefix=" " category="inline-code"></block></block>
   <block id="3e06d4583220bf6e3116f03fc794dab1" category="paragraph">In der Befehlsausgabe sollte eine Meldung angezeigt werden, dass sich die System-ID auf dem Knoten „beeinträchtigt“ geändert hat und die korrekten alten und neuen IDs angezeigt werden. Im folgenden Beispiel wurde node2 ersetzt und hat eine neue System-ID von 151759706.</block>
   <block id="23b40d7aca05dd545bc77221d79f3fbe" category="list-text">Vergewissern Sie sich am gesunden Knoten, dass alle Corestapy gespeichert sind:</block>
-  <block id="8672de10e3d8295abd1be60e2569c4c6" category="list-text">Speichern von CoreDumps:<block ref="638fbf24cf3f819c8401dfd4c062ccc2" prefix=" " category="inline-code"></block></block>
-  <block id="2675f497966bc5cad0cdd88dbe6eab31" category="list-text">Warten Sie auf das<block ref="f1cce1d6823a5337ea1ed313f3bc1d65" prefix=" " category="inline-code"></block> Befehl zum Abschließen, bevor Sie das Giveback ausgeben.</block>
-  <block id="80de24e4482214278771d2b0f3142427" category="paragraph">Sie können den folgenden Befehl eingeben, um den Fortschritt von zu überwachen<block ref="f1cce1d6823a5337ea1ed313f3bc1d65" prefix=" " category="inline-code"></block> Befehl:<block ref="f184ba8755eeceb270413ed2f4bdd7f3" prefix=" " category="inline-code"></block></block>
   <block id="dc480d49888be9665881255050d6e3fd" category="list-text">Geben Sie den Knoten zurück:</block>
-  <block id="7a18402f95cb86527db24f56d6baec40" category="list-text">Geben Sie vom ordnungsgemäßen Node den Speicher des ersetzten Node wieder:<block ref="06b377d178eed8a76119920cc708363f" prefix=" " category="inline-code"></block></block>
-  <block id="3217c14b22c3695ed301b94539bd2dbb" category="paragraph">Der Ersatz-Node kehrt seinen Storage zurück und führt den Booten durch.</block>
   <block id="e52d65661673e0d8112057f135b30a91" category="inline-link">Manuelle Giveback-Befehle</block>
   <block id="85bdc20f7292dbafd4caa42c19f7b123" category="paragraph">Weitere Informationen finden Sie im<block ref="fea6157c393b81b627aed2aca6311576" category="inline-link-rx"></block> Thema, um das Veto zu überschreiben.</block>
-  <block id="8a6fbf23d593cc1be4de4068cb3eeee1" category="paragraph">Die Ausgabe des Befehls „Storage Failover show“ sollte die in der Partnermeldung geänderte System-ID nicht enthalten.</block>
-  <block id="18963b05f9f3bc779f544c26aae06ab9" category="paragraph">Bei den Festplatten, die zum Ersatz-Node gehören, sollte die neue System-ID angezeigt werden. Im folgenden Beispiel zeigen die Festplatten von node1 jetzt die neue System-ID, 1873775277:</block>
   <block id="ee6adef69d8b8786ea9c8ed7878b0970" category="list-text">Wenn sich das System in einer MetroCluster-Konfiguration befindet, überwachen Sie den Status des Node:<block ref="4d06f3844212ac745a73965bbb3f6e51" prefix=" " category="inline-code"></block></block>
   <block id="554a23fbeb893ba3c6cb31c09b0d481f" category="paragraph">Die MetroCluster-Konfiguration dauert einige Minuten nach dem Austausch und kehrt in den normalen Zustand zurück. Zu diesem Zeitpunkt zeigt jeder Node einen konfigurierten Status mit aktivierter DR-Spiegelung und einem normalen Modus. Der<block ref="3a430417b055bb7642531def2eebffec" prefix=" " category="inline-code"></block> In der Befehlsausgabe wird die alte System-ID angezeigt, bis die MetroCluster-Konfiguration den normalen Status aufweist.</block>
   <block id="e73102dae0c8597be4416dbc7fd1d930" category="list-text">Wenn sich der Node abhängig vom MetroCluster-Status in einer MetroCluster-Konfiguration befindet, vergewissern Sie sich, dass im Feld für die DR-Home-ID der ursprüngliche Eigentümer der Festplatte angezeigt wird, wenn der ursprüngliche Eigentümer ein Node am Disaster-Standort ist.</block>
-  <block id="cfe787a999b8c200091f805ad9426e24" category="list-text">Der Ersatzknoten ist der aktuelle Besitzer der Festplatten am Disaster-Standort.</block>
-  <block id="7c5a57d1d4b3b589da7f755562ad50f8" category="paragraph">Siehe<block ref="4b1c17d30e94cc8d68adcd4265a76547" category="inline-link-rx"></block> Finden Sie weitere Informationen.</block>
   <block id="381526217dead66932ed7e3b4d0903a5" category="list-text">Wenn sich Ihr System in einer MetroCluster-Konfiguration befindet, vergewissern Sie sich, dass jeder Node konfiguriert ist:<block ref="be437ba53b60f2b2ffd3b5125a8be145" prefix=" " category="inline-code"></block></block>
   <block id="6deb52ed65be42ac8913dcb77b7974b2" category="list-text">Vergewissern Sie sich, dass die erwarteten Volumes für jeden Node vorhanden sind:<block ref="6e33357af78f433ecca9de8b2c95153d" prefix=" " category="inline-code"></block></block>
   <block id="169b97f74ce63e1551e2942f0c276b35" category="list-text">Wenn Sie die automatische Übernahme beim Neustart deaktiviert haben, aktivieren Sie sie vom gesunden Knoten:<block ref="4f538b2a4fb102a33c9c1d3cf53f9787" prefix=" " category="inline-code"></block></block>
-  <block id="5a503439969930e9e348f79d2b8004d7" category="section-title">Schritt 7: Stellen Sie die Funktionen für Storage und Volume Encryption wieder her</block>
   <block id="e68c8836280fba147b04a2b14b196600" category="list-text">Je nachdem, ob Sie integriertes oder externes Verschlüsselungsmanagement verwenden, sollten Sie eines der folgenden Verfahren verwenden:</block>
   <block id="e81625c6f6813a6e5480c2987f5bd781" category="section-title">Schritt 8: Senden Sie das fehlgeschlagene Teil an NetApp zurück</block>
   <block id="68908cbb53a7b71659933af600697a19" category="summary">Zum Hot-Swap eines DCPM \\ (De-Stage-Controller-Stromversorgungsmoduls), das den NVRAM11-Akku enthält, müssen Sie das fehlerhafte DCPM-Modul ausfindig machen, es aus dem Gehäuse entfernen und das Ersatzmodul DCPM installieren.</block>
@@ -3052,8 +3027,6 @@
   <block id="3312f9cce5a2b0b4ea67ddcce0850bf9" category="video-title">Animation - Ersetzen eines E/A-Moduls</block>
   <block id="658f167c4900ed24167db8a2c8ec0dae" category="list-text">Installieren Sie das I/O-Modul in den Zielsteckplatz:</block>
   <block id="9dbc737f0670b3590709580acb50117c" category="list-text">Wiederholen Sie die Schritte zum Entfernen und Installieren, um zusätzliche Module für Controller A auszutauschen</block>
-  <block id="e3fd55f400cc227fbbc7c777c0679db1" category="list-text">Wenn es sich bei dem Ersatz-E/A-Modul um eine NIC handelt, verkabeln Sie das Modul oder die Module mit den Datenschaltern.</block>
-  <block id="c51e6cbbe594b20461edba0d83817fce" category="list-text">Booten Sie den BMC neu, und starten Sie dann den Node neu:</block>
   <block id="65c5b494e6d3420e2beeee5028389f58" category="list-text">Wenn Sie hinzugefügt haben:</block>
   <block id="7589522c1c45d0b3dfdf43c267a456bc" category="cell">Wenn I/O-Modul ist ein...</block>
   <block id="85fd23f64df6d6e4c54bd55af7b58c44" category="paragraph">NIC-Modul in den Steckplätzen 3 oder 7,</block>
@@ -3971,7 +3944,6 @@
   <block id="b351b18aabb1167eb5b0851a7dfde759" category="doc">Tauschen Sie ein Netzteil aus – AFF C190</block>
   <block id="bdcac988a0903764d18f7be5086a6f98" category="doc">Ersetzen Sie ein DIMM – AFF C190</block>
   <block id="70307621ba0045acdea9f2a7c113fa13" category="paragraph">Um die DIMMs auszutauschen, müssen Sie sie im Controller-Modul lokalisieren und anschließend die einzelnen Schritte befolgen.</block>
-  <block id="0a980a0f7131164348aa395168430c19" category="list-text">Kehren Sie zu zurück <block ref="8d9485b043d2d189d21e80102089dac7" category="inline-link-macro-rx"></block> Wie Sie die NVMEM-LED erneut prüfen.</block>
   <block id="17268c6ef2838628d8d6888cfbe7b25b" category="paragraph">Geben Sie zurück:<block ref="745317aaa34c2b7c12b3bbdaf4b93485" prefix=" " category="inline-code"></block> *Hinweis:* Wenn Sie das automatische Giveback deaktiviert haben, aktivieren Sie es mit dem Befehl Storage Failover modify erneut.</block>
   <block id="1af1fe949907061171a34fcc37aae4b2" category="paragraph">Fahren Sie mit dem nächsten Schritt fort. Es ist keine Aktion erforderlich.</block>
   <block id="0f614c99bcb66f2ffd7b4fb27558ea2a" category="doc">Übersicht über den Austausch des Chassis – AFF C190</block>
@@ -4247,7 +4219,6 @@
   <block id="b9faf63d3186c5579024bb4f41c534f6" category="paragraph">Der Status des NVMe-Steckplatzes zeigt im Bildschirmausgang das zu ersetzende Caching-Modul an.</block>
   <block id="f21d9047fb686a34fb7720397d2458bc" category="list-text">Für ONTAP 9.8 und höher:</block>
   <block id="d797b840a35f6deb381b0b402e04b0c9" category="list-text">Bereiten Sie auf der Administrator-Berechtigungsebene den NVMe-Zielsteckplatz für das Entfernen vor und antworten<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> Wenn Sie gefragt werden, ob Sie fortfahren möchten:<block ref="0277bb5cae56876e81c890026e236b8d" prefix=" " category="inline-code"></block> Mit dem folgenden Befehl wird Steckplatz 6-2 auf node1 zum Entfernen vorbereitet und die Meldung angezeigt, dass es sicher zu entfernen ist:</block>
-  <block id="70241a33e23df22a0f8f997b18ff24a7" category="admonition">Siehe<block ref="853257fe46b33572328cc9f35a075f2a" category="inline-link-rx"></block> Für Ihre Version von ONTAP.</block>
   <block id="e1e044e9b2596ea55ccf2665031de0fc" category="image-alt">drw 9000 entfernen flashcache</block>
   <block id="846c76a20561f327d04b080605ad1886" category="paragraph">Orangefarbene Entriegelungstaste.</block>
   <block id="5da823ff1ce6004b2df61f2050acf611" category="list-text">Drücken Sie die orangefarbene Entriegelungstaste auf der Vorderseite des Cache-Moduls.</block>
@@ -4327,7 +4298,6 @@
   <block id="e2da081ec1f9e5df221849d0bca3449a" category="paragraph"><block ref="e2da081ec1f9e5df221849d0bca3449a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="8c2c57baca5559cc6deaa2d149cbcc7e" category="admonition">Wenn Sie über mehr als einen Festplatten-Shelf-Stack verfügen, lesen Sie die „_Installation and Cabling Guide_“ für den Laufwerk-Shelf-Typ.</block>
   <block id="dc1949c56b4feff1c4f2d03eb17ee3cb" category="inline-link-macro">Einbau- und Kabelregale für eine neue Systeminstallation - Regale mit IOM12-Modulen</block>
-  <block id="2b5a9c03e0a3ef447899ed93ac4917cb" category="paragraph"><block ref="2b5a9c03e0a3ef447899ed93ac4917cb" category="inline-link-macro-rx"></block></block>
   <block id="90a326588028ddcde615038a3974e162" category="paragraph"><block ref="90a326588028ddcde615038a3974e162" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f3e065129fb4cb88ba99260c70d8c054" category="list-text">Gehen Sie zu <block ref="53346fef0c147b551f530d05bbad2e41" category="inline-xref-macro-rx"></block> Zum Abschließen der Einrichtung und Konfiguration des Systems.</block>
   <block id="51b3003c067a0d5dfcbcfbc5aab0240d" category="section-title">Option 2: Verbinden Sie die Controller mit einem einzigen NS224-Festplatten-Shelf in AFF A700 und ASA AFF A700 Systemen, die nur mit ONTAP 9.8 und höher ausgeführt werden</block>
@@ -4438,7 +4408,6 @@
   <block id="46bbb084ae40b0369bddbcb13aac2bc4" category="list-text">Wenn Sie ein X91148A-Modul als Speichermodul in den Steckplätzen 3 und/oder 7 in einen Steckplatz mit einem vorhandenen NIC-Modul hinzufügen, verwenden Sie System Manager, um die LIFs dauerhaft zu verschiedenen Home-Ports zu migrieren, wie in beschrieben<block ref="85291e79b86f275650bb0fb4e90a39e9" category="inline-link-rx"></block>.</block>
   <block id="bee1f07b307186667ad005db1d21960d" category="list-text">Wenn Sie ein zweites X91148A-Modul zum Speichern installieren, wiederholen Sie die Schritte zum Entfernen und Installieren des Moduls in Steckplatz 7.</block>
   <block id="9744ad3e63fafdf6d52c1d0eeed92d7d" category="inline-link">Hot-Adding eines NS224-Laufwerk-Shelfs</block>
-  <block id="da6e337f5926cf03f06bcd1c9fb63113" category="list-text">Installieren und verkabeln Sie die NS224-Regale, wie in beschrieben<block ref="a5aecdce285751c9f856700f4feb4311" category="inline-link-rx"></block>.</block>
   <block id="7b76c70a3880af1ff9cad2a56ea732d6" category="doc">Starten des Recovery-Images – AFF A700 und FAS9000</block>
   <block id="524e28e47589d1c72cc806b496a8da04" category="section-title">Option 1 Booten Sie das Recovery-Image in den meisten Systemen</block>
   <block id="4afe550d309fda5baa26dd6ae61e8442" category="cell">*Wenn Sie sehen...</block>
@@ -4709,7 +4678,6 @@
   <block id="2010d72cb8663ac4f3960dead61f921e" category="paragraph"><block ref="2010d72cb8663ac4f3960dead61f921e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f4c10aef61f6ce27a93c5212bf85139d" category="list-text">Öffnen Sie am Ersatzsteuermodul den Luftkanal, und entfernen Sie die leeren Riser mithilfe der Animation, der Abbildung oder der schriftlichen Schritte aus dem Controller-Modul:</block>
   <block id="63f87aaa5f633e2ee952b199ae093a26" category="video-title">Animation - Entfernen Sie die leeren Riser aus dem Ersatzcontroller-Modul</block>
-  <block id="1f25549d09d9fee6b326b3ae80c2ed1b" category="image-alt">drw a400 leerer Riser entfernen</block>
   <block id="7f17300d94b3ad1307db5cc0a95ca048" category="list-text">Drücken Sie die Verriegelungslaschen an den Seiten des Luftkanals in Richtung der Mitte des Controller-Moduls.</block>
   <block id="3f88f0afc7a9dcaea99ffc820cae4c95" category="list-text">Schieben Sie den Luftkanal zur Rückseite des Controller-Moduls, und drehen Sie ihn dann nach oben in seine vollständig geöffnete Position.</block>
   <block id="d7b31bd33c49d2208df6af8e69383eb1" category="list-text">Drehen Sie den Riserriegel auf der linken Seite des Steigrohrs 1 nach oben und in Richtung Luftkanal, heben Sie den Riseraufsatz an und legen Sie ihn dann beiseite.</block>
@@ -5059,7 +5027,6 @@
   <block id="e38904d799c9886a80f28f3058df0f26" category="list-text">e0c und e0d</block>
   <block id="f8b677145fadd0e7b54924a472cde8af" category="list-text">* Oder* e0e und e0f</block>
   <block id="dd31aac3fb199e23ada1b2d6967181ec" category="admonition">Sie können ein Port-Paar als CNA und ein Port-Paar als FC verbinden, oder Sie können beide Port-Paare als CNA oder beide Port-Paare als FC verbinden.</block>
-  <block id="6c9cda13d9d7d9f8f82d912175e78d9b" category="list-text">Informationen zum Kabelanschluss des Speichers finden Sie unter <block ref="42bf816180738dc1660363ee044d9786" category="inline-link-macro-rx"></block></block>
   <block id="6d4bc3cf86318438b709fd5087158d59" category="section-title">Option 2: Verkabelung eines Switch-Clusters, Unified-Netzwerk-Konfiguration</block>
   <block id="afcfe9ab06da740b8b6db896f79a9ba9" category="paragraph">Managementnetzwerk, UTA2-Datennetzwerk und Management-Ports auf den Controllern werden mit Switches verbunden. Die Cluster-Interconnect-Ports sind mit den Cluster-Interconnect-Switches verbunden.</block>
   <block id="65dc5db3d1655dcd2f6bb2520a3cbef6" category="list-text">Sie können die Verkabelung zwischen den Controllern und den Switches mit der Grafik oder Schritt-für-Schritt-Anleitung ausführen:</block>
@@ -5093,8 +5060,6 @@
   <block id="4b340db6110d657781e4a28d91e76457" category="list-text">Controller 1 Port 0a zu IOM B-Port 1 am ersten Festplatten-Shelf im Stack.</block>
   <block id="25e9c854cd268404ba760167e55a47b9" category="list-text">Controller 2 Port 0b zu IOM B-Port 3 auf dem letzten Laufwerk-Shelf im Stack.<block ref="1869c18bf4845d129ab70a2555c3fa58" category="inline-image-macro-rx" type="image"></block> Kabel Mini-SAS HD auf Mini-SAS HD</block>
   <block id="ba9a3cf272ff19e49b8066ab84a2b3dc" category="inline-link-macro">Installation und Verkabelung</block>
-  <block id="a1770e5cf644990212f313f91eccb2d8" category="paragraph"><block ref="a1770e5cf644990212f313f91eccb2d8" category="inline-link-macro-rx"></block></block>
-  <block id="41e876cad607f9363190645026f4f818" category="list-text">Informationen zum Abschließen der Einrichtung des Systems finden Sie unter <block ref="cf51f79f23f70e62c97013df347c6a0f" category="inline-link-macro-rx"></block></block>
   <block id="a83c5e67d745b0c85b815af3214463cd" category="section-title">Option 1: Schließen Sie das System-Setup ab, wenn die Netzwerkerkennung aktiviert ist</block>
   <block id="cbd6e530c253bd69eae2efffc8a1d409" category="list-text">Mithilfe der folgenden Animation können Sie eine oder mehrere Laufwerk-Shelf-IDs festlegen</block>
   <block id="2c51278d41ddd5b0a5e4e43d5d054024" category="admonition">Das Format für die Adresse lautet<block ref="e3a42c8b12a27a5e78828d7419e57eb0" category="inline-link-rx"></block>.</block>
@@ -5113,8 +5078,6 @@
   <block id="50c99b8a77b810f6cd5e8517f4310c31" category="doc">Tauschen Sie ein Netzteil aus – AFF A220 und FAS2700</block>
   <block id="c4de84ea78d221e98599baf30d3e65d1" category="doc">Ersetzen Sie ein DIMM – AFF A220 und FAS2700</block>
   <block id="b609dd6c87556493ce1f11c7ab61cbdb" category="list-text">Überprüfen Sie die NVMEM-LED auf der Rückseite des Controller-Moduls.</block>
-  <block id="376b1cae869bbe8ab1cce68fdb30b696" category="inline-link-macro">Ersetzen Sie die DIMMs</block>
-  <block id="91e13f2779cb51174165fa30eaba7e5b" category="list-text">Kehren Sie zu zurück <block ref="cf268cc4bc5a73daf7348170b397c07d" category="inline-link-macro-rx"></block> Wie Sie die NVMEM-LED erneut prüfen.</block>
   <block id="03be12a0476133b21cb6c1c927956d23" category="doc">Austausch von SSD-Laufwerken oder HDD-Laufwerken – AFF A220 und FAS2700</block>
   <block id="49d177da03edc46e3dbb473a8199c5e8" category="doc">Übersicht über den Austausch des Chassis – AFF A220 und FAS2700</block>
   <block id="7322467d01726afa3b63a66bb748a30d" category="doc">Starten des Recovery-Images – AFF A220 und FAS2700</block>
@@ -5125,14 +5088,8 @@
   <block id="6050f7a94074865f0c7eb8f65b5c5a8f" category="cell">Controller-Redundanz</block>
   <block id="21f105a570b6840e0f78f7fef2476046" category="cell">Gehen Sie dann wie folgt vor:</block>
   <block id="556696d309aaf81ce29c6a76f8f8a503" category="paragraph">HA-Paar</block>
-  <block id="91b91feeb88498e7be1c10bbbb6db4c2" category="inline-link-macro">Überprüfen der Änderung der System-ID auf einem HA-System</block>
-  <block id="4e87b3c0f415f46d36e8fa6bd32a6ff7" category="paragraph"><block ref="4e87b3c0f415f46d36e8fa6bd32a6ff7" category="inline-link-macro-rx"></block></block>
   <block id="d7fb1a4bddb3db62efbcefc0f8162f42" category="paragraph">Eigenständig</block>
-  <block id="465740a443e85d455a90494615d629b9" category="inline-link-macro">Manuelle Neuzuteilung der System-ID auf einem eigenständigen System in ONTAP</block>
-  <block id="7070195bf98baff2e0462461db9cb074" category="paragraph"><block ref="7070195bf98baff2e0462461db9cb074" category="inline-link-macro-rx"></block></block>
   <block id="c35620e4053e83506175fd11f77f79d1" category="paragraph">MetroCluster Konfiguration mit zwei Nodes</block>
-  <block id="734e28e3c6b715a48c7043347210471e" category="inline-link-macro">Manuelle Neuzuteilung der System-ID auf Systemen in einer MetroCluster-Konfiguration mit zwei Knoten</block>
-  <block id="ca5a5e07d656cff35da2184538cfc5fb" category="paragraph"><block ref="ca5a5e07d656cff35da2184538cfc5fb" category="inline-link-macro-rx"></block></block>
   <block id="d7f3697202a93edfa9694f456f135d47" category="section-title">Option 3: Manuelle Neuzuweisung der System-ID an Systemen in einer MetroCluster Konfiguration mit zwei Nodes</block>
   <block id="f707961e750c3177d39579c3dd6298da" category="doc">Vollständige Systemwiederherstellung - AFF A220 und FAS2700</block>
   <block id="9da34b3563e3dc0c838ac5494efca1fe" category="doc">Stellen Sie OKM, NSE und NVE nach Bedarf wieder her – AFF A220 und FAS2700</block>
@@ -7312,7 +7269,6 @@
   <block id="3cea6cd019ee970febca58bfe050e1cb" category="list-text">Booten Sie an der LOADER-Eingabeaufforderung auf dem Ersatz-Controller den Controller und geben Sie „y“ ein, wenn Sie aufgrund von nicht übereinstimmenden System-ID aufgefordert werden, die System-ID außer Kraft zu setzen.</block>
   <block id="40ef2970d7d205d6f0ba4ecddaec7b51" category="list-text">Warten Sie, bis Sie auf das Giveback warten... Die Meldung wird auf der Konsole des Controllers mit dem Ersatzmodul angezeigt und anschließend vom gesunden Controller aus überprüfen, ob die neue Partner-System-ID automatisch zugewiesen wurde:<block ref="ddf400f1cb6b8b9330ed6c79c508123c" prefix=" " category="inline-code"></block></block>
   <block id="e8060bae9316148ae38460dbb2356f26" category="paragraph">Bei den Festplatten, die zum Ersatz-Controller gehören, sollte die neue System-ID angezeigt werden. Im folgenden Beispiel zeigen die Festplatten von node1 jetzt die neue System-ID, 151759706:</block>
-  <block id="209f885dfe9e7d41b82f04b945d68576" category="list-text">Wenn die Speicherverschlüsselung aktiviert ist, müssen Sie ************</block>
   <block id="929bfee1ef6e5f44f83a22a0ee585e88" category="paragraph">Wenn ein Lüfter ausfällt, protokolliert das System eine Warnmeldung an die Systemkonsole und gibt an, welcher Lüfter ausfällt.</block>
   <block id="3f39e3eb27d53c3293d829964b0aec99" category="list-text">Stellen Sie sicher, dass beide NSM-Module im Shelf dieselbe Version von Firmware ausführen: Version 0200 oder höher.</block>
   <block id="c4a176fcfed8ad262bd0a9b82f87a961" category="paragraph">Wenn ein DIMM fehlerhaft ist, meldet das System eine Warnmeldung an die Systemkonsole und gibt an, welches DIMM defekt ist.</block>
@@ -7347,7 +7303,6 @@
   <block id="0a2404583aab34668c1c8004bddabbaa" category="list-text">Option 1 auswählen,<block ref="e6922a1788401c5ef431db829a2c387b" prefix=" " category="inline-code"></block></block>
   <block id="c566d4828cd295258aa8097a90880602" category="open-title">Option 2: Verwenden Von External Manager</block>
   <block id="0a05a9975c9259ea331a85366e41d3ce" category="list-text">Wählen Sie Option 11,<block ref="0dd518498ab98fe1fd543910856e6153" prefix=" " category="inline-code"></block>.</block>
-  <block id="453b94e2cc94c331c590159bf6b2d21e" category="admonition">Nachdem die Informationen zum Managementzertifikat abgeschlossen sind, kehrt der Node zum Boot-Menü zurück.</block>
   <block id="a5462faa34b6cf806cb49f24d84b02a7" category="list-text">Wenn Ihr System so konfiguriert ist, dass es 10-GbE-Cluster-Interconnect und Datenverbindungen auf 40-GbE-NICs unterstützt 10, konvertieren Sie diese Ports mit dem Befehl nicadmin convert aus dem Wartungsmodus. Siehe<block ref="2d808a662d9493bde97b50913a25a294" category="inline-link-rx"></block> Finden Sie weitere Informationen.</block>
   <block id="55c99fae85fce446adbb5ceb895cf55e" category="paragraph">Wenn Sie die Netzteile beim Ersetzen eines Gehäuses entfernen, deaktivieren, trennen und dann die vier Netzteile von der Rückseite des alten Gehäuses entfernen.</block>
   <block id="c56809d9cff2ea190c6fb9d67e804b42" category="paragraph">Sie müssen die sechs Lüftermodule, die sich an der Vorderseite des Gehäuses befinden, entfernen, wenn Sie das Gehäuse austauschen.</block>
@@ -7364,7 +7319,6 @@
   <block id="de9724762d060c871892fe8183e35056" category="image-alt">drw a900 NS224 zwei-Shelf-Kabel IEOPS 938</block>
   <block id="6f189db9f1b1dfc1be838de48c805168" category="video-title">Animation – legt NVMe-Laufwerk-Shelf-IDs fest</block>
   <block id="c81415a6ed927280dac360edb5000bc6" category="image-alt">drw a900 Power bei IEOPS 941</block>
-  <block id="7a0118bb1b2d6a800462ca70c23a1876" category="image-alt">drw 9000-Kabelkonsolenschalter-Controller IEOPS 953</block>
   <block id="1f583998630e94806bf5b9e059227dd4" category="paragraph"><block ref="1f583998630e94806bf5b9e059227dd4" category="inline-link-rx"></block></block>
   <block id="9b0500b65158795cfc5abb2becae4e80" category="paragraph">In der folgenden Tabelle sind die Kabeltypen aufgeführt, die Sie möglicherweise erhalten können. Wenn Sie ein Kabel erhalten, das nicht in der Tabelle aufgeführt ist, lesen Sie die<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block> Um das Kabel zu lokalisieren und dessen Verwendung zu identifizieren.</block>
   <block id="192e7ded6d54e3ac04596dc33b9c67cf" category="paragraph">Sie können ein I/O-Modul zu einem leeren Modulsteckplatz in Ihrem System hinzufügen.</block>
@@ -7375,7 +7329,6 @@
   <block id="15247f97704eb964c60d179c321c1370" category="list-text">Fügen Sie an der Eingabeaufforderung die Sicherungsschlüsseldaten aus der Ausgabe von ein<block ref="6b6f6c1a8bc1fede794cda92ed140953" prefix=" " category="inline-code"></block> ODER<block ref="32ba7af89b7557f6e3e6d80a922080ce" prefix=" " category="inline-code"></block> Befehl.</block>
   <block id="8726b2ef66dc0e734b269a3191597e11" category="paragraph">---------------------------- BEGINNEN SIE MIT DEM BACKUP---------------------------------</block>
   <block id="328f6eaec3741c1d0f9558d6c40c1da4" category="paragraph">TmV0QXBWIETLESBKBG9iAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1AAAAAAAAAAAAAAAAAAAAAA1AAAAAAAAAAAAAAAAAAAAAAAA1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA . . . H4nPQM0nrDRYRa9SCv8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</block>
-  <block id="26eef74dee0269079c9b6b002eeddb34" category="admonition">Der Node kehrt zum Startmenü zurück.</block>
   <block id="1e4d7cab6ce42bcab6973efa42fc0b2c" category="list-text">Führen Sie die integrierte Synchronisierung des Sicherheitsschlüsselmanagers aus:</block>
   <block id="377fca3965b001b9bcc8843e1b287fe7" category="list-text">Setzen Sie die MSID zurück, wenn sie zuvor festgelegt wurde und zu Beginn dieses Verfahrens erfasst wurde:</block>
   <block id="a967d40ef247a202e5f1ce7a9626a0ca" category="list-text">Weisen Sie einem FIPS-Laufwerk oder einer SED mithilfe des einen Datenauthentifizierungsschlüssel zu<block ref="8fc59e93e98503b6d1b1230269b06192" prefix=" " category="inline-code"></block> Befehl.</block>
@@ -7397,4 +7350,37 @@
   <block id="3a5f51ab8f29522107285c1bd243bf95" category="paragraph">Wenn das Feld SAS2/SAS3 Mixed Stack Support nicht in der Ausgabe angezeigt wird oder den Wert „none“ hat, unterstützt Ihr System keine gemischten Stacks.</block>
   <block id="b57b9debcc2348af5e609f2c38ecae74" category="paragraph">Wenn im Feld SAS2/SAS3 Mixed Stack Support „all“ angezeigt wird, unterstützt Ihr System gemischte Stacks.</block>
   <block id="7a2d660ca9e94c940789a57658eb9268" category="paragraph">Wenn im Feld SAS2/SAS3 Mixed Stack Support „Bridge-Attached“ angezeigt wird, unterstützt Ihr System gemischte Stacks nur, wenn die Speichereinschübe über eine ATTO FibreBridge verbunden sind.</block>
+  <block id="4a9a79dbcdff2c804e887801277bb57c" category="list-text">Verkabeln Sie Ihren Speicher: <block ref="64b4bebcc285271f3157ecc735b0c062" category="inline-xref-macro-rx"></block></block>
+  <block id="e90d1c109a9cd8d68a357882d5cf925c" category="list-text">Informationen zum Abschließen der Einrichtung des Systems finden Sie unter <block ref="84c1e7f35fa076545c5f4c4417de33e1" category="inline-xref-macro-rx"></block></block>
+  <block id="d12db64c0cb5cb862afbde49d98d6f25" category="inline-link-macro">Abschluss des Austauschvorgangs</block>
+  <block id="e739fb18db4795dd1e2cea8f3c5244c3" category="list-text">Gehen Sie zu <block ref="56c57196a2457d200e49164377b65ba5" category="inline-link-macro-rx"></block>.</block>
+  <block id="ba9fde9925258d03950e9c2d180f665c" category="image-alt">drw A400 ersetzt Boot-Medium IEOPS 1007</block>
+  <block id="e7f3c0051e6bc5cbd205f59b35151985" category="inline-image-macro">Breite=500 px</block>
+  <block id="6a226d8716b094e1702259265b496684" category="paragraph"><block ref="6a226d8716b094e1702259265b496684" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="afe794b290a5da51dd8b580fadd2b035" category="image-alt">drw A400 Ersetzen sie die mezz-Karte IEOPS 1006</block>
+  <block id="a7f924c2147b80d349701c702d7f091f" category="image-alt">entfernen Sie den IEOPS 1002 des leeren risers drw a400</block>
+  <block id="54c5909d12d5c473924ce9b2c856a68d" category="image-alt">drw A400 nvdimm Batt IEOPS 1004</block>
+  <block id="947bc8320a7df1722adcc49a6bdc81ba" category="image-alt">drw A400 Ersetzen Sie die PCIe-Karten IEOPS 1008</block>
+  <block id="85445cdcf89edd32e9cf4cb8554898a3" category="image-alt">drw A400 ersetzt NVDIMM DIMM IEOPS 1009</block>
+  <block id="f7e6cca62df33f4887013e8daaa9e77d" category="image-alt">drw A400 rtc Batt IEOPS 1003</block>
+  <block id="f5a5a95a5282486c3989ed932401b693" category="image-alt">drw A900 Kabelkonsolen-Switch-Controller IEOPS 953</block>
+  <block id="0ea0d47e034118a7f063c35eaf67ebd2" category="list-text">Wenn die Speicherverschlüsselung aktiviert ist, müssen Sie die Funktion wiederherstellen.</block>
+  <block id="718ea359d9cc2d2bff619909d16ec537" category="admonition">Der Controller kehrt zum Startmenü zurück.</block>
+  <block id="a9cbabd3f42c5ad7f4796dbf5e384b08" category="list-text">Starten Sie den Controller im Boot-Menü.</block>
+  <block id="1e37c9a4ea44b0a302091f02c74564c1" category="admonition">Der Controller kehrt zum Startmenü zurück, nachdem die Managementzertifikatinformationen abgeschlossen sind.</block>
+  <block id="34dbbed571bcfe30f4b9897172116b74" category="list-text">Informationen zum Kabelanschluss des Speichers finden Sie unter <block ref="4261ea2b75c295a1978f7924667f1c11" category="inline-xref-macro-rx"></block></block>
+  <block id="24ed59b86428c96c86204227163206c0" category="paragraph"><block ref="24ed59b86428c96c86204227163206c0" category="inline-link-rx"></block></block>
+  <block id="90d49fcc83418b049803a1b2081f3c6b" category="list-text">Informationen zum Abschließen der Einrichtung des Systems finden Sie unter <block ref="53346fef0c147b551f530d05bbad2e41" category="inline-xref-macro-rx"></block></block>
+  <block id="14fa1a86493af188cbb574d402b31f1b" category="list-text">Kehren Sie zu zurück <block ref="c67cdb63ab5b46180d9910dcb0f03689" category="inline-xref-macro-rx"></block> In diesem Verfahren wird die NVMEM-LED erneut überprüft.</block>
+  <block id="ba17e519b189ae10cd004d12dcc5e44d" category="paragraph"><block ref="751c01f8467f96987ff97e3a647e9973" category="inline-xref-macro-rx"></block></block>
+  <block id="c1918f58421ab69768df267ff2412c99" category="paragraph"><block ref="0b030be2689b90a40f49c456c91f18ec" category="inline-xref-macro-rx"></block></block>
+  <block id="b102c1828cf53d9df33f622c2208da4c" category="paragraph"><block ref="6ac3340c69a46ee235155eba76c461d6" category="inline-xref-macro-rx"></block></block>
+  <block id="68495e0db11cd8c3fcd536c93ecb150b" category="list-text">Installieren und verkabeln Sie die NS224-Regale, wie in beschrieben<block ref="8b1d41e5fd14f554e8b3490e0dfd47ae" category="inline-link-rx"></block>.</block>
+  <block id="d034ad76bb5b20c4f0a1790c3665c3b2" category="paragraph"><block ref="d034ad76bb5b20c4f0a1790c3665c3b2" category="inline-link-rx"></block></block>
+  <block id="7be2f40216e9676314a384c650694fed" category="admonition">Siehe<block ref="17d46f7a995ead494ec7b2eb9caffda8" category="inline-link-rx"></block> Für Ihre Version von ONTAP.</block>
+  <block id="1fad4d8ec174b60255a8febb2707e048" category="paragraph"><block ref="1fad4d8ec174b60255a8febb2707e048" category="inline-link-rx"></block></block>
+  <block id="8427b7c5bd63cec67b7bb2edba538972" category="list-text">Booten Sie den Node neu:</block>
+  <block id="8c2c8bc4e47d0ed180d7a321a6f45a30" category="paragraph">Um das NVRAM-Modul auszutauschen, befindet es sich in Steckplatz 6 im Gehäuse und befolgen Sie die Schritte in der angegebenen Reihenfolge.</block>
+  <block id="44e91a10c5fb9bc923eb6ca613b41106" category="list-text">Drücken Sie den mit Buchstaben versehenen und nummerierten Nockenriegel.</block>
+  <block id="35ed901089030d76b9de29f7bb8d54ce" category="paragraph">Die Nockenverriegelung bewegt sich vom Gehäuse weg.</block>
 </blocks>

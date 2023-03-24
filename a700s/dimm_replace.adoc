@@ -21,7 +21,6 @@ Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz
 
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
-[role="lead"]
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 
 Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE für die Berechtigung und den Zustand anzeigt, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren.
@@ -65,7 +64,6 @@ Wenn der Regler „beeinträchtigt“ angezeigt wird `Waiting for giveback...`Dr
 
 == Schritt 2: Entfernen Sie das Controller-Modul
 
-[role="lead"]
 Sie müssen das Controller-Modul aus dem Chassis entfernen, wenn Sie das Controller-Modul ersetzen oder eine Komponente im Controller-Modul ersetzen.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
@@ -143,7 +141,6 @@ Luftkanal
 
 == Schritt 3: Ersetzen Sie ein DIMM
 
-[role="lead"]
 Um ein DIMM auszutauschen, müssen Sie es im Controller-Modul mithilfe der DIMM-Karte auf der Innenseite des Controller-Moduls lokalisieren und es anschließend nach den entsprechenden Schritten ersetzen.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
@@ -219,7 +216,6 @@ Wenn Sie den NVRAM-Riser, Riser 1, entfernt haben, stellen Sie sicher, dass Sie 
 
 == Schritt 4: Installieren Sie das Controller-Modul neu und starten Sie das System
 
-[role="lead"]
 Nachdem Sie eine FRU im Controller-Modul ersetzt haben, müssen Sie das Controller-Modul neu installieren und neu starten.
 
 Bei HA-Paaren mit zwei Controller-Modulen im selben Chassis ist die Sequenz, in der Sie das Controller-Modul installieren, besonders wichtig, da sie versucht, neu zu booten, sobald Sie es vollständig im Chassis einsetzen.
@@ -260,7 +256,6 @@ Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt
 
 == Schritt 5: Führen Sie die Diagnose aus
 
-[role="lead"]
 Nachdem Sie eine Komponente im System ausgetauscht haben, sollten Sie Diagnosetests auf dieser Komponente durchführen.
 
 Ihr System muss die LOADER-Eingabeaufforderung aufweisen, um die Diagnose zu starten.
@@ -287,5 +282,4 @@ Nachdem Sie den Befehl ausgegeben haben, sollten Sie warten, bis das System an d
 
 == Schritt 6:Zurückgeben des fehlgeschlagenen Teils an NetApp
 
-[role="lead"]
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

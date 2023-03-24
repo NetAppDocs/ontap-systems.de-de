@@ -21,14 +21,12 @@ Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz
 
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
-[role="lead"]
 Fahren Sie den Controller mit eingeschränkter Konfiguration herunter oder übernehmen Sie ihn entsprechend.
 
 [role="tabbed-block"]
 ====
 .Option 1: Die meisten Konfigurationen
 --
-[role="lead"]
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 
 .Über diese Aufgabe
@@ -84,7 +82,6 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 --
 .Option 2: Controller befindet sich in einem MetroCluster mit zwei Nodes
 --
-[role="lead"]
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller umschalten, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 
 .Über diese Aufgabe
@@ -183,7 +180,6 @@ mcc1A::> metrocluster operation show
 
 == Schritt 2: Entfernen Sie das Controller-Modul
 
-[role="lead"]
 Um auf Komponenten im Controller-Modul zuzugreifen, müssen Sie das Controller-Modul aus dem Gehäuse entfernen.
 
 Sie können das Controller-Modul mithilfe der folgenden Animation, Illustration oder der geschriebenen Schritte aus dem Gehäuse entfernen.
@@ -214,7 +210,6 @@ Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen,
 
 == Schritt 3: System-DIMMs austauschen
 
-[role="lead"]
 Beim Ersetzen eines System-DIMM wird das Ziel-DIMM durch die zugehörige Fehlermeldung identifiziert, das Ziel-DIMM anhand der FRU-Karte im Luftkanal ausfindig gemacht und anschließend das DIMM ersetzt.
 
 Sie können die folgende Animation, Illustration oder die geschriebenen Schritte zum Ersetzen eines System-DIMM verwenden.
@@ -261,7 +256,6 @@ NOTE: Prüfen Sie das DIMM visuell, um sicherzustellen, dass es gleichmäßig au
 
 == Schritt 4: Installieren Sie das Controller-Modul
 
-[role="lead"]
 Nachdem Sie die Komponente im Controller-Modul ersetzt haben, müssen Sie das Controller-Modul wieder in das Gehäuse einsetzen und dann im Wartungsmodus booten.
 
 Sie können die folgende Animation, Illustration oder die geschriebenen Schritte zur Installation des Controller-Moduls im Gehäuse verwenden.
@@ -312,7 +306,6 @@ Wenn das System im Startmenü stoppt, wählen Sie die Option zum Booten in LOADE
 
 == Schritt 5: Führen Sie die Diagnose aus
 
-[role="lead"]
 Nachdem Sie ein System-DIMM im System ersetzt haben, sollten Sie Diagnosetests für diese Komponente ausführen.
 
 Ihr System muss die LOADER-Eingabeaufforderung aufweisen, um die Diagnose zu starten.
@@ -339,7 +332,6 @@ Nachdem Sie den Befehl ausgegeben haben, sollten Sie warten, bis das System an d
 
 == Schritt 6: Stellen Sie das Controller-Modul nach dem Ausführen der Diagnose wieder in Betrieb
 
-[role="lead"]
 Nach Abschluss der Diagnose müssen Sie das System erneut einschalten, das Controller-Modul zurückgeben und dann die automatische Rückgabe aktivieren.
 
 . Das System nach Bedarf neu einsetzen.
@@ -354,7 +346,6 @@ Wenn Sie die Medienkonverter (QSFPs oder SFPs) entfernt haben, sollten Sie diese
 
 == Schritt 7: Aggregate in einer MetroCluster Konfiguration mit zwei Nodes zurückwechseln
 
-[role="lead"]
 Nachdem Sie in einer MetroCluster Konfiguration mit zwei Nodes den FRU-Austausch abgeschlossen haben, können Sie den MetroCluster SwitchBack-Vorgang durchführen. Damit wird die Konfiguration in ihren normalen Betriebszustand zurückversetzt, wobei die Synchronisations-Storage Virtual Machines (SVMs) auf dem ehemals beeinträchtigten Standort jetzt aktiv sind und Daten aus den lokalen Festplattenpools bereitstellen.
 
 Dieser Task gilt nur für MetroCluster-Konfigurationen mit zwei Nodes.
@@ -413,5 +404,4 @@ Wenn ein Wechsel eine lange Zeit in Anspruch nimmt, können Sie den Status der i
 
 == Schritt 8: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
-[role="lead"]
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.
