@@ -1,0 +1,106 @@
+---
+permalink: c400/controller-replace-system-config-restore-and-verify.html 
+sidebar: sidebar 
+keywords: aff c400, restore and verify the system configuration, verify and set the ha state of the controller module, run system-level diagnostics 
+summary: Nach dem Austausch und dem Booten der Hardware im Wartungsmodus überprüfen Sie die Low-Level-Systemkonfiguration des Ersatz-Controllers und konfigurieren nach Bedarf die Systemeinstellungen neu. 
+---
+= Stellen Sie die Systemkonfiguration wieder her und überprüfen Sie sie: AFF C400
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nach dem Austausch und dem Booten der Hardware im Wartungsmodus überprüfen Sie die Low-Level-Systemkonfiguration des Ersatz-Controllers und konfigurieren nach Bedarf die Systemeinstellungen neu.
+
+
+
+== Schritt 1: Stellen Sie die Systemzeit nach dem Austausch des Controllers ein und überprüfen Sie sie
+
+Sie sollten die Uhrzeit und das Datum auf dem Ersatzcontroller-Modul gegen das gesunde Controller-Modul in einem HA-Paar oder gegen einen zuverlässigen Zeitserver in einer eigenständigen Konfiguration überprüfen. Wenn Zeit und Datum nicht übereinstimmen, müssen Sie sie auf dem Ersatzcontroller-Modul zurücksetzen, um mögliche Ausfälle auf Clients aufgrund von Zeitunterschieden zu verhindern.
+
+.Über diese Aufgabe
+Es ist wichtig, dass Sie die Befehle in den Schritten auf den richtigen Systemen anwenden:
+
+* Der Node _Replacement_ ist der neue Node, der den beeinträchtigten Knoten im Rahmen dieses Verfahrens ersetzt.
+* Der Node _Healthy_ ist der HA-Partner des Node _Replacement_.
+
+
+.Schritte
+. Wenn sich der Node _Replacement_ nicht an der LOADER-Eingabeaufforderung befindet, halten Sie das System an der LOADER-Eingabeaufforderung an.
+. Überprüfen Sie auf dem Node _Healthy_ die Systemzeit: `show date`
++
+Datum und Uhrzeit werden in GMT angegeben.
+
+. Prüfen Sie an der LOADER-Eingabeaufforderung Datum und Uhrzeit auf dem Node _Replacement_: `show date`
++
+Datum und Uhrzeit werden in GMT angegeben.
+
+. Legen Sie bei Bedarf das Datum in GMT auf dem Ersatzknoten fest: `set date _mm/dd/yyyy_`
+. Stellen Sie bei Bedarf die Zeit in GMT auf dem Ersatzknoten ein: `set time _hh:mm:ss_`
+. Bestätigen Sie an der LOADER-Eingabeaufforderung Datum und Uhrzeit am Node _Replacement_: `show date`
++
+Datum und Uhrzeit werden in GMT angegeben.
+
+
+
+
+
+== Schritt: Überprüfen Sie den HA-Status des Controller-Moduls und legen Sie ihn fest
+
+Sie müssen die überprüfen `HA` Status des Controller-Moduls und, falls erforderlich, aktualisieren Sie den Status entsprechend Ihrer Systemkonfiguration.
+
+. Überprüfen Sie im Wartungsmodus des neuen Controller-Moduls, ob alle Komponenten gleich angezeigt werden `HA` Bundesland: `ha-config show`
++
+Der HA-Status sollte für alle Komponenten identisch sein.
+
+. Wenn der angezeigte Systemzustand des Controller-Moduls nicht mit der Systemkonfiguration übereinstimmt, setzen Sie das ein `HA` Status für das Controller-Modul: `ha-config modify controller ha-state`
++
+Für den HA-Status kann einer der folgenden Werte vorliegen:
+
++
+** `ha`
+** `mcc`
+** `mcc-2n`
+** `mccip`
+** `non-ha`
+
+
+. Wenn der angezeigte Systemzustand des Controller-Moduls nicht mit der Systemkonfiguration übereinstimmt, setzen Sie das ein `HA` Status für das Controller-Modul: `ha-config modify controller ha-state`
+. Bestätigen Sie, dass sich die Einstellung geändert hat: `ha-config show`
+
+
+
+
+== Schritt 3: Führen Sie die Diagnose aus
+
+Nachdem Sie eine Komponente im System ausgetauscht haben, sollten Sie Diagnosetests auf dieser Komponente durchführen.
+
+Ihr System muss die LOADER-Eingabeaufforderung aufweisen, um die Diagnose zu starten.
+
+Alle Befehle im Diagnoseverfahren werden vom Controller ausgegeben, der die Komponente ersetzt wird.
+
+. Wenn der zu wartenden Controller nicht an der LOADER-Eingabeaufforderung angezeigt wird, booten Sie den Controller neu: `system node halt -node node_name`
++
+Nachdem Sie den Befehl ausgegeben haben, sollten Sie warten, bis das System an der LOADER-Eingabeaufforderung angehalten wird.
+
+. Rufen Sie an der LOADER-Eingabeaufforderung die speziellen Treiber auf, die speziell für die Diagnose auf Systemebene entwickelt wurden, um ordnungsgemäß zu funktionieren: `boot_diags`
+. Wählen Sie im angezeigten Menü *Scansystem* aus, um die Ausführung der Diagnosetests zu aktivieren.
+. Wählen Sie *Testsystem* aus dem angezeigten Menü, um Diagnosetests auszuführen.
+. Wählen Sie den Test oder die Testreihe aus den verschiedenen Untermenüs aus.
+. Fahren Sie auf der Grundlage des Ergebnisses des vorhergehenden Schritts fort:
++
+** Wenn der Test fehlgeschlagen ist, korrigieren Sie den Fehler, und führen Sie den Test erneut aus.
+** Wenn der Test keine Fehler gemeldet hat, wählen Sie im Menü Neu starten aus, um das System neu zu starten.
++
+
+NOTE: Während des Bootens werden möglicherweise die folgenden Eingabeaufforderungen angezeigt:
+
++
+*** Eine Warnmeldung über eine nicht übereinstimmende System-ID und die Aufforderung, die System-ID außer Kraft zu setzen.
+*** Eine Eingabeaufforderung mit einer Warnmeldung, dass Sie beim Aufrufen des Wartungsmodus in einer HA-Konfiguration sicherstellen müssen, dass der gesunde Controller weiterhin ausgefallen ist. Sie können sicher reagieren `y` Um diese Eingabeaufforderungen.
+
+
+
+
+

@@ -241,9 +241,9 @@ Wenn auf dem HA-Paar ONTAP 9.7 oder 9.6 ausgeführt wird, werden die nicht-dediz
 
 
 
-=== Bereiten Sie ein AFF A700, AFF A800 oder AFF A400 HA-Paar vor, um ein zweites Shelf im laufenden Betrieb hinzuzufügen
+=== Bereiten Sie ein AFF A700, AFF A800, AFF C800, AFF A400 oder AFF C400 HA-Paar auf das Hot-Add eines zweiten Shelf vor
 
-Wenn Sie über ein AFF A700, AFF A800 oder AFF A400 HA-Paar mit einem NS224-Laufwerk-Shelf verfügen, das mit einem Satz RoCE-fähiger Ports an jedem Controller verbunden ist, müssen Sie das Shelf neu konfigurieren (nachdem Sie die zusätzlichen RoCE-fähigen PCIe-Karten oder I/O-Module installiert haben). Über beide Ports-Sätze auf jedem Controller hinweg, bevor das zweite Shelf im laufenden Betrieb hinzugefügt wird.
+Wenn Sie ein AFF A700, AFF A800, AFF C800, AFF A400 oder AFF C400 HA-Paar mit einem NS224-Laufwerk-Shelf haben, das mit einem Satz RoCE-fähiger Ports an jedem Controller verkabelt ist, müssen Sie das Shelf neu verkabeln (Nachdem Sie die zusätzlichen RoCE-fähigen PCIe-Karten oder I/O-Module installiert haben) über beide Port-Sätze auf jedem Controller hinweg, bevor Sie das zweite Shelf Hot-hinzufügen.
 
 .Bevor Sie beginnen
 * Sie müssen die Systemanforderungen erfüllt haben.
@@ -296,7 +296,7 @@ Bei Bedarf können Sie Verkabelungsabbildungen mit einem vorhandenen Single Shel
 
 
  a| 
-AFF A800 HA-PAAR
+AFF A800 oder AFF C800 HA-Paar
  a| 
 
 NOTE: Die Unterschritte gehen davon aus, dass das vorhandene Shelf in jedem Controller-Steckplatz 5 mit RoCE-fähigen PCIe-Karten verbunden ist.
@@ -305,7 +305,7 @@ NOTE: Die Unterschritte gehen davon aus, dass das vorhandene Shelf in jedem Cont
 ====
 Bei Bedarf können Sie Verkabelungsabbildungen mit einem vorhandenen Single Shelf und dem neu ablsierten Shelf in einer 2-Shelf-Konfiguration verwenden.
 
-<<Verkabeln Sie ein Hot-Add-Shelf für ein AFF A800 HA-Paar>>
+<<Verkabeln Sie ein Hot-Add-Shelf mit einem AFF A800- oder AFF C800 HA-Paar>>
 
 ====
 .. Bewegen Sie das Kabel an Controller A von Steckplatz 5 Port b (e5b) in Steckplatz 3 Port b (e3b).
@@ -325,6 +325,22 @@ Bei Bedarf können Sie Verkabelungsabbildungen mit einem vorhandenen Single Shel
 
 ====
 .. Bewegen Sie das Kabel an Controller A von Port e0d nach Steckplatz 5 Port b (e5b).
+.. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
+
+
+
+
+ a| 
+AFF C400 HA-Paar
+ a| 
+[NOTE]
+====
+Bei Bedarf können Sie Verkabelungsabbildungen mit einem vorhandenen Single Shelf und dem neu ablsierten Shelf in einer 2-Shelf-Konfiguration verwenden.
+
+<<Verkabeln Sie ein Hot-Add-Shelf für ein AFF C400 HA-Paar>>
+
+====
+.. Bringen Sie das Kabel an Controller A von Steckplatz 4 Port A (e4a) in Steckplatz 5 Port b (e5b).
 .. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
 
 
@@ -394,7 +410,7 @@ NOTE: Montieren Sie das Regal nicht mit einem Flansch.
 
 NOTE: Ein voll beladenes NS224-Regal kann bis zu 66.78 kg (30.29 kg) wiegen und erfordert zwei Personen, um einen hydraulischen Aufzug zu heben oder zu verwenden. Entfernen Sie keine Regalkomponenten (von der Vorder- oder Rückseite des Regals), um das Gewicht des Regals zu verringern, da das Regalgewicht unausgeglichen wird.
 
-. Schließen Sie die Stromkabel an das Shelf an, befestigen Sie sie in der Kabelhalterung, und schließen Sie die Netzkabel anschließend an verschiedene Stromquellen an, um für Ausfallsicherheit zu sorgen.
+. Schließen Sie die Netzkabel an das Shelf an, befestigen Sie sie mit der Netzkabelhalterung, wenn es sich um Wechselstrom-Netzteile handelt, oder mit den zwei Flügelschrauben, wenn es sich um Gleichstromnetzteile handelt. Schließen Sie dann die Netzkabel aus Stabilitätsausschluss an verschiedene Stromquellen an.
 +
 Ein Shelf schaltet sich ein, wenn es mit einer Stromquelle verbunden ist. Es verfügt nicht über Netzschalter. Bei ordnungsgemäßer Funktion leuchtet die zweifarbige LED des Netzteils grün.
 
@@ -557,7 +573,7 @@ Andernfalls werden Sie mit diesem Verfahren durchgeführt.
 
 
 
-=== Verkabeln Sie ein Hot-Add-Shelf für ein FAS500f- oder AFF A250-HA-Paar
+=== Verkabeln Sie ein Hot-Add-Shelf für ein HA-Paar AFF A250, AFF C250 oder FAS500f
 
 Wenn zusätzlicher Storage benötigt wird, können Sie ein NS224-Festplatten-Shelf zu einem FAS500f- oder AFF A250-HA-Paar hinzufügen.
 
@@ -587,7 +603,7 @@ Wenn Sie von der Rückseite des Plattform-Chassis aus betrachtet werden, ist der
 .. Kabel-Shelf NSM B-Port e0a zu Controller B, Steckplatz 1, Port A (e1a)
 .. Kabel-Shelf NSM B-Port e0b zum Controller A-Steckplatz 1 Port b (e1b). + die folgende Abbildung zeigt die Shelf-Verkabelung, wenn der Vorgang abgeschlossen ist.
 +
-image::../media/drw_ns224_aff250_fas500f_1shelf.png[drw ns224 aff250 fas500f 1Shelf]
+image::../media/drw_ns224_a250_c250_f500f_1shelf_IEOPS-963.svg[drw ns224 a250 c250 f500f 1 Einschub IEOPS 963]
 
 
 
@@ -611,7 +627,7 @@ Andernfalls werden Sie mit diesem Verfahren durchgeführt.
 
 === Verkabeln Sie ein Hot-Add-Shelf für ein AFF A700 HA-Paar
 
-Wie Sie ein NS224-Laufwerk-Shelf in einem AFF A700 HA-Paar verkabeln, hängt von der Anzahl der Hot-Adding-Shelfs und der Anzahl der RoCE-fähigen Port-Sätze (ein oder zwei) ab, die Sie auf den Controller-Modulen verwenden.
+Wie Sie ein NS224-Laufwerk-Shelf in einem AFF A700 HA-Paar verkabeln, hängt von der Anzahl der Shelfs ab, die Sie beim Hinzufügen verwenden, und von der Anzahl der RoCE-fähigen Port-Sätze (ein oder zwei), die Sie auf den Controller-Modulen verwenden.
 
 .Bevor Sie beginnen
 * Sie müssen die Systemanforderungen erfüllt haben.
@@ -710,9 +726,9 @@ Andernfalls werden Sie mit diesem Verfahren durchgeführt.
 
 
 
-=== Verkabeln Sie ein Hot-Add-Shelf für ein AFF A800 HA-Paar
+=== Verkabeln Sie ein Hot-Add-Shelf mit einem AFF A800- oder AFF C800 HA-Paar
 
-Wie Sie ein NS224-Laufwerk-Shelf in einem AFF A800 HA-Paar verkabeln, hängt von der Anzahl der Hot-Adding-Shelfs und der Anzahl der RoCE-fähigen Port-Sätze (ein oder zwei) ab, die Sie an den Controller-Modulen verwenden.
+Wie Sie ein NS224-Laufwerk-Shelf in einem AFF A800 oder AFF C800 HA-Paar verkabeln, hängt von der Anzahl der hinzuzufüenden Shelfs und der Anzahl der RoCE-fähigen Port-Sätze (ein oder zwei) auf den Controller-Modulen ab.
 
 .Bevor Sie beginnen
 * Sie müssen die Systemanforderungen erfüllt haben.
@@ -739,15 +755,15 @@ Andernfalls fahren Sie mit dem nächsten Schritt fort.
 NOTE: Bei diesem Schritt wird vorausgesetzt, dass Sie die RoCE-fähige PCIe-Karte in Steckplatz 5 installiert haben.
 
 +
-.. Kabel-Shelf NSM A Port e0a zu Controller A Steckplatz 5 Port a.
-.. Kabel-Shelf NSM A Port e0b bis Controller B-Steckplatz 5 Port B.
-.. Kabel-Shelf NSM B-Port e0a zu Controller B-Steckplatz 5 Port a.
-.. Kabel-Shelf NSM B-Port e0b für Controller A-Steckplatz 5 Port B.
+.. Verkabeln Sie das Shelf NSM A-Port e0a mit Controller A, Steckplatz 5, Port A (e5a).
+.. Verkabeln Sie den Port e0b des Shelf NSM A mit Controller B-Steckplatz 5, Port b (e5b).
+.. Verkabeln Sie den Shelf NSM B-Port e0a mit Controller B-Steckplatz 5, Port A (e5a).
+.. Verkabeln Sie den Shelf NSM B-Port e0b mit Controller A-Steckplatz 5, Port b (e5b).
 +
 Die folgende Abbildung zeigt die Verkabelung für ein Hot-Added Shelf mit einer RoCE-fähigen PCIe-Karte pro Controller-Modul:
 
 +
-image::../media/drw_ns224_a800_1shelf.png[drw ns224 a800 1 Shelf]
+image::../media/drw_ns224_a800_c800_1shelf_IEOPS-964.svg[drw ns224 a800 c800 1-Shelf-IEOPS 964]
 
 
 
@@ -768,10 +784,10 @@ Shelf 1
 
 NOTE: Diese Unterschritte gehen davon aus, dass Sie die Verkabelung des Shelf-Ports e0a zu der RoCE-fähigen PCIe-Karte in Steckplatz 5 anstatt in Steckplatz 3 beginnen.
 
-.. Verbinden Sie NSM A Port e0a mit Controller A Steckplatz 5 Port a.
-.. Kabel NSM A Port e0b an Controller B Steckplatz 3 Port B.
-.. Kabel NSM B-Port e0a zu Controller B-Steckplatz 5 Port a.
-.. Kabel NSM B Port e0b an Controller A Steckplatz 3 Port B.
+.. Verkabeln Sie den NSM A-Port e0a mit dem Controller A-Steckplatz 5, Port A (e5a).
+.. Verkabeln Sie den NSM A-Port e0b mit Controller B-Steckplatz 3, Port b (e3b).
+.. Verkabeln Sie den NSM B-Port e0a mit Controller B-Steckplatz 5, Port A (e5a).
+.. Verkabeln Sie den NSM B-Port e0b mit Controller A-Steckplatz 3, Port b (e3b).
 .. Wenn Sie ein zweites Regal heizen, füllen Sie die Unterschritte "`Shelf 2`" aus; andernfalls fahren Sie mit Schritt 3 fort.
 
 
@@ -783,10 +799,10 @@ Shelf 2
 
 NOTE: Diese Unterschritte gehen davon aus, dass Sie die Verkabelung des Shelf-Ports e0a mit der RoCE-fähigen PCIe-Karte in Steckplatz 3 anstatt in Steckplatz 5 beginnen (der mit den Verkabelungsunterschritten für Shelf 1 korreliert).
 
-.. Verbinden Sie NSM A Port e0a mit Controller A Steckplatz 3 Port a.
-.. Kabel NSM A Port e0b an Controller B Steckplatz 5 Port B.
-.. Kabel NSM B-Port e0a zu Controller B-Steckplatz 3 Port a.
-.. Kabel NSM B Port e0b an Controller A Steckplatz 5 Port B.
+.. Verkabeln Sie den NSM A-Port e0a mit dem Controller A-Steckplatz 3, Port A (e3a).
+.. Verkabeln Sie den NSM A-Port e0b mit Controller B-Steckplatz 5, Port b (e5b).
+.. Verbinden Sie den NSM B-Port e0a mit Controller B-Steckplatz 3, Port A (e3a).
+.. Verkabeln Sie den NSM B-Port e0b mit Controller A-Steckplatz 5, Port b (e5b).
 .. Fahren Sie mit Schritt 3 fort.
 
 
@@ -795,7 +811,7 @@ NOTE: Diese Unterschritte gehen davon aus, dass Sie die Verkabelung des Shelf-Po
 Die folgende Abbildung zeigt die Verkabelung für zwei Hot-Added Shelves:
 
 +
-image::../media/drw_ns224_a800_2shelves.png[drw ns224 a800 2 Shelfs]
+image::../media/drw_ns224_a800_c800_2shelves_IEOPS-966.svg[drw ns224 a800 c800 2 Shelfs IEOPS 966]
 
 . Stellen Sie sicher, dass das Hot-Added Shelf ordnungsgemäß verkabelt ist.
 +
@@ -817,7 +833,7 @@ Andernfalls werden Sie mit diesem Verfahren durchgeführt.
 
 === Verkabeln Sie ein Hot-Add-Shelf für ein AFF A400 HA-Paar
 
-Wie Sie ein NS224-Laufwerk-Shelf in einem AFF A400 HA-Paar verkabeln, hängt von der Anzahl der im laufenden Betrieb hinzuzufügenden Shelfs und der Anzahl der RoCE-fähigen Port-Sätze (ein oder zwei) ab, die Sie an den Controller-Modulen verwenden.
+Wie Sie ein NS224-Laufwerk-Shelf in einem AFF A400 HA-Paar verkabeln, hängt davon ab, wie viele Shelfs Sie Hot-hinzufügen, und wie viele RoCE-fähige Port-Sätze (ein oder zwei) Sie auf den Controller-Modulen verwenden.
 
 .Bevor Sie beginnen
 * Sie müssen die Systemanforderungen erfüllt haben.
@@ -863,9 +879,9 @@ image::../media/drw_ns224_a400_1shelf.png[drw ns224 a400, 1 Shelf]
 Shelf 1
  a| 
 .. Verbinden Sie NSM A Port e0a mit Controller A Port e0c.
-.. Kabel NSM A Port e0b an Controller B Steckplatz 5 Port B.
+.. Verkabeln Sie den NSM A-Port e0b mit Controller B-Steckplatz 5, Port 2 (e5b).
 .. Verbinden Sie den NSM B-Port e0a mit Controller B-Port e0c.
-.. Kabel NSM B Port e0b an Controller A Steckplatz 5 Port B.
+.. Verkabeln Sie den NSM B-Port e0b mit Controller A-Steckplatz 5, Port 2 (e5b).
 .. Wenn Sie ein zweites Regal heizen, füllen Sie die Unterschritte "`Shelf 2`" aus; andernfalls fahren Sie mit Schritt 3 fort.
 
 
@@ -874,9 +890,9 @@ Shelf 1
  a| 
 Shelf 2
  a| 
-.. Verbinden Sie NSM A Port e0a mit Controller A Steckplatz 5 Port a.
+.. Verkabeln Sie den NSM A-Port e0a mit Controller A-Steckplatz 5, Port 1 (e5a).
 .. Verbinden Sie den NSM A-Port e0b mit dem Port e0d des Controllers.
-.. Kabel NSM B-Port e0a zu Controller B-Steckplatz 5 Port a.
+.. Verkabeln Sie den NSM B-Port e0a mit Controller B-Steckplatz 5, Port 1 (e5a).
 .. Verbinden Sie den NSM B-Port e0b mit Controller A-Port e0d.
 .. Fahren Sie mit Schritt 3 fort.
 
@@ -886,7 +902,98 @@ Shelf 2
 Die folgende Abbildung zeigt die Verkabelung für zwei Hot-Added Shelves:
 
 +
-image::../media/drw_ns224_a400_2shelves.png[drw ns224 a400 2 Einlegeböden]
+image::../media/drw_ns224_a400_2shelves_IEOPS-983.svg[drw ns224 a400 2 Shelfs IEOPS 983]
+
+. Stellen Sie sicher, dass das Hot-Added Shelf ordnungsgemäß verkabelt ist.
++
+Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
+
++
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"^]
+
+. Wenn Sie die automatische Laufwerkszuweisung als Teil der Vorbereitung für dieses Verfahren deaktiviert haben, müssen Sie manuell die Laufwerkseigentümer festlegen und bei Bedarf die automatische Laufwerkszuweisung wieder aktivieren.
++
+Andernfalls werden Sie mit diesem Verfahren durchgeführt.
+
++
+<<Füllen Sie das Hot Add aus>>
+
+
+
+
+
+=== Verkabeln Sie ein Hot-Add-Shelf für ein AFF C400 HA-Paar
+
+Wie Sie ein NS224-Laufwerk-Shelf in einem AFF C400 HA-Paar verkabeln, hängt von der Anzahl der hinzuzufüenden Shelfs und der Anzahl der RoCE-fähigen Port-Sets (ein oder zwei), die Sie auf den Controller-Modulen verwenden, ab.
+
+.Bevor Sie beginnen
+* Sie müssen die Systemanforderungen erfüllt haben.
++
+<<Anforderungen für einen Hot-Add-Zusatz>>
+
+* Sie müssen die entsprechenden Vorbereitungsverfahren abgeschlossen haben.
++
+<<Bereiten Sie sich auf ein Hot-Add vor>>
+
+* Sie müssen die Shelfs installiert und eingeschaltet sowie die Shelf-IDs festlegen.
++
+<<Installieren Sie ein Laufwerk-Shelf für einen Hot-Add-Zusatz>>
+
+
+
+.Schritte
+. Wenn Sie bei jedem Controller-Modul ein Shelf mit einem Satz RoCE-fähiger Ports hinzufügen und dies das einzige NS224-Shelf in Ihrem HA-Paar ist, führen Sie die folgenden Teilschritte durch.
++
+Andernfalls fahren Sie mit dem nächsten Schritt fort.
+
++
+.. Verkabeln Sie das Shelf NSM A-Port e0a mit Controller A, Steckplatz 4, Port 1 (e4a).
+.. Verkabeln Sie den Shelf NSM A-Port e0b mit Controller B-Steckplatz 4, Port 2 (e4b).
+.. Verkabeln Sie den Shelf NSM B-Port e0a mit Controller B-Steckplatz 4, Port 1 (e4a).
+.. Verkabeln Sie den Shelf NSM B-Port e0b mit Controller A-Steckplatz 4, Port 2 (e4b).
++
+Die folgende Abbildung zeigt die Verkabelung für ein Hot-Added Shelf mit einem Satz RoCE-fähiger Ports pro Controller-Modul:
+
++
+image::../media/drw_ns224_c400_1shelf_IEOPS-985.svg[drw ns224 c400 1-Shelf-IEOPS 985]
+
+
+
+. Wenn Sie ein oder zwei Shelfs im laufenden Betrieb mit zwei Sätzen von RoCE-fähigen Ports an jedem Controller-Modul hinzufügen, führen Sie die folgenden Teilschritte durch.
++
+[cols="1,3"]
+|===
+| Shelfs | Verkabelung 
+
+
+ a| 
+Shelf 1
+ a| 
+.. Verkabeln Sie den NSM A-Port e0a mit dem Controller A-Steckplatz 4, Port 1 (e4a).
+.. Verkabeln Sie den NSM A-Port e0b mit Controller B-Steckplatz 5, Port 2 (e5b).
+.. Verbinden Sie den NSM B-Port e0a mit Controller B-Port-Steckplatz 4 Port 1 (e4a).
+.. Verkabeln Sie den NSM B-Port e0b mit Controller A-Steckplatz 5, Port 2 (e5b).
+.. Wenn Sie ein zweites Regal heizen, füllen Sie die Unterschritte "`Shelf 2`" aus; andernfalls fahren Sie mit Schritt 3 fort.
+
+
+
+
+ a| 
+Shelf 2
+ a| 
+.. Verkabeln Sie den NSM A-Port e0a mit Controller A-Steckplatz 5, Port 1 (e5a).
+.. Verkabeln Sie den NSM A-Port e0b mit Controller B-Steckplatz 4, Port 2 (e4b).
+.. Verkabeln Sie den NSM B-Port e0a mit Controller B-Steckplatz 5, Port 1 (e5a).
+.. Verkabeln Sie den NSM B-Port e0b mit Controller A-Steckplatz 4, Port 2 (e4b).
+.. Fahren Sie mit Schritt 3 fort.
+
+
+|===
++
+Die folgende Abbildung zeigt die Verkabelung für zwei Hot-Added Shelves:
+
++
+image::../media/drw_ns224_c400_2shelves_IEOPS-984.svg[drw ns224 c400 2 Shelfs IEOPS 984]
 
 . Stellen Sie sicher, dass das Hot-Added Shelf ordnungsgemäß verkabelt ist.
 +

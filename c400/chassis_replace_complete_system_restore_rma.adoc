@@ -1,0 +1,135 @@
+---
+permalink: c400/chassis-replace-complete-system-restore-rma.html 
+sidebar: sidebar 
+keywords: aff c400, verify and set HA state, run diagnostics, complete the replacement process 
+summary: Sie müssen den HA-Status des Chassis überprüfen, Diagnosen ausführen und das ausgefallene Teil an NetApp zurücksenden, wie in den mit dem Kit gelieferten RMA-Anweisungen beschrieben. 
+---
+= Schließen Sie den Wiederherstellungs- und Austauschprozess ab – AFF C400
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen den HA-Status des Chassis überprüfen, Diagnosen ausführen und das ausgefallene Teil an NetApp zurücksenden, wie in den mit dem Kit gelieferten RMA-Anweisungen beschrieben.
+
+
+
+== Schritt: Überprüfen Sie den HA-Status des Chassis und legen Sie diesen fest
+
+Sie müssen den HA-Status des Chassis überprüfen und gegebenenfalls den Status entsprechend Ihrer Systemkonfiguration aktualisieren.
+
+. Zeigen Sie im Wartungsmodus von einem der Controller-Module aus den HA-Status des lokalen Controller-Moduls und des Chassis an: `ha-config show`
++
+Der HA-Status sollte für alle Komponenten identisch sein.
+
+. Wenn der angezeigte Systemzustand für das Chassis nicht mit der Systemkonfiguration übereinstimmt:
++
+.. Legen Sie für das Chassis den HA-Status fest: `ha-config modify chassis _HA-state_`
++
+Der Wert für _HA-State_ kann einer der folgenden Werte sein:
+
++
+*** `ha`
+*** `mcc`
+*** `mcc-2n`
+*** `mccip`
+*** `non-ha`
+
+
+.. Bestätigen Sie, dass sich die Einstellung geändert hat: `ha-config show`
+
+
+. Falls Sie dies noch nicht getan haben, können Sie den Rest Ihres Systems erneut verwenden.
+. Bringen Sie die Blende wieder an der Vorderseite des Systems an.
+
+
+
+
+== Schritt 2: Diagnose ausführen
+
+Nachdem Sie eine Komponente im System ausgetauscht haben, sollten Sie Diagnosetests auf dieser Komponente durchführen.
+
+Ihr System muss die LOADER-Eingabeaufforderung aufweisen, um die Diagnose zu starten.
+
+Alle Befehle in den Diagnoseverfahren werden vom Node ausgegeben, auf dem die Komponente ersetzt wird.
+
+. Wenn der Node, der gewartet werden soll, nicht an der LOADER-Eingabeaufforderung angezeigt wird, booten Sie den Node neu: `system node halt -node node_name`
++
+Nachdem Sie den Befehl ausgegeben haben, sollten Sie warten, bis das System an der LOADER-Eingabeaufforderung angehalten wird.
+
+. Rufen Sie an der LOADER-Eingabeaufforderung die speziellen Treiber auf, die speziell für die Diagnose auf Systemebene entwickelt wurden, um ordnungsgemäß zu funktionieren: `boot_diags`
+. Wählen Sie im angezeigten Menü *Scansystem* aus, um die Ausführung der Diagnosetests zu aktivieren.
+. Wählen Sie *Testsystem* aus dem angezeigten Menü, um Diagnosetests auszuführen.
+. Wählen Sie den Test oder die Testreihe aus den verschiedenen Untermenüs aus.
+. Fahren Sie auf der Grundlage des Ergebnisses des vorhergehenden Schritts fort:
++
+** Wenn der Test fehlgeschlagen ist, korrigieren Sie den Fehler, und führen Sie den Test erneut aus.
+** Wenn der Test keine Fehler gemeldet hat, wählen Sie im Menü Neu starten aus, um das System neu zu starten.
+
+
+
+
+
+
+== Schritt 3: Aggregate in einer MetroCluster Konfiguration mit zwei Nodes zurückwechseln
+
+Nachdem Sie in einer MetroCluster Konfiguration mit zwei Nodes den FRU-Austausch abgeschlossen haben, können Sie den MetroCluster SwitchBack-Vorgang durchführen. Damit wird die Konfiguration in ihren normalen Betriebszustand zurückversetzt, wobei die Synchronisations-Storage Virtual Machines (SVMs) auf dem ehemals beeinträchtigten Standort jetzt aktiv sind und Daten aus den lokalen Festplattenpools bereitstellen.
+
+Dieser Task gilt nur für MetroCluster-Konfigurationen mit zwei Nodes.
+
+.Schritte
+. Vergewissern Sie sich, dass sich alle Nodes im befinden `enabled` Bundesland: `metrocluster node show`
++
+[listing]
+----
+cluster_B::>  metrocluster node show
+
+DR                           Configuration  DR
+Group Cluster Node           State          Mirroring Mode
+----- ------- -------------- -------------- --------- --------------------
+1     cluster_A
+              controller_A_1 configured     enabled   heal roots completed
+      cluster_B
+              controller_B_1 configured     enabled   waiting for switchback recovery
+2 entries were displayed.
+----
+. Überprüfen Sie, ob die Neusynchronisierung auf allen SVMs abgeschlossen ist: `metrocluster vserver show`
+. Überprüfen Sie, ob die automatischen LIF-Migrationen durch die heilenden Vorgänge erfolgreich abgeschlossen wurden: `metrocluster check lif show`
+. Führen Sie den Wechsel zurück mit dem aus `metrocluster switchback` Befehl von einem beliebigen Node im verbleibenden Cluster
+. Stellen Sie sicher, dass der Umkehrvorgang abgeschlossen ist: `metrocluster show`
++
+Der Vorgang zum zurückwechseln wird weiterhin ausgeführt, wenn sich ein Cluster im befindet `waiting-for-switchback` Bundesland:
+
++
+[listing]
+----
+cluster_B::> metrocluster show
+Cluster              Configuration State    Mode
+--------------------	------------------- 	---------
+ Local: cluster_B configured       	switchover
+Remote: cluster_A configured       	waiting-for-switchback
+----
++
+Der Vorgang zum zurückwechseln ist abgeschlossen, wenn sich die Cluster im befinden `normal` Bundesland:
+
++
+[listing]
+----
+cluster_B::> metrocluster show
+Cluster              Configuration State    Mode
+--------------------	------------------- 	---------
+ Local: cluster_B configured      		normal
+Remote: cluster_A configured      		normal
+----
++
+Wenn ein Wechsel eine lange Zeit in Anspruch nimmt, können Sie den Status der in-progress-Basispläne über die überprüfen `metrocluster config-replication resync-status show` Befehl.
+
+. Wiederherstellung beliebiger SnapMirror oder SnapVault Konfigurationen
+
+
+
+
+== Schritt 4: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

@@ -46,19 +46,6 @@ Dies kann bis zu fünf Minuten dauern.
 +
 So bleibt ONTAP genügend Zeit, um das NSM-Entfernungsereignis zu bearbeiten.
 
-* *Best Practice:* die Best Practice besteht darin, aktuelle Versionen der NSM-Firmware (NVMe Shelf Module) und der Laufwerk-Firmware auf dem System zu haben, bevor FRU-Komponenten ersetzt werden.
-+
-https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp Downloads: Festplatten-Shelf Firmware"^]
-
-+
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["NetApp Downloads: Festplatten-Firmware"^]
-
-+
-[NOTE]
-====
-Stellen Sie die Firmware nicht auf eine Version zurück, die Ihr Shelf und seine Komponenten nicht unterstützt.
-
-====
 * Bei Bedarf können Sie die blauen LEDs am Shelf einschalten, um die physische Suche nach dem betroffenen Shelf zu erleichtern: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
 +
 Wenn Sie den nicht kennen `_shelf_name_` Führen Sie den aus `storage shelf show` Befehl.
@@ -70,7 +57,7 @@ Ein Regal hat drei Positionen-LEDs: Eine auf dem Bedienfeld und eine auf jedem N
 +
 Wenn Sie die RMA-Nummer oder zusätzliche Hilfe beim Ersatzverfahren benötigen, wenden Sie sich an den technischen Support unter https://mysupport.netapp.com/site/global/dashboard["NetApp Support"^], 888-463-8277 (Nordamerika), 00-800-44-638277 (Europa) oder +800-800-80-800 (Asien/Pazifik).
 
-* Sie können das Bootmedium mit dem folgenden Video oder den schriftlichen Schritten ersetzen.
+* Sie können die folgenden Animationen oder die geschriebenen Schritte verwenden, um das Boot-Medium zu ersetzen.
 +
 .Animation - Ersetzen Sie die Startmedien in einem NS224-Laufwerk-Shelf
 video::20ed85f9-1f80-4e0e-9219-ab4600070d8a[panopto]
@@ -81,7 +68,7 @@ video::20ed85f9-1f80-4e0e-9219-ab4600070d8a[panopto]
 . Richtig gemahlen.
 . Trennen Sie die Verkabelung vom NSM-Modul, das die FRU enthält, die Sie ersetzen:
 +
-.. Ziehen Sie das Netzkabel vom Netzteil ab, indem Sie den Netzkabelhalter öffnen und dann das Netzkabel vom Netzteil trennen.
+.. Ziehen Sie das Netzkabel vom Netzteil ab, indem Sie den Netzkabelhalter öffnen, wenn es sich um ein Netzteil handelt, oder die beiden Flügelschrauben lösen, wenn es sich um ein Gleichstromnetzteil handelt, und ziehen Sie dann das Netzkabel vom Netzteil ab.
 +
 Die Netzteile haben keinen Netzschalter.
 
@@ -163,7 +150,7 @@ Das NSM-Modul sollte vollständig in das Regal eingeführt und mit den Rändern 
 +
 Die Kabel werden mit der Zuglasche des Steckers nach oben eingesetzt. Wenn ein Kabel richtig eingesetzt wird, klickt es an seine Stelle.
 
-.. Schließen Sie das Netzkabel wieder an das Netzteil an, und befestigen Sie dann das Netzkabel mit der Netzkabelhalterung.
+.. Schließen Sie das Netzkabel wieder an das Netzteil an, und befestigen Sie das Netzkabel mit der Netzkabelhalterung, wenn es sich um ein Netzteil handelt, oder ziehen Sie die beiden Flügelschrauben fest, wenn es sich um ein Gleichstromnetzteil handelt.
 +
 Bei ordnungsgemäßer Funktion leuchtet die zweifarbige LED des Netzteils grün.
 

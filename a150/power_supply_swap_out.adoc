@@ -1,0 +1,70 @@
+---
+permalink: a150/power-supply-swap-out.html 
+sidebar: sidebar 
+keywords: aff a150, a150, aff, swap, power, supply, turn off, disconnect, remove, old, install, connect, turn on, replacement 
+summary: Beim Austausch eines Netzteils müssen Sie das alte Netzteil ausschalten, trennen und entfernen sowie das neue Netzteil installieren, anschließen und einschalten. 
+---
+= Tauschen Sie ein Netzteil aus – AFF A150
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Beim Austausch eines Netzteils müssen Sie das alte Netzteil ausschalten, trennen und entfernen sowie das neue Netzteil installieren, anschließen und einschalten.
+
+Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+
+* Die Netzteile sind redundant und Hot-Swap-fähig.
+* Dieses Verfahren ist für den Austausch eines Netzteils nach dem anderen beschrieben.
++
+
+NOTE: Die Kühlung ist in das Netzteil integriert, sodass Sie das Netzteil innerhalb von zwei Minuten nach dem Entfernen austauschen müssen, um eine Überhitzung durch einen verringerten Luftstrom zu vermeiden. Da das Chassis eine gemeinsame Kühlungskonfiguration für die beiden HA-Nodes bereitstellt, werden alle Controller-Module im Chassis mit einer Verzögerung von mehr als zwei Minuten heruntergefahren. Wenn beide Controller-Module heruntergefahren werden, stellen Sie sicher, dass beide Netzteile eingesetzt sind, schalten Sie beide für 30 Sekunden aus und schalten Sie beide ein.
+
+* Die Netzteile haben einen automatischen Bereich.
+
+
+.Schritte
+. Identifizieren Sie das zu ersetzenden Netzteil anhand von Konsolenfehlern oder über die LEDs an den Netzteilen.
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Schalten Sie das Netzteil aus und trennen Sie die Netzkabel:
++
+.. Schalten Sie den Netzschalter am Netzteil aus.
+.. Öffnen Sie die Netzkabelhalterung, und ziehen Sie dann das Netzkabel vom Netzteil ab.
+.. Ziehen Sie das Netzkabel von der Stromversorgung ab.
+
+
+. Drücken Sie die Verriegelung am Handgriff der Stromversorgungs-Nockenwelle, und öffnen Sie dann den Nockengriff, um das Netzteil vollständig von der Mittelebene zu lösen.
++
+image::../media/drw_2600_psu_repl_animated_gif.png[drw 2600 psu repl animiert gif]
+
+. Schieben Sie die Stromversorgung mit dem Nockengriff aus dem System heraus.
++
+
+CAUTION: Wenn Sie ein Netzteil entfernen, verwenden Sie immer zwei Hände, um sein Gewicht zu stützen.
+
+. Stellen Sie sicher, dass sich der ein-/Ausschalter des neuen Netzteils in der Stellung aus befindet.
+. Halten und richten Sie die Kanten des Netzteils mit beiden Händen an der Öffnung im Systemgehäuse aus, und drücken Sie dann vorsichtig das Netzteil mithilfe des Nockengriffs in das Gehäuse.
++
+Die Netzteile sind codiert und können nur auf eine Weise installiert werden.
+
++
+
+NOTE: Beim Einschieben des Netzteils in das System keine übermäßige Kraft verwenden. Sie können den Anschluss beschädigen.
+
+. Schließen Sie den Nockengriff, so dass die Verriegelung in die verriegelte Position einrastet und das Netzteil vollständig eingesetzt ist.
+. Schließen Sie die Verkabelung des Netzteils wieder an:
++
+.. Schließen Sie das Netzkabel wieder an das Netzteil und die Stromversorgung an.
+.. Befestigen Sie das Netzkabel mithilfe der Netzkabelhalterung am Netzteil.
+
+
++
+Sobald die Stromversorgung wiederhergestellt ist, sollte die Status-LED grün leuchten.
+
+. Schalten Sie das neue Netzteil ein, und überprüfen Sie dann den Betrieb der Aktivitäts-LEDs für das Netzteil.
++
+Die Netzteil-LEDs leuchten, wenn das Netzteil online geschaltet wird.
+
+. Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"^] Seite für weitere Informationen.
+

@@ -14,25 +14,16 @@ summary: Sie können ein ausgefallenes Netzteil unterbrechungsfrei in einem NS22
 Sie können ein ausgefallenes Netzteil unterbrechungsfrei in einem NS224-Laufwerk-Shelf ersetzen, das eingeschaltet ist, und während I/O gerade läuft.
 
 .Über diese Aufgabe
-* Mischen Sie keine Netzteile mit unterschiedlichen Effizienzwerten. Immer ersetzen wie für „Gefällt mir“.
+* Verwenden Sie keine Netzteile mit unterschiedlichen Wirkungsgrades oder mit unterschiedlichen Eingangstypen.
++
+Immer ersetzen wie für „Gefällt mir“.
+
 * Wenn Sie mehrere Netzteile ersetzen, müssen Sie dies nacheinander durchführen, damit das Shelf die Stromversorgung aufrecht erhält.
 * *Best Practice:* die beste Praxis ist, das Netzteil innerhalb von zwei Minuten nach dem Entfernen aus dem NSM-Modul zu ersetzen.
 +
 Wenn Sie die zwei Minuten überschreiten, wird das Shelf weiterhin ausgeführt. ONTAP sendet jedoch Meldungen an die Konsole über das beeinträchtigte Netzteil, bis das Netzteil ersetzt wird.
 
-* *Best Practice:* die Best Practice besteht darin, aktuelle Versionen der NSM-Firmware (NVMe Shelf Module) und der Laufwerk-Firmware auf dem System zu haben, bevor FRU-Komponenten ersetzt werden.
-+
-https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp Downloads: Festplatten-Shelf Firmware"^]
-
-+
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["NetApp Downloads: Festplatten-Firmware"^]
-
-+
-[NOTE]
-====
-Stellen Sie die Firmware nicht auf eine Version zurück, die Ihr Shelf und seine Komponenten nicht unterstützt.
-
-====
+* Stellen Sie die Firmware nicht auf eine Version zurück, die Ihr Shelf und seine Komponenten nicht unterstützt.
 * Bei Bedarf können Sie die blauen LEDs am Shelf einschalten, um die physische Suche nach dem betroffenen Shelf zu erleichtern: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
 +
 Wenn Sie den nicht kennen `shelf_name` Führen Sie den aus `storage shelf show` Befehl.
@@ -44,12 +35,18 @@ Ein Regal hat drei Positionen-LEDs: Eine auf dem Bedienfeld und eine auf jedem N
 +
 Wenn Sie die RMA-Nummer oder zusätzliche Hilfe beim Ersatzverfahren benötigen, wenden Sie sich an den technischen Support unter https://mysupport.netapp.com/site/global/dashboard["NetApp Support"^], 888-463-8277 (Nordamerika), 00-800-44-638277 (Europa) oder +800-800-80-800 (Asien/Pazifik).
 
-* Sie können das folgende Video oder die geschriebenen Schritte zum Austausch eines Netzteils verwenden.
-+
+
+
+Verwenden Sie das entsprechende Verfahren für Ihren Netzteiltyp: AC oder DC.
+
+[role="tabbed-block"]
+====
+.Option 1: Ersetzen Sie ein Wechselstromnetzteil
+--
+Zum Austauschen eines Netzteils können Sie die Animation ansehen oder die folgenden Schritte ausführen.
+
 .Animation - Hot-Swap eines Netzteils in einem NS224-Laufwerk-Shelf
 video::5794da63-99aa-425a-825f-aa86002f154d[panopto]
-
-
 .Schritte
 . Richtig gemahlen.
 . Identifizieren Sie das ausgefallene Netzteil physisch.
@@ -60,9 +57,9 @@ Das System protokolliert eine Warnmeldung an die Systemkonsole und gibt an, welc
 +
 Die Netzteile haben keinen Netzschalter.
 
-. Entfernen Sie das ausgefallene Netzteil:
+. Entfernen Sie das Netzteil:
 +
-.. Drehen Sie den Kurvengriff in die offene (horizontale) Position, und greifen Sie ihn dann an.
+.. Drehen Sie den Griff nach oben in die horizontale Position, und fassen Sie ihn dann an.
 .. Drücken Sie mit dem Daumen auf die blaue Lasche, um den Verriegelungsmechanismus zu lösen.
 .. Ziehen Sie das Netzteil aus dem NSM-Modul, während Sie die andere Hand verwenden, um das Gewicht zu unterstützen.
 
@@ -75,7 +72,7 @@ Die Netzteile haben keinen Netzschalter.
 
 NOTE: Verwenden Sie keine übermäßige Kraft, oder Sie können den internen Stecker beschädigen.
 
-.. Drehen Sie den Nockengriff in die geschlossene Position.
+.. Drehen Sie den Griff nach unten, so dass er sich nicht im normalen Betrieb befindet.
 
 
 . Schließen Sie das Netzkabel an das Netzteil an, und befestigen Sie das Netzkabel mit der Netzkabelhalterung.
@@ -83,3 +80,96 @@ NOTE: Verwenden Sie keine übermäßige Kraft, oder Sie können den internen Ste
 Bei ordnungsgemäßer Funktion leuchtet die zweifarbige LED des Netzteils grün.
 
 
+
+--
+.Option 2: Ersetzen Sie ein Gleichstromnetzteil
+--
+Führen Sie zum Austauschen eines Gleichstromnetzteils die folgenden Schritte durch.
+
+. Richtig gemahlen.
+. Identifizieren Sie das ausgefallene Netzteil physisch.
++
+Das System protokolliert eine Warnmeldung an die Systemkonsole und gibt an, welche Stromversorgung fehlgeschlagen ist. Darüber hinaus leuchten die Fehler-LED auf der Anzeige des Shelf-Bedieners und die zweifarbige LED am ausgefallenen Netzteil leuchtet rot.
+
+. Trennen Sie das Netzteil:
++
+Die Abbildung und die Tabelle im nächsten Schritt zeigen die beiden Flügelschrauben (Pos. #1) und den D-SUB-DC-Netzkabelanschluss (Pos. #2).
+
++
+.. Lösen Sie die beiden Flügelschrauben am Netzkabelanschluss.
+.. Ziehen Sie den Netzkabelanschluss vom Netzteil ab, und legen Sie ihn beiseite.
+
+
+. Entfernen Sie das Netzteil:
++
+.. Drehen Sie den Griff nach oben in die horizontale Position, und fassen Sie ihn dann an.
+.. Drücken Sie mit dem Daumen auf die blaue Lasche, um den Verriegelungsmechanismus zu lösen.
+.. Ziehen Sie das Netzteil aus dem NSM-Modul, während Sie die andere Hand verwenden, um das Gewicht zu unterstützen.
++
+
+NOTE: Das Netzteil ist kurz. Verwenden Sie immer zwei Hände, um es zu stützen, wenn Sie es aus dem NSM-Modul entfernen, so dass es nicht aus dem NSM-Modul schwingt und Sie verletzt.
+
++
+image::../media/drw_dcpsu_remove-replace-generic_IEOPS-788.svg[drw dcpsu remove Generic IEOPS 788 ersetzen]
+
++
+[cols="1,3"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.svg["Breite=10 px"]
+ a| 
+Flügelschrauben
+
+
+
+ a| 
+image:../media/legend_icon_02.svg["Breite=10 px"]
+ a| 
+D-SUB-DC-Netzkabelanschluss
+
+
+
+ a| 
+image:../media/legend_icon_03.svg["Breite=10 px"]
+ a| 
+Netzteilgriff
+
+
+
+ a| 
+image:../media/legend_icon_04.svg["Breite=10 px"]
+ a| 
+Blaue Verriegelungslasche für die Stromversorgung
+
+|===
+
+
+. Setzen Sie das Ersatznetzteil ein:
++
+.. Stützen und richten Sie die Kanten des Netzteils mit beiden Händen an der Öffnung im NSM-Modul aus.
+.. Schieben Sie das Netzteil vorsichtig in das NSM-Modul, bis der Verriegelungsmechanismus einrastet.
++
+Ein Netzteil muss ordnungsgemäß mit dem internen Anschluss und dem Verriegelungsmechanismus verbunden sein. Wiederholen Sie diesen Schritt, wenn Sie das Netzteil nicht richtig eingesetzt haben.
+
++
+
+NOTE: Verwenden Sie keine übermäßige Kraft, oder Sie können den internen Stecker beschädigen.
+
+.. Drehen Sie den Griff nach unten, so dass er sich nicht im normalen Betrieb befindet.
+
+
+. Schließen Sie das D-SUB-Gleichstromkabel wieder an:
++
+Sobald die Stromversorgung wiederhergestellt ist, sollte die Status-LED grün leuchten.
+
++
+.. Schließen Sie den Netzkabelanschluss an das Netzteil an.
+.. Ziehen Sie die beiden Flügelschrauben fest, um den Netzkabelanschluss am Netzteil zu befestigen.
+
+
+
+
+--
+====

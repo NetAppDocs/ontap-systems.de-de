@@ -1,0 +1,37 @@
+---
+permalink: c800/controller-replace-overview.html 
+sidebar: sidebar 
+keywords: aff c800, prerequisite, replace the controller module 
+summary: Sie müssen die Voraussetzungen für den Austausch prüfen und die richtige für Ihre Version des ONTAP Betriebssystems auswählen. 
+---
+= Überblick über den Austausch von Controller-Modulen – AFF C800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen die Voraussetzungen für den Austausch prüfen und die richtige für Ihre Version des ONTAP Betriebssystems auswählen.
+
+* Alle Festplatten-Shelfs müssen ordnungsgemäß funktionieren.
+* Der gesunde Regler muss in der Lage sein, den zu ersetzenden Regler zu übernehmen (bezeichnet in diesem Verfahren als „`eingeschränkte Steuerung`“).
+* Wenn sich Ihr System in einer MetroCluster-Konfiguration befindet, müssen Sie den Abschnitt überprüfen https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/concept_choosing_the_correct_recovery_procedure_parent_concept.html["Auswahl des richtigen Wiederherstellungsverfahrens"] Um zu bestimmen, ob Sie dieses Verfahren verwenden sollten.
+* Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
+* Sie müssen ein Controller-Modul durch ein Controller-Modul desselben Modelltyps ersetzen. Sie können kein System-Upgrade durch einen Austausch des Controller-Moduls durchführen.
+* Im Rahmen dieses Verfahrens können Laufwerke oder Laufwerk-Shelfs nicht geändert werden.
+* In diesem Verfahren wird das Boot-Gerät vom beeinträchtigten Controller auf den _Replacement_-Controller verschoben, sodass der _Replacement_-Controller in derselben ONTAP-Version wie das alte Controller-Modul gestartet wird.
+* Es ist wichtig, dass Sie die Befehle in diesen Schritten auf die richtigen Systeme anwenden:
++
+** Die Steuerung _imired_ ist die Steuerung, die ersetzt wird.
+** Die Steuerung _Replacement_ ist die neue Steuerung, die die beeinträchtigte Steuerung ersetzt.
+** Der _Healthy_ Controller ist der überlebende Controller.
+
+
+* Sie müssen die Konsolenausgabe der Controller immer in einer Textdatei erfassen.
++
+Auf diese Weise erhalten Sie eine Aufzeichnung des Verfahrens, damit Sie Probleme beheben können, die während des Austauschvorgangs auftreten können.
+
+
+
+
+NOTE: Die BIOS-Version des _Replacement_ Controllers darf nicht entsprechend dem Partner Controller oder dem alten Controller-Modul heruntergestuft werden.

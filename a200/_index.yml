@@ -1,16 +1,12 @@
 ---
 indexpage:
   tiles:
-  - title: Los geht's 
+  - title: Installieren
     links:
-    - title: Versionshinweise zu ONTAP
-      url: https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508
-    - title: Was ist neu
-      url: "../whats-new.html"
-  - title: Installation und Einrichtung
-    links:
-    - title: Alle Konfigurationen
-      url: "/install-setup.html"
+    - title: Schnelle Schritte
+      url: https://docs.netapp.com/us-en/ontap-systems/media/PDF/210-06711+C0_AFFA200_ISI_web.pdf
+    - title: Videoschritte
+      url: https://youtu.be/WAE0afWhj1c
   - title: Wartung
     links:
     - title: Boot-Medien
@@ -19,50 +15,31 @@ indexpage:
       url: "/chassis-replace-overview.html"
     - title: Controller-Modul
       url: "/controller-replace-overview.html"
-    - title: NV-Batterie
-      url: "/nvmem-nvram-battery-replace.html"
-    - title: System-DIMM
+    - title: DIMM
       url: "/dimm-replace.html"
+    - title: Laufwerk
+      url: "/dimm-replace.html"
+    - title: NVMEM-Akku
+      url: "/nvmem-nvram-battery-replace.html"
     - title: Stromversorgung
       url: "/power-supply-swap-out.html"
     - title: RTC-Akku
       url: "/rtc-battery-replace.html"
-  - title: Know-How
+    - title: SAS Shelfs
+      url: "../sas3/index.html"
+  - title: Unterstützte Switches
     links:
-    - title: Ersetzen eines internen Laufwerks Video
-      url: https://www.youtube.com/watch?v=Ziqg9HL8oYQ
-    - title: NetApp All-Flash FAS Solution for Nonpersistent Desktops with VMware
-        Horizon View TR-4539
-      url: https://www.netapp.com/pdf.html?item=/media/10695-tr-4539.pdf
-  - title: Shelfs hinzufügen oder entfernen
-    links:
-    - title: SAS mit IOM12
-      url: https://docs.netapp.com/us-en/ontap-systems/sas3/index.html
-  - title: Installieren und warten Sie die Switches
-    links:
-    - title: Von Broadcom unterstützte Switches
-      url: https://docs.netapp.com/us-en/ontap-systems-switches/
-    - title: Cisco Switches
-      url: https://docs.netapp.com/us-en/ontap-systems-switches/
-  - title: Upgrade
+    - title: BES-53248
+      url: https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/configure-new-switch-overview.html
+    - title: Cisco Nexus 9336C-FX2
+      url: https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/configure-switch-overview-9336c-cluster.html
+    - title: Cisco Nexus 9336C-FX2 in gemeinsam genutzter Konfiguration
+      url: https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2-shared/configure-switch-overview-9336c-shared.html
+  - title: Weitere Dokumentressourcen
     links:
     - title: Upgrade der Systemhardware
       url: https://docs.netapp.com/us-en/ontap-systems-upgrade/
     - title: ONTAP-Software-Upgrade
       url: https://docs.netapp.com/us-en/ontap/upgrade/index.html
-  - title: Mehr Ressourcen
-    links:
-    - title: ONTAP-Dokumentation
-      url: https://docs.netapp.com/us-en/ontap/
-    - title: NetApp Hardware Universe
-      url: https://hwu.netapp.com/home/index
-    - title: NetApp Active IQ Digital Advisor
-      url: https://docs.netapp.com/us-en/active-iq/index.html
-    - title: NetApp Active IQ Config Advisor
-      url: https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor
-    - title: NetApp Interoperabilitäts-Matrix-Tool
-      url: https://mysupport.netapp.com/matrix/#welcome
-    - title: NetApp Support Knowledge Base
-      url: https://kb.netapp.com/
-    - title: NetApp Community
-      url: https://community.netapp.com/
+    - title: Ersetzen des internen Festplattenlaufwerks (Video)
+      url: https://www.youtube.com/watch?v=Ziqg9HL8oYQ
