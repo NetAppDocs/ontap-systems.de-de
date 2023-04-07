@@ -3,7 +3,7 @@
 
 
 [role="lead"]
-Sie können ein ausgefallenes Laufwerk unterbrechungsfrei ersetzen, während I/O gerade läuft. Das Verfahren zum Austausch einer SSD gilt für nicht rotierende Laufwerke, und das Verfahren zum Austausch einer Festplatte betrifft rotierende Laufwerke.
+Sie können ein ausgefallenes SSD-Laufwerk unterbrechungsfrei ersetzen, während I/O ausgeführt wird.
 
 Wenn ein Laufwerk ausfällt, meldet die Plattform eine Warnmeldung an die Systemkonsole und gibt an, welches Laufwerk ausgefallen ist. Darüber hinaus leuchten die Fehler-LED auf der Bedieneranzeige und die Fehler-LED am ausgefallenen Laufwerk.
 
@@ -15,7 +15,7 @@ Das ausgefallene Laufwerk wird in der Liste der ausgefallenen Laufwerke angezeig
 
 +
 
-NOTE: Abhängig vom Laufwerkstyp und der Kapazität kann es bis zu mehrere Stunden dauern, bis das Laufwerk in der Liste der ausgefallenen Laufwerke angezeigt wird.
+NOTE: Es kann mehrere Stunden dauern, bis das Laufwerk in der Liste der ausgefallenen Laufwerke angezeigt wird.
 
 * Legen Sie fest, ob die SED-Authentifizierung aktiviert ist.
 +
@@ -29,6 +29,3 @@ Wie Sie die Festplatte austauschen, hängt davon ab, wie das Festplattenlaufwerk
 Die Festplatten-Firmware wird bei neuen Laufwerken, die nicht über aktuelle Firmware-Versionen verfügen, automatisch (unterbrechungsfrei) aktualisiert.
 
 Beim Austausch mehrerer Festplattenlaufwerke müssen Sie eine Minute zwischen dem Entfernen jedes ausgefallenen Laufwerks und dem Einsetzen des Ersatzlaufwerks warten, damit das Storage-System die Existenz jeder neuen Festplatte erkennen kann.
-
-.Verfahren
-Ersetzen Sie das ausgefallene Laufwerk, indem Sie die entsprechende Option für die Laufwerke auswählen, die von Ihrer Plattform unterstützt werden.

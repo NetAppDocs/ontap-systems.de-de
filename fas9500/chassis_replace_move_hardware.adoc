@@ -11,13 +11,13 @@ summary: Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionie
 
 
 [role="lead"]
-Um das Gehäuse auszutauschen, müssen Sie die Komponenten aus dem alten Chassis entfernen und im Ersatzgehäuse installieren.
+Um das Gehäuse auszutauschen, müssen Sie die Komponenten aus dem Gehäuse für beeinträchtigte Geräte entfernen und sie in das Ersatzgehäuse einsetzen.
 
 
 
 == Schritt 1: Entfernen Sie die Netzteile
 
-Wenn Sie die Netzteile beim Ersetzen eines Gehäuses entfernen, deaktivieren, trennen und dann die vier Netzteile von der Rückseite des alten Gehäuses entfernen.
+Beim Entfernen der Netzteile beim Austausch eines Gehäuses müssen die vier Netzteile ausgeschaltet, getrennt und anschließend von der Rückseite des Gehäuses entfernt werden.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Schalten Sie das Netzteil aus und trennen Sie die Netzkabel:
@@ -97,7 +97,7 @@ Schieben Sie den Lüfter in das Gehäuse ein-/heraus
 
 == Schritt 3: Entfernen Sie das Controller-Modul
 
-Um das Chassis auszutauschen, müssen Sie das Controller-Modul oder die Module aus dem alten Chassis entfernen.
+Um das Gehäuse auszutauschen, müssen Sie das oder die Controller-Module aus dem Gehäuse für beeinträchtigte Geräte entfernen.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Ziehen Sie die Kabel vom beeinträchtigten Controller-Modul ab, und verfolgen Sie, wo die Kabel angeschlossen waren.
@@ -137,7 +137,7 @@ Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen,
 
 == Schritt 4: Entfernen Sie die E/A-Module
 
-Um I/O-Module aus dem alten Chassis, einschließlich der NVRAM-Module, zu entfernen, befolgen Sie die spezifischen Abfolge von Schritten. Sie müssen das Modul Flash Cache, falls vorhanden, nicht aus dem NVRAM-Modul entfernen, wenn Sie es in ein neues Chassis verschieben.
+Um E/A-Module aus dem Gehäuse für beeinträchtigte Zugriffe, einschließlich der NVRAM-Module, zu entfernen, befolgen Sie die angegebenen Schritte. Sie müssen das FlashCache Modul, falls vorhanden, nicht aus dem NVRAM-Modul entfernen, wenn Sie es in ein Ersatzgehäuse verschieben.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Trennen Sie alle Kabel, die mit dem Ziel-E/A-Modul verbunden sind.
@@ -185,14 +185,14 @@ E/A-Nockenverriegelung vollständig entriegelt
 
 
 . Legen Sie das E/A-Modul beiseite.
-. Wiederholen Sie den vorherigen Schritt für die verbleibenden I/O-Module des alten Chassis.
+. Wiederholen Sie den vorherigen Schritt für die verbleibenden I/O-Module im Gehäuse für beeinträchtigte Zugriffe.
 
 
 
 
 == Schritt 5: Entfernen Sie das Leistungsmodul des De-Stage-Controllers
 
-Entfernen Sie die beiden abgebachten Controller-Stromversorgungsmodule von der Vorderseite des alten Gehäuses.
+Entfernen Sie die beiden destufigen Controller-Stromversorgungsmodule von der Vorderseite des Gehäuses für die Außerbetriebnahme.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Drücken Sie die Sperrtaste für Terrakotta am Modulgriff, und schieben Sie das DCPM-Modul aus dem Gehäuse.
@@ -218,30 +218,9 @@ DCPM-Modul Terra cotta Verriegelungsknopf
 
 
 
-== Schritt 6: Ersetzen Sie ein Chassis aus dem Rack oder Systemschrank der Ausrüstung
+== Schritt 6: Entfernen Sie das USB-LED-Modul
 
-Sie müssen das vorhandene Chassis aus dem Rack oder dem Systemschrank entfernen, bevor Sie das Ersatzgehäuse installieren können.
-
-. Entfernen Sie die Schrauben von den Montagepunkten des Gehäuses.
-+
-
-NOTE: Wenn sich das System in einem Systemschrank befindet, müssen Sie möglicherweise die hintere Abklemme entfernen.
-
-. Schieben Sie mit Hilfe von zwei oder drei Personen das alte Chassis in einem Systemschrank oder _L_-Halterungen in einem Geräterückel von den Rack-Schienen und legen Sie es dann beiseite.
-. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
-. Installieren Sie das Ersatzgehäuse mithilfe von zwei oder drei Personen in das Rack oder den Systemschrank des Geräts, indem Sie das Chassis an die Rack-Schienen in einem Systemschrank oder _L_ -Halterungen in einem Rack führen.
-. Schieben Sie das Chassis vollständig in das Rack oder den Systemschrank der Ausrüstung.
-. Befestigen Sie die Vorderseite des Chassis mit den Schrauben, die Sie vom alten Chassis entfernt haben, am Rack oder am Systemschrank des Geräts.
-. Befestigen Sie die Rückseite des Chassis am Rack oder am Systemschrank des Geräts.
-. Wenn Sie die Kabelführungshalter verwenden, entfernen Sie sie aus dem alten Chassis und installieren Sie sie dann am Ersatzgehäuse.
-. Falls noch nicht geschehen, befestigen Sie die Blende.
-
-
-
-
-== Schritt 7: Bewegen Sie das USB-LED-Modul in das neue Gehäuse
-
-Sobald das neue Gehäuse im Rack oder Schrank installiert ist, schieben Sie das USB-LED-Modul von der Vorderseite des alten Gehäuses in das neue Gehäuse.
+Entfernen Sie die USB-LED-Module.
 
 .Animation - USB-Modul entfernen/installieren
 video::bc46a3e8-6541-444e-973b-ae78004bf153[panopto]
@@ -264,9 +243,30 @@ image:../media/legend_icon_02.svg["Breite = 20"]
 Schieben Sie es aus dem Chassis heraus.
 
 |===
-. Suchen Sie das USB-LED-Modul an der Vorderseite des alten Gehäuses direkt unter den DCPM-Modulen.
-. Drücken Sie die schwarze Verriegelungstaste auf der rechten Seite des Moduls, um das Modul aus dem Gehäuse zu lösen, und schieben Sie es dann aus dem alten Gehäuse heraus.
+. Suchen Sie das USB-LED-Modul auf der Vorderseite des Gehäuses mit eingeschränkter Stromversorgung direkt unter den Netzteilschächten.
+. Drücken Sie die schwarze Verriegelungstaste auf der rechten Seite des Moduls, um das Modul aus dem Gehäuse zu lösen, und schieben Sie es dann aus dem Gehäuse für beeinträchtigte Personen heraus.
 . Richten Sie die Kanten des Moduls am USB-LED-Schacht an der Unterseite des Ersatzgehäuses aus, und schieben Sie das Modul vorsichtig bis zum Einrasten in das Gehäuse.
+
+
+
+
+== Schritt 7: Austausch eines Chassis aus dem Geräte-Rack oder Systemschrank heraus
+
+Sie müssen das vorhandene Chassis aus dem Rack oder dem Systemschrank entfernen, bevor Sie das Ersatzgehäuse installieren können.
+
+. Entfernen Sie die Schrauben von den Montagepunkten des Gehäuses.
++
+
+NOTE: Wenn sich das System in einem Systemschrank befindet, müssen Sie möglicherweise die hintere Abklemme entfernen.
+
+. Schieben Sie mit Hilfe von zwei oder drei Personen das Gehäuse für beeinträchtigte Personen von den Rack-Schienen in einem Systemschrank oder _L_ Halterungen in einem Geräterahmen und legen Sie es dann beiseite.
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Installieren Sie das Ersatzgehäuse mithilfe von zwei oder drei Personen in das Rack oder den Systemschrank des Geräts, indem Sie das Chassis an die Rack-Schienen in einem Systemschrank oder _L_ -Halterungen in einem Rack führen.
+. Schieben Sie das Chassis vollständig in das Rack oder den Systemschrank der Ausrüstung.
+. Befestigen Sie die Vorderseite des Gehäuses mit den Schrauben, die Sie aus dem Gehäuse für beeinträchtigte Geräte entfernt haben, am Geräte-Rack oder Systemschrank.
+. Befestigen Sie die Rückseite des Chassis am Rack oder am Systemschrank des Geräts.
+. Wenn Sie die Kabelhalterungen verwenden, entfernen Sie sie aus dem Gehäuse für beeinträchtigte Personen, und installieren Sie sie dann auf dem Ersatzgehäuse.
+. Falls noch nicht geschehen, befestigen Sie die Blende.
 
 
 
@@ -303,9 +303,9 @@ Wenn das Lüftermodul erfolgreich in das Gehäuse eingesetzt wurde, blinkt die g
 
 == Schritt 10: E/A-Module installieren
 
-Folgen Sie zum Installieren der I/O-Module, einschließlich der NVRAM/Flash Cache Module aus dem alten Chassis, den entsprechenden Schritten.
+Um I/O-Module, einschließlich NVRAM/FlashCache-Module, aus dem Gehäuse für beeinträchtigte Vorgänge zu installieren, folgen Sie den spezifischen Schritten.
 
-Sie müssen das Gehäuse installiert haben, damit Sie die I/O-Module in die entsprechenden Steckplätze im neuen Gehäuse installieren können.
+Das Gehäuse muss installiert sein, damit Sie die E/A-Module in die entsprechenden Steckplätze im Ersatzgehäuse einsetzen können.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Nachdem das Ersatzgehäuse im Rack oder Schrank installiert wurde, installieren Sie die E/A-Module in die entsprechenden Steckplätze im Ersatzgehäuse, indem Sie das E/A-Modul vorsichtig in den Steckplatz schieben, bis sich die nummerierte und letzte E/A-Nockenverriegelung einlässt. Drücken Sie dann die E/A-Nockenverriegelung ganz nach oben, um das Modul zu verriegeln.
@@ -313,7 +313,7 @@ Sie müssen das Gehäuse installiert haben, damit Sie die I/O-Module in die ents
 . Wiederholen Sie den vorherigen Schritt für die restlichen I/O-Module, die Sie beiseite gelegt haben.
 +
 
-NOTE: Wenn im alten Chassis leere I/O-Panels vorhanden sind, schieben Sie sie jetzt in das Ersatzgehäuse.
+NOTE: Wenn das Gehäuse für den beeinträchtigten Betrieb über leere E/A-Platten verfügt, bringen Sie diese zu diesem Zeitpunkt in das Ersatzgehäuse.
 
 
 
@@ -324,6 +324,7 @@ NOTE: Wenn im alten Chassis leere I/O-Panels vorhanden sind, schieben Sie sie je
 Beim Ersetzen eines Gehäuses installieren Sie die Netzteile beim Installieren eines Gehäuses, indem Sie die Netzteile in das Ersatzgehäuse und den Anschluss an die Stromversorgung anschließen.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Stellen Sie sicher, dass sich die Kipper des Netzteiles in der Position aus befinden.
 . Halten und richten Sie die Kanten des Netzteils mit beiden Händen an der Öffnung im Systemgehäuse aus, und drücken Sie dann vorsichtig das Netzteil in das Gehäuse, bis es einrastet.
 +
 Die Netzteile sind codiert und können nur auf eine Weise installiert werden.
@@ -342,18 +343,29 @@ IMPORTANT: Schließen Sie das Netzkabel nur an das Netzteil an. Schließen Sie d
 
 
 
-== Schritt 12: Installieren Sie den Controller
+== Schritt 12 Installieren Sie die USB-LED-Module
 
-Nachdem Sie das Controller-Modul und alle anderen Komponenten im neuen Chassis installiert haben, booten Sie es in einem Status, wo Sie den Interconnect-Diagnosetest ausführen können.
+Installieren Sie die USB-LED-Module im Ersatzgehäuse.
+
+. Suchen Sie das USB-LED-Modul auf der Vorderseite des Gehäuses mit eingeschränkter Stromversorgung direkt unter den Netzteilschächten.
+. Drücken Sie die schwarze Verriegelungstaste auf der rechten Seite des Moduls, um das Modul aus dem Gehäuse zu lösen, und schieben Sie es dann aus dem Gehäuse für beeinträchtigte Personen heraus.
+. Richten Sie die Kanten des Moduls am USB-LED-Schacht an der Unterseite des Ersatzgehäuses aus, und schieben Sie das Modul vorsichtig bis zum Einrasten in das Gehäuse.
+
+
+
+
+== Schritt 13: Installieren Sie den Controller
+
+Nachdem Sie das Controller-Modul und alle anderen Komponenten in das Ersatzgehäuse eingebaut haben, booten Sie es in einem Zustand, in dem Sie den Interconnect-Diagnosetest ausführen können.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Schließen Sie die Netzteile an verschiedene Stromquellen an, und schalten Sie sie dann ein.
 . Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
 +
 
 NOTE: Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein, wenn Sie dazu aufgefordert werden.
 
 . Führen Sie die Konsole wieder mit dem Controller-Modul aus, und schließen Sie den Management-Port wieder an.
-. Schließen Sie die Netzteile an verschiedene Stromquellen an, und schalten Sie sie dann ein.
 . Schieben Sie das Controller-Modul mit dem Nockengriff in die offene Position in das Gehäuse und schieben Sie das Controller-Modul fest hinein, bis es auf die Mittelebene trifft und vollständig sitzt. Schließen Sie dann den Nockengriff, bis er in die verriegelte Position einrastet.
 +
 
@@ -362,21 +374,6 @@ IMPORTANT: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermä
 +
 Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt.
 
-. Wiederholen Sie die vorherigen Schritte, um den zweiten Controller im neuen Chassis zu installieren.
-. Booten jedes Node im Wartungsmodus:
-+
-.. Drücken Sie beim Booten jedes Node `Ctrl-C` Um den Bootvorgang zu unterbrechen, wenn die Meldung angezeigt wird, drücken Sie Strg-C für das Startmenü.
-+
-
-NOTE: Wenn die Eingabeaufforderung nicht angezeigt wird und die Controller-Module beim ONTAP booten, geben Sie ein `halt`, Und geben Sie an der LOADER-Eingabeaufforderung ein `boot_ontap`, Drücken Sie `Ctrl-C` Wenn Sie dazu aufgefordert werden, und wiederholen Sie diesen Schritt.
-
-
-
-+
-Antwort `y` Wenn die Eingabeaufforderung zum Starten im Wartungsmodus angezeigt wird
-
-+
-.. Wählen Sie im Startmenü die Option Wartungsmodus aus.
-
-
+. Wiederholen Sie die vorherigen Schritte, um den zweiten Controller im Ersatzgehäuse zu installieren.
+. Starten Sie jeden Controller.
 

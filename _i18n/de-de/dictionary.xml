@@ -626,8 +626,6 @@
   <block id="81e1b67b4176274b272b2432d79bb3a4" category="list-text">Stellen Sie sicher, dass das Ersatzlaufwerk von Ihrer Plattform unterstützt wird. Siehe<block ref="ed4326c3351d8ac0e334b8b4d9b37c82" category="inline-link-rx"></block>.</block>
   <block id="35947e84e557291e52a523d2f7eefc27" category="list-text">Stellen Sie sicher, dass alle anderen Komponenten im System ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.</block>
   <block id="dd48f304652176299be75f07f2b6523a" category="paragraph">Ersetzen Sie das ausgefallene Laufwerk, indem Sie die entsprechende Option für die Laufwerke auswählen, die von Ihrer Plattform unterstützt werden.</block>
-  <block id="db0773b2c2e76f55090ea4c745896508" category="inline-link">_Video des ausgefallenen Laufwerks ersetzen_</block>
-  <block id="b007859cf50f8648510a8f673ecab515" category="paragraph">Sie können auch wählen, um die zu sehen<block ref="d09508f83c89674ee44a13af41e2f512" category="inline-link-rx"></block> Dies zeigt einen Überblick über das Verfahren zum Austausch integrierter Laufwerke.</block>
   <block id="349535790ff32da6089571ee962b5909" category="list-text">Wenn Sie dem Ersatzlaufwerk den Besitz eines Laufwerks manuell zuweisen möchten, müssen Sie das Ersatzlaufwerk für die automatische Laufwerkszuweisung deaktivieren, sofern dieses aktiviert ist</block>
   <block id="9b6925a7601fc7c5515a98f2e73c64cb" category="admonition">Sie weisen den Antriebseigentum manuell zu und aktivieren dann die automatische Laufwerkszuweisung später in diesem Verfahren.</block>
   <block id="5670543c21cc67177810154ace0b7c16" category="list-text">Überprüfen Sie, ob die automatische Laufwerkszuweisung aktiviert ist:<block ref="95e8c3545da27ac609a73ab063932ef7" prefix=" " category="inline-code"></block></block>
@@ -3061,7 +3059,6 @@
   <block id="0efaf93a941de2d7943b578a71c531e5" category="paragraph">Geben Sie diesen Befehl ein: <block ref="9523abebf4095034762968308dc8665d" prefix="" category="inline-code"></block></block>
   <block id="c60b737dad56de61b3e4c1509a184df3" category="paragraph">Sie haben keine weiteren Schritte in dieser speziellen Aufgabe. Sie haben die Diagnose auf Systemebene abgeschlossen.</block>
   <block id="f2c155633ff38e4e2d070e9d244a9074" category="doc">Verschieben und ersetzen Sie die Hardware FAS9500</block>
-  <block id="a30a15e944afabde046385685fec252c" category="paragraph">Um das Gehäuse auszutauschen, müssen Sie die Komponenten aus dem alten Chassis entfernen und im Ersatzgehäuse installieren.</block>
   <block id="0a7d4055ebf0329a7a3468cd3ccca3ca" category="section-title">Schritt 1: Entfernen Sie die Netzteile</block>
   <block id="060c350ffa4e24bde01789b8be8138f7" category="paragraph">Wenn Sie die Netzteile entfernen, wenn Sie ein Gehäuse ersetzen, müssen Sie das Gerät ausschalten, trennen und dann das Netzteil vom alten Gehäuse entfernen.</block>
   <block id="12ccb6284dde6c218f4afb3d3857d96e" category="list-text">Halten Sie die Terrakotta-Taste am Netzteilgriff gedrückt, und ziehen Sie dann das Netzteil aus dem Gehäuse.</block>
@@ -3078,7 +3075,6 @@
   <block id="7bb3e2efcb7169f8ff52d523079a8978" category="paragraph">Um das Chassis auszutauschen, müssen Sie das Controller-Modul oder die Module aus dem alten Chassis entfernen.</block>
   <block id="2c2b9a83665e5336275a4320efcb9a16" category="image-alt">drw 9500 PCM entfernen</block>
   <block id="27289e7e37a8ebe804b1a49b34e69e35" category="section-title">Schritt 4: Entfernen Sie die E/A-Module</block>
-  <block id="21f8e15996afff8db254da85ba3f4ea7" category="paragraph">Um I/O-Module aus dem alten Chassis, einschließlich der NVRAM-Module, zu entfernen, befolgen Sie die spezifischen Abfolge von Schritten. Sie müssen das Modul Flash Cache, falls vorhanden, nicht aus dem NVRAM-Modul entfernen, wenn Sie es in ein neues Chassis verschieben.</block>
   <block id="f237f7ef0851804ffdea97155b697410" category="list-text">Wiederholen Sie den vorherigen Schritt für die verbleibenden I/O-Module des alten Chassis.</block>
   <block id="e3ffa7ef57fa247f588e5917dee58499" category="section-title">Schritt 5: Entfernen Sie das Leistungsmodul des De-Stage-Controllers</block>
   <block id="fa32cefdac621b08336fe76915d4002f" category="paragraph">Zur Installation des Ersatzgehäuses müssen die Controller-Stromversorgungsmodule aus dem alten Gehäuse entfernt werden.</block>
@@ -3116,7 +3112,6 @@
   <block id="55b0e11d7fc34ae2b7fbd2be3acb1424" category="list-text">Schieben Sie das Controller-Modul mit dem Nockengriff in die offene Position in das Gehäuse und schieben Sie das Controller-Modul fest hinein, bis es auf die Mittelebene trifft und vollständig sitzt. Schließen Sie dann den Nockengriff, bis er in die verriegelte Position einrastet.</block>
   <block id="b77690ba581630e6f3bd4cee96dd675a" category="admonition">Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige Kraft verwenden, da die Anschlüsse beschädigt werden können.</block>
   <block id="45c20771cb1532f5746ddda7446e7140" category="list-text">Booten jedes Node im Wartungsmodus:</block>
-  <block id="6e7d5178a758393b97e367ca3da27d68" category="list-text">Drücken Sie beim Booten jedes Node<block ref="76be6883bcf9e8a6aed3a347ac20e41f" prefix=" " category="inline-code"></block> Um den Bootvorgang zu unterbrechen, wenn die Meldung angezeigt wird, drücken Sie Strg-C für das Startmenü.</block>
   <block id="1aa73ef56da88752323de5876f9b3750" category="doc">Tauschen Sie ein Netzteil aus – FAS9500</block>
   <block id="ef20366d8eeda4ed0725f1a5a164c558" category="paragraph">Die grüne Betriebs-LED leuchtet, wenn das Netzteil vollständig in das Gehäuse eingesetzt wird und die gelbe Warnungs-LED zunächst blinkt, schaltet sich jedoch nach ein paar Augenblicken aus.</block>
   <block id="3e5fda4bdb63c28cc3aa53cadbde1129" category="doc">Ersetzen Sie ein DIMM - FAS9500</block>
@@ -6739,7 +6734,6 @@
   <block id="ba076cc47bbe54dead2d30165db372b5" category="image-alt">entfernen Sie die NV-Batterie des drw a900</block>
   <block id="9c0cca32aafcf28a513162ba96089a15" category="video-title">Animation - USB entfernen/installieren</block>
   <block id="8da7df8c5a74dcac7b5b9a5067e72313" category="image-alt">drw a900 entfernen LED-Mod ersetzen</block>
-  <block id="cf261a4e73438cb00bd1e7a2fef7257c" category="list-text">Drücken Sie, wenn der Boot-Vorgang von jedem Controller gestartet wird<block ref="76be6883bcf9e8a6aed3a347ac20e41f" prefix=" " category="inline-code"></block> Um den Bootvorgang zu unterbrechen, wenn die Meldung angezeigt wird, drücken Sie Strg-C für das Startmenü.</block>
   <block id="d35fd8965949830b92555b33686beb19" category="doc">Tauschen Sie ein Netzteil aus – AFF A900</block>
   <block id="fcc9aa8940599a2c3be38723a65e9e21" category="doc">Ersetzen Sie ein DIMM - AFF A900</block>
   <block id="a2996937d1a0f2d39e753cdc891f28a1" category="image-alt">drw a900 DIMM-Karte</block>
@@ -6775,7 +6769,6 @@
   <block id="3d583022c2a0e3f44141400e25a3113d" category="list-text"><block ref="3d583022c2a0e3f44141400e25a3113d" category="inline-link-macro-rx"></block></block>
   <block id="e95c782f97493fda4a0794b55f88c5be" category="list-text"><block ref="e95c782f97493fda4a0794b55f88c5be" category="inline-link-macro-rx"></block></block>
   <block id="280316afc56c30d6861e875ee64f9d8b" category="list-text"><block ref="280316afc56c30d6861e875ee64f9d8b" category="inline-link-macro-rx"></block></block>
-  <block id="fd6e0dc56bc08d5a210f50e7388d932f" category="doc">A220 System-Dokumentation</block>
   <block id="426345b53ce830fc944ab03c4c6232df" category="summary">Lernen Sie die neuen Funktionen für FAS und AFF Systeme kennen.</block>
   <block id="2f2c60dca423ec5715985231d7044062" category="doc">Was ist neu für FAS und AFF Systeme</block>
   <block id="b7cfb975a50851418ad4bf0bcad4933f" category="section-title">Verbesserungen bei Hardware-Upgrades</block>
@@ -7256,12 +7249,7 @@
   <block id="c566d4828cd295258aa8097a90880602" category="open-title">Option 2: Verwenden Von External Manager</block>
   <block id="0a05a9975c9259ea331a85366e41d3ce" category="list-text">Wählen Sie Option 11,<block ref="0dd518498ab98fe1fd543910856e6153" prefix=" " category="inline-code"></block>.</block>
   <block id="a5462faa34b6cf806cb49f24d84b02a7" category="list-text">Wenn Ihr System so konfiguriert ist, dass es 10-GbE-Cluster-Interconnect und Datenverbindungen auf 40-GbE-NICs unterstützt 10, konvertieren Sie diese Ports mit dem Befehl nicadmin convert aus dem Wartungsmodus. Siehe<block ref="2d808a662d9493bde97b50913a25a294" category="inline-link-rx"></block> Finden Sie weitere Informationen.</block>
-  <block id="55c99fae85fce446adbb5ceb895cf55e" category="paragraph">Wenn Sie die Netzteile beim Ersetzen eines Gehäuses entfernen, deaktivieren, trennen und dann die vier Netzteile von der Rückseite des alten Gehäuses entfernen.</block>
   <block id="c56809d9cff2ea190c6fb9d67e804b42" category="paragraph">Sie müssen die sechs Lüftermodule, die sich an der Vorderseite des Gehäuses befinden, entfernen, wenn Sie das Gehäuse austauschen.</block>
-  <block id="63ee7e61fbd30f44f9b9df101a63a845" category="paragraph">Entfernen Sie die beiden abgebachten Controller-Stromversorgungsmodule von der Vorderseite des alten Gehäuses.</block>
-  <block id="1d8e1f6692aa85c8d94c39dda8015fdb" category="paragraph">Sobald das neue Gehäuse im Rack oder Schrank installiert ist, schieben Sie das USB-LED-Modul von der Vorderseite des alten Gehäuses in das neue Gehäuse.</block>
-  <block id="02c98171b36d44757b42c6b5c5d2acb9" category="paragraph">Antwort<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> Wenn die Eingabeaufforderung zum Starten im Wartungsmodus angezeigt wird</block>
-  <block id="2adab982ea2c53caec320e625667e439" category="list-text">Suchen Sie das USB-LED-Modul an der Vorderseite des alten Gehäuses direkt unter den DCPM-Modulen.</block>
   <block id="e9e9a6de5e421dfe8a5ccc0b156ecc94" category="admonition">Wenn die Port-Etiketten auf der Karte nicht sichtbar sind, überprüfen Sie die Ausrichtung der Karteninstallation (der PCIe-Steckersockel befindet sich auf der linken Seite des Kartensteckplatzes in den A400 und FAS8300/8700), und suchen Sie dann nach der Karte, und suchen Sie im nach der Teilenummer<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block> Für eine Grafik der Blende, in der die Port-Bezeichnungen angezeigt werden. Die Teilenummer der Karte kann über gefunden werden<block ref="432345ed72f5509f18312f01d4f08dff" prefix=" " category="inline-code"></block> Befehl oder auf der Packliste des Systems.</block>
   <block id="bea43746a1060b2b6af67fba31ca2890" category="paragraph">Die folgende Abbildung zeigt, wie ein typisches System aussieht und wo sich die Hauptkomponenten am Lesevorgang des Systems befinden:</block>
   <block id="2f50f96b8a95f8c73f9257ccd13d3c46" category="image-alt">drw a900-Controller in Gehäuse-ID IEOPS 856</block>
@@ -7376,7 +7364,6 @@
   <block id="af41b619bf9d50ddae2454efc001e4dd" category="paragraph">Die Ausgabe sollte den Status des Speichermoduls als gelöscht anzeigen.</block>
   <block id="376b1cae869bbe8ab1cce68fdb30b696" category="inline-link-macro">Ersetzen Sie die DIMMs</block>
   <block id="91e13f2779cb51174165fa30eaba7e5b" category="list-text">Kehren Sie zu zurück <block ref="cf268cc4bc5a73daf7348170b397c07d" category="inline-link-macro-rx"></block> Wie Sie die NVMEM-LED erneut prüfen.</block>
-  <block id="e23872c7fd1b170c488a2c5244bc263e" category="doc">A150-Systemdokumentation</block>
   <block id="1a9ae2b5eb296d614bebfdc33f389268" category="doc">Überprüfen Sie die integrierten Verschlüsselungsschlüssel - AFF A150</block>
   <block id="3bf6a2921f0e655ea4d2b6b2851e02df" category="doc">System wieder einsetzen und Festplatten neu zuweisen – AFF A150</block>
   <block id="91b91feeb88498e7be1c10bbbb6db4c2" category="inline-link-macro">Überprüfen der Änderung der System-ID auf einem HA-System</block>
@@ -7418,7 +7405,6 @@
   <block id="5ba23cc00c6685a0d9b231590e5ee1c0" category="paragraph">Für NS224 Laufwerk-Shelfs sind die Shelf-IDs auf 00 und 01 voreingestellt. Wenn Sie die Shelf-IDs ändern möchten, verwenden Sie das gerade gebogene Ende einer Büroklammer oder den Kugelschreiber mit schmaler Spitze, um auf die Shelf-ID-Taste hinter der Frontplatte zuzugreifen.</block>
   <block id="688ed49ee5cf1b7f7ef70935870d42d8" category="summary">In der Dokumentation zum AFF C250-System können Sie das System installieren, einrichten und warten.</block>
   <block id="c2deffcaea49ccd174c7da17d80e1edf" category="doc">AFF C250-Systemdokumentation</block>
-  <block id="68234c72c82d88dc22b60a4f8925c19a" category="doc">Ersetzen Sie das SSD-Laufwerk – AFF C250</block>
   <block id="a4829fef0cfb953ea3181e31db648a62" category="paragraph">Sie können ein ausgefallenes SSD-Laufwerk unterbrechungsfrei ersetzen, während I/O ausgeführt wird.</block>
   <block id="d7b7b72f7a0bd85854375ed25ad54137" category="admonition">Es kann mehrere Stunden dauern, bis das Laufwerk in der Liste der ausgefallenen Laufwerke angezeigt wird.</block>
   <block id="f6551f88d88dddb684035802224a0336" category="doc">Fahren Sie den Controller - AFF C250 herunter</block>
@@ -7716,7 +7702,6 @@
   <block id="96575ba10e2fbb7c8295e344411ca2d1" category="doc">Ersetzen Sie ein DIMM-Modul – AFF C800</block>
   <block id="0251caa15dc8d2cbd1cfcc6d72965b59" category="summary">In der Dokumentation zum AFF C800-System können Sie das System installieren, einrichten und warten.</block>
   <block id="9683970b55904c77ccb71ba2bd90666f" category="doc">AFF C800-Systemdokumentation</block>
-  <block id="b048da3eaccc3591e9c1d6b08af1a750" category="doc">Ersetzen Sie das SSD-Laufwerk – AFF C800</block>
   <block id="592fdd085a6d32be5ca82d8cf41fd57d" category="doc">Überprüfen Sie die integrierten Verschlüsselungsschlüssel - AFF C800</block>
   <block id="053f6b40fe6bb9b0a6dde49c0f76dc01" category="doc">System wieder einsetzen und Festplatten neu zuweisen – AFF C800</block>
   <block id="1085be18597d7d6c96ecba68a211bd73" category="doc">Ersetzen Sie eine PCIe-Karte - AFF C800</block>
@@ -7786,4 +7771,37 @@
   <block id="36c69c49c18ae2fa7dce0347a69f0065" category="sidebar">AFF C800-Startmedium</block>
   <block id="81e825abffe43a736d6c9dc55fd84da2" category="sidebar">AFF C800-Gehäuse</block>
   <block id="c164f067875d1a9aa792717f22c79b98" category="sidebar">Controller-Modul AFF C800</block>
+  <block id="0a73484fb1b3edef8bbbf67f873dec2a" category="paragraph">Um das Gehäuse auszutauschen, müssen Sie die Komponenten aus dem Gehäuse für beeinträchtigte Geräte entfernen und sie in das Ersatzgehäuse einsetzen.</block>
+  <block id="c41b6afef3be0625148760974efbe53b" category="paragraph">Beim Entfernen der Netzteile beim Austausch eines Gehäuses müssen die vier Netzteile ausgeschaltet, getrennt und anschließend von der Rückseite des Gehäuses entfernt werden.</block>
+  <block id="f29cd4bb20b414e068c19ba637ce5223" category="paragraph">Um das Gehäuse auszutauschen, müssen Sie das oder die Controller-Module aus dem Gehäuse für beeinträchtigte Geräte entfernen.</block>
+  <block id="d29be88ad14bfa795c9cb4b5e8e71620" category="paragraph">Um E/A-Module aus dem Gehäuse für beeinträchtigte Zugriffe, einschließlich der NVRAM-Module, zu entfernen, befolgen Sie die angegebenen Schritte. Sie müssen das FlashCache Modul, falls vorhanden, nicht aus dem NVRAM-Modul entfernen, wenn Sie es in ein Ersatzgehäuse verschieben.</block>
+  <block id="70796c97dce9e8bc0ec4d548fad4c33c" category="list-text">Wiederholen Sie den vorherigen Schritt für die verbleibenden I/O-Module im Gehäuse für beeinträchtigte Zugriffe.</block>
+  <block id="7dcb58280c958448c619b7845f19a872" category="paragraph">Entfernen Sie die beiden destufigen Controller-Stromversorgungsmodule von der Vorderseite des Gehäuses für die Außerbetriebnahme.</block>
+  <block id="bd87961e02bb318277afd71851d575b3" category="section-title">Schritt 6: Entfernen Sie das USB-LED-Modul</block>
+  <block id="cc5d26d79e1692ae91756085b4c1675a" category="paragraph">Entfernen Sie die USB-LED-Module.</block>
+  <block id="4b4ddff45477c23b33a8313eeba376e8" category="list-text">Suchen Sie das USB-LED-Modul auf der Vorderseite des Gehäuses mit eingeschränkter Stromversorgung direkt unter den Netzteilschächten.</block>
+  <block id="90228675f9bb2f32a23b3c76a9187e07" category="list-text">Drücken Sie die schwarze Verriegelungstaste auf der rechten Seite des Moduls, um das Modul aus dem Gehäuse zu lösen, und schieben Sie es dann aus dem Gehäuse für beeinträchtigte Personen heraus.</block>
+  <block id="bacfa9c94d1c1eae1fb55199be616b3d" category="section-title">Schritt 7: Austausch eines Chassis aus dem Geräte-Rack oder Systemschrank heraus</block>
+  <block id="2bc629fe1fa0756ba85648b1b075475e" category="list-text">Schieben Sie mit Hilfe von zwei oder drei Personen das Gehäuse für beeinträchtigte Personen von den Rack-Schienen in einem Systemschrank oder _L_ Halterungen in einem Geräterahmen und legen Sie es dann beiseite.</block>
+  <block id="1cff1ec8bb5f01806ddb910dceecf767" category="list-text">Befestigen Sie die Vorderseite des Gehäuses mit den Schrauben, die Sie aus dem Gehäuse für beeinträchtigte Geräte entfernt haben, am Geräte-Rack oder Systemschrank.</block>
+  <block id="979104406ee03d12a7689ad931f5410b" category="list-text">Wenn Sie die Kabelhalterungen verwenden, entfernen Sie sie aus dem Gehäuse für beeinträchtigte Personen, und installieren Sie sie dann auf dem Ersatzgehäuse.</block>
+  <block id="b9179a26176765e84f442a338275974c" category="paragraph">Um I/O-Module, einschließlich NVRAM/FlashCache-Module, aus dem Gehäuse für beeinträchtigte Vorgänge zu installieren, folgen Sie den spezifischen Schritten.</block>
+  <block id="8a063f47876606fb88039df27bbfad1f" category="paragraph">Das Gehäuse muss installiert sein, damit Sie die E/A-Module in die entsprechenden Steckplätze im Ersatzgehäuse einsetzen können.</block>
+  <block id="62d3b0199402c94809d4bbaf872df5c3" category="admonition">Wenn das Gehäuse für den beeinträchtigten Betrieb über leere E/A-Platten verfügt, bringen Sie diese zu diesem Zeitpunkt in das Ersatzgehäuse.</block>
+  <block id="dc844fd8ca4280150d42e7895f0e653c" category="list-text">Stellen Sie sicher, dass sich die Kipper des Netzteiles in der Position aus befinden.</block>
+  <block id="88c1c1e7e0b97d9299ec57ba96dda64f" category="section-title">Schritt 12 Installieren Sie die USB-LED-Module</block>
+  <block id="42bf593239b1d9f984d9473a72a5ad0c" category="paragraph">Installieren Sie die USB-LED-Module im Ersatzgehäuse.</block>
+  <block id="b38f7c9ed48d1cadfbd357776bcf9e09" category="section-title">Schritt 13: Installieren Sie den Controller</block>
+  <block id="1811d556efb31524fdf575ec0c8b9b6e" category="paragraph">Nachdem Sie das Controller-Modul und alle anderen Komponenten in das Ersatzgehäuse eingebaut haben, booten Sie es in einem Zustand, in dem Sie den Interconnect-Diagnosetest ausführen können.</block>
+  <block id="c24ca3412a6dae4a658543695619f65a" category="list-text">Wiederholen Sie die vorherigen Schritte, um den zweiten Controller im Ersatzgehäuse zu installieren.</block>
+  <block id="e1c82a0b92bea9d8ce8c8d14a1992cd8" category="list-text">Starten Sie jeden Controller.</block>
+  <block id="7765edbf8893ad208b9932e53c6d932a" category="doc">Ersetzen Sie das SSD-Laufwerk – AFF C800</block>
+  <block id="8b516ca5434f765000f11032059de011" category="section-title">Schritt 6 Entfernen Sie das USB-LED-Modul</block>
+  <block id="284d8ab33b7a1bc5797091f74643b163" category="section-title">Schritt 7: Installieren Sie das USB-LED-Modul am Ersatzgehäuse</block>
+  <block id="b91630a08c2bbd38ab4fcccfc43288bc" category="paragraph">Sobald das Ersatzgehäuse in das Rack oder den Schrank eingebaut ist, installieren Sie das USB-LED-Modul von der Vorderseite des Gehäuses für beeinträchtigte Störungen am Ersatzgehäuse.</block>
+  <block id="d87777306e62f6ae23e04dd3919ca898" category="list-text">Suchen Sie das USB-LED-Modul auf der Vorderseite des Gehäuses für beeinträchtigte Personen direkt unter den DCPM-Modulen.</block>
+  <block id="632bcda28821b8191cdaaa396c4b3e22" category="paragraph">Um E/A-Module einschließlich der NVRAM-Module aus dem Gehäuse für beeinträchtigte Vorgänge zu installieren, befolgen Sie die angegebenen Schritte.</block>
+  <block id="bcf7de048a0b400d784ce2434b8beffe" category="doc">Ersetzen Sie das SSD-Laufwerk – AFF C250</block>
+  <block id="9c7a64854bf794e3fdb5cf355e7f1647" category="doc">AFF A150-Systemdokumentation</block>
+  <block id="31d91f8342285d4227c3ee9c296c770a" category="doc">AFF A220 Systemdokumentation</block>
 </blocks>
