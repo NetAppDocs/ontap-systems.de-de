@@ -315,18 +315,7 @@
   <block id="f0bb66ccc33b2423473b4997076e2e15" category="paragraph">Geben Sie an der Eingabeaufforderung die integrierte Passphrase für das Verschlüsselungsmanagement des Kunden ein. Falls die Passphrase nicht angegeben werden kann, wenden Sie sich an den NetApp Support.</block>
   <block id="596bcca65aca56bacb3df39265f83dfb" category="summary">Zum Austausch des Chassis müssen Sie die Controller herunterfahren.</block>
   <block id="a102b530af65288511339cf8117713a3" category="doc">Herunterfahren der Controller – FAS2600</block>
-  <block id="b5d03ef67a171c85bf4bd311e2fd75df" category="paragraph">Sie müssen den Controller oder den Controller im Chassis herunterfahren, bevor Sie sie in das neue Chassis verschieben.</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="list-title">Über diese Aufgabe</block>
-  <block id="880c0610027a11af7086ae7e380e12e5" category="list-text">Wenn Ihr System über zwei Controller-Module verfügt, deaktivieren Sie das HA-Paar.</block>
-  <block id="d426a3f5c9c0e3362f4ed536e7643c03" category="cell">Wenn Ihr System Clustered ONTAP mit...</block>
-  <block id="93ff4b8a35c5f08ad3e97fdc9983948e" category="paragraph">Zwei Controller im Cluster</block>
-  <block id="a0540c64b7001eb9739a6eed390808ac" category="paragraph">Mehr als zwei Controller im Cluster</block>
-  <block id="b2aa61dcee4d7b77fcd001973469ddde" category="paragraph"><block ref="2ad2df2fff9b45582f1f35a1de091886" prefix="" category="inline-code"></block></block>
-  <block id="853a8c6f8383ee1dc5f3826af9ff6797" category="list-text">Halten Sie den Regler an, und drücken Sie<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> Wenn Sie aufgefordert werden, den Stopp zu bestätigen:<block ref="e1f5c50429478cf8a201f7a77cce9c92" prefix=" " category="inline-code"></block></block>
-  <block id="481250f3e8ec41b0e994305d8fc52b4a" category="paragraph">Die Bestätigungsmeldung sieht wie folgt aus:</block>
-  <block id="253a50052b60be1951a606aa7c311ba2" category="admonition">Sie müssen ein sauberes System herunterfahren, bevor Sie das Chassis ersetzen, um nicht geschriebene Daten im nicht-flüchtigen Speicher (NVMEM/NVRAM) zu verlieren. Wenn die NVMEM/NVRAM-LED abhängig vom System blinkt, befinden sich Inhalte im NVMEM/NVRAM, die nicht auf die Festplatte gespeichert wurden. Sie müssen den Controller neu booten und Beginn dieses Verfahrens. Bei wiederholten Versuchen, den Controller ordnungsgemäß herunterzufahren, ist zu beachten, dass keine Daten verloren gehen, die nicht auf der Festplatte gespeichert wurden.</block>
-  <block id="8373aa3aac3c8f18564812bfcb55615a" category="list-text">Halten Sie gegebenenfalls den zweiten Controller an, um eine mögliche Quorum-Fehlermeldung in einer HA-Paar-Konfiguration zu vermeiden:<block ref="0ecd86b0d64cff2c7cc14bffb8f97491" prefix=" " category="inline-code"></block></block>
-  <block id="7da65b5a10b69b45b490009ac07696ff" category="paragraph">Antwort<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> Wenn Sie dazu aufgefordert werden.</block>
   <block id="e1782167c4ccac91c29c561fbdf9bd10" category="summary">Sie können Ihr neues System mit dem PDF-Poster installieren und einrichten. Das PDF-Poster enthält Schritt-für-Schritt-Anleitungen mit Live-Links zu weiteren Inhalten.</block>
   <block id="f8775be935fb9d9effeb8c290b2531ef" category="doc">Installation und Einrichtung eines PDF-Posters – FAS2600</block>
   <block id="4707af501257324eebcc0182dcfed521" category="inline-link-macro">FAS2600 Installation and Setup instructions</block>
@@ -6706,7 +6695,6 @@
   <block id="b12c60055be138bf7526b1769365b47e" category="image-alt">drw a900 eingeschaltet</block>
   <block id="bb0210ac9561e033fc7d726a6ac134e8" category="paragraph"><block ref="bb0210ac9561e033fc7d726a6ac134e8" category="inline-link-rx"></block></block>
   <block id="ee509c1ffca70e9f258ad73c3116cf37" category="doc">Prüfungen vor dem Herunterfahren für integrierte Verschlüsselungsschlüssel - AFF A900</block>
-  <block id="9cc3abf99d341ddf4468a9377444f16d" category="doc">Schalten Sie den Regler für beeinträchtigte AFF A900 aus</block>
   <block id="cb0bd9965128fe9d9c7dc5fe35ba00fa" category="doc">Schnellschritte – AFF A900</block>
   <block id="cd9130a2736bae3213b0c2da4de3435e" category="inline-link-macro">Installations- und Setup-Anleitung für AFF A900</block>
   <block id="a164244a6913c60772e9b9fbbbc17a4a" category="doc">Fügen Sie ein I/O-Modul hinzu – AFF A900</block>
@@ -7198,13 +7186,11 @@
   <block id="0c2b7daebf1a1e94a676675bf614fba6" category="paragraph">Die Boot-Medien befinden sich an der Wand des Shelf-Chassis gegenüber dem Netzteil.</block>
   <block id="178d438c63a174b511750f68655d814d" category="list-text">Nachdem Sie den RTC-Akku ersetzt haben, installieren Sie das NSM-Modul neu und das Modul startet, wird die Echtzeituhr von ONTAP aktualisiert.</block>
   <block id="d067784c8bad4d41a4f87accd50abbc1" category="list-text">Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE anzeigt, um die Berechtigung und den Zustand zu erhalten, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe <block ref="68d9e980b8b4998ef88139d7b7ab8ff6" category="inline-link-macro-rx"></block>.</block>
-  <block id="1c0138111ac00fdce24dc38ffd9859d5" category="list-text">Wenn Sie ein Cluster mit mehr als zwei Controllern haben, muss es sich im Quorum befinden. Wenn das Cluster nicht im Quorum ist oder ein guter Controller angezeigt wird<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block> Für die Berechtigung und den Zustand müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe <block ref="68d9e980b8b4998ef88139d7b7ab8ff6" category="inline-link-macro-rx"></block>.</block>
   <block id="305fade7b83ae4e7549b33a3ae1b1fd0" category="doc">Hot-Add-Shelf - NS224-Shelves</block>
   <block id="859c951ebab21901f2fd6183c53339d5" category="summary">Um ein Modul \ (DCPM\) des Destage-Controllers im laufenden Betrieb auszutauschen, das den NVRAM11-Akku enthält, müssen Sie das fehlerhafte DCPM-Modul ausfindig machen, es aus dem Gehäuse entfernen und das Ersatzmodul DCPM installieren.</block>
   <block id="8ea19d634d233a26f4f650bd2e2b467c" category="paragraph">Zum Hot-Swap eines Destage-Controller-Stromversorgungsmoduls (DCPM), das den NVRAM11-Akku enthält, müssen Sie das fehlerhafte DCPM-Modul ausfindig machen, es aus dem Gehäuse entfernen und das Ersatzmodul DCPM installieren.</block>
   <block id="58fb0a507d97ff336e5db5d69ba846e9" category="inline-link">Konvertieren Sie 40-GbE-NIC-Ports für 10-GbE-Konnektivität in mehrere 10-GbE-Ports</block>
   <block id="8ae73aa056882e7b560f3b52b5764957" category="list-text">Wenn Ihr System für 10-GbE-Cluster Interconnect und Datenverbindungen auf 40-GbE-NICs konfiguriert ist, konvertieren Sie diese Ports mithilfe der in 10-GbE-Verbindungen<block ref="5ec041cdb2bbdf01cd4ea2c400b17495" prefix=" " category="inline-code"></block> Befehl im Wartungsmodus. Siehe<block ref="2d808a662d9493bde97b50913a25a294" category="inline-link-rx"></block> Finden Sie weitere Informationen.</block>
-  <block id="d875f9fec183da794cd6d6245ef00d1d" category="paragraph"><block ref="272f3c49a4ec1753c70013d06165277b" prefix="" category="inline-code"></block></block>
   <block id="1bb835185391c9f6463cb5dc111090d1" category="paragraph">Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE für die Berechtigung und den Zustand anzeigt, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe <block ref="68d9e980b8b4998ef88139d7b7ab8ff6" category="inline-link-macro-rx"></block>.</block>
   <block id="aae78f4a3d47a08dddca98a632d4a75f" category="paragraph">Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE für die Berechtigung und den Zustand anzeigt, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren.</block>
   <block id="68d9e980b8b4998ef88139d7b7ab8ff6" category="paragraph"><block ref="68d9e980b8b4998ef88139d7b7ab8ff6" category="inline-link-macro-rx"></block></block>
@@ -7416,11 +7402,7 @@
   <block id="5ab526c2d8a23c39c3d68b1080ca3e89" category="doc">Ausführliche Anleitung - AFF C400</block>
   <block id="ed1fe7521861c492832064f3b6daca68" category="paragraph">100-GbE-Kabel (QSFP28)</block>
   <block id="e0cc8c545401fc3b34281140c54756c7" category="admonition">Wenn die Portetiketten auf der Karte nicht sichtbar sind, können Sie die Ports identifizieren, indem Sie die Ausrichtung der Karteninstallation überprüfen (bei C400 befindet sich der PCIe-Anschlusssockel auf der linken Seite des Kartensteckplatzes), und dann in NetApp Hardware Universe nach der Teilenummer nach der Karte suchen. Zeigt eine Grafik der Blende mit den Port-Etiketten. Sie können die Teilenummer der Karte über den Befehl sysconfig -a oder auf der Packliste des Systems finden.</block>
-  <block id="80a7f396e1bc3ed796a9313a0aa75443" category="image-alt">drw c400 TNSC-Netzwerkkabel</block>
-  <block id="a905d4a42dacfc07296e02d609b47cb0" category="image-alt">drw c400 Switched Network Cabling</block>
   <block id="670ce436320fc9008e2880db983e27d2" category="paragraph">Die folgenden Optionen zeigen, wie Sie ein oder zwei NS224-Laufwerk-Shelfs mit Ihrem System verkabeln.</block>
-  <block id="66587f1aa86b9e296b1d1dd43ca73e3e" category="image-alt">drw c400 ein ns224-Einlegeböden</block>
-  <block id="0b9e9bf3097ae366abf0d35474fb4b1f" category="image-alt">drw c400 zwei ns224-Shelfs</block>
   <block id="eca713323e6fa9782ebae60357fc0453" category="doc">Ersetzen Sie ein NVDIMM - AFF C400</block>
   <block id="719e61ffcf0d96924351db01f7e50603" category="doc">Videos – AFF C400</block>
   <block id="51e4f59a1aaa143b8d5c910f0a77328e" category="video-title">Animation - AFF C400 Installations- und Setup-Anweisungen</block>
@@ -7804,4 +7786,80 @@
   <block id="66ba60034a525a69b1b5cf4344529c25" category="paragraph">Um E/A-Module aus dem Gehäuse für beeinträchtigte Zugriffe, einschließlich der NVRAM-Module, zu entfernen, befolgen Sie die angegebenen Schritte.</block>
   <block id="76558becedd79e95bf3921d5f08baeb6" category="list-text">Suchen Sie das USB-LED-Modul auf der Vorderseite des Gehäuses mit eingeschränkter Stromversorgung direkt unter den DCPM-Schächten.</block>
   <block id="ac6201b7b810f81cfaef54d4d8fe63d5" category="list-text">TORQ-Treiber für Systemschrankschrauben</block>
+  <block id="d581cc3762a48b4da22069bdeae81b8f" category="inline-link">So schalten Sie ein HA-Paar in einem Cluster mit 4 Nodes ein und fahren ein paar ordnungsgemäß hoch</block>
+  <block id="3f7ee1fb6cfdfd18c49f8e060fa8f9c9" category="paragraph">Dieses Verfahren gilt nur für Konfigurationen ohne MetroCluster mit 2 Nodes. Wenn Sie ein System mit mehr als zwei Nodes haben, finden Sie weitere Informationen unter<block ref="681b47fbe1cebc545a75e77efd420ec0" category="inline-link-rx"></block>.</block>
+  <block id="36ee27bc3fc7c617977b35534609c979" category="paragraph">Sie benötigen:</block>
+  <block id="68d685ddbaa25f1a411d5e93d6f91913" category="list-text">Lokale Administratoranmeldeinformationen für ONTAP.</block>
+  <block id="ac1036c822296c33d140ef7ba7cd246d" category="list-text">NetApp Onboard-Verschlüsselungsmanagement (OKM) Cluster-weite Passphrase bei Verwendung von Storage-Verschlüsselung.</block>
+  <block id="93e6bf3fa29a7ebd2a4bb235a54deb94" category="list-text">SP/BMC-Zugriff für jeden Controller.</block>
+  <block id="d6562c849f41b9038124f0c304aed030" category="list-text">Stoppen Sie den Zugriff aller Clients/Hosts auf Daten auf dem NetApp System.</block>
+  <block id="d61b46d9cd719b77efb76269147aa377" category="list-text">Externe Sicherungsaufträge werden angehalten.</block>
+  <block id="527f18fb3f8ac4bca4ae01901a2c9317" category="list-text">Notwendige Werkzeuge und Ausrüstung für den Austausch.</block>
+  <block id="3b6fc5695f8237510131da824ce788d0" category="inline-link">Anleitung zur Problemlösung des Speichersystems wird ordnungsgemäß heruntergefahren und gestartet</block>
+  <block id="03f7958d5b1fc7636429e97368e2f97f" category="admonition">Wenn es sich bei dem System um ein NetApp StorageGRID oder ONTAP S3 handelt, das als FabricPool Cloud Tier verwendet wird, finden Sie im<block ref="6db187057e0b0e01589d1a1a7f510469" category="inline-link-rx"></block> Nach Durchführung dieses Verfahrens.</block>
+  <block id="ec965df16952820cbea39156c0dfe2f0" category="admonition">Wenn Sie FlexArray-Array-LUNs verwenden, befolgen Sie die Dokumentation zum Speicher-Array des jeweiligen Anbieters, um das Herunterfahren für diese Systeme durchzuführen, nachdem Sie dieses Verfahren durchgeführt haben.</block>
+  <block id="ad8a5006901db5ea8481166a34f27929" category="inline-link">SU490: (Auswirkung: Kritisch) SSD Best Practices: Vermeiden Sie das Risiko von Laufwerksausfällen und Datenverlust, wenn Sie sich für mehr als zwei Monate ausgeschaltet haben</block>
+  <block id="7d140f8b4464f9a8684a7943df8e74d9" category="admonition">Wenn Sie SSDs verwenden, finden Sie weitere Informationen unter<block ref="13eec713a6c81535d5709aa561195b7a" category="inline-link-rx"></block></block>
+  <block id="356bf392971487f892daba5338258571" category="paragraph">Als Best Practice vor dem Herunterfahren sollten Sie:</block>
+  <block id="2ee5edc561a6167cf2d57a64ee655bef" category="inline-link">Zustandsberichte zu Systemen</block>
+  <block id="7023017d0098f741d6569842ee62b922" category="list-text">Zusätzliche Durchführung<block ref="9ace058273de133e6accbea83a7d278a" category="inline-link-rx"></block>.</block>
+  <block id="f40b8507b340a958be200bec6d3758a0" category="list-text">Führen Sie ein Upgrade von ONTAP auf eine empfohlene Version für das System durch.</block>
+  <block id="9f4d2068e7b3d206efc0252b3da597a5" category="inline-link">Active IQ Wellness-Alarme und Risiken</block>
+  <block id="c5df4dcae9a001142a36959487445ff6" category="list-text">Lösen Sie alle<block ref="31b25beca26cb366eeb0665e3c0d7cbf" category="inline-link-rx"></block>. Notieren Sie sich alle derzeit auftretenden Fehler im System, z. B. LEDs an den Systemkomponenten.</block>
+  <block id="3923b7d5100131c85be2160c8b680704" category="list-text">Melden Sie sich über SSH beim Cluster an oder von einem beliebigen Node im Cluster mit einem lokalen Konsolenkabel und einem Laptop/einer Konsole an.</block>
+  <block id="d9e8189e14354652821e1f0f10f12dfe" category="list-text">Schalten Sie AutoSupport aus, und geben Sie an, wie lange das System voraussichtlich offline ist:</block>
+  <block id="ff3faabe8aca2ae4a92cf7dec5b62b8f" category="paragraph"><block ref="14fb036c43dbcde966a639d33554da5c" prefix="" category="inline-code"></block></block>
+  <block id="ac2a6618449930e8abeb32fd078d7716" category="list-text">Ermitteln Sie die SP/BMC-Adresse aller Nodes:</block>
+  <block id="0d16db60da2c01b63ef84ee8d616c2fb" category="paragraph"><block ref="b206d268f79aeaa7c4f1e44684d2f080" prefix="" category="inline-code"></block></block>
+  <block id="a0fd5b31be719aeb26e2fc9c6991da9f" category="list-text">Beenden Sie die Cluster-Shell:<block ref="f24f62eeb789199b9b2e467df3b1876b" prefix=" " category="inline-code"></block></block>
+  <block id="cf814f480a03329076e1d0cf2f71d7e3" category="list-text">Melden Sie sich über SSH beim SP/BMC an. Verwenden Sie dabei die IP-Adresse eines der in der Ausgabe des vorherigen Schritts aufgeführten Nodes.</block>
+  <block id="aed4c23042b5f25dad252449f4ddcc59" category="paragraph">Wenn Sie eine Konsole oder einen Laptop verwenden, melden Sie sich mit den gleichen Cluster-Administratorberechtigungen beim Controller an.</block>
+  <block id="a3dcd96fdc725fa51c4161c8a03146ab" category="admonition">Öffnen Sie eine SSH-Sitzung für jede SP/BMC-Verbindung, damit Sie den Fortschritt überwachen können.</block>
+  <block id="e2cba6e644aeaf95f80f688b880746da" category="list-text">Alle Nodes im Cluster anhalten:</block>
+  <block id="02e0d9b5c39d838c007bfad7b6e34196" category="paragraph"><block ref="b89a38fd8ae1ad809e5b3560be211bfa" prefix="" category="inline-code"></block>.</block>
+  <block id="aba2c36fe67a0528d4417c7e5c4da8a1" category="admonition">Bei Clustern mit SnapMirror Synchronous-Betrieb im StructSync-Modus:<block ref="03e2e719454253f2db864fa560da7899" prefix=" " category="inline-code"></block></block>
+  <block id="3171aeb3fa199cec60349b4529cc0178" category="list-text">Geben Sie *y* für jeden Controller im Cluster ein, wenn angezeigt wird<block ref="25cae4cb08eccf660db87cfb99a959d7" prefix=" " category="inline-code"></block></block>
+  <block id="a39c8c38e51a42fcfaac22367dd19064" category="list-text">Warten Sie, bis die einzelnen Controller angehalten sind, und zeigen Sie die LOADER-Eingabeaufforderung an.</block>
+  <block id="461bb1724a0adc2c975edfdd4b4923a1" category="list-text">Schalten Sie jedes Netzteil aus, oder ziehen Sie den Netzstecker, wenn kein Netzteilschalter vorhanden ist.</block>
+  <block id="e3dc6cc26ed03ba51ee4327edde1e1fc" category="list-text">Ziehen Sie das Netzkabel von den einzelnen Netzteilen ab.</block>
+  <block id="0042f27885e192c9ea879dde4ac34445" category="list-text">Vergewissern Sie sich, dass alle Controller, Laufwerk-Shelfs und Switches, die dem Cluster zugeordnet sind, heruntergefahren sind.</block>
+  <block id="3f80193798fcbb08cbe99cbe0a3aff95" category="paragraph">Nachdem Sie das Chassis ersetzt haben, fahren Sie die Clusterkomponenten in der folgenden Reihenfolge hoch:</block>
+  <block id="f9604921fe40d48421b9ae74e9a50059" category="list-text">Schalten Sie den Switch ein</block>
+  <block id="85ee83d55e3fb9b20f9f17b7fb773ca0" category="list-text">Schalten Sie die Festplatten-Shelfs ein</block>
+  <block id="d692ae791953fc513c9f3fd94d866964" category="list-text">Schalten Sie die Controller ein</block>
+  <block id="6d0114cd2de3e017d8d76d6b9f2191fc" category="list-text">Schalten Sie den Switch ein:</block>
+  <block id="fe12fd40092a74cc86c0db3006d72880" category="list-text">Schließen Sie jedes Netzkabel wieder an die PDU an das Netzteil an.</block>
+  <block id="d79f0458e922251555ddc7baa3538dbc" category="list-text">Drehen Sie den Wippschalter jedes Netzteils in die POSITION EIN (falls zutreffend).</block>
+  <block id="420a1ffc592934afa358803642255547" category="list-text">Warten Sie, bis der Schalter hochgefahren ist.</block>
+  <block id="67935e6f17c778c98c8e80fce8e29a9f" category="list-text">Prüfen Sie, ob die Fehleranzeigen am Schalter (vorne und hinten) leuchten.</block>
+  <block id="978a8732c5cda53a8b4a3de35d2184fd" category="list-text">Stellen Sie über die Management-IP-Adresse eine Verbindung zum Switch her.</block>
+  <block id="c72d57bd067b2b477426ef13c9c81629" category="list-text">Überprüfen Sie den Zustand des Switches (weitere Details finden Sie in der Dokumentation des Switch-Anbieters).</block>
+  <block id="fc5b4d6235b015336cafcedc54683d5d" category="list-text">Wiederholen Sie den Vorgang für jeden Schalter, bis alle Schalter eingeschaltet und ordnungsgemäß funktionieren.</block>
+  <block id="874c11301500ddf99db8a26ccc161200" category="list-text">Schalten Sie die Festplatten-Shelfs ein:</block>
+  <block id="6309302d98e4a634b65821ffb59dcafc" category="list-text">Warten Sie, bis alle Festplatten-Shelfs hochfahren und die Laufwerke hochfahren.</block>
+  <block id="453fd8a2e005a3688cb57a1715403eb8" category="list-text">Stellen Sie sicher, dass alle Shelf-IDs die erwarteten Werte entsprechen.</block>
+  <block id="43efaf94ccfd1b8ff73ede9310aa0726" category="list-text">Überprüfen Sie das Festplatten-Shelf auf Fehler-LEDs (vorne und hinten), die vor dem Herunterfahren nicht vorhanden waren.</block>
+  <block id="9a14737750e117b254a09e3e342bf4d4" category="list-text">Einschalten der Controller:</block>
+  <block id="1526ecbd5f3186fd0391bcab851746a6" category="list-text">Drehen Sie den Wippschalter jedes Netzteils in die POSITION EIN (falls zutreffend). HA-Paare, die sich nicht im selben Chassis befinden, sollten gleichzeitig hochgefahren werden.</block>
+  <block id="4ac3730c7728ff9f397c9c9c30e61398" category="list-text">Warten Sie, bis die Controller im Chassis hochgefahren sind.</block>
+  <block id="2a966b5531ce1a15adff1f9be922268a" category="list-text">Überprüfen Sie das Chassis und die Controller auf Fehler-LEDs (vorne und hinten).</block>
+  <block id="c908a555fb9bda03518faf090d62b55f" category="list-text">Wiederholen Sie diesen Vorgang für jeden Controller/Chassis, bis alle eingeschaltet sind.</block>
+  <block id="1ace3ad5235525fbfcabf5c9ed71d2c2" category="list-text">Stellen Sie über SSH eine Verbindung mit der SP- oder BMC-IP-Adresse der Nodes her. Verwenden Sie diesen Befehl, um die IP-Adresse vor dem Herunterfahren zu erhalten:</block>
+  <block id="42bd22c6658be2e7f86763221caaff8d" category="list-text">Zusätzliche Systemzustandsprüfungen durchführen:</block>
+  <block id="6cae41ec99a87022e2ff84639c1c9bc1" category="list-text">Lösen Sie alle<block ref="31b25beca26cb366eeb0665e3c0d7cbf" category="inline-link-rx"></block></block>
+  <block id="a4e515a78d7900d16a4af3f913b033f7" category="list-text">Laufen<block ref="48865c7c1d8013246e4e5f705a9105de" category="inline-link-rx"></block></block>
+  <block id="2d7735678080387bf2714cda931af8cf" category="inline-link">So führen Sie eine Cluster-Integritätsprüfung mit einem Skript in ONTAP durch</block>
+  <block id="b13401e632345d1a1c36a42722a9cdd7" category="list-text">Überprüfen Sie den Systemzustand, wie in beschrieben<block ref="8441a6aeb4c8951afc9d3ef26143aa41" category="inline-link-rx"></block></block>
+  <block id="36bc7c68ef7de2e917f4a186a4edaa58" category="list-text">Erzeugen einer Wartungsaufgabe abgeschlossen AutoSupport Meldung:</block>
+  <block id="538f577c4284d097aef57681a2acf728" category="paragraph"><block ref="a0502e9e767995ecf84f499d84740634" prefix="" category="inline-code"></block></block>
+  <block id="c779830d2c1a694320dcf49ae503c75a" category="list-text">Stellen Sie sicher, dass das automatische Giveback aktiviert ist:</block>
+  <block id="3d2d5e9a2a8cef4225a4bd073c2aeefb" category="paragraph"><block ref="6f0c6616b99fea33a3020e0e0dcbe3c6" prefix="" category="inline-code"></block></block>
+  <block id="a095b22aaa929c82c4414b8a51e710af" category="doc">Fahren Sie die Controller herunter - AFF A900</block>
+  <block id="736a1f9cdd2dabb4a30feb86e55777ad" category="paragraph">25-GbE-Kabel (SFP28)</block>
+  <block id="bbeb14c0a41e32ab9190d6fef7d7d2de" category="list-text">Schließen Sie die Verkabelung zwischen den Controllern und den Switches anhand der Abbildung ab:</block>
+  <block id="3f90eae06a0fd4fa951102461bc035a2" category="image-alt">drw c400 TNSC-Netzwerkverkabelung IEOPS 1095</block>
+  <block id="dc70a7fbe1f21380db9b236898b87503" category="image-alt">drw c400 geswitchte Netzwerkverkabelung IEOPS 1096</block>
+  <block id="2a29b6abc01fa919029a6defab91ed09" category="list-text">Verwenden Sie die folgende Abbildung, um Ihre Controller mit einem einzelnen Festplatten-Shelf zu verkabeln.</block>
+  <block id="cf05a1b835cc522d6ff312818c4655b5" category="image-alt">drw c400 ein ns224-Shelf IEOPS 1097</block>
+  <block id="c8bb212781cb1ea1ac1f2bb19672260b" category="image-alt">drw c400 zwei ns224-Shelfs IEOPS 1098</block>
 </blocks>

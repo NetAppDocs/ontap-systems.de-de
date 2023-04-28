@@ -11,56 +11,66 @@ summary: Zum Austausch des Chassis müssen Sie die Controller herunterfahren.
 
 
 [role="lead"]
-Sie müssen den Controller oder den Controller im Chassis herunterfahren, bevor Sie sie in das neue Chassis verschieben.
+Dieses Verfahren gilt nur für Konfigurationen ohne MetroCluster mit 2 Nodes. Wenn Sie ein System mit mehr als zwei Nodes haben, finden Sie weitere Informationen unter https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_perform_a_graceful_shutdown_and_power_up_of_one_HA_pair_in_a_4__node_cluster["So schalten Sie ein HA-Paar in einem Cluster mit 4 Nodes ein und fahren ein paar ordnungsgemäß hoch"^].
 
-.Über diese Aufgabe
-* Wenn Sie ein Cluster mit mehr als zwei Controllern haben, muss es sich im Quorum befinden. Wenn das Cluster nicht im Quorum ist oder ein guter Controller angezeigt wird `false` Für die Berechtigung und den Zustand müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^].
-* Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
-+
-Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+.Bevor Sie beginnen
+Sie benötigen:
 
+* Lokale Administratoranmeldeinformationen für ONTAP.
+* NetApp Onboard-Verschlüsselungsmanagement (OKM) Cluster-weite Passphrase bei Verwendung von Storage-Verschlüsselung.
+* SP/BMC-Zugriff für jeden Controller.
+* Stoppen Sie den Zugriff aller Clients/Hosts auf Daten auf dem NetApp System.
+* Externe Sicherungsaufträge werden angehalten.
+* Notwendige Werkzeuge und Ausrüstung für den Austausch.
+
+
+
+NOTE: Wenn es sich bei dem System um ein NetApp StorageGRID oder ONTAP S3 handelt, das als FabricPool Cloud Tier verwendet wird, finden Sie im https://kb.netapp.com/onprem/ontap/hardware/What_is_the_procedure_for_graceful_shutdown_and_power_up_of_a_storage_system_during_scheduled_power_outage#["Anleitung zur Problemlösung des Speichersystems wird ordnungsgemäß heruntergefahren und gestartet"] Nach Durchführung dieses Verfahrens.
+
+
+NOTE: Wenn Sie FlexArray-Array-LUNs verwenden, befolgen Sie die Dokumentation zum Speicher-Array des jeweiligen Anbieters, um das Herunterfahren für diese Systeme durchzuführen, nachdem Sie dieses Verfahren durchgeführt haben.
+
+
+NOTE: Wenn Sie SSDs verwenden, finden Sie weitere Informationen unter https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU490["SU490: (Auswirkung: Kritisch) SSD Best Practices: Vermeiden Sie das Risiko von Laufwerksausfällen und Datenverlust, wenn Sie sich für mehr als zwei Monate ausgeschaltet haben"]
+
+Als Best Practice vor dem Herunterfahren sollten Sie:
+
+* Zusätzliche Durchführung https://kb.netapp.com/onprem/ontap/os/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["Zustandsberichte zu Systemen"].
+* Führen Sie ein Upgrade von ONTAP auf eine empfohlene Version für das System durch.
+* Lösen Sie alle https://activeiq.netapp.com/["Active IQ Wellness-Alarme und Risiken"]. Notieren Sie sich alle derzeit auftretenden Fehler im System, z. B. LEDs an den Systemkomponenten.
 
 
 .Schritte
-. Wenn Ihr System über zwei Controller-Module verfügt, deaktivieren Sie das HA-Paar.
+. Melden Sie sich über SSH beim Cluster an oder von einem beliebigen Node im Cluster mit einem lokalen Konsolenkabel und einem Laptop/einer Konsole an.
+. Schalten Sie AutoSupport aus, und geben Sie an, wie lange das System voraussichtlich offline ist:
 +
-[cols="1,2"]
-|===
-| Wenn Ihr System Clustered ONTAP mit... | Dann... 
+`system node autosupport invoke -node * -type all -messages "MAINT=8h Power Maintenance"`
 
-
- a| 
-Zwei Controller im Cluster
- a| 
-`cluster ha modify -configured false`
-
-`storage failover modify -node node0 -enabled false`
-
-
-
- a| 
-Mehr als zwei Controller im Cluster
- a| 
-`storage failover modify -node node0 -enabled false`
-
-|===
-. Halten Sie den Regler an, und drücken Sie `y` Wenn Sie aufgefordert werden, den Stopp zu bestätigen: `system node halt -node _node_name_`
+. Ermitteln Sie die SP/BMC-Adresse aller Nodes:
 +
-Die Bestätigungsmeldung sieht wie folgt aus:
+`system service-processor show -node * -fields address`
+
+. Beenden Sie die Cluster-Shell: `exit`
+. Melden Sie sich über SSH beim SP/BMC an. Verwenden Sie dabei die IP-Adresse eines der in der Ausgabe des vorherigen Schritts aufgeführten Nodes.
++
+Wenn Sie eine Konsole oder einen Laptop verwenden, melden Sie sich mit den gleichen Cluster-Administratorberechtigungen beim Controller an.
 
 +
-[listing]
-----
-Warning: This operation will cause controller "node-name" to be marked as unhealthy. Unhealthy nodes do not participate in quorum voting. If the controller goes out of service and one more controller goes out of service there will be a data serving failure for the entire cluster. This will cause a client disruption. Use "cluster show" to verify cluster state. If possible bring other nodes online to improve the resiliency of this cluster.
 
-Do you want to continue? {y|n}:
-----
+NOTE: Öffnen Sie eine SSH-Sitzung für jede SP/BMC-Verbindung, damit Sie den Fortschritt überwachen können.
+
+. Alle Nodes im Cluster anhalten:
++
+`system node halt -node * -skip-lif-migration-before-shutdown true -ignore-quorum-warnings true -inhibit-takeover true`.
+
 +
 
-NOTE: Sie müssen ein sauberes System herunterfahren, bevor Sie das Chassis ersetzen, um nicht geschriebene Daten im nicht-flüchtigen Speicher (NVMEM/NVRAM) zu verlieren. Wenn die NVMEM/NVRAM-LED abhängig vom System blinkt, befinden sich Inhalte im NVMEM/NVRAM, die nicht auf die Festplatte gespeichert wurden. Sie müssen den Controller neu booten und Beginn dieses Verfahrens. Bei wiederholten Versuchen, den Controller ordnungsgemäß herunterzufahren, ist zu beachten, dass keine Daten verloren gehen, die nicht auf der Festplatte gespeichert wurden.
+NOTE: Bei Clustern mit SnapMirror Synchronous-Betrieb im StructSync-Modus: `system node halt -node * -skip-lif-migration-before-shutdown true -ignore-quorum-warnings true -inhibit-takeover true -ignore-strict-sync-warnings true`
 
-. Halten Sie gegebenenfalls den zweiten Controller an, um eine mögliche Quorum-Fehlermeldung in einer HA-Paar-Konfiguration zu vermeiden: `system node halt -node _second_node_name_ -ignore-quorum-warnings true -skip-lif-migration-before-shutdown true`
-+
-Antwort `y` Wenn Sie dazu aufgefordert werden.
-
+. Geben Sie *y* für jeden Controller im Cluster ein, wenn angezeigt wird `_Warning: Are you sure you want to halt node "cluster name-controller number"?
+{y|n}:_`
+. Warten Sie, bis die einzelnen Controller angehalten sind, und zeigen Sie die LOADER-Eingabeaufforderung an.
+. Schalten Sie jedes Netzteil aus, oder ziehen Sie den Netzstecker, wenn kein Netzteilschalter vorhanden ist.
+. Ziehen Sie das Netzkabel von den einzelnen Netzteilen ab.
+. Vergewissern Sie sich, dass alle Controller, Laufwerk-Shelfs und Switches, die dem Cluster zugeordnet sind, heruntergefahren sind.
 

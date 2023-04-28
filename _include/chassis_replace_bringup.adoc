@@ -1,0 +1,61 @@
+= 
+:allow-uri-read: 
+
+
+Nachdem Sie das Chassis ersetzt haben, fahren Sie die Clusterkomponenten in der folgenden Reihenfolge hoch:
+
+* Schalten Sie den Switch ein
+* Schalten Sie die Festplatten-Shelfs ein
+* Schalten Sie die Controller ein
+
+
+.Schritte
+. Schalten Sie den Switch ein:
++
+.. Schließen Sie jedes Netzkabel wieder an die PDU an das Netzteil an.
+.. Drehen Sie den Wippschalter jedes Netzteils in die POSITION EIN (falls zutreffend).
+.. Warten Sie, bis der Schalter hochgefahren ist.
+.. Prüfen Sie, ob die Fehleranzeigen am Schalter (vorne und hinten) leuchten.
+.. Stellen Sie über die Management-IP-Adresse eine Verbindung zum Switch her.
+.. Überprüfen Sie den Zustand des Switches (weitere Details finden Sie in der Dokumentation des Switch-Anbieters).
+.. Wiederholen Sie den Vorgang für jeden Schalter, bis alle Schalter eingeschaltet und ordnungsgemäß funktionieren.
+
+
+. Schalten Sie die Festplatten-Shelfs ein:
++
+.. Schließen Sie jedes Netzkabel wieder an die PDU an das Netzteil an.
+.. Drehen Sie den Wippschalter jedes Netzteils in die POSITION EIN (falls zutreffend).
+.. Warten Sie, bis alle Festplatten-Shelfs hochfahren und die Laufwerke hochfahren.
+.. Stellen Sie sicher, dass alle Shelf-IDs die erwarteten Werte entsprechen.
+.. Überprüfen Sie das Festplatten-Shelf auf Fehler-LEDs (vorne und hinten), die vor dem Herunterfahren nicht vorhanden waren.
+
+
+. Einschalten der Controller:
++
+.. Schließen Sie jedes Netzkabel wieder an die PDU an das Netzteil an.
+.. Drehen Sie den Wippschalter jedes Netzteils in die POSITION EIN (falls zutreffend). HA-Paare, die sich nicht im selben Chassis befinden, sollten gleichzeitig hochgefahren werden.
+.. Warten Sie, bis die Controller im Chassis hochgefahren sind.
+.. Überprüfen Sie das Chassis und die Controller auf Fehler-LEDs (vorne und hinten).
+.. Wiederholen Sie diesen Vorgang für jeden Controller/Chassis, bis alle eingeschaltet sind.
+.. Stellen Sie über SSH eine Verbindung mit der SP- oder BMC-IP-Adresse der Nodes her. Verwenden Sie diesen Befehl, um die IP-Adresse vor dem Herunterfahren zu erhalten:
++
+`system service-processor show -node * -fields address`
+
+.. Zusätzliche Systemzustandsprüfungen durchführen:
++
+... Lösen Sie alle https://activeiq.netapp.com/["Active IQ Wellness-Alarme und Risiken"]
+... Laufen https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"]
+... Überprüfen Sie den Systemzustand, wie in beschrieben https://kb.netapp.com/onprem/ontap/os/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["So führen Sie eine Cluster-Integritätsprüfung mit einem Skript in ONTAP durch"]
+
+
+.. Erzeugen einer Wartungsaufgabe abgeschlossen AutoSupport Meldung:
++
+`system node autosupport invoke -node * -type all -message MAINT=end`
+
+.. Stellen Sie sicher, dass das automatische Giveback aktiviert ist:
++
+`storage failover modify -node local -auto-giveback true`
+
+
+
+
