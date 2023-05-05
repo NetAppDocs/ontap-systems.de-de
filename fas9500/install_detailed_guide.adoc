@@ -58,7 +58,9 @@ X66240A-05 (112-00639), 0,5 m
 X66240A-2 (112-00598), 2 m
 
 X66240A-5 (112-00600), 5 m
-| image:../media/oie_cable_sfp_gbe_copper.svg["Breite = 85px"]  a| 
+ a| 
+image::../media/oie_cable_sfp_gbe_copper.svg[oie-Kabel sfp gbe Kupfer]
+ a| 
 Netzwerkkabel
 
 
@@ -234,7 +236,6 @@ video::da08295f-ba8c-4de7-88c3-ae7c0170408d[panopto]
 image::../media/drw_9500_tnsc_network_cabling.svg[drw 9500 tnsc Netzwerkverkabelung]
 
 +
-[cols="20%,80%"]
 |===
 | Schritt | Führen Sie an jedem Controller aus 
 
@@ -287,10 +288,18 @@ Kabelanschlüsse in Steckplatz A5 und B5 (5a, 5b, 5c und 5d) sowie in den Steckp
 
 image::../media/oie_cable_sfp_gbe_copper.svg[oie-Kabel sfp gbe Kupfer]
 
+
+
+ a| 
+** Befestigen Sie die Kabel mit den Kabelführungsarmen (nicht abgebildet).
+** Schließen Sie die Stromkabel an die Netzteile an, und schließen Sie sie an verschiedene Stromquellen an (nicht abgebildet). PSU 1 und 3 versorgen alle Komponenten der Seite A mit Strom, während PSU2 und PSU4 alle Komponenten der Seite B mit Strom versorgen.
+
+ a| 
+image::../media/oie_cable_power.svg[oie-Kabel mit Strom]
+
+image::../media/drw_a900fas9500_power_source_icon_IEOPS-1142.svg[drw a900fas9500 Stromquellensymbol IEOPS 1142]
+
 |===
-. Schließen Sie die Stromkabel an die Netzteile an, und schließen Sie sie an verschiedene Stromquellen an (nicht abgebildet).
-. Befestigen Sie die Kabel mit den Kabelführungsarmen (nicht abgebildet).
-. Informationen zum Kabelanschluss des Speichers finden Sie unter <<Schritt 4: Controller mit Laufwerk-Shelfs verkabeln>>.
 
 
 --
@@ -316,7 +325,6 @@ video::3ad3f118-8339-4683-865f-ae7c0170400c[panopto]
 image::../media/drw_9500_switched_network_cabling.svg[drw 9500-geschaltete Netzwerkverkabelung]
 
 +
-[cols="20%,80%"]
 |===
 | Schritt | Führen Sie an jedem Controller aus 
 
@@ -363,16 +371,24 @@ image::../media/oie_cable100_gbe_qsfp28.svg[oie Cable100 gbe qsfp28]
  a| 
 image::../media/oie_legend_icon_4_dr.svg[oie-Legende Symbol 4 dr]
  a| 
-25-GbE-Kabelanschluss:
+25-GbE-Verbindungen verkabeln:
 
 Kabelanschlüsse in Steckplatz A5 und B5 (5a, 5b, 5c und 5d) sowie in den Steckplätzen A7 und B7 (7a, 7b, 7c und 7d) an die 25-GbE-Netzwerk-Switches.
 
 image::../media/oie_cable_sfp_gbe_copper.svg[oie-Kabel sfp gbe Kupfer]
 
+
+
+ a| 
+** Befestigen Sie die Kabel mit den Kabelführungsarmen (nicht abgebildet).
+** Schließen Sie die Stromkabel an die Netzteile an, und schließen Sie sie an verschiedene Stromquellen an (nicht abgebildet). PSU 1 und 3 versorgen alle Komponenten der Seite A mit Strom, während PSU2 und PSU4 alle Komponenten der Seite B mit Strom versorgen.
+
+ a| 
+image::../media/oie_cable_power.svg[oie-Kabel mit Strom]
+
+image::../media/drw_a900fas9500_power_source_icon_IEOPS-1142.svg[drw a900fas9500 Stromquellensymbol IEOPS 1142]
+
 |===
-. Schließen Sie die Stromkabel an die Netzteile an, und schließen Sie sie an verschiedene Stromquellen an (nicht abgebildet).
-. Befestigen Sie die Kabel mit den Kabelführungsarmen (nicht abgebildet).
-. Informationen zum Kabelanschluss des Speichers finden Sie unter <<Schritt 4: Controller mit Laufwerk-Shelfs verkabeln>>.
 
 
 --
@@ -381,7 +397,7 @@ image::../media/oie_cable_sfp_gbe_copper.svg[oie-Kabel sfp gbe Kupfer]
 
 == Schritt 4: Controller mit Laufwerk-Shelfs verkabeln
 
-Sie müssen die Shelf-zu-Shelf-Verbindungen verkabeln und dann beide Controller mit dem DS212C oder DS224C Laufwerk-Shelfs verkabeln.
+Verbinden Sie DS212C- oder DS224C Laufwerk-Shelfs mit den Controllern.
 
 
 NOTE: Weitere Informationen zur SAS-Verkabelung und Arbeitsblätter finden Sie unter https://docs.netapp.com/us-en/ontap-systems/sas3/overview-cabling-rules-examples.html["SAS-Verkabelungsregeln, Arbeitsblätter und Beispiele – Regale mit IOM12-Modulen"^]
@@ -432,7 +448,6 @@ image::../media/oie_cable_mini_sas_hd_to_mini_sas_hd.svg[oie Kabel Mini sas hd a
 Mini-SAS-Kabel
 
 |===
-. Informationen zum Abschließen der Einrichtung des Systems finden Sie unter <<Schritt 5: System-Setup und -Konfiguration abschließen>>.
 
 
 
@@ -499,8 +514,7 @@ image::../media/legend_icon_05.svg[Legende Symbol 05]
 Warten Sie 10 Sekunden auf die Bernstein-LED (!) Um angezeigt zu werden, schalten Sie dann das Laufwerk-Shelf aus und wieder ein, um die Shelf-ID festzulegen.
 
 |===
-. Schließen Sie die Stromkabel an die Controller-Netzteile an, und schließen Sie sie dann an Stromquellen auf verschiedenen Stromkreisen an.
-. Schalten Sie die Netzschalter an beide Knoten ein.
+. Schalten Sie die Netzschalter an den Netzteilen beider Knoten ein.
 +
 .Animation: Schalten Sie die Stromversorgung der Controller ein
 video::a905e56e-c995-4704-9673-adfa0005a891[panopto]
@@ -632,15 +646,15 @@ image::../media/legend_icon_05.svg[Legende Symbol 05]
 Warten Sie 10 Sekunden auf die Bernstein-LED (!) Um angezeigt zu werden, schalten Sie dann das Laufwerk-Shelf aus und wieder ein, um die Shelf-ID festzulegen.
 
 |===
-. Schließen Sie die Stromkabel an die Controller-Netzteile an, und schließen Sie sie dann an Stromquellen auf verschiedenen Stromkreisen an.
-. Schalten Sie die Netzschalter an beide Knoten ein.
+. Schalten Sie die Netzschalter an den Netzteilen beider Knoten ein.
 +
 .Animation: Schalten Sie die Stromversorgung der Controller ein
 video::a905e56e-c995-4704-9673-adfa0005a891[panopto]
 +
 image::../media/drw_9500_power-on.svg[drw 9500 eingeschaltet]
 
-+
+
+
 
 NOTE: Das erste Booten kann bis zu acht Minuten dauern.
 

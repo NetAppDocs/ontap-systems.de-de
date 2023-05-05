@@ -136,7 +136,7 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Entfernen Sie die Abdeckung des Zielsteckplatzes:
 +
-.. Drücken Sie die Taste mit der Nummerierung und dem Buchstaben.
+.. Drücken Sie den mit Buchstaben versehenen und nummerierten Nockenriegel.
 .. Drehen Sie die Nockenverriegelung nach unten, bis sie sich in der geöffneten Position befindet.
 .. Entfernen Sie die Abdeckung.
 
@@ -311,9 +311,9 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 . Trennen Sie alle Kabel vom Ziel-E/A-Modul.
 . Entfernen Sie das Ziel-I/O-Modul aus dem Gehäuse:
 +
-.. Drücken Sie die Taste mit der Nummerierung und dem Buchstaben.
+.. Drücken Sie den mit Buchstaben versehenen und nummerierten Nockenriegel.
 +
-Die Nockentaste bewegt sich vom Gehäuse weg.
+Die Nockenverriegelung bewegt sich vom Gehäuse weg.
 
 .. Drehen Sie die Nockenverriegelung nach unten, bis sie sich in horizontaler Position befindet.
 +
@@ -358,10 +358,24 @@ E/A-Nockenverriegelung vollständig entriegelt
 
 . Wiederholen Sie die Schritte zum Entfernen und Installieren, um zusätzliche Module für Controller A auszutauschen
 . Wenn es sich bei dem Ersatz-E/A-Modul um eine NIC handelt, verkabeln Sie das Modul oder die Module mit den Datenschaltern.
-. Booten Sie den Node neu:
 +
 
 NOTE: Dadurch werden die PCIe-Karten und andere Komponenten neu initialisiert und der Node wird neu gebootet.
+
+. Booten Sie den Controller über die LOADER-Eingabeaufforderung neu:
++
+.. Überprüfen Sie die BMC-Version auf dem Controller: `system service-processor show`
+.. Aktualisieren Sie ggf. die BMC-Firmware: `system service-processor image update`
+.. Booten Sie den Node neu: `bye`
++
+
+NOTE: Dadurch werden die PCIe-Karten und andere Komponenten neu initialisiert und der Node wird neu gebootet.
+
++
+
+NOTE: Wenn beim Neustart ein Problem auftritt, lesen Sie https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1494308["BURT 1494308 – das Herunterfahren der Umgebung kann während des Austauschs des I/O-Moduls ausgelöst werden"]
+
+
 
 . Geben Sie den Node vom Partner-Node zurück. `storage failover giveback -ofnode target_node_name`
 . Automatisches Giveback aktivieren, falls deaktiviert: `storage failover modify -node local -auto-giveback true`
