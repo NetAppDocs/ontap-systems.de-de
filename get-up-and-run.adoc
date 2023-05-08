@@ -2,7 +2,7 @@
 permalink: get-up-and-run.html 
 sidebar: sidebar 
 keywords:  
-summary: Zur Inbetriebnahme von AFF und FAS Systemen installieren Sie Hardwarekomponenten, konfigurieren Ihre Switches und konfigurieren Ihren Storage in ONTAP. 
+summary: Für die Inbetriebnahme von AFF, FAS und ASA Systemen installieren Sie Hardwarekomponenten, konfigurieren Ihre Switches und konfigurieren Ihren Storage in ONTAP. 
 ---
 = Starten Sie mit AFF und FAS Storage-Systemen
 :allow-uri-read: 
@@ -19,7 +19,7 @@ Verwenden Sie den folgenden Workflow zur Implementierung Ihres Storage-Systems, 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"] Installieren Sie AFF/FAS Controller
 [role="quick-margin-para"]
-Installieren Sie Ihre All Flash FAS/FAS Controller im Rack oder Schrank. Installations- und Setup-Anleitung für Ihr All Flash FAS/FAS Plattformmodell erhalten Sie hier.
+Installieren Sie Ihre All Flash FAS/FAS Controller im Rack oder Schrank. Rufen Sie die Installations- und Setup-Anleitung für Ihr AFF/FAS Plattformmodell auf.Folgen Sie bei All-SAN-Array-Systemen (ASA) den Installationsanweisungen für das entsprechende Modell der AFF A-Series.
 
 [cols="4,9,9,9"]
 |===
@@ -27,14 +27,20 @@ Installieren Sie Ihre All Flash FAS/FAS Controller im Rack oder Schrank. Install
 
  a| 
  a| 
-.AFF Systeme
-* https://docs.netapp.com/us-en/ontap-systems/c190/install-setup.html["AFF C 190"]
+.Systeme der AFF A-Series
 * https://docs.netapp.com/us-en/ontap-systems/fas2700/install-setup.html["AFF A220"]
 * https://docs.netapp.com/us-en/ontap-systems/a250/install-setup.html["AFF A250"]
 * https://docs.netapp.com/us-en/ontap-systems/a400/install-setup.html["AFF A400"]
 * https://docs.netapp.com/us-en/ontap-systems/fas9000/install-setup.html["AFF A700"]
 * https://docs.netapp.com/us-en/ontap-systems/a800/install-setup.html["AFF A800"]
 * https://docs.netapp.com/us-en/ontap-systems/a900/install_detailed_guide.html["AFF A900"]
+
+ a| 
+.Systeme der AFF C-Serie
+* https://docs.netapp.com/us-en/ontap-systems/c190/install-setup.html["AFF C 190"]
+* https://docs.netapp.com/us-en/ontap-systems/c250/install-setup.html["AFF C250"]
+* https://docs.netapp.com/us-en/ontap-systems/c400/install-setup.html["AFF C400"]
+* https://docs.netapp.com/us-en/ontap-systems/a800/install-setup.html["AFF C800"]
 
  a| 
 .FAS Systeme
@@ -44,7 +50,6 @@ Installieren Sie Ihre All Flash FAS/FAS Controller im Rack oder Schrank. Install
 * https://docs.netapp.com/us-en/ontap-systems/fas9000/install-setup.html["FAS9000"]
 * https://docs.netapp.com/us-en/ontap-systems/fas9500/install_setup.html["FAS9500"]
 
- a| 
 
 |===
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"] Die Switch-Hardware einbauen
@@ -153,7 +158,7 @@ Um die Software auf Ihrem Switch zu installieren und zu konfigurieren, folgen Si
 |===
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sechs"] Schließen Sie die System-Einrichtung ab
 [role="quick-margin-para"]
-Nachdem die Switches konfiguriert und die erforderliche Software installiert wurden, rufen Sie die Installations- und Setup-Anleitung für das All Flash FAS/FAS Plattformmodell auf, um das System vollständig einzurichten.
+Nachdem die Switches konfiguriert und die erforderliche Software installiert wurden, rufen Sie die Installations- und Setup-Anleitung für das All Flash FAS/FAS Plattformmodell auf, um das System vollständig einzurichten. Befolgen Sie bei All-SAN-Array-Systemen (ASA) die Installationsanweisungen für das entsprechende Modell der AFF A-Serie.
 
 [cols="4,9,9,9"]
 |===
@@ -162,13 +167,19 @@ Nachdem die Switches konfiguriert und die erforderliche Software installiert wur
  a| 
  a| 
 .AFF Systeme
-* https://docs.netapp.com/us-en/ontap-systems/c190/install-setup.html["AFF C 190"]
 * https://docs.netapp.com/us-en/ontap-systems/fas2700/install-setup.html["AFF A220"]
 * https://docs.netapp.com/us-en/ontap-systems/a250/install-setup.html["AFF A250"]
 * https://docs.netapp.com/us-en/ontap-systems/a400/install-setup.html["AFF A400"]
 * https://docs.netapp.com/us-en/ontap-systems/fas9000/install-setup.html["AFF A700"]
 * https://docs.netapp.com/us-en/ontap-systems/a800/install-setup.html["AFF A800"]
 * https://docs.netapp.com/us-en/ontap-systems/a900/install_detailed_guide.html["AFF A900"]
+
+ a| 
+.Systeme der AFF C-Serie
+* https://docs.netapp.com/us-en/ontap-systems/c190/install-setup.html["AFF C 190"]
+* https://docs.netapp.com/us-en/ontap-systems/c250/install-setup.html["AFF C250"]
+* https://docs.netapp.com/us-en/ontap-systems/c400/install-setup.html["AFF C400"]
+* https://docs.netapp.com/us-en/ontap-systems/a800/install-setup.html["AFF C800"]
 
  a| 
 .FAS Systeme
@@ -178,7 +189,6 @@ Nachdem die Switches konfiguriert und die erforderliche Software installiert wur
 * https://docs.netapp.com/us-en/ontap-systems/fas9000/install-setup.html["FAS9000"]
 * https://docs.netapp.com/us-en/ontap-systems/fas9500/install_setup.html["FAS9500"]
 
- a| 
 
 |===
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["Sieben"] Schließen Sie die ONTAP-Konfiguration ab
