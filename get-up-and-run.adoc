@@ -19,12 +19,15 @@ Verwenden Sie den folgenden Workflow zur Implementierung Ihres Storage-Systems, 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"] Installieren Sie AFF/FAS Controller
 [role="quick-margin-para"]
-Installieren Sie Ihre All Flash FAS/FAS Controller im Rack oder Schrank. Installations- und Setup-Anleitung für Ihr All Flash FAS/FAS Plattformmodell erhalten Sie hier. Befolgen Sie bei All-SAN-Array-Systemen (ASA) die Installationsanweisungen für das entsprechende Modell der AFF A-Serie.
+6d311090c29c1da16c7810703948cbe1
 
-[role="quick-margin-para"]
-**Systeme der AFF A-Serie**
+[cols="4,9,9,9"]
+|===
 
-[role="quick-margin-list"]
+
+ a| 
+ a| 
+.Systeme der AFF A-Series
 * https://["AFF A220"]
 * https://["AFF A250"]
 * https://["AFF A400"]
@@ -32,21 +35,15 @@ Installieren Sie Ihre All Flash FAS/FAS Controller im Rack oder Schrank. Install
 * https://["AFF A800"]
 * https://["AFF A900"]
 
-
-[role="quick-margin-para"]
-**Systeme der AFF C-Serie**
-
-[role="quick-margin-list"]
+ a| 
+.Systeme der AFF C-Serie
 * https://["AFF C 190"]
 * https://["AFF C250"]
 * https://["AFF C400"]
 * https://["AFF C800"]
 
-
-[role="quick-margin-para"]
-**FAS Systeme**
-
-[role="quick-margin-list"]
+ a| 
+.FAS Systeme
 * https://["FAS500f"]
 * https://["FAS8300"]
 * https://["FAS8700"]
@@ -54,126 +51,122 @@ Installieren Sie Ihre All Flash FAS/FAS Controller im Rack oder Schrank. Install
 * https://["FAS9500"]
 
 
+|===
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"] Die Switch-Hardware einbauen
 [role="quick-margin-para"]
 Installieren Sie Ihre Switches im Rack oder Schrank. Lesen Sie die folgenden Anweisungen für Ihr Switch-Modell.
 
-[role="quick-margin-para"]
-**Cluster-Switches**
+[cols="2,9,9,9"]
+|===
 
-[role="quick-margin-list"]
+
+ a| 
+ a| 
+.f267a68fd1c8bddcc992701898021398
 * link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/install-hardware-bes53248.html["Installieren Sie den BES-53248-Switch"]
 * link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/install-switch-9336c-cluster.html["Installieren Sie den Cisco Nexus 9336C-FX2 Switch"]
 * link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-nvidia-sn2100/install-hardware-sn2100-cluster.html["Installieren Sie den NVIDIA SN2100-Switch"]
 
-
-[role="quick-margin-para"]
-**Storage Switches**
-
-[role="quick-margin-list"]
+ a| 
+.403284bd44beda112195a484c8a76421
 * link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2-storage/install-9336c-storage.html["Installieren Sie den Cisco Nexus 9336C-FX2 Switch"]
 * link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-nvidia-sn2100/install-hardware-sn2100-storage.html["Installieren Sie den NVIDIA SN2100-Switch"]
 
-
-[role="quick-margin-para"]
-**Shared Switches**
-
-[role="quick-margin-list"]
+ a| 
+.bc8a2cd252a5beb1dbf4f209baea67eb
 * link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2-shared/install-9336c-shared.html["Installieren Sie den Cisco Nexus 9336C-FX2 Switch"]
 
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"] Verkabeln Sie die Switches mit den Controllern
+|===
+.a4ae5d0bd4e47ba267a8df1ceee51985
 [role="quick-margin-para"]
 Die Installations- und Setup-Anleitung für AFF/FAS enthält Anweisungen zur Verkabelung der Controller-Ports mit dem Switch. Wenn Sie jedoch Listen mit unterstützten Kabeln und Transceivern sowie detaillierte Informationen zu den Host-Ports für Ihren Switch benötigen, greifen Sie auf die folgenden Anweisungen für Ihr Switch-Modell zu.
 
-[role="quick-margin-para"]
-**Cluster-Switches**
+[cols="2,9,9,9"]
+|===
 
-[role="quick-margin-list"]
+
+ a| 
+ a| 
+.f267a68fd1c8bddcc992701898021398
 * link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/configure-reqs-bes53248.html#configuration-requirements["BES-53248-Schalter verkabeln"]
 * link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/setup-worksheet-9336c-cluster.html["Cisco Nexus 9336C-FX2-Switch verkabeln"]
 * link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-nvidia-sn2100/cabling-considerations-sn2100-cluster.html["Verkabeln Sie den NVIDIA SN2100-Switch"]
 
-
-[role="quick-margin-para"]
-**Storage Switches**
-
-[role="quick-margin-list"]
+ a| 
+.403284bd44beda112195a484c8a76421
 * link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2-storage/setup-worksheet-9336c-storage.html["Cisco Nexus 9336C-FX2-Switch verkabeln"]
 * link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-nvidia-sn2100/cabling-considerations-sn2100-storage.html["Verkabeln Sie den NVIDIA SN2100-Switch"]
 
-
-[role="quick-margin-para"]
-**Shared Switches**
-
-[role="quick-margin-list"]
+ a| 
+.bc8a2cd252a5beb1dbf4f209baea67eb
 * link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2-shared/cable-9336c-shared.html["Cisco Nexus 9336C-FX2-Switch verkabeln"]
 
 
+|===
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]Konfigurieren Sie den Switch
 [role="quick-margin-para"]
 Führen Sie eine Ersteinrichtung Ihrer Switches durch. Lesen Sie die folgenden Anweisungen für Ihr Switch-Modell.
 
-[role="quick-margin-para"]
-**Cluster-Switches**
+[cols="2,9,9,9"]
+|===
 
-[role="quick-margin-list"]
+
+ a| 
+ a| 
+.f267a68fd1c8bddcc992701898021398
 * link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/configure-install-initial.html["Konfigurieren Sie den BES-53248-Switch"]
 * link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/setup-switch-9336c-cluster.html["Konfigurieren Sie den Cisco Nexus 9336C-FX2 Switch"]
 * link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-nvidia-sn2100/configure-sn2100-cluster.html["Konfigurieren Sie den NVIDIA SN2100-Switch"]
 
-
-[role="quick-margin-para"]
-**Storage Switches**
-
-[role="quick-margin-list"]
+ a| 
+.403284bd44beda112195a484c8a76421
 * link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2-storage/setup-switch-9336c-storage.html["Konfigurieren Sie den Cisco Nexus 9336C-FX2 Switch"]
 * link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-nvidia-sn2100/configure-sn2100-storage.html["Konfigurieren Sie den NVIDIA SN2100-Switch"]
 
-
-[role="quick-margin-para"]
-**Shared Switches**
-
-[role="quick-margin-list"]
+ a| 
+.bc8a2cd252a5beb1dbf4f209baea67eb
 * link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2-shared/setup-and-configure-9336c-shared.html["Konfigurieren Sie den Cisco Nexus 9336C-FX2 Switch"]
 
 
+|===
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"] Installation der Switch-Software
 [role="quick-margin-para"]
 Um die Software auf Ihrem Switch zu installieren und zu konfigurieren, folgen Sie dem Workflow für die Softwareinstallation Ihres Switch-Modells.
 
-[role="quick-margin-para"]
-**Cluster-Switches**
+[cols="2,9,9,9"]
+|===
 
-[role="quick-margin-list"]
+
+ a| 
+ a| 
+.f267a68fd1c8bddcc992701898021398
 * link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/configure-software-overview-bes53248.html["Installation der Software für BES-53248-Switches"]
 * link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/configure-software-overview-9336c-cluster.html["Installieren Sie Software für Cisco Nexus 9336C-FX2 Switch"]
 * link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-nvidia-sn2100/configure-software-overview-sn2100-cluster.html["Software für NVIDIA SN2100-Switch installieren"]
 
-
-[role="quick-margin-para"]
-**Storage Switches**
-
-[role="quick-margin-list"]
+ a| 
+.403284bd44beda112195a484c8a76421
 * link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2-storage/configure-software-overview-9336c-storage.html["Installieren Sie Software für Cisco Nexus 9336C-FX2 Switch"]
 * link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-nvidia-sn2100/configure-software-sn2100-storage.html["Software für NVIDIA SN2100-Switch installieren"]
 
-
-[role="quick-margin-para"]
-**Shared Switches**
-
-[role="quick-margin-list"]
+ a| 
+.bc8a2cd252a5beb1dbf4f209baea67eb
 * link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2-shared/configure-software-overview-9336c-shared.html["Installieren Sie Software für Cisco Nexus 9336C-FX2 Switch"]
 
 
+|===
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sechs"] Schließen Sie die System-Einrichtung ab
 [role="quick-margin-para"]
 Nachdem die Switches konfiguriert und die erforderliche Software installiert wurden, rufen Sie die Installations- und Setup-Anleitung für das All Flash FAS/FAS Plattformmodell auf, um das System vollständig einzurichten. Befolgen Sie bei All-SAN-Array-Systemen (ASA) die Installationsanweisungen für das entsprechende Modell der AFF A-Serie.
 
-[role="quick-margin-para"]
-**AFF Systeme**
+[cols="4,9,9,9"]
+|===
 
-[role="quick-margin-list"]
+
+ a| 
+ a| 
+.f3585daa539c5917b4fedd0eb7efb3f2
 * https://["AFF A220"]
 * https://["AFF A250"]
 * https://["AFF A400"]
@@ -181,21 +174,15 @@ Nachdem die Switches konfiguriert und die erforderliche Software installiert wur
 * https://["AFF A800"]
 * https://["AFF A900"]
 
-
-[role="quick-margin-para"]
-**Systeme der AFF C-Serie**
-
-[role="quick-margin-list"]
+ a| 
+.Systeme der AFF C-Serie
 * https://["AFF C 190"]
 * https://["AFF C250"]
 * https://["AFF C400"]
 * https://["AFF C800"]
 
-
-[role="quick-margin-para"]
-**FAS Systeme**
-
-[role="quick-margin-list"]
+ a| 
+.FAS Systeme
 * https://["FAS500f"]
 * https://["FAS8300"]
 * https://["FAS8700"]
@@ -203,6 +190,7 @@ Nachdem die Switches konfiguriert und die erforderliche Software installiert wur
 * https://["FAS9500"]
 
 
+|===
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["Sieben"] Schließen Sie die ONTAP-Konfiguration ab
 [role="quick-margin-para"]
 Nachdem die All Flash FAS/FAS Controller und Switches installiert und eingerichtet wurden, müssen Sie die Konfiguration des Storage in ONTAP abschließen. Greifen Sie entsprechend der Bereitstellungskonfiguration auf die folgenden Anweisungen zu.
