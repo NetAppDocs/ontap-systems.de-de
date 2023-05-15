@@ -21,7 +21,7 @@ Nach Ausführung der Diagnose müssen Sie die Speicher- und Netzwerkverbindungen
 
 .Schritte
 . Das System neu aufführen.
-. Überprüfen Sie anhand von, ob die Verkabelung korrekt ist https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"].
+. Überprüfen Sie anhand von, ob die Verkabelung korrekt ist https://["Active IQ Config Advisor"].
 +
 .. Laden Sie Config Advisor herunter und installieren Sie es.
 .. Geben Sie die Informationen für das Zielsystem ein, und klicken Sie auf Daten erfassen.
@@ -80,8 +80,8 @@ Sie können den folgenden Befehl eingeben, um den Fortschritt des Befehls saveco
 
 . Wenn Ihr Storage- oder Volume Encryption-System konfiguriert ist, müssen Sie die Funktionen für Storage oder Volume Encryption mithilfe eines der folgenden Verfahren wiederherstellen: Je nachdem, ob Sie integriertes oder externes Verschlüsselungsmanagement verwenden:
 +
-** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-onboard-key-management-encryption-keys-task.html["Wiederherstellung der integrierten Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"^]
-** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-external-encryption-keys-93-later-task.html["Wiederherstellung der externen Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"^]
+** https://["Wiederherstellung der integrierten Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"^]
+** https://["Wiederherstellung der externen Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"^]
 
 
 . Geben Sie den Controller zurück:
@@ -98,7 +98,7 @@ Wenn Sie aufgrund einer nicht übereinstimmenden System-ID aufgefordert werden, 
 NOTE: Wenn das Rückübertragung ein Vetorecht ist, können Sie erwägen, das Vetos außer Kraft zu setzen.
 
 +
-http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["Finden Sie die Inhalte zur Hochverfügbarkeitskonfiguration Ihrer Version von ONTAP 9"]
+http://["Finden Sie die Inhalte zur Hochverfügbarkeitskonfiguration Ihrer Version von ONTAP 9"]
 
 .. Nachdem das Giveback abgeschlossen ist, bestätigen Sie, dass das HA-Paar sich gesund befindet und ein Takeover möglich ist: `storage failover show`
 +
@@ -182,8 +182,8 @@ disk_name    system-1  (118065481)  Pool0  J8Y0TDZC       system-1  (118065481)
 ----
 . Wenn Ihr Storage- oder Volume Encryption-System konfiguriert ist, müssen Sie die Funktionen für Storage oder Volume Encryption mithilfe eines der folgenden Verfahren wiederherstellen: Je nachdem, ob Sie integriertes oder externes Verschlüsselungsmanagement verwenden:
 +
-** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-onboard-key-management-encryption-keys-task.html["Wiederherstellung der integrierten Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"^]
-** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-external-encryption-keys-93-later-task.html["Wiederherstellung der externen Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"^]
+** https://["Wiederherstellung der integrierten Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"^]
+** https://["Wiederherstellung der externen Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"^]
 
 
 . Booten des Node: `boot_ontap`

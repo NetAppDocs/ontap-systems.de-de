@@ -18,12 +18,12 @@ Sie können ein X91148A-Modul in einem leeren Modulsteckplatz in Ihrem System en
 * Auf Ihrem System müssen mindestens ein freier Steckplatz verfügbar sein.
 * Wenn mehrere Steckplätze verfügbar sind, installieren Sie das Modul gemäß der Slot Priority Matrix für das X91148A-Modul im Hardware Universe.
 +
-https://hwu.netapp.com["NetApp Hardware Universe"]
+https://["NetApp Hardware Universe"]
 
 * Wenn Sie das Modul X91148A als Speichermodul hinzufügen, müssen Sie die Modulsteckplätze 3 und/oder 7 installieren.
 * Wenn Sie das X91148A-Modul als 100-GbE-NIC hinzufügen, können Sie jeden offenen Steckplatz verwenden. Standardmäßig werden die Steckplätze 3 und 7 als Speichersteckplätze festgelegt. Wenn Sie diese Steckplätze als Netzwerksteckplätze verwenden möchten und keine NS224-Shelfs hinzufügen, müssen Sie die Steckplätze für die Netzwerknutzung mit dem ändern `storage port modify -node _node name_ -port _port name_ -mode network` Befehl. Im Hardware Universe finden Sie weitere Steckplätze, die vom X91148A-Modul für die Netzwerkanbindung verwendet werden können.
 +
-https://hwu.netapp.com["NetApp Hardware Universe"]
+https://["NetApp Hardware Universe"]
 
 * Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
 
@@ -105,5 +105,5 @@ Die Konsolenverbindung zeigt an, dass der Node nach Abschluss der Übernahme auf
 . GiveBack der Knoten vom Partner-Knoten: `storage failover giveback -ofnode target_node_name`
 . Automatisches Giveback aktivieren, falls deaktiviert: `storage failover modify -node local -auto-giveback true`
 . Wiederholen Sie diese Schritte für Controller B.
-. Installieren und verkabeln Sie die NS224-Regale, wie in beschrieben https://docs.netapp.com/us-en/ontap-systems/ns224/hot-add-shelf.html["Hot-Add - NS224-Shelfs"].
+. Installieren und verkabeln Sie die NS224-Regale, wie in beschrieben https://["Hot-Add - NS224-Shelfs"].
 

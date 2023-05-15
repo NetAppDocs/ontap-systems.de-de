@@ -16,8 +16,8 @@ Sie müssen ein DIMM im Controller-Modul ersetzen, wenn Ihr System eine steigend
 .Bevor Sie beginnen
 * Als Best Practice empfiehlt es sich, die aktuelle Version des DQP (Disk Qualification Package) zu installieren, bevor ein Laufwerk Hot-Swap durchgeführt wird.
 * Identifizieren Sie das ausgefallene Laufwerk, indem Sie den ausführen `storage disk show -broken` Befehl über die Systemkonsole. Das ausgefallene Laufwerk wird in der Liste der ausgefallenen Laufwerke angezeigt. Falls nicht, sollten Sie warten und dann den Befehl erneut ausführen.
-* Wie Sie die Festplatte austauschen, hängt davon ab, wie das Festplattenlaufwerk verwendet wird. Wenn die SED-Authentifizierung aktiviert ist, müssen Sie die SED-Ersatzanweisungen im verwenden https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/home.html["ONTAP 9 – NetApp Verschlüsselungsleitfadens"]. In diesen Anweisungen werden zusätzliche Schritte beschrieben, die vor und nach dem Austausch einer SED ausgeführt werden müssen.
-* Das Ersatzlaufwerk muss von Ihrer Plattform unterstützt werden. Siehe https://hwu.netapp.com["NetApp Hardware Universe"].
+* Wie Sie die Festplatte austauschen, hängt davon ab, wie das Festplattenlaufwerk verwendet wird. Wenn die SED-Authentifizierung aktiviert ist, müssen Sie die SED-Ersatzanweisungen im verwenden https://["ONTAP 9 – NetApp Verschlüsselungsleitfadens"]. In diesen Anweisungen werden zusätzliche Schritte beschrieben, die vor und nach dem Austausch einer SED ausgeführt werden müssen.
+* Das Ersatzlaufwerk muss von Ihrer Plattform unterstützt werden. Siehe https://["NetApp Hardware Universe"].
 * Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
 
 

@@ -13,7 +13,7 @@ summary: Zum Austausch des Chassis müssen Sie die Controller herunterfahren.
 == Schalten Sie den beeinträchtigten Regler - FAS9500 aus
 
 [role="lead"]
-Dieses Verfahren gilt nur für Konfigurationen ohne MetroCluster mit 2 Nodes. Wenn Sie ein System mit mehr als zwei Nodes haben, finden Sie weitere Informationen unter https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_perform_a_graceful_shutdown_and_power_up_of_one_HA_pair_in_a_4__node_cluster["So schalten Sie ein HA-Paar in einem Cluster mit 4 Nodes ein und fahren ein paar ordnungsgemäß hoch"^].
+Dieses Verfahren gilt nur für Konfigurationen ohne MetroCluster mit 2 Nodes. Wenn Sie ein System mit mehr als zwei Nodes haben, finden Sie weitere Informationen unter https://["So schalten Sie ein HA-Paar in einem Cluster mit 4 Nodes ein und fahren ein paar ordnungsgemäß hoch"^].
 
 .Bevor Sie beginnen
 Sie benötigen:
@@ -27,19 +27,19 @@ Sie benötigen:
 
 
 
-NOTE: Wenn es sich bei dem System um ein NetApp StorageGRID oder ONTAP S3 handelt, das als FabricPool Cloud Tier verwendet wird, finden Sie im https://kb.netapp.com/onprem/ontap/hardware/What_is_the_procedure_for_graceful_shutdown_and_power_up_of_a_storage_system_during_scheduled_power_outage#["Anleitung zur Problemlösung des Speichersystems wird ordnungsgemäß heruntergefahren und gestartet"] Nach Durchführung dieses Verfahrens.
+NOTE: Wenn es sich bei dem System um ein NetApp StorageGRID oder ONTAP S3 handelt, das als FabricPool Cloud Tier verwendet wird, finden Sie im https://["Anleitung zur Problemlösung des Speichersystems wird ordnungsgemäß heruntergefahren und gestartet"] Nach Durchführung dieses Verfahrens.
 
 
 NOTE: Wenn Sie FlexArray-Array-LUNs verwenden, befolgen Sie die Dokumentation zum Speicher-Array des jeweiligen Anbieters, um das Herunterfahren für diese Systeme durchzuführen, nachdem Sie dieses Verfahren durchgeführt haben.
 
 
-NOTE: Wenn Sie SSDs verwenden, finden Sie weitere Informationen unter https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU490["SU490: (Auswirkung: Kritisch) SSD Best Practices: Vermeiden Sie das Risiko von Laufwerksausfällen und Datenverlust, wenn Sie sich für mehr als zwei Monate ausgeschaltet haben"]
+NOTE: Wenn Sie SSDs verwenden, finden Sie weitere Informationen unter https://["SU490: (Auswirkung: Kritisch) SSD Best Practices: Vermeiden Sie das Risiko von Laufwerksausfällen und Datenverlust, wenn Sie sich für mehr als zwei Monate ausgeschaltet haben"]
 
 Als Best Practice vor dem Herunterfahren sollten Sie:
 
-* Zusätzliche Durchführung https://kb.netapp.com/onprem/ontap/os/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["Zustandsberichte zu Systemen"].
+* Zusätzliche Durchführung https://["Zustandsberichte zu Systemen"].
 * Führen Sie ein Upgrade von ONTAP auf eine empfohlene Version für das System durch.
-* Lösen Sie alle https://activeiq.netapp.com/["Active IQ Wellness-Alarme und Risiken"]. Notieren Sie sich alle derzeit auftretenden Fehler im System, z. B. LEDs an den Systemkomponenten.
+* Lösen Sie alle https://["Active IQ Wellness-Alarme und Risiken"]. Notieren Sie sich alle derzeit auftretenden Fehler im System, z. B. LEDs an den Systemkomponenten.
 
 
 .Schritte

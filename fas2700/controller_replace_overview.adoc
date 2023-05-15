@@ -15,7 +15,7 @@ Sie müssen die Voraussetzungen für den Austausch prüfen und die richtige für
 
 * Alle Festplatten-Shelfs müssen ordnungsgemäß funktionieren.
 * Wenn sich Ihr System in einem HA-Paar befindet, muss der gesunde Controller in der Lage sein, den zu ersetzenden Controller zu übernehmen (in diesem Verfahren als „`eingeschränkter Controller`“ bezeichnet).
-* Wenn sich Ihr System in einer MetroCluster-Konfiguration befindet, müssen Sie den Abschnitt überprüfen https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/concept_choosing_the_correct_recovery_procedure_parent_concept.html["Auswahl des richtigen Wiederherstellungsverfahrens"] Um zu bestimmen, ob Sie dieses Verfahren verwenden sollten.
+* Wenn sich Ihr System in einer MetroCluster-Konfiguration befindet, müssen Sie den Abschnitt überprüfen https://["Auswahl des richtigen Wiederherstellungsverfahrens"] Um zu bestimmen, ob Sie dieses Verfahren verwenden sollten.
 +
 Beachten Sie, dass das Verfahren zum Austausch des Controllers bei einem Controller in einer MetroCluster Konfiguration mit vier oder acht Nodes mit dem bei einem HA-Paar identisch ist. Es sind keine MetroCluster-spezifischen Schritte erforderlich, da der Ausfall auf ein HA-Paar beschränkt ist und Storage Failover-Befehle zur unterbrechungsfreien Ausführung während des Austauschs genutzt werden können.
 

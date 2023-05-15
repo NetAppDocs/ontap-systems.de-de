@@ -21,11 +21,11 @@ Ihr HA-Paar muss bestimmte Anforderungen erfüllen, bevor ein NS2224-Laufwerk-Sh
 
 * Ihr Plattformmodell und Ihre ONTAP-Version müssen NS224-Shelf und Laufwerke unterstützen, die Sie hinzufügen möchten.
 +
-https://hwu.netapp.com["NetApp Hardware Universe"^]
+https://["NetApp Hardware Universe"^]
 
 * Zum Anschließen des Shelfs müssen Sie die richtige Anzahl und den richtigen Kabeltyp haben.
 +
-https://hwu.netapp.com["NetApp Hardware Universe"^]
+https://["NetApp Hardware Universe"^]
 
 * Ihr HA-Paar muss über genügend verfügbare RoCE-fähige Ports verfügen, um die Anzahl der Shelves zu unterstützen, die Sie im laufenden Betrieb hinzufügen.
 +
@@ -35,7 +35,7 @@ Für jedes Shelf, das Sie hinzufügen, benötigen Sie mindestens zwei RoCE-fähi
 Wenn Ihr HA-Paar nicht über ausreichende RoCE-fähige Ports verfügt und Ihr Plattformmodell die Verwendung von RoCE-fähigen PCIe-Karten oder I/O-Modulen unterstützt, müssen Sie die zusätzlichen Karten oder I/O-Module entsprechend Ihrem Plattformmodell in die richtigen Controller-Steckplätze installiert haben.
 
 +
-https://hwu.netapp.com["NetApp Hardware Universe"^]
+https://["NetApp Hardware Universe"^]
 
 +
 [NOTE]
@@ -54,14 +54,14 @@ link:../fas9000/caching-module-and-core-dump-module-replace.html["Ersetzen Sie d
 Sie können nach dem Hinzufügen von Shelfs nicht die Höchstzahl der von Ihrem HA-Paar unterstützten Shelfs überschritten haben.
 
 +
-https://hwu.netapp.com["NetApp Hardware Universe"^]
+https://["NetApp Hardware Universe"^]
 
 * Wenn Sie ein Shelf zu einem HA-Paar hinzufügen, das bereits über ein NS224-Shelf verfügt, können beim HA-Paar keine Fehlermeldungen bei der Storage-Verkabelung ausgegeben werden. Es muss als Multipath HA verkabelt werden.
 +
 Sie können Active IQ Config Advisor ausführen, um Fehlermeldungen bei der Storage-Verkabelung sowie die Korrekturmaßnahmen anzuzeigen, die Sie durchführen sollten.
 
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"^]
+https://["NetApp Downloads: Config Advisor"^]
 
 * Sie benötigen einen Büroklammer mit einer Seite gerade oder einem schmal gekippten Kugelschreiber.
 +
@@ -81,21 +81,21 @@ Bevor Sie ein NS224-Festplatten-Shelf im laufenden Betrieb hinzufügen, sollten 
 Wenn die aktuelle Version des DQP installiert ist, kann Ihr System neu qualifizierte Laufwerke erkennen und verwenden. Dies verhindert, dass Systemereignimeldungen über nicht aktuelle Laufwerksinformationen verfügen und Laufwerkspartitionierung verhindern, da Laufwerke nicht erkannt werden. Das DQP benachrichtigt Sie auch über nicht aktuelle Laufwerk-Firmware.
 
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["NetApp Downloads: Disk Qualification Package"^]
+https://["NetApp Downloads: Disk Qualification Package"^]
 
 * *Best Practice:* die beste Praxis ist, Active IQ Config Advisor vor und nach dem Hot-Adding eines Regals zu laufen.
 +
 Wenn Active IQ Config Advisor ausgeführt wird, bevor ein Shelf hinzugefügt wird, ist ein Schnappschuss der vorhandenen Shelf-Ethernet-Konnektivität (ENET) möglich. Es werden die NVMe Shelf-Versionen (NSM) der Firmware-Versionen überprüft und können Sie eine Shelf-ID überprüfen, die bereits im HA-Paar verwendet wird. Wenn Sie Active IQ Config Advisor nach dem Hinzufügen eines Shelfs im laufenden Betrieb ausführen, können Sie überprüfen, ob Shelfs ordnungsgemäß verkabelt sind und dass Shelf-IDs innerhalb des HA-Paars eindeutig sind.
 
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"^]
+https://["NetApp Downloads: Config Advisor"^]
 
 * *Best Practice:* die beste Vorgehensweise ist, aktuelle Versionen der NSM-Firmware (NVMe Shelf Module) und der Laufwerk-Firmware auf dem System zu haben, bevor ein neues Shelf hinzugefügt wird.
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp Downloads: Festplatten-Shelf Firmware"^]
+https://["NetApp Downloads: Festplatten-Shelf Firmware"^]
 
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["NetApp Downloads: Festplatten-Firmware"^]
+https://["NetApp Downloads: Festplatten-Firmware"^]
 
 +
 
@@ -350,7 +350,7 @@ Bei Bedarf können Sie Verkabelungsabbildungen mit einem vorhandenen Single Shel
 Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
 
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"^]
+https://["NetApp Downloads: Config Advisor"^]
 
 
 
@@ -560,7 +560,7 @@ image::../media/drw_ns224_a900_4shelves.png[drw ns224 a900 4Shelves]
 Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
 
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"]
+https://["NetApp Downloads: Config Advisor"]
 
 . Wenn Sie die automatische Laufwerkszuweisung als Teil der Vorbereitung für dieses Verfahren deaktiviert haben, müssen Sie manuell die Laufwerkseigentümer festlegen und die automatische Laufwerkszuweisung ggf. erneut aktivieren.
 +
@@ -612,7 +612,7 @@ image::../media/drw_ns224_a250_c250_f500f_1shelf_IEOPS-963.svg[drw ns224 a250 c2
 Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
 
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"^]
+https://["NetApp Downloads: Config Advisor"^]
 
 . Wenn Sie die automatische Laufwerkszuweisung als Teil der Vorbereitung für dieses Verfahren deaktiviert haben, müssen Sie manuell die Laufwerkseigentümer festlegen und die automatische Laufwerkszuweisung ggf. erneut aktivieren.
 +
@@ -713,7 +713,7 @@ image::../media/drw_ns224_a700_2shelves.png[drw ns224 a700 mit 2 Shelfs]
 Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
 
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"^]
+https://["NetApp Downloads: Config Advisor"^]
 
 . Wenn Sie die automatische Laufwerkszuweisung als Teil der Vorbereitung für dieses Verfahren deaktiviert haben, müssen Sie manuell die Laufwerkseigentümer festlegen und die automatische Laufwerkszuweisung ggf. erneut aktivieren.
 +
@@ -818,7 +818,7 @@ image::../media/drw_ns224_a800_c800_2shelves_IEOPS-966.svg[drw ns224 a800 c800 2
 Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
 
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"^]
+https://["NetApp Downloads: Config Advisor"^]
 
 . Wenn Sie die automatische Laufwerkszuweisung als Teil der Vorbereitung für dieses Verfahren deaktiviert haben, müssen Sie manuell die Laufwerkseigentümer festlegen und die automatische Laufwerkszuweisung ggf. erneut aktivieren.
 +
@@ -909,7 +909,7 @@ image::../media/drw_ns224_a400_2shelves_IEOPS-983.svg[drw ns224 a400 2 Shelfs IE
 Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
 
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"^]
+https://["NetApp Downloads: Config Advisor"^]
 
 . Wenn Sie die automatische Laufwerkszuweisung als Teil der Vorbereitung für dieses Verfahren deaktiviert haben, müssen Sie manuell die Laufwerkseigentümer festlegen und bei Bedarf die automatische Laufwerkszuweisung wieder aktivieren.
 +
@@ -1000,7 +1000,7 @@ image::../media/drw_ns224_c400_2shelves_IEOPS-984.svg[drw ns224 c400 2 Shelfs IE
 Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
 
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"^]
+https://["NetApp Downloads: Config Advisor"^]
 
 . Wenn Sie die automatische Laufwerkszuweisung als Teil der Vorbereitung für dieses Verfahren deaktiviert haben, müssen Sie manuell die Laufwerkseigentümer festlegen und bei Bedarf die automatische Laufwerkszuweisung wieder aktivieren.
 +
@@ -1052,7 +1052,7 @@ image::../media/drw_ns224_a320_2shelves_direct_attached.png[drw ns224 a320 2Shel
 Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
 
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"^]
+https://["NetApp Downloads: Config Advisor"^]
 
 . Wenn Sie die automatische Laufwerkszuweisung als Teil der Vorbereitung für dieses Verfahren deaktiviert haben, müssen Sie manuell die Laufwerkseigentümer festlegen und bei Bedarf die automatische Laufwerkszuweisung wieder aktivieren.
 +

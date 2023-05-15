@@ -22,9 +22,9 @@ Um Ihr System zu installieren, müssen Sie ein Konto erstellen, das System regis
 .Bevor Sie beginnen
 Sie müssen Zugriff auf das Hardware Universe haben, um Informationen zu den Standortanforderungen sowie zusätzliche Informationen über Ihr konfiguriertes System zu erhalten. Möglicherweise möchten Sie auch Zugriff auf die Versionshinweise für Ihre Version von ONTAP haben, um weitere Informationen zu diesem System zu erhalten.
 
-https://hwu.netapp.com["NetApp Hardware Universe"]
+https://["NetApp Hardware Universe"]
 
-http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["Finden Sie die Versionshinweise für Ihre Version von ONTAP 9"]
+http://["Finden Sie die Versionshinweise für Ihre Version von ONTAP 9"]
 
 Folgendes müssen Sie an Ihrer Website angeben:
 
@@ -44,7 +44,7 @@ image::../media/drw_ssn_label.png[drw ssn-Etikett]
 In der folgenden Tabelle sind die Kabeltypen aufgeführt, die Sie möglicherweise erhalten können. Wenn Sie ein Kabel empfangen, das nicht in der Tabelle aufgeführt ist, finden Sie im Hardware Universe das Kabel und dessen Verwendung.
 
 +
-https://hwu.netapp.com["NetApp Hardware Universe"]
+https://["NetApp Hardware Universe"]
 
 +
 [cols="1,2,1,2"]
@@ -161,7 +161,7 @@ System einschalten
 |===
 . Lesen Sie den _NetApp ONTAP Configuration Guide_ und sammeln Sie die in diesem Leitfaden aufgeführten Informationen.
 +
-https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["ONTAP Konfigurationsleitfaden"]
+https://["ONTAP Konfigurationsleitfaden"]
 
 
 
@@ -194,7 +194,7 @@ image::../media/drw_a320_cable_management_arms.png[drw a320 Kabelführungsarme]
 Sie können die Controller mithilfe der Switch-freien Cluster-Methode mit zwei Nodes oder des Cluster Interconnect-Netzwerks mit dem Netzwerk verkabeln.
 
 
-NOTE: Wenn die Port-Etiketten auf der Karte nicht sichtbar sind, überprüfen Sie die Ausrichtung der Karteninstallation (der PCIe-Anschluss befindet sich auf der linken Seite des Kartensteckplatzes in den Karten A400 und FAS8300/8700), und suchen Sie dann nach der Karte nach der Teilenummer im https://hwu.netapp.com["NetApp Hardware Universe"^] Für eine Grafik der Blende, in der die Port-Bezeichnungen angezeigt werden. Die Teilenummer der Karte kann über gefunden werden `sysconfig -a` Befehl oder auf der Packliste des Systems.
+NOTE: Wenn die Port-Etiketten auf der Karte nicht sichtbar sind, überprüfen Sie die Ausrichtung der Karteninstallation (der PCIe-Anschluss befindet sich auf der linken Seite des Kartensteckplatzes in den Karten A400 und FAS8300/8700), und suchen Sie dann nach der Karte nach der Teilenummer im https://["NetApp Hardware Universe"^] Für eine Grafik der Blende, in der die Port-Bezeichnungen angezeigt werden. Die Teilenummer der Karte kann über gefunden werden `sysconfig -a` Befehl oder auf der Packliste des Systems.
 
 
 NOTE: Wenn Sie eine MetroCluster IP-Konfiguration verkabeln, sind die Ports e0a/e0b zum Hosten von Daten-LIFs verfügbar (normalerweise im standardmäßigen IPSpace).
@@ -381,26 +381,26 @@ System Manager wird geöffnet.
 
 . Mit der systemgesteuerten Einrichtung konfigurieren Sie das System anhand der im _NetApp ONTAP Configuration Guide_ erfassten Daten.
 +
-https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["ONTAP Konfigurationsleitfaden"]
+https://["ONTAP Konfigurationsleitfaden"]
 
 . Richten Sie Ihr Konto ein und laden Sie Active IQ Config Advisor herunter:
 +
 .. Melden Sie sich bei Ihrem bestehenden Konto an oder erstellen Sie ein Konto.
 +
-https://mysupport.netapp.com/eservice/public/now.do["NetApp Support-Registrierung"]
+https://["NetApp Support-Registrierung"]
 
 .. Registrieren Sie das System.
 +
-https://mysupport.netapp.com/eservice/registerSNoAction.do?moduleName=RegisterMyProduct["NetApp Produktregistrierung"]
+https://["NetApp Produktregistrierung"]
 
 .. Laden Sie Active IQ Config Advisor herunter.
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"]
+https://["NetApp Downloads: Config Advisor"]
 
 
 
 . Überprüfen Sie den Systemzustand Ihres Systems, indem Sie Config Advisor ausführen.
-. Wechseln Sie nach Abschluss der Erstkonfiguration mit dem https://www.netapp.com/data-management/oncommand-system-documentation/["ONTAP  ONTAP System Manager; Dokumentationsressourcen"] Seite für Informationen über das Konfigurieren zusätzlicher Funktionen in ONTAP.
+. Wechseln Sie nach Abschluss der Erstkonfiguration mit dem https://["ONTAP  ONTAP System Manager; Dokumentationsressourcen"] Seite für Informationen über das Konfigurieren zusätzlicher Funktionen in ONTAP.
 
 
 
@@ -477,7 +477,7 @@ NOTE: Das Format für die Adresse ist +https://x.x.x.x.+
 
 .. Konfigurieren Sie das System mit den im _NetApp ONTAP Configuration Guide_ erfassten Daten.
 +
-https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["ONTAP Konfigurationsleitfaden"]
+https://["ONTAP Konfigurationsleitfaden"]
 
 
 
@@ -485,18 +485,18 @@ https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["ONTAP Konfigurati
 +
 .. Melden Sie sich bei Ihrem bestehenden Konto an oder erstellen Sie ein Konto.
 +
-https://mysupport.netapp.com/eservice/public/now.do["NetApp Support-Registrierung"]
+https://["NetApp Support-Registrierung"]
 
 .. Registrieren Sie das System.
 +
-https://mysupport.netapp.com/eservice/registerSNoAction.do?moduleName=RegisterMyProduct["NetApp Produktregistrierung"]
+https://["NetApp Produktregistrierung"]
 
 .. Laden Sie Active IQ Config Advisor herunter.
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"]
+https://["NetApp Downloads: Config Advisor"]
 
 
 
 . Überprüfen Sie den Systemzustand Ihres Systems, indem Sie Config Advisor ausführen.
-. Wechseln Sie nach Abschluss der Erstkonfiguration mit dem https://www.netapp.com/data-management/oncommand-system-documentation/["ONTAP  ONTAP System Manager; Dokumentationsressourcen"] Seite für Informationen über das Konfigurieren zusätzlicher Funktionen in ONTAP.
+. Wechseln Sie nach Abschluss der Erstkonfiguration mit dem https://["ONTAP  ONTAP System Manager; Dokumentationsressourcen"] Seite für Informationen über das Konfigurieren zusätzlicher Funktionen in ONTAP.
 

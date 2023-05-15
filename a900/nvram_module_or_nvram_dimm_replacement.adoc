@@ -352,7 +352,7 @@ Wenn Sie aufgrund einer nicht übereinstimmenden System-ID aufgefordert werden, 
 NOTE: Wenn das Rückübertragung ein Vetorecht ist, können Sie erwägen, das Vetos außer Kraft zu setzen.
 
 +
-Weitere Informationen finden Sie im https://docs.netapp.com/us-en/ontap/high-availability/ha_manual_giveback.html#if-giveback-is-interrupted["Manuelle Giveback-Befehle"^] Thema, um das Veto zu überschreiben.
+Weitere Informationen finden Sie im https://["Manuelle Giveback-Befehle"^] Thema, um das Veto zu überschreiben.
 
 .. Nachdem das Giveback abgeschlossen ist, bestätigen Sie, dass das HA-Paar sich gesund befindet und ein Takeover möglich ist: `storage failover show`
 +
@@ -389,7 +389,7 @@ Dies ist erforderlich, wenn beide der folgenden Werte erfüllt sind:
 ** Die MetroCluster Konfiguration befindet sich in einem Switchover-Zustand.
 ** Der Ersatz-Controller ist der aktuelle Besitzer der Festplatten am Disaster-Standort.
 +
-Siehe https://docs.netapp.com/us-en/ontap-metrocluster/manage/concept_understanding_mcc_data_protection_and_disaster_recovery.html#disk-ownership-changes-during-ha-takeover-and-metrocluster-switchover-in-a-four-node-metrocluster-configuration["Änderungen am Festplattenbesitz während HA Takeover und MetroCluster Switchover in einer MetroCluster Konfiguration mit vier Nodes"] Finden Sie weitere Informationen.
+Siehe https://["Änderungen am Festplattenbesitz während HA Takeover und MetroCluster Switchover in einer MetroCluster Konfiguration mit vier Nodes"] Finden Sie weitere Informationen.
 
 
 
@@ -562,4 +562,4 @@ NOTE: Sie können das verwenden `security key-manager key query -key-type NSE-AK
 
 == Schritt 7: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
-Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://["Teilerückgabe  Austausch"] Seite für weitere Informationen.

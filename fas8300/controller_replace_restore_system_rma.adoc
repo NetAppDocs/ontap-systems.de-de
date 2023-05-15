@@ -2,7 +2,7 @@
 permalink: fas8300/controller-replace-restore-system-rma.html 
 sidebar: sidebar 
 keywords: fas8300, fas8700, how to restore NetApp Storage Encryption, how to complete the replacement process 
-summary: 'Um den vollen Betrieb des Systems wiederherzustellen, müssen Sie die NetApp Storage Encryption-Konfiguration (falls erforderlich) wiederherstellen und Lizenzen für den neuen Controller installieren und das ausgefallene Teil an NetApp zurückgeben, wie in den mit dem Kit gelieferten RMA-Anweisungen beschrieben. Wenden Sie sich an den technischen Support unter https://mysupport.netapp.com/site/global/dashboard["NetApp Support"], 888-463-8277 (Nordamerika), 00-800-44-638277 (Europa) oder +800-800-80-800 (Asien/Pazifik) wenn Sie die RMA-Nummer oder zusätzliche Hilfe beim Ersatzverfahren benötigen.' 
+summary: 'Um den vollen Betrieb des Systems wiederherzustellen, müssen Sie die NetApp Storage Encryption-Konfiguration (falls erforderlich) wiederherstellen und Lizenzen für den neuen Controller installieren und das ausgefallene Teil an NetApp zurückgeben, wie in den mit dem Kit gelieferten RMA-Anweisungen beschrieben. Wenden Sie sich an den technischen Support unter https://["NetApp Support"], 888-463-8277 (Nordamerika), 00-800-44-638277 (Europa) oder +800-800-80-800 (Asien/Pazifik) wenn Sie die RMA-Nummer oder zusätzliche Hilfe beim Ersatzverfahren benötigen.' 
 ---
 = Vollständige Systemwiederherstellung – FAS8300 und FAS8700
 :allow-uri-read: 
@@ -28,7 +28,7 @@ Die Lizenzschlüssel müssen im 28-stelligen Format vorliegen.
 Sie haben eine 90-Tage-Nachfrist zur Installation der Lizenzschlüssel. Nach Ablauf der Frist werden alle alten Lizenzen ungültig. Nachdem ein gültiger Lizenzschlüssel installiert wurde, haben Sie 24 Stunden Zeit, um alle Schlüssel zu installieren, bevor die Kulanzzeit endet.
 
 .Schritte
-. Wenn Sie neue Lizenzschlüssel benötigen, holen Sie sich die Ersatzlizenz auf dem https://mysupport.netapp.com/site/global/dashboard["NetApp Support Website"] Im Abschnitt „My Support“ unter „Software-Lizenzen“.
+. Wenn Sie neue Lizenzschlüssel benötigen, holen Sie sich die Ersatzlizenz auf dem https://["NetApp Support Website"] Im Abschnitt „My Support“ unter „Software-Lizenzen“.
 +
 
 NOTE: Die neuen Lizenzschlüssel, die Sie benötigen, werden automatisch generiert und an die E-Mail-Adresse in der Datei gesendet. Wenn Sie die E-Mail mit den Lizenzschlüssel nicht innerhalb von 30 Tagen erhalten, sollten Sie sich an den technischen Support wenden.
@@ -56,7 +56,7 @@ Wenn eine der LIFs als falsch aufgeführt ist, stellen Sie sie auf ihre Home-Por
 . Registrieren Sie die Seriennummer des Systems beim NetApp Support.
 +
 ** Wenn AutoSupport aktiviert ist, senden Sie eine AutoSupport Nachricht, um die Seriennummer zu registrieren.
-** Wenn AutoSupport nicht aktiviert ist, rufen Sie an https://mysupport.netapp.com["NetApp Support"] Um die Seriennummer zu registrieren.
+** Wenn AutoSupport nicht aktiviert ist, rufen Sie an https://["NetApp Support"] Um die Seriennummer zu registrieren.
 
 
 . Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut: `storage failover modify -node local -auto-giveback true`
@@ -124,4 +124,4 @@ Wenn ein Wechsel eine lange Zeit in Anspruch nimmt, können Sie den Status der i
 
 == Schritt 4: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
-Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://["Teilerückgabe  Austausch"] Seite für weitere Informationen.
