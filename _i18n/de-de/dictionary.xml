@@ -3745,7 +3745,6 @@
   <block id="ca305e69a315b30dad8d789c197489f9" category="doc">Fahren Sie den Controller herunter - AFF C190</block>
   <block id="4ee2fc05d2faa1f333113817a90809f4" category="summary">Dieser Abschnitt enthält detaillierte Schritt-für-Schritt-Anleitungen zur Installation eines AFF C190 Systems.</block>
   <block id="25cf65ddd80144b70d3dac5fc3efd292" category="doc">Detaillierte Schritte – AFF C190</block>
-  <block id="537180ccf440446ad8816ed356c6cee9" category="paragraph">Um Ihr AFF C190 System zu installieren, müssen Sie ein Konto erstellen und das System registrieren. Außerdem müssen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp für Ihr System inventarisieren und bestimmte Netzwerkinformationen erfassen.</block>
   <block id="7d8007fcad12dc860aaddff5b27fe8d6" category="paragraph">10-GbE-Kabel (je nach Bestellung)</block>
   <block id="a3393a78d1cddac132a3d1bbb09cf0b3" category="paragraph">X6566B-05-R6 (112-00297), 0,5 m</block>
   <block id="099e9575efd9dec07cc74564bbb3e3b2" category="paragraph">X6566B-2-R6 (112-00299), 2 m</block>
@@ -3758,34 +3757,21 @@
   <block id="490cb76fd3c75ff8166e251d789f799e" category="paragraph">Ethernet-Host und Management-Netzwerk</block>
   <block id="c0e4edaf8676378054faf4095793fc9a" category="image-alt">drw oie fas2700 Gewicht Achtung</block>
   <block id="78b39d88cb979ddb300a4cf2c6cdb1be" category="image-alt">drw-Kabelmanagement-ARM-Installation</block>
-  <block id="bb4dc882830ed15ff271077443be872e" category="section-title">Option 1: Unified-Konfiguration mit zwei Nodes ohne Switches verkabeln</block>
-  <block id="b2566b1f021e42ed3c97e4c8d5548f0d" category="paragraph">Die UTA2-Ports und Management-Ports der Controller-Module sind mit Switches verbunden. Die Cluster Interconnect-Ports sind an beiden Controller-Modulen verkabelt.</block>
   <block id="fcca883f68c4e92b98d0f294614cda60" category="admonition">Stecken Sie beim Anschließen an einen optischen Switch den SFP-Port in den Controller-Port, bevor Sie die Verkabelung zum Port durchführen.</block>
-  <block id="099a72df2bea2f81469ee9e97fc608df" category="list-text">Verwenden Sie die Abbildung oder die Schritt-für-Schritt-Anleitung, um die Verkabelung zwischen den Controllern und den Switches abzuschließen:</block>
   <block id="73da34bccb5db786798534ea5b6eb1d6" category="image-alt">drw c190 tnsc Unified Network Cabling animiert gif</block>
   <block id="29232642e257cc5bf9288d51db5b38a1" category="paragraph">Verbinden Sie die Cluster-Interconnect-Ports mit dem Cluster Interconnect-Kabel miteinander:</block>
   <block id="e264767a0a11b7a11be0a5345921827e" category="list-text">e0b bis e0b<block ref="9a0e89c71564aa69ffecf67eb610bc96" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="6ed1027d1da4974a15118c7e8afd7bd8" category="paragraph">Verwenden Sie einen der folgenden Kabeltypen, um die Datenports e0c/0c und e0d/0d * oder* e0e/0e und e0f/0f an Ihr Hostnetzwerk zu verkabeln:</block>
   <block id="519c55b1abbe70db981fa64fb386a258" category="paragraph"><block ref="519c55b1abbe70db981fa64fb386a258" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c0a9eb11c9962c2eb967f53a4845bf1a" category="paragraph">Verkabeln Sie die E0M-Ports mit den Management-Netzwerk-Switches mit den RJ45-Kabeln:</block>
   <block id="f2333c38a5002ab3a3ce6f24b2d22d95" category="paragraph"><block ref="f2333c38a5002ab3a3ce6f24b2d22d95" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="c173bd77464f3b04c0d7c6e0a540f514" category="section-title">Option 2: Cluster mit Kabelumschaltung, Unified-Konfiguration</block>
-  <block id="0e8ca1ea3d276eefedced94f4d995872" category="paragraph">Die UTA2-Ports und Management-Ports der Controller-Module sind mit Switches verbunden. Die Cluster-Interconnect-Ports sind mit den Cluster-Interconnect-Switches verbunden.</block>
-  <block id="5142e76828492b8472d310125f7bdc52" category="list-text">Verwenden Sie die Abbildung oder die Schritt-für-Schritt-Anleitung, um die Verkabelung zwischen den Controllern und den Switches abzuschließen:</block>
   <block id="d7d7ce9a70c375da7dd9edb7b21a9134" category="image-alt">drw c190 Switch Unified Network Cabling animiert (gif)</block>
   <block id="81b22135a51aae23b34a49fb4dc95ad2" category="paragraph">Verkabelung e0a und e0b mit den Cluster Interconnect Switches mit dem Cluster Interconnect-Kabel:</block>
   <block id="cdb6f4b16ce28508dd90ea2ebac10c11" category="paragraph"><block ref="cdb6f4b16ce28508dd90ea2ebac10c11" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="61f1c61b5feaeb89fc7d9cba126122c7" category="section-title">Option 3: 2-Node-Cluster ohne Switches verkabeln, Ethernet-Konfiguration</block>
-  <block id="7964bdbe798b1e42df1039eee0ed4b7f" category="paragraph">RJ45-Ports und Management-Ports der Controller-Module sind mit Switches verbunden. Die Cluster Interconnect-Ports sind an beiden Controller-Modulen verkabelt.</block>
   <block id="0df32eef6f99f6d05877f5da86a45063" category="image-alt">drw c190 tnsc ethernet-Netzwerkverkabelung animiert gif</block>
-  <block id="b96881a043916feb6b04e9d9d0e20a7f" category="paragraph">Verkabeln Sie die Cluster-Interconnect-Ports über das Cluster-Interconnect-Kabel miteinander <block ref="6b6a40b68f5814cad1750bfff7e3b927" category="inline-image-macro-rx" type="image"></block>:</block>
   <block id="fb201d3291ef220a70a2ca2508729abe" category="list-text">e0b bis e0b<block ref="89b350cdba7fe4fe6fc5044b1844ae20" category="inline-image-macro-rx" type="image"></block></block>
   <block id="836e597d16643401627d14a351ba6a9c" category="paragraph">Verwenden Sie das Cat 6 RJ45-Kabel, um e0c über e0f-Ports mit Ihrem Hostnetzwerk zu verkabeln:</block>
   <block id="97fa7018860cc17c4006609d9662603b" category="paragraph"><block ref="97fa7018860cc17c4006609d9662603b" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="f4d46ae73f467f92c060779d91e706f5" category="paragraph">Verkabeln Sie die E0M-Ports mit den Management-Netzwerk-Switches mit den RJ45-Kabeln <block ref="af9561bb1d24f4c26f5879aaf09a1c65" category="inline-image-macro-rx" type="image"></block>.</block>
   <block id="98fba69d64d87a6163f05e51141bb98d" category="paragraph"><block ref="98fba69d64d87a6163f05e51141bb98d" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="0a9b2befdc7da9bfc8df73a2b240fae8" category="section-title">Option 4: Kabel ein Switch-Cluster, Ethernet-Konfiguration</block>
-  <block id="165f152c925d401aec3bdff9aed4cf96" category="paragraph">RJ45-Ports und Management-Ports der Controller-Module sind mit Switches verbunden. Die Cluster-Interconnect-Ports sind mit den Cluster-Interconnect-Switches verbunden.</block>
   <block id="ac3d560a40b4d6d28fac097677ecaa8d" category="image-alt">drw c190 geschaltete ethernet-Netzwerkverkabelung animiert</block>
   <block id="3c6b5500a384efa581b62d9c5f18e0b2" category="paragraph"><block ref="3c6b5500a384efa581b62d9c5f18e0b2" category="inline-image-macro-rx" type="image"></block></block>
   <block id="347e1a8985d85eefdfec9853c8769148" category="image-alt">drw schalten Sie den Netzschalter auf die netzteile ein</block>
@@ -3798,7 +3784,6 @@
   <block id="3125087114c2490b7c6800800a39a990" category="summary">In diesem Abschnitt finden Sie eine grafische Anleitung für eine typische Installation Ihres Systems, von Rack und Verkabelung bis hin zur Ersteinrichtung des Systems.</block>
   <block id="8a20c268704bf24640a88346ca257e3e" category="doc">Schnellschritte – AFF C190</block>
   <block id="0acd1668055811ba455a173f5b2007e1" category="inline-link-macro">AFF C190 – Installations- und Setup-Anleitung</block>
-  <block id="78986e3198e620c9a4397bd93b083e68" category="paragraph">In diesem Abschnitt finden Sie eine grafische Anleitung für eine typische Installation Ihres Systems, von Rack und Verkabelung bis hin zur Ersteinrichtung des Systems. Verwenden Sie die <block ref="3eed3afb9edbfbab44cea22e18033b51" category="inline-link-macro-rx"></block> Wenn Sie mit der Installation von NetApp Systemen vertraut sind.</block>
   <block id="48cb3ada49a99389f0b8a03abf466ec8" category="summary">Sie müssen den HA-Status des Chassis überprüfen und die Diagnose auf Systemebene ausführen.</block>
   <block id="82df4d187ca1c57ddc3d281ba59fc12f" category="doc">Wiederherstellen und Überprüfen der Konfiguration – AFF C190</block>
   <block id="a9c0a6c57639677722b2d4d4893acd60" category="section-title">Schritt 1: Überprüfen und Einstellen des HA-Status des Chassis</block>
@@ -4507,7 +4492,6 @@
   <block id="34618f776812de6f5f59a70ca2c17728" category="doc">Ersetzen Sie ein DIMM – AFF A200</block>
   <block id="dd33af940cfd986282d97dc9269783a9" category="summary">Beim Austausch eines Netzteils muss das Netzteil \ (PSU\) von der Stromquelle getrennt, das Netzkabel abgezogen, das alte Netzteil entfernt und das Ersatznetzteil installiert werden. Anschließend wird es wieder an die Stromquelle angeschlossen.</block>
   <block id="b122a7303b98280f8acc1bef20b1890d" category="doc">Ersetzen Sie ein Netzteil - AFF A250</block>
-  <block id="7f078b87c94f86a68825895095430993" category="paragraph">Verwenden Sie das folgende Video oder die tabellarischen Schritte, um das Netzteil auszutauschen:</block>
   <block id="a73367a24d737b005906f745ac5c73c2" category="doc">Ersetzen Sie die Hardware - AFF A250</block>
   <block id="586424cb167133a0adfaf4650a20127e" category="paragraph">Verwenden Sie zum Austauschen des Gehäuses das folgende Video oder die tabellarischen Schritte. Es wird davon ausgegangen, dass die Blende entfernt und ausgetauscht wird:</block>
   <block id="b0a5349e52bfc1b486c0f4bb7f8c6b18" category="doc">Schalten Sie die Controller aus - AFF A250</block>
@@ -7258,7 +7242,6 @@
   <block id="49c230c702ed6b30a6efde8eba87e563" category="doc">Fehlgeschlagene Teile an NetApp zurückgeben – AFF A150</block>
   <block id="3dfa4c8dc7083d8d9bf2fb1fc402660a" category="doc">Kurzanleitung - AFF A150</block>
   <block id="6e0311a42e114c05c9779f6c830f1d97" category="inline-link-macro">Installations- und Setup-Anweisungen für das AFF A150-System</block>
-  <block id="2e869cac122e3063f7b418f03cb3fa26" category="paragraph"><block ref="2e869cac122e3063f7b418f03cb3fa26" category="inline-link-macro-rx"></block></block>
   <block id="b80ee1e7ed290f304dbaae444297a4fa" category="doc">Wiederherstellung von OKM, NSE und NVE nach Bedarf – AFF A150</block>
   <block id="e822ef8c7b4b17d3230b125760d56e76" category="doc">Stellen Sie die Systemkonfiguration wieder her und überprüfen Sie sie – AFF A150</block>
   <block id="178a6a7a54abe615089fef92a8499c05" category="doc">Starten Sie das Wiederherstellungs-Image - AFF A150</block>
@@ -7272,13 +7255,7 @@
   <block id="9b6f6ecb6633d22a67cc6a982fc55841" category="paragraph">Wenn Sie über eine MetroCluster-Konfiguration verfügen, verwenden Sie den MetroCluster-Installationsinhalt.</block>
   <block id="7f4d4fbe08a8a895671d05c4a82b0c85" category="inline-link">MetroCluster-Dokumentation</block>
   <block id="c56326d51fd75802f2144766bd1e36d3" category="paragraph"><block ref="c56326d51fd75802f2144766bd1e36d3" category="inline-link-rx"></block></block>
-  <block id="11f6227d0571f4bf3fac6b6d821a60d1" category="paragraph">Um Ihr AFF A150 System zu installieren, müssen Sie ein Konto auf der NetApp Support Website erstellen, Ihr System registrieren und Lizenzschlüssel erhalten. Außerdem müssen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp für Ihr System inventarisieren und bestimmte Netzwerkinformationen erfassen.</block>
-  <block id="dd1dcd1cd7a28bbfc3b5a581b055bce3" category="inline-link-macro">Verkabelung der Controller mit Laufwerk-Shelfs</block>
-  <block id="6c9cda13d9d7d9f8f82d912175e78d9b" category="list-text">Informationen zum Kabelanschluss des Speichers finden Sie unter <block ref="42bf816180738dc1660363ee044d9786" category="inline-link-macro-rx"></block></block>
   <block id="ee44682d06dd8612d09f370d6f80069a" category="image-alt">drw a150 HA-Speicherverkabelung IEOPS 1032</block>
-  <block id="a1770e5cf644990212f313f91eccb2d8" category="paragraph"><block ref="a1770e5cf644990212f313f91eccb2d8" category="inline-link-macro-rx"></block></block>
-  <block id="4402c8b8d6c489ed5617a151ffa90726" category="inline-link-macro">Die Systemeinrichtung und -Konfiguration wird abgeschlossen</block>
-  <block id="41e876cad607f9363190645026f4f818" category="list-text">Informationen zum Abschließen der Einrichtung des Systems finden Sie unter <block ref="cf51f79f23f70e62c97013df347c6a0f" category="inline-link-macro-rx"></block></block>
   <block id="ab65dd4e976f1787737fc87ae65b8a6d" category="paragraph"><block ref="ab65dd4e976f1787737fc87ae65b8a6d" category="inline-link-rx"></block></block>
   <block id="c2df61cd54941946b9e1d41669228517" category="paragraph"><block ref="c2df61cd54941946b9e1d41669228517" category="inline-link-rx"></block></block>
   <block id="a7d0c7f24713f4f2e4432bb2b91f97d0" category="paragraph"><block ref="a7d0c7f24713f4f2e4432bb2b91f97d0" category="inline-link-rx"></block></block>
@@ -7355,7 +7332,6 @@
   <block id="4d8adba62be8512e84ae7825848692e9" category="doc">Fehlgeschlagene Teile an NetApp - AFF C400 zurücksenden</block>
   <block id="28dd2419d5232cd5e390f590d7d76b55" category="doc">Kurzanleitung - AFF C400</block>
   <block id="bef061f2ba2a880a4d71960c6fb14a8f" category="inline-link-macro">Installations- und Setup-Anweisungen für AFF C400</block>
-  <block id="1fb877c7c5a192a0f8712065429afd55" category="paragraph"><block ref="1fb877c7c5a192a0f8712065429afd55" category="inline-link-macro-rx"></block></block>
   <block id="dde11f85a430c37e085e56c530fa6482" category="doc">Wiederherstellung von OKM, NSE und NVE nach Bedarf – AFF C400</block>
   <block id="a637f1b4c2a1d9b5cb9f0347c7e77539" category="doc">Stellen Sie die Systemkonfiguration wieder her und überprüfen Sie sie: AFF C400</block>
   <block id="b1c4aeeae550bfbe7c6574898398d781" category="doc">Ersetzen Sie die NVDIMM-Batterie - AFF C400</block>
@@ -7499,13 +7475,8 @@
   <block id="f0167637a350c4dd2e81ce6e691cd9db" category="list-text">Drehen Sie den Griff nach unten, so dass er sich nicht im normalen Betrieb befindet.</block>
   <block id="f66f18cf0f377b83882ade5b0618dbe0" category="open-title">Option 2: Ersetzen Sie ein Gleichstromnetzteil</block>
   <block id="75a2f242d94a472d387a461ee767e00c" category="paragraph">Führen Sie zum Austauschen eines Gleichstromnetzteils die folgenden Schritte durch.</block>
-  <block id="de5c94ee80b23390308831ba0a74d44b" category="paragraph">Die Abbildung und die Tabelle im nächsten Schritt zeigen die beiden Flügelschrauben (Pos. #1) und den D-SUB-DC-Netzkabelanschluss (Pos. #2).</block>
-  <block id="75b8b67557750f13b0b08808f90f76e3" category="list-text">Lösen Sie die beiden Flügelschrauben am Netzkabelanschluss.</block>
-  <block id="37a0782c59ce799b3f0ac9f1fd300d95" category="list-text">Ziehen Sie den Netzkabelanschluss vom Netzteil ab, und legen Sie ihn beiseite.</block>
   <block id="dd59df5055ae64422d06dada9ff46511" category="admonition">Das Netzteil ist kurz. Verwenden Sie immer zwei Hände, um es zu stützen, wenn Sie es aus dem NSM-Modul entfernen, so dass es nicht aus dem NSM-Modul schwingt und Sie verletzt.</block>
   <block id="6e496e45275d9692038e8f0693a1ec58" category="paragraph">Ein Netzteil muss ordnungsgemäß mit dem internen Anschluss und dem Verriegelungsmechanismus verbunden sein. Wiederholen Sie diesen Schritt, wenn Sie das Netzteil nicht richtig eingesetzt haben.</block>
-  <block id="de1e769c433d3a929aaa6f6ee4b43fe2" category="list-text">Schließen Sie den Netzkabelanschluss an das Netzteil an.</block>
-  <block id="a637e5d063c7b8dd7bfddc7608e9573e" category="list-text">Ziehen Sie die beiden Flügelschrauben fest, um den Netzkabelanschluss am Netzteil zu befestigen.</block>
   <block id="89f1a7f8afce2b821a07ad90fa45719c" category="list-text">Sie können die folgende Animation oder die geschriebenen Schritte verwenden, um einen Lüfter zu ersetzen.</block>
   <block id="3b3c879ba506df7489cfabd2dcff0ce2" category="list-text">Trennen Sie die Netzkabel von den Netzteilen, indem Sie die Netzkabelhalterung öffnen, wenn es sich um Netzgeräte handelt, oder lösen Sie die beiden Flügelschrauben, wenn es sich um Gleichstromnetzteile handelt, und ziehen Sie dann die Netzkabel aus den Netzteilen.</block>
   <block id="2618c98d909106f2012ce83478a61e98" category="list-text">Sie können die folgende Animation oder die schriftlichen Schritte verwenden, um ein NSM-Modul zu ersetzen.</block>
@@ -7871,4 +7842,108 @@
   <block id="30975d9ae55d85636f78d9b3e459df73" category="sidebar">ASA Lösungsüberblick</block>
   <block id="6c713e33f81bfdf294d75a585966fd05" category="sidebar">Technischer Bericht von ASA</block>
   <block id="b47e2ddbcc7bf8a413f11a740b83ad50" category="sidebar">Datenblatt zum FAS-System</block>
+  <block id="163a2ccd4200819af22c143525c2903e" category="list-text">Lösen Sie die beiden Flügelschrauben am D-SUB-DC-Netzkabelanschluss.</block>
+  <block id="d88c630155642b1c688f5784be9a1acf" category="paragraph">In der Abbildung und Tabelle in Schritt 4 sind die beiden Flügelschrauben (Pos. #1) und der D-SUB-DC-Netzkabelanschluss (Pos. #2) dargestellt.</block>
+  <block id="3d95f3470ed102d015e07a1fbb7f7608" category="list-text">Ziehen Sie den D-SUB-Gleichstromkabelanschluss vom Netzteil ab, und legen Sie ihn beiseite.</block>
+  <block id="d28bc8f0e10f780bf01d0983424f02e4" category="list-text">Schließen Sie den D-SUB-DC-Netzkabelanschluss an das Netzteil an.</block>
+  <block id="538209f1ec1db21a865711f12301a29e" category="list-text">Ziehen Sie die beiden Flügelschrauben fest, um den D-SUB-DC-Netzkabelanschluss am Netzteil zu befestigen.</block>
+  <block id="29e74344b0f8f3bb2a741f7b4a504193" category="list-text">Die Netzteile sind redundant und Hot-Swap-fähig.</block>
+  <block id="1510e50dd45e2c76b8244bd6a5fc56ab" category="list-text">Die Netzteileinheiten verfügen über eine automatische Bereichswahl.</block>
+  <block id="408c129c35367a646082d00e22485944" category="paragraph">Verwenden Sie das folgende Video oder die Schritte, um das Netzteil zu ersetzen:</block>
+  <block id="96ebd81c649ce61228798b69731b39cc" category="list-text">Drehen Sie den Nockengriff so, dass er verwendet werden kann, um das Netzteil aus dem Controller-Modul zu ziehen, während Sie die Verriegelungslasche drücken.</block>
+  <block id="041817816aadc0ac389510f06856eb73" category="list-text">Stützen Sie die Ränder des Netzteils mit beiden Händen auf die Öffnung im Controller-Modul, und schieben Sie das Netzteil vorsichtig in das Controller-Modul, bis die Verriegelungslasche einrastet.</block>
+  <block id="ecc8536d184ca3a7e451181d0f568d41" category="paragraph">Die Netzteileinheiten greifen nur ordnungsgemäß mit dem internen Anschluss und verriegeln sich in einer Richtung.</block>
+  <block id="7d710ae6fae5f82131f5e646788f27a1" category="list-text">Ziehen Sie den D-SUB-Gleichstromkabelanschluss vom Netzteil ab, und legen Sie ihn beiseite.</block>
+  <block id="26cc3f70141c5f4b4f5a7a7c52321240" category="list-text">Entfernen Sie das Netzteil:</block>
+  <block id="25b0a4705669fa58bd671a04b5e34a7f" category="list-text">Ziehen Sie das Netzteil aus dem Controller-Modul, während Sie die andere Hand verwenden, um das Gewicht zu tragen.</block>
+  <block id="0d8f690f8863cf6dd078f46fd151cce4" category="admonition">Das Netzteil ist kurz. Verwenden Sie immer zwei Hände, um es zu unterstützen, wenn Sie es aus dem Controller-Modul entfernen, damit es nicht aus dem Controller-Modul herausschwingt und Sie verletzt.</block>
+  <block id="8e7311e4f3b2e71464aaa1fa66388a4b" category="paragraph">Netzteilgriff</block>
+  <block id="6aaf2adda7ea3fae24f9570eb951048f" category="list-text">Installieren Sie das Ersatznetzteil:</block>
+  <block id="b323fb6f842e16e2eb1c10951fffbf3e" category="list-text">Schieben Sie das Netzteil vorsichtig in das Controller-Modul, bis der Verriegelungsmechanismus einrastet.</block>
+  <block id="b5ecda37046d685b93693e01ecb6e6fe" category="paragraph">Ein Netzteil muss ordnungsgemäß mit dem internen Anschluss und dem Verriegelungsmechanismus verbunden sein. Wiederholen Sie diesen Schritt, wenn Sie das Netzteil nicht richtig eingesetzt haben.</block>
+  <block id="049ea4245daefe1c9ce73d6a75dfbab1" category="list-text">Schließen Sie den D-SUB-Gleichstromkabelanschluss an das Netzteil an.</block>
+  <block id="71c2f9602a7f71f9eab2a859d2e0f4ae" category="list-text">Ziehen Sie die beiden Flügelschrauben fest, um den D-SUB-DC-Netzkabelanschluss am Netzteil zu befestigen.</block>
+  <block id="05a183c8bc1fc9522f554a0dcc45645f" category="paragraph">Installieren Sie Ihre All Flash FAS/FAS Controller im Rack oder Schrank. Installations- und Setup-Anleitung für Ihr All Flash FAS/FAS Plattformmodell erhalten Sie hier. Befolgen Sie bei All-SAN-Array-Systemen (ASA) die Installationsanweisungen für das entsprechende Modell der AFF A-Serie.</block>
+  <block id="7877fbd25ecba999ab0a739fe29df547" category="paragraph">**Systeme der AFF A-Serie**</block>
+  <block id="999865050c05a9851fa1100ea708f735" category="paragraph">**Systeme der AFF C-Serie**</block>
+  <block id="fb4b827f429720ceefe590267f9978cf" category="paragraph">**FAS Systeme**</block>
+  <block id="6eeacbfb54f0dd2b69ca25ccf7e621e3" category="paragraph">**Cluster-Switches**</block>
+  <block id="05d287d05ed5025354b8f6c796c87491" category="paragraph">**Storage Switches**</block>
+  <block id="aca0ddc3769e84e478caff604ad14594" category="paragraph">**Shared Switches**</block>
+  <block id="4f4f401ca3cb71c1eacaf052eac321fb" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> Verkabeln Sie die Switches mit den Controllern</block>
+  <block id="93a86d433d6f98e9a80d74b972237ee6" category="paragraph">**AFF Systeme**</block>
+  <block id="1688757a0e4a29ec41d21e63fcc98a90" category="paragraph">Um Ihr AFF C190 System zu installieren, erstellen Sie ein Konto und registrieren Sie das System. Außerdem müssen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp für Ihr System inventarisieren und bestimmte Netzwerkinformationen erfassen.</block>
+  <block id="39bbc5176cba797f24070d78f90d0d5a" category="list-text">Stellen Sie sicher, dass Sie Zugriff auf haben <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block> (HWU) enthält Informationen zu den Standortanforderungen sowie zusätzliche Informationen zu Ihrem konfigurierten System.</block>
+  <block id="5dd03e8d039863e563e049be198c3fd3" category="inline-link-macro">Versionshinweise</block>
+  <block id="09e00942626b9d2b5187768ea624369a" category="list-text">Stellen Sie sicher, dass Sie Zugriff auf haben <block ref="9d7659179eb5b5c244263cabf30336a7" category="inline-link-macro-rx"></block> Für Ihre Version von ONTAP finden Sie weitere Informationen zu diesem System.</block>
+  <block id="841cf46b69a4b2c782c980b795074554" category="list-text">Stellen Sie sicher, dass Sie die folgenden Elemente an Ihrem Standort haben:</block>
+  <block id="85220111cf8764a6d5eefe427de4fbde" category="paragraph">Installieren Sie Ihr System gegebenenfalls in einem 4-Säulen-Rack oder NetApp Systemschrank.</block>
+  <block id="1ccb5aa93b58b2e0cbfd6015e33c6a90" category="paragraph">Verkabeln Sie die Controller mit dem Netzwerk unter Verwendung der Cluster-Methode ohne Switch mit zwei Nodes oder der Cluster Interconnect-Netzwerkmethode.</block>
+  <block id="22cf31ea4e88d1269c525c08a9c8fdff" category="paragraph">UTA2-Ports, Ethernet-Datennetzwerk und Management-Ports auf den Controller-Modulen sind mit Switches verbunden. Die Cluster Interconnect-Ports sind an beiden Controller-Modulen verkabelt.</block>
+  <block id="434c44657e12928e06a65124dfb073b0" category="paragraph">Erfahren Sie, wie Sie ein 2-Node-Cluster ohne Switches verkabeln.</block>
+  <block id="f7284f28e338cb3e10e42e8214151229" category="paragraph">Sie können die UTA2-Datennetzwerkports oder die ethernet-Datennetzwerkports verwenden, um die Controller mit Ihrem Host-Netzwerk zu verbinden. Beachten Sie bei der Verkabelung zwischen den Controllern und den Switches die folgenden Verkabelungsabbildungen.</block>
+  <block id="48114454330840b73674b4d456819a4e" category="list-text">UTA2-Datennetzwerkkonfigurationen</block>
+  <block id="e6746873d55c9a028bc3eae1ed6cd0db" category="list-text">Ethernet-Netzwerkkonfigurationen</block>
+  <block id="f9655777cbdbded95ebaf4fdc1ed1c83" category="paragraph">Führen Sie die folgenden Schritte für jedes Controller-Modul durch.</block>
+  <block id="4b7d254b4cff665eba8f89aeb96e16cb" category="list-text">Verkabeln Sie die Cluster Interconnect Ports e0a mit e0a und e0b mit e0b mit dem Cluster Interconnect-Kabel. +<block ref="9a0e89c71564aa69ffecf67eb610bc96" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="365d382b2d9ecca9b0d40171c69b38ff" category="list-text">Führen Sie einen der folgenden Schritte aus:</block>
+  <block id="54254076225178d5782bc5158de2ffd3" category="list-text">Verwenden Sie einen der folgenden Kabeltypen, um die Datenports e0c/0c und e0d/0d oder e0e/0e und e0f/0f mit dem Host-Netzwerk zu verkabeln.</block>
+  <block id="43083753a8bd4d126f4e9d226b24d42f" category="list-text">Verwenden Sie das Cat 6 RJ45-Kabel, um die e0c- über e0f-Ports mit Ihrem Hostnetzwerk zu verkabeln. In der folgenden Abbildung.</block>
+  <block id="5cb31a934f99a854350d21ffae22067d" category="paragraph">Lesen Sie, wie Sie ein Cluster mit Switches verkabeln.</block>
+  <block id="3c82d1b8b75fddcd5945e9505cb93e2a" category="list-text">Unified Netzwerkkonfigurationen</block>
+  <block id="98632dc1c45ca0b18d4707328081c4e1" category="list-text">Verkabeln sie e0a und e0b mit dem Cluster Interconnect-Kabel mit den Cluster Interconnect-Switches.</block>
+  <block id="119bf83fa4465fb53f4c1cb409fbd677" category="list-text">Verwenden Sie das Cat 6 RJ45-Kabel, um die e0c- über e0f-Ports mit Ihrem Hostnetzwerk zu verkabeln.</block>
+  <block id="94ba17d1769cd415862a18057c1938b2" category="section-title">Schritt 4: System-Setup abschließen</block>
+  <block id="0b6ed16c1f9d9e2458c0f6738eb93288" category="paragraph">Erfahren Sie, wie Sie die Systemeinrichtung abschließen Wenn die Netzwerkerkennung auf Ihrem Laptop aktiviert ist.</block>
+  <block id="eb75aeb3b4b2b9734ba3e52f5483f0b2" category="inline-link-macro">ONTAP-Dokumentation</block>
+  <block id="fd69b335d8c511a8e881204822f8b6ef" category="list-text">Wechseln Sie nach Abschluss der Erstkonfiguration mit dem <block ref="a3e81585099d58285005c3431d208fd9" category="inline-link-macro-rx"></block> Site für Informationen zur Konfiguration zusätzlicher Funktionen in ONTAP.</block>
+  <block id="b06876b5a3b23ef5cff05f5d0950ec0d" category="paragraph">Erfahren Sie, wie Sie die Systemeinrichtung abschließen, wenn die Netzwerkerkennung auf Ihrem Laptop nicht aktiviert ist.</block>
+  <block id="a76d705a87cd7b7a1bea352a13c6cd65" category="inline-link-macro">ONTAP &amp;amp;Dokumentation</block>
+  <block id="0c629d7be969a0c3ffa913473ff37b4b" category="list-text">Wechseln Sie nach Abschluss der Erstkonfiguration mit dem <block ref="be5377ebec3eac0b9e77b9246477ddd0" category="inline-link-macro-rx"></block> Site für Informationen zur Konfiguration zusätzlicher Funktionen in ONTAP.</block>
+  <block id="02b3fd979029ff021f281b78fa7ccd20" category="paragraph">Erfahren Sie, wie Sie Ihr C190 System installieren – von Rack- und Verkabelung bis zur Ersteinrichtung des Systems. Verwenden Sie die <block ref="3eed3afb9edbfbab44cea22e18033b51" category="inline-link-macro-rx"></block> Wenn Sie mit der Installation von NetApp Systemen vertraut sind.</block>
+  <block id="1d4ac53db25f608efca8dafa3f3d6b43" category="paragraph">In den folgenden Videos erfahren Sie, wie Sie Ihr System in Racks einarbeiten und verkabeln und wie Sie die Erstkonfiguration des Systems durchführen.</block>
+  <block id="95a15694e7d6d23376f741970900ef8e" category="list-text">Hardwareinstallation und -Verkabelung</block>
+  <block id="4657c74c0fa17e5f15e4a506f177b913" category="paragraph">Das folgende Video zeigt, wie Sie Ihr System installieren und verkabeln.</block>
+  <block id="d4b6f94dadb3f20b9bf031b9b9983ce3" category="list-text">End-to-End-Softwarekonfiguration</block>
+  <block id="314f8c912a6741218e22dc8ca5f7ee41" category="paragraph">Erfahren Sie, wie Sie Ihr AFF A150-System installieren.</block>
+  <block id="119be031ef4485d20c7683d291d0e9f6" category="inline-link">MetroCluster-Dokumentation</block>
+  <block id="bfd53ea423739db497251aa14d8747cd" category="paragraph">Wenn Sie über eine MetroCluster-Konfiguration verfügen, verwenden Sie die<block ref="9b888d0bb3e87322cc68a0bb4a7ae515" category="inline-link-rx"></block>.</block>
+  <block id="f6387b34fb856500ccda4acb52336ff7" category="paragraph">Um Ihr AFF A150 System zu installieren, erstellen Sie ein Konto auf der NetApp Support-Website, registrieren Sie Ihr System und erhalten Sie Ihre Lizenzschlüssel. Außerdem müssen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp für Ihr System inventarisieren und bestimmte Netzwerkinformationen erfassen.</block>
+  <block id="5d0ff6a06bf967bf825de2c2a610cc33" category="list-text">Wenden Sie sich an Ihren Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.</block>
+  <block id="bcce32e97ae0002c4edc1cc8b9245285" category="inline-link">Registrieren Sie das System</block>
+  <block id="1e074148aea327f834455c1f6ae99894" category="list-text"><block ref="2539e9179736696f68f1ba88f3812383" category="inline-link-rx"></block>.</block>
+  <block id="f9be17421d77a57baae245776004d9fc" category="inline-link">Config Advisor</block>
+  <block id="2e1859a63c8f237167580360c7882aca" category="list-text">Herunterladen und installieren<block ref="56697f7f340a212f549439c89b0cabd2" category="inline-link-rx"></block> Auf Ihrem Laptop.</block>
+  <block id="a025f9bb5b185f275f929e4e427c7a26" category="paragraph">In der folgenden Tabelle sind die Kabeltypen aufgeführt, die Sie möglicherweise erhalten können. Wenn Sie ein Kabel erhalten, das nicht in der Tabelle aufgeführt ist, lesen Sie<block ref="ed4326c3351d8ac0e334b8b4d9b37c82" category="inline-link-rx"></block> Um das Kabel zu lokalisieren und dessen Verwendung zu identifizieren.</block>
+  <block id="e881b3bd9e158bdbe75952ecb742a95f" category="inline-link">Laden Sie das Arbeitsblatt für die Cluster-Konfiguration herunter, und füllen Sie es aus</block>
+  <block id="738f95af1a0163cf0e1c5931095ae65f" category="list-text"><block ref="d3aebb99b149a14152b68ab3bc13a233" category="inline-link-rx"></block>.</block>
+  <block id="767d56519e2665f49f35713c1a1be451" category="section-title">Schritt 3: Controller mit Netzwerk verbinden</block>
+  <block id="32eaf8761a3db861b1156e2738e758c1" category="paragraph">Verkabeln Sie die Controller entweder mit der Cluster-Methode ohne zwei Nodes oder mit der Cluster Interconnect-Netzwerkmethode mit dem Netzwerk.</block>
+  <block id="3760d11ceaf4a0fe32d1665068e04673" category="paragraph">Die Managementnetzwerke, das UTA2-Datennetzwerk, das Ethernet-Datennetzwerk und die Management-Ports der Controller sind mit Switches verbunden. Die Cluster Interconnect-Ports sind an beiden Controllern verkabelt.</block>
+  <block id="6daf690bb435e2ddca90bbd25f4d0d4c" category="list-text">Verwenden Sie einen der folgenden Kabeltypen, um die UTA2-Daten-Ports mit dem Host-Netzwerk zu verkabeln.</block>
+  <block id="afb6c834a58331c6ea63436bbf5864c3" category="list-text">Verwenden Sie für einen FC-Host 0c und 0d *oder* 0e und 0f.</block>
+  <block id="0bd1e8e50111e01ba1604ade94902cca" category="list-text">Verwenden Sie für ein 10GbE-System e0c und e0d *oder* e0e und e0f.</block>
+  <block id="1fc58e4765d0d92d238af8bdfc3ab370" category="list-text">Unified Network Cabling</block>
+  <block id="b7f69837ac40254faa2741b926641a85" category="list-text">Ethernet-Netzwerkverkabelung</block>
+  <block id="d121c2dd9af112004d29375d7d7385ba" category="list-text">Verkabeln Sie bei jedem Controller-Modul e0a und e0b mit dem Cluster Interconnect-Kabel der Cluster Interconnect-Switches.</block>
+  <block id="32f4bb165c35f300da46d2891dcd4591" category="list-text">Verwenden Sie für einen FC-Host 0c und 0d **oder** 0e und 0f.</block>
+  <block id="94a602afccb4ec515036eba24fdfed92" category="list-text">Verwenden Sie für ein 10GbE-System e0c und e0d **oder** e0e und e0f.</block>
+  <block id="711382b326731ba29a44a7ecd4dacb3e" category="paragraph">Verkabeln Sie die Controller mit den Shelfs mithilfe der integrierten Storage Ports. NetApp empfiehlt MP-HA-Verkabelung für Systeme mit externem Storage.</block>
+  <block id="0c8480de057f1244b5ab346faf4daf5d" category="paragraph">Wenn Sie ein SAS-Bandlaufwerk haben, können Sie Single-Path-Verkabelung verwenden. Wenn Sie keine externen Shelfs haben, ist die MP-HA-Verkabelung zu internen Laufwerken optional (nicht abgebildet), wenn die SAS-Kabel zusammen mit dem System bestellt werden.</block>
+  <block id="3d8bab9b47da70efbcdca04a75fddf8e" category="list-text">Verkabeln Sie das HA-Paar mit externen Festplatten-Shelfs.</block>
+  <block id="f2f386197bbf8899460af5987fca456d" category="paragraph">Das folgende Beispiel zeigt die Verkabelung für DS224C Laufwerk-Shelfs. Die Verkabelung ist ähnlich mit anderen unterstützten Laufwerk-Shelfs.</block>
+  <block id="1d775c632fba61d3af79e48b275d4b7e" category="paragraph">Wenn Sie über mehrere Festplatten-Shelf-Stacks verfügen, lesen Sie <block ref="a1770e5cf644990212f313f91eccb2d8" category="inline-link-macro-rx"></block> Für den Typ Ihres Festplatten-Shelfs.</block>
+  <block id="624bc3e7c8eadd32ac4d94ff03171ec7" category="section-title">Schritt 5: System-Setup abschließen</block>
+  <block id="60567d4e2a479c00e2c6513bd91d9cd1" category="list-text">Konfigurieren Sie das System anhand der Daten, die Sie im erfasst haben<block ref="492b1b89e16fbed782c0f28e34fb9371" category="inline-link-rx"></block>.</block>
+  <block id="23dc4039b6ba90f63944cca90e993ec5" category="inline-link">Vorhandenes Konto oder Erstellen und Konto</block>
+  <block id="21371189181c93bc505633f5bb1729ea" category="list-text">Melden Sie sich bei Ihrem an<block ref="87e6dd8e4f31a1e4060528f9a17ea003" category="inline-link-rx"></block>.</block>
+  <block id="0ba7583639a274c434bbe6ef797115a4" category="inline-link">Registrieren</block>
+  <block id="d8f675889dd7611add24a5c35dbe0287" category="list-text"><block ref="dd5351a0b089c34796a2c16f455a15ef" category="inline-link-rx"></block> Ihrem System.</block>
+  <block id="a70e700572fd5f3ed169ddc6b2f5473e" category="list-text">Download<block ref="4dfdca8e27abd55d1321fd9c213c69c3" category="inline-link-rx"></block>.</block>
+  <block id="b0ebe1326fcf7880c70950de144bb8b2" category="list-text">Wechseln Sie nach Abschluss der Erstkonfiguration mit dem<block ref="85236f9c87441cb975667a870e3c5acc" category="inline-link-rx"></block> Site für Informationen zur Konfiguration zusätzlicher Funktionen in ONTAP.</block>
+  <block id="cdc4a8392b31dfb0d6f525f8b4bfb521" category="list-text">Verkabeln und konfigurieren Sie Ihren Laptop oder Ihre Konsole.</block>
+  <block id="f0e48b1c6152b408e3a17383284dfa34" category="paragraph">Anweisungen zum Konfigurieren des Konsolenports finden Sie in der Online-Hilfe Ihres Laptops oder der Konsole.</block>
+  <block id="6266bb335022aad7813f5a92f40c41bb" category="list-text">Konfigurieren Sie das Cluster mithilfe von System Manager auf Ihrem Laptop oder der Konsole.</block>
+  <block id="b1e0a8fb86dde21901d58064a47983ae" category="paragraph">Erfahren Sie, wie Sie Ihr System vom Rack über die Verkabelung bis zum ersten Systemauflegen installieren. Nutzung <block ref="2e869cac122e3063f7b418f03cb3fa26" category="inline-link-macro-rx"></block> Wenn Sie mit der Installation von NetApp Systemen vertraut sind.</block>
+  <block id="78504a496ba3e0d8a682fe929b4d61d9" category="paragraph"><block ref="78504a496ba3e0d8a682fe929b4d61d9" category="inline-link-macro-rx"></block></block>
 </blocks>

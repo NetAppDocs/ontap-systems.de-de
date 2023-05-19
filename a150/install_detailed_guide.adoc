@@ -11,31 +11,29 @@ summary: Dieser Leitfaden enthält detaillierte Schritt-für-Schritt-Anleitungen
 
 
 [role="lead"]
-Dieser Leitfaden enthält detaillierte Schritt-für-Schritt-Anleitungen zur Installation eines typischen NetApp Systems. In diesem Handbuch finden Sie weitere detaillierte Installationsanweisungen.
+Erfahren Sie, wie Sie Ihr AFF A150-System installieren.
 
-Wenn Sie über eine MetroCluster-Konfiguration verfügen, verwenden Sie den MetroCluster-Installationsinhalt.
-
-https://["MetroCluster-Dokumentation"^]
+Wenn Sie über eine MetroCluster-Konfiguration verfügen, verwenden Sie die https://["MetroCluster-Dokumentation"^].
 
 
 
 == Schritt 1: Installation vorbereiten
 
 [role="lead"]
-Um Ihr AFF A150 System zu installieren, müssen Sie ein Konto auf der NetApp Support Website erstellen, Ihr System registrieren und Lizenzschlüssel erhalten. Außerdem müssen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp für Ihr System inventarisieren und bestimmte Netzwerkinformationen erfassen.
+Um Ihr AFF A150 System zu installieren, erstellen Sie ein Konto auf der NetApp Support-Website, registrieren Sie Ihr System und erhalten Sie Ihre Lizenzschlüssel. Außerdem müssen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp für Ihr System inventarisieren und bestimmte Netzwerkinformationen erfassen.
 
-Sie müssen Zugriff auf das Hardware Universe haben, um Informationen zu den Standortanforderungen sowie zusätzliche Informationen über Ihr konfiguriertes System zu erhalten. Möglicherweise möchten Sie auch Zugriff auf die Versionshinweise für Ihre Version von ONTAP haben, um weitere Informationen zu diesem System zu erhalten.
+.Bevor Sie beginnen
+* Stellen Sie sicher, dass Sie Zugriff auf haben link:https://hwu.netapp.com["NetApp Hardware Universe"^] (HWU) enthält Informationen zu den Standortanforderungen sowie zusätzliche Informationen zu Ihrem konfigurierten System.
+* Stellen Sie sicher, dass Sie Zugriff auf haben link:http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["Versionshinweise"^] Für Ihre Version von ONTAP finden Sie weitere Informationen zu diesem System.
+* Wenden Sie sich an Ihren Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.
+* Stellen Sie sicher, dass Sie die folgenden Elemente an Ihrem Standort haben:
++
+** Rack-Platz für das Storage-System
+** Kreuzschlitzschraubendreher #2
+** Zusätzliche Netzwerkkabel zum Anschließen des Systems an den Netzwerk-Switch und Laptop oder die Konsole über einen Webbrowser
+** Ein Laptop oder eine Konsole mit einer RJ-45-Verbindung und Zugriff auf einen Webbrowser
 
-https://["NetApp Hardware Universe"^]
 
-http://["Finden Sie die Versionshinweise für Ihre Version von ONTAP 9"^]
-
-Folgendes müssen Sie an Ihrer Website angeben:
-
-* Rack-Platz für das Storage-System
-* Kreuzschlitzschraubendreher #2
-* Zusätzliche Netzwerkkabel zum Anschließen des Systems an den Netzwerk-Switch und Laptop oder die Konsole über einen Webbrowser
-* Ein Laptop oder eine Konsole mit einer RJ-45-Verbindung und Zugriff auf einen Webbrowser
 
 
 .Schritte
@@ -47,22 +45,13 @@ image::../media/drw_ssn_label.png[drw ssn-Etikett]
 . Richten Sie Ihr Konto ein:
 +
 .. Melden Sie sich bei Ihrem bestehenden Konto an oder erstellen Sie ein Konto.
-.. Registrieren Sie das System.
-+
-https://["NetApp Produktregistrierung"]
+.. https://["Registrieren Sie das System"].
 
 
-
-. Laden Sie Config Advisor auf Ihrem Laptop herunter und installieren Sie es.
-+
-https://["NetApp Downloads: Config Advisor"]
-
+. Herunterladen und installieren https://["Config Advisor"] Auf Ihrem Laptop.
 . Notieren Sie sich die Anzahl und die Kabeltypen, die Sie erhalten haben.
 +
-In der folgenden Tabelle sind die Kabeltypen aufgeführt, die Sie möglicherweise erhalten können. Wenn Sie ein Kabel empfangen, das nicht in der Tabelle aufgeführt ist, finden Sie im Hardware Universe das Kabel und dessen Verwendung.
-
-+
-https://["NetApp Hardware Universe"]
+In der folgenden Tabelle sind die Kabeltypen aufgeführt, die Sie möglicherweise erhalten können. Wenn Sie ein Kabel erhalten, das nicht in der Tabelle aufgeführt ist, lesen Sie https://["NetApp Hardware Universe"] Um das Kabel zu lokalisieren und dessen Verwendung zu identifizieren.
 
 +
 [cols="1,2,1,2"]
@@ -164,10 +153,7 @@ image:../media/oie_cable_power.png[""]
 System einschalten
 
 |===
-. Laden Sie das _Cluster-Konfigurationsarbeitsblatt_ herunter, und füllen Sie es aus.
-+
-https://["Cluster-Konfigurationsdokument"]
-
+. https://["Laden Sie das Arbeitsblatt für die Cluster-Konfiguration herunter, und füllen Sie es aus"].
 
 
 
@@ -175,7 +161,7 @@ https://["Cluster-Konfigurationsdokument"]
 == Schritt 2: Installieren Sie die Hardware
 
 [role="lead"]
-Sie müssen das System je nach Bedarf in einem 4-Säulen-Rack oder NetApp Systemschrank installieren.
+Installieren Sie Ihr System gegebenenfalls in einem 4-Säulen-Rack oder NetApp Systemschrank.
 
 .Schritte
 . Installieren Sie die Schienensatz nach Bedarf.
@@ -196,20 +182,20 @@ image::../media/drw_cable_management_arm_install.png[drw-Kabelmanagement-ARM-Ins
 
 
 
-== Schritt 3: Controller mit Ihrem Netzwerk verbinden
+== Schritt 3: Controller mit Netzwerk verbinden
 
 [role="lead"]
-Sie können die Controller mithilfe der Switch-freien Cluster-Methode mit zwei Nodes oder des Cluster Interconnect-Netzwerks mit dem Netzwerk verkabeln.
+Verkabeln Sie die Controller entweder mit der Cluster-Methode ohne zwei Nodes oder mit der Cluster Interconnect-Netzwerkmethode mit dem Netzwerk.
 
+Die Managementnetzwerke, das UTA2-Datennetzwerk, das Ethernet-Datennetzwerk und die Management-Ports der Controller sind mit Switches verbunden. Die Cluster Interconnect-Ports sind an beiden Controllern verkabelt.
 
+[role="tabbed-block"]
+====
+.Option 1: Cluster mit zwei Nodes ohne Switches
+--
+Erfahren Sie, wie Sie ein 2-Node-Cluster ohne Switches verkabeln.
 
-=== Option 1: Verkabeln eines 2-Node-Clusters ohne Switches, Unified Network-Konfiguration
-
-[role="lead"]
-Managementnetzwerk, UTA2-Datennetzwerk und Management-Ports auf den Controllern werden mit Switches verbunden. Die Cluster Interconnect-Ports sind an beiden Controllern verkabelt.
-
-Sie müssen sich an den Netzwerkadministrator wenden, um Informationen über das Anschließen des Systems an die Switches zu erhalten.
-
+.Bevor Sie beginnen
 Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
 
 image::../media/oie_cable_pull_tab_down.png[ziehen Sie die Lasche des oie-Kabels nach unten]
@@ -217,218 +203,66 @@ image::../media/oie_cable_pull_tab_down.png[ziehen Sie die Lasche des oie-Kabels
 
 NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
 
-.Schritte
-. Sie können die Verkabelung zwischen den Controllern und den Switches mit der Grafik oder Schritt-für-Schritt-Anleitung ausführen:
+.Über diese Aufgabe
+Sie können die UTA2-Datennetzwerkports oder die ethernet-Datennetzwerkports verwenden, um die Controller mit Ihrem Host-Netzwerk zu verbinden. Beachten Sie bei der Verkabelung zwischen den Controllern und den Switches die folgenden Verkabelungsabbildungen.
+
+UTA2-Datennetzwerkkonfigurationen::
 +
+--
 image::../media/drw_2700_tnsc_unified_network_cabling_animated_gif.png[drw 2700 tnsc Unified Network Cabling animiert gif]
 
+--
+Ethernet-Netzwerkkonfigurationen::
 +
-[cols="1,3"]
-|===
-| Schritt | Führen Sie an jedem Controller aus 
-
-
- a| 
-image:../media/oie_legend_icon_1_lg.png[""]
- a| 
-Verbinden Sie die Cluster-Interconnect-Ports mit dem Cluster Interconnect-Kabel miteinander:
-
-** e0a an e0a
-** e0b bis e0bimage:../media/drw_c190_u_tnsc_clust_cbling.png[""]
-
-
-
-
- a| 
-image:../media/oie_legend_icon_2_o.png[""]
- a| 
-Verwenden Sie einen der folgenden Kabeltypen, um die UTA2-Daten-Ports mit Ihrem Hostnetzwerk zu verkabeln:
-
-Ein FC-Host
-
-** 0c und 0d
-** * Oder* 0e und 0f Eine 10GbE
-** e0c und e0d
-** * Oder* e0e und e0f
-
-
-
-NOTE: Sie können ein Port-Paar als CNA und ein Port-Paar als FC verbinden, oder Sie können beide Port-Paare als CNA oder beide Port-Paare als FC verbinden.
-
-image:../media/drw_c190_u_fc_10gbe_cbling.png[""]
-
-
-
- a| 
-image:../media/oie_legend_icon_3_lp.png[""]
- a| 
-Verkabeln Sie die E0M-Ports mit den Management-Netzwerk-Switches mit den RJ45-Kabeln:
-
-image:../media/drw_c190_u_mgmt_cbling.png[""]
-
-
-
- a| 
-image:../media/oie_legend_icon_attn_symbol.png[""]
- a| 
-Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
-
-|===
-. Informationen zum Kabelanschluss des Speichers finden Sie unter link:install_detailed_guide.md#["Verkabelung der Controller mit Laufwerk-Shelfs"]
-
-
-
-
-=== Option 2: Verkabelung eines Switch-Clusters, Unified-Netzwerk-Konfiguration
-
-[role="lead"]
-Managementnetzwerk, UTA2-Datennetzwerk und Management-Ports auf den Controllern werden mit Switches verbunden. Die Cluster-Interconnect-Ports sind mit den Cluster-Interconnect-Switches verbunden.
-
-Sie müssen sich an den Netzwerkadministrator wenden, um Informationen über das Anschließen des Systems an die Switches zu erhalten.
-
-Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
-
-image::../media/oie_cable_pull_tab_down.png[ziehen Sie die Lasche des oie-Kabels nach unten]
-
-
-NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
-
-.Schritte
-. Sie können die Verkabelung zwischen den Controllern und den Switches mit der Grafik oder Schritt-für-Schritt-Anleitung ausführen:
-+
-image::../media/drw_2700_switched_unified_network_cabling_animated_gif.png[drw 2700 geschaltete Unified-Netzwerkverkabelung gif animiert]
-
-+
-[cols="1,3"]
-|===
-| Schritt | Führen Sie die Ausführung an jedem Controller-Modul aus 
-
-
- a| 
-image:../media/oie_legend_icon_1_lg.png[""]
- a| 
-Verkabelung e0a und e0b mit den Cluster Interconnect Switches mit dem Cluster Interconnect-Kabel:
-
-image:../media/drw_c190_u_switched_clust_cbling.png[""]
-
-
-
- a| 
-image:../media/oie_legend_icon_2_o.png[""]
- a| 
-Verwenden Sie einen der folgenden Kabeltypen, um die UTA2-Daten-Ports mit Ihrem Hostnetzwerk zu verkabeln:
-
-Ein FC-Host
-
-** 0c und 0d
-** **Oder** 0e und 0f
-
-
-Eine 10GbE
-
-** e0c und e0d
-** **Oder** e0e und e0f
-
-
-
-NOTE: Sie können ein Port-Paar als CNA und ein Port-Paar als FC verbinden, oder Sie können beide Port-Paare als CNA oder beide Port-Paare als FC verbinden.
-
-image:../media/drw_c190_u_fc_10gbe_cbling.png[""]
-
-
-
- a| 
-image:../media/oie_legend_icon_3_lp.png[""]
- a| 
-Verkabeln Sie die E0M-Ports mit den Management-Netzwerk-Switches mit den RJ45-Kabeln:
-
-image:../media/drw_c190_u_mgmt_cbling.png[""]
-
-
-
- a| 
-image:../media/oie_legend_icon_attn_symbol.png[""]
- a| 
-Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
-
-|===
-. Informationen zum Kabelanschluss des Speichers finden Sie unter link:install_detailed_guide.md#["Verkabelung der Controller mit Laufwerk-Shelfs"]
-
-
-
-
-=== Option 3: Verkabelung eines 2-Node-Clusters ohne Switches, Ethernet-Netzwerkkonfiguration
-
-[role="lead"]
-Managementnetzwerk, Ethernet-Datennetzwerk und Management-Ports auf den Controllern sind mit Switches verbunden. Die Cluster Interconnect-Ports sind an beiden Controllern verkabelt.
-
-Sie müssen sich an den Netzwerkadministrator wenden, um Informationen über das Anschließen des Systems an die Switches zu erhalten.
-
-Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
-
-image::../media/oie_cable_pull_tab_down.png[ziehen Sie die Lasche des oie-Kabels nach unten]
-
-
-NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
-
-.Schritte
-. Sie können die Verkabelung zwischen den Controllern und den Switches mit der Grafik oder Schritt-für-Schritt-Anleitung ausführen:
-+
+--
 image::../media/drw_2700_tnsc_ethernet_network_cabling_animated_gif.png[drw 2700 tnsc ethernet-Netzwerkverkabelung animiert gif]
 
+--
+
+
+Führen Sie die folgenden Schritte für jedes Controller-Modul durch.
+
+.Schritte
+. Verkabeln Sie die Cluster Interconnect Ports e0a mit e0a und e0b mit e0b mit dem Cluster Interconnect-Kabel. +image:../media/drw_c190_u_tnsc_clust_cbling.png[""]
+. Führen Sie einen der folgenden Schritte aus:
 +
-[cols="1,3"]
-|===
-| Schritt | Führen Sie an jedem Controller aus 
+UTA2-Datennetzwerkkonfigurationen:: Verwenden Sie einen der folgenden Kabeltypen, um die UTA2-Daten-Ports mit dem Host-Netzwerk zu verkabeln.
++
+--
+** Verwenden Sie für einen FC-Host 0c und 0d *oder* 0e und 0f.
+** Verwenden Sie für ein 10GbE-System e0c und e0d *oder* e0e und e0f.
++
+image:../media/drw_c190_u_fc_10gbe_cbling.png[""]
 
-
- a| 
-image:../media/oie_legend_icon_1_lg.png[""]
- a| 
-Verbinden Sie die Cluster-Interconnect-Ports mit dem Cluster Interconnect-Kabel miteinander:
-
-** e0a an e0a
-** e0b bis e0bimage:../media/drw_c190_e_tnsc_clust_cbling.png[""]
-
++
+Sie können ein Port-Paar als CNA und ein Port-Paar als FC verbinden, oder Sie können beide Port-Paare als CNA oder beide Port-Paare als FC verbinden.
 
 
 
- a| 
-image:../media/oie_legend_icon_2_o.png[""]
- a| 
-Verwenden Sie das Cat 6 RJ45-Kabel, um e0c über e0f-Ports mit Ihrem Hostnetzwerk zu verkabeln:
-
+--
+Ethernet-Netzwerkkonfigurationen:: Verwenden Sie das Cat 6 RJ45-Kabel, um die e0c- über e0f-Ports mit Ihrem Hostnetzwerk zu verkabeln. In der folgenden Abbildung.
++
+--
 image:../media/drw_c190_e_rj45_cbling.png[""]
 
+--
 
 
- a| 
-image:../media/oie_legend_icon_3_lp.png[""]
- a| 
-Verkabeln Sie die E0M-Ports mit den Management-Netzwerk-Switches mit den RJ45-Kabeln:
-
-image:../media/drw_c190_e_mgmt_cbling.png[""]
-
-
-
- a| 
-image:../media/oie_legend_icon_attn_symbol.png[""]
- a| 
-Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
-
-|===
-. Informationen zum Kabelanschluss des Speichers finden Sie unter link:install_detailed_guide.md#["Verkabelung der Controller mit Laufwerk-Shelfs"]
+. Verkabeln Sie die E0M-Ports mit den Management-Netzwerk-Switches mit den RJ45-Kabeln.
++
+image:../media/drw_c190_u_mgmt_cbling.png[""]
 
 
 
 
-=== Option 4: Kabel ein Switch-Cluster, Ethernet-Netzwerk-Konfiguration
+IMPORTANT: Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
 
-[role="lead"]
-Managementnetzwerk, Ethernet-Datennetzwerk und Management-Ports auf den Controllern sind mit Switches verbunden. Die Cluster-Interconnect-Ports sind mit den Cluster-Interconnect-Switches verbunden.
+--
+.Option 2: Cluster mit Switch
+--
+Lesen Sie, wie Sie ein Cluster mit Switches verkabeln.
 
-Sie müssen sich an den Netzwerkadministrator wenden, um Informationen über das Anschließen des Systems an die Switches zu erhalten.
-
+.Bevor Sie beginnen
 Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
 
 image::../media/oie_cable_pull_tab_down.png[ziehen Sie die Lasche des oie-Kabels nach unten]
@@ -436,65 +270,74 @@ image::../media/oie_cable_pull_tab_down.png[ziehen Sie die Lasche des oie-Kabels
 
 NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
 
-.Schritte
-. Sie können die Verkabelung zwischen den Controllern und den Switches mit der Grafik oder Schritt-für-Schritt-Anleitung ausführen:
+.Über diese Aufgabe
+Sie können die UTA2-Datennetzwerkports oder die ethernet-Datennetzwerkports verwenden, um die Controller mit Ihrem Host-Netzwerk zu verbinden. Beachten Sie bei der Verkabelung zwischen den Controllern und den Switches die folgenden Verkabelungsabbildungen.
+
+Unified Network Cabling::
 +
+--
+image::../media/drw_2700_switched_unified_network_cabling_animated_gif.png[drw 2700 geschaltete Unified-Netzwerkverkabelung gif animiert]
+
+--
+Ethernet-Netzwerkverkabelung::
++
+--
 image::../media/drw_2700_switched_ethernet_network_cabling_animated_gif.png[drw 2700 Ethernet-Netzwerkverkabelung animiert gif]
 
+--
+
+
+Führen Sie die folgenden Schritte für jedes Controller-Modul durch.
+
+.Schritte
+. Verkabeln Sie bei jedem Controller-Modul e0a und e0b mit dem Cluster Interconnect-Kabel der Cluster Interconnect-Switches.
 +
-[cols="1,2"]
-|===
-| Schritt | Führen Sie die Ausführung an jedem Controller-Modul aus 
+image:../media/drw_c190_u_switched_clust_cbling.png[""]
+
+. Führen Sie einen der folgenden Schritte aus:
++
+UTA2-Datennetzwerkkonfigurationen:: Verwenden Sie einen der folgenden Kabeltypen, um die UTA2-Daten-Ports mit dem Host-Netzwerk zu verkabeln.
++
+--
+** Verwenden Sie für einen FC-Host 0c und 0d **oder** 0e und 0f.
+** Verwenden Sie für ein 10GbE-System e0c und e0d **oder** e0e und e0f.
++
+image:../media/drw_c190_u_fc_10gbe_cbling.png[""]
+
++
+Sie können ein Port-Paar als CNA und ein Port-Paar als FC verbinden, oder Sie können beide Port-Paare als CNA oder beide Port-Paare als FC verbinden.
 
 
- a| 
-image:../media/oie_legend_icon_1_lg.png[""]
- a| 
-Verkabelung e0a und e0b mit den Cluster Interconnect Switches mit dem Cluster Interconnect-Kabel:
 
-image:../media/drw_c190_e_switched_clust_cbling.png[""]
-
-
-
- a| 
-image:../media/oie_legend_icon_2_o.png[""]
- a| 
-Verwenden Sie das Cat 6 RJ45-Kabel, um e0c über e0f-Ports mit Ihrem Hostnetzwerk zu verkabeln:
-
+--
+Ethernet-Netzwerkkonfigurationen:: Verwenden Sie das Cat 6 RJ45-Kabel, um die e0c- über e0f-Ports mit Ihrem Hostnetzwerk zu verkabeln.
++
+--
 image:../media/drw_c190_e_rj45_cbling.png[""]
 
+--
 
 
- a| 
-image:../media/oie_legend_icon_3_lp.png[""]
- a| 
-Verkabeln Sie die E0M-Ports mit den Management-Netzwerk-Switches mit den RJ45-Kabeln:
-
-image:../media/drw_c190_e_mgmt_cbling.png[""]
+. Verkabeln Sie die E0M-Ports mit den Management-Netzwerk-Switches mit den RJ45-Kabeln.
++
+image:../media/drw_c190_u_mgmt_cbling.png[""]
 
 
 
- a| 
-image:../media/oie_legend_icon_attn_symbol.png[""]
- a| 
-Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
 
-|===
-. Informationen zum Kabelanschluss des Speichers finden Sie unter link:install_detailed_guide.md#["Verkabelung der Controller mit Laufwerk-Shelfs"]
+IMPORTANT: Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
 
-
+--
+====
 
 
 == Schritt 4: Controller mit Laufwerk-Shelfs verkabeln
 
-[role="lead"]
-Sie müssen die Controller mithilfe der integrierten Storage-Ports mit den Shelfs verkabeln. NetApp empfiehlt MP-HA-Verkabelung für Systeme mit externem Storage. Wenn Sie ein SAS-Bandlaufwerk haben, können Sie Single-Path-Verkabelung verwenden. Wenn Sie keine externen Shelfs haben, ist die MP-HA-Verkabelung zu internen Laufwerken optional (nicht abgebildet), wenn die SAS-Kabel zusammen mit dem System bestellt werden.
+Verkabeln Sie die Controller mit den Shelfs mithilfe der integrierten Storage Ports. NetApp empfiehlt MP-HA-Verkabelung für Systeme mit externem Storage.
 
+.Über diese Aufgabe
+Wenn Sie ein SAS-Bandlaufwerk haben, können Sie Single-Path-Verkabelung verwenden. Wenn Sie keine externen Shelfs haben, ist die MP-HA-Verkabelung zu internen Laufwerken optional (nicht abgebildet), wenn die SAS-Kabel zusammen mit dem System bestellt werden.
 
-
-=== Option 1: Kabelspeicherung auf einem HA-Paar mit externen Festplatten-Shelfs
-
-[role="lead"]
 Sie müssen die Shelf-Verbindungen verkabeln und dann beide Controller mit den Laufwerk-Shelfs verkabeln.
 
 Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
@@ -502,25 +345,15 @@ Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabel
 image::../media/oie_cable_pull_tab_down.png[ziehen Sie die Lasche des oie-Kabels nach unten]
 
 .Schritte
-. Verkabeln Sie das HA-Paar mit externen Festplatten-Shelfs:
+. Verkabeln Sie das HA-Paar mit externen Festplatten-Shelfs.
 +
-
-NOTE: Das Beispiel verwendet DS224C. Die Verkabelung ist ähnlich wie bei anderen unterstützten Festplatten-Shelfs.
+Das folgende Beispiel zeigt die Verkabelung für DS224C Laufwerk-Shelfs. Die Verkabelung ist ähnlich mit anderen unterstützten Laufwerk-Shelfs.
 
 +
 image::../media/drw_a150_ha_storage_cabling_IEOPS-1032.svg[drw a150 HA-Speicherverkabelung IEOPS 1032]
 
+. Verkabeln Sie die Shelf-zu-Shelf-Ports.
 +
-[cols="1,3"]
-|===
-| Schritt | Führen Sie an jedem Controller aus 
-
-
- a| 
-image:../media/oie_legend_icon_1_lo.png[""]
- a| 
-Verkabeln Sie die Shelf-zu-Shelf-Ports.
-
 ** Port 3 auf IOM A zu Port 1 auf dem IOM A auf dem Shelf direkt unten.
 ** Port 3 auf IOM B zu Port 1 auf dem IOM B auf dem Shelf direkt unten.
 +
@@ -528,13 +361,8 @@ image:../media/oie_cable_mini_sas_hd_to_mini_sas_hd.png[""] Kabel Mini-SAS HD au
 
 
 
-
-
- a| 
-image:../media/oie_legend_icon_2_mb.png[""]
- a| 
-Verbinden Sie jeden Node mit IOM A im Stack.
-
+. Verbinden Sie jeden Node mit IOM A im Stack.
++
 ** Controller 1 Port 0b zu IOM A-Port 3 am letzten Laufwerk-Shelf im Stack.
 ** Controller 2 Port 0a zu IOM A-Port 1 am ersten Festplatten-Shelf im Stack.
 +
@@ -542,39 +370,27 @@ image:../media/oie_cable_mini_sas_hd_to_mini_sas_hd.png[""] Kabel Mini-SAS HD au
 
 
 
-
-
- a| 
-image:../media/oie_legend_icon_3_t.png[""]
- a| 
-Verbinden Sie jeden Node mit IOM B im Stack
-
+. Verbinden Sie jeden Node mit IOM B im Stack
++
 ** Controller 1 Port 0a zu IOM B-Port 1 am ersten Festplatten-Shelf im Stack.
 ** Controller 2 Port 0b zu IOM B-Port 3 auf dem letzten Laufwerk-Shelf im Stack.image:../media/oie_cable_mini_sas_hd_to_mini_sas_hd.png[""] Kabel Mini-SAS HD auf Mini-SAS HD
 
 
-|===
-+
-Wenn Sie über mehr als einen Festplatten-Shelf-Stack verfügen, lesen Sie die „_Installation and Cabling Guide_“ für den Laufwerk-Shelf-Typ.
 
-+
-link:../com.netapp.doc.hw-ds-sas3-icg/home.html["Installation und Verkabelung"]
 
-. Informationen zum Abschließen der Einrichtung des Systems finden Sie unter link:install_detailed_guide.md#["Die Systemeinrichtung und -Konfiguration wird abgeschlossen"]
+Wenn Sie über mehrere Festplatten-Shelf-Stacks verfügen, lesen Sie link:../com.netapp.doc.hw-ds-sas3-icg/home.html["Installation und Verkabelung"] Für den Typ Ihres Festplatten-Shelfs.
 
 
 
-
-== Schritt 5: System-Setup und -Konfiguration abschließen
+== Schritt 5: System-Setup abschließen
 
 [role="lead"]
 Die Einrichtung und Konfiguration des Systems kann mithilfe der Cluster-Erkennung nur mit einer Verbindung zum Switch und Laptop abgeschlossen werden. Sie können auch direkt eine Verbindung zu einem Controller im System herstellen und dann eine Verbindung zum Management Switch herstellen.
 
-
-
-=== Option 1: Schließen Sie das System-Setup ab, wenn die Netzwerkerkennung aktiviert ist
-
-[role="lead"]
+[role="tabbed-block"]
+====
+.Option 1: Wenn die Netzwerkerkennung aktiviert ist
+--
 Wenn die Netzwerkerkennung auf Ihrem Laptop aktiviert ist, können Sie das System mit der automatischen Cluster-Erkennung einrichten und konfigurieren.
 
 .Schritte
@@ -617,44 +433,29 @@ System Manager wird geöffnet.
 
 
 
-. Mit der systemgesteuerten Einrichtung konfigurieren Sie das System anhand der im _NetApp ONTAP Configuration Guide_ erfassten Daten.
-+
-https://["ONTAP Konfigurationsleitfaden"]
-
+. Konfigurieren Sie das System anhand der Daten, die Sie im erfasst haben https://["ONTAP Konfigurationsleitfaden"].
 . Richten Sie Ihr Konto ein und laden Sie Active IQ Config Advisor herunter:
 +
-.. Melden Sie sich bei Ihrem bestehenden Konto an oder erstellen Sie ein Konto.
-+
-https://["NetApp Support-Registrierung"]
-
-.. Registrieren Sie das System.
-+
-https://["NetApp Produktregistrierung"]
-
-.. Laden Sie Active IQ Config Advisor herunter.
-+
-https://["NetApp Downloads: Config Advisor"]
-
+.. Melden Sie sich bei Ihrem an https://["Vorhandenes Konto oder Erstellen und Konto"].
+.. https://["Registrieren"] Ihrem System.
+.. Download https://["Active IQ Config Advisor"].
 
 
 . Überprüfen Sie den Systemzustand Ihres Systems, indem Sie Config Advisor ausführen.
-. Wechseln Sie nach Abschluss der Erstkonfiguration mit dem https://["ONTAP  ONTAP System Manager; Dokumentationsressourcen"] Seite für Informationen über das Konfigurieren zusätzlicher Funktionen in ONTAP.
+. Wechseln Sie nach Abschluss der Erstkonfiguration mit dem https://["ONTAP-Dokumentation"] Site für Informationen zur Konfiguration zusätzlicher Funktionen in ONTAP.
 
 
-
-
-=== Option 2: Abschluss der Systemeinrichtung und -Konfiguration, falls die Netzwerkerkennung nicht aktiviert ist
-
-[role="lead"]
+--
+.Option 2: Wenn die Netzwerkerkennung nicht aktiviert ist
+--
 Wenn die Netzwerkerkennung auf Ihrem Laptop nicht aktiviert ist, müssen Sie die Konfiguration und das Setup mit dieser Aufgabe abschließen.
 
 .Schritte
-. Laptop oder Konsole verkabeln und konfigurieren:
+. Verkabeln und konfigurieren Sie Ihren Laptop oder Ihre Konsole.
 +
 .. Stellen Sie den Konsolenport des Laptops oder der Konsole auf 115,200 Baud mit N-8-1 ein.
 +
-
-NOTE: Informationen zur Konfiguration des Konsolenport finden Sie in der Online-Hilfe Ihres Laptops oder der Konsole.
+Anweisungen zum Konfigurieren des Konsolenports finden Sie in der Online-Hilfe Ihres Laptops oder der Konsole.
 
 .. Schließen Sie das Konsolenkabel an den Laptop oder die Konsole an, und schließen Sie den Konsolenport am Controller mithilfe des im Lieferumfang des Systems verwendeten Konsolenkabels an.
 +
@@ -706,35 +507,26 @@ NOTE: Überprüfen Sie die Online-Hilfe Ihres Laptops oder Ihrer Konsole, wenn S
 
 
 |===
-. Konfigurieren Sie das Cluster unter System Manager auf Ihrem Laptop oder Ihrer Konsole:
+. Konfigurieren Sie das Cluster mithilfe von System Manager auf Ihrem Laptop oder der Konsole.
 +
 .. Rufen Sie die Node-Management-IP-Adresse im Browser auf.
 +
 
 NOTE: Das Format für die Adresse lautet https://[].
 
-.. Konfigurieren Sie das System mit den im _NetApp ONTAP Configuration Guide_ erfassten Daten.
-+
-https://["ONTAP Konfigurationsleitfaden"]
-
+.. Konfigurieren Sie das System anhand der Daten, die Sie im erfasst haben https://["ONTAP Konfigurationsleitfaden"].
 
 
 . Richten Sie Ihr Konto ein und laden Sie Active IQ Config Advisor herunter:
 +
-.. Melden Sie sich bei Ihrem bestehenden Konto an oder erstellen Sie ein Konto.
-+
-https://["NetApp Support-Registrierung"]
-
-.. Registrieren Sie das System.
-+
-https://["NetApp Produktregistrierung"]
-
-.. Laden Sie Active IQ Config Advisor herunter.
-+
-https://["NetApp Downloads: Config Advisor"]
-
+.. Melden Sie sich bei Ihrem an https://["Vorhandenes Konto oder Erstellen und Konto"].
+.. https://["Registrieren"] Ihrem System.
+.. Download https://["Active IQ Config Advisor"].
 
 
 . Überprüfen Sie den Systemzustand Ihres Systems, indem Sie Config Advisor ausführen.
-. Wechseln Sie nach Abschluss der Erstkonfiguration mit dem https://["ONTAP  ONTAP System Manager; Dokumentationsressourcen"] Seite für Informationen über das Konfigurieren zusätzlicher Funktionen in ONTAP.
+. Wechseln Sie nach Abschluss der Erstkonfiguration mit dem https://["ONTAP-Dokumentation"] Site für Informationen zur Konfiguration zusätzlicher Funktionen in ONTAP.
 
+
+--
+====
