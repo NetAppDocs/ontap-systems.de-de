@@ -21,7 +21,7 @@ Nach Ausführung der Diagnose müssen Sie die Speicher- und Netzwerkverbindungen
 
 .Schritte
 . Das System neu aufführen.
-. Überprüfen Sie anhand von, ob die Verkabelung korrekt ist https://["Active IQ Config Advisor"].
+. Überprüfen Sie anhand von, ob die Verkabelung korrekt ist https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"].
 +
 .. Laden Sie Config Advisor herunter und installieren Sie es.
 .. Geben Sie die Informationen für das Zielsystem ein, und klicken Sie auf Daten erfassen.
@@ -69,8 +69,8 @@ node2             node1             -            Waiting for giveback (HA mailbo
 
 . Wenn Ihr Storage- oder Volume Encryption-System konfiguriert ist, müssen Sie die Funktionen für Storage oder Volume Encryption mithilfe eines der folgenden Verfahren wiederherstellen: Je nachdem, ob Sie integriertes oder externes Verschlüsselungsmanagement verwenden:
 +
-** https://["Wiederherstellung der integrierten Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"^]
-** https://["Wiederherstellung der externen Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"^]
+** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-onboard-key-management-encryption-keys-task.html["Wiederherstellung der integrierten Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"^]
+** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-external-encryption-keys-93-later-task.html["Wiederherstellung der externen Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"^]
 +
 Sie können antworten `Y` Wenn Sie aufgefordert werden, den erweiterten Modus fortzusetzen. Die Eingabeaufforderung für den erweiterten Modus wird angezeigt (*>).
 
@@ -99,7 +99,7 @@ Wenn Sie aufgrund einer nicht übereinstimmenden System-ID aufgefordert werden, 
 NOTE: Wenn das Rückübertragung ein Vetorecht ist, können Sie erwägen, das Vetos außer Kraft zu setzen.
 
 +
-http://["Finden Sie die Inhalte zur Hochverfügbarkeitskonfiguration Ihrer Version von ONTAP 9"]
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["Finden Sie die Inhalte zur Hochverfügbarkeitskonfiguration Ihrer Version von ONTAP 9"]
 
 .. Nachdem das Giveback abgeschlossen ist, bestätigen Sie, dass das HA-Paar sich gesund befindet und ein Takeover möglich ist: `storage failover show`
 +
@@ -233,7 +233,7 @@ dr-group-id            cluster node           configuration-state
 .. Vergewissern Sie sich, dass die MetroCluster konfiguriert ist und sich im normalen Modus befindet: `metrocluster show`
 .. Durchführen einer MetroCluster-Prüfung: `metrocluster check run`
 .. Ergebnisse der MetroCluster-Prüfung anzeigen: `metrocluster check show`
-.. Nutzen Sie Config Advisor. Wechseln Sie zur Config Advisor-Seite auf der NetApp Support Site unter http://["support.netapp.com/NOW/download/tools/config_advisor/"].
+.. Nutzen Sie Config Advisor. Wechseln Sie zur Config Advisor-Seite auf der NetApp Support Site unter http://support.netapp.com/NOW/download/tools/config_advisor/["support.netapp.com/NOW/download/tools/config_advisor/"].
 +
 Überprüfen Sie nach dem Ausführen von Config Advisor die Ausgabe des Tools und befolgen Sie die Empfehlungen in der Ausgabe, um die erkannten Probleme zu beheben.
 

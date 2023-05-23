@@ -37,7 +37,7 @@ Wenn im Output irgendwelche Volumes aufgelistet werden, wird NVE konfiguriert, u
 Wenn der Befehl fehlschlägt, wenden Sie sich an den NetApp Support.
 
 +
-http://["mysupport.netapp.com"]
+http://mysupport.netapp.com/["mysupport.netapp.com"]
 
 .. Überprüfen Sie das `Restored` Spalte wird angezeigt `yes` Für alle Authentifizierungsschlüssel und dass alle Schlüsselmanager angezeigt werden `available`: `security key-manager query`
 .. Schalten Sie den beeinträchtigten Regler aus.
@@ -59,7 +59,7 @@ http://["mysupport.netapp.com"]
 *** Führen Sie den Setup-Assistenten für den Schlüsselmanager aus: `security key-manager setup -node target/impaired node name`
 +
 
-NOTE: Geben Sie an der Eingabeaufforderung die integrierte Passphrase für das Verschlüsselungsmanagement des Kunden ein. Wenn die Passphrase nicht angegeben werden kann, wenden Sie sich an http://["mysupport.netapp.com"]
+NOTE: Geben Sie an der Eingabeaufforderung die integrierte Passphrase für das Verschlüsselungsmanagement des Kunden ein. Wenn die Passphrase nicht angegeben werden kann, wenden Sie sich an http://mysupport.netapp.com/["mysupport.netapp.com"]
 
 *** Überprüfen Sie das `Restored` Spalte wird angezeigt `yes` Für alle Authentifizierungsschlüssel: `security key-manager key show -detail`
 *** Wechseln Sie zum erweiterten Berechtigungsebene-Modus, und geben Sie ein `y` Wenn Sie dazu aufgefordert werden, fortzufahren: `set -priv advanced`
@@ -92,7 +92,7 @@ NOTE: Geben Sie an der Eingabeaufforderung die integrierte Passphrase für das V
 Wenn der Befehl fehlschlägt, wenden Sie sich an den NetApp Support.
 
 +
-http://["mysupport.netapp.com"]
+http://mysupport.netapp.com/["mysupport.netapp.com"]
 
 .. Überprüfen Sie das `Restored` Spalte wird angezeigt `yes` Für alle Authentifizierungsschlüssel und dass alle Schlüsselmanager angezeigt werden `available`: `security key-manager query`
 .. Schalten Sie den beeinträchtigten Regler aus.
@@ -114,7 +114,7 @@ http://["mysupport.netapp.com"]
 *** Führen Sie den Setup-Assistenten für den Schlüsselmanager aus: `security key-manager setup -node target/impaired node name`
 +
 
-NOTE: Geben Sie die OKM-Passphrase des Kunden an der Eingabeaufforderung ein. Wenn die Passphrase nicht angegeben werden kann, wenden Sie sich an http://["mysupport.netapp.com"]
+NOTE: Geben Sie die OKM-Passphrase des Kunden an der Eingabeaufforderung ein. Wenn die Passphrase nicht angegeben werden kann, wenden Sie sich an http://mysupport.netapp.com/["mysupport.netapp.com"]
 
 *** Überprüfen Sie das `Restored` In der Spalte wird angezeigt `yes` Für alle Authentifizierungsschlüssel: `security key-manager key show -detail`
 *** Wechseln Sie zum erweiterten Berechtigungsebene-Modus, und geben Sie ein `y` Wenn Sie dazu aufgefordert werden, fortzufahren: `set -priv advanced`

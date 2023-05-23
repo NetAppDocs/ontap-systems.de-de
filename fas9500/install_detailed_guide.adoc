@@ -19,10 +19,10 @@ Dieser Artikel enthält Schritt-für-Schritt-Anleitungen zur Installation eines 
 
 Um Ihr System zu installieren, müssen Sie auf der NetApp Support Site ein Konto erstellen, Ihr System registrieren und Lizenzschlüssel abrufen. Außerdem müssen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp für Ihr System inventarisieren und bestimmte Netzwerkinformationen erfassen.
 
-Sie müssen Zugriff auf die haben https://["NetApp Hardware Universe"^] Weitere Informationen zu Standortanforderungen sowie zusätzliche Informationen zu Ihrem konfigurierten System.
+Sie müssen Zugriff auf die haben https://hwu.netapp.com["NetApp Hardware Universe"^] Weitere Informationen zu Standortanforderungen sowie zusätzliche Informationen zu Ihrem konfigurierten System.
 
 .Was Sie brauchen
-Möglicherweise möchten Sie auch Zugriff auf den haben http://["Versionshinweise zu ONTAP 9"^] Für Ihre Version von ONTAP finden Sie weitere Informationen zu diesem System.
+Möglicherweise möchten Sie auch Zugriff auf den haben http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["Versionshinweise zu ONTAP 9"^] Für Ihre Version von ONTAP finden Sie weitere Informationen zu diesem System.
 
 Folgendes müssen Sie an Ihrer Website angeben:
 
@@ -42,7 +42,7 @@ image::../media/drw_ssn_label.svg[drw ssn-Etikett]
 In der folgenden Tabelle sind die Kabeltypen aufgeführt, die Sie möglicherweise erhalten können. Wenn Sie ein Kabel empfangen, das nicht in der Tabelle aufgeführt ist, finden Sie im Hardware Universe das Kabel und dessen Verwendung.
 
 +
-https://["NetApp Hardware Universe"^]
+https://hwu.netapp.com["NetApp Hardware Universe"^]
 
 +
 [cols="1,2,1,2"]
@@ -178,7 +178,7 @@ image::../media/oie_cable_power.svg[oie-Kabel mit Strom]
 System einschalten
 
 |===
-. Überprüfen Sie die https://["ONTAP Konfigurationsleitfaden"^] Und sammeln Sie die in diesem Handbuch aufgeführten erforderlichen Informationen.
+. Überprüfen Sie die https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["ONTAP Konfigurationsleitfaden"^] Und sammeln Sie die in diesem Handbuch aufgeführten erforderlichen Informationen.
 
 
 
@@ -400,10 +400,10 @@ image::../media/drw_a900fas9500_power_source_icon_IEOPS-1142.svg[drw a900fas9500
 Verbinden Sie DS212C- oder DS224C Laufwerk-Shelfs mit den Controllern.
 
 
-NOTE: Weitere Informationen zur SAS-Verkabelung und Arbeitsblätter finden Sie unter https://["SAS-Verkabelungsregeln, Arbeitsblätter und Beispiele – Regale mit IOM12-Modulen"^]
+NOTE: Weitere Informationen zur SAS-Verkabelung und Arbeitsblätter finden Sie unter https://docs.netapp.com/us-en/ontap-systems/sas3/overview-cabling-rules-examples.html["SAS-Verkabelungsregeln, Arbeitsblätter und Beispiele – Regale mit IOM12-Modulen"^]
 
 .Bevor Sie beginnen
-* Füllen Sie das SAS-Verkabelungsarbeitsblatt für Ihr System aus. Siehe https://["SAS-Verkabelungsregeln, Arbeitsblätter und Beispiele – Regale mit IOM12-Modulen"^].
+* Füllen Sie das SAS-Verkabelungsarbeitsblatt für Ihr System aus. Siehe https://docs.netapp.com/us-en/ontap-systems/sas3/overview-cabling-rules-examples.html["SAS-Verkabelungsregeln, Arbeitsblätter und Beispiele – Regale mit IOM12-Modulen"^].
 * Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen. Die Kabelabzieher für die Storage-Module sind nach oben und die Abziehlaschen an den Shelves sind nach unten.
 
 
@@ -554,25 +554,25 @@ System Manager wird geöffnet.
 
 
 
-. Konfigurieren Sie das System mithilfe von System Manager geführten Setups anhand der Daten, die Sie im erfasst haben https://["ONTAP Konfigurationsleitfaden"^].
+. Konfigurieren Sie das System mithilfe von System Manager geführten Setups anhand der Daten, die Sie im erfasst haben https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["ONTAP Konfigurationsleitfaden"^].
 . Richten Sie Ihr Konto ein und laden Sie Active IQ Config Advisor herunter:
 +
 .. Melden Sie sich bei Ihrem bestehenden Konto an oder erstellen Sie ein Konto.
 +
-https://["NetApp Support-Registrierung"^]
+https://mysupport.netapp.com/eservice/public/now.do["NetApp Support-Registrierung"^]
 
 .. Registrieren Sie das System.
 +
-https://["NetApp Produktregistrierung"^]
+https://mysupport.netapp.com/eservice/registerSNoAction.do?moduleName=RegisterMyProduct["NetApp Produktregistrierung"^]
 
 .. Laden Sie Active IQ Config Advisor herunter.
 +
-https://["NetApp Downloads: Config Advisor"^]
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"^]
 
 
 
 . Überprüfen Sie den Systemzustand Ihres Systems, indem Sie Config Advisor ausführen.
-. Wechseln Sie nach Abschluss der Erstkonfiguration mit dem https://["ONTAP  ONTAP System Manager; Dokumentationsressourcen"^] Seite für Informationen über das Konfigurieren zusätzlicher Funktionen in ONTAP.
+. Wechseln Sie nach Abschluss der Erstkonfiguration mit dem https://www.netapp.com/data-management/oncommand-system-documentation/["ONTAP  ONTAP System Manager; Dokumentationsressourcen"^] Seite für Informationen über das Konfigurieren zusätzlicher Funktionen in ONTAP.
 
 
 --
@@ -691,27 +691,27 @@ NOTE: Überprüfen Sie die Online-Hilfe Ihres Laptops oder Ihrer Konsole, wenn S
 
 NOTE: Das Format für die Adresse ist +https://x.x.x.x+.
 
-.. Konfigurieren Sie das System anhand der Daten, die Sie im erfasst haben https://["ONTAP Konfigurationsleitfaden"^] .
+.. Konfigurieren Sie das System anhand der Daten, die Sie im erfasst haben https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["ONTAP Konfigurationsleitfaden"^] .
 
 
 . Richten Sie Ihr Konto ein und laden Sie Active IQ Config Advisor herunter:
 +
 .. Melden Sie sich bei Ihrem bestehenden Konto an oder erstellen Sie ein Konto.
 +
-https://["NetApp Support-Registrierung"^]
+https://mysupport.netapp.com/eservice/public/now.do["NetApp Support-Registrierung"^]
 
 .. Registrieren Sie das System.
 +
-https://["NetApp Produktregistrierung"^]
+https://mysupport.netapp.com/eservice/registerSNoAction.do?moduleName=RegisterMyProduct["NetApp Produktregistrierung"^]
 
 .. Laden Sie Active IQ Config Advisor herunter.
 +
-https://["NetApp Downloads: Config Advisor"^]
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"^]
 
 
 
 . Überprüfen Sie den Systemzustand Ihres Systems, indem Sie Config Advisor ausführen.
-. Wechseln Sie nach Abschluss der Erstkonfiguration mit dem https://["ONTAP  ONTAP System Manager; Dokumentationsressourcen"^] Seite für Informationen über das Konfigurieren zusätzlicher Funktionen in ONTAP.
+. Wechseln Sie nach Abschluss der Erstkonfiguration mit dem https://www.netapp.com/data-management/oncommand-system-documentation/["ONTAP  ONTAP System Manager; Dokumentationsressourcen"^] Seite für Informationen über das Konfigurieren zusätzlicher Funktionen in ONTAP.
 
 
 --

@@ -15,14 +15,14 @@ Wenn ein Laufwerk ausfällt, meldet die Plattform eine Warnmeldung an die System
 
 * Das Ersatzlaufwerk muss von Ihrer Plattform unterstützt werden.
 +
-https://["NetApp Hardware Universe"]
+https://hwu.netapp.com["NetApp Hardware Universe"]
 
 * Wenn die SED-Authentifizierung aktiviert ist, müssen Sie die SED-Ersatzanweisungen in der ONTAP-Dokumentation verwenden.
 +
 Anweisungen in der ONTAP-Dokumentation beschreiben zusätzliche Schritte, die vor und nach dem Austausch einer SED ausgeführt werden müssen.
 
 +
-https://["ONTAP 9 – NetApp Verschlüsselungsleitfadens"]
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/home.html["ONTAP 9 – NetApp Verschlüsselungsleitfadens"]
 
 * Alle anderen Komponenten im System müssen ordnungsgemäß funktionieren. Wenden Sie sich andernfalls an den technischen Support.
 * Überprüfen Sie, ob das Laufwerk, das Sie entfernen, fehlgeschlagen ist, indem Sie das ausführen `storage disk show -broken` Befehl. Das ausgefallene Laufwerk wird in der Liste der ausgefallenen Laufwerke angezeigt. Falls nicht, sollten Sie warten und dann den Befehl erneut ausführen.
@@ -108,7 +108,7 @@ Sie müssen die automatische Laufwerkszuweisung auf beiden Controller-Modulen er
 
 .. Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.
 +
-Wenden Sie sich an den technischen Support unter https://["NetApp Support"], 888-463-8277 (Nordamerika), 00-800-44-638277 (Europa) oder +800-800-80-800 (Asien/Pazifik) wenn Sie die RMA-Nummer oder zusätzliche Hilfe beim Ersatzverfahren benötigen.
+Wenden Sie sich an den technischen Support unter https://mysupport.netapp.com/site/global/dashboard["NetApp Support"], 888-463-8277 (Nordamerika), 00-800-44-638277 (Europa) oder +800-800-80-800 (Asien/Pazifik) wenn Sie die RMA-Nummer oder zusätzliche Hilfe beim Ersatzverfahren benötigen.
 
 
 

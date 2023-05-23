@@ -48,7 +48,7 @@ Für den HA-Status kann einer der folgenden Werte vorliegen:
 . Schalten Sie die Netzteileinheiten ein, indem Sie den Wippschalter auf *EIN* stellen und warten, bis die Controller vollständig hochgefahren sind.
 . Überprüfen Sie nach dem Einschalten die Vorder- und Rückseite des Chassis und der Controller auf Fehler-LEDs.
 . Stellen Sie über SSH eine Verbindung mit der SP- oder BMC-IP-Adresse der Nodes her. Dies ist dieselbe Adresse, die zum Herunterfahren der Nodes verwendet wird.
-. Führen Sie zusätzliche Zustandsprüfungen durch, wie in beschrieben https://["Wie_ein_Cluster_Health_Check_with_a_script_in_ONTAP_durchführen"^]
+. Führen Sie zusätzliche Zustandsprüfungen durch, wie in beschrieben https://kb.netapp.com/onprem/ontap/os/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["Wie_ein_Cluster_Health_Check_with_a_script_in_ONTAP_durchführen"^]
 . Schalten Sie AutoSupport wieder ein (beenden Sie die Meldung zum Wartungsfenster):
 `system node autosupport invoke -node * -type all -message MAINT=end`
 
@@ -58,9 +58,9 @@ Für den HA-Status kann einer der folgenden Werte vorliegen:
 
 NOTE: Als Best Practice sollten Sie Folgendes tun:
 
-* Lösen Sie alle https://["Active IQ Wellness-Alarme und Risiken"^] (Active IQ nimmt Zeit in Anspruch, um Autosupports nach dem Einschalten zu verarbeiten - erwarten Sie eine Verzögerung der Ergebnisse)
-* Laufen https://["Active IQ Config Advisor"^]
-* Überprüfen Sie den Systemzustand mit https://["Wie_ein_Cluster_Health_Check_with_a_script_in_ONTAP_durchführen"^]
+* Lösen Sie alle https://activeiq.netapp.com/["Active IQ Wellness-Alarme und Risiken"^] (Active IQ nimmt Zeit in Anspruch, um Autosupports nach dem Einschalten zu verarbeiten - erwarten Sie eine Verzögerung der Ergebnisse)
+* Laufen https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^]
+* Überprüfen Sie den Systemzustand mit https://kb.netapp.com/onprem/ontap/os/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["Wie_ein_Cluster_Health_Check_with_a_script_in_ONTAP_durchführen"^]
 
 
 ====
@@ -184,4 +184,4 @@ Bestimmen Sie die Ursache des Problems.
 
 == Schritt 4: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
-Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://["Teilerückgabe  Austausch"] Seite für weitere Informationen.
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

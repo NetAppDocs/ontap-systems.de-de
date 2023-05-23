@@ -14,8 +14,8 @@ summary: Sie können Ihrem System ein I/O-Modul hinzufügen, indem Sie ein vorha
 Sie können Ihrem System ein I/O-Modul hinzufügen, indem Sie entweder einen NIC oder einen Speicheradapter durch einen neuen in einem vollständig bestückten System ersetzen oder einen neuen NIC- oder Speicheradapter in einen leeren Gehäusesteckplatz Ihres Systems hinzufügen.
 
 .Bevor Sie beginnen
-* Prüfen Sie die https://["NetApp Hardware Universe"] Vergewissern Sie sich, dass das neue I/O-Modul mit Ihrem System und Ihrer Version von ONTAP kompatibel ist.
-* Wenn mehrere Steckplätze verfügbar sind, überprüfen Sie die Steckplatzprioritäten in https://["NetApp Hardware Universe"] Und verwenden Sie die beste für Ihr I/O-Modul verfügbare Lösung.
+* Prüfen Sie die https://hwu.netapp.com/["NetApp Hardware Universe"] Vergewissern Sie sich, dass das neue I/O-Modul mit Ihrem System und Ihrer Version von ONTAP kompatibel ist.
+* Wenn mehrere Steckplätze verfügbar sind, überprüfen Sie die Steckplatzprioritäten in https://hwu.netapp.com/["NetApp Hardware Universe"] Und verwenden Sie die beste für Ihr I/O-Modul verfügbare Lösung.
 * Damit ein I/O-Modul unterbrechungsfrei hinzugefügt werden kann, müssen Sie den Zielcontroller übernehmen, die Abdeckung für die Steckplatzabdeckung im Zielsteckplatz entfernen oder ein vorhandenes I/O-Modul entfernen, das neue oder das neue I/O-Modul hinzufügen und dann den Zielcontroller zurückgeben.
 * Stellen Sie sicher, dass alle anderen Komponenten ordnungsgemäß funktionieren.
 
@@ -162,7 +162,7 @@ NOTE: Dadurch werden die PCIe-Karten und andere Komponenten neu initialisiert un
 . Automatisches Giveback aktivieren, falls deaktiviert: `storage failover modify -node local -auto-giveback true`
 . Wenn Sie die Steckplätze 3 und/oder 7 für Netzwerke verwenden, verwenden Sie den `storage port modify -node __<node name>__ -port __<port name>__ -mode network` Befehl zum Konvertieren des Steckplatzes für die Netzwerkverwendung.
 . Wiederholen Sie diese Schritte für Controller B.
-. Wenn Sie ein Storage-I/O-Modul installiert haben, installieren und verkabeln Sie Ihre SAS-Shelfs, wie unter beschrieben https://["Hot-Adding eines SAS-Shelfs"^].
+. Wenn Sie ein Storage-I/O-Modul installiert haben, installieren und verkabeln Sie Ihre SAS-Shelfs, wie unter beschrieben https://docs.netapp.com/us-en/ontap-systems/sas3/install-hot-add-shelf.html["Hot-Adding eines SAS-Shelfs"^].
 
 
 
@@ -188,14 +188,14 @@ Die LIFs werden automatisch migriert, wenn das Controller-Modul heruntergefahren
  a| 
 NIC-I/O-Modul mit weniger Ports
  a| 
-Die betroffenen LIFs werden permanent einem anderen Home-Port zugewiesen. Siehe https://["Migrieren eines LIF"^] Weitere Informationen über die Verwendung von System Manager zum permanenten Verschieben der LIFs
+Die betroffenen LIFs werden permanent einem anderen Home-Port zugewiesen. Siehe https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html["Migrieren eines LIF"^] Weitere Informationen über die Verwendung von System Manager zum permanenten Verschieben der LIFs
 
 
 
  a| 
 NIC-I/O-Modul mit Speicher-I/O-Modul
  a| 
-Verwenden Sie System Manager, um die LIFs dauerhaft zu verschiedenen Home Ports zu migrieren, wie in beschrieben https://["Migrieren eines LIF"^].
+Verwenden Sie System Manager, um die LIFs dauerhaft zu verschiedenen Home Ports zu migrieren, wie in beschrieben https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html["Migrieren eines LIF"^].
 
 |===
 
@@ -373,7 +373,7 @@ NOTE: Dadurch werden die PCIe-Karten und andere Komponenten neu initialisiert un
 
 +
 
-NOTE: Wenn beim Neustart ein Problem auftritt, lesen Sie https://["BURT 1494308 – das Herunterfahren der Umgebung kann während des Austauschs des I/O-Moduls ausgelöst werden"]
+NOTE: Wenn beim Neustart ein Problem auftritt, lesen Sie https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1494308["BURT 1494308 – das Herunterfahren der Umgebung kann während des Austauschs des I/O-Moduls ausgelöst werden"]
 
 
 
@@ -396,7 +396,7 @@ Verwenden Sie die `storage port modify -node *_<node name>__ -port *_<port name>
  a| 
 Speichermodul
  a| 
-Installieren und verkabeln Sie Ihre SAS-Shelfs, wie unter beschriebenhttps://["Hot-Adding eines SAS-Shelfs"^].
+Installieren und verkabeln Sie Ihre SAS-Shelfs, wie unter beschriebenhttps://docs.netapp.com/us-en/ontap-systems/sas3/install-hot-add-shelf.html["Hot-Adding eines SAS-Shelfs"^].
 
 |===
 . Wiederholen Sie diese Schritte für Controller B.
