@@ -40,7 +40,7 @@ Mindestens ein Netzteil liefert Strom für das Festplatten-Shelf.
 .2+| image:../media/drw_sas_fault_icon.png[""] .2+| Achtung  a| 
 Leuchtet gelb
  a| 
-Bei der Funktion mehrerer FRUs ist ein Fehler aufgetreten: Festplatten-Shelf, IOM12-Module oder Netzteile.
+Bei der Funktion einer weiteren FRU ist ein Fehler aufgetreten: Das Platten-Shelf, die Laufwerke, IOM12/IOM12B-Module oder die Netzteile.
 
 Überprüfen Sie Ereignismeldungen, um zu ermitteln, welche Korrekturmaßnahmen ergriffen werden müssen.
 
@@ -64,7 +64,7 @@ Leuchtet blau
  a| 
 Der Systemadministrator aktivierte diese LED-Funktion, um die physische Suche nach dem zu serviceenden Festplatten-Shelf zu erleichtern.
 
-Die Standort-LED auf der Bedieneranzeige und beide IOM12-Module leuchten, wenn diese LED-Funktion aktiviert ist. Nach 30 Minuten schalten sich die Standort-LEDs automatisch aus.
+Wenn diese LED-Funktion aktiviert ist, leuchten die Standort-LED auf dem Bedienfeld und beide IOM12/IOM12B-Module auf. Nach 30 Minuten schalten sich die Standort-LEDs automatisch aus.
 
 |===
 Je nach Ihrem Festplatten-Shelf-Modell sieht die Bedieneranzeige anders aus; die drei LEDs sind jedoch in der gleichen Weise angeordnet.
@@ -75,13 +75,13 @@ image::../media/drw_opd.gif[drw opd]
 
 
 
-== IOM12-Modul-LEDs
+== LEDs für IOM12/IOM12B-Modul
 
-Die LEDs am IOM12-Modul zeigen an, ob das Modul normal funktioniert, ob es für den I/O-Datenverkehr bereit ist und ob es Probleme mit der Hardware gibt.
+Die LEDs am IOM12/IOM12B-Modul zeigen an, ob das Modul normal funktioniert, ob es für I/O-Datenverkehr bereit ist und ob es Probleme mit der Hardware gibt.
 
-In der folgenden Tabelle werden die IOM12-Modul-LEDs beschrieben, die mit der Funktion des Moduls und der Funktion der einzelnen SAS-Ports am Modul verbunden sind.
+In der folgenden Tabelle werden die LEDs des IOM12/IOM12B-Moduls beschrieben, die mit der Funktion des Moduls und der Funktion der einzelnen SAS-Ports auf dem Modul verbunden sind.
 
-Das IOM12-Modul wird in den Festplatten-Shelfs DS460C, DS224C und DS212C verwendet.
+Das IOM12/IOM12B Modul wird in den Festplatten-Shelfs DS460C, DS224C und DS212C verwendet.
 
 [cols="4*"]
 |===
@@ -95,7 +95,7 @@ Achtung
  a| 
 Leuchtet gelb
  a| 
-IOM12-Modulfunktion: Es ist ein Fehler mit der Funktion des IOM12-Moduls aufgetreten.
+Funktion des IOM12/IOM12B-Moduls: Bei der Funktion des IOM12/IOM12B-Moduls ist ein Fehler aufgetreten.
 
 SAS-Port-Funktion: Weniger als alle vier SAS-Lanes haben einen Link eingerichtet (mit einem Adapter oder einem anderen Festplatten-Shelf).
 
@@ -121,14 +121,18 @@ Standort
  a| 
 Leuchtet blau
  a| 
-Der Systemadministrator aktivierte diese LED-Funktion, um das Festplatten-Shelf physisch mit dem ausgefallenen IOM12-Modul zu lokalisieren.
+Der Systemadministrator hat diese LED-Funktion aktiviert, um das Festplatten-Shelf mit dem ausgefallenen IOM12/IOM12B Modul physisch zu lokalisieren.
 
-Die Standort-LED auf der Bedieneranzeige und beide IOM12-Module leuchten, wenn diese LED-Funktion aktiviert ist. Nach 30 Minuten schalten sich die Standort-LEDs automatisch aus.
+Wenn diese LED-Funktion aktiviert ist, leuchten die Standort-LED auf dem Bedienfeld und beide IOM12/IOM12B-Module auf. Nach 30 Minuten schalten sich die Standort-LEDs automatisch aus.
 
 |===
-Die folgende Abbildung ist für ein IOM12-Modul:
+Die folgende Abbildung ist für ein IOM12-Modul dargestellt:
 
 image::../media/drw_iom12.gif[drw iom12]
+
+Die IOM12B-Module zeichnen sich durch einen blauen Streifen und ein „IOM12B“-Label aus:
+
+image::../media/iom12b.png[Iom12b]
 
 
 

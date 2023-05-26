@@ -13,9 +13,7 @@ summary: Dieser Abschnitt enthält detaillierte Schritt-für-Schritt-Anleitungen
 [role="lead"]
 Dieser Abschnitt enthält detaillierte Schritt-für-Schritt-Anleitungen zur Installation eines AFF C250-Systems.
 
-Wenn Sie über eine MetroCluster-Konfiguration verfügen, verwenden Sie den MetroCluster-Installationsinhalt.
-
-https://docs.netapp.com/us-en/ontap-metrocluster/index.html["MetroCluster-Dokumentation"^]
+Wenn Sie über eine MetroCluster-Konfiguration verfügen, verwenden Sie die https://docs.netapp.com/us-en/ontap-metrocluster/index.html["MetroCluster-Dokumentation"^].
 
 
 
@@ -23,17 +21,19 @@ https://docs.netapp.com/us-en/ontap-metrocluster/index.html["MetroCluster-Dokume
 
 Um Ihr AFF C250-System zu installieren, müssen Sie ein Konto erstellen und das System registrieren. Außerdem müssen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp für Ihr System inventarisieren und bestimmte Netzwerkinformationen erfassen.
 
-Sie müssen Zugriff auf die haben link:https://hwu.netapp.com["NetApp Hardware Universe"^] (HWU) enthält Informationen zu den Standortanforderungen sowie zusätzliche Informationen zu Ihrem konfigurierten System. Möglicherweise möchten Sie auch Zugriff auf den haben link:http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["Versionshinweise zu Ihrer Version von ONTAP"^] Weitere Informationen zu diesem System.
+HINWEIS:
+
+.Bevor Sie beginnen
+* Stellen Sie sicher, dass Sie Zugriff auf haben link:https://hwu.netapp.com["NetApp Hardware Universe"^] (HWU), um Informationen zu den Standortanforderungen zu erhalten.
+* Kunden mit speziellen Anforderungen an die Stromversorgung müssen diese überprüfen https://hwu.netapp.com["HWU"] Für Konfigurationsoptionen.
+* Stellen Sie sicher, dass Sie Zugriff auf haben link:http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["Versionshinweise zu Ihrer Version von ONTAP"^] Weitere Informationen zu diesem System.
+* Folgendes müssen Sie an Ihrer Website angeben:
++
+** Rack-Platz für das Storage-System
+** Kreuzschlitzschraubendreher #2
+** Zusätzliche Netzwerkkabel zum Anschließen des Systems an den Netzwerk-Switch und den Laptop oder die Konsole über einen Webbrowser.
 
 
-NOTE: Kunden mit besonderen Anforderungen an die Stromversorgung müssen die HWU bezüglich ihrer Konfigurationsoptionen prüfen.
-
-.Was Sie brauchen
-Folgendes müssen Sie an Ihrer Website angeben:
-
-* Rack-Platz für das Storage-System
-* Kreuzschlitzschraubendreher #2
-* Zusätzliche Netzwerkkabel zum Anschließen des Systems an den Netzwerk-Switch und Laptop oder die Konsole über einen Webbrowser
 
 
 .Schritte
@@ -165,222 +165,149 @@ image::../media/drw_affa250_weight_caution.png[drw affa250 Gewicht Achtung]
 
 
 
-== Schritt 3: Kabelcontroller
-
-Die Cluster Ihrer Plattform müssen über die Switch-Methode mit zwei Nodes oder die Netzwerkmethode für Cluster Interconnect verkabelt werden. Optional ist die Verkabelung zu den Fibre Channel- oder iSCSI-Hostnetzwerken oder Direct-Attached Storage möglich. Diese Verkabelung ist nicht exklusiv; Sie können Kabel zu einem Host-Netzwerk und Speicher haben.
-
-
-
-=== Erforderliche Verkabelung: Controller mit einem Cluster verkabeln
+== Schritt 3: Controller mit Cluster verkabeln
 
 Verkabeln Sie die Controller über eine Switch-Methode mit zwei Nodes oder über das Cluster Interconnect-Netzwerk mit einem Cluster.
 
-
-
-==== Option 1: Verkabeln eines 2-Node-Clusters ohne Switches
-
+[role="tabbed-block"]
+====
+.Option 1: Cluster mit zwei Nodes ohne Switches
+--
 Die Management-, Fibre Channel- und Daten- oder Host-Netzwerk-Ports der Controller-Module sind mit Switches verbunden. Die Cluster Interconnect-Ports sind an beiden Controller-Modulen verkabelt.
 
 .Bevor Sie beginnen
-Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.
-
-Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
-
+* Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.
+* Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
++
 image::../media/oie_cable_pull_tab_down.png[ziehen Sie die Lasche des oie-Kabels nach unten]
 
++
 
 NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
 
-Verwenden Sie die Animation oder die tabellarischen Schritte, um die Verkabelung zwischen den Controllern und den Switches abzuschließen:
+
+
+.Über diese Aufgabe
+Verwenden Sie die Animation oder die tabellarischen Schritte, um die Verkabelung zwischen den Controllern und den Switches abzuschließen. Führen Sie die Schritte an jedem Controller aus.
 
 .Animation – Verkabeln Sie einen 2-Node-Cluster ohne Switches
 video::beec3966-0a01-473c-a5de-ac68017fbf29[panopto]
-[cols="10,90"]
-|===
-| Schritt | Führen Sie an jedem Controller aus 
+.Schritte
+. Verkabeln Sie die Cluster Interconnect-Ports e0c mit e0c und e0d mit dem 25-GbE-Cluster Interconnect-Kabelimage:../media/oie_cable_sfp_gbe_copper.png[""]:
++
+image:../media/drw_affa250_tnsc_cabling.png[""]
 
-
- a| 
-image:../media/oie_legend_icon_1_lg.png[""]
- a| 
-Verkabeln Sie die Cluster-Interconnect-Ports mit dem 25-GbE-Cluster-Interconnect-Kabel miteinanderimage:../media/oie_cable_sfp_gbe_copper.png[""]:
-
-* e0c bis e0c
-* e0d bis e0dimage:../media/drw_affa250_tnsc_cabling.png[""]
-
-
-
-
- a| 
-image:../media/oie_legend_icon_2_dr.png[""]
- a| 
-Die Port-Schraubenschlüssel-Ports mit den Managementnetzwerk-Switches mit den RJ45-Kabeln verkabeln.
-
+. Die Port-Schraubenschlüssel-Ports mit den Managementnetzwerk-Switches mit den RJ45-Kabeln verkabeln.
++
 image::../media/drw_affa250_mgmt_cabling.png[drw affa250-Management-Kabel]
 
 
 
- a| 
-image:../media/oie_legend_icon_attn_symbol.png[""]
- a| 
-Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
 
-|===
-Informationen zum Abschließen der Einrichtung des Systems finden Sie unter link:install-detailed-guide.html#step-4-complete-system-setup-and-configuration["Schritt 4: System-Setup und -Konfiguration abschließen"].
+IMPORTANT: Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
 
-
-
-==== Option 2: Kabel ein geschalteter Cluster
-
+--
+.Option 2: Cluster mit Switch
+--
 Alle Ports auf den Controllern sind mit Switches verbunden; Cluster Interconnect, Management, Fibre Channel und Daten- oder Host-Netzwerk-Switches.
 
 .Bevor Sie beginnen
-Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.
-
-Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
-
+* Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.
+* Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
++
 image::../media/oie_cable_pull_tab_down.png[ziehen Sie die Lasche des oie-Kabels nach unten]
 
++
 
 NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
 
-Verwenden Sie die Animation oder die tabellarischen Schritte, um die Verkabelung zwischen den Controllern und den Switches abzuschließen:
+
+
+.Über diese Aufgabe
+Verwenden Sie die Animation oder die tabellarischen Schritte, um die Verkabelung zwischen den Controllern und den Switches abzuschließen. Führen Sie die Schritte an jedem Controller aus.
 
 .Animation - Verkabeln Sie ein geschalteter Cluster
 video::bf6759dc-4cbf-488e-982e-ac68017fbef8[panopto]
-[cols="10,90"]
-|===
-| Schritt | Führen Sie an jedem Controller aus 
+.Schritte
+. Verkabeln Sie die Cluster Interconnect Ports e0c und e0d mit den 25-GbE-Cluster Interconnect-Switches.
++
+image:../media/drw_affa250_switched_clust_cabling.png[""]
 
-
- a| 
-image:../media/oie_legend_icon_1_lg.png[""]
- a| 
-Verkabeln Sie die Cluster-Interconnect-Ports mit den 25-GbE-Cluster-Interconnect-Switches.
-
-* e0c
-* e0dimage:../media/drw_affa250_switched_clust_cabling.png[""]
-
-
-
-
- a| 
-image:../media/oie_legend_icon_2_dr.png[""]
- a| 
-Die Port-Schraubenschlüssel-Ports mit den Managementnetzwerk-Switches mit den RJ45-Kabeln verkabeln.
-
+. Die Port-Schraubenschlüssel-Ports mit den Managementnetzwerk-Switches mit den RJ45-Kabeln verkabeln.
++
 image::../media/drw_affa250_mgmt_cabling.png[drw affa250-Management-Kabel]
 
 
 
- a| 
-image:../media/oie_legend_icon_attn_symbol.png[""]
- a| 
-Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
 
-|===
-Informationen zum Abschließen der Einrichtung des Systems finden Sie unter link:install-detailed-guide.html#step-4-complete-system-setup-and-configuration["Schritt 4: System-Setup und -Konfiguration abschließen"].
+IMPORTANT: Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
+
+--
+====
 
 
-
-=== Optionale Verkabelung: Kabelkonfigurationsabhängige Optionen
+== Schritt 4: Kabel zum Host-Netzwerk oder Speicher (optional)
 
 Sie verfügen über eine konfigurationsabhängige optionale Verkabelung mit den Fibre Channel- oder iSCSI-Hostnetzwerken oder dem Direct-Attached Storage. Diese Verkabelung ist nicht exklusiv; Sie können die Verkabelung zu einem Host-Netzwerk und Speicher haben.
 
-
-
-==== Option 1: Kabel zu einem Fibre Channel-Hostnetzwerk
-
+[role="tabbed-block"]
+====
+.Option 1: Kabel zum Fibre-Channel-Hostnetzwerk
+--
 Fibre Channel-Ports auf den Controllern sind mit Fibre Channel Host-Netzwerk-Switches verbunden.
 
 .Bevor Sie beginnen
-Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.
-
-Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
-
+* Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.
+* Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
++
 image::../media/oie_cable_pull_tab_up.png[ziehen Sie die Lasche des oie-Kabels nach oben]
 
++
 
 NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
 
-[cols="10,90"]
-|===
-| Schritt | Führen Sie die Ausführung an jedem Controller-Modul aus 
 
 
- a| 
-1
- a| 
-Verkabeln Sie die Ports 2a bis 2d mit den FC-Host-Switches.image:../media/drw_affa250_fc_host_cabling.png[""]
+.Über diese Aufgabe
+Führen Sie den Schritt für jedes Controller-Modul durch.
 
-
-
- a| 
-2
- a| 
-Um andere optionale Kabel durchzuführen, wählen Sie aus:
-
-* <<Option 2: Kabel zu einem 25-GbE-Daten- oder Hostnetzwerk>>
-* <<Option 3: Controller mit einem einzelnen Festplatten-Shelf verkabeln>>
+.Schritte
+. Verkabeln Sie die Ports 2a bis 2d mit den FC-Host-Switches.
++
+image:../media/drw_affa250_fc_host_cabling.png[""]
 
 
 
-
- a| 
-3
- a| 
-Informationen zum Abschließen der Einrichtung des Systems finden Sie unter link:install-detailed-guide.html#step-4-complete-system-setup-and-configuration["Schritt 4: System-Setup und -Konfiguration abschließen"].
-
-|===
-
-
-==== Option 2: Kabel zu einem 25-GbE-Daten- oder Hostnetzwerk
-
+--
+.Option 2: Kabel zu einem 25-GbE-Daten- oder Hostnetzwerk
+--
 25-GbE-Ports auf den Controllern sind mit 25-GbE-Daten oder Host-Netzwerk-Switches verbunden.
 
 .Bevor Sie beginnen
-Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.
-
-Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
-
+* Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.
+* Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
++
 image::../media/oie_cable_pull_tab_up.png[ziehen Sie die Lasche des oie-Kabels nach oben]
 
++
 
 NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
 
-[cols="10,90"]
-|===
-| Schritt | Führen Sie die Ausführung an jedem Controller-Modul aus 
 
 
- a| 
-1
- a| 
-Verkabeln Sie die Ports e4a über e4d mit den 10 GbE Host Netzwerk-Switches.image:../media/drw_affa250_25gbe_host_cabling.png[""]
+.Über diese Aufgabe
+Führen Sie den Schritt für jedes Controller-Modul durch.
 
-
-
- a| 
-2
- a| 
-Um andere optionale Kabel durchzuführen, wählen Sie aus:
-
-* <<Option 1: Kabel zu einem Fibre Channel-Hostnetzwerk>>
-* <<Option 3: Controller mit einem einzelnen Festplatten-Shelf verkabeln>>
+.Schritte
+. Verkabeln Sie die Ports e4a über e4d mit den 10 GbE Host Netzwerk-Switches.
++
+image:../media/drw_affa250_25gbe_host_cabling.png[""]
 
 
 
-
- a| 
-3
- a| 
-Informationen zum Abschließen der Einrichtung des Systems finden Sie unter link:install-detailed-guide.html#step-4-complete-system-setup-and-configuration["Schritt 4: System-Setup und -Konfiguration abschließen"].
-
-|===
-
-
-==== Option 3: Controller mit einem einzelnen Festplatten-Shelf verkabeln
-
+--
+.Option 3: Controller zum einzelnen Festplatten-Shelf verkabeln
+--
 Verkabeln Sie jeden Controller mit den NSM-Modulen am NS224-Festplatten-Shelf.
 
 .Bevor Sie beginnen
@@ -391,40 +318,34 @@ image::../media/oie_cable_pull_tab_up.png[ziehen Sie die Lasche des oie-Kabels n
 
 NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
 
-Verwenden Sie die Animation oder die tabellarischen Schritte, um die Verkabelung zwischen den Controllern und dem einzelnen Shelf abzuschließen:
+.Über diese Aufgabe
+Schließen Sie die Verkabelung zwischen den Controllern und dem einzelnen Shelf anhand der Animation oder der tabellarischen Schritte ab. Führen Sie die Schritte für jedes Controller-Modul aus.
 
 .Animation - Verkabeln Sie die Controller mit einem einzigen NS224
 video::3f92e625-a19c-4d10-9028-ac68017fbf57[panopto]
-[cols="10,90"]
-|===
-| Schritt | Führen Sie die Ausführung an jedem Controller-Modul aus 
+.Schritte
+. Verbinden Sie Controller A mit dem Shelf.
++
+image:../media/drw_affa250_1shelf_cabling_a.png[""]
 
-
- a| 
-image:../media/oie_legend_icon_1_mb.png[""]
- a| 
-Controller A am Shelf verkabeln: image:../media/drw_affa250_1shelf_cabling_a.png[""]
-
-
-
- a| 
-image:../media/oie_legend_icon_2_lo.png[""]
- a| 
-Controller B am Shelf verkabeln: image:../media/drw_affa250_1shelf_cabling_b.png[""]
-
-|===
-Informationen zum Abschließen der Einrichtung des Systems finden Sie unter link:install-detailed-guide.html#step-4-complete-system-setup-and-configuration["Schritt 4: System-Setup und -Konfiguration abschließen"].
+. Verbinden Sie Controller B mit dem Shelf.
++
+image:../media/drw_affa250_1shelf_cabling_b.png[""]
 
 
 
-== Schritt 4: System-Setup und -Konfiguration abschließen
+--
+====
+
+
+== Schritt 5: System-Setup abschließen
 
 Führen Sie die Systemeinrichtung und -Konfiguration mithilfe der Cluster-Erkennung mit nur einer Verbindung zum Switch und Laptop durch, oder indem Sie direkt einen Controller im System verbinden und dann eine Verbindung zum Management-Switch herstellen.
 
-
-
-=== Option 1: Führen Sie die Systemeinrichtung und -Konfiguration durch, wenn die Netzwerkerkennung aktiviert ist
-
+[role="tabbed-block"]
+====
+.Option 1: Wenn die Netzwerkerkennung aktiviert ist
+--
 Wenn die Netzwerkerkennung auf Ihrem Laptop aktiviert ist, können Sie das System mit der automatischen Cluster-Erkennung einrichten und konfigurieren.
 
 .Schritte
@@ -486,10 +407,9 @@ https://mysupport.netapp.com/site/tools["NetApp Downloads: Config Advisor"]
 . Wechseln Sie nach Abschluss der Erstkonfiguration mit dem link:https://www.netapp.com/data-management/oncommand-system-documentation/["ONTAP  ONTAP System Manager; Dokumentationsressourcen"^] Seite für Informationen über das Konfigurieren zusätzlicher Funktionen in ONTAP.
 
 
-
-
-=== Option 2: Führen Sie die Systemeinrichtung und -Konfiguration durch, wenn die Netzwerkerkennung nicht aktiviert ist
-
+--
+.Option 2: Wenn die Netzwerkerkennung nicht aktiviert ist
+--
 Wenn die Netzwerkerkennung auf Ihrem Laptop nicht aktiviert ist, müssen Sie die Konfiguration und das Setup mit dieser Aufgabe abschließen.
 
 .Schritte
@@ -556,20 +476,14 @@ NOTE: Das Format für die Adresse ist +https://x.x.x.x+.
 
 . Richten Sie Ihr Konto ein und laden Sie Active IQ Config Advisor herunter:
 +
-.. Melden Sie sich bei Ihrem bestehenden Konto an oder erstellen Sie ein Konto.
-+
-https://mysupport.netapp.com/site/user/registration["NetApp Support-Registrierung"]
-
-.. Registrieren Sie das System.
-+
-https://mysupport.netapp.com/site/systems/register["NetApp Produktregistrierung"]
-
-.. Laden Sie Active IQ Config Advisor herunter.
-+
-https://mysupport.netapp.com/site/tools["NetApp Downloads: Config Advisor"]
-
+.. Melden Sie sich bei Ihrem an https://mysupport.netapp.com/site/user/registration["Vorhandenes Konto erstellen oder ein Konto erstellen"].
+.. https://mysupport.netapp.com/site/systems/register["Registrieren"] Ihrem System.
+.. Download https://mysupport.netapp.com/site/tools["Active IQ Config Advisor"].
 
 
 . Überprüfen Sie den Systemzustand Ihres Systems, indem Sie Config Advisor ausführen.
 . Wechseln Sie nach Abschluss der Erstkonfiguration mit dem link:https://www.netapp.com/data-management/oncommand-system-documentation/["ONTAP  ONTAP System Manager; Dokumentationsressourcen"^] Seite für Informationen über das Konfigurieren zusätzlicher Funktionen in ONTAP.
 
+
+--
+====

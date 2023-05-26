@@ -4504,9 +4504,6 @@
   <block id="ecdf5c8847c01f217fee685736ae0644" category="doc">Detaillierte Schritte - AFF A250</block>
   <block id="bf34833ec8e983c1342c0fbebc12c347" category="paragraph">Um Ihr AFF A250-System zu installieren, müssen Sie ein Konto erstellen und das System registrieren. Außerdem müssen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp für Ihr System inventarisieren und bestimmte Netzwerkinformationen erfassen.</block>
   <block id="66316dee9c1b4739766a18fe76f0cf3d" category="admonition">Kunden mit besonderen Anforderungen an die Stromversorgung müssen die HWU bezüglich ihrer Konfigurationsoptionen prüfen.</block>
-  <block id="f2633075828362900ca73919da819a29" category="paragraph">Verkabeln Sie die Cluster-Interconnect-Ports mit dem 25-GbE-Cluster-Interconnect-Kabel miteinander<block ref="6b6a40b68f5814cad1750bfff7e3b927" category="inline-image-macro-rx" type="image"></block>:</block>
-  <block id="58c441d64314c2082defd9f79f4f5d89" category="paragraph">Verkabeln Sie die Ports 2a bis 2d mit den FC-Host-Switches.<block ref="8c69ea1e01dd0a307f5cc8e68a746e18" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="291805e5f6e41a41cff79176c18b9bbc" category="paragraph">Verkabeln Sie die Ports e4a über e4d mit den 10 GbE Host Netzwerk-Switches.<block ref="4d47a33513883c069cdd23a129a70f98" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0e103ad5ee434b2faca19141061cbe51" category="paragraph">Verkabeln Sie jeden Controller mit den NSM-Modulen am NS224-Festplatten-Shelf.</block>
   <block id="1f684a558f672dca1e5cd104fa082470" category="doc">Komplette Systemwiederherstellung - AFF A250</block>
   <block id="d4ec9448190c18c9b85b138eae5cfe04" category="doc">Integrierte Verschlüsselungsschlüssel - AFF A250</block>
@@ -5209,7 +5206,6 @@
   <block id="c61664b995859451c9b18dba9398d36e" category="cell"><block ref="c61664b995859451c9b18dba9398d36e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="2aa97e44cace7cb882c9dcba32940f8f" category="cell">Achtung</block>
   <block id="75e6252bb5a504fc80a435f3c6fc7c82" category="paragraph">Leuchtet gelb</block>
-  <block id="a91f4dbac042acc9674c8f30f0009e10" category="paragraph">Bei der Funktion mehrerer FRUs ist ein Fehler aufgetreten: Festplatten-Shelf, IOM12-Module oder Netzteile.</block>
   <block id="42532600d34fb5884550b5ba06c71866" category="paragraph">Überprüfen Sie Ereignismeldungen, um zu ermitteln, welche Korrekturmaßnahmen ergriffen werden müssen.</block>
   <block id="5bb2376fdbdd8b69f07ffed693784a70" category="paragraph">Blinkt gelb</block>
   <block id="59ee562359b2b7e862570a57471bda07" category="paragraph">Die Shelf-ID befindet sich in einem ausstehenden Status.</block>
@@ -5217,21 +5213,13 @@
   <block id="965881f89ebf03830d8c6f3d7b4af499" category="paragraph"><block ref="965881f89ebf03830d8c6f3d7b4af499" category="inline-image-macro-rx" type="image"></block></block>
   <block id="d4300cfa84e2e26784840198a0cbd030" category="paragraph">Leuchtet blau</block>
   <block id="dcef7e6e25f4d0285a65c6e2456b274e" category="paragraph">Der Systemadministrator aktivierte diese LED-Funktion, um die physische Suche nach dem zu serviceenden Festplatten-Shelf zu erleichtern.</block>
-  <block id="2c64d9557c9a2aa50849a46c94063cbf" category="paragraph">Die Standort-LED auf der Bedieneranzeige und beide IOM12-Module leuchten, wenn diese LED-Funktion aktiviert ist. Nach 30 Minuten schalten sich die Standort-LEDs automatisch aus.</block>
   <block id="735b119b02d7cf2ed75726f0f7dd0561" category="paragraph">Je nach Ihrem Festplatten-Shelf-Modell sieht die Bedieneranzeige anders aus; die drei LEDs sind jedoch in der gleichen Weise angeordnet.</block>
   <block id="5d405fcbf9fe0221fc5a388844b43691" category="paragraph">Die folgende Abbildung zeigt eine DS224C Festplatten-Shelf-Bedieneranzeige mit aufgelaufter Endkappe:</block>
   <block id="619a6c64b692f7c7d530acc10ff465bd" category="image-alt">drw opd</block>
-  <block id="578194735681dfccf0ab5a7f231ad3eb" category="section-title">IOM12-Modul-LEDs</block>
-  <block id="4bd9e80f0885938495ab10fad1f15091" category="paragraph">Die LEDs am IOM12-Modul zeigen an, ob das Modul normal funktioniert, ob es für den I/O-Datenverkehr bereit ist und ob es Probleme mit der Hardware gibt.</block>
-  <block id="43887fc5a62c282f3e5be085309f0a65" category="paragraph">In der folgenden Tabelle werden die IOM12-Modul-LEDs beschrieben, die mit der Funktion des Moduls und der Funktion der einzelnen SAS-Ports am Modul verbunden sind.</block>
-  <block id="1a2971baecb92cc9a6f46a52fdbc4383" category="paragraph">Das IOM12-Modul wird in den Festplatten-Shelfs DS460C, DS224C und DS212C verwendet.</block>
-  <block id="16dd5aba0d994e6b3b2ad2851ff70375" category="paragraph">IOM12-Modulfunktion: Es ist ein Fehler mit der Funktion des IOM12-Moduls aufgetreten.</block>
   <block id="06193ae5b75dce356ceef150051cbba7" category="paragraph">SAS-Port-Funktion: Weniger als alle vier SAS-Lanes haben einen Link eingerichtet (mit einem Adapter oder einem anderen Festplatten-Shelf).</block>
   <block id="96c5571f7b6648b76366cba9755c4f43" category="paragraph">LNK</block>
   <block id="19e79e9ef0fa80f9b6aa5a3f8e5bb42c" category="paragraph">Port-Link</block>
   <block id="e35abb0fc157a472260600f52f6994cc" category="paragraph">Mindestens eine der vier SAS Lanes hat einen Link eingerichtet (mit einem Adapter oder einem anderen Festplatten-Shelf).</block>
-  <block id="85eed6af8a7071f352ad78220d797f3b" category="paragraph">Der Systemadministrator aktivierte diese LED-Funktion, um das Festplatten-Shelf physisch mit dem ausgefallenen IOM12-Modul zu lokalisieren.</block>
-  <block id="11e1a575acb39145b730906b42d580a1" category="paragraph">Die folgende Abbildung ist für ein IOM12-Modul:</block>
   <block id="f2105620d136a321a397d0310e98f133" category="image-alt">drw iom12</block>
   <block id="2aa3adf1c0ff2c8444260a0e888c02bc" category="section-title">Netzteil-LEDs</block>
   <block id="09cdf702b67ff26e9a51e5bd564332db" category="paragraph">Die LEDs am Netzteil zeigen an, ob das Netzteil normal funktioniert oder es Hardwareprobleme gibt.</block>
@@ -7946,4 +7934,48 @@
   <block id="6266bb335022aad7813f5a92f40c41bb" category="list-text">Konfigurieren Sie das Cluster mithilfe von System Manager auf Ihrem Laptop oder der Konsole.</block>
   <block id="b1e0a8fb86dde21901d58064a47983ae" category="paragraph">Erfahren Sie, wie Sie Ihr System vom Rack über die Verkabelung bis zum ersten Systemauflegen installieren. Nutzung <block ref="2e869cac122e3063f7b418f03cb3fa26" category="inline-link-macro-rx"></block> Wenn Sie mit der Installation von NetApp Systemen vertraut sind.</block>
   <block id="78504a496ba3e0d8a682fe929b4d61d9" category="paragraph"><block ref="78504a496ba3e0d8a682fe929b4d61d9" category="inline-link-macro-rx"></block></block>
+  <block id="79386daaa48888ed81c00ef493d329e9" category="paragraph">Wenn Sie über eine MetroCluster-Konfiguration verfügen, verwenden Sie die<block ref="d4b6e949edad9293b177bc65e2892165" category="inline-link-rx"></block>.</block>
+  <block id="9b9935ad5969c28de13381a2e512b47c" category="paragraph">HINWEIS:</block>
+  <block id="25ca1a1b0a04d8f5341dca5c9e9eed8a" category="list-text">Stellen Sie sicher, dass Sie Zugriff auf haben <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block> (HWU), um Informationen zu den Standortanforderungen zu erhalten.</block>
+  <block id="b00f162fad84edda46484fcada242a8c" category="inline-link">HWU</block>
+  <block id="0b596d3b9a72deeb4bca2c3f00662c30" category="list-text">Kunden mit speziellen Anforderungen an die Stromversorgung müssen diese überprüfen<block ref="911e5b8f28f318acfdc1d057cd36b40e" category="inline-link-rx"></block> Für Konfigurationsoptionen.</block>
+  <block id="50bb0852475aeb4d407a01f8d637ccae" category="list-text">Stellen Sie sicher, dass Sie Zugriff auf haben <block ref="515d1814cb0f36c56a64a6574d93c9df" category="inline-link-macro-rx"></block> Weitere Informationen zu diesem System.</block>
+  <block id="eba4465f65ac7360936f8f238b09999c" category="list-text">Zusätzliche Netzwerkkabel zum Anschließen des Systems an den Netzwerk-Switch und den Laptop oder die Konsole über einen Webbrowser.</block>
+  <block id="c7e4a9edbb9ec3bb0052efd3332763a3" category="section-title">Schritt 3: Controller mit Cluster verkabeln</block>
+  <block id="089103029c56ad66034dfe6bd70cfdcb" category="paragraph">Verwenden Sie die Animation oder die tabellarischen Schritte, um die Verkabelung zwischen den Controllern und den Switches abzuschließen. Führen Sie die Schritte an jedem Controller aus.</block>
+  <block id="38e134ad6d648c53626268f8b6a82510" category="list-text">Verkabeln Sie die Cluster Interconnect-Ports e0c mit e0c und e0d mit dem 25-GbE-Cluster Interconnect-Kabel<block ref="6b6a40b68f5814cad1750bfff7e3b927" category="inline-image-macro-rx" type="image"></block>:</block>
+  <block id="5d8d8fe980b572286e75db6ff18d3cbc" category="paragraph"><block ref="5d8d8fe980b572286e75db6ff18d3cbc" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="84e68180cd83b83ca12149fed857f1ac" category="list-text">Verkabeln Sie die Cluster Interconnect Ports e0c und e0d mit den 25-GbE-Cluster Interconnect-Switches.</block>
+  <block id="ee3f9d0ec20204c7d48b52d859e31c4d" category="paragraph"><block ref="ee3f9d0ec20204c7d48b52d859e31c4d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="40a8f8b2f4ff5acd74232849a99a8a04" category="section-title">Schritt 4: Kabel zum Host-Netzwerk oder Speicher (optional)</block>
+  <block id="03c1ffcb3fc95b8bfccde9eae4c521cb" category="open-title">Option 1: Kabel zum Fibre-Channel-Hostnetzwerk</block>
+  <block id="57f232cf1846457526a67fb857654097" category="paragraph">Führen Sie den Schritt für jedes Controller-Modul durch.</block>
+  <block id="8c69ea1e01dd0a307f5cc8e68a746e18" category="paragraph"><block ref="8c69ea1e01dd0a307f5cc8e68a746e18" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4d47a33513883c069cdd23a129a70f98" category="paragraph"><block ref="4d47a33513883c069cdd23a129a70f98" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="db24b10d7ccee1e6c17be0c81439dce8" category="open-title">Option 3: Controller zum einzelnen Festplatten-Shelf verkabeln</block>
+  <block id="8fb418cbd362c972abff9e15e5bbef81" category="paragraph">Schließen Sie die Verkabelung zwischen den Controllern und dem einzelnen Shelf anhand der Animation oder der tabellarischen Schritte ab. Führen Sie die Schritte für jedes Controller-Modul aus.</block>
+  <block id="26f36b74d2b5930cb4c8a791d8825169" category="list-text">Verbinden Sie Controller A mit dem Shelf.</block>
+  <block id="18f599f35e14d88c5e3fb9f75197e3c8" category="paragraph"><block ref="18f599f35e14d88c5e3fb9f75197e3c8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4e9ad1feb0945eeeb8a1d11bf9bf539e" category="list-text">Verbinden Sie Controller B mit dem Shelf.</block>
+  <block id="f822d74484a7588f78ead07185e89b82" category="paragraph"><block ref="f822d74484a7588f78ead07185e89b82" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a363ebbaf5776be0c980b7b95cd927d3" category="inline-link">Vorhandenes Konto erstellen oder ein Konto erstellen</block>
+  <block id="50350463d29f0dd6d00e1fbb6e5ee301" category="list-text">Melden Sie sich bei Ihrem an<block ref="7d7bd8ac0b1a83207c698de0ebfd0970" category="inline-link-rx"></block>.</block>
+  <block id="d8c9578f313af4d30124d95a9a82f55a" category="list-text"><block ref="45857239f243800c6028823fe1bb7167" category="inline-link-macro-rx"></block> Ihrem System.</block>
+  <block id="42608111c1df97efb2c5e1785a0c9236" category="paragraph">Verkabeln Sie die Controller mit der Cluster-Methode ohne Switch mit zwei Nodes oder mit der Cluster Interconnect-Netzwerkmethode.</block>
+  <block id="940761e28da4b693854d6f9dd90cf253" category="video-title">Animation - zwei-Node-Cluster ohne Switch verkabeln</block>
+  <block id="e8da070fbb7ed9f4e58234be76f00e95" category="list-text">Verwenden Sie das 25-GbE-Cluster-Interconnect-Kabel, um die Cluster-Interconnect-Ports e0c mit e0c und e0d mit e0d zu verbinden.</block>
+  <block id="c26780590002425e46bd9c5734245466" category="paragraph">Verwenden Sie die Animation oder die Schritte, um die Verkabelung zwischen den Controllern und den Switches abzuschließen. Führen Sie die Schritte an jedem Controller aus.</block>
+  <block id="76cc458c90f11508f1ec83bed8953ef1" category="video-title">Animation - Cluster mit Kabelverschaltung</block>
+  <block id="f7d77014760bf79c9b9469d98b1e031b" category="admonition">Wenn Sie den Anschluss einsetzen, sollten Sie spüren, dass er einrastet. Wenn Sie nicht fühlen, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.</block>
+  <block id="ed7a3f593115fbd1332dbd3743a9967c" category="paragraph">Führen Sie den folgenden Schritt für jedes Controller-Modul durch.</block>
+  <block id="63acd4af39a4e0dda6fe6c3d381743a7" category="open-title">Option 2: Verkabelung zu 25 GbE Daten oder Host-Netzwerk</block>
+  <block id="2b5c65d5b0abc122c914eec510d083ae" category="paragraph">Bei der Funktion einer weiteren FRU ist ein Fehler aufgetreten: Das Platten-Shelf, die Laufwerke, IOM12/IOM12B-Module oder die Netzteile.</block>
+  <block id="179393dc95adf2d21fee0c7a4ac43a35" category="paragraph">Wenn diese LED-Funktion aktiviert ist, leuchten die Standort-LED auf dem Bedienfeld und beide IOM12/IOM12B-Module auf. Nach 30 Minuten schalten sich die Standort-LEDs automatisch aus.</block>
+  <block id="a0e54d8ccf5f2c0e80dde9c632b59a06" category="section-title">LEDs für IOM12/IOM12B-Modul</block>
+  <block id="d513e2f89875e1250513a03a56fb4689" category="paragraph">Die LEDs am IOM12/IOM12B-Modul zeigen an, ob das Modul normal funktioniert, ob es für I/O-Datenverkehr bereit ist und ob es Probleme mit der Hardware gibt.</block>
+  <block id="94d8e14101b7f4ab9a744f00e8e2fe29" category="paragraph">In der folgenden Tabelle werden die LEDs des IOM12/IOM12B-Moduls beschrieben, die mit der Funktion des Moduls und der Funktion der einzelnen SAS-Ports auf dem Modul verbunden sind.</block>
+  <block id="90f41460d3ad083904e7b340e4b39ece" category="paragraph">Das IOM12/IOM12B Modul wird in den Festplatten-Shelfs DS460C, DS224C und DS212C verwendet.</block>
+  <block id="1ed7e5bc49edc6dcd82d94adaa712607" category="paragraph">Funktion des IOM12/IOM12B-Moduls: Bei der Funktion des IOM12/IOM12B-Moduls ist ein Fehler aufgetreten.</block>
+  <block id="661a269cef9bb91a2f8b4d733118a2eb" category="paragraph">Der Systemadministrator hat diese LED-Funktion aktiviert, um das Festplatten-Shelf mit dem ausgefallenen IOM12/IOM12B Modul physisch zu lokalisieren.</block>
+  <block id="a78123fcf223e9fb14720d2a07e2ef85" category="paragraph">Die folgende Abbildung ist für ein IOM12-Modul dargestellt:</block>
 </blocks>
