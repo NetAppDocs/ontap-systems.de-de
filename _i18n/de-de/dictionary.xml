@@ -3968,7 +3968,6 @@
   <block id="20fb63d96f0c0c1b27482e0044df988a" category="paragraph">Der Vorgang zum zurückwechseln ist abgeschlossen, wenn sich die Cluster im befinden<block ref="fea087517c26fadd409bd4b9dc642555" prefix=" " category="inline-code"></block> Bundesland:</block>
   <block id="96079f0a36e437f5bfadad93d5fec62f" category="paragraph">Wenn ein Wechsel eine lange Zeit in Anspruch nimmt, können Sie den Status der in-progress-Basispläne über die überprüfen<block ref="32762e78cfa49b07513c4f60c2b0a741" prefix=" " category="inline-code"></block> Befehl.</block>
   <block id="bebab338ce208a8365444e4ebe4efe11" category="list-text">Wiederherstellung beliebiger SnapMirror oder SnapVault Konfigurationen</block>
-  <block id="36db73d94b30571d5e78b69926c4ee10" category="doc">Einsatz von Controller-Modul-Ersatz – FAS8200</block>
   <block id="4fa4535552a76ba6abb695db42b48161" category="paragraph">Beachten Sie, dass das Verfahren zum Austausch des Controllers bei einem Controller in einer vier oder acht MetroCluster-Konfiguration mit dem bei einem HA-Paar identisch ist. Es sind keine MetroCluster-spezifischen Schritte erforderlich, da der Ausfall auf ein HA-Paar beschränkt ist und Storage Failover-Befehle zur unterbrechungsfreien Ausführung während des Austauschs genutzt werden können.</block>
   <block id="18286caf45baac43fedf94bfeaff35fa" category="list-text">Alle PCIe-Karten, die vom alten Controller-Modul in das neue Controller-Modul verschoben oder aus dem vorhandenen Bestand am Kundenstandort hinzugefügt wurden, müssen vom Ersatzcontroller-Modul unterstützt werden.</block>
   <block id="9f3fe6619f3cc21d2cc057e260c9a3ae" category="doc">Fahren Sie den beeinträchtigten Controller herunter – FAS8200</block>
@@ -7867,7 +7866,6 @@
   <block id="841cf46b69a4b2c782c980b795074554" category="list-text">Stellen Sie sicher, dass Sie die folgenden Elemente an Ihrem Standort haben:</block>
   <block id="85220111cf8764a6d5eefe427de4fbde" category="paragraph">Installieren Sie Ihr System gegebenenfalls in einem 4-Säulen-Rack oder NetApp Systemschrank.</block>
   <block id="1ccb5aa93b58b2e0cbfd6015e33c6a90" category="paragraph">Verkabeln Sie die Controller mit dem Netzwerk unter Verwendung der Cluster-Methode ohne Switch mit zwei Nodes oder der Cluster Interconnect-Netzwerkmethode.</block>
-  <block id="22cf31ea4e88d1269c525c08a9c8fdff" category="paragraph">UTA2-Ports, Ethernet-Datennetzwerk und Management-Ports auf den Controller-Modulen sind mit Switches verbunden. Die Cluster Interconnect-Ports sind an beiden Controller-Modulen verkabelt.</block>
   <block id="434c44657e12928e06a65124dfb073b0" category="paragraph">Erfahren Sie, wie Sie ein 2-Node-Cluster ohne Switches verkabeln.</block>
   <block id="f7284f28e338cb3e10e42e8214151229" category="paragraph">Sie können die UTA2-Datennetzwerkports oder die ethernet-Datennetzwerkports verwenden, um die Controller mit Ihrem Host-Netzwerk zu verbinden. Beachten Sie bei der Verkabelung zwischen den Controllern und den Switches die folgenden Verkabelungsabbildungen.</block>
   <block id="48114454330840b73674b4d456819a4e" category="list-text">UTA2-Datennetzwerkkonfigurationen</block>
@@ -7978,4 +7976,17 @@
   <block id="1ed7e5bc49edc6dcd82d94adaa712607" category="paragraph">Funktion des IOM12/IOM12B-Moduls: Bei der Funktion des IOM12/IOM12B-Moduls ist ein Fehler aufgetreten.</block>
   <block id="661a269cef9bb91a2f8b4d733118a2eb" category="paragraph">Der Systemadministrator hat diese LED-Funktion aktiviert, um das Festplatten-Shelf mit dem ausgefallenen IOM12/IOM12B Modul physisch zu lokalisieren.</block>
   <block id="a78123fcf223e9fb14720d2a07e2ef85" category="paragraph">Die folgende Abbildung ist für ein IOM12-Modul dargestellt:</block>
+  <block id="ab821717031a58a1a9d01409f017bf49" category="doc">Überblick über den Austausch von Controller-Modulen – FAS8200</block>
+  <block id="925bdd1d7aad5ef53490c52842590538" category="paragraph">In der folgenden Tabelle wird der Kabeltyp mit der Aufrufnummer und der Kabelfarbe in den Abbildungen für Cluster-Netzwerkverkabelungen ohne zwei Knoten und geswitchte Cluster-Netzwerkverkabelungen aufgeführt.</block>
+  <block id="d0afed67605524c7117536fe92ce3da8" category="cell">Verbindungstyp</block>
+  <block id="985b78c75a9bb79d8cb44d78a86e22a9" category="image-alt">oie-Legendensymbol 2 o</block>
+  <block id="73bfdf61f88c1cff337d81f80cb733d7" category="paragraph">Controller zum Hosten von Datennetzwerk-Switches</block>
+  <block id="2ef47c54a75d2ffe153e57585c5ef8eb" category="image-alt">oie Legend Icon 3 lp</block>
+  <block id="3be4d8a4a3ae9d68dd7ac9118685e99e" category="paragraph">Controller für den Management-Netzwerk-Switch</block>
+  <block id="c00351b5bbad5f2b55b1e523113b08ab" category="paragraph">Beachten Sie bei der Verkabelung zwischen den Controllern und den Switches die folgenden Verkabelungsabbildungen.</block>
+  <block id="70c67999b75c623ee9876e398ee7ebb9" category="list-text">Verkabeln Sie die Controller entweder mit einem UTA2-Datennetzwerk oder einem Ethernet-Netzwerk.</block>
+  <block id="4eb04196699d24394da6f4bdb0a6cd76" category="doc">Ersetzen Sie die Echtzeituhr-Batterie - AFF A220 und FAS2700</block>
+  <block id="3529feb1f15a906788e97c962f5f18b5" category="doc">Ersetzen Sie den Echtzeitakku - AFF A150</block>
+  <block id="74fef60bd66705310b79dcd3e46f4894" category="doc">Ersetzen Sie das SSD- oder Festplattenlaufwerk – AFF A150</block>
+  <block id="d646909dddf2c419f953113a67e04618" category="doc">Ersetzen Sie ein DIMM-Modul – AFF A150</block>
 </blocks>
