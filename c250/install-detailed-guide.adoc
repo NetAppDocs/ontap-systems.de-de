@@ -364,10 +364,11 @@ Das System beginnt zu booten. Das erste Booten kann bis zu acht Minuten dauern.
 +
 Weitere Informationen finden Sie in der Online-Hilfe Ihres Notebooks.
 
-. Schließen Sie Ihren Laptop mithilfe der Animation an den Management-Switch an:
-+
-.Animation - Verbinden Sie Ihren Laptop mit dem Management-Switch
-video::d61f983e-f911-4b76-8b3a-ab1b0066909b[panopto]
+. Verbinden Sie Ihren Laptop mit dem Management-Switch:
+
+
+image::../media/dwr_laptop_to_switch_only.svg[dwr-Laptop nur zum Umschalten]
+
 . Wählen Sie ein ONTAP-Symbol aus, um es zu ermitteln:
 +
 image::../media/drw_autodiscovery_controler_select.png[wählen sie den drw-Kontroller für die automatische Ermittlung aus]
@@ -420,11 +421,11 @@ Wenn die Netzwerkerkennung auf Ihrem Laptop nicht aktiviert ist, müssen Sie die
 
 NOTE: Informationen zur Konfiguration des Konsolenport finden Sie in der Online-Hilfe Ihres Laptops oder der Konsole.
 
-.. Verbinden Sie den Laptop oder die Konsole mit dem Switch im Management-Subnetz.
+.. Schließen Sie den Laptop oder die Konsole an den Management-Switch an.
 +
-image::../media/drw_console_client_mgmt_subnet_affa250.png[drw-Konsole-Client-Management-Subnetz affe250]
+image::../media/dwr_laptop_to_switch_only.svg[dwr-Laptop nur zum Umschalten]
 
-.. Weisen Sie dem Laptop oder der Konsole eine TCP/IP-Adresse zu. Verwenden Sie dabei eine Adresse, die sich im Management-Subnetz befindet.
+.. Weisen Sie dem Laptop oder der Konsole eine TCP/IP-Adresse zu. Verwenden Sie dazu eine Adresse auf dem Management-Switch.
 
 
 . Verwenden Sie die folgende Animation, um Shelf-IDs für ein oder mehrere Festplatten-Shelfs einzuschalten und festzulegen:

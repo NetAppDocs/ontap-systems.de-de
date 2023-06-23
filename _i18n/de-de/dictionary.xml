@@ -7867,12 +7867,10 @@
   <block id="85220111cf8764a6d5eefe427de4fbde" category="paragraph">Installieren Sie Ihr System gegebenenfalls in einem 4-Säulen-Rack oder NetApp Systemschrank.</block>
   <block id="1ccb5aa93b58b2e0cbfd6015e33c6a90" category="paragraph">Verkabeln Sie die Controller mit dem Netzwerk unter Verwendung der Cluster-Methode ohne Switch mit zwei Nodes oder der Cluster Interconnect-Netzwerkmethode.</block>
   <block id="434c44657e12928e06a65124dfb073b0" category="paragraph">Erfahren Sie, wie Sie ein 2-Node-Cluster ohne Switches verkabeln.</block>
-  <block id="f7284f28e338cb3e10e42e8214151229" category="paragraph">Sie können die UTA2-Datennetzwerkports oder die ethernet-Datennetzwerkports verwenden, um die Controller mit Ihrem Host-Netzwerk zu verbinden. Beachten Sie bei der Verkabelung zwischen den Controllern und den Switches die folgenden Verkabelungsabbildungen.</block>
   <block id="48114454330840b73674b4d456819a4e" category="list-text">UTA2-Datennetzwerkkonfigurationen</block>
   <block id="e6746873d55c9a028bc3eae1ed6cd0db" category="list-text">Ethernet-Netzwerkkonfigurationen</block>
   <block id="f9655777cbdbded95ebaf4fdc1ed1c83" category="paragraph">Führen Sie die folgenden Schritte für jedes Controller-Modul durch.</block>
   <block id="4b7d254b4cff665eba8f89aeb96e16cb" category="list-text">Verkabeln Sie die Cluster Interconnect Ports e0a mit e0a und e0b mit e0b mit dem Cluster Interconnect-Kabel. +<block ref="9a0e89c71564aa69ffecf67eb610bc96" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="365d382b2d9ecca9b0d40171c69b38ff" category="list-text">Führen Sie einen der folgenden Schritte aus:</block>
   <block id="54254076225178d5782bc5158de2ffd3" category="list-text">Verwenden Sie einen der folgenden Kabeltypen, um die Datenports e0c/0c und e0d/0d oder e0e/0e und e0f/0f mit dem Host-Netzwerk zu verkabeln.</block>
   <block id="43083753a8bd4d126f4e9d226b24d42f" category="list-text">Verwenden Sie das Cat 6 RJ45-Kabel, um die e0c- über e0f-Ports mit Ihrem Hostnetzwerk zu verkabeln. In der folgenden Abbildung.</block>
   <block id="5cb31a934f99a854350d21ffae22067d" category="paragraph">Lesen Sie, wie Sie ein Cluster mit Switches verkabeln.</block>
@@ -7891,10 +7889,8 @@
   <block id="95a15694e7d6d23376f741970900ef8e" category="list-text">Hardwareinstallation und -Verkabelung</block>
   <block id="4657c74c0fa17e5f15e4a506f177b913" category="paragraph">Das folgende Video zeigt, wie Sie Ihr System installieren und verkabeln.</block>
   <block id="d4b6f94dadb3f20b9bf031b9b9983ce3" category="list-text">End-to-End-Softwarekonfiguration</block>
-  <block id="314f8c912a6741218e22dc8ca5f7ee41" category="paragraph">Erfahren Sie, wie Sie Ihr AFF A150-System installieren.</block>
   <block id="119be031ef4485d20c7683d291d0e9f6" category="inline-link">MetroCluster-Dokumentation</block>
   <block id="bfd53ea423739db497251aa14d8747cd" category="paragraph">Wenn Sie über eine MetroCluster-Konfiguration verfügen, verwenden Sie die<block ref="9b888d0bb3e87322cc68a0bb4a7ae515" category="inline-link-rx"></block>.</block>
-  <block id="f6387b34fb856500ccda4acb52336ff7" category="paragraph">Um Ihr AFF A150 System zu installieren, erstellen Sie ein Konto auf der NetApp Support-Website, registrieren Sie Ihr System und erhalten Sie Ihre Lizenzschlüssel. Außerdem müssen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp für Ihr System inventarisieren und bestimmte Netzwerkinformationen erfassen.</block>
   <block id="5d0ff6a06bf967bf825de2c2a610cc33" category="list-text">Wenden Sie sich an Ihren Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.</block>
   <block id="bcce32e97ae0002c4edc1cc8b9245285" category="inline-link">Registrieren Sie das System</block>
   <block id="1e074148aea327f834455c1f6ae99894" category="list-text"><block ref="2539e9179736696f68f1ba88f3812383" category="inline-link-rx"></block>.</block>
@@ -7904,13 +7900,9 @@
   <block id="e881b3bd9e158bdbe75952ecb742a95f" category="inline-link">Laden Sie das Arbeitsblatt für die Cluster-Konfiguration herunter, und füllen Sie es aus</block>
   <block id="738f95af1a0163cf0e1c5931095ae65f" category="list-text"><block ref="d3aebb99b149a14152b68ab3bc13a233" category="inline-link-rx"></block>.</block>
   <block id="767d56519e2665f49f35713c1a1be451" category="section-title">Schritt 3: Controller mit Netzwerk verbinden</block>
-  <block id="32eaf8761a3db861b1156e2738e758c1" category="paragraph">Verkabeln Sie die Controller entweder mit der Cluster-Methode ohne zwei Nodes oder mit der Cluster Interconnect-Netzwerkmethode mit dem Netzwerk.</block>
-  <block id="3760d11ceaf4a0fe32d1665068e04673" category="paragraph">Die Managementnetzwerke, das UTA2-Datennetzwerk, das Ethernet-Datennetzwerk und die Management-Ports der Controller sind mit Switches verbunden. Die Cluster Interconnect-Ports sind an beiden Controllern verkabelt.</block>
   <block id="6daf690bb435e2ddca90bbd25f4d0d4c" category="list-text">Verwenden Sie einen der folgenden Kabeltypen, um die UTA2-Daten-Ports mit dem Host-Netzwerk zu verkabeln.</block>
   <block id="afb6c834a58331c6ea63436bbf5864c3" category="list-text">Verwenden Sie für einen FC-Host 0c und 0d *oder* 0e und 0f.</block>
   <block id="0bd1e8e50111e01ba1604ade94902cca" category="list-text">Verwenden Sie für ein 10GbE-System e0c und e0d *oder* e0e und e0f.</block>
-  <block id="1fc58e4765d0d92d238af8bdfc3ab370" category="list-text">Unified Network Cabling</block>
-  <block id="b7f69837ac40254faa2741b926641a85" category="list-text">Ethernet-Netzwerkverkabelung</block>
   <block id="d121c2dd9af112004d29375d7d7385ba" category="list-text">Verkabeln Sie bei jedem Controller-Modul e0a und e0b mit dem Cluster Interconnect-Kabel der Cluster Interconnect-Switches.</block>
   <block id="32f4bb165c35f300da46d2891dcd4591" category="list-text">Verwenden Sie für einen FC-Host 0c und 0d **oder** 0e und 0f.</block>
   <block id="94a602afccb4ec515036eba24fdfed92" category="list-text">Verwenden Sie für ein 10GbE-System e0c und e0d **oder** e0e und e0f.</block>
@@ -7989,4 +7981,19 @@
   <block id="3529feb1f15a906788e97c962f5f18b5" category="doc">Ersetzen Sie den Echtzeitakku - AFF A150</block>
   <block id="74fef60bd66705310b79dcd3e46f4894" category="doc">Ersetzen Sie das SSD- oder Festplattenlaufwerk – AFF A150</block>
   <block id="d646909dddf2c419f953113a67e04618" category="doc">Ersetzen Sie ein DIMM-Modul – AFF A150</block>
+  <block id="833748c904af71a7ab422a33ad70be86" category="list-text">Verbinden Sie Ihren Laptop mit dem Management-Switch:</block>
+  <block id="482df54948cb0af45b9238ba8f7416dd" category="paragraph">Sie können die Controller mit dem Netzwerk verbinden, indem Sie die Cluster-Methode ohne zwei Nodes oder die Cluster-Methode mit Switches verwenden.</block>
+  <block id="ff83054154392545e173589dbc5f0d6e" category="paragraph">Die Cluster Interconnect- und HA-Ports eines Controller-Moduls sind mit dem Partner-Controller-Modul verbunden. Die optionalen Daten-Ports, optionalen NIC-Karten und Management-Ports der Controller-Module werden mit Switches verbunden.</block>
+  <block id="d9a4d96ebe77470ef37b10a2002ee889" category="paragraph">Controller Module Cluster Interconnect und HA Ports sind mit dem Cluster/HA Switch verbunden. Die optionalen Datenports, optionalen NIC-Karten, Mezzanine-Karten und Management-Ports sind mit Switches verbunden.</block>
+  <block id="3794995e59166b895cc502ce8c1ba88e" category="list-text">Schließen Sie Ihren Laptop an den Management-Switch an.</block>
+  <block id="55d181b0e985bd01c76c600ee8e5436b" category="paragraph">Dieser Abschnitt enthält detaillierte Schritt-für-Schritt-Anleitungen zur Installation eines AFF A150-Systems.</block>
+  <block id="07b84ded01d94786eac9600aeee34234" category="paragraph">Um Ihr AFF A150-System zu installieren, erstellen Sie ein Konto auf der NetApp Support-Website, registrieren Ihr System und erhalten Ihre Lizenzschlüssel. Außerdem müssen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp für Ihr System inventarisieren und bestimmte Netzwerkinformationen erfassen.</block>
+  <block id="c82dff6dbb251f02ea9b21c5377c84b7" category="paragraph">Sie installieren Ihr System gegebenenfalls in einem 4-Säulen-Rack oder NetApp-Systemschrank.</block>
+  <block id="c0f68275dba754d24cf8cd39cc11b441" category="paragraph">Sie verkabeln die Controller entweder mit der zwei-Node-Cluster-Methode ohne Switches oder mit der Cluster-Methode mit Switches.</block>
+  <block id="5a579b0b54ae5d57e0aca1dfcffc421b" category="paragraph">Verkabeln Sie Ihr 2-Node-Cluster ohne Switches.</block>
+  <block id="69516d110b779c64dceeed289ceff830" category="list-text">Die Controller entweder mit einem UTA2-Datennetzwerk oder einem Ethernet-Netzwerk verkabeln:</block>
+  <block id="9216554f447e636359d50545d5efdd16" category="paragraph">Verkabeln Sie Ihren Switched Cluster.</block>
+  <block id="04924b20a91a5f5b238ee6721421d3cb" category="list-text">Die UTA2-Datennetzwerkports oder die ethernet-Datennetzwerkports können zum Verbinden der Controller mit Ihrem Host-Netzwerk verwendet werden:</block>
+  <block id="be838816a39a48461edd5a1e87b6d8e5" category="list-text">Schließen Sie den Laptop oder die Konsole an den Management-Switch an.</block>
+  <block id="fea0a68e925a0ae2df0aa5bbdbe7c891" category="list-text">Weisen Sie dem Laptop oder der Konsole eine TCP/IP-Adresse zu. Verwenden Sie dazu eine Adresse auf dem Management-Switch.</block>
 </blocks>

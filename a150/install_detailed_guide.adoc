@@ -11,7 +11,7 @@ summary: Dieser Leitfaden enthält detaillierte Schritt-für-Schritt-Anleitungen
 
 
 [role="lead"]
-Erfahren Sie, wie Sie Ihr AFF A150-System installieren.
+Dieser Abschnitt enthält detaillierte Schritt-für-Schritt-Anleitungen zur Installation eines AFF A150-Systems.
 
 Wenn Sie über eine MetroCluster-Konfiguration verfügen, verwenden Sie die https://docs.netapp.com/us-en/ontap-metrocluster/index.html["MetroCluster-Dokumentation"^].
 
@@ -19,8 +19,7 @@ Wenn Sie über eine MetroCluster-Konfiguration verfügen, verwenden Sie die http
 
 == Schritt 1: Installation vorbereiten
 
-[role="lead"]
-Um Ihr AFF A150 System zu installieren, erstellen Sie ein Konto auf der NetApp Support-Website, registrieren Sie Ihr System und erhalten Sie Ihre Lizenzschlüssel. Außerdem müssen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp für Ihr System inventarisieren und bestimmte Netzwerkinformationen erfassen.
+Um Ihr AFF A150-System zu installieren, erstellen Sie ein Konto auf der NetApp Support-Website, registrieren Ihr System und erhalten Ihre Lizenzschlüssel. Außerdem müssen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp für Ihr System inventarisieren und bestimmte Netzwerkinformationen erfassen.
 
 .Bevor Sie beginnen
 * Stellen Sie sicher, dass Sie Zugriff auf haben link:https://hwu.netapp.com["NetApp Hardware Universe"^] (HWU) enthält Informationen zu den Standortanforderungen sowie zusätzliche Informationen zu Ihrem konfigurierten System.
@@ -160,8 +159,7 @@ System einschalten
 
 == Schritt 2: Installieren Sie die Hardware
 
-[role="lead"]
-Installieren Sie Ihr System gegebenenfalls in einem 4-Säulen-Rack oder NetApp Systemschrank.
+Sie installieren Ihr System gegebenenfalls in einem 4-Säulen-Rack oder NetApp-Systemschrank.
 
 .Schritte
 . Installieren Sie die Schienensatz nach Bedarf.
@@ -184,18 +182,43 @@ image::../media/drw_cable_management_arm_install.png[drw-Kabelmanagement-ARM-Ins
 
 == Schritt 3: Controller mit Netzwerk verbinden
 
-[role="lead"]
-Verkabeln Sie die Controller entweder mit der Cluster-Methode ohne zwei Nodes oder mit der Cluster Interconnect-Netzwerkmethode mit dem Netzwerk.
+Sie verkabeln die Controller entweder mit der zwei-Node-Cluster-Methode ohne Switches oder mit der Cluster-Methode mit Switches.
 
-Die Managementnetzwerke, das UTA2-Datennetzwerk, das Ethernet-Datennetzwerk und die Management-Ports der Controller sind mit Switches verbunden. Die Cluster Interconnect-Ports sind an beiden Controllern verkabelt.
+.Über diese Aufgabe
+In der folgenden Tabelle wird der Kabeltyp mit der Aufrufnummer und der Kabelfarbe in den Abbildungen für Cluster-Netzwerkverkabelungen ohne zwei Knoten und geswitchte Cluster-Netzwerkverkabelungen aufgeführt.
 
+[cols="20%,80%"]
+|===
+| Verkabelung | Verbindungstyp 
+
+
+ a| 
+image::../media/oie_legend_icon_1_lg.svg[oie-Legende-Symbol 1 lg]
+ a| 
+Cluster Interconnect
+
+
+
+ a| 
+image::../media/oie_legend_icon_2_o.svg[oie-Legendensymbol 2 o]
+ a| 
+Controller zum Hosten von Datennetzwerk-Switches
+
+
+
+ a| 
+image::../media/oie_legend_icon_3_lp.svg[oie Legend Icon 3 lp]
+ a| 
+Controller für den Management-Netzwerk-Switch
+
+|===
 [role="tabbed-block"]
 ====
 .Option 1: Cluster mit zwei Nodes ohne Switches
 --
-Erfahren Sie, wie Sie ein 2-Node-Cluster ohne Switches verkabeln.
+Verkabeln Sie Ihr 2-Node-Cluster ohne Switches.
 
-.Bevor Sie beginnen
+.Über diese Aufgabe
 Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
 
 image::../media/oie_cable_pull_tab_down.png[ziehen Sie die Lasche des oie-Kabels nach unten]
@@ -203,28 +226,9 @@ image::../media/oie_cable_pull_tab_down.png[ziehen Sie die Lasche des oie-Kabels
 
 NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
 
-.Über diese Aufgabe
-Sie können die UTA2-Datennetzwerkports oder die ethernet-Datennetzwerkports verwenden, um die Controller mit Ihrem Host-Netzwerk zu verbinden. Beachten Sie bei der Verkabelung zwischen den Controllern und den Switches die folgenden Verkabelungsabbildungen.
-
-UTA2-Datennetzwerkkonfigurationen::
-+
---
-image::../media/drw_2700_tnsc_unified_network_cabling_animated_gif.png[drw 2700 tnsc Unified Network Cabling animiert gif]
-
---
-Ethernet-Netzwerkkonfigurationen::
-+
---
-image::../media/drw_2700_tnsc_ethernet_network_cabling_animated_gif.png[drw 2700 tnsc ethernet-Netzwerkverkabelung animiert gif]
-
---
-
-
-Führen Sie die folgenden Schritte für jedes Controller-Modul durch.
-
 .Schritte
 . Verkabeln Sie die Cluster Interconnect Ports e0a mit e0a und e0b mit e0b mit dem Cluster Interconnect-Kabel. +image:../media/drw_c190_u_tnsc_clust_cbling.png[""]
-. Führen Sie einen der folgenden Schritte aus:
+. Die Controller entweder mit einem UTA2-Datennetzwerk oder einem Ethernet-Netzwerk verkabeln:
 +
 UTA2-Datennetzwerkkonfigurationen:: Verwenden Sie einen der folgenden Kabeltypen, um die UTA2-Daten-Ports mit dem Host-Netzwerk zu verkabeln.
 +
@@ -260,9 +264,9 @@ IMPORTANT: Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
 --
 .Option 2: Cluster mit Switch
 --
-Lesen Sie, wie Sie ein Cluster mit Switches verkabeln.
+Verkabeln Sie Ihren Switched Cluster.
 
-.Bevor Sie beginnen
+.Über diese Aufgabe
 Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
 
 image::../media/oie_cable_pull_tab_down.png[ziehen Sie die Lasche des oie-Kabels nach unten]
@@ -270,31 +274,12 @@ image::../media/oie_cable_pull_tab_down.png[ziehen Sie die Lasche des oie-Kabels
 
 NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
 
-.Über diese Aufgabe
-Sie können die UTA2-Datennetzwerkports oder die ethernet-Datennetzwerkports verwenden, um die Controller mit Ihrem Host-Netzwerk zu verbinden. Beachten Sie bei der Verkabelung zwischen den Controllern und den Switches die folgenden Verkabelungsabbildungen.
-
-Unified Network Cabling::
-+
---
-image::../media/drw_2700_switched_unified_network_cabling_animated_gif.png[drw 2700 geschaltete Unified-Netzwerkverkabelung gif animiert]
-
---
-Ethernet-Netzwerkverkabelung::
-+
---
-image::../media/drw_2700_switched_ethernet_network_cabling_animated_gif.png[drw 2700 Ethernet-Netzwerkverkabelung animiert gif]
-
---
-
-
-Führen Sie die folgenden Schritte für jedes Controller-Modul durch.
-
 .Schritte
 . Verkabeln Sie bei jedem Controller-Modul e0a und e0b mit dem Cluster Interconnect-Kabel der Cluster Interconnect-Switches.
 +
 image:../media/drw_c190_u_switched_clust_cbling.png[""]
 
-. Führen Sie einen der folgenden Schritte aus:
+. Die UTA2-Datennetzwerkports oder die ethernet-Datennetzwerkports können zum Verbinden der Controller mit Ihrem Host-Netzwerk verwendet werden:
 +
 UTA2-Datennetzwerkkonfigurationen:: Verwenden Sie einen der folgenden Kabeltypen, um die UTA2-Daten-Ports mit dem Host-Netzwerk zu verkabeln.
 +
@@ -336,13 +321,13 @@ IMPORTANT: Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
 Verkabeln Sie die Controller mit den Shelfs mithilfe der integrierten Storage Ports. NetApp empfiehlt MP-HA-Verkabelung für Systeme mit externem Storage.
 
 .Über diese Aufgabe
-Wenn Sie ein SAS-Bandlaufwerk haben, können Sie Single-Path-Verkabelung verwenden. Wenn Sie keine externen Shelfs haben, ist die MP-HA-Verkabelung zu internen Laufwerken optional (nicht abgebildet), wenn die SAS-Kabel zusammen mit dem System bestellt werden.
-
-Sie müssen die Shelf-Verbindungen verkabeln und dann beide Controller mit den Laufwerk-Shelfs verkabeln.
-
-Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
-
+* Wenn Sie ein SAS-Bandlaufwerk haben, können Sie Single-Path-Verkabelung verwenden. Wenn Sie keine externen Shelfs haben, ist die MP-HA-Verkabelung zu internen Laufwerken optional (nicht abgebildet), wenn die SAS-Kabel zusammen mit dem System bestellt werden.
+* Sie müssen die Shelf-Verbindungen verkabeln und dann beide Controller mit den Laufwerk-Shelfs verkabeln.
+* Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
++
 image::../media/oie_cable_pull_tab_down.png[ziehen Sie die Lasche des oie-Kabels nach unten]
+
+
 
 .Schritte
 . Verkabeln Sie das HA-Paar mit externen Festplatten-Shelfs.
@@ -411,10 +396,10 @@ NOTE: Das erste Booten kann bis zu acht Minuten dauern.
 +
 Weitere Informationen finden Sie in der Online-Hilfe Ihres Notebooks.
 
-. Schließen Sie Ihren Laptop mithilfe der folgenden Animation an den Management-Switch an.
+. Schließen Sie Ihren Laptop an den Management-Switch an.
 +
-.Animation - Verbinden Sie Ihren Laptop mit dem Management-Switch
-video::d61f983e-f911-4b76-8b3a-ab1b0066909b[panopto]
+image::../media/dwr_laptop_to_switch_only.svg[dwr-Laptop nur zum Umschalten]
+
 . Wählen Sie ein ONTAP-Symbol aus, um es zu ermitteln:
 +
 image::../media/drw_autodiscovery_controler_select.png[wählen sie den drw-Kontroller für die automatische Ermittlung aus]
