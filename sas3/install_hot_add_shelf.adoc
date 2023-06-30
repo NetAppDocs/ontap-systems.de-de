@@ -28,14 +28,14 @@ Ihr System muss bestimmte Anforderungen erfüllen, bevor Platten-Shelfs mit IOM1
 
 * Ihr System und Ihre Version von ONTAP müssen die Platten-Shelves unterstützen, die Sie hinzufügen können, einschließlich der IOMs, Festplattenlaufwerke und SAS-Kabel.
 +
-https://hwu.netapp.com["NetApp Hardware Universe"]
+https://hwu.netapp.com["NetApp Hardware Universe"^]
 
 * Ihr System muss mindestens die maximale Anzahl unterstützter Festplattenlaufwerke aufweisen, um die Anzahl der Festplatten-Shelfs, die Sie hinzufügen möchten.
 +
 Sie können nach dem Hinzufügen von Platten-Shelves nicht die Höchstzahl der unterstützten Festplattenlaufwerke im System überschritten haben.
 
 +
-https://hwu.netapp.com["NetApp Hardware Universe"]
+https://hwu.netapp.com["NetApp Hardware Universe"^]
 
 * Wenn Sie einen Stack von einem oder mehreren Platten-Shelves (direkt zu den Plattform-Controllern) Hot-hinzufügen, muss Ihr System über genügend freie PCI SAS HBA- oder integrierte SAS-Ports oder eine Kombination aus beiden verfügen.
 +
@@ -54,7 +54,7 @@ Laden Sie Config Advisor herunter, und führen Sie sie aus, um zu überprüfen, 
 Sie müssen alle Verkabelungsfehler mithilfe der Korrekturmaßnahmen korrigieren, die durch die Fehlermeldungen bereitgestellt werden.
 
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"]
+https://mysupport.netapp.com/site/tools["NetApp Downloads: Config Advisor"^]
 
 
 
@@ -84,13 +84,6 @@ Vor dem Hot-Adding Disk Shelves sollten Sie sich mit Aspekten und Best Practices
 Für HA- und Single-Path-Konfigurationen, die für AFF A200, AFF A220, FAS2600 Series und FAS2700 Systeme anwendbar sind, können Sie Festplatten-Shelfs am Ende des Stacks hinzufügen, ohne dass Controller-Verbindungen vorhanden sind.
 
 * Platten-Shelfs mit IOM12/IOM12B Modulen müssen in einem eigenen Stack gemeinsam sein. Sie können nicht einem Stack mit Shelfs mit IOM6-Modulen oder IOM3-Modulen hinzugefügt werden.
-+
-Diese Vorgehensweise unterstützt nicht die gemeinsame Nutzung eines Stacks: Shelf mit IOM12/IOM12B-Modulen werden im laufenden Betrieb in einem Shelf-Stack mit IOM6-Modulen hinzugefügt.
-
-* Ein System kann mehrere Pathing- und Quad-Pathed-Stacks mit IOM12/IOM12B-Modulen haben.
-+
-Wenn Sie ein HA-Paar haben, zeigt ONTAP die Systemkonfiguration als an `multipath HA`. Wenn Sie eine Single-Controller-Konfiguration haben, zeigt ONTAP die Systemkonfiguration als an `multipath`.
-
 * Bei diesem Verfahren wird vorausgesetzt, dass Ihre Konfiguration die in-Band ACP verwendet.
 +
 Bei Konfigurationen, bei denen ACP in der Band aktiviert ist, wird ACP in-Band automatisch auf Platten-Shelfs aktiviert, die im laufenden Betrieb hinzugefügt werden können. Bei Konfigurationen, bei denen in-Band-ACP nicht aktiviert ist, funktionieren Hot-zusätzliche Festplatten-Shelfs ohne ACP-Funktionen.
@@ -123,17 +116,17 @@ Wenn SAS-Verkabelung oder doppelte Shelf-ID-Fehler generiert werden, folgen Sie 
 Zum Download von Config Advisor benötigen Sie Netzwerkzugriff.
 
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"]
+https://mysupport.netapp.com/site/tools["NetApp Downloads: Config Advisor"^]
 
 * Als Best Practice wird empfohlen, die aktuellen Versionen der Festplatten-Shelf- (IOM) und Festplatten-Firmware auf dem System zu installieren, bevor neue Festplatten-Shelfs, Shelf-FRU-Komponenten oder SAS-Kabel hinzugefügt werden.
 +
 Aktuelle Versionen der Firmware finden Sie auf der NetApp Support Site.
 
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp Downloads: Festplatten-Shelf Firmware"]
+https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp Downloads: Festplatten-Shelf Firmware"^]
 
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["NetApp Downloads: Festplatten-Firmware"]
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["NetApp Downloads: Festplatten-Firmware"^]
 
 
 
@@ -291,7 +284,7 @@ CAUTION: *Möglicher Verlust des Datenzugriffs:* Schlingen Sie die Schublade nie
 Wenn Sie über ein Plattformmodell mit einem internen Festplatten-Shelf verfügen, müssen Shelf-IDs über das interne Festplatten-Shelf und extern verbundene Festplatten-Shelfs eindeutig sein.
 
 +
-Sie können die folgenden Unterschritte verwenden, um die Shelf-IDs zu ändern. Weitere detaillierte Anweisungen finden Sie unter link:install-change-shelf-id.html["Ändern Sie eine Shelf-ID"].
+Sie können die folgenden Unterschritte verwenden, um die Shelf-IDs zu ändern. Weitere detaillierte Anweisungen finden Sie unter link:install-change-shelf-id.html["Ändern Sie eine Shelf-ID"^].
 
 +
 .. Falls erforderlich, überprüfen Sie, ob die Shelf-IDs bereits verwendet werden, indem Sie Config Advisor ausführen.
@@ -316,7 +309,7 @@ Die Shelf-ID blinkt und die LED für die Bedieneranzeige blinkt, bis Sie das Fes
 
 == Verkabeln Sie Platten-Shelfs mit IOM12/IOM12B-Modulen für ein Hot-Add
 
-Sie verkabeln die SAS-Verbindungen --Shelf-to-Shelf und Controller-to-Stack - sofern zutreffend für Hot-Added Platten-Shelfs, damit sie mit dem System verbunden werden können.
+Sie verkabeln die SAS-Verbindungen (Shelf-to-Shelf und Controller-to-Stack) je nach Bedarf für Hot-Added Festplatten-Shelfs, damit Sie Konnektivität zum System haben.
 
 .Bevor Sie beginnen
 Sie müssen die Anforderungen in erfüllt haben link:install-hot-add-shelf.html#requirements-for-hot-adding-disk-shelves-with-iom12iom12b-modules["Anforderungen für Hot-Adding Disk-Shelfs mit IOM12-Modulen"] Und installiert, eingeschaltet und Shelf-IDs für jedes Festplatten-Shelf gemäß Anweisungen in festlegen link:install-hot-add-shelf.html#install-disk-shelves-with-iom12iom12b-modules-for-a-hot-add["Installieren Sie Platten-Shelfs mit IOM12-Modulen für ein Hot-Add-System"].
@@ -363,7 +356,7 @@ Sie müssen die automatische Zuweisung der Festplattenbesitzer auf beiden Contro
 
 
  a| 
-Sie verkabeln einen Stack mit Multipath HA, Multipath, Single Path HA oder Single-Path-Konnektivität zu den Controllern
+Sie verkabeln einen Stack mit Multipath HA, Tri-Path HA, Multipath, Single Path HA oder Single Path-Konnektivität zu den Controllern
  a| 
 Verbinden Sie die Shelf-zu-Shelf-Verbindungen mit „`standard`“-Konnektivität (unter Verwendung von IOM-Ports 3 und 1):
 
@@ -386,10 +379,10 @@ Verbinden Sie die Shelf-zu-Shelf-Verbindungen mit „`double-wide`“-Konnektivi
 |===
 .. Überprüfen Sie die Verkabelungsarbeitsblätter und Beispiele für den Controller-to-Stack-Stack, um zu ermitteln, ob ein ausgefülltes Arbeitsblatt für Ihre Konfiguration vorhanden ist.
 +
-link:install-cabling-worksheets-examples-fas2600.html["Verkabelungsarbeitsblätter und Beispiele für Controller-to-Stack für AFF- und FAS-Plattformen mit integriertem Storage"]
+link:install-cabling-worksheets-examples-fas2600.html["Verkabelungsarbeitsblätter und Beispiele für Plattformen mit internem Storage für den Controller-to-Stack-Stack"]
 
 +
-link:install-cabling-worksheets-examples-multipath.html["Arbeitsblätter und Beispiele für die Verkabelung von Controller und Stack für gängige Multipath HA-Konfigurationen"]
+link:install-cabling-worksheets-examples-multipath.html["Arbeitsblätter für Controller-to-Stack-Verkabelung und Beispiele für Verkabelung bei Multipath HA-Konfigurationen"]
 
 +
 link:install-worksheets-examples-quadpath.html["Verkabelungsarbeitsblatt für den Controller-to-Stack und Kabelbeispiel für eine Quad-Path HA-Konfiguration mit zwei Quad-Port SAS HBAs"]
@@ -405,7 +398,7 @@ link:install-cabling-worksheet-template-quadpath.html["Vorlage für Verkabelungs
 .. Stellen Sie sicher, dass alle Kabel sicher befestigt sind.
 
 
-. Wenn Sie ein oder mehrere Platten-Shelves zu einem vollständigen logischen ersten oder letzten Festplatten-Shelf hinzufügen – eines vorhandenen Stacks führen Sie die entsprechenden Teilschritte für Ihre Konfiguration aus. Anderenfalls wechseln Sie mit dem nächsten Schritt.
+. Wenn Sie ein oder mehrere Platten-Shelves im laufenden Betrieb zu einem Ende (dem logischen ersten oder letzten Festplatten-Shelf) eines vorhandenen Stacks hinzufügen, führen Sie die entsprechenden Teilschritte für Ihre Konfiguration aus. Andernfalls fahren Sie mit dem nächsten Schritt fort.
 +
 
 NOTE: Achten Sie darauf, dass Sie mindestens 70 Sekunden warten, bis Sie ein Kabel trennen und wieder anschließen, und wenn Sie ein Kabel länger ersetzen.
@@ -417,7 +410,7 @@ NOTE: Achten Sie darauf, dass Sie mindestens 70 Sekunden warten, bis Sie ein Kab
 
 
  a| 
-Hot-Adding eines Platten-Shelf am Ende eines Stacks mit Multipath HA, Multipath, Quad-Path-HA oder Quad-Path-Konnektivität zu den Controllern
+Hinzufügen eines Platten-Shelfs zum Ende eines Stacks mit Multipath HA, Multipath HA, Multipath, Quad-Path HA oder Quad-Path-Konnektivität zu den Controllern
  a| 
 .. Trennen Sie alle Kabel von IOM A des Festplatten-Shelf am Ende des Stacks, die mit einem beliebigen Controller verbunden sind. Andernfalls fahren Sie mit subschritt e. fort
 +
@@ -444,14 +437,14 @@ Diese Anweisungen gelten für das Hinzufügen von Hot-to-Stack-Verbindungen am E
 |===
 . Wenn Sie ein Platten-Shelf mit optischen Mini-SAS-HD-SAS-Kabeln in einem Stack mit SAS-Kupferkabeln verbundene Platten-Shelfs aufnehmen, ersetzen Sie die SAS-Kupferkabel. Andernfalls fahren Sie mit dem nächsten Schritt fort.
 +
-Der Stack muss die im angegebenen Anforderungen erfüllen <<Anforderungen für Hot-Adding Disk-Shelfs mit IOM12-Modulen>> Abschnitt dieses Verfahrens.
+Der Stack muss die im angegebenen Anforderungen erfüllen <<Anforderungen an Hot-Adding Disk-Shelfs mit IOM12/IOM12B-Modulen>> Abschnitt dieses Verfahrens.
 
 +
 Ersetzen Sie die Kabel nacheinander, und stellen Sie sicher, dass Sie zwischen dem Trennen eines Kabels und dem Anschließen eines neuen Kabels mindestens 70 Sekunden warten.
 
 . Laden Sie Config Advisor herunter, und führen Sie sie aus, um zu überprüfen, ob die SAS-Verbindungen korrekt verkabelt sind.
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"]
+https://mysupport.netapp.com/site/tools["NetApp Downloads: Config Advisor"^]
 
 +
 Wenn SAS-Verkabelungsfehler generiert werden, befolgen Sie die angegebenen Korrekturmaßnahmen.

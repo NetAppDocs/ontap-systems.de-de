@@ -1,0 +1,260 @@
+---
+permalink: fas2800/dimm-replace.html 
+sidebar: sidebar 
+keywords: fas2800, replace, dimm, shut, down, impaired, controller, controller, metrocluster, replace, system, reinstall, diagnostics, module, filed, part, aggregates, 
+summary: 'Sie müssen ein DIMM im Controller-Modul ersetzen, wenn Ihr System eine steigende Anzahl korrigierbarer Fehlerkorrekturcodes (ECC) registriert; andernfalls wird eine Systempanik verursacht.' 
+---
+= Ersetzen Sie ein DIMM-Modul – FAS2800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen ein DIMM im Controller-Modul ersetzen, wenn Ihr System eine steigende Anzahl korrigierbarer Fehlerkorrekturcodes (ECC) registriert; andernfalls wird eine Systempanik verursacht.
+
+Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+
+Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
+
+.Animation - Ersetzen Sie ein DIMM
+video::6c035199-9b79-494b-9c65-af9a015ffaf0[panopto]
+
+
+== Schritt 1: Schalten Sie den beeinträchtigten Regler aus
+
+Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
+
+Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE anzeigt, um die Berechtigung und den Zustand zu erhalten, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^].
+
+.Schritte
+. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung: `system node autosupport invoke -node * -type all -message MAINT=_number_of_hours_down_h`
++
+Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Wenn der beeinträchtigte Controller Teil eines HA-Paars ist, deaktivieren Sie das automatische Giveback von der Konsole des gesunden Controllers: `storage failover modify -node local -auto-giveback false`
+. Nehmen Sie den beeinträchtigten Controller zur LOADER-Eingabeaufforderung:
++
+[cols="1,2"]
+|===
+| Wenn der eingeschränkte Controller angezeigt wird... | Dann... 
+
+
+ a| 
+Die LOADER-Eingabeaufforderung
+ a| 
+Wechseln Sie zu Controller-Modul entfernen.
+
+
+
+ a| 
+Warten auf Giveback...
+ a| 
+Drücken Sie Strg-C, und antworten Sie dann `y`.
+
+
+
+ a| 
+Eingabeaufforderung des Systems oder Passwort (Systempasswort eingeben)
+ a| 
+Übernehmen oder stoppen Sie den beeinträchtigten Regler von der gesunden Steuerung: `storage failover takeover -ofnode _impaired_node_name_`
+
+Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drücken Sie Strg-C, und antworten Sie dann `y`.
+
+|===
+
+
+
+
+== Schritt 2: Controller-Modul entfernen
+
+Entfernen Sie das Controller-Modul aus dem System, und entfernen Sie dann die Abdeckung des Controller-Moduls.
+
+.Schritte
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Lösen Sie den Haken- und Schlaufenriemen, mit dem die Kabel am Kabelführungsgerät befestigt sind, und ziehen Sie dann die Systemkabel und SFPs (falls erforderlich) vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren.
++
+Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation des Kabelverwaltungsgeräts die Kabel organisiert sind.
+
+. Entfernen Sie die Kabelführungsgeräte von der linken und rechten Seite des Controller-Moduls und stellen Sie sie zur Seite.
+. Drücken Sie die Verriegelung am Nockengriff, bis sie loslässt, öffnen Sie den Nockengriff vollständig, um das Controller-Modul aus der Mittelplatine zu lösen, und ziehen Sie das Controller-Modul anschließend mit zwei Händen aus dem Gehäuse heraus.
++
+image::../media/drw_2240_x_opening_cam_latch.svg[drw 2240 x Öffnungsnockenverriegelung]
+
+. Drehen Sie das Controller-Modul um und legen Sie es auf eine flache, stabile Oberfläche.
+. Öffnen Sie die Abdeckung, indem Sie die blauen Tasten an den Seiten des Controller-Moduls drücken, um die Abdeckung zu lösen, und drehen Sie dann die Abdeckung nach oben und von dem Controller-Modul.
++
+image::../media/drw_2850_open_controller_module_cover_IEOPS-695.svg[drw 2850 Open-Controller-Modulabdeckung IEOPS 695]
+
+
+
+[cols="1,3"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[Legende Symbol 01]
+ a| 
+Entriegelungstaste der Steuermodulabdeckung
+
+|===
+
+
+== Schritt 3: Ersetzen Sie die DIMMs
+
+Suchen Sie das DIMM im Controller, entfernen Sie es, und ersetzen Sie es.
+
+
+NOTE: Vor dem Austauschen eines DIMM müssen Sie die NVMEM-Batterie vom Controller-Modul abziehen.
+
+.Schritte
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
++
+Sie müssen ein sauberes System herunterfahren, bevor Sie Systemkomponenten ersetzen, um nicht geschriebene Daten im nichtflüchtigen Speicher (NVMEM) zu verlieren. Die LED befindet sich auf der Rückseite des Controller-Moduls. Achten Sie auf das folgende Symbol:
+
++
+image::../media/drw_hw_nvram_icon.svg[drw-hw-nvram-Symbol]
+
+. Wenn die NVMEM-LED nicht blinkt, befindet sich kein Inhalt in der NVMEM. Sie können die folgenden Schritte überspringen und mit der nächsten Aufgabe bei diesem Verfahren fortfahren.
+. Wenn die NVMEM-LED blinkt, befinden sich Daten in der NVMEM und Sie müssen die Batterie trennen, um den Speicher zu löschen:
++
+.. Entfernen Sie den Akku aus dem Controller-Modul, indem Sie die blaue Taste an der Seite des Controller-Moduls drücken.
+.. Schieben Sie den Akku nach oben, bis er die Halteklammern freigibt, und heben Sie den Akku aus dem Controller-Modul heraus.
+.. Suchen Sie das Batteriekabel, drücken Sie auf die Klammer am Akkustecker, um den Sicherungsclip aus der Steckdose zu lösen, und ziehen Sie dann das Akkukabel aus der Steckdose.
+.. Vergewissern Sie sich, dass die NVMEM-LED nicht mehr leuchtet.
+.. Schließen Sie den Batterieanschluss wieder an, und überprüfen Sie die LED auf der Rückseite des Controllers erneut.
+.. Ziehen Sie das Batteriekabel ab.
+
+
+. Suchen Sie die DIMMs auf dem Controller-Modul.
+. Achten Sie auf die Ausrichtung und Position des DIMM im Sockel, damit Sie das Ersatz-DIMM in die richtige Ausrichtung einsetzen können.
+. Werfen Sie das DIMM aus dem Steckplatz, indem Sie die beiden DIMM-Auswerferlaschen auf beiden Seiten des DIMM langsam auseinander drücken und dann das DIMM aus dem Steckplatz schieben.
++
+Das DIMM dreht sich ein wenig nach oben.
+
+. Drehen Sie das DIMM-Modul so weit wie möglich, und schieben Sie es dann aus dem Sockel.
++
+
+NOTE: Halten Sie das DIMM vorsichtig an den Rändern, um Druck auf die Komponenten auf der DIMM-Leiterplatte zu vermeiden.
+
++
+image::../media/drw_2850_replace_dimms_IEOPS-699.svg[drw 2850 dimms IEOPS 699 ersetzen]
+
++
+[cols="1,3"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[Legende Symbol 01]
+ a| 
+Taste zum Entriegeln der NVRAM-Batterie
+
+
+
+ a| 
+image::../media/legend_icon_02.svg[Legende Symbol 02]
+ a| 
+NVRAM-Batteriestecker
+
+
+
+ a| 
+image::../media/legend_icon_03.svg[Legende Symbol 03]
+ a| 
+DIMM-Auswerferlaschen
+
+
+
+ a| 
+image::../media/legend_icon_04.svg[Legende Symbol 04]
+ a| 
+DIMMs
+
+|===
+. Entfernen Sie das Ersatz-DIMM aus dem antistatischen Versandbeutel, halten Sie das DIMM an den Ecken und richten Sie es am Steckplatz aus.
++
+Die Kerbe zwischen den Stiften am DIMM sollte mit der Lasche im Sockel aufliegen.
+
+. Setzen Sie das DIMM-Modul in den Steckplatz ein.
++
+Das DIMM passt eng in den Steckplatz, sollte aber leicht einpassen. Falls nicht, richten Sie das DIMM-Modul mit dem Steckplatz aus und setzen Sie es wieder ein.
+
++
+
+NOTE: Prüfen Sie das DIMM visuell, um sicherzustellen, dass es gleichmäßig ausgerichtet und vollständig in den Steckplatz eingesetzt ist.
+
+. Drücken Sie vorsichtig, aber fest auf die Oberseite des DIMM, bis die Auswurfklammern über den Kerben an den Enden des DIMM einrasten.
+. NVRM-Batterie wieder anschließen:
++
+.. Schließen Sie die NVRAM-Batterie an.
++
+Vergewissern Sie sich, dass der Stecker in der Akkusteckdose auf der Hauptplatine einrastet.
+
+.. Richten Sie die Batterie an den Haltehalterungen an der Blechseitenwand aus.
+.. Schieben Sie den Akku nach unten, bis die Akkuverriegelung einrastet und in die Öffnung an der Seitenwand einrastet.
+
+
+. Bringen Sie die Abdeckung des Controller-Moduls wieder an.
+
+
+
+
+== Schritt 4: Installieren Sie das Controller-Modul neu
+
+Setzen Sie das Controller-Modul wieder in das Gehäuse ein.
+
+.Schritte
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Wenn dies noch nicht geschehen ist, bringen Sie die Abdeckung am Controller-Modul wieder an.
+. Drehen Sie das Controller-Modul um und richten Sie das Ende an der Öffnung im Gehäuse aus.
+. Schieben Sie das Controller-Modul vorsichtig bis zur Hälfte in das System. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie das Controller-Modul vorsichtig bis zur Hälfte in das System.
++
+
+NOTE: Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein, wenn Sie dazu aufgefordert werden.
+
+. Das System nach Bedarf neu einsetzen.
++
+Wenn Sie die Medienkonverter (QSFPs oder SFPs) entfernt haben, sollten Sie diese erneut installieren, wenn Sie Glasfaserkabel verwenden.
+
+. Führen Sie die Neuinstallation des Controller-Moduls durch:
++
+.. Schieben Sie das Steuermodul fest in die offene Position, bis es auf die Mittelebene trifft und vollständig sitzt, und schließen Sie dann den Nockengriff in die verriegelte Position.
++
+
+NOTE: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige Kraft verwenden, um Schäden an den Anschlüssen zu vermeiden.
+
++
+Der Controller beginnt zu booten, sobald er im Gehäuse sitzt.
+
+.. Wenn Sie dies noch nicht getan haben, installieren Sie das Kabelverwaltungsgerät neu.
+.. Verbinden Sie die Kabel mit dem Haken- und Schlaufenband mit dem Kabelmanagement-Gerät.
+
+
+. Starten Sie das Controller-Modul neu.
++
+
+NOTE: Während des Bootens werden möglicherweise die folgenden Eingabeaufforderungen angezeigt:
+
++
+** Eine Warnmeldung über eine nicht übereinstimmende System-ID und die Aufforderung, die System-ID außer Kraft zu setzen.
+** Eine Eingabeaufforderung mit einer Warnmeldung, dass Sie beim Aufrufen des Wartungsmodus in einer HA-Konfiguration sicherstellen müssen, dass der gesunde Controller weiterhin ausgefallen ist. Sie können sicher reagieren `y` Um diese Eingabeaufforderungen.
+
+
+
+
+
+
+== Schritt 5: Automatisches Giveback und AutSupport wiederherstellen
+
+Stellen Sie automatische Giveback und AutoSupport wieder her, wenn sie deaktiviert wurden.
+
+. Stellen Sie mithilfe der die automatische Rückgabe wieder her `storage failover modify -node local -auto-giveback true` Befehl.
+. Wenn ein AutoSupport-Wartungsfenster ausgelöst wurde, beenden Sie das Fenster mit. Verwenden Sie dazu die `system node autosupport invoke -node * -type all -message MAINT=END` Befehl.
+
+
+
+
+== Schritt 6: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

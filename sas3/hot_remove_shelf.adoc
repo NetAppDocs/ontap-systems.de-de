@@ -14,9 +14,9 @@ summary: 'Sie können ein Platten-Shelf in Betrieb nehmen mit IOM12-Modulen (ein
 Sie können ein Platten-Shelf in Betrieb nehmen mit IOM12/IOM12B-Modulen (ein Platten-Shelf kann unterbrechungsfrei von einem System entfernt werden, das eingeschaltet ist und I/O im Gange ist), wenn Sie ein Platten-Shelf verschieben oder ersetzen müssen. Sie können ein oder mehrere Platten-Shelfs innerhalb eines Stacks mit Platten-Shelfs Hot-entfernen oder einen Stack von Festplatten-Shelfs entfernen.
 
 .Bevor Sie beginnen
-* Ihr System muss eine Multipath HA-, Multipath-, Quad-Path-Konfiguration oder Quad-Path-Konfiguration sein.
+* Ihr System muss Multipath HA, Multipath HA, Multipath, Quad-Path HA oder Quad-Path-Konfiguration sein.
 +
-Bei Plattformen mit integriertem Storage, wie z. B. AFF A200, AFF A220, FAS2600 Serie und FAS2700 Systemen, muss der externe Storage als Multipath HA oder Multipath verkabelt werden.
+Bei Plattformen mit internem Storage muss der externe Storage als Multipath HA, Tri-Path HA oder Multipath verkabelt werden.
 
 +
 
@@ -27,7 +27,7 @@ NOTE: Das System ist für ein Single-Controller-System der FAS2600 Serie mit dem
 Sie können Active IQ Config Advisor herunterladen und ausführen, um alle Fehlermeldungen der SAS-Verkabelung sowie die Korrekturmaßnahmen anzuzeigen, die Sie ergreifen sollten.
 
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"]
+https://mysupport.netapp.com/site/tools["NetApp Downloads: Config Advisor"^]
 
 * DIE HA-Paar-Konfigurationen können nicht im Übernahmemodus liegen.
 * Sie müssen alle Aggregate von den Festplatten entfernt haben (die Festplatten müssen Ersatzteile sein) in den Festplatten-Regalen, die Sie entfernen.
@@ -52,7 +52,7 @@ Durch das Entfernen von Besitzinformationen von einer Ersatzfestplatte kann das 
 ====
 Um das Eigentum von Festplatten zu entfernen, müssen Sie die automatische Zuweisung der Festplatteneigentümer deaktivieren. Am Ende dieses Vorgangs wird die automatische Zuweisung zum Festplattenbesitzer wieder aktiviert.
 
-https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["Überblick über Festplatten und Aggregate"]
+https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["Überblick über Festplatten und Aggregate"^]
 
 ====
 * Bei einem Clustered ONTAP System mit mehr als zwei Nodes empfiehlt es sich, Epsilon auf ein anderes HA-Paar zuzuweisen, das während der geplanten Wartung arbeitet.
@@ -75,13 +75,13 @@ Der Knoten, auf dem das Epsilon steht, wird angezeigt `true` Im `Epsilon` Spalte
 
 NOTE: Wenn Sie die Single-Path-Konnektivität von den Controllern nicht zum Stack aufrechterhalten, wenn Sie den Stack neu verkabeln, um das Festplatten-Shelf zu umgehen, das Sie entfernen, können Sie das System mit einer Multidisk-Panik fehlschlagen.
 
-* *Möglicher Regalschaden:* Wenn Sie ein DS460C-Regal entfernen und es in einen anderen Teil des Rechenzentrums verschieben oder an einen anderen Ort transportieren, lesen Sie den Abschnitt, <<Verschieben oder Transport von DS460C Shelfs>> Am Ende dieses Verfahrens.
+* *Mögliche Regalschäden:* Wenn Sie ein DS460C Shelf entfernen und es in einen anderen Teil des Datacenters verschieben oder an einen anderen Ort transportieren, lesen Sie am Ende dieses Verfahrens den Abschnitt „Verschieben oder Transportieren der DS460C Shelfs“.
 
 
 .Schritte
-. Vergewissern Sie sich, dass Ihre Systemkonfiguration genau ist `Multi-Path HA`, `Multi-Path`, `Quad-path HA`, Oder `Quad-path`: `sysconfig`
+. Vergewissern Sie sich, dass Ihre Systemkonfiguration genau ist `Multi-Path HA`, `tri-path HA`, `Multi-Path`, `Quad-path HA`, Oder `Quad-path` Durch Ausführen des `sysconfig` Befehl aus der Nodeshell eines der Controller.
 +
-Sie führen diesen Befehl aus dem nodeshell von beiden Controllern. Es kann bis zu einer Minute dauern, bis das System die Erkennung abgeschlossen hat.
+Es kann bis zu einer Minute dauern, bis das System die Erkennung abgeschlossen hat.
 
 +
 Die Konfiguration ist im aufgeführt `System Storage Configuration` Feld.
@@ -180,8 +180,8 @@ Ein Platten-Shelf aus der Mitte des Stacks Ist Ein Festplatten-Shelf in der Mitt
 Sie können sich die folgenden Verkabelungsbeispiele nennen, wenn Sie ein Festplatten-Shelf aus einem Ende eines Stacks oder der Mitte eines Stacks entfernen. Beachten Sie die folgenden Verkabelungsbeispiele:
 
 +
-** Die IOM12-Module werden nebeneinander wie in einem DS224C oder DS212C Festplatten-Shelf angeordnet; bei einem DS460C werden die IOM12-Module übereinander angeordnet.
-** Der Stack in jedem Beispiel ist mit einer standardmäßigen Shelf-to-Shelf-Verkabelung verbunden, die in Stacks mit Multipath HA oder Multipath-Konnektivität verwendet wird.
+** Die IOM12/IOM12B Module sind nebeneinander wie in einem DS224C oder DS212C Festplatten-Shelf angeordnet; bei einem DS460C sind die IOM12/IOM12B Module übereinander angeordnet.
+** Der Stack in den einzelnen Beispielen wird über Standard-Shelf-zu-Shelf-Kabel verkabelt, die in Stacks mit Multipath HA, Tri-Path HA oder Multipath-Konnektivität verwendet werden.
 +
 Sie können die Neuaufteilung beschreiben, wenn der Stack über HA mit Quad-Path oder Quad-Path-Konnektivität verbunden ist, wobei doppelt breite Shelf-to-Shelf-Verkabelung verwendet wird.
 
@@ -189,7 +189,7 @@ Sie können die Neuaufteilung beschreiben, wenn der Stack über HA mit Quad-Path
 +
 Sie wiederholen die Neuauftragung für Pfad B (IOM B).
 
-** Das Verkabelungsbeispiel zum Entfernen eines Festplatten-Shelfs vom Ende eines Stacks zeigt, wie das logische letzte Festplatten-Shelf in einem Stack entfernt wird, der mit Multipath HA-Konnektivität verbunden ist.
+** Das Beispiel zur Verkabelung zum Entfernen eines Platten-Shelf vom Ende eines Stacks zeigt, wie das letzte logische Platten-Shelf in einem Stack entfernt wird, der mit Multipath HA oder Tri-Path HA-Konnektivität verkabelt ist.
 +
 Sie können die Neuablung schließen, wenn Sie das erste logische Platten-Shelf in einem Stack entfernen oder ob Ihr Stack über Multipath-Konnektivität verfügt.
 
@@ -279,7 +279,7 @@ Ihre DS460C-Sendung wurde mit vier abnehmbaren Hebegriffen (zwei pro Seite) verp
 image::../media/drw_ds460c_handles.gif[drw ds460c Griffe]
 
 +
-Wenn Sie das DS460C Shelf zu einem anderen Teil des Datacenters verschieben oder an einen anderen Ort transportieren, finden Sie im folgenden Abschnitt: <<Verschieben oder Transport von DS460C Shelfs>>.
+Wenn Sie das DS460C Shelf in einen anderen Teil des Datacenters verschieben oder an einen anderen Ort transportieren, lesen Sie den Abschnitt „Verschieben oder Transportieren von DS460C Shelfs“.
 
 
 

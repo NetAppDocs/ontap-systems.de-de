@@ -14,7 +14,7 @@ summary: Anhand dieses Beispiels können Sie erfahren, wie Sie ein ausgefülltes
 Mit diesem Beispiel können Sie die Vorgehensweise beim Lesen und Anwenden eines ausgefüllten Arbeitsblatts erläutern, um Controller-zu-Stack-Verbindungen für Platten-Shelves mit IOM12/IOM12B-Modulen für Multipath-Konnektivität zu verkabeln.
 
 .Bevor Sie beginnen
-Wenn Sie über eine Plattform mit internem Storage verfügen, z. B. FAS2600 Serie, AFF A200, FAS2700 Serie, AFF A220, Verwenden Sie später Folgendes (diese Plattformen verwenden ein einzigartiges Arbeitsblatt):
+Wenn Sie über eine Plattform mit internem Speicher verfügen, verwenden Sie das folgende Arbeitsblatt:
 
 link:install-cabling-worksheets-examples-fas2600.html["Verkabelungsarbeitsblätter und Beispiele für Plattformen mit internem Storage für den Controller-to-Stack-Stack"]
 
@@ -28,7 +28,7 @@ Die in diesem Beispiel verwendete Konfiguration ist eine Multipath HA-Konfigurat
 NOTE: Wenn Sie mehr Port-Paare haben, als Sie die Stacks in Ihrem System verkabeln müssen, sollten Sie die Best Practice Port-Paare überspringen, um die SAS-Ports auf Ihrem System zu optimieren. Durch die Optimierung von SAS-Ports optimieren Sie die Performance Ihres Systems.
 
 * Wenn Sie eine Single-Controller-Konfiguration haben, überspringen Sie die Unterschritte b und d für die Verkabelung zu einem zweiten Controller.
-* Bei Bedarf können Sie sich auf beziehen link:install-cabling-rules.html["Regeln für die SAS-Verkabelung"] Weitere Informationen zur Nummerierung der Controller-Steckplätze, Shelf-zu-Shelf-Konnektivität und Controller/Shelf-Konnektivität (einschließlich der Verwendung von Port-Paaren)
+* Bei Bedarf können Sie sich auf beziehen link:install-cabling-rules.html["SAS-Verkabelungsregeln und -Konzepte"] Weitere Informationen zur Nummerierung der Controller-Steckplätze, Shelf-zu-Shelf-Konnektivität und Controller/Shelf-Konnektivität (einschließlich der Verwendung von Port-Paaren)
 
 
 Die Port-Paare sind über jedes andere Port-Paar im Arbeitsblatt verkabelt: 1a/2b und 1c/2d.

@@ -14,7 +14,7 @@ summary: Durch Ausfüllen der Worksheet-Vorlage können Sie die SAS-Port-Paare d
 Durch Ausfüllen der Worksheet-Vorlage können Sie die SAS-Port-Paare des Controllers definieren, mit denen Controller mit IOM12/IOM12B-Modulen verbunden werden können. So wird eine Multipath-Konnektivität in einem HA-Paar oder einer Single-Controller-Konfiguration erreicht. Sie können auch das ausgefüllte Arbeitsblatt verwenden, um sich durch die multipathed Verbindungen für Ihre Konfiguration zu führen.
 
 .Bevor Sie beginnen
-Wenn Sie über eine Plattform mit internem Storage verfügen, z. B. FAS2600 Serie, AFF A200, FAS2700 Serie, AFF A220, Verwenden Sie später Folgendes (diese Plattformen verwenden ein einzigartiges Arbeitsblatt):
+Wenn Sie über eine Plattform mit internem Speicher verfügen, verwenden Sie das folgende Arbeitsblatt:
 
 link:install-cabling-worksheets-examples-fas2600.html["Verkabelungsarbeitsblätter und Beispiele für Plattformen mit internem Storage für den Controller-to-Stack-Stack"]
 
@@ -27,7 +27,7 @@ Beispiele für abgeschlossene Worksheets finden Sie für Multipath HA- und Multi
 Für die Arbeitsblattbeispiele wird eine Konfiguration mit zwei Quad-Port-SAS-HBAs und zwei Stacks an Platten-Shelfs mit IOM12/IOM12B-Modulen verwendet.
 
 * Die Arbeitsblattvorlage ermöglicht bis zu sechs Stapel. Bei Bedarf müssen weitere Spalten hinzugefügt werden.
-* Bei Bedarf können Sie sich auf die beziehen link:install-cabling-rules.html["Regeln für die SAS-Verkabelung"] Weitere Informationen zu unterstützten Konfigurationen finden Sie auf der Konvention zur Nummerierung von Controller-Steckplätzen, Shelf-to-Shelf-Konnektivität und Controller/Shelf-Konnektivität (einschließlich Verwendung von Port-Paaren).
+* Bei Bedarf können Sie sich auf die beziehen link:install-cabling-rules.html["SAS-Verkabelungsregeln und -Konzepte"] Weitere Informationen zu unterstützten Konfigurationen finden Sie auf der Konvention zur Nummerierung von Controller-Steckplätzen, Shelf-to-Shelf-Konnektivität und Controller/Shelf-Konnektivität (einschließlich Verwendung von Port-Paaren).
 * Falls erforderlich, können Sie nach dem Ausfüllen des Arbeitsblatts auf lesen link:install-cabling-worksheets-how-to-read-multipath.html["Lesen eines Arbeitsblatts zur Verkabelung von Controller-zu-Stack-Verbindungen für Multipath-Konnektivität"]
 
 

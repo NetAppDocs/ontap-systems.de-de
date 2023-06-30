@@ -13,9 +13,9 @@ Es ist wichtig, dass Sie die Befehle in den Schritten auf den richtigen Systemen
 
 .Schritte
 . Wenn sich der Node _Replacement_ nicht an der LOADER-Eingabeaufforderung befindet, halten Sie das System an der LOADER-Eingabeaufforderung an.
-. Überprüfen Sie auf dem Node _Healthy_ die Systemzeit: `show date`
+. Überprüfen Sie auf dem Node _Healthy_ die Systemzeit: `cluster date show`
 +
-Datum und Uhrzeit werden in GMT angegeben.
+Datum und Uhrzeit basieren auf der konfigurierten Zeitzone.
 
 . Prüfen Sie an der LOADER-Eingabeaufforderung Datum und Uhrzeit auf dem Node _Replacement_: `show date`
 +
@@ -23,7 +23,7 @@ Datum und Uhrzeit werden in GMT angegeben.
 
 . Legen Sie bei Bedarf das Datum in GMT auf dem Ersatzknoten fest: `set date _mm/dd/yyyy_`
 . Stellen Sie bei Bedarf die Zeit in GMT auf dem Ersatzknoten ein: `set time _hh:mm:ss_`
-. Bestätigen Sie an der LOADER-Eingabeaufforderung Datum und Uhrzeit am Node _Replacement_: `show date`
+. Bestätigen Sie an der LOADER-Eingabeaufforderung Datum und Uhrzeit am Node _Replacement_: `date`
 +
 Datum und Uhrzeit werden in GMT angegeben.
 

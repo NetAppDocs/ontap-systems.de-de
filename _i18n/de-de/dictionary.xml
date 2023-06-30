@@ -26,12 +26,10 @@
   <block id="d6cd7784b4e7b607424fb3f31dc53b2d" category="list-text">Der Node _Healthy_ ist der HA-Partner des Node _Replacement_.</block>
   <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">Schritte</block>
   <block id="58532634ca04e50b018c22652941f0e2" category="list-text">Wenn sich der Node _Replacement_ nicht an der LOADER-Eingabeaufforderung befindet, halten Sie das System an der LOADER-Eingabeaufforderung an.</block>
-  <block id="7676556d14b3f7dfc7ddc885b585b132" category="list-text">Überprüfen Sie auf dem Node _Healthy_ die Systemzeit:<block ref="7e17e2b336dbdd66c2f45405573b53de" prefix=" " category="inline-code"></block></block>
   <block id="610bb0d24c586904b13f6cb09aca2599" category="paragraph">Datum und Uhrzeit werden in GMT angegeben.</block>
   <block id="7d605a9dbf45a466003e126065e1bc68" category="list-text">Prüfen Sie an der LOADER-Eingabeaufforderung Datum und Uhrzeit auf dem Node _Replacement_:<block ref="7e17e2b336dbdd66c2f45405573b53de" prefix=" " category="inline-code"></block></block>
   <block id="fba5bbeb3ff706c0a6a0f6aa48ca6830" category="list-text">Legen Sie bei Bedarf das Datum in GMT auf dem Ersatzknoten fest:<block ref="7e61842d1d9bb6d13127efea49e14c96" prefix=" " category="inline-code"></block></block>
   <block id="42038d95379d1d97bbdb99cca278fbaf" category="list-text">Stellen Sie bei Bedarf die Zeit in GMT auf dem Ersatzknoten ein:<block ref="e963cd9cdc97a95d8672b225c6c0f776" prefix=" " category="inline-code"></block></block>
-  <block id="129717f48118cb8374cc8d6ecb1a3002" category="list-text">Bestätigen Sie an der LOADER-Eingabeaufforderung Datum und Uhrzeit am Node _Replacement_:<block ref="7e17e2b336dbdd66c2f45405573b53de" prefix=" " category="inline-code"></block></block>
   <block id="627ef6515d7b7d0d5ea8083c530471b0" category="section-title">Schritt: Überprüfen Sie den HA-Status des Controller-Moduls und legen Sie ihn fest</block>
   <block id="7b9f82a6a85f3a3c9f96c87c16c21372" category="paragraph">Sie müssen die überprüfen<block ref="594c16ca0695f6665d7cf4971707adf6" prefix=" " category="inline-code"></block> Status des Controller-Moduls und, falls erforderlich, aktualisieren Sie den Status entsprechend Ihrer Systemkonfiguration.</block>
   <block id="8ccdb2a9438a446fc98b092384f5d324" category="list-text">Überprüfen Sie im Wartungsmodus des neuen Controller-Moduls, ob alle Komponenten gleich angezeigt werden<block ref="594c16ca0695f6665d7cf4971707adf6" prefix=" " category="inline-code"></block> Bundesland:<block ref="fb4e6c2e33b945c3ff4d042cb66d2ed4" prefix=" " category="inline-code"></block></block>
@@ -227,7 +225,6 @@
   <block id="087b01deb1bef7c8b4ffe6fe81283666" category="list-text">Nehmen Sie den beeinträchtigten Controller zur LOADER-Eingabeaufforderung:</block>
   <block id="ebc5673f419bc9da94f2c2f001aaf3ff" category="cell">Wenn der eingeschränkte Controller angezeigt wird...</block>
   <block id="a2efb773cb3f251f8687b1e41309b525" category="paragraph">Die LOADER-Eingabeaufforderung</block>
-  <block id="3891e96240b27c2309a21f6387f98917" category="paragraph">Wechseln Sie zu Controller-Modul entfernen.</block>
   <block id="fd66c964768074eb90f4f1426229bf3e" category="paragraph">Warten auf Giveback...</block>
   <block id="2c605d107b8b0f8d344d6c863e4c47a9" category="paragraph">Drücken Sie Strg-C, und antworten Sie dann<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block>.</block>
   <block id="7e14201f51e262f13f2c3c4eb7e4a175" category="paragraph">Eingabeaufforderung des Systems oder Passwort (Systempasswort eingeben)</block>
@@ -787,7 +784,6 @@
   <block id="cd52056b12799b75e95ce3715dbd95d0" category="section-title">Schritt 2: LIFs überprüfen und die Seriennummer registrieren</block>
   <block id="556aba51608845a42e971c4c7b471837" category="paragraph">Bevor Sie den Node _Replacement_ zum Service zurücksenden, sollten Sie überprüfen, ob sich die LIFs auf ihren Home-Ports befinden, und bei aktiviertem AutoSupport die Seriennummer des Node _Replacement_ registrieren.</block>
   <block id="462ec873925d8409f9ead354ff424e1b" category="list-text">Vergewissern Sie sich, dass die logischen Schnittstellen ihrem Home-Server und ihren Ports Berichterstellung:<block ref="f8a58a872dbff91c3ae7076526ddf81a" prefix=" " category="inline-code"></block></block>
-  <block id="8ea6b3a9b2a4529608397a2c8232b2e9" category="paragraph">Wenn eine der LIFs als falsch aufgeführt ist, stellen Sie sie auf ihre Home-Ports zurück:<block ref="d1e4afa40f7e9718bdad64b4f5db9abb" prefix=" " category="inline-code"></block></block>
   <block id="bfe787834fd9e46156b1d62f2f5029f8" category="list-text">Registrieren Sie die Seriennummer des Systems beim NetApp Support.</block>
   <block id="523f153f577513ed6f7ddd1f4d6a7cac" category="list-text">Wenn AutoSupport aktiviert ist, senden Sie eine AutoSupport Nachricht, um die Seriennummer zu registrieren.</block>
   <block id="69d8be94d5b9ba35360160c6e3097920" category="list-text">Wenn AutoSupport nicht aktiviert ist, rufen Sie an<block ref="201cec37350c6561a61e79fe67dd46bf" category="inline-link-rx"></block> Um die Seriennummer zu registrieren.</block>
@@ -5274,18 +5270,12 @@
   <block id="830b5fe829eb12d5b43a45ca8d16c92f" category="paragraph">Wenn die Laufwerksschublade geöffnet ist, wird vor jedem Laufwerk eine Warnungs-LED angezeigt.</block>
   <block id="9a0daa08283e3d5284734f7a4dd54c88" category="image-alt">2860 g Bernstein auf Antrieb</block>
   <block id="6c6102fba9a6a67d68f726fd9a0aaa6a" category="cell">Die Warnungs-LED leuchtet auf</block>
-  <block id="0fdd3a9de120fbacd6c04d73ee6832df" category="summary">Sie können die ausgefüllten Verkabelungsarbeitsblätter und Beispiele für Controller-Stack verwenden, um Plattformen mit internem Storage zu verkabeln, einschließlich FAS2600 Series, AFF A200, FAS2700 Serie, AFF A220. Und später.</block>
   <block id="bb42dbb13759e9df73ffa74412e3548a" category="doc">Verkabelungsarbeitsblätter und Verkabelungsbeispiele für Plattformen mit internem Speicher - Regale mit IOM12/IOM12B-Modulen</block>
   <block id="424f2fdac9e61f7b7785b602da677d00" category="admonition">Diese Informationen gelten nicht für Plattformen des FAS25XX.</block>
-  <block id="18e93c7175385ec259f95d9d453bdda1" category="list-text">Bei Bedarf können Sie sich auf beziehen <block ref="db31d33614fd87795381d5ac14be04aa" category="inline-link-macro-rx"></block> Weitere Informationen zu unterstützten Konfigurationen, Shelf-zu-Shelf-Konnektivität und Controller-zu-Shelf-Konnektivität</block>
-  <block id="ba38e437ae673ee3e3f19dd893a38b35" category="list-text">Kabelbeispiele zeigen Kabel-zu-Stack-Kabel als solide oder gestrichelt an, um Controller-0b-Port-Verbindungen von Controller 0a-Port-Verbindungen zu unterscheiden.</block>
-  <block id="1b423539e905b630394da7971c47a88a" category="image-alt">drw fas2600-Controller zum Stapeln des Kabelschlüssels</block>
   <block id="ee547c1c638ccba345b1cbcb32709bcc" category="list-text">Verkabelungsbeispiele zeigen Controller-zu-Stack-Verbindungen und Shelf-zu-Shelf-Verbindungen in zwei verschiedenen Farben, um die Konnektivität durch IOM A (Domäne A) und IOM B (Domäne B) zu unterscheiden.</block>
   <block id="c81b301c5f51b115f5e18cb1507f7388" category="image-alt">drw fas2600-Kabelfarbschlüssel</block>
   <block id="4efb7705f98005596f065e30ddf32363" category="section-title">Plattformen mit internem Storage in einer Multipath HA-Konfiguration mit einem Multi-Shelf Stack</block>
   <block id="ff82ea2b354e0f934f26abf26044a994" category="paragraph">Im folgenden Arbeitsblatt und Verkabelungsbeispiel werden Port-Paar 0a/0b verwendet:</block>
-  <block id="722de0e0a7dcfb970621a772bae3850c" category="image-alt">drw fas2600 mpha-Arbeitsblatt</block>
-  <block id="5eb85c13122610ca0d3c8606ac0884a7" category="image-alt">drw fas2600 mpha</block>
   <block id="8498d609d156c09f9b21ae8adb760b18" category="section-title">FAS2600 Serie Multipath-Konfiguration mit einem Multi-Shelf-Stack</block>
   <block id="5067863de55d98010fd9bb2898b6d0e2" category="paragraph">Die folgenden Worksheets und Verkabelungsbeispiele verwenden das Port-Paar 0a/0b.</block>
   <block id="436ea39ce2a06ceb277515424ceed3d4" category="paragraph">In diesem Beispiel ist der Controller in Steckplatz A des Chassis installiert. Wenn sich ein Controller in Steckplatz A des Chassis befindet, befindet sich sein interner Speicherport (0b) in Domäne A (IOM A). Daher muss Port 0b mit Domäne A (IOM A) im Stack verbunden sein.</block>
@@ -5297,7 +5287,6 @@
   <block id="22de385bc846aff8918c00418f396af3" category="summary">Es stehen folgende SAS-Verkabelungsregeln, Beispiele und Worksheets zur Verfügung, mit denen Sie Ihre SAS-Laufwerk-Shelfs mit IOM12-Modulen an Ihr Storage-System verkabeln.</block>
   <block id="e0c4907423e9966f80fb30cb4ce6df57" category="doc">SAS-Verkabelungsregeln, Arbeitsblätter und Beispiele – Regale mit IOM12/IOM12B-Modulen</block>
   <block id="87fe7ea614796dffe614513028372aa9" category="paragraph">Um Ihnen bei der Verkabelung Ihrer SAS-Laufwerk-Shelfs mit IOM12/IOM12B-Modulen in Ihr Speichersystem zu helfen, können Sie je nach Bedarf alle verfügbaren SAS-Verkabelungsregeln, Arbeitsblätter und Beispielinhalte nutzen.</block>
-  <block id="dec8d0bac5e3e019cf604b191c0cd1fc" category="paragraph">*SAS-Kabelregeln*</block>
   <block id="eb631b70ae7c721773f91b506c815082" category="inline-link-macro">Konfigurationen</block>
   <block id="2c20867b019d706a391ac25e6929487d" category="list-text"><block ref="2c20867b019d706a391ac25e6929487d" category="inline-link-macro-rx"></block></block>
   <block id="fde7507300690e9e5b82885ffbc9508b" category="inline-link-macro">Controller-Slot-Nummerierung</block>
@@ -5309,10 +5298,6 @@
   <block id="ec5bf10bb724f1090f587e3f483ad17f" category="inline-link-macro">Optische Mini-SAS-HD-SAS-Kabel</block>
   <block id="183816ad8f9602df1b79177a9a701a9e" category="list-text"><block ref="183816ad8f9602df1b79177a9a701a9e" category="inline-link-macro-rx"></block></block>
   <block id="466938affa9a199b1c83c75ca5cb1a5b" category="paragraph">*Verkabelungsarbeitsblätter und Beispiele*</block>
-  <block id="9da6ad063de2521b4320f53e9eaef62c" category="inline-link-macro">Gängige Multipath HA-Konfigurationen</block>
-  <block id="d9e855b435b4d134eea547e0fa310441" category="list-text"><block ref="d9e855b435b4d134eea547e0fa310441" category="inline-link-macro-rx"></block></block>
-  <block id="e188406fb2d6108447e3bc6cb9155625" category="inline-link-macro">AFF- und FAS-Plattformen mit Onboard-Storage</block>
-  <block id="7a63e08a24ae8c9c1ab5dcddaf6f551f" category="list-text"><block ref="7a63e08a24ae8c9c1ab5dcddaf6f551f" category="inline-link-macro-rx"></block></block>
   <block id="d0b14672f568caba4ff0c9e7e94adbfd" category="inline-link-macro">Quad-Path HA-Konfigurationen</block>
   <block id="c9652f347c61d0d2c370d1229afb9e37" category="list-text"><block ref="c9652f347c61d0d2c370d1229afb9e37" category="inline-link-macro-rx"></block></block>
   <block id="8ae471d6400ac43c05cee2f01574b10c" category="paragraph">*Vorlagen für Verkabelungsarbeitsblatt*</block>
@@ -5345,7 +5330,6 @@
   <block id="c50fdb32ee76a4d77a2a4b76520e5bed" category="admonition">Nach dem Austausch des Lüftermoduls leuchtet die Warn-LED weiterhin (gelb), während die Firmware überprüft, ob das Lüftermodul ordnungsgemäß installiert wurde. Nach Abschluss dieses Vorgangs erlischt die LED.</block>
   <block id="162c19cb0e58f8c6c83c319b91d9da12" category="paragraph">Wenden Sie sich an den technischen Support unter<block ref="eb2c61027d5e6c8b35692c1e74187026" category="inline-link-rx"></block>, 888-463-8277 (Nordamerika), 00-800-44-638277 (Europa) oder +800-800-80-800 (Asien/Pazifik) wenn Sie die RMA-Nummer benötigen.</block>
   <block id="1a9e0b4a2336d16f8663305e4fc18c6f" category="summary">Mithilfe der Verkabelungsarbeitsblätter und Beispiele für den Controller-to-Stack können Sie das HA-Paar als Multipath HA-Konfiguration verkabeln.</block>
-  <block id="597768bf006f6e20b6db4d977f39566f" category="doc">Verkabelungsarbeitsblätter und Verkabelungsbeispiele für gängige Multipath HA-Konfigurationen – Shelves mit IOM12/IOM12B-Modulen</block>
   <block id="bf19714cdcd1dd190617db0b27cdf3cf" category="inline-link-macro">Lesen eines Arbeitsblatts zur Verkabelung von Controller-zu-Stack-Verbindungen für Multipath-Konnektivität</block>
   <block id="7ab9991308c3a3d15fb6ed5c7a347e31" category="list-text">Bei Bedarf können Sie sich auf beziehen <block ref="32f1048d76ed4ef07349228b731694c0" category="inline-link-macro-rx"></block>.</block>
   <block id="f36fd727bb50e27882dbe086058bd373" category="list-text">Verkabelungsbeispiele zeigen Kabel zwischen Controller und Stack als fest oder gestrichelt, um Controller A- und C-Port-Verbindungen von Controller B- und D-Port-Verbindungen zu unterscheiden.</block>
@@ -5416,9 +5400,6 @@
   <block id="16e515f4f7ddf43ca6fc5f5321a960e5" category="list-text">Wenn Sie ein Platten-Shelf mit IOM12/IOM12B-Modulen im laufenden Betrieb einem vorhandenen Stack hinzufügen (von Platten-Shelfs mit IOM12/IOM12B-Modulen), können Sie das Platten-Shelf entweder am Ende des logischen ersten oder letzten Platten-Shelfs hinzufügen.</block>
   <block id="f0e56e4ad757d6fad89dfcfe1aa12d88" category="paragraph">Für HA- und Single-Path-Konfigurationen, die für AFF A200, AFF A220, FAS2600 Series und FAS2700 Systeme anwendbar sind, können Sie Festplatten-Shelfs am Ende des Stacks hinzufügen, ohne dass Controller-Verbindungen vorhanden sind.</block>
   <block id="4a6c06310d2bcd1c9758407cb59a423d" category="list-text">Platten-Shelfs mit IOM12/IOM12B Modulen müssen in einem eigenen Stack gemeinsam sein. Sie können nicht einem Stack mit Shelfs mit IOM6-Modulen oder IOM3-Modulen hinzugefügt werden.</block>
-  <block id="1297a8f1ac3fcf90ab0c70ff5e47b71d" category="paragraph">Diese Vorgehensweise unterstützt nicht die gemeinsame Nutzung eines Stacks: Shelf mit IOM12/IOM12B-Modulen werden im laufenden Betrieb in einem Shelf-Stack mit IOM6-Modulen hinzugefügt.</block>
-  <block id="0712df39e8d2ca11a74df9f3fe275482" category="list-text">Ein System kann mehrere Pathing- und Quad-Pathed-Stacks mit IOM12/IOM12B-Modulen haben.</block>
-  <block id="835ecba5eb095440eda54c2f50f1ef89" category="paragraph">Wenn Sie ein HA-Paar haben, zeigt ONTAP die Systemkonfiguration als an<block ref="6a2261f2aa8f6f694724a61b378ae0ea" prefix=" " category="inline-code"></block>. Wenn Sie eine Single-Controller-Konfiguration haben, zeigt ONTAP die Systemkonfiguration als an<block ref="90870fcbef383147c684a1554de0fb6c" prefix=" " category="inline-code"></block>.</block>
   <block id="23799cee6c2d33512d5d7c2c4dd066da" category="list-text">Bei diesem Verfahren wird vorausgesetzt, dass Ihre Konfiguration die in-Band ACP verwendet.</block>
   <block id="0a21ef57c079b8fb55adaac84e5c7dc9" category="paragraph">Bei Konfigurationen, bei denen ACP in der Band aktiviert ist, wird ACP in-Band automatisch auf Platten-Shelfs aktiviert, die im laufenden Betrieb hinzugefügt werden können. Bei Konfigurationen, bei denen in-Band-ACP nicht aktiviert ist, funktionieren Hot-zusätzliche Festplatten-Shelfs ohne ACP-Funktionen.</block>
   <block id="df9362a84fd3cff7395403ecc0c32568" category="list-text">Eine unterbrechungsfreie Stack-Konsolidierung wird nicht unterstützt.</block>
@@ -5485,7 +5466,6 @@
   <block id="82fd485bd66b7a7cf95b41701aff95f4" category="list-text">Legen Sie die Shelf-ID für jedes Festplatten-Shelf fest, das Sie einer ID hinzufügen möchten, die innerhalb des HA-Paars oder der Single-Controller-Konfiguration eindeutig ist.</block>
   <block id="50a5f31124b37f0e6f0175b4691d290a" category="paragraph">Wenn Sie über ein Plattformmodell mit einem internen Festplatten-Shelf verfügen, müssen Shelf-IDs über das interne Festplatten-Shelf und extern verbundene Festplatten-Shelfs eindeutig sein.</block>
   <block id="437cff47077287b8acaab6cf6eb3f66e" category="inline-link-macro">Ändern Sie eine Shelf-ID</block>
-  <block id="f44e011a4789f1353840c4446705dbef" category="paragraph">Sie können die folgenden Unterschritte verwenden, um die Shelf-IDs zu ändern. Weitere detaillierte Anweisungen finden Sie unter <block ref="7a954fe7521681b1209c8a82ea854632" category="inline-link-macro-rx"></block>.</block>
   <block id="be888bc11355717d8c2ff0800204b0b3" category="list-text">Falls erforderlich, überprüfen Sie, ob die Shelf-IDs bereits verwendet werden, indem Sie Config Advisor ausführen.</block>
   <block id="da76ba8629924d6ccf3a6035d9cd60f7" category="paragraph">Sie können auch die ausführen<block ref="82b00438bdff68cba792c38604023279" prefix=" " category="inline-code"></block> Befehl, um eine Liste der bereits verwendeten Shelf-IDs (und Duplikate, falls vorhanden) in Ihrem System anzuzeigen.</block>
   <block id="d4220cd9c056561ecccf19054b1b635b" category="list-text">Greifen Sie auf den Shelf-ID-Knopf hinter der linken Endkappe zu.</block>
@@ -5495,7 +5475,6 @@
   <block id="e721fed5752af28a811f95c9517647d5" category="paragraph">Die Shelf-ID blinkt und die LED für die Bedieneranzeige blinkt, bis Sie das Festplatten-Shelf aus- und wieder einschalten.</block>
   <block id="114b5f5f60d5305cae68f7358becbb08" category="list-text">Wiederholen Sie die Subschritte a bis d für jedes Festplatten-Shelf, das Sie im laufenden Betrieb hinzufügen möchten.</block>
   <block id="7c100d04606be0913d1347f47c7198ab" category="section-title">Verkabeln Sie Platten-Shelfs mit IOM12/IOM12B-Modulen für ein Hot-Add</block>
-  <block id="7d1f085b961baef4ee505ff0b202f8af" category="paragraph">Sie verkabeln die SAS-Verbindungen --Shelf-to-Shelf und Controller-to-Stack - sofern zutreffend für Hot-Added Platten-Shelfs, damit sie mit dem System verbunden werden können.</block>
   <block id="c920d4841ecd46b57d9a50e7295a2153" category="inline-link-macro">Anforderungen für Hot-Adding Disk-Shelfs mit IOM12-Modulen</block>
   <block id="36779ed778ea1fac61fae3be46917d43" category="inline-link-macro">Installieren Sie Platten-Shelfs mit IOM12-Modulen für ein Hot-Add-System</block>
   <block id="56ccacf68c60aa589cdd947ffabc6a40" category="paragraph">Sie müssen die Anforderungen in erfüllt haben <block ref="38d5024537883b0bd86511e0b5e50dba" category="inline-link-macro-rx"></block> Und installiert, eingeschaltet und Shelf-IDs für jedes Festplatten-Shelf gemäß Anweisungen in festlegen <block ref="2957551c96808bfde01acb853ddbc0af" category="inline-link-macro-rx"></block>.</block>
@@ -5513,7 +5492,6 @@
   <block id="3f876ffd29608a6fdd6c56b2bcd2373a" category="list-text">Wenn Sie einen Stapel an Platten-Shelfs während des laufenden Betrieb direkt zu einem Controller hinzufügen, führen Sie die folgenden Teilschritte durch; anderenfalls fahren Sie mit Schritt 3 fort.</block>
   <block id="aab34a0f20291dc4eca51492b7dda4a1" category="list-text">Wenn der Stack, den Sie hinzufügen, mehr als nur ein Festplatten-Shelf hat, verkabeln Sie die Shelf-to-Shelf-Verbindungen. Andernfalls fahren Sie mit dem Unterschritt B. fort</block>
   <block id="bfa9de45095a3a90ebc55708a5ee6dd2" category="cell">Wenn...</block>
-  <block id="eb6b116ad264c3ca003c27162d0d11cf" category="paragraph">Sie verkabeln einen Stack mit Multipath HA, Multipath, Single Path HA oder Single-Path-Konnektivität zu den Controllern</block>
   <block id="4488830a541dd347507e71eccb3f4943" category="paragraph">Verbinden Sie die Shelf-zu-Shelf-Verbindungen mit „`standard`“-Konnektivität (unter Verwendung von IOM-Ports 3 und 1):</block>
   <block id="779c08e01ec265d0aff357c180fceb48" category="list-text">Beginnend mit dem logischen ersten Shelf im Stack verbinden Sie IOM A-Port 3 mit Dem IOM A-Port 1 des nächsten Shelfs, bis jedes IOM A im Stack verbunden ist.</block>
   <block id="e35dc83f4e69b7ee09cb18fffad51f70" category="list-text">Wiederholen Sie den Unterschritt i für IOM B.</block>
@@ -5522,10 +5500,6 @@
   <block id="e3a77aa5b3bcde007d2fae9a8ec6064a" category="list-text">Beginnend mit dem logischen ersten Shelf im Stack verbinden Sie IOM A-Port 4 mit Dem IOM A-Port 2 des nächsten Shelfs, bis jedes IOM A im Stack verbunden ist.</block>
   <block id="3695fc6217ea304b073a799f547f9347" category="list-text">Wiederholen Sie die Unterschritte i und ii für IOM B.</block>
   <block id="11eaf61422cf68224e34ee6875a0eaf8" category="list-text">Überprüfen Sie die Verkabelungsarbeitsblätter und Beispiele für den Controller-to-Stack-Stack, um zu ermitteln, ob ein ausgefülltes Arbeitsblatt für Ihre Konfiguration vorhanden ist.</block>
-  <block id="df890e7b6d800ea7f63516f78dc7b333" category="inline-link-macro">Verkabelungsarbeitsblätter und Beispiele für Controller-to-Stack für AFF- und FAS-Plattformen mit integriertem Storage</block>
-  <block id="4831f887bab13b0957b607ad184c87f7" category="paragraph"><block ref="4831f887bab13b0957b607ad184c87f7" category="inline-link-macro-rx"></block></block>
-  <block id="157171cdb89a7c3ef4163f5ab09c52b9" category="inline-link-macro">Arbeitsblätter und Beispiele für die Verkabelung von Controller und Stack für gängige Multipath HA-Konfigurationen</block>
-  <block id="5d50d12c536a18b90ff261c6cb3dd2ff" category="paragraph"><block ref="5d50d12c536a18b90ff261c6cb3dd2ff" category="inline-link-macro-rx"></block></block>
   <block id="5c2ad194cf23987186d5cbe5c49ce2a6" category="inline-link-macro">Verkabelungsarbeitsblatt für den Controller-to-Stack und Kabelbeispiel für eine Quad-Path HA-Konfiguration mit zwei Quad-Port SAS HBAs</block>
   <block id="02548e03b89f23365c2f51edd44d2173" category="paragraph"><block ref="02548e03b89f23365c2f51edd44d2173" category="inline-link-macro-rx"></block></block>
   <block id="9495b7b73fbc9016369ec183980f3b98" category="list-text">Wenn ein ausgefülltes Arbeitsblatt für Ihre Konfiguration vorhanden ist, verkabeln Sie die Controller-to-Stack-Verbindungen mithilfe des ausgefüllten Arbeitsblatts. Gehen Sie andernfalls mit dem nächsten Unterschritt.</block>
@@ -5535,10 +5509,8 @@
   <block id="b9e772dcfe474ff5403c912944516e36" category="inline-link-macro">Vorlage für Verkabelungsarbeitsblatt für den Controller-zu-Stack für Quad-Pathed-Konnektivität</block>
   <block id="612ddf012153a583a53a09e3d7b592ea" category="paragraph"><block ref="612ddf012153a583a53a09e3d7b592ea" category="inline-link-macro-rx"></block></block>
   <block id="52c50d0ed319a8e8651dbd6633a6eb4b" category="list-text">Stellen Sie sicher, dass alle Kabel sicher befestigt sind.</block>
-  <block id="15d747925bd876379293d3f7b381a24a" category="list-text">Wenn Sie ein oder mehrere Platten-Shelves zu einem vollständigen logischen ersten oder letzten Festplatten-Shelf hinzufügen – eines vorhandenen Stacks führen Sie die entsprechenden Teilschritte für Ihre Konfiguration aus. Anderenfalls wechseln Sie mit dem nächsten Schritt.</block>
   <block id="dbe0afeaa91b9a08168e98b33a4c7de8" category="admonition">Achten Sie darauf, dass Sie mindestens 70 Sekunden warten, bis Sie ein Kabel trennen und wieder anschließen, und wenn Sie ein Kabel länger ersetzen.</block>
   <block id="f869ea7ce9a752fc1c1184b74b7c48b7" category="cell">Ihr Unternehmen</block>
-  <block id="98aa5d35b682331617bfb7e16474e48b" category="paragraph">Hot-Adding eines Platten-Shelf am Ende eines Stacks mit Multipath HA, Multipath, Quad-Path-HA oder Quad-Path-Konnektivität zu den Controllern</block>
   <block id="e5db3fb8bc84ca3e26b513ea750c6127" category="list-text">Trennen Sie alle Kabel von IOM A des Festplatten-Shelf am Ende des Stacks, die mit einem beliebigen Controller verbunden sind. Andernfalls fahren Sie mit subschritt e. fort</block>
   <block id="eded78be6c2ef5bdeed5cb2e044b45ea" category="paragraph">Lassen Sie das andere Ende dieser Kabel mit den Controllern verbunden sein, oder ersetzen Sie bei Bedarf die Kabel durch weitere Kabel.</block>
   <block id="30a13f506678dd37c6740d0a8210db83" category="list-text">Verkabeln Sie die Shelf-zu-Shelf-Verbindungen zwischen IOM A des Festplatten-Shelfs am Ende des Stacks und IOM A des Festplatten-Shelfs, das Sie hinzufügen.</block>
@@ -5550,7 +5522,6 @@
   <block id="a3d47aa3e93dad380f8eddea49e10329" category="list-text">Überprüfen Sie, ob das Kabel fest befestigt ist.</block>
   <block id="310e6246fbcbc6ffbcf046392bd9519f" category="list-text">Wiederholen Sie die für IOM B geltenden Unterschritte</block>
   <block id="125273384fcb185d3d30fb428a9882ad" category="list-text">Wenn Sie ein Platten-Shelf mit optischen Mini-SAS-HD-SAS-Kabeln in einem Stack mit SAS-Kupferkabeln verbundene Platten-Shelfs aufnehmen, ersetzen Sie die SAS-Kupferkabel. Andernfalls fahren Sie mit dem nächsten Schritt fort.</block>
-  <block id="d723d62f22ae4fd78c33384440e5978e" category="paragraph">Der Stack muss die im angegebenen Anforderungen erfüllen <block ref="b97fb0f13d8cc81479b53e89d9178105" category="inline-xref-macro-rx"></block> Abschnitt dieses Verfahrens.</block>
   <block id="20244777af6f97db49ab4dc75a00ca87" category="paragraph">Ersetzen Sie die Kabel nacheinander, und stellen Sie sicher, dass Sie zwischen dem Trennen eines Kabels und dem Anschließen eines neuen Kabels mindestens 70 Sekunden warten.</block>
   <block id="cffaa419df3085d01136e2b025db708e" category="paragraph">Wenn SAS-Verkabelungsfehler generiert werden, befolgen Sie die angegebenen Korrekturmaßnahmen.</block>
   <block id="de46960b44022dd01adfc6091d8e17ba" category="list-text">Überprüfen Sie die SAS-Konnektivität für jedes Hot-Added Festplatten-Shelf:<block ref="a8562efc8f11591bbf23ca4b6d02f983" prefix=" " category="inline-code"></block></block>
@@ -5610,14 +5581,12 @@
   <block id="0ce1997215ff26fd5b9284736a764b25" category="admonition">Wenn Sie das erste Laufwerk einsetzen, leuchtet die Warn-LED möglicherweise. Die LED sollte jedoch innerhalb einer Minute ausgeschaltet werden.</block>
   <block id="3b11171c02404a6a48fbb19b047eef0f" category="summary">Durch Ausfüllen der Worksheet-Vorlage können Sie die SAS-Port-Paare des Controllers definieren, mit denen Controller mit IOM12/IOM12B-Modulen verbunden werden können. So wird eine Multipath-Konnektivität in einem HA-Paar oder einer Single-Controller-Konfiguration erreicht. Sie können auch das ausgefüllte Arbeitsblatt verwenden, um sich durch die multipathed Verbindungen für Ihre Konfiguration zu führen.</block>
   <block id="12156870a61d18f81545fc90d3b6ffda" category="doc">Controller-zu-Stack-Verkabelungsarbeitsblatt für multipathed Connectivity - Regale mit IOM12/IOM12B-Modulen</block>
-  <block id="e789db57588c567cf162bf2f8ec8b65e" category="paragraph">Wenn Sie über eine Plattform mit internem Storage verfügen, z. B. FAS2600 Serie, AFF A200, FAS2700 Serie, AFF A220, Verwenden Sie später Folgendes (diese Plattformen verwenden ein einzigartiges Arbeitsblatt):</block>
   <block id="f5d03e0aa6d32340b1284f6bb82c8ee3" category="inline-link-macro">Verkabelungsarbeitsblätter und Beispiele für Plattformen mit internem Storage für den Controller-to-Stack-Stack</block>
   <block id="c19123e6031c139d66f534ae4311d605" category="paragraph"><block ref="c19123e6031c139d66f534ae4311d605" category="inline-link-macro-rx"></block></block>
   <block id="5976250f174c7aa7423cbb91c458e804" category="list-text">Diese Prozedur und Arbeitsblattvorlage können für die Verkabelung von Multipath HA- oder Multipath-Konfigurationen mit einem oder mehreren Stacks angewendet werden.</block>
   <block id="8c7e7585bf065649c4ca12e935833b4c" category="paragraph">Beispiele für abgeschlossene Worksheets finden Sie für Multipath HA- und Multipath-Konfigurationen.</block>
   <block id="51432cf63c198a0a11bab993299ae7fd" category="paragraph">Für die Arbeitsblattbeispiele wird eine Konfiguration mit zwei Quad-Port-SAS-HBAs und zwei Stacks an Platten-Shelfs mit IOM12/IOM12B-Modulen verwendet.</block>
   <block id="da38645c7fd59844e84034f3e0e006a1" category="list-text">Die Arbeitsblattvorlage ermöglicht bis zu sechs Stapel. Bei Bedarf müssen weitere Spalten hinzugefügt werden.</block>
-  <block id="366650169d0230a4d4bd37f5a9f65737" category="list-text">Bei Bedarf können Sie sich auf die beziehen <block ref="db31d33614fd87795381d5ac14be04aa" category="inline-link-macro-rx"></block> Weitere Informationen zu unterstützten Konfigurationen finden Sie auf der Konvention zur Nummerierung von Controller-Steckplätzen, Shelf-to-Shelf-Konnektivität und Controller/Shelf-Konnektivität (einschließlich Verwendung von Port-Paaren).</block>
   <block id="2afb2ee03a930cb4967503a5dbf7a5b0" category="list-text">Falls erforderlich, können Sie nach dem Ausfüllen des Arbeitsblatts auf lesen <block ref="32f1048d76ed4ef07349228b731694c0" category="inline-link-macro-rx"></block></block>
   <block id="b1d23e069f48305f66afd6c74e6f2742" category="image-alt">dmw-Arbeitsblatt mpha-Vorlage</block>
   <block id="b6e864fc7eab4fd6206badf96144db05" category="list-text">Listen Sie in den Feldern über den grauen Feldern alle SAS A-Ports auf Ihrem System und dann alle SAS C-Ports auf Ihrem System in einer Reihe von Steckplätzen (0, 1, 2, 3 usw.) auf.</block>
@@ -5665,7 +5634,6 @@
   <block id="d69f8bb928c8179d4a1d81a77b9f6a4c" category="list-text">Gehen Sie wie folgt vor, um ein Arbeitsblatt und eine Verkabelung zu lesen, um Verbindungen zwischen Controller und Stack zu verkabeln.</block>
   <block id="2f40064540d7b13547e7d24b16fd49e7" category="paragraph">Die in diesem Beispiel verwendete Konfiguration ist eine Quad-Path HA-Konfiguration mit zwei Quad-Port SAS HBAs auf jedem Controller und zwei Stacks an Festplatten-Shelfs mit IOM12-Modulen.</block>
   <block id="a513cfe8d83ba38ea85b01260a4ffb53" category="list-text">Wenn Sie eine Single-Controller-Konfiguration haben, überspringen Sie die Unterschritte b und d für die Verkabelung zu einem zweiten Controller.</block>
-  <block id="b4e4a43caabf816c003f966fc4a0f279" category="list-text">Bei Bedarf können Sie sich auf beziehen <block ref="db31d33614fd87795381d5ac14be04aa" category="inline-link-macro-rx"></block> Weitere Informationen zur Nummerierung der Controller-Steckplätze, Shelf-zu-Shelf-Konnektivität und Controller/Shelf-Konnektivität (einschließlich der Verwendung von Port-Paaren)</block>
   <block id="270a0442694cb2d6cfb0b5aac8bf618c" category="list-text">Kabel-Port-Paar 1a/2b an jedem Controller zu Stack 1:</block>
   <block id="480e4f10ac2e8a84a7f6455bf724bff5" category="paragraph">Dies ist die Multipath-Verkabelung für Stack 1.</block>
   <block id="84233093e0fddbce6c78136ff461562e" category="list-text">Kabel-Controller 1-Port 1a zu Stack 1, erstes Shelf-IOM A-Port 1.</block>
@@ -5698,8 +5666,6 @@
   <block id="bd7b8cb1f03ceb90528c843b3cd8c0a4" category="summary">Sie können ein Platten-Shelf in Betrieb nehmen mit IOM12-Modulen (ein Platten-Shelf wird unterbrechungsfrei von einem eingeschalteten System entfernt und die I/O wird gerade ausgeführt), wenn Sie das Platten-Shelf verschieben oder ersetzen müssen. Sie können ein oder mehrere Platten-Shelfs innerhalb eines Stacks mit Platten-Shelfs Hot-entfernen oder einen Stack von Festplatten-Shelfs entfernen.</block>
   <block id="314802b9b5ea5477ad3c17cc48db0ca8" category="doc">Regal für die Warmentferne - Regale mit IOM12/IOM12B-Modulen</block>
   <block id="f6516aa66806c66f90b17f54c90fc724" category="paragraph">Sie können ein Platten-Shelf in Betrieb nehmen mit IOM12/IOM12B-Modulen (ein Platten-Shelf kann unterbrechungsfrei von einem System entfernt werden, das eingeschaltet ist und I/O im Gange ist), wenn Sie ein Platten-Shelf verschieben oder ersetzen müssen. Sie können ein oder mehrere Platten-Shelfs innerhalb eines Stacks mit Platten-Shelfs Hot-entfernen oder einen Stack von Festplatten-Shelfs entfernen.</block>
-  <block id="c5cabc5bd527563ec2a9e03c2ca16ab6" category="list-text">Ihr System muss eine Multipath HA-, Multipath-, Quad-Path-Konfiguration oder Quad-Path-Konfiguration sein.</block>
-  <block id="a545c2ce8d557ac97c60d7fea8129606" category="paragraph">Bei Plattformen mit integriertem Storage, wie z. B. AFF A200, AFF A220, FAS2600 Serie und FAS2700 Systemen, muss der externe Storage als Multipath HA oder Multipath verkabelt werden.</block>
   <block id="079a7f8e81dcfa4ea9fb370c9901815f" category="admonition">Das System ist für ein Single-Controller-System der FAS2600 Serie mit dem externen Storage, der mit Multipath-Konnektivität verbunden ist, eine Konfiguration mit gemischten Pfaden, da der interne Storage über Single Path-Konnektivität verfügt.</block>
   <block id="7aef33153293755f25958302c5aed92b" category="paragraph">Sie können Active IQ Config Advisor herunterladen und ausführen, um alle Fehlermeldungen der SAS-Verkabelung sowie die Korrekturmaßnahmen anzuzeigen, die Sie ergreifen sollten.</block>
   <block id="a87e1a96f2d7d8d3f543485f49e17ff9" category="list-text">DIE HA-Paar-Konfigurationen können nicht im Übernahmemodus liegen.</block>
@@ -5709,7 +5675,6 @@
   <block id="00124b65b0475ef5a1ef8812a9a5aa02" category="list-text">*Best Practice:* die beste Praxis ist, Festplatten Eigentum zu entfernen, nachdem Sie die Aggregate von den Festplatten in den Platten-Shelves, die Sie entfernen.</block>
   <block id="d861952ae543b7ab12c97b76ba5a6d22" category="paragraph">Durch das Entfernen von Besitzinformationen von einer Ersatzfestplatte kann das Festplattenlaufwerk (je nach Bedarf) ordnungsgemäß in einen anderen Knoten integriert werden.</block>
   <block id="82a0e673933c66d13ebe9ac1bf565aa9" category="paragraph">Um das Eigentum von Festplatten zu entfernen, müssen Sie die automatische Zuweisung der Festplatteneigentümer deaktivieren. Am Ende dieses Vorgangs wird die automatische Zuweisung zum Festplattenbesitzer wieder aktiviert.</block>
-  <block id="c917987d5d8844333d3271b88c9ef8ec" category="paragraph"><block ref="c917987d5d8844333d3271b88c9ef8ec" category="inline-link-rx"></block></block>
   <block id="6d262abed5885a9a0e7edfe9d9df36e8" category="list-text">Bei einem Clustered ONTAP System mit mehr als zwei Nodes empfiehlt es sich, Epsilon auf ein anderes HA-Paar zuzuweisen, das während der geplanten Wartung arbeitet.</block>
   <block id="aae869bb20c68bfa1b78ddb6bdd06a3d" category="paragraph">Das erneute Signieren des Epsilon minimiert das Risiko unvorhergesehener Fehler, die auf alle Nodes in einem Clustered ONTAP System beeinträchtigt werden. Anhand der folgenden Schritte können Sie feststellen, ob der Knoten Epsilon und Epsilon bei Bedarf neu zugewiesen werden:</block>
   <block id="75a7fdc720f737b1c4798195fa81dd5a" category="list-text">Legen Sie die Berechtigungsebene auf erweitert fest:<block ref="0581d0d071ad835f74bf419081ce5d75" prefix=" " category="inline-code"></block></block>
@@ -5719,9 +5684,6 @@
   <block id="859b2518ddc407ed154103ca5d61902f" category="list-text">Epsilon einem Node in einem anderen HA-Paar zuweisen:<block ref="15bad7069cd7f71577acf6ccca0cab3e" prefix=" " category="inline-code"></block></block>
   <block id="1319d9c9945c8d2b36ffa9c0945c9db6" category="list-text">Wenn Sie ein Platten-Shelf im laufenden Betrieb aus einem Stapel entfernen (jedoch den Stack behalten), können Sie erneut einen Pfad nach nacheinander überprüfen (Pfad A dann Pfad B), um das Festplatten-Shelf, das Sie entfernen, zu umgehen, damit Sie stets die Single-Path-Verbindung von den Controllern zum Stack aufrechterhalten.</block>
   <block id="be52806c806fdd72f6b18960841d7459" category="admonition">Wenn Sie die Single-Path-Konnektivität von den Controllern nicht zum Stack aufrechterhalten, wenn Sie den Stack neu verkabeln, um das Festplatten-Shelf zu umgehen, das Sie entfernen, können Sie das System mit einer Multidisk-Panik fehlschlagen.</block>
-  <block id="0c19992873d54086f9866be6126e317c" category="list-text">*Möglicher Regalschaden:* Wenn Sie ein DS460C-Regal entfernen und es in einen anderen Teil des Rechenzentrums verschieben oder an einen anderen Ort transportieren, lesen Sie den Abschnitt, <block ref="2dfa5cde780121ff739815d2402836cf" category="inline-xref-macro-rx"></block> Am Ende dieses Verfahrens.</block>
-  <block id="bb4fc12c448337a0baf229180b8301a3" category="list-text">Vergewissern Sie sich, dass Ihre Systemkonfiguration genau ist<block ref="7331911b71ec7e78bff5c45bd2c5aaf9" prefix=" " category="inline-code"></block>,<block ref="30cd2ef2a4cf8bde2668292e60ce425e" prefix=" " category="inline-code"></block>,<block ref="98a06331c5019fee7c2bec76b5d289fb" prefix=" " category="inline-code"></block>, Oder<block ref="3a22361329a9005da35e1a3654fdb1ea" prefix=" " category="inline-code"></block>:<block ref="d4b15528721ed3ac7910f1fa2cacec13" prefix=" " category="inline-code"></block></block>
-  <block id="d4e4c353414a921b7e83ae256c64c7c3" category="paragraph">Sie führen diesen Befehl aus dem nodeshell von beiden Controllern. Es kann bis zu einer Minute dauern, bis das System die Erkennung abgeschlossen hat.</block>
   <block id="ed6b750b8843d7a7df75da2dbf5fe1e8" category="paragraph">Die Konfiguration ist im aufgeführt<block ref="bcd87154f25ef0dd1da8c6e024c2597e" prefix=" " category="inline-code"></block> Feld.</block>
   <block id="ed7a174149f5c6131e9541d84860b876" category="admonition">Für ein Single-Controller-System der FAS2600 Serie, das über den externen Storage verfügt, der mit Multipath-Konnektivität verbunden ist, wird die Ausgabe als angezeigt<block ref="864c2004fbb86b41fd41ecb867289c11" prefix=" " category="inline-code"></block> Weil im internen Storage Single Path-Konnektivität verwendet wird.</block>
   <block id="7cc8d0bc29251cecfd1b637849b731d6" category="list-text">Überprüfen Sie, ob die Festplatten in den Festplatten-Shelves, die Sie entfernen, keine Aggregate haben (sind Ersatzteile) und das Eigentum entfernt wird:</block>
@@ -5749,12 +5711,9 @@
   <block id="9fd4326c6ab2d997562f5767f3df7b73" category="list-text">Entfernen Sie alle Shelf-zu-Shelf-Kabel von IOM A-Ports 1 und 2 oder von den Ports 3 und 4 auf dem Festplatten-Shelf, das Sie entfernen, und IOM A des nächsten Festplatten-Shelfs und legen Sie sie beiseite.</block>
   <block id="ea478137f9f3f510d78ded85ca711328" category="list-text">Trennen Sie die verbleibenden Shelf-zu-Shelf-Verkabelung, die mit IOM A-Ports am Festplatten-Shelf verbunden ist. Sie werden entfernt und an dieselben IOM A-Ports am nächsten Festplatten-Shelf im Stack angeschlossen. Das „`nächste`“ Festplatten-Shelf kann über oder unter dem Festplatten-Shelf liegen, je nachdem, aus welchem IOM A-Ports (1 und 2 oder 3 und 4) Sie die Verkabelung entfernt haben.</block>
   <block id="ecb0971ba53e44dba0504141a48c9f2f" category="paragraph">Sie können sich die folgenden Verkabelungsbeispiele nennen, wenn Sie ein Festplatten-Shelf aus einem Ende eines Stacks oder der Mitte eines Stacks entfernen. Beachten Sie die folgenden Verkabelungsbeispiele:</block>
-  <block id="36cd08727706401ebefa64f1f844f7b4" category="list-text">Die IOM12-Module werden nebeneinander wie in einem DS224C oder DS212C Festplatten-Shelf angeordnet; bei einem DS460C werden die IOM12-Module übereinander angeordnet.</block>
-  <block id="3c41c9d7f79dc14dd41849a0139018f6" category="list-text">Der Stack in jedem Beispiel ist mit einer standardmäßigen Shelf-to-Shelf-Verkabelung verbunden, die in Stacks mit Multipath HA oder Multipath-Konnektivität verwendet wird.</block>
   <block id="5fea7092c0a88a4150d45ceb8b855a04" category="paragraph">Sie können die Neuaufteilung beschreiben, wenn der Stack über HA mit Quad-Path oder Quad-Path-Konnektivität verbunden ist, wobei doppelt breite Shelf-to-Shelf-Verkabelung verwendet wird.</block>
   <block id="8fd0f0ba5d2b2db036e96ecd3ee6d8aa" category="list-text">Die Verkabelungsbeispiele zeigen die Neuauftragung eines der Pfade: Pfad A (IOM A).</block>
   <block id="ec63bd7bc48ac55f299c9d68ecffd51e" category="paragraph">Sie wiederholen die Neuauftragung für Pfad B (IOM B).</block>
-  <block id="9417829bbfaa2b6bc90f4631eba2650e" category="list-text">Das Verkabelungsbeispiel zum Entfernen eines Festplatten-Shelfs vom Ende eines Stacks zeigt, wie das logische letzte Festplatten-Shelf in einem Stack entfernt wird, der mit Multipath HA-Konnektivität verbunden ist.</block>
   <block id="211fa836e39f7f323e02691753f9da66" category="paragraph">Sie können die Neuablung schließen, wenn Sie das erste logische Platten-Shelf in einem Stack entfernen oder ob Ihr Stack über Multipath-Konnektivität verfügt.</block>
   <block id="c2f61fd2c187c56b3314931c01a8eaf7" category="image-alt">drw-Hotremove-Ende</block>
   <block id="147a645b8f80ab0559368234fa51e963" category="image-alt">drw Hotremove Mitte</block>
@@ -5778,7 +5737,6 @@
   <block id="60f2a3cfd26e6f6c57aebe8c8e233493" category="list-text">Entfernen Sie die Festplatten-Shelfs aus dem Rack oder dem Schrank.</block>
   <block id="2832373659f325a28de2b5462611f72c" category="paragraph">Bei DS460C Festplatten-Shelfs kann ein vollständig beladenes Shelf ca. 247 112 kg wiegen. Gehen Sie daher beim Entfernen eines Shelfs aus einem Rack oder Schrank folgendermaßen vor.</block>
   <block id="69803fc9f7acd429df0403558d86852a" category="admonition">Es wird empfohlen, einen mechanischen Aufzug oder vier Personen mit den Hubgriffen zu verwenden, um ein DS460C-Regal sicher zu bewegen.</block>
-  <block id="d2190ca0f2bf90686cb089f6fb2d5e2b" category="paragraph">Wenn Sie das DS460C Shelf zu einem anderen Teil des Datacenters verschieben oder an einen anderen Ort transportieren, finden Sie im folgenden Abschnitt: <block ref="2dfa5cde780121ff739815d2402836cf" category="inline-xref-macro-rx"></block>.</block>
   <block id="1d5287e79870e687badf4e2da0612ad0" category="paragraph">Wenn Sie ein DS460C Shelf zu einem anderen Teil des Datacenters verschieben oder das Shelf an einen anderen Ort transportieren, müssen Sie die Laufwerke aus den Laufwerksfächern entfernen, um mögliche Beschädigungen der Laufwerkfächer und Laufwerke zu vermeiden.</block>
   <block id="c3fdb0812209f286e664a4d0cd47c328" category="list-text">Wenn Sie DS460C Shelfs als Teil Ihrer neuen Systeminstallation oder des Shelf-Hot-Add installiert haben, haben Sie das Verpackungsmaterial des Laufwerks gespeichert. Verpacken Sie die Laufwerke erst dann, wenn Sie sie verschoben haben.</block>
   <block id="9f82eea0f440d221437653dd782356a4" category="summary">Ihre Systemkonfiguration legt fest, ob Sie ein unterbrechungsfreies Hot-Swap-Modul IOM12/IOM12B oder einen störenden Austausch von IOM12/IOM12B-Modulen durchführen können, wenn ein IOM12/IOM12B-Modul ausfällt.</block>
@@ -5791,7 +5749,6 @@
   <block id="20b0dc7787284cb0afa2dbc5d95136a2" category="paragraph">Die IOM12-Module zeichnen sich durch ein "IOM12"-Label aus:</block>
   <block id="5416d570ace1334ffbc27d0d9486ebe5" category="paragraph">Die IOM12B-Module zeichnen sich durch einen blauen Streifen und ein „IOM12B“-Label aus:</block>
   <block id="d2a8fdadc8d18dd445c56f47cea6197a" category="image-alt">Iom12b</block>
-  <block id="f85a60cb0afe5b75f4c43ed293c8a779" category="list-text">Bei Multipath HA oder Multipath) und Quad-Pathed-Konfigurationen (Quad-Path HA oder Quad-Path) können Sie ein Shelf IOM im laufenden Betrieb austauschen (ein Shelf IOM unterbrechungsfrei ersetzen in einem System, das eingeschaltet ist und Daten bereitstellt - I/O läuft).</block>
   <block id="9785f45e8f6989c9b8cb2419a2b695da" category="list-text">Bei HA-Konfigurationen der FAS2600 Serie und der FAS2700 Serie müssen Sie ein Takeover- und Giveback-Vorgang durchführen, um ein Shelf-IOM in einem System zu ersetzen, das eingeschaltet ist und Daten bereitstellt - I/O läuft.</block>
   <block id="0894c7928fa1bee8fd4a0207429b7254" category="list-text">Bei Single-Path-Konfigurationen der FAS2600 Serie müssen Sie das System anhalten, um ein Shelf-IOM zu ersetzen.</block>
   <block id="f00eb102fd21bbf5e0dd612fcc8a9fde" category="admonition">Wenn Sie versuchen, ein Shelf-IOM auf einem Festplatten-Shelf durch eine Single-Path-Verbindung zu tauschen, gehen alle Zugriffe auf die Festplattenlaufwerke im Festplatten-Shelf und alle darunter liegenden Festplatten-Shelfs verloren. Sie könnten auch Ihr gesamtes System herunterbringen.</block>
@@ -5803,7 +5760,6 @@
   <block id="27f828dc47aef9b25b9f0603b1307a44" category="list-text">Identifizieren Sie das ausgefallene Shelf-IOM physisch über die Warnmeldung der Systemkonsole und die LED für leuchtende Warnung (gelb) auf dem ausgefallenen Shelf-IOM.</block>
   <block id="44a79028b8e2f56c8d1164ae1aedc076" category="list-text">Führen Sie eine der folgenden Aktionen auf der Grundlage der Art der Konfiguration aus:</block>
   <block id="e8599f3c8ef213317efbf60b0379685c" category="cell">Wenn Sie ein...</block>
-  <block id="099e230bc4db13968f2d136f79693703" category="paragraph">Multipath HA, Multipath, Quad Path HA oder Quad-Path-Konfiguration</block>
   <block id="373a5d24b1aa2958990518bcd5ed56ab" category="paragraph">FAS2600 Series und FAS2700 HA-Single-Path-Konfiguration</block>
   <block id="5de1791487db34e32b1323bb994c054c" category="list-text">Ermitteln Sie den Ziel-Node (der Node, zu dem das ausgefallene Shelf-IOM gehört).</block>
   <block id="1e5e667063d28d41ec828c8438a56b89" category="paragraph">IOM A gehört zu Controller 1. IOM B gehört zu Controller 2.</block>
@@ -5855,9 +5811,7 @@
   <block id="26a846deb04c0d63c063041ad0fa15ef" category="list-text">Führen Sie Active IQ Config Advisor aus, um doppelte Shelf-ID-Warnmeldungen zu prüfen, oder führen Sie den aus<block ref="82b00438bdff68cba792c38604023279" prefix=" " category="inline-code"></block> Befehl, um eine Liste der bereits verwendeten Shelf-IDs einschließlich doppelter IDs anzuzeigen.</block>
   <block id="8599052dc8c8c0f79b1edc766e0bb77e" category="list-text">Wenn im System doppelte Shelf-IDs vorhanden sind, ändern Sie die doppelten Shelf-IDs, indem Sie diesen Vorgang wiederholen.</block>
   <block id="062023e4095a297f17b97a86d9b4d256" category="summary">Platten-Shelfs mit IOM12/IOM12B Modulen können in HA-Paar- und Single-Controller-Konfigurationen (für unterstützte Plattformen) verkabelt werden.</block>
-  <block id="f5b9b5b9c8a3b908584581a89b8c2226" category="doc">SAS-Verkabelungsregeln – Shelfs mit IOM12/IOM12B-Modulen</block>
   <block id="19a5945f47c08602bccb2ce050ccb955" category="paragraph">Platten-Shelfs mit IOM12/IOM12B-Modulen können unter Anwendung der SAS-Verkabelungsregeln in HA-Paar- und Single-Controller-Konfigurationen (für unterstützte Plattformen) verkabelt werden: Konfigurationsregeln, Controller-Slot-Nummerierungsregeln, Shelf-to-Shelf-Verbindungsregeln, Controller-to-Stack-Verbindungsregeln und gegebenenfalls optische Kabelregeln für Mini-SAS HD SAS.</block>
-  <block id="238f6056b9fefe76918fd63804bbcbfa" category="admonition">Die in diesem Leitfaden beschriebenen Regeln für die SAS-Verkabelung zu den Nummerierungsregeln für Controller-Steckplätze, Shelf-to-Shelf-Verbindungsregeln und die in diesem Leitfaden beschriebenen Regeln für alle SAS-Platten-Shelves gelten, unabhängig davon, ob sie IOM12/IOM12B, IOM6 oder IOM3-Module besitzen. Die Informationen in diesem Leitfaden betreffen jedoch die einzigartigen Eigenschaften von Platten-Shelfs mit IOM12-Modulen und ihre Verwendung in unterstützten Konfigurationen.</block>
   <block id="35f903a7001175494e6eb7088631a16e" category="paragraph">Die in diesem Leitfaden beschriebenen SAS-Verkabelungsregeln zu Konfigurationsregeln und optischen Mini-SAS-HD-SAS-SAS-Kabelregeln gelten speziell für Platten-Shelves mit IOM12/IOM12B-Modulen.</block>
   <block id="13a358753c734e014332022a647326d0" category="paragraph">Die in diesem Leitfaden beschriebenen SAS-Verkabelungsregeln ausgleichen SAS-Ports zwischen integrierten SAS-Ports und SAS-Ports für Host Bus Adapter, um hochverfügbare Storage Controller-Konfigurationen bereitzustellen und folgende Ziele zu erreichen:</block>
   <block id="e650f09b3c5e7082570989f690e937f2" category="list-text">Einen einzigen, leicht verständlichen universellen Algorithmus für alle SAS-Produkte und -Konfigurationen bereitstellen</block>
@@ -5866,13 +5820,9 @@
   <block id="540d6dd9e8a601304f58e8b1692a0cbc" category="list-text">Sorgen Sie für maximale Ausfallsicherheit, um die Verfügbarkeit aufrechtzuerhalten und die Abhängigkeit von Controller-Takeovers zu minimieren</block>
   <block id="ac9d521507af48d2a069896628ddcbe1" category="paragraph">Sie sollten vermeiden, von den Regeln zu abweichen; Abweichungen können Zuverlässigkeit, Universalität und Gemeinsamkeit reduzieren.</block>
   <block id="1411fab742ef51836dbcd20dc81b333a" category="section-title">Konfigurationsregeln</block>
-  <block id="9f5ac9f9e33d14b5edcf142aa6534de3" category="paragraph">Platten-Shelfs mit IOM12-Modulen werden bei spezifischen Typen von HA-Paar- und Single-Controller-Konfigurationen unterstützt.</block>
   <block id="a02316bb16a44dfeab4bba0330def5a9" category="admonition">Die FAS25XX Plattformen werden in diesem Bereich nicht behandelt.</block>
   <block id="e813922cd0bf97e10c1d75af7555f41d" category="list-text">HA-Paar-Konfigurationen müssen als Multipath HA oder Quad-Path HA-Konfigurationen mit den folgenden Ausnahmen verkabelt werden:</block>
-  <block id="f18e20acd27581fe2f1075089d65a455" category="list-text">Plattformen mit internem Storage, einschließlich FAS2600 Serie, AFF A200, FAS2700 Serie, AFF A220, Und später kann es als Single-Path-HA-Konfigurationen verkabelt werden, um die Verbindung zu einem externen SAS-Band-Backup-Gerät zu unterstützen.</block>
-  <block id="c47a6f7fbf347f2ab09e05ad80c1fc30" category="list-text">Plattformen mit internem Storage, einschließlich FAS2600 Serie, AFF A200, FAS2700 Serie, AFF A220, Und später, keine Unterstützung für Quad-Path HA-Konnektivität</block>
   <block id="905e44a8d6df3feceb87ebb53cfc800e" category="list-text">Single Controller-Konfigurationen müssen als Multipath- oder Quad-Path-Konfigurationen verkabelt werden, mit folgenden Ausnahmen:</block>
-  <block id="4f84345fdfdaaef18218a7ade58e0626" category="list-text">Single Controller-Konfigurationen der FAS2600 Serie (mit externen Festplatten-Shelfs) können als Single-Path-Konfigurationen verkabelt werden.</block>
   <block id="ab36d824336ef6ebffc6dcb6e6c8f5c7" category="paragraph">Da der interne Storage Single Path-Konnektivität verwendet, gibt ONTAP gelegentlich Warnungen aus, ob gemischte Pfade erkannt werden. Um diese Warnungen zu vermeiden, können Sie Single-Path-Verbindungen zu den externen Festplatten-Shelfs verwenden. Darüber hinaus können Sie Single-Path-Konnektivität verwenden, wenn ein externes SAS-Bandsicherungsgerät verwendet wird.</block>
   <block id="8e671e17830a3698938ea6b534403e16" category="list-text">Konfigurationen der Single Controller-Serie FAS2600 unterstützen keine Quad-Path-Konnektivität.</block>
   <block id="978a314c2a364134efaa7961e780a939" category="section-title">Regeln für die Nummerierung von Controller-Steckplätzen</block>
@@ -5887,8 +5837,6 @@
   <block id="32455c6254e3a15b603b17e884e4a3f5" category="section-title">Verbindungsregeln für Shelf-zu-Shelf</block>
   <block id="9e6bd75d2dbbefca4d7d3cc44a0101c2" category="paragraph">Wenn Sie mehr als ein Platten-Shelf in einem Stapel an Platten-Shelfs haben, werden diese über die jeweiligen SAS-Domänen (IOM A und IOM B) mit den entsprechenden Shelf-to-Shelf-Kabeln „`standard`“ oder „`double-wide`“ miteinander verbunden. Ihre Verwendung von Shelf-to-Shelf-Verkabelungen zwischen "`standard`" oder "`double-wide`" hängt von der Konfiguration ab.</block>
   <block id="dde4848c792228faaab1af9f19fc0907" category="section-title">Standard-Shelf-zu-Shelf-Konnektivität</block>
-  <block id="630c1008b20b98a788cf51f2c263b171" category="list-text">Die standardmäßigen Shelf-to-Shelf-Konnektivität wird in Multipath HA-, Multipath-, Single Path-Konfigurationen und Single Path-Konfigurationen verwendet.</block>
-  <block id="57cd520e08d659571c07fae57894a715" category="list-text">Shelf-to-Shelf-Konnektivität ist genau das, was in vorhandenen SAS-Storage-Konfigurationen mit IOM3- und IOM6-Modulen verwendet wird: Zwischen den Festplatten-Shelfs in jeder Domäne ist eine Kabelverbindung erforderlich – Domänen-A (IOM A) und Domäne B (IOM B).</block>
   <block id="5a53cde4cf5c91e0b09b08e60c754e51" category="list-text">Als Best Practice wird empfohlen, die IOM-Ports 3 und 1 für die Standard-Shelf-Konnektivität zu verwenden.</block>
   <block id="925ce4810c954644e740106ff49fc2b7" category="paragraph">Vom logischen ersten Shelf zum logischen letzten Shelf in einem Stack verbinden Sie IOM-Port 3 mit dem IOM-Port 1 des nächsten Shelfs in Domäne A und dann Domäne B.</block>
   <block id="dcbdcc316aee385c3ebdf72977af7d44" category="image-alt">drw-Shelf auf Shelf-Standard</block>
@@ -5947,24 +5895,13 @@
   <block id="2baadcb56e7720f5676b919d51a92530" category="paragraph">Wenn Sie beispielsweise sechs Portpaare für Ihr System identifiziert haben und drei Stacks als Multipath verkabelt werden müssen, müssen Sie jedes andere Portpaar in Ihrer Liste verkabeln:</block>
   <block id="e2379f90f7d935a1dcd0af01adbdf46e" category="image-alt">drw Portpaar Verbindungsregeln Liste überspringen</block>
   <block id="5e94596a2debe5f10b4bfe8ed1dfb583" category="paragraph">Verkabelungsarbeitsblätter für Controller-to-Stack sind bequeme Tools für die Identifizierung und Organisation von Port-Paaren, sodass Sie die Verbindungen zwischen Controller und Stack für Ihre HA-Paar- oder Single-Controller-Konfiguration verkabeln können.</block>
-  <block id="0ce2d44d1215d0431e0b46ed686dd560" category="section-title">Verbindungsregeln für Controller 0b und 0a Port für Plattformen mit internem Storage</block>
-  <block id="0c574ecb6a58bb92327391af7cfd84d2" category="paragraph">Plattformen mit internem Storage, einschließlich FAS2600 Serie, AFF A200, FAS2700 Serie, AFF A220, Und später sollten spezielle Verbindungsregeln gelten, da jeder Controller dieselbe Domänenkonnektivität zwischen dem internen Speicher (Port 0b) und dem Stack aufrechterhalten muss. Dies bedeutet, dass, wenn sich ein Controller in Steckplatz A des Chassis (Controller 1) befindet, er sich in Domäne A (IOM A) befindet und daher Port 0b mit IOM A im Stack verbinden muss. Wenn sich ein Controller in Steckplatz B des Chassis (Controller 2) befindet, befindet er sich in Domäne B (IOM B). Daher muss Port 0b mit IOM B im Stack verbunden werden.</block>
   <block id="27858a1c4654311bc60fbcd9494b2c3e" category="admonition">Die FAS25XX Plattformen werden in diesem Bereich nicht berücksichtigt.</block>
-  <block id="f49f9d1b35c60dce77fd03008b90cb34" category="admonition">Wenn Sie den Port 0b nicht mit der richtigen Domäne (Cross-Connect-Domänen) verbinden, setzen Sie das System mit Stabilitätsproblemen konfrontiert, die eine sichere Ausführung von unterbrechungsfreien Abläufen verhindern.</block>
-  <block id="5118c6333d912e1b490b20c974a571ef" category="list-text">Controller 0b Port (interner Storage-Port):</block>
-  <block id="53b81829b8b397189aaa4f3eb1ae76a7" category="list-text">Controller 1 0b Port stellt immer eine Verbindung mit IOM A (Domäne A) her.</block>
-  <block id="951d8294040ef100fca0ba29f8fd6566" category="list-text">Controller 2 0b Port stellt immer eine Verbindung mit IOM B (Domäne B) her.</block>
-  <block id="f97c9e5c4cad2705f3a016e5e1997d97" category="list-text">Port 0b ist immer der primäre Pfad.</block>
-  <block id="72cacfdea1ad23cb63716d9475da2462" category="list-text">Port 0b stellt immer eine Verbindung mit dem logischen letzten Festplatten-Shelf in einem Stack her.</block>
-  <block id="f32d66255c282d48b3e8f74f3142e658" category="list-text">Port 0b stellt immer eine Verbindung mit Festplatten-Shelf-IOM-Port 3 her.</block>
   <block id="b84caa3e5d7ef1b5806f72c6d4c5884b" category="list-text">Controller 0a Port (interner HBA-Port):</block>
   <block id="f3bc55f33663d14383a84df3141cf713" category="list-text">Controller 1 0a Port stellt immer eine Verbindung zu IOM B (Domäne B) her.</block>
   <block id="38487244666d5641531a05514c50668d" category="list-text">Controller 2 0a Port stellt immer eine Verbindung mit IOM A (Domäne A) her.</block>
   <block id="0757935fc13bec433eaf412d005fb61b" category="list-text">Port 0a ist immer der sekundäre Pfad.</block>
   <block id="5821e49b61c774c699a1d7c8f58887e5" category="list-text">Port 0a stellt immer eine Verbindung zum logischen ersten Festplatten-Shelf in einem Stack her.</block>
   <block id="47f1d04db41788a76ce8ec9e42c7defd" category="list-text">Port 0a stellt immer eine Verbindung zu Festplatten-Shelf-IOM-Port 1 her.</block>
-  <block id="06da34e55ca27b5fa072a7b523991230" category="paragraph">Die folgende Abbildung zeigt die Konnektivität der internen Storage Port-Domäne (0b) für eine FAS2600 Serie, AFF A200, FAS2700 Serie, AFF A220 und höher für Multipath HA-Konfiguration:</block>
-  <block id="d6be80f16b2e703ff33257470dacbcf3" category="image-alt">drw fas2600 mpha-Domain-Beispiel</block>
   <block id="cfabee74f7cf81c29938b44cfcd37eae" category="paragraph">Sie können Mini-SAS-HD-SAS-optische Kabel verwenden - Multimode-Aktivkabel (AOC) mit Mini-SAS-HD-zu-Mini-SAS-HD-Anschlüssen und OM4-Breakout-Kabeln mit Mini-SAS-HD-zu-LC-Anschlüssen - für SAS-Verbindungen über große Entfernungen bei bestimmten Konfigurationen mit Platten-Shelves mit IOM12-Modulen.</block>
   <block id="0500445e8d76472cb131af54eda14d19" category="list-text">Ihre Plattform und Version von ONTAP müssen den Einsatz von Mini-SAS HD SAS optischen Kabeln unterstützen: Multimode-Aktivkabel (AOC) mit Mini-SAS-HD-zu-Mini-SAS-HD-Anschlüssen und Multimode-Breakout-Kabeln (OM4) mit Mini-SAS-HD-zu-LC-Anschlüssen.</block>
   <block id="268e77a403beaee637dafa92037d4b51" category="list-text">Optische SAS-Multimode-AOC-Kabel mit Mini-SAS-HD-Mini-SAS-HD-Anschlüssen können für Controller-Stack- und Shelf-to-Shelf-Verbindungen verwendet werden und sind in einer Länge von bis zu 50 Metern erhältlich.</block>
@@ -6165,28 +6102,18 @@
   <block id="129ae0938540dd9a7876d09d06bd1f3d" category="list-text">Rufen Sie Hardware Universe auf, und navigieren Sie zu Ihrer Plattforminformation.</block>
   <block id="f67745dbd9289e38cb69268974c8e01a" category="list-text">Wenn Sie einer MetroCluster Konfiguration ein Shelf hinzufügen, muss die Konfiguration alle Anforderungen in den MetroCluster Installations- und Konfigurationsleitfäden erfüllen.</block>
   <block id="e7fc3e467c21c0163b6e186e86ec5265" category="inline-link">MetroCluster IP Installations- und Konfigurationshandbuch</block>
-  <block id="96f4732a126902bc7ba1b00365b93018" category="paragraph"><block ref="96f4732a126902bc7ba1b00365b93018" category="inline-link-rx"></block></block>
   <block id="006182a7cf1f4ee783649b59fe5319fe" category="inline-link">ONTAP 9 Stretch MetroCluster Installations- und Konfigurationshandbuch</block>
-  <block id="2f8a4b346b8424a5087dfb19acb186a5" category="paragraph"><block ref="2f8a4b346b8424a5087dfb19acb186a5" category="inline-link-rx"></block></block>
   <block id="88961c06e2b1a459284563a20920c4a2" category="inline-link">ONTAP 9 Fabric-Attached MetroCluster Installations- und Konfigurationshandbuch</block>
-  <block id="48a3ab22450cdd41a14f0b4fc3a359c9" category="paragraph"><block ref="48a3ab22450cdd41a14f0b4fc3a359c9" category="inline-link-rx"></block></block>
-  <block id="09397aecf3eae55f108f43cd457d39f0" category="list-text">Der Stack der IOM6-Shelfs, denen ein IOM12 Shelf bei laufendem Betrieb hinzugefügt wird, muss mit SAS-Kupferkabeln verbunden werden (für alle Shelf-zu-Shelf- und Controller-zu-Stack-Verbindungen).</block>
   <block id="c08b36d83324a217b367ef482dda6bff" category="paragraph">Optische SAS-Kabel werden in einem gemischten Stack nicht unterstützt.</block>
-  <block id="79558b80e68c3388b4399b11c12347ac" category="admonition">Wenn der IOM6-Shelf-Stack mit optischen SAS-Kabeln verbunden ist, kann kein IOM12-Shelf im laufenden Betrieb hinzugefügt werden. Wenden Sie sich an Ihren NetApp Ansprechpartner.</block>
-  <block id="8ac997f121720a497b3cff0318f505b3" category="list-text">Ihr System muss weniger als die maximale Anzahl von unterstützten Laufwerken aufweisen, um mindestens die Anzahl der Laufwerke zu nutzen, die in den IOM12-Shelves installiert werden können, die Sie benötigen.</block>
   <block id="00fff54c913160f5c3bf6b51833732a2" category="paragraph">Nach den Hot-Adding IOM12/IOM12B-Shelfs können Sie die maximal unterstützte Anzahl an Laufwerken in Ihrem System nicht überschritten haben.</block>
   <block id="930a04c4c89c9247f79288e2800c12ca" category="list-text">Sie müssen die IOM12/IOM12B-Shelves sowie die entsprechende Anzahl und Art von SAS-Kupferkabeln bestellt und erhalten haben.</block>
-  <block id="3969a8285624065a82b260666129a7d3" category="paragraph">Die IOM12-Shelves verwenden Mini-SAS-HD-Anschlüsse. IOM6-Shelfs verwenden QSFP-Connectors.</block>
   <block id="c7566a05bf32290cd12dd8d369e46bd4" category="section-title">Anforderungen für Hot-Add-in-Bridge-MetroCluster-Konfigurationen</block>
   <block id="1aefc40815c8a14c682b27d605e0c852" category="paragraph">Wenn Sie im laufenden Betrieb IOM12/IOM12B-Shelves zu einem Stack von IOM6-Shelves hinzufügen, die über zwei ATTO FibreBridge Bridges in einer MetroCluster-Konfiguration verbunden sind, muss das System bestimmte Anforderungen erfüllen.</block>
-  <block id="8c5677f5d5c9a3e27e7aa9a888386129" category="list-text">Wenn in der aktuellen Konfiguration Bridge-SAS-Ports vorhanden sind, sollten die IOM12-Shelves als separater Stack hinzugefügt werden.</block>
   <block id="19ad2c0538cf2699805ae5b7a88dc72d" category="paragraph">Alle Bridge-Ports können verwendet werden, bevor IOM12/IOM12B- und IOM6-Module in einem Stack gemischt werden.</block>
   <block id="bd7825d41c8830b21a19c98ddcd9b85a" category="list-text">Geben Sie das ein <block ref="5ddc7c3a7b5a66f920371f4ddb8d047c" prefix="" category="inline-code"></block> Befehl an der Admin-Eingabeaufforderung eines der beiden Controller.</block>
   <block id="9d5ea5ac8c96d6d172e1cc58ef233dd1" category="list-text">Die Konfiguration muss alle Anforderungen in den MetroCluster Installations- und Konfigurationsleitfäden erfüllen.</block>
   <block id="39d46c9b8c2da59196572bcb75b09f65" category="inline-link">Installieren und Konfigurieren einer Stretch-MetroCluster-Konfiguration</block>
-  <block id="b984b4ca60433c9bfb091a25c359bf29" category="paragraph"><block ref="b984b4ca60433c9bfb091a25c359bf29" category="inline-link-rx"></block></block>
   <block id="e88635bcb3016a1e52f43f35377d1872" category="inline-link">Installieren und Konfigurieren einer Fabric-Attached MetroCluster-Konfiguration</block>
-  <block id="21990ac0aec263e0a024057600dc893c" category="paragraph"><block ref="21990ac0aec263e0a024057600dc893c" category="inline-link-rx"></block></block>
   <block id="f29790dcd5dad7176b065228da8e813b" category="list-text">Der Stack der IOM6-Shelfs, für die in der laufenden Umgebung ein IOM12/IOM12B Shelf hinzugefügt wird, muss mit SAS-Kupferkabeln verbunden werden (für alle Shelf-to-Shelf- und Controller-to-Stack-Verbindungen).</block>
   <block id="a303526442a9b488afde68409bafd573" category="admonition">Wenn der IOM6-Shelf-Stack mit optischen SAS-Kabeln verbunden ist, können Sie kein IOM12/IOM12B-Shelf im laufenden Betrieb hinzufügen. Wenden Sie sich an Ihren NetApp Ansprechpartner.</block>
   <block id="6e4c499bdd2966c2b90a216c4bda1fb3" category="list-text">Ihre Konfiguration muss weniger als die maximale Anzahl von Laufwerken aufweisen, die für einen Bridge-Port unterstützt werden.</block>
@@ -6197,20 +6124,14 @@
   <block id="dd6fd6077c76a89a726fd6fd4df5ecd6" category="paragraph">Eine unterstützte Version der Shelf-Firmware schützt vor Problemen mit dem Zugriff auf den Storage Stack, wenn Sie das Shelf, das im laufenden Betrieb hinzugefügt wird, nicht ordnungsgemäß mit dem Stack verbunden haben.</block>
   <block id="4b0c6c7c1712b07c4f6eb456f77c250b" category="paragraph">Überprüfen Sie nach dem Download der IOM12/IOM12B Shelf-Firmware auf Ihre Shelves, ob die Firmware-Version 0260 oder höher ist, indem Sie in die eingeben<block ref="282088db491007d323bdd5e8588f06cb" prefix=" " category="inline-code"></block> Befehl an der Konsole eines der beiden Controller.</block>
   <block id="cc2b41a35c221fb91dbefde3e869ed2d" category="list-text">Mithilfe dieses Verfahrens können Festplatten-Shelfs im laufenden Betrieb hinzugefügt werden, die innerhalb desselben MetroCluster Systems entfernt wurden, wenn das betroffene Shelf Aggregate gespiegelt hat.</block>
-  <block id="398a3c8d2269f5f0bf21e8be014ed54c" category="list-text">Wenn Shelfs mit IOM12-Modulen in einem Shelf-Stack mit IOM6-Modulen hinzugefügt werden, arbeitet die Performance des gesamten Stacks mit 6 Gbit/s (arbeitet mit der niedrigsten gemeinsamen Geschwindigkeit).</block>
-  <block id="75e1d900c724ecf27f282e3bba238d06" category="paragraph">Bei den Hot-Adding-Shelfs, die von IOM3- oder IOM6-Modulen aktualisiert wurden, arbeitet der Stack mit 12 Gbit/s. Die Shelf-Backplane und Festplattenfunktionen können die Festplatten-Performance jedoch auf 3 Gbit/s oder 6 Gbit/s begrenzen.</block>
   <block id="6ef27274e13ef21decb2e40b817dc838" category="list-text">Die Shelf- (IOM) und die Laufwerk-Firmware sollten bei Bedarf automatisch aktualisiert werden.</block>
   <block id="73dba703fd8c5b56b1febc70d5f9bc0d" category="list-text">*Best Practice:* die beste Praxis ist, aktuelle Versionen der Shelf- (IOM) Firmware und Laufwerk-Firmware auf dem System zu haben, bevor ein Shelf im laufenden Betrieb hinzugefügt wird.</block>
   <block id="160fd79816dd71c8a799efb47ac36361" category="paragraph">Wenn Sie Active IQ Config Advisor ausführen, bevor Sie ein Shelf hinzufügen, erhalten Sie einen Snapshot der vorhandenen SAS-Konnektivität, verifiziert die Firmware-Versionen (IOM) und ermöglicht Ihnen, eine Shelf-ID zu überprüfen, die bereits auf dem System verwendet wird. Wenn Sie Active IQ Config Advisor nach dem Hinzufügen eines Shelfs im laufenden Betrieb ausführen, können Sie überprüfen, ob Shelfs ordnungsgemäß verkabelt sind und die Shelf-IDs innerhalb des Systems eindeutig sind.</block>
   <block id="146d395e439d39abc69ffa4b33c098e7" category="list-text">*Best Practice:* die beste Praxis ist es, in-Band ACP (IBACP) auf Ihrem System laufen zu lassen.</block>
-  <block id="b2eb7290e0c647560c735690a8df2377" category="list-text">Für Systeme, auf denen IBAP läuft, wird IBACP automatisch auf Hot-Added IOM12-Shelves aktiviert.</block>
-  <block id="0255f63676d9b237186bfd36a0664dca" category="list-text">Bei Systemen, bei denen Out-of-Band-ACP aktiviert ist, sind ACP-Funktionen auf IOM12-Shelfs nicht verfügbar.</block>
   <block id="8ea8c6292abb58ce4ad3173e65ac4ff9" category="paragraph">Sie sollten zu IBACP migrieren und die Out-of-Band ACP-Verkabelung entfernen.</block>
   <block id="cf9f30a46a1bd1436a4faafee987b86d" category="list-text">Wenn Ihr System nicht IBACP verfügt und Ihr System die Anforderungen von IBACP erfüllt, können Sie Ihr System auf IBACP migrieren, bevor Sie ein IOM12 Shelf im laufenden Betrieb hinzufügen.</block>
   <block id="4737928907e8a292681e7a90cfb49f2d" category="inline-link">Anweisungen für die Migration in IBACP</block>
-  <block id="5657d544f237cd4dbe450a90b964d7ee" category="paragraph"><block ref="5657d544f237cd4dbe450a90b964d7ee" category="inline-link-rx"></block></block>
   <block id="74058cc9034742368de6ba87df420c12" category="admonition">Die Migrationsanweisungen enthalten die Systemanforderungen für IBACP.</block>
-  <block id="34186aada31d58acf460b5c4c88d85ef" category="paragraph">Wenn Sie die Eigentümerschaft der Laufwerke für die IOM12-Shelves manuell zuweisen, müssen Sie die automatische Laufwerkszuweisung deaktivieren, wenn sie aktiviert ist.</block>
   <block id="ade63becc62556e3c87bdc2937803b8e" category="paragraph"><block ref="a36de82ec030fb7c465d75421f1bf354" category="inline-xref-macro-rx"></block></block>
   <block id="f5965bbdd3ba21efcd908fcb2587c4b7" category="paragraph">Bei einem HA-Paar müssen Sie die Eigentümerschaft des Laufwerks manuell zuweisen, wenn Laufwerke im Shelf Eigentum beider Controller-Module sind.</block>
   <block id="bddd9e5d88d913d8866bfb32eedde8d0" category="paragraph">Wenn Sie ein HA-Paar haben, können Sie den Befehl auf einem der Controller-Module eingeben.</block>
@@ -6219,7 +6140,6 @@
   <block id="186c036c7e975a624b82dd356df0999b" category="section-title">Installation von Shelfs für ein Hot-Add-regale</block>
   <block id="3546e85dc307b9bcf0b533b27fad8878" category="paragraph">Sie installieren das Shelf für jedes Shelf, das Sie im laufenden Betrieb hinzufügen, in ein Rack, verbinden die Netzkabel, schalten das Shelf ein und legen die Shelf-ID fest.</block>
   <block id="36c4b867932e9d22e95453e968104256" category="list-text">Legen Sie die Shelf-ID für jedes Shelf fest, das Sie einer ID hinzufügen möchten, die innerhalb des HA-Paars oder der Single-Controller-Konfiguration eindeutig ist.</block>
-  <block id="4c1c5ca48f80900bdbd6478de4bd8643" category="paragraph">Gültige Shelf-ID: 00 bis 99. Es wird empfohlen, die Shelf-IDs so festzulegen, dass IOM6-Shelfs niedrigere Zahlen (1 bis 9) und die IOM12-Shelfs größere Zahlen (10 und höher) verwenden.</block>
   <block id="07ef6aaec0e48ce2f5b9d9f42adf77cc" category="paragraph">Wenn Sie über ein Plattformmodell mit Onboard-Storage verfügen, müssen Shelf-IDs über das interne Shelf und extern verbundene Shelves eindeutig sein. Es wird empfohlen, dass Sie für das interne Shelf den Wert 0 festlegen. Bei MetroCluster-IP-Konfigurationen gelten nur die externen Shelf-Namen. Daher müssen die Shelf-Namen nicht eindeutig sein.</block>
   <block id="fea2f0f5c7391e6c3a0ee4727fd42bd6" category="list-text">Falls erforderlich, überprüfen Sie, ob die Shelf-IDs bereits verwendet werden, indem Sie Active IQ Config Advisor ausführen.</block>
   <block id="a278e5727be8ac05546bb45f5d4a3958" category="list-text">Drücken Sie die Taste, um die Nummer so lange zu drücken, bis Sie die gewünschte Nummer erreicht haben.</block>
@@ -6229,7 +6149,6 @@
   <block id="74ee2dd8c1c457d065bbe6699d54d9d2" category="paragraph">Sie müssen beide Netzschalter ausschalten, 10 Sekunden warten und dann wieder einschalten, um den aus- und Wiedereinschalten abzuschließen.</block>
   <block id="1127d0feda6e469dce912ad847745999" category="list-text">Wiederholen Sie die Teilschritte b bis g für jedes Regal, das Sie im laufenden Betrieb hinzufügen möchten.</block>
   <block id="ac6725fb813060a9b7afc55f795aae39" category="section-title">Kabel-Shelfs für ein Hot-Add-Kabel</block>
-  <block id="3ed3a0caa77626b30983d683ee9db330" category="paragraph">Wie Sie ein IOM12/IOM12B Shelf mit einem Stack von IOM12-Shelves verkabeln, hängt davon ab, ob das IOM12-Shelf das erste IOM12/IOM12B-Shelf ist, d. h., es gibt keine anderen IOM12-Shelves im Stack, Oder ob es sich um ein zusätzliches IOM12/IOM12B-Shelf zu einem vorhandenen gemischten Stack handelt, d. h. ein oder mehrere IOM12/IOM12B-Shelves sind bereits im Stack vorhanden. Es hängt auch davon ab, ob der Stack Multipath HA, Multipath-Konnektivität, Single Path HA oder Single Path-Konnektivität bietet.</block>
   <block id="93484edf29512f42176285d1b3aaffee" category="list-text">Sie müssen das Vorbereitungsverfahren, falls zutreffend, abgeschlossen haben.</block>
   <block id="7aa59d062d2da8d407e876bd47370fa0" category="paragraph"><block ref="1f1303724d0c3c3fd20087be0397e475" category="inline-xref-macro-rx"></block></block>
   <block id="f687c0bac0c7622f56dbb2b4da300a72" category="paragraph"><block ref="395b2cdcd845cc34c1cb8c041e444e72" category="inline-xref-macro-rx"></block></block>
@@ -6237,8 +6156,6 @@
   <block id="e0895cf80563e944b90f33500e3072ad" category="paragraph">Durch die Erweiterung von IOM12/IOM12B-Shelfs in das logische, letzte Shelf in einem Stack bleiben die IOM6-Shelfs in Gruppen zusammengefasst und die IOM12/IOM12B-Shelfs bleiben so gruppiert, dass eine Transition zwischen den beiden Gruppen von Shelfs mit einer einzigen Geschwindigkeit möglich ist.</block>
   <block id="506c2c0c7f5b70af3df68c45c46f45a7" category="paragraph">Beispiel:</block>
   <block id="0455216bece3ce620e2fd5c84b24a523" category="list-text">In einem HA-Paar wird ein Übergang mit einer einzelnen Geschwindigkeit in einem Stack mit zwei IOM6-Shelfs und zwei IOM12/IOM12B-Shelfs wie folgt dargestellt:</block>
-  <block id="cb9ba118de906a291cd694ac2df4fdae" category="list-text">In einem HA-Paar mit integriertem IOM12E Storage wird ein Übergang mit einer einzelnen Geschwindigkeit in einem Stack mit zwei IOM12-Shelfs und zwei IOM6-Shelfs wie folgt dargestellt:</block>
-  <block id="988fffa48b6a32203597193ccfb194d0" category="paragraph">Der Onboard-Speicherport 0b ist der Port vom internen Speicher (Expander) und da er mit dem Hot-Added IOM12/IOM12B-Shelf (das letzte Shelf im Stack) verbunden wird, wird die Gruppe der IOM12/IOM12B-Shelves zusammen gehalten und ein einziger Übergang über den Stack und die integrierte IOM12E-Speicherung beibehalten.</block>
   <block id="eadd8b5aeac3b3cac91a5861456a7daf" category="list-text">Es wird nur eine Transition mit einer zentralen Geschwindigkeit in einem gemischten Stack unterstützt. Es gibt keine weiteren Geschwindigkeitsübergänge. Beispielsweise können Sie keine zwei Geschwindigkeitsübergänge innerhalb eines Stacks haben, die wie dargestellt werden:</block>
   <block id="785690423679fc729d3390cf87c73c79" category="list-text">IOM6-Shelfs können in einem gemischten Stack hinzugefügt werden. Sie müssen sie jedoch zusammen mit den IOM6-Shelfs (vorhandene Gruppe von IOM6-Shelfs) in den Stack einbinden, um die Transition in der einzelnen Geschwindigkeit im Stack aufrechtzuerhalten.</block>
   <block id="22c141c57159ea5a9cf5ecee1f8b4145" category="list-text">Sie verkabeln IOM12/IOM12B-Shelves indem Sie zuerst die SAS-Ports auf dem IOM A-Pfad verbinden und dann die Kabelschritte für den IOM B-Pfad, je nach Ihrer Stack-Konnektivität, wiederholen.</block>
@@ -6247,16 +6164,13 @@
   <block id="f260b20153205d9038127e4a15618a0f" category="list-text">Die SAS-Kabelanschlüsse sind codiert. Wenn sie sich korrekt an einen SAS-Port orientieren, klickt der Anschluss an.</block>
   <block id="10ae5a4ce8cb24c89ab7989958cb34b9" category="paragraph">Bei Shelfs setzen Sie einen SAS-Kabelanschluss ein, wobei die Zuglasche nach unten (auf der Unterseite des Steckers) ausgerichtet ist. Bei Controllern kann die Ausrichtung der SAS-Ports je nach Plattformmodell variieren. Daher variiert die korrekte Ausrichtung des SAS-Kabelsteckers.</block>
   <block id="f40ad7d263effd48cd15f5ec54dc2775" category="list-text">Sie können die folgende Abbildung zur Verkabelung von IOM12/IOM12B-Shelfs mit einem IOM6-Shelf-Stack in einer Konfiguration verwenden, in der keine FC-to-SAS-Bridges verwendet werden.</block>
-  <block id="80e0a56bad8ed4beffb511e7a7644751" category="paragraph">Diese Abbildung bezieht sich auf einen Stack mit Multipath HA Konnektivität. Das Verkabelungskonzept kann jedoch auf Stacks mit Multipath, Single Path HA, Single Path Konnektivität und Stretch MetroCluster Konfigurationen angewendet werden.</block>
   <block id="9eae6e522d01233eda31813671040bc9" category="image-alt">drw sas2 sas3 gemischter Stapel</block>
   <block id="5c5d06fa180884eea62ba831b980ed33" category="list-text">Sie können die folgende Abbildung zur Verkabelung von IOM12/IOM12B-Shelfs mit einem IOM6-Shelf-Stack in einer über eine Bridge verbundenen MetroCluster-Konfiguration verwenden. <block ref="3bf7d126d94220be52cd0d278e98261d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a4450110a0add0d3dc0ed544c4dc9587" category="list-text">Identifizieren Sie physisch das letzte logische Shelf im Stack.</block>
-  <block id="dcb30e1abfaaa4b668dce7194e9a2977" category="paragraph">Je nach Plattformmodell und Stack-Konnektivität (Multipath HA, Multipath, Single Path HA oder Single Path) verfügt das logische letzte Shelf über Controller-zu-Stack-Verbindungen von Controller SAS-Ports B und D. Oder es verfügt das Shelf über keine Verbindungen zu keinem Controller (da die Controller-zu-Stack-Konnektivität über die logische Oberseite des Stacks liegt, über die Controller-SAS-Ports A und C).</block>
   <block id="3d7f99cbbf1b9ba05ea3a6ec89eae8b6" category="list-text">Wenn das IOM12/IOM12B Shelf, das Sie im laufenden Betrieb hinzufügen, das erste IOM12/IOM12B-Shelf dem IOM6-Stack hinzugefügt wird, d. h. es gibt keine anderen IOM12/IOM12B-Shelves im IOM6-Shelf-Stack, führen Sie die entsprechenden Unterschritte durch.</block>
   <block id="2cb6637a5fdf450f80c9f19b8c718a47" category="admonition">Achten Sie darauf, dass Sie mindestens 70 Sekunden zwischen dem Trennen eines Kabels und dem Wiederanschließen des Kabels und dem Ersetzen eines Kabels für ein anderes warten.</block>
   <block id="3290caa995109a5019ab331bcbb4fd8c" category="paragraph">Fahren Sie andernfalls mit Schritt 3 fort.</block>
   <block id="49ae96093ef4318ebea3748695f1f2ec" category="cell">Wenn die Konnektivität Ihres IOM6-Stacks...</block>
-  <block id="86ce44b3919ce611e611db5c55786de7" category="paragraph">Multipath HA oder Multipath oder Single Path HA mit Controller-Konnektivität zum logischen letzten Shelf (einschließlich Stretch MetroCluster-Konfigurationen)</block>
   <block id="f90e83f0fc16f0b31efebdcbd9c72739" category="list-text">Trennen Sie das Controller-zu-Stack-Kabel vom letzten IOM6-Shelf-IOM A-Circle-Port mit dem Controller oder der Bridge.</block>
   <block id="fd92699fb017101c94c8dbf35e4f1c24" category="paragraph">Notieren Sie sich den Controller Port.</block>
   <block id="8ac5fbac18bdb8a392c9db2f9781f0fe" category="paragraph">Legen Sie das Kabel beiseite. Sie wird nicht mehr benötigt.</block>
@@ -6266,16 +6180,13 @@
   <block id="41cb447e88bb124a5db517ed30198998" category="list-text">Wenn Sie ein weiteres IOM12/IOM12B-Shelf während des laufenden Betrieb hinzufügen, verkabeln Sie die Shelf-zu-Shelf-Verbindung zwischen dem IOM12/IOM12B-Shelf IOM A-Port 3 des gerade verkabelten Shelfs und dem nächsten IOM12/IOM12B-Shelf IOM A-Port 1.</block>
   <block id="8904fa6bfff4cd47f36ebe61b80ba07e" category="paragraph">Verwenden Sie ein Mini-SAS HD-to-Mini-SAS HD-Kabel mit SAS-Kupfer.</block>
   <block id="e2e2c21437bf854e94458bf7484b889d" category="paragraph">Andernfalls fahren Sie mit dem nächsten Unterschritt fort.</block>
-  <block id="926c9efdfde9f0aef47047a0e5f7949b" category="list-text">Stellen Sie die Controller-zu-Stack-Verbindung wieder her, indem Sie denselben Port am Controller oder Bridge (in Unterschritt A) an den neuen letzten IOM12 IOM A-Port 3 verkabeln.</block>
   <block id="88a9a5978bd68dcd7789cf66763e32e0" category="paragraph">Verwenden Sie je nach Anschlusstyp des Controllers ein SAS-Kupfer-QSFP-to-Mini-SAS-HD-Kabel oder Mini-SAS HD-Kabel.</block>
   <block id="f0ae24e4bd1fbe613eaf4033ecfa3b35" category="list-text">Wiederholen Sie die Unterschritte A bis d für IOM B</block>
   <block id="069bc69fbf8862340aea67e1cee8ebf1" category="paragraph">Fahren Sie andernfalls mit Schritt 4 fort.</block>
   <block id="7830f5d1f77c11f64cb999e574fc8f3f" category="paragraph">Über Bridge-Verbindungen in einer MetroCluster-Konfiguration</block>
   <block id="8086de199e5cb4c9290c11b750a84678" category="list-text">Trennen Sie das untere Bridge-to-Stack-Kabel vom letzten IOM6-Shelf-IOM A-Circle-Port zur Bridge.</block>
   <block id="7a59e011c42c6e3179dcd77e8259dd0f" category="paragraph">Notieren Sie sich den Bridge-Port.</block>
-  <block id="6abc41dcfb66265b141bc0c3d6bd404f" category="list-text">Verkabeln Sie die Shelf-to-Shelf-Verbindung zwischen dem letzten IOM6-Shelf IOM A-Circle-Port (von Unterschritt A) und dem neuen IOM12-Shelf IOM A-Port 1.</block>
   <block id="f1c72d9035552f6b2e5c43b27f1fd1cc" category="list-text">Wiederholen Sie die Unterschritte b und c, um die Shelf-zu-Shelf-Verbindungen für IOM B zu verkabeln</block>
-  <block id="63fc6622bd95c4421099340dd35535b4" category="list-text">Stellen Sie die untere Bridge-to-Stack-Verbindung wieder her, indem Sie denselben Port an der Bridge (in Unterschritt A) an den neuen letzten IOM12-Shelf IOM A-Port 3 verkabeln.</block>
   <block id="87787cb4b43228e79111842d0ca7ad92" category="list-text">Fahren Sie mit Schritt 4 fort.</block>
   <block id="53446fdb493b04597baa8f53eb3225a7" category="paragraph">Single Path HA oder Single Path ohne Controller-Verbindung zum logischen letzten Shelf</block>
   <block id="c5053835d12fc440bf9519cf51926077" category="list-text">Verkabeln Sie die Shelf-zu-Shelf-Verbindung zwischen dem letzten IOM6-Shelf IOM A-Circle-Port und dem neuen IOM12/IOM12B-Shelf IOM A-Port 1.</block>
@@ -6283,7 +6194,6 @@
   <block id="46a7d11c0de8261bfb74d9bce4920db4" category="list-text">Wenn Sie ein weiteres IOM12/IOM12B-Shelf bei laufendem Betrieb hinzufügen, wiederholen Sie die Unterschritte A und B.</block>
   <block id="cc6b443dcaf375914e07667f9d494608" category="list-text">Wenn das IOM12/IOM12B Shelf, das Sie in der Hot-Adding-Umgebung verwenden, ein zusätzliches IOM12/IOM12B Shelf zu einem vorhandenen gemischten Stack ist, d. h. ein oder mehrere IOM12/IOM12B Shelves sind bereits im Stack vorhanden, führen Sie die entsprechenden Teilschritte durch.</block>
   <block id="fbeb13900997a66117589107666778fd" category="cell">Wenn die Verbindung Ihres gemischten Stacks...</block>
-  <block id="2959cd4f37c3034d02125ecfe63d8c4b" category="paragraph">Multipath HA oder Multipath oder Single Path HA mit Controller-Konnektivität zum logischen letzten Shelf oder Bridge-Attached-Konnektivität in einer MetroCluster-Konfiguration</block>
   <block id="323be85d169cf65d9f2dff0b9daf0dd6" category="list-text">Bewegen Sie das Controller-zu-Stack-Kabel vom letzten IOM12/IOM12B-Shelf IOM A-Port 3 an denselben Port am neuen IOM12/IOM12B-Shelf.</block>
   <block id="4a234d60639e9340f8ce3de65d81db69" category="list-text">Wenn Sie ein IOM12/IOM12B-Shelf im laufenden Betrieb hinzufügen, verkabeln Sie die Shelf-zu-Shelf-Verbindung zwischen dem alten letzten IOM12/IOM12B-Shelf IOM A-Port 3 zum neuen letzten IOM12/IOM12B-Shelf IOM A-Port 1.</block>
   <block id="633e2691f3d334f1861df8688fb8aff3" category="list-text">Wenn Sie mehr als ein IOM12/IOM12B-Shelf in der laufenden Zeit hinzufügen, verkabeln Sie die Shelf-zu-Shelf-Verbindung zwischen dem alten letzten IOM12/IOM12B-Shelf IOM A-Port 3 und dem nächsten IOM12/IOM12B-Shelf IOM A-Port 1. Wiederholen Sie dies dann für zusätzliche IOM12/IOM12B-Shelves.</block>
@@ -6341,10 +6251,7 @@
   <block id="1d4c0fb2a243494a984412dc5b5381a1" category="admonition">Wenn Sie ein HA-Paar mit mindestens zwei Stacks haben, ist das Festplatten-Shelf mit den Root-Aggregaten für den zweiten Stack die Shelf-ID auf 10 voreingestellt.</block>
   <block id="f2717497b83e7964ce960a0ca5ac4860" category="paragraph">Sie müssen Shelf-IDs festlegen, sodass sie innerhalb des HA-Paars oder der Single-Controller-Konfiguration eindeutig sind. Sie können Shelf-IDs manuell festlegen oder Shelf-IDs automatisch allen Festplatten-Shelfs des HA-Paars oder der Single-Controller-Konfiguration zuweisen. Verwenden Sie dazu einen Befehl im Wartungsmodus. Anweisungen für beide Methoden werden bereitgestellt.</block>
   <block id="b1b6e8ddb338daabf15cdf510590fae4" category="list-text">Festplatten-Shelfs, die die Root-Aggregate enthalten, können durch die Etiketten auf der Festplatten-Shelf-Box und dem Festplatten-Shelf-Chassis identifiziert werden.</block>
-  <block id="5c542a7e2ad58397aad1271e4d3a0117" category="paragraph">Auf den Etiketten wird die Stapelnummer angezeigt, z. B. *Loop oder Stack #: 1* und *Loop oder Stack #: 2*. Festplatten-Shelfs, die nicht die Root-Aggregate enthalten, zeigen nur die Festplatten-Shelf-Seriennummer auf den Etiketten an.</block>
   <block id="ecf2c214f39b200ba60904cb20770b94" category="list-text">Wenn Sie bei der Einrichtung und Konfiguration des Systems nicht so konfigurieren, dass das System die automatische Festplatteneigentümer-Zuweisung verwendet, müssen Sie die Festplatteneigentümer manuell zuweisen.</block>
-  <block id="3e4b78a10116c79b33b35d6940601a98" category="list-text">In-Band Alternate Control Path (ACP) ist automatisch aktiviert.</block>
-  <block id="a465c0fe78962946e881b32ab9ec2b88" category="paragraph">In-Band ACP wird auf Single Path HA- oder Single Path-Konfigurationen nicht unterstützt.</block>
   <block id="d0239e887ec2c441679c67bab9e771e2" category="list-text">Die beste Vorgehensweise besteht darin, dass die aktuelle Version des DQP (Disk Qualification Package) installiert ist.</block>
   <block id="83b7fe235f4d243b23ebf6cb04f9c234" category="list-text">Als Best Practice wird empfohlen, Config Advisor nach einer neuen System-Installation herunterzuladen und auszuführen.</block>
   <block id="f04a5c047df778cea3df6efa23d65eae" category="paragraph">Wenn Sie Config Advisor nach einer neuen Systeminstallation ausführen, können Sie überprüfen, ob die SAS-Verbindungen ordnungsgemäß verkabelt sind und dass Shelf-IDs innerhalb des HA-Paars oder der Konfiguration mit einem Controller eindeutig sind.</block>
@@ -6355,12 +6262,10 @@
   <block id="76a74383605253628e7771913e3eb749" category="admonition">Schalten Sie die Festplatten-Shelfs derzeit nicht ein.</block>
   <block id="cff4c6a80d673a91abe24c8dff38731f" category="section-title">Verkabeln Sie die Platten-Shelves mit IOM12/IOM12B-Modulen für eine neue Systeminstallation</block>
   <block id="b8fe06fa8cda2e641eeef95ff91ef16f" category="paragraph">Sie verkabeln Festplatten-Shelf-SAS-Verbindungen --Shelf-zu-Shelf (falls zutreffend) und Controller-zu-Shelf-, um Storage-Konnektivität für das System herzustellen.</block>
-  <block id="1143d5c25aa2f693537222d1f3260323" category="paragraph">Sie müssen die Anforderungen in erfüllt haben <block ref="d785cc9ecd460c8d1bff7d4aeeca8c73" category="inline-xref-macro-rx"></block> Und installierte die Festplatten-Shelfs im Rack.</block>
   <block id="eb0ef620e7c33a9d328a59925c63f641" category="paragraph">Nachdem Sie die Festplatten-Shelfs verkabeln, schalten Sie sie ein, legen die Shelf-IDs fest und schließen die Einrichtung und Konfiguration des Systems ab.</block>
   <block id="938b81eb4d9b969de0bb315b1f640378" category="list-text">Verkabeln Sie die Shelf-zu-Shelf-Verbindungen innerhalb jedes Stacks, wenn der Stack über mehr als ein Festplatten-Shelf verfügt. Andernfalls fahren Sie mit dem nächsten Schritt fort:</block>
   <block id="a7d77ef34ce2b9d850f4769f4d7e7a6c" category="inline-link-macro">Verbindungsregeln für Shelf-zu-Shelf</block>
   <block id="f43f298ef090aeeea5ee30105943fc22" category="paragraph">Eine detaillierte Erläuterung und Beispiele für Shelf-to-Shelf „`standard`“-Verkabelung und Shelf-to-Shelf „`dOuble-wide`“-Verkabelung finden Sie unter <block ref="26ae17222c3b6b055eac72da397050a1" category="inline-link-macro-rx"></block>.</block>
-  <block id="1c0e65520c35332052a7497245e722c4" category="paragraph">Sie sind dabei Verkabelung von Multipath HA, Multipath, Single Path HA oder Single Path-Konfiguration</block>
   <block id="e6b5dfec5e2c0904b5ee95122da9b6a5" category="list-text">Wiederholen Sie den Unterschritt A für IOM B.</block>
   <block id="56767a43c2f3e9180e63f6a9f40436fa" category="list-text">Wiederholen Sie die Teilschritte a und b für jeden Stapel.</block>
   <block id="fd4ece52db86a5d9850377adfb59fc89" category="paragraph">Sie verkabeln eine HA- oder Quad-Path-Konfiguration</block>
@@ -6502,7 +6407,6 @@
   <block id="fedeae451b36efcc460d172d9fe45850" category="section-title">Schritt 3: Ersetzen Sie den Lüfter - AFF A700s</block>
   <block id="62052f557603d07beccb5c5c5b7c8d48" category="list-text">Ermitteln Sie das Lüftermodul, das Sie ersetzen müssen, indem Sie die Fehlermeldungen der Konsole überprüfen.</block>
   <block id="e1d83f38808259079bf63398959b5064" category="section-title">Schritt 4: Installieren Sie das Controller-Modul wieder - AFF A700s</block>
-  <block id="db1d1fc556b59fbc6af03005e8bfd733" category="section-title">Schritt 4: Rückgabe des fehlerhaften Teils an NetApp - AFF A700s</block>
   <block id="9a86085357934b0a1859c727c4e1e2ff" category="summary">Um eine fehlerhafte NVRAM-Karte zu ersetzen, müssen Sie den NVRAM-Riser 1 aus dem Controller-Modul entfernen, die fehlerhafte Karte aus dem Riser entfernen, die neue NVRAM-Karte im Riser installieren und den Riser im Controller-Modul wieder installieren. Da die System-ID von der NVRAM-Karte abgeleitet wird, werden beim Ersetzen des Moduls Festplatten, die zum System gehören, der neuen System-ID neu zugewiesen.</block>
   <block id="24ce82ff8bc29243190bb0a11659117c" category="doc">Ersetzen Sie das NVRAM-Modul und die NVRAM-DIMMs - AFF A700s</block>
   <block id="68a1306a8c08262df17717b7309d7609" category="list-text">Wenn sich Ihr System in einem HA-Paar befindet, muss der Partner-Controller den Controller übernehmen können, der dem zu ersetzenden NVRAM-Modul zugeordnet ist.</block>
@@ -7035,9 +6939,7 @@
   <block id="2392f11d96d6fc4362b42688f146c995" category="sidebar">Installation und Verkabelung der Shelves für das neue System</block>
   <block id="4ccd403eb19c48e7ebdaaeb982ef2481" category="sidebar">Hot-Add-Shelf</block>
   <block id="cf999199f9d4c3e90d15399860476f13" category="sidebar">Die Shelf-ID ändern</block>
-  <block id="b32341112e04cf53228eb2711e7faa5c" category="sidebar">Verkabelungsarbeitsblätter und Beispiele für gängige Multipath HA-Konfigurationen</block>
   <block id="3f9904dabd6885ddf815902aade7d320" category="sidebar">Verkabelungsarbeitsblätter und Beispiele für Plattformen mit internem Storage</block>
-  <block id="99035f209c8d40299210fe873096f23b" category="sidebar">Verkabelungsarbeitsblatt und Beispiel für eine Quad-Path HA-Konfiguration mit zwei SAS HBAs mit vier Ports</block>
   <block id="f64eba4acc825268e4959bef4c193b11" category="sidebar">Vorlage für Verkabelungsarbeitsblatt für multipathed Connectivity</block>
   <block id="ce6374cb8d43c65f66d31cf1a0ede69e" category="sidebar">Vorlage für Verkabelungsarbeitsblatt für Quad-Pathed-Konnektivität</block>
   <block id="c9dbe70bac035df0f96f45c02dcf5bd9" category="sidebar">Lesen des Arbeitsblatts zum Kabelanschluss für multipathed Connectivity</block>
@@ -7607,8 +7509,6 @@
   <block id="fcaf8c1ce832814314e7cdc51233676b" category="sidebar">Plattform-Upgrade (die meisten Systeme)</block>
   <block id="7c4365c5c3b36c349d31ac07e90053ce" category="sidebar">Plattform-Upgrade (MetroCluster-Konfiguration)</block>
   <block id="46edf46f46a5fc2267bcf312e1955d28" category="sidebar">ONTAP Software-Dokumentation</block>
-  <block id="c8a6259aed44fea9ff6723eeb59cce9e" category="sidebar">Digital Advisor Dokumentation</block>
-  <block id="974ad78dc53c253ebfe5b2b8b376f353" category="sidebar">Tools und Support</block>
   <block id="668e2078ef1b1722c77cdb5c523a4463" category="sidebar">NetApp Knowledge Base</block>
   <block id="2bae42f280067110dfd52cc69a468364" category="sidebar">Active IQ (Anmeldung erforderlich)</block>
   <block id="b5bfe3d61bf9be292418cb9d21eec19c" category="sidebar">Starten Sie jetzt</block>
@@ -7996,4 +7896,466 @@
   <block id="04924b20a91a5f5b238ee6721421d3cb" category="list-text">Die UTA2-Datennetzwerkports oder die ethernet-Datennetzwerkports können zum Verbinden der Controller mit Ihrem Host-Netzwerk verwendet werden:</block>
   <block id="be838816a39a48461edd5a1e87b6d8e5" category="list-text">Schließen Sie den Laptop oder die Konsole an den Management-Switch an.</block>
   <block id="fea0a68e925a0ae2df0aa5bbdbe7c891" category="list-text">Weisen Sie dem Laptop oder der Konsole eine TCP/IP-Adresse zu. Verwenden Sie dazu eine Adresse auf dem Management-Switch.</block>
+  <block id="71d4d064630d70cfb9adf86452b9de52" category="paragraph">Wenn eine der LIFs als falsch aufgeführt ist, stellen Sie sie auf ihre Home-Ports zurück:<block ref="985591930e85610706940dd82967bd61" prefix=" " category="inline-code"></block></block>
+  <block id="5f9489878c0e21ab14f2c4768367bc39" category="list-text">Wenn ein AutoSupport-Wartungsfenster ausgelöst wurde, beenden Sie das Fenster mit. Verwenden Sie dazu die<block ref="9ac424c0d7b432975df36a19daf50c9c" prefix=" " category="inline-code"></block> Befehl.</block>
+  <block id="fe5bb47bbec2cc6ab51288fa7ec602da" category="paragraph">Speicher- und Netzwerkverbindungen des Controller-Moduls wieder herstellen.</block>
+  <block id="8f71288719d23ae490bd8fa8ba6d2988" category="paragraph">Wenn Schnittstellen als aufgeführt werden<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>, Zurücksetzen dieser Schnittstellen zurück zu ihrem Home-Port mit dem<block ref="71c4baf0f55b5bfce2627ab279a13043" prefix=" " category="inline-code"></block> Befehl.</block>
+  <block id="1ccdd49d3b4e697ec664a985a5983b41" category="list-text">Stellen Sie AutoSupport wieder her, wenn sie mithilfe des deaktiviert wurde<block ref="9ac424c0d7b432975df36a19daf50c9c" prefix=" " category="inline-code"></block></block>
+  <block id="657e1e449c74518bb94702c89e392c1b" category="list-text">Überprüfen Sie auf dem Node _Healthy_ die Systemzeit:<block ref="1cac34e5e8442fb80d6ade838d969fc0" prefix=" " category="inline-code"></block></block>
+  <block id="6071c318b780c1f56da250b5fe0334d8" category="paragraph">Datum und Uhrzeit basieren auf der konfigurierten Zeitzone.</block>
+  <block id="408525dec83104bf941d9a7d0a93d454" category="list-text">Bestätigen Sie an der LOADER-Eingabeaufforderung Datum und Uhrzeit am Node _Replacement_:<block ref="5fc732311905cb27e82d67f4f6511f7f" prefix=" " category="inline-code"></block></block>
+  <block id="598dc5e99f2a14bda43240b77ca40634" category="section-title">Schritt 2: Das System hochfahren</block>
+  <block id="a5878fdf6c8d3698ab74c4f473608246" category="paragraph">Wenn Sie über eine Plattform mit internem Speicher verfügen, verwenden Sie das folgende Arbeitsblatt:</block>
+  <block id="e80602d70a12972f8bf4a77f853d5172" category="inline-link-macro">SAS-Verkabelungsregeln und -Konzepte</block>
+  <block id="21a6c3bb04b7d126a65edcb02e25ec46" category="list-text">Bei Bedarf können Sie sich auf die beziehen <block ref="513d554484deefc85e1b679659a84cbc" category="inline-link-macro-rx"></block> Weitere Informationen zu unterstützten Konfigurationen finden Sie auf der Konvention zur Nummerierung von Controller-Steckplätzen, Shelf-to-Shelf-Konnektivität und Controller/Shelf-Konnektivität (einschließlich Verwendung von Port-Paaren).</block>
+  <block id="33541e56b6653b3ccd3503e7d446f985" category="summary">Sie können die vollständigen Controller-to-Stack-Verkabelungs-Worksheets und Verkabelungsbeispiele verwenden, um Plattformen mit internem Speicher zu verkabeln.</block>
+  <block id="84c55d9e8eb41695e92702bc9aa7e417" category="list-text">Bei Bedarf können Sie sich auf beziehen <block ref="513d554484deefc85e1b679659a84cbc" category="inline-link-macro-rx"></block> Weitere Informationen zu unterstützten Konfigurationen, Shelf-zu-Shelf-Konnektivität und Controller-zu-Shelf-Konnektivität</block>
+  <block id="84f61db881175683de35ce39e2e25556" category="list-text">Beispiele für Verkabelungen zeigen Controller-zu-Stack-Kabel als solide oder gestrichelt, um Controller-0b/0b1-Port-Verbindungen von Controller-0a-Port-Verbindungen zu unterscheiden.</block>
+  <block id="dd4d7242739fdb8eb5eab6889088e71a" category="image-alt">drw fas2600 Controller zu Stack Kabeltyp Schlüssel IEOPS 947</block>
+  <block id="559ab6a66b2bfa274b38981fac849dbe" category="section-title">FAS2800 Plattform in einer Multipath HA-Konfiguration ohne externe Shelfs</block>
+  <block id="c551f9f047036ae88cefbff0f867bfd7" category="paragraph">Das folgende Beispiel zeigt, dass für eine Multipath HA-Konnektivität keine Verkabelung erforderlich ist:</block>
+  <block id="7520d8de654d9ba2c8c8616c324533eb" category="image-alt">drw fas2800 noshelf mpha IEOPS 954</block>
+  <block id="dce517c194d8aadca050f89acd9479f9" category="section-title">FAS2800 Plattform in einer HA-Konfiguration mit drei Pfaden ohne externe Shelfs</block>
+  <block id="96093137909588511c6efc52b70c20f0" category="paragraph">Das folgende Verkabelungsbeispiel zeigt die erforderliche Verkabelung zwischen den beiden Controllern, um eine Tri-Path-Konnektivität zu erreichen:</block>
+  <block id="24511779e02007e937b5e09eb22acd22" category="image-alt">drw fas2800 noshelf tpha IEOPS 955</block>
+  <block id="45eccdceb680b5fc042ecd5f2cb2f360" category="section-title">FAS2800 Plattform in einer Multipath HA-Konfiguration mit einem Multi-Shelf Stack</block>
+  <block id="f9fe60b0d5b0a173d8e8a93ef1fad4fa" category="paragraph">Im folgenden Arbeitsblatt und in der Verkabelung wird das Portpaar 0a/0b1 verwendet:</block>
+  <block id="94d112c03cbc394f8f2a92ff360b41b9" category="image-alt">drw fas2800 Arbeitsblatt IEOPS 948</block>
+  <block id="68f4d5ceedad60b68609111dd83bb1dd" category="image-alt">drw fas2800 mit Shelfs tpha IEOPS 949</block>
+  <block id="b1e743b8776f5252291595e89248eca8" category="admonition">Dieser Abschnitt gilt nicht für FAS2800 oder FAS25XX Systeme.</block>
+  <block id="b3bbdd3382ae9ee68dc7a3c014a9e55f" category="image-alt">drw fas2600 mpha Arbeitsblatt IEOPS 1255</block>
+  <block id="7e1de3653f38ae49017d6c9db4292905" category="image-alt">drw fas2600 mpha IEOPS 1256</block>
+  <block id="889643b70d8973adb82162d572e085b6" category="list-text">Bei Multipath (Multipath HA oder Multipath), Tri-Path-HA und Quad-Pathed (Quad Path HA oder Quad Path) Konfigurationen können Sie ein Shelf IOM im laufenden Betrieb austauschen (unterbrechungsfreies Ersetzen eines Shelf IOM in einem System, das eingeschaltet ist und Daten bereitstellt – I/O wird ausgeführt).</block>
+  <block id="78e2c67b6cd9683131c2d5cc3b5f52eb" category="paragraph">Multipath HA, Tri-Path HA, Multipath, Quad-Path HA oder Quad-Path-Konfiguration</block>
+  <block id="6d777385d5ec907bb961f7417dca8878" category="paragraph"><block ref="6d777385d5ec907bb961f7417dca8878" category="inline-link-rx"></block></block>
+  <block id="0ee240824d7af98d85ac767eaccc865a" category="paragraph"><block ref="0ee240824d7af98d85ac767eaccc865a" category="inline-link-rx"></block></block>
+  <block id="6d0d5f63b661f0d75b4bc5a5a2c970fc" category="paragraph"><block ref="6d0d5f63b661f0d75b4bc5a5a2c970fc" category="inline-link-rx"></block></block>
+  <block id="874f447ea48b8a01b3d6036d97f74e27" category="list-text">Ihr System muss weniger als die maximale Anzahl an unterstützten Laufwerken aufweisen, zumindest die Anzahl der Laufwerke, die in den IOM12/IOM12B-Shelves installiert werden können, die Sie bei laufendem Betrieb hinzufügen.</block>
+  <block id="9ede2d6e7ff2c506f18985f68e692af9" category="paragraph"><block ref="9ede2d6e7ff2c506f18985f68e692af9" category="inline-link-rx"></block></block>
+  <block id="3e13397e3855003e83c5bd90f17f8b8d" category="list-text">Wenn in der aktuellen Konfiguration Bridge SAS-Ports verfügbar sind, sollten die IOM12/IOM12B-Shelfs als separater Stack hinzugefügt werden.</block>
+  <block id="59fc52719ae405798ce33ec8377fff0f" category="paragraph"><block ref="59fc52719ae405798ce33ec8377fff0f" category="inline-link-rx"></block></block>
+  <block id="1b7414640eba82929db27856a548aa7d" category="paragraph"><block ref="1b7414640eba82929db27856a548aa7d" category="inline-link-rx"></block></block>
+  <block id="c4df39668489dc5a0445eefa1b0ae993" category="list-text">Wenn Sie Shelfs mit IOM12/IOM12B-Modulen im laufenden Betrieb zu einem Shelf mit IOM6-Modulen hinzufügen, wird die Performance des gesamten Stack mit 6 Gbit/s ausgeführt (mit der niedrigsten gemeinsamen Geschwindigkeit).</block>
+  <block id="f5397894a1a5219c58306fcf93f44e66" category="paragraph">Wenn es sich bei den hinzuzufügende Shelfs um Shelves handelt, die von IOM3- oder IOM6-Modulen auf IOM12-/IOM12B-Module aktualisiert wurden, arbeitet der Stack mit 12 Gbit/s. die Shelf Backplane und die Festplattenfunktionen können jedoch die Festplatten-Performance auf 3 Gbit/s oder 6 Gbit/s begrenzen.</block>
+  <block id="0e2ac0f21198c430c971dd9e441f6fc7" category="list-text">Bei Systemen, auf denen IBACP ausgeführt wird, wird IBACP automatisch in zusätzlich aktiven IOM12/IOM12B-Shelfs aktiviert.</block>
+  <block id="269e042dc90ba45b8f4ba99cc4811c43" category="list-text">Bei Systemen mit Out-of-Band-ACP sind die ACP-Funktionen in Shelfs IOM12/IOM12B nicht verfügbar.</block>
+  <block id="145cb3ca8681febc2695ed384e8786c0" category="paragraph"><block ref="145cb3ca8681febc2695ed384e8786c0" category="inline-link-rx"></block></block>
+  <block id="97887a2b9e5437b59f9205502aa6f821" category="paragraph">Wenn Sie den IOM12/IOM12B-Shelfs, die Sie im laufenden Betrieb hinzufügen, manuell Laufwerkeigentümer zuweisen, müssen Sie die automatische Laufwerkszuweisung deaktivieren, wenn sie aktiviert ist.</block>
+  <block id="44efd2e3c1edf2a13d788173c8c6bedb" category="paragraph">Gültige Shelf-ID: 00 bis 99. Es wird empfohlen, die Shelf-IDs so einzustellen, dass die IOM6-Shelfs niedrigere Zahlen (1 bis 9) verwenden und die IOM12/IOM12B-Shelfs eine höhere Anzahl verwenden (10 und höher).</block>
+  <block id="0301e862598fef61b159e918e47fbf91" category="paragraph">Wie Sie ein IOM12/IOM12B Shelf zu einem Stack mit IOM6-Shelfs verkabeln, hängt davon ab, ob das IOM12/IOM12B Shelf das erste IOM12/IOM12B Shelf ist. Dies bedeutet, dass im Stack kein anderes IOM12/IOM12B Shelf vorhanden ist. Oder ob es sich um ein zusätzliches IOM12/IOM12B Shelf zu einem vorhandenen gemischten Stack handelt, d. h., es besteht bereits ein oder mehrere IOM12/IOM12B-Shelves im Stack. Dies hängt außerdem davon ab, ob der Stack Multipath HA, Multipath HA, Single Path HA oder Single Path-Konnektivität bietet.</block>
+  <block id="6ddd0f1b8cb9cab2c51d86f276a4eafd" category="list-text">In einem HA-Paar mit internem Storage (IOM12E/IOM12G) wird ein Single-Speed-Übergang innerhalb eines Stacks mit zwei IOM12/IOM12B-Shelfs und zwei IOM6-Shelfs dargestellt als:</block>
+  <block id="3efe63a3802447c66b1e1340cc37011c" category="paragraph">Der interne Speicherport 0b/0b1 ist der Port des internen Speichers (Expander) und da er mit dem Hot-Added IOM12/IOM12B Shelf (dem letzten Shelf im Stack) verbunden ist, wird die Gruppe der IOM12/IOM12B Shelves zusammen gehalten und ein einziger Übergang über den Stack und den internen IOM12E/IOM12G Speicher aufrechterhalten.</block>
+  <block id="17540f86c10768e4e727e19e559e374f" category="paragraph">Die Abbildung zeigt speziell auf einen Stack mit Multipath HA-Konnektivität. Das Verkabelungskonzept kann jedoch auf Stacks mit Multipath, Tri-Path HA, Single-Path HA, Single-Path-Konnektivität und Stretch MetroCluster Konfigurationen angewendet werden.</block>
+  <block id="e7066e65ab6d0d00e13f5776fdc410f6" category="paragraph">Abhängig von Ihrem Plattformmodell und Ihrer Stack-Konnektivität (Multipath HA, Tri-Path HA, Multipath, Single Path HA oder Single Path), Das logische letzte Shelf ist das Shelf, das Controller-to-Stack-Verbindungen von den Controller-SAS-Ports B und D aufweist. Oder es hat das Shelf keine Verbindungen zu beliebigen Controllern (da die Konnektivität zwischen Controller und Stack über die Controller SAS-Ports A und C zum logischen oberen Teil des Stacks gehört).</block>
+  <block id="6367f42eda55c79ca60e48d6384ab2f1" category="paragraph">Multipath HA, Tri-Path HA, Multipath oder Single-Path HA mit Controller-Konnektivität zum letzten logischen Shelf (einschließlich Stretch-MetroCluster-Konfigurationen)</block>
+  <block id="f239ca80a281b7e3098e53bf849bbc6d" category="list-text">Stellen Sie die Controller-zu-Stack-Verbindung wieder her, indem Sie denselben Port am Controller oder der Bridge (in Schritt A) mit dem neuen letzten IOM12/IOM12B-Shelf-IOM A-Port 3 verkabeln.</block>
+  <block id="d0d9f013532d105b4493bf4a40659776" category="list-text">Stellen Sie die untere Bridge-to-Stack-Verbindung wieder her, indem Sie denselben Port auf der Bridge (in Schritt A) mit dem neuen letzten IOM12/IOM12B-Shelf-IOM A-Port 3 verkabeln.</block>
+  <block id="364a89e35ed719e51e59a60ec21ff69a" category="paragraph">Multipath HA, Tri-Path HA, Multipath oder Single-Path HA mit Controller-Konnektivität zum logischen letzten Shelf oder Bridge-Attached-Konnektivität in einer MetroCluster-Konfiguration</block>
+  <block id="d52293a37620938ba7e4feb13708edf9" category="doc">SAS-Verkabelungsregeln und -Konzepte – Shelfs mit IOM12/IOM12B-Modulen</block>
+  <block id="f10aa207b12f6aea0d49aa15d0d2b698" category="admonition">Die in diesem Leitfaden beschriebenen Regeln für die SAS-Verkabelung zu den Nummerierungsregeln für Controller-Steckplätze, Shelf-to-Shelf-Verbindungsregeln und die in diesem Leitfaden beschriebenen Regeln für alle SAS-Platten-Shelves gelten, unabhängig davon, ob sie IOM12/IOM12B, IOM6 oder IOM3-Module besitzen. Die Informationen in diesem Leitfaden sind jedoch speziell auf die einzigartigen Merkmale von Festplatten-Shelfs mit IOM12/IOM12B-Modulen und ihre Verwendung in unterstützten Konfigurationen abgestimmt.</block>
+  <block id="8f3e1bfcac5ebf3ae518d7d0b7183191" category="paragraph">Festplatten-Shelfs mit IOM12/IOM12B Modulen werden in bestimmten HA-Paar- und Single-Controller-Konfigurationen unterstützt.</block>
+  <block id="6c5fe9aff643cb6f6afc0c56cef693b2" category="paragraph">Aktuelle Informationen zu unterstützten Verkabelungskonfigurationen für Ihr Plattformmodell finden Sie im Hardware Universe.</block>
+  <block id="38c7dba0bfe978540fdb2f9598267e27" category="list-text">Plattformen mit internem Storage unterstützen keine Quad-Path-HA-Konnektivität.</block>
+  <block id="0fecc4c819e73e375d9c40a95ba6fec2" category="list-text">Ein FAS2800 HA-Paar kann als Tri-Path HA verkabelt werden.</block>
+  <block id="bd0ab5deac45d462eafb4c6094f38b07" category="paragraph">Informationen zur FAS2800-Konnektivität finden Sie im <block ref="44cb6d44583fef757ae54be5d72211f9" category="inline-xref-macro-rx"></block> Abschnitt.</block>
+  <block id="379f6edbaf8caad99a93caabf81a3374" category="list-text">Plattformen mit internem Storage können als Single-Path HA-Konfigurationen verkabelt werden (von Port 0b/0b1 zu externen Shelfs), um die Konnektivität zu einem externen SAS Tape Backup-Gerät (von Port 0a) zu unterstützen.</block>
+  <block id="e543cae57757f63f8d1f193133213927" category="paragraph">Bei FAS2800 HA-Paaren ist die Verkabelung zu externen Shelfs Single-Path-HA, obwohl die interne Verbindung jedes Controllers von Port 0b mit seiner lokalen Erweiterung (IOM12G) und Port 0c mit der Erweiterung seines Partners vorhanden ist, lautet die HA-Paar-Konfiguration Multipath HA.</block>
+  <block id="9331810e62f51c7489e12877891ef496" category="list-text">Die Single-Controller-Konfigurationen der FAS2600 Serie können als Single-Path-Konfigurationen verkabelt werden.</block>
+  <block id="58e545ebba1044e5ef472e1c15a83e56" category="list-text">Standardmäßige Shelf-to-Shelf-Konnektivität wird in jedem Stack von Festplatten-Shelfs mit mehr als einem Festplatten-Shelf verwendet.</block>
+  <block id="0d93f50b6ba07d734a4fc535331feeba" category="paragraph">Zwischen den Platten-Shelves in jeder Domäne – Domäne A (IOM A) und Domäne B (IOM B) wird eine Kabelverbindung benötigt.</block>
+  <block id="8e6be4e546371eb88e215e42e577faf9" category="section-title">Controller 0b/0b1 und 0a-Port-Anschlussregeln für Plattformen mit internem Speicher</block>
+  <block id="bdc324833c79d07a6e6e0a64fe5be5f7" category="paragraph">Plattformen mit internem Speicher verfügen über einen eindeutigen Satz von Verbindungsregeln, da jeder Controller die gleiche Domänenkonnektivität zwischen dem internen Speicher (Port 0b/0b1) und dem Stack aufrechterhalten muss. Das bedeutet, dass sich ein Controller im Steckplatz A des Chassis (Controller 1) in Domäne A (IOM A) befindet und somit Port 0b/0b1 mit IOM A im Stack verbunden werden muss. Wenn sich ein Controller im Steckplatz B des Chassis (Controller 2) befindet, befindet er sich in Domäne B (IOM B) und somit muss Port 0b/0b1 mit IOM B im Stack verbunden werden.</block>
+  <block id="3efcc2e815502067db645cea76a01d7e" category="admonition">Wenn Sie den 0b/0b1-Port nicht mit der richtigen Domäne (Cross-Connect-Domänen) verbinden, setzen Sie Ihr System Stabilitätsproblemen aus, die eine sichere Durchführung von unterbrechungsfreien Verfahren verhindern.</block>
+  <block id="ade459d42d6d857cbd96a94e336a0f85" category="list-text">Controller 0b/0b1-Port (interner Speicherport):</block>
+  <block id="3bab20a687a982595c77f77ac9a95999" category="list-text">Der Port Controller 1 0b/0b1 stellt immer eine Verbindung zu IOM A (Domäne A) her.</block>
+  <block id="aba2d6429487fb8312ccf308c2b4282d" category="list-text">Der Port Controller 2 0b/0b1 stellt immer eine Verbindung zu IOM B (Domäne B) her.</block>
+  <block id="e30f4f926e91db6b95bd6a2e7d8e8db8" category="list-text">Port 0b/0b1 ist immer der primäre Pfad.</block>
+  <block id="f37147b373a7dab930e9ad58967b110f" category="list-text">Port 0b/0b1 stellt immer eine Verbindung zum letzten logischen Festplatten-Shelf in einem Stack her.</block>
+  <block id="ec50871e5c9ed1add9f37e13b5f6dcc5" category="list-text">Port 0b/0b1 stellt immer eine Verbindung zu IOM-Port 3 des Festplatten-Shelf her.</block>
+  <block id="5cc45636165f15166974ddab3dfb0fd7" category="paragraph">In der folgenden Abbildung wird die Konnektivität der internen Speicher-Port-Domäne (0b/0b1) mit einem externen Shelf-Stack hervorgehoben:</block>
+  <block id="cb9e9a1b808c7a4e6312fd5827f6c84e" category="image-alt">drw fas2600 mpha-Domänenbeispiel IEOPS 1172</block>
+  <block id="45219ca27a4ad91c17dcca93a96dd284" category="section-title">Tri-Path-HA-Konnektivität</block>
+  <block id="7125880b6305be48cdd0760966c349f2" category="paragraph">Tri-Path-HA-Konnektivität ist auf FAS2800 HA-Paaren verfügbar. Tri-Path-HA-Konnektivität verfügt über drei Pfade von jedem Controller zu internen (IOM12G) und externen Shelfs:</block>
+  <block id="c8c29757ef852a483118b80a57d4b5ac" category="list-text">Die interne Verbindung jedes Controllers von Port 0b mit seinem lokalen IOM12G und Port 0c mit dem IOM12G seines Partners erzeugt Multipath HA-Konnektivität zu einem HA-Paar.</block>
+  <block id="494edf65cd0a33575dc779a9df2979d6" category="list-text">Die Verkabelung der externen Storage-Ports jedes Controllers, 0a und 0b1, ergibt eine HA-Paar-HA-Konnektivität für drei Pfade.</block>
+  <block id="a35c30ba1541ae1d8a44ed5229f19650" category="paragraph">Die Ports 0a und 0b1 sind über die beiden Controller verkabelt, wenn keine externen Shelfs vorhanden sind oder sie mit externen Shelfs verbunden sind, um HA-Konnektivität in drei Pfaden zu erreichen.</block>
+  <block id="77f105a56bd1c2ae99c93daa98950ddb" category="paragraph">Im Folgenden werden die internen Verbindungen und die externen Kabel des Controllers angezeigt, die eine HA-Konnektivität mit drei Pfaden ermöglichen:</block>
+  <block id="d16f504f7bfcd6bdd9341d281e367431" category="image-alt">drw fas2800 Concept tpha IEOPS 950</block>
+  <block id="56aa5946d918a9c287c3413f16a7f6a8" category="paragraph">Die FAS2800 externen SAS-Ports:</block>
+  <block id="49c992eee9e3421ed1fbdca1cea6cc70" category="list-text">Der Port 0a stammt aus dem internen HBA (wie andere Plattformen mit einem internen Shelf).</block>
+  <block id="21f39b91f6bc9739ca0f20af09effa4e" category="list-text">Der 0b1-Port stammt vom internen Shelf (wie die 0b-Ports auf anderen Plattformen mit einem internen Shelf).</block>
+  <block id="cd00b581ae35cc28e22b76f1f56e73a3" category="list-text">Der port 0b2 wird nicht verwendet. Er ist deaktiviert. Wenn ein Kabel daran angeschlossen ist, wird eine Fehlermeldung ausgegeben.</block>
+  <block id="89c7c407656d81769624b64d696a7e5e" category="image-alt">drw Sas3-Ports auf fas2800 IEOPS 946 (1)</block>
+  <block id="4d29df0cb21d81560d8799a21074035f" category="paragraph">Beispiele für eine FAS2800 HA-Paar-Verkabelung sind im zu finden <block ref="c19123e6031c139d66f534ae4311d605" category="inline-link-macro-rx"></block> Abschnitt.</block>
+  <block id="d781db166642a4d3afbe74add6458ec0" category="paragraph">*SAS-Verkabelungsregeln und -Konzepte*</block>
+  <block id="8f8530d523c868e5ee729783d7b0a04a" category="list-text"><block ref="8f8530d523c868e5ee729783d7b0a04a" category="inline-link-macro-rx"></block></block>
+  <block id="f70fe2f81dab8d7ddd64b2b8e46c9db9" category="inline-link-macro">Multipath HA-Konfigurationen</block>
+  <block id="4cdce5b4db97f8a8cccd6d629adfc065" category="list-text"><block ref="4cdce5b4db97f8a8cccd6d629adfc065" category="inline-link-macro-rx"></block></block>
+  <block id="49a079fbeac70af49f3d165faa90d12f" category="inline-link-macro">Plattformen mit internem Storage</block>
+  <block id="fb02e210d25a1db1f9a1388e23551987" category="list-text"><block ref="fb02e210d25a1db1f9a1388e23551987" category="inline-link-macro-rx"></block></block>
+  <block id="4b077b9294c983e4fcb79f22bbbd7059" category="list-text">Ihr System muss Multipath HA, Multipath HA, Multipath, Quad-Path HA oder Quad-Path-Konfiguration sein.</block>
+  <block id="47d1c6074cdb766b8570365bf3c957b4" category="paragraph">Bei Plattformen mit internem Storage muss der externe Storage als Multipath HA, Tri-Path HA oder Multipath verkabelt werden.</block>
+  <block id="b47ee462126834b65b6cb8631735e9b6" category="list-text">*Mögliche Regalschäden:* Wenn Sie ein DS460C Shelf entfernen und es in einen anderen Teil des Datacenters verschieben oder an einen anderen Ort transportieren, lesen Sie am Ende dieses Verfahrens den Abschnitt „Verschieben oder Transportieren der DS460C Shelfs“.</block>
+  <block id="b30291dbc620b5f1b37a40f305a02f42" category="list-text">Vergewissern Sie sich, dass Ihre Systemkonfiguration genau ist<block ref="7331911b71ec7e78bff5c45bd2c5aaf9" prefix=" " category="inline-code"></block>,<block ref="e48889091c7b245a01ec6e7c96d076a6" prefix=" " category="inline-code"></block>,<block ref="30cd2ef2a4cf8bde2668292e60ce425e" prefix=" " category="inline-code"></block>,<block ref="98a06331c5019fee7c2bec76b5d289fb" prefix=" " category="inline-code"></block>, Oder<block ref="3a22361329a9005da35e1a3654fdb1ea" prefix=" " category="inline-code"></block> Durch Ausführen des<block ref="d4b15528721ed3ac7910f1fa2cacec13" prefix=" " category="inline-code"></block> Befehl aus der Nodeshell eines der Controller.</block>
+  <block id="8c39b7226de6fd48c0c5d30d8d9d17c4" category="paragraph">Es kann bis zu einer Minute dauern, bis das System die Erkennung abgeschlossen hat.</block>
+  <block id="2336de80553a028befa65fff819c1dde" category="list-text">Die IOM12/IOM12B Module sind nebeneinander wie in einem DS224C oder DS212C Festplatten-Shelf angeordnet; bei einem DS460C sind die IOM12/IOM12B Module übereinander angeordnet.</block>
+  <block id="62770b693e525340d1e88f2ad5bcea2d" category="list-text">Der Stack in den einzelnen Beispielen wird über Standard-Shelf-zu-Shelf-Kabel verkabelt, die in Stacks mit Multipath HA, Tri-Path HA oder Multipath-Konnektivität verwendet werden.</block>
+  <block id="f4507ab39b62bbe20965312721a8efcc" category="list-text">Das Beispiel zur Verkabelung zum Entfernen eines Platten-Shelf vom Ende eines Stacks zeigt, wie das letzte logische Platten-Shelf in einem Stack entfernt wird, der mit Multipath HA oder Tri-Path HA-Konnektivität verkabelt ist.</block>
+  <block id="09c4b41de089c23d1a678473dad5d4b0" category="paragraph">Wenn Sie das DS460C Shelf in einen anderen Teil des Datacenters verschieben oder an einen anderen Ort transportieren, lesen Sie den Abschnitt „Verschieben oder Transportieren von DS460C Shelfs“.</block>
+  <block id="d1439ffc926f9eb464ebdd314a0ffff3" category="doc">Controller-to-Stack-Verkabelungs-Worksheets und Verkabelungsbeispiele für Multipath HA-Konfigurationen – Shelfs mit IOM12/IOM12B-Modulen</block>
+  <block id="1803219dad807bec033016996a2a80f6" category="admonition">Diese Informationen gelten für Plattformen ohne internen Speicher.</block>
+  <block id="9c5e6dce379da9748afc258e9d7006a5" category="list-text">Bei Bedarf können Sie sich auf beziehen <block ref="513d554484deefc85e1b679659a84cbc" category="inline-link-macro-rx"></block> Weitere Informationen zu unterstützten Konfigurationen finden Sie auf der Konvention zur Nummerierung von Controller-Steckplätzen, Shelf-to-Shelf-Konnektivität und Controller/Shelf-Konnektivität (einschließlich der Verwendung von Port-Paaren).</block>
+  <block id="ed696617fba9412fed0e3069a929b5b7" category="list-text">Bei Bedarf können Sie sich auf beziehen <block ref="513d554484deefc85e1b679659a84cbc" category="inline-link-macro-rx"></block> Weitere Informationen zur Nummerierung der Controller-Steckplätze, Shelf-zu-Shelf-Konnektivität und Controller/Shelf-Konnektivität (einschließlich der Verwendung von Port-Paaren)</block>
+  <block id="60564c6a5dbb582ea0f8b967540d266c" category="paragraph">Auf den Etiketten wird die Stapelnummer angezeigt, z. B. *Loop oder Stack #: 1* und *Loop oder Stack #: 2*. Bei Festplatten-Shelfs, die keine Root-Aggregate enthalten, wird nur die Festplatten-Shelf-Seriennummer auf den Etiketten angezeigt.</block>
+  <block id="e50b176d298cced2ec9cfd5bbe516332" category="list-text">IBACP (in-Band Alternate Control Path) wird automatisch aktiviert.</block>
+  <block id="e5db155980df3ce33a16c9ed4af83e4e" category="paragraph">IBACP wird nicht bei Single-Path-HA- oder Single-Path-Konfigurationen unterstützt.</block>
+  <block id="ba809f57bc3e36546d8a47b82a5d995c" category="paragraph"><block ref="ba809f57bc3e36546d8a47b82a5d995c" category="inline-link-rx"></block></block>
+  <block id="d37bef5353b917df46bc5ea30882b3a9" category="paragraph">Sie müssen die Anforderungen in erfüllt haben <block ref="45a94b67f53095b9a49e00311fb0216a" category="inline-xref-macro-rx"></block> Und installierte die Festplatten-Shelfs im Rack.</block>
+  <block id="59e65b256ff4505ae2cefd9f9a823d8b" category="paragraph">Sie verkabeln eine Multipath HA, Multipath HA, Multipath-, Single Path HA oder Single Path-Konfiguration</block>
+  <block id="7e8bbc30dce4dc23bd053149c93370be" category="inline-link-macro">Arbeitsblätter für Controller-to-Stack-Verkabelung und Beispiele für Verkabelung bei Multipath HA-Konfigurationen</block>
+  <block id="909231a59b5cc48f6b48e61f36f7ab60" category="paragraph"><block ref="909231a59b5cc48f6b48e61f36f7ab60" category="inline-link-macro-rx"></block></block>
+  <block id="bc50a6f8ac8dfb2c580781d34e24ae74" category="paragraph">Sie können die folgenden Unterschritte verwenden, um die Shelf-IDs zu ändern. Weitere detaillierte Anweisungen finden Sie unter <block ref="1bf0acf64e45d0c785cbad3f63f469c6" category="inline-link-macro-rx"></block>.</block>
+  <block id="c1c6bb3499071a6bae963462682776e0" category="paragraph">Sie verkabeln die SAS-Verbindungen (Shelf-to-Shelf und Controller-to-Stack) je nach Bedarf für Hot-Added Festplatten-Shelfs, damit Sie Konnektivität zum System haben.</block>
+  <block id="0f3465a3f0de913b314ff9fa769f5b77" category="paragraph">Sie verkabeln einen Stack mit Multipath HA, Tri-Path HA, Multipath, Single Path HA oder Single Path-Konnektivität zu den Controllern</block>
+  <block id="a9965269fc2882517b2f7404230818ad" category="list-text">Wenn Sie ein oder mehrere Platten-Shelves im laufenden Betrieb zu einem Ende (dem logischen ersten oder letzten Festplatten-Shelf) eines vorhandenen Stacks hinzufügen, führen Sie die entsprechenden Teilschritte für Ihre Konfiguration aus. Andernfalls fahren Sie mit dem nächsten Schritt fort.</block>
+  <block id="ca067501330c228a786fd00d17229575" category="paragraph">Hinzufügen eines Platten-Shelfs zum Ende eines Stacks mit Multipath HA, Multipath HA, Multipath, Quad-Path HA oder Quad-Path-Konnektivität zu den Controllern</block>
+  <block id="fa3d4e5360018aa45e5104272d43148c" category="paragraph">Der Stack muss die im angegebenen Anforderungen erfüllen <block ref="d7ead9d51e0253f97f9c0ae83a2ee9eb" category="inline-xref-macro-rx"></block> Abschnitt dieses Verfahrens.</block>
+  <block id="5be896a9c15045aaa6d68be3afa13034" category="list-text">Rufen Sie an der EINGABEAUFFORDERUNG DES LOADERS die speziellen Treiber auf, die speziell für die Diagnose entwickelt wurden, um ordnungsgemäß zu funktionieren:<block ref="87ee09e2a5f76fd0b04e7f6e02d1e3ef" prefix=" " category="inline-code"></block></block>
+  <block id="2aaf80f49dd70b27832d7aa8d96090d0" category="list-text">Wenn in der Befehlsausgabe &lt;lno-DARE&gt; oder &lt;1Ono-DARE&gt; angezeigt wird, unterstützt das System NVE nicht, fahren Sie mit fort <block ref="89ef15e2cd441b6b5852f79de56e5549" category="inline-xref-macro-rx"></block>.</block>
+  <block id="78fe270cb69c9ecda90d7e049a571c28" category="list-text">Wenn in der Befehlsausgabe nicht &lt;lno-DARE&gt; angezeigt wird und auf dem System ONTAP 9.6 oder höher ausgeführt wird, fahren Sie mit dem nächsten Abschnitt fort. <block ref="a913f4e8384864716d5146884ff27f0e" category="inline-xref-macro-rx"></block>.</block>
+  <block id="d9b691280dde7c1805e39052719c9c29" category="list-text">Deaktivieren Sie das automatische Giveback vom Controller mit funktionstüchtiger Funktion:
+Storage Failover modify -Node local -Auto-giveback false`
+Oder<block ref="1d2c479b57949de891a15e148e1ebcf5" prefix=" " category="inline-code"></block></block>
+  <block id="ce62d26f194e7c2888ff8e53c7d011c5" category="paragraph">Wenn Umgebungsvariablen aktiviert sind, müssen Sie die spezifischen Schritte für Systeme durchführen, für die Onboard Key Manager (OKM), NetApp Storage Encryption (NSE) oder NetApp Volume Encryption (NVE) aktiviert ist. Dies erfolgt über die Einstellungen, die Sie zu Beginn dieses Verfahrens erfasst haben.</block>
+  <block id="a9b1f8d4946ebf3182e44c224cfa7997" category="doc">Fahren Sie den beeinträchtigten Controller herunter - FAS2800</block>
+  <block id="ba1ddb4c1d6bdc698ece9a974aae0713" category="paragraph">Schalten Sie den außer Betrieb genommenen Controller aus oder übernehmen Sie ihn.</block>
+  <block id="3ab3867dfd753c1ff0d27e903bff1cc4" category="doc">Ersetzen Sie das Boot-Medium FAS2800</block>
+  <block id="1a829a672d8f4a1ab6936c766164f3fe" category="image-alt">drw 2850 pcm ausbauen Installation IEOPS 694</block>
+  <block id="5d9c656065fa74e7cb14500497b33617" category="list-text">Öffnen Sie die Abdeckung, indem Sie die blauen Tasten an den Seiten des Controller-Moduls drücken, um die Abdeckung zu lösen, und drehen Sie dann die Abdeckung nach oben und von dem Controller-Modul.</block>
+  <block id="206f40d3d3a553b715b00b4ada962595" category="image-alt">drw 2850 Open-Controller-Modulabdeckung IEOPS 695</block>
+  <block id="ac250ab529052385767cc5abd9d02efe" category="paragraph">Entriegelungstaste der Steuermodulabdeckung</block>
+  <block id="02196554e362859bf13fdb8c354bd53c" category="paragraph">Suchen Sie die Startmedien im Controller-Modul unter der Zusatzkarte, und befolgen Sie die Anweisungen zum Austauschen.</block>
+  <block id="b269a4583845b75a99e2494b866181d5" category="inline-image-macro">Breite=500</block>
+  <block id="ab18556462377223339c421c568ab231" category="paragraph"><block ref="ab18556462377223339c421c568ab231" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6b6e58fb741960f0300c7783438276a5" category="paragraph">Verriegelungslasche für Startmedien</block>
+  <block id="fa8b2d8b91c1c89065d3652288dbddc1" category="list-text">Entfernen Sie die Mezzanine-Karte mithilfe der folgenden Abbildung oder der FRU-Zuordnung auf dem Controller-Modul:</block>
+  <block id="c684d6ba7251084d87edf6423b1ebd24" category="list-text">Entfernen Sie die Blende der Zusatzkarte, indem Sie sie gerade aus dem Controller-Modul herausziehen.</block>
+  <block id="d62aede9e33b9cbeca49d6fcc6de78c2" category="list-text">Lösen Sie die Rändelschrauben auf der Zusatzkarte.</block>
+  <block id="db1a320c26dfcefe739a659ae4724890" category="admonition">Sie können die Rändelschrauben mit den Fingern oder einem Schraubendreher lösen. Wenn Sie Ihre Finger verwenden, müssen Sie den NV-Akku möglicherweise nach oben drehen, um den Finger besser an der Daumenschraube daneben zu kaufen.</block>
+  <block id="1a64138e0b66965c80b909462ba9543f" category="list-text">Heben Sie die Zusatzkarte gerade nach oben.</block>
+  <block id="60e9fb8867837c6cef006a1e1ea9fb0a" category="list-text">Drücken Sie die blaue Taste am Startmediengehäuse, um die Startmedien aus dem Gehäuse zu lösen, drehen Sie die Startmedien nach oben und ziehen Sie sie dann vorsichtig gerade aus dem Startmediensockel.</block>
+  <block id="716d7fa9776f190a42806b2c391aa047" category="list-text">Richten Sie die Kanten des Ersatzstartmediums an der Buchse des Boot-Mediums aus, und schieben Sie ihn dann vorsichtig in die Buchse.
+Überprüfen Sie die Startmedien, um sicherzustellen, dass sie korrekt und vollständig in den Sockel eingesetzt sind. Entfernen Sie gegebenenfalls die Startmedien, und setzen Sie sie wieder in den Sockel ein.</block>
+  <block id="253b929f8465fe80f44b0c6026acc584" category="list-text">Drücken Sie die blaue Verriegelungstaste, drehen Sie das Startmedium ganz nach unten, und lassen Sie dann die Verriegelungstaste los, um das Startmedium zu verriegeln.</block>
+  <block id="d29b17eb668c51029bfa0626ffe7500f" category="list-text">Setzen Sie die Zusatzkarte wieder ein:</block>
+  <block id="834f618686de8125c24ea965ba281757" category="list-text">Richten Sie den Sockel auf der Hauptplatine mit dem Sockel auf der Zusatzkarte aus, und setzen Sie die Karte vorsichtig in den Sockel ein.</block>
+  <block id="361016e8b59dfa6e2e2f28d3e38835e1" category="list-text">Ziehen Sie die drei Rändelschrauben auf der Zusatzkarte fest.</block>
+  <block id="31276a19caaffd6d8a485978edefcae8" category="list-text">Bringen Sie die Zusatzverkleidung wieder an.</block>
+  <block id="eef513f5198b93971d313eb80e4da6fb" category="list-text">Setzen Sie die Abdeckung des Controller-Moduls wieder ein, und verriegeln Sie sie.</block>
+  <block id="1aecc8a01c9fc90b26bed0f39865bc18" category="paragraph">Installieren Sie das System-Image auf dem Ersatz-Startmedium mit einem USB-Flash-Laufwerk, auf dem das Image installiert ist. Während dieses Vorgangs müssen Sie das var-Dateisystem wiederherstellen.</block>
+  <block id="4c10168d5e2592171ac54097149079b0" category="list-text">Sie benötigen ein USB-Flash-Laufwerk, das mit MBR/FAT32 formatiert ist, mit mindestens 4 GB Kapazität.</block>
+  <block id="2d62115b923af681ab92f0d122a64860" category="list-text">Sie müssen über eine Netzwerkverbindung verfügen.</block>
+  <block id="f1d3e9055855dc043c18702a6852bc69" category="list-text">Laden Sie die entsprechende Bildversion von ONTAP auf das formatierte USB-Flash-Laufwerk herunter:</block>
+  <block id="95601ad37ef55b6b9cad60bc467a3328" category="inline-link">So stellen Sie fest, ob die laufende ONTAP-Version NetApp Volume Encryption (NVE) unterstützt</block>
+  <block id="df64ce1e5d600ef517b23604e94d93bd" category="list-text">Nutzung<block ref="eeb276fd288c995d07ccaa70ededcc33" category="inline-link-rx"></block> Um festzustellen, ob die Volume-Verschlüsselung derzeit unterstützt wird.</block>
+  <block id="c5dfa5f01cf1c0d03284861e71d31370" category="list-text">Wenn NVE auf dem Cluster unterstützt wird, laden Sie das Image mit NetApp Volume Encryption herunter.</block>
+  <block id="a3dc3f912569e20eb3139702fd4a6206" category="inline-link">Welches ONTAP Image sollte ich herunterladen? Mit oder ohne Volume-Verschlüsselung?</block>
+  <block id="1532b93706d24d095538566641303954" category="list-text">Wenn NVE nicht auf dem Cluster unterstützt wird, laden Sie das Image ohne NetApp Volume Encryption herunter.
+Siehe<block ref="087e4d006962c8ba6c4d8fdb71ff8e38" category="inline-link-rx"></block> Entnehmen.</block>
+  <block id="b455521e9b63749ce3c5c792316849ca" category="list-text">Entpacken Sie das heruntergeladene Bild.</block>
+  <block id="0f844d6324319ebe9b4aabd24f1b88dd" category="list-text">Installieren Sie das Controller-Modul:</block>
+  <block id="6bfde1459ef866428e3532004887b3b8" category="list-text">Controller-Modul wieder einsetzen.</block>
+  <block id="aa22e2fb20ea26cf3d0b89dfcd65a440" category="doc">Überblick über den Austausch des Gehäuses - FAS2800</block>
+  <block id="2655035d8bc59ea5bd6dd9f09d821e65" category="doc">Ersetzen Sie eine Zusatzkarte - FAS2800</block>
+  <block id="db5c04ca6cb958f296ff071cf8420f54" category="paragraph">Ersetzen Sie die Mezzanine-Karte, indem Sie die Kabel und alle SFP- und QSFP-Module von der Karte trennen, die fehlerhafte Mezzanine-Karte austauschen und die Karten wieder einsetzen.</block>
+  <block id="783de30113379b15fc6135387f11b7e6" category="video-title">Animation: Ersetzen Sie die Zusatzkarte</block>
+  <block id="a0ff1a6d16d908c33e10409aed0ac623" category="paragraph">Entfernen Sie das Controller-Modul aus dem System, und entfernen Sie dann die Abdeckung des Controller-Moduls.</block>
+  <block id="cf6800eb49ae54456676c105c115a1fa" category="section-title">Schritt 3: Ersetzen Sie die Zusatzkarte</block>
+  <block id="6918dd1d1ecfa7a18a047a925c4f30ee" category="paragraph">Setzen Sie die Zusatzkarte wieder ein.</block>
+  <block id="808ce573561d6717a3c0cc395df3a504" category="image-alt">drw 2850 HIC IEOPS 700 austauschen</block>
+  <block id="b98f82c68dbd20395815986320582ec2" category="paragraph">Riserblende</block>
+  <block id="83b54898f0ac014b1e217ee413643205" category="paragraph">PCIe-Zusatzkarte</block>
+  <block id="64016c063cf6b470fdcccc5a97f852b1" category="list-text">Lösen Sie die Rändelschrauben auf der Zusatzkarte, und heben Sie die Zusatzkarte gerade nach oben.</block>
+  <block id="4bca5310f65e82fe5c4eec2c7a1c6c17" category="list-text">Richten Sie den Anschluss am Ersatz-Zusatzkartenstecker an der Buchse auf der Hauptplatine aus, und setzen Sie die Karte vorsichtig in den Sockel ein.</block>
+  <block id="f2972968e044e6666c42c0182107b4f6" category="paragraph">Setzen Sie das Controller-Modul wieder ein.</block>
+  <block id="f36f34bd21dc87823e156cd47c7d7440" category="list-text">Drehen Sie das Controller-Modul um und richten Sie das Ende an der Öffnung im Gehäuse aus.</block>
+  <block id="3ab31ac30e2ad91e2f7e6a9ecd045f6e" category="list-text">Schieben Sie das Controller-Modul vorsichtig bis zur Hälfte in das System. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie das Controller-Modul vorsichtig bis zur Hälfte in das System.</block>
+  <block id="d32890221c5529cefc96a956073d9844" category="list-text">Stellen Sie mithilfe der die automatische Rückgabe wieder her<block ref="6f0c6616b99fea33a3020e0e0dcbe3c6" prefix=" " category="inline-code"></block> Befehl.</block>
+  <block id="e2306cfc3634594ca9e5483d541a9eb2" category="doc">Vollständige Systemwiederherstellung - FAS2800</block>
+  <block id="954e375575b9fbd9370aa08dd503d453" category="paragraph">Stellen Sie den vollständigen Betrieb des Systems wieder her, indem Sie die Konfigurationen der NetApp-Speicherverschlüsselung oder der Volume-Verschlüsselung (falls erforderlich) wiederherstellen, Lizenzen für den Ersatz-Controller installieren und das fehlerhafte Teil an NetApp zurücksenden, wie in den RMA-Anweisungen beschrieben, die dem Kit beiliegen.</block>
+  <block id="ff3a1a304de699b15bd2a5a39798c5a8" category="section-title">Schritt 2: Wiederherstellung der Speicher- und Volume-Verschlüsselung-Funktion</block>
+  <block id="332c846459ecae57b885b30c41482384" category="section-title">Schritt 3: Überprüfen Sie die LIFs und registrieren Sie die Seriennummer</block>
+  <block id="458c640b6a96cac4ef20be523ebb7f89" category="doc">Ersetzen Sie die NVMEM-Batterie - FAS2800</block>
+  <block id="26e700524d9a1c0b6c28c8ad2d207679" category="section-title">Schritt 2: Entfernen und öffnen Sie das Controller-Modul</block>
+  <block id="2a0805526339647b20ef0fc7df37dd6f" category="paragraph">Entfernen und öffnen Sie das Controller-Modul.</block>
+  <block id="9ae3f8b33ac65ec233f1c5afa0e5b31c" category="paragraph">Entfernen Sie die fehlerhafte NVMEM-Batterie aus dem System und ersetzen Sie sie durch eine neue NVMEM-Batterie.</block>
+  <block id="6858cb3dca131d0d76332f3bd5160ce7" category="video-title">Animation: Ersetzen Sie die NV-Batterie</block>
+  <block id="cf7e5cd262adf1cc20a08505755f07a3" category="image-alt">drw 2850 nvbattery IEOPS 715 ersetzen</block>
+  <block id="168d99dab7a9fe08ab26290312dd16e7" category="paragraph">Akkufreigabelasche</block>
+  <block id="33d1a8451c69f74459695562e91ceef8" category="paragraph">Batterieanschluss</block>
+  <block id="c0c80117cce7bb03ee803f73b530673c" category="list-text">Entfernen Sie die fehlerhafte Batterie aus dem Controller-Modul:</block>
+  <block id="5dde822876459fe513ddd782ee62b081" category="list-text">Drücken Sie die blaue Taste an der Seite des Controller-Moduls.</block>
+  <block id="cfbaff2fca685ca6d49a66c7783234eb" category="list-text">Schieben Sie den Akku nach oben, bis er die Halteklammern freigibt, und heben Sie den Akku aus dem Controller-Modul heraus.</block>
+  <block id="ffdab672b5303a82bceb504a929ac040" category="list-text">Ziehen Sie den Akku vom Controller-Modul ab</block>
+  <block id="3236ef72d450eec8cfc673cc7faea15d" category="list-text">Entfernen Sie den Ersatzakku aus der Verpackung.
+Setzen Sie den Ersatzakku ein:</block>
+  <block id="702681b0ddd2d2e77a632f93dea9da08" category="list-text">Stecken Sie den Batteriestecker wieder in die Buchse am Controller-Modul.</block>
+  <block id="1c7abce2557996fd20076d25e06502f1" category="paragraph">Vergewissern Sie sich, dass der Stecker in der Akkubuchse auf der Hauptplatine einrastet.</block>
+  <block id="d6974842c352301a8a23606fd8d04519" category="list-text">Ausrichten der Batterie an den Haltehalterungen an der Blechseitenwand.</block>
+  <block id="2b4753778df73e034bbfe714d2d4741f" category="list-text">Schieben Sie den Akku nach unten, bis die Akkuverriegelung einrastet und in die Öffnung an der Seitenwand einrastet.</block>
+  <block id="98589dc004f09ae0dad7e1b6f02b49cc" category="list-text">Starten Sie das Controller-Modul neu.</block>
+  <block id="77eded9438a3613ba447a2592768431f" category="section-title">Schritt 5: Automatisches Giveback und AutSupport wiederherstellen</block>
+  <block id="c7e6662de773deb97f21acca554ecb2a" category="paragraph">Stellen Sie automatische Giveback und AutoSupport wieder her, wenn sie deaktiviert wurden.</block>
+  <block id="e8ee04904c783a5522b8e5d05e929ec0" category="doc">Videos – FAS2800</block>
+  <block id="89ec55d6caf5c08b62f951c13868846e" category="video-title">Animation – FAS2800 Installations- und Setup-Anleitung</block>
+  <block id="b1431e23e98302fc2fdbdf8a76f33d8d" category="doc">Ersetzen Sie die Hardware des Controller-Moduls – FAS2800</block>
+  <block id="d27d70d1f85fe30f676b7d8f18fbcc20" category="paragraph">Ersetzen Sie die Hardware des beeinträchtigten Controller-Moduls, indem Sie den beeinträchtigten Controller entfernen, FRU-Komponenten in das Ersatz-Controller-Modul verschieben, das Ersatz-Controller-Modul im Gehäuse installieren und dann das Ersatz-Controller-Modul starten.</block>
+  <block id="1c196a814e5043cb74dc86df6c03ff47" category="paragraph">Entfernen Sie das Controller-Modul für beeinträchtigte Störungen aus dem Gehäuse.</block>
+  <block id="27d23c72f7120f51677aa7a5c4e3c7fb" category="list-text">Wenn Sie die SFP-Module nach dem Entfernen der Kabel im System belassen haben, bringen Sie sie in das Ersatz-Controller-Modul.</block>
+  <block id="1702b5ed07427fec23228fc597ce204d" category="paragraph">Entfernen Sie den NVMEM-Akku aus dem Controller-Modul für beeinträchtigte Verwendung, und installieren Sie ihn in das Controller-Ersatzmodul.</block>
+  <block id="f0c32c78b60207518b286f8da455dc65" category="admonition">Schließen Sie den NVMEM-Akku erst an, wenn Sie dazu aufgefordert werden.</block>
+  <block id="26a1f7d3ba4c51ef22c4cfdbdfda1d8c" category="paragraph">NVMEM Batterie-Release-Taste</block>
+  <block id="68bb8073b782fccb191b6577e7b6daed" category="paragraph">NVMEM-Batteriestecker</block>
+  <block id="d18072dacf447878404b5ad0bae39da2" category="list-text">Entfernen Sie den Akku aus dem Controller-Modul:</block>
+  <block id="8583fb4771a40b0c84c5bda299897d93" category="list-text">Ziehen Sie den Batteriestecker, indem Sie den Clip an der Vorderseite des Batteriesteckers zusammendrücken, um den Stecker aus der Steckdose zu lösen, und ziehen Sie dann das Batteriekabel aus der Steckdose.</block>
+  <block id="2549b95d18de43d1c8602f07ed634585" category="list-text">Setzen Sie den Akku in das neue Controller-Modul ein, und setzen Sie ihn ein:</block>
+  <block id="350a3cd01c92197375fa1dd80773199d" category="admonition">Schließen Sie den Akku noch nicht an.  Sie schließen es an, sobald die restlichen Komponenten in das Ersatz-Controller-Modul verschoben wurden.</block>
+  <block id="ba9da6f2122b24c495dd034a4a5ec818" category="section-title">Schritt 3: Entfernen Sie die Zusatzkarte</block>
+  <block id="853a9f16e976ca6346fa38e81f8476a8" category="paragraph">Entfernen Sie die Zusatzverkleidung und die PCIe-Zusatzkarte vom Controller-Modul für beeinträchtigte Störungen.</block>
+  <block id="539df95ed4f8e5993f75e19be1a36f64" category="list-text">Entfernen Sie die Blende der Zusatzkarte, indem Sie sie gerade aus dem Controller-Modul herausziehen.</block>
+  <block id="7bb524aff91b85838c807523fc1e4828" category="admonition">Sie können die Rändelschrauben mit den Fingern oder einem Schraubendreher lösen.</block>
+  <block id="099cf7f6040f65b3c9d7fb3f7393d4c3" category="list-text">Heben Sie die Zusatzkarte gerade nach oben und legen Sie sie auf eine antistatische Oberfläche.</block>
+  <block id="3356d87e196ed94acd2635f8d405e53f" category="paragraph">Entfernen Sie das Startmedium aus dem Controller-Modul für beeinträchtigten Betrieb, und setzen Sie es in das Ersatz-Controller-Modul ein.</block>
+  <block id="fed0c92cdbae5ea9c1adbf11ed80e55a" category="list-text">Suchen Sie nach dem Entfernen der Mezzanine-Karte das Boot-Medium anhand der folgenden Abbildung oder der FRU-Zuordnung auf dem Controller-Modul:</block>
+  <block id="45602b20a419ba91959f6389b3e025a3" category="image-alt">drw 2850 Boot-Medium IEOPS 696 ersetzen</block>
+  <block id="a9ddd021b293dcac2e98382851f85f92" category="paragraph">Startmedien-Entriegelungstaste</block>
+  <block id="f77adf36adb0721ff6a3bdb4c40ae967" category="list-text">Entfernen Sie das Startmedium:</block>
+  <block id="7716b5b822ee00aa2c3fbd58b6ff2117" category="list-text">Drücken Sie die blaue Taste am Gehäuse des Bootmediums, um das Boot-Medium aus dem Gehäuse zu lösen.</block>
+  <block id="fb6ae5bf6634b7a6d673563f05601387" category="list-text">Drehen Sie die Startmedien nach oben, und ziehen Sie sie vorsichtig gerade aus dem Startmediensockel heraus.</block>
+  <block id="d0bb83c57c80aa63779da3b7ad8fe497" category="list-text">Installieren Sie das Startmedium am Ersatz-Controller-Modul:</block>
+  <block id="918c073c7d2d0879662be83044a3838c" category="list-text">Drücken Sie die blaue Verriegelungstaste am Startmediengehäuse, drehen Sie die Startmedien ganz nach unten, und lassen Sie dann die Verriegelungstaste los, um das Startmedium zu verriegeln.</block>
+  <block id="e22316649109edfe291449028ee7da74" category="section-title">Schritt 5: Installieren Sie die Zusatzkarte im Ersatzcontroller</block>
+  <block id="a00bf690f9db0be90ea5ab9cde9db677" category="paragraph">Installieren Sie die Zusatzkarte im Ersatz-Controller-Modul.</block>
+  <block id="507e7243ab4a1d0bdbfa4edd5c9733d3" category="list-text">Richten Sie die Zusatzkarte am Anschluss auf der Hauptplatine aus.</block>
+  <block id="fc7fc35188ad3f7c32f3328839f4dff2" category="list-text">Drücken Sie die Karte vorsichtig nach unten, um sie in den Steckplatz zu setzen.</block>
+  <block id="803bc905348545eacfc8739f67ee6fc2" category="list-text">Setzen Sie die Verkleidung der Zusatzkarte wieder ein.</block>
+  <block id="ec782fd2b49f0e4d6edd263c0d30d7f7" category="paragraph">Entfernen Sie die DIMMs aus dem Controller-Modul für beeinträchtigte Störungen, und setzen Sie sie in das Ersatz-Controller-Modul ein.</block>
+  <block id="64b66263e264f63be40a6135bb7e5f04" category="image-alt">drw 2850 dimms IEOPS 699 ersetzen</block>
+  <block id="2a7c25f4f62d559672aaa2da18086b65" category="paragraph">DIMM-Verriegelungsriegel</block>
+  <block id="97d11e594531d9157ff1f8acb63fd22c" category="list-text">Suchen Sie die DIMMs auf dem Controller-Modul</block>
+  <block id="dab2480c00fbe3b34d9af825595e97ae" category="admonition">Notieren Sie sich die Position des DIMM-Moduls in den Sockeln, damit Sie das DIMM an der gleichen Stelle in das Ersatz-Controller-Modul und in der richtigen Ausrichtung einsetzen können.</block>
+  <block id="c9e2d45ba9969e527f9d0fa047c621bd" category="list-text">Entfernen Sie die DIMMs aus dem Controller-Modul für beeinträchtigte Störungen:</block>
+  <block id="870ee50e7b3cc6d93b98e9ec6a8ab100" category="list-text">Entfernen Sie das DIMM-Modul aus dem Steckplatz, indem Sie die beiden DIMM-Auswurfhalterungen auf beiden Seiten des DIMM langsam auseinander drücken.</block>
+  <block id="dc1bab551db9ce9e5c5fe8cabfa84a76" category="paragraph">Das DIMM dreht sich ein wenig nach oben.</block>
+  <block id="685636dc5350b778abfb785eaf60ca39" category="list-text">Drehen Sie das DIMM-Modul so weit wie möglich, und schieben Sie es dann aus dem Sockel.</block>
+  <block id="81a434fab7192536678c765fcb18c594" category="list-text">Stellen Sie sicher, dass die NVMEM-Batterie nicht an das Ersatz-Controller-Modul angeschlossen ist.</block>
+  <block id="f70897638195a2f326f7183edf6a3cf8" category="list-text">Installieren Sie die DIMMs in der Ersatzsteuerung an derselben Stelle, an der sie sich im außer Betrieb genommenen Controller befanden:</block>
+  <block id="3ef62fc6a162d755622021a1d6a1ed56" category="list-text">Wiederholen Sie diese Schritte für das andere DIMM.</block>
+  <block id="873b72e260492016e7a701ecefab8d34" category="section-title">Schritt 7: Verschieben Sie ein Cache-Modul</block>
+  <block id="2123f32d0c6f36af91430296709196a1" category="paragraph">Entfernen Sie das Cache-Modul aus dem Controller-Modul für beeinträchtigte Störungen, und setzen Sie es in das Controller-Ersatzmodul ein.</block>
+  <block id="60f4158622c1b93ba749ee47777762b7" category="image-alt">drw 2850 Caching-Modul IEOPS 697 ersetzen</block>
+  <block id="bdf54b9db8bfe07cda14f003e5b4afea" category="paragraph">Sperrtaste für Caching-Modul</block>
+  <block id="d6be971cb9546606b4106e2ce6594564" category="list-text">Suchen Sie das Caching-Modul in der Nähe der Rückseite des Controller-Moduls, und entfernen Sie es:</block>
+  <block id="86afc3ba2df9db0892f3d7b13977fdb3" category="list-text">Drücken Sie die blaue Verriegelungstaste, und drehen Sie das Zwischenspeichermodul nach oben.</block>
+  <block id="5933b9f61a8881951d2ee1bf05dd260a" category="list-text">Installieren Sie das Caching-Modul im Ersatz-Controller-Modul:</block>
+  <block id="2688650848e4f3835aba141aab8abd77" category="list-text">Drücken Sie die blaue Sperrtaste, drehen Sie das Caching-Modul ganz nach unten, und lassen Sie dann die Sperrtaste los, um das Caching-Modul zu verriegeln.</block>
+  <block id="11eeb319e60e9bfcf687bb45298baa8c" category="list-text">Schließen Sie die NVMEM-Batterie an.</block>
+  <block id="52171524851f62cb3baf11036da62cb6" category="paragraph">Vergewissern Sie sich, dass der Stecker in der Akkusteckdose auf der Hauptplatine einrastet.</block>
+  <block id="d3c9127aa6a1eedcb9187315657c4cbf" category="admonition">Wenn das Anschließen der Batterie schwierig ist, entfernen Sie die Batterie aus dem Controller-Modul, schließen Sie sie an, und setzen Sie sie dann wieder in das Controller-Modul ein.</block>
+  <block id="86976c899464bf7c145a1a100eb56931" category="section-title">Schritt 8: Installieren Sie die NV-Batterie</block>
+  <block id="0aa269b91aaa67ad4a33798a5addcade" category="paragraph">Setzen Sie die NV-Batterie in das neue Controller-Modul ein.</block>
+  <block id="e2a7c878d6256dd0131d41af9940ac59" category="section-title">Schritt 9: Installieren Sie den Controller</block>
+  <block id="8265ef3502f8ac77f57d832ac049580a" category="paragraph">Installieren Sie das Ersatz-Controller-Modul im Systemgehäuse und starten Sie den ONTAP.</block>
+  <block id="cbde4763aa08c054c18d5c779d9c5b23" category="list-text">Drehen Sie das Controller-Modul.</block>
+  <block id="2242e742287f23709fa714deab7eb578" category="admonition">Sie müssen nach einer Konsolenmeldung für das automatische Firmware-Update suchen. Wenn die Aktualisierungsmeldung angezeigt wird, drücken Sie nicht<block ref="76be6883bcf9e8a6aed3a347ac20e41f" prefix=" " category="inline-code"></block> So unterbrechen Sie den Bootvorgang, bis eine Meldung angezeigt wird, die bestätigt, dass die Aktualisierung abgeschlossen ist. Wenn die Firmware-Aktualisierung abgebrochen wird, wird der Boot-Prozess zur LOADER-Eingabeaufforderung beendet. Sie müssen den ausführen<block ref="af718f67c26a0f44692db1ab31eb6a36" prefix=" " category="inline-code"></block> Befehl, und geben Sie dann ein<block ref="1442f7a5af9f43702c90a69a8357a46d" prefix=" " category="inline-code"></block> Um das System neu zu starten.</block>
+  <block id="5dc33b8c32ff69779a908c84d65a7b21" category="list-text">Eine Warnmeldung über eine nicht übereinstimmende System-ID und die Aufforderung, die System-ID außer Kraft zu setzen. Antworten<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> Zu dieser Eingabeaufforderung.</block>
+  <block id="7ac264b7d08fb9d1106ac983e7478d8a" category="list-text">Eine Eingabeaufforderung mit einer Warnmeldung, dass Sie beim Aufrufen des Wartungsmodus in einer HA-Konfiguration sicherstellen müssen, dass der gesunde Controller weiterhin ausgefallen ist. Antworten<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> Zu dieser Eingabeaufforderung.</block>
+  <block id="75127c072b8dbfcfddece3f2cfd7f451" category="doc">Stellen Sie die Konfiguration wieder her und überprüfen Sie sie - FAS2800</block>
+  <block id="e6c254ab2bdf1b6e7e1ef07d143a13af" category="paragraph">Überprüfen Sie den HA-Status des Chassis, um das System hochzubringen, und senden Sie das fehlerhafte Teil an NetApp zurück. Dies wird in den dem Kit beiliegenden RMA-Anweisungen beschrieben.</block>
+  <block id="9596a3101174a610f7547f1a64ef5318" category="list-text">Legen Sie den HA-Status für das Chassis basierend auf der vorhandenen Konfiguration des Systems fest:<block ref="8c04088c57a1d68914caed5df5031ed1" prefix=" " category="inline-code"></block></block>
+  <block id="fc7de36232e6d564fdd8b86d9b96e5c3" category="list-text">Beenden des Wartungsmodus:<block ref="4a1bde0ea8bcda2a591f42646813c477" prefix=" " category="inline-code"></block>.    Die LOADER-Eingabeaufforderung wird angezeigt.</block>
+  <block id="05feda261599a7466b383d9e10f43f27" category="list-text">Starten Sie die Controller-Module.</block>
+  <block id="eba8408f37a356fdabfeb21f5ae29286" category="doc">Ersetzen Sie das Caching-Modul FAS2800</block>
+  <block id="dec0306e681fc720cf31bc4851ebcee4" category="inline-link">ONTAP 9 – Systemadministrationshandbuch</block>
+  <block id="b95a2b769ddc69403557ab79e1942007" category="paragraph"><block ref="b95a2b769ddc69403557ab79e1942007" category="inline-link-rx"></block></block>
+  <block id="a9c8e259606b559907dfb2f00a204be4" category="paragraph">Suchen Sie das Caching-Modul im Controller, entfernen Sie das fehlerhafte Caching-Modul und ersetzen Sie es.</block>
+  <block id="ee92b073f59fe189ba6ba0d749a2475e" category="video-title">Animation - Ersetzen Sie das Caching-Modul</block>
+  <block id="310b3fddb492900dc2073bfed3ad2e76" category="list-text">Suchen Sie das fehlerhafte Caching-Modul in der Nähe der Rückseite des Controller-Moduls, und entfernen Sie es.</block>
+  <block id="7c54a0f1ea1ead89a0c9b6aeef198946" category="list-text">Drücken Sie die blaue Entriegelungstaste, und drehen Sie das Caching-Modul nach oben.</block>
+  <block id="1861e494e4e49e7521421f1074d1c277" category="paragraph">Schaltfläche zum Freigeben des Caching-Moduls</block>
+  <block id="8154cefebd8252a7cccd4805ef747b70" category="list-text">Richten Sie die Kanten des Ersatz-Cache-Moduls an der Buchse im Gehäuse aus, und schieben Sie es vorsichtig in den Sockel.</block>
+  <block id="51561c50b0a48bfa0a140f7c1afdb558" category="paragraph">Setzen Sie das Controller-Modul wieder in das Gehäuse ein.</block>
+  <block id="c5f938bfc527c4bc823a887db137e442" category="list-text">Drücken Sie das Controller-Modul vorsichtig bis zur Hälfte in das System.</block>
+  <block id="ee92a9f0097994689e1bda7bed36ad5d" category="paragraph">Der Controller startet, sobald er vollständig im Gehäuse eingesetzt ist.</block>
+  <block id="7712b02131dda6b0cd207e6b834af33f" category="section-title">Schritt 5: Automatisches Giveback und AutoSupport wiederherstellen</block>
+  <block id="58a4b1c93d94014eec48898453bccf6b" category="list-text">Wenn ein AutoSupport-Wartungsfenster ausgelöst wurde, beenden Sie das Fenster mit. Verwenden Sie dazu die<block ref="9ac424c0d7b432975df36a19daf50c9c" prefix=" " category="inline-code"></block></block>
+  <block id="f13ddfa8c0e2762d2f399acfc6f0806b" category="summary">Beim Austausch eines Netzteils muss das funktionsunbestimmte Netzteil ausgeschaltet, getrennt und entfernt werden. Außerdem muss das Ersatznetzteil installiert, angeschlossen und eingeschaltet werden.</block>
+  <block id="de1b8802ef132a49eb27c58d444b128f" category="doc">Tauschen Sie ein Netzteil aus - FAS2800</block>
+  <block id="9b0f331e43ad447dbbb78d71a44b1734" category="video-title">Animation: Ersetzen Sie das Netzteil</block>
+  <block id="ad74e1b8d39de33b6e8b9df71820c85f" category="image-alt">drw 2850 Netzteil IEOPS 702 ersetzen</block>
+  <block id="4f57674d148f7c749c1795267b17a2b1" category="doc">System neu zuordnen und Festplatten neu zuweisen – FAS2800</block>
+  <block id="2675f497966bc5cad0cdd88dbe6eab31" category="list-text">Warten Sie auf das<block ref="f1cce1d6823a5337ea1ed313f3bc1d65" prefix=" " category="inline-code"></block> Befehl zum Abschließen, bevor Sie das Giveback ausgeben.</block>
+  <block id="578b3122a990bee5553a818b631268ef" category="admonition">Wenn die Rückgabe ein Veto eingelegt wird, lösen Sie das Veto-Problem. Wenn das Veto nicht entscheidend ist, können Sie das Veto überschreiben.</block>
+  <block id="cf71e2640e92b433c3b638e9e94411a3" category="doc">Senden Sie das fehlerhafte Teil an NetApp - FAS2800 zurück</block>
+  <block id="d3b5d00b3ac932c953d2ab9864fd8409" category="doc">Ersetzen Sie den Echtzeituhr-Akku - FAS2800</block>
+  <block id="103256b354864966fcc74d6466bc1cc4" category="paragraph">Tauschen Sie die RTC-Batterie aus, indem Sie sie in der Steuerung einsetzen und die entsprechenden Schritte befolgen.</block>
+  <block id="51f7be1d2b3585b769547e04e7036ed9" category="image-alt">drw 2850 rtc-Batterie IEOPS 701 ersetzen</block>
+  <block id="9f463a2feadd622498da11734b7d3548" category="paragraph">Installieren Sie das Controller-Modul neu, und starten Sie es bis zur LOADER-Eingabeaufforderung.</block>
+  <block id="8133c5bbfd79c61b3d28f53fd52d6b77" category="section-title">Schritt 5: Stellen Sie die Uhrzeit/das Datum nach dem Austausch der RTC-Batterie ein</block>
+  <block id="c9f8b929f9ab0b6a880c4fbdb297685c" category="doc">Wiederherstellung von OKM, NSE und NVE nach Bedarf – FAS2800</block>
+  <block id="e8b941fcc944e0bbefda4636b0900a37" category="list-text"><block ref="e8b941fcc944e0bbefda4636b0900a37" category="inline-link-macro-rx"></block></block>
+  <block id="531b14cc35d21cdbdd3198396f0be9e2" category="list-text"><block ref="531b14cc35d21cdbdd3198396f0be9e2" category="inline-link-macro-rx"></block></block>
+  <block id="64bd602d0544a5fe1fc2a2419daab9cb" category="list-text"><block ref="64bd602d0544a5fe1fc2a2419daab9cb" category="inline-link-macro-rx"></block></block>
+  <block id="57d485c98e6887d6e9203bac1d90bb5b" category="summary">Verschieben Sie die Netzteile, Festplatten und Controller-Module oder -Module vom Gehäuse für beeinträchtigte Störungen in das Ersatzgehäuse, und ersetzen Sie das Gehäuse für beeinträchtigte Störungen aus dem Geräte-Rack oder Systemschrank durch das Ersatzgehäuse desselben Modells wie das Gehäuse für beeinträchtigte Störungen.</block>
+  <block id="4366f74c4f2ef88a08284a5d59c6119c" category="doc">Verschieben und ersetzen Sie Hardware – FAS2800</block>
+  <block id="7c5cfb9ddad014365f0de74ba951ffc3" category="paragraph">Wenn Sie ein Netzteil entfernen, wenn Sie ein Gehäuse ersetzen, müssen Sie das Netzteil ausschalten, trennen und aus dem Gehäuse entfernen sowie es am Ersatzgehäuse installieren und anschließen.</block>
+  <block id="075968c9cfe201324f67c6dd57423623" category="paragraph">Entfernen Sie das oder die Controller-Module aus dem Gehäuse für beeinträchtigte Störungen.</block>
+  <block id="ecd88b88f167b4220060f55cd515a5d0" category="list-text">Wiederholen Sie diese Schritte für das zweite Controller-Modul im Chassis.</block>
+  <block id="ff6be4cd8fc3c7dd2668ce38b9f0c0d6" category="section-title">Schritt 3: Verschieben Sie Laufwerke in das Ersatzgehäuse</block>
+  <block id="cb222b0662bfcc0873a126c023d18639" category="paragraph">Verschieben Sie die Laufwerke aus den einzelnen Laufwerkschachtöffnungen im Gehäuse für beeinträchtigte Laufwerke in dieselbe Schachtöffnung im Ersatzgehäuse.</block>
+  <block id="122d24dfbf9f05e990c3628541000cab" category="list-text">Drücken Sie die Entriegelungstaste auf der gegenüberliegenden Seite der LEDs.</block>
+  <block id="781e632f918c0d9c096496d8f4cea093" category="list-text">Richten Sie das Laufwerk aus dem Gehäuse für beeinträchtigte Verbindung mit der gleichen Schachtöffnung im Ersatzgehäuse aus.</block>
+  <block id="666dbbf9aa205d3a1a84cd2586d5321d" category="paragraph">Der Nockengriff rastet ein und beginnt sich in die geschlossene Position zu drehen.</block>
+  <block id="e20b40789c08ab02225f933f48bd8f73" category="list-text">Schieben Sie den Antrieb ganz fest in das Gehäuse, und verriegeln Sie dann den Nockengriff, indem Sie ihn gegen den Antriebshalter drücken.</block>
+  <block id="10ed17eeda7cfb1251b50b19d4e83cd2" category="paragraph">Entfernen Sie das vorhandene Chassis aus dem Geräte-Rack oder Systemschrank und installieren Sie das Ersatzgehäuse im Geräte-Rack oder Systemschrank.</block>
+  <block id="d9b58093a09ff3f9f4ee47e855e10b09" category="paragraph">Installieren Sie das Controller-Modul und alle anderen Komponenten in das Ersatzgehäuse, und booten Sie es im Wartungsmodus.</block>
+  <block id="a1b1abf2b9f93afc61b501cc65856321" category="list-text">Wiederholen Sie die vorherigen Schritte für den zweiten Controller im Ersatzgehäuse.</block>
+  <block id="fb7c806d17ac05daec934e824397154e" category="list-text">Wiederholen Sie die vorherigen Schritte für das zweite Controller-Modul im Ersatzgehäuse.</block>
+  <block id="939dd100817795c3c406debd7b6667d8" category="doc">Überblick über den Austausch von Controller-Modulen - FAS2800</block>
+  <block id="b7b41b094d20b126c69180a1751fc468" category="doc">Onboard-Verschlüsselung prüfen – FAS2800</block>
+  <block id="8e605f57d62f3d1be204e98b9b4935f7" category="doc">Ersetzen Sie das SSD- oder HDD-Laufwerk - FAS2800</block>
+  <block id="9e88aae04cfd42bd2e0b9f18c79e6b08" category="doc">Überblick über den Austausch von Boot-Medien - FAS2800</block>
+  <block id="cffd34bd4c8c92699b3202d7f451d2ae" category="doc">Stellen Sie die Systemkonfiguration wieder her und überprüfen Sie sie - FAS2800</block>
+  <block id="5a78b16de65a946feda8c56392de99d0" category="paragraph">Überprüfen Sie nach dem Austausch der Hardware und dem Booten des Ersatz-Controllers die Low-Level-Systemkonfiguration des Ersatz-Controllers und konfigurieren Sie die Systemeinstellungen nach Bedarf neu.</block>
+  <block id="3fc70ee0f25a2808ad9e1ace34edd095" category="list-text">Wenn der angezeigte Systemstatus für den Controller nicht mit Ihrer Systemkonfiguration übereinstimmt, legen Sie den HA-Status für das Ersatz-Controller-Modul fest:<block ref="83ac5421ebdbb8b86762e96ecda44c4a" prefix=" " category="inline-code"></block></block>
+  <block id="0da3888f81e8e56d2de2a92a42b512a3" category="doc">Starten Sie das Recovery-Image - FAS2800</block>
+  <block id="c5ad83e174ba7727e76fc50c8366e589" category="list-text">Stellen Sie das var-Dateisystem wieder her:</block>
+  <block id="e51ecd8f185715278ef737fd290e62f5" category="list-text">Drücken Sie<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> Wenn Sie aufgefordert werden, die Konfigurationskopie wiederherzustellen.</block>
+  <block id="17fb1354460acbac7ab4abe6c27a24a2" category="list-text">Wenn keymanager, NSE oder NVE in Ihrem System integriert sind, finden Sie unter <block ref="4b98be10d46a75a522880bc01a177aa5" category="inline-xref-macro-rx"></block></block>
+  <block id="1a037944aedbce3040a5314200246858" category="list-text">Überprüfen Sie an der Cluster-Eingabeaufforderung die logischen Schnittstellen mit dem<block ref="55cf88a325a6e0574aef732566cc984c" prefix=" " category="inline-code"></block> Befehl.</block>
+  <block id="8c4cb494b75288cf3ce1e7ce1dee3c9d" category="paragraph">Wenn Schnittstellen als „falsch“ aufgeführt sind, stellen Sie diese Schnittstellen mithilfe der zurück auf ihren Home Port<block ref="ffbe7d182280173cba10c83ec9992974" prefix=" " category="inline-code"></block> Befehl.</block>
+  <block id="fcb4d3b1f229bc036dc2280a7c1d29c4" category="list-text">Wenn Sie die Storage-Verschlüsselung nicht verwenden, stellen Sie die automatische Rückgabe und den AutoSupport wieder her:</block>
+  <block id="fde9b148f6eb9655d65658597326b4ee" category="doc">Detaillierte Schritte - FAS2800</block>
+  <block id="c507fc907e52c0d3d2a5b32d101a1559" category="paragraph">Um Ihr FAS2800 System zu installieren, müssen Sie ein Konto auf der NetApp Support-Website erstellen, Ihr System registrieren und Lizenzschlüssel erhalten. Außerdem müssen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp für Ihr System inventarisieren und bestimmte Netzwerkinformationen erfassen.</block>
+  <block id="82374f90663d7205d26c38028c93cb8d" category="inline-link">Versionshinweise für Ihre Version von ONTAP 9</block>
+  <block id="4afcf4b1bce6c3df1cc1e778d2d69e65" category="paragraph">Sie müssen Zugriff auf die haben<block ref="ed4326c3351d8ac0e334b8b4d9b37c82" category="inline-link-rx"></block> Weitere Informationen zu Standortanforderungen sowie zusätzliche Informationen zu Ihrem konfigurierten System. Möglicherweise möchten Sie auch Zugriff auf den haben<block ref="eaa168831c6fecf820d5605f3f5de542" category="inline-link-rx"></block> Für Ihre Version von ONTAP finden Sie weitere Informationen zu diesem System.</block>
+  <block id="94f11775f11fcb36a20933d06500449a" category="list-text">Registrieren Sie Ihr System über <block ref="1cbd3811871137aa1e003e1ccae3894e" category="inline-link-rx"></block></block>
+  <block id="4aed417c4620186c402fe3b82713076b" category="list-text">Herunterladen und installieren<block ref="56697f7f340a212f549439c89b0cabd2" category="inline-link-rx"></block> Auf Ihrem Laptop.</block>
+  <block id="202c6b9676e6e0879f99a323aacdd76b" category="paragraph">In der folgenden Tabelle sind die Kabeltypen aufgeführt, die Sie möglicherweise erhalten können. Wenn Sie ein Kabel erhalten, das nicht in der Tabelle aufgeführt ist, lesen Sie die<block ref="ed4326c3351d8ac0e334b8b4d9b37c82" category="inline-link-rx"></block> Um das Kabel zu lokalisieren und dessen Verwendung zu identifizieren.</block>
+  <block id="21d9a13ac1bf780b5a88db05a215c05d" category="paragraph">10 GbE, SFP28 Kabel (abhängig von der Bestellung)</block>
+  <block id="68ddfa29cb0d12a802225c5426557710" category="paragraph">X6566B-05-R6, .5,</block>
+  <block id="4d60abe9b21979209fc33ec224620c9f" category="paragraph">X6566B-2-R6, 2 m</block>
+  <block id="38ee836908ff6e63d2fe51cba40af515" category="paragraph">25 GB Ethernet, SFP28</block>
+  <block id="9e4563e9b028264514409ab230a5da42" category="paragraph">X66240A-05, 0,5 m</block>
+  <block id="0aeb49c9fa6e4bb6f0e2ba133818122d" category="paragraph">X66240-2, 2 m</block>
+  <block id="f6f5073d92449b0a0e2bd3034fc1ecea" category="paragraph">X66240A-5, 5 m</block>
+  <block id="dea505bfaa4f0d732b7c8f5f9938f6be" category="image-alt">oie-Kabel 25 GB Ethernet SFP28 IEOPS 1069</block>
+  <block id="cd438f3250a6932c30ca2344ae39b00e" category="paragraph">32 GB Fibre Channel,
+SFP+ (Target/Initiator)</block>
+  <block id="2c4afc06b1fdae4cd99b305968ffe5d2" category="paragraph">X66250-2, 2 m</block>
+  <block id="4f4ed96765dcb8c23de6679e6a7ca755" category="paragraph">X66250-5, 5 m</block>
+  <block id="cfdd6b2015d7d026f3cd6c1eb78a3ee1" category="paragraph">X66250-15, 15 m</block>
+  <block id="f740a217496c1f42a51b7a745f62930e" category="paragraph">FC-Netzwerk</block>
+  <block id="6e421f2c1b8bf174d208a91d7f5dc0ae" category="paragraph">X6561-R6</block>
+  <block id="9f1d44b1644f80b8412d9dd6de6d8982" category="paragraph">X6562-R6</block>
+  <block id="a49ba2f6b0c90ba38b8dcd0a94db081d" category="paragraph">X66030A, 0,5 m</block>
+  <block id="d3b3da5c1301d8d6a324ad66c58950cb" category="paragraph">X66031A, 1 m</block>
+  <block id="d5e936a50b968238745495b8619c3de2" category="paragraph">X66032A, 2 m</block>
+  <block id="7176bca53e61f926de4367eb107ce7c8" category="paragraph">USB-C-Konsolenkabel</block>
+  <block id="34dc50315428bf6e6940b722c6a21ee9" category="paragraph">Optionales FC-Kabel</block>
+  <block id="01b24af9f8a6b3efddd64ee9ab57a42e" category="paragraph">Zusätzliches FC-Netzwerkkabel</block>
+  <block id="3f23ceafafc807d2b7578916c6816fcb" category="inline-link">Richten Sie das Cluster mit der ONTAP CLI ein</block>
+  <block id="a41ad0c41b61aa6e16a86ba5e2432d9f" category="list-text">Laden Sie die Arbeitsblätter in herunter, und füllen Sie sie aus <block ref="a7d19322be231451e03428c8b87e512f" category="inline-link-rx"></block>.</block>
+  <block id="3157ab12e29c7ae731c3bbc36443b23f" category="image-alt">oie fas2800 Gewicht Vorsicht IEOPS 1070</block>
+  <block id="bb4787913f600ff690f937a7622bfef5" category="paragraph">Verkabeln Sie die Controller mit dem Netzwerk mithilfe der Cluster-Methode ohne zwei Nodes oder mithilfe der Cluster Interconnect-Netzwerkmethode.</block>
+  <block id="9646d1820777de5269873d2317186ecb" category="paragraph">Management-Netzwerk-Switch</block>
+  <block id="e80abcbf02cd3bed5561a16253c1dea0" category="paragraph">Host-Netzwerk-Switches</block>
+  <block id="3b9d43c8f889d04a7e7e50ecc887f626" category="paragraph">Verkabeln Sie die Netzwerkverbindungen und die Cluster-Interconnect-Ports für ein Cluster mit zwei Nodes ohne Switches.</block>
+  <block id="724b63ff77d309630df65f6af09956a2" category="admonition">Wenn Sie den Anschluss einsetzen, sollten Sie spüren, dass er einrastet. Wenn Sie ihn nicht einrasten, entfernen Sie ihn, drehen Sie den Kabelkopf um und versuchen Sie es erneut.</block>
+  <block id="b81e7d6a7be0cc8238b538c4b907282a" category="paragraph">Sie können die Verkabelung zwischen den Controllern und den Switches mithilfe der Grafik oder der Schritt-für-Schritt-Anleitung abschließen.</block>
+  <block id="43f3f164715da7f3368f26b28f4ef36f" category="video-title">Animation – Verkabelung einer 2-Node-Cluster-Verkabelung ohne Switches</block>
+  <block id="00cdc1c050c54120647c95f8ac43e946" category="list-text">Verkabeln Sie die Cluster Interconnect Ports e0a mit e0a und e0b mit e0b mit dem Cluster Interconnect-Kabel:</block>
+  <block id="64d64c32d62f821e30eb2ef5d4583099" category="paragraph">*Cluster-Verbindungskabel*</block>
+  <block id="0d31c2b61f0790381bf124be78a40d97" category="image-alt">drw 2800 Tnsc-Clusterverkabelung IEOPS 892</block>
+  <block id="329a1da79dbbba5ea7dea23acd21eb44" category="paragraph">*RJ45-Kabel*</block>
+  <block id="71148769b55621d50b01310cdb17af44" category="image-alt">drw 2800 Managementverbindung IEOPS 1077</block>
+  <block id="69dc61becc19938a9333356069afeddb" category="list-text">Verkabeln Sie die Ports der Zusatzkarte mit dem Hostnetzwerk.</block>
+  <block id="a773f522f61f6a463095f90a0f74a848" category="image-alt">drw 2800 Netzwerkverkabelung IEOPS 894</block>
+  <block id="1d249cc4581bfebd1ac174f1d758e2de" category="list-text">Wenn Sie über ein 4-Port-Ethernet-Datennetzwerk verfügen, verbinden Sie die Ports e1a über e1d mit Ihrem Ethernet-Datennetzwerk.</block>
+  <block id="1cc0b86b94e25e4841fd242fdbd850e8" category="list-text">4-Port, 10 GB Ethernet, SFP28</block>
+  <block id="213b283921a16f109ab5a42efd1afde7" category="list-text">4 PORTS, 10GBASE-T, RJ45</block>
+  <block id="245589e179b64a47376b04123778941c" category="list-text">Wenn Sie über ein Fibre-Channel-Datennetzwerk mit 4 Ports verfügen, verkabeln Sie die Ports 1a bis 1d für das FC-Netzwerk.</block>
+  <block id="9a867735c4f604a49c9d27393e56dfe2" category="list-text">4-Port, 32 GB Fibre Channel, SFP+ (nur Target)</block>
+  <block id="0d483d1755efbe3138752df4c802b435" category="list-text">4-Port, 32 GB Fibre Channel, SFP+ (Initiator/Ziel)</block>
+  <block id="8bb7b23c936cb70e2890bdc1e1a55118" category="list-text">Wenn Sie über eine 2+2-Karte (2 Ports mit Ethernet-Verbindungen und 2 Ports mit Fibre-Channel-Verbindungen) verfügen, verkabeln Sie die Ports e1a und e1b mit Ihrem FC-Datennetzwerk und die Ports e1c und e1d mit Ihrem Ethernet-Datennetzwerk.</block>
+  <block id="e664a3bf047f98da138d06dd6bbecf60" category="list-text">2-Port, 10 GB Ethernet (SFP28) + 2-Port 32 GB FC (SFP+)</block>
+  <block id="c76e1890be7e78a7e7f8b44303d6f072" category="admonition">Schließen Sie DIE Netzkabel NICHT an.</block>
+  <block id="945919717a9a1b9de8896baef8c155a5" category="paragraph">Verkabeln Sie die Netzwerkverbindungen und die Cluster Interconnect Ports für ein Switch Cluster.</block>
+  <block id="4b3a23428d43b0cc1ea88affb10b1421" category="admonition">Wenn Sie den Anschluss einsetzen, sollten Sie spüren, dass er einrastet. Wenn Sie ihn nicht einrasten, entfernen Sie ihn, drehen Sie den Kabelkopf um und versuchen Sie es erneut.</block>
+  <block id="b6713b6dcccfb0ea851ac5892871d1ce" category="paragraph">Verkabeln Sie Ihre Controller mit einem externen Speicher.</block>
+  <block id="80ae6b7de29ff0be35e926815150d39e" category="paragraph">Sie können die Verkabelung zwischen den Controllern und den Laufwerk-Shelfs mithilfe der Grafik oder der Schritt-für-Schritt-Anleitung abschließen.</block>
+  <block id="3fc162aa6870cf22cf3e0a947b89615a" category="video-title">Animation: Kabel für Laufwerkseinschübe</block>
+  <block id="2728bec52c30a9bf554b834ce8cfd335" category="admonition">Verwenden Sie nicht Port 0b2 an einer FAS2800. Dieser SAS-Port wird von ONTAP nicht verwendet und ist immer deaktiviert. Siehe<block ref="6f4656a8b776447b5b4debad13e7a22e" category="inline-link-rx"></block> Finden Sie weitere Informationen.</block>
+  <block id="936f11624ce65028d5f2861c02e343af" category="image-alt">oie-Legende Symbol 1 Lo</block>
+  <block id="c40e49e90ec7d35ff60916a8d39fe6e8" category="image-alt">oie-Legendensymbol 2 mb</block>
+  <block id="3b7d5f20d28c201cdbde659df3e31649" category="image-alt">oie-Legendensymbol 3 t</block>
+  <block id="6ac0c621e44f0d6d3cfb9a6035ba969b" category="list-text">Port 1 auf IOM A zu Port 3 auf IOM A auf dem Shelf direkt unten.</block>
+  <block id="a2a4a3ef1017cf43a3cf109d61286633" category="list-text">Port 1 auf IOM B zu Port 3 auf IOM B auf dem Shelf direkt unten.</block>
+  <block id="9f8e1f093714df2b4e4cea2483986e1f" category="paragraph">*Mini-SAS HD auf Mini-SAS HD Kabel*</block>
+  <block id="202f3ec29ba7fc0c62960a60ae2f794f" category="image-alt">drw 2800 Shelf-zu-Shelf-Verkabelung IEOPS 895</block>
+  <block id="b1905c91f00e1e7ad75a290938d0c0ae" category="list-text">Verkabeln Sie Controller A mit den Laufwerk-Shelfs.</block>
+  <block id="7414b28752291f5ed73122cbbe85acd3" category="list-text">Controller A-Port 0a zu IOM B-Port 1 am ersten Festplatten-Shelf im Stack.</block>
+  <block id="d490aaf97e1fdf82eb244edca242e5f7" category="list-text">Controller A-Port 0b1 zu IOM A-Port 3 auf dem letzten Festplatten-Shelf im Stack.</block>
+  <block id="0d5514b466e4b55a41f3994d3034c96f" category="image-alt">dwr 2800 Controller1 zu den Shelfs IEOPS 896</block>
+  <block id="575f5a968bfa57f9d0a99b09b5f73ff2" category="list-text">Controller B mit den Laufwerk-Shelfs verbinden.</block>
+  <block id="49fefb8508936cb5a0f672b0146c0013" category="list-text">Controller B Port 0a zu IOM A Port 1 am ersten Festplatten-Shelf im Stack.</block>
+  <block id="0cbd55a3e4a33973ae5e025f7565fe75" category="list-text">Controller B Port 0b1 zu IOM B Port 3 auf dem letzten Festplatten-Shelf im Stack.</block>
+  <block id="8f61138caddaadc30f99b723e123cf22" category="image-alt">dwr 2800 Controller2 zu den Shelfs IEOPS 897</block>
+  <block id="a63d383da174eddb392adcd87d936c44" category="paragraph">Wenn die Netzwerkerkennung auf Ihrem Laptop aktiviert ist, schließen Sie die Systemeinrichtung und -Konfiguration mithilfe der automatischen Clustererkennung ab.</block>
+  <block id="17eddeb5ca42d640ce98ba7b90523804" category="image-alt">dwr 2800 Einschalten des IEOPS 898</block>
+  <block id="9e4e9e3678bbed5f0d0698cff8427b61" category="list-text">Konfigurieren Sie das System mithilfe von System Manager geführten Setups anhand der Daten, die Sie im erfasst haben<block ref="492b1b89e16fbed782c0f28e34fb9371" category="inline-link-rx"></block></block>
+  <block id="5725fc4af65adef1b57d4b7c9a365287" category="paragraph">Wenn die Netzwerkerkennung auf Ihrem Laptop nicht aktiviert ist, führen Sie die Konfiguration und Einrichtung manuell durch.</block>
+  <block id="3b1f7398f44c65a5f8ab979cc8757340" category="list-text">Schließen Sie das Konsolenkabel an den Laptop oder die Konsole an, und schließen Sie den Konsolenport am Controller mithilfe des Konsolenkabels, das im Lieferumfang des Systems enthalten ist, an. Anschließend schließen Sie den Laptop oder die Konsole an den Switch im Management-Subnetz an.</block>
+  <block id="6f196fc99c938b047a2dbbae60694da9" category="image-alt">drw 2800 Laptop zum Umschalten auf Controller IEOPS 1084</block>
+  <block id="1f61f05d390e702160f04da6c21786d5" category="list-text">Nachdem Sie die Erstkonfiguration abgeschlossen haben, fahren Sie mit fort <block ref="8203f64117389bb7bbdf8d4d70d36e4d" category="inline-link-rx"></block> Für Informationen über das Konfigurieren zusätzlicher Funktionen in ONTAP.</block>
+  <block id="1063e487d045f7cd17b5712ab35a43b6" category="doc">FAS2800 Systemdokumentation</block>
+  <block id="40ab4deb5c724a3e2d6c8f6d96a94554" category="doc">Fahren Sie die Controller herunter - FAS2800</block>
+  <block id="5f81816799fe408c4f5d0d2b06be7dd0" category="doc">Kurzanleitung - FAS2800</block>
+  <block id="b0f0e558d3522c3be05dd8c2dd0af1cc" category="inline-link-macro">Installations- und Setup-Anleitung für FAS2800 Systeme</block>
+  <block id="dcd1fb87d1725e210ef205f9a1c5e788" category="paragraph"><block ref="dcd1fb87d1725e210ef205f9a1c5e788" category="inline-link-macro-rx"></block></block>
+  <block id="30d72b7769d2368f3a2f7fcacca60c27" category="doc">Ersetzen Sie ein DIMM-Modul – FAS2800</block>
+  <block id="041e48089a1444bcdc82526d41790e40" category="paragraph">Entfernen Sie das Controller-Modul aus dem System, und entfernen Sie dann die Abdeckung des Controller-Moduls.</block>
+  <block id="8caaa86fafbf22c9627e97fb31c1eea5" category="paragraph">Suchen Sie das DIMM im Controller, entfernen Sie es, und ersetzen Sie es.</block>
+  <block id="95da017c37970d073ec39c2d3a5f57a0" category="admonition">Vor dem Austauschen eines DIMM müssen Sie die NVMEM-Batterie vom Controller-Modul abziehen.</block>
+  <block id="fa59f7fdc751f040e98449eb5f9bab77" category="list-text">Entfernen Sie den Akku aus dem Controller-Modul, indem Sie die blaue Taste an der Seite des Controller-Moduls drücken.</block>
+  <block id="e460f960683865692d03871b47a39fd8" category="list-text">Suchen Sie das Batteriekabel, drücken Sie auf die Klammer am Akkustecker, um den Sicherungsclip aus der Steckdose zu lösen, und ziehen Sie dann das Akkukabel aus der Steckdose.</block>
+  <block id="5f2a29b0970aac5a4425f7cf26343e24" category="list-text">Schließen Sie den Batterieanschluss wieder an, und überprüfen Sie die LED auf der Rückseite des Controllers erneut.</block>
+  <block id="2bb5a458e01d43f7e5641661b16f0d46" category="list-text">Ziehen Sie das Batteriekabel ab.</block>
+  <block id="82b2c56e53a487cba16496c5167ec489" category="list-text">Achten Sie auf die Ausrichtung und Position des DIMM im Sockel, damit Sie das Ersatz-DIMM in die richtige Ausrichtung einsetzen können.</block>
+  <block id="72d609b19c1bf7528c15b9f03dffdc1f" category="paragraph">Taste zum Entriegeln der NVRAM-Batterie</block>
+  <block id="4ec1b0ed9e4f78833f020b2b7ed423ce" category="paragraph">DIMMs</block>
+  <block id="c8bfe0a5fc27fb76ba86b0b3f8e488a3" category="list-text">NVRM-Batterie wieder anschließen:</block>
+  <block id="b7cf9d5fc111cce87031b050032fe85f" category="list-text">Schließen Sie die NVRAM-Batterie an.</block>
+  <block id="44e9bf23cac339f1a46833e07d1be621" category="list-text">Richten Sie die Batterie an den Haltehalterungen an der Blechseitenwand aus.</block>
+  <block id="cca6b082b0a0af8dfe622b365bd85350" category="section-title">Schritt 5: Rückgabe des fehlerhaften Teils an NetApp - AFF A700s</block>
+  <block id="a334af0b164fc0db79711e89abe4cb0d" category="sidebar">FAS2800</block>
+  <block id="4ec6a95192d18718a540794417c8fa63" category="sidebar">NetApp Active IQ Digital Advisor</block>
+  <block id="519131237f79eadb2dc6a1e003a087bc" category="sidebar">NetApp Active IQ Config Advisor</block>
+  <block id="b1a2e879032b7693396d5911fdb9ee8f" category="sidebar">Mezzanine-Karten</block>
+  <block id="7655464c949e17f83cc9f89554f784e5" category="sidebar">Verkabelung von Worksheets und Beispielen für Multipath HA</block>
+  <block id="c2b6b3b554d53a9298b53bc5f03d3830" category="sidebar">Verkabelungsarbeitsblatt und Beispiel für eine Quad-Path HA</block>
+  <block id="84f80d47c3a3934ba083c16827645698" category="sidebar">FAS2800 Systeme</block>
+  <block id="0822c3a3c2088294acf4b156198fab16" category="sidebar">FAS2800 Installation und Setup</block>
+  <block id="52082133ddafec6f44b27acdb0e80d2a" category="sidebar">FAS2800 Wartung</block>
+  <block id="79f9aa553b7d76f8fd255e9277fa5ed0" category="sidebar">FAS2800 Boot-Medien</block>
+  <block id="1823853a2ff016fa1f167769ab335876" category="sidebar">Ersetzen Sie das Startmedium und übertragen Sie das Startabbild</block>
+  <block id="e8beac267c4a923aec553646307b83eb" category="sidebar">FAS2800 Caching-Modul</block>
+  <block id="c1c62fce3287ee9fb4c1d797a1feba55" category="sidebar">FAS2800 Chassis</block>
+  <block id="94e71ac35b9db70fff06a5064f80e3f9" category="sidebar">FAS2800 Controller</block>
+  <block id="ff67b04dba165a63ada544868c9096f3" category="sidebar">FAS2800 DIMM</block>
+  <block id="082f3ddfd8b928e971f0ca5feb57e067" category="sidebar">FAS2800 Laufwerk</block>
+  <block id="7f6c436a2d5532b606b07a676e696d32" category="sidebar">FAS2800 NVMEM-Akku</block>
+  <block id="aee81807d892ce8f0557ee7ba4da62af" category="sidebar">FAS2800 Mezzanine-Karte</block>
+  <block id="9287ab39836157b975fad28f9782a821" category="sidebar">FAS2800 Netzteil</block>
+  <block id="3dfd3fa9bee4e9b9ad14ec588c8e9ed4" category="sidebar">FAS2800 Echtzeituhr-Akku</block>
 </blocks>

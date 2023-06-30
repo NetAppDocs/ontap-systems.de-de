@@ -39,45 +39,45 @@ Wenn im Feld SAS2/SAS3 Mixed Stack Support „Bridge-Attached“ angezeigt wird,
 
 ** Rufen Sie Hardware Universe auf, und navigieren Sie zu Ihrer Plattforminformation.
 +
-https://hwu.netapp.com["NetApp Hardware Universe"]
+https://hwu.netapp.com["NetApp Hardware Universe"^]
 
 
 
 * Wenn Sie einer MetroCluster Konfiguration ein Shelf hinzufügen, muss die Konfiguration alle Anforderungen in den MetroCluster Installations- und Konfigurationsleitfäden erfüllen.
 +
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mcc-inst-cnfg-ip/home.html["MetroCluster IP Installations- und Konfigurationshandbuch"]
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mcc-inst-cnfg-ip/home.html["MetroCluster IP Installations- und Konfigurationshandbuch"^]
 
 +
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mcc-inst-cnfg-stretch/home.html["ONTAP 9 Stretch MetroCluster Installations- und Konfigurationshandbuch"]
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mcc-inst-cnfg-stretch/home.html["ONTAP 9 Stretch MetroCluster Installations- und Konfigurationshandbuch"^]
 
 +
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mcc-inst-cnfg-fabric/home.html["ONTAP 9 Fabric-Attached MetroCluster Installations- und Konfigurationshandbuch"]
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mcc-inst-cnfg-fabric/home.html["ONTAP 9 Fabric-Attached MetroCluster Installations- und Konfigurationshandbuch"^]
 
-* Der Stack der IOM6-Shelfs, denen ein IOM12 Shelf bei laufendem Betrieb hinzugefügt wird, muss mit SAS-Kupferkabeln verbunden werden (für alle Shelf-zu-Shelf- und Controller-zu-Stack-Verbindungen).
+* Der Stack der IOM6-Shelfs, für die in der laufenden Umgebung ein IOM12/IOM12B Shelf hinzugefügt wird, muss mit SAS-Kupferkabeln verbunden werden (für alle Shelf-to-Shelf- und Controller-to-Stack-Verbindungen).
 +
 Optische SAS-Kabel werden in einem gemischten Stack nicht unterstützt.
 
 +
 
-NOTE: Wenn der IOM6-Shelf-Stack mit optischen SAS-Kabeln verbunden ist, kann kein IOM12-Shelf im laufenden Betrieb hinzugefügt werden. Wenden Sie sich an Ihren NetApp Ansprechpartner.
+NOTE: Wenn der IOM6-Shelf-Stack mit optischen SAS-Kabeln verbunden ist, können Sie kein IOM12/IOM12B-Shelf im laufenden Betrieb hinzufügen. Wenden Sie sich an Ihren NetApp Ansprechpartner.
 
-* Ihr System muss weniger als die maximale Anzahl von unterstützten Laufwerken aufweisen, um mindestens die Anzahl der Laufwerke zu nutzen, die in den IOM12-Shelves installiert werden können, die Sie benötigen.
+* Ihr System muss weniger als die maximale Anzahl an unterstützten Laufwerken aufweisen, zumindest die Anzahl der Laufwerke, die in den IOM12/IOM12B-Shelves installiert werden können, die Sie bei laufendem Betrieb hinzufügen.
 +
 Nach den Hot-Adding IOM12/IOM12B-Shelfs können Sie die maximal unterstützte Anzahl an Laufwerken in Ihrem System nicht überschritten haben.
 
 +
-https://hwu.netapp.com["NetApp Hardware Universe"]
+https://hwu.netapp.com["NetApp Hardware Universe"^]
 
 * Ihr System kann keine Fehlermeldungen bei der SAS-Verkabelung haben.
 +
 Sie müssen alle Verkabelungsfehler mithilfe der Korrekturmaßnahmen korrigieren, die durch die Fehlermeldungen bereitgestellt werden.
 
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"]
+https://mysupport.netapp.com/site/tools["NetApp Downloads: Config Advisor"^]
 
 * Sie müssen die IOM12/IOM12B-Shelves sowie die entsprechende Anzahl und Art von SAS-Kupferkabeln bestellt und erhalten haben.
 +
-Die IOM12-Shelves verwenden Mini-SAS-HD-Anschlüsse. IOM6-Shelfs verwenden QSFP-Connectors.
+Die IOM12/IOM12B-Einschübe verwenden Mini-SAS-HD-Steckverbinder. IOM6-Shelfs verwenden QSFP-Connectors.
 
 
 
@@ -87,7 +87,7 @@ Die IOM12-Shelves verwenden Mini-SAS-HD-Anschlüsse. IOM6-Shelfs verwenden QSFP-
 
 Wenn Sie im laufenden Betrieb IOM12/IOM12B-Shelves zu einem Stack von IOM6-Shelves hinzufügen, die über zwei ATTO FibreBridge Bridges in einer MetroCluster-Konfiguration verbunden sind, muss das System bestimmte Anforderungen erfüllen.
 
-* Wenn in der aktuellen Konfiguration Bridge-SAS-Ports vorhanden sind, sollten die IOM12-Shelves als separater Stack hinzugefügt werden.
+* Wenn in der aktuellen Konfiguration Bridge SAS-Ports verfügbar sind, sollten die IOM12/IOM12B-Shelfs als separater Stack hinzugefügt werden.
 +
 Alle Bridge-Ports können verwendet werden, bevor IOM12/IOM12B- und IOM6-Module in einem Stack gemischt werden.
 
@@ -105,16 +105,16 @@ Wenn im Feld SAS2/SAS3 Mixed Stack Support noch etwas anderes angezeigt wird, wi
 
 ** Rufen Sie Hardware Universe auf, und navigieren Sie zu Ihrer Plattforminformation.
 +
-https://hwu.netapp.com["NetApp Hardware Universe"]
+https://hwu.netapp.com["NetApp Hardware Universe"^]
 
 
 
 * Die Konfiguration muss alle Anforderungen in den MetroCluster Installations- und Konfigurationsleitfäden erfüllen.
 +
-https://docs.netapp.com/us-en/ontap-metrocluster/install-stretch/index.html["Installieren und Konfigurieren einer Stretch-MetroCluster-Konfiguration"]
+https://docs.netapp.com/us-en/ontap-metrocluster/install-stretch/index.html["Installieren und Konfigurieren einer Stretch-MetroCluster-Konfiguration"^]
 
 +
-https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html["Installieren und Konfigurieren einer Fabric-Attached MetroCluster-Konfiguration"]
+https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html["Installieren und Konfigurieren einer Fabric-Attached MetroCluster-Konfiguration"^]
 
 * Der Stack der IOM6-Shelfs, für die in der laufenden Umgebung ein IOM12/IOM12B Shelf hinzugefügt wird, muss mit SAS-Kupferkabeln verbunden werden (für alle Shelf-to-Shelf- und Controller-to-Stack-Verbindungen).
 +
@@ -154,9 +154,9 @@ Eine unterstützte Version der Shelf-Firmware schützt vor Problemen mit dem Zug
 Mithilfe dieses Verfahrens können Festplatten-Shelfs, die im laufenden Betrieb hinzugefügt wurden, nicht von einem anderen Stack in demselben System entfernt werden, wenn das System eingeschaltet ist und Daten bereitstellt (I/O wird ausgeführt).
 
 * Mithilfe dieses Verfahrens können Festplatten-Shelfs im laufenden Betrieb hinzugefügt werden, die innerhalb desselben MetroCluster Systems entfernt wurden, wenn das betroffene Shelf Aggregate gespiegelt hat.
-* Wenn Shelfs mit IOM12-Modulen in einem Shelf-Stack mit IOM6-Modulen hinzugefügt werden, arbeitet die Performance des gesamten Stacks mit 6 Gbit/s (arbeitet mit der niedrigsten gemeinsamen Geschwindigkeit).
+* Wenn Sie Shelfs mit IOM12/IOM12B-Modulen im laufenden Betrieb zu einem Shelf mit IOM6-Modulen hinzufügen, wird die Performance des gesamten Stack mit 6 Gbit/s ausgeführt (mit der niedrigsten gemeinsamen Geschwindigkeit).
 +
-Bei den Hot-Adding-Shelfs, die von IOM3- oder IOM6-Modulen aktualisiert wurden, arbeitet der Stack mit 12 Gbit/s. Die Shelf-Backplane und Festplattenfunktionen können die Festplatten-Performance jedoch auf 3 Gbit/s oder 6 Gbit/s begrenzen.
+Wenn es sich bei den hinzuzufügende Shelfs um Shelves handelt, die von IOM3- oder IOM6-Modulen auf IOM12-/IOM12B-Module aktualisiert wurden, arbeitet der Stack mit 12 Gbit/s. die Shelf Backplane und die Festplattenfunktionen können jedoch die Festplatten-Performance auf 3 Gbit/s oder 6 Gbit/s begrenzen.
 
 * Nachdem Sie ein Shelf mit Hot-Zusatz angeschlossen haben, erkennt ONTAP das Shelf:
 +
@@ -176,10 +176,10 @@ NOTE: Firmware-Updates können bis zu 30 Minuten dauern.
 
 * *Best Practice:* die beste Praxis ist, aktuelle Versionen der Shelf- (IOM) Firmware und Laufwerk-Firmware auf dem System zu haben, bevor ein Shelf im laufenden Betrieb hinzugefügt wird.
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp Downloads: Festplatten-Shelf Firmware"]
+https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp Downloads: Festplatten-Shelf Firmware"^]
 
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["NetApp Downloads: Festplatten-Firmware"]
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["NetApp Downloads: Festplatten-Firmware"^]
 
 
 
@@ -198,18 +198,18 @@ https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/downloa
 Wenn Sie Active IQ Config Advisor ausführen, bevor Sie ein Shelf hinzufügen, erhalten Sie einen Snapshot der vorhandenen SAS-Konnektivität, verifiziert die Firmware-Versionen (IOM) und ermöglicht Ihnen, eine Shelf-ID zu überprüfen, die bereits auf dem System verwendet wird. Wenn Sie Active IQ Config Advisor nach dem Hinzufügen eines Shelfs im laufenden Betrieb ausführen, können Sie überprüfen, ob Shelfs ordnungsgemäß verkabelt sind und die Shelf-IDs innerhalb des Systems eindeutig sind.
 
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"]
+https://mysupport.netapp.com/site/tools["NetApp Downloads: Config Advisor"^]
 
 * *Best Practice:* die beste Praxis ist es, in-Band ACP (IBACP) auf Ihrem System laufen zu lassen.
 +
-** Für Systeme, auf denen IBAP läuft, wird IBACP automatisch auf Hot-Added IOM12-Shelves aktiviert.
-** Bei Systemen, bei denen Out-of-Band-ACP aktiviert ist, sind ACP-Funktionen auf IOM12-Shelfs nicht verfügbar.
+** Bei Systemen, auf denen IBACP ausgeführt wird, wird IBACP automatisch in zusätzlich aktiven IOM12/IOM12B-Shelfs aktiviert.
+** Bei Systemen mit Out-of-Band-ACP sind die ACP-Funktionen in Shelfs IOM12/IOM12B nicht verfügbar.
 +
 Sie sollten zu IBACP migrieren und die Out-of-Band ACP-Verkabelung entfernen.
 
 ** Wenn Ihr System nicht IBACP verfügt und Ihr System die Anforderungen von IBACP erfüllt, können Sie Ihr System auf IBACP migrieren, bevor Sie ein IOM12 Shelf im laufenden Betrieb hinzufügen.
 +
-https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/In-Band_ACP_Setup_and_Support["Anweisungen für die Migration in IBACP"]
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/In-Band_ACP_Setup_and_Support["Anweisungen für die Migration in IBACP"^]
 
 +
 
@@ -223,7 +223,7 @@ NOTE: Die Migrationsanweisungen enthalten die Systemanforderungen für IBACP.
 
 == Bereiten Sie sich darauf vor, das Laufwerk manuell einem Hot-Add-Vorgang zuzuweisen
 
-Wenn Sie die Eigentümerschaft der Laufwerke für die IOM12-Shelves manuell zuweisen, müssen Sie die automatische Laufwerkszuweisung deaktivieren, wenn sie aktiviert ist.
+Wenn Sie den IOM12/IOM12B-Shelfs, die Sie im laufenden Betrieb hinzufügen, manuell Laufwerkeigentümer zuweisen, müssen Sie die automatische Laufwerkszuweisung deaktivieren, wenn sie aktiviert ist.
 
 .Bevor Sie beginnen
 Sie müssen die Systemanforderungen erfüllt haben.
@@ -360,7 +360,7 @@ CAUTION: *Möglicher Verlust des Datenzugriffs:* Schlingen Sie die Schublade nie
 +
 .. Legen Sie die Shelf-ID für jedes Shelf fest, das Sie einer ID hinzufügen möchten, die innerhalb des HA-Paars oder der Single-Controller-Konfiguration eindeutig ist.
 +
-Gültige Shelf-ID: 00 bis 99. Es wird empfohlen, die Shelf-IDs so festzulegen, dass IOM6-Shelfs niedrigere Zahlen (1 bis 9) und die IOM12-Shelfs größere Zahlen (10 und höher) verwenden.
+Gültige Shelf-ID: 00 bis 99. Es wird empfohlen, die Shelf-IDs so einzustellen, dass die IOM6-Shelfs niedrigere Zahlen (1 bis 9) verwenden und die IOM12/IOM12B-Shelfs eine höhere Anzahl verwenden (10 und höher).
 
 +
 Wenn Sie über ein Plattformmodell mit Onboard-Storage verfügen, müssen Shelf-IDs über das interne Shelf und extern verbundene Shelves eindeutig sein. Es wird empfohlen, dass Sie für das interne Shelf den Wert 0 festlegen. Bei MetroCluster-IP-Konfigurationen gelten nur die externen Shelf-Namen. Daher müssen die Shelf-Namen nicht eindeutig sein.
@@ -369,7 +369,7 @@ Wenn Sie über ein Plattformmodell mit Onboard-Storage verfügen, müssen Shelf-
 
 . Falls erforderlich, überprüfen Sie, ob die Shelf-IDs bereits verwendet werden, indem Sie Active IQ Config Advisor ausführen.
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"]
+https://mysupport.netapp.com/site/tools["NetApp Downloads: Config Advisor"^]
 
 +
 Sie können auch die ausführen `storage shelf show -fields shelf-id` Befehl, um eine Liste der bereits verwendeten Shelf-IDs (und Duplikate, falls vorhanden) in Ihrem System anzuzeigen.
@@ -390,7 +390,7 @@ Sie müssen beide Netzschalter ausschalten, 10 Sekunden warten und dann wieder e
 
 == Kabel-Shelfs für ein Hot-Add-Kabel
 
-Wie Sie ein IOM12/IOM12B Shelf mit einem Stack von IOM12-Shelves verkabeln, hängt davon ab, ob das IOM12-Shelf das erste IOM12/IOM12B-Shelf ist, d. h., es gibt keine anderen IOM12-Shelves im Stack, Oder ob es sich um ein zusätzliches IOM12/IOM12B-Shelf zu einem vorhandenen gemischten Stack handelt, d. h. ein oder mehrere IOM12/IOM12B-Shelves sind bereits im Stack vorhanden. Es hängt auch davon ab, ob der Stack Multipath HA, Multipath-Konnektivität, Single Path HA oder Single Path-Konnektivität bietet.
+Wie Sie ein IOM12/IOM12B Shelf zu einem Stack mit IOM6-Shelfs verkabeln, hängt davon ab, ob das IOM12/IOM12B Shelf das erste IOM12/IOM12B Shelf ist. Dies bedeutet, dass im Stack kein anderes IOM12/IOM12B Shelf vorhanden ist. Oder ob es sich um ein zusätzliches IOM12/IOM12B Shelf zu einem vorhandenen gemischten Stack handelt, d. h., es besteht bereits ein oder mehrere IOM12/IOM12B-Shelves im Stack. Dies hängt außerdem davon ab, ob der Stack Multipath HA, Multipath HA, Single Path HA oder Single Path-Konnektivität bietet.
 
 .Bevor Sie beginnen
 * Sie müssen die Systemanforderungen erfüllt haben.
@@ -418,12 +418,12 @@ Beispiel:
 +
 ** In einem HA-Paar wird ein Übergang mit einer einzelnen Geschwindigkeit in einem Stack mit zwei IOM6-Shelfs und zwei IOM12/IOM12B-Shelfs wie folgt dargestellt:
 +
- Controller <-> IOM6 <-> IOM6 <---> IOM12IOM12B <-> IOM12/IOM12B <-> Controller
-** In einem HA-Paar mit integriertem IOM12E Storage wird ein Übergang mit einer einzelnen Geschwindigkeit in einem Stack mit zwei IOM12-Shelfs und zwei IOM6-Shelfs wie folgt dargestellt:
+ Controller <-> IOM6 <-> IOM6 <---> IOM12/IOM12B <-> IOM12/IOM12B <-> Controller
+** In einem HA-Paar mit internem Storage (IOM12E/IOM12G) wird ein Single-Speed-Übergang innerhalb eines Stacks mit zwei IOM12/IOM12B-Shelfs und zwei IOM6-Shelfs dargestellt als:
 +
- IOM12E 0b <-> IOM12/IOM12B <-> IOM12/IOM12B <---> IOM6 <-> IOM6 <-> IOM12E 0a
+ IOM12E 0b/IOM12G 0b1 <-> IOM12/IOM12B <-> IOM12/IOM12B <---> IOM6 <-> IOM6 <-> IOM12E 0a/IOM12G 0a
 +
-Der Onboard-Speicherport 0b ist der Port vom internen Speicher (Expander) und da er mit dem Hot-Added IOM12/IOM12B-Shelf (das letzte Shelf im Stack) verbunden wird, wird die Gruppe der IOM12/IOM12B-Shelves zusammen gehalten und ein einziger Übergang über den Stack und die integrierte IOM12E-Speicherung beibehalten.
+Der interne Speicherport 0b/0b1 ist der Port des internen Speichers (Expander) und da er mit dem Hot-Added IOM12/IOM12B Shelf (dem letzten Shelf im Stack) verbunden ist, wird die Gruppe der IOM12/IOM12B Shelves zusammen gehalten und ein einziger Übergang über den Stack und den internen IOM12E/IOM12G Speicher aufrechterhalten.
 
 
 
@@ -443,7 +443,7 @@ Bei Shelfs setzen Sie einen SAS-Kabelanschluss ein, wobei die Zuglasche nach unt
 
 * Sie können die folgende Abbildung zur Verkabelung von IOM12/IOM12B-Shelfs mit einem IOM6-Shelf-Stack in einer Konfiguration verwenden, in der keine FC-to-SAS-Bridges verwendet werden.
 +
-Diese Abbildung bezieht sich auf einen Stack mit Multipath HA Konnektivität. Das Verkabelungskonzept kann jedoch auf Stacks mit Multipath, Single Path HA, Single Path Konnektivität und Stretch MetroCluster Konfigurationen angewendet werden.
+Die Abbildung zeigt speziell auf einen Stack mit Multipath HA-Konnektivität. Das Verkabelungskonzept kann jedoch auf Stacks mit Multipath, Tri-Path HA, Single-Path HA, Single-Path-Konnektivität und Stretch MetroCluster Konfigurationen angewendet werden.
 
 +
 image::../media/drw_sas2_sas3_mixed_stack.png[drw sas2 sas3 gemischter Stapel]
@@ -454,7 +454,7 @@ image::../media/drw_sas2_sas3_mixed_stack.png[drw sas2 sas3 gemischter Stapel]
 .Schritte
 . Identifizieren Sie physisch das letzte logische Shelf im Stack.
 +
-Je nach Plattformmodell und Stack-Konnektivität (Multipath HA, Multipath, Single Path HA oder Single Path) verfügt das logische letzte Shelf über Controller-zu-Stack-Verbindungen von Controller SAS-Ports B und D. Oder es verfügt das Shelf über keine Verbindungen zu keinem Controller (da die Controller-zu-Stack-Konnektivität über die logische Oberseite des Stacks liegt, über die Controller-SAS-Ports A und C).
+Abhängig von Ihrem Plattformmodell und Ihrer Stack-Konnektivität (Multipath HA, Tri-Path HA, Multipath, Single Path HA oder Single Path), Das logische letzte Shelf ist das Shelf, das Controller-to-Stack-Verbindungen von den Controller-SAS-Ports B und D aufweist. Oder es hat das Shelf keine Verbindungen zu beliebigen Controllern (da die Konnektivität zwischen Controller und Stack über die Controller SAS-Ports A und C zum logischen oberen Teil des Stacks gehört).
 
 . Wenn das IOM12/IOM12B Shelf, das Sie im laufenden Betrieb hinzufügen, das erste IOM12/IOM12B-Shelf dem IOM6-Stack hinzugefügt wird, d. h. es gibt keine anderen IOM12/IOM12B-Shelves im IOM6-Shelf-Stack, führen Sie die entsprechenden Unterschritte durch.
 +
@@ -471,7 +471,7 @@ Fahren Sie andernfalls mit Schritt 3 fort.
 
 
  a| 
-Multipath HA oder Multipath oder Single Path HA mit Controller-Konnektivität zum logischen letzten Shelf (einschließlich Stretch MetroCluster-Konfigurationen)
+Multipath HA, Tri-Path HA, Multipath oder Single-Path HA mit Controller-Konnektivität zum letzten logischen Shelf (einschließlich Stretch-MetroCluster-Konfigurationen)
  a| 
 .. Trennen Sie das Controller-zu-Stack-Kabel vom letzten IOM6-Shelf-IOM A-Circle-Port mit dem Controller oder der Bridge.
 +
@@ -494,7 +494,7 @@ Verwenden Sie ein Mini-SAS HD-to-Mini-SAS HD-Kabel mit SAS-Kupfer.
 +
 Andernfalls fahren Sie mit dem nächsten Unterschritt fort.
 
-.. Stellen Sie die Controller-zu-Stack-Verbindung wieder her, indem Sie denselben Port am Controller oder Bridge (in Unterschritt A) an den neuen letzten IOM12 IOM A-Port 3 verkabeln.
+.. Stellen Sie die Controller-zu-Stack-Verbindung wieder her, indem Sie denselben Port am Controller oder der Bridge (in Schritt A) mit dem neuen letzten IOM12/IOM12B-Shelf-IOM A-Port 3 verkabeln.
 +
 Verwenden Sie je nach Anschlusstyp des Controllers ein SAS-Kupfer-QSFP-to-Mini-SAS-HD-Kabel oder Mini-SAS HD-Kabel.
 
@@ -519,7 +519,7 @@ Legen Sie das Kabel beiseite. Sie wird nicht mehr benötigt.
 +
 Andernfalls weiter mit subStep e.
 
-.. Verkabeln Sie die Shelf-to-Shelf-Verbindung zwischen dem letzten IOM6-Shelf IOM A-Circle-Port (von Unterschritt A) und dem neuen IOM12-Shelf IOM A-Port 1.
+.. Verkabeln Sie die Shelf-zu-Shelf-Verbindung zwischen dem letzten IOM6-Shelf IOM A-Kreis-Port (von Unterschritt A) und dem neuen IOM12/IOM12B-Shelf IOM A-Port 1.
 +
 Verwenden Sie ein SAS-Kupfer QSFP-to-Mini-SAS HD-Kabel.
 
@@ -531,7 +531,7 @@ Verwenden Sie ein Mini-SAS HD-to-Mini-SAS HD-Kabel mit SAS-Kupfer.
 Andernfalls fahren Sie mit dem nächsten Unterschritt fort.
 
 .. Wiederholen Sie die Unterschritte b und c, um die Shelf-zu-Shelf-Verbindungen für IOM B zu verkabeln
-.. Stellen Sie die untere Bridge-to-Stack-Verbindung wieder her, indem Sie denselben Port an der Bridge (in Unterschritt A) an den neuen letzten IOM12-Shelf IOM A-Port 3 verkabeln.
+.. Stellen Sie die untere Bridge-to-Stack-Verbindung wieder her, indem Sie denselben Port auf der Bridge (in Schritt A) mit dem neuen letzten IOM12/IOM12B-Shelf-IOM A-Port 3 verkabeln.
 +
 Verwenden Sie je nach Anschlusstyp des Controllers ein SAS-Kupfer-QSFP-to-Mini-SAS-HD-Kabel oder Mini-SAS HD-Kabel.
 
@@ -567,7 +567,7 @@ NOTE: Achten Sie darauf, dass Sie mindestens 70 Sekunden warten, bis Sie ein Kab
 
 
  a| 
-Multipath HA oder Multipath oder Single Path HA mit Controller-Konnektivität zum logischen letzten Shelf oder Bridge-Attached-Konnektivität in einer MetroCluster-Konfiguration
+Multipath HA, Tri-Path HA, Multipath oder Single-Path HA mit Controller-Konnektivität zum logischen letzten Shelf oder Bridge-Attached-Konnektivität in einer MetroCluster-Konfiguration
  a| 
 .. Bewegen Sie das Controller-zu-Stack-Kabel vom letzten IOM12/IOM12B-Shelf IOM A-Port 3 an denselben Port am neuen IOM12/IOM12B-Shelf.
 .. Wenn Sie ein IOM12/IOM12B-Shelf im laufenden Betrieb hinzufügen, verkabeln Sie die Shelf-zu-Shelf-Verbindung zwischen dem alten letzten IOM12/IOM12B-Shelf IOM A-Port 3 zum neuen letzten IOM12/IOM12B-Shelf IOM A-Port 1.
@@ -626,7 +626,7 @@ Fahren Sie andernfalls mit Schritt 4 fort.
 Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
 
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"]
+https://mysupport.netapp.com/site/tools["NetApp Downloads: Config Advisor"^]
 
 . Wenn Sie die automatische Laufwerkszuweisung als Teil der Vorbereitung für dieses Verfahren deaktiviert haben, müssen Sie manuell die Laufwerkseigentümer festlegen und bei Bedarf die automatische Laufwerkszuweisung wieder aktivieren.
 +

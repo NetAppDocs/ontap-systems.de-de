@@ -1,0 +1,194 @@
+---
+permalink: fas2800/bootmedia-replace.html 
+sidebar: sidebar 
+keywords: fas2800, replace, boot, media, controller, module, fru map 
+summary: Sie müssen das Startmedium im Controller finden und die Anweisungen befolgen, um es zu ersetzen. 
+---
+= Ersetzen Sie das Boot-Medium FAS2800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+Zum Austauschen des Startmediums müssen Sie das beeinträchtigte Controller-Modul entfernen, das Ersatzstartmedium installieren und das Boot-Image auf ein USB-Flash-Laufwerk übertragen.
+
+
+
+== Schritt 1: Entfernen Sie das Controller-Modul
+
+[role="lead"]
+Um auf Komponenten innerhalb des Controllers zuzugreifen, müssen Sie zuerst das Controller-Modul aus dem System entfernen und dann die Abdeckung am Controller-Modul entfernen.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Lösen Sie den Haken- und Schlaufenriemen, mit dem die Kabel am Kabelführungsgerät befestigt sind, und ziehen Sie dann die Systemkabel und SFPs (falls erforderlich) vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren.
+. Drücken Sie die Verriegelung am Nockengriff, bis sie loslässt, öffnen Sie den Nockengriff vollständig, um das Controller-Modul aus der Mittelplatine zu lösen, und ziehen Sie das Controller-Modul anschließend mit zwei Händen aus dem Gehäuse heraus.
++
+image::../media/drw_2850_pcm_remove_install_IEOPS-694.svg[drw 2850 pcm ausbauen Installation IEOPS 694]
+
+. Drehen Sie das Controller-Modul um und legen Sie es auf eine flache, stabile Oberfläche.
+. Öffnen Sie die Abdeckung, indem Sie die blauen Tasten an den Seiten des Controller-Moduls drücken, um die Abdeckung zu lösen, und drehen Sie dann die Abdeckung nach oben und von dem Controller-Modul.
++
+image::../media/drw_2850_open_controller_module_cover_IEOPS-695.svg[drw 2850 Open-Controller-Modulabdeckung IEOPS 695]
+
+
+
+[cols="1,3"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[Legende Symbol 01]
+ a| 
+Entriegelungstaste der Steuermodulabdeckung
+
+|===
+
+
+== Schritt 2: Ersetzen Sie die Startmedien
+
+Suchen Sie die Startmedien im Controller-Modul unter der Zusatzkarte, und befolgen Sie die Anweisungen zum Austauschen.
+
+.Animation - Ersetzen Sie das Startmedium
+video::10a29a01-a86e-451c-b05a-af4701726f57[panopto]
+image:../media/drw_2850_replace_boot_media_IEOPS-696.svg["Breite=500"]
+
+[cols="1,3"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[Legende Symbol 01]
+ a| 
+Verriegelungslasche für Startmedien
+
+|===
+.Schritte
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Entfernen Sie die Mezzanine-Karte mithilfe der folgenden Abbildung oder der FRU-Zuordnung auf dem Controller-Modul:
++
+.. Entfernen Sie die Blende der Zusatzkarte, indem Sie sie gerade aus dem Controller-Modul herausziehen.
+.. Lösen Sie die Rändelschrauben auf der Zusatzkarte.
++
+
+NOTE: Sie können die Rändelschrauben mit den Fingern oder einem Schraubendreher lösen. Wenn Sie Ihre Finger verwenden, müssen Sie den NV-Akku möglicherweise nach oben drehen, um den Finger besser an der Daumenschraube daneben zu kaufen.
+
+.. Heben Sie die Zusatzkarte gerade nach oben.
+
+
+. Ersetzen Sie die Startmedien:
++
+.. Drücken Sie die blaue Taste am Startmediengehäuse, um die Startmedien aus dem Gehäuse zu lösen, drehen Sie die Startmedien nach oben und ziehen Sie sie dann vorsichtig gerade aus dem Startmediensockel.
++
+
+NOTE: Drehen oder ziehen Sie die Boot-Medien nicht gerade nach oben, da dadurch der Sockel oder das Boot-Medium beschädigt werden kann.
+
+.. Richten Sie die Kanten des Ersatzstartmediums an der Buchse des Boot-Mediums aus, und schieben Sie ihn dann vorsichtig in die Buchse.
+Überprüfen Sie die Startmedien, um sicherzustellen, dass sie korrekt und vollständig in den Sockel eingesetzt sind. Entfernen Sie gegebenenfalls die Startmedien, und setzen Sie sie wieder in den Sockel ein.
+.. Drücken Sie die blaue Verriegelungstaste, drehen Sie das Startmedium ganz nach unten, und lassen Sie dann die Verriegelungstaste los, um das Startmedium zu verriegeln.
+
+
+. Setzen Sie die Zusatzkarte wieder ein:
++
+.. Richten Sie den Sockel auf der Hauptplatine mit dem Sockel auf der Zusatzkarte aus, und setzen Sie die Karte vorsichtig in den Sockel ein.
+.. Ziehen Sie die drei Rändelschrauben auf der Zusatzkarte fest.
+.. Bringen Sie die Zusatzverkleidung wieder an.
+
+
+. Setzen Sie die Abdeckung des Controller-Moduls wieder ein, und verriegeln Sie sie.
+
+
+
+
+== Schritt 3: Übertragen Sie das Startabbild auf das Startmedium
+
+Installieren Sie das System-Image auf dem Ersatz-Startmedium mit einem USB-Flash-Laufwerk, auf dem das Image installiert ist. Während dieses Vorgangs müssen Sie das var-Dateisystem wiederherstellen.
+
+.Bevor Sie beginnen
+* Sie benötigen ein USB-Flash-Laufwerk, das mit MBR/FAT32 formatiert ist, mit mindestens 4 GB Kapazität.
+* Sie müssen über eine Netzwerkverbindung verfügen.
+
+
+.Schritte
+. Laden Sie die entsprechende Bildversion von ONTAP auf das formatierte USB-Flash-Laufwerk herunter:
++
+.. Nutzung https://kb.netapp.com/onprem/ontap/dm/Encryption/How_to_determine_if_the_running_ONTAP_version_supports_NetApp_Volume_Encryption_(NVE)["So stellen Sie fest, ob die laufende ONTAP-Version NetApp Volume Encryption (NVE) unterstützt"^] Um festzustellen, ob die Volume-Verschlüsselung derzeit unterstützt wird.
++
+*** Wenn NVE auf dem Cluster unterstützt wird, laden Sie das Image mit NetApp Volume Encryption herunter.
+*** Wenn NVE nicht auf dem Cluster unterstützt wird, laden Sie das Image ohne NetApp Volume Encryption herunter.
+Siehe https://kb.netapp.com/onprem/ontap/os/Which_ONTAP_image_should_I_download%3F_With_or_without_Volume_Encryption%3F["Welches ONTAP Image sollte ich herunterladen? Mit oder ohne Volume-Verschlüsselung?"^] Entnehmen.
+
+
+
+
+. Entpacken Sie das heruntergeladene Bild.
++
+
+NOTE: Wenn Sie den Inhalt mit Windows extrahieren, verwenden Sie WinZip nicht zum Extrahieren des Netzboots-Images. Verwenden Sie ein anderes Extraktionstool, wie 7-Zip oder WinRAR.
+
++
+Die Image-Datei „ungezippte Dienste“ enthält zwei Ordner:
+
++
+** `boot`
+** `efi`
++
+... Kopieren Sie die `efi` Ordner zum obersten Verzeichnis auf dem USB-Flash-Laufwerk.
++
+Das USB-Flash-Laufwerk sollte den efi-Ordner und die gleiche Service Image (BIOS)-Version des beeinträchtigten Controllers haben.
+
+... Entfernen Sie das USB-Flash-Laufwerk von Ihrem Laptop.
+
+
+
+
+. Installieren Sie das Controller-Modul:
++
+.. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
+.. Controller-Modul wieder einsetzen.
++
+Denken Sie beim Neuinstallieren der Medienkonverter (SFPs) daran, wenn sie entfernt wurden.
+
+
+
+. Stecken Sie das USB-Flash-Laufwerk in den USB-Steckplatz des Controller-Moduls.
++
+Stellen Sie sicher, dass Sie das USB-Flash-Laufwerk in den für USB-Geräte gekennzeichneten Steckplatz und nicht im USB-Konsolenport installieren.
+
+. Drücken Sie das Controller-Modul ganz in das System, vergewissern Sie sich, dass der Nockengriff das USB-Flash-Laufwerk löscht, drücken Sie den Nockengriff fest, um den Sitz des Controller-Moduls zu beenden, schieben Sie den Nockengriff in die geschlossene Position und ziehen Sie die Daumenschraube fest.
++
+Der Controller beginnt zu booten, sobald er vollständig im Chassis installiert ist.
+
+. Unterbrechen Sie den Boot-Vorgang, um an der LOADER-Eingabeaufforderung zu stoppen, indem Sie Strg-C drücken, wenn Sie sehen Starten VON AUTOBOOT drücken Sie Strg-C, um den Vorgang abzubrechen
++
+Wenn Sie diese Meldung verpassen, drücken Sie Strg-C, wählen Sie die Option zum Booten im Wartungsmodus aus, und halten Sie dann den Controller zum Booten in LOADER an.
+
+. Wenn Systeme mit einem Controller im Chassis vorhanden sind, schließen Sie das Netzteil wieder an und schalten Sie die Netzteile ein.
++
+Das System beginnt mit dem Booten und wird bei DER LOADER-Eingabeaufforderung angehalten.
+
+. Legen Sie den Verbindungstyp für das Netzwerk an der LOADER-Eingabeaufforderung fest:
++
+** Wenn Sie DHCP konfigurieren: `ifconfig e0a -auto`
++
+
+NOTE: Der von Ihnen konfigurierte Zielport ist der Zielport, über den Sie während der Wiederherstellung des var-Dateisystems mit dem beeinträchtigten Controller über den gesunden Controller kommunizieren. Sie können in diesem Befehl auch den Port E0M verwenden.
+
+** Wenn Sie manuelle Verbindungen konfigurieren: `ifconfig e0a -addr=filer_addr -mask=netmask -gw=gateway-dns=dns_addr-domain=dns_domain`
++
+*** Filer_addr ist die IP-Adresse des Speichersystems.
+*** Netmask ist die Netzwerkmaske des Managementnetzwerks, das mit dem HA-Partner verbunden ist.
+*** Das Gateway ist das Gateway für das Netzwerk.
+*** dns_addr ist die IP-Adresse eines Namensservers in Ihrem Netzwerk.
+*** die dns_Domain ist der Domain Name des Domain Name System (DNS).
++
+Wenn Sie diesen optionalen Parameter verwenden, benötigen Sie keinen vollqualifizierten Domänennamen in der Netzboot-Server-URL. Sie benötigen nur den Hostnamen des Servers.
+
+
+
+
+
++
+
+NOTE: Andere Parameter können für Ihre Schnittstelle erforderlich sein. Sie können eingeben `help ifconfig` Details finden Sie in der Firmware-Eingabeaufforderung.
+
+

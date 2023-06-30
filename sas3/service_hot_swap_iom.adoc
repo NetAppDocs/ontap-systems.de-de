@@ -35,7 +35,7 @@ Die IOM12B-Module zeichnen sich durch einen blauen Streifen und ein „IOM12B“
 +
 image::../media/iom12b.png[Iom12b]
 
-* Bei Multipath HA oder Multipath) und Quad-Pathed-Konfigurationen (Quad-Path HA oder Quad-Path) können Sie ein Shelf IOM im laufenden Betrieb austauschen (ein Shelf IOM unterbrechungsfrei ersetzen in einem System, das eingeschaltet ist und Daten bereitstellt - I/O läuft).
+* Bei Multipath (Multipath HA oder Multipath), Tri-Path-HA und Quad-Pathed (Quad Path HA oder Quad Path) Konfigurationen können Sie ein Shelf IOM im laufenden Betrieb austauschen (unterbrechungsfreies Ersetzen eines Shelf IOM in einem System, das eingeschaltet ist und Daten bereitstellt – I/O wird ausgeführt).
 * Bei HA-Konfigurationen der FAS2600 Serie und der FAS2700 Serie müssen Sie ein Takeover- und Giveback-Vorgang durchführen, um ein Shelf-IOM in einem System zu ersetzen, das eingeschaltet ist und Daten bereitstellt - I/O läuft.
 * Bei Single-Path-Konfigurationen der FAS2600 Serie müssen Sie das System anhalten, um ein Shelf-IOM zu ersetzen.
 +
@@ -47,10 +47,10 @@ NOTE: Wenn Sie versuchen, ein Shelf-IOM auf einem Festplatten-Shelf durch eine S
 Aktuelle Versionen der Firmware finden Sie auf der NetApp Support Site.
 
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp Downloads: Festplatten-Shelf Firmware"]
+https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp Downloads: Festplatten-Shelf Firmware"^]
 
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["NetApp Downloads: Festplatten-Firmware"]
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["NetApp Downloads: Festplatten-Firmware"^]
 
 * Die Festplatten-Shelf- (IOM)-Firmware wird auf einem neuen Shelf-IOM automatisch mit einer nicht aktuellen Firmware-Version aktualisiert (unterbrechungsfrei).
 +
@@ -78,7 +78,7 @@ Speichern Sie alle Verpackungsmaterialien zum Verwenden der Rücksendung des feh
 
 
  a| 
-Multipath HA, Multipath, Quad Path HA oder Quad-Path-Konfiguration
+Multipath HA, Tri-Path HA, Multipath, Quad-Path HA oder Quad-Path-Konfiguration
  a| 
 Fahren Sie mit dem nächsten Schritt fort.
 
@@ -141,7 +141,7 @@ Die SAS-Kabelanschlüsse sind keyed. Wenn sie korrekt an einen IOM-Port ausgeric
 
 
  a| 
-Multipath HA, Multipath, Quad Path HA oder Quad-Path-Konfiguration
+Multipath HA, Tri-Path HA, Multipath, Quad-Path HA oder Quad-Path-Konfiguration
  a| 
 Fahren Sie mit dem nächsten Schritt fort.
 

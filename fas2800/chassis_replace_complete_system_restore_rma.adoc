@@ -1,0 +1,71 @@
+---
+permalink: fas2800/chassis-replace-complete-system-restore-rma.html 
+sidebar: sidebar 
+keywords: fas2800, replace, chassis, shut down, controller, metrocluster, power, supply, ha, state, controller, configuration, switch, aggregates, replace, move, remove, swap 
+summary: Sie müssen den HA-Status des Chassis überprüfen und die System-Level-Diagnose ausführen, Aggregate wechseln und das ausgefallene Teil an NetApp zurückgeben. Dies gilt auch in den mit dem Kit gelieferten RMA-Anweisungen. 
+---
+= Stellen Sie die Konfiguration wieder her und überprüfen Sie sie - FAS2800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+Überprüfen Sie den HA-Status des Chassis, um das System hochzubringen, und senden Sie das fehlerhafte Teil an NetApp zurück. Dies wird in den dem Kit beiliegenden RMA-Anweisungen beschrieben.
+
+
+
+== Schritt: Überprüfen Sie den HA-Status des Chassis und legen Sie diesen fest
+
+Sie müssen den HA-Status des Chassis überprüfen und gegebenenfalls den Status entsprechend Ihrer Systemkonfiguration aktualisieren.
+
+. Zeigen Sie im Wartungsmodus von einem der Controller-Module aus den HA-Status des lokalen Controller-Moduls und des Chassis an: `ha-config show`
++
+Der HA-Status sollte für alle Komponenten identisch sein.
+
+. Wenn der angezeigte Systemzustand für das Chassis nicht mit der Systemkonfiguration übereinstimmt:
++
+.. Legen Sie den HA-Status für das Chassis basierend auf der vorhandenen Konfiguration des Systems fest: `ha-config modify chassis _ha-state_`
++
+Für den HA-Status kann einer der folgenden Werte vorliegen:
+
++
+*** `ha`
+*** `non-ha`
+
+
+.. Bestätigen Sie, dass sich die Einstellung geändert hat: `ha-config show`
+
+
+. Falls Sie dies noch nicht getan haben, können Sie den Rest Ihres Systems erneut verwenden.
+. Beenden des Wartungsmodus: `halt`.    Die LOADER-Eingabeaufforderung wird angezeigt.
+. Starten Sie die Controller-Module.
+
+
+
+
+== Schritt 2: Das System hochfahren
+
+. Wenn Sie dies nicht getan haben, schließen Sie die Netzkabel wieder an die Netzteile an.
+. Schalten Sie die Netzteileinheiten ein, indem Sie den Wippschalter auf *EIN* stellen und warten, bis die Controller vollständig hochgefahren sind.
+. Überprüfen Sie nach dem Einschalten die Vorder- und Rückseite des Chassis und der Controller auf Fehler-LEDs.
+. Stellen Sie über SSH eine Verbindung mit der SP- oder BMC-IP-Adresse der Nodes her. Dies ist dieselbe Adresse, die zum Herunterfahren der Nodes verwendet wird.
+. Führen Sie zusätzliche Zustandsprüfungen durch, wie in beschrieben https://kb.netapp.com/onprem/ontap/os/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["Wie_ein_Cluster_Health_Check_with_a_script_in_ONTAP_durchführen"^]
+. Wenn ein AutoSupport-Wartungsfenster ausgelöst wurde, beenden Sie das Fenster mit. Verwenden Sie dazu die `system node autosupport invoke -node * -type all -message MAINT=END` Befehl.
+
+
+[]
+====
+
+NOTE: Als Best Practice sollten Sie Folgendes tun:
+
+* Lösen Sie alle https://activeiq.netapp.com/["Active IQ Wellness-Alarme und Risiken"^] (Active IQ nimmt Zeit in Anspruch, um Autosupports nach dem Einschalten zu verarbeiten - erwarten Sie eine Verzögerung der Ergebnisse)
+* Laufen https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^]
+* Überprüfen Sie den Systemzustand mit https://kb.netapp.com/onprem/ontap/os/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["Wie_ein_Cluster_Health_Check_with_a_script_in_ONTAP_durchführen"^]
+
+
+====
+
+
+== Schritt 3: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

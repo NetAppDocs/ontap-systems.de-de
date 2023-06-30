@@ -16,7 +16,7 @@ Sie können ein ausgefallenes Festplattenlaufwerk im laufenden Betrieb in einem 
 .Bevor Sie beginnen
 * Das Festplattenlaufwerk, das Sie installieren, muss vom DS224C oder DS212C Festplatten-Shelf unterstützt werden.
 +
-https://hwu.netapp.com["NetApp Hardware Universe"]
+https://hwu.netapp.com["NetApp Hardware Universe"^]
 
 * Alle anderen Komponenten im System müssen ordnungsgemäß funktionieren. Wenden Sie sich andernfalls an den technischen Support.
 * Das zu entfernenden Festplattenlaufwerk muss fehlerhaft sein.
@@ -32,7 +32,7 @@ NOTE: Abhängig vom Laufwerkstyp und der Kapazität kann es bis zu mehrere Stund
 Anweisungen in der ONTAP-Dokumentation beschreiben zusätzliche Schritte, die vor und nach dem Austausch einer SED ausgeführt werden müssen.
 
 +
-https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html["Übersicht über die NetApp Verschlüsselung mit CLI"]
+https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html["Übersicht über die NetApp Verschlüsselung mit CLI"^]
 
 
 
@@ -79,10 +79,10 @@ https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/downloa
 Aktuelle Versionen der Firmware finden Sie auf der NetApp Support Site.
 
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp Downloads: Festplatten-Shelf Firmware"]
+https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp Downloads: Festplatten-Shelf Firmware"^]
 
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["NetApp Downloads: Festplatten-Firmware"]
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["NetApp Downloads: Festplatten-Firmware"^]
 
 * Festplatten-Firmware wird auf neuen Festplatten ohne aktuelle Firmware-Versionen automatisch (unterbrechungsfrei) aktualisiert.
 +
@@ -91,7 +91,7 @@ NOTE: Die Firmware der Festplattenlaufwerke werden alle zwei Minuten überprüft
 
 * Bei Bedarf können Sie die (blauen) LEDs des Festplatten-Shelfs einschalten, um Hilfe bei der physischen Suche nach dem betroffenen Festplatten-Shelf zu leisten: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
 +
-Ein Platten-Shelf hat drei Positionen-LEDs: Eine auf der Bedienkonsole und eine auf jedem IOM12-Modul. Die Standort-LEDs leuchten 30 Minuten lang. Sie können sie ausschalten, indem Sie denselben Befehl eingeben, jedoch die Option „aus“ verwenden.
+Ein Festplatten-Shelf verfügt über drei Standort-LEDs: Eine auf der Bedieneranzeige und eine an jedem Shelf-IOM. Die Standort-LEDs leuchten 30 Minuten lang. Sie können sie ausschalten, indem Sie denselben Befehl eingeben, jedoch die Option „aus“ verwenden.
 
 * Falls erforderlich, finden Sie Informationen über die Bedeutung und Lage der Festplatten-Shelf-LEDs auf der Bedieneranzeige und den FRU-Komponenten.
 

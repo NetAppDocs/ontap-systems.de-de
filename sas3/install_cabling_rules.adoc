@@ -1,10 +1,10 @@
 ---
 permalink: sas3/install-cabling-rules.html 
 sidebar: sidebar 
-keywords: disk, shelves, shelf, iom12, module, single-controller, configuration, support, platform, sas, cabling, cable, rule, controller, shelf-to-shelf, connection, rule, controller-to-stack, mini-sas, hd, optical, cable, rule, sas cabling rules, iom12b 
+keywords: disk, shelves, shelf, iom12, module, single-controller, configuration, support, platform, sas, cabling, cable, rule, controller, shelf-to-shelf, connection, rule, controller-to-stack, mini-sas, hd, optical, cable, rule, sas cabling rules, iom12b, concepts 
 summary: 'Platten-Shelfs mit IOM12/IOM12B Modulen können in HA-Paar- und Single-Controller-Konfigurationen (für unterstützte Plattformen) verkabelt werden.' 
 ---
-= SAS-Verkabelungsregeln – Shelfs mit IOM12/IOM12B-Modulen
+= SAS-Verkabelungsregeln und -Konzepte – Shelfs mit IOM12/IOM12B-Modulen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -14,7 +14,7 @@ summary: 'Platten-Shelfs mit IOM12/IOM12B Modulen können in HA-Paar- und Single
 Platten-Shelfs mit IOM12/IOM12B-Modulen können unter Anwendung der SAS-Verkabelungsregeln in HA-Paar- und Single-Controller-Konfigurationen (für unterstützte Plattformen) verkabelt werden: Konfigurationsregeln, Controller-Slot-Nummerierungsregeln, Shelf-to-Shelf-Verbindungsregeln, Controller-to-Stack-Verbindungsregeln und gegebenenfalls optische Kabelregeln für Mini-SAS HD SAS.
 
 
-NOTE: Die in diesem Leitfaden beschriebenen Regeln für die SAS-Verkabelung zu den Nummerierungsregeln für Controller-Steckplätze, Shelf-to-Shelf-Verbindungsregeln und die in diesem Leitfaden beschriebenen Regeln für alle SAS-Platten-Shelves gelten, unabhängig davon, ob sie IOM12/IOM12B, IOM6 oder IOM3-Module besitzen. Die Informationen in diesem Leitfaden betreffen jedoch die einzigartigen Eigenschaften von Platten-Shelfs mit IOM12-Modulen und ihre Verwendung in unterstützten Konfigurationen.
+NOTE: Die in diesem Leitfaden beschriebenen Regeln für die SAS-Verkabelung zu den Nummerierungsregeln für Controller-Steckplätze, Shelf-to-Shelf-Verbindungsregeln und die in diesem Leitfaden beschriebenen Regeln für alle SAS-Platten-Shelves gelten, unabhängig davon, ob sie IOM12/IOM12B, IOM6 oder IOM3-Module besitzen. Die Informationen in diesem Leitfaden sind jedoch speziell auf die einzigartigen Merkmale von Festplatten-Shelfs mit IOM12/IOM12B-Modulen und ihre Verwendung in unterstützten Konfigurationen abgestimmt.
 
 Die in diesem Leitfaden beschriebenen SAS-Verkabelungsregeln zu Konfigurationsregeln und optischen Mini-SAS-HD-SAS-SAS-Kabelregeln gelten speziell für Platten-Shelves mit IOM12/IOM12B-Modulen.
 
@@ -32,20 +32,39 @@ Sie sollten vermeiden, von den Regeln zu abweichen; Abweichungen können Zuverl�
 
 == Konfigurationsregeln
 
-Platten-Shelfs mit IOM12-Modulen werden bei spezifischen Typen von HA-Paar- und Single-Controller-Konfigurationen unterstützt.
+[role="lead"]
+Festplatten-Shelfs mit IOM12/IOM12B Modulen werden in bestimmten HA-Paar- und Single-Controller-Konfigurationen unterstützt.
 
 
 NOTE: Die FAS25XX Plattformen werden in diesem Bereich nicht behandelt.
 
+[NOTE]
+====
+Aktuelle Informationen zu unterstützten Verkabelungskonfigurationen für Ihr Plattformmodell finden Sie im Hardware Universe.
+
+https://hwu.netapp.com["NetApp Hardware Universe"^]
+
+====
 * HA-Paar-Konfigurationen müssen als Multipath HA oder Quad-Path HA-Konfigurationen mit den folgenden Ausnahmen verkabelt werden:
 +
-** Plattformen mit internem Storage, einschließlich FAS2600 Serie, AFF A200, FAS2700 Serie, AFF A220, Und später kann es als Single-Path-HA-Konfigurationen verkabelt werden, um die Verbindung zu einem externen SAS-Band-Backup-Gerät zu unterstützen.
-** Plattformen mit internem Storage, einschließlich FAS2600 Serie, AFF A200, FAS2700 Serie, AFF A220, Und später, keine Unterstützung für Quad-Path HA-Konnektivität
+** Plattformen mit internem Storage unterstützen keine Quad-Path-HA-Konnektivität.
+** Ein FAS2800 HA-Paar kann als Tri-Path HA verkabelt werden.
++
+Informationen zur FAS2800-Konnektivität finden Sie im <<Tri-Path-HA-Konnektivität>> Abschnitt.
+
+** Plattformen mit internem Storage können als Single-Path HA-Konfigurationen verkabelt werden (von Port 0b/0b1 zu externen Shelfs), um die Konnektivität zu einem externen SAS Tape Backup-Gerät (von Port 0a) zu unterstützen.
 
 
+
+
+[NOTE]
+====
+Bei FAS2800 HA-Paaren ist die Verkabelung zu externen Shelfs Single-Path-HA, obwohl die interne Verbindung jedes Controllers von Port 0b mit seiner lokalen Erweiterung (IOM12G) und Port 0c mit der Erweiterung seines Partners vorhanden ist, lautet die HA-Paar-Konfiguration Multipath HA.
+
+====
 * Single Controller-Konfigurationen müssen als Multipath- oder Quad-Path-Konfigurationen verkabelt werden, mit folgenden Ausnahmen:
 +
-** Single Controller-Konfigurationen der FAS2600 Serie (mit externen Festplatten-Shelfs) können als Single-Path-Konfigurationen verkabelt werden.
+** Die Single-Controller-Konfigurationen der FAS2600 Serie können als Single-Path-Konfigurationen verkabelt werden.
 +
 Da der interne Storage Single Path-Konnektivität verwendet, gibt ONTAP gelegentlich Warnungen aus, ob gemischte Pfade erkannt werden. Um diese Warnungen zu vermeiden, können Sie Single-Path-Verbindungen zu den externen Festplatten-Shelfs verwenden. Darüber hinaus können Sie Single-Path-Konnektivität verwenden, wenn ein externes SAS-Bandsicherungsgerät verwendet wird.
 
@@ -88,8 +107,10 @@ Wenn Sie mehr als ein Platten-Shelf in einem Stapel an Platten-Shelfs haben, wer
 
 === Standard-Shelf-zu-Shelf-Konnektivität
 
-* Die standardmäßigen Shelf-to-Shelf-Konnektivität wird in Multipath HA-, Multipath-, Single Path-Konfigurationen und Single Path-Konfigurationen verwendet.
-* Shelf-to-Shelf-Konnektivität ist genau das, was in vorhandenen SAS-Storage-Konfigurationen mit IOM3- und IOM6-Modulen verwendet wird: Zwischen den Festplatten-Shelfs in jeder Domäne ist eine Kabelverbindung erforderlich – Domänen-A (IOM A) und Domäne B (IOM B).
+* Standardmäßige Shelf-to-Shelf-Konnektivität wird in jedem Stack von Festplatten-Shelfs mit mehr als einem Festplatten-Shelf verwendet.
++
+Zwischen den Platten-Shelves in jeder Domäne – Domäne A (IOM A) und Domäne B (IOM B) wird eine Kabelverbindung benötigt.
+
 * Als Best Practice wird empfohlen, die IOM-Ports 3 und 1 für die Standard-Shelf-Konnektivität zu verwenden.
 +
 Vom logischen ersten Shelf zum logischen letzten Shelf in einem Stack verbinden Sie IOM-Port 3 mit dem IOM-Port 1 des nächsten Shelfs in Domäne A und dann Domäne B.
@@ -238,23 +259,23 @@ link:install-cabling-worksheet-template-quadpath.html["Vorlage für Verkabelungs
 
 
 
-=== Verbindungsregeln für Controller 0b und 0a Port für Plattformen mit internem Storage
+=== Controller 0b/0b1 und 0a-Port-Anschlussregeln für Plattformen mit internem Speicher
 
-Plattformen mit internem Storage, einschließlich FAS2600 Serie, AFF A200, FAS2700 Serie, AFF A220, Und später sollten spezielle Verbindungsregeln gelten, da jeder Controller dieselbe Domänenkonnektivität zwischen dem internen Speicher (Port 0b) und dem Stack aufrechterhalten muss. Dies bedeutet, dass, wenn sich ein Controller in Steckplatz A des Chassis (Controller 1) befindet, er sich in Domäne A (IOM A) befindet und daher Port 0b mit IOM A im Stack verbinden muss. Wenn sich ein Controller in Steckplatz B des Chassis (Controller 2) befindet, befindet er sich in Domäne B (IOM B). Daher muss Port 0b mit IOM B im Stack verbunden werden.
+Plattformen mit internem Speicher verfügen über einen eindeutigen Satz von Verbindungsregeln, da jeder Controller die gleiche Domänenkonnektivität zwischen dem internen Speicher (Port 0b/0b1) und dem Stack aufrechterhalten muss. Das bedeutet, dass sich ein Controller im Steckplatz A des Chassis (Controller 1) in Domäne A (IOM A) befindet und somit Port 0b/0b1 mit IOM A im Stack verbunden werden muss. Wenn sich ein Controller im Steckplatz B des Chassis (Controller 2) befindet, befindet er sich in Domäne B (IOM B) und somit muss Port 0b/0b1 mit IOM B im Stack verbunden werden.
 
 
 NOTE: Die FAS25XX Plattformen werden in diesem Bereich nicht berücksichtigt.
 
 
-NOTE: Wenn Sie den Port 0b nicht mit der richtigen Domäne (Cross-Connect-Domänen) verbinden, setzen Sie das System mit Stabilitätsproblemen konfrontiert, die eine sichere Ausführung von unterbrechungsfreien Abläufen verhindern.
+NOTE: Wenn Sie den 0b/0b1-Port nicht mit der richtigen Domäne (Cross-Connect-Domänen) verbinden, setzen Sie Ihr System Stabilitätsproblemen aus, die eine sichere Durchführung von unterbrechungsfreien Verfahren verhindern.
 
-* Controller 0b Port (interner Storage-Port):
+* Controller 0b/0b1-Port (interner Speicherport):
 +
-** Controller 1 0b Port stellt immer eine Verbindung mit IOM A (Domäne A) her.
-** Controller 2 0b Port stellt immer eine Verbindung mit IOM B (Domäne B) her.
-** Port 0b ist immer der primäre Pfad.
-** Port 0b stellt immer eine Verbindung mit dem logischen letzten Festplatten-Shelf in einem Stack her.
-** Port 0b stellt immer eine Verbindung mit Festplatten-Shelf-IOM-Port 3 her.
+** Der Port Controller 1 0b/0b1 stellt immer eine Verbindung zu IOM A (Domäne A) her.
+** Der Port Controller 2 0b/0b1 stellt immer eine Verbindung zu IOM B (Domäne B) her.
+** Port 0b/0b1 ist immer der primäre Pfad.
+** Port 0b/0b1 stellt immer eine Verbindung zum letzten logischen Festplatten-Shelf in einem Stack her.
+** Port 0b/0b1 stellt immer eine Verbindung zu IOM-Port 3 des Festplatten-Shelf her.
 
 
 * Controller 0a Port (interner HBA-Port):
@@ -268,9 +289,37 @@ NOTE: Wenn Sie den Port 0b nicht mit der richtigen Domäne (Cross-Connect-Domän
 
 
 
-Die folgende Abbildung zeigt die Konnektivität der internen Storage Port-Domäne (0b) für eine FAS2600 Serie, AFF A200, FAS2700 Serie, AFF A220 und höher für Multipath HA-Konfiguration:
+In der folgenden Abbildung wird die Konnektivität der internen Speicher-Port-Domäne (0b/0b1) mit einem externen Shelf-Stack hervorgehoben:
 
-image::../media/drw_fas2600_mpha_domain_example.png[drw fas2600 mpha-Domain-Beispiel]
+image::../media/drw_fas2600_mpha_domain_example_IEOPS-1172.svg[drw fas2600 mpha-Domänenbeispiel IEOPS 1172]
+
+
+
+=== Tri-Path-HA-Konnektivität
+
+Tri-Path-HA-Konnektivität ist auf FAS2800 HA-Paaren verfügbar. Tri-Path-HA-Konnektivität verfügt über drei Pfade von jedem Controller zu internen (IOM12G) und externen Shelfs:
+
+* Die interne Verbindung jedes Controllers von Port 0b mit seinem lokalen IOM12G und Port 0c mit dem IOM12G seines Partners erzeugt Multipath HA-Konnektivität zu einem HA-Paar.
+* Die Verkabelung der externen Storage-Ports jedes Controllers, 0a und 0b1, ergibt eine HA-Paar-HA-Konnektivität für drei Pfade.
++
+Die Ports 0a und 0b1 sind über die beiden Controller verkabelt, wenn keine externen Shelfs vorhanden sind oder sie mit externen Shelfs verbunden sind, um HA-Konnektivität in drei Pfaden zu erreichen.
+
+
+
+Im Folgenden werden die internen Verbindungen und die externen Kabel des Controllers angezeigt, die eine HA-Konnektivität mit drei Pfaden ermöglichen:
+
+image::../media/drw_fas2800_concept_tpha_IEOPS-950.svg[drw fas2800 Concept tpha IEOPS 950]
+
+Die FAS2800 externen SAS-Ports:
+
+* Der Port 0a stammt aus dem internen HBA (wie andere Plattformen mit einem internen Shelf).
+* Der 0b1-Port stammt vom internen Shelf (wie die 0b-Ports auf anderen Plattformen mit einem internen Shelf).
+* Der port 0b2 wird nicht verwendet. Er ist deaktiviert. Wenn ein Kabel daran angeschlossen ist, wird eine Fehlermeldung ausgegeben.
+
+
+image::../media/drw_sas3_ports_on_fas2800_IEOPS-946 (1).svg[drw Sas3-Ports auf fas2800 IEOPS 946 (1)]
+
+Beispiele für eine FAS2800 HA-Paar-Verkabelung sind im zu finden link:install-cabling-worksheets-examples-fas2600.html["Verkabelungsarbeitsblätter und Beispiele für Plattformen mit internem Storage für den Controller-to-Stack-Stack"] Abschnitt.
 
 
 

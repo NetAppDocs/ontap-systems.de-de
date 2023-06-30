@@ -53,12 +53,12 @@ Sie müssen Shelf-IDs festlegen, sodass sie innerhalb des HA-Paars oder der Sing
 
 * Festplatten-Shelfs, die die Root-Aggregate enthalten, können durch die Etiketten auf der Festplatten-Shelf-Box und dem Festplatten-Shelf-Chassis identifiziert werden.
 +
-Auf den Etiketten wird die Stapelnummer angezeigt, z. B. *Loop oder Stack #: 1* und *Loop oder Stack #: 2*. Festplatten-Shelfs, die nicht die Root-Aggregate enthalten, zeigen nur die Festplatten-Shelf-Seriennummer auf den Etiketten an.
+Auf den Etiketten wird die Stapelnummer angezeigt, z. B. *Loop oder Stack #: 1* und *Loop oder Stack #: 2*. Bei Festplatten-Shelfs, die keine Root-Aggregate enthalten, wird nur die Festplatten-Shelf-Seriennummer auf den Etiketten angezeigt.
 
 * Wenn Sie bei der Einrichtung und Konfiguration des Systems nicht so konfigurieren, dass das System die automatische Festplatteneigentümer-Zuweisung verwendet, müssen Sie die Festplatteneigentümer manuell zuweisen.
-* In-Band Alternate Control Path (ACP) ist automatisch aktiviert.
+* IBACP (in-Band Alternate Control Path) wird automatisch aktiviert.
 +
-In-Band ACP wird auf Single Path HA- oder Single Path-Konfigurationen nicht unterstützt.
+IBACP wird nicht bei Single-Path-HA- oder Single-Path-Konfigurationen unterstützt.
 
 
 
@@ -84,7 +84,7 @@ Wenn SAS-Verkabelung oder doppelte Shelf-ID-Fehler generiert werden, folgen Sie 
 Zum Download von Config Advisor benötigen Sie Netzwerkzugriff.
 
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"]
+https://https://mysupport.netapp.com/site/tools["NetApp Downloads: Config Advisor"^]
 
 
 
@@ -242,7 +242,7 @@ NOTE: Schalten Sie die Festplatten-Shelfs derzeit nicht ein.
 Sie verkabeln Festplatten-Shelf-SAS-Verbindungen --Shelf-zu-Shelf (falls zutreffend) und Controller-zu-Shelf-, um Storage-Konnektivität für das System herzustellen.
 
 .Bevor Sie beginnen
-Sie müssen die Anforderungen in erfüllt haben <<Requirements for installing and cabling disk shelves with IOM12 modules for a new system installation>> Und installierte die Festplatten-Shelfs im Rack.
+Sie müssen die Anforderungen in erfüllt haben <<Anforderungen an die Installation und Verkabelung von Platten-Shelves mit IOM12/IOM12B Modulen für eine neue Systeminstallation>> Und installierte die Festplatten-Shelfs im Rack.
 
 .Über diese Aufgabe
 Nachdem Sie die Festplatten-Shelfs verkabeln, schalten Sie sie ein, legen die Shelf-IDs fest und schließen die Einrichtung und Konfiguration des Systems ab.
@@ -259,7 +259,7 @@ Eine detaillierte Erläuterung und Beispiele für Shelf-to-Shelf „`standard`�
 
 
  a| 
-Sie sind dabei Verkabelung von Multipath HA, Multipath, Single Path HA oder Single Path-Konfiguration
+Sie verkabeln eine Multipath HA, Multipath HA, Multipath-, Single Path HA oder Single Path-Konfiguration
  a| 
 Verbinden Sie die Shelf-zu-Shelf-Verbindungen mit „`standard`“-Konnektivität (unter Verwendung von IOM-Ports 3 und 1):
 
@@ -286,10 +286,10 @@ Verbinden Sie die Shelf-zu-Shelf-Verbindungen mit „`double-wide`“-Konnektivi
 +
 .. Überprüfen Sie die Verkabelungsarbeitsblätter und Beispiele für den Controller-to-Stack-Stack, um zu ermitteln, ob ein ausgefülltes Arbeitsblatt für Ihre Konfiguration vorhanden ist.
 +
-link:install-cabling-worksheets-examples-fas2600.html["Verkabelungsarbeitsblätter und Beispiele für Controller-to-Stack für AFF- und FAS-Plattformen mit integriertem Storage"]
+link:install-cabling-worksheets-examples-fas2600.html["Verkabelungsarbeitsblätter und Beispiele für Plattformen mit internem Storage für den Controller-to-Stack-Stack"]
 
 +
-link:install-cabling-worksheets-examples-multipath.html["Arbeitsblätter und Beispiele für die Verkabelung von Controller und Stack für gängige Multipath HA-Konfigurationen"]
+link:install-cabling-worksheets-examples-multipath.html["Arbeitsblätter für Controller-to-Stack-Verkabelung und Beispiele für Verkabelung bei Multipath HA-Konfigurationen"]
 
 +
 link:install-worksheets-examples-quadpath.html["Verkabelungsarbeitsblatt für den Controller-to-Stack und Kabelbeispiel für eine Quad-Path HA-Konfiguration mit zwei Quad-Port SAS HBAs"]
@@ -409,7 +409,7 @@ Sie können das Platzhalterzeichen verwenden, um mehr als eine Festplatte gleich
 Wenn SAS-Verkabelung oder doppelte Shelf-ID-Fehler generiert werden, folgen Sie den Korrekturmaßnahmen.
 
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"]
+https://https://mysupport.netapp.com/site/tools["NetApp Downloads: Config Advisor"^]
 
 +
 Sie können auch die ausführen `storage shelf show -fields shelf-id` Befehl, um eine Liste der bereits verwendeten Shelf-IDs (und Duplikate, falls vorhanden) in Ihrem System anzuzeigen.
