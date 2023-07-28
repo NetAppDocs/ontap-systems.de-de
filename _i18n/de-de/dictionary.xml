@@ -8356,4 +8356,80 @@ SFP+ (Target/Initiator)</block>
   <block id="9287ab39836157b975fad28f9782a821" category="sidebar">FAS2800 Netzteil</block>
   <block id="3dfd3fa9bee4e9b9ad14ec588c8e9ed4" category="sidebar">FAS2800 Echtzeituhr-Akku</block>
   <block id="f298a7570713e4b8f24128c2f7dcc05c" category="sidebar">Tools und Support</block>
+  <block id="0a90cb9b1ee5610139d0e39856363c8c" category="summary">Sie können den Zustand Ihres Festplatten-Shelf überwachen, indem Sie Informationen über den Speicherort und die Statusbedingungen der LEDs an den Festplatten-Shelf-Komponenten erhalten.</block>
+  <block id="039c72bbf63892ab7a9a7d88f01d9ef1" category="doc">Überwachen Sie die Festplatten-Shelf-LEDs – NS224-Shelfs</block>
+  <block id="4c1e87d961b7abad7899274630f1a96a" category="list-text">Die Standort-LEDs (blau) auf dem Bedienfeld des Shelfs (ODP) und beiden NSM-Modulen können aktiviert werden, um die physische Lokalisierung des zu wartende Shelf zu unterstützen:<block ref="d6bcc7ed2edc5b8ad7e7188bba8189eb" prefix=" " category="inline-code"></block></block>
+  <block id="3417b5f666a273fe6204a90a40cd960a" category="paragraph">Die Standort-LEDs leuchten 30 Minuten lang. Sie können sie ausschalten, indem Sie den gleichen Befehl eingeben, jedoch mit dem<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block> Option.</block>
+  <block id="90c4ae9a3664954df72efa181f417914" category="list-text">Ein LED-Status kann sein:</block>
+  <block id="5f77ac1006b54df5d09a24404a213642" category="list-text">„Ein“: Die LED-Beleuchtung ist konstant</block>
+  <block id="ca49a7e42f16a88fc179226bfe0edde8" category="list-text">„Aus“: Die LED leuchtet nicht</block>
+  <block id="117106b46f3b11e3bbfc40ae15a1f678" category="list-text">„Blinken“: Die LED schaltet sich je nach FRU-Status in unterschiedlichen Intervallen ein und aus</block>
+  <block id="e3248bada0dd8141e2ab87552806328f" category="list-text">„Beliebiger Status“: Die LED kann „ein“, „aus“ oder „Blinken“ sein.</block>
+  <block id="6afbd49803e44c3aa6797e42828fd734" category="paragraph">Die LEDs am vorderen Bedienfeld des Festplatten-Shelfs (ODP) zeigen an, ob Ihr Festplatten-Shelf ordnungsgemäß funktioniert oder ob Hardware-Probleme auftreten.</block>
+  <block id="98b358c9e04e87becfb72379a2b4c9d5" category="paragraph">In der folgenden Abbildung und Tabelle werden die drei LEDs am ODP beschrieben:</block>
+  <block id="138149667750b6d9b839cc79c8d6b29a" category="image-alt">drw ns224 odp-leds IEOPS 1262</block>
+  <block id="6984fd43f67a1bf48379d74906b421c0" category="cell">LED-Name und -Farbe</block>
+  <block id="89a44a0e4b47aa8032cdb05ec66374e8" category="paragraph">Strom (Grün)</block>
+  <block id="521c36a31c2762741cf0f8890cbe05e3" category="paragraph">Ein</block>
+  <block id="7ab85b9335b729ddfdd50939907e5626" category="paragraph">Mindestens ein Netzteil versorgt das Festplatten-Shelf mit Strom.</block>
+  <block id="7ad8ba1fe94fd72fd9f74d14e7037f4a" category="paragraph">Achtung (Gelb)</block>
+  <block id="e83364f6cc636130c2c04e44b8f47f19" category="list-text">Bei der Funktion einer der mehreren Shelf-FRUs ist ein Fehler aufgetreten.</block>
+  <block id="792a0f450d52c98560941fc89bf34430" category="list-text">Wenn die zweistellige Shelf-ID ebenfalls blinkt, befindet sich die Shelf-ID in einem ausstehenden Status.</block>
+  <block id="c71218e03c7b1d130d35a210073b7500" category="paragraph">Schalten Sie das Festplatten-Shelf aus und wieder ein, damit die Shelf-ID wirkt.</block>
+  <block id="fdb5296df84be4098a8bcf7a2eafe291" category="paragraph">Position (Blau)</block>
+  <block id="fa5f455b4bf3d012d2777718991d0440" category="paragraph">Der Systemadministrator hat diese LED-Funktion aktiviert.</block>
+  <block id="745d735db3f2e8f31dbbfa30d77113d9" category="section-title">NSM-Modul-LEDs</block>
+  <block id="2abced28d6da640242f441beadbf8ee0" category="paragraph">Die LEDs an einem NSM-Modul zeigen an, ob das Modul normal funktioniert, ob es für I/O-Datenverkehr bereit ist und ob Probleme mit der Hardware auftreten.</block>
+  <block id="eb21c45722f5ff9bf64973b0ac209180" category="paragraph">In der folgenden Abbildung und den folgenden Tabellen werden NSM-Modul-LEDs beschrieben, die mit der Funktion eines Moduls und der Funktion der einzelnen NVMe-Ports auf einem Modul verbunden sind.</block>
+  <block id="68f54317fa8b23ea7098189416f011eb" category="image-alt">drw ns224 nsm-leds IEOPS 1270</block>
+  <block id="a5b225465f65d6810c16d66ba3172319" category="cell">Anruf</block>
+  <block id="cb5feb1b7314637725a2e73bdc9f7295" category="cell">Farbe</block>
+  <block id="9594eec95be70e7b1710f730fdda33d9" category="paragraph">Blau</block>
+  <block id="6d9957aa3906726ca4d7614d877977df" category="paragraph">NSM-Modul: Standort</block>
+  <block id="88068e33c78eb72f1b371c7110846085" category="paragraph">Gelb</block>
+  <block id="1903810490ad85ac105168a3e90068d0" category="paragraph">NSM-Modul: Achtung</block>
+  <block id="e5b3a965934bf3ca0a50c8cda04e1b3f" category="paragraph">NVMe Port/Link: Status</block>
+  <block id="e03b09748657a5b63a0374112f96cef8" category="paragraph">NVMe Port/Link: Achtung</block>
+  <block id="ec53a8c4f07baed5d8825072c89799be" category="cell">Status</block>
+  <block id="5767ccac8b9ab75a17e52eb709fb26e8" category="cell">NSM-Warnung (gelb)</block>
+  <block id="a2164070412e695d73fc2ab64c01f149" category="cell">Anschluss LNK (grün)</block>
+  <block id="5a1dea4ae3ffb6c0ab8f9acbbf3c4fda" category="cell">Port-Achtung (Gelb)</block>
+  <block id="f7461aec7fcfa3f30f604927ef643ebc" category="paragraph">NSM normal</block>
+  <block id="d60fd197e540446192f328624ebc9be2" category="paragraph">Alle Bundesstaaten</block>
+  <block id="956b8d84f48336f2a0e561c66edb7f07" category="paragraph">NSM-Fehler</block>
+  <block id="7e5905b08296770ebd816f86cfb84b60" category="paragraph">NSM VPD-Fehler</block>
+  <block id="ec280b965c05518ec9a4070c43b19c7f" category="paragraph">Keine Host-Port-Verbindung</block>
+  <block id="1401dfc837785ee5fb45ba2c53fd991b" category="paragraph">Host-Port-Verbindung aktiv</block>
+  <block id="923a074db98ee6d8f18ca11712164fff" category="paragraph">Ein/blinkt mit Aktivität</block>
+  <block id="25570bb9d9339942629f14699f8f977e" category="paragraph">Host-Port-Verbindung mit Fehler</block>
+  <block id="4402fe228b0b8a78da9019341eb36b7f" category="paragraph">Ein/aus, wenn alle Spuren fehlerhaft sind</block>
+  <block id="ae56bf029d48aa72a5f72c3a20e780b9" category="paragraph">BIOS-Start vom BIOS-Image nach dem Einschalten</block>
+  <block id="cfad0a7419f44ea0c64db24197abbf70" category="paragraph">Blinken</block>
+  <block id="6b6aa0b6d9b620cfef1de19db2c781e5" category="paragraph">Die LEDs an einem AC- oder DC-Netzteil (PSU) zeigen an, ob das Netzteil normal funktioniert oder ob Hardwareprobleme vorliegen.</block>
+  <block id="ddf6d4204e991f952d5f65cedae767ce" category="paragraph">Die folgende Abbildung und die folgenden Tabellen beschreiben die LED an einem Netzteil. (Die Abbildung zeigt ein Wechselstromnetzteil, die LED-Position ist jedoch dieselbe auf dem Gleichstromnetzteil):</block>
+  <block id="cb64a8852ed883dfc686d51492e31bfa" category="image-alt">drw ns224 psu-leds IEOPS 1261</block>
+  <block id="7609b319dac3aca8b9d7c805388fc5e6" category="paragraph">Die zweifarbige LED zeigt die Stromversorgung/Aktivität an, wenn sie grün leuchtet, und einen Fehler, wenn sie gelb ist.</block>
+  <block id="0cb6b469a5da43eb5225c25fab0b5ff0" category="cell">Leistung/Aktivität (grün)</block>
+  <block id="cd5f6c10b859eea6eaed71a2e494c0db" category="paragraph">Kein AC/DC-Strom für das Gehäuse</block>
+  <block id="aade40c62d1308360c2f119536da1c63" category="paragraph">Keine AC/DC-Stromversorgung für das Netzteil</block>
+  <block id="cf335ef3413e902db7461d8f15450cae" category="paragraph">AC/DC-Stromversorgung eingeschaltet, aber Netzteil nicht im Gehäuse</block>
+  <block id="215c6f78a1c194e6228514ff7bdd71cd" category="paragraph">PSU funktioniert ordnungsgemäß</block>
+  <block id="3f01099f03de6897d7388ee1c31f6770" category="paragraph">Netzteilfehler</block>
+  <block id="0da2a2ed379c0a511e6346492e61a8e8" category="paragraph">Lüfterausfall</block>
+  <block id="d78c48ba978ed998f8c4aaf41f2003a1" category="paragraph">Firmware-Aktualisierungsmodus</block>
+  <block id="0485558d80ce3f9e356a60181cefb758" category="section-title">Laufwerk-LEDs</block>
+  <block id="ec2086f8c8aa32f4039431accf799e7e" category="paragraph">Die LEDs eines NVMe-Laufwerks zeigen an, ob es ordnungsgemäß funktioniert oder ob es Probleme mit der Hardware gibt.</block>
+  <block id="1789a93f2267580a7b3d61d32fd8de64" category="paragraph">In der folgenden Abbildung und den folgenden Tabellen werden die beiden LEDs eines NVMe-Laufwerks beschrieben:</block>
+  <block id="82e7f0e876b2809cacccfffb630802cf" category="image-alt">drw ns224 Laufwerk-leds IEOPS 1263</block>
+  <block id="31eef7712c15110e77d39c33fa6398b8" category="paragraph">Leistung/Aktivität</block>
+  <block id="4f64599448fa0ed6d8c8631c9c782051" category="cell">Strom/Aktivität (Grün)</block>
+  <block id="d24aa27125c051e29098493eceace539" category="cell">Zugehörige ODP-LED</block>
+  <block id="73adb82b35cf9e200ec112cf75d968b7" category="paragraph">Laufwerk installiert und betriebsbereit</block>
+  <block id="382b0f5185773fa0f67a8ed8056c7759" category="paragraph">K. A.</block>
+  <block id="04e450c5eabdbe5208c912ed16aa5c5f" category="paragraph">Laufwerksausfall</block>
+  <block id="81c36a08fce93b18a65d7e5214ab26cb" category="paragraph">SES-Geräte-Identifizieren-Set</block>
+  <block id="0adb6ff7f0bdadd155910f204b3330d5" category="paragraph">Blinkt</block>
+  <block id="cc818334a12195812c946efa74959a44" category="paragraph">Achtung (gelb) ist ausgeschaltet</block>
+  <block id="830de589dead0df6a61213a5dc116efd" category="paragraph">SES-Gerätefehler-Bit gesetzt</block>
+  <block id="2475cae13a65975fd4da631c78689624" category="paragraph">Stromsteuerungsfehler</block>
 </blocks>

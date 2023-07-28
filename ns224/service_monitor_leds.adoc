@@ -1,0 +1,408 @@
+---
+permalink: ns224/service-monitor-leds.html 
+sidebar: sidebar 
+keywords: monitor, health, drive, shelf, location, status, condition, led, component, operator, display, panel, nsm, power, supply, drive, monitor drive shelf leds, operator display panel leds, nsm module leds, power supply leds, drive leds 
+summary: Sie können den Zustand Ihres Festplatten-Shelf überwachen, indem Sie Informationen über den Speicherort und die Statusbedingungen der LEDs an den Festplatten-Shelf-Komponenten erhalten. 
+---
+= Überwachen Sie die Festplatten-Shelf-LEDs – NS224-Shelfs
+:allow-uri-read: 
+:icons: font
+:firstname: both:imagesdir: ../media/
+:author: both:imagesdir: ../media/
+:authorinitials: b
+:authors: both:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können den Zustand Ihres Festplatten-Shelf überwachen, indem Sie Informationen über den Speicherort und die Statusbedingungen der LEDs an den Festplatten-Shelf-Komponenten erhalten.
+
+* Die Standort-LEDs (blau) auf dem Bedienfeld des Shelfs (ODP) und beiden NSM-Modulen können aktiviert werden, um die physische Lokalisierung des zu wartende Shelf zu unterstützen: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
++
+Wenn Sie den nicht kennen `_shelf_name_` Führen Sie den aus `storage shelf show` Befehl.
+
++
+Die Standort-LEDs leuchten 30 Minuten lang. Sie können sie ausschalten, indem Sie den gleichen Befehl eingeben, jedoch mit dem `off` Option.
+
+* Ein LED-Status kann sein:
++
+** „Ein“: Die LED-Beleuchtung ist konstant
+** „Aus“: Die LED leuchtet nicht
+** „Blinken“: Die LED schaltet sich je nach FRU-Status in unterschiedlichen Intervallen ein und aus
+** „Beliebiger Status“: Die LED kann „ein“, „aus“ oder „Blinken“ sein.
+
+
+
+
+
+
+== LEDs auf der Bedieneranzeige
+
+Die LEDs am vorderen Bedienfeld des Festplatten-Shelfs (ODP) zeigen an, ob Ihr Festplatten-Shelf ordnungsgemäß funktioniert oder ob Hardware-Probleme auftreten.
+
+In der folgenden Abbildung und Tabelle werden die drei LEDs am ODP beschrieben:
+
+image::../media/drw_ns224_odp_leds_IEOPS-1262.svg[drw ns224 odp-leds IEOPS 1262]
+
+[cols="1,2,1,5"]
+|===
+| LED-Symbol | LED-Name und -Farbe | Bundesland | Beschreibung 
+
+
+ a| 
+image:../media/drw_sas_power_icon.png[""]
+ a| 
+Strom (Grün)
+ a| 
+Ein
+ a| 
+Mindestens ein Netzteil versorgt das Festplatten-Shelf mit Strom.
+
+
+
+ a| 
+image:../media/drw_sas_fault_icon.png[""]
+ a| 
+Achtung (Gelb)
+ a| 
+Ein
+ a| 
+* Bei der Funktion einer der mehreren Shelf-FRUs ist ein Fehler aufgetreten.
++
+Überprüfen Sie Ereignismeldungen, um zu ermitteln, welche Korrekturmaßnahmen ergriffen werden müssen.
+
+* Wenn die zweistellige Shelf-ID ebenfalls blinkt, befindet sich die Shelf-ID in einem ausstehenden Status.
++
+Schalten Sie das Festplatten-Shelf aus und wieder ein, damit die Shelf-ID wirkt.
+
+
+
+
+
+ a| 
+image:../media/drw_sas3_location_icon.gif[""]
+ a| 
+Position (Blau)
+ a| 
+Ein
+ a| 
+Der Systemadministrator hat diese LED-Funktion aktiviert.
+
+|===
+
+
+== NSM-Modul-LEDs
+
+Die LEDs an einem NSM-Modul zeigen an, ob das Modul normal funktioniert, ob es für I/O-Datenverkehr bereit ist und ob Probleme mit der Hardware auftreten.
+
+In der folgenden Abbildung und den folgenden Tabellen werden NSM-Modul-LEDs beschrieben, die mit der Funktion eines Moduls und der Funktion der einzelnen NVMe-Ports auf einem Modul verbunden sind.
+
+image::../media/drw_ns224_nsm_leds_IEOPS-1270.svg[drw ns224 nsm-leds IEOPS 1270]
+
+[cols="1,1,2,4"]
+|===
+| Anruf | LED-Symbol | Farbe | Beschreibung 
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+image:../media/drw_sas3_location_icon.gif[""]
+ a| 
+Blau
+ a| 
+NSM-Modul: Standort
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+image:../media/drw_sas_fault_icon.png[""]
+ a| 
+Gelb
+ a| 
+NSM-Modul: Achtung
+
+
+
+ a| 
+image:../media/legend_icon_03.png[""]
+ a| 
+LNK
+ a| 
+Grün
+ a| 
+NVMe Port/Link: Status
+
+
+
+ a| 
+image:../media/legend_icon_04.png[""]
+ a| 
+image:../media/drw_sas_fault_icon.png[""]
+ a| 
+Gelb
+ a| 
+NVMe Port/Link: Achtung
+
+|===
+[cols="2,1,1,1"]
+|===
+| Status | NSM-Warnung (gelb) | Anschluss LNK (grün) | Port-Achtung (Gelb) 
+
+
+ a| 
+NSM normal
+ a| 
+Aus
+ a| 
+Alle Bundesstaaten
+ a| 
+Aus
+
+
+
+ a| 
+NSM-Fehler
+ a| 
+Ein
+ a| 
+Alle Bundesstaaten
+ a| 
+Alle Bundesstaaten
+
+
+
+ a| 
+NSM VPD-Fehler
+ a| 
+Ein
+ a| 
+Alle Bundesstaaten
+ a| 
+Alle Bundesstaaten
+
+
+
+ a| 
+Keine Host-Port-Verbindung
+ a| 
+Alle Bundesstaaten
+ a| 
+Aus
+ a| 
+Aus
+
+
+
+ a| 
+Host-Port-Verbindung aktiv
+ a| 
+Alle Bundesstaaten
+ a| 
+Ein/blinkt mit Aktivität
+ a| 
+Alle Bundesstaaten
+
+
+
+ a| 
+Host-Port-Verbindung mit Fehler
+ a| 
+Ein
+ a| 
+Ein/aus, wenn alle Spuren fehlerhaft sind
+ a| 
+Ein
+
+
+
+ a| 
+BIOS-Start vom BIOS-Image nach dem Einschalten
+ a| 
+Blinken
+ a| 
+Alle Bundesstaaten
+ a| 
+Alle Bundesstaaten
+
+|===
+
+
+== Netzteil-LEDs
+
+Die LEDs an einem AC- oder DC-Netzteil (PSU) zeigen an, ob das Netzteil normal funktioniert oder ob Hardwareprobleme vorliegen.
+
+Die folgende Abbildung und die folgenden Tabellen beschreiben die LED an einem Netzteil. (Die Abbildung zeigt ein Wechselstromnetzteil, die LED-Position ist jedoch dieselbe auf dem Gleichstromnetzteil):
+
+image::../media/drw_ns224_psu_leds_IEOPS-1261.svg[drw ns224 psu-leds IEOPS 1261]
+
+[cols="1,4"]
+|===
+| Anruf | Beschreibung 
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Die zweifarbige LED zeigt die Stromversorgung/Aktivität an, wenn sie grün leuchtet, und einen Fehler, wenn sie gelb ist.
+
+|===
+[cols="2,1,1"]
+|===
+| Status | Leistung/Aktivität (grün) | Achtung (Gelb) 
+
+
+ a| 
+Kein AC/DC-Strom für das Gehäuse
+ a| 
+Aus
+ a| 
+Aus
+
+
+
+ a| 
+Keine AC/DC-Stromversorgung für das Netzteil
+ a| 
+Aus
+ a| 
+Ein
+
+
+
+ a| 
+AC/DC-Stromversorgung eingeschaltet, aber Netzteil nicht im Gehäuse
+ a| 
+Blinken
+ a| 
+Aus
+
+
+
+ a| 
+PSU funktioniert ordnungsgemäß
+ a| 
+Ein
+ a| 
+Aus
+
+
+
+ a| 
+Netzteilfehler
+ a| 
+Aus
+ a| 
+Ein
+
+
+
+ a| 
+Lüfterausfall
+ a| 
+Aus
+ a| 
+Ein
+
+
+
+ a| 
+Firmware-Aktualisierungsmodus
+ a| 
+Blinken
+ a| 
+Aus
+
+|===
+
+
+== Laufwerk-LEDs
+
+Die LEDs eines NVMe-Laufwerks zeigen an, ob es ordnungsgemäß funktioniert oder ob es Probleme mit der Hardware gibt.
+
+In der folgenden Abbildung und den folgenden Tabellen werden die beiden LEDs eines NVMe-Laufwerks beschrieben:
+
+image::../media/drw_ns224_drive_leds_IEOPS-1263.svg[drw ns224 Laufwerk-leds IEOPS 1263]
+
+[cols="1,2,2"]
+|===
+| Anruf | LED-Name | Farbe 
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Achtung
+ a| 
+Gelb
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Leistung/Aktivität
+ a| 
+Grün
+
+|===
+[cols="2,1,1,1"]
+|===
+| Status | Strom/Aktivität (Grün) | Achtung (Gelb) | Zugehörige ODP-LED 
+
+
+ a| 
+Laufwerk installiert und betriebsbereit
+ a| 
+Ein/blinkt mit Aktivität
+ a| 
+Alle Bundesstaaten
+ a| 
+K. A.
+
+
+
+ a| 
+Laufwerksausfall
+ a| 
+Ein/blinkt mit Aktivität
+ a| 
+Ein
+ a| 
+Achtung (Gelb)
+
+
+
+ a| 
+SES-Geräte-Identifizieren-Set
+ a| 
+Ein/blinkt mit Aktivität
+ a| 
+Blinkt
+ a| 
+Achtung (gelb) ist ausgeschaltet
+
+
+
+ a| 
+SES-Gerätefehler-Bit gesetzt
+ a| 
+Ein/blinkt mit Aktivität
+ a| 
+Ein
+ a| 
+Achtung (Gelb)
+
+
+
+ a| 
+Stromsteuerungsfehler
+ a| 
+Aus
+ a| 
+Alle Bundesstaaten
+ a| 
+Achtung (Gelb)
+
+|===
