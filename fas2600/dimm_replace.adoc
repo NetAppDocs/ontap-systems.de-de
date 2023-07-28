@@ -182,7 +182,7 @@ Wenn Sie die Medienkonverter (QSFPs oder SFPs) entfernt haben, sollten Sie diese
  a| 
 Ein HA-Paar
  a| 
-Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt. Bereiten Sie sich darauf vor, den Bootvorgang zu unterbrechen.
+Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt.
 
 .. Schieben Sie das Steuermodul fest in die offene Position, bis es auf die Mittelebene trifft und vollständig sitzt, und schließen Sie dann den Nockengriff in die verriegelte Position.
 +
@@ -194,12 +194,6 @@ Der Controller beginnt zu booten, sobald er im Gehäuse sitzt.
 
 .. Wenn Sie dies noch nicht getan haben, installieren Sie das Kabelverwaltungsgerät neu.
 .. Verbinden Sie die Kabel mit dem Haken- und Schlaufenband mit dem Kabelmanagement-Gerät.
-.. Wenn die Meldung angezeigt wird `Press Ctrl-C for Boot Menu`, Drücken Sie `Ctrl-C` Um den Bootvorgang zu unterbrechen.
-+
-
-NOTE: Wenn die Eingabeaufforderung nicht angezeigt wird und das Controller-Modul im ONTAP gebootet wird, geben Sie ein `halt`, Und geben Sie an der LOADER-Eingabeaufforderung ein `boot_ontap`, Drücken Sie `Ctrl-C` Wenn Sie dazu aufgefordert werden, und starten Sie dann in den Wartungsmodus.
-
-.. Wählen Sie im angezeigten Menü die Option zum Starten im Wartungsmodus aus.
 
 
 
@@ -214,12 +208,7 @@ NOTE: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige
 
 .. Wenn Sie dies noch nicht getan haben, installieren Sie das Kabelverwaltungsgerät neu.
 .. Verbinden Sie die Kabel mit dem Haken- und Schlaufenband mit dem Kabelmanagement-Gerät.
-.. Schließen Sie die Stromkabel wieder an die Netzteile und an die Stromquellen an, schalten Sie den Netzstrom ein, um den Bootvorgang zu starten, und drücken Sie dann `Ctrl-C` Nachdem Sie den gesehen haben `Press Ctrl-C for Boot Menu` Nachricht:
-+
-
-NOTE: Wenn die Eingabeaufforderung nicht angezeigt wird und das Controller-Modul im ONTAP gebootet wird, geben Sie ein `halt`, Und geben Sie an der LOADER-Eingabeaufforderung ein `boot_ontap`, Drücken Sie `Ctrl-C` Wenn Sie dazu aufgefordert werden, und starten Sie dann in den Wartungsmodus.
-
-.. Wählen Sie im Startmenü die Option Wartungsmodus aus.
+.. Schließen Sie die Netzkabel wieder an die Netzteile und die Stromquellen an, und schalten Sie dann die Stromversorgung ein, um den Startvorgang zu starten.
 
 
 |===
@@ -227,132 +216,6 @@ NOTE: Wenn die Eingabeaufforderung nicht angezeigt wird und das Controller-Modul
 
 
 
-== Schritt 5: Führen Sie die Diagnose auf Systemebene aus
-
-Nach der Installation eines neuen DIMM sollten Sie die Diagnose ausführen.
-
-Ihr System muss die LOADER-Eingabeaufforderung aufweisen, um die Diagnose auf Systemebene zu starten.
-
-Alle Befehle im Diagnoseverfahren werden vom Controller ausgegeben, der die Komponente ersetzt wird.
-
-. Wenn der zu wartenden Controller nicht an der LOADER-Eingabeaufforderung angezeigt wird, führen Sie die folgenden Schritte aus:
-+
-.. Wählen Sie im angezeigten Menü die Option Wartungsmodus.
-.. Nachdem der Controller in den Wartungsmodus gebootet wurde, beenden Sie den Controller: `halt`
-+
-Nachdem Sie den Befehl ausgegeben haben, sollten Sie warten, bis das System an der LOADER-Eingabeaufforderung angehalten wird.
-
-+
-
-NOTE: Während des Startvorgangs können Sie sicher reagieren `y` So werden Sie aufgefordert:
-
-+
-*** Eine Eingabeaufforderung mit einer Warnmeldung, dass Sie beim Aufrufen des Wartungsmodus in einer HA-Konfiguration sicherstellen müssen, dass der gesunde Controller weiterhin ausgefallen ist.
-
-
-
-
-. Rufen Sie an der LOADER-Eingabeaufforderung die speziellen Treiber auf, die speziell für die Diagnose auf Systemebene entwickelt wurden, um ordnungsgemäß zu funktionieren: `boot_diags`
-+
-Während des Startvorgangs können Sie sicher reagieren `y` Zu den Aufforderungen, bis die Eingabeaufforderung für den Wartungsmodus (*>) angezeigt wird.
-
-. Führen Sie eine Diagnose für den Systemspeicher aus: `sldiag device run -dev mem`
-. Stellen Sie sicher, dass keine Hardwareprobleme durch den Austausch der DIMMs entstanden sind: `sldiag device status -dev mem -long -state failed`
-+
-Die Diagnose auf Systemebene gibt die Eingabeaufforderung zurück, wenn keine Testfehler auftreten oder den vollständigen Status von Fehlern, die durch das Testen der Komponente entstehen, angezeigt wird.
-
-. Fahren Sie auf der Grundlage des Ergebnisses des vorhergehenden Schritts fort:
-+
-[cols="1,2"]
-|===
-| Wenn die Diagnose auf Systemebene testet... | Dann... 
-
-
- a| 
-Wurden ohne Fehler abgeschlossen
- a| 
-.. Löschen Sie die Statusprotokolle: `sldiag device clearstatus`
-.. Überprüfen Sie, ob das Protokoll gelöscht wurde: `sldiag device status`
-+
-Die folgende Standardantwort wird angezeigt:
-
-+
-SLDIAG: Es sind keine Protokollnachrichten vorhanden.
-
-.. Beenden des Wartungsmodus: `halt`
-+
-Der Controller zeigt die LOADER-Eingabeaufforderung an.
-
-.. Booten des Controllers über die LOADER-Eingabeaufforderung: `bye`
-.. Zurückkehren des Controllers in den normalen Betrieb:
-
-
-|===
-+
-[cols="1,2"]
-|===
-| Wenn Ihr Controller in... | Dann... 
-
-
- a| 
-Ein HA-Paar
- a| 
-Geben Sie zurück: `storage failover giveback -ofnode _replacement_node_name_`
-
-
-NOTE: Wenn Sie die automatische Rückgabe deaktivieren, aktivieren Sie sie mit dem Befehl Storage Failover modify erneut.
-
-
-
- a| 
-Eine eigenständige Konfiguration
- a| 
-Fahren Sie mit dem nächsten Schritt fort.
-
-Es ist keine Aktion erforderlich.
-
-Sie haben die Diagnose auf Systemebene abgeschlossen.
-
-
-
- a| 
-Es kam zu einigen Testfehlern
- a| 
-Bestimmen Sie die Ursache des Problems:
-
-.. Beenden des Wartungsmodus: `halt`
-+
-Nachdem Sie den Befehl ausgegeben haben, warten Sie, bis das System an der LOADER-Eingabeaufforderung angehalten wird.
-
-.. Schalten Sie die Netzteile aus oder wieder ein, abhängig von der Anzahl der Controller-Module im Chassis:
-+
-*** Wenn Sie zwei Controller-Module im Chassis besitzen, lassen Sie die Netzteile eingeschaltet, um das andere Controller-Modul mit Strom zu versorgen.
-*** Wenn Sie ein Controller-Modul im Gehäuse haben, schalten Sie die Netzteile aus und ziehen Sie sie von den Netzteilen ab.
-
-
-.. Überprüfen Sie, ob Sie alle Aspekte, die bei der Ausführung von Diagnose auf Systemebene zu beachten sind, dass die Kabel sicher angeschlossen sind und die Hardwarekomponenten ordnungsgemäß im Storage-System installiert wurden.
-.. Booten Sie das zu betreuende Controller-Modul, und unterbrechen Sie den Boot, indem Sie auf drücken `Ctrl-C` Wenn Sie dazu aufgefordert werden, zum Startmenü zu gelangen:
-+
-*** Wenn Sie zwei Controller-Module im Chassis haben, setzen Sie das Controller-Modul vollständig ein, das Sie im Chassis warten.
-+
-Das Controller-Modul wird bei vollem Sitz hochgestartet.
-
-*** Wenn Sie ein Controller-Modul im Chassis haben, schließen Sie die Netzteile an und schalten Sie sie dann ein.
-
-
-.. Wählen Sie aus dem Menü die Option Start in den Wartungsmodus.
-.. Beenden Sie den Wartungsmodus, indem Sie den folgenden Befehl eingeben: `halt`
-+
-Nachdem Sie den Befehl ausgegeben haben, warten Sie, bis das System an der LOADER-Eingabeaufforderung angehalten wird.
-
-.. Führen Sie den Diagnosetest auf Systemebene erneut aus.
-
-
-|===
-
-
-
-
-== Schritt 6: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+== Schritt 5: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

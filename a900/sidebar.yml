@@ -1,7 +1,6 @@
 ---
 section: a900
 title: AFF A900 Systeme
-url: "/a900/index.html"
 entries:
 - title: Installation und Einrichtung
   pdf-filename: Installation und Einrichtung von AFF A900
@@ -17,64 +16,68 @@ entries:
 - title: Wartung
   pdf-filename: AFF A900 Wartung
   entries:
-  - title: E/A-Modul hinzufügen
-    url: "/a900/add_io_module.html"
+  - title: Überblick
+    url: "/a900/maintain-overview.html"
   - title: Boot-Medien
     pdf-filename: AFF A900-Startmedien
     entries:
     - title: Überblick
       url: "/a900/bootmedia_replace_overview.html"
-    - title: Integrierte Verschlüsselungsschlüssel werden vor dem Herunterfahren überprüft
+    - title: Integrierte Verschlüsselungsschlüssel überprüfen
       url: "/a900/bootmedia_encryption_preshutdown_checks.html"
-    - title: Schalten Sie den beeinträchtigten Regler aus
+    - title: Schalten Sie den beeinträchtigten Controller aus
       url: "/a900/bootmedia_impaired_controller_shutdown.html"
     - title: Boot-Image ersetzen
       url: "/a900/bootmedia_replace.html"
-    - title: Starten Sie das Recovery-Image
+    - title: Recovery-Image starten
       url: "/a900/bootmedia_recovery_image.html"
-    - title: Schritte zum Austausch von Medien nach dem Booten für OKM, NSE und NVE
+    - title: Stellen Sie OKM, NSE und NVE wieder her
       url: "/a900/bootmedia_encryption_restore.html"
-    - title: Senden Sie das fehlerhafte Teil an NetApp zurück
+    - title: Rückgabe fehlgeschlagen. Teil an NetApp
       url: "/a900/bootmedia_complete_rma.html"
   - title: Chassis
     pdf-filename: AFF A900-Gehäuse
     entries:
     - title: Überblick
       url: "/a900/chassis_replace_overview.html"
-    - title: Schalten Sie den beeinträchtigten Regler aus
+    - title: Schalten Sie den beeinträchtigten Controller aus
       url: "/a900/chassis_replace_shutdown.html"
-    - title: Ersetzen Sie die Hardware
+    - title: Ersetzen Sie das Gehäuse
       url: "/a900/chassis_replace_move_hardware.html"
-    - title: Wiederherstellen und Überprüfen der Konfiguration
+    - title: Stellen Sie die Konfiguration wieder her und überprüfen Sie sie
       url: "/a900/chassis_replace_complete_system_restore_rma.html"
-  - title: Controller-Modul
+  - title: Controller
     pdf-filename: AFF A900-Controller-Modul
     entries:
     - title: Überblick
       url: "/a900/controller_replace_overview.html"
-    - title: Schalten Sie den beeinträchtigten Regler aus
+    - title: Schalten Sie den beeinträchtigten Controller aus
       url: "/a900/controller_replace_shutdown.html"
-    - title: Ersetzen Sie die Controller-Modul-Hardware
+    - title: Controller austauschen
       url: "/a900/controller_replace.html"
     - title: Stellen Sie die Systemkonfiguration wieder her und überprüfen Sie sie
       url: "/a900/controller_replace_system_config_restore_and_verify.html"
-    - title: Das System neu aufführen
+    - title: System neu auffindbar
       url: "/a900/controller_replace_recable_reassign_disks.html"
     - title: Vollständige Systemwiederherstellung
       url: "/a900/controller_replace_complete_system_restoration_rma.html"
   - title: DIMM
     url: "/a900/dimm_replace.html"
-  - title: Leistungsmodul für die Ablagensteuerung
+  - title: DFPM
     url: "/a900/dcpm_NVRAM11_battery_replace.html"
   - title: Ventilator
     url: "/a900/fan_swap_out.html"
   - title: I/O-Modul
-    url: "/a900/pci_cards_and_risers_replace.html"
-  - title: LED-USB-Modul
+    entries:
+    - title: Ersetzen Sie das E/A-Modul
+      url: "/a900/pci_cards_and_risers_replace.html"
+    - title: E/A-Modul hinzufügen
+      url: "/a900/add_io_module.html"
+  - title: LED USB
     url: "/a900/led_module_replace.html"
-  - title: NVRAM-Modul und/oder NVRAM-DIMMs
+  - title: NVRAM
     url: "/a900/nvram_module_or_nvram_dimm_replacement.html"
   - title: Stromversorgung
     url: "/a900/power_supply_swap_out.html"
-  - title: RTC-Akku
+  - title: Akku in Echtzeit
     url: "/a900/rtc_battery_replace.html"

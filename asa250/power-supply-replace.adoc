@@ -1,0 +1,173 @@
+---
+permalink: asa250/power-supply-replace.html 
+sidebar: sidebar 
+keywords: asa a250, replace a power supply 
+summary: 'Beim Austausch eines Netzteils muss das Netzteil \ (PSU\) von der Stromquelle getrennt, das Netzkabel abgezogen, das alte Netzteil entfernt und das Ersatznetzteil installiert werden. Anschließend wird es wieder an die Stromquelle angeschlossen.' 
+---
+= Ersetzen Sie ein Netzteil - ASA A250
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Beim Austausch eines Netzteils (PSU) wird das Zielnetzteil von der Stromquelle getrennt, das Netzkabel abgezogen, das alte Netzteil entfernt und das Ersatznetzteil installiert und dann wieder an die Stromquelle angeschlossen.
+
+* Die Netzteile sind redundant und Hot-Swap-fähig.
+* Dieses Verfahren wird für den Austausch eines Netzteils auf einmal beschrieben.
++
+
+NOTE: Es empfiehlt sich, das Netzteil innerhalb von zwei Minuten nach dem Entfernen aus dem Gehäuse auszutauschen. Das System funktioniert weiterhin, aber ONTAP sendet Meldungen über das heruntergestufte Netzteil an die Konsole, bis das Netzteil ersetzt wird.
+
+* Die Netzteile haben einen automatischen Bereich.
++
+
+IMPORTANT: Vermischen Sie PSUs nicht mit unterschiedlichen Effizienzwerten. Immer ersetzen wie für „Gefällt mir“.
+
+
+
+Wenden Sie das entsprechende Verfahren für Ihren Netzteiltyp an: AC oder DC.
+
+[role="tabbed-block"]
+====
+.Option 1: Wechselstromnetzteil ersetzen
+--
+Verwenden Sie das folgende Video oder die tabellarischen Schritte, um das Netzteil zu ersetzen:
+
+.Animation: Ersetzen Sie das Netzteil
+video::86487f5e-20ff-43e6-99ae-ac5b015c1aa5[panopto]
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Identifizieren Sie das Netzteil, das Sie ersetzen möchten, basierend auf Konsolenfehlermeldungen oder durch die rote Fehler-LED am Netzteil.
+. Trennen Sie das Netzteil:
++
+.. Öffnen Sie die Stromkabelhalterung, und ziehen Sie dann das Netzkabel vom Netzteil ab.
+
+
+. Entfernen Sie das Netzteil, indem Sie den Griff nach oben drehen, die Verriegelungslasche drücken und dann das Netzteil aus dem Controller-Modul herausziehen.
++
+
+CAUTION: Das Netzteil ist kurz. Verwenden Sie immer zwei Hände, um sie zu unterstützen, wenn Sie sie aus dem Controller-Modul entfernen, damit es nicht plötzlich aus dem Controller-Modul schwingen und Sie verletzen.
+
++
+image::../media/drw_a250_replace_psu.png[drw a250 ersetzen sie das netzteil]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Blaue Netzteilverriegelungslasche 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Stromversorgung
+
+|===
+. Installieren Sie das Ersatz-Netzteil im Controller-Modul:
++
+.. Stützen und richten Sie die Kanten des Netzteils mit beiden Händen an der Öffnung im Controller-Modul aus.
+.. Schieben Sie das Netzteil vorsichtig in das Controller-Modul, bis die Verriegelungsklammer einrastet.
++
+Die Netzteile werden nur ordnungsgemäß mit dem internen Anschluss in Kontakt treten und auf eine Weise verriegeln.
+
++
+
+NOTE: Um eine Beschädigung des internen Anschlusses zu vermeiden, verwenden Sie beim Einschieben des Netzteils in das System keine übermäßige Kraft.
+
+
+
+. Schließen Sie die Netzteilverkabelung wieder an:
++
+.. Schließen Sie das Netzkabel wieder an das Netzteil an.
+.. Befestigen Sie das Netzkabel mit der Netzkabelhalterung am Netzteil.
+
+
++
+Sobald das Netzteil wieder mit Strom versorgt wird, sollte die Status-LED grün leuchten.
+
+. Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"^] Seite für weitere Informationen.
+
+
+--
+.Option 2: Ersetzen Sie ein DC-Netzteil
+--
+Führen Sie zum Austauschen eines DC-Netzteils die folgenden Schritte durch.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Identifizieren Sie das Netzteil, das Sie ersetzen möchten, basierend auf Konsolenfehlermeldungen oder durch die rote Fehler-LED am Netzteil.
+. Trennen Sie das Netzteil:
++
+.. Lösen Sie den D-SUB-DC-Netzkabelanschluss mit den Flügelschrauben am Stecker.
+.. Ziehen Sie das Netzkabel vom Netzteil ab, und legen Sie es beiseite.
+
+
+. Entfernen Sie das Netzteil, indem Sie den Griff nach oben drehen, die Verriegelungslasche drücken und dann das Netzteil aus dem Controller-Modul herausziehen.
++
+
+CAUTION: Das Netzteil ist kurz. Verwenden Sie immer zwei Hände, um sie zu unterstützen, wenn Sie sie aus dem Controller-Modul entfernen, damit es nicht plötzlich aus dem Controller-Modul schwingen und Sie verletzen.
+
++
+image::../media/drw_dcpsu_remove-replace-generic_IEOPS-788.svg[drw dcpsu remove Generic IEOPS 788 ersetzen]
+
++
+[cols="1,3"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.svg["Breite=10 px"]
+ a| 
+Flügelschrauben
+
+
+
+ a| 
+image:../media/legend_icon_02.svg["Breite=10 px"]
+ a| 
+D-SUB-DC-Netzkabelanschluss
+
+
+
+ a| 
+image:../media/legend_icon_03.svg["Breite=10 px"]
+ a| 
+Netzteilgriff
+
+
+
+ a| 
+image:../media/legend_icon_04.svg["Breite=10 px"]
+ a| 
+Blaue Netzteilverriegelungslasche
+
+|===
+. Installieren Sie das Ersatz-Netzteil im Controller-Modul:
++
+.. Stützen und richten Sie die Kanten des Netzteils mit beiden Händen an der Öffnung im Controller-Modul aus.
+.. Schieben Sie das Netzteil vorsichtig in das Controller-Modul, bis die Verriegelungsklammer einrastet.
++
+Die Netzteile werden nur ordnungsgemäß mit dem internen Anschluss in Kontakt treten und auf eine Weise verriegeln.
+
++
+
+NOTE: Um eine Beschädigung des internen Anschlusses zu vermeiden, verwenden Sie beim Einschieben des Netzteils in das System keine übermäßige Kraft.
+
+
+
+. Schließen Sie das D-SUB-Gleichstromkabel wieder an:
++
+.. Schließen Sie den Netzkabelanschluss an das Netzteil an.
+.. Befestigen Sie das Netzkabel mit den Rändelschrauben am Netzteil.
++
+Sobald das Netzteil wieder mit Strom versorgt wird, sollte die Status-LED grün leuchten.
+
+
+
+. Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"^] Seite für weitere Informationen.
+
+
+--
+====

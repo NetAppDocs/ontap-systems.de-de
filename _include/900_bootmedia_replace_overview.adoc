@@ -1,0 +1,24 @@
+= 
+:allow-uri-read: 
+
+
+Das Boot-Medium speichert einen primären und sekundären Satz von Systemdateien (Boot-Image), die das System beim Booten verwendet. Je nach Netzwerkkonfiguration können Sie entweder einen unterbrechungsfreien oder störenden Austausch durchführen.
+
+Sie müssen über ein USB-Flash-Laufwerk verfügen, das auf FAT32 formatiert ist, und über die entsprechende Speichermenge, um die zu speichern `image_xxx.tgz`.
+
+Außerdem müssen Sie die kopieren `image_xxx.tgz` Datei auf dem USB-Flash-Laufwerk zur späteren Verwendung in diesem Verfahren.
+
+* Bei den unterbrechungsfreien und unterbrechungsfreien Methoden zum Austausch von Boot-Medien müssen Sie den wiederherstellen `var` Filesystem:
++
+** Beim unterbrechungsfreien Austausch benötigt das HA-Paar keine Verbindung zu einem Netzwerk, um den wiederherzustellen `var` File-System. Das HA-Paar in einem einzelnen Chassis hat eine interne E0S-Verbindung, die zum Transfer verwendet wird `var` Konfigurieren zwischen ihnen.
+** Für den störenden Austausch benötigen Sie keine Netzwerkverbindung, um den wiederherzustellen `var` Dateisystem, aber der Prozess erfordert zwei Neustarts.
+
+
+* Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
+* Es ist wichtig, dass Sie die Befehle in diesen Schritten auf dem richtigen Controller anwenden:
++
+** Der Controller _Impared_ ist der Controller, an dem Sie Wartungsarbeiten durchführen.
+** Der _Healthy_ Controller ist der HA-Partner des beeinträchtigten Controllers.
+
+
+

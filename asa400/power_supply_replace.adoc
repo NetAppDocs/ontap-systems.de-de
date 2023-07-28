@@ -1,0 +1,68 @@
+---
+permalink: asa400/power-supply-replace.html 
+sidebar: sidebar 
+keywords: asa a400, asa, a400, replace, replacing, power, supply, psu, disconnect, target, psu, unplug, power, cable, removing, remove, replacement, source, replace a power supply 
+summary: 'Beim Austausch eines Netzteils \ (PSU\) muss das Zielnetzteil von der Stromquelle getrennt, das Netzkabel abgezogen, das alte Netzteil entfernt und das Ersatznetzteil installiert werden. Anschließend muss das Ersatznetzteil wieder an die Stromquelle angeschlossen werden.' 
+---
+= Austauschen eines Netzteils - ASA A400
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Beim Austausch eines Netzteils (Netzteils) muss das Zielnetzteil von der Stromquelle getrennt, das Netzkabel abgezogen, das alte Netzteil entfernt und das Ersatznetzteil installiert werden. Anschließend muss das Ersatznetzteil wieder an die Stromquelle angeschlossen werden.
+
+* Die Netzteile sind redundant und Hot-Swap-fähig.
+* Dieses Verfahren ist für den Austausch eines Netzteils nach dem anderen beschrieben.
++
+
+NOTE: Als Best Practice empfiehlt es sich, das Netzteil innerhalb von zwei Minuten vom Gehäuse zu ersetzen. Das System funktioniert weiterhin, aber ONTAP sendet Meldungen an die Konsole über das beeinträchtigte Netzteil, bis das Netzteil ersetzt wird.
+
++
+
+IMPORTANT: Vermischen Sie PSUs nicht mit unterschiedlichen Effizienzwerten. Immer ersetzen wie für „Gefällt mir“.
+
+
+
+Sie können die folgende Animation, Abbildung oder die schriftlichen Schritte zum Austausch des Netzteils verwenden.
+
+.Animation - Ersetzen Sie ein Netzteil
+video::60567649-288a-48b7-bc90-aae100199959[panopto]
+image::../media/drw_A400_psu.png[drw A400 netzteil]
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Identifizieren Sie das zu ersetzenden Netzteil anhand von Konsolenfehlern oder über die LEDs an den Netzteilen.
+. Trennen Sie das Netzteil:
++
+.. Öffnen Sie die Netzkabelhalterung, und ziehen Sie dann das Netzkabel vom Netzteil ab.
+.. Ziehen Sie das Netzkabel von der Stromversorgung ab.
+
+
+. Entfernen Sie das Netzteil:
++
+.. Drehen Sie den Nockengriff so, dass er zum Herausziehen der Stromversorgung aus dem Gehäuse verwendet werden kann.
+.. Drücken Sie die blaue Verriegelungslasche, um das Netzteil aus dem Gehäuse zu lösen.
+.. Ziehen Sie das Netzteil mit beiden Händen aus dem Gehäuse und legen Sie es dann beiseite.
+
+
+. Halten und richten Sie die Kanten des Netzteils mit beiden Händen an der Öffnung im Controller-Modul aus, und drücken Sie dann vorsichtig das Netzteil in das Controller-Modul, bis die Verriegelungslasche einrastet.
++
+Die Netzteile werden nur ordnungsgemäß mit dem internen Anschluss in Kontakt treten und auf eine Weise verriegeln.
+
++
+
+NOTE: Um Schäden am internen Stecker zu vermeiden, sollten Sie beim Einschieben der Stromversorgung in das System keine übermäßige Kraft verwenden.
+
+. Drehen Sie den Nockengriff so, dass er bündig gegen die Stromversorgung steht.
+. Schließen Sie die Verkabelung des Netzteils wieder an:
++
+.. Schließen Sie das Netzkabel wieder an das Netzteil und die Stromversorgung an.
+.. Befestigen Sie das Netzkabel mithilfe der Netzkabelhalterung am Netzteil.
+
+
++
+Sobald die Stromversorgung wiederhergestellt ist, sollte die Status-LED grün leuchten.
+
+. Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"^] Seite für weitere Informationen.
+

@@ -1,13 +1,79 @@
 ---
-layout: landing-page 
-sidebar: sidebar 
 permalink: a700s/index.html 
-summary: Mit der Dokumentation des AFF A700s Systems können Sie das System installieren, einrichten und warten. 
+sidebar: sidebar 
+keywords: aff A700s maintenance, maintenance, repairing A700s, repairing aff A700s, replace aff A700s components, replace aff A700s components 
+summary: Wartung der ASA A700s Hardware 
 ---
-= AFF A700s System - Dokumentation
-:hardbreaks:
+= Instandhaltung der AFF A700s Hardware
 :allow-uri-read: 
-:linkattrs: 
-:imagesdir: ./media/
+:icons: font
+:imagesdir: ../media/
 
 
+[role="lead"]
+Für das AFF A700s Storage-System können Sie folgende Komponenten Wartungsverfahren durchführen:
+
+
+
+== Boot-Medien
+
+Das Startmedium speichert einen primären und sekundären Satz von Boot-Image-Dateien, die das System beim Booten verwendet.
+
+
+
+== Chassis
+
+Das Chassis ist das physische Gehäuse, in dem alle Controller-Komponenten wie Controller-/CPU-Einheit, Stromversorgung und I/O-Vorgänge untergebracht sind
+
+
+
+== Controller
+
+Ein Controller besteht aus einer Hauptplatine, Firmware und Software. Er steuert die Laufwerke und implementiert die ONTAP-Funktionen.
+
+
+
+== DIMM
+
+Sie müssen ein DIMM (Dual-Inline-Speichermodul) ersetzen, wenn ein Speicherfehler vorliegt oder ein ausgefallenes DIMM vorliegt.
+
+
+
+== Laufwerk
+
+Ein Laufwerk ist ein Gerät, das den physischen Speicher für Daten bereitstellt.
+
+
+
+== Ventilator
+
+Der Lüfter kühlt den Controller.
+
+
+
+== NVRAM-Akku
+
+Eine NVRAM-Batterie ist dafür verantwortlich, das NVRAM-Modul weiterhin mit Strom zu versorgen.
+
+
+
+== NVRAM
+
+ The NVRAM module (Non-Volatile Random Access Memory) allows the controller to retain data across power cycles or system reboots.
+
+
+== PCIe-Karte
+
+Eine PCIe-Karte (Peripheral Component Interconnect Express) ist eine Erweiterungskarte, die in den PCIe-Steckplatz auf der Hauptplatine eingesteckt wird.
+
+
+
+== Stromversorgung
+
+Ein Netzteil stellt eine redundante Stromversorgung in einem Controller Shelf bereit.
+
+
+
+== Akku in Echtzeit
+
+Eine Echtzeituhr-Batterie bewahrt die Systemdaten und -Uhrzeitinformationen, wenn die Stromversorgung ausgeschaltet ist.

@@ -1,7 +1,7 @@
 ---
 permalink: fas8300/nvdimm-replace.html 
 sidebar: sidebar 
-keywords: fas8300, fas8700, replace, nvmem, battery, remove, controller, module, controller, metrocluster, configuration, diagnostics, aggregate, configuration, reinstall, run, system, switch, shut, down 
+keywords: fas8300, fas8700, replace, nvmem, battery, remove, controller, module, controller, metrocluster, configuration, aggregate, configuration, reinstall, run, system, switch, shut, down 
 summary: Sie müssen das NVDIMM im Controller-Modul ersetzen, wenn sich Ihr System registriert, dass die Flashlebensdauer fast am Ende liegt oder dass das identifizierte NVDIMM im Allgemeinen nicht ordnungsgemäß ist. Andernfalls kommt es zu einer Systempanik. 
 ---
 = Ersetzen Sie ein NVDIMM – FAS8300 und FAS8700
@@ -262,7 +262,7 @@ NOTE: Sichtprüfung des NVDIMM, um sicherzustellen, dass es gleichmäßig ausger
 
 == Schritt 4: Installieren Sie das Controller-Modul
 
-Nachdem Sie die Komponente im Controller-Modul ersetzt haben, müssen Sie das Controller-Modul wieder in das Gehäuse einsetzen und dann im Wartungsmodus booten.
+Nachdem Sie die Komponente im Controller-Modul ersetzt haben, müssen Sie das Controller-Modul wieder in das Gehäuse einsetzen und es dann booten.
 
 Sie können die folgende Animation, Illustration oder die geschriebenen Schritte zur Installation des Controller-Moduls im Gehäuse verwenden.
 
@@ -301,46 +301,15 @@ Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt
 NOTE: Wenn das System im Startmenü stoppt, wählen Sie die Option zum Booten in LOADER.
 
 .. Geben Sie an der LOADER-Eingabeaufforderung ein `bye` Um die PCIe-Karten und andere Komponenten neu zu initialisieren.
-.. Unterbrechen Sie den Boot-Prozess und booten Sie an der LOADER-Eingabeaufforderung, indem Sie drücken `Ctrl-C`.
-+
-Wenn das System im Startmenü stoppt, wählen Sie die Option zum Booten in LOADER.
 
 
 
 
 
 
+== Schritt 5: Stellen Sie das Controller-Modul wieder in Betrieb
 
-== Schritt 5: Führen Sie die Diagnose aus
-
-Nachdem Sie das NVDIMM im System ersetzt haben, sollten Sie Diagnosetests für diese Komponente ausführen.
-
-Ihr System muss die LOADER-Eingabeaufforderung aufweisen, um die Diagnose zu starten.
-
-Alle Befehle im Diagnoseverfahren werden vom Controller ausgegeben, der die Komponente ersetzt wird.
-
-.Schritte
-. Wenn der zu wartenden Controller nicht an der LOADER-Eingabeaufforderung angezeigt wird, booten Sie den Controller neu: `system node halt -node _node_name_`
-+
-Nachdem Sie den Befehl ausgegeben haben, sollten Sie warten, bis das System an der LOADER-Eingabeaufforderung angehalten wird.
-
-. Rufen Sie an der LOADER-Eingabeaufforderung die speziellen Treiber auf, die speziell für die Diagnose auf Systemebene entwickelt wurden, um ordnungsgemäß zu funktionieren: `boot_diags`
-. Wählen Sie im angezeigten Menü *Scansystem* aus, um die Ausführung der Diagnosetests zu aktivieren.
-. Wählen Sie im angezeigten Menü die Option *Speicher testen* aus.
-. Wählen Sie im angezeigten Menü * NVDIMM Test* aus.
-. Fahren Sie auf der Grundlage des Ergebnisses des vorhergehenden Schritts fort:
-+
-** Wenn der Test fehlgeschlagen ist, korrigieren Sie den Fehler, und führen Sie den Test erneut aus.
-** Wenn der Test keine Fehler gemeldet hat, wählen Sie `Reboot` Über das Menü, um das System neu zu starten.
-
-
-
-
-
-
-== Schritt 6: Stellen Sie das Controller-Modul nach dem Ausführen der Diagnose wieder in Betrieb
-
-Nach Abschluss der Diagnose müssen Sie das System erneut einschalten, das Controller-Modul zurückgeben und dann die automatische Rückgabe aktivieren.
+Sie müssen das System neu verstellen, das Controller-Modul zurückgeben und dann das automatische Giveback erneut aktivieren.
 
 .Schritte
 . Das System nach Bedarf neu einsetzen.
@@ -353,7 +322,7 @@ Wenn Sie die Medienkonverter (QSFPs oder SFPs) entfernt haben, sollten Sie diese
 
 
 
-== Schritt 7: Aggregate in einer MetroCluster Konfiguration mit zwei Nodes zurückwechseln
+== Schritt 6: Aggregate in einer MetroCluster Konfiguration mit zwei Nodes zurückwechseln
 
 Nachdem Sie in einer MetroCluster Konfiguration mit zwei Nodes den FRU-Austausch abgeschlossen haben, können Sie den MetroCluster SwitchBack-Vorgang durchführen. Damit wird die Konfiguration in ihren normalen Betriebszustand zurückversetzt, wobei die Synchronisations-Storage Virtual Machines (SVMs) auf dem ehemals beeinträchtigten Standort jetzt aktiv sind und Daten aus den lokalen Festplattenpools bereitstellen.
 
@@ -411,6 +380,6 @@ Wenn ein Wechsel eine lange Zeit in Anspruch nimmt, können Sie den Status der i
 
 
 
-== Schritt 8: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+== Schritt 7: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

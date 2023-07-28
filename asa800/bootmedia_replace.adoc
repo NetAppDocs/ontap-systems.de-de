@@ -1,0 +1,254 @@
+---
+permalink: asa800/bootmedia-replace.html 
+sidebar: sidebar 
+keywords: asa a800, replace the boot media 
+summary: Sie finden das ausgefallene Startmedium im Controller-Modul, indem Sie Riser 3 am Controller-Modul entfernen, bevor Sie das Boot-Medium ersetzen können. 
+---
+= Ersetzen Sie das Startmedium - ASA A800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Zum Austauschen des Startmediums müssen Sie das beeinträchtigte Controller-Modul entfernen, das Ersatzstartmedium installieren und das Boot-Image auf ein USB-Flash-Laufwerk übertragen.
+
+
+
+== Schritt 1: Entfernen Sie das Controller-Modul
+
+Sie müssen das Controller-Modul aus dem Chassis entfernen, wenn Sie das Controller-Modul ersetzen oder eine Komponente im Controller-Modul ersetzen.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Trennen Sie die Netzteile des Controller-Moduls von der Quelle.
+. Lösen Sie die Netzkabelhalter, und ziehen Sie anschließend die Kabel von den Netzteilen ab.
+. Lösen Sie den Haken- und Schlaufenriemen, mit dem die Kabel an das Kabelmanagement-Gerät gebunden sind, und ziehen Sie dann die Systemkabel und SFP- und QSFP-Module (falls erforderlich) vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren.
++
+Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation des Kabelverwaltungsgeräts die Kabel organisiert sind.
+
+. Entfernen Sie das Kabelführungs-Gerät aus dem Controller-Modul und legen Sie es beiseite.
+. Drücken Sie beide Verriegelungsriegel nach unten, und drehen Sie dann beide Verriegelungen gleichzeitig nach unten.
++
+Das Controller-Modul wird leicht aus dem Chassis entfernt.
+
++
+image::../media/drw_a800_pcm_remove.png[drw a800 pcm entfernen]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Verriegelungsverschluss
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Sicherungsstift
+
+|===
+. Schieben Sie das Controller-Modul aus dem Gehäuse.
++
+Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen, während Sie es aus dem Gehäuse schieben.
+
+. Das Steuermodul auf eine stabile, flache Oberfläche legen und den Luftkanal öffnen:
++
+.. Drücken Sie die Verriegelungslaschen an den Seiten des Luftkanals in Richtung der Mitte des Controller-Moduls.
+.. Schieben Sie den Luftkanal in Richtung der Lüftermodule, und drehen Sie ihn dann nach oben in die vollständig geöffnete Position.
+
+
+
+
+image::../media/drw_a800_open_air_duct.png[drw a800 Freiluftkanal]
+
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Verriegelungsklammern für Luftkanäle
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Schieben Sie den Luftkanal in Richtung Lüftermodule
+
+
+
+ a| 
+image:../media/legend_icon_03.png[""]
+ a| 
+Luftkanal in Richtung Lüftermodule drehen
+
+|===
+
+
+== Schritt 2: Ersetzen Sie die Startmedien
+
+Sie finden das ausgefallene Startmedium im Controller-Modul, indem Sie Riser 3 am Controller-Modul entfernen, bevor Sie das Boot-Medium ersetzen können.
+
+Sie benötigen einen Kreuzschlitzschraubendreher, um die Schraube zu entfernen, mit der die Bootmedien befestigt sind.
+
+. Suchen Sie das Startmedium:
++
+image::../media/drw_a800_boot_media_replace.png[drw a800 Startmedien ersetzen]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Luftkanal
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Riser 3
+
+
+
+ a| 
+image:../media/legend_icon_03.png[""]
+ a| 
+Kreuzschlitzschraubendreher #1
+
+
+
+ a| 
+image:../media/legend_icon_04.png[""]
+ a| 
+Schraube für Boot-Medien
+
+
+
+ a| 
+image:../media/legend_icon_05.png[""]
+ a| 
+Boot-Medien
+
+|===
+. Entfernen Sie die Boot-Medien aus dem Controller-Modul:
++
+.. Entfernen Sie mit einem #1 Kreuzschlitzschraubendreher die Schraube, mit der das Bootmedium befestigt ist, und setzen Sie die Schraube an einem sicheren Ort beiseite.
+.. Fassen Sie die Seiten des Startmediums an, drehen Sie die Startmedien vorsichtig nach oben, ziehen Sie dann die Startmedien gerade aus dem Sockel und legen Sie sie beiseite.
+
+
+. Installieren Sie die Ersatzstartmedien in das Controller-Modul:
++
+.. Richten Sie die Kanten der Startmedien am Buchsengehäuse aus, und schieben Sie sie vorsichtig in die Buchse.
+.. Drehen Sie das Startmedium nach unten zur Hauptplatine.
+.. Befestigen Sie das Bootmedium mit der Boot-Medienschraube am Motherboard.
++
+Ziehen Sie die Schraube nicht zu fest, oder beschädigen Sie die Bootsmedien möglicherweise nicht.
+
+
+
+. Setzen Sie den Riser wieder in das Controller-Modul ein.
+. Luftkanal schließen:
++
+.. Den Luftkanal nach unten drehen.
+.. Schieben Sie den Luftkanal in Richtung der Steigleitungen, bis er einrastet.
+
+
+
+
+
+
+== Schritt 3: Übertragen Sie das Startabbild auf das Startmedium
+
+Der installierte Ersatz-Startdatenträger ist ohne Startabbild, sodass Sie ein Startabbild über ein USB-Flash-Laufwerk übertragen müssen.
+
+.Bevor Sie beginnen
+* Sie müssen über ein USB-Flash-Laufwerk verfügen, das auf FAT32 formatiert ist und eine Kapazität von mindestens 4 GB aufweist.
+* Eine Kopie der gleichen Bildversion von ONTAP wie der beeinträchtigte Controller. Das entsprechende Image können Sie im Abschnitt „Downloads“ auf der NetApp Support-Website herunterladen
++
+** Wenn NVE aktiviert ist, laden Sie das Image mit NetApp Volume Encryption herunter, wie in der Download-Schaltfläche angegeben.
+** Wenn NVE nicht aktiviert ist, laden Sie das Image ohne NetApp Volume Encryption herunter, wie im Download-Button dargestellt.
+
+
+* Wenn Ihr System ein HA-Paar ist, müssen Sie eine Netzwerkverbindung haben.
+* Wenn es sich bei Ihrem System um ein eigenständiges System handelt, benötigen Sie keine Netzwerkverbindung, Sie müssen jedoch beim Wiederherstellen des var-Dateisystems einen zusätzlichen Neustart durchführen.
+
+
+.Schritte
+. Laden Sie das entsprechende Service-Image von der NetApp Support Site auf das USB-Flash-Laufwerk herunter und kopieren Sie es.
++
+.. Laden Sie das Service-Image auf Ihren Arbeitsbereich auf Ihrem Laptop herunter.
+.. Entpacken Sie das Service-Image.
++
+
+NOTE: Wenn Sie den Inhalt mit Windows extrahieren, verwenden Sie WinZip nicht zum Extrahieren des Netzboots-Images. Verwenden Sie ein anderes Extraktionstool, wie 7-Zip oder WinRAR.
+
++
+Die Image-Datei „ungezippte Dienste“ enthält zwei Ordner:
+
++
+*** Booten
+*** efi
+
+
+.. kopieren Sie den efi-Ordner in das oberste Verzeichnis auf dem USB-Flash-Laufwerk. + das USB-Flash-Laufwerk sollte den efi-Ordner und die gleiche Service Image (BIOS)-Version von dem haben, was der beeinträchtigte Controller läuft.
+.. Entfernen Sie das USB-Flash-Laufwerk von Ihrem Laptop.
+
+
+. Wenn Sie dies noch nicht getan haben, schließen Sie den Luftkanal:
++
+.. Schwenken Sie den Luftkanal bis nach unten zum Controller-Modul.
+.. Schieben Sie den Luftkanal in Richtung der Steigleitungen, bis die Verriegelungslaschen einrasten.
+.. Überprüfen Sie den Luftkanal, um sicherzustellen, dass er richtig sitzt und fest sitzt.
++
+image::../media/drw_a800_close_air_duct.png[drw a800 schließen Luftkanal]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Luftkanal
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Riser
+
+|===
+
+
+. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
+. Installieren Sie das Kabelverwaltungsgerät neu und führen Sie das System nach Bedarf wieder ein.
++
+Denken Sie beim Neuinstallieren der Medienkonverter (SFPs oder QSFPs) daran, wenn sie entfernt wurden.
+
+. Schließen Sie das Netzkabel an das Netzteil an, und setzen Sie den Netzkabelhalter wieder ein.
+. Stecken Sie das USB-Flash-Laufwerk in den USB-Steckplatz des Controller-Moduls.
++
+Stellen Sie sicher, dass Sie das USB-Flash-Laufwerk in den für USB-Geräte gekennzeichneten Steckplatz und nicht im USB-Konsolenport installieren.
+
+. Schieben Sie das Controller-Modul vorsichtig ganz in das System, bis sich die Verriegelungshaken des Controller-Moduls erheben, drücken Sie fest auf die Verriegelungshaken, um den Sitz des Controller-Moduls zu beenden, und schwenken Sie dann die Verriegelungshaken in die verriegelte Position über den Stiften des Controller-Moduls.
++
+Der Controller beginnt zu booten, sobald er vollständig im Chassis installiert ist.
+
+. Unterbrechen Sie den Boot-Vorgang, indem Sie Strg-C drücken, um an der LOADER-Eingabeaufforderung zu stoppen.
++
+Wenn Sie diese Meldung verpassen, drücken Sie Strg-C, wählen Sie die Option zum Booten im Wartungsmodus aus, und halten Sie dann den Controller zum Booten in LOADER an.
+
+

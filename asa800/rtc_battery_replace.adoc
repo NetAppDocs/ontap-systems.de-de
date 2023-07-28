@@ -1,0 +1,302 @@
+---
+permalink: asa800/rtc-battery-replace.html 
+sidebar: sidebar 
+keywords: asa a800, replace the real-time clock battery 
+summary: 'Sie ersetzen den Echtzeituhr-Akku (RTC) im Controller-Modul, sodass die Dienste und Anwendungen Ihres Systems, die von der genauen Zeitsynchronisierung abhängen, weiterhin funktionieren.' 
+---
+= Ersetzen Sie die Echtzeituhr-Batterie - ASA A800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie ersetzen den Echtzeituhr-Akku (RTC) im Controller-Modul, sodass die Dienste und Anwendungen Ihres Systems, die von der genauen Zeitsynchronisierung abhängen, weiterhin funktionieren.
+
+* Sie können dieses Verfahren bei allen Versionen von ONTAP verwenden, die von Ihrem System unterstützt werden
+* Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+
+
+
+
+== Schritt 1: Schalten Sie den beeinträchtigten Regler aus
+
+Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
+
+.Über diese Aufgabe
+* Wenn Sie NetApp Storage Encryption verwenden, müssen Sie die MSID mithilfe der Anweisungen im zurückgesetzt haben link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/return-seds-unprotected-mode-task.html["SEDs werden in den ungeschützten Modus versetzt"].
+* Wenn Sie über ein SAN-System verfügen, müssen Sie Ereignismeldungen geprüft haben  `cluster kernel-service show`) Für beeinträchtigte Controller SCSI-Blade. Der `cluster kernel-service show` Der Befehl zeigt den Node-Namen, den Quorum-Status dieses Node, den Verfügbarkeitsstatus dieses Node und den Betriebsstatus dieses Node an.
++
+Jeder Prozess des SCSI-Blades sollte sich im Quorum mit den anderen Nodes im Cluster befinden. Probleme müssen behoben werden, bevor Sie mit dem Austausch fortfahren.
+
+* Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE anzeigt, um die Berechtigung und den Zustand zu erhalten, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^].
+
+
+.Schritte
+. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden: `cluster1:> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deaktivieren Sie das automatische Giveback von der Konsole des gesunden Controllers: `storage failover modify –node local -auto-giveback false`
++
+
+NOTE: Wenn Sie sehen _Möchten Sie Auto-Giveback deaktivieren?_, geben Sie ein `y`.
+
+. Nehmen Sie den beeinträchtigten Controller zur LOADER-Eingabeaufforderung:
++
+[cols="1,2"]
+|===
+| Wenn der eingeschränkte Controller angezeigt wird... | Dann... 
+
+
+ a| 
+Die LOADER-Eingabeaufforderung
+ a| 
+Wechseln Sie zu Controller-Modul entfernen.
+
+
+
+ a| 
+Warten auf Giveback...
+ a| 
+Drücken Sie Strg-C, und antworten Sie dann `y` Wenn Sie dazu aufgefordert werden.
+
+
+
+ a| 
+Eingabeaufforderung für das System oder Passwort
+ a| 
+Übernehmen oder stoppen Sie den beeinträchtigten Regler von der gesunden Steuerung: `storage failover takeover -ofnode _impaired_node_name_`
+
+Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drücken Sie Strg-C, und antworten Sie dann `y`.
+
+|===
+
+
+
+
+== Schritt 2: Entfernen Sie das Controller-Modul
+
+Sie müssen das Controller-Modul aus dem Chassis entfernen, wenn Sie das Controller-Modul ersetzen oder eine Komponente im Controller-Modul ersetzen.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Trennen Sie die Netzteile des Controller-Moduls von der Quelle.
+. Lösen Sie die Netzkabelhalter, und ziehen Sie anschließend die Kabel von den Netzteilen ab.
+. Lösen Sie den Haken- und Schlaufenriemen, mit dem die Kabel an das Kabelmanagement-Gerät gebunden sind, und ziehen Sie dann die Systemkabel und SFP- und QSFP-Module (falls erforderlich) vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren.
++
+Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation des Kabelverwaltungsgeräts die Kabel organisiert sind.
+
+. Entfernen Sie das Kabelführungs-Gerät aus dem Controller-Modul und legen Sie es beiseite.
+. Drücken Sie beide Verriegelungsriegel nach unten, und drehen Sie dann beide Verriegelungen gleichzeitig nach unten.
++
+Das Controller-Modul wird leicht aus dem Chassis entfernt.
+
++
+image::../media/drw_a800_pcm_remove.png[drw a800 pcm entfernen]
+
+
+
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Verriegelungsverschluss 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Sicherungsstift
+
+|===
+. Schieben Sie das Controller-Modul aus dem Gehäuse.
++
+Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen, während Sie es aus dem Gehäuse schieben.
+
+. Das Steuermodul auf eine stabile, flache Oberfläche legen und den Luftkanal öffnen:
++
+.. Drücken Sie die Verriegelungslaschen an den Seiten des Luftkanals in Richtung der Mitte des Controller-Moduls.
+.. Schieben Sie den Luftkanal in Richtung der Lüftermodule, und drehen Sie ihn dann nach oben in die vollständig geöffnete Position.
++
+image::../media/drw_a800_open_air_duct.png[drw a800 Freiluftkanal]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Verriegelungsklammern für Luftkanäle 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Schieben Sie den Luftkanal in Richtung Lüftermodule
+
+
+
+ a| 
+image:../media/legend_icon_03.png[""]
+ a| 
+Luftkanal in Richtung Lüftermodule drehen
+
+|===
+
+
+
+
+
+
+== Schritt 3: Entfernen Sie die PCIe Riser
+
+Sie müssen einen oder mehrere PCIe-Riser entfernen, wenn Sie bestimmte Hardwarekomponenten im Controller-Modul ersetzen.
+
+. Entfernen Sie den PCIe-Riser aus dem Controller-Modul:
++
+.. Entfernen Sie alle SFP- oder QSFP-Module, die sich möglicherweise in den PCIe-Karten enthalten haben.
+.. Drehen Sie die Riserverriegelung auf der linken Seite des Riser nach oben und in Richtung der Lüftermodule.
++
+Der Riser hebt sich leicht vom Controller-Modul auf.
+
+.. Heben Sie den Riser an, und legen Sie ihn in Richtung der Lüfter, so dass die Metalllippe auf dem Riser den Rand des Controller-Moduls entfernt, heben Sie den Riser aus dem Controller-Modul und legen Sie ihn dann auf eine stabile, flache Oberfläche.
++
+image::../media/drw_a800_riser_2_3_remove.png[drw a800 Riser 2 3 entfernen]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Luftkanal 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Riserkarte 2 (mittlerer Riser), Verriegelungsriegel
+
+|===
+
+
+
+
+
+
+== Schritt 4: Ersetzen Sie die RTC-Batterie
+
+Um die RTC-Batterie zu ersetzen, suchen Sie sie im Controller, und befolgen Sie die einzelnen Schritte.
+
+. Suchen Sie den RTC-Akku unter Riser 2.
++
+image::../media/drw_a800_rtc_battery_replace.png[drw a800 rtc-Akku ersetzen]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Luftkanal 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Riser 2
+
+
+
+ a| 
+image:../media/legend_icon_03.png[""]
+ a| 
+RTC-Akku und Gehäuse
+
+|===
+. Schieben Sie den Akku vorsichtig von der Halterung weg, drehen Sie ihn vom Halter weg, und heben Sie ihn dann aus der Halterung.
++
+
+NOTE: Beachten Sie die Polarität der Batterie, während Sie sie aus dem Halter entfernen. Der Akku ist mit einem Pluszeichen gekennzeichnet und muss korrekt in der Halterung positioniert werden. Ein Pluszeichen in der Nähe des Halters zeigt an, wie der Akku positioniert werden soll.
+
+. Entfernen Sie den Ersatzakku aus dem antistatischen Versandbeutel.
+. Notieren Sie die Polarität der RTC-Batterie, und setzen Sie sie anschließend in den Halter ein, indem Sie die Batterie schräg kippen und nach unten drücken.
+. Überprüfen Sie die Batterie visuell, um sicherzustellen, dass sie vollständig in den Halter eingebaut ist und die Polarität korrekt ist.
+
+
+
+
+== Schritt 5: Installieren Sie die PCIe Riser
+
+Sie installieren die PCIe Riser neu, nachdem Sie die Hardwarekomponenten in der beeinträchtigten Steuerung ausgetauscht haben.
+
+. Installieren Sie den Riser in das Controller-Modul:
++
+.. Richten Sie die Lippe des Riser an der Unterseite der Bleche des Controller-Moduls aus.
+.. Führen Sie den Riser entlang der Stifte im Controller-Modul und senken Sie den Riser anschließend in das Controller-Modul.
+.. Drehen Sie die Verriegelung nach unten, und klicken Sie sie in die verriegelte Position.
++
+Bei der Verriegelung ist die Verriegelung bündig mit der Oberseite des Riser und der Riser sitzt im Controller-Modul.
+
+.. Setzen Sie alle SFP-Module wieder ein, die von den PCIe-Karten entfernt wurden.
+
+
+
+
+
+
+== Schritt 6: Setzen Sie das Controller-Modul wieder ein und setzen Sie Zeit/Datum nach dem RTC-Batterieaustausch ein
+
+Nachdem Sie eine Komponente innerhalb des Controller-Moduls ersetzt haben, müssen Sie das Controller-Modul im Systemgehäuse neu installieren, die Uhrzeit und das Datum auf dem Controller zurücksetzen und es dann booten.
+
+. Wenn Sie dies noch nicht getan haben, schließen Sie den Luftkanal oder die Abdeckung des Controller-Moduls.
+. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
++
+Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein, wenn Sie dazu aufgefordert werden.
+
+. Das System nach Bedarf neu einsetzen.
++
+Wenn Sie die Medienkonverter (QSFPs oder SFPs) entfernt haben, sollten Sie diese erneut installieren, wenn Sie Glasfaserkabel verwenden.
+
+. Wenn die Netzteile nicht angeschlossen waren, schließen Sie sie wieder an, und setzen Sie die Netzkabelhalter wieder ein.
+. Führen Sie die Neuinstallation des Controller-Moduls durch:
++
+.. Drücken Sie das Controller-Modul fest in das Gehäuse, bis es auf die Mittelebene trifft und vollständig sitzt.
++
+Die Verriegelungen steigen, wenn das Controller-Modul voll eingesetzt ist.
+
++
+
+NOTE: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige Kraft verwenden, um Schäden an den Anschlüssen zu vermeiden.
+
++
+Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt.
+
+.. Drehen Sie die Verriegelungsriegel nach oben, und kippen Sie sie so, dass sie die Sicherungsstifte entfernen und dann in die verriegelte Position absenken.
+.. Wenn Sie dies noch nicht getan haben, installieren Sie das Kabelverwaltungsgerät neu.
+.. Halten Sie den Controller an der LOADER-Eingabeaufforderung an.
+
+
+. Uhrzeit und Datum auf dem Controller zurücksetzen:
++
+.. Prüfen Sie Datum und Uhrzeit auf dem gesunden Controller mit dem `show date` Befehl.
+.. Überprüfen Sie an der LOADER-Eingabeaufforderung auf dem Ziel-Controller die Zeit und das Datum.
+.. Ändern Sie bei Bedarf das Datum mit dem `set date mm/dd/yyyy` Befehl.
+.. Stellen Sie bei Bedarf die Uhrzeit in GMT mithilfe des ein `set time hh:mm:ss` Befehl.
+.. Bestätigen Sie Datum und Uhrzeit auf dem Ziel-Controller.
+
+
+. Geben Sie an der LOADER-Eingabeaufforderung ein `bye` Um die PCIe-Karten und andere Komponenten neu zu initialisieren und den Controller neu zu starten.
+. Wiederherstellung des normalen Betriebs des Controllers durch Zurückgeben des Speichers: `storage failover giveback -ofnode _impaired_node_name_`
+. Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut: `storage failover modify -node local -auto-giveback true`
+
+
+
+
+== Schritt 7: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

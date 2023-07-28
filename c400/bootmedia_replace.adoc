@@ -17,8 +17,18 @@ Zum Austauschen des Startmediums müssen Sie das beeinträchtigte Controller-Mod
 == Schritt 1: Entfernen Sie das Controller-Modul
 
 [role="lead"]
+Zum Austauschen des Startmediums müssen Sie das beeinträchtigte Controller-Modul entfernen, das Ersatzstartmedium installieren und das Boot-Image auf ein USB-Flash-Laufwerk übertragen.
+
+
+
+== Schritt 1: Entfernen Sie das Controller-Modul
+
 Um auf Komponenten im Controller-Modul zuzugreifen, müssen Sie das Controller-Modul aus dem Gehäuse entfernen.
 
+Sie können das Controller-Modul mithilfe der folgenden Animation, Illustration oder der geschriebenen Schritte aus dem Gehäuse entfernen.
+
+.Animation - Entfernen Sie das Controller-Modul
+video::ca74d345-e213-4390-a599-aae10019ec82[panopto]
 .Schritte
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Lösen Sie die Netzkabelhalter, und ziehen Sie anschließend die Kabel von den Netzteilen ab.
@@ -48,7 +58,7 @@ Verriegelungsriegel
  a| 
 image:../media/legend_icon_02.png[""]
  a| 
-Der Controller bewegt sich leicht aus dem Chassis
+Schieben Sie den Controller aus dem Chassis heraus
 
 |===
 . Schieben Sie das Controller-Modul aus dem Gehäuse.
@@ -62,7 +72,6 @@ Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen,
 
 == Schritt 2: Ersetzen Sie die Startmedien
 
-[role="lead"]
 Suchen Sie das Boot-Medium im Controller-Modul (siehe FRU-Zuordnung am Controller-Modul) und befolgen Sie dann die Anweisungen, um es zu ersetzen.
 
 .Bevor Sie beginnen
@@ -154,7 +163,6 @@ Entfernen Sie gegebenenfalls die Startmedien, und setzen Sie sie wieder in den S
 
 == Schritt 3: Übertragen Sie das Startabbild auf das Startmedium
 
-[role="lead"]
 Das installierte Ersatzstartmedium verfügt nicht über ein Startabbild. Sie müssen also ein Startabbild über ein USB-Flash-Laufwerk übertragen.
 
 .Bevor Sie beginnen

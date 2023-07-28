@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: aff a700, fas9000, storage encryption, licenses, storage encryption, volume encryption, serial number, metrocluster, switchback 
 summary: 'Um den Ersatzvorgang abzuschließen und den Betrieb des Systems wiederherzustellen, müssen Sie den Storage erneut herstellen, die NetApp Storage Encryption Konfiguration (falls erforderlich) wiederherstellen und die Lizenzen für den neuen Controller installieren.' 
 ---
-= Komplette Systemwiederherstellung - AFF A700 und FAS9000
+= Vollständige Systemwiederherstellung - FAS9000
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -20,7 +20,9 @@ Um den Ersatzvorgang abzuschließen und den Betrieb des Systems wiederherzustell
 Sie müssen neue Lizenzen für den Node _Replacement_ installieren, wenn der beeinträchtigte Knoten ONTAP-Funktionen verwendete, die eine Standard-Lizenz (Node-locked) erfordern. Bei Standardlizenzen sollte jeder Node im Cluster über seinen eigenen Schlüssel für die Funktion verfügen.
 
 .Über diese Aufgabe
-Bis Sie Lizenzschlüssel installieren, sind Funktionen, für die Standardlizenzen erforderlich sind, weiterhin für den Node _Replacement_ verfügbar. Wenn der beeinträchtigte Knoten jedoch der einzige Node im Cluster war, der eine Lizenz für die Funktion besitzt, sind keine Konfigurationsänderungen an der Funktion zulässig. Durch die Verwendung nicht lizenzierter Funktionen auf dem Knoten können Sie möglicherweise nicht mit Ihrer Lizenzvereinbarung einverstanden sein. Sie sollten daher den Ersatzlizenzschlüssel oder die Schlüssel so schnell wie möglich auf dem Node _Replacement_ installieren.
+Bis Sie Lizenzschlüssel installieren, sind Funktionen, für die Standardlizenzen erforderlich sind, weiterhin für den Node _Replacement_ verfügbar. Wenn der beeinträchtigte Knoten jedoch der einzige Node im Cluster war, der eine Lizenz für die Funktion besitzt, sind keine Konfigurationsänderungen an der Funktion zulässig.
+
+Durch die Verwendung nicht lizenzierter Funktionen auf dem Knoten können Sie möglicherweise nicht mit Ihrer Lizenzvereinbarung einverstanden sein. Sie sollten daher den Ersatzlizenzschlüssel oder die Schlüssel so schnell wie möglich auf dem Node _Replacement_ installieren.
 
 Die Lizenzschlüssel müssen im 28-stelligen Format vorliegen.
 
@@ -28,17 +30,12 @@ Sie haben eine 90-Tage-Nachfrist zur Installation der Lizenzschlüssel. Nach Abl
 
 Wenn sich der Node in einer MetroCluster-Konfiguration befindet und alle Nodes an einem Standort ersetzt wurden, müssen vor dem Wechsel die Lizenzschlüssel auf dem Node _Replacement_ oder den Nodes installiert werden.
 
-. Wenn Sie neue Lizenzschlüssel benötigen, rufen Sie die Ersatz-Lizenzschlüssel auf der NetApp Support Site im Abschnitt „My Support“ unter „Software-Lizenzen“ auf.
-+
-https://mysupport.netapp.com/site/global/dashboard["NetApp Support"]
-
+.Schritte
+. Wenn Sie neue Lizenzschlüssel benötigen, holen Sie sich die Ersatzlizenz auf dem https://mysupport.netapp.com/site/global/dashboard["NetApp Support Website"] Im Abschnitt „My Support“ unter „Software-Lizenzen“.
 +
 
 NOTE: Die neuen Lizenzschlüssel, die Sie benötigen, werden automatisch generiert und an die E-Mail-Adresse in der Datei gesendet. Wenn Sie die E-Mail mit den Lizenzschlüssel nicht innerhalb von 30 Tagen erhalten, sollten Sie sich an den technischen Support wenden.
 
-
-
-.Schritte
 . Installieren Sie jeden Lizenzschlüssel: `+system license add -license-code license-key, license-key...+`
 . Entfernen Sie ggf. die alten Lizenzen:
 +

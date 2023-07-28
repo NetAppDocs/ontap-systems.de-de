@@ -1,0 +1,317 @@
+= Schritt 1: Schalten Sie den beeinträchtigten Regler aus
+:allow-uri-read: 
+
+
+Sie müssen ein DIMM im Controller-Modul ersetzen, wenn Ihr System eine steigende Anzahl korrigierbarer Fehlerkorrekturcodes (ECC) registriert; andernfalls wird eine Systempanik verursacht.
+
+.Bevor Sie beginnen
+Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+
+Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
+
+
+
+== Schritt 1: Schalten Sie den beeinträchtigten Regler aus
+
+Fahren Sie den Regler herunter oder übernehmen Sie ihn mit einer der folgenden Optionen.
+
+[role="tabbed-block"]
+====
+.Option 1: Die meisten Systeme
+--
+Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
+
+.Über diese Aufgabe
+* Wenn Sie NetApp Storage Encryption verwenden, müssen Sie die MSID mithilfe der Anweisungen im zurückgesetzt haben link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/return-seds-unprotected-mode-task.html["SEDs werden in den ungeschützten Modus versetzt"].
+* Wenn Sie über ein SAN-System verfügen, müssen Sie Ereignismeldungen geprüft haben  `cluster kernel-service show`) Für beeinträchtigte Controller SCSI-Blade. Der `cluster kernel-service show` Der Befehl zeigt den Node-Namen, den Quorum-Status dieses Node, den Verfügbarkeitsstatus dieses Node und den Betriebsstatus dieses Node an.
++
+Jeder Prozess des SCSI-Blades sollte sich im Quorum mit den anderen Nodes im Cluster befinden. Probleme müssen behoben werden, bevor Sie mit dem Austausch fortfahren.
+
+* Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE anzeigt, um die Berechtigung und den Zustand zu erhalten, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^].
+
+
+.Schritte
+. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden: `cluster1:> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deaktivieren Sie das automatische Giveback von der Konsole des gesunden Controllers: `storage failover modify –node local -auto-giveback false`
++
+
+NOTE: Wenn Sie sehen _Möchten Sie Auto-Giveback deaktivieren?_, geben Sie ein `y`.
+
+. Nehmen Sie den beeinträchtigten Controller zur LOADER-Eingabeaufforderung:
++
+[cols="1,2"]
+|===
+| Wenn der eingeschränkte Controller angezeigt wird... | Dann... 
+
+
+ a| 
+Die LOADER-Eingabeaufforderung
+ a| 
+Wechseln Sie zu Controller-Modul entfernen.
+
+
+
+ a| 
+Warten auf Giveback...
+ a| 
+Drücken Sie Strg-C, und antworten Sie dann `y` Wenn Sie dazu aufgefordert werden.
+
+
+
+ a| 
+Eingabeaufforderung für das System oder Passwort
+ a| 
+Übernehmen oder stoppen Sie den beeinträchtigten Regler von der gesunden Steuerung: `storage failover takeover -ofnode _impaired_node_name_`
+
+Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drücken Sie Strg-C, und antworten Sie dann `y`.
+
+|===
+
+
+--
+.Option 2: Controller befindet sich in einem MetroCluster
+--
+
+NOTE: Verwenden Sie dieses Verfahren nicht, wenn sich Ihr System in einer MetroCluster-Konfiguration mit zwei Knoten befindet.
+
+Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
+
+* Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE anzeigt, um die Berechtigung und den Zustand zu erhalten, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^].
+* Wenn Sie über eine MetroCluster-Konfiguration verfügen, müssen Sie bestätigt haben, dass der MetroCluster-Konfigurationsstatus konfiguriert ist und dass die Nodes in einem aktivierten und normalen Zustand vorliegen (`metrocluster node show`).
+
+
+.Schritte
+. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deaktivieren Sie das automatische Giveback von der Konsole des gesunden Controllers: `storage failover modify –node local -auto-giveback false`
+. Nehmen Sie den beeinträchtigten Controller zur LOADER-Eingabeaufforderung:
++
+[cols="1,2"]
+|===
+| Wenn der eingeschränkte Controller angezeigt wird... | Dann... 
+
+
+ a| 
+Die LOADER-Eingabeaufforderung
+ a| 
+Wechseln Sie zu Controller-Modul entfernen.
+
+
+
+ a| 
+Warten auf Giveback...
+ a| 
+Drücken Sie Strg-C, und antworten Sie dann `y` Wenn Sie dazu aufgefordert werden.
+
+
+
+ a| 
+Eingabeaufforderung des Systems oder Passwort (Systempasswort eingeben)
+ a| 
+Übernehmen oder stoppen Sie den beeinträchtigten Regler von der gesunden Steuerung: `storage failover takeover -ofnode _impaired_node_name_`
+
+Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drücken Sie Strg-C, und antworten Sie dann `y`.
+
+|===
+
+
+--
+====
+
+
+== Schritt 2: Entfernen Sie das Controller-Modul
+
+Um auf Komponenten innerhalb des Controllers zuzugreifen, müssen Sie zuerst das Controller-Modul aus dem System entfernen und dann die Abdeckung am Controller-Modul entfernen.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Ziehen Sie die Kabel vom beeinträchtigten Controller-Modul ab, und verfolgen Sie, wo die Kabel angeschlossen waren.
+. Schieben Sie die Terrakotta-Taste am Nockengriff nach unten, bis sie entsperrt wird.
++
+.Animation - Entfernen Sie den Controller
+video::256721fd-4c2e-40b3-841a-adf2000df5fa[panopto]
++
+image::../media/drw_a900_remove_PCM.png[drw a900 PCM entfernen]
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Freigabetaste für den CAM-Griff
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+CAM-Griff
+
+|===
+. Drehen Sie den Nockengriff so, dass er das Controller-Modul vollständig aus dem Gehäuse herausrückt, und schieben Sie dann das Controller-Modul aus dem Gehäuse.
++
+Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen, während Sie es aus dem Gehäuse schieben.
+
+. Setzen Sie die Abdeckung des Controller-Moduls auf eine stabile, flache Oberfläche, drücken Sie die blaue Taste auf der Abdeckung, schieben Sie die Abdeckung auf die Rückseite des Controller-Moduls, und schwenken Sie sie dann nach oben und heben Sie sie vom Controller-Modul ab.
++
+image::../media/drw_a900_PCM_open.png[drw a900 PCM offen]
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Verriegelungstaste für die Controllermodulabdeckung
+
+|===
+
+
+
+
+== Schritt 3: Ersetzen Sie die DIMMs
+
+Um die DIMMs auszutauschen, suchen Sie sie im Controller und befolgen Sie die Schritte in der jeweiligen Reihenfolge.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Suchen Sie die DIMMs auf dem Controller-Modul.
+
+
+image::../media/drw_a900_DIMM_map.png[drw a900 DIMM-Karte]
+
+. Werfen Sie das DIMM aus dem Steckplatz, indem Sie die beiden DIMM-Auswerferlaschen auf beiden Seiten des DIMM langsam auseinander drücken und dann das DIMM aus dem Steckplatz schieben.
++
+
+IMPORTANT: Halten Sie das DIMM vorsichtig an den Rändern, um Druck auf die Komponenten auf der DIMM-Leiterplatte zu vermeiden.
+
++
+.Animation - DIMM ersetzen
+video::db161030-298a-4ae4-b902-adf2000e2aa4[panopto]
++
+image::../media/drw_a900_replace_PCM_dimms.png[drw a900 ersetzen PCM-dimms]
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+DIMM-Auswerferlaschen
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+DIMM
+
+|===
+. Entfernen Sie das Ersatz-DIMM aus dem antistatischen Versandbeutel, halten Sie das DIMM an den Ecken und richten Sie es am Steckplatz aus.
++
+Die Kerbe zwischen den Stiften am DIMM sollte mit der Lasche im Sockel aufliegen.
+
+. Vergewissern Sie sich, dass sich die DIMM-Auswerferlaschen am Anschluss in der geöffneten Position befinden und setzen Sie das DIMM-Auswerfer anschließend in den Steckplatz ein.
++
+Das DIMM passt eng in den Steckplatz, sollte aber leicht einpassen. Falls nicht, richten Sie das DIMM-Modul mit dem Steckplatz aus und setzen Sie es wieder ein.
+
++
+
+IMPORTANT: Prüfen Sie das DIMM visuell, um sicherzustellen, dass es gleichmäßig ausgerichtet und vollständig in den Steckplatz eingesetzt ist.
+
+. Drücken Sie vorsichtig, aber fest auf die Oberseite des DIMM, bis die Auswurfklammern über den Kerben an den Enden des DIMM einrasten.
+. Schließen Sie die Abdeckung des Controller-Moduls.
+
+
+
+
+== Schritt 4: Installieren Sie den Controller
+
+Nachdem Sie die Komponenten im Controller-Modul installiert haben, müssen Sie das Controller-Modul wieder in das Systemgehäuse installieren und das Betriebssystem booten.
+
+Bei HA-Paaren mit zwei Controller-Modulen im selben Chassis ist die Sequenz, in der Sie das Controller-Modul installieren, besonders wichtig, da sie versucht, neu zu booten, sobald Sie es vollständig im Chassis einsetzen.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Wenn dies noch nicht geschehen ist, bringen Sie die Abdeckung am Controller-Modul wieder an.
++
+image::../media/drw_a900_PCM_open.png[drw a900 PCM offen]
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Verriegelungstaste für die Controllermodulabdeckung
+
+|===
+. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
++
+.Animation - Controller installieren
+video::099237f3-d7f2-4749-86e2-adf2000df53c[panopto]
++
+image::../media/drw_a900_remove_PCM.png[drw a900 PCM entfernen]
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Freigabetaste für den CAM-Griff
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+CAM-Griff
+
+|===
++
+
+NOTE: Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein, wenn Sie dazu aufgefordert werden.
+
+. Verkabeln Sie nur die Management- und Konsolen-Ports, sodass Sie auf das System zugreifen können, um die Aufgaben in den folgenden Abschnitten auszuführen.
++
+
+NOTE: Sie schließen die übrigen Kabel später in diesem Verfahren an das Controller-Modul an.
+
+. Führen Sie die Neuinstallation des Controller-Moduls durch:
++
+.. Wenn Sie dies noch nicht getan haben, installieren Sie das Kabelverwaltungsgerät neu.
+.. Drücken Sie das Controller-Modul fest in das Gehäuse, bis es auf die Mittelebene trifft und vollständig sitzt.
++
+Die Verriegelungen steigen, wenn das Controller-Modul voll eingesetzt ist.
+
++
+
+IMPORTANT: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige Kraft verwenden, um Schäden an den Anschlüssen zu vermeiden.
+
++
+Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt.
+
+.. Drehen Sie die Verriegelungsriegel nach oben, und kippen Sie sie so, dass sie die Sicherungsstifte entfernen und dann in die verriegelte Position absenken.
+
+
+
+
+
+
+== Schritt 5: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

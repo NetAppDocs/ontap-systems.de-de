@@ -1,0 +1,80 @@
+= 
+:allow-uri-read: 
+
+
+Beim Austausch eines Netzteils muss das Netzteil ausgeschaltet, getrennt und entfernt werden. Außerdem muss das Netzteil installiert, angeschlossen und das Ersatznetzteil eingeschaltet werden.
+
+Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+
+.Über diese Aufgabe
+* Die Netzteile sind redundant und Hot-Swap-fähig.
+* Dieses Verfahren ist für den Austausch eines Netzteils nach dem anderen beschrieben.
++
+
+NOTE: Als Best Practice empfiehlt es sich, das Netzteil innerhalb von zwei Minuten vom Gehäuse zu ersetzen. Das System funktioniert weiterhin, aber ONTAP sendet Meldungen an die Konsole über das beeinträchtigte Netzteil, bis das Netzteil ersetzt wird.
+
+* Das System enthält vier Netzteile.
+* Die Netzteile haben einen automatischen Bereich.
++
+
+IMPORTANT: Vermischen Sie PSUs nicht mit unterschiedlichen Effizienzwerten. Immer ersetzen wie für „Gefällt mir“.
+
+
+
+.Schritte
+. Identifizieren Sie das zu ersetzenden Netzteil anhand von Konsolenfehlern oder über die LEDs an den Netzteilen.
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Schalten Sie das Netzteil aus und trennen Sie die Netzkabel:
++
+.. Schalten Sie den Netzschalter am Netzteil aus.
+.. Öffnen Sie die Netzkabelhalterung, und ziehen Sie dann das Netzkabel vom Netzteil ab.
+
+
+. Halten Sie die Terrakotta-Taste am Netzteilgriff gedrückt, und ziehen Sie dann das Netzteil aus dem Gehäuse.
++
+ACHTUNG:
+
++
+Wenn Sie ein Netzteil entfernen, verwenden Sie immer zwei Hände, um sein Gewicht zu stützen.
+
++
+.Animation - Netzteil entfernen/installieren
+video::6d0eee92-72e2-4da4-a4fa-adf9016b57ff[panopto]
++
+image::../media/drw_9000_remove_install_psu_module.svg[drw 9000 das Einbauen des netzteilmoduls entfernen]
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Verriegelungsknopf
+
+|===
+. Stellen Sie sicher, dass sich der ein-/Ausschalter des neuen Netzteils in der Stellung aus befindet.
+. Halten und richten Sie die Kanten des Netzteils mit beiden Händen an der Öffnung im Systemgehäuse aus, und drücken Sie dann vorsichtig das Netzteil in das Gehäuse, bis es einrastet.
++
+Die Netzteile sind codiert und können nur auf eine Weise installiert werden.
+
++
+
+IMPORTANT: Beim Einschieben des Netzteils in das System keine übermäßige Kraft verwenden. Sie können den Anschluss beschädigen.
+
+. Schließen Sie die Verkabelung des Netzteils wieder an:
++
+.. Schließen Sie das Netzkabel wieder an das Netzteil an.
+.. Befestigen Sie das Netzkabel mithilfe der Netzkabelhalterung am Netzteil.
++
+Sobald die Stromversorgung wiederhergestellt ist, sollte die Status-LED grün leuchten.
+
+
+
+. Schalten Sie das neue Netzteil ein, und überprüfen Sie dann den Betrieb der Aktivitäts-LEDs für das Netzteil.
++
+Die grüne Betriebs-LED leuchtet, wenn das Netzteil vollständig in das Gehäuse eingesetzt wird und die gelbe Warnungs-LED zunächst blinkt, schaltet sich jedoch nach ein paar Augenblicken aus.
+
+. Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"^] Seite für weitere Informationen.
+

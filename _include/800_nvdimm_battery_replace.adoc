@@ -1,0 +1,197 @@
+= Schritt 1: Schalten Sie den beeinträchtigten Regler aus
+:allow-uri-read: 
+
+
+Zum Austauschen der NVDIMM-Batterie müssen Sie das Controller-Modul entfernen, den Akku entfernen, den Akku austauschen und dann das Controller-Modul wieder einsetzen.
+
+Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+
+
+
+== Schritt 1: Schalten Sie den beeinträchtigten Regler aus
+
+Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
+
+.Über diese Aufgabe
+* Wenn Sie NetApp Storage Encryption verwenden, müssen Sie die MSID mithilfe der Anweisungen im zurückgesetzt haben link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/return-seds-unprotected-mode-task.html["SEDs werden in den ungeschützten Modus versetzt"].
+* Wenn Sie über ein SAN-System verfügen, müssen Sie Ereignismeldungen geprüft haben  `cluster kernel-service show`) Für beeinträchtigte Controller SCSI-Blade. Der `cluster kernel-service show` Der Befehl zeigt den Node-Namen, den Quorum-Status dieses Node, den Verfügbarkeitsstatus dieses Node und den Betriebsstatus dieses Node an.
++
+Jeder Prozess des SCSI-Blades sollte sich im Quorum mit den anderen Nodes im Cluster befinden. Probleme müssen behoben werden, bevor Sie mit dem Austausch fortfahren.
+
+* Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE anzeigt, um die Berechtigung und den Zustand zu erhalten, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^].
+
+
+.Schritte
+. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden: `cluster1:> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deaktivieren Sie das automatische Giveback von der Konsole des gesunden Controllers: `storage failover modify –node local -auto-giveback false`
++
+
+NOTE: Wenn Sie sehen _Möchten Sie Auto-Giveback deaktivieren?_, geben Sie ein `y`.
+
+. Nehmen Sie den beeinträchtigten Controller zur LOADER-Eingabeaufforderung:
++
+[cols="1,2"]
+|===
+| Wenn der eingeschränkte Controller angezeigt wird... | Dann... 
+
+
+ a| 
+Die LOADER-Eingabeaufforderung
+ a| 
+Wechseln Sie zu Controller-Modul entfernen.
+
+
+
+ a| 
+Warten auf Giveback...
+ a| 
+Drücken Sie Strg-C, und antworten Sie dann `y` Wenn Sie dazu aufgefordert werden.
+
+
+
+ a| 
+Eingabeaufforderung für das System oder Passwort
+ a| 
+Übernehmen oder stoppen Sie den beeinträchtigten Regler von der gesunden Steuerung: `storage failover takeover -ofnode _impaired_node_name_`
+
+Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drücken Sie Strg-C, und antworten Sie dann `y`.
+
+|===
+
+
+
+
+== Schritt 2: Entfernen Sie das Controller-Modul
+
+Sie müssen das Controller-Modul aus dem Chassis entfernen, wenn Sie das Controller-Modul ersetzen oder eine Komponente im Controller-Modul ersetzen.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Trennen Sie die Netzteile des Controller-Moduls von der Quelle.
+. Lösen Sie die Netzkabelhalter, und ziehen Sie anschließend die Kabel von den Netzteilen ab.
+. Lösen Sie den Haken- und Schlaufenriemen, mit dem die Kabel an das Kabelmanagement-Gerät gebunden sind, und ziehen Sie dann die Systemkabel und SFP- und QSFP-Module (falls erforderlich) vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren. Lösen Sie den Haken und den Schlaufenriemen, mit dem die Kabel am Kabelführungsgerät befestigt sind, und ziehen Sie dann die Systemkabel vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren.
++
+Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation des Kabelverwaltungsgeräts die Kabel organisiert sind.
+
+. Entfernen Sie das Kabelführungs-Gerät aus dem Controller-Modul und legen Sie es beiseite.
+. Drücken Sie beide Verriegelungsriegel nach unten, und drehen Sie dann beide Verriegelungen gleichzeitig nach unten.
++
+Das Controller-Modul wird leicht aus dem Chassis entfernt.
+
++
+image::../media/drw_a800_pcm_remove.png[drw a800 pcm entfernen]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Verriegelungsverschluss 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Sicherungsstift
+
+|===
+. Schieben Sie das Controller-Modul aus dem Gehäuse.
++
+Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen, während Sie es aus dem Gehäuse schieben.
+
+. Stellen Sie das Controller-Modul an einem sicheren Ort beiseite.
+
+
+
+
+== Schritt 3: Ersetzen Sie den NVDIMM-Akku
+
+Zum Austauschen der NVDIMM-Batterie müssen Sie eine fehlerhafte Batterie aus dem Controller-Modul entfernen und die Ersatzbatterie in das Controller-Modul installieren.
+
+. Öffnen Sie die Luftkanalabdeckung, und suchen Sie den NVDIMM-Akku im Riser.
++
+image::../media/drw_a800_nvdimm_battery_replace.png[drw a800 nvdimm-Akku ersetzen]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Luftkanalaufführung 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+NVDIMM-Batteriestecker
+
+
+
+ a| 
+image:../media/legend_icon_03.png[""]
+ a| 
+NVDIMM-Akkupack
+
+|===
++
+*Achtung:* die LED der NVDIMM-Batterie-Steuerplatine blinkt während der Auslagerung des Inhalts in den Flash-Speicher, wenn Sie das System anhalten. Nach Abschluss der Abscheidungen schaltet sich die LED aus.
+
+. Suchen Sie den Batteriestecker, und drücken Sie den Clip auf der Vorderseite des Batteriesteckers, um den Stecker aus der Steckdose zu lösen, und ziehen Sie dann das Akkukabel aus der Steckdose.
+. Fassen Sie die Batterie an, und heben Sie die Batterie aus dem Luftkanal und dem Controller-Modul, und legen Sie sie beiseite.
+. Entfernen Sie den Ersatzakku aus der Verpackung.
+. Setzen Sie den Ersatzakku in den NVDIMM-Luftkanal ein:
++
+.. Setzen Sie den Akku in den Steckplatz ein, und drücken Sie den Akku fest nach unten, um sicherzustellen, dass er fest eingerastet ist.
+.. Schließen Sie den Batteriestecker an die Steckerbuchse an, und stellen Sie sicher, dass der Stecker einrastet.
+
+
+. Schließen Sie den NVDIMM-Luftkanal.
++
+Vergewissern Sie sich, dass der Stecker in die Steckdose einrastet.
+
+
+
+
+
+== Schritt 4: Installieren Sie das Controller-Modul neu und starten Sie das System
+
+Nachdem Sie eine FRU im Controller-Modul ersetzt haben, müssen Sie das Controller-Modul neu installieren und neu starten.
+
+. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
++
+
+NOTE: Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein, wenn Sie dazu aufgefordert werden.
+
+. Das System nach Bedarf neu einsetzen.
++
+Wenn Sie die Medienkonverter (QSFPs oder SFPs) entfernt haben, sollten Sie diese erneut installieren, wenn Sie Glasfaserkabel verwenden.
+
+. Schließen Sie das Netzkabel an das Netzteil an, setzen Sie die Sicherungshülse des Netzkabels wieder ein, und schließen Sie dann das Netzteil an die Stromquelle an.
+. Führen Sie die Neuinstallation des Controller-Moduls durch:
++
+.. Drücken Sie das Controller-Modul fest in das Gehäuse, bis es auf die Mittelebene trifft und vollständig sitzt.
++
+Die Verriegelungen steigen, wenn das Controller-Modul voll eingesetzt ist.
+
++
+
+NOTE: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige Kraft verwenden, um Schäden an den Anschlüssen zu vermeiden.
+
++
+Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt.
+
+.. Drehen Sie die Verriegelungsriegel nach oben, und kippen Sie sie so, dass sie die Sicherungsstifte entfernen und dann in die verriegelte Position absenken.
+.. Wenn Sie dies noch nicht getan haben, installieren Sie das Kabelverwaltungsgerät neu.
+
+
+
+
+
+
+== Schritt 5: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

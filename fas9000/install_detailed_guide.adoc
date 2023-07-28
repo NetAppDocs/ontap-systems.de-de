@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: aff a700, fas9000, detailed, guide, prepare, install, hardware, two, node, switchless, cluster, cable, controller, ds212c, ds224c, ns224, drive, shelf, complete, system, setup, configuration, network, discovery 
 summary: Dieser Leitfaden enthält detaillierte Schritt-für-Schritt-Anleitungen zur Installation eines typischen NetApp Systems. 
 ---
-= Detaillierter Leitfaden – AFF A700 und FAS9000
+= Detaillierter Leitfaden - FAS9000
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -323,11 +323,11 @@ image:../media/Cable_shelves_new_system_IOM12_shelves.png[""]
 
 
 
-=== Option 2: Verbinden Sie die Controller mit einem einzigen NS224-Festplatten-Shelf in AFF A700 und ASA AFF A700 Systemen, die nur mit ONTAP 9.8 und höher ausgeführt werden
+=== Option 2: Verkabeln Sie die Controller nur mit einem einzelnen NS224-Festplatten-Shelf in ASA AFF A700 Systemen mit ONTAP 9.8 und höher
 
 Sie müssen jeden Controller bei einer AFF A700 oder ASA AFF A700 mit System ONTAP 9.8 oder höher mit den NSM-Modulen am NS224 Drive-Shelf verkabeln.
 
-* Diese Aufgabe gilt nur für AFF A700 und ASA AFF A700 mit ONTAP 9.8 oder höher.
+* Dieser Vorgang gilt nur für ASA AFF A700 mit ONTAP 9.8 oder höher.
 * Für die Systeme muss mindestens ein X91148A-Modul in den Steckplätzen 3 und/oder 7 pro Controller installiert sein. Die Animation oder Abbildungen zeigen, dass dieses Modul in den Steckplätzen 3 und 7 installiert ist.
 * Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen. Die Kabelabzieher für die Storage-Module sind nach oben und die Abziehlaschen an den Shelves sind nach unten.
 +
@@ -358,11 +358,11 @@ image::../media/single_NS224_shelf.png[Einzelnes NS224-Shelf]
 
 
 
-=== Option 3: Verkabeln Sie die Controller mit zwei NS224-Laufwerk-Shelfs in AFF A700 und ASA AFF A700 Systemen, die nur mit ONTAP 9.8 und höher ausgeführt werden
+=== Option 3: Verkabeln Sie die Controller nur mit zwei NS224-Laufwerk-Shelfs in ASA AFF A700 Systemen mit ONTAP 9.8 und höher
 
 Sie müssen jeden Controller bei einer AFF A700 oder ASA AFF A700 mit System ONTAP 9.8 oder höher mit den NSM-Modulen der NS224 Laufwerk-Shelfs verkabeln.
 
-* Diese Aufgabe gilt nur für AFF A700 und ASA AFF A700 mit ONTAP 9.8 oder höher.
+* Dieser Vorgang gilt nur für ASA AFF A700 mit ONTAP 9.8 oder höher.
 * Die Systeme müssen zwei X91148A-Module pro Controller in den Steckplätzen 3 und 7 installiert sein.
 * Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen. Die Kabelabzieher für die Storage-Module sind nach oben und die Abziehlaschen an den Shelves sind nach unten.
 +

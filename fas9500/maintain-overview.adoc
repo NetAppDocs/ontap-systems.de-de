@@ -1,0 +1,86 @@
+---
+permalink: fas9500/maintain-overview.html 
+sidebar: sidebar 
+keywords: FAS9500 maintenance, maintenance, repairing FAS9500, repairing aff FAS9500, replace FAS9500 components, replace FAS9500 components 
+summary: Wartung der ASA FAS9500 Hardware 
+---
+= Wartung der FAS9500 Hardware
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Für das FAS9500-Speichersystem können Sie Wartungsverfahren für die folgenden Komponenten durchführen.
+
+
+
+== Boot-Medien
+
+Das Startmedium speichert einen primären und sekundären Satz von Boot-Image-Dateien, die das System beim Booten verwendet.
+
+
+
+== Caching-Modul
+
+Sie müssen das Caching-Modul des Controllers ersetzen, wenn Ihr System eine einzelne AutoSupport-Meldung (ASUP) registriert, dass das Modul offline gegangen ist.
+
+
+
+== Chassis
+
+Das Chassis ist das physische Gehäuse, in dem alle Controller-Komponenten wie Controller-/CPU-Einheit, Stromversorgung und I/O-Vorgänge untergebracht sind
+
+
+
+== Controller
+
+Ein Controller besteht aus einer Hauptplatine, Firmware und Software. Er steuert die Laufwerke und implementiert die ONTAP-Funktionen.
+
+
+
+== DFPM
+
+Die DCPM (Controller-Stromversorgungsmodul der Auslagerung) enthält die NVRAM11-Batterie.
+
+
+
+== DIMM
+
+Sie müssen ein DIMM (Dual-Inline-Speichermodul) ersetzen, wenn ein Speicherfehler vorliegt oder ein ausgefallenes DIMM vorliegt.
+
+
+
+== Ventilator
+
+Der Lüfter kühlt den Controller.
+
+
+
+== I/O-Modul
+
+Das E/A-Modul (Eingangs-/Ausgangsmodul) ist eine Hardwarekomponente, die als Vermittler zwischen dem Controller und verschiedenen Geräten oder Systemen dient, die Daten mit dem Controller austauschen müssen.
+
+
+
+== LED USB
+
+Das USB-LED-Modul stellt Verbindungen zu Konsolenports und Systemstatus bereit.
+
+
+
+== NVRAM
+
+Das NVRAM-Modul (Non-Volatile Random Access Memory) ermöglicht es dem Controller, Daten während des aus- und Einschaltzyklus oder beim Neustart des Systems aufzubewahren.
+
+
+
+== Stromversorgung
+
+Ein Netzteil stellt eine redundante Stromversorgung in einem Controller Shelf bereit.
+
+
+
+== Akku in Echtzeit
+
+Eine Echtzeituhr-Batterie bewahrt die Systemdaten und -Uhrzeitinformationen, wenn die Stromversorgung ausgeschaltet ist.

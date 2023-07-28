@@ -1,0 +1,80 @@
+---
+permalink: a900/maintain-overview.html 
+sidebar: sidebar 
+keywords: aff A900 maintenance, maintenance, repairing aff A900, repairing aff A900, replace aff A900 components, replace aff A900 components 
+summary: Wartung der ASA A900 Hardware 
+---
+= Wartung der AFF A900 Hardware
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Für das AFF A900-Speichersystem können Sie Wartungsverfahren für die folgenden Komponenten durchführen.
+
+
+
+== Boot-Medien
+
+Das Startmedium speichert einen primären und sekundären Satz von Boot-Image-Dateien, die das System beim Booten verwendet.
+
+
+
+== Chassis
+
+Das Chassis ist das physische Gehäuse, in dem alle Controller-Komponenten wie Controller-/CPU-Einheit, Stromversorgung und I/O-Vorgänge untergebracht sind
+
+
+
+== Controller
+
+Ein Controller besteht aus einer Hauptplatine, Firmware und Software. Er steuert die Laufwerke und implementiert die ONTAP-Funktionen.
+
+
+
+== DIMM
+
+Sie müssen ein DIMM (Dual-Inline-Speichermodul) ersetzen, wenn ein Speicherfehler vorliegt oder ein ausgefallenes DIMM vorliegt.
+
+
+
+== DFPM
+
+Die DCPM (Controller-Stromversorgungsmodul der Auslagerung) enthält die NVRAM11-Batterie.
+
+
+
+== Ventilator
+
+Der Lüfter kühlt den Controller.
+
+
+
+== I/O-Modul
+
+Das E/A-Modul (Eingangs-/Ausgangsmodul) ist eine Hardwarekomponente, die als Vermittler zwischen dem Controller und verschiedenen Geräten oder Systemen dient, die Daten mit dem Controller austauschen müssen.
+
+
+
+== LED USB
+
+Das USB-LED-Modul stellt Verbindungen zu Konsolenports und Systemstatus bereit.
+
+
+
+== NVRAM
+
+Das NVRAM-Modul (Non-Volatile Random Access Memory) ermöglicht es dem Controller, Daten während des aus- und Einschaltzyklus oder beim Neustart des Systems aufzubewahren.
+
+
+
+== Stromversorgung
+
+Ein Netzteil stellt eine redundante Stromversorgung in einem Controller Shelf bereit.
+
+
+
+== Akku in Echtzeit
+
+Eine Echtzeituhr-Batterie bewahrt die Systemdaten und -Uhrzeitinformationen, wenn die Stromversorgung ausgeschaltet ist.

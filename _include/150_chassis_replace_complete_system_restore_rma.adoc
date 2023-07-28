@@ -1,0 +1,100 @@
+= Schritt: Überprüfen Sie den HA-Status des Chassis und legen Sie diesen fest
+:allow-uri-read: 
+
+
+Sie müssen den HA-Status des Chassis überprüfen, die Aggregate zurückwechseln und das fehlerhafte Teil gemäß den dem Kit beiliegenden RMA-Anweisungen an NetApp zurücksenden.
+
+
+
+== Schritt: Überprüfen Sie den HA-Status des Chassis und legen Sie diesen fest
+
+Sie müssen den HA-Status des Chassis überprüfen und gegebenenfalls den Status entsprechend Ihrer Systemkonfiguration aktualisieren.
+
+. Zeigen Sie im Wartungsmodus von einem der Controller-Module aus den HA-Status des lokalen Controller-Moduls und des Chassis an: `ha-config show`
++
+Der HA-Status sollte für alle Komponenten identisch sein.
+
+. Wenn der angezeigte Systemzustand für das Chassis nicht mit der Systemkonfiguration übereinstimmt:
++
+.. Legen Sie für das Chassis den HA-Status fest: `ha-config modify chassis _HA-state_`
++
+Für den HA-Status kann einer der folgenden Werte vorliegen:
+
++
+*** `ha`
+*** `mcc`
+*** `mcc-2n`
+*** `mccip`
+*** `non-ha`
+
+
+.. Bestätigen Sie, dass sich die Einstellung geändert hat: `ha-config show`
+
+
+. Falls Sie dies noch nicht getan haben, können Sie den Rest Ihres Systems erneut verwenden.
+. Starten Sie das System neu.
+
+
+
+
+== Schritt 2: Switch zurück zu Aggregaten in einer MetroCluster Konfiguration mit zwei Nodes
+
+Nachdem Sie in einer MetroCluster Konfiguration mit zwei Nodes den FRU-Austausch abgeschlossen haben, können Sie den MetroCluster SwitchBack-Vorgang durchführen. Damit wird die Konfiguration in ihren normalen Betriebszustand zurückversetzt, wobei die Synchronisations-Storage Virtual Machines (SVMs) auf dem ehemals beeinträchtigten Standort jetzt aktiv sind und Daten aus den lokalen Festplattenpools bereitstellen.
+
+Dieser Task gilt nur für MetroCluster-Konfigurationen mit zwei Nodes.
+
+.Schritte
+. Vergewissern Sie sich, dass sich alle Nodes im befinden `enabled` Bundesland: `metrocluster node show`
++
+[listing]
+----
+cluster_B::>  metrocluster node show
+
+DR                           Configuration  DR
+Group Cluster Node           State          Mirroring Mode
+----- ------- -------------- -------------- --------- --------------------
+1     cluster_A
+              controller_A_1 configured     enabled   heal roots completed
+      cluster_B
+              controller_B_1 configured     enabled   waiting for switchback recovery
+2 entries were displayed.
+----
+. Überprüfen Sie, ob die Neusynchronisierung auf allen SVMs abgeschlossen ist: `metrocluster vserver show`
+. Überprüfen Sie, ob die automatischen LIF-Migrationen durch die heilenden Vorgänge erfolgreich abgeschlossen wurden: `metrocluster check lif show`
+. Führen Sie den Wechsel zurück mit dem aus `metrocluster switchback` Befehl von einem beliebigen Node im verbleibenden Cluster
+. Stellen Sie sicher, dass der Umkehrvorgang abgeschlossen ist: `metrocluster show`
++
+Der Vorgang zum zurückwechseln wird weiterhin ausgeführt, wenn sich ein Cluster im befindet `waiting-for-switchback` Bundesland:
+
++
+[listing]
+----
+cluster_B::> metrocluster show
+Cluster              Configuration State    Mode
+--------------------	------------------- 	---------
+ Local: cluster_B configured       	switchover
+Remote: cluster_A configured       	waiting-for-switchback
+----
++
+Der Vorgang zum zurückwechseln ist abgeschlossen, wenn sich die Cluster im befinden `normal` Bundesland:
+
++
+[listing]
+----
+cluster_B::> metrocluster show
+Cluster              Configuration State    Mode
+--------------------	------------------- 	---------
+ Local: cluster_B configured      		normal
+Remote: cluster_A configured      		normal
+----
++
+Wenn ein Wechsel eine lange Zeit in Anspruch nimmt, können Sie den Status der in-progress-Basispläne über die überprüfen `metrocluster config-replication resync-status show` Befehl.
+
+. Wiederherstellung beliebiger SnapMirror oder SnapVault Konfigurationen
+
+
+
+
+== Schritt 3: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

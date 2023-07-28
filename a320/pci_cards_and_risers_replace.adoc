@@ -1,7 +1,7 @@
 ---
 permalink: a320/pci-cards-and-risers-replace.html 
 sidebar: sidebar 
-keywords: aff, a320, aff a320, replace, pcie, card, disconnect, cable, card, sfp, qsfp, module, riser, reinstall, shut, down, controller, operation, diagnostic, complete, process, replace a pcie card, shut down the impaired controller, remove the controller module, replace a pcie card, install the controller module, restore the controller module to operation after running diagnostics, complete the replacement process 
+keywords: aff, a320, aff a320, replace, pcie, card, disconnect, cable, card, sfp, qsfp, module, riser, reinstall, shut, down, controller, operation, complete, process, replace a pcie card, shut down the impaired controller, remove the controller module, replace a pcie card, install the controller module, restore the controller module to operation, complete the replacement process 
 summary: Um eine PCIe-Karte zu ersetzen, müssen Sie die Kabel von den Karten trennen, die SFP- und QSFP-Module von den Karten entfernen, bevor Sie den Riser entfernen, den Riser neu installieren und dann die SFP- und QSFP-Module neu installieren, bevor Sie die Karten verkabeln. 
 ---
 = Ersetzen Sie eine PCIe-Karte - AFF A320
@@ -147,7 +147,7 @@ image::../media/drw_a320_pci_card_replace_animated_gif.png[drw a320 pci-Karte er
 
 == Sep 4: Installieren Sie das Controller-Modul
 
-Nachdem Sie die Komponente im Controller-Modul ersetzt haben, müssen Sie das Controller-Modul wieder in das Gehäuse einsetzen und dann im Wartungsmodus booten.
+Nachdem Sie die Komponente im Controller-Modul ersetzt haben, müssen Sie das Controller-Modul wieder in das Gehäuse einsetzen und es dann booten.
 
 . Wenn Sie dies noch nicht getan haben, schließen Sie den Luftkanal auf der Rückseite des Controller-Moduls und setzen Sie die Abdeckung wieder über die PCIe-Karten ein.
 . Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
@@ -179,7 +179,6 @@ Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt
 .. Lösen Sie die Verriegelungen, um das Controller-Modul einrasten zu lassen.
 .. Stromversorgung wieder einschalten.
 .. Wenn Sie dies noch nicht getan haben, installieren Sie das Kabelverwaltungsgerät neu.
-.. Unterbrechen Sie den normalen Bootvorgang, indem Sie auf drücken `Ctrl-C`.
 
 
 
@@ -188,7 +187,7 @@ Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt
 
 == Schritt 5: Stellen Sie das Controller-Modul wieder in Betrieb
 
-Nach Abschluss der Diagnose müssen Sie das System erneut einschalten, das Controller-Modul zurückgeben und dann die automatische Rückgabe aktivieren.
+Sie müssen das System neu verstellen, das Controller-Modul zurückgeben und dann das automatische Giveback erneut aktivieren.
 
 . Das System nach Bedarf neu einsetzen.
 +

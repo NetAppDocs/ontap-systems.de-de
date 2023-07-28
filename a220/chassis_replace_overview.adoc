@@ -1,0 +1,21 @@
+---
+permalink: a220/chassis-replace-overview.html 
+sidebar: sidebar 
+keywords: aff a220, replace, chassis, shut down, controller, metrocluster, power, supply, ha, state, controller, configuration, switch, aggregates, replace, move, remove, swap 
+summary: Sie ersetzen ein beeinträchtigtes Gehäuse durch das neue Gehäuse des gleichen Modells wie das beeinträchtigte Gehäuse. 
+---
+= Übersicht über den Austausch des Gehäuses - AFF A220
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um das Gehäuse zu ersetzen, müssen Sie die Netzteile, Festplatten und Controller-Module oder Module vom beeinträchtigten Gehäuse in das neue Gehäuse verlegen und das beeinträchtigte Gehäuse aus dem Geräterrack oder dem Systemschrank durch das neue Gehäuse des gleichen Modells wie das beeinträchtigte Gehäuse auswechseln.
+
+Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+
+* Sie können dieses Verfahren bei allen Versionen von ONTAP verwenden, die von Ihrem System unterstützt werden.
+* Hierbei wird angenommen, dass Sie alle Laufwerke und Controller-Module bzw. -Module in das neue Chassis verschieben und dass es sich um eine neue Komponente von NetApp handelt.
+* Dieser Vorgang ist störend. Für ein Cluster mit zwei Controllern kommt es zu einem vollständigen Service-Ausfall und zu einem teilweisen Ausfall in einem Cluster mit mehreren Nodes.
+

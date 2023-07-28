@@ -2,7 +2,7 @@
 permalink: fas9500/controller_replace_system_config_restore_and_verify.html 
 sidebar: sidebar 
 keywords:  
-summary: Nach Abschluss des Hardware-Austauschs und des Bootens im Wartungsmodus überprüfen Sie die Low-Level-Systemkonfiguration des Ersatz-Controllers, konfigurieren die Systemeinstellungen nach Bedarf neu und führen dann die Diagnose auf Systemebene aus. 
+summary: Nach dem Austausch der Hardware und dem Booten im Wartungsmodus überprüfen Sie die grundlegende Systemkonfiguration des Ersatz-Controllers und konfigurieren das System nach Bedarf neu. 
 ---
 = Wiederherstellen und Überprüfen der Systemkonfiguration - FAS9500
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Nach Abschluss des Hardware-Austauschs und des Bootens im Wartungsmodus
 
 
 [role="lead"]
-Nach Abschluss des Hardware-Austauschs überprüfen Sie die Low-Level-Systemkonfiguration des Ersatz-Controllers, konfigurieren die Systemeinstellungen nach Bedarf neu und führen dann die Diagnose auf Systemebene aus.
+Nach dem Austausch der Hardware überprüfen Sie die Low-Level-Systemkonfiguration des Ersatz-Controllers und konfigurieren die Systemeinstellungen nach Bedarf neu.
 
 
 
@@ -80,168 +80,3 @@ Mccip
 . Wenn der angezeigte Systemzustand des Controller-Moduls nicht mit der Systemkonfiguration übereinstimmt, setzen Sie das ein `HA` Status für das Controller-Modul: `ha-config modify controller _ha-state_`
 . Wenn der angezeigte Systemzustand des Gehäuses nicht mit der Systemkonfiguration übereinstimmt, legen Sie den fest `HA` Status für das Chassis: `ha-config modify chassis _ha-state_`
 
-
-
-
-== Schritt 3: Führen Sie die Diagnose auf Systemebene aus
-
-Sie sollten beim Austausch des Controllers umfassende oder gezielte Diagnosetests für bestimmte Komponenten und Subsysteme durchführen.
-
-Alle Befehle in den Diagnoseverfahren werden vom Node ausgegeben, auf dem die Komponente ersetzt wird.
-
-. Wenn der Node, der gewartet werden soll, nicht an der LOADER-Eingabeaufforderung angezeigt wird, booten Sie den Node neu: `halt`
-+
-Nachdem Sie den Befehl ausgegeben haben, sollten Sie warten, bis das System an der LOADER-Eingabeaufforderung angehalten wird.
-
-. Rufen Sie an der LOADER-Eingabeaufforderung die speziellen Treiber auf, die speziell für die Diagnose auf Systemebene entwickelt wurden, um ordnungsgemäß zu funktionieren: `boot_diags`
-+
-Während des Startvorgangs können Sie sicher reagieren `y` Zu den Aufforderungen, bis die Eingabeaufforderung für den Wartungsmodus (*>) angezeigt wird.
-
-. Die verfügbaren Geräte des Controller-Moduls anzeigen und notieren: `sldiag device show -dev mb`
-+
-Die angezeigten Controller-Module und -Ports können eine oder mehrere der folgenden sein:
-
-+
-** Bootmedia ist das Systembootgerät.
-** cna ist ein konvergierter Netzwerkadapter oder eine Schnittstelle, die nicht mit einem Netzwerk oder Speichergerät verbunden ist.
-** fcal ist ein Fibre Channel-Arbitrated Loop-Gerät, das nicht mit einem Fibre Channel-Netzwerk verbunden ist.
-** env ist die Umgebung der Hauptplatine.
-** Speicher ist Systemspeicher.
-** nic ist eine Netzwerkschnittstellenkarte.
-** nvram ist nicht-flüchtiger RAM.
-** Nvmem ist ein Hybridmodell aus NVRAM und Systemspeicher.
-** sas ist ein Serial Attached SCSI-Gerät, das nicht mit einem Festplatten-Shelf verbunden ist.
-
-
-. Führen Sie die Diagnose nach Bedarf aus.
-+
-[cols="1,2"]
-|===
-| Wenn Sie Diagnosetests ausführen möchten, um... | Dann... 
-
-
- a| 
-Einzelne Komponenten
- a| 
-.. Löschen Sie die Statusprotokolle: `sldiag device clearstatus`
-.. Anzeigen der verfügbaren Tests für die ausgewählten Geräte: `sldiag device show -dev dev_name`
-+
-Dev_Name kann eine beliebige der im vorherigen Schritt identifizierten Ports und Geräte sein.
-
-.. Überprüfen Sie die Ausgabe, und wählen Sie ggf. nur die Tests aus, die Sie ausführen möchten: `sldiag device modify -dev dev_name -selection only`
-+
-`-selection only` Deaktiviert alle anderen Tests, die Sie nicht für das Gerät ausführen möchten.
-
-.. Die ausgewählten Tests ausführen: `sldiag device run -dev dev_name`
-+
-Nach Abschluss des Tests wird die folgende Meldung angezeigt:
-
-+
-[listing]
-----
-*> <SLDIAG:_ALL_TESTS_COMPLETED>
-----
-.. Vergewissern Sie sich, dass keine Tests fehlgeschlagen sind: `sldiag device status -dev dev_name -long -state failed`
-+
-Die Diagnose auf Systemebene gibt die Eingabeaufforderung zurück, wenn keine Testfehler auftreten oder den vollständigen Status von Fehlern, die durch das Testen der Komponente entstehen, angezeigt wird.
-
-
-
-
-
- a| 
-Mehrere Komponenten gleichzeitig
- a| 
-.. Überprüfen Sie die aktivierten und deaktivierten Geräte in der Ausgabe des vorhergehenden Verfahrens und bestimmen Sie, welche Geräte gleichzeitig ausgeführt werden sollen.
-.. Führen Sie die einzelnen Tests für das Gerät auf: `sldiag device show -dev dev_name`
-.. Überprüfen Sie die Ausgabe, und wählen Sie ggf. nur die Tests aus, die Sie ausführen möchten: `sldiag device modify -dev dev_name -selection only`
-+
--Selection deaktiviert nur alle anderen Tests, die Sie nicht für das Gerät ausführen möchten.
-
-.. Überprüfen Sie, ob die Tests geändert wurden: `sldiag device show`
-.. Wiederholen Sie diese Teilschritte für jedes Gerät, das gleichzeitig ausgeführt werden soll.
-.. Führen Sie eine Diagnose für alle Geräte durch: `sldiag device run`
-+
-
-IMPORTANT: Fügen Sie Ihre Einträge nach dem Ausführen der Diagnose nicht hinzu oder ändern Sie sie nicht.
-
-+
-Nach Abschluss des Tests wird die folgende Meldung angezeigt:
-
-+
-[listing]
-----
-*> <SLDIAG:_ALL_TESTS_COMPLETED>
-----
-.. Vergewissern Sie sich, dass es keine Hardwareprobleme auf dem Node gibt: `sldiag device status -long -state failed`
-+
-Die Diagnose auf Systemebene gibt die Eingabeaufforderung zurück, wenn keine Testfehler auftreten oder den vollständigen Status von Fehlern, die durch das Testen der Komponente entstehen, angezeigt wird.
-
-
-
-|===
-. Fahren Sie auf der Grundlage des Ergebnisses des vorhergehenden Schritts fort:
-+
-[cols="1,2"]
-|===
-| Wenn die Diagnose auf Systemebene testet... | Dann... 
-
-
- a| 
-Wurden ohne Fehler abgeschlossen
- a| 
-.. Löschen Sie die Statusprotokolle: `sldiag device clearstatus`
-.. Überprüfen Sie, ob das Protokoll gelöscht wurde: `sldiag device status`
-+
-Die folgende Standardantwort wird angezeigt:
-
-+
-SLDIAG: Es sind keine Protokollnachrichten vorhanden.
-
-.. Beenden des Wartungsmodus: `halt`
-+
-Auf dem Node wird die LOADER-Eingabeaufforderung angezeigt.
-
-.. Booten des Node über die LOADER-Eingabeaufforderung: `bye`
-.. Zurückkehren des Node in den normalen Betrieb:
-
-
-|===
-
-
-[cols="1,2"]
-|===
-| Wenn Ihr Knoten in... | Dann... 
-
-
- a| 
-Ein HA-Paar
- a| 
-Geben Sie zurück: `storage failover giveback -ofnode replacement_node_name`
-
-
-NOTE: Wenn Sie die automatische Rückgabe deaktivieren, aktivieren Sie sie mit dem Befehl Storage Failover modify erneut.
-
-
-
- a| 
-Es kam zu einigen Testfehlern
- a| 
-Bestimmen Sie die Ursache des Problems:
-
-. Beenden des Wartungsmodus: `halt`
-+
-Nachdem Sie den Befehl ausgegeben haben, warten Sie, bis das System an der LOADER-Eingabeaufforderung angehalten wird.
-
-. Schalten Sie die Netzteile aus oder wieder ein, abhängig von der Anzahl der Controller-Module im Chassis. + Lassen Sie die Netzteile eingeschaltet, um das andere Controller-Modul mit Strom zu versorgen.
-. Überprüfen Sie, ob Sie alle Aspekte, die bei der Ausführung von Diagnose auf Systemebene zu beachten sind, dass die Kabel sicher angeschlossen sind und die Hardwarekomponenten ordnungsgemäß im Storage-System installiert wurden.
-. Booten Sie das zu betreuende Controller-Modul, und unterbrechen Sie den Boot, indem Sie auf drücken `Ctrl-C` Wenn Sie dazu aufgefordert werden, zum Startmenü zu gelangen. + das Controller-Modul wird bei vollem Sitz hochgestartet.
-. Wählen Sie aus dem Menü die Option Start in den Wartungsmodus.
-. Beenden Sie den Wartungsmodus, indem Sie den folgenden Befehl eingeben: `halt`
-+
-Nachdem Sie den Befehl ausgegeben haben, warten Sie, bis das System an der LOADER-Eingabeaufforderung angehalten wird.
-
-. Führen Sie den Diagnosetest auf Systemebene erneut aus.
-
-
-|===

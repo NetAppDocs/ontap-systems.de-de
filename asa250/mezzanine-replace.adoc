@@ -1,0 +1,253 @@
+---
+permalink: asa250/mezzanine-replace.html 
+sidebar: sidebar 
+keywords: asa a250, replace or install a mezzanine card 
+summary: Um eine fehlerhafte Mezzanine-Karte zu ersetzen, müssen Sie die Kabel und alle SFP- oder QSFP-Module entfernen, die Karte austauschen, die SFP- oder QSFP-Module neu installieren und die Karten neu auflegen. Um eine neue Mezzanine-Karte zu installieren, müssen Sie über die entsprechenden Kabel und SFP- oder QSFP-Module verfügen. 
+---
+= Ersetzen oder installieren Sie eine Zusatzkarte - ASA A250
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um eine fehlerhafte Mezzanine-Karte zu ersetzen, müssen Sie die Kabel und alle SFP- oder QSFP-Module entfernen, die Karte austauschen, die SFP- oder QSFP-Module neu installieren und die Karten neu auflegen. Um eine neue Mezzanine-Karte zu installieren, müssen Sie über die entsprechenden Kabel und SFP- oder QSFP-Module verfügen.
+
+.Über diese Aufgabe
+* Sie können dieses Verfahren bei allen Versionen von ONTAP verwenden, die von Ihrem System unterstützt werden
+* Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+
+
+
+
+== Schritt 1: Schalten Sie den beeinträchtigten Regler aus
+
+Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
+
+.Über diese Aufgabe
+* Wenn Sie NetApp Storage Encryption verwenden, müssen Sie die MSID mithilfe der Anweisungen im zurückgesetzt haben link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/return-seds-unprotected-mode-task.html["SEDs werden in den ungeschützten Modus versetzt"].
+* Wenn Sie über ein SAN-System verfügen, müssen Sie Ereignismeldungen geprüft haben  `cluster kernel-service show`) Für beeinträchtigte Controller SCSI-Blade. Der `cluster kernel-service show` Der Befehl zeigt den Node-Namen, den Quorum-Status dieses Node, den Verfügbarkeitsstatus dieses Node und den Betriebsstatus dieses Node an.
++
+Jeder Prozess des SCSI-Blades sollte sich im Quorum mit den anderen Nodes im Cluster befinden. Probleme müssen behoben werden, bevor Sie mit dem Austausch fortfahren.
+
+* Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE anzeigt, um die Berechtigung und den Zustand zu erhalten, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^].
+
+
+.Schritte
+. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden: `cluster1:> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deaktivieren Sie das automatische Giveback von der Konsole des gesunden Controllers: `storage failover modify –node local -auto-giveback false`
++
+
+NOTE: Wenn Sie sehen _Möchten Sie Auto-Giveback deaktivieren?_, geben Sie ein `y`.
+
+. Nehmen Sie den beeinträchtigten Controller zur LOADER-Eingabeaufforderung:
++
+[cols="1,2"]
+|===
+| Wenn der eingeschränkte Controller angezeigt wird... | Dann... 
+
+
+ a| 
+Die LOADER-Eingabeaufforderung
+ a| 
+Wechseln Sie zu Controller-Modul entfernen.
+
+
+
+ a| 
+Warten auf Giveback...
+ a| 
+Drücken Sie Strg-C, und antworten Sie dann `y` Wenn Sie dazu aufgefordert werden.
+
+
+
+ a| 
+Eingabeaufforderung für das System oder Passwort
+ a| 
+Übernehmen oder stoppen Sie den beeinträchtigten Regler von der gesunden Steuerung: `storage failover takeover -ofnode _impaired_node_name_`
+
+Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drücken Sie Strg-C, und antworten Sie dann `y`.
+
+|===
+
+
+
+
+== Schritt 2: Entfernen Sie das Controller-Modul
+
+Entfernen Sie das Controller-Modul aus dem Chassis, wenn Sie eine Komponente im Controller-Modul ersetzen.
+
+Achten Sie darauf, dass Sie die Kabel so kennzeichnen, dass Sie wissen, woher sie stammen.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Trennen Sie die Netzteile des Controller-Moduls von der Quelle.
+. Lösen Sie die Netzkabelhalter, und ziehen Sie anschließend die Kabel von den Netzteilen ab.
+. Setzen Sie den Zeigefinger in den Verriegelungsmechanismus auf beiden Seiten des Controller-Moduls ein, drücken Sie den Hebel mit dem Daumen, und ziehen Sie den Controller vorsichtig einige Zentimeter aus dem Gehäuse.
++
+
+NOTE: Wenn Sie Schwierigkeiten beim Entfernen des Controller-Moduls haben, setzen Sie Ihre Zeigefinger durch die Fingerlöcher von innen (durch Überqueren der Arme).
+
++
+image::../media/drw_a250_pcm_remove_install.png[drw a250 pcm ausbauen]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Hebel 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Verriegelungsmechanismus
+
+|===
+. Fassen Sie die Seiten des Controller-Moduls mit beiden Händen an, ziehen Sie es vorsichtig aus dem Gehäuse heraus und legen Sie es auf eine flache, stabile Oberfläche.
+. Drehen Sie die Daumenschraube auf der Vorderseite des Controller-Moduls gegen den Uhrzeigersinn, und öffnen Sie die Abdeckung des Controller-Moduls.
++
+image::../media/drw_a250_open_controller_module_cover.png[die Abdeckung des drw a250-Controller-Moduls öffnen]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Flügelschraube 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Controller-Modulabdeckung.
+
+|===
+
+
+
+
+== Schritt 3: Tauschen Sie eine Mezzanine-Karte aus oder installieren Sie sie
+
+Um eine Zusatzkarte zu ersetzen, müssen Sie die Karte mit eingeschränkter Karte entfernen und die Ersatzkarte installieren. Um eine Mezzanine-Karte zu installieren, müssen Sie die Frontplatte entfernen und die neue Karte installieren.
+
+Verwenden Sie das folgende Video oder die tabellarischen Schritte, um eine Mezzanine-Karte zu ersetzen:
+
+.Animation - Ersetzen Sie eine Mezzanine-Karte
+video::d8e7d4d9-8d28-4be1-809b-ac5b01643676[panopto]
+. So ersetzen Sie eine Mezzanine-Karte:
+. Suchen Sie die Mezzanine-Karte mit beeinträchtigter Zusatzfunktion auf Ihrem Controller-Modul und ersetzen Sie sie.
++
+image::../media/drw_a250_replace_mezz_card.png[drw a250 ersetzen sie die mezz-Karte]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Entfernen Sie die Schrauben an der Vorderseite des Controller-Moduls. 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Lösen Sie die Schraube im Controller-Modul.
+
+
+
+ a| 
+image:../media/legend_icon_03.png[""]
+ a| 
+Entfernen Sie die Mezzanine-Karte.
+
+|===
++
+.. Trennen Sie alle Kabel, die mit der Mezzanine-Karte verbunden sind, von der Steckdose.
++
+Achten Sie darauf, dass Sie die Kabel so kennzeichnen, dass Sie wissen, woher sie stammen.
+
+.. Entfernen Sie alle SFP- oder QSFP-Module, die sich möglicherweise in der beeinträchtigten Mezzanine-Karte enthalten, und stellen Sie sie beiseite.
+.. Entfernen Sie mit dem #1-Magnetschraubendreher die Schrauben von der Vorderseite des Controller-Moduls und legen Sie sie sicher auf den Magneten.
+.. Lösen Sie mit dem #1-Magnetschraubendreher die Schraube auf der Mezzanine-Karte mit beeinträchtigten Karten.
+.. Heben Sie die beeinträchtigte Mezzanine-Karte vorsichtig mit dem #1-Schraubendreher direkt aus der Steckdose und legen Sie sie beiseite.
+.. Entfernen Sie die Ersatzkarte aus dem antistatischen Versandbeutel, und richten Sie sie an der Innenseite des Controller-Moduls aus.
+.. Richten Sie die Ersatzkarte vorsichtig an der entsprechenden Stelle aus.
+.. Setzen Sie mit dem #1-Magnetschraubendreher die Schrauben an der Vorderseite des Controller-Moduls und der Mezzanine-Karte ein und ziehen Sie sie fest.
++
+
+NOTE: Beim Anziehen der Schraube auf der Mezzanine-Karte keine Kraft auftragen; Sie können sie knacken.
+
+.. Setzen Sie alle SFP- oder QSFP-Module ein, die von der Mezzanine-Karte mit beeinträchtigter Zwischenkarte entfernt wurden, in die Ersatzkarte.
+
+
+. So installieren Sie eine Mezzanine-Karte:
+. Sie installieren eine neue Mezzanine-Karte, wenn Ihr System nicht über eine verfügt.
++
+.. Entfernen Sie mit dem #1-Magnetschraubendreher die Schrauben von der Vorderseite des Controller-Moduls und der Frontplatte, die den Schlitz für die Mezzanine-Karte abdeckt, und legen Sie sie sicher auf den Magneten.
+.. Entfernen Sie die Mezzanine-Karte aus dem antistatischen Versandbeutel, und richten Sie sie an der Innenseite des Controller-Moduls aus.
+.. Richten Sie die Mezzanine-Karte vorsichtig an der entsprechenden Position aus.
+.. Setzen Sie mit dem #1-Magnetschraubendreher die Schrauben an der Vorderseite des Controller-Moduls und der Mezzanine-Karte ein und ziehen Sie sie fest.
++
+
+NOTE: Beim Anziehen der Schraube auf der Mezzanine-Karte keine Kraft auftragen; Sie können sie knacken.
+
+
+
+
+
+
+
+== Schritt 4: Installieren Sie das Controller-Modul neu
+
+Nachdem Sie eine Komponente im Controller-Modul ausgetauscht haben, müssen Sie das Controller-Modul im Systemgehäuse neu installieren und starten.
+
+. Schließen Sie die Abdeckung des Controller-Moduls, und ziehen Sie die Daumenschraube fest.
++
+image::../media/drw_a250_close_controller_module_cover.png[abdeckung des drw a250-Controllermoduls schließen]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Controller-Modulabdeckung 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Flügelschraube
+
+|===
+. Setzen Sie das Controller-Modul in das Chassis ein:
++
+.. Stellen Sie sicher, dass die Arms des Verriegelungsmechanismus in der vollständig ausgestreckten Position verriegelt sind.
+.. Richten Sie das Controller-Modul mit beiden Händen aus und schieben Sie es vorsichtig in die Arms des Verriegelungsmechanismus, bis es anhält.
+.. Platzieren Sie Ihre Zeigefinger durch die Fingerlöcher von der Innenseite des Verriegelungsmechanismus.
+.. Drücken Sie die Daumen auf den orangefarbenen Laschen oben am Verriegelungsmechanismus nach unten, und schieben Sie das Controller-Modul vorsichtig über den Anschlag.
+.. Lösen Sie Ihre Daumen von oben auf den Verriegelungs-Mechanismen und drücken Sie weiter, bis die Verriegelungen einrasten.
++
+Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt. Bereiten Sie sich darauf vor, den Bootvorgang zu unterbrechen.
+
+
+
++
+Das Controller-Modul sollte vollständig eingesetzt und mit den Kanten des Gehäuses bündig sein.
+
+. Das System nach Bedarf neu einsetzen.
+. Wiederherstellung des normalen Betriebs des Controllers durch Zurückgeben des Speichers: `storage failover giveback -ofnode _impaired_node_name_`
+. Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut: `storage failover modify -node local -auto-giveback true`
+
+
+
+
+== Schritt 5: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

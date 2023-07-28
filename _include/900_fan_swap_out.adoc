@@ -1,0 +1,50 @@
+= 
+:allow-uri-read: 
+
+
+Zum Auswechseln eines Lüftermoduls ohne Unterbrechung des Dienstes müssen Sie eine bestimmte Sequenz von Aufgaben durchführen.
+
+
+IMPORTANT: Als Best Practice empfiehlt es sich, das Netzteil innerhalb von zwei Minuten vom Gehäuse zu ersetzen. Das System funktioniert weiterhin, aber ONTAP sendet Meldungen an die Konsole über das beeinträchtigte Netzteil, bis das Netzteil ersetzt wird.
+
+.Schritte
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Entfernen Sie die Blende (falls erforderlich) mit zwei Händen, indem Sie die Öffnungen auf beiden Seiten der Blende fassen und dann zu Ihnen ziehen, bis sich die Blende von den Kugelknöpfen am Rahmen des Chassis löst.
+. Ermitteln Sie das Lüftermodul, das Sie ersetzen müssen, indem Sie die Konsolenfehlermeldungen überprüfen und die Warn-LED an jedem Lüftermodul betrachten.
+. Drücken Sie auf die Terrakotta-Taste am Lüftermodul, und ziehen Sie das Lüftermodul gerade aus dem Gehäuse, um sicherzustellen, dass Sie es mit Ihrer freien Hand unterstützen.
++
+
+IMPORTANT: Die Lüftermodule sind kurz. Unterstützen Sie das Lüftermodul immer mit Ihrer freien Hand, damit es nicht plötzlich vom Gehäuse abfällt und Sie verletzt.
+
++
+.Animation - Lüfter entfernen/installieren
+video::3c3c8d93-b48e-4554-87c8-adf9016af819[panopto]
++
+image::../media/drw_a900_remove_install_fan.png[drw a900 Installationlüfter entfernen]
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Entriegelungstaste Terra cotta
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Schieben Sie den Lüfter in das Gehäuse ein-/heraus
+
+|===
+. Setzen Sie das Lüftermodul beiseite.
+. Richten Sie die Kanten des Ersatzlüftermoduls an der Öffnung im Gehäuse aus, und schieben Sie es dann in das Gehäuse, bis es einrastet.
++
+Wenn das Lüftermodul erfolgreich in das Gehäuse eingesetzt wurde, blinkt die gelbe Warn-LED viermal.
+
+. Richten Sie die Blende an den Kugelknöpfen aus, und drücken Sie dann vorsichtig die Blende auf die Kugelbolzen.
+. Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"^] Seite für weitere Informationen.
+

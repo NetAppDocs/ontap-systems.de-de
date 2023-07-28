@@ -267,7 +267,7 @@ Entfernen Sie gegebenenfalls das Cache-Modul, und setzen Sie es wieder in den So
 
 == Schritt 4: Installieren Sie den Controller neu
 
-Nachdem Sie eine Komponente im Controller-Modul ausgetauscht haben, müssen Sie das Controller-Modul im Systemgehäuse neu installieren und in einen Zustand versetzen, in dem Sie Diagnosetests auf der ersetzten Komponente ausführen können.
+Nachdem Sie eine Komponente innerhalb des Controller-Moduls ausgetauscht haben, müssen Sie das Controller-Modul wieder im System-Chassis installieren.
 
 . Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
 +
@@ -280,7 +280,7 @@ Wenn Sie die Medienkonverter (QSFPs oder SFPs) entfernt haben, sollten Sie diese
 
 . Führen Sie die Neuinstallation des Controller-Moduls durch:
 +
-Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt. Bereiten Sie sich darauf vor, den Bootvorgang zu unterbrechen.
+Das Controller-Modul startet, sobald es vollständig im Gehäuse eingesetzt ist
 
 +
 .. Schieben Sie das Steuermodul fest in die offene Position, bis es auf die Mittelebene trifft und vollständig sitzt, und schließen Sie dann den Nockengriff in die verriegelte Position.
@@ -291,140 +291,13 @@ NOTE: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige
 .. Ziehen Sie die Flügelschraube am Nockengriff auf der Rückseite des Controller-Moduls fest.
 .. Wenn Sie dies noch nicht getan haben, installieren Sie das Kabelverwaltungsgerät neu.
 .. Verbinden Sie die Kabel mit dem Haken- und Schlaufenband mit dem Kabelmanagement-Gerät.
-.. Drücken Sie, wenn der Boot-Vorgang von jedem Controller gestartet wird `Ctrl-C` Um den Bootvorgang zu unterbrechen, wenn die Meldung angezeigt wird `Press Ctrl-C for Boot Menu`.
-.. Wählen Sie im angezeigten Menü die Option zum Starten im Wartungsmodus aus.
 
 
 
 
 
 
-== Schritt 5: Führen Sie die Diagnose auf Systemebene aus
-
-Nach der Installation eines neuen Cache-Moduls sollten Sie die Diagnose ausführen.
-
-Ihr System muss die LOADER-Eingabeaufforderung aufweisen, um die Diagnose auf Systemebene zu starten.
-
-Alle Befehle im Diagnoseverfahren werden vom Controller ausgegeben, der die Komponente ersetzt wird.
-
-. Wenn der zu wartenden Controller nicht an der LOADER-Eingabeaufforderung angezeigt wird, führen Sie die folgenden Schritte aus:
-+
-.. Wählen Sie im angezeigten Menü die Option Wartungsmodus.
-.. Nachdem der Controller in den Wartungsmodus gebootet wurde, beenden Sie den Controller: `halt`
-+
-Nachdem Sie den Befehl ausgegeben haben, sollten Sie warten, bis das System an der LOADER-Eingabeaufforderung angehalten wird.
-
-+
-
-NOTE: Während des Startvorgangs können Sie sicher reagieren `y` So werden Sie aufgefordert:
-
-
-
-. Rufen Sie an der LOADER-Eingabeaufforderung die speziellen Treiber auf, die speziell für die Diagnose auf Systemebene entwickelt wurden, um ordnungsgemäß zu funktionieren: `boot_diags`
-+
-Während des Startvorgangs können Sie sicher reagieren `y` Zu den Aufforderungen, bis die Eingabeaufforderung für den Wartungsmodus (*>) angezeigt wird.
-
-. Führen Sie eine Diagnose für das Caching-Modul aus: `sldiag device run -dev fcache`
-. Vergewissern Sie sich, dass keine Hardwareprobleme aufgrund des Austauschs des Caching-Moduls entstanden sind: `sldiag device status -dev fcache -long -state failed`
-+
-Die Diagnose auf Systemebene gibt die Eingabeaufforderung zurück, wenn keine Testfehler auftreten oder den vollständigen Status von Fehlern, die durch das Testen der Komponente entstehen, angezeigt wird.
-
-. Fahren Sie auf der Grundlage des Ergebnisses des vorhergehenden Schritts fort:
-+
-[cols="1,2"]
-|===
-| Wenn die Diagnose auf Systemebene testet... | Dann... 
-
-
- a| 
-Wurden ohne Fehler abgeschlossen
- a| 
-.. Löschen Sie die Statusprotokolle: `sldiag device clearstatus`
-.. Überprüfen Sie, ob das Protokoll gelöscht wurde: `sldiag device status`
-+
-Die folgende Standardantwort wird angezeigt:
-
-+
-SLDIAG: Es sind keine Protokollnachrichten vorhanden.
-
-.. Beenden des Wartungsmodus: `halt`
-+
-Der Controller zeigt die LOADER-Eingabeaufforderung an.
-
-.. Booten des Controllers über die LOADER-Eingabeaufforderung: `bye`
-.. Zurückkehren des Controllers in den normalen Betrieb:
-
-
-|===
-+
-[cols="1,2"]
-|===
-| Wenn Ihr Controller in... | Dann... 
-
-
- a| 
-Ein HA-Paar
- a| 
-Geben Sie zurück: `storage failover giveback -ofnode _replacement_node_name_`
-
-
-NOTE: Wenn Sie die automatische Rückgabe deaktivieren, aktivieren Sie sie mit dem Befehl Storage Failover modify erneut.
-
-
-
- a| 
-MetroCluster Konfiguration mit zwei Nodes
- a| 
-Fahren Sie mit dem nächsten Schritt fort. Das Verfahren zum Wechsel von MetroCluster erfolgt bei der nächsten Aufgabe des Ersatzprozesses.
-
-
-
- a| 
-Eine eigenständige Konfiguration
- a| 
-Fahren Sie mit dem nächsten Schritt fort. Es ist keine Aktion erforderlich. Sie haben die Diagnose auf Systemebene abgeschlossen.
-
-
-
- a| 
-Es kam zu einigen Testfehlern
- a| 
-Bestimmen Sie die Ursache des Problems:
-
-.. Beenden des Wartungsmodus: `halt`
-+
-Nachdem Sie den Befehl ausgegeben haben, warten Sie, bis das System an der LOADER-Eingabeaufforderung angehalten wird.
-
-.. Schalten Sie die Netzteile aus oder wieder ein, abhängig von der Anzahl der Controller-Module im Chassis:
-+
-*** Wenn Sie zwei Controller-Module im Chassis besitzen, lassen Sie die Netzteile eingeschaltet, um das andere Controller-Modul mit Strom zu versorgen.
-*** Wenn Sie ein Controller-Modul im Gehäuse haben, schalten Sie die Netzteile aus und ziehen Sie sie von den Netzteilen ab.
-
-
-.. Überprüfen Sie, ob Sie alle Aspekte, die bei der Ausführung von Diagnose auf Systemebene zu beachten sind, dass die Kabel sicher angeschlossen sind und die Hardwarekomponenten ordnungsgemäß im Storage-System installiert wurden.
-.. Booten Sie das zu betreuende Controller-Modul, und unterbrechen Sie den Boot, indem Sie auf drücken `Ctrl-C` Wenn Sie dazu aufgefordert werden, zum Startmenü zu gelangen:
-+
-*** Wenn Sie zwei Controller-Module im Chassis haben, setzen Sie das Controller-Modul vollständig ein, das Sie im Chassis warten.
-+
-Das Controller-Modul wird bei vollem Sitz hochgestartet.
-
-*** Wenn Sie ein Controller-Modul im Chassis haben, schließen Sie die Netzteile an und schalten Sie sie dann ein.
-
-
-.. Wählen Sie aus dem Menü die Option Start in den Wartungsmodus.
-.. Beenden Sie den Wartungsmodus, indem Sie den folgenden Befehl eingeben: `halt`
-+
-Nachdem Sie den Befehl ausgegeben haben, warten Sie, bis das System an der LOADER-Eingabeaufforderung angehalten wird.
-
-.. Führen Sie den Diagnosetest auf Systemebene erneut aus.
-
-
-|===
-
-
-
-
-== Schritt 6: Aggregate in einer MetroCluster Konfiguration mit zwei Nodes zurückwechseln
+== Schritt 5: Aggregate in einer MetroCluster Konfiguration mit zwei Nodes zurückwechseln
 
 Nachdem Sie in einer MetroCluster Konfiguration mit zwei Nodes den FRU-Austausch abgeschlossen haben, können Sie den MetroCluster SwitchBack-Vorgang durchführen. Damit wird die Konfiguration in ihren normalen Betriebszustand zurückversetzt, wobei die Synchronisations-Storage Virtual Machines (SVMs) auf dem ehemals beeinträchtigten Standort jetzt aktiv sind und Daten aus den lokalen Festplattenpools bereitstellen.
 
@@ -482,6 +355,6 @@ Wenn ein Wechsel eine lange Zeit in Anspruch nimmt, können Sie den Status der i
 
 
 
-== Schritt 7: Führen Sie den Ersatzprozess durch
+== Schritt 6: Schließen Sie den Austauschprozess ab
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

@@ -1,0 +1,754 @@
+---
+permalink: asa900/install_detailed_guide.html 
+sidebar: sidebar 
+keywords: ASA A900 
+summary: Detaillierte Schritt-für-Schritt-Anleitung zur Installation eines typischen NetApp-Systems. 
+---
+= Detaillierte Schritte - ASA 900
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Diese Seite enthält detaillierte Schritt-für-Schritt-Anleitungen zur Installation eines typischen NetApp-Systems. Verwenden Sie diesen Artikel, wenn Sie detailliertere Installationsanweisungen wünschen.
+
+
+
+== Schritt 1: Installation vorbereiten
+
+Um Ihr System zu installieren, müssen Sie auf der NetApp Support Site ein Konto erstellen, Ihr System registrieren und Lizenzschlüssel abrufen. Außerdem müssen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp für Ihr System inventarisieren und bestimmte Netzwerkinformationen erfassen.
+
+Sie müssen Zugriff auf die haben https://hwu.netapp.com["NetApp Hardware Universe"^] Weitere Informationen zu Standortanforderungen sowie zusätzliche Informationen zu Ihrem konfigurierten System.
+
+.Was Sie brauchen
+Möglicherweise möchten Sie auch Zugriff auf den haben http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["Versionshinweise zu ONTAP 9"^] Für Ihre Version von ONTAP finden Sie weitere Informationen zu diesem System.
+
+Folgendes müssen Sie an Ihrer Website angeben:
+
+* Rack-Platz für das Storage-System
+* Kreuzschlitzschraubendreher #2
+* Zusätzliche Netzwerkkabel zum Anschließen des Systems an den Netzwerk-Switch und Laptop oder die Konsole über einen Webbrowser
+
+
+.Schritte
+. Packen Sie den Inhalt aller Boxen aus.
+. Notieren Sie die Seriennummer des Systems von den Controllern.
++
+image::../media/drw_ssn_label.svg[drw ssn-Etikett]
+
+. Notieren Sie sich die Anzahl und die Kabeltypen, die Sie erhalten haben.
++
+In der folgenden Tabelle sind die Kabeltypen aufgeführt, die Sie möglicherweise erhalten können. Wenn Sie ein Kabel empfangen, das nicht in der Tabelle aufgeführt ist, finden Sie im Hardware Universe das Kabel und dessen Verwendung.
+
++
+https://hwu.netapp.com["NetApp Hardware Universe"^]
+
++
+[cols="1,2,2,2"]
+|===
+| Kabeltyp... | Teilenummer und Länge | Steckverbindertyp | Für... 
+
+
+ a| 
+25-GbE-Datenkabel
+ a| 
+X66240A-05 (112-00639), 0,5 m
+
+X66240A-2 (112-00598), 2 m
+
+X66240A-5 (112-00600), 5 m
+ a| 
+image::../media/oie_cable_sfp_gbe_copper.svg[oie-Kabel sfp gbe Kupfer]
+ a| 
+Netzwerkkabel
+
+
+
+ a| 
+32 Gbit FC (SFP+ Op)
+ a| 
+X66250-2 (112-00342), 2 m
+
+X66250-5 (112-00344), 5 m
+
+X66250-15 (112-00346), 15 m
+ a| 
+image::../media/oie_cable_sfp_gbe_copper.svg[oie-Kabel sfp gbe Kupfer]
+ a| 
+Optisches FC-Netzwerkkabel
+
+
+
+ a| 
+40-GbE-Netzwerkkabel
+ a| 
+X66100-1 (112-00542), 1 m
+
+X66100-3 (112-00543), 3 m
+
+X66100-5 (112-00544), 5 m
+ a| 
+image::../media/oie_cable100_gbe_qsfp28.svg[oie Cable100 gbe qsfp28]
+ a| 
+Ethernet-Daten, Cluster-Netzwerk
+
+
+
+ a| 
+100-GbE-Kabel
+ a| 
+X6211B-1 (112-00573), 1 m
+
+X6211B-2 (112-00574), 2 m
+
+X6211B-5 (112-00576), 5 m
+ a| 
+image::../media/oie_cable100_gbe_qsfp28.svg[oie Cable100 gbe qsfp28]
+ a| 
+Netzwerk,
+
+NVME-Storage,
+
+Ethernet-Daten,
+
+Cluster-Netzwerk
+
+
+
+ a| 
+Optische Kabel
+ a| 
+X66031A (112-00436), 1 m
+
+X66032A (112-00437), 2 m
+
+X66033A (112-00438), 3 m
+ a| 
+image::../media/oie_cable_fiber_lc_connector.svg[oie-Kabel-Glasfaser-lc-Anschluss]
+ a| 
+Optisches FC-Netzwerk
+
+
+
+ a| 
+CAT 6, RJ-45 (je nach Bestellung)
+ a| 
+Teilenummern X6585-R6 (112-00291), 3m
+
+X6562-R6 (112-00196), 5 m
+ a| 
+image::../media/oie_cable_rj45.svg[oie-Kabel rj45]
+ a| 
+Managementnetzwerk und Ethernet-Daten
+
+
+
+ a| 
+Micro-USB-Konsolenkabel
+ a| 
+Keine Angabe
+ a| 
+image::../media/oie_cable_micro_usb.svg[oie-Kabel Micro-usb]
+ a| 
+Verbindung über die Konsole während der Software-Einrichtung auf Laptops/Konsolen, die nicht von Windows stammen
+
+
+
+ a| 
+Stromkabel
+ a| 
+Keine Angabe
+ a| 
+image::../media/oie_cable_power.svg[oie-Kabel mit Strom]
+ a| 
+System einschalten
+
+|===
+. Überprüfen Sie die https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["ONTAP Konfigurationsleitfaden"^] Und sammeln Sie die in diesem Handbuch aufgeführten erforderlichen Informationen.
+
+
+
+
+== Schritt 2: Installieren Sie die Hardware
+
+Sie müssen das System je nach Bedarf in einem 4-Säulen-Rack oder NetApp Systemschrank installieren.
+
+. Installieren Sie die Schienensatz nach Bedarf.
+. Installieren und sichern Sie das System anhand der im Schienensatz enthaltenen Anweisungen.
++
+
+NOTE: Sie müssen sich der Sicherheitsbedenken im Zusammenhang mit dem Gewicht des Systems bewusst sein.
+
++
+image::../media/drw_9500_lifting_icon.svg[symbol für das Anheben des drw 9500]
+
+. Schließen Sie Kabelmanagement-Geräte (wie abgebildet) an.
++
+image::../media/drw_9500_cable_management_arms.svg[drw 9500 Kabelführungsarme]
+
+. Bringen Sie die Blende auf die Vorderseite des Systems an.
+
+
+Das folgende Diagramm zeigt, wie ein typisches System aussieht und wo sich die Hauptkomponenten auf der Rückseite des Systems befinden:
+
+image::../media/drw_a900_controller_in _chassis_ID_IEOPS-856.svg[drw a900-Controller in Gehäuse-ID IEOPS 856]
+
+
+
+== Schritt 3: Controller mit Ihrem Netzwerk verbinden
+
+Sie können die Controller mithilfe der Switch-freien Cluster-Methode mit zwei Nodes oder des Cluster Interconnect-Netzwerks mit dem Netzwerk verkabeln.
+
+[role="tabbed-block"]
+====
+.Option 1: Cluster mit zwei Nodes ohne Switches
+--
+Managementnetzwerk, Datennetzwerk und Management-Ports auf den Controllern sind mit Switches verbunden. Die Cluster Interconnect-Ports sind an beiden Controllern verkabelt.
+
+.Bevor Sie beginnen
+Sie müssen sich an den Netzwerkadministrator wenden, um Informationen über das Anschließen des Systems an die Switches zu erhalten.
+
+Achten Sie beim Einsetzen der Kabel in die Anschlüsse darauf, die Richtung der Kabelabziehlaschen zu überprüfen. Die Kabelabziehlaschen sind für alle Netzwerkmodulanschlüsse nach oben.
+
+image::../media/oie_cable_pull_tab_up.svg[ziehen Sie die Lasche des oie-Kabels nach oben]
+
+
+NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
+
+. Verwenden Sie die Animation oder Abbildung, um die Verkabelung zwischen den Controllern und den Switches abzuschließen:
++
+.Animation – Verkabeln Sie einen 2-Node-Cluster ohne Switches
+video::37419c37-f56f-48e5-8e6c-afa600095444[panopto]
++
+image::../media/drw_a900_tnsc_network_cabling_IEOPS-933.svg[drw a900 tnsc Netzwerkverkabelung IEOPS 933]
+
++
+|===
+| Schritt | Führen Sie an jedem Controller aus 
+
+
+ a| 
+image::../media/oie_legend_icon_1_lg.svg[oie-Legende-Symbol 1 lg]
+ a| 
+Verkabelung der Cluster Interconnect Ports:
+
+** Steckplatz A4 und B4 (e4a)
+** Steckplatz A8 und B8 (e8a)
+
+
+image::../media/oie_cable100_gbe_qsfp28.svg[oie Cable100 gbe qsfp28]
+
+
+
+ a| 
+image::../media/oie_legend_icon_2_lp.svg[oie Legend Icon 2 lp]
+ a| 
+Controller-Management-Ports (Schraubenschlüssel) verkabeln.
+
+image::../media/oie_cable_rj45.svg[oie-Kabel rj45]
+
+
+
+ a| 
+image::../media/oie_legend_icon_3_o.svg[oie-Legende-Symbol 3 o]
+ a| 
+25-GbE-Netzwerk-Switches verkabeln:
+
+Anschlüsse in Steckplatz A3 und B3 (e3a und e3c) und Steckplatz A9 und B9 (e9a und e9c) zu den 25-GbE-Netzwerk-Switches.
+
+image::../media/oie_cable_sfp_gbe_copper.svg[oie-Kabel sfp gbe Kupfer]
+
+40-GbE-Host-Netzwerk-Switches:
+
+Kabel-Host-Anschlüsse Seite b‐Steckplatz A4 und B4 (e4b) und Steckplatz A8 und B8 (e8b) am Host-Switch.
+
+image::../media/oie_cable100_gbe_qsfp28.svg[oie Cable100 gbe qsfp28]
+
+
+
+ a| 
+image::../media/oie_legend_icon_4_dr.svg[oie-Legende Symbol 4 dr]
+ a| 
+32-GB-FC-Verbindungen verkabeln:
+
+Kabelanschlüsse in Steckplatz A5 und B5 (5a, 5b, 5c und 5d) sowie in den Steckplätzen A7 und B7 (7a, 7b, 7c und 7d) an die 32 GB FC-Netzwerk-Switches.
+
+image::../media/oie_cable_sfp_gbe_copper.svg[oie-Kabel sfp gbe Kupfer]
+
+
+
+ a| 
+** Befestigen Sie die Kabel mit den Kabelführungsarmen (nicht abgebildet).
+** Schließen Sie die Stromkabel an die Netzteile an, und schließen Sie sie an verschiedene Stromquellen an (nicht abgebildet). PSU 1 und 3 versorgen alle Komponenten der Seite A mit Strom, während PSU2 und PSU4 alle Komponenten der Seite B mit Strom versorgen.
+
+ a| 
+image::../media/oie_cable_power.svg[oie-Kabel mit Strom]
+
+image::../media/drw_a900fas9500_power_source_icon_IEOPS-1142.svg[drw a900fas9500 Stromquellensymbol IEOPS 1142]
+
+|===
+
+
+--
+.Option 2: Cluster mit Switch
+--
+Managementnetzwerk, Datennetzwerk und Management-Ports auf den Controllern sind mit Switches verbunden. Die Cluster Interconnect- und HA-Ports sind mit dem Cluster/HA-Switch verbunden.
+
+.Bevor Sie beginnen
+Sie müssen sich an den Netzwerkadministrator wenden, um Informationen über das Anschließen des Systems an die Switches zu erhalten.
+
+Achten Sie beim Einsetzen der Kabel in die Anschlüsse darauf, die Richtung der Kabelabziehlaschen zu überprüfen. Die Kabelabziehlaschen sind für alle Netzwerkmodulanschlüsse nach oben.
+
+image::../media/oie_cable_pull_tab_up.svg[ziehen Sie die Lasche des oie-Kabels nach oben]
+
+
+NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
+
+. Verwenden Sie die Animation oder Abbildung, um die Verkabelung zwischen den Controllern und den Switches abzuschließen:
++
+.Animation - Verkabeln Sie ein geschalteter Cluster
+video::61ec11ec-aa30-474a-87a5-afa60008b52b[panopto]
++
+image::../media/drw_a900_switched_network_cabling_IEOPS-934.svg[drw a900-Switch-Netzwerkverkabelung IEEPS 934]
+
++
+|===
+| Schritt | Führen Sie an jedem Controller aus 
+
+
+ a| 
+image::../media/oie_legend_icon_1_lg.svg[oie-Legende-Symbol 1 lg]
+ a| 
+Cluster-Interconnect-Ports verkabeln:
+
+** Steckplatz A4 und B4 (e4a) zum Cluster-Netzwerk-Switch.
+** Steckplatz A8 und B8 (e8a) zum Cluster-Netzwerk-Switch
+
+
+image::../media/oie_cable100_gbe_qsfp28.svg[oie Cable100 gbe qsfp28]
+
+
+
+ a| 
+image::../media/oie_legend_icon_2_lp.svg[oie Legend Icon 2 lp]
+ a| 
+Controller-Management-Ports (Schraubenschlüssel) verkabeln.
+
+image::../media/oie_cable_rj45.svg[oie-Kabel rj45]
+
+
+
+ a| 
+image::../media/oie_legend_icon_3_o.svg[oie-Legende-Symbol 3 o]
+ a| 
+Kabel-25-GbE-Netzwerk-Switches:
+
+Anschlüsse in Steckplatz A3 und B3 (e3a und e3c) und Steckplatz A9 und B9 (e9a und e9c) zu den 25-GbE-Netzwerk-Switches.
+
+image::../media/oie_cable_sfp_gbe_copper.svg[oie-Kabel sfp gbe Kupfer]
+
+40-GbE-Host-Netzwerk-Switches:
+
+Kabel-Host-Anschlüsse Seite b‐Steckplatz A4 und B4 (e4b) und Steckplatz A8 und B8 (e8b) am Host-Switch.
+
+image::../media/oie_cable100_gbe_qsfp28.svg[oie Cable100 gbe qsfp28]
+
+
+
+ a| 
+image::../media/oie_legend_icon_4_dr.svg[oie-Legende Symbol 4 dr]
+ a| 
+32-GB-FC-Verbindungen verkabeln:
+
+Kabelanschlüsse in Steckplatz A5 und B5 (5a, 5b, 5c und 5d) sowie in den Steckplätzen A7 und B7 (7a, 7b, 7c und 7d) an die 32 GB FC-Netzwerk-Switches.
+
+image::../media/oie_cable_sfp_gbe_copper.svg[oie-Kabel sfp gbe Kupfer]
+
+
+
+ a| 
+** Befestigen Sie die Kabel mit den Kabelführungsarmen (nicht abgebildet).
+** Schließen Sie die Stromkabel an die Netzteile an, und schließen Sie sie an verschiedene Stromquellen an (nicht abgebildet). PSU 1 und 3 versorgen alle Komponenten der Seite A mit Strom, während PSU2 und PSU4 alle Komponenten der Seite B mit Strom versorgen.
+
+ a| 
+image::../media/oie_cable_power.svg[oie-Kabel mit Strom]
+
+image::../media/drw_a900fas9500_power_source_icon_IEOPS-1142.svg[drw a900fas9500 Stromquellensymbol IEOPS 1142]
+
+|===
+
+
+--
+====
+
+
+== Schritt 4: Controller mit Laufwerk-Shelfs verkabeln
+
+Verkabeln Sie entweder ein einzelnes NS224 Laufwerk-Shelf oder zwei NS224 Laufwerk-Shelfs mit Ihren Controllern.
+
+[role="tabbed-block"]
+====
+.Option 1: Verbinden Sie die Controller mit einem einzelnen NS224 Festplatten-Shelf
+--
+Sie müssen jeden Controller mit den NSM-Modulen am NS224-Laufwerk-Shelf verkabeln.
+
+.Bevor Sie beginnen
+* Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen. Die Kabelabzieher für die Storage-Module sind nach oben und die Abziehlaschen an den Shelves sind nach unten.
+
+
+image::../media/oie_cable_pull_tab_up.svg[ziehen Sie die Lasche des oie-Kabels nach oben]
+
+image::../media/oie_cable_pull_tab_down.svg[ziehen Sie die Lasche des oie-Kabels nach unten]
+
+
+NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
+
+. Verwenden Sie die folgenden Animationen oder Zeichnungen, um Ihre Controller mit einem einzelnen NS224-Laufwerk-Shelf zu verkabeln.
++
+.Animation - Kabel ein einziges NS224-Regal
+video::8d8b45cd-bd8f-4fab-a4fa-afa5017e7b72[panopto]
++
+image::../media/drw_a900_NS224_one shelf_cabling_IEOPS-937.svg[drw a900 NS224 One-Shelf-Verkabelung IEOPS 937]
+
++
+|===
+| Schritt | Führen Sie an jedem Controller aus 
+
+
+ a| 
+image::../media/oie_legend_icon_1_mb.svg[oie-Legende Symbol 1 mb]
+ a| 
+** Verbinden Sie Controller A Port e2a mit Port e0a auf NSM A auf dem Shelf.
+** Verbinden Sie Controller A Port e10b mit Port e0b auf NSM B auf dem Shelf.
+
+
+image::../media/oie_cable100_gbe_qsfp28.svg[oie Cable100 gbe qsfp28]
+
+100-GbE-Kabel
+
+
+
+ a| 
+image::../media/oie_legend_icon_2_lo.svg[oie-Legende Symbol 2 Lo]
+ a| 
+** Verbinden Sie den Controller B-Port e2a mit Port e0a auf NSM B auf dem Shelf.
+** Verbinden Sie Controller B Port e10b mit Port e0b auf NSM A auf dem Shelf.
+
+
+image::../media/oie_cable100_gbe_qsfp28.svg[oie Cable100 gbe qsfp28]
+
+100-GbE-Kabel
+
+|===
+
+
+--
+.Option 2: Verbinden Sie die Controller mit zwei NS224-Laufwerk-Shelfs
+--
+Sie müssen jeden Controller mit den NSM-Modulen der NS224 Laufwerk-Shelfs verkabeln.
+
+.Bevor Sie beginnen
+* Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen. Die Kabelabzieher für die Storage-Module sind nach oben und die Abziehlaschen an den Shelves sind nach unten.
+
+
+image::../media/oie_cable_pull_tab_up.svg[ziehen Sie die Lasche des oie-Kabels nach oben]
+
+image::../media/oie_cable_pull_tab_down.svg[ziehen Sie die Lasche des oie-Kabels nach unten]
+
+
+NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
+
+. Verwenden Sie die folgende Animation oder Abbildung, um Ihre Controller mit zwei NS224 Laufwerk-Shelfs zu verkabeln.
++
+.Animation - Kabel zwei NS224 Regale
+video::ec143c32-9e4b-47e5-893e-afa5017da6b4[panopto]
++
+image::../media/drw_a900_NS224_line_art_two shelf_cabling_IEOPS-1147.svg[drw a900 NS224 Line Art zwei-Shelf-Verkabelung IEOPS 1147]
+
++
+image::../media/drw_a900_NS224_two_shelf_cabling_IEOPS-938.svg[drw a900 NS224 zwei-Shelf-Kabel IEOPS 938]
+
++
+|===
+| Schritt | Führen Sie an jedem Controller aus 
+
+
+ a| 
+image::../media/oie_legend_icon_1_mb.svg[oie-Legende Symbol 1 mb]
+ a| 
+** Verbinden Sie Controller A Port e2a mit NSM A e0a auf Shelf 1.
+** Verbinden Sie Controller A Port e10b mit NSM B e0b auf Shelf 1.
+** Verbinden Sie Controller A Port e2b mit NSM B e0b auf Shelf 2.
+** Verbinden Sie Controller A Port e10a mit NSM A e0a auf Shelf 2.
+
+
+image::../media/oie_cable100_gbe_qsfp28.svg[oie Cable100 gbe qsfp28]
+
+100-GbE-Kabel
+
+
+
+ a| 
+image::../media/oie_legend_icon_2_lo.svg[oie-Legende Symbol 2 Lo]
+ a| 
+** Verbinden Sie Controller B-Port e2a mit NSM B e0a auf Shelf 1.
+** Verbinden Sie Controller B Port e10b mit NSM A e0b auf Shelf 1.
+** Verbinden Sie Controller B Port e2b mit NSM A e0b auf Shelf 2.
+** Verbinden Sie den Controller B-Port e10a mit NSM B e0a auf Shelf 2.
+
+
+image::../media/oie_cable100_gbe_qsfp28.svg[oie Cable100 gbe qsfp28]
+
+100-GbE-Kabel
+
+|===
+
+
+--
+====
+
+
+== Schritt 5: System-Setup und -Konfiguration abschließen
+
+Die Einrichtung und Konfiguration des Systems kann mithilfe der Cluster-Erkennung nur mit einer Verbindung zum Switch und Laptop abgeschlossen werden. Sie können auch direkt eine Verbindung zu einem Controller im System herstellen und dann eine Verbindung zum Management Switch herstellen.
+
+[role="tabbed-block"]
+====
+.Option 1: Wenn die Netzwerkerkennung aktiviert ist
+--
+Wenn die Netzwerkerkennung auf Ihrem Laptop aktiviert ist, können Sie das System mit der automatischen Cluster-Erkennung einrichten und konfigurieren.
+
+. Verwenden Sie die folgende Animation oder Zeichnung, um eine oder mehrere Laufwerk-Shelf-IDs festzulegen:
++
+Die NS224-Einschübe sind auf die Shelf-ID 00 und 01 voreingestellt. Wenn Sie die Shelf-IDs ändern möchten, müssen Sie ein Werkzeug erstellen, um in die Öffnung einzufügen, an der sich die Schaltfläche befindet. Siehe https://docs.netapp.com/us-en/ontap-systems/ns224/change-shelf-id.html["Shelf-ID ändern – NS224-Einschübe"] Detaillierte Anweisungen.
+
++
+.Animation – legt NVMe-Laufwerk-Shelf-IDs fest
+video::95a29da1-faa3-4ceb-8a0b-ac7600675aa6[panopto]
++
+image::../media/drw_a900_oie_change_ns224_shelf ID_IEOPS-836.svg[drw a900 oie-Änderung ns224 Shelf-ID IEOPS 836]
+
++
+[cols="20%,80%"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[Legende Symbol 01]
+ a| 
+Einlegeboden-Endkappe
+
+
+
+ a| 
+image::../media/legend_icon_02.svg[Legende Symbol 02]
+ a| 
+Ablagefaceplate
+
+
+
+ a| 
+image::../media/legend_icon_03.svg[Legende Symbol 03]
+ a| 
+Shelf-ID-LED
+
+
+
+ a| 
+image::../media/legend_icon_04.svg[Legende Symbol 04]
+ a| 
+Taste für die Einstellung der Shelf-ID
+
+|===
+. Schalten Sie die Netzschalter an den Netzteilen beider Knoten ein.
++
+.Animation: Schalten Sie die Stromversorgung der Controller ein
+video::a905e56e-c995-4704-9673-adfa0005a891[panopto]
++
+image::../media/drw_a900_power-on_IEOPS-941.svg[drw a900 Power bei IEOPS 941]
+
++
+
+NOTE: Das erste Booten kann bis zu acht Minuten dauern.
+
+. Stellen Sie sicher, dass die Netzwerkerkennung auf Ihrem Laptop aktiviert ist.
++
+Weitere Informationen finden Sie in der Online-Hilfe Ihres Notebooks.
+
+. Schließen Sie Ihren Laptop mithilfe der folgenden Animation an den Management-Switch an.
++
+.Animation - Verbinden Sie Ihren Laptop mit dem Management-Switch
+video::d61f983e-f911-4b76-8b3a-ab1b0066909b[panopto]
++
+image::../media/dwr_laptop_to_switch_only.svg[dwr-Laptop nur zum Umschalten]
+
+. Wählen Sie ein ONTAP-Symbol aus, um es zu ermitteln:
++
+image::../media/drw_autodiscovery_controler_select.svg[wählen sie den drw-Kontroller für die automatische Ermittlung aus]
+
++
+.. Öffnen Sie Den Datei-Explorer.
+.. Klicken Sie im linken Bereich auf Netzwerk.
+.. Mit der rechten Maustaste klicken und Aktualisieren auswählen.
+.. Doppelklicken Sie auf das ONTAP-Symbol, und akzeptieren Sie alle auf dem Bildschirm angezeigten Zertifikate.
++
+
+NOTE: XXXXX ist die Seriennummer des Systems für den Ziel-Node.
+
++
+System Manager wird geöffnet.
+
+
+
+. Konfigurieren Sie das System mithilfe von System Manager geführten Setups anhand der Daten, die Sie im erfasst haben https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["ONTAP Konfigurationsleitfaden"^].
+. Richten Sie Ihr Konto ein und laden Sie Active IQ Config Advisor herunter:
++
+.. Melden Sie sich bei Ihrem bestehenden Konto an oder erstellen Sie ein Konto.
++
+https://mysupport.netapp.com/eservice/public/now.do["NetApp Support-Registrierung"^]
+
+.. Registrieren Sie das System.
++
+https://mysupport.netapp.com/eservice/registerSNoAction.do?moduleName=RegisterMyProduct["NetApp Produktregistrierung"^]
+
+.. Laden Sie Active IQ Config Advisor herunter.
++
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"^]
+
+
+
+. Überprüfen Sie den Systemzustand Ihres Systems, indem Sie Config Advisor ausführen.
+. Wechseln Sie nach Abschluss der Erstkonfiguration mit dem https://www.netapp.com/data-management/oncommand-system-documentation/["ONTAP  ONTAP System Manager; Dokumentationsressourcen"^] Seite für Informationen über das Konfigurieren zusätzlicher Funktionen in ONTAP.
+
+
+--
+.Option 2: Wenn die Netzwerkerkennung nicht aktiviert ist
+--
+Wenn Sie keinen Windows- oder Mac-basierten Laptop oder keine Konsole verwenden oder die automatische Erkennung nicht aktiviert ist, müssen Sie die Konfiguration und das Setup mit dieser Aufgabe abschließen.
+
+. Laptop oder Konsole verkabeln und konfigurieren:
++
+.. Stellen Sie den Konsolenport des Laptops oder der Konsole auf 115,200 Baud mit N-8-1 ein.
++
+
+NOTE: Informationen zur Konfiguration des Konsolenport finden Sie in der Online-Hilfe Ihres Laptops oder der Konsole.
+
+.. Schließen Sie das Konsolenkabel über das im System gelieferte Konsolenkabel an den Laptop oder die Konsole an den Management Switch im Management-Subnetz.
++
+image::../media/drw_A900_cable_console_switch_controller_IEOPS-953.svg[drw A900 Kabelkonsolen-Switch-Controller IEOPS 953]
+
+.. Weisen Sie dem Laptop oder der Konsole eine TCP/IP-Adresse zu. Verwenden Sie dabei eine Adresse, die sich im Management-Subnetz befindet.
+
+
+. Mithilfe der folgenden Animation können Sie eine oder mehrere Laufwerk-Shelf-IDs festlegen:
++
+Die NS224-Einschübe sind auf die Shelf-ID 00 und 01 voreingestellt. Wenn Sie die Shelf-IDs ändern möchten, müssen Sie ein Werkzeug erstellen, um in die Öffnung einzufügen, an der sich die Schaltfläche befindet. Siehe https://docs.netapp.com/us-en/ontap-systems/ns224/change-shelf-id.html["Shelf-ID ändern – NS224-Einschübe"] Detaillierte Anweisungen.
+
++
+.Animation – legt NVMe-Laufwerk-Shelf-IDs fest
+video::95a29da1-faa3-4ceb-8a0b-ac7600675aa6[panopto]
++
+image::../media/drw_a900_oie_change_ns224_shelf ID_IEOPS-836.svg[drw a900 oie-Änderung ns224 Shelf-ID IEOPS 836]
+
++
+[cols="20%,80%"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[Legende Symbol 01]
+ a| 
+Einlegeboden-Endkappe
+
+
+
+ a| 
+image::../media/legend_icon_02.svg[Legende Symbol 02]
+ a| 
+Ablagefaceplate
+
+
+
+ a| 
+image::../media/legend_icon_03.svg[Legende Symbol 03]
+ a| 
+Shelf-ID-LED
+
+
+
+ a| 
+image::../media/legend_icon_04.svg[Legende Symbol 04]
+ a| 
+Taste für die Einstellung der Shelf-ID
+
+|===
+. Schalten Sie die Netzschalter an den Netzteilen beider Knoten ein.
++
+.Animation: Schalten Sie die Stromversorgung der Controller ein
+video::bb04eb23-aa0c-4821-a87d-ab2300477f8b[panopto]
++
+image::../media/drw_a900_power-on_IEOPS-941.svg[drw a900 Power bei IEOPS 941]
+
++
+
+NOTE: Das erste Booten kann bis zu acht Minuten dauern.
+
+. Weisen Sie einem der Nodes eine erste Node-Management-IP-Adresse zu.
++
+[cols="20%,80%"]
+|===
+| Wenn das Managementnetzwerk DHCP enthält... | Dann... 
+
+
+ a| 
+Konfiguriert
+ a| 
+Notieren Sie die IP-Adresse, die den neuen Controllern zugewiesen ist.
+
+
+
+ a| 
+Nicht konfiguriert
+ a| 
+.. Öffnen Sie eine Konsolensitzung mit PuTTY, einem Terminalserver oder dem entsprechenden Betrag für Ihre Umgebung.
++
+
+NOTE: Überprüfen Sie die Online-Hilfe Ihres Laptops oder Ihrer Konsole, wenn Sie nicht wissen, wie PuTTY konfiguriert werden soll.
+
+.. Geben Sie die Management-IP-Adresse ein, wenn Sie dazu aufgefordert werden.
+
+
+|===
+. Konfigurieren Sie das Cluster unter System Manager auf Ihrem Laptop oder Ihrer Konsole:
++
+.. Rufen Sie die Node-Management-IP-Adresse im Browser auf.
++
+
+NOTE: Das Format für die Adresse ist +https://x.x.x.x+.
+
+.. Konfigurieren Sie das System anhand der Daten, die Sie im erfasst haben https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["ONTAP Konfigurationsleitfaden"^]
+
+
+. Richten Sie Ihr Konto ein und laden Sie Active IQ Config Advisor herunter:
++
+.. Melden Sie sich bei Ihrem bestehenden Konto an oder erstellen Sie ein Konto.
++
+https://mysupport.netapp.com/eservice/public/now.do["NetApp Support-Registrierung"^]
+
+.. Registrieren Sie das System.
++
+https://mysupport.netapp.com/eservice/registerSNoAction.do?moduleName=RegisterMyProduct["NetApp Produktregistrierung"^]
+
+.. Laden Sie Active IQ Config Advisor herunter.
++
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"^]
+
+
+
+. Überprüfen Sie den Systemzustand Ihres Systems, indem Sie Config Advisor ausführen.
+. Wechseln Sie nach Abschluss der Erstkonfiguration mit dem https://www.netapp.com/data-management/oncommand-system-documentation/["ONTAP  ONTAP System Manager; Dokumentationsressourcen"^] Seite für Informationen über das Konfigurieren zusätzlicher Funktionen in ONTAP.
+
+
+--
+====

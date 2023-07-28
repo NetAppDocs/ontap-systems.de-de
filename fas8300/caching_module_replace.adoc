@@ -271,7 +271,7 @@ Das Ende des Cache-Moduls wird von der Registerkarte Release gelöscht.
 
 == Schritt 4: Installieren Sie das Controller-Modul
 
-Nachdem Sie die Komponente im Controller-Modul ersetzt haben, müssen Sie das Controller-Modul wieder in das Gehäuse einsetzen und dann im Wartungsmodus booten.
+Nachdem Sie die Komponente im Controller-Modul ersetzt haben, müssen Sie das Controller-Modul wieder in das Gehäuse einsetzen.
 
 Sie können die folgende Animation, Illustration oder die geschriebenen Schritte zur Installation des Controller-Moduls im Gehäuse verwenden.
 
@@ -301,7 +301,7 @@ NOTE: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige
 
 .. Setzen Sie das Controller-Modul vollständig in das Gehäuse ein, indem Sie die Verriegelungsriegel nach oben drehen, kippen Sie sie so, dass sie die Sicherungsstifte entfernen, den Controller vorsichtig ganz nach innen schieben und dann die Verriegelungsriegel in die verriegelte Position senken.
 +
-Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt. Bereiten Sie sich darauf vor, den Bootvorgang zu unterbrechen.
+Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt.
 
 .. Wenn Sie dies noch nicht getan haben, installieren Sie das Kabelverwaltungsgerät neu.
 .. Unterbrechen Sie den normalen Boot-Prozess und booten Sie zu LOADER, indem Sie drücken `Ctrl-C`.
@@ -310,46 +310,15 @@ Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt
 NOTE: Wenn das System im Startmenü stoppt, wählen Sie die Option zum Booten in LOADER.
 
 .. Geben Sie an der LOADER-Eingabeaufforderung ein `bye` Um die PCIe-Karten und andere Komponenten neu zu initialisieren.
-.. Unterbrechen Sie den Boot-Prozess und booten Sie an der LOADER-Eingabeaufforderung, indem Sie drücken `Ctrl-C`.
-+
-Wenn das System im Startmenü stoppt, wählen Sie die Option zum Booten in LOADER.
 
 
 
 
 
 
+== Schritt 5: Stellen Sie das Controller-Modul wieder in Betrieb
 
-== Schritt 5: Führen Sie die Diagnose aus
-
-Nachdem Sie eine Komponente im System ausgetauscht haben, sollten Sie Diagnosetests auf dieser Komponente durchführen.
-
-Ihr System muss die LOADER-Eingabeaufforderung aufweisen, um die Diagnose zu starten.
-
-Alle Befehle im Diagnoseverfahren werden vom Controller ausgegeben, der die Komponente ersetzt wird.
-
-.Schritte
-. Wenn der zu wartenden Controller nicht an der LOADER-Eingabeaufforderung angezeigt wird, booten Sie den Controller neu: `system node halt -node _node_name_`
-+
-Nachdem Sie den Befehl ausgegeben haben, sollten Sie warten, bis das System an der LOADER-Eingabeaufforderung angehalten wird.
-
-. Rufen Sie an der LOADER-Eingabeaufforderung die speziellen Treiber auf, die speziell für die Diagnose auf Systemebene entwickelt wurden, um ordnungsgemäß zu funktionieren: `boot_diags`
-. Wählen Sie im angezeigten Menü *Scansystem* aus, um die Ausführung der Diagnosetests zu aktivieren.
-. Wählen Sie im angezeigten Menü die Option *Stress-Test-System* aus.
-. Wählen Sie im angezeigten Menü die Option **M.2 NVME Drive Stress** aus.
-. Fahren Sie auf der Grundlage des Ergebnisses des vorhergehenden Schritts fort:
-+
-** Wenn der Test fehlgeschlagen ist, korrigieren Sie den Fehler, und führen Sie den Test erneut aus.
-** Wenn der Test keine Fehler gemeldet hat, wählen Sie im Menü Neu starten aus, um das System neu zu starten.
-
-
-
-
-
-
-== Schritt 6: Stellen Sie das Controller-Modul nach dem Ausführen der Diagnose wieder in Betrieb
-
-Nach Abschluss der Diagnose müssen Sie das System erneut einschalten, das Controller-Modul zurückgeben und dann die automatische Rückgabe aktivieren.
+Sie müssen das System neu verstellen, das Controller-Modul zurückgeben und dann das automatische Giveback erneut aktivieren.
 
 .Schritte
 . Das System nach Bedarf neu einsetzen.

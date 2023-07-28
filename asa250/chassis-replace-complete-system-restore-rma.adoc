@@ -1,0 +1,50 @@
+---
+permalink: asa250/chassis-replace-complete-system-restore-rma.html 
+sidebar: sidebar 
+keywords: asa a250, verify and set HA state, complete the replacement process 
+summary: Sie müssen den HA-Status des Gehäuses überprüfen und das fehlerhafte Teil an NetApp zurücksenden, wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben. 
+---
+= Schließen Sie den Wiederherstellungs- und Austauschprozess ab - ASA A250
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen den HA-Status des Gehäuses überprüfen und das fehlerhafte Teil an NetApp zurücksenden, wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben.
+
+
+
+== Schritt: Überprüfen Sie den HA-Status des Chassis und legen Sie diesen fest
+
+Sie müssen den HA-Status des Chassis überprüfen und gegebenenfalls den Status entsprechend Ihrer Systemkonfiguration aktualisieren.
+
+. Zeigen Sie im Wartungsmodus von einem der Controller-Module aus den HA-Status des lokalen Controller-Moduls und des Chassis an: `ha-config show`
++
+Der HA-Status sollte für alle Komponenten identisch sein.
+
+. Wenn der angezeigte Systemzustand für das Chassis nicht mit der Systemkonfiguration übereinstimmt:
++
+.. Legen Sie für das Chassis den HA-Status fest: `ha-config modify chassis _HA-state_`
++
+Für den HA-Status kann einer der folgenden Werte vorliegen:
+
++
+*** `ha`
+*** `mcc`
+*** `mccip`
+*** `non-ha`
+
+
+.. Bestätigen Sie, dass sich die Einstellung geändert hat: `ha-config show`
+
+
+. Falls Sie dies noch nicht getan haben, können Sie den Rest Ihres Systems erneut verwenden.
+. Bringen Sie die Blende wieder an der Vorderseite des Systems an.
+
+
+
+
+== Schritt 2: Rückgabe des fehlerhaften Teils an NetApp
+
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

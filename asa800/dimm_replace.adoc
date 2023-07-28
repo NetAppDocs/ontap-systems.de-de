@@ -1,0 +1,237 @@
+---
+permalink: asa800/dimm-replace.html 
+sidebar: sidebar 
+keywords: asa a800, replace a dimm 
+summary: 'Sie müssen ein DIMM im Controller-Modul ersetzen, wenn Ihr System eine steigende Anzahl korrigierbarer Fehlerkorrekturcodes (ECC) registriert; andernfalls wird eine Systempanik verursacht.' 
+---
+= Ersetzen Sie das DIMM-Modul – ASA A800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen ein DIMM im Controller-Modul ersetzen, wenn Ihr System eine steigende Anzahl korrigierbarer Fehlerkorrekturcodes (ECC) registriert; andernfalls wird eine Systempanik verursacht.
+
+Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+
+Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
+
+
+
+== Schritt 1: Schalten Sie den beeinträchtigten Regler aus
+
+Speicher- und Netzwerkverbindungen des Controller-Moduls wieder herstellen.
+
+.Schritte
+. Das System neu aufführen.
+. Überprüfen Sie anhand von, ob die Verkabelung korrekt ist https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"].
++
+.. Laden Sie Config Advisor herunter und installieren Sie es.
+.. Geben Sie die Informationen für das Zielsystem ein, und klicken Sie auf Daten erfassen.
+.. Klicken Sie auf die Registerkarte Verkabelung, und überprüfen Sie die Ausgabe. Stellen Sie sicher, dass alle Festplatten-Shelfs angezeigt werden und alle Festplatten in der Ausgabe angezeigt werden. So beheben Sie mögliche Verkabelungsprobleme.
+.. Überprüfen Sie die andere Verkabelung, indem Sie auf die entsprechende Registerkarte klicken und dann die Ausgabe von Config Advisor überprüfen.
+
+
+
+
+
+
+== Schritt 2: Entfernen Sie das Controller-Modul
+
+Sie müssen das Controller-Modul aus dem Chassis entfernen, wenn Sie das Controller-Modul ersetzen oder eine Komponente im Controller-Modul ersetzen.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Trennen Sie die Netzteile des Controller-Moduls von der Quelle.
+. Lösen Sie die Netzkabelhalter, und ziehen Sie anschließend die Kabel von den Netzteilen ab.
+. Lösen Sie den Haken- und Schlaufenriemen, mit dem die Kabel an das Kabelmanagement-Gerät gebunden sind, und ziehen Sie dann die Systemkabel und SFP- und QSFP-Module (falls erforderlich) vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren.
++
+Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation des Kabelverwaltungsgeräts die Kabel organisiert sind.
+
+. Entfernen Sie das Kabelführungs-Gerät aus dem Controller-Modul und legen Sie es beiseite.
+. Drücken Sie beide Verriegelungsriegel nach unten, und drehen Sie dann beide Verriegelungen gleichzeitig nach unten.
++
+Das Controller-Modul wird leicht aus dem Chassis entfernt.
+
++
+image::../media/drw_a800_pcm_remove.png[drw a800 pcm entfernen]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Verriegelungsverschluss 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Sicherungsstift
+
+|===
+. Schieben Sie das Controller-Modul aus dem Gehäuse.
++
+Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen, während Sie es aus dem Gehäuse schieben.
+
+. Das Steuermodul auf eine stabile, flache Oberfläche legen und den Luftkanal öffnen:
++
+.. Drücken Sie die Verriegelungslaschen an den Seiten des Luftkanals in Richtung der Mitte des Controller-Moduls.
+.. Schieben Sie den Luftkanal in Richtung der Lüftermodule, und drehen Sie ihn dann nach oben in die vollständig geöffnete Position.
++
+image::../media/drw_a800_open_air_duct.png[drw a800 Freiluftkanal]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Verriegelungsklammern für Luftkanäle 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Schieben Sie den Luftkanal in Richtung Lüftermodule
+
+
+
+ a| 
+image:../media/legend_icon_03.png[""]
+ a| 
+Luftkanal in Richtung Lüftermodule drehen
+
+|===
+
+
+
+
+
+
+== Schritt 3: Ersetzen Sie ein DIMM
+
+Zum Austauschen eines DIMM-Moduls müssen Sie das DIMM-Modul mithilfe des DIMM-MAP-Etiketts oben am Luftkanal lokalisieren und es anschließend gemäß den einzelnen Schritten austauschen.
+
+. Beim Entfernen eines DIMM-Moduls entsperren Sie die Verriegelungsriegel am entsprechenden Riser und entfernen Sie dann den Riser.
++
+image::../media/drw_a800_dimm_replace.png[drw a800 dimm Ersetzen]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Luftkanalabdeckung 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Riser 1 und DIMM Bank 1 und 3-6
+
+
+
+ a| 
+Riser 2 und DIMM-Bank 7-10, 12-13 und 15-18
+ a| 
+Riser 3 und DIMM 19 -22 und 24
+
+|===
++
+*Hinweis:* die Ablagefach 2 und 14 bleiben leer. Versuchen Sie nicht, DIMMs in diesen Steckplätzen zu installieren.
+
+. Beachten Sie die Ausrichtung des DIMM-Moduls in der Buchse, damit Sie das ErsatzDIMM in die richtige Ausrichtung einsetzen können.
+. Werfen Sie das DIMM aus dem Steckplatz, indem Sie die beiden DIMM-Auswerferlaschen auf beiden Seiten des DIMM langsam auseinander drücken und dann das DIMM aus dem Steckplatz schieben.
++
+
+NOTE: Halten Sie das DIMM vorsichtig an den Rändern, um Druck auf die Komponenten auf der DIMM-Leiterplatte zu vermeiden.
+
+. Entfernen Sie das Ersatz-DIMM aus dem antistatischen Versandbeutel, halten Sie das DIMM an den Ecken und richten Sie es am Steckplatz aus.
++
+Die Kerbe zwischen den Stiften am DIMM sollte mit der Lasche im Sockel aufliegen.
+
+. Setzen Sie das DIMM-Modul in den Steckplatz ein.
++
+Das DIMM passt eng in den Steckplatz, sollte aber leicht einpassen. Falls nicht, richten Sie das DIMM-Modul mit dem Steckplatz aus und setzen Sie es wieder ein.
+
++
+
+NOTE: Prüfen Sie das DIMM visuell, um sicherzustellen, dass es gleichmäßig ausgerichtet und vollständig in den Steckplatz eingesetzt ist.
+
+. Drücken Sie vorsichtig, aber fest auf die Oberseite des DIMM, bis die Auswurfklammern über den Kerben an den Enden des DIMM einrasten.
+. Installieren Sie alle Riser, die Sie aus dem Controller-Modul entfernt haben, neu.
+. Schließen Sie den Luftkanal.
+
+
+
+
+== Schritt 4: Installieren Sie das Controller-Modul neu und starten Sie das System
+
+Nachdem Sie eine FRU im Controller-Modul ersetzt haben, müssen Sie das Controller-Modul neu installieren und neu starten.
+
+. Wenn Sie dies noch nicht getan haben, schließen Sie den Luftkanal:
++
+.. Schwenken Sie den Luftkanal bis nach unten zum Controller-Modul.
+.. Schieben Sie den Luftkanal in Richtung der Steigleitungen, bis die Verriegelungslaschen einrasten.
+.. Überprüfen Sie den Luftkanal, um sicherzustellen, dass er richtig sitzt und fest sitzt.
++
+image::../media/drw_a700s_close_air_duct.png[drw a700s schließen den Luftkanal]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Verriegelungslaschen 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Stößel schieben
+
+|===
+
+
+. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
++
+
+NOTE: Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein, wenn Sie dazu aufgefordert werden.
+
+. Das System nach Bedarf neu einsetzen.
++
+Wenn Sie die Medienkonverter (QSFPs oder SFPs) entfernt haben, sollten Sie diese erneut installieren, wenn Sie Glasfaserkabel verwenden.
+
+. Schließen Sie das Netzkabel an das Netzteil an, setzen Sie die Sicherungshülse des Netzkabels wieder ein, und schließen Sie dann das Netzteil an die Stromquelle an.
+. Führen Sie die Neuinstallation des Controller-Moduls durch:
++
+.. Drücken Sie das Controller-Modul fest in das Gehäuse, bis es auf die Mittelebene trifft und vollständig sitzt.
++
+Die Verriegelungen steigen, wenn das Controller-Modul voll eingesetzt ist.
+
++
+
+NOTE: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige Kraft verwenden, um Schäden an den Anschlüssen zu vermeiden.
+
++
+Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt.
+
+.. Drehen Sie die Verriegelungsriegel nach oben, und kippen Sie sie so, dass sie die Sicherungsstifte entfernen und dann in die verriegelte Position absenken.
+.. Wenn Sie dies noch nicht getan haben, installieren Sie das Kabelverwaltungsgerät neu.
+
+
+
+
+
+
+== Schritt 5: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

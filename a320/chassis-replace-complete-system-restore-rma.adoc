@@ -1,8 +1,8 @@
 ---
 permalink: a320/chassis-replace-complete-system-restore-rma.html 
 sidebar: sidebar 
-keywords: aff a320, verify and set HA state, run diagnostics, complete the replacement process 
-summary: Sie müssen den HA-Status des Chassis überprüfen, Diagnosen ausführen und das ausgefallene Teil an NetApp zurücksenden, wie in den mit dem Kit gelieferten RMA-Anweisungen beschrieben. 
+keywords: aff a320, verify and set HA state,  complete the replacement process 
+summary: Sie müssen den HA-Status des Gehäuses überprüfen und das fehlerhafte Teil an NetApp zurücksenden, wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben. 
 ---
 = Schließen Sie den Wiederherstellungs- und Austauschprozess - AFF A320 ab
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Sie müssen den HA-Status des Chassis überprüfen, Diagnosen ausführe
 
 
 [role="lead"]
-Sie müssen den HA-Status des Chassis überprüfen, Diagnosen ausführen und das ausgefallene Teil an NetApp zurücksenden, wie in den mit dem Kit gelieferten RMA-Anweisungen beschrieben.
+Sie müssen den HA-Status des Gehäuses überprüfen und das fehlerhafte Teil an NetApp zurücksenden, wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben.
 
 
 
@@ -45,32 +45,6 @@ Für den HA-Status kann einer der folgenden Werte vorliegen:
 
 
 
-== Schritt 2: Diagnose ausführen
-
-Nachdem Sie eine Komponente im System ausgetauscht haben, sollten Sie Diagnosetests auf dieser Komponente durchführen.
-
-Ihr System muss die LOADER-Eingabeaufforderung aufweisen, um die Diagnose zu starten.
-
-Alle Befehle in den Diagnoseverfahren werden vom Node ausgegeben, auf dem die Komponente ersetzt wird.
-
-. Wenn der Node, der gewartet werden soll, nicht an der LOADER-Eingabeaufforderung angezeigt wird, booten Sie den Node neu: `system node halt -node node_name`
-+
-Nachdem Sie den Befehl ausgegeben haben, sollten Sie warten, bis das System an der LOADER-Eingabeaufforderung angehalten wird.
-
-. Rufen Sie an der LOADER-Eingabeaufforderung die speziellen Treiber auf, die speziell für die Diagnose auf Systemebene entwickelt wurden, um ordnungsgemäß zu funktionieren: `boot_diags`
-. Wählen Sie im angezeigten Menü *Scansystem* aus, um die Ausführung der Diagnosetests zu aktivieren.
-. Wählen Sie *Testsystem* aus dem angezeigten Menü, um Diagnosetests auszuführen.
-. Wählen Sie den Test oder die Testreihe aus den verschiedenen Untermenüs aus.
-. Fahren Sie auf der Grundlage des Ergebnisses des vorhergehenden Schritts fort:
-+
-** Wenn der Test fehlgeschlagen ist, korrigieren Sie den Fehler, und führen Sie den Test erneut aus.
-** Wenn der Test keine Fehler gemeldet hat, wählen Sie im Menü Neu starten aus, um das System neu zu starten.
-
-
-
-
-
-
-== Schritt 3: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+== Schritt 2: Rückgabe des fehlerhaften Teils an NetApp
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

@@ -18,6 +18,12 @@ Das Verfahren zum Booten des beeinträchtigten Controllers über das Recovery-Im
 == Option 1: Die meisten Systeme
 
 [role="lead"]
+Das Verfahren zum Booten des beeinträchtigten Controllers über das Recovery-Image hängt davon ab, ob sich das System in einer MetroCluster-Konfiguration mit zwei Knoten befindet.
+
+
+
+== Option 1: Die meisten Systeme
+
 Sie müssen das ONTAP-Image vom USB-Laufwerk starten, das Dateisystem wiederherstellen und die Umgebungsvariablen überprüfen.
 
 Dieses Verfahren gilt für Systeme, die sich nicht in einer MetroCluster Konfiguration mit zwei Nodes befinden.
@@ -110,7 +116,6 @@ Wenn Schnittstellen als „falsch“ aufgeführt sind, stellen Sie diese Schnitt
 
 == Option 2: Controller befindet sich in einem MetroCluster mit zwei Nodes
 
-[role="lead"]
 Sie müssen das ONTAP-Image vom USB-Laufwerk booten und die Umgebungsvariablen überprüfen.
 
 Dieses Verfahren gilt für Systeme in einer MetroCluster-Konfiguration mit zwei Nodes.

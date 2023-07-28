@@ -1,0 +1,380 @@
+---
+permalink: asa900/chassis_replace_move_hardware.html 
+sidebar: sidebar 
+keywords:  
+summary: Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden. 
+---
+= Hardware verschieben und ersetzen – ASA A900
+:allow-uri-read: 
+
+
+
+
+== Hardware verschieben und ersetzen – ASA A900
+
+[role="lead"]
+Um das Gehäuse auszutauschen, müssen Sie die Komponenten aus dem Gehäuse für beeinträchtigte Geräte entfernen und sie in das Ersatzgehäuse einsetzen.
+
+
+
+== Schritt 1: Entfernen Sie die Netzteile
+
+Beim Entfernen der Netzteile beim Austausch eines Gehäuses müssen die vier Netzteile ausgeschaltet, getrennt und anschließend von der Rückseite des Gehäuses entfernt werden.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Schalten Sie das Netzteil aus und trennen Sie die Netzkabel:
++
+.. Schalten Sie den Netzschalter am Netzteil aus.
+.. Öffnen Sie die Netzkabelhalterung, und ziehen Sie dann das Netzkabel vom Netzteil ab.
+.. Ziehen Sie das Netzkabel von der Stromversorgung ab.
+
+
+. Halten Sie die Terrakotta-Verriegelungstaste am Griff des Netzteils gedrückt, und ziehen Sie das Netzteil aus dem Gehäuse.
++
+
+NOTE: Wenn Sie ein Netzteil entfernen, verwenden Sie immer zwei Hände, um sein Gewicht zu stützen.
+
++
+.Animation - Netzteil entfernen/installieren
+video::6d0eee92-72e2-4da4-a4fa-adf9016b57ff[panopto]
++
+image::../media/drw_a900_remove_install_PSU_module.png[drw a900 entfernen das Einbauen des Netzteilmoduls]
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Verriegelungsknopf
+
+|===
+. Wiederholen Sie die vorherigen Schritte für alle weiteren Netzteile.
+
+
+
+
+== Schritt 2: Entfernen Sie die Lüfter
+
+Sie müssen die sechs Lüftermodule, die sich an der Vorderseite des Gehäuses befinden, entfernen, wenn Sie das Gehäuse austauschen.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Entfernen Sie die Blende (falls erforderlich) mit zwei Händen, indem Sie die Öffnungen auf beiden Seiten der Blende fassen und dann zu Ihnen ziehen, bis sich die Blende von den Kugelknöpfen am Rahmen des Chassis löst.
+. Drücken Sie die Terrakotta-Verriegelungstaste am Lüftermodul, und ziehen Sie das Lüftermodul gerade aus dem Gehäuse, um sicherzustellen, dass Sie es mit der freien Hand abstützen.
++
+
+NOTE: Die Lüftermodule sind kurz. Unterstützen Sie das Lüftermodul immer mit Ihrer freien Hand, damit es nicht plötzlich vom Gehäuse abfällt und Sie verletzt.
+
++
+.Animation - Lüfter entfernen/installieren
+video::3c3c8d93-b48e-4554-87c8-adf9016af819[panopto]
++
+image::../media/drw_a900_remove_install_fan.png[drw a900 Installationlüfter entfernen]
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Terrakotta-Verriegelungstaste
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Schieben Sie den Lüfter in das Gehäuse ein-/heraus
+
+|===
+. Setzen Sie das Lüftermodul beiseite.
+. Wiederholen Sie die vorherigen Schritte für alle verbleibenden Lüftermodule.
+
+
+
+
+== Schritt 3: Entfernen Sie das Controller-Modul
+
+Um das Gehäuse auszutauschen, müssen Sie das oder die Controller-Module aus dem Gehäuse für beeinträchtigte Geräte entfernen.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Ziehen Sie die Kabel vom beeinträchtigten Controller-Modul ab, und verfolgen Sie, wo die Kabel angeschlossen waren.
+. Schieben Sie die Verriegelungstaste für Terrakotta am Nockengriff nach unten, bis sie entriegelt wird.
++
+.Animation - Entfernen Sie den Controller
+video::256721fd-4c2e-40b3-841a-adf2000df5fa[panopto]
++
+image::../media/drw_a900_remove_PCM.png[drw a900 PCM entfernen]
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Verriegelungstaste am Nockengriff
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+CAM-Griff
+
+|===
+. Drehen Sie den Nockengriff so, dass er das Controller-Modul vollständig aus dem Gehäuse herausrückt, und schieben Sie dann das Controller-Modul aus dem Gehäuse.
++
+Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen, während Sie es aus dem Gehäuse schieben.
+
+. Legen Sie das Controller-Modul an einem sicheren Ort beiseite und verfolgen Sie, aus welchem Gehäusesteckplatz es stammt, damit es in denselben Steckplatz im Ersatzgehäuse eingesetzt werden kann.
+. Wiederholen Sie diese Schritte, wenn sich ein weiteres Controller-Modul im Chassis befindet.
+
+
+
+
+== Schritt 4: Entfernen Sie die E/A-Module
+
+Um E/A-Module aus dem Gehäuse für beeinträchtigte Zugriffe, einschließlich der NVRAM-Module, zu entfernen, befolgen Sie die angegebenen Schritte.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Trennen Sie alle Kabel, die mit dem Ziel-E/A-Modul verbunden sind.
++
+Achten Sie darauf, dass Sie die Kabel so kennzeichnen, dass Sie wissen, woher sie stammen.
+
+. Entfernen Sie das Ziel-I/O-Modul aus dem Gehäuse:
++
+.. Drücken Sie die Verriegelungstaste für die nummerierte und beschriftene Nocke.
++
+Die Nockenverriegelungstaste bewegt sich vom Gehäuse weg.
+
+.. Drehen Sie die Nockenverriegelung nach unten, bis sie sich in horizontaler Position befindet.
++
+Das I/O-Modul wird aus dem Gehäuse entfernt und bewegt sich ca. 1/2 Zoll aus dem I/O-Steckplatz.
+
+.. Entfernen Sie das E/A-Modul aus dem Gehäuse, indem Sie an den Zuglaschen an den Seiten der Modulfläche ziehen.
++
+Stellen Sie sicher, dass Sie den Steckplatz verfolgen, in dem sich das I/O-Modul befand.
+
++
+.Animation - E/A-Modul entfernen/installieren
+video::3a5b1f6e-15ec-40b4-bb2a-adf9016af7b6[panopto]
++
+image:../media/drw_a900_remove_PCIe_module.png[""]
+
+
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Gerettete und nummerierte E/A-Nockenverriegelung
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+E/A-Nockenverriegelung vollständig entriegelt
+
+|===
+. Legen Sie das E/A-Modul beiseite.
+. Wiederholen Sie den vorherigen Schritt für die verbleibenden I/O-Module im Gehäuse für beeinträchtigte Zugriffe.
+
+
+
+
+== Schritt 5: Entfernen Sie das destufige Controller-Leistungsteil
+
+Entfernen Sie die beiden destufigen Controller-Stromversorgungsmodule von der Vorderseite des Gehäuses für die Außerbetriebnahme.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Drücken Sie die Terrakotta-Verriegelungstaste am Modulgriff, und schieben Sie die DCPM aus dem Gehäuse.
++
+.Animation - DCPM entfernen/installieren
+video::ade18276-5dbc-4b91-9a0e-adf9016b4e55[panopto]
++
+image::../media/drw_a900_remove_NV_battery.png[entfernen Sie die NV-Batterie des drw a900]
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+VERRIEGELUNGSTASTE DCPM Terrakotta
+
+|===
+. LEGEN Sie DIE DCPM an einem sicheren Ort beiseite, und wiederholen Sie diesen Schritt für die verbleibenden DCPM.
+
+
+
+
+== Schritt 6: Entfernen Sie das USB-LED-Modul
+
+Entfernen Sie die USB-LED-Module.
+
+.Animation - USB entfernen/installieren
+video::eb715462-cc20-454f-bcf9-adf9016af84e[panopto]
+image::../media/drw_a900_remove_replace_LED_mod.png[drw a900 entfernen LED-Mod ersetzen]
+
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Das Modul auswerfen.
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Schieben Sie es aus dem Chassis heraus.
+
+|===
+. Suchen Sie das USB-LED-Modul auf der Vorderseite des Gehäuses mit eingeschränkter Stromversorgung direkt unter den DCPM-Schächten.
+. Drücken Sie die schwarze Verriegelungstaste auf der rechten Seite des Moduls, um das Modul aus dem Gehäuse zu lösen, und schieben Sie es dann aus dem Gehäuse für beeinträchtigte Personen heraus.
+. Stellen Sie das Modul an einem sicheren Ort zur Seite.
+
+
+
+
+== Schritt 7: Gehäuse ausbauen
+
+Sie müssen das vorhandene Chassis aus dem Rack oder dem Systemschrank entfernen, bevor Sie das Ersatzgehäuse installieren können.
+
+. Entfernen Sie die Schrauben von den Montagepunkten des Gehäuses.
++
+
+NOTE: Wenn sich das System in einem Systemschrank befindet, müssen Sie möglicherweise die hintere Abklemme entfernen.
+
+. Schieben Sie mit Hilfe von zwei oder drei Personen das Gehäuse für beeinträchtigte Personen von den Rack-Schienen in einem Systemschrank oder _L_ Halterungen in einem Geräterahmen und legen Sie es dann beiseite.
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Installieren Sie das Ersatzgehäuse mithilfe von zwei oder drei Personen in das Rack oder den Systemschrank des Geräts, indem Sie das Chassis an die Rack-Schienen in einem Systemschrank oder _L_ -Halterungen in einem Rack führen.
+. Schieben Sie das Chassis vollständig in das Rack oder den Systemschrank der Ausrüstung.
+. Befestigen Sie die Vorderseite des Gehäuses mit den Schrauben, die Sie aus dem Gehäuse für beeinträchtigte Geräte entfernt haben, am Geräte-Rack oder Systemschrank.
+. Befestigen Sie die Rückseite des Chassis am Rack oder am Systemschrank des Geräts.
+. Wenn Sie die Kabelhalterungen verwenden, entfernen Sie sie aus dem Gehäuse für beeinträchtigte Personen, und installieren Sie sie dann auf dem Ersatzgehäuse.
+
+
+
+
+== Schritt 8: Installieren Sie das Power-Modul des destufigen Controllers
+
+Wenn das Ersatzgehäuse in das Rack oder den Systemschrank eingebaut ist, müssen Sie die destufigen Controller-Stromversorgungsmodule wieder einsetzen.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Richten Sie das Ende der DCPM an der Gehäuseöffnung aus, und schieben Sie es vorsichtig in das Gehäuse, bis es einrastet.
++
+
+NOTE: Modul und Steckplatz sind codiert. Das Modul nicht in die Öffnung zwingen. Wenn das Modul nicht leicht einarbeitet, richten Sie das Modul aus und schieben Sie es in das Gehäuse.
+
+. Wiederholen Sie diesen Schritt für die verbleibenden DCPM.
+
+
+
+
+== Schritt 9: Installieren Sie die Lüfter im Gehäuse
+
+Um die Lüftermodule beim Austausch des Gehäuses zu installieren, müssen Sie eine bestimmte Sequenz von Aufgaben durchführen.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Richten Sie die Kanten des Ersatzlüftermoduls an der Öffnung im Gehäuse aus, und schieben Sie es dann in das Gehäuse, bis es einrastet.
++
+Wenn das Lüftermodul erfolgreich in das Gehäuse eingesetzt wurde, blinkt die gelbe Warn-LED viermal.
+
+. Wiederholen Sie diese Schritte für die übrigen Lüftermodule.
+. Richten Sie die Blende an den Kugelknöpfen aus, und drücken Sie dann vorsichtig die Blende auf die Kugelbolzen.
+
+
+
+
+== Schritt 10: E/A-Module installieren
+
+Um E/A-Module einschließlich der NVRAM-Module aus dem Gehäuse für beeinträchtigte Vorgänge zu installieren, befolgen Sie die angegebenen Schritte.
+
+Das Gehäuse muss installiert sein, damit Sie die E/A-Module in die entsprechenden Steckplätze im Ersatzgehäuse einsetzen können.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Nachdem das Ersatzgehäuse im Rack oder Schrank installiert wurde, installieren Sie die E/A-Module in die entsprechenden Steckplätze im Ersatzgehäuse, indem Sie das E/A-Modul vorsichtig in den Steckplatz schieben, bis sich die nummerierte und letzte E/A-Nockenverriegelung einlässt. Drücken Sie dann die E/A-Nockenverriegelung ganz nach oben, um das Modul zu verriegeln.
+. E/A-Modul nach Bedarf wieder aufführen.
+. Wiederholen Sie den vorherigen Schritt für die restlichen I/O-Module, die Sie beiseite gelegt haben.
++
+
+NOTE: Wenn das Gehäuse für den beeinträchtigten Betrieb über leere E/A-Platten verfügt, bringen Sie diese zu diesem Zeitpunkt in das Ersatzgehäuse.
+
+
+
+
+
+== Schritt 11: Installieren Sie die Netzteile
+
+Beim Ersetzen eines Gehäuses installieren Sie die Netzteile beim Installieren eines Gehäuses, indem Sie die Netzteile in das Ersatzgehäuse und den Anschluss an die Stromversorgung anschließen.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Stellen Sie sicher, dass sich die Kipper des Netzteiles in der Position aus befinden.
+. Halten und richten Sie die Kanten des Netzteils mit beiden Händen an der Öffnung im Systemgehäuse aus, und drücken Sie dann vorsichtig das Netzteil in das Gehäuse, bis es einrastet.
++
+Die Netzteile sind codiert und können nur auf eine Weise installiert werden.
+
++
+
+IMPORTANT: Beim Einschieben des Netzteils in das System keine übermäßige Kraft verwenden. Sie können den Anschluss beschädigen.
+
+. Schließen Sie das Netzkabel wieder an, und befestigen Sie es mithilfe des Verriegelungsmechanismus für Netzkabel am Netzteil.
++
+
+IMPORTANT: Schließen Sie das Netzkabel nur an das Netzteil an. Schließen Sie das Netzkabel derzeit nicht an eine Stromquelle an.
+
+. Wiederholen Sie die vorherigen Schritte für alle weiteren Netzteile.
+
+
+
+
+== Schritt 12: Installieren Sie die USB-LED-Module
+
+Installieren Sie die USB-LED-Module im Ersatzgehäuse.
+
+. Suchen Sie den USB-LED-Modulsteckplatz auf der Vorderseite des Ersatzgehäuses direkt unter den DCPM-Schächten.
+. Richten Sie die Kanten des Moduls am USB-LED-Schacht aus, und schieben Sie das Modul vorsichtig bis zum Klicken in das Gehäuse.
+
+
+
+
+== Schritt 13: Installieren Sie den Controller
+
+Nachdem Sie das Controller-Modul und alle anderen Komponenten in das Ersatzgehäuse installiert haben, starten Sie es.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Schließen Sie die Netzteile an verschiedene Stromquellen an, und schalten Sie sie dann ein.
+. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
++
+
+NOTE: Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein, wenn Sie dazu aufgefordert werden.
+
+. Führen Sie die Konsole wieder mit dem Controller-Modul aus, und schließen Sie den Management-Port wieder an.
+. Schieben Sie das Controller-Modul mit dem Nockengriff in die offene Position in das Gehäuse und schieben Sie das Controller-Modul fest hinein, bis es auf die Mittelebene trifft und vollständig sitzt. Schließen Sie dann den Nockengriff, bis er in die verriegelte Position einrastet.
++
+
+IMPORTANT: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige Kraft verwenden, da die Anschlüsse beschädigt werden können.
+
++
+Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt.
+
+. Wiederholen Sie die vorherigen Schritte, um den zweiten Controller im Ersatzgehäuse zu installieren.
+. Starten Sie jeden Controller.
+

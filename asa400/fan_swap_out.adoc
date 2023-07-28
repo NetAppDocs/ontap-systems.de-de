@@ -1,0 +1,49 @@
+---
+permalink: asa400/fan-swap-out.html 
+sidebar: sidebar 
+keywords: asa a400, asa, a400, swap, out, fan, module, interrupt, service, sequence, task, hot-swap, hot-swap a fan module 
+summary: Zum Auswechseln eines Lüftermoduls ohne Unterbrechung des Dienstes müssen Sie eine bestimmte Sequenz von Aufgaben durchführen. 
+---
+= Hot-Swap eines Lüftermoduls – ASA A400
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Zum Auswechseln eines Lüftermoduls ohne Unterbrechung des Dienstes müssen Sie eine bestimmte Sequenz von Aufgaben durchführen.
+
+
+NOTE: Sie müssen das Lüftermodul innerhalb von zwei Minuten nach dem Entfernen aus dem Gehäuse ersetzen. Der Luftstrom des Systems wird unterbrochen, und das Controller-Modul oder die Module werden nach zwei Minuten heruntergefahren, um eine Überhitzung zu vermeiden.
+
+Sie können die folgende Animation, Illustration oder die geschriebenen Schritte zum Hot-Swap eines Lüftermoduls verwenden.
+
+.Animation: Ersetzen Sie einen Lüfter
+video::ae59d53d-7746-402c-bd6b-aad9012efa89[panopto]
+image::../media/drw_A400_Replace_fan.png[drw A400 Lüfter austauschen]
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Entfernen Sie die Blende (falls erforderlich) mit zwei Händen, indem Sie die Öffnungen auf beiden Seiten der Blende fassen und dann zu Ihnen ziehen, bis sich die Blende von den Kugelknöpfen am Rahmen des Chassis löst.
+. Ermitteln Sie das Lüftermodul, das Sie ersetzen müssen, indem Sie die Konsolenfehlermeldungen überprüfen und die Warn-LED an jedem Lüftermodul betrachten.
+. Drücken Sie die Freigabehebel am Nockengriff des Lüftermoduls nach unten, und drehen Sie dann den Nockengriff nach unten.
++
+Das Lüftermodul bewegt sich ein wenig vom Gehäuse entfernt.
+
+. Ziehen Sie das Lüftermodul gerade aus dem Gehäuse heraus. Stellen Sie sicher, dass Sie es mit der freien Hand unterstützen, damit es nicht aus dem Gehäuse herausschwingt.
++
+
+NOTE: Die Lüftermodule sind kurz. Unterstützen Sie das Lüftermodul immer mit Ihrer freien Hand, damit es nicht plötzlich vom Gehäuse abfällt und Sie verletzt.
+
+. Setzen Sie das Lüftermodul beiseite.
+. Setzen Sie das Ersatzlüftermodul in das Gehäuse ein, indem Sie es an der Öffnung ausrichten und dann in das Gehäuse schieben.
+. Drücken Sie den Nockengriff des Lüftermoduls fest, damit er ganz in das Gehäuse eingesetzt wird.
++
+Der Nockengriff hebt sich leicht, wenn das Lüftermodul vollständig sitzt.
+
+. Schwenken Sie den Nockengriff in die geschlossene Position, und stellen Sie sicher, dass der Freigabehebel des Nockengriffs in die verriegelte Position einrastet.
++
+Die Warn-LED darf nicht leuchten, wenn der Lüfter sitzt und sich auf die Betriebsgeschwindigkeit verdreht hat.
+
+. Richten Sie die Blende an den Kugelknöpfen aus, und drücken Sie dann vorsichtig die Blende auf die Kugelbolzen.
+. Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"^] Seite für weitere Informationen.
+

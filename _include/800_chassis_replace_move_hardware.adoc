@@ -1,0 +1,134 @@
+= Schritt 1: Entfernen Sie die Controller-Module
+:allow-uri-read: 
+
+
+Verschieben Sie die Netzteile, Festplatten und das Controller-Modul vom Gehäuse für beeinträchtigte Störungen in das neue Gehäuse, und tauschen Sie das Gehäuse für beeinträchtigte Störungen durch das neue Gehäuse desselben Modells aus.
+
+
+
+== Schritt 1: Entfernen Sie die Controller-Module
+
+Um das Chassis auszutauschen, müssen Sie die Controller-Module aus dem alten Chassis entfernen.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Lösen Sie die Netzkabelhalter, und ziehen Sie anschließend die Kabel von den Netzteilen ab.
+. Lösen Sie den Haken und den Schlaufenriemen, mit dem die Kabel am Kabelführungsgerät befestigt sind, und ziehen Sie dann die Systemkabel vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren.
++
+Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation des Kabelverwaltungsgeräts die Kabel organisiert sind.
+
+. Entfernen Sie das Kabelführungs-Gerät aus dem Controller-Modul und legen Sie es beiseite.
+. Drücken Sie beide Verriegelungsriegel nach unten, und drehen Sie dann beide Verriegelungen gleichzeitig nach unten.
++
+Das Controller-Modul wird leicht aus dem Chassis entfernt.
+
++
+image::../media/drw_a800_pcm_remove.png[drw a800 pcm entfernen]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Verriegelungsverschluss 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Sicherungsstift
+
+|===
+. Schieben Sie das Controller-Modul aus dem Gehäuse.
++
+Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen, während Sie es aus dem Gehäuse schieben.
+
+. Stellen Sie das Controller-Modul an einer sicheren Stelle beiseite, und wiederholen Sie diese Schritte für das andere Controller-Modul im Gehäuse.
+
+
+
+
+== Schritt 2: Fahren Sie die Laufwerke in das neue Gehäuse
+
+Sie müssen die Laufwerke von jeder Schachtöffnung im alten Chassis auf dieselbe Schachtöffnung im neuen Chassis verschieben.
+
+. Entfernen Sie vorsichtig die Blende von der Vorderseite des Systems.
+. Entfernen Sie die Laufwerke:
++
+.. Drücken Sie die Entriegelungstaste oben auf der Trägerseite unter den LEDs.
+.. Ziehen Sie den Nockengriff in die vollständig geöffnete Position, um den Antrieb von der Mittelplatine zu lösen, und schieben Sie ihn dann vorsichtig aus dem Chassis heraus.
++
+Das Laufwerk sollte aus dem Gehäuse heraus einrücken und so das Gehäuse frei schieben.
+
++
+
+NOTE: Wenn Sie ein Laufwerk entfernen, verwenden Sie immer zwei Hände, um sein Gewicht zu stützen.
+
++
+
+NOTE: Laufwerke sind zerbrechlich. Behandeln Sie sie so wenig wie möglich, um Schäden an ihnen zu vermeiden.
+
+
+
+. Richten Sie das Laufwerk aus dem alten Gehäuse an der gleichen Schachtöffnung im neuen Gehäuse aus.
+. Schieben Sie das Laufwerk vorsichtig so weit wie möglich in das Gehäuse.
++
+Der Nockengriff greift ein und beginnt, sich nach oben zu drehen.
+
+. Schieben Sie den Antrieb den Rest des Weges fest in das Gehäuse und verriegeln Sie dann den Nockengriff, indem Sie ihn nach oben und gegen den Laufwerkhalter schieben.
++
+Schließen Sie den Nockengriff langsam, damit er korrekt an der Vorderseite des Laufwerkträgers ausgerichtet ist. Zum sicheren Zeitpunkt klickt er.
+
+. Wiederholen Sie den Vorgang für die übrigen Laufwerke im System.
+
+
+
+
+== Schritt 3: Ersetzen Sie ein Chassis aus dem Rack oder Systemschrank der Ausrüstung
+
+Sie müssen das vorhandene Chassis aus dem Rack oder dem Systemschrank entfernen, bevor Sie das Ersatzgehäuse installieren können.
+
+. Entfernen Sie die Schrauben von den Montagepunkten des Gehäuses.
+. Schieben Sie das alte Chassis bei zwei Personen von den Rack-Schienen in einem Systemschrank oder Ausrüstungs-Rack und legen Sie es dann beiseite.
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Installieren Sie das Ersatzgehäuse mithilfe von zwei Personen in das Rack oder den Systemschrank. Führen Sie das Chassis durch die Rack-Schienen in einem System-Schrank oder Ausrüstungs-Rack.
+. Schieben Sie das Chassis vollständig in das Rack oder den Systemschrank der Ausrüstung.
+. Befestigen Sie die Vorderseite des Chassis mit den Schrauben, die Sie vom alten Chassis entfernt haben, am Rack oder am Systemschrank des Geräts.
+. Falls noch nicht geschehen, befestigen Sie die Blende.
+
+
+
+
+== Schritt 4: Installieren Sie die Controller-Module
+
+Nachdem Sie die Controller-Module in das neue Gehäuse installiert haben, müssen Sie es booten.
+
+Bei HA-Paaren mit zwei Controller-Modulen im selben Chassis ist die Sequenz, in der Sie das Controller-Modul installieren, besonders wichtig, da sie versucht, neu zu booten, sobald Sie es vollständig im Chassis einsetzen.
+
+. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
++
+
+NOTE: Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein, wenn Sie dazu aufgefordert werden.
+
+. Führen Sie die Konsole wieder mit dem Controller-Modul aus, und schließen Sie den Management-Port wieder an.
+. Schließen Sie die Stromkabel an die Netzteile an, und setzen Sie die Netzkabelhalter wieder ein.
+. Führen Sie die Neuinstallation des Controller-Moduls durch:
++
+.. Drücken Sie das Controller-Modul fest in das Gehäuse, bis es auf die Mittelebene trifft und vollständig sitzt.
++
+Die Verriegelungen steigen, wenn das Controller-Modul voll eingesetzt ist.
+
++
+
+NOTE: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige Kraft verwenden, um Schäden an den Anschlüssen zu vermeiden.
+
++
+Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt. Bereiten Sie sich darauf vor, den Bootvorgang zu unterbrechen.
+
+.. Drehen Sie die Verriegelungsriegel nach oben, und kippen Sie sie so, dass sie die Sicherungsstifte entfernen und dann in die verriegelte Position absenken.
+.. Wenn Sie dies noch nicht getan haben, installieren Sie das Kabelverwaltungsgerät neu.
+.. Unterbrechen Sie den normalen Bootvorgang, indem Sie auf drücken `Ctrl-C`.
+
+
+. Wiederholen Sie die vorherigen Schritte, um den zweiten Controller im neuen Chassis zu installieren.
+

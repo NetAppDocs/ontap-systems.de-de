@@ -21,14 +21,12 @@ Sie ersetzen den Echtzeituhr-Akku (RTC) im Controller-Modul, sodass die Dienste 
 
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
-[role="lead"]
 Sie können den beeinträchtigten Controller je nach Hardwarekonfiguration des Speichersystems mithilfe verschiedener Verfahren herunterfahren oder übernehmen.
 
 [role="tabbed-block"]
 ====
 .Option 1: Die meisten Konfigurationen
 --
-[role="lead"]
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 
 .Über diese Aufgabe
@@ -84,7 +82,6 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 --
 .Option 2: Controller befindet sich in einem MetroCluster mit zwei Nodes
 --
-[role="lead"]
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller umschalten, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 
 .Über diese Aufgabe
@@ -183,8 +180,13 @@ mcc1A::> metrocluster operation show
 
 == Schritt 2: Entfernen Sie das Controller-Modul
 
-[role="lead"]
 Um auf Komponenten im Controller-Modul zuzugreifen, müssen Sie das Controller-Modul aus dem Gehäuse entfernen.
+
+Sie können die folgenden Animationen, Abbildungen oder die geschriebenen Schritte verwenden, um das Controller-Modul aus dem Gehäuse zu entfernen.
+
+.Animation - Entfernen Sie das Controller-Modul
+video::ca74d345-e213-4390-a599-aae10019ec82[panopto]
+image::../media/drw_A400_Remove_controller.png[drw A400 Controller entfernen]
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Lösen Sie die Netzkabelhalter, und ziehen Sie anschließend die Kabel von den Netzteilen ab.
@@ -197,26 +199,6 @@ Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation
 +
 Das Controller-Modul wird leicht aus dem Chassis entfernt.
 
-+
-image::../media/drw_A400_Remove_controller.png[drw A400 Controller entfernen]
-
-+
-|===
-
-
- a| 
-image:../media/legend_icon_01.png[""]
- a| 
-Verriegelungsriegel
-
-
-
- a| 
-image:../media/legend_icon_02.png[""]
- a| 
-Der Controller bewegt sich leicht aus dem Chassis
-
-|===
 . Schieben Sie das Controller-Modul aus dem Gehäuse.
 +
 Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen, während Sie es aus dem Gehäuse schieben.
@@ -228,7 +210,6 @@ Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen,
 
 == Schritt 3: Ersetzen Sie die RTC-Batterie
 
-[role="lead"]
 Sie müssen den RTC-Akku im Controller-Modul finden und anschließend die einzelnen Schritte befolgen. Die Position des RTC-Akkus finden Sie in der FRU-Karte im Controller-Modul.
 
 Sie können die RTC-Batterie mit den folgenden Animationen, Abbildungen oder den schriftlichen Schritten ersetzen.
@@ -264,8 +245,13 @@ NOTE: Beachten Sie die Polarität der Batterie, während Sie sie aus dem Halter 
 
 == Schritt 4: Setzen Sie das Controller-Modul wieder ein und setzen Sie Zeit/Datum nach dem RTC-Batterieaustausch ein
 
-[role="lead"]
 Nachdem Sie eine Komponente innerhalb des Controller-Moduls ersetzt haben, müssen Sie das Controller-Modul im Systemgehäuse neu installieren, die Uhrzeit und das Datum auf dem Controller zurücksetzen und es dann booten.
+
+Sie können die folgende Animation, Illustration oder die geschriebenen Schritte zur Installation des Controller-Moduls im Gehäuse verwenden.
+
+.Animation - Installieren des Controller-Moduls
+video::0310fe80-b129-4685-8fef-ab19010e720a[panopto]
+image::../media/drw_A400_Install_controller_source.png[drw A400 Controller-Quelle installieren]
 
 . Wenn Sie dies noch nicht getan haben, schließen Sie den Luftkanal oder die Abdeckung des Controller-Moduls.
 . Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
@@ -317,7 +303,6 @@ NOTE: Wenn das System im Startmenü stoppt, wählen Sie die Option zum Booten in
 
 == Schritt 5: Aggregate in einer MetroCluster Konfiguration mit zwei Nodes zurückwechseln
 
-[role="lead"]
 Nachdem Sie in einer MetroCluster Konfiguration mit zwei Nodes den FRU-Austausch abgeschlossen haben, können Sie den MetroCluster SwitchBack-Vorgang durchführen. Damit wird die Konfiguration in ihren normalen Betriebszustand zurückversetzt, wobei die Synchronisations-Storage Virtual Machines (SVMs) auf dem ehemals beeinträchtigten Standort jetzt aktiv sind und Daten aus den lokalen Festplattenpools bereitstellen.
 
 Dieser Task gilt nur für MetroCluster-Konfigurationen mit zwei Nodes.
@@ -376,5 +361,4 @@ Wenn ein Wechsel eine lange Zeit in Anspruch nimmt, können Sie den Status der i
 
 == Schritt 6: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
-[role="lead"]
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

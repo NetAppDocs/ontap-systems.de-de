@@ -1,0 +1,81 @@
+---
+permalink: fas8300/maintain-overview.html 
+sidebar: sidebar 
+keywords: fas8300 maintenance, maintenance, repairing, repairing fas8300, replace fas8300 components, replace fas8300 components 
+summary: Wartung der FAS8330 und FAS8700 Hardware 
+---
+= Wartung von FAS8300 und FAS8700 Hardware
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bei den Storage-Systemen FAS8300 und FAS8700 können Sie Wartungsverfahren für die folgenden Komponenten durchführen.
+
+
+
+== Boot-Medien
+
+Das Startmedium speichert einen primären und sekundären Satz von Boot-Image-Dateien, die das System beim Booten verwendet.
+
+
+
+== Caching-Modul
+
+Sie müssen das Caching-Modul des Controllers ersetzen, wenn Ihr System eine einzelne AutoSupport-Meldung (ASUP) registriert, dass das Modul offline gegangen ist.
+
+
+
+== Chassis
+
+Das Chassis ist das physische Gehäuse, in dem alle Controller-Komponenten wie Controller-/CPU-Einheit, Stromversorgung und I/O-Vorgänge untergebracht sind
+
+
+
+== Controller
+
+Ein Controller besteht aus einer Hauptplatine, Firmware und Software. Er steuert die Laufwerke und implementiert die ONTAP-Funktionen.
+
+
+
+== DIMM
+
+Sie müssen ein DIMM (Dual-Inline-Speichermodul) ersetzen, wenn ein Speicherfehler vorliegt oder ein ausgefallenes DIMM vorliegt.
+
+
+
+== Ventilator
+
+Der Lüfter kühlt den Controller.
+
+
+
+== NVDIMM-Batterie
+
+Eine NVDIMM-Batterie ist für die Aufrechterhaltung der Stromversorgung des NVDIMM-Moduls verantwortlich.
+
+
+
+== NVDIMM
+
+ The NVDIMM (non-volatile dual in-line memory module) manages the data transfer from the volatile memory to the non-volatile storage, and maintains data integrity in the event of a power loss or system shutdown.
+
+
+== PCIe- oder Mezzanine-Karte
+
+Eine PCIe-Karte (Peripheral Component Interconnect Express) ist eine Erweiterungskarte, die in den PCIe-Steckplatz auf der Hauptplatine eingesteckt wird.
+
+Eine Mezzanine-Karte ist eine Erweiterungskarte, die in einen speziellen Steckplatz auf der Hauptplatine eingesetzt werden soll.
+
+
+
+== Stromversorgung
+
+Ein Netzteil stellt eine redundante Stromversorgung in einem Controller Shelf bereit.
+
+
+
+== Akku in Echtzeit
+
+Eine Echtzeituhr-Batterie bewahrt die Systemdaten und -Uhrzeitinformationen, wenn die Stromversorgung ausgeschaltet ist.

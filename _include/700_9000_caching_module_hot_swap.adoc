@@ -1,0 +1,133 @@
+= 
+:allow-uri-read: 
+
+
+Die NVMe SSD Flash Cache Module (FlashCache oder Caching-Module) befinden sich ausschließlich im vorderen Teil des NVRAM10-Moduls in Steckplatz 6 der FAS9000-Systeme. Ab ONTAP 9.4 können Sie das Caching-Modul entweder im laufenden Betrieb gegen dieselbe Kapazität vom selben oder einem anderen unterstützten Anbieter austauschen.
+
+.Bevor Sie beginnen
+Ihr Storage-System muss je nach Ihrer Situation bestimmte Kriterien erfüllen:
+
+* Sie muss über das entsprechende Betriebssystem für das zu installierenden Cache-Modul verfügen.
+* Es muss die Caching-Kapazität unterstützen.
+* Das Ersatz-Caching-Modul muss die gleiche Kapazität haben wie das ausgefallene Caching-Modul, kann aber von einem anderen unterstützten Anbieter stammen.
+* Alle anderen Komponenten des Storage-Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+
+
+.Schritte
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Suchen Sie das fehlgeschlagene Cache-Modul in Steckplatz 6 mithilfe der gelb beleuchteten Warn-LED an der Vorderseite des Cache-Moduls.
+. Bereiten Sie den Cache-Modulschacht wie folgt vor:
++
+.. Für ONTAP 9.7 und früher:
++
+... Notieren Sie die Kapazität, Teilenummer und Seriennummer des Cache-Moduls auf dem Zielknoten: `system node run local sysconfig -av 6`
+... Bereiten Sie auf der Administrator-Berechtigungsebene den NVMe-Zielsteckplatz für den Austausch vor und antworten Sie `y` Wenn Sie gefragt werden, ob Sie fortfahren möchten: `system controller slot module replace -node _node_name -slot slot_number_` Mit dem folgenden Befehl wird Steckplatz 6-2 auf node1 als Ersatz vorbereitet und eine Meldung angezeigt, dass er sicher ersetzt werden kann:
++
+[listing]
+----
+::> system controller slot module replace -node node1 -slot 6-2
+
+Warning: NVMe module in slot 6-2 of the node node1 will be powered off for replacement.
+Do you want to continue? (y|n): `y`
+
+The module has been successfully powered off.  It can now be safely replaced.
+After the replacement module is inserted, use the "system controller slot module insert" command to place the module into service.
+----
+... Zeigt den Steckplatz-Status mit dem Befehl zum Anzeigen des System-Controller-Steckplatz-Moduls an.
++
+Der Status des NVMe-Steckplatzes zeigt im Bildschirmausgang das zu ersetzende Caching-Modul an.
+
+
+
+.. Für ONTAP 9.8 und höher:
++
+... Notieren Sie die Kapazität, Teilenummer und Seriennummer des Cache-Moduls auf dem Zielknoten: `system node run local sysconfig -av 6`
+... Bereiten Sie auf der Administrator-Berechtigungsebene den NVMe-Zielsteckplatz für das Entfernen vor und antworten `y` Wenn Sie gefragt werden, ob Sie fortfahren möchten: `system controller slot module remove -node node_name -slot slot_number` Mit dem folgenden Befehl wird Steckplatz 6-2 auf node1 zum Entfernen vorbereitet und die Meldung angezeigt, dass es sicher zu entfernen ist:
++
+[listing]
+----
+::> system controller slot module remove -node node1 -slot 6-2
+
+Warning: SSD module in slot 6-2 of the node node1 will be powered off for removal.
+Do you want to continue? (y|n): `y`
+
+The module has been successfully removed from service and powered off. It can now be safely removed.
+----
+... Zeigen Sie mit dem den Status des Steckplatzes an `system controller slot module show` Befehl.
++
+Der Status des NVMe-Steckplatzes wird angezeigt `powered-off` In der Bildschirmausgabe des Cache-Moduls, das ersetzt werden muss.
+
+
+
+
+
++
+
+NOTE: Siehe https://docs.netapp.com/us-en/ontap-cli-9121/["Befehlsman-Pages"^] Für Ihre Version von ONTAP.
+
+. Entfernen Sie das Caching-Modul:
++
+image::../media/drw_9000_remove_flashcache.png[drw 9000 entfernen flashcache]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Orangefarbene Entriegelungstaste.
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Nockengriff für das Caching-Modul.
+
+|===
++
+.. Drücken Sie die orangefarbene Entriegelungstaste auf der Vorderseite des Cache-Moduls.
++
+
+NOTE: Verwenden Sie nicht die nummerierte und letzte E/A-Nockenverriegelung, um das Cache-Modul auszuwerfen. Die nummerierte und gerettete E/A-Nockenverriegelung wirft das gesamte NVRAM10-Modul und nicht das Caching-Modul aus.
+
+.. Drehen Sie den Nockengriff, bis das Caching-Modul beginnt, aus dem NVRAM10-Modul zu schieben.
+.. Ziehen Sie den Nockengriff vorsichtig gerade zu Ihnen, um das Cache-Modul aus dem NVRAM10-Modul zu entfernen.
++
+Achten Sie darauf, das Cache-Modul zu unterstützen, wenn Sie es aus dem NVRAM10-Modul entfernen.
+
+
+
+. Installieren Sie das Caching-Modul:
++
+.. Richten Sie die Kanten des Cache-Moduls an der Öffnung im NVRAM10-Modul aus.
+.. Schieben Sie das Cache-Modul vorsichtig in den Schacht, bis der Nockengriff einrastet.
+.. Den Nockengriff drehen, bis er einrastet.
+
+
+. Bringen Sie das Ersatz-Cache-Modul online, indem Sie das verwenden `system controller slot module insert` Befehl wie folgt:
++
+Der folgende Befehl bereitet Steckplatz 6-2 auf node1 für das Einschalten vor und zeigt eine Meldung an, dass er eingeschaltet ist:
+
++
+[listing]
+----
+::> system controller slot module insert -node node1 -slot 6-2
+
+Warning: NVMe module in slot 6-2 of the node localhost will be powered on and initialized.
+Do you want to continue? (y|n): `y`
+
+The module has been successfully powered on, initialized and placed into service.
+----
+. Überprüfen Sie den Steckplatzstatus mithilfe der `system controller slot module show` Befehl.
++
+Stellen Sie sicher, dass die Befehlsausgabe den Status für Steckplatz 6-1 oder 6-2 als meldet `powered-on` Und einsatzbereit.
+
+. Vergewissern Sie sich, dass das Ersatz-Cache-Modul online ist und erkannt wird, und bestätigen Sie anschließend visuell, dass die gelbe Warnungs-LED nicht leuchtet: `sysconfig -av slot_number`
++
+
+NOTE: Wenn Sie das Caching-Modul durch ein Caching-Modul eines anderen Anbieters ersetzen, wird der neue Anbietername in der Befehlsausgabe angezeigt.
+
+. Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"^] Seite für weitere Informationen.
+

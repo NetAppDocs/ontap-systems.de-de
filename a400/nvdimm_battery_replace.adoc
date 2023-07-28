@@ -1,7 +1,7 @@
 ---
 permalink: a400/nvdimm-battery-replace.html 
 sidebar: sidebar 
-keywords: aff a400, aff, a400, replace, nvdimm, battery, remove, controller, module, reinstall, impair, aggregate, switch, back, two-node, metrocluster, configuration, replacement, complete, process, replace the nvdimm battery, shut down the impaired controller, remove the controller module, replace the nvdimm battery, install the controller module, run diagnostics, restore the controller module to operation after running diagnostics, switch back aggregates in a two-node metrocluster configuration, complete the replacement process 
+keywords: aff a400, aff, a400, replace, nvdimm, battery, remove, controller, module, reinstall, impair, aggregate, switch, back, two-node, metrocluster, configuration, replacement, complete, process, replace the nvdimm battery, shut down the impaired controller, remove the controller module, replace the nvdimm battery, install the controller module, restore the controller module, switch back aggregates in a two-node metrocluster configuration, complete the replacement process 
 summary: Zum Austauschen der NVDIMM-Batterie müssen Sie das Controller-Modul entfernen, den Akku entfernen, den Akku austauschen und dann das Controller-Modul wieder einsetzen. 
 ---
 = Tauschen Sie die NVDIMM-Batterie – AFF A400 aus
@@ -236,7 +236,7 @@ image::../media/drw_A400_nvdimm-batt_IEOPS-1004.svg[drw A400 nvdimm Batt IEOPS 1
 
 == Schritt 4: Installieren Sie das Controller-Modul
 
-Nachdem Sie die Komponente im Controller-Modul ersetzt haben, müssen Sie das Controller-Modul wieder in das Gehäuse einsetzen und dann im Wartungsmodus booten.
+Nachdem Sie die Komponente im Controller-Modul ersetzt haben, müssen Sie das Controller-Modul wieder in das Gehäuse einsetzen und es dann booten.
 
 Sie können die folgende Animation, Illustration oder die geschriebenen Schritte zur Installation des Controller-Moduls im Gehäuse verwenden.
 
@@ -274,44 +274,15 @@ Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt
 NOTE: Wenn das System im Startmenü stoppt, wählen Sie die Option zum Booten in LOADER.
 
 .. Geben Sie an der LOADER-Eingabeaufforderung ein `bye` Um die PCIe-Karten und andere Komponenten neu zu initialisieren.
-.. Unterbrechen Sie den Boot-Prozess und booten Sie an der LOADER-Eingabeaufforderung, indem Sie drücken `Ctrl-C`.
-+
-Wenn das System im Startmenü stoppt, wählen Sie die Option zum Booten in LOADER.
 
 
 
 
 
 
+== Schritt 5: Stellen Sie das Controller-Modul wieder in Betrieb
 
-== Schritt 5: Führen Sie die Diagnose aus
-
-Nachdem Sie eine Komponente im System ausgetauscht haben, sollten Sie Diagnosetests auf dieser Komponente durchführen.
-
-Ihr System muss die LOADER-Eingabeaufforderung aufweisen, um die Diagnose zu starten.
-
-Alle Befehle im Diagnoseverfahren werden vom Controller ausgegeben, der die Komponente ersetzt wird.
-
-. Wenn der zu wartenden Controller nicht an der LOADER-Eingabeaufforderung angezeigt wird, booten Sie den Controller neu: `system node halt -node node_name`
-+
-Nachdem Sie den Befehl ausgegeben haben, sollten Sie warten, bis das System an der LOADER-Eingabeaufforderung angehalten wird.
-
-. Rufen Sie an der EINGABEAUFFORDERUNG DES LOADERS die speziellen Treiber auf, die speziell für die Diagnose entwickelt wurden, um ordnungsgemäß zu funktionieren: `boot_diags`
-. Wählen Sie im angezeigten Menü *Scansystem* aus, um die Ausführung der Diagnosetests zu aktivieren.
-. Wählen Sie im angezeigten Menü * Test Memory* aus, um Diagnosetests auszuführen.
-. Fahren Sie auf der Grundlage des Ergebnisses des vorhergehenden Schritts fort:
-+
-** Wenn die Messung Probleme zeigt, beheben Sie das Problem, und führen Sie den Scan erneut aus.
-** Wenn der Scan keine Fehler gemeldet hat, wählen Sie im Menü Neu starten aus, um das System neu zu starten.
-
-
-
-
-
-
-== Schritt 6: Stellen Sie das Controller-Modul nach dem Ausführen der Diagnose wieder in Betrieb
-
-Nach Abschluss der Diagnose müssen Sie das System erneut einschalten, das Controller-Modul zurückgeben und dann die automatische Rückgabe aktivieren.
+Sie müssen das System neu verstellen, das Controller-Modul zurückgeben und dann das automatische Giveback erneut aktivieren.
 
 . Das System nach Bedarf neu einsetzen.
 +
@@ -323,7 +294,7 @@ Wenn Sie die Medienkonverter (QSFPs oder SFPs) entfernt haben, sollten Sie diese
 
 
 
-== Schritt 7: Aggregate in einer MetroCluster Konfiguration mit zwei Nodes zurückwechseln
+== Schritt 6: Aggregate in einer MetroCluster Konfiguration mit zwei Nodes zurückwechseln
 
 Nachdem Sie in einer MetroCluster Konfiguration mit zwei Nodes den FRU-Austausch abgeschlossen haben, können Sie den MetroCluster SwitchBack-Vorgang durchführen. Damit wird die Konfiguration in ihren normalen Betriebszustand zurückversetzt, wobei die Synchronisations-Storage Virtual Machines (SVMs) auf dem ehemals beeinträchtigten Standort jetzt aktiv sind und Daten aus den lokalen Festplattenpools bereitstellen.
 
@@ -381,6 +352,6 @@ Wenn ein Wechsel eine lange Zeit in Anspruch nimmt, können Sie den Status der i
 
 
 
-== Schritt 8: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+== Schritt 7: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

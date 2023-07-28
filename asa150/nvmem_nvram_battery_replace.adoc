@@ -1,0 +1,269 @@
+---
+permalink: asa150/nvmem-nvram-battery-replace.html 
+sidebar: sidebar 
+keywords: asa a150, a150, asa, replace, nvmem, battery, shut, down, impaired, controller, controller, aggregates, metrocluster, configuration, reinstall 
+summary: Um eine NVMEM-Batterie im System zu ersetzen, müssen Sie das Controller-Modul aus dem System entfernen, öffnen, die Batterie ersetzen, und das Controller-Modul schließen und ersetzen. 
+---
+= Ersetzen Sie die NVMEM-Batterie – ASA A150
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um eine NVMEM-Batterie im System zu ersetzen, müssen Sie das Controller-Modul aus dem System entfernen, öffnen, die Batterie ersetzen, und das Controller-Modul schließen und ersetzen.
+
+Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+
+
+
+== Schritt 1: Schalten Sie den beeinträchtigten Regler aus
+
+[role="lead"]
+Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
+
+.Über diese Aufgabe
+* Wenn Sie NetApp Storage Encryption verwenden, müssen Sie die MSID mithilfe der Anweisungen im zurückgesetzt haben link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/return-seds-unprotected-mode-task.html["SEDs werden in den ungeschützten Modus versetzt"].
+* Wenn Sie über ein SAN-System verfügen, müssen Sie Ereignismeldungen geprüft haben  `cluster kernel-service show`) Für beeinträchtigte Controller SCSI-Blade. Der `cluster kernel-service show` Der Befehl zeigt den Node-Namen, den Quorum-Status dieses Node, den Verfügbarkeitsstatus dieses Node und den Betriebsstatus dieses Node an.
++
+Jeder Prozess des SCSI-Blades sollte sich im Quorum mit den anderen Nodes im Cluster befinden. Probleme müssen behoben werden, bevor Sie mit dem Austausch fortfahren.
+
+* Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE anzeigt, um die Berechtigung und den Zustand zu erhalten, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^].
+
+
+.Schritte
+. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden: `cluster1:> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deaktivieren Sie das automatische Giveback von der Konsole des gesunden Controllers: `storage failover modify –node local -auto-giveback false`
++
+
+NOTE: Wenn Sie sehen _Möchten Sie Auto-Giveback deaktivieren?_, geben Sie ein `y`.
+
+. Nehmen Sie den beeinträchtigten Controller zur LOADER-Eingabeaufforderung:
++
+[cols="1,2"]
+|===
+| Wenn der eingeschränkte Controller angezeigt wird... | Dann... 
+
+
+ a| 
+Die LOADER-Eingabeaufforderung
+ a| 
+Wechseln Sie zu Controller-Modul entfernen.
+
+
+
+ a| 
+Warten auf Giveback...
+ a| 
+Drücken Sie Strg-C, und antworten Sie dann `y` Wenn Sie dazu aufgefordert werden.
+
+
+
+ a| 
+Eingabeaufforderung für das System oder Passwort
+ a| 
+Übernehmen oder stoppen Sie den beeinträchtigten Regler von der gesunden Steuerung: `storage failover takeover -ofnode _impaired_node_name_`
+
+Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drücken Sie Strg-C, und antworten Sie dann `y`.
+
+|===
+. Wenn das System nur über ein Controller-Modul im Gehäuse verfügt, schalten Sie die Netzteile aus und ziehen Sie dann die Netzkabel des beeinträchtigten Controllers von der Stromquelle ab.
+
+
+
+
+== Schritt 2: Controller-Modul entfernen
+
+[role="lead"]
+Um auf Komponenten innerhalb des Controllers zuzugreifen, müssen Sie zuerst das Controller-Modul aus dem System entfernen und dann die Abdeckung am Controller-Modul entfernen.
+
+.Schritte
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Lösen Sie den Haken- und Schlaufenriemen, mit dem die Kabel am Kabelführungsgerät befestigt sind, und ziehen Sie dann die Systemkabel und SFPs (falls erforderlich) vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren.
++
+Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation des Kabelverwaltungsgeräts die Kabel organisiert sind.
+
+. Entfernen Sie die Kabelführungsgeräte von der linken und rechten Seite des Controller-Moduls und stellen Sie sie zur Seite.
++
+image::../media/drw_25xx_cable_management_arm.png[drw 25xx Kabelmanagement-ARM]
+
+. Drücken Sie die Verriegelung am Nockengriff, bis sie loslässt, öffnen Sie den Nockengriff vollständig, um das Controller-Modul aus der Mittelplatine zu lösen, und ziehen Sie das Controller-Modul anschließend mit zwei Händen aus dem Gehäuse heraus.
++
+image::../media/drw_2240_x_opening_cam_latch.png[drw 2240 x Öffnungsnockenverriegelung]
+
+. Drehen Sie das Controller-Modul um und legen Sie es auf eine flache, stabile Oberfläche.
+. Öffnen Sie die Abdeckung, indem Sie die blauen Laschen einschieben, um die Abdeckung zu lösen, und schwenken Sie dann die Abdeckung nach oben und öffnen Sie sie.
+
+
+
+
+== Schritt 3: Ersetzen Sie die NVMEM-Batterie
+
+[role="lead"]
+Um die NVMEM-Batterie in Ihrem System zu ersetzen, müssen Sie die ausgefallene NVMEM-Batterie aus dem System entfernen und durch eine neue NVMEM-Batterie ersetzen.
+
+.Schritte
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Überprüfen Sie die NVMEM-LED:
++
+** Wenn sich Ihr System in einer HA-Konfiguration befindet, fahren Sie mit dem nächsten Schritt fort.
+** Wenn sich das System in einer eigenständigen Konfiguration befindet, fahren Sie das Controller-Modul ordnungsgemäß herunter, und überprüfen Sie dann die NVRAM-LED, die durch das NV-Symbol gekennzeichnet ist.
++
+image::../media/drw_hw_nvram_icon.png[drw-hw-nvram-Symbol]
+
++
+
+NOTE: Die NVRAM-LED blinkt während des Auslagerung des Inhalts in den Flash-Speicher, wenn Sie das System anhalten. Nach Abschluss der Abscheidungen schaltet sich die LED aus.
+
++
+*** Wenn die Stromversorgung ohne eine saubere Abschaltung unterbrochen wird, blinkt die NVMEM-LED bis zum Abschluss des Destages und die LED erlischt.
+*** Wenn die LED eingeschaltet ist und eingeschaltet ist, werden nicht geschriebene Daten auf NVMEM gespeichert.
++
+Dies tritt in der Regel während eines unkontrollierten Herunterfahrens auf, nachdem ONTAP erfolgreich gestartet wurde.
+
+
+
+
+
+. Suchen Sie den NVMEM-Akku im Controller-Modul.
++
+image::../media/drw_2600_nvmem_batt_repl_animated_gif.png[drw 2600 nvmem Batt repanimiert gif]
+
+. Suchen Sie den Batteriestecker, und drücken Sie den Clip auf der Vorderseite des Batteriesteckers, um den Stecker aus der Steckdose zu lösen, und ziehen Sie dann das Akkukabel aus der Steckdose.
+. Entfernen Sie den Akku aus dem Controller-Modul und legen Sie ihn beiseite.
+. Entfernen Sie den Ersatzakku aus der Verpackung.
+. Schließen Sie das Batteriekabel an der Seite des Batteriehalters um den Kabelkanal.
+. Positionieren Sie den Akku, indem Sie die Schlüsselrippen der Batteriehalter an den „`V`“-Kerben an der Seitenwand aus Metall ausrichten.
+. Schieben Sie den Akku entlang der Seitenwand aus Metall nach unten, bis die Halterungen an der Seitenwand in die Steckplätze am Akkupack einhaken und der Akkupack einrastet und in die Öffnung an der Seitenwand einrastet.
+. Stecken Sie den Batteriestecker wieder in das Controller-Modul.
+
+
+
+
+== Schritt 4: Installieren Sie das Controller-Modul neu
+
+[role="lead"]
+Nachdem Sie die Komponenten im Controller-Modul ausgetauscht haben, setzen Sie sie wieder in das Gehäuse ein.
+
+.Schritte
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Wenn dies noch nicht geschehen ist, bringen Sie die Abdeckung am Controller-Modul wieder an.
+. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
++
+
+NOTE: Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein, wenn Sie dazu aufgefordert werden.
+
+. Das System nach Bedarf neu einsetzen.
++
+Wenn Sie die Medienkonverter (QSFPs oder SFPs) entfernt haben, sollten Sie diese erneut installieren, wenn Sie Glasfaserkabel verwenden.
+
+. Führen Sie die Neuinstallation des Controller-Moduls durch:
++
+[cols="1,2"]
+|===
+| Ihr System befindet sich in... | Führen Sie dann folgende Schritte aus... 
+
+
+ a| 
+Ein HA-Paar
+ a| 
+Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt.
+
+.. Schieben Sie das Steuermodul fest in die offene Position, bis es auf die Mittelebene trifft und vollständig sitzt, und schließen Sie dann den Nockengriff in die verriegelte Position.
++
+
+NOTE: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige Kraft verwenden, um Schäden an den Anschlüssen zu vermeiden.
+
++
+Der Controller beginnt zu booten, sobald er im Gehäuse sitzt.
+
+.. Wenn Sie dies noch nicht getan haben, installieren Sie das Kabelverwaltungsgerät neu.
+.. Verbinden Sie die Kabel mit dem Haken- und Schlaufenband mit dem Kabelmanagement-Gerät.
+
+
+
+
+ a| 
+Eine eigenständige Konfiguration
+ a| 
+.. Schieben Sie das Steuermodul fest in die offene Position, bis es auf die Mittelebene trifft und vollständig sitzt, und schließen Sie dann den Nockengriff in die verriegelte Position.
++
+
+NOTE: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige Kraft verwenden, um Schäden an den Anschlüssen zu vermeiden.
+
+.. Wenn Sie dies noch nicht getan haben, installieren Sie das Kabelverwaltungsgerät neu.
+.. Verbinden Sie die Kabel mit dem Haken- und Schlaufenband mit dem Kabelmanagement-Gerät.
+.. Schließen Sie die Stromkabel wieder an die Netzteile und an die Stromquellen an. Schalten Sie die Stromversorgung ein, um den Startvorgang zu starten.
+
+
+|===
+
+
+
+
+== Schritt 5: Aggregate in einer MetroCluster Konfiguration mit zwei Nodes zurückwechseln
+
+[role="lead"]
+Nachdem Sie in einer MetroCluster Konfiguration mit zwei Nodes den FRU-Austausch abgeschlossen haben, können Sie den MetroCluster SwitchBack-Vorgang durchführen. Damit wird die Konfiguration in ihren normalen Betriebszustand zurückversetzt, wobei die Synchronisations-Storage Virtual Machines (SVMs) auf dem ehemals beeinträchtigten Standort jetzt aktiv sind und Daten aus den lokalen Festplattenpools bereitstellen.
+
+Dieser Task gilt nur für MetroCluster-Konfigurationen mit zwei Nodes.
+
+.Schritte
+. Vergewissern Sie sich, dass sich alle Nodes im befinden `enabled` Bundesland: `metrocluster node show`
++
+[listing]
+----
+cluster_B::>  metrocluster node show
+
+DR                           Configuration  DR
+Group Cluster Node           State          Mirroring Mode
+----- ------- -------------- -------------- --------- --------------------
+1     cluster_A
+              controller_A_1 configured     enabled   heal roots completed
+      cluster_B
+              controller_B_1 configured     enabled   waiting for switchback recovery
+2 entries were displayed.
+----
+. Überprüfen Sie, ob die Neusynchronisierung auf allen SVMs abgeschlossen ist: `metrocluster vserver show`
+. Überprüfen Sie, ob die automatischen LIF-Migrationen durch die heilenden Vorgänge erfolgreich abgeschlossen wurden: `metrocluster check lif show`
+. Führen Sie den Wechsel zurück mit dem aus `metrocluster switchback` Befehl von einem beliebigen Node im verbleibenden Cluster
+. Stellen Sie sicher, dass der Umkehrvorgang abgeschlossen ist: `metrocluster show`
++
+Der Vorgang zum zurückwechseln wird weiterhin ausgeführt, wenn sich ein Cluster im befindet `waiting-for-switchback` Bundesland:
+
++
+[listing]
+----
+cluster_B::> metrocluster show
+Cluster              Configuration State    Mode
+--------------------	------------------- 	---------
+ Local: cluster_B configured       	switchover
+Remote: cluster_A configured       	waiting-for-switchback
+----
++
+Der Vorgang zum zurückwechseln ist abgeschlossen, wenn sich die Cluster im befinden `normal` Bundesland:
+
++
+[listing]
+----
+cluster_B::> metrocluster show
+Cluster              Configuration State    Mode
+--------------------	------------------- 	---------
+ Local: cluster_B configured      		normal
+Remote: cluster_A configured      		normal
+----
++
+Wenn ein Wechsel eine lange Zeit in Anspruch nimmt, können Sie den Status der in-progress-Basispläne über die überprüfen `metrocluster config-replication resync-status show` Befehl.
+
+. Wiederherstellung beliebiger SnapMirror oder SnapVault Konfigurationen
+
+
+
+
+== Schritt 6: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+
+[role="lead"]
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

@@ -1,8 +1,8 @@
 ---
 permalink: fas8200/chassis-replace-complete-system-restore-rma.html 
 sidebar: sidebar 
-keywords: fas8200, verify and set HA state, run diagnostics, complete the replacement process 
-summary: Sie müssen den HA-Status des Chassis überprüfen und die System-Level-Diagnose ausführen, Aggregate wechseln und das ausgefallene Teil an NetApp zurückgeben. Dies gilt auch in den mit dem Kit gelieferten RMA-Anweisungen. 
+keywords: fas8200, verify and set HA state, complete the replacement process 
+summary: Sie müssen den HA-Status des Chassis überprüfen, die Aggregate zurückwechseln und das fehlerhafte Teil gemäß den dem Kit beiliegenden RMA-Anweisungen an NetApp zurücksenden. 
 ---
 = Konfiguration wiederherstellen und überprüfen – FAS8200
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Sie müssen den HA-Status des Chassis überprüfen und die System-Level
 
 
 [role="lead"]
-Sie müssen den HA-Status des Chassis überprüfen und die System-Level-Diagnose ausführen, Aggregate wechseln und das ausgefallene Teil an NetApp zurückgeben. Dies gilt auch in den mit dem Kit gelieferten RMA-Anweisungen.
+Sie müssen den HA-Status des Chassis überprüfen, die Aggregate zurückwechseln und das fehlerhafte Teil gemäß den dem Kit beiliegenden RMA-Anweisungen an NetApp zurücksenden.
 
 
 
@@ -59,133 +59,7 @@ Beenden des Wartungsmodus: `halt` Die LOADER-Eingabeaufforderung wird angezeigt.
 
 
 
-== Schritt 2: Führen Sie die Diagnose auf Systemebene aus
-
-Nach der Installation eines neuen Gehäuses sollten Sie die Interconnect-Diagnose ausführen.
-
-Ihr System muss die LOADER-Eingabeaufforderung aufweisen, um die Diagnose auf Systemebene zu starten.
-
-Alle Befehle im Diagnoseverfahren werden vom Controller ausgegeben, der die Komponente ersetzt wird.
-
-. Wenn der zu wartenden Controller nicht an der LOADER-Eingabeaufforderung angezeigt wird, führen Sie die folgenden Schritte aus:
-+
-.. Wählen Sie im angezeigten Menü die Option Wartungsmodus.
-.. Nachdem der Controller in den Wartungsmodus gebootet wurde, beenden Sie den Controller: `halt`
-+
-Nachdem Sie den Befehl ausgegeben haben, sollten Sie warten, bis das System an der LOADER-Eingabeaufforderung angehalten wird.
-
-+
-
-NOTE: Während des Startvorgangs können Sie sicher reagieren `y` So werden Sie aufgefordert:
-
-
-
-. Wiederholen Sie den vorherigen Schritt auf dem zweiten Controller, wenn Sie sich in einer HA-Konfiguration befinden.
-+
-
-NOTE: Zum Ausführen des Interconnect-Tests müssen sich beide Controller im Wartungsmodus befinden.
-
-. Rufen Sie an der LOADER-Eingabeaufforderung die speziellen Treiber auf, die speziell für die Diagnose auf Systemebene entwickelt wurden, um ordnungsgemäß zu funktionieren: `boot_diags`
-+
-Während des Startvorgangs können Sie sicher reagieren `y` Zu den Aufforderungen, bis die Eingabeaufforderung für den Wartungsmodus (*>) angezeigt wird.
-
-. Aktivieren Sie die Verbindungstests über die Eingabeaufforderung für den Wartungsmodus: `sldiag device modify -dev interconnect -sel enable`
-+
-Die Verbindungstests sind standardmäßig deaktiviert und müssen aktiviert sein, damit sie separat ausgeführt werden können.
-
-. Führen Sie den Verbindungstest über die Eingabeaufforderung für den Wartungsmodus aus: `sldiag device run -dev interconnect`
-+
-Sie müssen den Interconnect-Test nur von einem Controller aus ausführen.
-
-. Vergewissern Sie sich, dass keine Hardwareprobleme aufgrund des Austauschs des Chassis aufgetreten sind: `sldiag device status -dev interconnect -long -state failed`
-+
-Die Diagnose auf Systemebene gibt die Eingabeaufforderung zurück, wenn keine Testfehler auftreten oder den vollständigen Status von Fehlern, die durch das Testen der Komponente entstehen, angezeigt wird.
-
-. Fahren Sie auf der Grundlage des Ergebnisses des vorhergehenden Schritts fort.
-+
-[cols="1,2"]
-|===
-| Wenn die Diagnose auf Systemebene testet... | Dann... 
-
-
- a| 
-Wurden ohne Fehler abgeschlossen
- a| 
-.. Löschen Sie die Statusprotokolle: `sldiag device clearstatus`
-.. Überprüfen Sie, ob das Protokoll gelöscht wurde: `sldiag device status`
-+
-Die folgende Standardantwort wird angezeigt:
-
-+
-[listing]
-----
-SLDIAG: No log messages are present.
-----
-.. Beenden Sie den Wartungsmodus bei beiden Controllern: `halt`
-+
-Vom System wird die LOADER-Eingabeaufforderung angezeigt.
-
-+
-
-NOTE: Sie müssen den Wartungsmodus auf beiden Controllern beenden, bevor Sie fortfahren.
-
-.. Geben Sie an der LOADER-Eingabeaufforderung den folgenden Befehl für beide Controller ein: `bye`
-.. Zurückkehren des Controllers in den normalen Betrieb:
-
-
-|===
-+
-[cols="1,2"]
-|===
-| Wenn Ihr System ONTAP ausführt... | Dann... 
-
-
- a| 
-Mit zwei Nodes im Cluster
- a| 
-Geben Sie folgende Befehle ein: `node::> cluster ha modify -configured true``node::> storage failover modify -node node0 -enabled true`
-
-
-
- a| 
-Mit mehr als zwei Nodes im Cluster
- a| 
-Geben Sie diesen Befehl ein:``node::> storage failover modify -node node0 -enabled true``
-
-
-
- a| 
-In einer MetroCluster Konfiguration mit zwei Nodes
- a| 
-Fahren Sie mit dem nächsten Schritt fort. Das Verfahren zum Wechsel von MetroCluster erfolgt bei der nächsten Aufgabe des Ersatzprozesses.
-
-
-
- a| 
-In einer eigenständigen Konfiguration
- a| 
-Sie haben keine weiteren Schritte in dieser speziellen Aufgabe. Sie haben die Diagnose auf Systemebene abgeschlossen.
-
-
-
- a| 
-Es kam zu einigen Testfehlern
- a| 
-Bestimmen Sie die Ursache des Problems.
-
-.. Beenden des Wartungsmodus: `halt`
-.. Führen Sie eine saubere Abschaltung durch, und trennen Sie dann die Netzteile.
-.. Überprüfen Sie, ob Sie alle Aspekte, die bei der Ausführung von Diagnose auf Systemebene zu beachten sind, dass die Kabel sicher angeschlossen sind und die Hardwarekomponenten ordnungsgemäß im Storage-System installiert wurden.
-.. Schließen Sie die Netzteile wieder an, und schalten Sie das Speichersystem dann ein.
-.. Führen Sie den Diagnosetest auf Systemebene erneut aus.
-
-
-|===
-
-
-
-
-== Schritt 3: Aggregate in einer MetroCluster Konfiguration mit zwei Nodes zurückwechseln
+== Schritt 2: Switch zurück zu Aggregaten in einer MetroCluster Konfiguration mit zwei Nodes
 
 Nachdem Sie in einer MetroCluster Konfiguration mit zwei Nodes den FRU-Austausch abgeschlossen haben, können Sie den MetroCluster SwitchBack-Vorgang durchführen. Damit wird die Konfiguration in ihren normalen Betriebszustand zurückversetzt, wobei die Synchronisations-Storage Virtual Machines (SVMs) auf dem ehemals beeinträchtigten Standort jetzt aktiv sind und Daten aus den lokalen Festplattenpools bereitstellen.
 
@@ -243,6 +117,6 @@ Wenn ein Wechsel eine lange Zeit in Anspruch nimmt, können Sie den Status der i
 
 
 
-== Schritt 4: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+== Schritt 3: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

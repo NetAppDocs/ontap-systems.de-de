@@ -1,7 +1,7 @@
 ---
 permalink: a320/controller-replace-system-config-restore-and-verify.html 
 sidebar: sidebar 
-keywords: aff a320, restore and verify the system configuration, verify and set the ha state of the controller module, run system-level diagnostics 
+keywords: aff a320, restore and verify the system configuration, verify and set the ha state of the controller module 
 summary: Nach dem Austausch und dem Booten der Hardware im Wartungsmodus überprüfen Sie die Low-Level-Systemkonfiguration des Ersatz-Controllers und konfigurieren nach Bedarf die Systemeinstellungen neu. 
 ---
 = Systemkonfiguration wiederherstellen und überprüfen – AFF A320
@@ -67,39 +67,4 @@ Für den HA-Status kann einer der folgenden Werte vorliegen:
 
 . Wenn der angezeigte Systemzustand des Controller-Moduls nicht mit der Systemkonfiguration übereinstimmt, setzen Sie das ein `HA` Status für das Controller-Modul: `ha-config modify controller ha-state`
 . Bestätigen Sie, dass sich die Einstellung geändert hat: `ha-config show`
-
-
-
-
-== Schritt 3: Führen Sie die Diagnose aus
-
-Nachdem Sie eine Komponente im System ausgetauscht haben, sollten Sie Diagnosetests auf dieser Komponente durchführen.
-
-Ihr System muss die LOADER-Eingabeaufforderung aufweisen, um die Diagnose zu starten.
-
-Alle Befehle im Diagnoseverfahren werden vom Controller ausgegeben, der die Komponente ersetzt wird.
-
-. Wenn der zu wartenden Controller nicht an der LOADER-Eingabeaufforderung angezeigt wird, booten Sie den Controller neu: `system node halt -node node_name`
-+
-Nachdem Sie den Befehl ausgegeben haben, sollten Sie warten, bis das System an der LOADER-Eingabeaufforderung angehalten wird.
-
-. Rufen Sie an der LOADER-Eingabeaufforderung die speziellen Treiber auf, die speziell für die Diagnose auf Systemebene entwickelt wurden, um ordnungsgemäß zu funktionieren: `boot_diags`
-. Wählen Sie im angezeigten Menü *Scansystem* aus, um die Ausführung der Diagnosetests zu aktivieren.
-. Wählen Sie *Testsystem* aus dem angezeigten Menü, um Diagnosetests auszuführen.
-. Wählen Sie den Test oder die Testreihe aus den verschiedenen Untermenüs aus.
-. Fahren Sie auf der Grundlage des Ergebnisses des vorhergehenden Schritts fort:
-+
-** Wenn der Test fehlgeschlagen ist, korrigieren Sie den Fehler, und führen Sie den Test erneut aus.
-** Wenn der Test keine Fehler gemeldet hat, wählen Sie im Menü Neu starten aus, um das System neu zu starten.
-+
-
-NOTE: Während des Bootens werden möglicherweise die folgenden Eingabeaufforderungen angezeigt:
-
-+
-*** Eine Warnmeldung über eine nicht übereinstimmende System-ID und die Aufforderung, die System-ID außer Kraft zu setzen.
-*** Eine Eingabeaufforderung mit einer Warnmeldung, dass Sie beim Aufrufen des Wartungsmodus in einer HA-Konfiguration sicherstellen müssen, dass der gesunde Controller weiterhin ausgefallen ist. Sie können sicher reagieren `y` Um diese Eingabeaufforderungen.
-
-
-
-
 

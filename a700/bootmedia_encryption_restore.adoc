@@ -1,0 +1,275 @@
+---
+permalink: a700/bootmedia-encryption-restore.html 
+sidebar: sidebar 
+keywords: aff a700, fas9000, post, boot, media, replacement, steps, okm, nse, nve 
+summary: 'Sobald Umgebungsvariablen geprüft werden, müssen Sie spezifische Schritte für Systeme mit aktiviertem Onboard Key Manager (OKM), NetApp Storage Encryption (NSE) oder NetApp Volume Encryption (NVE) durchführen.' 
+---
+= Stellen Sie OKM, NSE und NVE nach Bedarf wieder her – AFF A700 und FAS9000
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sobald Umgebungsvariablen geprüft werden, müssen Sie spezifische Schritte für Systeme mit aktiviertem Onboard Key Manager (OKM), NetApp Storage Encryption (NSE) oder NetApp Volume Encryption (NVE) durchführen.
+
+Bestimmen Sie den Abschnitt, den Sie zum Wiederherstellen Ihrer OKM-, NSE- oder NVE-Konfigurationen verwenden sollten:
+
+Wenn NSE oder NVE zusammen mit Onboard Key Manager aktiviert sind, müssen die zu Beginn dieses Verfahrens erfassten Einstellungen wiederhergestellt werden.
+
+* Wenn NSE oder NVE aktiviert sind und der Onboard Key Manager aktiviert ist, wechseln Sie zu <<Option 1: Wiederherstellung von NVE oder NSE bei aktiviertem Onboard Key Manager>>.
+* Wenn NSE oder NVE für ONATP 9.5 aktiviert sind, finden Sie unter <<Option 2: Stellen Sie NSE/NVE auf Systemen mit ONTAP 9.5 und früher wieder her>>.
+* Wenn NSE oder NVE für ONTAP 9.6 aktiviert sind, finden Sie unter <<Option 3: Stellen Sie NSE/NVE auf Systemen mit ONTAP 9.6 und höher wieder her>>.
+
+
+
+
+== Option 1: Wiederherstellung von NVE oder NSE bei aktiviertem Onboard Key Manager
+
+.Schritte
+. Schließen Sie das Konsolenkabel an den Ziel-Controller an.
+. Verwenden Sie die `boot_ontap` Befehl an der LOADER-Eingabeaufforderung zum Booten des Controllers.
+. Überprüfen Sie die Konsolenausgabe:
++
+[cols="1,3"]
+|===
+| *Wenn die Konsole angezeigt wird...* | *Dann...* 
+
+
+ a| 
+Die LOADER-Eingabeaufforderung
+ a| 
+Starten des Controllers zum Boot-Menü: `boot_ontap menu`
+
+
+
+ a| 
+Warten auf Giveback...
+ a| 
+.. Eingabe `Ctrl-C` An der Eingabeaufforderung
+.. Bei der Nachricht: Möchten Sie den Controller anhalten, anstatt [y/n] zu warten? , Geben Sie ein: `y`
+.. Geben Sie an der LOADER-Eingabeaufforderung den ein `boot_ontap menu` Befehl.
+
+
+|===
+. Geben Sie im Startmenü den verborgenen Befehl ein. `recover_onboard_keymanager` Und antworten `y` An der Eingabeaufforderung.
+. Geben Sie die Passphrase für das Onboard-Schlüsselmanagement ein, das Sie zu Beginn dieses Verfahrens vom Kunden erhalten haben.
+. Wenn Sie zur Eingabe der Sicherungsdaten aufgefordert werden, fügen Sie die zu Beginn dieses Verfahrens erfassten Sicherungsdaten ein, wenn Sie dazu aufgefordert werden. Fügen Sie die Ausgabe von ein `security key-manager backup show` ODER `security key-manager onboard show-backup` Befehl.
++
+
+NOTE: Die Daten werden von beiden ausgegeben `security key-manager backup show` Oder `security key-manager onboard show-backup` Befehl.
+
++
+Beispiel für Backup-Daten:
+
++
+[]
+====
+------------------------------- BACKUP-------------------------------------- TmV0QXBwIETERTABCbGaiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA . . . H4nPQM0nrDRYRa9SCv8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+--------------------------------- END-BACKUP--------------------------------------------------
+
+====
+. Wählen Sie im Startmenü die Option Normal Boot aus.
++
+Das System wird mit gebootet `Waiting for giveback...` Eingabeaufforderung:
+
+. Stellen Sie das Konsolenkabel auf den Partner-Controller um und melden Sie sich als Administrator an.
+. Überprüfen Sie, ob der Ziel-Controller bereit ist für die Rückgabe an den `storage failover show` Befehl.
+. Geben Sie nur die CFO-Aggregate mit dem Storage Failover Giveback zurück `-fromnode local -only-cfo-aggregates true` Befehl.
++
+** Wenn der Befehl aufgrund eines ausgefallenen Laufwerks ausfällt, setzen Sie die ausgefallene Festplatte physisch aus, lassen Sie sie aber in den Steckplatz, bis ein Austausch erfolgt.
+** Wenn der Befehl aufgrund einer offenen CIFS-Sitzung nicht erfolgreich ausgeführt wird, informieren Sie sich beim Kunden darüber, wie CIFS-Sitzungen abgeschlossen werden können.
++
+
+NOTE: Die Beendigung von CIFS kann zu Datenverlust führen.
+
+** Wenn der Befehl fehlschlägt, weil der Partner "nicht bereit" ist, warten Sie 5 Minuten, bis die NVMEMs synchronisieren.
+** Wenn der Befehl aufgrund eines NDMP-, SnapMirror- oder SnapVault-Prozesses ausfällt, deaktivieren Sie den Prozess. Weitere Informationen finden Sie im entsprechenden Documentation Center.
+
+
+. Sobald die Rückgabe abgeschlossen ist, überprüfen Sie den Failover- und Giveback-Status mit `storage failover show` Und ``storage failover show`-GiveBack`-Befehle.
++
+Es werden nur die CFO-Aggregate (Root-Aggregate und Daten-Aggregate im CFO-Stil) angezeigt.
+
+. Schieben Sie das Konsolenkabel auf den Ziel-Controller.
+. Wenn Sie ONTAP 9.5 und früher ausführen, führen Sie den Key-Manager Setup-Assistenten aus:
++
+.. Starten Sie den Assistenten mit `security key-manager setup -nodenodename` Geben Sie dann bei der entsprechenden Aufforderung die Passphrase für das Onboard-Verschlüsselungsmanagement ein.
+.. Geben Sie das ein `key-manager key show -detail` Befehl zum Anzeigen einer detaillierten Ansicht aller im Onboard-Schlüsselmanager gespeicherten Schlüssel und zur Überprüfung des s `Restored` Spalte = `yes` Für alle Authentifizierungsschlüssel.
++
+
+NOTE: Wenn der `Restored` Spalte = nichts anderes als `yes`, Wenden Sie sich an den Kundendienst.
+
+.. Warten Sie 10 Minuten, bis der Schlüssel über das Cluster synchronisiert wird.
+
+
+. Wenn Sie ONTAP 9.6 oder höher verwenden:
++
+.. Führen Sie die aus `security key-manager onboard sync` Geben Sie bei der entsprechenden Aufforderung die Passphrase ein.
+.. Geben Sie das ein `security key-manager key query` Befehl zum Anzeigen einer detaillierten Ansicht aller im Onboard-Schlüsselmanager gespeicherten Schlüssel und zur Überprüfung des s `Restored` Spalte = `yes/true` Für alle Authentifizierungsschlüssel.
++
+
+NOTE: Wenn der `Restored` Spalte = nichts anderes als `yes/true`, Wenden Sie sich an den Kundendienst.
+
+.. Warten Sie 10 Minuten, bis der Schlüssel über das Cluster synchronisiert wird.
+
+
+. Stellen Sie das Konsolenkabel auf den Partner Controller um.
+. Geben Sie den Ziel-Controller mithilfe des zurück `storage failover giveback -fromnode local` Befehl.
+. Überprüfen Sie den Giveback-Status, 3 Minuten nachdem Berichte abgeschlossen wurden, mithilfe von `storage failover show` Befehl.
++
+Falls das Giveback nach 20 Minuten nicht abgeschlossen ist, wenden Sie sich an den Kundendienst.
+
+. Geben Sie an der Clustershell-Eingabeaufforderung den ein `net int show -is-home false` Befehl zum Auflistung der logischen Schnittstellen, die sich nicht auf ihrem Home Controller und Port befinden.
++
+Wenn Schnittstellen als aufgeführt werden `false`, Zurücksetzen dieser Schnittstellen zurück zu ihrem Home-Port mit dem `net int revert -vserver Cluster -lif _nodename_` Befehl.
+
+. Bewegen Sie das Konsolenkabel auf den Ziel-Controller, und führen Sie den aus `version -v` Befehl zum Prüfen der ONTAP-Versionen.
+. Stellen Sie die automatische Rückgabe wieder her, wenn Sie die Funktion mithilfe von deaktivieren `storage failover modify -node local -auto-giveback true` Befehl.
+
+
+
+
+== Option 2: Stellen Sie NSE/NVE auf Systemen mit ONTAP 9.5 und früher wieder her
+
+.Schritte
+. Schließen Sie das Konsolenkabel an den Ziel-Controller an.
+. Verwenden Sie die `boot_ontap` Befehl an der LOADER-Eingabeaufforderung zum Booten des Controllers.
+. Überprüfen Sie die Konsolenausgabe:
++
+[cols="1,3"]
+|===
+| *Wenn die Konsole angezeigt wird...* | *Dann...* 
+
+
+ a| 
+Die Eingabeaufforderung für die Anmeldung
+ a| 
+Fahren Sie mit Schritt 7 fort.
+
+
+
+ a| 
+Warten auf Giveback...
+ a| 
+.. Melden Sie sich beim Partner-Controller an.
+.. Überprüfen Sie, ob der Ziel-Controller bereit ist für die Rückgabe an den `storage failover show` Befehl.
+
+
+|===
+. Bewegen Sie das Konsolenkabel zum Partner-Controller und geben Sie den Ziel-Controller-Storage mithilfe des zurück `storage failover giveback -fromnode local -only-cfo-aggregates true local` Befehl.
++
+** Wenn der Befehl aufgrund eines ausgefallenen Laufwerks ausfällt, setzen Sie die ausgefallene Festplatte physisch aus, lassen Sie sie aber in den Steckplatz, bis ein Austausch erfolgt.
+** Wenn der Befehl aufgrund von offenen CIFS-Sitzungen ausfällt, wenden Sie sich an den Kunden, wie CIFS-Sitzungen abgeschlossen werden können.
++
+
+NOTE: Die Beendigung von CIFS kann zu Datenverlust führen.
+
+** Wenn der Befehl fehlschlägt, weil der Partner „nicht bereit“ ist, warten Sie 5 Minuten, bis die NVMEMs synchronisiert werden.
+** Wenn der Befehl aufgrund eines NDMP-, SnapMirror- oder SnapVault-Prozesses ausfällt, deaktivieren Sie den Prozess. Weitere Informationen finden Sie im entsprechenden Documentation Center.
+
+
+. Warten Sie 3 Minuten, und überprüfen Sie den Failover-Status mit `storage failover show` Befehl.
+. Geben Sie an der Clustershell-Eingabeaufforderung den ein `net int show -is-home false` Befehl zum Auflistung der logischen Schnittstellen, die sich nicht auf ihrem Home Controller und Port befinden.
++
+Wenn Schnittstellen als aufgeführt werden `false`, Zurücksetzen dieser Schnittstellen zurück zu ihrem Home-Port mit dem `net int revert -vserver Cluster -lif _nodename_` Befehl.
+
+. Verschieben Sie das Konsolenkabel auf den Ziel-Controller und führen Sie die Version aus `-v command` Um die ONTAP-Versionen zu prüfen.
+. Stellen Sie die automatische Rückgabe wieder her, wenn Sie die Funktion mithilfe von deaktivieren `storage failover modify -node local -auto-giveback true` Befehl.
+. Verwenden Sie die `storage encryption disk show` An der clustershell-Eingabeaufforderung zur Überprüfung der Ausgabe.
++
+
+NOTE: Dieser Befehl funktioniert nicht, wenn NVE (NetApp Volume Encryption) konfiguriert wird
+
+. Verwenden Sie die Abfrage des Security Key-Managers, um die Schlüssel-IDs der Authentifizierungsschlüssel anzuzeigen, die auf den Schlüsselverwaltungsservern gespeichert sind.
++
+** Wenn der `Restored` Spalte = `yes` Und alle Schlüsselmanager melden sich in einem verfügbaren Zustand, gehen Sie zu _Complete the Replacement Process_.
+** Wenn der `Restored` Spalte = nichts anderes als `yes`, Und/oder ein oder mehrere Schlüsselmanager sind nicht verfügbar, verwenden Sie die `security key-manager restore -address` Befehl zum Abrufen und Wiederherstellen aller mit allen Knoten verknüpften Authentifizierungsschlüssel (AKS) und Schlüssel-IDs von allen verfügbaren Key Management-Servern.
++
+Überprüfen Sie die Ausgabe der Sicherheitsschlüssel-Manager-Abfrage erneut, um sicherzustellen, dass der `Restored` Spalte = `yes` Und alle wichtigen Manager sind in einem verfügbaren Zustand unterstellt
+
+
+
+. Wenn das Onboard-Verschlüsselungsmanagement aktiviert ist:
++
+.. Verwenden Sie die `security key-manager key show -detail` Eine detaillierte Ansicht aller im Onboard Key Manager gespeicherten Schlüssel anzeigen.
+.. Verwenden Sie die `security key-manager key show -detail` Führen Sie den Befehl aus und überprüfen Sie das `Restored` Spalte = `yes` Für alle Authentifizierungsschlüssel.
++
+Wenn der `Restored` Spalte = nichts anderes als `yes`, Verwenden Sie die `security key-manager setup -node _Repaired_(Target)_node_` Befehl zum Wiederherstellen der Onboard Key Management-Einstellungen. Führen Sie den erneut aus `security key-manager key show -detail` Befehl zur Überprüfung `Restored` Spalte = `yes` Für alle Authentifizierungsschlüssel.
+
+
+
+. Schließen Sie das Konsolenkabel an den Partner Controller an.
+. Geben Sie den Controller mithilfe des zurück `storage failover giveback -fromnode local` Befehl.
+. Stellen Sie die automatische Rückgabe wieder her, wenn Sie die Funktion mithilfe von deaktivieren `storage failover modify -node local -auto-giveback true` Befehl.
+
+
+
+
+== Option 3: Stellen Sie NSE/NVE auf Systemen mit ONTAP 9.6 und höher wieder her
+
+.Schritte
+. Schließen Sie das Konsolenkabel an den Ziel-Controller an.
+. Verwenden Sie die `boot_ontap` Befehl an der LOADER-Eingabeaufforderung zum Booten des Controllers.
+. Überprüfen Sie die Konsolenausgabe:
++
+[cols="1,3"]
+|===
+| Wenn die Konsole angezeigt wird... | Dann... 
+
+
+ a| 
+Die Eingabeaufforderung für die Anmeldung
+ a| 
+Fahren Sie mit Schritt 7 fort.
+
+
+
+ a| 
+Warten auf Giveback...
+ a| 
+.. Melden Sie sich beim Partner-Controller an.
+.. Überprüfen Sie, ob der Ziel-Controller bereit ist für die Rückgabe an den `storage failover show` Befehl.
+
+
+|===
+. Bewegen Sie das Konsolenkabel zum Partner-Controller und geben Sie den Ziel-Controller-Storage mithilfe des zurück `storage failover giveback -fromnode local -only-cfo-aggregates true local` Befehl.
++
+** Wenn der Befehl aufgrund eines ausgefallenen Laufwerks ausfällt, setzen Sie die ausgefallene Festplatte physisch aus, lassen Sie sie aber in den Steckplatz, bis ein Austausch erfolgt.
+** Wenn der Befehl aufgrund einer offenen CIFS-Sitzung nicht erfolgreich ausgeführt wird, informieren Sie sich beim Kunden darüber, wie CIFS-Sitzungen abgeschlossen werden können.
++
+
+NOTE: Die Beendigung von CIFS kann zu Datenverlust führen.
+
+** Wenn der Befehl fehlschlägt, weil der Partner "nicht bereit" ist, warten Sie 5 Minuten, bis die NVMEMs synchronisieren.
+** Wenn der Befehl aufgrund eines NDMP-, SnapMirror- oder SnapVault-Prozesses ausfällt, deaktivieren Sie den Prozess. Weitere Informationen finden Sie im entsprechenden Documentation Center.
+
+
+. Warten Sie 3 Minuten, und überprüfen Sie den Failover-Status mit `storage failover show` Befehl.
+. Geben Sie an der Clustershell-Eingabeaufforderung den ein `net int show -is-home false` Befehl zum Auflistung der logischen Schnittstellen, die sich nicht auf ihrem Home Controller und Port befinden.
++
+Wenn Schnittstellen als aufgeführt werden `false`, Zurücksetzen dieser Schnittstellen zurück zu ihrem Home-Port mit dem `net int revert -vserver Cluster -lif _nodename_` Befehl.
+
+. Bewegen Sie das Konsolenkabel auf den Ziel-Controller, und führen Sie den aus `version -v` Befehl zum Prüfen der ONTAP-Versionen.
+. Stellen Sie die automatische Rückgabe wieder her, wenn Sie die Funktion mithilfe von deaktivieren `storage failover modify -node local -auto-giveback true` Befehl.
+. Verwenden Sie die `storage encryption disk show` An der clustershell-Eingabeaufforderung zur Überprüfung der Ausgabe.
+. Verwenden Sie die `security key-manager key query` Befehl zum Anzeigen der Schlüssel-IDs der Authentifizierungsschlüssel, die auf den Schlüsselverwaltungsservern gespeichert sind.
++
+** Wenn der `Restored` Spalte = `yes/true`, Sie sind fertig und können den Austauschprozess abschließen.
+** Wenn der `Key Manager type` = `external` Und das `Restored` Spalte = nichts anderes als `yes/true`, Verwenden Sie die `security key-manager external restore` Befehl zum Wiederherstellen der Schlüssel-IDs der Authentifizierungsschlüssel.
++
+
+NOTE: Falls der Befehl fehlschlägt, wenden Sie sich an den Kundendienst.
+
+** Wenn der `Key Manager type` = `onboard` Und das `Restored` Spalte = nichts anderes als `yes/true`, Verwenden Sie die `security key-manager onboard sync` Befehl zum erneuten Synchronisieren des Key Manager-Typs.
++
+Überprüfen Sie mithilfe der Schlüsselabfrage für den Sicherheitsschlüssel-Manager, ob der `Restored` Spalte = `yes/true` Für alle Authentifizierungsschlüssel.
+
+
+
+. Schließen Sie das Konsolenkabel an den Partner Controller an.
+. Geben Sie den Controller mithilfe des zurück `storage failover giveback -fromnode local` Befehl.
+. Stellen Sie die automatische Rückgabe wieder her, wenn Sie die Funktion mithilfe von deaktivieren `storage failover modify -node local -auto-giveback true` Befehl.
+. Stellen Sie AutoSupport wieder her, wenn sie mithilfe des deaktiviert wurde `system node autosupport invoke -node * -type all -message MAINT=END`
+

@@ -10,13 +10,13 @@ summary: Sie müssen das Startmedium im Controller finden und die Anweisungen be
 :imagesdir: ../media/
 
 
+[role="lead"]
 Zum Austauschen des Startmediums müssen Sie das beeinträchtigte Controller-Modul entfernen, das Ersatzstartmedium installieren und das Boot-Image auf ein USB-Flash-Laufwerk übertragen.
 
 
 
 == Schritt 1: Entfernen Sie das Controller-Modul
 
-[role="lead"]
 Um auf Komponenten innerhalb des Controllers zuzugreifen, müssen Sie zuerst das Controller-Modul aus dem System entfernen und dann die Abdeckung am Controller-Modul entfernen.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
@@ -43,7 +43,6 @@ image::../media/drw_2600_opening_pcm_cover.png[drw 2600, öffnen der pcm-Abdecku
 
 == Schritt 2: Ersetzen Sie die Startmedien
 
-[role="lead"]
 Sie müssen das Startmedium im Controller finden und die Anweisungen befolgen, um es zu ersetzen.
 
 .Schritte
@@ -70,7 +69,6 @@ Entfernen Sie gegebenenfalls die Startmedien, und setzen Sie sie wieder in den S
 
 == Schritt 3: Übertragen Sie das Startabbild auf das Startmedium
 
-[role="lead"]
 Sie können das System-Image über ein USB-Flash-Laufwerk, auf dem das Image installiert ist, auf dem Ersatzstartmedium installieren. Sie müssen das var-Dateisystem jedoch während dieses Vorgangs wiederherstellen.
 
 * Sie müssen über ein USB-Flash-Laufwerk verfügen, das auf FAT32 formatiert ist und eine Kapazität von mindestens 4 GB aufweist.

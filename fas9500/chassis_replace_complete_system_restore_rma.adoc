@@ -1,8 +1,8 @@
 ---
 permalink: fas9500/chassis_replace_complete_system_restore_rma.html 
 sidebar: sidebar 
-keywords: aff fas9500, verify and set HA state, run diagnostics, complete the replacement process 
-summary: Sie müssen den HA-Status des Chassis überprüfen, Diagnosen ausführen und das ausgefallene Teil an NetApp zurücksenden, wie in den mit dem Kit gelieferten RMA-Anweisungen beschrieben. 
+keywords: aff fas9500, verify and set HA state, complete the replacement process 
+summary: Sie müssen den HA-Status des Gehäuses überprüfen und das fehlerhafte Teil an NetApp zurücksenden, wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben. 
 ---
 = Wiederherstellen und Überprüfen der Konfiguration - FAS9500
 :allow-uri-read: 
@@ -42,7 +42,7 @@ Für den HA-Status kann einer der folgenden Werte vorliegen:
 
 
 
-== Schritt 2: System hochfahren
+== Schritt 2: Das System hochfahren
 
 . Wenn Sie dies nicht getan haben, schließen Sie die Netzkabel wieder an die Netzteile an.
 . Schalten Sie die Netzteileinheiten ein, indem Sie den Wippschalter auf *EIN* stellen und warten, bis die Controller vollständig hochgefahren sind.
@@ -66,125 +66,6 @@ NOTE: Als Best Practice sollten Sie Folgendes tun:
 ====
 
 
-== Schritt 3: Führen Sie die Diagnose auf Systemebene aus
-
-Nach der Installation eines neuen Gehäuses sollten Sie die Interconnect-Diagnose ausführen.
-
-.Bevor Sie beginnen
-Ihr System muss die LOADER-Eingabeaufforderung aufweisen, um die Diagnose auf Systemebene zu starten.
-
-Alle Befehle in den Diagnoseverfahren werden vom Node ausgegeben, auf dem die Komponente ersetzt wird.
-
-. Wenn der Node, der gewartet werden soll, nicht an der LOADER-Eingabeaufforderung steht, führen Sie die folgenden Schritte aus:
-+
-.. Wählen Sie im angezeigten Menü die Option Wartungsmodus.
-.. Nachdem der Node im Wartungsmodus gebootet wurde, beenden Sie den Node: `halt`
-+
-Nachdem Sie den Befehl ausgegeben haben, sollten Sie warten, bis das System an der LOADER-Eingabeaufforderung angehalten wird.
-
-+
-
-NOTE: Während des Startvorgangs können Sie sicher reagieren `y` So werden Sie aufgefordert:
-
-
-
-. Wiederholen Sie den vorherigen Schritt auf dem zweiten Node, wenn Sie sich in einer HA-Konfiguration befinden.
-+
-
-NOTE: Zum Ausführen des Interconnect-Tests müssen sich beide Controller im Wartungsmodus befinden.
-
-. Rufen Sie an der LOADER-Eingabeaufforderung die speziellen Treiber auf, die speziell für die Diagnose auf Systemebene entwickelt wurden, um ordnungsgemäß zu funktionieren: `boot_diags`
-+
-Während des Startvorgangs können Sie sicher reagieren `y` Zu den Aufforderungen, bis die Eingabeaufforderung für den Wartungsmodus (*>) angezeigt wird.
-
-. Aktivieren Sie die Verbindungstests über die Eingabeaufforderung für den Wartungsmodus: `sldiag device modify -dev interconnect -sel enable`
-+
-Die Verbindungstests sind standardmäßig deaktiviert und müssen aktiviert sein, damit sie separat ausgeführt werden können.
-
-. Führen Sie den Verbindungstest über die Eingabeaufforderung für den Wartungsmodus aus: `sldiag device run -dev interconnect`
-+
-Sie müssen den Interconnect-Test nur von einem Controller aus ausführen.
-
-. Vergewissern Sie sich, dass keine Hardwareprobleme aufgrund des Austauschs des Chassis aufgetreten sind: `sldiag device status -dev interconnect -long -state failed`
-+
-Die Diagnose auf Systemebene gibt die Eingabeaufforderung zurück, wenn keine Testfehler auftreten oder den vollständigen Status von Fehlern, die durch das Testen der Komponente entstehen, angezeigt wird.
-
-. Fahren Sie auf der Grundlage des Ergebnisses des vorhergehenden Schritts fort.
-
-
-|===
-| Wenn die Diagnose auf Systemebene testet... | Dann... 
-
-
- a| 
-Wurden ohne Fehler abgeschlossen
- a| 
-. Löschen Sie die Statusprotokolle: `sldiag device clearstatus`
-. Überprüfen Sie, ob das Protokoll gelöscht wurde: `sldiag device status`
-+
-Die folgende Standardantwort wird angezeigt:
-
-+
-[listing]
-----
-SLDIAG: No log messages are present.
-----
-. Beenden Sie den Wartungsmodus bei beiden Controllern: `halt`
-+
-Vom System wird die LOADER-Eingabeaufforderung angezeigt.
-
-+
-
-NOTE: Sie müssen den Wartungsmodus auf beiden Controllern beenden, bevor Sie fortfahren.
-
-. Geben Sie an der LOADER-Eingabeaufforderung den folgenden Befehl für beide Controller ein: `bye`
-. Stellt den normalen Betrieb des Node wieder bereit.
-
-
-|===
-|===
-| Wenn Ihr System ONTAP ausführt... | Dann... 
-
-
- a| 
-Mit zwei Nodes im Cluster
- a| 
-Geben Sie folgende Befehle ein: `node::> cluster ha modify -configured true`
-`node::> storage failover modify -node node0 -enabled true`
-
-
-
- a| 
-Mit mehr als zwei Nodes im Cluster
- a| 
-Geben Sie diesen Befehl ein: ``node::> storage failover modify -node node0 -enabled true``
-
-
-
- a| 
-In einer eigenständigen Konfiguration
- a| 
-Sie haben keine weiteren Schritte in dieser speziellen Aufgabe. Sie haben die Diagnose auf Systemebene abgeschlossen.
-
-
-
- a| 
-Es kam zu einigen Testfehlern
- a| 
-Bestimmen Sie die Ursache des Problems.
-
-. Beenden des Wartungsmodus: `halt`
-. Führen Sie eine saubere Abschaltung durch, und trennen Sie dann die Netzteile.
-. Überprüfen Sie, ob Sie alle Aspekte, die bei der Ausführung von Diagnose auf Systemebene zu beachten sind, dass die Kabel sicher angeschlossen sind und die Hardwarekomponenten ordnungsgemäß im Storage-System installiert wurden.
-. Schließen Sie die Netzteile wieder an, und schalten Sie das Speichersystem dann ein.
-. Führen Sie den Diagnosetest auf Systemebene erneut aus.
-+
- If the system-level diagnostics test fails again, contact link:http://mysupport.netapp.com/[mysupport.netapp.com^].
-
-
-|===
-
-
-== Schritt 4: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+== Schritt 3: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

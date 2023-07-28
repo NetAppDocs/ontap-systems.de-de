@@ -169,7 +169,10 @@ NOTE: Stellen Sie sicher, dass die Karte vollständig und quadratische Position 
 
 == Schritt 3: PCIe-Karten verschieben
 
-Im Rahmen des Controlleraustauschs müssen Sie beide PCIe-Riser-Module, Riser 2 (mittlerer Riser) und Riser 3 (Riser rechts) aus dem beeinträchtigten Controller-Modul entfernen, die PCIe-Karten aus den Riser-Modulen entfernen. Und installieren Sie sie in denselben Riser-Modulen im Ersatzcontroller-Modul. Sobald die DIMMs in das Ersatzcontrollermodul verschoben wurden, installieren Sie die Riser-Module im Ersatzcontrollermodul.
+Im Rahmen des Controller-Austauschprozesses müssen Sie beide PCIe-Riser-Module, Riser 2 (mittlere Riserkarte) und Riser 3 (Riser ganz rechts), vom beeinträchtigten Controller-Modul entfernen und die PCIe-Karten von den Riser-Modulen entfernen. Und installieren Sie die Karten in den gleichen Riser-Modulen im Ersatz-Controller-Modul. Sobald die DIMMs in das Ersatzcontrollermodul verschoben wurden, installieren Sie die Riser-Module im Ersatzcontrollermodul.
+
+
+IMPORTANT: Installieren Sie die Steigleitungen des außer Betrieb genommenen Controller-Moduls nicht im Ersatz-Controller-Modul.
 
 . Entfernen Sie den PCIe-Riser aus dem Controller-Modul:
 +
@@ -222,13 +225,13 @@ Riser 2 (mittlerer Riser) und PCI-Karten in den Riser-Steckplätzen 2 und 3.
 
 
 . Entfernen Sie den entsprechenden Riser aus dem Ersatzcontrollermodul.
-. Installieren Sie die PCIe-Karte in den gleichen Steckplatz im PCIe-Riser:
+. Setzen Sie die PCIe-Karte vom Ersatzcontroller in den Riser ein, und setzen Sie den Riser wieder in den Ersatzcontroller ein:
 +
 .. Richten Sie die Karte mit der Kartenführung am Riser und dem Kartensockel im Riser aus, und schieben Sie sie anschließend in den Sockel im Riser.
 +
+Stellen Sie sicher, dass die Karte vollständig und quadratische Position im Risersteckplatz hat.
 
-NOTE: Stellen Sie sicher, dass die Karte vollständig und quadratische Position im Risersteckplatz hat.
-
+.. Setzen Sie den Riser wieder in das Ersatz-Controller-Modul ein.
 .. Schwenken Sie die Verriegelungsverriegelung, bis sie in die verriegelte Position einrastet.
 
 
