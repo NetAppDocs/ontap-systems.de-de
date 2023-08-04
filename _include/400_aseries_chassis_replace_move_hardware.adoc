@@ -1,0 +1,114 @@
+= Schritt 1: Entfernen Sie die Controller-Module
+:allow-uri-read: 
+
+
+Setzen Sie die Lüfter, Festplatten und das Controller-Modul vom Gehäuse für beeinträchtigte Störungen in das neue Gehäuse und ersetzen Sie das Gehäuse für beeinträchtigte Störungen durch das neue Gehäuse desselben Modells wie das Gehäuse für beeinträchtigte Störungen.
+
+
+
+== Schritt 1: Entfernen Sie die Controller-Module
+
+Um das Chassis auszutauschen, müssen Sie die Controller-Module aus dem alten Chassis entfernen.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Lösen Sie die Netzkabelhalter, und ziehen Sie anschließend die Kabel von den Netzteilen ab.
+. Lösen Sie den Haken- und Schlaufenriemen, mit dem die Kabel am Kabelführungsgerät befestigt sind, und ziehen Sie dann die Systemkabel und SFPs (falls erforderlich) vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren.
++
+Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation des Kabelverwaltungsgeräts die Kabel organisiert sind.
+
+. Entfernen Sie die Kabelführungsgeräte von der linken und rechten Seite des Controller-Moduls und stellen Sie sie zur Seite.
+. Drücken Sie beide Verriegelungsriegel nach unten, und drehen Sie dann beide Verriegelungen gleichzeitig nach unten.
++
+Das Controller-Modul wird leicht aus dem Chassis entfernt.
+
+. Schieben Sie das Controller-Modul aus dem Gehäuse.
++
+Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen, während Sie es aus dem Gehäuse schieben.
+
+. Stellen Sie das Controller-Modul an einer sicheren Stelle beiseite, und wiederholen Sie diese Schritte für das andere Controller-Modul im Gehäuse.
+
+
+
+
+== Schritt 2: Bewegen Sie die Lüfter
+
+Um die Lüftermodule beim Austausch des Gehäuses in das Ersatzgehäuse zu verschieben, müssen Sie eine bestimmte Sequenz von Aufgaben durchführen.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Entfernen Sie die Blende (falls erforderlich) mit zwei Händen, indem Sie die Öffnungen auf beiden Seiten der Blende fassen und dann zu Ihnen ziehen, bis sich die Blende von den Kugelknöpfen am Rahmen des Chassis löst.
+. Drücken Sie die Freigabehebel am Nockengriff des Lüftermoduls nach unten, und drehen Sie dann den Nockengriff nach unten.
++
+Das Lüftermodul bewegt sich ein wenig vom Gehäuse entfernt.
+
+. Ziehen Sie das Lüftermodul gerade aus dem Gehäuse heraus. Stellen Sie sicher, dass Sie es mit der freien Hand unterstützen, damit es nicht aus dem Gehäuse herausschwingt.
++
+
+CAUTION: Die Lüftermodule sind kurz. Unterstützen Sie das Lüftermodul immer mit Ihrer freien Hand, damit es nicht plötzlich vom Gehäuse abfällt und Sie verletzt.
+
+. Setzen Sie das Lüftermodul beiseite.
+. Wiederholen Sie die vorherigen Schritte für alle verbleibenden Lüftermodule.
+. Setzen Sie das Lüftermodul in das Ersatzgehäuse ein, indem Sie es an der Öffnung ausrichten und dann in das Gehäuse schieben.
+. Drücken Sie den Nockengriff des Lüftermoduls fest, damit er ganz in das Gehäuse eingesetzt wird.
++
+Der Nockengriff hebt sich leicht, wenn das Lüftermodul vollständig sitzt.
+
+. Schwenken Sie den Nockengriff in die geschlossene Position, und stellen Sie sicher, dass der Freigabehebel des Nockengriffs in die verriegelte Position einrastet.
+. Wiederholen Sie diese Schritte für die übrigen Lüftermodule.
+
+
+
+
+== Schritt 3: Ersetzen Sie ein Chassis aus dem Rack oder Systemschrank der Ausrüstung
+
+Sie müssen das vorhandene Chassis aus dem Rack oder dem Systemschrank entfernen, bevor Sie das Ersatzgehäuse installieren können.
+
+. Entfernen Sie die Schrauben von den Montagepunkten des Gehäuses.
+. Schieben Sie das alte Chassis bei zwei Personen von den Rack-Schienen in einem Systemschrank oder Ausrüstungs-Rack und legen Sie es dann beiseite.
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Installieren Sie das Ersatzgehäuse mithilfe von zwei Personen in das Rack oder den Systemschrank. Führen Sie das Chassis durch die Rack-Schienen in einem System-Schrank oder Ausrüstungs-Rack.
+. Schieben Sie das Chassis vollständig in das Rack oder den Systemschrank der Ausrüstung.
+. Befestigen Sie die Vorderseite des Chassis mit den Schrauben, die Sie vom alten Chassis entfernt haben, am Rack oder am Systemschrank des Geräts.
+. Falls noch nicht geschehen, befestigen Sie die Blende.
+
+
+
+
+== Schritt 4: Installieren Sie die Controller-Module
+
+Nachdem Sie die Controller-Module in das neue Gehäuse installiert haben, müssen Sie es booten.
+
+Bei HA-Paaren mit zwei Controller-Modulen im selben Chassis ist die Sequenz, in der Sie das Controller-Modul installieren, besonders wichtig, da sie versucht, neu zu booten, sobald Sie es vollständig im Chassis einsetzen.
+
+. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
++
+
+NOTE: Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein, wenn Sie dazu aufgefordert werden.
+
+. Führen Sie die Konsole wieder mit dem Controller-Modul aus, und schließen Sie den Management-Port wieder an.
+. Schließen Sie die Installation des Controller-Moduls ab:
++
+.. Schließen Sie das Netzkabel an das Netzteil an, setzen Sie die Sicherungshülse des Netzkabels wieder ein, und schließen Sie dann das Netzteil an die Stromquelle an.
+.. Schieben Sie das Controller-Modul mithilfe der Verriegelungen fest in das Gehäuse, bis sich die Verriegelungsriegel erheben.
++
+
+NOTE: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige Kraft verwenden, um Schäden an den Anschlüssen zu vermeiden.
+
+.. Setzen Sie das Controller-Modul vollständig in das Gehäuse ein, indem Sie die Verriegelungsriegel nach oben drehen, kippen Sie sie so, dass sie die Sicherungsstifte entfernen, den Controller vorsichtig ganz nach innen schieben und dann die Verriegelungsriegel in die verriegelte Position senken.
++
+Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt. Bereiten Sie sich darauf vor, den Bootvorgang zu unterbrechen.
+
+.. Wenn Sie dies noch nicht getan haben, installieren Sie das Kabelverwaltungsgerät neu.
+.. Unterbrechen Sie den normalen Boot-Prozess und booten Sie zu LOADER, indem Sie drücken `Ctrl-C`.
++
+
+NOTE: Wenn das System im Startmenü stoppt, wählen Sie die Option zum Booten in LOADER.
+
+.. Geben Sie an der LOADER-Eingabeaufforderung ein `bye` Um die PCIe-Karten und andere Komponenten neu zu initialisieren.
+.. Unterbrechen Sie den Boot-Prozess und booten Sie an der LOADER-Eingabeaufforderung, indem Sie drücken `Ctrl-C`.
++
+Wenn das System im Startmenü stoppt, wählen Sie die Option zum Booten in LOADER.
+
+
+
+. Wiederholen Sie die vorherigen Schritte, um den zweiten Controller im neuen Chassis zu installieren.
+
