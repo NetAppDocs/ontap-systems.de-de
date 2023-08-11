@@ -13,17 +13,28 @@ summary: Sie müssen die Systemkomponenten an die PDUs anschließen, die PDU-Kab
 [role="lead"]
 Sie müssen die Systemkomponenten an die PDUs anschließen, die PDU-Kabel an die Wechselstromquellen leiten, sie an die Stromquellen anschließen und das System einschalten.
 
+
+IMPORTANT: Um einen Systemausfall bei Ausfall einer PDU zu verhindern, schließen Sie nicht beide Netzkabel einer beliebigen Komponente an eine PDU an. Verteilen Sie die Last über die PDS, die an verschiedene Stromkreise angeschlossen sind, wie in der Abbildung dargestellt.
+
 Für jede PDU in Ihrem Systemschrank müssen separate Stromkreise verfügbar sein.
 
-. Schließen Sie Ihr Gerät an die PDUs an. Stellen Sie sicher, dass Sie die Netzteile jeder Komponente an eine PDU auf gegenüberliegenden Seiten des Systemschranks anschließen.
-. Führen Sie die PDU-Stromkabel durch eine Öffnung im Systemschrank.
+. Verbinden Sie Ihre Geräte mit den PDUs:
 +
-Nutzen Sie eine der folgenden Öffnungen:
+.. Schließen Sie die Controller-Netzteile an verschiedene PDUs an, die an verschiedene Stromquellen angeschlossen sind.
+.. Schließen Sie die Festplatten-Shelf-Netzteile an verschiedene PDUs an, die an verschiedene Stromquellen angeschlossen sind.
+.. Schließen Sie alle Switch-Netzteile an verschiedene PDUs an, die an verschiedene Stromquellen angeschlossen sind.
++
+image::../media/cabinet_power_cabling_IEOPS-1320.svg[Schaltschrankstromverkabelung IEOPS 1320]
 
 +
-** Die Oberseite des Systemschranks
-** Zwischen der hinteren Tür unten und dem Rahmen des Systemschranks
-** Durch die Bodenöffnung und unter dem Systemschrank
+Führen Sie die PDU-Stromkabel durch eine der folgenden Öffnungen im Systemschrank:
+
++
+*** Die Oberseite des Systemschranks
+*** Zwischen der hinteren Tür unten und dem Rahmen des Systemschranks
+*** Durch die Bodenöffnung und unter dem Systemschrank
+
+
 
 
 . Schalten Sie die Netzschalter oder Leistungsschalter an den PDUs aus.

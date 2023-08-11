@@ -182,6 +182,9 @@ Verriegelungstaste für die Controllermodulabdeckung
 
 Um die DIMMs auszutauschen, suchen Sie sie im Controller und befolgen Sie die Schritte in der jeweiligen Reihenfolge.
 
+
+NOTE: Der VER2-Controller hat weniger DIMM-Sockel. Die Anzahl der unterstützten DIMMs wird nicht reduziert oder die DIMM-Sockel-Nummerierung wird nicht geändert. Wenn Sie die DIMMs auf das neue Controller-Modul verschieben, installieren Sie die DIMMs an derselben Sockennummer/-Position wie das Controller-Modul für beeinträchtigte Module.  Informationen zur Position des DIMM-Sockels finden Sie im FRU-Kartendiagramm auf dem VER2-Controller-Modul.
+
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Suchen Sie die DIMMs auf dem Controller-Modul.
 
@@ -303,15 +306,123 @@ Die Verriegelungen steigen, wenn das Controller-Modul voll eingesetzt ist.
 IMPORTANT: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige Kraft verwenden, um Schäden an den Anschlüssen zu vermeiden.
 
 +
-Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt.
+Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt. Bereiten Sie sich darauf vor, den Bootvorgang zu unterbrechen.
 
 .. Drehen Sie die Verriegelungsriegel nach oben, und kippen Sie sie so, dass sie die Sicherungsstifte entfernen und dann in die verriegelte Position absenken.
+.. Unterbrechen Sie den Bootvorgang, indem Sie auf drücken `Ctrl-C` Wenn Sie sehen, drücken Sie Strg-C für das Startmenü.
+.. Wählen Sie im angezeigten Menü die Option zum Starten im Wartungsmodus aus.
 
 
 
 
 
 
-== Schritt 5: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+== Schritt 5: Führen Sie die Diagnose auf Systemebene aus
+
+Nach der Installation eines neuen DIMM sollten Sie die Diagnose ausführen.
+
+Ihr System muss die LOADER-Eingabeaufforderung aufweisen, um die Diagnose auf Systemebene zu starten.
+
+Alle Befehle im Diagnoseverfahren werden vom Controller ausgegeben, der die Komponente ersetzt wird.
+
+. Wenn der zu wartenden Controller nicht an der LOADER-Eingabeaufforderung angezeigt wird, führen Sie die folgenden Schritte aus:
++
+.. Wählen Sie im angezeigten Menü die Option Wartungsmodus.
+.. Nachdem der Controller in den Wartungsmodus gebootet wurde, beenden Sie den Controller: `halt`
++
+Nachdem Sie den Befehl ausgegeben haben, sollten Sie warten, bis das System an der LOADER-Eingabeaufforderung angehalten wird.
+
++
+
+IMPORTANT: Während des Startvorgangs können Sie sicher reagieren `y` Zu Eingabeaufforderungen.
+
++
+*** Wenn eine Eingabeaufforderung eine Warnung angezeigt wird, dass beim Aufrufen des Wartungsmodus in einer HA-Konfiguration Sie sicherstellen müssen, dass der gesunde Controller weiterhin ausgefallen ist.
+
+
+
+
+. Rufen Sie an der LOADER-Eingabeaufforderung die speziellen Treiber auf, die speziell für die Diagnose auf Systemebene entwickelt wurden, um ordnungsgemäß zu funktionieren: `boot_diags`
++
+Während des Startvorgangs können Sie sicher reagieren `y` Zu den Aufforderungen, bis die Eingabeaufforderung für den Wartungsmodus (*>) angezeigt wird.
+
+. Führen Sie eine Diagnose für den Systemspeicher aus: `sldiag device run -dev mem`
+. Stellen Sie sicher, dass keine Hardwareprobleme durch den Austausch der DIMMs entstanden sind: `sldiag device status -dev mem -long -state failed`
++
+Die Diagnose auf Systemebene gibt die Eingabeaufforderung zurück, wenn keine Testfehler auftreten oder den vollständigen Status von Fehlern, die durch das Testen der Komponente entstehen, angezeigt wird.
+
+. Fahren Sie auf der Grundlage des Ergebnisses des vorhergehenden Schritts fort:
++
+[cols="1,2"]
+|===
+| Wenn die Diagnose auf Systemebene testet... | Dann... 
+
+
+ a| 
+Wurden ohne Fehler abgeschlossen
+ a| 
+.. Löschen Sie die Statusprotokolle: `sldiag device clearstatus`
+.. Überprüfen Sie, ob das Protokoll gelöscht wurde: `sldiag device status`
++
+Die folgende Standardantwort wird angezeigt:
+
++
+SLDIAG: Es sind keine Protokollnachrichten vorhanden.
+
+.. Beenden des Wartungsmodus: `halt`
++
+Der Controller zeigt die LOADER-Eingabeaufforderung an.
+
+.. Booten des Controllers über die LOADER-Eingabeaufforderung: `bye`
+.. Zurückkehren des Controllers in den normalen Betrieb:
+
+
+|===
++
+[cols="1,2"]
+|===
+| Wenn Ihr Controller in... | Dann... 
+
+
+ a| 
+Ein HA-Paar
+ a| 
+Geben Sie zurück: `storage failover giveback -ofnode replacement_node_name`        *Hinweis:* Wenn Sie das automatische Giveback deaktiviert haben, aktivieren Sie es mit dem Befehl Storage Failover modify erneut.
+
+
+
+ a| 
+Es kam zu einigen Testfehlern
+ a| 
+Bestimmen Sie die Ursache des Problems:
+
+.. Beenden des Wartungsmodus: `halt`
++
+Nachdem Sie den Befehl ausgegeben haben, warten Sie, bis das System an der LOADER-Eingabeaufforderung angehalten wird.
+
+.. Überprüfen Sie, ob Sie alle Aspekte, die bei der Ausführung von Diagnose auf Systemebene zu beachten sind, dass die Kabel sicher angeschlossen sind und die Hardwarekomponenten ordnungsgemäß im Storage-System installiert wurden.
+.. Booten Sie das zu betreuende Controller-Modul, und unterbrechen Sie den Boot, indem Sie auf drücken `Ctrl-C` Wenn Sie dazu aufgefordert werden, zum Startmenü zu gelangen:
++
+*** Wenn Sie zwei Controller-Module im Chassis haben, setzen Sie das Controller-Modul vollständig ein, das Sie im Chassis warten.
++
+Das Controller-Modul wird bei vollem Sitz hochgestartet.
+
+*** Wenn Sie ein Controller-Modul im Chassis haben, schließen Sie die Netzteile an und schalten Sie sie dann ein.
+
+
+.. Wählen Sie aus dem Menü die Option Start in den Wartungsmodus.
+.. Beenden Sie den Wartungsmodus, indem Sie den folgenden Befehl eingeben: `halt`
++
+Nachdem Sie den Befehl ausgegeben haben, warten Sie, bis das System an der LOADER-Eingabeaufforderung angehalten wird.
+
+.. Führen Sie den Diagnosetest auf Systemebene erneut aus.
+
+
+|===
+
+
+
+
+== Schritt 6: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.
