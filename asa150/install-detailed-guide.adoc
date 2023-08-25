@@ -19,7 +19,6 @@ Wenn Sie über eine MetroCluster-Konfiguration verfügen, verwenden Sie die http
 
 == Schritt 1: Installation vorbereiten
 
-[role="lead"]
 Um Ihr System zu installieren, erstellen Sie ein Konto auf der NetApp Support-Website, registrieren Sie Ihr System und erhalten Sie Ihre Lizenzschlüssel. Außerdem müssen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp für Ihr System inventarisieren und bestimmte Netzwerkinformationen erfassen.
 
 .Bevor Sie beginnen
@@ -40,7 +39,7 @@ Um Ihr System zu installieren, erstellen Sie ein Konto auf der NetApp Support-We
 . Packen Sie den Inhalt aller Boxen aus.
 . Notieren Sie die Seriennummer des Systems von den Controllern.
 +
-image::../media/drw_ssn_label.png[drw ssn-Etikett]
+image::../media/drw_ssn_label.png[Beispiel für die Seriennummer des Systems, die den Standort der Nummer anzeigt]
 
 . Richten Sie Ihr Konto ein:
 +
@@ -96,7 +95,7 @@ X6536-R6 (112-00090), 5 m
 
 X6554-R6 (112-00189), 15 m
  a| 
-image:../media/oie_cable_fiber_lc_connector.png[""]
+image:../media/oie_cable_fiber_lc_connector.png["Abbildung mit LC-Glasfaseranschluss"]
  a| 
 FC-Host-Netzwerk
 
@@ -137,7 +136,7 @@ Micro-USB-Konsolenkabel
  a| 
 Keine Angabe
  a| 
-image:../media/oie_cable_micro_usb.png[""]
+image:../media/oie_cable_micro_usb.png["Abbildung zeigt einen Micro-USB-Anschluss"]
  a| 
 Verbindung über die Konsole während der Software-Einrichtung auf Laptops/Konsolen, die nicht von Windows stammen
 
@@ -160,7 +159,6 @@ System einschalten
 
 == Schritt 2: Installieren Sie die Hardware
 
-[role="lead"]
 Installieren Sie Ihr System gegebenenfalls in einem 4-Säulen-Rack oder NetApp Systemschrank.
 
 .Schritte
@@ -184,7 +182,6 @@ image::../media/drw_cable_management_arm_install.png[drw-Kabelmanagement-ARM-Ins
 
 == Schritt 3: Controller mit Netzwerk verbinden
 
-[role="lead"]
 Verkabeln Sie die Controller entweder mit der Cluster-Methode ohne zwei Nodes oder mit der Cluster Interconnect-Netzwerkmethode mit dem Netzwerk.
 
 Die Managementnetzwerke, das UTA2-Datennetzwerk, das Ethernet-Datennetzwerk und die Management-Ports der Controller sind mit Switches verbunden. Die Cluster Interconnect-Ports sind an beiden Controllern verkabelt.
@@ -232,7 +229,7 @@ UTA2-Datennetzwerkkonfigurationen:: Verwenden Sie einen der folgenden Kabeltypen
 ** Verwenden Sie für einen FC-Host 0c und 0d *oder* 0e und 0f.
 ** Verwenden Sie für ein 10GbE-System e0c und e0d *oder* e0e und e0f.
 +
-image:../media/drw_c190_u_fc_10gbe_cbling.png[""]
+image:../media/drw_c190_u_fc_10gbe_cbling.png["Abbildung, die die Anschlüsse des Datenanschlusses wie im umgebenden Text beschrieben zeigt"]
 
 +
 Sie können ein Port-Paar als CNA und ein Port-Paar als FC verbinden, oder Sie können beide Port-Paare als CNA oder beide Port-Paare als FC verbinden.
@@ -302,7 +299,7 @@ UTA2-Datennetzwerkkonfigurationen:: Verwenden Sie einen der folgenden Kabeltypen
 ** Verwenden Sie für einen FC-Host 0c und 0d **oder** 0e und 0f.
 ** Verwenden Sie für ein 10GbE-System e0c und e0d **oder** e0e und e0f.
 +
-image:../media/drw_c190_u_fc_10gbe_cbling.png[""]
+image:../media/drw_c190_u_fc_10gbe_cbling.png["Abbildung, die die Anschlüsse des Datenanschlusses wie im umgebenden Text beschrieben zeigt"]
 
 +
 Sie können ein Port-Paar als CNA und ein Port-Paar als FC verbinden, oder Sie können beide Port-Paare als CNA oder beide Port-Paare als FC verbinden.
@@ -384,7 +381,6 @@ Wenn Sie über mehrere Festplatten-Shelf-Stacks verfügen, lesen Sie link:../com
 
 == Schritt 5: System-Setup abschließen
 
-[role="lead"]
 Die Einrichtung und Konfiguration des Systems kann mithilfe der Cluster-Erkennung nur mit einer Verbindung zum Switch und Laptop abgeschlossen werden. Sie können auch direkt eine Verbindung zu einem Controller im System herstellen und dann eine Verbindung zum Management Switch herstellen.
 
 [role="tabbed-block"]
