@@ -305,10 +305,7 @@ Nachdem Sie die FRU ersetzt haben, müssen Sie das Controller-Modul neu booten.
 Sie müssen die Änderung der System-ID beim Booten des Ersatz-Controllers bestätigen und anschließend überprüfen, ob die Änderung implementiert wurde.
 
 
-NOTE: Diese Vorgehensweise gilt nur für Systeme, auf denen ONTAP in einem HA-Paar ausgeführt wird.
-
-
-CAUTION: Eine Neuzuordnung von Festplatten ist nur erforderlich, wenn das NVRAM-Modul ersetzt wird.
+CAUTION: Eine Neuzuweisung der Festplatte ist nur erforderlich, wenn das NVRAM-Modul ersetzt wird. Dies gilt nicht für den Austausch des NVRAM-DIMM.
 
 .Schritte
 . Wenn sich der Ersatz-Controller im Wartungsmodus befindet (zeigt das an `*>` Eingabeaufforderung), beenden Sie den Wartungsmodus und gehen Sie zur LOADER-Eingabeaufforderung: `halt`
@@ -408,6 +405,9 @@ dr-group-id            cluster node           configuration-state
 == Schritt 6: Stellen Sie die Funktionen für Storage und Volume Encryption wieder her
 
 Wenn die Speicherverschlüsselung aktiviert ist, gehen Sie wie folgt vor.
+
+
+IMPORTANT: Dieser Schritt gilt nicht für den Austausch des NVRAM-DIMM.
 
 [role="tabbed-block"]
 ====

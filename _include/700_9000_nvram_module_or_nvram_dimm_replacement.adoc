@@ -384,7 +384,8 @@ Wählen Sie eine der folgenden Optionen aus, um Anweisungen zur Neuzuweisung von
 .Überprüfen Sie, ob sich die System-ID auf einem HA-System ändert
 Sie müssen die Änderung der System-ID beim Booten des Node _Replacement_ bestätigen und anschließend überprüfen, ob die Änderung implementiert wurde.
 
-Diese Vorgehensweise gilt nur für Systeme, auf denen ONTAP in einem HA-Paar ausgeführt wird.
+
+CAUTION: Eine Neuzuweisung der Festplatte ist nur erforderlich, wenn das NVRAM-Modul ersetzt wird. Dies gilt nicht für den Austausch des NVRAM-DIMM.
 
 .Schritte
 . Wenn sich der Ersatz-Node im Wartungsmodus befindet (zeigt das an `*>` Eingabeaufforderung, beenden Sie den Wartungsmodus und gehen Sie zur LOADER-Eingabeaufforderung: `halt`

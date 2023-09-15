@@ -6479,7 +6479,6 @@
   <block id="e1d6265d5c32eb8c4e989291b8d72d20" category="list-text">Schieben Sie das Modul vorsichtig in den Schlitz, bis die vorletzte und nummerierte Nockenverriegelung mit dem Stift der E/A-Nockenwelle einrastet. Drücken Sie dann die Nockenverriegelung ganz nach oben, um das Modul zu verriegeln.</block>
   <block id="bc62fa4bef9a4cd2a983ca01d5a5b1b3" category="paragraph">nockenverriegelung vollständig entriegelt</block>
   <block id="58e30dc94cdf372b64dac305fbb57bc0" category="section-title">Schritt 5: Festplatten neu zuweisen</block>
-  <block id="7b0ac7dba1c185e5ac66482ca29488da" category="admonition">Eine Neuzuordnung von Festplatten ist nur erforderlich, wenn das NVRAM-Modul ersetzt wird.</block>
   <block id="84bda9f97f27f63cc6fa0c4cac3ddcb4" category="list-text">Wenn sich der Ersatz-Controller im Wartungsmodus befindet (zeigt das an<block ref="2cf8a3bab83c4d2618c18eeeca9ebc98" prefix=" " category="inline-code"></block> Eingabeaufforderung), beenden Sie den Wartungsmodus und gehen Sie zur LOADER-Eingabeaufforderung:<block ref="4a1bde0ea8bcda2a591f42646813c477" prefix=" " category="inline-code"></block></block>
   <block id="3cea6cd019ee970febca58bfe050e1cb" category="list-text">Booten Sie an der LOADER-Eingabeaufforderung auf dem Ersatz-Controller den Controller und geben Sie „y“ ein, wenn Sie aufgrund von nicht übereinstimmenden System-ID aufgefordert werden, die System-ID außer Kraft zu setzen.</block>
   <block id="40ef2970d7d205d6f0ba4ecddaec7b51" category="list-text">Warten Sie, bis Sie auf das Giveback warten... Die Meldung wird auf der Konsole des Controllers mit dem Ersatzmodul angezeigt und anschließend vom gesunden Controller aus überprüfen, ob die neue Partner-System-ID automatisch zugewiesen wurde:<block ref="ddf400f1cb6b8b9330ed6c79c508123c" prefix=" " category="inline-code"></block></block>
@@ -8539,4 +8538,6 @@ Dieser Abschnitt enthält detaillierte Schritt-für-Schritt-Anleitungen zur Inst
   <block id="e598646ba49e0f0b7db709308a38bd0c" category="inline-image-macro">Abbildung: Cluster-Verbindungen zwischen den Ports auf der Rückseite der Controller</block>
   <block id="d5fe92183ddfd6502c92a350a2928047" category="list-text">e0b bis e0b
 <block ref="23c439b7ef31021d610e4d3b988f3cd1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="10fbfa6320d8e7c72e731fbd9a6e6c69" category="admonition">Eine Neuzuweisung der Festplatte ist nur erforderlich, wenn das NVRAM-Modul ersetzt wird. Dies gilt nicht für den Austausch des NVRAM-DIMM.</block>
+  <block id="099f7b942e4e89631784891716949599" category="admonition">Dieser Schritt gilt nicht für den Austausch des NVRAM-DIMM.</block>
 </blocks>
