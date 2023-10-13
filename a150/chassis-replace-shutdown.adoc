@@ -50,7 +50,7 @@ Als Best Practice vor dem Herunterfahren sollten Sie:
 . Melden Sie sich über SSH beim Cluster an oder von einem beliebigen Node im Cluster mit einem lokalen Konsolenkabel und einem Laptop/einer Konsole an.
 . Schalten Sie AutoSupport aus, und geben Sie an, wie lange das System voraussichtlich offline ist:
 +
-`system node autosupport invoke -node * -type all -messages "MAINT=8h Power Maintenance"`
+`system node autosupport invoke -node * -type all -message "MAINT=8h Power Maintenance"`
 
 . Ermitteln Sie die SP/BMC-Adresse aller Nodes:
 +

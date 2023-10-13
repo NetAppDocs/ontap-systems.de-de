@@ -248,6 +248,9 @@ image::../media/drw_affa250_mgmt_cabling.png[drw affa250-Management-Kabel]
 
 Sie verfügen über eine konfigurationsabhängige optionale Verkabelung mit den Fibre Channel- oder iSCSI-Hostnetzwerken oder dem Direct-Attached Storage. Diese Verkabelung ist nicht exklusiv; Sie können die Verkabelung zu einem Host-Netzwerk und Speicher haben.
 
+
+NOTE: link:https://hwu.netapp.com["NetApp Hardware Universe"^] Steckplatz-Priorität für Host-Netzwerkkarten (Fibre Channel oder 25 GbE) ist Steckplatz 2. Wenn Sie jedoch beide Karten haben, wird die Fibre Channel-Karte in Steckplatz 2 eingesetzt, und die 25GbE-Karte wird in Steckplatz 1 eingesetzt (wie in den Optionen unten gezeigt). Wenn Sie über ein externes Shelf verfügen, wird die Speicherkarte in Steckplatz 1 eingesetzt, der einzige unterstützte Steckplatz für Shelfs.
+
 [role="tabbed-block"]
 ====
 .Option 1: Kabel zum Fibre-Channel-Hostnetzwerk
