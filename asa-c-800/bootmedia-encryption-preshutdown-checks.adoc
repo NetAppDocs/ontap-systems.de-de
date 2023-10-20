@@ -1,0 +1,305 @@
+---
+permalink: asa-c800/bootmedia-encryption-preshutdown-checks.html 
+sidebar: sidebar 
+keywords: asa c800, pre-shutdown checks for onboard encryption keys 
+summary: Bevor Sie den beeinträchtigten Controller herunterfahren und den Status der integrierten Verschlüsselungsschlüssel prüfen, müssen Sie den Status des beeinträchtigten Controllers überprüfen, die automatische Rückgabe deaktivieren und überprüfen, welche Version von ONTAP das System ausführt. 
+---
+= Überprüfen Sie die integrierten Verschlüsselungsschlüssel - ASA C800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor Sie den beeinträchtigten Controller herunterfahren und den Status der integrierten Schlüssel überprüfen, müssen Sie den Status des beeinträchtigten Controllers überprüfen, das automatische Giveback deaktivieren und überprüfen, welche Version von ONTAP auf dem System ausgeführt wird.
+
+Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE für die Berechtigung und den Zustand anzeigt, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^].
+
+.Schritte
+. Den Status des beeinträchtigten Reglers prüfen:
++
+** Wenn sich der Controller mit eingeschränkter Bedieneinheit an der Anmeldeaufforderung befindet, melden Sie sich als an `admin`.
+** Wenn der Controller mit eingeschränkter Einstellung an der LOADER-Eingabeaufforderung steht und Teil der HA-Konfiguration ist, melden Sie sich als an `admin` Auf dem gesunden Controller.
+** Wenn sich der beeinträchtigte Controller in einer eigenständigen Konfiguration befindet und an DER LOADER-Eingabeaufforderung angezeigt wird, wenden Sie sich an link:http://mysupport.netapp.com/["mysupport.netapp.com"^].
+
+
+. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Überprüfen Sie die Version von ONTAP, auf der das System auf dem beeinträchtigten Controller ausgeführt wird, wenn er eingeschaltet ist, oder auf dem Partner-Controller, wenn der beeinträchtigte Controller nicht verfügbar ist, über das `version -v` Befehl:
++
+** Wenn <lno-DARE> oder <1Ono-DARE> in der Befehlsausgabe angezeigt wird, unterstützt das System NVE nicht. Fahren Sie mit dem Herunterfahren des Controllers fort.
+** Wenn <lno-DARE> nicht in der Befehlsausgabe angezeigt wird und auf dem System ONTAP 9.5 ausgeführt wird, fahren Sie mit fort <<Checking NVE or NSE on systems running ONTAP 9.5 and later>>.
+** Wenn <lno-DARE> nicht in der Befehlsausgabe angezeigt wird und auf dem System ONTAP 9.6 oder höher ausgeführt wird, fahren Sie mit fort <<Checking NVE or NSE on systems running ONTAP 9.6 and later>>.
+
+
+. Wenn der beeinträchtigte Controller Teil einer HA-Konfiguration ist, deaktivieren Sie das automatische Giveback vom ordnungsgemäßen Controller: `storage failover modify -node local -auto-giveback false` Oder `storage failover modify -node local -auto-giveback-after-panic false`
+
+
+
+
+== Option 1: Prüfen Sie NVE oder NSE auf Systemen mit ONTAP 9.5 und früher
+
+Vor dem Herunterfahren des beeinträchtigten Controllers müssen Sie prüfen, ob im System NetApp Volume Encryption (NVE) oder NetApp Storage Encryption (NSE) aktiviert ist. In diesem Fall müssen Sie die Konfiguration überprüfen.
+
+.Schritte
+. Schließen Sie das Konsolenkabel an den beeinträchtigten Controller an.
+. Überprüfen Sie, ob NVE für alle Volumes im Cluster konfiguriert ist: `volume show -is-encrypted true`
++
+Wenn im Output irgendwelche Volumes aufgelistet werden, wird NVE konfiguriert, und Sie müssen die NVE-Konfiguration überprüfen. Wenn keine Volumes aufgeführt sind, prüfen Sie, ob NSE konfiguriert ist.
+
+. Überprüfen Sie, ob NSE konfiguriert ist: `storage encryption disk show`
++
+** Wenn in der Befehlsausgabe die Laufwerkdetails mit Informationen zu Modus und Schlüssel-ID aufgeführt werden, wird NSE konfiguriert und Sie müssen die NSE-Konfiguration überprüfen.
+** Wenn NVE und NSE nicht konfiguriert sind, kann der beeinträchtigte Controller sicher heruntergefahren werden.
+
+
+
+
+
+
+== Überprüfen der NVE-Konfiguration
+
+.Schritte
+. Anzeigen der Schlüssel-IDs der Authentifizierungsschlüssel, die auf den Schlüsselverwaltungsservern gespeichert sind: `security key-manager query`
++
+** Wenn der `Restored` Spalte wird angezeigt `yes` Außerdem werden alle Schlüsselmanager angezeigt `available`, Es ist sicher, den beeinträchtigten Regler herunterzufahren.
+** Wenn der `Restored` Spalte zeigt alle anderen als an `yes`, Oder wenn ein Schlüsselmanager angezeigt wird `unavailable`, Sie müssen einige zusätzliche Schritte.
+** Wenn die Meldung angezeigt wird dieser Befehl wird nicht unterstützt, wenn die integrierte Schlüsselverwaltung aktiviert ist, müssen Sie einige weitere Schritte durchführen.
+
+
+. Wenn der `Restored` Spalte hat andere als angezeigt `yes`, Oder wenn ein Schlüsselmanager angezeigt `unavailable`:
++
+.. Abrufen und Wiederherstellen aller Authentifizierungsschlüssel und der zugehörigen Schlüssel-IDs: `security key-manager restore -address *`
++
+Wenn der Befehl fehlschlägt, wenden Sie sich an den NetApp Support.
+
++
+http://mysupport.netapp.com/["mysupport.netapp.com"]
+
+.. Überprüfen Sie das `Restored` Spalte wird angezeigt `yes` Für alle Authentifizierungsschlüssel und dass alle Schlüsselmanager angezeigt werden `available`: `security key-manager query`
+.. Schalten Sie den beeinträchtigten Regler aus.
+
+
+. Wenn Sie die Meldung gesehen haben dieser Befehl wird nicht unterstützt, wenn die integrierte Schlüsselverwaltung aktiviert ist, zeigen Sie die im Onboard-Schlüsselmanager gespeicherten Schlüssel an: `security key-manager key show -detail`
++
+.. Wenn der `Restored` Spalte wird angezeigt `yes` Manuelle Sicherung der Informationen zum Onboard-Verschlüsselungsmanagement:
++
+*** Wechseln Sie zum erweiterten Berechtigungsebene-Modus, und geben Sie ein `y` Wenn Sie dazu aufgefordert werden, fortzufahren: `set -priv advanced`
+*** Geben Sie den Befehl ein, um die OKM Backup-Informationen anzuzeigen: `security key-manager backup show`
+*** Kopieren Sie den Inhalt der Backup-Informationen in eine separate Datei oder eine Protokolldatei. Sie werden es in Disaster-Szenarien benötigen, in denen Sie OKM manuell wiederherstellen müssen.
+*** Zurück zum Admin-Modus: `set -priv admin`
+*** Schalten Sie den beeinträchtigten Regler aus.
+
+
+.. Wenn der `Restored` Spalte zeigt alle anderen als an `yes`:
++
+*** Führen Sie den Setup-Assistenten für den Schlüsselmanager aus: `security key-manager setup -node target/impaired node name`
++
+
+NOTE: Geben Sie an der Eingabeaufforderung die integrierte Passphrase für das Verschlüsselungsmanagement des Kunden ein. Wenn die Passphrase nicht angegeben werden kann, wenden Sie sich an http://mysupport.netapp.com/["mysupport.netapp.com"]
+
+*** Überprüfen Sie das `Restored` Spalte wird angezeigt `yes` Für alle Authentifizierungsschlüssel: `security key-manager key show -detail`
+*** Wechseln Sie zum erweiterten Berechtigungsebene-Modus, und geben Sie ein `y` Wenn Sie dazu aufgefordert werden, fortzufahren: `set -priv advanced`
+*** Geben Sie den Befehl ein, um die OKM Backup-Informationen anzuzeigen: `security key-manager backup show`
+*** Kopieren Sie den Inhalt der Backup-Informationen in eine separate Datei oder eine Protokolldatei. Sie werden es in Disaster-Szenarien benötigen, in denen Sie OKM manuell wiederherstellen müssen.
+*** Zurück zum Admin-Modus: `set -priv admin`
+*** Sie können den Controller sicher herunterfahren.
+
+
+
+
+
+
+
+
+== Überprüfen der NSE-Konfiguration
+
+.Schritte
+. Anzeigen der Schlüssel-IDs der Authentifizierungsschlüssel, die auf den Schlüsselverwaltungsservern gespeichert sind: `security key-manager query`
++
+** Wenn der `Restored` Spalte wird angezeigt `yes` Außerdem werden alle Schlüsselmanager angezeigt `available`, Es ist sicher, den beeinträchtigten Regler herunterzufahren.
+** Wenn der `Restored` Spalte zeigt alle anderen als an `yes`, Oder wenn ein Schlüsselmanager angezeigt wird `unavailable`, Sie müssen einige zusätzliche Schritte.
+** Wenn die Meldung angezeigt wird dieser Befehl wird nicht unterstützt, wenn die integrierte Schlüsselverwaltung aktiviert ist, müssen Sie einige weitere Schritte durchführen
+
+
+. Wenn der `Restored` Spalte hat andere als angezeigt `yes`, Oder wenn ein Schlüsselmanager angezeigt `unavailable`:
++
+.. Abrufen und Wiederherstellen aller Authentifizierungsschlüssel und der zugehörigen Schlüssel-IDs: `security key-manager restore -address *`
++
+Wenn der Befehl fehlschlägt, wenden Sie sich an den NetApp Support.
+
++
+http://mysupport.netapp.com/["mysupport.netapp.com"]
+
+.. Überprüfen Sie das `Restored` Spalte wird angezeigt `yes` Für alle Authentifizierungsschlüssel und dass alle Schlüsselmanager angezeigt werden `available`: `security key-manager query`
+.. Schalten Sie den beeinträchtigten Regler aus.
+
+
+. Wenn Sie die Meldung gesehen haben dieser Befehl wird nicht unterstützt, wenn die integrierte Schlüsselverwaltung aktiviert ist, zeigen Sie die im Onboard-Schlüsselmanager gespeicherten Schlüssel an: `security key-manager key show -detail`
++
+.. Wenn der `Restored` Spalte wird angezeigt `yes`, Manuelle Sicherung der Informationen zum Onboard-Verschlüsselungsmanagement:
++
+*** Wechseln Sie zum erweiterten Berechtigungsebene-Modus, und geben Sie ein `y` Wenn Sie dazu aufgefordert werden, fortzufahren: `set -priv advanced`
+*** Geben Sie den Befehl ein, um die OKM Backup-Informationen anzuzeigen:  `security key-manager backup show`
+*** Kopieren Sie den Inhalt der Backup-Informationen in eine separate Datei oder eine Protokolldatei. Sie werden es in Disaster-Szenarien benötigen, in denen Sie OKM manuell wiederherstellen müssen.
+*** Zurück zum Admin-Modus: `set -priv admin`
+*** Schalten Sie den beeinträchtigten Regler aus.
+
+
+.. Wenn der `Restored` Spalte zeigt alle anderen als an `yes`:
++
+*** Führen Sie den Setup-Assistenten für den Schlüsselmanager aus: `security key-manager setup -node target/impaired node name`
++
+
+NOTE: Geben Sie die OKM-Passphrase des Kunden an der Eingabeaufforderung ein. Wenn die Passphrase nicht angegeben werden kann, wenden Sie sich an http://mysupport.netapp.com/["mysupport.netapp.com"]
+
+*** Überprüfen Sie das `Restored` In der Spalte wird angezeigt `yes` Für alle Authentifizierungsschlüssel: `security key-manager key show -detail`
+*** Wechseln Sie zum erweiterten Berechtigungsebene-Modus, und geben Sie ein `y` Wenn Sie dazu aufgefordert werden, fortzufahren: `set -priv advanced`
+*** Geben Sie den Befehl ein, um die OKM-Informationen zu sichern: ``security key-manager backup show``
++
+
+NOTE: Stellen Sie sicher, dass OKM-Informationen in Ihrer Protokolldatei gespeichert werden. Diese Informationen werden in Disaster-Szenarien benötigt, in denen OKM möglicherweise manuell wiederhergestellt werden muss.
+
+*** Kopieren Sie den Inhalt der Sicherungsinformationen in eine separate Datei oder Ihr Protokoll. Sie werden es in Disaster-Szenarien benötigen, in denen Sie OKM manuell wiederherstellen müssen.
+*** Zurück zum Admin-Modus: `set -priv admin`
+*** Sie können den Controller sicher herunterfahren.
+
+
+
+
+
+
+
+
+== Option 2: Prüfen Sie NVE oder NSE auf Systemen mit ONTAP 9.6 und höher
+
+Vor dem Herunterfahren des beeinträchtigten Controllers müssen Sie überprüfen, ob im System NetApp Volume Encryption (NVE) oder NetApp Storage Encryption (NSE) aktiviert ist. In diesem Fall müssen Sie die Konfiguration überprüfen.
+
+. Überprüfen Sie, ob NVE für alle Volumes im Cluster verwendet wird: `volume show -is-encrypted true`
++
+Wenn im Output irgendwelche Volumes aufgelistet werden, wird NVE konfiguriert, und Sie müssen die NVE-Konfiguration überprüfen. Wenn keine Volumes aufgeführt sind, prüfen Sie, ob NSE konfiguriert und verwendet wird.
+
+. Überprüfen Sie, ob NSE konfiguriert und in Verwendung ist: `storage encryption disk show`
++
+** Wenn in der Befehlsausgabe die Laufwerkdetails mit Informationen zu Modus und Schlüssel-ID aufgeführt werden, wird NSE konfiguriert und Sie müssen die NSE-Konfiguration und die darin verwendeten Informationen überprüfen.
+** Wenn keine Festplatten angezeigt werden, ist NSE nicht konfiguriert.
+** Wenn NVE und NSE nicht konfiguriert sind, sind keine Laufwerke mit NSE-Schlüsseln geschützt, sodass sich der beeinträchtigte Controller nicht herunterfahren lässt.
+
+
+
+
+
+
+== Überprüfen der NVE-Konfiguration
+
+. Anzeigen der Schlüssel-IDs der Authentifizierungsschlüssel, die auf den Schlüsselverwaltungsservern gespeichert sind: `security key-manager key query`
++
+
+NOTE: Nach der ONTAP 9.6 Version verfügen Sie eventuell über weitere wichtige Manager-Typen. Diese Typen sind `KMIP`, `AKV`, und `GCP`. Der Prozess zur Bestätigung dieser Typen entspricht der Bestätigung `external` Oder `onboard` Wichtige Manager-Typen.
+
++
+** Wenn der `Key Manager` Typ wird angezeigt `external` Und das `Restored` Spalte wird angezeigt `yes`, Es ist sicher, den beeinträchtigten Regler herunterzufahren.
+** Wenn der `Key Manager` Typ wird angezeigt `onboard` Und das `Restored` Spalte wird angezeigt `yes`, Sie müssen einige zusätzliche Schritte.
+** Wenn der `Key Manager` Typ wird angezeigt `external` Und das `Restored` Spalte zeigt alle anderen als an `yes`, Sie müssen einige zusätzliche Schritte.
+** Wenn der `Key Manager` Typ wird angezeigt `onboard` Und das `Restored` Spalte zeigt alle anderen als an `yes`, Sie müssen einige zusätzliche Schritte.
+
+
+. Wenn der `Key Manager` Typ wird angezeigt `onboard` Und das `Restored` Spalte wird angezeigt `yes`, Manuelle Sicherung der OKM-Informationen:
++
+.. Wechseln Sie zum erweiterten Berechtigungsebene-Modus, und geben Sie ein `y` Wenn Sie dazu aufgefordert werden, fortzufahren: `set -priv advanced`
+.. Geben Sie den Befehl ein, um die Schlüsselmanagementinformationen anzuzeigen: `security key-manager onboard show-backup`
+.. Kopieren Sie den Inhalt der Backup-Informationen in eine separate Datei oder eine Protokolldatei. Sie werden es in Disaster-Szenarien benötigen, in denen Sie OKM manuell wiederherstellen müssen.
+.. Zurück zum Admin-Modus: `set -priv admin`
+.. Schalten Sie den beeinträchtigten Regler aus.
+
+
+. Wenn der `Key Manager` Typ wird angezeigt `external` Und das `Restored` Spalte zeigt alle anderen als an `yes`:
++
+.. Stellen Sie die Authentifizierungsschlüssel für das externe Verschlüsselungsmanagement auf allen Nodes im Cluster wieder her: `security key-manager external restore`
++
+Wenn der Befehl fehlschlägt, wenden Sie sich an den NetApp Support.
+
++
+http://mysupport.netapp.com/["mysupport.netapp.com"^]
+
+.. Überprüfen Sie das `Restored` Spalte entspricht `yes` Für alle Authentifizierungsschlüssel: `security key-manager key query`
+.. Schalten Sie den beeinträchtigten Regler aus.
+
+
+. Wenn der `Key Manager` Typ wird angezeigt `onboard` Und das `Restored` Spalte zeigt alle anderen als an `yes`:
++
+.. Geben Sie den integrierten Sicherheitsschlüssel-Manager Sync-Befehl ein: `security key-manager onboard sync`
++
+
+NOTE: Geben Sie an der Eingabeaufforderung die 32-stellige alphanumerische Onboard-Passphrase des Kunden ein. Falls die Passphrase nicht angegeben werden kann, wenden Sie sich an den NetApp Support. http://mysupport.netapp.com/["mysupport.netapp.com"^]
+
+.. Überprüfen Sie die `Restored` In der Spalte wird angezeigt `yes` Für alle Authentifizierungsschlüssel: `security key-manager key query`
+.. Überprüfen Sie das `Key Manager` Typ zeigt an `onboard`, Und dann manuell sichern Sie die OKM-Informationen.
+.. Wechseln Sie zum erweiterten Berechtigungsebene-Modus, und geben Sie ein `y` Wenn Sie dazu aufgefordert werden, fortzufahren: `set -priv advanced`
+.. Geben Sie den Befehl ein, um die Backup-Informationen für das Verschlüsselungsmanagement anzuzeigen: `security key-manager onboard show-backup`
+.. Kopieren Sie den Inhalt der Backup-Informationen in eine separate Datei oder eine Protokolldatei. Sie werden es in Disaster-Szenarien benötigen, in denen Sie OKM manuell wiederherstellen müssen.
+.. Zurück zum Admin-Modus: `set -priv admin`
+.. Sie können den Controller sicher herunterfahren.
+
+
+
+
+
+
+== Überprüfen der NSE-Konfiguration
+
+. Anzeigen der Schlüssel-IDs der Authentifizierungsschlüssel, die auf den Schlüsselverwaltungsservern gespeichert sind: `security key-manager key query -key-type NSE-AK`
++
+
+NOTE: Nach der ONTAP 9.6 Version verfügen Sie eventuell über weitere wichtige Manager-Typen. Diese Typen sind `KMIP`, `AKV`, und `GCP`. Der Prozess zur Bestätigung dieser Typen entspricht der Bestätigung `external` Oder `onboard` Wichtige Manager-Typen.
+
++
+** Wenn der `Key Manager` Typ wird angezeigt `external` Und das `Restored` Spalte wird angezeigt `yes`, Es ist sicher, den beeinträchtigten Regler herunterzufahren.
+** Wenn der `Key Manager` Typ wird angezeigt `onboard` Und das `Restored` Spalte wird angezeigt `yes`, Sie müssen einige zusätzliche Schritte.
+** Wenn der `Key Manager` Typ wird angezeigt `external` Und das `Restored` Spalte zeigt alle anderen als an `yes`, Sie müssen einige zusätzliche Schritte.
+** Wenn der `Key Manager` Typ wird angezeigt `external` Und das `Restored` Spalte zeigt alle anderen als an `yes`, Sie müssen einige zusätzliche Schritte.
+
+
+. Wenn der `Key Manager` Typ wird angezeigt `onboard` Und das `Restored` Spalte wird angezeigt `yes`, Manuelle Sicherung der OKM-Informationen:
++
+.. Wechseln Sie zum erweiterten Berechtigungsebene-Modus, und geben Sie ein `y` Wenn Sie dazu aufgefordert werden, fortzufahren: `set -priv advanced`
+.. Geben Sie den Befehl ein, um die Schlüsselmanagementinformationen anzuzeigen: `security key-manager onboard show-backup`
+.. Kopieren Sie den Inhalt der Backup-Informationen in eine separate Datei oder eine Protokolldatei. Sie werden es in Disaster-Szenarien benötigen, in denen Sie OKM manuell wiederherstellen müssen.
+.. Zurück zum Admin-Modus: `set -priv admin`
+.. Sie können den Controller sicher herunterfahren.
+
+
+. Wenn der `Key Manager` Typ wird angezeigt `external` Und das `Restored` Spalte zeigt alle anderen als an `yes`:
++
+.. Stellen Sie die Authentifizierungsschlüssel für das externe Verschlüsselungsmanagement auf allen Nodes im Cluster wieder her: `security key-manager external restore`
++
+Wenn der Befehl fehlschlägt, wenden Sie sich an den NetApp Support.
+
++
+http://mysupport.netapp.com/["mysupport.netapp.com"^]
+
+.. Überprüfen Sie das `Restored` Spalte entspricht `yes` Für alle Authentifizierungsschlüssel: `security key-manager key query`
+.. Sie können den Controller sicher herunterfahren.
+
+
+. Wenn der `Key Manager` Typ wird angezeigt `onboard` Und das `Restored` Spalte zeigt alle anderen als an `yes`:
++
+.. Geben Sie den integrierten Sicherheitsschlüssel-Manager Sync-Befehl ein: `security key-manager onboard sync`
++
+Geben Sie an der Eingabeaufforderung die 32-stellige alphanumerische Onboard-Passphrase des Kunden ein. Falls die Passphrase nicht angegeben werden kann, wenden Sie sich an den NetApp Support.
+
++
+http://mysupport.netapp.com/["mysupport.netapp.com"^]
+
+.. Überprüfen Sie die `Restored` In der Spalte wird angezeigt `yes` Für alle Authentifizierungsschlüssel: `security key-manager key query`
+.. Überprüfen Sie das `Key Manager` Typ zeigt an `onboard`, Und dann manuell sichern Sie die OKM-Informationen.
+.. Wechseln Sie zum erweiterten Berechtigungsebene-Modus, und geben Sie ein `y` Wenn Sie dazu aufgefordert werden, fortzufahren: `set -priv advanced`
+.. Geben Sie den Befehl ein, um die Backup-Informationen für das Verschlüsselungsmanagement anzuzeigen: `security key-manager onboard show-backup`
+.. Kopieren Sie den Inhalt der Backup-Informationen in eine separate Datei oder eine Protokolldatei. Sie werden es in Disaster-Szenarien benötigen, in denen Sie OKM manuell wiederherstellen müssen.
+.. Zurück zum Admin-Modus: `set -priv admin`
+.. Sie können den Controller sicher herunterfahren.
+
+
+

@@ -1,0 +1,122 @@
+---
+permalink: asa-c800/bootmedia-recovery-image-boot-non-2n-mcc.html 
+sidebar: sidebar 
+keywords: asa c800, boot the recovery image 
+summary: Sie müssen das ONTAP-Image vom USB-Laufwerk starten, das Dateisystem wiederherstellen und die Umgebungsvariablen überprüfen. 
+---
+= Starten Sie das Wiederherstellungs-Image - ASA C800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen das ONTAP-Image vom USB-Laufwerk starten, das Dateisystem wiederherstellen und die Umgebungsvariablen überprüfen.
+
+. Starten Sie von der LOADER-Eingabeaufforderung das Recovery-Image vom USB-Flash-Laufwerk: `boot_recovery`
++
+Das Bild wird vom USB-Flash-Laufwerk heruntergeladen.
+
+. Wenn Sie dazu aufgefordert werden, geben Sie entweder den Namen des Bilds ein oder akzeptieren Sie das Standardbild, das in den Klammern auf dem Bildschirm angezeigt wird.
+. Stellen Sie das var-Dateisystem wieder her:
++
+[cols="1,2"]
+|===
+| Wenn Ihr System... | Dann... 
+
+
+ a| 
+Eine Netzwerkverbindung
+ a| 
+.. Drücken Sie `y` Wenn Sie aufgefordert werden, die Backup-Konfiguration wiederherzustellen.
+.. Stellen Sie den gesunden Controller auf die erweiterte Berechtigungsebene ein: `set -privilege advanced`
+.. Führen Sie den Befehl Restore Backup aus: `system node restore-backup -node local -target-address _impaired_node_IP_address_`
+.. Zurückkehren des Controllers zur Administratorebene: `set -privilege admin`
+.. Drücken Sie `y` Wenn Sie aufgefordert werden, die wiederhergestellte Konfiguration zu verwenden.
+.. Drücken Sie `y` Wenn Sie dazu aufgefordert werden, den Controller neu zu booten.
+
+
+
+
+ a| 
+Keine Netzwerkverbindung
+ a| 
+.. Drücken Sie `n` Wenn Sie aufgefordert werden, die Backup-Konfiguration wiederherzustellen.
+.. Starten Sie das System neu, wenn Sie dazu aufgefordert werden.
+.. Wählen Sie im angezeigten Menü die Option *Flash aktualisieren aus Backup config* (Flash synchronisieren) aus.
++
+Wenn Sie aufgefordert werden, mit der Aktualisierung fortzufahren, drücken Sie `*y*`.
+
+
+
+
+
+ a| 
+Keine Netzwerkverbindung und befindet sich in einer MetroCluster IP-Konfiguration
+ a| 
+.. Drücken Sie `n` Wenn Sie aufgefordert werden, die Backup-Konfiguration wiederherzustellen.
+.. Starten Sie das System neu, wenn Sie dazu aufgefordert werden.
+.. Warten Sie, bis die iSCSI-Speicherverbindungen verbunden sind.
++
+Sie können fortfahren, nachdem Sie die folgenden Meldungen angezeigt haben:
+
++
+[listing]
+----
+date-and-time [node-name:iscsi.session.stateChanged:notice]: iSCSI session state is changed to Connected for the target iSCSI-target (type: dr_auxiliary, address: ip-address).
+date-and-time [node-name:iscsi.session.stateChanged:notice]: iSCSI session state is changed to Connected for the target iSCSI-target (type: dr_partner, address: ip-address).
+date-and-time [node-name:iscsi.session.stateChanged:notice]: iSCSI session state is changed to Connected for the target iSCSI-target (type: dr_auxiliary, address: ip-address).
+date-and-time [node-name:iscsi.session.stateChanged:notice]: iSCSI session state is changed to Connected for the target iSCSI-target (type: dr_partner, address: ip-address).
+----
+.. Wählen Sie im angezeigten Menü die Option *Flash aktualisieren aus Backup config* (Flash synchronisieren) aus.
++
+Wenn Sie aufgefordert werden, mit der Aktualisierung fortzufahren, drücken Sie `*y*`.
+
+
+
+|===
+. Stellen Sie sicher, dass die Umgebungsvariablen wie erwartet festgelegt sind:
++
+.. Nehmen Sie den Controller zur LOADER-Eingabeaufforderung.
+.. Überprüfen Sie die Einstellungen der Umgebungsvariable mit dem `printenv` Befehl.
+.. Wenn eine Umgebungsvariable nicht wie erwartet festgelegt ist, ändern Sie sie mit dem `setenv _environment_variable_name_ _changed_value_` Befehl.
+.. Speichern Sie Ihre Änderungen mit dem `savenv` Befehl.
+
+
+. Das nächste hängt von Ihrer Systemkonfiguration ab:
++
+** Wenn keymanager, NSE oder NVE in Ihrem System integriert sind, finden Sie unter xref:bootmedia-encryption-restore.adoc[Stellen Sie OKM, NSE und NVE nach Bedarf wieder her]
+** Wenn keymanager, NSE oder NVE auf Ihrem System nicht konfiguriert sind, führen Sie die Schritte in diesem Abschnitt aus.
+
+
+. Geben Sie an der LOADER-Eingabeaufforderung das ein `boot_ontap` Befehl.
++
+[cols="1,2"]
+|===
+| Wenn Sie sehen... | Dann... 
+
+
+ a| 
+Die Eingabeaufforderung für die Anmeldung
+ a| 
+Fahren Sie mit dem nächsten Schritt fort.
+
+
+
+ a| 
+Warten auf Giveback...
+ a| 
+.. Melden Sie sich beim Partner-Controller an.
+.. Überprüfen Sie, ob der Ziel-Controller bereit ist für die Rückgabe an den `storage failover show` Befehl.
+
+
+|===
+. Schließen Sie das Konsolenkabel an den Partner Controller an.
+. Geben Sie den Controller mithilfe des zurück `storage failover giveback -fromnode local` Befehl
+. Überprüfen Sie an der Cluster-Eingabeaufforderung die logischen Schnittstellen mit dem `net int -is-home false` Befehl.
++
+Wenn Schnittstellen als „falsch“ aufgeführt sind, stellen Sie diese Schnittstellen mithilfe der zurück auf ihren Home Port `net int revert` Befehl.
+
+. Bewegen Sie das Konsolenkabel auf den reparierten Controller und führen Sie den aus `version -v` Befehl zum Prüfen der ONTAP-Versionen.
+. Stellen Sie die automatische Rückgabe wieder her, wenn Sie die Funktion mithilfe von deaktivieren `storage failover modify -node local -auto-giveback true` Befehl.
+
