@@ -1149,8 +1149,6 @@
   <block id="aeef38b8f860290dfafd28f807c628f7" category="admonition">Das Format für die Adresse ist +https://x.x.x.x+.</block>
   <block id="abda447c368c0080cdf2af6a77ea3d22" category="list-text">Konfigurieren Sie das System anhand der Daten, die Sie im erfasst haben <block ref="571ad76602d16a750ecd1119ab38063c" category="inline-link-macro-rx"></block>.</block>
   <block id="7103ae2dc232b897a89408d0cd914f59" category="doc">Integrierte Verschlüsselungsschlüssel - AFF A800</block>
-  <block id="5fb89931e5b269129a2ad5936878a851" category="list-text">Wenn &lt;lno-DARE&gt; nicht in der Befehlsausgabe angezeigt wird und auf dem System ONTAP 9.5 ausgeführt wird, fahren Sie mit fort <block ref="b9f6f8746149f87def14842273c93bfe" category="inline-xref-macro-rx"></block>.</block>
-  <block id="70c3e5c6b05722334dd3cfb521d9e159" category="list-text">Wenn &lt;lno-DARE&gt; nicht in der Befehlsausgabe angezeigt wird und auf dem System ONTAP 9.6 oder höher ausgeführt wird, fahren Sie mit fort <block ref="e0569187fa90a6ae4bbbe053355b82c8" category="inline-xref-macro-rx"></block>.</block>
   <block id="b8238a1ffeb288edb4606d4cee1cdf5c" category="doc">Herunterfahren der Controller - AFF A800</block>
   <block id="03163c4d180c5b6d6482efa550043cd8" category="doc">Herunterfahren des Controllers - AFF A800</block>
   <block id="f0623f3de563d7ac67a984a76c53803d" category="paragraph">Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Controllers durchführen. Fahren Sie den Controller mit eingeschränkter Konfiguration herunter oder übernehmen Sie ihn entsprechend.</block>
@@ -2345,8 +2343,6 @@
   <block id="e55f609f99ca89d1e0364e07cd66a1ac" category="paragraph">Nachdem der Knoten „beeinträchtigt“ den angezeigt hat<block ref="fd66c964768074eb90f4f1426229bf3e" prefix=" " category="inline-code"></block> Meldung, führen Sie ein Giveback vom gesunden Knoten aus:</block>
   <block id="9829cc73f1aa57fe4c8f650070116d1b" category="list-text">Über den gesunden Knoten:<block ref="d3bfc2dd4e9b253edab550e9f4890345" prefix=" " category="inline-code"></block></block>
   <block id="6ccdc0e53e02a4d771ffb485d5c0df6c" category="paragraph">Der beeinträchtigte Node nimmt seinen Storage zurück, beendet den Booten und startet dann neu und wird erneut vom gesunden Node übernommen.</block>
-  <block id="3804b132271e47a4db7521e977b43625" category="inline-link">ONTAP 9 High-Availability Configuration Guide</block>
-  <block id="08ca2eade8768d4ee7e1752168f719ac" category="paragraph"><block ref="08ca2eade8768d4ee7e1752168f719ac" category="inline-link-rx"></block></block>
   <block id="889c078e9cfb9c17ddcfadb4d5c9759c" category="list-text">Überwachen Sie den Status des Giveback-Vorgangs mithilfe von<block ref="852ce55a153bc728405ba8a2c95bcdf1" prefix=" " category="inline-code"></block> Befehl.</block>
   <block id="2e2dd412417cfab75b0340fc82c0c08b" category="list-text">Nach Abschluss des Giveback-Vorgangs bestätigen Sie, dass das HA-Paar ordnungsgemäß funktioniert und dass ein Takeover mithilfe des möglich ist<block ref="ddf400f1cb6b8b9330ed6c79c508123c" prefix=" " category="inline-code"></block> Befehl.</block>
   <block id="d2438a9a8b88afff0b59df6c125b3884" category="list-text">Stellen Sie das automatische Giveback wieder her, wenn Sie es mithilfe des Storage Failover modify-Befehls deaktiviert haben.</block>
@@ -3956,7 +3952,6 @@
   <block id="825f13ad9fc8dc2bdd837adbced6f40f" category="paragraph">Das Verfahren zum Starten des beeinträchtigten Controllers vom Wiederherstellungsabbild hängt davon ab, ob sich das System in einer MetroCluster-Konfiguration mit zwei Controllern befindet.</block>
   <block id="75e670af7a515907420be152e288dc75" category="doc">Austausch eines Lüfters – AFF A300</block>
   <block id="57392ef77b666ec53aa7b24253ca15d7" category="doc">Konfiguration wiederherstellen und überprüfen – AFF A300</block>
-  <block id="3746182c68f1f041a5f57979560a0566" category="list-text">Gehen Sie zu <block ref="1665eb69960f5979fe40ff23600bffd1" category="inline-xref-macro-rx"></block>.</block>
   <block id="e90917eb1ade74fea4468ecec1b0dfd3" category="doc">Ersetzen Sie das Boot-Medium AFF A300</block>
   <block id="31681f3abbed1ceeaf397023a488e2e2" category="section-title">Schritt 2: Ersetzen Sie das Bootmedium - AFF A300</block>
   <block id="889b878f17fd664e744718e80f4d60de" category="doc">Schalten Sie die beeinträchtigte Steuerung - AFF A300 aus</block>
@@ -6585,16 +6580,8 @@
   <block id="7befdc0c8cc35d0c1711e11bd7feb970" category="list-text">Löschen Sie die Daten im Cache-Modul:<block ref="6daf7f4112fcf7c7be366c44ff70faf2" prefix=" " category="inline-code"></block></block>
   <block id="236dd84b9226dbf8dfd98a6c46b59972" category="list-text">Stellen Sie sicher, dass die Daten aus dem Caching-Modul gelöscht wurden:<block ref="55030d884a341e8f95d06478b61fbec9" prefix=" " category="inline-code"></block></block>
   <block id="af41b619bf9d50ddae2454efc001e4dd" category="paragraph">Die Ausgabe sollte den Status des Speichermoduls als gelöscht anzeigen.</block>
-  <block id="376b1cae869bbe8ab1cce68fdb30b696" category="inline-link-macro">Ersetzen Sie die DIMMs</block>
-  <block id="91e13f2779cb51174165fa30eaba7e5b" category="list-text">Kehren Sie zu zurück <block ref="cf268cc4bc5a73daf7348170b397c07d" category="inline-link-macro-rx"></block> Wie Sie die NVMEM-LED erneut prüfen.</block>
   <block id="1a9ae2b5eb296d614bebfdc33f389268" category="doc">Überprüfen Sie die integrierten Verschlüsselungsschlüssel - AFF A150</block>
   <block id="3bf6a2921f0e655ea4d2b6b2851e02df" category="doc">System wieder einsetzen und Festplatten neu zuweisen – AFF A150</block>
-  <block id="91b91feeb88498e7be1c10bbbb6db4c2" category="inline-link-macro">Überprüfen der Änderung der System-ID auf einem HA-System</block>
-  <block id="4e87b3c0f415f46d36e8fa6bd32a6ff7" category="paragraph"><block ref="4e87b3c0f415f46d36e8fa6bd32a6ff7" category="inline-link-macro-rx"></block></block>
-  <block id="465740a443e85d455a90494615d629b9" category="inline-link-macro">Manuelle Neuzuteilung der System-ID auf einem eigenständigen System in ONTAP</block>
-  <block id="7070195bf98baff2e0462461db9cb074" category="paragraph"><block ref="7070195bf98baff2e0462461db9cb074" category="inline-link-macro-rx"></block></block>
-  <block id="734e28e3c6b715a48c7043347210471e" category="inline-link-macro">Manuelle Neuzuteilung der System-ID auf Systemen in einer MetroCluster-Konfiguration mit zwei Knoten</block>
-  <block id="ca5a5e07d656cff35da2184538cfc5fb" category="paragraph"><block ref="ca5a5e07d656cff35da2184538cfc5fb" category="inline-link-macro-rx"></block></block>
   <block id="1cd8a39839471e937855a3c54b6b84d9" category="doc">Übersicht über den Austausch von Boot-Medien - AFF A150</block>
   <block id="35db388e4e99e4a7488ab682126d7fa6" category="doc">Ersetzen Sie die NVMEM-Batterie – AFF A150</block>
   <block id="2867a72512f6330f74fb93ac9f93f07d" category="doc">Verschieben und Ersetzen von Hardware – AFF A150</block>
@@ -7372,7 +7359,6 @@
   <block id="60564c6a5dbb582ea0f8b967540d266c" category="paragraph">Auf den Etiketten wird die Stapelnummer angezeigt, z. B. *Loop oder Stack #: 1* und *Loop oder Stack #: 2*. Bei Festplatten-Shelfs, die keine Root-Aggregate enthalten, wird nur die Festplatten-Shelf-Seriennummer auf den Etiketten angezeigt.</block>
   <block id="e50b176d298cced2ec9cfd5bbe516332" category="list-text">IBACP (in-Band Alternate Control Path) wird automatisch aktiviert.</block>
   <block id="e5db155980df3ce33a16c9ed4af83e4e" category="paragraph">IBACP wird nicht bei Single-Path-HA- oder Single-Path-Konfigurationen unterstützt.</block>
-  <block id="ba809f57bc3e36546d8a47b82a5d995c" category="paragraph"><block ref="ba809f57bc3e36546d8a47b82a5d995c" category="inline-link-rx"></block></block>
   <block id="d37bef5353b917df46bc5ea30882b3a9" category="paragraph">Sie müssen die Anforderungen in erfüllt haben <block ref="45a94b67f53095b9a49e00311fb0216a" category="inline-xref-macro-rx"></block> Und installierte die Festplatten-Shelfs im Rack.</block>
   <block id="59e65b256ff4505ae2cefd9f9a823d8b" category="paragraph">Sie verkabeln eine Multipath HA, Multipath HA, Multipath-, Single Path HA oder Single Path-Konfiguration</block>
   <block id="7e8bbc30dce4dc23bd053149c93370be" category="inline-link-macro">Arbeitsblätter für Controller-to-Stack-Verkabelung und Beispiele für Verkabelung bei Multipath HA-Konfigurationen</block>
@@ -7383,7 +7369,6 @@
   <block id="a9965269fc2882517b2f7404230818ad" category="list-text">Wenn Sie ein oder mehrere Platten-Shelves im laufenden Betrieb zu einem Ende (dem logischen ersten oder letzten Festplatten-Shelf) eines vorhandenen Stacks hinzufügen, führen Sie die entsprechenden Teilschritte für Ihre Konfiguration aus. Andernfalls fahren Sie mit dem nächsten Schritt fort.</block>
   <block id="ca067501330c228a786fd00d17229575" category="paragraph">Hinzufügen eines Platten-Shelfs zum Ende eines Stacks mit Multipath HA, Multipath HA, Multipath, Quad-Path HA oder Quad-Path-Konnektivität zu den Controllern</block>
   <block id="fa3d4e5360018aa45e5104272d43148c" category="paragraph">Der Stack muss die im angegebenen Anforderungen erfüllen <block ref="d7ead9d51e0253f97f9c0ae83a2ee9eb" category="inline-xref-macro-rx"></block> Abschnitt dieses Verfahrens.</block>
-  <block id="2aaf80f49dd70b27832d7aa8d96090d0" category="list-text">Wenn in der Befehlsausgabe &lt;lno-DARE&gt; oder &lt;1Ono-DARE&gt; angezeigt wird, unterstützt das System NVE nicht, fahren Sie mit fort <block ref="89ef15e2cd441b6b5852f79de56e5549" category="inline-xref-macro-rx"></block>.</block>
   <block id="78fe270cb69c9ecda90d7e049a571c28" category="list-text">Wenn in der Befehlsausgabe nicht &lt;lno-DARE&gt; angezeigt wird und auf dem System ONTAP 9.6 oder höher ausgeführt wird, fahren Sie mit dem nächsten Abschnitt fort. <block ref="a913f4e8384864716d5146884ff27f0e" category="inline-xref-macro-rx"></block>.</block>
   <block id="d9b691280dde7c1805e39052719c9c29" category="list-text">Deaktivieren Sie das automatische Giveback vom Controller mit funktionstüchtiger Funktion:
 Storage Failover modify -Node local -Auto-giveback false`
@@ -7592,7 +7577,6 @@ Setzen Sie den Ersatzakku ein:</block>
   <block id="0da3888f81e8e56d2de2a92a42b512a3" category="doc">Starten Sie das Recovery-Image - FAS2800</block>
   <block id="c5ad83e174ba7727e76fc50c8366e589" category="list-text">Stellen Sie das var-Dateisystem wieder her:</block>
   <block id="e51ecd8f185715278ef737fd290e62f5" category="list-text">Drücken Sie<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> Wenn Sie aufgefordert werden, die Konfigurationskopie wiederherzustellen.</block>
-  <block id="17fb1354460acbac7ab4abe6c27a24a2" category="list-text">Wenn keymanager, NSE oder NVE in Ihrem System integriert sind, finden Sie unter <block ref="4b98be10d46a75a522880bc01a177aa5" category="inline-xref-macro-rx"></block></block>
   <block id="1a037944aedbce3040a5314200246858" category="list-text">Überprüfen Sie an der Cluster-Eingabeaufforderung die logischen Schnittstellen mit dem<block ref="55cf88a325a6e0574aef732566cc984c" prefix=" " category="inline-code"></block> Befehl.</block>
   <block id="8c4cb494b75288cf3ce1e7ce1dee3c9d" category="paragraph">Wenn Schnittstellen als „falsch“ aufgeführt sind, stellen Sie diese Schnittstellen mithilfe der zurück auf ihren Home Port<block ref="ffbe7d182280173cba10c83ec9992974" prefix=" " category="inline-code"></block> Befehl.</block>
   <block id="fcb4d3b1f229bc036dc2280a7c1d29c4" category="list-text">Wenn Sie die Storage-Verschlüsselung nicht verwenden, stellen Sie die automatische Rückgabe und den AutoSupport wieder her:</block>
@@ -8694,4 +8678,19 @@ Dieser Abschnitt enthält detaillierte Schritt-für-Schritt-Anleitungen zur Inst
   <block id="052bc2e859c31b84b04f42db7b60abff" category="sidebar">ASA C800-Startmedium</block>
   <block id="801fdf5b112137a107d3f17390e4042d" category="sidebar">ASA C800-Gehäuse</block>
   <block id="ca7dce9cd06f0f2ef6e548c8c26d54d9" category="sidebar">Controller-Modul ASA C800</block>
+  <block id="664f9c52f93e2fbf6e801148b0f573ad" category="inline-link">HA-Paar-Management</block>
+  <block id="665a2533bb5f8d55add7fd24df29e614" category="paragraph"><block ref="665a2533bb5f8d55add7fd24df29e614" category="inline-link-rx"></block></block>
+  <block id="8fa572d5dfdbff8c60e791d349eca279" category="list-text">Wenn in der Befehlsausgabe &lt;lno-DARE&gt; oder &lt;1Ono-DARE&gt; angezeigt wird, unterstützt das System NVE nicht, fahren Sie mit fort<block ref="c2302bfb39f1e6b6fccfd9207e94da44" category="inline-link-rx"></block>.</block>
+  <block id="7d52b24114e5d676f50874574fb29878" category="paragraph">Alle anderen Komponenten im System müssen ordnungsgemäß funktionieren. Andernfalls müssen Sie sich an den entsprechenden Kontakt wenden<block ref="eb2c61027d5e6c8b35692c1e74187026" category="inline-link-rx"></block>.</block>
+  <block id="6cca151867efbcb742b6e15efec51760" category="list-text">Drücken Sie die Verriegelung am Nockengriff, bis er sich löst, öffnen Sie den Nockengriff vollständig, um das Controller-Modul aus der Mittelplatine zu lösen, und ziehen Sie dann mit zwei Händen das Controller-Modul halb aus dem Gehäuse.</block>
+  <block id="92edeac7b5b629f5e93e2de4ba2adf43" category="list-text">Überprüfen Sie die NVMEM-LED auf der Rückseite des Controller-Moduls.  Suchen Sie nach dem NV-Symbol:</block>
+  <block id="bb49ab711ab9d79c58c90ff674747f54" category="admonition">Die grüne NV-LED auf der Frontplatte beginnt zu blinken, wenn die Stromversorgung vom Controller entfernt wird, wenn sich das System im Status „Warten auf Rückgabe“ befand oder das System nicht übernommen oder ordnungsgemäß angehalten wurde (nicht belegte Daten).  Wenn das beeinträchtigte Controller-Modul nicht erfolgreich vom Partner-Controller-Modul übernommen wurde, wenden Sie sich an<block ref="eb2c61027d5e6c8b35692c1e74187026" category="inline-link-rx"></block></block>
+  <block id="fab80bc3fcd8eac48cd9c319017190f7" category="list-text">Wenn die grüne NV-Status-LED zu blinken beginnt, wenn das Controller-Modul aus dem Gehäuse entfernt wird:</block>
+  <block id="db20b5f8713e5397c5c04ce0ebd834fd" category="list-text">Vergewissern Sie sich, dass der Controller durch das Partner-Controller-Modul eine saubere Übernahme durch das Partner-Controller-Modul hatte oder dass der beeinträchtigte Controller _Warten auf Giveback_ anzeigt. Die blinkende LED kann ignoriert werden und Sie können den beeinträchtigten Controller vollständig aus dem Chassis entfernen.</block>
+  <block id="b3fb52770d8a327ed5d79c25e8d2d8fe" category="list-text">Wenn die grüne NV-LED aus ist, können Sie das Entfernen des außer Betrieb genommenen Controllers aus dem Gehäuse abschließen.</block>
+  <block id="30f4d9cc74028fcb25b044f8d09f0cdd" category="list-text">Entfernen Sie das Steuermodul aus dem Gehäuse.</block>
+  <block id="6476f2f5425248b422cb30658323cbae" category="list-text">Kehren Sie zu zurück <block ref="c67cdb63ab5b46180d9910dcb0f03689" category="inline-xref-macro-rx"></block> Wie Sie die NVMEM-LED erneut prüfen.</block>
+  <block id="699b31ad01a325baded3de0b74220957" category="list-text"><block ref="56abd8a9e334744fb66750bee3a52178" category="inline-xref-macro-rx"></block></block>
+  <block id="74e404c1f33731e0a999a4fc54ab33df" category="list-text"><block ref="893f29ac32188f4c8d29836a3587e127" category="inline-xref-macro-rx"></block></block>
+  <block id="a192a372cc891c7f0839a86b1b42a3e2" category="list-text">Gehen Sie zu <block ref="39ef488856eb21b3aaabcded4bff7c5d" category="inline-xref-macro-rx"></block>.</block>
 </blocks>

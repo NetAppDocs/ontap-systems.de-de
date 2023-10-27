@@ -13,7 +13,7 @@ summary: Um eine NVMEM-Batterie im System zu ersetzen, müssen Sie das Controlle
 [role="lead"]
 Um eine NVMEM-Batterie im System zu ersetzen, müssen Sie das Controller-Modul aus dem System entfernen, öffnen, die Batterie ersetzen, und das Controller-Modul schließen und ersetzen.
 
-Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+Alle anderen Komponenten im System müssen ordnungsgemäß funktionieren. Andernfalls müssen Sie sich an den entsprechenden Kontakt wenden https://mysupport.netapp.com/site/global/dashboard["NetApp Support"].
 
 
 
@@ -73,14 +73,26 @@ Entfernen und öffnen Sie das Controller-Modul.
 Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation des Kabelverwaltungsgeräts die Kabel organisiert sind.
 
 . Entfernen Sie die Kabelführungsgeräte von der linken und rechten Seite des Controller-Moduls und stellen Sie sie zur Seite.
-. Drücken Sie die Verriegelung am Nockengriff, bis sie loslässt, öffnen Sie den Nockengriff vollständig, um das Controller-Modul aus der Mittelplatine zu lösen, und ziehen Sie das Controller-Modul anschließend mit zwei Händen aus dem Gehäuse heraus.
+. Drücken Sie die Verriegelung am Nockengriff, bis er sich löst, öffnen Sie den Nockengriff vollständig, um das Controller-Modul aus der Mittelplatine zu lösen, und ziehen Sie dann mit zwei Händen das Controller-Modul halb aus dem Gehäuse.
 +
 image::../media/drw_2850_pcm_remove_install_IEOPS-694.svg[drw 2850 pcm ausbauen Installation IEOPS 694]
 
-. Drehen Sie das Controller-Modul um und legen Sie es auf eine flache, stabile Oberfläche.
-. Öffnen Sie die Abdeckung, indem Sie die blauen Tasten an den Seiten des Controller-Moduls drücken, um die Abdeckung zu lösen, und drehen Sie dann die Abdeckung nach oben und von dem Controller-Modul.
+. Überprüfen Sie die NVMEM-LED auf der Rückseite des Controller-Moduls.  Suchen Sie nach dem NV-Symbol:
 +
-image::../media/drw_2850_open_controller_module_cover_IEOPS-695.svg[drw 2850 Open-Controller-Modulabdeckung IEOPS 695]
+image::../media/drw_hw_nvram_icon.svg[drw-hw-nvram-Symbol]
+
++
+
+NOTE: Die grüne NV-LED auf der Frontplatte beginnt zu blinken, wenn die Stromversorgung vom Controller entfernt wird, wenn sich das System im Status „Warten auf Rückgabe“ befand oder das System nicht übernommen oder ordnungsgemäß angehalten wurde (nicht belegte Daten).  Wenn das beeinträchtigte Controller-Modul nicht erfolgreich vom Partner-Controller-Modul übernommen wurde, wenden Sie sich an https://mysupport.netapp.com/site/global/dashboard["NetApp Support"]
+
++
+** Wenn die grüne NV-Status-LED zu blinken beginnt, wenn das Controller-Modul aus dem Gehäuse entfernt wird:
++
+*** Vergewissern Sie sich, dass der Controller durch das Partner-Controller-Modul eine saubere Übernahme durch das Partner-Controller-Modul hatte oder dass der beeinträchtigte Controller _Warten auf Giveback_ anzeigt. Die blinkende LED kann ignoriert werden und Sie können den beeinträchtigten Controller vollständig aus dem Chassis entfernen.
+
+
+** Wenn die grüne NV-LED aus ist, können Sie das Entfernen des außer Betrieb genommenen Controllers aus dem Gehäuse abschließen.
+
 
 
 
@@ -92,26 +104,11 @@ Entfernen Sie die fehlerhafte NVMEM-Batterie aus dem System und ersetzen Sie sie
 
 .Schritte
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
-. Überprüfen Sie die NVMEM-LED:
+. Entfernen Sie das Steuermodul aus dem Gehäuse.
+. Drehen Sie das Controller-Modul um und legen Sie es auf eine flache, stabile Oberfläche.
+. Öffnen Sie die Abdeckung, indem Sie die blauen Tasten an den Seiten des Controller-Moduls drücken, um die Abdeckung zu lösen, und drehen Sie dann die Abdeckung nach oben und von dem Controller-Modul.
 +
-** Wenn sich Ihr System in einer HA-Konfiguration befindet, fahren Sie mit dem nächsten Schritt fort.
-** Wenn sich das System in einer eigenständigen Konfiguration befindet, fahren Sie das Controller-Modul ordnungsgemäß herunter, und überprüfen Sie dann die NVRAM-LED, die durch das NV-Symbol gekennzeichnet ist.
-+
-image::../media/drw_hw_nvram_icon.svg[drw-hw-nvram-Symbol]
-
-+
-
-NOTE: Die NVRAM-LED blinkt während des Auslagerung des Inhalts in den Flash-Speicher, wenn Sie das System anhalten. Nach Abschluss der Abscheidungen schaltet sich die LED aus.
-
-+
-*** Wenn die Stromversorgung ohne eine saubere Abschaltung unterbrochen wird, blinkt die NVMEM-LED bis zum Abschluss des Destages und die LED erlischt.
-*** Wenn die LED eingeschaltet ist und eingeschaltet ist, werden nicht geschriebene Daten auf NVMEM gespeichert.
-+
-Dies tritt in der Regel während eines unkontrollierten Herunterfahrens auf, nachdem ONTAP erfolgreich gestartet wurde.
-
-
-
-
+image::../media/drw_2850_open_controller_module_cover_IEOPS-695.svg[drw 2850 Open-Controller-Modulabdeckung IEOPS 695]
 
 . Suchen Sie den NVMEM-Akku im Controller-Modul.
 +
