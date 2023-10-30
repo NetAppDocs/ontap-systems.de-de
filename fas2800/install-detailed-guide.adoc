@@ -1,8 +1,8 @@
 ---
 permalink: fas2800/install-detailed-guide.html 
 sidebar: sidebar 
-keywords: fas2800, detailed, guide, prepare, install, hardware, cable, controllers, node, switchless, cluster, network, configuration, system, setup, discovery 
-summary: Dieser Leitfaden enthält detaillierte Schritt-für-Schritt-Anleitungen zur Installation eines typischen NetApp Systems. 
+keywords: fas2800, detailed, guide, prepare, install, hardware, cable, controllers, node, switchless, cluster, network, configuration, system, storage system, setup, discovery 
+summary: Dieses Verfahren enthält detaillierte Schritt-für-Schritt-Anleitungen zur Installation eines typischen NetApp Storage-Systems. 
 ---
 = Detaillierte Schritte - FAS2800
 :allow-uri-read: 
@@ -11,42 +11,51 @@ summary: Dieser Leitfaden enthält detaillierte Schritt-für-Schritt-Anleitungen
 
 
 [role="lead"]
-Dieser Leitfaden enthält detaillierte Schritt-für-Schritt-Anleitungen zur Installation eines typischen NetApp Systems. In diesem Handbuch finden Sie weitere detaillierte Installationsanweisungen.
+Dieses Verfahren enthält detaillierte Schritt-für-Schritt-Anweisungen zur Installation eines typischen NetApp-Speichersystems. Gehen Sie wie folgt vor, wenn Sie ausführlichere Installationsanweisungen wünschen.
 
 
 
 == Schritt 1: Installation vorbereiten
 
-Um Ihr FAS2800 System zu installieren, müssen Sie ein Konto auf der NetApp Support-Website erstellen, Ihr System registrieren und Lizenzschlüssel erhalten. Außerdem müssen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp für Ihr System inventarisieren und bestimmte Netzwerkinformationen erfassen.
-
-Sie müssen Zugriff auf die haben https://hwu.netapp.com["NetApp Hardware Universe"] Weitere Informationen zu Standortanforderungen sowie zusätzliche Informationen zu Ihrem konfigurierten System. Möglicherweise möchten Sie auch Zugriff auf den haben http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["Versionshinweise für Ihre Version von ONTAP 9"] Für Ihre Version von ONTAP finden Sie weitere Informationen zu diesem System.
-
+.Bevor Sie beginnen
 Folgendes müssen Sie an Ihrer Website angeben:
 
-* Rack-Platz für das Storage-System
+* Rack-Platz für das Speichersystem in einem Telco-Rack oder Systemschrank.
++
+** 2 HE für das Storage-System
+** 2 oder 4 HE für jedes Laufwerk-Shelf im System
+
+
 * Kreuzschlitzschraubendreher #2
-* Zusätzliche Netzwerkkabel zum Anschließen des Systems an den Netzwerk-Switch und Laptop oder die Konsole über einen Webbrowser
+* Zusätzliche Netzwerkkabel zum Anschließen des Speichersystems an den Netzwerk-Switch und Laptop oder die Konsole über einen Webbrowser
 * Ein Laptop oder eine Konsole mit einer RJ-45-Verbindung und Zugriff auf einen Webbrowser
++
+** Zugriff auf die https://hwu.netapp.com["NetApp Hardware Universe"] Für Informationen über Standortanforderungen sowie zusätzliche Informationen über Ihr konfiguriertes Speichersystem.
+** Möglicherweise möchten Sie auch Zugriff auf den haben http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["Versionshinweise für Ihre Version von ONTAP 9"] Für Ihre Version von ONTAP finden Sie weitere Informationen zu diesem Storage-System.
+
+
 
 
 .Schritte
-. Packen Sie den Inhalt aller Boxen aus.
-. Notieren Sie die Seriennummer des Systems von den Controllern.
+. Packen Sie alle Kartons aus und inventarisieren Sie den Inhalt.
++
+
+IMPORTANT: Kunden mit speziellen Anforderungen an die Stromversorgung müssen diese überprüfen https://hwu.netapp.com["NetApp Hardware Universe"] Für ihre Konfigurationsoptionen.
+
+. Auf das zugreifen https://docs.netapp.com/us-en/ontap/task_configure_ontap.html#assign-a-node-management-ip-address["Konfigurieren Sie ONTAP mit System Manager in einem neuen Cluster"^]
++
+.. Lesen Sie die amd-Verfahrensschritte zu den Anforderungen.
+.. Erfassen Sie Informationen über Ihr Storage-System, indem Sie das abschließen https://docs.netapp.com/us-en/ontap/task_configure_ontap.html["Arbeitsblatt einrichten^ (URL zum Arbeitsblatt erforderlich)"].
+.. Notieren Sie die Seriennummer des Storage-Systems von den Controllern.
 +
 image::../media/drw_ssn_label.svg[drw ssn-Etikett]
 
-. Richten Sie Ihr Konto ein:
-+
-.. Melden Sie sich bei Ihrem bestehenden Konto an oder erstellen Sie ein Konto.
-.. Registrieren Sie Ihr System über  https://mysupport.netapp.com/eservice/registerSNoAction.do?moduleName=RegisterMyProduct["NetApp Produktregistrierung"]
 
 
-. Herunterladen und installieren https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Config Advisor"] Auf Ihrem Laptop.
-. Notieren Sie sich die Anzahl und die Kabeltypen, die Sie erhalten haben.
-+
+
+
 In der folgenden Tabelle sind die Kabeltypen aufgeführt, die Sie möglicherweise erhalten können. Wenn Sie ein Kabel erhalten, das nicht in der Tabelle aufgeführt ist, lesen Sie die https://hwu.netapp.com["NetApp Hardware Universe"] Um das Kabel zu lokalisieren und dessen Verwendung zu identifizieren.
 
-+
 [cols="1,2,1,2"]
 |===
 | Kabeltyp... | Teilenummer und Länge | Steckverbindertyp | Für... 
@@ -127,7 +136,7 @@ Storage
  a| 
 USB-C-Konsolenkabel
  a| 
-Keine Angabe
+Kein Etikett mit der Teilenummer
  a| 
 image::../media/oie_cable_micro_usb.svg[oie-Kabel Micro-usb]
  a| 
@@ -138,11 +147,11 @@ Verbindung über die Konsole während der Software-Einrichtung auf Laptops/Konso
  a| 
 Stromkabel
  a| 
-Keine Angabe
+Kein Etikett mit der Teilenummer
  a| 
 image::../media/oie_cable_power.svg[oie-Kabel mit Strom]
  a| 
-System einschalten
+Einschalten des Storage-Systems
 
 
 
@@ -156,21 +165,18 @@ image::../media/oie_cable_fiber_lc_connector.svg[oie-Kabel-Glasfaser-lc-Anschlus
 Zusätzliches FC-Netzwerkkabel
 
 |===
-. Laden Sie die Arbeitsblätter in herunter, und füllen Sie sie aus  https://docs.netapp.com/us-en/ontap/software_setup/concept_set_up_the_cluster.html#cluster-setup-worksheets["Richten Sie das Cluster mit der ONTAP CLI ein"^].
-
-
 
 
 == Schritt 2: Installieren Sie die Hardware
 
-Sie müssen das System je nach Bedarf in einem 4-Säulen-Rack oder NetApp Systemschrank installieren.
+Installieren Sie Ihr Storage-System gegebenenfalls in einem Telekommunikationsrack oder NetApp Storage-Systemschrank.
 
 .Schritte
 . Installieren Sie die Schienensatz nach Bedarf.
-. Installieren und sichern Sie das System anhand der im Schienensatz enthaltenen Anweisungen.
+. Installieren und sichern Sie Ihr Speichersystem gemäß den Anweisungen im Schienensatz.
 +
 
-NOTE: Sie müssen sich der Sicherheitsbedenken im Zusammenhang mit dem Gewicht des Systems bewusst sein.
+NOTE: Sie müssen sich der Sicherheitsbedenken im Zusammenhang mit dem Gewicht des Speichersystems bewusst sein.
 
 +
 image::../media/oie_fas2800_weight_caution_IEOPS-1070.svg[oie fas2800 Gewicht Vorsicht IEOPS 1070]
@@ -179,16 +185,16 @@ image::../media/oie_fas2800_weight_caution_IEOPS-1070.svg[oie fas2800 Gewicht Vo
 +
 image::../media/drw_cable_management_arm_install.svg[drw-Kabelmanagement-ARM-Installation]
 
-. Bringen Sie die Blende auf die Vorderseite des Systems an.
+. Platzieren Sie die Blende auf der Vorderseite des Speichersystems.
 
 
 
 
 == Schritt 3: Controller mit Ihrem Netzwerk verbinden
 
-Verkabeln Sie die Controller mit dem Netzwerk mithilfe der Cluster-Methode ohne zwei Nodes oder mithilfe der Cluster Interconnect-Netzwerkmethode.
+Verkabeln Sie die Controller entweder als zwei-Node-Cluster ohne Switches oder als Switched-Cluster mit dem Netzwerk.
 
-In der folgenden Tabelle wird der Kabeltyp mit der Aufrufnummer und der Kabelfarbe in den Abbildungen für Cluster-Netzwerkverkabelungen ohne zwei Knoten und geswitchte Cluster-Netzwerkverkabelungen aufgeführt.
+Die folgende Tabelle zeigt den Kabeltyp mit der Aufrufnummer und der Kabelfarbe in den Abbildungen für Cluster mit zwei Nodes ohne Switch und mit Switch.
 
 [cols="20%,80%"]
 |===
@@ -215,27 +221,26 @@ image::../media/oie_legend_icon_3_o.svg[oie-Legende-Symbol 3 o]
 Host-Netzwerk-Switches
 
 |===
+.Bevor Sie beginnen
+* Wenden Sie sich an Ihren Netzwerkadministrator, um Informationen über das Anschließen des Speichersystems an die Switches zu erhalten.
+* Prüfen Sie den Pfeil auf der Abbildung, ob die Zuglasche des Kabelsteckers richtig ausgerichtet ist.
++
+** Wenn Sie den Anschluss einsetzen, sollten Sie spüren, dass er einrastet. Wenn Sie ihn nicht einrasten, entfernen Sie ihn, drehen Sie den Kabelkopf um und versuchen Sie es erneut.
+** Stecken Sie beim Anschließen an einen optischen Switch den SFP-Port in den Controller-Port, bevor Sie die Verkabelung zum Port durchführen.
+
+
+
+
+image::../media/oie_cable_pull_tab_down.svg[ziehen Sie die Lasche des oie-Kabels nach unten]
+
 [role="tabbed-block"]
 ====
 .Option 1: Verkabeln eines 2-Node-Clusters ohne Switches
 --
 Verkabeln Sie die Netzwerkverbindungen und die Cluster-Interconnect-Ports für ein Cluster mit zwei Nodes ohne Switches.
 
-.Bevor Sie beginnen
-Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.
-
-Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
-
-image::../media/oie_cable_pull_tab_down.svg[ziehen Sie die Lasche des oie-Kabels nach unten]
-
-
-NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie spüren, dass er einrastet. Wenn Sie ihn nicht einrasten, entfernen Sie ihn, drehen Sie den Kabelkopf um und versuchen Sie es erneut.
-
-
-NOTE: Stecken Sie beim Anschließen an einen optischen Switch den SFP-Port in den Controller-Port, bevor Sie die Verkabelung zum Port durchführen.
-
 .Über diese Aufgabe
-Sie können die Verkabelung zwischen den Controllern und den Switches mithilfe der Grafik oder der Schritt-für-Schritt-Anleitung abschließen.
+Verwenden Sie die Animation oder die Schritt-für-Schritt-Anleitung, um die Verkabelung zwischen den Controllern und den Switches abzuschließen.
 
 .Animation – Verkabelung einer 2-Node-Cluster-Verkabelung ohne Switches
 video::90577508-fa79-46cf-b18a-afe8016325af[panopto]
@@ -315,18 +320,8 @@ IMPORTANT: Schließen Sie DIE Netzkabel NICHT an.
 --
 Verkabeln Sie die Netzwerkverbindungen und die Cluster Interconnect Ports für ein Switch Cluster.
 
-
-NOTE: Sie müssen sich an den Netzwerkadministrator wenden, um Informationen über das Anschließen des Systems an die Switches zu erhalten.
-
-Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
-
-image::../media/oie_cable_pull_tab_down.svg[ziehen Sie die Lasche des oie-Kabels nach unten]
-
-
-NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie spüren, dass er einrastet. Wenn Sie ihn nicht einrasten, entfernen Sie ihn, drehen Sie den Kabelkopf um und versuchen Sie es erneut.
-
 .Über diese Aufgabe
-Sie können die Verkabelung zwischen den Controllern und den Switches mithilfe der Grafik oder der Schritt-für-Schritt-Anleitung abschließen.
+Verwenden Sie die Animation oder die Schritt-für-Schritt-Anleitung, um die Verkabelung zwischen den Controllern und den Switches abzuschließen.
 
 .Animation - Switch Cluster Verkabelung
 video::6553a3db-57dd-4247-b34a-afe8016315d4[panopto]
@@ -403,22 +398,10 @@ IMPORTANT: Schließen Sie DIE Netzkabel NICHT an.
 
 Verkabeln Sie Ihre Controller mit einem externen Speicher.
 
+Die folgende Tabelle zeigt den Kabeltyp mit der Aufrufnummer und der Kabelfarbe in den Abbildungen zur Verkabelung der Festplatten-Shelfs mit dem Storage-System.
 
-NOTE: Das Beispiel verwendet DS224C. Die Verkabelung ist ähnlich wie bei anderen unterstützten Festplatten-Shelfs.
 
-Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
-
-image::../media/oie_cable_pull_tab_down.svg[ziehen Sie die Lasche des oie-Kabels nach unten]
-
-.Über diese Aufgabe
-Sie können die Verkabelung zwischen den Controllern und den Laufwerk-Shelfs mithilfe der Grafik oder der Schritt-für-Schritt-Anleitung abschließen.
-
-.Animation: Kabel für Laufwerkseinschübe
-video::b2a7549d-8141-47dc-9e20-afe8016f4386[panopto]
-
-NOTE: Verwenden Sie nicht Port 0b2 an einer FAS2800. Dieser SAS-Port wird von ONTAP nicht verwendet und ist immer deaktiviert. Siehe https://docs.netapp.com/us-en/ontap-systems/sas3/install-new-system.html["Installieren Sie ein Shelf in einem neuen Storage-System"^] Finden Sie weitere Informationen.
-
-In der folgenden Tabelle wird der Kabeltyp mit der Aufrufnummer und der Kabelfarbe in den Abbildungen für Cluster-Netzwerkverkabelungen ohne zwei Knoten und geswitchte Cluster-Netzwerkverkabelungen aufgeführt.
+NOTE: Das Beispiel verwendet DS224C. Die Verkabelung ist ähnlich wie bei anderen unterstützten Festplatten-Shelfs. Siehe https://docs.netapp.com/us-en/ontap-systems/sas3/install-new-system.html["Einbau- und Kabelregale für eine neue Systeminstallation - Regale mit IOM12/IOM12B-Modulen"^] Finden Sie weitere Informationen.
 
 [cols="20%,80%"]
 |===
@@ -428,23 +411,35 @@ In der folgenden Tabelle wird der Kabeltyp mit der Aufrufnummer und der Kabelfar
  a| 
 image::../media/oie_legend_icon_1_lo.svg[oie-Legende Symbol 1 Lo]
  a| 
-Cluster Interconnect
+Shelf-zu-Shelf-Verkabelung
 
 
 
  a| 
 image::../media/oie_legend_icon_2_mb.svg[oie-Legendensymbol 2 mb]
  a| 
-Management-Netzwerk-Switch
+Controller A zu den Laufwerk-Shelfs
 
 
 
  a| 
 image::../media/oie_legend_icon_3_t.svg[oie-Legendensymbol 3 t]
  a| 
-Host-Netzwerk-Switches
+Controller B zu den Laufwerk-Shelfs
 
 |===
+Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
+
+image::../media/oie_cable_pull_tab_down.svg[ziehen Sie die Lasche des oie-Kabels nach unten]
+
+.Über diese Aufgabe
+Verwenden Sie die Animation oder die Schritt-für-Schritt-Anleitung, um die Verkabelung zwischen den Controllern und den Laufwerk-Shelfs abzuschließen.
+
+
+IMPORTANT: Verwenden Sie nicht Port 0b2 an einer FAS2800. Dieser SAS-Port wird von ONTAP nicht verwendet und ist immer deaktiviert. Siehe https://docs.netapp.com/us-en/ontap-systems/sas3/install-new-system.html["Installieren Sie ein Shelf in einem neuen Storage-System"^] Finden Sie weitere Informationen.
+
+.Animation: Kabel für Laufwerkseinschübe
+video::b2a7549d-8141-47dc-9e20-afe8016f4386[panopto]
 .Schritte
 . Verkabeln Sie die Shelf-zu-Shelf-Ports.
 +
@@ -495,39 +490,40 @@ image::../media/dwr-2800_controller2-to shelves_IEOPS-897.svg[dwr 2800 Controlle
 
 
 
-== Schritt 5: System-Setup und -Konfiguration abschließen
+== Schritt 5: Vollständige Einrichtung und Konfiguration des Storage-Systems
 
-Die Einrichtung und Konfiguration des Systems kann mithilfe der Cluster-Erkennung nur mit einer Verbindung zum Switch und Laptop abgeschlossen werden. Sie können auch direkt eine Verbindung zu einem Controller im System herstellen und dann eine Verbindung zum Management Switch herstellen.
+Führen Sie die Einrichtung und Konfiguration des Speichersystems mit einer der folgenden Optionen durch: Wenn die Netzwerkerkennung aktiviert ist, oder mit Option 2: Wenn die Netzwerkerkennung nicht aktiviert ist.
 
 [role="tabbed-block"]
 ====
 .Option 1: Wenn die Netzwerkerkennung aktiviert ist
 --
-Wenn die Netzwerkerkennung auf Ihrem Laptop aktiviert ist, schließen Sie die Systemeinrichtung und -Konfiguration mithilfe der automatischen Clustererkennung ab.
+Wenn die Netzwerkerkennung auf Ihrem Laptop aktiviert ist, schließen Sie die Einrichtung und Konfiguration des Storage-Systems mithilfe der automatischen Cluster-Erkennung ab.
 
 .Schritte
-. Mithilfe der folgenden Animation können Sie eine oder mehrere Laufwerk-Shelf-IDs festlegen
+. Verwenden Sie die folgende Animation, um die Shelf-Stromversorgung einzuschalten und Shelf-IDs festzulegen.
 +
 .Animation: Legen Sie die Festplatten-Shelf-IDs fest
 video::c600f366-4d30-481a-89d9-ab1b0066589b[panopto]
-. Schließen Sie die Stromkabel an die Controller-Netzteile an, und schließen Sie sie dann an Stromquellen auf verschiedenen Stromkreisen an.
-. Schalten Sie die Netzschalter an beide Knoten ein.
+. Schalten Sie die Controller ein
 +
-image::../media/dwr_2800_turn_on_power_IEOPS-898.svg[dwr 2800 Einschalten des IEOPS 898]
-
+.. Schließen Sie die Stromkabel an die Controller-Netzteile an, und schließen Sie sie dann an Stromquellen auf verschiedenen Stromkreisen an.
+.. Schalten Sie die Netzschalter an beide Knoten ein.
 +
 
 NOTE: Das erste Booten kann bis zu acht Minuten dauern.
+
++
+image::../media/dwr_2800_turn_on_power_IEOPS-898.svg[dwr 2800 Einschalten des IEOPS 898]
+
+
 
 . Stellen Sie sicher, dass die Netzwerkerkennung auf Ihrem Laptop aktiviert ist.
 +
 Weitere Informationen finden Sie in der Online-Hilfe Ihres Notebooks.
 
-. Schließen Sie Ihren Laptop mithilfe der folgenden Animation an den Management-Switch an.
-+
-.Animation - Verbinden Sie Ihren Laptop mit dem Management-Switch
-video::d61f983e-f911-4b76-8b3a-ab1b0066909b[panopto]
-. Wählen Sie ein ONTAP-Symbol aus, um es zu ermitteln:
+. Schließen Sie Ihren Laptop an den Management-Switch an.
+. Verwenden Sie die Grafik oder die Schritte, um den Storage-System-Node zu ermitteln und Folgendes zu konfigurieren:
 +
 image::../media/drw_autodiscovery_controler_select.svg[wählen sie den drw-Kontroller für die automatische Ermittlung aus]
 
@@ -538,16 +534,27 @@ image::../media/drw_autodiscovery_controler_select.svg[wählen sie den drw-Kontr
 .. Doppelklicken Sie auf das ONTAP-Symbol, und akzeptieren Sie alle auf dem Bildschirm angezeigten Zertifikate.
 +
 
-NOTE: XXXXX ist die Seriennummer des Systems für den Ziel-Node.
+NOTE: XXXXX ist die Seriennummer des Storage-Systems für den Ziel-Node.
 
 +
 System Manager wird geöffnet.
 
 
 
-. Konfigurieren Sie das System mithilfe von System Manager geführten Setups anhand der Daten, die Sie im erfasst haben https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["ONTAP Konfigurationsleitfaden"]
-. Überprüfen Sie den Systemzustand Ihres Systems, indem Sie Config Advisor ausführen.
-. Wechseln Sie nach Abschluss der Erstkonfiguration mit dem https://www.netapp.com/data-management/oncommand-system-documentation/["ONTAP  ONTAP System Manager; Dokumentationsressourcen"] Seite für Informationen über das Konfigurieren zusätzlicher Funktionen in ONTAP.
+. Konfigurieren Sie mithilfe der von System Manager gesteuerten Einrichtung Ihr Storage-System mithilfe der in erfassten Daten <<Schritt 1: Installation vorbereiten>>.
+. Erstellen Sie ein Konto oder melden Sie sich bei Ihrem Konto an.
++
+.. Klicken Sie Auf https://mysupport.netapp.com["mysupport.netapp.com"]
+.. Klicken Sie auf _Konto erstellen_, wenn Sie ein Konto erstellen oder sich bei Ihrem Konto anmelden müssen.
+
+
+. Herunterladen und installieren https://mysupport.netapp.com/site/tools["Active IQ Config Advisor"]
++
+.. Überprüfen Sie den Zustand Ihres Storage-Systems durch Ausführen von Active IQ Config Advisor.
+
+
+. Registrieren Sie Ihr System unter https://mysupport.netapp.com/site/systems/register[].
+. Wechseln Sie nach Abschluss der Erstkonfiguration mit dem https://www.netapp.com/support-and-training/documentation/["NetApp ONTAP-Ressourcen"] Seite für Informationen über das Konfigurieren zusätzlicher Funktionen in ONTAP.
 
 
 --
@@ -563,7 +570,7 @@ Wenn die Netzwerkerkennung auf Ihrem Laptop nicht aktiviert ist, führen Sie die
 
 NOTE: Informationen zur Konfiguration des Konsolenport finden Sie in der Online-Hilfe Ihres Laptops oder der Konsole.
 
-.. Schließen Sie das Konsolenkabel an den Laptop oder die Konsole an, und schließen Sie den Konsolenport am Controller mithilfe des Konsolenkabels, das im Lieferumfang des Systems enthalten ist, an. Anschließend schließen Sie den Laptop oder die Konsole an den Switch im Management-Subnetz an.
+.. Schließen Sie das Konsolenkabel an den Laptop oder die Konsole an und verbinden Sie den Konsolenport am Controller mithilfe des Konsolenkabels, das mit dem Storage-System geliefert wurde, und dann den Laptop oder die Konsole mit dem Switch im Management-Subnetz.
 +
 image::../media/drw_2800_laptop_to_switch_to_controller_IEOPS-1084.svg[drw 2800 Laptop zum Umschalten auf Controller IEOPS 1084]
 
@@ -616,11 +623,22 @@ NOTE: Überprüfen Sie die Online-Hilfe Ihres Laptops oder Ihrer Konsole, wenn S
 
 NOTE: Das Format für die Adresse lautet https://x.x.x.x[].
 
-.. Konfigurieren Sie das System anhand der Daten, die Sie im erfasst haben https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["ONTAP Konfigurationsleitfaden"].
+.. Konfigurieren Sie das Speichersystem mithilfe der in erfassten Daten <<Schritt 1: Installation vorbereiten>>..
 
 
-. Überprüfen Sie den Systemzustand Ihres Systems, indem Sie Config Advisor ausführen.
-. Nachdem Sie die Erstkonfiguration abgeschlossen haben, fahren Sie mit fort  https://www.netapp.com/data-management/oncommand-system-documentation/["ONTAP  ONTAP System Manager; Dokumentationsressourcen"] Für Informationen über das Konfigurieren zusätzlicher Funktionen in ONTAP.
+. Erstellen Sie ein Konto oder melden Sie sich bei Ihrem Konto an.
++
+.. Klicken Sie Auf https://mysupport.netapp.com["mysupport.netapp.com"]
+.. Klicken Sie auf _Konto erstellen_, wenn Sie ein Konto erstellen oder sich bei Ihrem Konto anmelden müssen.
+
+
+. Herunterladen und installieren https://mysupport.netapp.com/site/tools["Active IQ Config Advisor"]
++
+.. Überprüfen Sie den Zustand Ihres Storage-Systems durch Ausführen von Active IQ Config Advisor.
+
+
+. Registrieren Sie Ihr System unter https://mysupport.netapp.com/site/systems/register[].
+. Wechseln Sie nach Abschluss der Erstkonfiguration mit dem https://www.netapp.com/support-and-training/documentation/["NetApp ONTAP-Ressourcen"] Seite für Informationen über das Konfigurieren zusätzlicher Funktionen in ONTAP.
 
 
 --
