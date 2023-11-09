@@ -173,27 +173,6 @@ mcc1A::> metrocluster operation show
 
 Um auf Komponenten im Controller-Modul zuzugreifen, müssen Sie das Controller-Modul aus dem Gehäuse entfernen.
 
-Sie können die folgenden Animationen, Abbildungen oder die geschriebenen Schritte verwenden, um das Controller-Modul aus dem Gehäuse zu entfernen.
-
-.Animation - Entfernen Sie das Controller-Modul
-video::ca74d345-e213-4390-a599-aae10019ec82[panopto]
-image::../media/drw_A400_Remove_controller.png[drw A400 Controller entfernen]
-
-[cols="10,90"]
-|===
-
-
- a| 
-image:../media/legend_icon_01.png["Legende Nummer 1"]
- a| 
-Verriegelungsriegel
-
-
-
- a| 
-image:../media/legend_icon_02.png["Legende Nummer 2"]
-| Der Controller bewegt sich leicht aus dem Chassis 
-|===
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Lösen Sie die Netzkabelhalter, und ziehen Sie anschließend die Kabel von den Netzteilen ab.
 . Lösen Sie den Haken- und Schlaufenriemen, mit dem die Kabel am Kabelführungsgerät befestigt sind, und ziehen Sie dann die Systemkabel und SFPs (falls erforderlich) vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren.
@@ -205,6 +184,27 @@ Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation
 +
 Das Controller-Modul wird leicht aus dem Chassis entfernt.
 
++
+image::../media/drw_c400_remove_controller_IEOPS-1216.svg[drw c400 Controller IEOPS 1216 entfernen]
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Verriegelungsriegel
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Der Controller bewegt sich leicht aus dem Chassis
+
+|===
 . Schieben Sie das Controller-Modul aus dem Gehäuse.
 +
 Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen, während Sie es aus dem Gehäuse schieben.
@@ -232,7 +232,7 @@ Sie können das NVDIMM mit den folgenden Animationen, Abbildungen oder geschrieb
 NOTE: In der Animation werden leere Steckplätze für Sockel ohne DIMMs angezeigt. Diese leeren Buchsen sind mit Leereinschüben bestückt.
 
 .Animation - Ersetzen Sie das NVDIMM
-video::e0afec49-0953-4dcc-b9d0-aadb01578e1b[panopto]
+video::7dfe09d8-eff8-41e3-9eb4-b03100032579[panopto]
 image::../media/drw_A400_Replace-NVDIMM-DIMM_IEOPS-1009.svg[drw A400 ersetzt NVDIMM DIMM IEOPS 1009]
 
 [cols="10,90"]
@@ -290,7 +290,7 @@ NOTE: Sichtprüfung des NVDIMM, um sicherzustellen, dass es gleichmäßig ausger
 
 == Schritt 4: Installieren Sie das Controller-Modul
 
-Nachdem Sie die Komponente im Controller-Modul ersetzt haben, müssen Sie das Controller-Modul wieder in das Gehäuse einsetzen und es dann booten.
+Nachdem Sie die Komponente im Controller-Modul ersetzt haben, müssen Sie das Controller-Modul wieder in das Gehäuse einsetzen und dann im Wartungsmodus booten.
 
 . Wenn Sie dies noch nicht getan haben, schließen Sie den Luftkanal.
 . Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
@@ -322,6 +322,10 @@ Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt
 NOTE: Wenn das System im Startmenü stoppt, wählen Sie die Option zum Booten in LOADER.
 
 .. Geben Sie an der LOADER-Eingabeaufforderung ein `bye` Um die PCIe-Karten und andere Komponenten neu zu initialisieren.
+.. Unterbrechen Sie den Boot-Prozess und booten Sie an der LOADER-Eingabeaufforderung, indem Sie drücken `Ctrl-C`.
++
+Wenn das System im Startmenü stoppt, wählen Sie die Option zum Booten in LOADER.
+
 
 
 

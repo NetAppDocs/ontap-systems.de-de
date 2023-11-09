@@ -10,10 +10,6 @@ Um die Hardware des Controller-Moduls zu ersetzen, müssen Sie den beeinträchti
 
 Um auf Komponenten im Controller-Modul zuzugreifen, müssen Sie das Controller-Modul aus dem Gehäuse entfernen.
 
-Sie können das Controller-Modul mithilfe der folgenden, Abbildung oder der geschriebenen Schritte aus dem Gehäuse entfernen.
-
-.Animation - Entfernen Sie das Controller-Modul
-video::ca74d345-e213-4390-a599-aae10019ec82[panopto]
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Lösen Sie die Netzkabelhalter, und ziehen Sie anschließend die Kabel von den Netzteilen ab.
 . Lösen Sie den Haken- und Schlaufenriemen, mit dem die Kabel am Kabelführungsgerät befestigt sind, und ziehen Sie dann die Systemkabel und SFPs (falls erforderlich) vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren.
@@ -26,7 +22,7 @@ Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation
 Das Controller-Modul wird leicht aus dem Chassis entfernt.
 
 +
-image:../media/drw_A400_Remove_controller.png[""]
+image::../media/drw_c400_remove_controller_IEOPS-1216.svg[drw c400 Controller IEOPS 1216 entfernen]
 
 +
 [cols="10,90"]
@@ -34,15 +30,17 @@ image:../media/drw_A400_Remove_controller.png[""]
 
 
  a| 
-image:../media/legend_icon_01.png["Legende Nummer 1"]
+image:../media/legend_icon_01.png[""]
  a| 
 Verriegelungsriegel
 
 
 
  a| 
-image:../media/legend_icon_02.png["Legende Nummer 2"]
-| Der Controller bewegt sich leicht aus dem Chassis 
+image:../media/legend_icon_02.png[""]
+ a| 
+Der Controller bewegt sich leicht aus dem Chassis
+
 |===
 . Schieben Sie das Controller-Modul aus dem Gehäuse.
 +
@@ -52,19 +50,20 @@ Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen,
 . Öffnen Sie am Ersatzsteuermodul den Luftkanal, und entfernen Sie die leeren Riser mithilfe der Animation, der Abbildung oder der schriftlichen Schritte aus dem Controller-Modul:
 +
 .Animation - Entfernen Sie die leeren Riser aus dem Ersatzcontroller-Modul
-video::49053752-e813-4c15-a917-ab190147fa6e[panopto]
+video::018a1c3c-0a26-4f48-bd60-b0300184c147[panopto]
++
+image::../media/drw_c400_empty_riser_remove_IEOPS-1225.svg[Entfernen Sie den IEOPS 1225 des leeren drw c400-Risers]
 
 
-image::../media/drw_a400_empty_riser_remove_IEOPS-1002.svg[entfernen Sie den IEOPS 1002 des leeren risers drw a400]
 
 [cols="10,90"]
 |===
 
 
  a| 
-image:../media/legend_icon_01.png["Legende Nummer 1"]
+image:../media/legend_icon_01.png[""]
  a| 
-Entriegelungsriegel für Riser
+Riser-Verriegelungen
 
 |===
 . Drücken Sie die Verriegelungslaschen an den Seiten des Luftkanals in Richtung der Mitte des Controller-Moduls.
@@ -82,10 +81,10 @@ Wenn Sie ein Controller-Modul ersetzen, müssen Sie das Netzteil vom beeinträch
 Sie können die folgenden Animationen, Abbildungen oder die schriftlichen Schritte verwenden, um die Netzteile in das Ersatzcontrollermodul zu verschieben.
 
 .Animation - Verschieben der Netzteile
-video::92060115-1967-475b-b517-aad9012f130c[panopto]
+video::6cac8f5f-dc11-4b1d-9b18-b03001858fda[panopto]
 . Entfernen Sie das Netzteil:
 +
-image::../media/drw_A400_psu.png[drw A400 netzteil]
+image::../media/drw_c400_psu_IEOPS-1237.svg[drw c400 netzteil IEOPS 1237]
 
 
 
@@ -133,8 +132,8 @@ Um den NVDIMM-Akku vom Controller-Modul mit eingeschränkter Betriebsdauer auf d
 Sie können die folgende Animation, Abbildung oder die geschriebenen Schritte verwenden, um den NVDIMM-Akku vom beeinträchtigten Controller-Modul in das Ersatzcontrollermodul zu verschieben.
 
 .Animation - Verschieben der NVDIMM-Batterie
-video::94d115b2-b02a-4234-805c-aad9012f204c[panopto]
-image::../media/drw_A400_nvdimm-batt_IEOPS-1004.svg[drw A400 nvdimm Batt IEOPS 1004]
+video::d38ef37e-aa0e-46ff-9283-b03001864e0c[panopto]
+image::../media/drw_c400_nvdimm_batt_IEOPS-1227.svg[drw c400 nvdimm Batt IEOPS 1227]
 
 [cols="10,90"]
 |===
@@ -186,8 +185,8 @@ Sie müssen das Startmedium ausfindig machen und dann die Anweisungen befolgen, 
 Sie können die folgenden Animationen, Abbildungen oder die geschriebenen Schritte verwenden, um die Startmedien vom beeinträchtigten Controller-Modul in das Ersatzcontrollermodul zu verschieben.
 
 .Animation - Verschieben des Bootmediums
-video::2a14099c-85de-4a84-867c-aad9012efac8[panopto]
-image::../media/drw_A400_Replace-boot_media_IEOPS-1007.svg[drw A400 ersetzt Boot-Medium IEOPS 1007]
+video::01d3d868-4c8a-4385-b264-b0300186fc58[panopto]
+image::../media/drw_c400_replace_boot_media_IEOPS-1217.svg[drw c400 Boot-Medium IEOPS 1217 ersetzen]
 
 [cols="10,90"]
 |===
@@ -237,12 +236,12 @@ Sie können die folgenden Animationen, Abbildungen oder die schriftlichen Schrit
 Verschieben von PCIe-Riser 1 und 2 (linke und mittlere Riser):
 
 .Animation - Verschieben von PCI-Riserern 1 und 2
-video::f4ee1d4d-6029-4fe6-a063-aad9012f170b[panopto]
+video::a38898c3-61a2-47bd-9011-b0300183540d[panopto]
 Verschieben der Mezzanine-Karte und des Riser 3 (Riser rechts):
 
 .Animation - Bewegen Sie die Mezzanine-Karte und Riser 3
-video::b0c3b575-3434-4e00-a421-aad9012f2e9e[panopto]
-image::../media/drw_A400_Replace-PCIe-cards_IEOPS-1008.svg[drw A400 Ersetzen Sie die PCIe-Karten IEOPS 1008]
+video::54c98658-29a3-423b-ae01-b030018091f5[panopto]
+image::../media/drw_c400_replace_PCIe_cards_IEOPS-1235.svg[drw c400 Ersetzen Sie die PCIe-Karten IEOPS 1235]
 
 [cols="10,90"]
 |===
@@ -313,7 +312,7 @@ Sie müssen das neue Controller-Modul bereit haben, damit Sie die DIMMs direkt v
 Sie können die DIMMs aus dem beeinträchtigten Controller-Modul in das Ersatzcontrollermodul verschieben, indem Sie die folgenden Animationen, Abbildungen oder die schriftlichen Schritte verwenden.
 
 .Animation - Verschieben der DIMMs
-video::717b52fa-f236-4f3d-b07d-aad9012f51a3[panopto]
+video::c5c77fd1-b566-467f-a1cd-b0300187de35[panopto]
 image::../media/drw_A400_Replace-NVDIMM-DIMM_IEOPS-1009.svg[drw A400 ersetzt NVDIMM DIMM IEOPS 1009]
 
 [cols="10,90"]
@@ -375,35 +374,33 @@ Vergewissern Sie sich, dass der Stecker am Controller-Modul abhält.
 
 Nachdem alle Komponenten vom beeinträchtigten Controller-Modul in das Ersatzcontrollermodul verschoben wurden, müssen Sie das Ersatzcontrollermodul in das Gehäuse installieren und es dann in den Wartungsmodus booten.
 
-Sie können die folgende Animation, Abbildung oder die geschriebenen Schritte zur Installation des Ersatzcontrollermoduls im Gehäuse verwenden.
-
-.Animation - Installieren des Controller-Moduls
-video::0310fe80-b129-4685-8fef-ab19010e720a[panopto]
-image::../media/drw_A400_Install_controller_source.png[drw A400 Controller-Quelle installieren]
-
-[cols="10,90"]
-|===
-
-
- a| 
-image:../media/legend_icon_01.png["Legende Nummer 1"]
- a| 
-Controller-Modul
-
-
-
- a| 
-image:../media/legend_icon_02.png["Legende Nummer 2"]
- a| 
-Verriegelungsriegel der Steuerung
-
-|===
 . Wenn Sie dies noch nicht getan haben, schließen Sie den Luftkanal.
 . Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
 +
 
 NOTE: Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein, wenn Sie dazu aufgefordert werden.
 
++
+image::../media/drw_c400_install_controller_IEOPS-1226.svg[drw c400 installieren Controller IEOPS 1226]
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Schieben Sie den Controller in das Gehäuse
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Verriegelungsriegel
+
+|===
 . Verkabeln Sie nur die Management- und Konsolen-Ports, sodass Sie auf das System zugreifen können, um die Aufgaben in den folgenden Abschnitten auszuführen.
 +
 
