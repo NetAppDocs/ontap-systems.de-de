@@ -174,11 +174,11 @@ https://docs.netapp.com/us-en/ontap-systems/platform-supplemental/superrail-inst
 NOTE: Sie müssen sich der Sicherheitsbedenken im Zusammenhang mit dem Gewicht des Systems bewusst sein.
 
 +
-image::../media/drw_asac800_weight_caution.png[drw asac800 Gewicht Vorsicht]
+image::../media/drw_affa800_weight_caution.png[drw affa800 Gewicht Achtung]
 
 . Schließen Sie Kabelmanagement-Geräte (wie abgebildet) an.
 +
-image::../media/drw_asac800_install_cable_mgmt.png[drw asac800-Installationskabel managen]
+image::../media/drw_affc800_install_cable_mgmt.png[drw affc800 Kabelmanagement installieren]
 
 . Bringen Sie die Blende auf die Vorderseite des Systems an.
 
@@ -228,8 +228,7 @@ image:../media/oie_legend_icon_1_dp.png[""]
 HA Interconnect Ports verkabeln:
 
 ** e0b bis e0b
-** e1b bis e1b
-image:../media/drw_asac800_ha_pair_cabling.png[""]
+** e1b bis e1bimage:../media/drw_affa800_ha_pair_cabling.png[""]
 
 
 
@@ -240,8 +239,7 @@ image:../media/oie_legend_icon_2_lg.png[""]
 Verkabeln Sie die Cluster-Interconnect-Ports:
 
 ** e0a an e0a
-** e1a bis e1a
-image:../media/drw_asac800_tnsc_clust_cabling.png[""]
+** e1a bis e1aimage:../media/drw_affa800_tnsc_clust_cabling.png[""]
 
 
 
@@ -249,7 +247,7 @@ image:../media/drw_asac800_tnsc_clust_cabling.png[""]
  a| 
 image:../media/oie_legend_icon_3_lp.png[""]
  a| 
-Verkabeln Sie die Management-Ports mit den Management-Netzwerk-Switches    image:../media/drw_asac800_mgmt_cabling.png["Abbildung zeigt die Position der Management-Ports auf der Rückseite des Systems"]
+Verkabeln Sie die Management-Ports mit den Management-Netzwerk-Switches    image:../media/drw_affa800_mgmt_cabling.png["Abbildung zeigt die Position der Management-Ports auf der Rückseite des Systems"]
 
 
 
@@ -303,8 +301,7 @@ image:../media/oie_legend_icon_1_dp.png[""]
 HA Interconnect Ports verkabeln:
 
 ** e0b bis e0b
-** e1b bis e1b
-image:../media/drw_asac800_ha_pair_cabling.png[""]
+** e1b bis e1bimage:../media/drw_affa800_ha_pair_cabling.png[""]
 
 
 
@@ -312,17 +309,14 @@ image:../media/drw_asac800_ha_pair_cabling.png[""]
  a| 
 image:../media/oie_legend_icon_2_lg.png[""]
  a| 
-Verkabeln Sie die Cluster-Interconnect-Ports mit den 100-GbE-Cluster-Interconnect-Switches.
-** e0a
-** e1a
-image:../media/drw_asac800_switched_clust_cabling.png[""]
+Verkabeln Sie die Cluster-Interconnect-Ports mit den 100-GbE-Cluster-Interconnect-Switches. ** e0a ** e1aimage:../media/drw_affa800_switched_clust_cabling.png[""]
 
 
 
  a| 
 image:../media/oie_legend_icon_3_lp.png[""]
  a| 
-Verkabeln Sie die Management-Ports mit den Management-Netzwerk-Switches    image:../media/drw_asac800_mgmt_cabling.png["Abbildung zeigt die Position der Management-Ports auf der Rückseite des Systems"]
+Verkabeln Sie die Management-Ports mit den Management-Netzwerk-Switches    image:../media/drw_affa800_mgmt_cabling.png["Abbildung zeigt die Position der Management-Ports auf der Rückseite des Systems"]
 
 
 
@@ -373,7 +367,7 @@ NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er e
  a| 
 1
  a| 
-Verkabeln Sie die Ports 2a bis 2d mit den FC-Host-Switches.image:../media/drw_asac800_fc_host_cabling.png[""]
+Verkabeln Sie die Ports 2a bis 2d mit den FC-Host-Switches.image:../media/drw_affa800_fc_host_cabling.png[""]
 
 
 
@@ -418,7 +412,7 @@ NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er e
  a| 
 1
  a| 
-Verkabeln Sie die Ports e4a über e4d mit den 10 GbE Host Netzwerk-Switches.image:../media/drw_asac800_10gbe_host_cabling.png[""]
+Verkabeln Sie die Ports e4a über e4d mit den 10 GbE Host Netzwerk-Switches.image:../media/drw_affa800_10gbe_host_cabling.png[""]
 
 
 
@@ -465,14 +459,14 @@ video::09dade4f-00bd-4d41-97d7-ab0c0123a0b4[panopto]
  a| 
 image:../media/oie_legend_icon_1_mb.png[""]
  a| 
-Controller A am Shelf verkabeln:    image:../media/drw_asac800_1shelf_cabling_a.png[""]
+Controller A am Shelf verkabeln: image:../media/drw_affa800_1shelf_cabling_a.png[""]
 
 
 
  a| 
 image:../media/oie_legend_icon_2_lo.png[""]
  a| 
-Controller B am Shelf verkabeln:    image:../media/drw_asac800_1shelf_cabling_b.png[""]
+Controller B am Shelf verkabeln: image:../media/drw_affa800_1shelf_cabling_b.png[""]
 
 |===
 Informationen zum Abschließen der Einrichtung des Systems finden Sie unter link:install-detailed-guide.html#step-4-complete-system-setup-and-configuration["Schritt 4: System-Setup und -Konfiguration abschließen"].
@@ -503,14 +497,14 @@ video::fe50ac38-9375-4e6b-85af-ab0c0123a0e0[panopto]
  a| 
 image:../media/oie_legend_icon_1_mb.png[""]
  a| 
-Verbinden Sie Controller A mit den Shelfs:    image:../media/drw_asac800_2shelf_cabling_a.png[""]
+Verbinden Sie Controller A mit den Shelfs: image:../media/drw_affa800_2shelf_cabling_a.png[""]
 
 
 
  a| 
 image:../media/oie_legend_icon_2_lo.png[""]
  a| 
-Controller B mit den Shelfs verkabeln:    image:../media/drw_asac800_2shelf_cabling_b.png[""]
+Controller B mit den Shelfs verkabeln: image:../media/drw_affa800_2shelf_cabling_b.png[""]
 
 |===
 Informationen zum Abschließen der Einrichtung des Systems finden Sie unter link:install-detailed-guide.html#step-4-complete-system-setup-and-configuration["Schritt 4: System-Setup und -Konfiguration abschließen"].
@@ -579,11 +573,11 @@ NOTE: Informationen zur Konfiguration des Konsolenport finden Sie in der Online-
 
 .. Schließen Sie das Konsolenkabel an den Laptop oder die Konsole an, und schließen Sie den Konsolenport am Controller mithilfe des im Lieferumfang des Systems verwendeten Konsolenkabels an.
 +
-image::../media/drw_console_connect_asac800.png[drw-Konsole verbinden asac800]
+image::../media/drw_console_connect_affa800.png[drw-Konsolenverbindung affa800]
 
 .. Verbinden Sie den Laptop oder die Konsole mit dem Switch im Management-Subnetz.
 +
-image::../media/drw_client_mgmt_subnet_asac800.png[drw-Client-Management-Subnetz asac800]
+image::../media/drw_client_mgmt_subnet_affa800.png[drw Client Management Subnetz afa800]
 
 .. Weisen Sie dem Laptop oder der Konsole eine TCP/IP-Adresse zu. Verwenden Sie dabei eine Adresse, die sich im Management-Subnetz befindet.
 
