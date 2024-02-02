@@ -1,4 +1,4 @@
-= Option 1: Fügen Sie ein X91148A-Modul als NIC-Modul in ein System mit offenen Steckplätzen hinzu
+= 
 :allow-uri-read: 
 
 
@@ -7,22 +7,16 @@ Sie können ein X91148A-Modul in einem leeren Modulsteckplatz in Ihrem System en
 * Ihr System muss ONTAP 9.8 und höher ausführen.
 * Um das X91148A-Modul unterbrechungsfrei hinzuzufügen, müssen Sie den Zielcontroller übernehmen, die Abdeckung für die Steckplatzabdeckung im Zielsteckplatz entfernen, das Modul hinzufügen und dann den Zielcontroller zurückgeben.
 * Auf Ihrem System müssen mindestens ein freier Steckplatz verfügbar sein.
-* Wenn mehrere Steckplätze verfügbar sind, installieren Sie das Modul gemäß der Slot Priority Matrix für das X91148A-Modul im Hardware Universe.
-+
-https://hwu.netapp.com["NetApp Hardware Universe"]
-
+* Wenn mehrere Steckplätze verfügbar sind, installieren Sie das Modul entsprechend der Steckplatzprioritätsmatrix für das X91148A-Modul im https://hwu.netapp.com["NetApp Hardware Universe"^].
 * Wenn Sie das Modul X91148A als Speichermodul hinzufügen, müssen Sie die Modulsteckplätze 3 und/oder 7 installieren.
-* Wenn Sie das X91148A-Modul als 100-GbE-NIC hinzufügen, können Sie jeden offenen Steckplatz verwenden. Standardmäßig werden die Steckplätze 3 und 7 als Speichersteckplätze festgelegt. Wenn Sie diese Steckplätze als Netzwerksteckplätze verwenden möchten und keine NS224-Shelfs hinzufügen, müssen Sie die Steckplätze für die Netzwerknutzung mit dem ändern `storage port modify -node _node name_ -port _port name_ -mode network` Befehl. Im Hardware Universe finden Sie weitere Steckplätze, die vom X91148A-Modul für die Netzwerkanbindung verwendet werden können.
-+
-https://hwu.netapp.com["NetApp Hardware Universe"]
-
+* Wenn Sie das X91148A-Modul als 100-GbE-NIC hinzufügen, können Sie jeden offenen Steckplatz verwenden. Standardmäßig werden die Steckplätze 3 und 7 als Speichersteckplätze festgelegt. Wenn Sie diese Steckplätze als Netzwerksteckplätze verwenden möchten und keine NS224-Shelfs hinzufügen, müssen Sie die Steckplätze für die Netzwerknutzung mit dem ändern `storage port modify -node _node name_ -port _port name_ -mode network` Befehl. Siehe https://hwu.netapp.com["NetApp Hardware Universe"^] Für andere Steckplätze, die vom X91148A-Modul für die Netzwerkanbindung verwendet werden können.
 * Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
 
 
-
-
-== Option 1: Fügen Sie ein X91148A-Modul als NIC-Modul in ein System mit offenen Steckplätzen hinzu
-
+[role="tabbed-block"]
+====
+--
+.Option 1: Ein X91148A-Modul als NIC-Modul hinzufügen
 Um ein X91148A-Modul als NIC-Modul in einem System mit offenen Steckplätzen hinzuzufügen, müssen Sie die genaue Reihenfolge der Schritte befolgen.
 
 .Schritte
@@ -51,16 +45,19 @@ Die Konsolenverbindung zeigt an, dass der Node nach Abschluss der Übernahme auf
 
 
 . Verbinden Sie das Modul mit den Datenschaltern.
-. Neustart von Controller A: `boot_ontap`
+. Booten Sie Controller A über die LOADER-Eingabeaufforderung: `bye`
++
+
+NOTE: Dadurch werden die PCIe-Karten und andere Komponenten neu initialisiert und der Node wird neu gebootet.
+
 . GiveBack der Knoten vom Partner-Knoten: `storage failover giveback -ofnode _target_node_name_`
 . Automatisches Giveback aktivieren, falls deaktiviert: `storage failover modify -node local -auto-giveback true`
 . Wiederholen Sie diese Schritte für Controller B.
 
 
-
-
-== Option 2: Fügen Sie ein X91148A-Modul als Speichermodul in ein System mit offenen Steckplätzen hinzu
-
+--
+.Option 2: Ein X91148A-Modul als Speichermodul hinzufügen
+--
 Um ein X91148A-Modul als Speichermodul in einem System mit offenen Steckplätzen hinzuzufügen, müssen Sie die genaue Reihenfolge der Schritte befolgen.
 
 * Bei diesem Verfahren wird vorausgesetzt, dass die Schlitze 3 und/oder 7 offen sind.
@@ -92,9 +89,26 @@ Die Konsolenverbindung zeigt an, dass der Node nach Abschluss der Übernahme auf
 .. Wenn Sie ein zweites X91148A-Modul zur Speicherung installieren, wiederholen Sie diesen Schritt für das Modul in Steckplatz 7.
 
 
-. Neustart von Controller A: `boot_ontap`
+. Neustart von Controller A:
++
+** Wenn das Ersatzmodul nicht das gleiche Modell wie das alte Modul ist, starten Sie das BMC neu:
++
+... Ändern Sie von der LOADER-Eingabeaufforderung in den erweiterten Berechtigungsebene: `set -privilege advanced`
+... Starten Sie den BMC neu: `sp reboot`
+
+
+** Wenn das Ersatzmodul mit dem alten Modul identisch ist, starten Sie über die LOADER-Eingabeaufforderung: `bye`
++
+
+NOTE: Dadurch werden die PCIe-Karten und andere Komponenten neu initialisiert und der Node wird neu gebootet.
+
+
+
 . GiveBack der Knoten vom Partner-Knoten: `storage failover giveback -ofnode target_node_name`
 . Automatisches Giveback aktivieren, falls deaktiviert: `storage failover modify -node local -auto-giveback true`
 . Wiederholen Sie diese Schritte für Controller B.
-. Installieren und verkabeln Sie die NS224-Regale, wie in beschrieben https://docs.netapp.com/us-en/ontap-systems/ns224/hot-add-shelf.html["Hot-Add - NS224-Shelfs"].
+. Installieren und verkabeln Sie die NS224-Regale, wie in beschrieben https://docs.netapp.com/us-en/ontap-systems/ns224/hot-add-shelf.html["Hot-Add - NS224-Shelfs"^].
 
+
+--
+====

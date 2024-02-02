@@ -1,4 +1,4 @@
-= Option 1: Fügen Sie ein X91148A-Modul als NIC-Modul in ein System ohne offene Steckplätze hinzu
+= 
 :allow-uri-read: 
 
 
@@ -7,21 +7,18 @@ Sie müssen ein oder mehrere vorhandene NIC- oder Speichermodule in Ihrem System
 * Ihr System muss ONTAP 9.8 und höher ausführen.
 * Wenn Sie das X91148A-Modul unterbrechungsfrei hinzufügen möchten, müssen Sie den Ziel-Controller übernehmen, das Modul hinzufügen und anschließend den Ziel-Controller zurückgeben.
 * Wenn Sie das Modul X91148A als Speicheradapter hinzufügen, müssen Sie das Modul in den Steckplätzen 3 und/oder 7 installieren.
-* Wenn Sie das X91148A-Modul als 100-GbE-NIC hinzufügen, können Sie jeden offenen Steckplatz verwenden. Standardmäßig werden die Steckplätze 3 und 7 als Speichersteckplätze festgelegt. Wenn Sie diese Steckplätze als Netzwerksteckplätze verwenden möchten und keine NS224-Shelfs hinzufügen, müssen Sie die Steckplätze für die Netzwerknutzung mit dem ändern `storage port modify -node _node name_ -port _port name_ -mode network` Befehl für jeden Port. Im Hardware Universe finden Sie weitere Steckplätze, die vom X91148A-Modul für die Netzwerkanbindung verwendet werden können.
-+
-https://hwu.netapp.com["NetApp Hardware Universe"]
-
+* Wenn Sie das X91148A-Modul als 100-GbE-NIC hinzufügen, können Sie jeden offenen Steckplatz verwenden. Standardmäßig werden die Steckplätze 3 und 7 als Speichersteckplätze festgelegt. Wenn Sie diese Steckplätze als Netzwerksteckplätze verwenden möchten und keine NS224-Shelfs hinzufügen, müssen Sie die Steckplätze für die Netzwerknutzung mit dem ändern `storage port modify -node _node name_ -port _port name_ -mode network` Befehl für jeden Port. Siehe https://hwu.netapp.com["NetApp Hardware Universe"^] Für andere Steckplätze, die vom X91148A-Modul für die Netzwerkanbindung verwendet werden können.
 * Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
 
 
-
-
-== Option 1: Fügen Sie ein X91148A-Modul als NIC-Modul in ein System ohne offene Steckplätze hinzu
-
+[role="tabbed-block"]
+====
+--
+.Option 1: Ein X91148A-Modul als NIC-Modul hinzufügen
 Sie müssen ein oder mehrere vorhandene NIC- oder Speichermodule in Ihrem System entfernen, um ein oder mehrere X91148A-NIC-Module in Ihrem vollständig bestückten System zu installieren.
 
 .Schritte
-. Wenn Sie ein X91148A-Modul zu einem Steckplatz hinzufügen, der ein NIC-Modul mit der gleichen Anzahl an Ports wie das X91148A-Modul enthält, werden die LIFs beim Herunterfahren des Controller-Moduls automatisch migriert. Wenn das zu ersetzende NIC-Modul mehr Ports als das X91148A-Modul besitzt, müssen Sie die betroffenen LIFs dauerhaft einem anderen Home-Port zuweisen. Siehe https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html["Migrieren eines LIF"] Weitere Informationen über die Verwendung von System Manager zum permanenten Verschieben der LIFs
+. Wenn Sie ein X91148A-Modul zu einem Steckplatz hinzufügen, der ein NIC-Modul mit der gleichen Anzahl an Ports wie das X91148A-Modul enthält, werden die LIFs beim Herunterfahren des Controller-Moduls automatisch migriert. Wenn das zu ersetzende NIC-Modul mehr Ports als das X91148A-Modul besitzt, müssen Sie die betroffenen LIFs dauerhaft einem anderen Home-Port zuweisen. Siehe https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html["Migrieren eines LIF"^] Weitere Informationen über die Verwendung von System Manager zum permanenten Verschieben der LIFs
 . Herunterfahren von Controller A:
 +
 .. Automatisches Giveback deaktivieren: `storage failover modify -node local -auto-giveback false`
@@ -51,6 +48,7 @@ Stellen Sie sicher, dass Sie den Steckplatz verfolgen, in dem sich das I/O-Modul
 image::../media/drw_9000_remove_pcie_module.png[drw 9000 entfernen das pcie-Modul]
 
 +
+[cols="1,4"]
 |===
 
 
@@ -78,24 +76,27 @@ E/A-Nockenverriegelung vollständig entriegelt
 
 . Wiederholen Sie die Schritte zum Entfernen und Installieren, um zusätzliche Module für Controller A auszutauschen
 . Verbinden Sie das Modul oder die Module mit den Datenschaltern.
-. Neustart von Controller A: `boot_ontap`
+. Booten Sie Controller A über die LOADER-Eingabeaufforderung: `bye`
++
+
+NOTE: Dadurch werden die PCIe-Karten und andere Komponenten neu initialisiert und der Node wird neu gebootet.
+
 . GiveBack der Knoten vom Partner-Knoten: `storage failover giveback -ofnode target_node_name`
 . Automatisches Giveback aktivieren, falls deaktiviert: `storage failover modify -node local -auto-giveback true`
 . Wenn Sie das X91148A-Modul als NIC-Modul in den Steckplätzen 3 oder 7 hinzugefügt haben, verwenden Sie zum Networking das `storage port modify -node _node name_ -port _port name_ -mode network` Befehl für jeden Port.
 . Wiederholen Sie diese Schritte für Controller B.
 
 
-
-
-== Option 2: Hinzufügen eines X91148A-Moduls als Speichermodul in einem System ohne offene Steckplätze
-
+--
+.Option 2: Hinzufügen eines X91148A-Moduls als Speichermodul
+--
 Sie müssen ein oder mehrere vorhandene NIC- oder Speichermodule in Ihrem System entfernen, um ein oder mehrere X91148A-Speichermodule in Ihrem vollständig bestückten System zu installieren.
 
 * Bei diesem Verfahren wird vorausgesetzt, dass Sie das X91148A-Modul wieder in die Steckplätze 3 und/oder 7 einsetzen.
 
 
 .Schritte
-. Wenn Sie ein X91148A-Modul als Speichermodul in den Steckplätzen 3 und/oder 7 in einen Steckplatz mit einem vorhandenen NIC-Modul hinzufügen, verwenden Sie System Manager, um die LIFs dauerhaft zu verschiedenen Home-Ports zu migrieren, wie in beschrieben https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html["Migrieren eines LIF"].
+. Wenn Sie ein X91148A-Modul als Speichermodul in den Steckplätzen 3 und/oder 7 in einen Steckplatz mit einem vorhandenen NIC-Modul hinzufügen, verwenden Sie System Manager, um die LIFs dauerhaft zu verschiedenen Home-Ports zu migrieren, wie in beschrieben https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html["Migrieren eines LIF"^].
 . Herunterfahren von Controller A:
 +
 .. Automatisches Giveback deaktivieren: `storage failover modify -node local -auto-giveback false`
@@ -125,6 +126,7 @@ Stellen Sie sicher, dass Sie den Steckplatz verfolgen, in dem sich das I/O-Modul
 image::../media/drw_9000_remove_pcie_module.png[drw 9000 entfernen das pcie-Modul]
 
 +
+[cols="1,4"]
 |===
 
 
@@ -151,9 +153,16 @@ E/A-Nockenverriegelung vollständig entriegelt
 .. Wenn Sie ein zweites X91148A-Modul zum Speichern installieren, wiederholen Sie die Schritte zum Entfernen und Installieren des Moduls in Steckplatz 7.
 
 
-. Neustart von Controller A: `boot_ontap`
+. Booten Sie Controller A über die LOADER-Eingabeaufforderung: `bye`
++
+
+NOTE: Dadurch werden die PCIe-Karten und andere Komponenten neu initialisiert und der Node wird neu gebootet.
+
 . GiveBack der Knoten vom Partner-Knoten: `storage failover giveback -ofnode _target_node_name_`
 . Automatisches Giveback aktivieren, falls deaktiviert: `storage failover modify -node local -auto-giveback true`
 . Wiederholen Sie diese Schritte für Controller B.
-. Installieren und verkabeln Sie die NS224-Regale, wie in beschrieben https://docs.netapp.com/us-en/ontap-systems/ns224/hot-add-shelf.html["Hot-Adding eines NS224-Laufwerk-Shelfs"].
+. Installieren und verkabeln Sie die NS224-Regale, wie in beschrieben https://docs.netapp.com/us-en/ontap-systems/ns224/hot-add-shelf.html["Hot-Adding eines NS224-Laufwerk-Shelfs"^].
 
+
+--
+====
