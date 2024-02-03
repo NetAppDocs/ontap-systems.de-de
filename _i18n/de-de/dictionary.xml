@@ -4490,7 +4490,6 @@
   <block id="8555f8973ccc4539a56ac495380c89d5" category="inline-link">Entfernen der leeren Riser aus dem Ersatzcontroller-Modul</block>
   <block id="d5e62cab20ddc280f38e9a81562855fc" category="paragraph"><block ref="d5e62cab20ddc280f38e9a81562855fc" category="inline-link-rx"></block></block>
   <block id="b8f99a879bdae690f650b2171355b5bb" category="image-alt">drw 8300 Leere Riser entfernen</block>
-  <block id="ae17f8ad6d4ad0752e9da66715863b23" category="paragraph">Sie können die folgenden Animationen, Illustrationen verwenden. Oder die schriftlichen Schritte, um die PCIe Riser und Mezzanine-Karte vom beeinträchtigten Controller-Modul auf das Ersatzcontrollermodul zu verschieben.</block>
   <block id="6976de191bb895bccff42aea7f5ef312" category="section-title">Schritt 6: Verschieben Sie Cache-Module</block>
   <block id="1e6c27613480cee2fca639b93121fd62" category="paragraph">Sie können die folgenden Animationen, Abbildungen oder die geschriebenen Schritte verwenden, um Cache-Module in das neue Controller-Modul zu verschieben.</block>
   <block id="1d3cf3e64d50da3c959f6c6aefc86da4" category="video-title">Animation - Verschieben der Caching-Module</block>
@@ -8792,4 +8791,9 @@ SFP+ (Target/Initiator)</block>
   <block id="f0770a756304b05e8fc4f321e0babe43" category="open-title">Option 2: Hinzufügen eines X91148A-Moduls als Speichermodul</block>
   <block id="9e41ec46d0af5ba1b01d8b3bde9b4f52" category="list-text">Wenn Sie ein X91148A-Modul als Speichermodul in den Steckplätzen 3 und/oder 7 in einen Steckplatz mit einem vorhandenen NIC-Modul hinzufügen, verwenden Sie System Manager, um die LIFs dauerhaft zu verschiedenen Home-Ports zu migrieren, wie in beschrieben<block ref="8a81e44d8701c7e0abd4b6ad328792f0" category="inline-link-rx"></block>.</block>
   <block id="c81f78014b983d44adbb454f838c2ae9" category="list-text">Installieren und verkabeln Sie die NS224-Regale, wie in beschrieben<block ref="a84558faf7b836b9db418a291f2462b5" category="inline-link-rx"></block>.</block>
+  <block id="68439e6a6b3d21f29b1f4c3391b0fc9d" category="admonition">Das Ver2 Controller-Modul hat nur einen Caching-Modulsockel (Steckplatz 6) im FAS8300. FAS8700 verfügt nicht über ein VER2 Controller-Modul. Die Cache-Modul-Funktionalität wird durch das Entfernen des Sockets nicht beeinträchtigt.</block>
+  <block id="c70a0b227334f67f05309732ae67641e" category="paragraph">Sie können die folgenden Animationen, Abbildungen, die PELZKARTE auf dem System oder die schriftlichen Schritte verwenden, um die PCIe-Riser und die Zusatzkarte vom beeinträchtigten Controller-Modul zum Ersatz-Controller-Modul zu verschieben.</block>
+  <block id="e0b36bb653f20c62f1b87229ea86e61e" category="admonition">Sie müssen die PCIe-Karten nicht von den Risern entfernen. Übertragen Sie die Riser, bei denen die PCIe-Karten noch installiert sind, auf das Ersatz-Controller-Modul.</block>
+  <block id="569455efa28fef99f37a55bfd832334e" category="admonition">Das Ver2 Controller-Modul besitzt nur einen Cache-Modulsockel im FAS8300. FAS8700 verfügt nicht über ein VER2 Controller-Modul. Die Cache-Modul-Funktionalität wird durch das Entfernen des Sockets nicht beeinträchtigt.</block>
+  <block id="f30c92bb3a7434fbf14bd27327ab95f7" category="admonition">Steckplatz 6 ist nur im FAS8300 VER2 Controller verfügbar.</block>
 </blocks>

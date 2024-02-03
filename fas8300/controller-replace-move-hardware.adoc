@@ -14,6 +14,9 @@ summary: Um die Hardware des Controller-Moduls zu ersetzen, müssen Sie den beei
 Um die Hardware des Controller-Moduls zu ersetzen, müssen Sie den beeinträchtigten Controller entfernen, die FRU-Komponenten in das Ersatzcontrollermodul verschieben, das Ersatzcontrollermodul im Gehäuse installieren und das System dann in den Wartungsmodus booten.
 
 
+NOTE: Das Ver2 Controller-Modul hat nur einen Caching-Modulsockel (Steckplatz 6) im FAS8300. FAS8700 verfügt nicht über ein VER2 Controller-Modul. Die Cache-Modul-Funktionalität wird durch das Entfernen des Sockets nicht beeinträchtigt.
+
+
 
 == Schritt 1: Entfernen Sie das Controller-Modul
 
@@ -156,7 +159,10 @@ Entfernen Sie gegebenenfalls die Startmedien, und setzen Sie sie wieder in den S
 
 Im Rahmen des Controller-Austauschprozesses müssen Sie die PCIe Riser und die Mezzanine-Karte vom beeinträchtigten Controller-Modul auf das Ersatzcontrollermodul verschieben.
 
-Sie können die folgenden Animationen, Illustrationen verwenden. Oder die schriftlichen Schritte, um die PCIe Riser und Mezzanine-Karte vom beeinträchtigten Controller-Modul auf das Ersatzcontrollermodul zu verschieben.
+Sie können die folgenden Animationen, Abbildungen, die PELZKARTE auf dem System oder die schriftlichen Schritte verwenden, um die PCIe-Riser und die Zusatzkarte vom beeinträchtigten Controller-Modul zum Ersatz-Controller-Modul zu verschieben.
+
+
+NOTE: Sie müssen die PCIe-Karten nicht von den Risern entfernen. Übertragen Sie die Riser, bei denen die PCIe-Karten noch installiert sind, auf das Ersatz-Controller-Modul.
 
 Verschieben von PCIe-Riser 1 und 2 (linke und mittlere Riser):
 
@@ -202,6 +208,9 @@ Der Riser hebt sich leicht vom Controller-Modul auf.
 == Schritt 6: Verschieben Sie Cache-Module
 
 Beim Austausch eines Controller-Moduls müssen Sie die Cache-Module von den beeinträchtigten Controller-Modulen auf das Ersatzcontrollermodul verschieben.
+
+
+NOTE: Das Ver2 Controller-Modul besitzt nur einen Cache-Modulsockel im FAS8300. FAS8700 verfügt nicht über ein VER2 Controller-Modul. Die Cache-Modul-Funktionalität wird durch das Entfernen des Sockets nicht beeinträchtigt.
 
 Sie können die folgenden Animationen, Abbildungen oder die geschriebenen Schritte verwenden, um Cache-Module in das neue Controller-Modul zu verschieben.
 

@@ -13,6 +13,9 @@ summary: 'Sie müssen das Caching-Modul im Controller-Modul ersetzen, wenn das S
 [role="lead"]
 Sie müssen das Caching-Modul im Controller-Modul ersetzen, wenn das System eine einzelne AutoSupport-Meldung (ASUP) registriert, dass das Modul offline geschaltet wurde; andernfalls kommt es zu Performance-Einbußen.
 
+
+NOTE: Das Ver2 Controller-Modul besitzt nur einen Cache-Modulsockel im FAS8300. FAS8700 verfügt nicht über ein VER2 Controller-Modul. Die Cache-Modul-Funktionalität wird durch das Entfernen des Sockets nicht beeinträchtigt.
+
 * Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
 
 
@@ -213,6 +216,9 @@ Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen,
 == Schritt 3: Ein Caching-Modul ersetzen
 
 Um ein Caching-Modul, das als Flash Cache auf dem Etikett des Controllers bezeichnet wird, zu ersetzen, suchen Sie den Steckplatz im Controller und folgen Sie den spezifischen Schritten. Informationen zum Speicherort des Flash Cache finden Sie in der FRU-Zuordnung im Controller-Modul.
+
+
+NOTE: Steckplatz 6 ist nur im FAS8300 VER2 Controller verfügbar.
 
 Ihr Storage-System muss je nach Ihrer Situation bestimmte Kriterien erfüllen:
 
