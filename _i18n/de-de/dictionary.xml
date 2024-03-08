@@ -1284,17 +1284,12 @@
   <block id="9ed9163b4599600e6378be760fd75fa8" category="paragraph">Das folgende Video zeigt, wie Sie Ihr neues System installieren und verkabeln.</block>
   <block id="26115a2b78227837b2498242d7c3a180" category="video-title">„Animation - Installation und Einrichtung einer AFF A800</block>
   <block id="2bb6eb6e274e403747742b20b6b76f1a" category="doc">Tauschen Sie den Echtzeitbatterie AFF A800 aus</block>
-  <block id="63b8891414a2163d2135a858ac9d8576" category="section-title">Schritt 3: Entfernen Sie die PCIe Riser</block>
-  <block id="0e402ea83f9434d19cbb58c56a2db717" category="paragraph">Sie müssen einen oder mehrere PCIe-Riser entfernen, wenn Sie bestimmte Hardwarekomponenten im Controller-Modul ersetzen.</block>
   <block id="92a1e44c6fd05cd1ba8ab2abf944200f" category="paragraph">Riserkarte 2 (mittlerer Riser), Verriegelungsriegel</block>
   <block id="5d32a38a1b041424ab4d21535c31e0b6" category="section-title">Schritt 4: Ersetzen Sie die RTC-Batterie</block>
   <block id="f8875cd0262026ed3fb8588a40cc1ddf" category="list-text">Suchen Sie den RTC-Akku unter Riser 2.</block>
   <block id="f384f058a9e18cd94b2018353655dfd8" category="image-alt">drw a800 rtc-Akku ersetzen</block>
   <block id="5970ecf5a77095b830e5e2d378b5f67c" category="paragraph">Riser 2</block>
   <block id="a7f375a810d73a673cfac8d89305ccac" category="paragraph">RTC-Akku und Gehäuse</block>
-  <block id="2ac4ac5667e74f34105113704c416ab4" category="section-title">Schritt 5: Installieren Sie die PCIe Riser</block>
-  <block id="b7d2c15ba4d23a3704c6e0fa1cd09303" category="paragraph">Sie installieren die PCIe Riser neu, nachdem Sie die Hardwarekomponenten in der beeinträchtigten Steuerung ausgetauscht haben.</block>
-  <block id="5b6534f621851e68cd3102bd5d746226" category="section-title">Schritt 6: Setzen Sie das Controller-Modul wieder ein und setzen Sie Zeit/Datum nach dem RTC-Batterieaustausch ein</block>
   <block id="cf10f00c0112c9e38ae28a3188c8cbd6" category="section-title">Schritt 7: Senden Sie das fehlgeschlagene Teil an NetApp zurück</block>
   <block id="4b03e4a08b555f0fcfb41ec98179267c" category="paragraph">Für die meisten Konfigurationen (einschließlich ASA-Konfigurationen) stehen Ihnen verschiedene Content-Formate zur Verfügung.</block>
   <block id="4dbd79294c989758d5af25c272edcd18" category="list-text"><block ref="4dbd79294c989758d5af25c272edcd18" category="inline-link-macro-rx"></block></block>
@@ -8796,4 +8791,9 @@ SFP+ (Target/Initiator)</block>
   <block id="738ad40a42e139ed29cebf62dfc05a11" category="paragraph"><block ref="738ad40a42e139ed29cebf62dfc05a11" category="inline-link-macro-rx"></block></block>
   <block id="99ddf4d694dac695dfe3508f22a2764a" category="paragraph"><block ref="99ddf4d694dac695dfe3508f22a2764a" category="inline-link-macro-rx"></block></block>
   <block id="2cff6532f0a35fcdab297942157a970e" category="paragraph">Erfahren Sie, wie Sie Ihr C190 System installieren – von Rack- und Verkabelung bis zur Ersteinrichtung des Systems. Verwenden Sie die <block ref="861cf0a8c95d8b17a03c43773caa91e4" category="inline-link-macro-rx"></block> Wenn Sie mit der Installation von NetApp Systemen vertraut sind.</block>
+  <block id="6b94783b3a4b318de01cab9d3ec81247" category="open-title">Original-Controller</block>
+  <block id="2790027947ff94fbf03f63a1df957821" category="list-text">Entfernen Sie den PCIe-Riser 2 (mittlere Riserkarte) vom Controller-Modul:</block>
+  <block id="f24c160de87a570618194aa5d8b9c9de" category="open-title">VER2-Controller</block>
+  <block id="204438254dc5e5c9fbc69d974b0ec2ad" category="list-text">Suchen Sie die RTC-Batterie in der Nähe der DIMMs.</block>
+  <block id="71adfc8a5d09d16090dd4dd7ff8256f4" category="image-alt">drw a800 rtc-Akku Austauschen v2</block>
 </blocks>

@@ -141,11 +141,13 @@ Luftkanal in Richtung Lüftermodule drehen
 
 
 
-== Schritt 3: Entfernen Sie die PCIe Riser
+== Schritt 3: Ersetzen Sie die RTC-Batterie
 
-Sie müssen einen oder mehrere PCIe-Riser entfernen, wenn Sie bestimmte Hardwarekomponenten im Controller-Modul ersetzen.
-
-. Entfernen Sie den PCIe-Riser aus dem Controller-Modul:
+[role="tabbed-block"]
+====
+.Original-Controller
+--
+. Entfernen Sie den PCIe-Riser 2 (mittlere Riserkarte) vom Controller-Modul:
 +
 .. Entfernen Sie alle SFP- oder QSFP-Module, die sich möglicherweise in den PCIe-Karten enthalten haben.
 .. Drehen Sie die Riserverriegelung auf der linken Seite des Riser nach oben und in Richtung der Lüftermodule.
@@ -173,14 +175,6 @@ Riserkarte 2 (mittlerer Riser), Verriegelungsriegel
 
 |===
 
-
-
-
-
-
-== Schritt 4: Ersetzen Sie die RTC-Batterie
-
-Um die RTC-Batterie zu ersetzen, suchen Sie sie im Controller, und befolgen Sie die einzelnen Schritte.
 
 . Suchen Sie den RTC-Akku unter Riser 2.
 +
@@ -217,14 +211,6 @@ NOTE: Beachten Sie die Polarität der Batterie, während Sie sie aus dem Halter 
 . Entfernen Sie den Ersatzakku aus dem antistatischen Versandbeutel.
 . Notieren Sie die Polarität der RTC-Batterie, und setzen Sie sie anschließend in den Halter ein, indem Sie die Batterie schräg kippen und nach unten drücken.
 . Überprüfen Sie die Batterie visuell, um sicherzustellen, dass sie vollständig in den Halter eingebaut ist und die Polarität korrekt ist.
-
-
-
-
-== Schritt 5: Installieren Sie die PCIe Riser
-
-Sie installieren die PCIe Riser neu, nachdem Sie die Hardwarekomponenten in der beeinträchtigten Steuerung ausgetauscht haben.
-
 . Installieren Sie den Riser in das Controller-Modul:
 +
 .. Richten Sie die Lippe des Riser an der Unterseite der Bleche des Controller-Moduls aus.
@@ -238,9 +224,44 @@ Bei der Verriegelung ist die Verriegelung bündig mit der Oberseite des Riser un
 
 
 
+--
+.VER2-Controller
+--
+. Suchen Sie die RTC-Batterie in der Nähe der DIMMs.
++
+image::../media/drw_a800_rtc_battery_replace_v2.png[drw a800 rtc-Akku Austauschen v2]
+
++
+[cols="1,4"]
+|===
 
 
-== Schritt 6: Setzen Sie das Controller-Modul wieder ein und setzen Sie Zeit/Datum nach dem RTC-Batterieaustausch ein
+ a| 
+image:../media/legend_icon_01.png[""]
+| Luftkanal 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+RTC-Akku und Gehäuse
+
+|===
+. Schieben Sie den Akku vorsichtig von der Halterung weg, drehen Sie ihn vom Halter weg, und heben Sie ihn dann aus der Halterung.
++
+
+NOTE: Beachten Sie die Polarität der Batterie, während Sie sie aus dem Halter entfernen. Der Akku ist mit einem Pluszeichen gekennzeichnet und muss korrekt in der Halterung positioniert werden. Ein Pluszeichen in der Nähe des Halters zeigt an, wie der Akku positioniert werden soll.
+
+. Entfernen Sie den Ersatzakku aus dem antistatischen Versandbeutel.
+. Notieren Sie die Polarität der RTC-Batterie, und setzen Sie sie anschließend in den Halter ein, indem Sie die Batterie schräg kippen und nach unten drücken.
+. Überprüfen Sie die Batterie visuell, um sicherzustellen, dass sie vollständig in den Halter eingebaut ist und die Polarität korrekt ist.
+
+
+--
+====
+
+
+== Schritt 4: Installieren Sie das Controller-Modul neu
 
 Nachdem Sie eine Komponente innerhalb des Controller-Moduls ersetzt haben, müssen Sie das Controller-Modul im Systemgehäuse neu installieren, die Uhrzeit und das Datum auf dem Controller zurücksetzen und es dann booten.
 
@@ -288,6 +309,6 @@ Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt
 
 
 
-== Schritt 7: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+== Schritt 5: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.
