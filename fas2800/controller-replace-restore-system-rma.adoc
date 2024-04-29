@@ -44,26 +44,7 @@ NOTE: Die neuen Lizenzschlüssel, die Sie benötigen, werden automatisch generie
 
 
 
-== Schritt 2: Wiederherstellung der Speicher- und Volume-Verschlüsselung-Funktion
-
-Für Storage-Systeme, die Sie zuvor für den Einsatz von Storage oder Volume Encryption konfiguriert haben, müssen Sie zusätzliche Schritte durchführen, um die Funktion für unterbrechungsfreie Verschlüsselung bereitzustellen. Sie können diese Aufgabe auf Storage-Systemen überspringen, auf denen Storage oder Volume Encryption nicht aktiviert ist.
-
-
-NOTE: Dieser Schritt ist beim Austausch eines DIMM nicht erforderlich.
-
-.Schritte
-. Je nachdem, ob Sie integriertes oder externes Verschlüsselungsmanagement verwenden, sollten Sie eines der folgenden Verfahren verwenden:
-+
-** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-onboard-key-management-encryption-keys-task.html["Wiederherstellung der integrierten Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"^]
-** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-external-encryption-keys-93-later-task.html["Wiederherstellung der externen Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"^]
-
-
-. SED-MSID zurücksetzen
-
-
-
-
-== Schritt 3: Überprüfen Sie die LIFs und registrieren Sie die Seriennummer
+== Schritt 2: LIFs überprüfen und die Seriennummer registrieren
 
 Bevor Sie den Node _Replacement_ zum Service zurücksenden, sollten Sie überprüfen, ob sich die LIFs auf ihren Home-Ports befinden, und bei aktiviertem AutoSupport die Seriennummer des Node _Replacement_ registrieren.
 
@@ -84,6 +65,6 @@ Wenn eine der LIFs als falsch aufgeführt ist, stellen Sie sie auf ihre Home-Por
 
 
 
-== Schritt 4: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+== Schritt 3: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

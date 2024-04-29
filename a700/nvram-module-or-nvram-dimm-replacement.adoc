@@ -99,7 +99,6 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller umschalten, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 
 .Über diese Aufgabe
-* Wenn Sie NetApp Storage Encryption verwenden, müssen Sie die MSID mithilfe der Anweisungen im Abschnitt „ein FIPS-Laufwerk oder SED in ungeschützten Modus zurückgeben“ von zurücksetzen link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/return-seds-unprotected-mode-task.html["NetApp Encryption: Übersicht mit CLI"^].
 * Sie müssen die Netzteile am Ende dieses Verfahrens einschalten, um den gesunden Controller mit Strom zu versorgen.
 
 
@@ -636,25 +635,6 @@ Sie müssen mit reagieren `y` Wenn Sie dazu aufgefordert werden, den erweiterten
 ====
 
 
-== Schritt 6: Stellen Sie die Funktionen für Storage und Volume Encryption wieder her
-
-Für Storage-Systeme, die Sie zuvor für den Einsatz von Storage oder Volume Encryption konfiguriert haben, müssen Sie zusätzliche Schritte durchführen, um die Funktion für unterbrechungsfreie Verschlüsselung bereitzustellen. Sie können diese Aufgabe auf Storage-Systemen überspringen, auf denen Storage oder Volume Encryption nicht aktiviert ist.
-
-
-NOTE: Dieser Schritt ist beim Austausch eines DIMM nicht erforderlich.
-
-.Schritte
-. Je nachdem, ob Sie integriertes oder externes Verschlüsselungsmanagement verwenden, sollten Sie eines der folgenden Verfahren verwenden:
-+
-** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-onboard-key-management-encryption-keys-task.html["Wiederherstellung der integrierten Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"^]
-** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-external-encryption-keys-93-later-task.html["Wiederherstellung der externen Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"^]
-
-
-. SED-MSID zurücksetzen
-
-
-
-
-== Schritt 7: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+== Schritt 6: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

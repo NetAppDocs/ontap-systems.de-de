@@ -182,7 +182,6 @@
   <block id="6d21dbcd6d30fc2426dd0b077d719da5" category="summary">Bevor Sie den beeinträchtigten Controller herunterfahren und den Status der integrierten Verschlüsselungsschlüssel prüfen, müssen Sie den Status des beeinträchtigten Controllers überprüfen, die automatische Rückgabe deaktivieren und überprüfen, welche Version von ONTAP das System ausführt.</block>
   <block id="120d4b04cada3ad4213234c2437fb645" category="doc">Integrierte Verschlüsselungsschlüssel - FAS2600</block>
   <block id="d1614290531967ae3b3623d71b4ed961" category="paragraph">Bevor Sie den beeinträchtigten Controller herunterfahren und den Status der integrierten Verschlüsselungsschlüssel prüfen, müssen Sie den Status des beeinträchtigten Controllers überprüfen, das automatische Giveback deaktivieren und die Version von ONTAP prüfen, die ausgeführt wird.</block>
-  <block id="518d2076bf387a28038f7558530bb987" category="inline-link-macro">NetApp Encryption: Übersicht mit CLI</block>
   <block id="6d4079af860d745f44d13bfe9834115d" category="list-text">Den Status des beeinträchtigten Reglers prüfen:</block>
   <block id="6f0786e478994e04512bb55e945ab79c" category="list-text">Wenn sich der Controller mit eingeschränkter Bedieneinheit an der Anmeldeaufforderung befindet, melden Sie sich als an<block ref="21232f297a57a5a743894a0e4a801fc3" prefix=" " category="inline-code"></block>.</block>
   <block id="1f543f99cb43496b3a35f9786089c979" category="list-text">Wenn der Controller mit eingeschränkter Einstellung an der LOADER-Eingabeaufforderung steht und Teil der HA-Konfiguration ist, melden Sie sich als an<block ref="21232f297a57a5a743894a0e4a801fc3" prefix=" " category="inline-code"></block> Auf dem gesunden Controller.</block>
@@ -571,7 +570,6 @@
   <block id="a0f829e8eae692ba3841ace71f629760" category="list-text">Stellen Sie sicher, dass die Umgebungsvariablen wie erwartet festgelegt sind:</block>
   <block id="324e677465a3eca81c578dca79975d76" category="list-text">Nehmen Sie den Controller zur LOADER-Eingabeaufforderung.</block>
   <block id="eeed9c2f829091b08810156d7ed4433e" category="list-text">Überprüfen Sie die Einstellungen der Umgebungsvariable mit dem<block ref="d3bc32150d1d972afca2cd16da79c694" prefix=" " category="inline-code"></block> Befehl.</block>
-  <block id="30748b1b116d9335e2b8cdb6ec3038d0" category="list-text">Wenn eine Umgebungsvariable nicht wie erwartet festgelegt ist, ändern Sie sie mit dem<block ref="c9518832c08f9faecfc35f8473eb7398" prefix=" " category="inline-code"></block> Befehl.</block>
   <block id="414efa7edc26a4a7b5a28ac4965ea178" category="list-text">Speichern Sie Ihre Änderungen mit dem<block ref="8d7578ebf6b1d6483a876337d887a337" prefix=" " category="inline-code"></block> Befehl.</block>
   <block id="b9eb862c5caa1201eee15d474b3217ef" category="list-text">Das nächste hängt von Ihrer Systemkonfiguration ab:</block>
   <block id="7a7b698215037ec83cf3c3bc1f775001" category="inline-xref-macro">Stellen Sie OKM, NSE und NVE nach Bedarf wieder her</block>
@@ -3509,7 +3507,6 @@
   <block id="d48c73102976c851dd07cb5e9103a138" category="doc">Ersetzen Sie eine PCIe-Karte: FAS8200</block>
   <block id="b829b8b1be5636c7bcd3a7828593e11e" category="open-title">Option 2: Controller befindet sich in einem MetroCluster mit zwei Nodes</block>
   <block id="0c2cb7a10e04116783dbfedc59540a50" category="paragraph">Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller umschalten, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.</block>
-  <block id="063a6c27f42a062a6ece0163f4444fc3" category="list-text">Wenn Sie NetApp Storage Encryption verwenden, müssen Sie die MSID mithilfe der Anweisungen im Abschnitt „ein FIPS-Laufwerk oder SED in ungeschützten Modus zurückgeben“ von zurücksetzen <block ref="bb6c6af86c0c41920e9753bb15981800" category="inline-link-macro-rx"></block>.</block>
   <block id="230cc8b63d72a2bf47b7c87ead7ab0b8" category="list-text">Sie müssen die Netzteile am Ende dieses Verfahrens einschalten, um den gesunden Controller mit Strom zu versorgen.</block>
   <block id="eec0e5f9d553c7b70402acd4568f1ec7" category="list-text">Überprüfen Sie den MetroCluster-Status, um festzustellen, ob der beeinträchtigte Controller automatisch auf den gesunden Controller umgeschaltet wurde:<block ref="0d51371cbb850772d2130a36f4368df4" prefix=" " category="inline-code"></block></block>
   <block id="a4d3e0e884bda08238ebcf294cd22173" category="list-text">Je nachdem, ob eine automatische Umschaltung stattgefunden hat, fahren Sie mit der folgenden Tabelle fort:</block>
@@ -3727,7 +3724,6 @@
   <block id="1e2a0fcc2986a119062540d6a8a9681f" category="inline-link">Finden Sie den Hochverfügbarkeits-Leitfaden für Ihre Version von ONTAP 9</block>
   <block id="8761710e49b8b20d4b6cc2adb064a0b2" category="paragraph"><block ref="8761710e49b8b20d4b6cc2adb064a0b2" category="inline-link-rx"></block></block>
   <block id="a5d68caf62cce2afa4e8ca12ce07943a" category="open-title">Option 2: ID neu zuweisen (MetroCluster-Konfiguration)</block>
-  <block id="3bf4c288b20a882f54f61cd8cb0618a7" category="section-title">Schritt 6: Stellen Sie die Funktionen für Storage und Volume Encryption wieder her</block>
   <block id="4991af82e8fdfcd13eef2c656f16d4c4" category="doc">Schalten Sie den beeinträchtigten Regler aus</block>
   <block id="6444f932b3d3398ef847475f65dde87a" category="paragraph">Fahren Sie den Controller mit eingeschränkter Konfiguration herunter oder übernehmen Sie ihn entsprechend.</block>
   <block id="68f1a7b941dc9e6a48709297bda51c0f" category="doc">Überblick über das Hinzufügen eines X91148A-Moduls - AFF A9000</block>
@@ -5942,7 +5938,6 @@
   <block id="fc86636cc733253cec13dbbddcd9f251" category="list-text">Drücken Sie<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> Wenn Sie dazu aufgefordert werden, den beeinträchtigten Controller neu zu starten.</block>
   <block id="35e25520eae4191769a5f17749607c22" category="list-text">Nehmen Sie den beeinträchtigten Controller zur LOADER-Eingabeaufforderung.</block>
   <block id="2ddd54a208744ec5e2ccb1b7ac83aa05" category="list-text">Überprüfen Sie die Einstellungen der Umgebungsvariablen mit dem Befehl printenv.</block>
-  <block id="edb5a1f64879356169f323de78b718be" category="list-text">Wenn eine Umgebungsvariable nicht wie erwartet festgelegt ist, ändern Sie sie mit dem Befehl setenvumwelt_variable_Name changed_value.</block>
   <block id="eeacd9b31ab0c2f60f1d13e5632f7f13" category="list-text">Speichern Sie Ihre Änderungen mit dem Befehl saveenv.</block>
   <block id="b52d8d1d987722da12d16df8a0a63541" category="list-text">Geben Sie an der LOADER-Eingabeaufforderung den Befehl Boot_ontap ein.</block>
   <block id="5d5be5511db4bca75b01ab22c4adf4ce" category="list-text">Vergewissern Sie sich, dass das Ziel bereit ist, das Giveback mit dem durchzuführen<block ref="ddf400f1cb6b8b9330ed6c79c508123c" prefix=" " category="inline-code"></block> Befehl.</block>
@@ -6441,12 +6436,6 @@
   <block id="1422875ceb77c2edc7c07474b11b3c6f" category="list-text">Öffnen Sie den Luftkanal des Steuermoduls:</block>
   <block id="43ae4ee714a69574b12c2b05c54410b5" category="list-text">Drücken Sie die Entriegelungstaste für Terrakotta am Modulgriff, und schieben Sie das DCPM-Modul aus dem Gehäuse.</block>
   <block id="0721343ac8e5e32a5122775fda62e4d0" category="doc">Wiederherstellen und Überprüfen der Konfiguration – AFF A900</block>
-  <block id="2c35abfceaabbce6e9a2f24491d249c0" category="open-title">Option 1: Verwenden Von Onboard Key Manager</block>
-  <block id="86b112e5aa1ced4fbffb09dded147e9f" category="list-text">Starten Sie den Node im Boot-Menü.</block>
-  <block id="e07ae2ef2fbd56f8a3ced5a2ab602ded" category="list-text">Wählen Sie Option 10,<block ref="cdca34dc3d7defb03d741a65d78de01c" prefix=" " category="inline-code"></block>.</block>
-  <block id="0a2404583aab34668c1c8004bddabbaa" category="list-text">Option 1 auswählen,<block ref="e6922a1788401c5ef431db829a2c387b" prefix=" " category="inline-code"></block></block>
-  <block id="c566d4828cd295258aa8097a90880602" category="open-title">Option 2: Verwenden Von External Manager</block>
-  <block id="0a05a9975c9259ea331a85366e41d3ce" category="list-text">Wählen Sie Option 11,<block ref="0dd518498ab98fe1fd543910856e6153" prefix=" " category="inline-code"></block>.</block>
   <block id="a5462faa34b6cf806cb49f24d84b02a7" category="list-text">Wenn Ihr System so konfiguriert ist, dass es 10-GbE-Cluster-Interconnect und Datenverbindungen auf 40-GbE-NICs unterstützt 10, konvertieren Sie diese Ports mit dem Befehl nicadmin convert aus dem Wartungsmodus. Siehe<block ref="2d808a662d9493bde97b50913a25a294" category="inline-link-rx"></block> Finden Sie weitere Informationen.</block>
   <block id="c56809d9cff2ea190c6fb9d67e804b42" category="paragraph">Sie müssen die sechs Lüftermodule, die sich an der Vorderseite des Gehäuses befinden, entfernen, wenn Sie das Gehäuse austauschen.</block>
   <block id="e9e9a6de5e421dfe8a5ccc0b156ecc94" category="admonition">Wenn die Port-Etiketten auf der Karte nicht sichtbar sind, überprüfen Sie die Ausrichtung der Karteninstallation (der PCIe-Steckersockel befindet sich auf der linken Seite des Kartensteckplatzes in den A400 und FAS8300/8700), und suchen Sie dann nach der Karte, und suchen Sie im nach der Teilenummer<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block> Für eine Grafik der Blende, in der die Port-Bezeichnungen angezeigt werden. Die Teilenummer der Karte kann über gefunden werden<block ref="432345ed72f5509f18312f01d4f08dff" prefix=" " category="inline-code"></block> Befehl oder auf der Packliste des Systems.</block>
@@ -6462,17 +6451,6 @@
   <block id="192e7ded6d54e3ac04596dc33b9c67cf" category="paragraph">Sie können ein I/O-Modul zu einem leeren Modulsteckplatz in Ihrem System hinzufügen.</block>
   <block id="741ade379895992f2a574e8e60de1571" category="section-title">Schritt 2: E/A-Module hinzufügen</block>
   <block id="31ac56c0f673cbef254563f6a8a32626" category="paragraph">Wenn Ihr System vollständig bestückt ist, können Sie ein I/O-Modul in einem I/O-Steckplatz ändern, indem Sie ein vorhandenes I/O-Modul entfernen und es durch ein anderes I/O-Modul ersetzen.</block>
-  <block id="74458273e576f4b2da617a6e0e209a5f" category="paragraph">Wenn die Speicherverschlüsselung aktiviert ist, gehen Sie wie folgt vor.</block>
-  <block id="23620cc2fa7491aefb480afbef75dac2" category="list-text">Geben Sie die Passphrase für den Onboard-Schlüsselmanager ein, den Sie vom Kunden erhalten haben.</block>
-  <block id="15247f97704eb964c60d179c321c1370" category="list-text">Fügen Sie an der Eingabeaufforderung die Sicherungsschlüsseldaten aus der Ausgabe von ein<block ref="6b6f6c1a8bc1fede794cda92ed140953" prefix=" " category="inline-code"></block> ODER<block ref="32ba7af89b7557f6e3e6d80a922080ce" prefix=" " category="inline-code"></block> Befehl.</block>
-  <block id="8726b2ef66dc0e734b269a3191597e11" category="paragraph">---------------------------- BEGINNEN SIE MIT DEM BACKUP---------------------------------</block>
-  <block id="328f6eaec3741c1d0f9558d6c40c1da4" category="paragraph">TmV0QXBWIETLESBKBG9iAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1AAAAAAAAAAAAAAAAAAAAAA1AAAAAAAAAAAAAAAAAAAAAAAA1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA . . . H4nPQM0nrDRYRa9SCv8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</block>
-  <block id="1e4d7cab6ce42bcab6973efa42fc0b2c" category="list-text">Führen Sie die integrierte Synchronisierung des Sicherheitsschlüsselmanagers aus:</block>
-  <block id="377fca3965b001b9bcc8843e1b287fe7" category="list-text">Setzen Sie die MSID zurück, wenn sie zuvor festgelegt wurde und zu Beginn dieses Verfahrens erfasst wurde:</block>
-  <block id="a967d40ef247a202e5f1ce7a9626a0ca" category="list-text">Weisen Sie einem FIPS-Laufwerk oder einer SED mithilfe des einen Datenauthentifizierungsschlüssel zu<block ref="8fc59e93e98503b6d1b1230269b06192" prefix=" " category="inline-code"></block> Befehl.</block>
-  <block id="551eb7af7cdc6ae3394d506bd47a783d" category="admonition">Sie können das verwenden<block ref="eb3cf23f0c9c60ca759ddca34bbfbf56" prefix=" " category="inline-code"></block> Befehl zum Anzeigen von Schlüssel-IDs.</block>
-  <block id="6f44d6d36af2c0294f4e53a2e6947b94" category="list-text">Überprüfen Sie, ob die Authentifizierungsschlüssel mit dem zugewiesen wurden<block ref="46353f4e0bb2c136591c37c9eeedcf40" prefix=" " category="inline-code"></block> Befehl.</block>
-  <block id="960bc5d7d199e0e148cd3dd0e517250d" category="list-text">Geben Sie die Informationen zum Verwaltungszertifikat an den Eingabeaufforderungen ein.</block>
   <block id="037baf09c7ddcc7c38f81e7dbe35fa87" category="paragraph">Sie können dem System ein I/O-Modul hinzufügen, indem Sie entweder einem System mit leeren Steckplätzen einen neuen I/O-Knoten hinzufügen oder ein E/A-Modul durch ein neues in einem vollständig bestückten System ersetzen.</block>
   <block id="55f1569cdcfb82612fcf293f23db4f6f" category="list-text">Prüfen Sie die<block ref="bb9c67b5a4c15a85b5e6aa6c9afd0285" category="inline-link-rx"></block> Vergewissern Sie sich, dass das neue I/O-Modul mit Ihrem System und Ihrer Version von ONTAP kompatibel ist.</block>
   <block id="6e4968851f4373ab9764e16cffb39389" category="list-text">Wenn mehrere Steckplätze verfügbar sind, überprüfen Sie die Steckplatzprioritäten in<block ref="bb9c67b5a4c15a85b5e6aa6c9afd0285" category="inline-link-rx"></block> Und verwenden Sie die beste für Ihr I/O-Modul verfügbare Lösung.</block>
@@ -6496,9 +6474,6 @@
   <block id="85445cdcf89edd32e9cf4cb8554898a3" category="image-alt">drw A400 ersetzt NVDIMM DIMM IEOPS 1009</block>
   <block id="f5a5a95a5282486c3989ed932401b693" category="image-alt">drw A900 Kabelkonsolen-Switch-Controller IEOPS 953</block>
   <block id="0ea0d47e034118a7f063c35eaf67ebd2" category="list-text">Wenn die Speicherverschlüsselung aktiviert ist, müssen Sie die Funktion wiederherstellen.</block>
-  <block id="718ea359d9cc2d2bff619909d16ec537" category="admonition">Der Controller kehrt zum Startmenü zurück.</block>
-  <block id="a9cbabd3f42c5ad7f4796dbf5e384b08" category="list-text">Starten Sie den Controller im Boot-Menü.</block>
-  <block id="1e37c9a4ea44b0a302091f02c74564c1" category="admonition">Der Controller kehrt zum Startmenü zurück, nachdem die Managementzertifikatinformationen abgeschlossen sind.</block>
   <block id="34dbbed571bcfe30f4b9897172116b74" category="list-text">Informationen zum Kabelanschluss des Speichers finden Sie unter <block ref="4261ea2b75c295a1978f7924667f1c11" category="inline-xref-macro-rx"></block></block>
   <block id="90d49fcc83418b049803a1b2081f3c6b" category="list-text">Informationen zum Abschließen der Einrichtung des Systems finden Sie unter <block ref="53346fef0c147b551f530d05bbad2e41" category="inline-xref-macro-rx"></block></block>
   <block id="14fa1a86493af188cbb574d402b31f1b" category="list-text">Kehren Sie zu zurück <block ref="c67cdb63ab5b46180d9910dcb0f03689" category="inline-xref-macro-rx"></block> In diesem Verfahren wird die NVMEM-LED erneut überprüft.</block>
@@ -7339,7 +7314,6 @@ Oder<block ref="1d2c479b57949de891a15e148e1ebcf5" prefix=" " category="inline-co
   <block id="ab18556462377223339c421c568ab231" category="paragraph"><block ref="ab18556462377223339c421c568ab231" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6b6e58fb741960f0300c7783438276a5" category="paragraph">Verriegelungslasche für Startmedien</block>
   <block id="fa8b2d8b91c1c89065d3652288dbddc1" category="list-text">Entfernen Sie die Mezzanine-Karte mithilfe der folgenden Abbildung oder der FRU-Zuordnung auf dem Controller-Modul:</block>
-  <block id="c684d6ba7251084d87edf6423b1ebd24" category="list-text">Entfernen Sie die Blende der Zusatzkarte, indem Sie sie gerade aus dem Controller-Modul herausziehen.</block>
   <block id="d62aede9e33b9cbeca49d6fcc6de78c2" category="list-text">Lösen Sie die Rändelschrauben auf der Zusatzkarte.</block>
   <block id="db1a320c26dfcefe739a659ae4724890" category="admonition">Sie können die Rändelschrauben mit den Fingern oder einem Schraubendreher lösen. Wenn Sie Ihre Finger verwenden, müssen Sie den NV-Akku möglicherweise nach oben drehen, um den Finger besser an der Daumenschraube daneben zu kaufen.</block>
   <block id="1a64138e0b66965c80b909462ba9543f" category="list-text">Heben Sie die Zusatzkarte gerade nach oben.</block>
@@ -7350,7 +7324,6 @@ Oder<block ref="1d2c479b57949de891a15e148e1ebcf5" prefix=" " category="inline-co
   <block id="d29b17eb668c51029bfa0626ffe7500f" category="list-text">Setzen Sie die Zusatzkarte wieder ein:</block>
   <block id="834f618686de8125c24ea965ba281757" category="list-text">Richten Sie den Sockel auf der Hauptplatine mit dem Sockel auf der Zusatzkarte aus, und setzen Sie die Karte vorsichtig in den Sockel ein.</block>
   <block id="361016e8b59dfa6e2e2f28d3e38835e1" category="list-text">Ziehen Sie die drei Rändelschrauben auf der Zusatzkarte fest.</block>
-  <block id="31276a19caaffd6d8a485978edefcae8" category="list-text">Bringen Sie die Zusatzverkleidung wieder an.</block>
   <block id="eef513f5198b93971d313eb80e4da6fb" category="list-text">Setzen Sie die Abdeckung des Controller-Moduls wieder ein, und verriegeln Sie sie.</block>
   <block id="1aecc8a01c9fc90b26bed0f39865bc18" category="paragraph">Installieren Sie das System-Image auf dem Ersatz-Startmedium mit einem USB-Flash-Laufwerk, auf dem das Image installiert ist. Während dieses Vorgangs müssen Sie das var-Dateisystem wiederherstellen.</block>
   <block id="4c10168d5e2592171ac54097149079b0" category="list-text">Sie benötigen ein USB-Flash-Laufwerk, das mit MBR/FAT32 formatiert ist, mit mindestens 4 GB Kapazität.</block>
@@ -7373,7 +7346,6 @@ Siehe<block ref="087e4d006962c8ba6c4d8fdb71ff8e38" category="inline-link-rx"></b
   <block id="cf6800eb49ae54456676c105c115a1fa" category="section-title">Schritt 3: Ersetzen Sie die Zusatzkarte</block>
   <block id="6918dd1d1ecfa7a18a047a925c4f30ee" category="paragraph">Setzen Sie die Zusatzkarte wieder ein.</block>
   <block id="808ce573561d6717a3c0cc395df3a504" category="image-alt">drw 2850 HIC IEOPS 700 austauschen</block>
-  <block id="b98f82c68dbd20395815986320582ec2" category="paragraph">Riserblende</block>
   <block id="83b54898f0ac014b1e217ee413643205" category="paragraph">PCIe-Zusatzkarte</block>
   <block id="64016c063cf6b470fdcccc5a97f852b1" category="list-text">Lösen Sie die Rändelschrauben auf der Zusatzkarte, und heben Sie die Zusatzkarte gerade nach oben.</block>
   <block id="4bca5310f65e82fe5c4eec2c7a1c6c17" category="list-text">Richten Sie den Anschluss am Ersatz-Zusatzkartenstecker an der Buchse auf der Hauptplatine aus, und setzen Sie die Karte vorsichtig in den Sockel ein.</block>
@@ -7383,8 +7355,6 @@ Siehe<block ref="087e4d006962c8ba6c4d8fdb71ff8e38" category="inline-link-rx"></b
   <block id="d32890221c5529cefc96a956073d9844" category="list-text">Stellen Sie mithilfe der die automatische Rückgabe wieder her<block ref="6f0c6616b99fea33a3020e0e0dcbe3c6" prefix=" " category="inline-code"></block> Befehl.</block>
   <block id="e2306cfc3634594ca9e5483d541a9eb2" category="doc">Vollständige Systemwiederherstellung - FAS2800</block>
   <block id="954e375575b9fbd9370aa08dd503d453" category="paragraph">Stellen Sie den vollständigen Betrieb des Systems wieder her, indem Sie die Konfigurationen der NetApp-Speicherverschlüsselung oder der Volume-Verschlüsselung (falls erforderlich) wiederherstellen, Lizenzen für den Ersatz-Controller installieren und das fehlerhafte Teil an NetApp zurücksenden, wie in den RMA-Anweisungen beschrieben, die dem Kit beiliegen.</block>
-  <block id="ff3a1a304de699b15bd2a5a39798c5a8" category="section-title">Schritt 2: Wiederherstellung der Speicher- und Volume-Verschlüsselung-Funktion</block>
-  <block id="332c846459ecae57b885b30c41482384" category="section-title">Schritt 3: Überprüfen Sie die LIFs und registrieren Sie die Seriennummer</block>
   <block id="458c640b6a96cac4ef20be523ebb7f89" category="doc">Ersetzen Sie die NVMEM-Batterie - FAS2800</block>
   <block id="26e700524d9a1c0b6c28c8ad2d207679" category="section-title">Schritt 2: Entfernen und öffnen Sie das Controller-Modul</block>
   <block id="2a0805526339647b20ef0fc7df37dd6f" category="paragraph">Entfernen und öffnen Sie das Controller-Modul.</block>
@@ -7420,8 +7390,6 @@ Setzen Sie den Ersatzakku ein:</block>
   <block id="2549b95d18de43d1c8602f07ed634585" category="list-text">Setzen Sie den Akku in das neue Controller-Modul ein, und setzen Sie ihn ein:</block>
   <block id="350a3cd01c92197375fa1dd80773199d" category="admonition">Schließen Sie den Akku noch nicht an.  Sie schließen es an, sobald die restlichen Komponenten in das Ersatz-Controller-Modul verschoben wurden.</block>
   <block id="ba9da6f2122b24c495dd034a4a5ec818" category="section-title">Schritt 3: Entfernen Sie die Zusatzkarte</block>
-  <block id="853a9f16e976ca6346fa38e81f8476a8" category="paragraph">Entfernen Sie die Zusatzverkleidung und die PCIe-Zusatzkarte vom Controller-Modul für beeinträchtigte Störungen.</block>
-  <block id="539df95ed4f8e5993f75e19be1a36f64" category="list-text">Entfernen Sie die Blende der Zusatzkarte, indem Sie sie gerade aus dem Controller-Modul herausziehen.</block>
   <block id="7bb524aff91b85838c807523fc1e4828" category="admonition">Sie können die Rändelschrauben mit den Fingern oder einem Schraubendreher lösen.</block>
   <block id="099cf7f6040f65b3c9d7fb3f7393d4c3" category="list-text">Heben Sie die Zusatzkarte gerade nach oben und legen Sie sie auf eine antistatische Oberfläche.</block>
   <block id="3356d87e196ed94acd2635f8d405e53f" category="paragraph">Entfernen Sie das Startmedium aus dem Controller-Modul für beeinträchtigten Betrieb, und setzen Sie es in das Ersatz-Controller-Modul ein.</block>
@@ -7437,7 +7405,6 @@ Setzen Sie den Ersatzakku ein:</block>
   <block id="a00bf690f9db0be90ea5ab9cde9db677" category="paragraph">Installieren Sie die Zusatzkarte im Ersatz-Controller-Modul.</block>
   <block id="507e7243ab4a1d0bdbfa4edd5c9733d3" category="list-text">Richten Sie die Zusatzkarte am Anschluss auf der Hauptplatine aus.</block>
   <block id="fc7fc35188ad3f7c32f3328839f4dff2" category="list-text">Drücken Sie die Karte vorsichtig nach unten, um sie in den Steckplatz zu setzen.</block>
-  <block id="803bc905348545eacfc8739f67ee6fc2" category="list-text">Setzen Sie die Verkleidung der Zusatzkarte wieder ein.</block>
   <block id="ec782fd2b49f0e4d6edd263c0d30d7f7" category="paragraph">Entfernen Sie die DIMMs aus dem Controller-Modul für beeinträchtigte Störungen, und setzen Sie sie in das Ersatz-Controller-Modul ein.</block>
   <block id="64b66263e264f63be40a6135bb7e5f04" category="image-alt">drw 2850 dimms IEOPS 699 ersetzen</block>
   <block id="2a7c25f4f62d559672aaa2da18086b65" category="paragraph">DIMM-Verriegelungsriegel</block>
@@ -8380,7 +8347,6 @@ SFP+ (Target/Initiator)</block>
   <block id="d5fe92183ddfd6502c92a350a2928047" category="list-text">e0b bis e0b
 <block ref="23c439b7ef31021d610e4d3b988f3cd1" category="inline-image-macro-rx" type="image"></block></block>
   <block id="10fbfa6320d8e7c72e731fbd9a6e6c69" category="admonition">Eine Neuzuweisung der Festplatte ist nur erforderlich, wenn das NVRAM-Modul ersetzt wird. Dies gilt nicht für den Austausch des NVRAM-DIMM.</block>
-  <block id="099f7b942e4e89631784891716949599" category="admonition">Dieser Schritt gilt nicht für den Austausch des NVRAM-DIMM.</block>
   <block id="ce75c7b2bf3b15b7659cc85a9c36c6f8" category="admonition">Geben Sie an der Eingabeaufforderung die 32-stellige alphanumerische Onboard-Passphrase des Kunden ein. Falls die Passphrase nicht angegeben werden kann, wenden Sie sich an den NetApp Support.<block ref="28649c93049a329043d206ec7fa0c6f8" category="inline-link-rx"></block></block>
   <block id="2f061f16ff1dc3668b0b979718bcf140" category="paragraph">Geben Sie an der Eingabeaufforderung die 32-stellige alphanumerische Onboard-Passphrase des Kunden ein. Falls die Passphrase nicht angegeben werden kann, wenden Sie sich an den NetApp Support.</block>
   <block id="f44ae95a820a7e92672103acdefa1387" category="paragraph"><block ref="5e48dfc079c01fd7f817337abb01a320" prefix="" category="inline-code"></block></block>
@@ -8792,4 +8758,11 @@ SFP+ (Target/Initiator)</block>
   <block id="45c0f160ca0efa09fc0b198986db5e31" category="image-alt">drw affa250 geschaltete Klistendelverkabelung</block>
   <block id="5407ed45e4a9085a4f72a4611d202d7c" category="sidebar">NS224 Shelfs und SAS-Shelfs von NetApp bieten Performance, Ausfallsicherheit und Flexibilität, die Sie für den digitalen Wandel brauchen.</block>
   <block id="432ba2d883505b11fa27f305c25abca9" category="sidebar">Festplatten-Shelfs für ONTAP Hardwaresysteme</block>
+  <block id="4ab265d37ededf839a389d0b0bedcb7f" category="paragraph">30 cm</block>
+  <block id="70f83c59fcbb747c1a869b38caf783e3" category="list-text">Wenn eine Umgebungsvariable nicht wie erwartet festgelegt ist, ändern Sie sie mit dem<block ref="ac4028a4cb48838c0a22ab27fa6e6920" prefix=" " category="inline-code"></block> Befehl.</block>
+  <block id="f0c3921d8aabdebf1548d35d830083d9" category="list-text">Entfernen Sie die E/A-Platte, indem Sie sie gerade aus dem Controller-Modul herausschieben.</block>
+  <block id="4dfabb2b4515ceefb323f4a3eb8d4a32" category="list-text">Setzen Sie die E/A-Platte wieder ein.</block>
+  <block id="ed991b7c3c7e4af5c89a603772f54dd1" category="paragraph">Entfernen Sie die E/A-Platte und die PCIe-Zusatzkarte aus dem Controller-Modul für beeinträchtigte Vorgänge.</block>
+  <block id="eeb8f13cb25825752e216fedcd65a6b1" category="paragraph">E/A-Platte</block>
+  <block id="c746ae924024283281476c33315a4598" category="list-text">Entfernen Sie die E/A-Platte, indem Sie sie gerade aus dem Controller-Modul herausschieben.</block>
 </blocks>
