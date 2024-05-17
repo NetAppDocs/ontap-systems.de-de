@@ -90,7 +90,7 @@ Wenn beispielsweise SAS-HBAs physische PCI-Steckplätze 3, 5 und 7 belegt, würd
 In diesem Dokument werden Steckplätze und Steckplatzanschlüsse wie folgt dargestellt:
 
 +
-image::../media/slot0_rules.png[Slot0-Regeln]
+image::../media/slot0_rules.png[Slot und Slot [Port Convensions]
 
 
 
@@ -116,7 +116,7 @@ Vom logischen ersten Shelf zum logischen letzten Shelf in einem Stack verbinden 
 
 
 
-image::../media/drw_shelf_to_shelf_standard.gif[drw-Shelf auf Shelf-Standard]
+image::../media/drw_shelf_to_shelf_standard.gif[Standardmäßige Shelf-zu-Shelf-Konnektivität]
 
 
 
@@ -132,7 +132,7 @@ Vom logischen ersten Shelf zum logischen letzten Shelf in einem Stack verbinden 
 
 
 
-image::../media/drw_shelf_to_shelf_double_wide.gif[drw-Shelf für doppelt breite Einlegeboden]
+image::../media/drw_shelf_to_shelf_double_wide.gif[Doppelbreite Shelf-zu-Shelf-Konnektivität]
 
 
 
@@ -164,7 +164,7 @@ IOM Port 2 wird nur für HA- und Quad-Path-Konfigurationen mit Quad-Path verwend
 
 Die folgende Abbildung zeigt, wie Controller-Ports A und C in einer Multipath HA-Konfiguration mit einem Quad Port HBA und zwei Festplatten-Shelfs verbunden sind. Die Anschlüsse zum Stapel 1 werden blau angezeigt. Die Verbindungen zum Stapel 2 werden orange dargestellt.
 
-image::../media/drw_controller_to_stack_rules_ports_a_and_c_example.gif[drw-Controller für Stapelregeln Ports a und c Beispiel]
+image::../media/drw_controller_to_stack_rules_ports_a_and_c_example.gif[Verbindungsregeln für Controller A- und C-Ports für Plattformen ohne internen Speicher]
 
 
 
@@ -183,7 +183,7 @@ IOM Port 4 wird nur für HA- und Quad-Path-Konfigurationen verwendet.
 
 Die folgende Abbildung zeigt, wie Controller-Ports B und D in einer Multipath HA-Konfiguration mit einem Quad-Port HBA und zwei Festplatten-Shelfs verbunden werden. Die Anschlüsse zum Stapel 1 werden blau angezeigt. Die Verbindungen zum Stapel 2 werden orange dargestellt.
 
-image::../media/drw_controller_to_stack_rules_ports_b_and_d_example.gif[drw-Controller zu stapeln Regeln die Ports b und d Beispiel]
+image::../media/drw_controller_to_stack_rules_ports_b_and_d_example.gif[Verbindungsregeln für Controller B und D-Ports für Plattformen ohne internen Speicher]
 
 
 
@@ -211,7 +211,7 @@ Beispiel: 1b, 2b, 3b, 1d, 2d, 3d
 
 .. Schreiben Sie die Liste der Anschlüsse D und B neu, sodass der erste Port in der Liste zum Ende der Liste verschoben wird.
 +
-Beispiel: image:../media/drw_gen_sas_cable_step2.png[""]
+Beispiel: image:../media/drw_gen_sas_cable_step2.png["Geben Sie die D- und B-Portliste erneut ein"]
 
 +
 Wenn mehr als ein Steckplatz mit SAS-Ports zur Verfügung steht, wird die Reihenfolge der Steckplätze durch ein Gleichgewicht zwischen Port-Paaren und mehreren Steckplätzen ausgeglichen (physische PCI-Steckplätze und integrierte Steckplätze). So wird verhindert, dass ein Stack mit einem einzelnen SAS HBA verbunden wird.
@@ -240,7 +240,7 @@ Wenn Sie beispielsweise sechs Portpaare für Ihr System identifiziert haben und 
 Wenn Sie beispielsweise sechs Portpaare für Ihr System identifiziert haben und drei Stacks als Multipath verkabelt werden müssen, müssen Sie jedes andere Portpaar in Ihrer Liste verkabeln:
 
 +
-image::../media/drw_portpair_connection_rules_list_skip.gif[drw Portpaar Verbindungsregeln Liste überspringen]
+image::../media/drw_portpair_connection_rules_list_skip.gif[Option zum überspringen von Portpaaren]
 
 +
 
@@ -290,7 +290,7 @@ NOTE: Wenn Sie den 0b/0b1-Port nicht mit der richtigen Domäne (Cross-Connect-Do
 
 In der folgenden Abbildung wird die Konnektivität der internen Speicher-Port-Domäne (0b/0b1) mit einem externen Shelf-Stack hervorgehoben:
 
-image::../media/drw_fas2600_mpha_domain_example_IEOPS-1172.svg[drw fas2600 mpha-Domänenbeispiel IEOPS 1172]
+image::../media/drw_fas2600_mpha_domain_example_IEOPS-1172.svg[Interner Speicherport 0b/0b1-Domänenkonnektivität]
 
 
 
@@ -307,7 +307,7 @@ Die Ports 0a und 0b1 sind über die beiden Controller verkabelt, wenn keine exte
 
 Im Folgenden werden die internen Verbindungen und die externen Kabel des Controllers angezeigt, die eine HA-Konnektivität mit drei Pfaden ermöglichen:
 
-image::../media/drw_fas2800_concept_tpha_IEOPS-950.svg[drw fas2800 Concept tpha IEOPS 950]
+image::../media/drw_fas2800_concept_tpha_IEOPS-950.svg[tri-Path-HA-Konnektivität]
 
 Die FAS2800 externen SAS-Ports:
 
@@ -316,7 +316,7 @@ Die FAS2800 externen SAS-Ports:
 * Der port 0b2 wird nicht verwendet. Er ist deaktiviert. Wenn ein Kabel daran angeschlossen ist, wird eine Fehlermeldung ausgegeben.
 
 
-image::../media/drw_sas3_ports_on_fas2800_IEOPS-946 (1).svg[drw Sas3-Ports auf fas2800 IEOPS 946 (1)]
+image::../media/drw-sas3-ports-on-fas2800.svg[drw Sas3-Ports an fas2800]
 
 Beispiele für eine FAS2800 HA-Paar-Verkabelung sind im zu finden link:install-cabling-worksheets-examples-fas2600.html["Verkabelungsarbeitsblätter und Beispiele für Plattformen mit internem Storage für den Controller-to-Stack-Stack"] Abschnitt.
 
