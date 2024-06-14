@@ -65,7 +65,7 @@ X6566B-05-R6 (112-00297), 0,5 m
 
 X6566B-2-R6 (112-00299), 2 m
  a| 
-image:../media/oie_cable_sfp_gbe_copper.png[""]
+image:../media/oie_cable_sfp_gbe_copper.png["GbE SFP Kupfer Connector"]
  a| 
 Cluster Interconnect-Netzwerk
 
@@ -80,7 +80,7 @@ Oder X6566B-3-R6 (112-00300), 3 m
 
 X6566B-5-R6 (112-00301), 5 m
  a| 
-image:../media/oie_cable_sfp_gbe_copper.png[""]
+image:../media/oie_cable_sfp_gbe_copper.png["GbE SFP Kupfer Connector"]
  a| 
 Daten
 
@@ -108,7 +108,7 @@ Teilenummern X6585-R6 (112-00291), 3m
 
 X6562-R6 (112-00196), 5 m
  a| 
-image:../media/oie_cable_rj45.png[""]
+image:../media/oie_cable_rj45.png["RJ-45-Kabelanschluss"]
  a| 
 Managementnetzwerk und Ethernet-Daten
 
@@ -125,7 +125,7 @@ X66032A (112-00437), 2 m
 
 X66033A (112-00438), 3 m
  a| 
-image:../media/oie_cable_mini_sas_hd_to_mini_sas_hd.png[""]
+image:../media/oie_cable_mini_sas_hd_to_mini_sas_hd.png["Mini-SAS-zu-Mini-SAS-Anschluss"]
  a| 
 Storage
 
@@ -147,7 +147,7 @@ Stromkabel
  a| 
 Keine Angabe
  a| 
-image:../media/oie_cable_power.png[""]
+image:../media/oie_cable_power.png["Stromkabel"]
  a| 
 System einschalten
 
@@ -169,11 +169,11 @@ Sie installieren Ihr System gegebenenfalls in einem 4-Säulen-Rack oder NetApp-S
 NOTE: Sie müssen sich der Sicherheitsbedenken im Zusammenhang mit dem Gewicht des Systems bewusst sein.
 
 +
-image::../media/drw_oie_fas2700_weight_caution.png[drw oie fas2700 Gewicht Achtung]
+image::../media/drw_oie_fas2700_weight_caution.png[Vorsicht bei der zweiköpfigen Hebebühne]
 
 . Schließen Sie Kabelmanagement-Geräte (wie abgebildet) an.
 +
-image::../media/drw_cable_management_arm_install.png[drw-Kabelmanagement-ARM-Installation]
+image::../media/drw_cable_management_arm_install.png[Anschließen von Kabelverwaltungsgeräten]
 
 . Bringen Sie die Blende auf die Vorderseite des Systems an.
 
@@ -221,13 +221,15 @@ Verkabeln Sie Ihr 2-Node-Cluster ohne Switches.
 .Über diese Aufgabe
 Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
 
-image::../media/oie_cable_pull_tab_down.png[ziehen Sie die Lasche des oie-Kabels nach unten]
+image::../media/oie_cable_pull_tab_down.png[Kabelanschluss mit Zuglasche unten]
 
 
 NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
 
 .Schritte
-. Verkabeln Sie die Cluster Interconnect Ports e0a mit e0a und e0b mit e0b mit dem Cluster Interconnect-Kabel. +image:../media/drw_c190_u_tnsc_clust_cbling.png[""]
+. Verkabeln Sie die Cluster Interconnect Ports e0a mit e0a und e0b mit e0b mit dem Cluster Interconnect-Kabel.
+ +
+image:../media/drw_c190_u_tnsc_clust_cbling.png["Cluster-Interconnect-Verkabelung"]
 . Die Controller entweder mit einem UTA2-Datennetzwerk oder einem Ethernet-Netzwerk verkabeln:
 +
 UTA2-Datennetzwerkkonfigurationen:: Verwenden Sie einen der folgenden Kabeltypen, um die UTA2-Daten-Ports mit dem Host-Netzwerk zu verkabeln.
@@ -247,14 +249,14 @@ Sie können ein Port-Paar als CNA und ein Port-Paar als FC verbinden, oder Sie k
 Ethernet-Netzwerkkonfigurationen:: Verwenden Sie das Cat 6 RJ45-Kabel, um die e0c- über e0f-Ports mit Ihrem Hostnetzwerk zu verkabeln. In der folgenden Abbildung.
 +
 --
-image:../media/drw_c190_e_rj45_cbling.png[""]
+image:../media/drw_c190_e_rj45_cbling.png["Host-Netzwerkverkabelung"]
 
 --
 
 
 . Verkabeln Sie die E0M-Ports mit den Management-Netzwerk-Switches mit den RJ45-Kabeln.
 +
-image:../media/drw_c190_u_mgmt_cbling.png[""]
+image:../media/drw_c190_u_mgmt_cbling.png["Verkabelung des Management-Ports"]
 
 
 
@@ -269,7 +271,7 @@ Verkabeln Sie Ihren Switched Cluster.
 .Über diese Aufgabe
 Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
 
-image::../media/oie_cable_pull_tab_down.png[ziehen Sie die Lasche des oie-Kabels nach unten]
+image::../media/oie_cable_pull_tab_down.png[Kabelanschluss mit Zuglasche unten]
 
 
 NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
@@ -277,7 +279,7 @@ NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er e
 .Schritte
 . Verkabeln Sie bei jedem Controller-Modul e0a und e0b mit dem Cluster Interconnect-Kabel der Cluster Interconnect-Switches.
 +
-image:../media/drw_c190_u_switched_clust_cbling.png[""]
+image:../media/drw_c190_u_switched_clust_cbling.png["ClusterInterconnect-Verkabelung"]
 
 . Die UTA2-Datennetzwerkports oder die ethernet-Datennetzwerkports können zum Verbinden der Controller mit Ihrem Host-Netzwerk verwendet werden:
 +
@@ -298,14 +300,14 @@ Sie können ein Port-Paar als CNA und ein Port-Paar als FC verbinden, oder Sie k
 Ethernet-Netzwerkkonfigurationen:: Verwenden Sie das Cat 6 RJ45-Kabel, um die e0c- über e0f-Ports mit Ihrem Hostnetzwerk zu verkabeln.
 +
 --
-image:../media/drw_c190_e_rj45_cbling.png[""]
+image:../media/drw_c190_e_rj45_cbling.png["Host-Netzwerkverkabelung"]
 
 --
 
 
 . Verkabeln Sie die E0M-Ports mit den Management-Netzwerk-Switches mit den RJ45-Kabeln.
 +
-image:../media/drw_c190_u_mgmt_cbling.png[""]
+image:../media/drw_c190_u_mgmt_cbling.png["Verkabelung des Management-Ports"]
 
 
 
@@ -325,7 +327,7 @@ Verkabeln Sie die Controller mit den Shelfs mithilfe der integrierten Storage Po
 * Sie müssen die Shelf-Verbindungen verkabeln und dann beide Controller mit den Laufwerk-Shelfs verkabeln.
 * Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
 +
-image::../media/oie_cable_pull_tab_down.png[ziehen Sie die Lasche des oie-Kabels nach unten]
+image::../media/oie_cable_pull_tab_down.png[Kabelanschluss mit Zuglasche unten]
 
 
 
@@ -342,7 +344,7 @@ image::../media/drw_a150_ha_storage_cabling_IEOPS-1032.svg[drw a150 HA-Speicherv
 ** Port 3 auf IOM A zu Port 1 auf dem IOM A auf dem Shelf direkt unten.
 ** Port 3 auf IOM B zu Port 1 auf dem IOM B auf dem Shelf direkt unten.
 +
-image:../media/oie_cable_mini_sas_hd_to_mini_sas_hd.png[""] Kabel Mini-SAS HD auf Mini-SAS HD
+image:../media/oie_cable_mini_sas_hd_to_mini_sas_hd.png["Mini-SAS-zu-Mini-SAS-Anschluss"]     Kabel Mini-SAS HD auf Mini-SAS HD
 
 
 
@@ -351,14 +353,15 @@ image:../media/oie_cable_mini_sas_hd_to_mini_sas_hd.png[""] Kabel Mini-SAS HD au
 ** Controller 1 Port 0b zu IOM A-Port 3 am letzten Laufwerk-Shelf im Stack.
 ** Controller 2 Port 0a zu IOM A-Port 1 am ersten Festplatten-Shelf im Stack.
 +
-image:../media/oie_cable_mini_sas_hd_to_mini_sas_hd.png[""] Kabel Mini-SAS HD auf Mini-SAS HD
+image:../media/oie_cable_mini_sas_hd_to_mini_sas_hd.png["Mini-SAS-zu-Mini-SAS-Anschluss"]     Kabel Mini-SAS HD auf Mini-SAS HD
 
 
 
 . Verbinden Sie jeden Node mit IOM B im Stack
 +
 ** Controller 1 Port 0a zu IOM B-Port 1 am ersten Festplatten-Shelf im Stack.
-** Controller 2 Port 0b zu IOM B-Port 3 auf dem letzten Laufwerk-Shelf im Stack.image:../media/oie_cable_mini_sas_hd_to_mini_sas_hd.png[""] Kabel Mini-SAS HD auf Mini-SAS HD
+** Controller 2 Port 0b zu IOM B-Port 3 auf dem letzten Laufwerk-Shelf im Stack.
+image:../media/oie_cable_mini_sas_hd_to_mini_sas_hd.png["Mini-SAS-zu-Mini-SAS-Anschluss"]     Kabel Mini-SAS HD auf Mini-SAS HD
 
 
 
@@ -385,7 +388,7 @@ video::c600f366-4d30-481a-89d9-ab1b0066589b[panopto]
 . Schließen Sie die Stromkabel an die Controller-Netzteile an, und schließen Sie sie dann an Stromquellen auf verschiedenen Stromkreisen an.
 . Schalten Sie die Netzschalter an beide Knoten ein.
 +
-image::../media/drw_turn_on_power_switches_to_psus.png[drw schalten Sie den Netzschalter auf die netzteile ein]
+image::../media/drw_turn_on_power_switches_to_psus.png[Einschalten der Stromversorgung]
 
 +
 
@@ -401,7 +404,7 @@ image::../media/dwr_laptop_to_switch_only.svg[dwr-Laptop nur zum Umschalten]
 
 . Wählen Sie ein ONTAP-Symbol aus, um es zu ermitteln:
 +
-image::../media/drw_autodiscovery_controler_select.png[wählen sie den drw-Kontroller für die automatische Ermittlung aus]
+image::../media/drw_autodiscovery_controler_select.png[Wählen Sie ein ONTAP-Symbol aus]
 
 +
 .. Öffnen Sie Den Datei-Explorer.
@@ -443,11 +446,11 @@ Anweisungen zum Konfigurieren des Konsolenports finden Sie in der Online-Hilfe I
 
 .. Schließen Sie das Konsolenkabel an den Laptop oder die Konsole an, und schließen Sie den Konsolenport am Controller mithilfe des im Lieferumfang des Systems verwendeten Konsolenkabels an.
 +
-image::../media/drw_console_connect_fas2700_affa200.png[die drw-Konsole verbindet fas2700 afa200]
+image::../media/drw_console_connect_fas2700_affa200.png[Es wird eine Verbindung zum Konsolenport hergestellt]
 
 .. Verbinden Sie den Laptop oder die Konsole mit dem Switch im Management-Subnetz.
 +
-image::../media/drw_client_to_mgmt_subnet_fas2700_affa220.png[drw-Client zum Management-Subnetz fas2700 afa220]
+image::../media/drw_client_to_mgmt_subnet_fas2700_affa220.png[Verbindung mit dem Management-Subnetz wird hergestellt]
 
 .. Weisen Sie dem Laptop oder der Konsole eine TCP/IP-Adresse zu. Verwenden Sie dabei eine Adresse, die sich im Management-Subnetz befindet.
 
@@ -459,7 +462,7 @@ video::c600f366-4d30-481a-89d9-ab1b0066589b[panopto]
 . Schließen Sie die Stromkabel an die Controller-Netzteile an, und schließen Sie sie dann an Stromquellen auf verschiedenen Stromkreisen an.
 . Schalten Sie die Netzschalter an beide Knoten ein.
 +
-image::../media/drw_turn_on_power_switches_to_psus.png[drw schalten Sie den Netzschalter auf die netzteile ein]
+image::../media/drw_turn_on_power_switches_to_psus.png[Einschalten der Stromversorgung]
 
 +
 
@@ -496,7 +499,7 @@ NOTE: Überprüfen Sie die Online-Hilfe Ihres Laptops oder Ihrer Konsole, wenn S
 .. Rufen Sie die Node-Management-IP-Adresse im Browser auf.
 +
 
-NOTE: Das Format für die Adresse lautet https://x.x.x.x[].
+NOTE: Das Format für die Adresse ist +https://x.x.x.x.+
 
 .. Konfigurieren Sie das System anhand der Daten, die Sie im erfasst haben https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["ONTAP Konfigurationsleitfaden"].
 

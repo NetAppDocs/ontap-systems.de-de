@@ -60,7 +60,7 @@ In der folgenden Tabelle sind die Kabeltypen aufgeführt, die Sie möglicherweis
  a| 
 X6211A-05 (112-00595), 0,5 m
  a| 
-image:../media/oie_cable100_gbe_qsfp28.png[""]
+image:../media/oie_cable100_gbe_qsfp28.png["100-GbE-QSFP28-Anschluss"]
  a| 
 HA Interconnect
 
@@ -111,7 +111,7 @@ RJ-45 (je nach Bestellung)
  a| 
 Keine Angabe
  a| 
-image:../media/oie_cable_rj45.png[""]
+image:../media/oie_cable_rj45.png["RJ-45-Kabelanschluss"]
  a| 
 Vereinfachtes
 
@@ -128,7 +128,7 @@ X66250-15 (112-00346) 15m;
 
 X66250-30 (112-00347) 30 m
  a| 
-image:../media/oie_cable_fc_optical.png[""]
+image:../media/oie_cable_fc_optical.png["OIE Glasfaserkabel für Fibre Channel"]
  a| 
 
 
@@ -149,7 +149,7 @@ Stromkabel
  a| 
 Keine Angabe
  a| 
-image:../media/oie_cable_power.png[""]
+image:../media/oie_cable_power.png["Stromkabel"]
  a| 
 System einschalten
 
@@ -174,11 +174,11 @@ https://docs.netapp.com/us-en/ontap-systems/platform-supplemental/superrail-inst
 NOTE: Sie müssen sich der Sicherheitsbedenken im Zusammenhang mit dem Gewicht des Systems bewusst sein.
 
 +
-image::../media/drw_affa800_weight_caution.png[drw affa800 Gewicht Achtung]
+image::../media/drw_affa800_weight_caution.png[Vorsicht bei der 4-Personen-Hebebühne]
 
 . Schließen Sie Kabelmanagement-Geräte (wie abgebildet) an.
 +
-image::../media/drw_affa800_install_cable_mgmt.png[drw affa800 installieren Sie die Kabelführung]
+image::../media/drw_affa800_install_cable_mgmt.png[Anschließen des Kabelverwaltungsgeräts]
 
 . Bringen Sie die Blende auf die Vorderseite des Systems an.
 
@@ -206,7 +206,7 @@ Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen 
 
 Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
 
-image::../media/oie_cable_pull_tab_up.png[ziehen Sie die Lasche des oie-Kabels nach oben]
+image::../media/oie_cable_pull_tab_up.png[Kabelanschluss mit Zuglasche oben]
 
 
 NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
@@ -223,36 +223,38 @@ video::edc42447-f721-4cbe-b080-ab0c0123a139[panopto]
 
 
  a| 
-image:../media/oie_legend_icon_1_dp.png[""]
+image:../media/oie_legend_icon_1_dp.png["Legende Nummer 1"]
  a| 
 HA Interconnect Ports verkabeln:
 
 ** e0b bis e0b
-** e1b bis e1bimage:../media/drw_affa800_ha_pair_cabling.png[""]
+** e1b bis e1b
+image:../media/drw_affa800_ha_pair_cabling.png["HA-Paar-Verkabelung"]
 
 
 
 
  a| 
-image:../media/oie_legend_icon_2_lg.png[""]
+image:../media/oie_legend_icon_2_lg.png["Legende Nummer 2"]
  a| 
 Verkabeln Sie die Cluster-Interconnect-Ports:
 
 ** e0a an e0a
-** e1a bis e1aimage:../media/drw_affa800_tnsc_clust_cabling.png[""]
+** e1a bis e1a
+image:../media/drw_affa800_tnsc_clust_cabling.png["Cluster-Interconnect-Verkabelung in einem 2-Node-Cluster ohne Switches"]
 
 
 
 
  a| 
-image:../media/oie_legend_icon_3_lp.png[""]
+image:../media/oie_legend_icon_3_lp.png["Schritt 3"]
  a| 
 Verkabeln Sie die Management-Ports mit den Management-Netzwerk-Switches    image:../media/drw_affa800_mgmt_cabling.png["Abbildung zeigt die Position der Management-Ports auf der Rückseite des Systems"]
 
 
 
  a| 
-image:../media/oie_legend_icon_attn_symbol.png[""]
+image:../media/oie_legend_icon_attn_symbol.png["Achtung-Symbol"]
  a| 
 Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
 
@@ -279,7 +281,7 @@ Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen 
 
 Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
 
-image::../media/oie_cable_pull_tab_up.png[ziehen Sie die Lasche des oie-Kabels nach oben]
+image::../media/oie_cable_pull_tab_up.png[Kabelanschluss mit Zuglasche oben]
 
 
 NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
@@ -296,32 +298,36 @@ video::49e48140-4c5a-4395-a7d7-ab0c0123a10e[panopto]
 
 
  a| 
-image:../media/oie_legend_icon_1_dp.png[""]
+image:../media/oie_legend_icon_1_dp.png["Legende Nummer 1"]
  a| 
 HA Interconnect Ports verkabeln:
 
 ** e0b bis e0b
-** e1b bis e1bimage:../media/drw_affa800_ha_pair_cabling.png[""]
+** e1b bis e1b
+image:../media/drw_affa800_ha_pair_cabling.png["HA-Paar-Verkabelung"]
 
 
 
 
  a| 
-image:../media/oie_legend_icon_2_lg.png[""]
+image:../media/oie_legend_icon_2_lg.png["Legende Nummer 2"]
  a| 
-Verkabeln Sie die Cluster-Interconnect-Ports mit den 100-GbE-Cluster-Interconnect-Switches. ** e0a ** e1aimage:../media/drw_affa800_switched_clust_cabling.png[""]
+Verkabeln Sie die Cluster-Interconnect-Ports mit den 100-GbE-Cluster-Interconnect-Switches.
+** e0a
+** e1a
+image:../media/drw_affa800_switched_clust_cabling.png["Cluster-Interconnect-Verkabelung"]
 
 
 
  a| 
-image:../media/oie_legend_icon_3_lp.png[""]
+image:../media/oie_legend_icon_3_lp.png["Schritt 3"]
  a| 
 Verkabeln Sie die Management-Ports mit den Management-Netzwerk-Switches    image:../media/drw_affa800_mgmt_cabling.png["Abbildung zeigt die Position der Management-Ports auf der Rückseite des Systems"]
 
 
 
  a| 
-image:../media/oie_legend_icon_attn_symbol.png[""]
+image:../media/oie_legend_icon_attn_symbol.png["Achtung-Symbol"]
  a| 
 Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
 
@@ -354,7 +360,7 @@ Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen 
 
 Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
 
-image::../media/oie_cable_pull_tab_up.png[ziehen Sie die Lasche des oie-Kabels nach oben]
+image::../media/oie_cable_pull_tab_up.png[Kabelanschluss mit Zuglasche oben]
 
 
 NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
@@ -367,7 +373,7 @@ NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er e
  a| 
 1
  a| 
-Verkabeln Sie die Ports 2a bis 2d mit den FC-Host-Switches.image:../media/drw_affa800_fc_host_cabling.png[""]
+Verkabeln Sie die Ports 2a bis 2d mit den FC-Host-Switches.image:../media/drw_affa800_fc_host_cabling.png["Fibre Channel-Host-Netzwerkkabel"]
 
 
 
@@ -399,7 +405,7 @@ Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen 
 
 Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
 
-image::../media/oie_cable_pull_tab_up.png[ziehen Sie die Lasche des oie-Kabels nach oben]
+image::../media/oie_cable_pull_tab_up.png[Kabelanschluss mit Zuglasche oben]
 
 
 NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
@@ -412,7 +418,7 @@ NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er e
  a| 
 1
  a| 
-Verkabeln Sie die Ports e4a über e4d mit den 10 GbE Host Netzwerk-Switches.image:../media/drw_affa800_10gbe_host_cabling.png[""]
+Verkabeln Sie die Ports e4a über e4d mit den 10 GbE Host Netzwerk-Switches.image:../media/drw_affa800_10gbe_host_cabling.png["Host-Netzwerkverkabelung"]
 
 
 
@@ -442,7 +448,7 @@ Sie müssen jeden Controller mit den NSM-Modulen am NS224-Laufwerk-Shelf verkabe
 .Bevor Sie beginnen
 Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
 
-image::../media/oie_cable_pull_tab_up.png[ziehen Sie die Lasche des oie-Kabels nach oben]
+image::../media/oie_cable_pull_tab_up.png[Kabelanschluss mit Zuglasche oben]
 
 
 NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
@@ -457,16 +463,16 @@ video::09dade4f-00bd-4d41-97d7-ab0c0123a0b4[panopto]
 
 
  a| 
-image:../media/oie_legend_icon_1_mb.png[""]
+image:../media/oie_legend_icon_1_mb.png["Legende Nummer 1"]
  a| 
-Controller A am Shelf verkabeln: image:../media/drw_affa800_1shelf_cabling_a.png[""]
+Controller A am Shelf verkabeln:    image:../media/drw_affa800_1shelf_cabling_a.png["Verkabelung der Controller mit einem einzelnen Shelf"]
 
 
 
  a| 
-image:../media/oie_legend_icon_2_lo.png[""]
+image:../media/oie_legend_icon_2_lo.png["Legende Nummer 2"]
  a| 
-Controller B am Shelf verkabeln: image:../media/drw_affa800_1shelf_cabling_b.png[""]
+Controller B am Shelf verkabeln:    image:../media/drw_affa800_1shelf_cabling_b.png["Verkabelung von Controller B zu einem einzelnen Shelf"]
 
 |===
 Informationen zum Abschließen der Einrichtung des Systems finden Sie unter link:install-detailed-guide.html#step-4-complete-system-setup-and-configuration["Schritt 4: System-Setup und -Konfiguration abschließen"].
@@ -480,7 +486,7 @@ Sie müssen jeden Controller an beiden NS224 Laufwerk-Shelfs mit den NSM-Modulen
 .Bevor Sie beginnen
 Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
 
-image::../media/oie_cable_pull_tab_up.png[ziehen Sie die Lasche des oie-Kabels nach oben]
+image::../media/oie_cable_pull_tab_up.png[Kabelanschluss mit Zuglasche oben]
 
 
 NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
@@ -495,16 +501,16 @@ video::fe50ac38-9375-4e6b-85af-ab0c0123a0e0[panopto]
 
 
  a| 
-image:../media/oie_legend_icon_1_mb.png[""]
+image:../media/oie_legend_icon_1_mb.png["Legende Nummer 1"]
  a| 
-Verbinden Sie Controller A mit den Shelfs: image:../media/drw_affa800_2shelf_cabling_a.png[""]
+Verbinden Sie Controller A mit den Shelfs:    image:../media/drw_affa800_2shelf_cabling_a.png["Verkabelung von Controller A mit zwei Shelfs"]
 
 
 
  a| 
-image:../media/oie_legend_icon_2_lo.png[""]
+image:../media/oie_legend_icon_2_lo.png["Legende Nummer 2"]
  a| 
-Controller B mit den Shelfs verkabeln: image:../media/drw_affa800_2shelf_cabling_b.png[""]
+Controller B mit den Shelfs verkabeln:    image:../media/drw_affa800_2shelf_cabling_b.png["Verkabelung von Controller B mit zwei Shelfs"]
 
 |===
 Informationen zum Abschließen der Einrichtung des Systems finden Sie unter link:install-detailed-guide.html#step-4-complete-system-setup-and-configuration["Schritt 4: System-Setup und -Konfiguration abschließen"].
@@ -536,7 +542,7 @@ Weitere Informationen finden Sie in der Online-Hilfe Ihres Notebooks.
 video::d61f983e-f911-4b76-8b3a-ab1b0066909b[panopto]
 . Wählen Sie ein ONTAP-Symbol aus, um es zu ermitteln:
 +
-image::../media/drw_autodiscovery_controler_select.png[wählen sie den drw-Kontroller für die automatische Ermittlung aus]
+image::../media/drw_autodiscovery_controler_select.png[Wählen Sie ein ONTAP-Symbol aus]
 
 +
 .. Öffnen Sie Den Datei-Explorer.
@@ -573,11 +579,11 @@ NOTE: Informationen zur Konfiguration des Konsolenport finden Sie in der Online-
 
 .. Schließen Sie das Konsolenkabel an den Laptop oder die Konsole an, und schließen Sie den Konsolenport am Controller mithilfe des im Lieferumfang des Systems verwendeten Konsolenkabels an.
 +
-image::../media/drw_console_connect_affa800.png[drw-Konsolenverbindung affa800]
+image::../media/drw_console_connect_affa800.png[Es wird eine Verbindung zum Konsolenport hergestellt]
 
 .. Verbinden Sie den Laptop oder die Konsole mit dem Switch im Management-Subnetz.
 +
-image::../media/drw_client_mgmt_subnet_affa800.png[drw Client Management Subnetz afa800]
+image::../media/drw_client_mgmt_subnet_affa800.png[Verbinden eines Laptops oder einer Konsole zum Einschalten des Management-Subnetzes]
 
 .. Weisen Sie dem Laptop oder der Konsole eine TCP/IP-Adresse zu. Verwenden Sie dabei eine Adresse, die sich im Management-Subnetz befindet.
 

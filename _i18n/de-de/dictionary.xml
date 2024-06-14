@@ -51,17 +51,14 @@
   <block id="359b2f64ed46d9bc640532f2fd8810c0" category="list-text">Lösen Sie den Haken- und Schlaufenriemen, mit dem die Kabel am Kabelführungsgerät befestigt sind, und ziehen Sie dann die Systemkabel und SFPs (falls erforderlich) vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren.</block>
   <block id="73ffa1532dd710d7eb1520cb730fb392" category="paragraph">Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation des Kabelverwaltungsgeräts die Kabel organisiert sind.</block>
   <block id="3e5a02473a086978bae6a6516ad46c5e" category="list-text">Entfernen Sie die Kabelführungsgeräte von der linken und rechten Seite des Controller-Moduls und stellen Sie sie zur Seite.</block>
-  <block id="cf233c8f355b435b1d8d0eac06c1f98c" category="image-alt">drw 25xx Kabelmanagement-ARM</block>
   <block id="3db53350c8daded7e4295f79671ca172" category="list-text">Wenn Sie nach dem Entfernen der Kabel die SFP-Module im System belassen, verschieben Sie sie in das neue Controller-Modul.</block>
   <block id="1b96f3aa099b152fc864dedb115af912" category="list-text">Drücken Sie die Verriegelung am Nockengriff, bis sie loslässt, öffnen Sie den Nockengriff vollständig, um das Controller-Modul aus der Mittelplatine zu lösen, und ziehen Sie das Controller-Modul anschließend mit zwei Händen aus dem Gehäuse heraus.</block>
   <block id="d6daae29261c119313124d1d21a1c267" category="image-alt">drw 2240 x Öffnungsnockenverriegelung</block>
   <block id="5fb9af22ffedd74df1492c91f96b8d7a" category="list-text">Drehen Sie das Controller-Modul um und legen Sie es auf eine flache, stabile Oberfläche.</block>
   <block id="99734ded605f0a86173c861064992678" category="list-text">Öffnen Sie die Abdeckung, indem Sie die blauen Laschen einschieben, um die Abdeckung zu lösen, und schwenken Sie dann die Abdeckung nach oben und öffnen Sie sie.</block>
-  <block id="0d1cd9daafc79ae251b7a5fe114375a7" category="image-alt">drw 2600, öffnen der pcm-Abdeckung</block>
   <block id="2a2508e145c26be9a521a151ff4382ee" category="section-title">Schritt 2: Verschieben Sie die Startmedien</block>
   <block id="379ba99db7039c94e102d4244b66fa4a" category="paragraph">Sie müssen das Bootmedium ausfindig machen und die Anweisungen befolgen, um es aus dem alten Controller-Modul zu entfernen und in das neue Controller-Modul einzufügen.</block>
   <block id="110fdfa3e2fa88169ab703b0f8e4ff64" category="list-text">Suchen Sie das Boot-Medium mithilfe der folgenden Abbildung oder der FRU-Zuordnung auf dem Controller-Modul:</block>
-  <block id="545b9a93e390e8eeaa40a9d0a4152ed7" category="image-alt">drw 2600 Bootmedium repanimiert gif</block>
   <block id="24f8f61617801a89825594b0a18dda65" category="list-text">Drücken Sie die blaue Taste am Startmediengehäuse, um die Startmedien aus dem Gehäuse zu lösen, und ziehen Sie sie vorsichtig gerade aus der Buchse des Boot-Mediums heraus.</block>
   <block id="b61b6d46ee8d3a317aa312bcaf415bc6" category="admonition">Drehen oder ziehen Sie die Boot-Medien nicht gerade nach oben, da dadurch der Sockel oder das Boot-Medium beschädigt werden kann.</block>
   <block id="95d96e38d18207537b338dbeb4af27f9" category="list-text">Bewegen Sie die Startmedien auf das neue Controller-Modul, richten Sie die Kanten des Startmediums am Buchsengehäuse aus, und schieben Sie sie dann vorsichtig in die Buchse.</block>
@@ -79,7 +76,6 @@
   <block id="9452f6d1d428f83bab1f0e5a0924350f" category="list-text">Wenn die LED eingeschaltet ist und eingeschaltet ist, werden nicht geschriebene Daten auf NVMEM gespeichert.</block>
   <block id="47ef1c836e868d626421de8d71a299e6" category="paragraph">Dies tritt in der Regel während eines unkontrollierten Herunterfahrens auf, nachdem ONTAP erfolgreich gestartet wurde.</block>
   <block id="b739b134857dab60a93e85c752192f2e" category="list-text">Suchen Sie den NVMEM-Akku im Controller-Modul.</block>
-  <block id="64088c2186941bf4f870117c75fd3185" category="image-alt">drw 2600 nvmem-Akkuwechsel animiert gif</block>
   <block id="8102785ce5a527a51011651cf58773d3" category="list-text">Suchen Sie den Batteriestecker, und drücken Sie den Clip auf der Vorderseite des Batteriesteckers, um den Stecker aus der Steckdose zu lösen, und ziehen Sie dann das Akkukabel aus der Steckdose.</block>
   <block id="0d75945d13c2726bbe988d2cc4dc6254" category="list-text">Fassen Sie den Akku an, und drücken Sie die blaue Verriegelungslasche, die mit DRUCKTASTE gekennzeichnet ist, und heben Sie den Akku aus dem Halter und dem Controller-Modul heraus.</block>
   <block id="f32f9406f781996e8d8f51dd5b46fb1f" category="list-text">Bringen Sie den Akku in das Ersatzcontrollermodul.</block>
@@ -95,7 +91,6 @@
   <block id="bc6f68ddb18a2f2b33244b2f8f11420b" category="admonition">Halten Sie das DIMM vorsichtig an den Rändern, um Druck auf die Komponenten auf der DIMM-Leiterplatte zu vermeiden.</block>
   <block id="19cc15a56d312c0b108cb53b467856b0" category="paragraph">Die Anzahl und Anordnung der System-DIMMs hängt vom Modell Ihres Systems ab.</block>
   <block id="e5f0d91d63a27f446a79033eff3b041b" category="paragraph">Die folgende Abbildung zeigt die Position der System-DIMMs:</block>
-  <block id="dce8ed7196aa5b8c52bf829b471ee8b2" category="image-alt">drw 2600 dimms</block>
   <block id="30cf6cba6f16aa09e8e855baf456b12c" category="list-text">Wiederholen Sie diese Schritte, um bei Bedarf weitere DIMMs zu entfernen.</block>
   <block id="e0d3227927926224ec3c1a434d4f3aa3" category="list-text">Vergewissern Sie sich, dass der NVMEM-Akku nicht an das neue Controller-Modul angeschlossen ist.</block>
   <block id="dcc90ea8bee87c3c59324148ecf01aa4" category="list-text">Suchen Sie den Steckplatz, in dem Sie das DIMM installieren.</block>
@@ -111,7 +106,6 @@
   <block id="0cc9340f0080afcdb2d028f17ff49030" category="list-text">Suchen Sie das Caching-Modul auf der Rückseite des Controller-Moduls, und entfernen Sie es.</block>
   <block id="bea349f51fb4fb1a5633e236822fa5b4" category="list-text">Drücken Sie die Freigabelasche.</block>
   <block id="c9b10c926499cf0c03511222cfe41c81" category="list-text">Entfernen Sie den Kühlkörper.</block>
-  <block id="e37270df64cfa143fcbfaedd83a3c109" category="image-alt">drw 2600 fcache</block>
   <block id="6bbc48da569bffd650e8c37eb91825ba" category="list-text">Ziehen Sie das Zwischenmodul vorsichtig gerade aus dem Gehäuse heraus.</block>
   <block id="bb9fc9627a5a2fc0453a6abc13985482" category="list-text">Verschieben Sie das Caching-Modul auf das neue Controller-Modul, richten Sie die Kanten des Cache-Moduls am Sockelgehäuse aus und schieben Sie es vorsichtig in den Sockel.</block>
   <block id="a781ea6900e45102f1a4339df14baa30" category="list-text">Vergewissern Sie sich, dass das Caching-Modul ganz und ganz im Sockel sitzt.</block>
@@ -147,7 +141,6 @@
   <block id="24718eccce3cd133d143bec81426275c" category="list-text">Eine Warnmeldung über eine nicht übereinstimmende System-ID und die Aufforderung, die System-ID außer Kraft zu setzen.</block>
   <block id="5882cd2f55c4bcf825c0675d56d4677a" category="list-text">Eine Eingabeaufforderung mit einer Warnmeldung, dass Sie beim Aufrufen des Wartungsmodus in einer HA-Konfiguration sicherstellen müssen, dass der gesunde Controller weiterhin ausgefallen ist. Sie können sicher reagieren<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> Um diese Eingabeaufforderungen.</block>
   <block id="34aec6eeba64b78b33ad52ec1e1cd899" category="summary">Mithilfe der Dokumentation des Storage-Systems können Sie Ihr System installieren, einrichten und warten.</block>
-  <block id="1f747d7a59e4bce713446ceffc970c2d" category="doc">FAS2600 System-Dokumentation</block>
   <block id="6f00135662159734f14958c139370d97" category="summary">Sie müssen die Voraussetzungen für den Austausch prüfen und die richtige für Ihre Version des ONTAP Betriebssystems auswählen.</block>
   <block id="32ab532730861844c01e0b025a4708f5" category="doc">Übersicht über den Austausch von Controller-Modulen - FAS2600</block>
   <block id="271c5a034296b2fd598c729a341c9b8a" category="list-text">Alle Festplatten-Shelfs müssen ordnungsgemäß funktionieren.</block>
@@ -279,7 +272,6 @@
   <block id="63d6811d18004212a8a99f9cbad84f37" category="paragraph">Um auf Komponenten innerhalb des Controllers zuzugreifen, müssen Sie zuerst das Controller-Modul aus dem System entfernen und dann die Abdeckung am Controller-Modul entfernen.</block>
   <block id="c9401da24274c9e8ecd7f5ccb9df6dcd" category="section-title">Schritt 3: Ersetzen Sie die NVMEM-Batterie</block>
   <block id="3a06d166e4691c3d19ec6d1b43ab5e47" category="paragraph">Um die NVMEM-Batterie in Ihrem System zu ersetzen, müssen Sie die ausgefallene NVMEM-Batterie aus dem System entfernen und durch eine neue NVMEM-Batterie ersetzen.</block>
-  <block id="31fd200f667413cd052c85fc2b0d53a1" category="image-alt">drw 2600 nvmem Batt repanimiert gif</block>
   <block id="1229e45dcb2b7951712e8e28495e0abe" category="list-text">Entfernen Sie den Akku aus dem Controller-Modul und legen Sie ihn beiseite.</block>
   <block id="0f322cdbcef235dfa9123cd81942ce9b" category="list-text">Entfernen Sie den Ersatzakku aus der Verpackung.</block>
   <block id="f8513ba35fb79fff664658165975390f" category="list-text">Stecken Sie den Batteriestecker wieder in das Controller-Modul.</block>
@@ -321,7 +313,6 @@
   <block id="e5c77732c72900008e8eb20c104f7bfd" category="paragraph">Zum Austauschen des Startmediums müssen Sie das beeinträchtigte Controller-Modul entfernen, das Ersatzstartmedium installieren und das Boot-Image auf ein USB-Flash-Laufwerk übertragen.</block>
   <block id="e2f9fc0be7a0bec719378633fe5d0324" category="section-title">Schritt 1: Entfernen Sie das Controller-Modul</block>
   <block id="d67487df6ee13914e99a3efddf90ac53" category="section-title">Schritt 2: Ersetzen Sie die Startmedien</block>
-  <block id="88de6a437c20bc32d754f16685e940b8" category="image-alt">drw 2600 Bootmedium bewegen aminiert gif</block>
   <block id="29ef8f0172c0b52d39a6c89ac64efff2" category="list-text">Richten Sie die Kanten des Ersatzstartmediums an der Buchse des Boot-Mediums aus, und schieben Sie ihn dann vorsichtig in die Buchse.</block>
   <block id="fc4428fa3182d6199ab3cb1c414d2e4c" category="list-text">Schließen Sie die Abdeckung des Controller-Moduls.</block>
   <block id="0e76e990df2967dffc59ccd2aa5f6178" category="section-title">Schritt 3: Übertragen Sie das Startabbild auf das Startmedium</block>
@@ -369,7 +360,6 @@
   <block id="5f02cc98e909c306d397a3ee47760670" category="list-text">Sie muss über das entsprechende Betriebssystem für das zu installierenden Cache-Modul verfügen.</block>
   <block id="ee9a7c8426388e1f808989ad540f6665" category="list-text">Es muss die Caching-Kapazität unterstützen.</block>
   <block id="8fea1e736ea79bea9594e914de0e1535" category="list-text">Alle anderen Komponenten des Storage-Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.</block>
-  <block id="b37236c3c4a90442c4db951305ea57a0" category="image-alt">drw 2600 fcache animiert repl gif</block>
   <block id="8b70ff461d015cb15798b71a827488de" category="list-text">Richten Sie die Kanten des Cache-Moduls an der Buchse im Gehäuse aus, und schieben Sie sie dann vorsichtig in die Buchse.</block>
   <block id="1ab6b8fc7d00d8cf418a98c2a06619a5" category="doc">Wiederherstellen und Verifizieren der Konfiguration – FAS2600</block>
   <block id="8507c94c124586b53f61fef1fe9f8fe8" category="section-title">Schritt: Überprüfen Sie den HA-Status des Chassis und legen Sie diesen fest</block>
@@ -446,7 +436,6 @@
   <block id="7030094db64cfe33a24436a2528348b6" category="inline-link-macro">Video zum Austausch der AFF FAS2600 Stromversorgung</block>
   <block id="e85e66f99bf70a0cd52615d346aa4f9f" category="paragraph"><block ref="e85e66f99bf70a0cd52615d346aa4f9f" category="inline-link-macro-rx"></block></block>
   <block id="a5c83d1259ea5fcd94515dacb438e884" category="list-text">Identifizieren Sie das zu ersetzenden Netzteil anhand von Konsolenfehlern oder über die LEDs an den Netzteilen.</block>
-  <block id="0bc322a4c7df540fa4b8bd8e6252f0cb" category="image-alt">drw 2600 psu repl animiert gif</block>
   <block id="2f0a975fc1ed0b8e647c1d0ebafd8aca" category="list-text">Stellen Sie sicher, dass sich der ein-/Ausschalter des neuen Netzteils in der Stellung aus befindet.</block>
   <block id="b93feae264747df3207fa8db06df964b" category="list-text">Schließen Sie die Verkabelung des Netzteils wieder an:</block>
   <block id="ad04e9c3de75924430b74401ad8fdedb" category="list-text">Schließen Sie das Netzkabel wieder an das Netzteil und die Stromversorgung an.</block>
@@ -467,12 +456,10 @@
   <block id="7fc9c28875c33b71c57dca88d46c06f5" category="list-text">Wenn die NVMEM-LED nicht blinkt, befindet sich kein Inhalt in der NVMEM. Sie können die folgenden Schritte überspringen und mit der nächsten Aufgabe bei diesem Verfahren fortfahren.</block>
   <block id="1bfb1175d15687b3de74a4e057e796f8" category="list-text">Wenn die NVMEM-LED blinkt, befinden sich Daten in der NVMEM und Sie müssen die Batterie trennen, um den Speicher zu löschen:</block>
   <block id="19b417244764fbe330d4b1a03b632913" category="list-text">Suchen Sie den Akku, drücken Sie den Clip auf der Vorderseite des Batteriesteckers, um den Sicherungsclip von der Steckdose zu lösen, und ziehen Sie dann das Akkukabel aus der Steckdose.</block>
-  <block id="159b1c0ea96f8dc44e01227e342600c4" category="image-alt">drw 2600 nvmem-Akku trennen den Stecker</block>
   <block id="9d80f287709beea4f34371644025d541" category="list-text">Vergewissern Sie sich, dass die NVMEM-LED nicht mehr leuchtet.</block>
   <block id="2df619b7d1a08e00bedcc91e7f49e549" category="list-text">Schließen Sie den Batteriestecker wieder an.</block>
   <block id="cc0229491324372575d8e9833b910f02" category="list-text">NVMEM-LED erneut prüfen.</block>
   <block id="169525b3af51c8a1a1183325e19e3768" category="list-text">Beachten Sie die Ausrichtung des DIMM-Moduls in der Buchse, damit Sie das ErsatzDIMM in die richtige Ausrichtung einsetzen können.</block>
-  <block id="1037b1c609239a848832f786d5ffba1b" category="image-alt">drw 2600 dimm repanimiert gif</block>
   <block id="780061b11a4f33cc8eecc0c1fd85c471" category="list-text">Entfernen Sie das Ersatz-DIMM aus dem antistatischen Versandbeutel, halten Sie das DIMM an den Ecken und richten Sie es am Steckplatz aus.</block>
   <block id="54c4ac61314c29265db975e7abc3e29f" category="paragraph">Die Kerbe zwischen den Stiften am DIMM sollte mit der Lasche im Sockel aufliegen.</block>
   <block id="07a1495b75de55dde311b89c9fa4d86b" category="list-text">Drücken Sie vorsichtig, aber fest auf die Oberseite des DIMM, bis die Auswurfklammern über den Kerben an den Enden des DIMM einrasten.</block>
@@ -527,7 +514,6 @@
   <block id="559d6c27ed3408b0bae6821791181311" category="list-text">Drücken Sie die Entriegelungstaste auf der Laufwerkseite.</block>
   <block id="634588567e302407f3ac38a5b8f3a5b7" category="paragraph">Je nach Speichersystem befinden sich die Festplatten mit der Entriegelungstaste oben oder links auf der Laufwerksfläche.</block>
   <block id="01c18660694535ca4b59c21e0e893461" category="paragraph">Die folgende Abbildung zeigt beispielsweise ein Laufwerk mit der Entriegelungstaste oben auf der Laufwerksfläche:</block>
-  <block id="9ab2cc930ccadfa1c2d9b8b44b66c57d" category="image-alt">2240 Festplatte wird entfernt</block>
   <block id="572908986c1b5c1fc8dc618c9ad316ad" category="paragraph">Der Nockengriff auf der Laufwerkfeder öffnet sich teilweise und das Laufwerk löst sich von der Mittelplatine aus.</block>
   <block id="0d8323eada848f2a4fe8cf79e773c078" category="list-text">Ziehen Sie den Nockengriff in die vollständig geöffnete Position, um den Laufwerkantrieb von der Mittelplatine zu lösen.</block>
   <block id="7dc8175f2f2fc69f2fb815cbd3873bf3" category="image-alt">drw-Laufwerk geöffnet</block>
@@ -790,7 +776,6 @@
   <block id="5501530668ccd4a98e422eaa9f70f55a" category="list-text">Entfernen Sie das Kabelführungs-Gerät aus dem Controller-Modul und legen Sie es beiseite.</block>
   <block id="36d204b1be645d0aebb6ca849fa255f4" category="list-text">Drücken Sie beide Verriegelungsriegel nach unten, und drehen Sie dann beide Verriegelungen gleichzeitig nach unten.</block>
   <block id="ac24bf2266610a02dbe8c4e0abac3b09" category="paragraph">Das Controller-Modul wird leicht aus dem Chassis entfernt.</block>
-  <block id="3be32b1e08fc73e5b4d38ae7e8333262" category="image-alt">drw a800 pcm entfernen</block>
   <block id="28f415f726deccd1fbd194cf6d26050d" category="cell">Verriegelungsverschluss</block>
   <block id="0f0a79780676cf6ae8f3282e89437c68" category="paragraph">Sicherungsstift</block>
   <block id="ac79e6e31df78a7f6d609aadb6ef37c1" category="list-text">Schieben Sie das Controller-Modul aus dem Gehäuse.</block>
@@ -798,7 +783,6 @@
   <block id="3df9f71f0d9a072a7166e0d233cad24a" category="list-text">Das Steuermodul auf eine stabile, flache Oberfläche legen und den Luftkanal öffnen:</block>
   <block id="83d690824ebadc71a7a918158b4bb4cf" category="list-text">Drücken Sie die Verriegelungslaschen an den Seiten des Luftkanals in Richtung der Mitte des Controller-Moduls.</block>
   <block id="d487dde166c80d206e555bcad2089ffa" category="list-text">Schieben Sie den Luftkanal in Richtung der Lüftermodule, und drehen Sie ihn dann nach oben in die vollständig geöffnete Position.</block>
-  <block id="f05cf61d6462bc25cbab09c89f88ff25" category="image-alt">drw a800 Freiluftkanal</block>
   <block id="bf1b040c014a82c7128928f952e50325" category="cell">Verriegelungsklammern für Luftkanäle</block>
   <block id="cdaaae7c9540237628621c761db1e26f" category="paragraph">Schieben Sie den Luftkanal in Richtung Lüftermodule</block>
   <block id="2ebdec22d5a391965cdb58290055d04c" category="paragraph">Luftkanal in Richtung Lüftermodule drehen</block>
@@ -826,7 +810,6 @@
   <block id="af9622020670ce2b86cd2845b04b00f4" category="list-text">Schwenken Sie den Luftkanal bis nach unten zum Controller-Modul.</block>
   <block id="97be101d543785854ad18ca62a561d32" category="list-text">Schieben Sie den Luftkanal in Richtung der Steigleitungen, bis die Verriegelungslaschen einrasten.</block>
   <block id="8bcf9822fb44294b0b3f73b10a473668" category="list-text">Überprüfen Sie den Luftkanal, um sicherzustellen, dass er richtig sitzt und fest sitzt.</block>
-  <block id="8875897a299dc9a018b6d4466588d015" category="image-alt">drw a700s schließen den Luftkanal</block>
   <block id="7fd4194660538f843b1d86284f560e49" category="cell">Verriegelungslaschen</block>
   <block id="7eaa7d8ab118781c7e4223cc8f206b4d" category="paragraph">Stößel schieben</block>
   <block id="4e873bb9bcf661825139a3dd0549c569" category="list-text">Schließen Sie das Netzkabel an das Netzteil an, setzen Sie die Sicherungshülse des Netzkabels wieder ein, und schließen Sie dann das Netzteil an die Stromquelle an.</block>
@@ -856,7 +839,6 @@
   <block id="489f4d822f036e8983d65332d7a37f54" category="section-title">Schritt 3: Bewegen Sie die Lüfter</block>
   <block id="6e84c6f5de78e87ef68b12592b7a3451" category="paragraph">Sie müssen die Lüfter vom beeinträchtigten Controller-Modul in das Ersatzmodul verschieben, wenn ein ausgefallenes Controller-Modul ersetzt wird.</block>
   <block id="913828212c34150e0ba19cde9f31f04f" category="list-text">Entfernen Sie das Lüftermodul, indem Sie die Verriegelungslaschen an der Seite des Lüftermoduls einklemmen und dann das Lüftermodul gerade aus dem Controller-Modul herausheben.</block>
-  <block id="79a34d0b71ca1ad3fdbbb6bb3a548146" category="image-alt">drw a800 ersetzen Sie den Lüfter</block>
   <block id="a1502c1dce561f00d4aba662f80c5fa3" category="cell">Verriegelungslaschen des Lüfters</block>
   <block id="a93e082238b757e44010c2ad81d1aba6" category="paragraph">Lüftermodul</block>
   <block id="219dba91289309b728804e9ddd5f60be" category="list-text">Schieben Sie das Lüftermodul in das Ersatzcontrollermodul, und installieren Sie dann das Lüftermodul, indem Sie die Kanten an der Öffnung im Controller-Modul ausrichten und das Lüftermodul dann in das Controller-Modul schieben, bis die Verriegelungen einrasten.</block>
@@ -955,7 +937,6 @@
   <block id="3d3e37cf62322510ce904afbb64e377c" category="list-text">Installieren Sie den Riser in das Controller-Modul:</block>
   <block id="45d542d338f0ff3b68658673f347e069" category="list-text">Setzen Sie alle SFP-Module wieder ein, die von den PCIe-Karten entfernt wurden.</block>
   <block id="4669ec523c55ca5b4ab8cdb07992b608" category="paragraph">Nachdem Sie eine Komponente im Controller-Modul ausgetauscht haben, müssen Sie das Controller-Modul im Systemgehäuse neu installieren und starten.</block>
-  <block id="055ce7154e7ea0261c8667a0d628ee36" category="image-alt">drw a800 schließen Luftkanal</block>
   <block id="0e015f08a18b5c9fa9d809adaf81aeb9" category="paragraph">Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt.</block>
   <block id="868fb46f8db1c45bfa9a49dea454c35a" category="doc">Übersicht über den Austausch von Controller-Modulen - AFF A800</block>
   <block id="736818ee29ba3143ee0a9e06231deb0e" category="list-text">Der gesunde Regler muss in der Lage sein, den zu ersetzenden Regler zu übernehmen (bezeichnet in diesem Verfahren als „`eingeschränkte Steuerung`“).</block>
@@ -997,7 +978,6 @@
   <block id="0ba2b3e0a887666765eb2d690768c576" category="cell">Für...</block>
   <block id="6c2f5875cec2a33db9d2ba4133823107" category="paragraph">100-GbE-Kabel</block>
   <block id="2a430083e05af594870aa5cbc7618768" category="paragraph">X6211A-05 (112-00595), 0,5 m</block>
-  <block id="8cdf95f9edee9fd494121eca54616173" category="paragraph"><block ref="8cdf95f9edee9fd494121eca54616173" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b772890c716d468c4b26510d897c0276" category="paragraph">HA Interconnect</block>
   <block id="3d8315ff7403b2d22ef55f5c6720369f" category="paragraph">X6211A-05 (112-00595), 0,5 m;</block>
   <block id="a3ad201a1a037cefc3f3acc547d02b93" category="paragraph">X6211-1 (112-00573), 1 m</block>
@@ -1014,18 +994,15 @@
   <block id="8e80f86275757e786a161de54316cd0d" category="paragraph">X66240A-5 (112-00600), 5 m</block>
   <block id="bcaa51b0b0d951db8b6df73cb52ce54d" category="paragraph">RJ-45 (je nach Bestellung)</block>
   <block id="e681a3b45989b468533c4b90ee960bf9" category="paragraph">Keine Angabe</block>
-  <block id="af9561bb1d24f4c26f5879aaf09a1c65" category="paragraph"><block ref="af9561bb1d24f4c26f5879aaf09a1c65" category="inline-image-macro-rx" type="image"></block></block>
   <block id="fe4dbcab9b910577e5035e97ac068dae" category="paragraph">Vereinfachtes</block>
   <block id="d1a3b3306889b878e71ae42b7b83d579" category="paragraph">Fibre Channel</block>
   <block id="5ede655916f5f4ce8041f40a2cdc9dae" category="paragraph">X66250-2 (112-00342) 2 m;</block>
   <block id="2a351329d6d1f8e46f32e023c62f5af1" category="paragraph">X66250-5 (112-00344) 5 m;</block>
   <block id="c0c188ddd9214c7abf4833d05538b260" category="paragraph">X66250-15 (112-00346) 15m;</block>
   <block id="e09cb337f16f3eb0696b405cbc2bce54" category="paragraph">X66250-30 (112-00347) 30 m</block>
-  <block id="aa1a174912bdf6af0df4cc4027cdd0f4" category="paragraph"><block ref="aa1a174912bdf6af0df4cc4027cdd0f4" category="inline-image-macro-rx" type="image"></block></block>
   <block id="2daea530a029187535b9b6d53d920b9d" category="paragraph">Micro-USB-Konsolenkabel</block>
   <block id="ef46fcdc16d2411ced3c889283ec70f6" category="paragraph">Konsolenverbindung während der Software-Einrichtung</block>
   <block id="0d39f1b0a5cbdec5ccf74bfa4519fe8c" category="paragraph">Stromkabel</block>
-  <block id="ec58e6df26c7cd49356dbb0f54140310" category="paragraph"><block ref="ec58e6df26c7cd49356dbb0f54140310" category="inline-image-macro-rx" type="image"></block></block>
   <block id="63b4031694d3970674e1de7cfbae06ce" category="paragraph">System einschalten</block>
   <block id="9cce7e4c2aef0e645d2e38ae612c4ed8" category="list-text">Laden Sie die herunter, und füllen Sie die aus <block ref="cb0390cbe2f3cf678134885ff143b6ba" category="inline-link-macro-rx"></block>.</block>
   <block id="a436a0fadfb3f84534d276f9e921604e" category="section-title">Schritt 2: Installieren Sie die Hardware</block>
@@ -1034,9 +1011,7 @@
   <block id="1a24d62ae37ede800baaffb6a6a891c2" category="inline-link-macro">Installieren von SuperRail in einem Vierpolige-Rack</block>
   <block id="1d73b4bc0bd82d2084a03bfdfa9c1378" category="list-text">Installieren und sichern Sie das System anhand der im Schienensatz enthaltenen Anweisungen.</block>
   <block id="9f54b5b254fa807cab889d1440acbc05" category="admonition">Sie müssen sich der Sicherheitsbedenken im Zusammenhang mit dem Gewicht des Systems bewusst sein.</block>
-  <block id="a0c86487fec36ce37cba5bd44aad6322" category="image-alt">drw affa800 Gewicht Achtung</block>
   <block id="5f640e6d3479fd7b72c9ae7db89d3548" category="list-text">Schließen Sie Kabelmanagement-Geräte (wie abgebildet) an.</block>
-  <block id="820d203fae081b8e985e10f5ba7a6241" category="image-alt">drw affa800 installieren Sie die Kabelführung</block>
   <block id="d8f1926eaea2f861c4642d7c0de8a8ca" category="list-text">Bringen Sie die Blende auf die Vorderseite des Systems an.</block>
   <block id="9e14ed70bdc7e6d3e7af539c06d65972" category="section-title">Schritt 3: Kabelcontroller</block>
   <block id="d418137185c0ce2bdea577947a57960c" category="paragraph">Die Cluster Ihrer Plattform müssen über die Switch-Methode mit zwei Nodes oder die Netzwerkmethode für Cluster Interconnect verkabelt werden. Optional ist die Verkabelung zu den Fibre Channel- oder iSCSI-Hostnetzwerken oder Direct-Attached Storage möglich. Diese Verkabelung ist nicht exklusiv; Sie können Kabel zu einem Host-Netzwerk und Speicher haben.</block>
@@ -1052,54 +1027,35 @@
   <block id="d42448253898da20d79d02f414303cb3" category="video-title">Animation – Verkabeln Sie einen 2-Node-Cluster ohne Switches</block>
   <block id="48c7c41b72e1d678923ce3571aa65b2d" category="cell">Schritt</block>
   <block id="e19d235ecefc26b5aac95b096a664ec6" category="cell">Führen Sie die Ausführung an jedem Controller-Modul aus</block>
-  <block id="f8793589b1deeb1a1641ea1f77deadeb" category="paragraph"><block ref="f8793589b1deeb1a1641ea1f77deadeb" category="inline-image-macro-rx" type="image"></block></block>
   <block id="34cd57c6976f4d17a4a24783a05e9e43" category="paragraph">HA Interconnect Ports verkabeln:</block>
   <block id="3b8092245bf9f73ee2eb61bb4346915b" category="list-text">e0b bis e0b</block>
-  <block id="7b5e5fd057334f9dbd71f6b577ff7677" category="list-text">e1b bis e1b<block ref="bfc87ef803b280fae3edbf21a31c0077" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="1f8423b3a1c8ebe55e8111993cede2a3" category="paragraph"><block ref="1f8423b3a1c8ebe55e8111993cede2a3" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6baba1e3fa15a886983640e637a762e9" category="paragraph">Verkabeln Sie die Cluster-Interconnect-Ports:</block>
   <block id="4f6495d505dded911984524478da41af" category="list-text">e0a an e0a</block>
-  <block id="9fb25d51d61d61c71697db66aff5e4f9" category="list-text">e1a bis e1a<block ref="83b8377d063700297200cb5f90f60dd7" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="5defeb12e66d13c969cbb3bb31457701" category="paragraph"><block ref="5defeb12e66d13c969cbb3bb31457701" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="4357958f190ff6c4c081ade05a73d53e" category="paragraph"><block ref="4357958f190ff6c4c081ade05a73d53e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="2cd55300ec4cb3223c5bc06b35b221bc" category="paragraph">Schließen Sie die Stromkabel AN dieser Stelle NICHT an.</block>
   <block id="8318f7a477919801182a78d50d64dd67" category="list-text">Informationen zur Durchführung optionaler Verkabelung finden Sie unter:</block>
-  <block id="1cf474ea9658d4a6b7324feffa3967fd" category="list-text"><block ref="c9f609c3e828427f5688ee58753894e5" category="inline-xref-macro-rx"></block></block>
-  <block id="0bb220d44bed0335a5dab4f4a0ed36a4" category="list-text"><block ref="8aad4abef45a2309ab3038b2b3e9ed79" category="inline-xref-macro-rx"></block></block>
-  <block id="0f156d5bceb3a6e3966f04370c598d85" category="list-text"><block ref="0119b77f0ae462187ef1cbf452a5656b" category="inline-xref-macro-rx"></block></block>
-  <block id="f0571b16e45cfcf3e75dcf1e773c291c" category="list-text"><block ref="bdb41f1e9db6683cf1f3c73d0285f818" category="inline-xref-macro-rx"></block></block>
   <block id="f2371181894421446afe16fe1e5da25b" category="inline-link-macro">Schritt 4: System-Setup und -Konfiguration abschließen</block>
   <block id="9bb6dc35b9c3cfb584e92ef6bf229185" category="list-text">Informationen zum Abschließen der Einrichtung des Systems finden Sie unter <block ref="b9ddf35bfac2437b7499c5c6e18fd46e" category="inline-link-macro-rx"></block>.</block>
   <block id="6c0e530aa28d8009701169ec145c45b2" category="section-title">Option 2: Kabel ein geschalteter Cluster</block>
   <block id="f9e35b540e44cb04a6bd15708b14606e" category="paragraph">Cluster Interconnect- und Management-Netzwerk-Ports an den Controllern sind mit Switches verbunden, während die HA Interconnect Ports an beiden Controllern verkabelt sind.</block>
   <block id="206e3e9f1269c68f454669b328348162" category="video-title">Animation - Verkabeln Sie ein geschalteter Cluster</block>
-  <block id="efc9b170c93cc5c3475dff9a11057add" category="paragraph">Verkabeln Sie die Cluster-Interconnect-Ports mit den 100-GbE-Cluster-Interconnect-Switches. ** e0a ** e1a<block ref="153c9110464651fb1eae9cc4405e1fba" category="inline-image-macro-rx" type="image"></block></block>
   <block id="83634456d26d63819e03234dcece6b98" category="section-title">Optionale Verkabelung: Kabelkonfigurationsabhängige Optionen</block>
   <block id="af28ebab5d3a50ec2aa0d0aefd31b178" category="paragraph">Sie verfügen über eine konfigurationsabhängige optionale Verkabelung mit den Fibre Channel- oder iSCSI-Hostnetzwerken oder dem Direct-Attached Storage. Diese Verkabelung ist nicht exklusiv; Sie können die Verkabelung zu einem Host-Netzwerk und Speicher haben.</block>
   <block id="97af7274dc94a2eacaad27110ee92a44" category="section-title">Option 1: Kabel zu einem Fibre Channel-Hostnetzwerk</block>
   <block id="b24498c2793e7d8d3cefa3bb843a56da" category="paragraph">Fibre Channel-Ports auf den Controllern sind mit Fibre Channel Host-Netzwerk-Switches verbunden.</block>
   <block id="c4ca4238a0b923820dcc509a6f75849b" category="paragraph">1</block>
-  <block id="f2b3fa371a81e53ad6486e565b845d6e" category="paragraph">Verkabeln Sie die Ports 2a bis 2d mit den FC-Host-Switches.<block ref="81f0d6877ff05391413cad4fd461fa9d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c81e728d9d4c2f636f067f89cc14862c" category="paragraph">2</block>
   <block id="41c3aa6b15da307401c926e42ea6e535" category="paragraph">Um andere optionale Kabel durchzuführen, wählen Sie aus:</block>
   <block id="eccbc87e4b5ce2fe28308fd9f2a7baf3" category="paragraph">3</block>
   <block id="ed6aa14dcddd8960a96a377341c9d252" category="section-title">Option 2: Kabel zu einem 10-GbE-Hostnetzwerk</block>
   <block id="7f41e7efae96b1a03620ad35c03b48c9" category="paragraph">10-GbE-Ports auf den Controllern sind mit 10-GbE-Host-Netzwerk-Switches verbunden.</block>
-  <block id="cbafe2caf6dcedc097aead608523640d" category="paragraph">Verkabeln Sie die Ports e4a über e4d mit den 10 GbE Host Netzwerk-Switches.<block ref="d58e771670be1cdb48adcf90823af25d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b508a654c509eed8ec1ae4dc75fdfc9a" category="section-title">Option 3: Controller mit einem einzelnen Festplatten-Shelf verkabeln</block>
   <block id="722164afb5db2ef3c2f2cf14fc383cba" category="paragraph">Sie müssen jeden Controller mit den NSM-Modulen am NS224-Laufwerk-Shelf verkabeln.</block>
   <block id="5fac6017ac5f7a2aad56f49afbe00547" category="paragraph">Verwenden Sie die Animation oder die tabellarischen Schritte, um Ihre Controller mit einem einzelnen Shelf zu verkabeln:</block>
   <block id="837918aaa69464badcf35f3fe9990380" category="video-title">Animation – Verkabeln Sie die Controller mit einem einzelnen Laufwerk-Shelf</block>
-  <block id="dcbdf1c0d1b9f68d0faeb146daed7433" category="paragraph"><block ref="dcbdf1c0d1b9f68d0faeb146daed7433" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="80fbd508bddeffc33092c60be0d4f6b0" category="paragraph">Controller A am Shelf verkabeln: <block ref="5a7e82fa4b93fb16c2c5bc44a8522f5a" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="5089e1d089fd198b7fe04eae5c1ed6b8" category="paragraph"><block ref="5089e1d089fd198b7fe04eae5c1ed6b8" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="e6dd0f6c8da4411248f9566cf343b96a" category="paragraph">Controller B am Shelf verkabeln: <block ref="cac8a5d3fb17ab489df054a6d41ea9bd" category="inline-image-macro-rx" type="image"></block></block>
   <block id="67f8e001ff11a5ea0b9591fadb082aee" category="section-title">Option 4: Controller mit zwei Festplatten-Shelfs verkabeln</block>
   <block id="a496c0eee37cdb410fb5999f04b37d60" category="paragraph">Sie müssen jeden Controller an beiden NS224 Laufwerk-Shelfs mit den NSM-Modulen verkabeln.</block>
   <block id="752a20127a073c8fcfed6924719fb0ed" category="paragraph">Verwenden Sie die Animation oder die tabellarischen Schritte, um Ihre Controller mit zwei Laufwerk-Shelfs zu verkabeln:</block>
   <block id="967cea93964caa083c2f02eb64b559e9" category="video-title">Animation – Verkabeln Sie die Controller mit zwei Laufwerk-Shelfs</block>
-  <block id="d79c126fd4481ac23425d8456f7afe5b" category="paragraph">Verbinden Sie Controller A mit den Shelfs: <block ref="33e04cf68a3af49b0ee4d01ad0d7ef57" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="3054630c0e5edbd6da4f93a401050c21" category="paragraph">Controller B mit den Shelfs verkabeln: <block ref="4ea96729fae2f1ab6cad14d31d1c7ccf" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ca6a767f42962c9e0a0d4a74740024b9" category="paragraph">Führen Sie die Systemeinrichtung und -Konfiguration mithilfe der Cluster-Erkennung mit nur einer Verbindung zum Switch und Laptop durch, oder indem Sie direkt einen Controller im System verbinden und dann eine Verbindung zum Management-Switch herstellen.</block>
   <block id="11b77e98d05566e5db1d8a342bd88e64" category="section-title">Option 1: Führen Sie die Systemeinrichtung und -Konfiguration durch, wenn die Netzwerkerkennung aktiviert ist</block>
   <block id="03acfd01fa7e9005a658be1126450720" category="paragraph">Wenn die Netzwerkerkennung auf Ihrem Laptop aktiviert ist, können Sie das System mit der automatischen Cluster-Erkennung einrichten und konfigurieren.</block>
@@ -1128,9 +1084,7 @@
   <block id="652ce79e32316dab29518241b6328f56" category="list-text">Stellen Sie den Konsolenport des Laptops oder der Konsole auf 115,200 Baud mit N-8-1 ein.</block>
   <block id="43a2f5067c714d18745f4ff886e4d131" category="admonition">Informationen zur Konfiguration des Konsolenport finden Sie in der Online-Hilfe Ihres Laptops oder der Konsole.</block>
   <block id="7260ebf97e775ac420f626e20bb3bf2d" category="list-text">Schließen Sie das Konsolenkabel an den Laptop oder die Konsole an, und schließen Sie den Konsolenport am Controller mithilfe des im Lieferumfang des Systems verwendeten Konsolenkabels an.</block>
-  <block id="217b7a2dfa322681da15c973e1a5f487" category="image-alt">drw-Konsolenverbindung affa800</block>
   <block id="831bf3baed03f4e44778e53eeb322aef" category="list-text">Verbinden Sie den Laptop oder die Konsole mit dem Switch im Management-Subnetz.</block>
-  <block id="6da02acc5640a92145614bae8f8d9a0f" category="image-alt">drw Client Management Subnetz afa800</block>
   <block id="9386f36e00ce2b82a21fbdf11cb34484" category="list-text">Weisen Sie dem Laptop oder der Konsole eine TCP/IP-Adresse zu. Verwenden Sie dabei eine Adresse, die sich im Management-Subnetz befindet.</block>
   <block id="2d2b36cae5d88031752403b7b340cbd9" category="list-text">Weisen Sie einem der Nodes eine erste Node-Management-IP-Adresse zu.</block>
   <block id="2cb29faf213707980883e98cd68af008" category="cell">Wenn das Managementnetzwerk DHCP enthält...</block>
@@ -1717,7 +1671,6 @@
   <block id="acd47cf4eb7a4076ffdc07861a0e849b" category="list-text">Kabel-Shelf NSM B-Port e0a zu Controller B-Steckplatz 3 Port a.</block>
   <block id="7be00b9b3d477b7e3040cb833bd9164b" category="list-text">Kabel-Shelf NSM B-Port e0b für Controller A-Steckplatz 3 Port B.</block>
   <block id="6e06431b37da6d52783c06ed54eb0e42" category="paragraph">Die folgende Abbildung zeigt die Verkabelung für ein Hot-Added Shelf mit einem RoCE-fähigen I/O-Modul pro Controller-Modul:</block>
-  <block id="8938c580277fb7fffe7bfaa223b07cc6" category="image-alt">drw ns224 a700 1 Shelf</block>
   <block id="387fb751376fe75512f4de0a3be8f22e" category="list-text">Wenn Sie ein oder zwei Shelfs mit zwei Sets von RoCE-fähigen Ports (zwei RoCE-fähige I/O-Module) in jedem Controller-Modul im laufenden Betrieb hinzufügen, füllen Sie die entsprechenden Teilschritte aus.</block>
   <block id="bb53c62475a4f28295dfd71302a53a3d" category="cell">Shelfs</block>
   <block id="d223aabe6d0751ac7fb17d3493f3c6c7" category="cell">Verkabelung</block>
@@ -1736,7 +1689,6 @@
   <block id="fc10913effb15f2e7e45af08900dd916" category="list-text">Kabel NSM B Port e0b an Controller A Steckplatz 3 Port B.</block>
   <block id="0dcadfb972a7b539c769d330f7ccc286" category="list-text">Fahren Sie mit Schritt 3 fort.</block>
   <block id="44602264e094d019e88a336cd27d0156" category="paragraph">Die folgende Abbildung zeigt die Verkabelung der ersten und zweiten Hot-Added Shelves:</block>
-  <block id="bda29c65071b0b49cc9a79c7f3ba0ceb" category="image-alt">drw ns224 a700 mit 2 Shelfs</block>
   <block id="100c5224303bd4ddbc570f323ec3b601" category="list-text">Wenn Sie ein Shelf mit nur einem Satz RoCE-fähiger Ports (eine RoCE-fähige PCIe-Karte) im laufenden Betrieb hinzufügen, führen Sie die folgenden Teilschritte aus, wenn Sie das einzige NS224-Shelf in Ihrem HA-Paar sind.</block>
   <block id="7f52c439783621a5d09c0e1eb50d4319" category="admonition">Bei diesem Schritt wird vorausgesetzt, dass Sie die RoCE-fähige PCIe-Karte in Steckplatz 5 installiert haben.</block>
   <block id="6f1539c78a094ce3c97746e4f05a0642" category="paragraph">Die folgende Abbildung zeigt die Verkabelung für ein Hot-Added Shelf mit einer RoCE-fähigen PCIe-Karte pro Controller-Modul:</block>
@@ -1811,28 +1763,22 @@
   <block id="b1dcdb6adb57e57f0ddb5a9240cca41f" category="video-title">Animation - ein Controller-Modul ersetzen</block>
   <block id="1f9529736c8bd4ae7629be26ea8da34d" category="list-text">Setzen Sie den Zeigefinger in den Verriegelungsmechanismus auf beiden Seiten des Controller-Moduls ein, drücken Sie den Hebel mit dem Daumen, und ziehen Sie den Controller vorsichtig einige Zentimeter aus dem Gehäuse.</block>
   <block id="edfea1a2881be4e7bcc10dfa9c8b3fc6" category="admonition">Wenn Sie Schwierigkeiten beim Entfernen des Controller-Moduls haben, setzen Sie Ihre Zeigefinger durch die Fingerlöcher von innen (durch Überqueren der Arme).</block>
-  <block id="0c7b55bb7aff6e5a8118717e6397155b" category="image-alt">drw a250 pcm ausbauen</block>
   <block id="e045615354060a83511b41ee31db4ae9" category="cell">Hebel</block>
   <block id="a76de2660bc401a58fcb77534d4a42e0" category="paragraph">Verriegelungsmechanismus</block>
   <block id="b73bf21f79f3c289f366daee581bf764" category="list-text">Fassen Sie die Seiten des Controller-Moduls mit beiden Händen an, ziehen Sie es vorsichtig aus dem Gehäuse heraus und legen Sie es auf eine flache, stabile Oberfläche.</block>
   <block id="4e292b7ed41b013fd58f6b9317045f27" category="list-text">Drehen Sie die Daumenschraube auf der Vorderseite des Controller-Moduls gegen den Uhrzeigersinn, und öffnen Sie die Abdeckung des Controller-Moduls.</block>
-  <block id="0c3e7a55198c30e93146d061467ce889" category="image-alt">die Abdeckung des drw a250-Controller-Moduls öffnen</block>
   <block id="e9deab90a3365474ad3f2beb8e513377" category="cell">Flügelschraube</block>
   <block id="a395074ef2c712dc5a0417266834035a" category="paragraph">Controller-Modulabdeckung.</block>
   <block id="7420f9b1d8e8ed836b7ae9c80124f6b8" category="list-text">Heben Sie die Luftkanalabdeckung heraus.</block>
-  <block id="22ecf0c78d63cfad3a4d14bb76e9e473" category="image-alt">drw a250 Luftkanalabdeckung entfernen</block>
   <block id="46dc7a6019d827f81ffce7b535eb038e" category="section-title">Schritt 2: Das Netzteil bewegen</block>
   <block id="309cd2af9d204470ca807bef5f4f1fa9" category="paragraph">Wenn Sie ein Controller-Modul ersetzen, müssen Sie das Netzteil vom beeinträchtigten Controller-Modul in das Ersatzcontrollermodul verschieben.</block>
   <block id="511831afd7b3843888ba00743f2e205e" category="list-text">Trennen Sie das Netzteil.</block>
-  <block id="59b278fa95360efca7786da48e036f4d" category="image-alt">drw a250 ersetzen sie das netzteil</block>
   <block id="67026bb70363d6be097582cad138cb32" category="list-text">Entfernen Sie das Lüftermodul, indem Sie die Seite des Lüftermoduls einklemmen und dann das Lüftermodul gerade aus dem Controller-Modul herausheben.</block>
-  <block id="14c3fdf178ecaf125c7a03c4cf179c95" category="image-alt">drw a250 Lüfter austauschen</block>
   <block id="6363c92adb40c2ba77ac54d58c15a070" category="list-text">Schieben Sie das Lüftermodul in das Ersatzcontrollermodul, richten Sie die Kanten des Lüftermoduls an der Öffnung im Controller-Modul aus, und schieben Sie dann das Lüftermodul in.</block>
   <block id="1229beab8577341c3e1295090613296f" category="section-title">Schritt 4: Verschieben Sie die Startmedien</block>
   <block id="631d48b6a978901aa9dd527f9e0c0de1" category="paragraph">Im AFF A250 befindet sich ein Boot-Medium unter dem Luftkanal im Controller-Modul. Sie müssen es vom beeinträchtigten Controller-Modul auf das Ersatzcontrollermodul verschieben.</block>
   <block id="24e3ea03dd6cd41feb1c45f7310ac774" category="paragraph">Um die Schraube zu entfernen, mit der die Bootsmedien befestigt sind, benötigen Sie einen #1 Magnetschraubendreher. Aufgrund der Platzbeschränkungen im Controller-Modul sollten Sie auch einen Magneten haben, um die Schraube darauf zu übertragen, damit Sie sie nicht verlieren.</block>
   <block id="208327117af481bf4a428ddcd144a3d8" category="list-text">Suchen und verschieben Sie die Startmedien vom Controller-Modul mit eingeschränkter Speicherfunktion in das Ersatzcontrollermodul.</block>
-  <block id="e09e6d2db19a96426f8b4d9fa4401743" category="image-alt">drw a250 ersetzen Startmedien</block>
   <block id="378896073d06c35c7666ecc139650bf3" category="cell">Entfernen Sie die Schraube, mit der das Boot-Medium am Motherboard im beeinträchtigten Controller-Modul befestigt ist.</block>
   <block id="42f1d337fd4fa932f99275b46ae051e9" category="paragraph">Heben Sie die Startmedien aus dem beeinträchtigten Controller-Modul.</block>
   <block id="c0a129ed8a4dffac36687970dd9e76e4" category="list-text">Entfernen Sie die Schraube mit dem #1-Magnetschraubendreher aus dem Startmedium und legen Sie sie sicher auf den Magneten.</block>
@@ -1840,7 +1786,6 @@
   <block id="f05dc6ae866c89472a3f7a9b59aa3e6a" category="list-text">Setzen Sie die Schraube mit dem #1-Magnetschraubendreher ein und ziehen Sie sie fest.</block>
   <block id="b87725fc2bdeda91a5fd85aed6e3e365" category="admonition">Beim Anziehen der Schraube auf dem Boot-Medium keine Kraft auftragen, da sie möglicherweise knacken kann.</block>
   <block id="3a03dd2c91e538d3e67a42cab9b8cce1" category="section-title">Schritt 5: Verschieben Sie die DIMMs</block>
-  <block id="3c2f4d45d9bb9dd0708e7cb1b34f4890" category="image-alt">drw a250 dimm Ersetzen</block>
   <block id="b01ebf76def2c231f4cfd6494e6308b3" category="admonition">Installieren Sie jedes DIMM in demselben Steckplatz, in dem es im beeinträchtigten Controller-Modul belegt ist.</block>
   <block id="8c4c883dc47946a34b3706d63b8b1efb" category="list-text">Schieben Sie die DIMM-Auswurfklammern langsam auf beiden Seiten des DIMM auseinander, und schieben Sie das DIMM aus dem Steckplatz.</block>
   <block id="e42df9e550215606cd6d3844a610b540" category="admonition">Halten Sie das DIMM an den Kanten, um einen Druck auf die Komponenten auf der DIMM-Leiterplatte zu vermeiden.</block>
@@ -1852,7 +1797,6 @@
   <block id="056e32e05ee357b7b5810599adfe19d7" category="section-title">Schritt 6: Verschieben Sie eine Mezzanine-Karte</block>
   <block id="c5bf586441a563a1c5456f0a84d2e336" category="paragraph">Um eine Mezzanine-Karte zu verschieben, müssen Sie die Verkabelung und alle QSFPs und SFPs aus den Ports entfernen, die Mezzanine-Karte auf den Ersatz-Controller verschieben, QSFPs und SFPs wieder an den Ports installieren und die Ports verkabeln.</block>
   <block id="f01e12831b76cf482945cbdc2c226aab" category="list-text">Suchen Sie die Mezzanine-Karten aus Ihrem Controller-Modul mit eingeschränkter Kartenfunktion und verschieben Sie sie.</block>
-  <block id="d69e481252f8954ecd0bb6e140318056" category="image-alt">drw a250 ersetzen sie die mezz-Karte</block>
   <block id="1d1d15afbd88f7addf313fcbd144f3f5" category="cell">Entfernen Sie die Schrauben an der Vorderseite des Controller-Moduls.</block>
   <block id="af50fa410d1487d4dc2b1afd3f6755e5" category="paragraph">Lösen Sie die Schraube im Controller-Modul.</block>
   <block id="52d353425f8ccedacb04b93cba007d8c" category="paragraph">Verschieben Sie die Mezzanine-Karte.</block>
@@ -1868,7 +1812,6 @@
   <block id="1c4b9eb7937f4450f0a872f4d796f7aa" category="section-title">Schritt 7: Die NV-Batterie bewegen</block>
   <block id="181a3766f31135df2527b723f0cd0bf0" category="paragraph">Beim Austausch des Controller-Moduls müssen Sie den NV-Akku vom beeinträchtigten Controller-Modul in das Ersatzcontrollermodul verschieben.</block>
   <block id="35e9bb6518844a891762cc28aa4821b8" category="list-text">Suchen Sie den NVMEM-Akku aus dem beeinträchtigten Controller-Modul und verschieben Sie ihn in das Ersatz-Controller-Modul.</block>
-  <block id="81c13bdfc94c175b0cb0830513c72fa7" category="image-alt">drw a250 ersetzen nvmem Batt</block>
   <block id="bcb72abac7a1b4e5d62301236d2af4ff" category="cell">Drücken Sie den Clip auf der Vorderseite des Batteriesteckers.</block>
   <block id="500f80ee3331803cffc5e2e0bc81d371" category="paragraph">Trennen Sie das Akkukabel von der Steckdose.</block>
   <block id="d1ad3057377dd4a69559d9ed51d7a401" category="paragraph">Fassen Sie den Akku an, und drücken Sie die blaue Verriegelungslasche, die mit DRUCKTASTE markiert ist.</block>
@@ -1881,9 +1824,7 @@
   <block id="8647835bebea663e6009839ccbd3ce9e" category="paragraph">Nachdem alle Komponenten vom beeinträchtigten Controller-Modul in das Ersatzcontrollermodul verschoben wurden, müssen Sie das Ersatzcontrollermodul in das Gehäuse installieren und es dann in den Wartungsmodus booten.</block>
   <block id="1ce77f487e28076022ddc7ec80345c1a" category="paragraph">Sie können die folgende Abbildung oder die geschriebenen Schritte zur Installation des Ersatzcontrollermoduls im Gehäuse verwenden.</block>
   <block id="79b7d25a32465f1453599bea780ff825" category="list-text">Wenn Sie dies noch nicht getan haben, den Luftkanal einbauen.</block>
-  <block id="9e8bc2f3ff00e91084e8d9faacfbbbc7" category="image-alt">drw a250 Einbau der Luftkanalabdeckung</block>
   <block id="d377aa259703e685c1fa1683da0a4acf" category="list-text">Schließen Sie die Abdeckung des Controller-Moduls, und ziehen Sie die Daumenschraube fest.</block>
-  <block id="588e0eb84568c656edff37257d660f7a" category="image-alt">abdeckung des drw a250-Controllermoduls schließen</block>
   <block id="c11e87f1824ea49a7afd546974221d86" category="cell">Controller-Modulabdeckung</block>
   <block id="e65c4f5a39a793b014b217f53d825905" category="list-text">Setzen Sie das Controller-Modul in das Chassis ein.</block>
   <block id="6e99f1c5e459e79f40eda2af98ca9507" category="list-text">Stellen Sie sicher, dass die Arms des Verriegelungsmechanismus in der vollständig ausgestreckten Position verriegelt sind.</block>
@@ -1892,7 +1833,6 @@
   <block id="861ccef1a1eea431b553c2d6a7dd1b6b" category="list-text">Drücken Sie die Daumen auf den orangefarbenen Laschen oben am Verriegelungsmechanismus nach unten, und schieben Sie das Controller-Modul vorsichtig über den Anschlag.</block>
   <block id="04dfd32abff05e80971ee43ebd97b0fe" category="list-text">Lösen Sie Ihre Daumen von oben auf den Verriegelungs-Mechanismen und drücken Sie weiter, bis die Verriegelungen einrasten.</block>
   <block id="004ff61696f63d2eb687e57371ce86bd" category="paragraph">Das Controller-Modul sollte vollständig eingesetzt und mit den Kanten des Gehäuses bündig sein.</block>
-  <block id="eccbdb663759dbfcdc939ff1dfb3e3e8" category="doc">FAS500f Systemdokumentation</block>
   <block id="2bf23db896fc6ece8a7fd4c8db50ab7d" category="doc">Überblick über den Austausch von Controller-Modulen - FAS500f</block>
   <block id="b94c622729a1c3b9f221ed4f8376e65b" category="doc">Ersetzen Sie ein Netzteil - FAS500f</block>
   <block id="1661dbd7e15cf50b73ab10b3561b2d66" category="paragraph">Sie können das folgende Video oder die tabellarischen Schritte verwenden, um das Netzteil zu ersetzen:</block>
@@ -1919,38 +1859,25 @@
   <block id="8c4aa541ee911e8d80451ef8cc304806" category="paragraph">Storage</block>
   <block id="611da794b15a6f5effae279e33ad2233" category="paragraph">Managementnetzwerk (BMC und Port mit Schraubenschlüssel) und Ethernet-Daten (e0a und e0b)</block>
   <block id="e7d8f45352dfaf66682a4662e11d6c86" category="list-text">Überprüfen Sie die <block ref="571ad76602d16a750ecd1119ab38063c" category="inline-link-macro-rx"></block> Und sammeln Sie die in diesem Handbuch aufgeführten erforderlichen Informationen.</block>
-  <block id="5ea097b6ef5e3828cb8cb8eed645e134" category="image-alt">drw affa250 Gewicht Achtung</block>
   <block id="9bd8aa5689228cb2b0d7fa13ff310ec9" category="list-text">Identifizieren und verwalten Sie Kabel, da dieses System über kein Kabelverwaltungs-Gerät verfügt.</block>
   <block id="b97bdff613a0ca54c0d7c15ca245a1f5" category="paragraph">Die Management-, Fibre Channel- und Daten- oder Host-Netzwerk-Ports der Controller-Module sind mit Switches verbunden. Die Cluster Interconnect-Ports sind an beiden Controller-Modulen verkabelt.</block>
   <block id="7540cda30776c310e4b86b624032cea1" category="image-alt">ziehen Sie die Lasche des oie-Kabels nach unten</block>
   <block id="3f4a7771ab61ac16b156190d458da251" category="cell">Führen Sie an jedem Controller aus</block>
-  <block id="e738e65f735fc9089f253b3fe571f559" category="paragraph"><block ref="e738e65f735fc9089f253b3fe571f559" category="inline-image-macro-rx" type="image"></block></block>
   <block id="3ea38b3923e0e690201e332cebb4b94d" category="paragraph">Verkabeln Sie die Cluster-Interconnect-Ports mit dem 25-GbE-Cluster-Interconnect-Kabel miteinander</block>
-  <block id="b5bee911f1169a180dca19eacfac565a" category="paragraph"><block ref="6b6a40b68f5814cad1750bfff7e3b927" category="inline-image-macro-rx" type="image"></block>:</block>
   <block id="59fffbd09d1c7158959327a869b9292f" category="list-text">e0c bis e0c</block>
-  <block id="de629fe3167cc52423821046b02074e3" category="list-text">e0d bis e0d<block ref="5d8d8fe980b572286e75db6ff18d3cbc" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="9fe24c609326a57c3fef0ffe189c165b" category="paragraph"><block ref="9fe24c609326a57c3fef0ffe189c165b" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0b344445518caeaff89d8726c0ffa65f" category="paragraph">Die Port-Schraubenschlüssel-Ports mit den Managementnetzwerk-Switches mit den RJ45-Kabeln verkabeln.</block>
-  <block id="849bd2bebf087b5cba4fc6e395e04cf4" category="image-alt">drw affa250-Management-Kabel</block>
   <block id="611c6be02af4f5847e3d1df02f0dd5cd" category="paragraph">Alle Ports auf den Controllern sind mit Switches verbunden; Cluster Interconnect, Management, Fibre Channel und Daten- oder Host-Netzwerk-Switches.</block>
   <block id="09401fd662d47d1159b97106f3c2c4b4" category="paragraph">Verkabeln Sie die Cluster-Interconnect-Ports mit den 25-GbE-Cluster-Interconnect-Switches.</block>
   <block id="96640993dd2592a16c29226daf83b860" category="list-text">e0c</block>
-  <block id="076b1ed5eae37af50f50d5b0e6d87908" category="list-text">e0d<block ref="ee3f9d0ec20204c7d48b52d859e31c4d" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="17333fa969880e45cf8dc4eb4f554f64" category="image-alt">oie-Legende Symbol attn Symbol</block>
   <block id="91007f6223d7f1e23fa6822f2e16adad" category="paragraph">Verkabeln Sie die Ports 2a bis 2d mit den FC-Host-Switches.</block>
-  <block id="0da779564ef18632153ddb2bf55a5416" category="image-alt">drw affa250 fc-Hostkabel</block>
   <block id="56207a9d07b6607ddcfada226919fb00" category="list-text"><block ref="9f2a6ae0f8e4e0c002cabfcf0d3b8027" category="inline-xref-macro-rx"></block></block>
   <block id="9ec8ef762c375cb5ef67631e96a76733" category="list-text"><block ref="1476a857b220f13e41f9015c8596b1d0" category="inline-xref-macro-rx"></block></block>
   <block id="46bef70db2abdd00f0d4fccb83fbd3db" category="section-title">Option 2: Kabel zu einem 25-GbE-Daten- oder Hostnetzwerk</block>
   <block id="2283d2460c1fb366154589c8106aeabb" category="paragraph">25-GbE-Ports auf den Controllern sind mit 25-GbE-Daten oder Host-Netzwerk-Switches verbunden.</block>
   <block id="277ba6b7a127ec6b40495a0cd012279f" category="paragraph">Verkabeln Sie die Ports e4a über e4d mit den 10 GbE Host Netzwerk-Switches.</block>
-  <block id="eacfd9b01b607ec0ff14339768945edd" category="image-alt">drw affa250 25-gbe-Hostkabel</block>
   <block id="3ee99f95dccd989449c31c5582a02a92" category="list-text"><block ref="9d121b80040875d39da3830ae414ba9b" category="inline-xref-macro-rx"></block></block>
   <block id="030773f8722b074a51df84aa530f0c3d" category="paragraph">Verwenden Sie die Animation oder die tabellarischen Schritte, um die Verkabelung zwischen den Controllern und dem einzelnen Shelf abzuschließen:</block>
   <block id="052c4e56b98f7829dc91610f07b00a63" category="video-title">Animation - Verkabeln Sie die Controller mit einem einzigen NS224</block>
-  <block id="941322167ca76688c15d3a6fb3aa998c" category="paragraph">Controller A am Shelf verkabeln: <block ref="18f599f35e14d88c5e3fb9f75197e3c8" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="a593c53042a73cf10d3fc157f88070a6" category="paragraph">Controller B am Shelf verkabeln: <block ref="f822d74484a7588f78ead07185e89b82" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="c80b115a559b6d9bf1acd577eef44159" category="image-alt">drw-Konsole-Client-Management-Subnetz affe250</block>
   <block id="a27042b0e01fb9b4136d2de6e8c1db73" category="doc">Onboard-Verschlüsselungsschlüssel - FAS500f</block>
   <block id="ababafc28230637bc7ee0dc0762d3d7a" category="list-text">Wenn &lt;lno-DARE&gt; nicht in der Befehlsausgabe angezeigt wird und auf dem System ONTAP 9.6 oder höher ausgeführt wird, fahren Sie mit dem nächsten Abschnitt fort.</block>
   <block id="ddf5ebb5c1d9ad17f6222185e1822bf6" category="section-title">Prüfen Sie NVE oder NSE auf Systemen mit ONTAP 9.6 und höher</block>
@@ -2061,7 +1988,6 @@
   <block id="2a79f92f83e80b8d7c1b1b19435df449" category="paragraph">Der Akku sollte ausgeworfen werden.</block>
   <block id="bc953fc580dd3c98e5ac857917f1e839" category="paragraph">Die Batterie wird ausgeworfen.</block>
   <block id="e4ac1bf0fb40fa4b04189d7b631ed1fe" category="list-text">Suchen Sie den RTC-Batteriehalter zwischen Kühlkörper und Midplane und setzen Sie ihn genau wie in der Grafik dargestellt ein.</block>
-  <block id="b54f7ad3db2c3b1f5f075be84cb94813" category="image-alt">drw a250 installieren rtc-Batt</block>
   <block id="77b955f90610902ce85885fceef7f34d" category="cell">Schieben Sie die Batterie mit der positiven Polarität nach oben unter die Lasche des Batteriegehäuses.</block>
   <block id="326f84612308aa43b411fe6225835ced" category="paragraph">Schieben Sie den Akku vorsichtig in die richtige Position, und vergewissern Sie sich, dass er mit der Lasche am Gehäuse befestigt ist.</block>
   <block id="b7d6746b2e02b132eeea59e81cc5d634" category="admonition">Wenn Sie ihn aggressiv einschieben, kann sich der Akku erneut auswerfen.</block>
@@ -2072,9 +1998,7 @@
   <block id="72e762fb9ea8e85f3b69ae72fd4dc171" category="doc">Ersetzen Sie ein NVDIMM – AFF A320</block>
   <block id="2d651f7d69648fdc916560614dbe381e" category="paragraph">Um auf Komponenten im Controller-Modul zuzugreifen, müssen Sie das Controller-Modul aus dem Gehäuse entfernen.</block>
   <block id="952c945c9a5a59d3bdaefb09fa3c158c" category="list-text">Trennen Sie das Netzteil des Controller-Moduls von der Stromversorgung.</block>
-  <block id="77fba3b2bed380ff997267e3badf202e" category="image-alt">drw a320 Kabelführungsarme</block>
   <block id="88dd2b76e22f517fcc43991c9f49fc1c" category="list-text">Entfernen Sie das Controller-Modul aus dem Chassis:</block>
-  <block id="58917ff5c68eb6bf1640a45420077a55" category="image-alt">drw a320-Controller entfernen animiertes gif</block>
   <block id="8a309974bafd50317ccd72aa26c07abb" category="list-text">Setzen Sie den Zeigefinger in den Verriegelungsmechanismus auf beiden Seiten des Controller-Moduls ein.</block>
   <block id="4d207179ee5262ab22beb9e4daca95a5" category="list-text">Drücken Sie auf die orangefarbene Lasche oben am Verriegelungsmechanismus nach unten, bis der Rastbolzen am Gehäuse entfernt wird.</block>
   <block id="7965e8ddcdf2a2c7321db103dd6fc83a" category="paragraph">Der Haken des Verriegelungsmechanismus sollte fast senkrecht sein und sich vom Chassispindel frei sein.</block>
@@ -2114,7 +2038,6 @@
   <block id="655693b8856b3ddd0aca0944005d67f9" category="doc">Ersetzen Sie die Hardware des Controller-Moduls – AFF A320</block>
   <block id="c75b039e7117dd559fe2e9c54d35354b" category="paragraph">Sie können die folgenden Bilder oder die geschriebenen Schritte verwenden, um das Controller-Modul aus dem Gehäuse zu entfernen.</block>
   <block id="f26a5008ba3ae6c52cababa034f37688" category="paragraph">Das folgende Bild zeigt das Entfernen der Kabel und Kabelführungsarme aus dem Modul für beeinträchtigte Controller:</block>
-  <block id="8b9cda3c71cd6650aa009c7fadfc8b01" category="image-alt">das drw a320-Controllerkabel trennen das animierte GIF-Kabel</block>
   <block id="a394b7cf60e50656e1e8a61ef5afbd6e" category="paragraph">Das folgende Bild zeigt das Entfernen des beeinträchtigten Controller-Moduls aus dem Gehäuse:</block>
   <block id="1f80cfc7ce17ecb96321179e76fe8285" category="list-text">Drehen Sie den Nockengriff so, dass er zum Herausziehen der Stromversorgung aus dem Controller-Modul verwendet werden kann, während Sie auf die blaue Verriegelungslasche drücken.</block>
   <block id="f42c638bfd110c61246a6666784bc4c1" category="section-title">Schritt 3: Bewegen Sie den NVDIMM-Akku</block>
@@ -2163,9 +2086,6 @@
   <block id="45cf2a44dafd78e32eaf8f429190dc15" category="paragraph">Der Riser sollte glatt und mit wenig Widerstand sitzen. Setzen Sie den Riseraufnehmer wieder in den Schacht ein, wenn der Riseraufnehmer mit einem erheblichen Widerstand in den Sockel eingesetzt wird.</block>
   <block id="376b7fd2a78e94df43caa814d7543dc5" category="list-text">Setzen Sie die Abdeckung wieder über die PCIe Riser ein.</block>
   <block id="ea1ac931101dcb5e350d2730dc13a26f" category="section-title">Schritt 7: Installieren Sie das Controller-Modul</block>
-  <block id="d7b5f5b1c91c3929a2256a49086d9176" category="image-alt">drw a320-Controller installieren animierte gif-Datei</block>
-  <block id="51e518953de4f3b345d4b65e647bdfc5" category="summary">In der Dokumentation des AFF A320-Systems können Sie das System installieren, einrichten und warten.</block>
-  <block id="aa0d733a680f2acafa9b34d28a6d95fd" category="doc">AFF A320 Systemdokumentation</block>
   <block id="f1483589a16ee2a87f4946990ed1464b" category="doc">Ersetzen Sie eine PCIe-Karte - AFF A320</block>
   <block id="c6835c4571228046430ed6bbb1f8c06a" category="paragraph">Sie müssen den PCIe-Riser mit der ausgefallenen PCIe-Karte aus dem Controller-Modul entfernen, die ausgefallene PCIe-Karte aus dem Riser entfernen, die Ersatz-PCIe-Karte im Riser installieren und dann den Riser wieder im Controller-Modul installieren.</block>
   <block id="d53dfbdb1355f3674e5de636f87c5be0" category="image-alt">drw a320 pci-Karte ersetzt animierte gif-Karte</block>
@@ -2218,7 +2138,6 @@
   <block id="2a33457024242a83948155f05debd9ba" category="paragraph">X6211A-1 (112-00573), 1 m;</block>
   <block id="dd5b1b97241f7e920d47e83949296289" category="paragraph">X6211A-3 (112-00543), 3 m;</block>
   <block id="46d28407508cc91dd2d078e77f45d84e" category="paragraph">X6211A-5 (112-00576), 5 m</block>
-  <block id="6b6a40b68f5814cad1750bfff7e3b927" category="paragraph"><block ref="6b6a40b68f5814cad1750bfff7e3b927" category="inline-image-macro-rx" type="image"></block></block>
   <block id="aaf19519c690f48d61ddd0b7fb41f45d" category="paragraph">Ethernet-Kabel – MPO</block>
   <block id="9acce39f034b56b5a36d798f9b54c493" category="paragraph">X6200-2 (112-00326), 2 m</block>
   <block id="36789c9401bff1c7c561e68fd452d624" category="paragraph">X66250-5 (112-00328), 5 m</block>
@@ -2251,13 +2170,10 @@
   <block id="013322a8027b639585538fe290718386" category="image-alt">drw a320 tnsc Netzwerkverkabelung animiert gif</block>
   <block id="e5cd602ca5c03c391e8dfac3c307e06c" category="paragraph">Cluster-/HA-Ports mit dem 100-GbE-Kabel (QSFP28) miteinander verkabeln:</block>
   <block id="4f8f8380e5597e92380de812b879c5d1" category="list-text">e0d bis e0d<block ref="5ea5295965a00406899d4b7460801661" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="381afd3fb13a052283be8343171ab050" category="paragraph"><block ref="381afd3fb13a052283be8343171ab050" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1ec377d11568067a729ee6f50dee77c8" category="paragraph">Wenn Sie Ihre integrierten Ports für eine Datennetzwerkverbindung verwenden, verbinden Sie die 100-GbE- oder 40-GbE-Kabel mit den entsprechenden Datennetzwerk-Switches:</block>
   <block id="3c04babfe00a81e06f8982d93dd90179" category="list-text">e0g und e0h<block ref="6fafbcd677ceba87d8c48de1a29a3bf5" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="650bb8a7a99ffc6aa5c626a33c48839f" category="paragraph"><block ref="650bb8a7a99ffc6aa5c626a33c48839f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="cc74cb2d1e5f9750b5812faaf036676e" category="paragraph">Wenn Sie Ihre NIC-Karten für Ethernet- oder FC-Verbindungen verwenden, verbinden Sie die NIC-Karte(n) mit den entsprechenden Switches:</block>
   <block id="becd6fe246f05c450f5f6f1ff59f10ab" category="image-alt">drw a320 nic-Verbindungen Schritt 3</block>
-  <block id="d1ac48d4410d6102fa54b8b3405a83e5" category="paragraph"><block ref="d1ac48d4410d6102fa54b8b3405a83e5" category="inline-image-macro-rx" type="image"></block></block>
   <block id="9dfe7ca4d480fd4e10a0954286489a0f" category="paragraph">Verkabeln Sie die E0M-Ports mit den Management-Netzwerk-Switches mit den RJ45-Kabeln.</block>
   <block id="5d86a652667b386e0b98042631990c02" category="paragraph"><block ref="5d86a652667b386e0b98042631990c02" category="inline-image-macro-rx" type="image"></block></block>
   <block id="eb9634f2ea796139d7f0aeca3f6ce2d4" category="section-title">Option 2: Verkabelung eines Switch Clusters</block>
@@ -2407,7 +2323,6 @@
   <block id="a81b41b0ce60920d308c876b3e9b38f1" category="paragraph">Eine MetroCluster IP-Konfiguration</block>
   <block id="8d8e1d2c17edc6fe8262408b12b73390" category="list-text">Wenn der angezeigte Systemzustand des Controller-Moduls nicht mit der Systemkonfiguration übereinstimmt, setzen Sie das ein<block ref="594c16ca0695f6665d7cf4971707adf6" prefix=" " category="inline-code"></block> Status für das Controller-Modul:<block ref="df7653bd48e36a44cee252d7543a526f" prefix=" " category="inline-code"></block></block>
   <block id="c36d25abc9dfdbc31228c74f7e654d0c" category="list-text">Wenn der angezeigte Systemzustand des Gehäuses nicht mit der Systemkonfiguration übereinstimmt, legen Sie den fest<block ref="594c16ca0695f6665d7cf4971707adf6" prefix=" " category="inline-code"></block> Status für das Chassis:<block ref="8c04088c57a1d68914caed5df5031ed1" prefix=" " category="inline-code"></block></block>
-  <block id="20d54df84f7e55d01eb019ccfe3eebef" category="summary">In der FAS9500 Systemdokumentation können Sie Ihr System installieren, einrichten und warten.</block>
   <block id="5852e0b4d479d20d783c528e9f8e41fa" category="doc">FAS9500 Systeme</block>
   <block id="1e9b0aa552aa50eb60a5f0b0da0057b0" category="summary">Um ein E/A-Modul zu ersetzen, müssen Sie eine bestimmte Sequenz von Aufgaben ausführen.</block>
   <block id="eb0c0a024c4f0aa6cfdd5767de1f16f1" category="doc">Ersetzen Sie ein I/O-Modul, FAS9500</block>
@@ -2461,7 +2376,6 @@
   <block id="c9ed271ea801891a1b5c1e6e048813b6" category="list-text">Drücken Sie<block ref="57cec4137b614c87cb4e24a3d003a3e0" prefix=" " category="inline-code"></block> Wenn Sie zur wiederhergestellten Konfigurationskopie aufgefordert werden.</block>
   <block id="29d4dec218aeaffabfed6dcc8fd1ad45" category="list-text">Wenn keymanager, NSE oder NVE in Ihrem System integriert sind, finden Sie unter <block ref="39910b5f3ea1ee39d8059faae857cc98" category="inline-xref-macro-rx"></block></block>
   <block id="9d720708adc6bbce63680b9093916875" category="list-text">Geben Sie den Node mithilfe des zurück<block ref="e23a9f1c6189f372292c98d844a0895f" prefix=" " category="inline-code"></block> Befehl.</block>
-  <block id="0829d23216964b4cc2a11bb04c4cf143" category="summary">Die NVMe SSD Flash Cache Module (FlashCache oder Caching-Module) befinden sich nur im vorderen Teil des NVRAM11 Moduls in Steckplatz 6 der FAS900 Systeme. Sie können das Caching-Modul dieselbe Kapazität im laufenden Betrieb vom selben oder einem anderen unterstützten Anbieter austauschen.</block>
   <block id="fb796745f1b93e7c27af0a928be9d5ae" category="doc">Hot-Swap-fähige Cache-Module – FAS9500</block>
   <block id="e5684d853146c37193094e90fea21bff" category="paragraph">Die NVMe SSD Flash Cache Module (FlashCache oder Caching-Module) befinden sich im vorderen Teil des NVRAM11 Moduls in den Slots 6 der FAS9500 Systeme. Sie können das Caching-Modul dieselbe Kapazität im laufenden Betrieb vom selben oder einem anderen unterstützten Anbieter austauschen.</block>
   <block id="1360261f3d9e17642c609debfd62b1d6" category="admonition">Wenn Sie das Flash Cache Modul „kalt“ wechseln möchten, befolgen Sie die Anweisungen zum Austauschen eines I/O-Moduls.</block>
@@ -2977,7 +2891,6 @@
   <block id="802d63748c35ef99b2385ba6d4d407ab" category="list-text">Schalten Sie die Netzschalter oder Leistungsschalter an die PDUs ein.</block>
   <block id="2dfbf4884a2bb3ae09ba7f32bd318abc" category="list-text">Schalten Sie die Komponenten ein, und starten Sie das System.</block>
   <block id="78a5c15479f8785439b1e31dad8ef39f" category="list-text">Schließen und verriegeln Sie die Türen des Systemschranks.</block>
-  <block id="f69507967898e382a99df57519e5deaf" category="summary">Zusätzliche Informationen</block>
   <block id="7d309cda2d3359be8b443f7451192e61" category="summary">Sie können die Richtung ändern, in der sich die vordere Klappe öffnet, indem Sie die beleuchtete Klappe, die Tür, das obere Scharnier und die zugehörige Hardware entfernen und dann auf der gegenüberliegenden Seite der Vorderseite des Systemschrankrahmens installieren.</block>
   <block id="cb60a8dc869953f0c81e001801098d91" category="doc">Die vordere Tür des Systemschranks umkehren</block>
   <block id="0a4a8cbec44f07cf1fa6adeb0d46999d" category="paragraph">Sie benötigen die folgenden Tools und Systeme, um die Türumkehr von System-Cabinets mit beleuchteten Abzeichen abzuschließen:</block>
@@ -3048,7 +2961,6 @@
   <block id="3d916345d2d4b88d59baeb4da4d032c2" category="paragraph">Die folgenden Abbildungen zeigen die obere und untere Ansicht des Systemschranks und identifizieren die Öffnungen, durch die Sie Kabelbündel vom Boden Ihres Rechenzentrums in den Systemschrank führen können. Die Abbildungen zeigen auch die Position der Systemschrankrollen und Nivellierfüße.</block>
   <block id="8b33a6fabc9dc64d006c6243d17ccb18" category="paragraph">ACHTUNG:</block>
   <block id="03e181c9a4ee916b1c6394530dfe5d25" category="paragraph">Um zu verhindern, dass Ihr Systemschrank durch den Rechenzentrumsboden fällt, dürfen Sie den Systemschrank nicht über eine Bodenöffnung Rollen, die größer ist als die Kabelzugangsöffnung an der Unterseite des Systemschranks.</block>
-  <block id="21894d83c731e60180113ee6528b6d88" category="image-alt">drw ozeki sys Kabine unten Abmessungen</block>
   <block id="0d3dccbe0e804739d481b2318646849d" category="summary">In Ihrem Systemschrank sind bereits einige Stützschienen installiert. Wenn Sie zusätzliche Stützschienen für Ihr System benötigen, müssen Sie diese vor der Installation der Systemkomponenten installieren.</block>
   <block id="766ceed182488f716e50814e69e8d1c4" category="doc">Installieren Sie zusätzliche Stützschienen</block>
   <block id="470cb711568432436799010f6ef4aae7" category="paragraph">Diese Aufgabe gilt für alle Controller und Festplatten-Shelfs außer dem DS212C und den DE212C Festplatten-Shelfs. Verwenden Sie die Anweisungen im Schienensatz-Flyer für die beiden Festplatten-Shelfs.</block>
@@ -3344,8 +3256,6 @@
   <block id="e258cc57dc79df503088fd861585707d" category="paragraph">Sie müssen nach einer Konsolenmeldung für das automatische Firmware-Update suchen. Wenn die Aktualisierungsmeldung angezeigt wird, drücken Sie nicht<block ref="76be6883bcf9e8a6aed3a347ac20e41f" prefix=" " category="inline-code"></block> So unterbrechen Sie den Bootvorgang, bis eine Meldung angezeigt wird, die bestätigt, dass die Aktualisierung abgeschlossen ist.</block>
   <block id="33ebea377cad1dfbfc8858828ecec322" category="paragraph">Drücken Sie nur<block ref="76be6883bcf9e8a6aed3a347ac20e41f" prefix=" " category="inline-code"></block> Wenn die Meldung angezeigt wird<block ref="c7edd01af4c95bd0ec0f7072d8035155" prefix=" " category="inline-code"></block>.</block>
   <block id="6bc52fae9fd0e09da172551e507a1444" category="admonition">Wenn die Firmware-Aktualisierung abgebrochen wird, wird der Boot-Prozess zur LOADER-Eingabeaufforderung beendet. Sie müssen den Befehl Update_Flash ausführen und DANN LOADER beenden und in den Wartungsmodus booten, indem Sie auf drücken<block ref="76be6883bcf9e8a6aed3a347ac20e41f" prefix=" " category="inline-code"></block> Wenn Sie sehen, dass AUTOBOOT gestartet wird, drücken Sie Strg-C, um den Vorgang abzubrechen.</block>
-  <block id="fefd734f0bdff8f12e4dd22d5240abe0" category="summary">Mit der Dokumentation des AFF C190 Systems können Sie Ihr System installieren, einrichten und warten.</block>
-  <block id="69df5da6ba52630e5f329314c7e74f75" category="doc">AFF C190 Systemdokumentation</block>
   <block id="54cd26f163d61b3be602eb785ab0a241" category="doc">Übersicht über den Austausch von Controller-Modulen - AFF C190</block>
   <block id="ca305e69a315b30dad8d789c197489f9" category="doc">Fahren Sie den Controller herunter - AFF C190</block>
   <block id="4ee2fc05d2faa1f333113817a90809f4" category="summary">Dieser Abschnitt enthält detaillierte Schritt-für-Schritt-Anleitungen zur Installation eines AFF C190 Systems.</block>
@@ -3360,28 +3270,18 @@
   <block id="caaa8a847335f7164117894cfe79e731" category="paragraph"><block ref="caaa8a847335f7164117894cfe79e731" category="inline-image-macro-rx" type="image"></block></block>
   <block id="fea037cb34a319bd3b823395ee5fdd07" category="paragraph">SFP + FC-Host-Netzwerk</block>
   <block id="490cb76fd3c75ff8166e251d789f799e" category="paragraph">Ethernet-Host und Management-Netzwerk</block>
-  <block id="c0e4edaf8676378054faf4095793fc9a" category="image-alt">drw oie fas2700 Gewicht Achtung</block>
   <block id="78b39d88cb979ddb300a4cf2c6cdb1be" category="image-alt">drw-Kabelmanagement-ARM-Installation</block>
   <block id="fcca883f68c4e92b98d0f294614cda60" category="admonition">Stecken Sie beim Anschließen an einen optischen Switch den SFP-Port in den Controller-Port, bevor Sie die Verkabelung zum Port durchführen.</block>
   <block id="73da34bccb5db786798534ea5b6eb1d6" category="image-alt">drw c190 tnsc Unified Network Cabling animiert gif</block>
   <block id="29232642e257cc5bf9288d51db5b38a1" category="paragraph">Verbinden Sie die Cluster-Interconnect-Ports mit dem Cluster Interconnect-Kabel miteinander:</block>
-  <block id="e264767a0a11b7a11be0a5345921827e" category="list-text">e0b bis e0b<block ref="9a0e89c71564aa69ffecf67eb610bc96" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c0a9eb11c9962c2eb967f53a4845bf1a" category="paragraph">Verkabeln Sie die E0M-Ports mit den Management-Netzwerk-Switches mit den RJ45-Kabeln:</block>
-  <block id="f2333c38a5002ab3a3ce6f24b2d22d95" category="paragraph"><block ref="f2333c38a5002ab3a3ce6f24b2d22d95" category="inline-image-macro-rx" type="image"></block></block>
   <block id="d7d7ce9a70c375da7dd9edb7b21a9134" category="image-alt">drw c190 Switch Unified Network Cabling animiert (gif)</block>
   <block id="81b22135a51aae23b34a49fb4dc95ad2" category="paragraph">Verkabelung e0a und e0b mit den Cluster Interconnect Switches mit dem Cluster Interconnect-Kabel:</block>
-  <block id="cdb6f4b16ce28508dd90ea2ebac10c11" category="paragraph"><block ref="cdb6f4b16ce28508dd90ea2ebac10c11" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0df32eef6f99f6d05877f5da86a45063" category="image-alt">drw c190 tnsc ethernet-Netzwerkverkabelung animiert gif</block>
   <block id="836e597d16643401627d14a351ba6a9c" category="paragraph">Verwenden Sie das Cat 6 RJ45-Kabel, um e0c über e0f-Ports mit Ihrem Hostnetzwerk zu verkabeln:</block>
-  <block id="97fa7018860cc17c4006609d9662603b" category="paragraph"><block ref="97fa7018860cc17c4006609d9662603b" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="98fba69d64d87a6163f05e51141bb98d" category="paragraph"><block ref="98fba69d64d87a6163f05e51141bb98d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ac3d560a40b4d6d28fac097677ecaa8d" category="image-alt">drw c190 geschaltete ethernet-Netzwerkverkabelung animiert</block>
-  <block id="3c6b5500a384efa581b62d9c5f18e0b2" category="paragraph"><block ref="3c6b5500a384efa581b62d9c5f18e0b2" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="347e1a8985d85eefdfec9853c8769148" category="image-alt">drw schalten Sie den Netzschalter auf die netzteile ein</block>
   <block id="e54c29276af1d0eb8b609db7484efd71" category="admonition">Das erste Booten kann bis zu acht Minuten dauern.</block>
   <block id="c148c3a234659fa32cba3b91e58f84d2" category="admonition">Die Standard-Port-Konfiguration für Unified-Konfigurationssysteme ist der CNA-Modus. Wenn Sie eine Verbindung zu einem FC-Host-Netzwerk herstellen, müssen Sie die Ports für den FC-Modus ändern.</block>
-  <block id="4362389171d8ddf25be9625250707012" category="image-alt">die drw-Konsole verbindet fas2700 afa200</block>
-  <block id="53b1b44ce765bbf2dbaa0e7ea313a991" category="image-alt">drw-Client zum Management-Subnetz fas2700 afa220</block>
   <block id="81b014b89575d4c2c10465dcae392a39" category="doc">Integrierte Verschlüsselungsschlüssel - AFF C190</block>
   <block id="fc3fc335fe3d498e24675e2eff27cd4f" category="doc">Herunterfahren der Controller - AFF C190</block>
   <block id="3125087114c2490b7c6800800a39a990" category="summary">In diesem Abschnitt finden Sie eine grafische Anleitung für eine typische Installation Ihres Systems, von Rack und Verkabelung bis hin zur Ersteinrichtung des Systems.</block>
@@ -3462,17 +3362,12 @@
   <block id="30354285f2a8e6ac58b71db46bfc3ead" category="list-text"><block ref="76afa3fde08aeab96dca3e3a39dcd27a" prefix="" category="inline-code"></block></block>
   <block id="a42edb5535752c77f564dff66261535b" category="doc">Ersetzen Sie die Controller-Modul-Hardware – FAS8200</block>
   <block id="d555d8d5b180690f03f434585c90b8d9" category="section-title">Schritt 1: Öffnen Sie das Controller-Modul</block>
-  <block id="541c76494433ada6ce291145a70e9591" category="image-alt">drw 32xx cbl-Management-ARM</block>
   <block id="c65d11e5b8171391c6bacf6aa11b9362" category="list-text">Lösen Sie die Daumenschraube am Nockengriff am Controller-Modul.</block>
-  <block id="2d377eee654631bfa9a2389a7f67bf78" category="image-alt">drw 8020 Nockengriffschraube</block>
   <block id="5521df603e8774a963fa73a2d1d99c29" category="list-text">Ziehen Sie den Nockengriff nach unten, und schieben Sie das Controller-Modul aus dem Gehäuse.</block>
   <block id="57f6abeeecbe08c578cdfb6a3a2675ac" category="section-title">Schritt 2: Bewegen Sie das Startgerät</block>
-  <block id="8ccbd61b66565f6f1198c3dcd986738d" category="image-alt">drw rxl-Startmedien</block>
   <block id="9a7b6b1d0022a5e02b155899f525484d" category="list-text">Öffnen Sie den CPU-Luftkanal, und suchen Sie den NVMEM-Akku.</block>
-  <block id="829c126125f54f9dae62f38e31701dc7" category="image-alt">drw rxl nvmem-Akku</block>
   <block id="cedd5c5d94628e9214df94e87bcbc459" category="cell">Verriegelungslasche</block>
   <block id="cf486acc42bee94e935f0a77a3c0a137" category="paragraph">NVMEM-Akku</block>
-  <block id="2afadaee32bfbcb58fbdc6c77b43ac9a" category="image-alt">drw rxl dimms</block>
   <block id="918a2a64830e16cf1c0cb6fd799f730d" category="list-text">Verschieben Sie die NVMEM-Batterie in das Ersatz-Controller-Modul.</block>
   <block id="0e3afb2eff968ec339750f42984ace90" category="list-text">Richten Sie die Lasche oder Laschen am Batteriehalter an den Kerben auf der Seite des Controller-Moduls aus, und drücken Sie dann vorsichtig das Batteriegehäuse nach unten, bis das Batteriegehäuse einrastet.</block>
   <block id="67ecdeb79444a8f5073d554e40345bdc" category="section-title">Schritt 5: Verschieben Sie eine PCIe-Karte</block>
@@ -3480,7 +3375,6 @@
   <block id="ffcebc45029609ecad773c46de117254" category="paragraph">Sie müssen das neue Controller-Modul bereit haben, damit Sie die PCIe-Karten direkt vom alten Controller-Modul in die entsprechenden Steckplätze im neuen bewegen können.</block>
   <block id="5e8be98213884705f4f23fefcedf276d" category="list-text">Lösen Sie die Flügelschraube an der Seitenabdeckung des Controller-Moduls.</block>
   <block id="f6f64ae09ccb768e3427b1a4b81f7ab2" category="list-text">Drehen Sie die Seitenabdeckung vom Controller-Modul ab.</block>
-  <block id="d563b9fb0eacf06da5cd234f55293337" category="image-alt">drw rxl pcie</block>
   <block id="fdf758b3eee65fd6bf1337cf88e410ab" category="paragraph">Seitenabdeckung</block>
   <block id="d8cb6501b634914cdd3c065dd289ab4c" category="paragraph">PCIe-Karte</block>
   <block id="130eb6dccf42e7d468cb0d5b14df3366" category="list-text">Entfernen Sie die PCIe-Karte aus dem alten Controller-Modul und legen Sie sie beiseite.</block>
@@ -3500,7 +3394,6 @@
   <block id="c15449579d92fa124a659aa412ed32be" category="section-title">Schritt 7: Installieren Sie den Controller</block>
   <block id="771cc9329585f02c8fc3df678acde373" category="list-text">Wenn Sie dies noch nicht getan haben, schließen Sie den CPU-Luftkanal.</block>
   <block id="cb3485b838ace7c31b78c8c66c4a67ec" category="list-text">Schieben Sie das Steuermodul fest in die offene Position, bis es auf die Mittelebene trifft und vollständig sitzt, und schließen Sie dann den Nockengriff in die verriegelte Position. Ziehen Sie die Flügelschraube am Nockengriff auf der Rückseite des Controller-Moduls fest.</block>
-  <block id="9d1976464339a2dc5b681ea4cacc276d" category="doc">FAS8200 System-Dokumentation</block>
   <block id="dc981419fad4296d2c2f3fd5fbc53ea9" category="summary">Um eine PCIe-Karte zu ersetzen, müssen Sie eine bestimmte Sequenz von Aufgaben durchführen.</block>
   <block id="d48c73102976c851dd07cb5e9103a138" category="doc">Ersetzen Sie eine PCIe-Karte: FAS8200</block>
   <block id="b829b8b1be5636c7bcd3a7828593e11e" category="open-title">Option 2: Controller befindet sich in einem MetroCluster mit zwei Nodes</block>
@@ -3593,7 +3486,6 @@
   <block id="f8a35054c2c3b7ffbacd941c8bc38831" category="doc">Hardware austauschen – FAS8200</block>
   <block id="5a05c6605a020e1a2163f79eb10968be" category="section-title">Schritt 1: Ein Netzteil bewegen</block>
   <block id="dcb58cd491b43356462c2529a579197a" category="list-text">Drücken Sie die Freigabehebel am Handgriff der Netzteilkamera nach unten, und senken Sie dann den Nockengriff in die vollständig geöffnete Position, um das Netzteil von der Mittelebene zu lösen.</block>
-  <block id="54c1f466dcb42475b75e8f202e013885" category="image-alt">drw rxl-netzteil</block>
   <block id="ef8efdc5b2bd1a532f14079abd36e082" category="paragraph">Freigabehebel am CAM-Griff</block>
   <block id="fc55b45cca3fa6be680def2c9c4b821e" category="paragraph">Ein/aus- und Fehler-LEDs</block>
   <block id="b82df982fd2500b5301a3127ef1f47c2" category="paragraph">Verriegelungsmechanismus der Stromversorgungskabel</block>
@@ -3601,7 +3493,6 @@
   <block id="ef04965c46c97b1b98ea3ea5fde7b27c" category="section-title">Schritt 2: Bewegen Sie einen Lüfter</block>
   <block id="15f0b91932be7ade13c5eb39a9a41f62" category="paragraph">Wenn Sie beim Austausch des Gehäuses ein Lüftermodul herausziehen, muss eine bestimmte Sequenz von Aufgaben ausgeführt werden.</block>
   <block id="26f3e4c2d12be621415f2684a8c8d8d2" category="list-text">Drücken Sie die Freigabehebel am Nockengriff des Lüftermoduls nach unten, und ziehen Sie dann den Nockengriff nach unten.</block>
-  <block id="873ff90864f62182ca0ed7a91a266e52" category="image-alt">drw fas32xx-Lüfter</block>
   <block id="8c8c98956870ffea5e2297a73a1972a1" category="paragraph">Warn-LED für das Lüftermodul</block>
   <block id="d3e14d546bdb099fa06c198263457888" category="doc">Tauschen Sie ein Netzteil aus – FAS8200</block>
   <block id="10bc7f8044338127350055a62aad1a90" category="doc">Ersetzen Sie ein DIMM – FAS8200</block>
@@ -3650,7 +3541,6 @@
   <block id="6410f0d1620d7d4196d6077993f01436" category="list-text">Durchführen einer MetroCluster-Prüfung:<block ref="c2966f2f3bfc7e81dae5df7c44ce66ea" prefix=" " category="inline-code"></block></block>
   <block id="405d6a60969fe89f9bb73650236f1000" category="list-text">Ergebnisse der MetroCluster-Prüfung anzeigen:<block ref="da68e7539bf844a8366ded5d17b246d7" prefix=" " category="inline-code"></block></block>
   <block id="ab1307f811b8b6743a287b5c52f1de16" category="inline-link">support.netapp.com/NOW/download/tools/config_advisor/</block>
-  <block id="830a33ec408c1e828e76f0b2c6ac23f1" category="list-text">Nutzen Sie Config Advisor. Wechseln Sie zur Config Advisor-Seite auf der NetApp Support Site unter<block ref="7b1e972215239acfe30c5560b88fe407" category="inline-link-rx"></block>.</block>
   <block id="daa9bd595933a6d18135662d2f5e506a" category="paragraph">Überprüfen Sie nach dem Ausführen von Config Advisor die Ausgabe des Tools und befolgen Sie die Empfehlungen in der Ausgabe, um die erkannten Probleme zu beheben.</block>
   <block id="ab762a0f70f0be63da9e88e925540f7b" category="list-text">Simulation eines Switchover-Vorgangs:</block>
   <block id="30d1d0c504ab652e59b6d22a22b4b120" category="list-text">Ändern Sie von der Eingabeaufforderung eines beliebigen Node auf die erweiterte Berechtigungsebene:<block ref="0581d0d071ad835f74bf419081ce5d75" prefix=" " category="inline-code"></block></block>
@@ -3673,9 +3563,7 @@
   <block id="bb9e730cb1bf41d49bb0bc0e691c93ae" category="paragraph">DCPM-Modul orange Verriegelungsknopf</block>
   <block id="3b4693c82a80c8cd74de5624c046d419" category="paragraph">Die LED DES DCPM-Moduls leuchtet, wenn das Modul fest im Gehäuse sitzt.</block>
   <block id="6de93a3d40cba5a9f17ae225a0a97f4e" category="section-title">Schritt 3: (Nur MetroCluster): Zurückwechseln von Aggregaten in einer MetroCluster-Konfiguration mit zwei Nodes</block>
-  <block id="9858e62153c9fdbd94de20e9842ed9e8" category="doc">FAS9000 System-Dokumentation</block>
   <block id="67217a13f69bc00335677c551451bc10" category="doc">Ersetzen Sie ein I/O-Modul – AFF A700 und FAS9000</block>
-  <block id="2caeb99a93a4b178a27338b7a581ae15" category="image-alt">drw 9000 entfernen das pcie-Modul</block>
   <block id="208e6af1006f73ba3b37a7e05e3692cd" category="list-text">Zurückkehren des Node in den normalen Betrieb:<block ref="30edaf7c9fa43c78aeaf4b8fabb7af1a" prefix=" " category="inline-code"></block></block>
   <block id="837fcf17f123dccb1301f252ade8a58e" category="admonition">Wenn sich Ihr System in einer MetroCluster Konfiguration mit zwei Nodes befindet, müssen Sie die Aggregate wie im nächsten Schritt beschrieben wiederherstellen.</block>
   <block id="14e1966b2539241942d6151ccb0e2a0e" category="section-title">Schritt 4: Aggregate in einer MetroCluster Konfiguration mit zwei Nodes zurückwechseln</block>
@@ -3686,7 +3574,6 @@
   <block id="b9faf63d3186c5579024bb4f41c534f6" category="paragraph">Der Status des NVMe-Steckplatzes zeigt im Bildschirmausgang das zu ersetzende Caching-Modul an.</block>
   <block id="f21d9047fb686a34fb7720397d2458bc" category="list-text">Für ONTAP 9.8 und höher:</block>
   <block id="d797b840a35f6deb381b0b402e04b0c9" category="list-text">Bereiten Sie auf der Administrator-Berechtigungsebene den NVMe-Zielsteckplatz für das Entfernen vor und antworten<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> Wenn Sie gefragt werden, ob Sie fortfahren möchten:<block ref="0277bb5cae56876e81c890026e236b8d" prefix=" " category="inline-code"></block> Mit dem folgenden Befehl wird Steckplatz 6-2 auf node1 zum Entfernen vorbereitet und die Meldung angezeigt, dass es sicher zu entfernen ist:</block>
-  <block id="e1e044e9b2596ea55ccf2665031de0fc" category="image-alt">drw 9000 entfernen flashcache</block>
   <block id="846c76a20561f327d04b080605ad1886" category="paragraph">Orangefarbene Entriegelungstaste.</block>
   <block id="5da823ff1ce6004b2df61f2050acf611" category="list-text">Drücken Sie die orangefarbene Entriegelungstaste auf der Vorderseite des Cache-Moduls.</block>
   <block id="c485fbcea21bebe6856cedbe9379bf48" category="admonition">Verwenden Sie nicht die nummerierte und letzte E/A-Nockenverriegelung, um das Cache-Modul auszuwerfen. Die nummerierte und gerettete E/A-Nockenverriegelung wirft das gesamte NVRAM10-Modul und nicht das Caching-Modul aus.</block>
@@ -3741,7 +3628,6 @@
   <block id="53590b790d3ba08516176d2bd37b33e9" category="paragraph">Speicherkabel</block>
   <block id="8ba04efff1ec0749374586b1b311d6c9" category="admonition">Dieses Kabel gilt nur für AFF A700.</block>
   <block id="89f3f7895c4e645c2888f18687aeac49" category="paragraph">FC-Host-Netzwerk</block>
-  <block id="1869c18bf4845d129ab70a2555c3fa58" category="paragraph"><block ref="1869c18bf4845d129ab70a2555c3fa58" category="inline-image-macro-rx" type="image"></block></block>
   <block id="02b3dac5d46f2e577325711400925ec7" category="list-text">Lesen Sie den _NetApp Leitfaden zur ONTAP-Konkuratierung_ und sammeln Sie die in diesem Leitfaden aufgeführten Informationen.</block>
   <block id="bf4bab0f60d5f890ac80c1ebcbbc12a9" category="image-alt">symbol für das Anheben des drw 9000</block>
   <block id="85b367f413d423e28eebf0d4d7343b21" category="image-alt">drw 9000 Kabelführungsarme</block>
@@ -3755,13 +3641,10 @@
   <block id="be80668047ce4354d053ebf7d3bf997a" category="admonition">In den Beispielen werden DS224C Shelfs verwendet. Die Verkabelung ist ähnlich wie bei anderen unterstützten SAS-Platten-Shelves.</block>
   <block id="87473dc4b1d1c5d45278a2d4f5421bdd" category="list-text">Verkabelung von SAS-Shelfs in FAS9000, AFF A700 und ASA AFF A700, ONTAP 9.7 und früher:</block>
   <block id="b0a396c09d23a9b88c978e8104270a2c" category="video-title">Animation - SAS-Kabelspeicher - ONTAP 9.7 und früher</block>
-  <block id="901fd883a5a0140d652136ffc6042723" category="paragraph"><block ref="901fd883a5a0140d652136ffc6042723" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1843827ef03aba05b85ff9846acb4a4f" category="list-text">Verkabelung von SAS-Shelfs in FAS9000, AFF A700 und ASA AFF A700, ONTAP 9.8 und höher:</block>
   <block id="30753a1fa10815d6c1474615f6e4763d" category="video-title">Animation - KabelSAS-Speicher - ONTAP 9.8 und höher</block>
-  <block id="e2da081ec1f9e5df221849d0bca3449a" category="paragraph"><block ref="e2da081ec1f9e5df221849d0bca3449a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="8c2c57baca5559cc6deaa2d149cbcc7e" category="admonition">Wenn Sie über mehr als einen Festplatten-Shelf-Stack verfügen, lesen Sie die „_Installation and Cabling Guide_“ für den Laufwerk-Shelf-Typ.</block>
   <block id="dc1949c56b4feff1c4f2d03eb17ee3cb" category="inline-link-macro">Einbau- und Kabelregale für eine neue Systeminstallation - Regale mit IOM12-Modulen</block>
-  <block id="90a326588028ddcde615038a3974e162" category="paragraph"><block ref="90a326588028ddcde615038a3974e162" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f3e065129fb4cb88ba99260c70d8c054" category="list-text">Gehen Sie zu <block ref="53346fef0c147b551f530d05bbad2e41" category="inline-xref-macro-rx"></block> Zum Abschließen der Einrichtung und Konfiguration des Systems.</block>
   <block id="51b3003c067a0d5dfcbcfbc5aab0240d" category="section-title">Option 2: Verbinden Sie die Controller mit einem einzigen NS224-Festplatten-Shelf in AFF A700 und ASA AFF A700 Systemen, die nur mit ONTAP 9.8 und höher ausgeführt werden</block>
   <block id="2335e41d88b4562f66436306d6ba0268" category="paragraph">Sie müssen jeden Controller bei einer AFF A700 oder ASA AFF A700 mit System ONTAP 9.8 oder höher mit den NSM-Modulen am NS224 Drive-Shelf verkabeln.</block>
@@ -3769,18 +3652,15 @@
   <block id="6bf14a7252e28dc753304577c4a9180c" category="list-text">Für die Systeme muss mindestens ein X91148A-Modul in den Steckplätzen 3 und/oder 7 pro Controller installiert sein. Die Animation oder Abbildungen zeigen, dass dieses Modul in den Steckplätzen 3 und 7 installiert ist.</block>
   <block id="69828b46097bb18230c9ffd2d5659688" category="list-text">Verwenden Sie die folgende Animation oder Abbildungen, um Ihre Controller mit zwei X91148A Speichermodulen mit einem einzigen NS224-Laufwerkseinschub zu verbinden, oder verkabeln Sie Ihre Controller mithilfe der Abbildung mit einem X91148A-Speichermodul mit einem NS224-Laufwerkseinschub.</block>
   <block id="e4fe2ba20af64acaf45fc4ff2fdf0009" category="video-title">Animation - Kabel ein einziges NS224 Regal - ONTAP 9.8 und höher</block>
-  <block id="4115ca426c5a2991609d061eae0860e1" category="image-alt">Einzelnes NS224-Shelf</block>
   <block id="5b469ad683a749737d93981005b005ad" category="section-title">Option 3: Verkabeln Sie die Controller mit zwei NS224-Laufwerk-Shelfs in AFF A700 und ASA AFF A700 Systemen, die nur mit ONTAP 9.8 und höher ausgeführt werden</block>
   <block id="14d38bc8dbc01d353e185629d1b8f15a" category="paragraph">Sie müssen jeden Controller bei einer AFF A700 oder ASA AFF A700 mit System ONTAP 9.8 oder höher mit den NSM-Modulen der NS224 Laufwerk-Shelfs verkabeln.</block>
   <block id="b3b5a55eb25abd410b88951b0f879705" category="list-text">Die Systeme müssen zwei X91148A-Module pro Controller in den Steckplätzen 3 und 7 installiert sein.</block>
   <block id="b36c3275f10fc227783ae634144cbd54" category="list-text">Verwenden Sie die folgenden Animationen oder Abbildungen, um Ihre Controller mit zwei NS224 Laufwerk-Shelfs zu verkabeln.</block>
   <block id="438bbae9c36667383085b6ae9e94d71f" category="video-title">Animation - Kabel zwei NS224 Regale - ONTAP 9.8 und höher</block>
-  <block id="4622525bca20bef319ab7dbd1480f7bb" category="image-alt">Zwei NS224-Einschübe</block>
   <block id="55d80e432b90973a4fa7b6b869da09c2" category="paragraph">Wenn das System über NS224-Laufwerk-Shelfs verfügt, sind die Shelfs voreingestellt auf die Shelf-ID 00 und 01. Wenn Sie die Shelf-IDs ändern möchten, müssen Sie ein Werkzeug erstellen, um in die Öffnung einzufügen, an der sich die Schaltfläche befindet.</block>
   <block id="ed1c1a95d2d8d5f187180744bbf4ad18" category="video-title">Animation – legt SAS- oder NVMe-Laufwerk-Shelf-IDs fest</block>
   <block id="d3511b5ad53487ac4d7bf62ec2fa34d1" category="paragraph"><block ref="d3511b5ad53487ac4d7bf62ec2fa34d1" category="inline-link-rx"></block></block>
   <block id="87f3e022170704ccb603a73e613a5c05" category="list-text">Verbinden Sie das Konsolenkabel mit dem Laptop oder der Konsole über das im Lieferumfang des Systems mitgelieferte Konsolenkabel, und verbinden Sie dann den Laptop mit dem Management Switch im Management-Subnetz.</block>
-  <block id="98e0a55b81b9188cead04d30df43a89c" category="image-alt">controller des drw 9000-Kabelkonsolenschalters</block>
   <block id="ec15ae659445c6b6db2f5a726a8eac48" category="admonition">Das Format für die Adresse ist +https://x.x.x.x.+</block>
   <block id="44e5cb60393d7e735de29347758edd23" category="doc">Integrierte Verschlüsselungsschlüssel überprüfen</block>
   <block id="9c675ab95a17d7706cc75c5ef43cd314" category="list-text">Wenn &lt;lno-DARE&gt; nicht in der Befehlsausgabe angezeigt wird und auf dem System ONTAP 9.5 ausgeführt wird, fahren Sie mit fort <block ref="bb573a9efe1b6bf0e0892d0c586f8500" category="inline-xref-macro-rx"></block>.</block>
@@ -3858,8 +3738,6 @@
   <block id="d4d4b346339524be979b964b901a1b92" category="cell">Dann...*</block>
   <block id="44cc7055d64e9241fd58fa9511a21357" category="section-title">Option 2: Booten des Recovery-Images in einer MetroCluster-Konfiguration mit zwei Nodes</block>
   <block id="c1ed0cd23ea77c49b5611e5929537b3f" category="list-text">Schieben Sie die orangefarbene Taste am Nockengriff nach unten, bis sie entsperrt ist.</block>
-  <block id="5981fc794ea7f5a20dc2dbae0768981d" category="image-alt">drw 9000 PCM entfernen</block>
-  <block id="4e867f5be074f366dc5d85d44eed34eb" category="image-alt">drw 9000 pcm offen</block>
   <block id="221a009c2c8e027e67f318554e11c21c" category="paragraph"><block ref="221a009c2c8e027e67f318554e11c21c" category="inline-image-macro-rx" type="image"></block></block>
   <block id="11bf37f206772e91df361decc88b5814" category="list-text">Wenn es sich bei Ihrem System um ein eigenständiges System handelt, benötigen Sie keine Netzwerkverbindung, sondern Sie müssen beim Wiederherstellen des einen zusätzlichen Neustart durchführen<block ref="b2145aac704ce76dbe1ac7adac535b23" prefix=" " category="inline-code"></block> File-System.</block>
   <block id="de8dff5c76cce6c1c8bf248199921c22" category="admonition">Der von Ihnen konfigurierte Zielport ist der Zielport, über den Sie mit dem beeinträchtigten Knoten über den gesunden Knoten während kommunizieren<block ref="b2145aac704ce76dbe1ac7adac535b23" prefix=" " category="inline-code"></block> Dateisystemwiederherstellung mit Netzwerkverbindung. Sie können in diesem Befehl auch den Port E0M verwenden.</block>
@@ -4042,7 +3920,6 @@
   <block id="6873688fd24ce06352b0f67301567306" category="doc">Tauschen Sie ein NVDIMM aus – AFF A400</block>
   <block id="8aa65620b50adcc4dd01255717235b22" category="paragraph">Sie können die folgenden Animationen, Abbildungen oder die geschriebenen Schritte verwenden, um das Controller-Modul aus dem Gehäuse zu entfernen.</block>
   <block id="62370fd38dc5699e9895079d2cfb1fa3" category="video-title">Animation - Entfernen Sie das Controller-Modul</block>
-  <block id="f5016594b8e72f5a97ef9aa0ab2ce820" category="image-alt">drw A400 Controller entfernen</block>
   <block id="1dfd8f0a690cafa9d3544e4817f68306" category="list-text">Stellen Sie das Controller-Modul auf eine stabile, flache Oberfläche.</block>
   <block id="b72bee50d170af9037bebf46f5eb89d7" category="paragraph">Um das NVDIMM auszutauschen, müssen Sie es im Controller-Modul mithilfe der FRU-Karte oben am Luftkanal oder der FRU-Karte oben auf dem Steckplatz 1-Riser suchen.</block>
   <block id="d07d22679fd595588166f72cbc3fcec6" category="list-text">Die NVDIMM-LED blinkt während des Destaging der Inhalte, wenn Sie das System anhalten. Nach Abschluss der Abscheidungen schaltet sich die LED aus.</block>
@@ -4052,10 +3929,8 @@
   <block id="fd62f71706b219af05866bd0a2936d3c" category="paragraph">Sie können das NVDIMM mit den folgenden Animationen, Abbildungen oder geschriebenen Schritten ersetzen.</block>
   <block id="4cdb88b773dbbe796646d321ccc17d79" category="admonition">In der Animation werden leere Steckplätze für Sockel ohne DIMMs angezeigt. Diese leeren Buchsen sind mit Leereinschüben bestückt.</block>
   <block id="47c008694073bf55896e212a6e34e5c9" category="video-title">Animation - Ersetzen Sie das NVDIMM</block>
-  <block id="dddaeedd9556d05cf4df1989bab97eb0" category="image-alt">drw A400 ersetzt NVDIMM-DIMM</block>
   <block id="f7594aa9507b35645b3c82938aed0e9a" category="paragraph">Sie können die folgende Animation, Illustration oder die geschriebenen Schritte zur Installation des Controller-Moduls im Gehäuse verwenden.</block>
   <block id="864cf8ca3a488042efd8b245b0273cfb" category="video-title">Animation - Installieren des Controller-Moduls</block>
-  <block id="d0c4c860316d9a931e10e1cbe3418d1b" category="image-alt">drw A400 Controller-Quelle installieren</block>
   <block id="f6805e79885366ea71636ffc0c97fcbd" category="list-text">Schieben Sie das Controller-Modul mithilfe der Verriegelungen fest in das Gehäuse, bis sich die Verriegelungsriegel erheben.</block>
   <block id="9ce7205fba4ea7a5cf342ea9bb657de2" category="list-text">Setzen Sie das Controller-Modul vollständig in das Gehäuse ein, indem Sie die Verriegelungsriegel nach oben drehen, kippen Sie sie so, dass sie die Sicherungsstifte entfernen, den Controller vorsichtig ganz nach innen schieben und dann die Verriegelungsriegel in die verriegelte Position senken.</block>
   <block id="8809109bc3c32c4643721e11bd2daa4b" category="list-text">Unterbrechen Sie den normalen Boot-Prozess und booten Sie zu LOADER, indem Sie drücken<block ref="76be6883bcf9e8a6aed3a347ac20e41f" prefix=" " category="inline-code"></block>.</block>
@@ -4066,7 +3941,6 @@
   <block id="936537a41290b6040d5cea518bd8e9f8" category="doc">Wiederherstellen und Überprüfen der Systemkonfiguration – AFF A400</block>
   <block id="20ea0eb9eebca0280abc5766496bdaed" category="doc">Ersetzen Sie die Controller-Modul-Hardware – AFF A400</block>
   <block id="d77f71cbbb3c8057b08d0dfb49aa5664" category="paragraph">Sie können das Controller-Modul mithilfe der folgenden, Abbildung oder der geschriebenen Schritte aus dem Gehäuse entfernen.</block>
-  <block id="2010d72cb8663ac4f3960dead61f921e" category="paragraph"><block ref="2010d72cb8663ac4f3960dead61f921e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f4c10aef61f6ce27a93c5212bf85139d" category="list-text">Öffnen Sie am Ersatzsteuermodul den Luftkanal, und entfernen Sie die leeren Riser mithilfe der Animation, der Abbildung oder der schriftlichen Schritte aus dem Controller-Modul:</block>
   <block id="63f87aaa5f633e2ee952b199ae093a26" category="video-title">Animation - Entfernen Sie die leeren Riser aus dem Ersatzcontroller-Modul</block>
   <block id="7f17300d94b3ad1307db5cc0a95ca048" category="list-text">Drücken Sie die Verriegelungslaschen an den Seiten des Luftkanals in Richtung der Mitte des Controller-Moduls.</block>
@@ -4075,14 +3949,11 @@
   <block id="94361a9fb6b7806dba08565d2eb8e812" category="list-text">Wiederholen Sie den vorherigen Schritt für die verbleibenden Riser.</block>
   <block id="467b2bc695ac2ddfea8c36e9a7b57ac2" category="paragraph">Sie können die folgenden Animationen, Abbildungen oder die schriftlichen Schritte verwenden, um die Netzteile in das Ersatzcontrollermodul zu verschieben.</block>
   <block id="89f5f6e8a1a57396283b629dd3099a85" category="video-title">Animation - Verschieben der Netzteile</block>
-  <block id="543cc636467d5177d82c2c5dc40fa939" category="image-alt">drw A400 netzteil</block>
   <block id="991ae28892a3f5f4d831cdf6dd55ed5a" category="paragraph">Sie können die folgende Animation, Abbildung oder die geschriebenen Schritte verwenden, um den NVDIMM-Akku vom beeinträchtigten Controller-Modul in das Ersatzcontrollermodul zu verschieben.</block>
   <block id="b40b5ea58f2090598e415d0e80a3db17" category="video-title">Animation - Verschieben der NVDIMM-Batterie</block>
-  <block id="9185cd979667bd7126df7c80d3bacf16" category="image-alt">drw A400 nvdimm Batt</block>
   <block id="b83b44d067ff2b81649ca1ec4d078840" category="list-text">Öffnen Sie den Luftkanal:</block>
   <block id="efedd511d0e15af2a88b1af1e665f3f3" category="paragraph">Sie können die folgenden Animationen, Abbildungen oder die geschriebenen Schritte verwenden, um die Startmedien vom beeinträchtigten Controller-Modul in das Ersatzcontrollermodul zu verschieben.</block>
   <block id="007f7757d161dc9bdb406ad2beebb4a1" category="video-title">Animation - Verschieben des Bootmediums</block>
-  <block id="956cd238a27c95a8b7705902c6d96082" category="image-alt">drw A400 ersetzt Startmedien</block>
   <block id="2f20e94212a35bf10b52a544d8f2e964" category="list-text">Drücken Sie die blaue Verriegelungstaste, damit sie sich in der geöffneten Position befindet.</block>
   <block id="ee96145214a39f508341276c610b49fa" category="list-text">Setzen Sie die Finger am Ende des Startmediums mit der blauen Taste, drücken Sie fest nach unten auf das Boot-Medium-Ende, um die blaue Verriegelungstaste zu drücken.</block>
   <block id="cf3466ecdfb072da2b00880d3ab9f6fc" category="section-title">Schritt 5: Verschieben Sie die PCIe Riser und Mezzanine-Karte</block>
@@ -4092,7 +3963,6 @@
   <block id="6b5b8285bd128c60fd64b1a0a3749faa" category="video-title">Animation - Verschieben von PCI-Riserern 1 und 2</block>
   <block id="2848d68851434f122810489775f0e87c" category="paragraph">Verschieben der Mezzanine-Karte und des Riser 3 (Riser rechts):</block>
   <block id="6424c2060a19465a5cc6ae95b740fca2" category="video-title">Animation - Bewegen Sie die Mezzanine-Karte und Riser 3</block>
-  <block id="702848fda50b66572d07fb0de7038e26" category="image-alt">drw A400 ersetzt PCIe-Karten</block>
   <block id="5b6499849e242c2c6e9287bd480a88a8" category="list-text">Verschieben Sie PCIe-Risers ein und zwei vom beeinträchtigten Controller-Modul auf das Ersatzcontrollermodul:</block>
   <block id="8ddb35da1640c2563c1596121661236d" category="list-text">Drehen Sie die Riserverriegelung auf der linken Seite des Steigrohrs nach oben und in Richtung Luftkanal.</block>
   <block id="dd822f5f7530d53cb3f2c4610f6dde38" category="list-text">Heben Sie den Riser an, und schieben Sie ihn dann zum Ersatzcontrollermodul.</block>
@@ -4112,7 +3982,6 @@
   <block id="c32ad4a5390f985bde71f85fd8251878" category="paragraph">Um eine PCIe-Karte zu ersetzen, müssen Sie die ausgefallene PCIe-Karte ausfindig machen, den Riser, der die Karte enthält, aus dem Controller-Modul entfernen, die Karte austauschen und dann den PCIe-Riser im Controller-Modul wieder einsetzen.</block>
   <block id="b1c76afa8183e9e38bbcdc2b07081516" category="paragraph">Sie können die folgende Animation, Illustration oder die geschriebenen Schritte zum Ersetzen einer PCIe-Karte verwenden.</block>
   <block id="5823654bd1d2c1d66c7f14b181b09611" category="video-title">Animation: Ersetzen Sie eine PCIe-Karte</block>
-  <block id="19d561d318b7f8e68cd53bd4b4ce75ae" category="paragraph"><block ref="19d561d318b7f8e68cd53bd4b4ce75ae" category="inline-image-macro-rx" type="image"></block></block>
   <block id="765cdfe024498fe63a6e735a5900aa5e" category="list-text">Entfernen Sie den Riser mit der auszutauschenden Karte:</block>
   <block id="4a1758eb84982eba0ae7e92f4805a0fd" category="list-text">Öffnen Sie den Luftkanal, indem Sie die Verriegelungslaschen an den Seiten des Luftkanals drücken, ihn zur Rückseite des Controller-Moduls schieben und dann in seine vollständig geöffnete Position drehen.</block>
   <block id="ae2da50d12990b504fe0386dd31104d2" category="list-text">Heben Sie den Riser gerade nach oben und legen Sie ihn auf einer stabilen, flachen Oberfläche beiseite.</block>
@@ -4127,7 +3996,6 @@
   <block id="d0d8c1208244a56dcbb2146e7f481b69" category="paragraph">Die Mezzanine-Karte befindet sich unter der Risernummer 3 (Steckplatz 4 und 5). Sie müssen diesen Riser entfernen, um auf die Mezzanine-Karte zuzugreifen, die Mezzanine-Karte austauschen und dann die Riser-Nummer 3 neu installieren. Weitere Informationen finden Sie in der FRU-Zuordnung des Controller-Moduls.</block>
   <block id="7b0bb567223271e2fe30743264b3e7e4" category="paragraph">Sie können die Mezzanine-Karte mit der folgenden Animation, Illustration oder den schriftlichen Schritten ersetzen.</block>
   <block id="f3a3cf7eab7750309059903e1cc7d3c1" category="video-title">Animation - Ersetzen Sie die Mezzanine-Karte</block>
-  <block id="cfeb91223ab0ffbe58ae834c4189db80" category="image-alt">drw A400 Austauschen der mezz-Karte</block>
   <block id="92110eec090dd64cd9c33fdb9e290990" category="list-text">Entfernen Sie die Risernummer 3 (Steckplätze 4 und 5):</block>
   <block id="53dc6c1f3f975e8decef52e58bc2aff1" category="list-text">Setzen Sie die Mezzanine-Karte wieder ein:</block>
   <block id="66dd4076c9302ca4e5be977c29e387f4" category="list-text">Entfernen Sie alle QSFP- oder SFP-Module von der Karte.</block>
@@ -4156,7 +4024,6 @@
   <block id="b8baf655ec765d5d983898664c9272aa" category="paragraph">X66250-2-N-C (112-00342)</block>
   <block id="13378a0df578c502443ae7f6cba29221" category="paragraph">16 GB FC oder 25 GbE Kabel für Mezzanine-Karten (abhängig von der Bestellung)</block>
   <block id="6a34534c1e57a69bc063e8a88767c875" category="list-text">Lesen Sie den _NetApp ONTAP Configuration Guide_ und sammeln Sie die in diesem Leitfaden aufgeführten Informationen.</block>
-  <block id="52d1bab65052dd1925e580b744d7189e" category="image-alt">drw Katana-Symbol für die Beschränkung des Hubens</block>
   <block id="19026798e40f3d682dde87cbb940fc1b" category="paragraph">Die optionalen Daten-Ports, optionalen NIC-Karten und Management-Ports der Controller-Module werden mit Switches verbunden. Die Cluster Interconnect- und HA-Ports sind an beiden Controller-Modulen verkabelt.</block>
   <block id="3d6d824132e6ea9215d5f55aab2c487b" category="paragraph">Achten Sie beim Einsetzen der Kabel in die Anschlüsse darauf, die Richtung der Kabelabziehlaschen zu überprüfen. Die Kabelabziehlaschen sind für alle Onboard-Ports und nach unten für Erweiterungskarten (NIC) vorgesehen.</block>
   <block id="89022c411a82a2fd505bed4d053014b2" category="image-alt">drw A400 TNSC-Netzwerkverkabelung</block>
@@ -4166,7 +4033,6 @@
   <block id="8e0457ffe2e7bb2af86481f4fd7c6f41" category="paragraph">Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen. Die Kabelabziehlasche für die NS224 sind nach oben.</block>
   <block id="3e2f0478573244aa002f7207cde9b93b" category="list-text">Verwenden Sie die folgende Animation oder Abbildung, um Ihre Controller mit einem einzelnen Festplatten-Shelf zu verkabeln.</block>
   <block id="89f7a66402ba80464b2d8b21ad48be2c" category="video-title">Animation - Verkabeln Sie die Controller mit einem NS224-Laufwerk-Shelf</block>
-  <block id="5a9ec0b35c155370c2df4d190c2eaac1" category="image-alt">drw a400 ein ns224-Einlegeböden</block>
   <block id="0d41b873813de2203d2c7cc22322899d" category="list-text">Verwenden Sie die folgende Animation oder Illustration, um Ihre Controller mit zwei Laufwerk-Shelfs zu verkabeln.</block>
   <block id="28a5b6c12bed824c9983c41c17b4e08c" category="image-alt">drw a400 zwei ns224-Einschübe</block>
   <block id="2d30f0e7d0bd139e4aadac367a22367c" category="section-title">Option 3: Controller mit SAS-Laufwerk-Shelfs verkabeln</block>
@@ -4198,7 +4064,6 @@
   <block id="5783f79f9e7f2e133566622979b9730b" category="paragraph">Suchen Sie das Boot-Medium im Controller-Modul (siehe FRU-Zuordnung am Controller-Modul) und befolgen Sie dann die Anweisungen, um es zu ersetzen.</block>
   <block id="e1868c0f167920cfa89fada6789c58de" category="paragraph">Obwohl der Inhalt des Startmediums verschlüsselt ist, empfiehlt es sich, den Inhalt der Startmedien zu löschen, bevor sie ersetzt werden. Weitere Informationen finden Sie im<block ref="89de74d6a86df9137b0ef3fb03a43036" category="inline-link-rx"></block> Für Ihr System auf der NetApp Support Site.</block>
   <block id="2328259b44c61e074b53206e40c60845" category="paragraph">Sie können die Startmedien mit der folgenden Animation, Illustration oder den schriftlichen Schritten ersetzen.</block>
-  <block id="bd5497d186b6e2b7b18e72f13cb6b003" category="image-alt">freiluftkanal drw A400</block>
   <block id="3a14f9b352276cdd1419142953354ef1" category="paragraph">Schieben Sie den Luftkanal zur Rückseite der Steuerung</block>
   <block id="3a8682a7a1e8546f30475e17aca47960" category="paragraph">Luftkanal nach oben drehen</block>
   <block id="49848140fa77705d8491bcd6486189b1" category="paragraph">Drücken Sie die blaue Taste</block>
@@ -4218,7 +4083,6 @@
   <block id="2b7c2aaa4a365717d683513bec2dd543" category="doc">Stellen Sie OKM, NSE und NVE nach Bedarf wieder her – AFF A400</block>
   <block id="2c4c75d1e0e065592eedb5be469928fc" category="doc">Hot-Swap-fähige Lüftermodule – AFF A400</block>
   <block id="f94769a33d4669a6660b7ec2722589ef" category="paragraph">Sie können die folgende Animation, Illustration oder die geschriebenen Schritte zum Hot-Swap eines Lüftermoduls verwenden.</block>
-  <block id="611a5142dc0f00bc2e5019e968d727a8" category="image-alt">drw A400 Lüfter austauschen</block>
   <block id="22cc15dad4c522616e5130f927446d07" category="doc">Rückgabe des fehlerhaften Teils an NetApp - AFF A400</block>
   <block id="f56310c49687a40fd4b43bced4b3dcc8" category="video-title">Animation – Installations- und Setup-Anleitung für die AFF A400</block>
   <block id="a6c279177bd30a0d3ee3363a3679bffa" category="doc">Tauschen Sie den Echtzeitakku – AFF A400 aus</block>
@@ -4391,7 +4255,6 @@
   <block id="1952d412a2089ae2581c6a09ce1f7282" category="section-title">Schritt 5: Verschieben Sie ggf. ein Caching-Modul</block>
   <block id="25b7b68a965a32e77a175144ad9d98b8" category="paragraph">Wenn Ihr AFF A220 oder FAS2700 System über ein Caching-Modul verfügt, müssen Sie das Caching-Modul vom alten Controller-Modul in das Ersatz-Controller-Modul verschieben. Das Caching-Modul wird auf dem Controller-Modul-Label als „`M.2 PCIe Card`“ bezeichnet.</block>
   <block id="d56209c7e3ab8840b7ec4dfa719e7d5a" category="paragraph">Drücken Sie nur<block ref="76be6883bcf9e8a6aed3a347ac20e41f" prefix=" " category="inline-code"></block> Nachdem Sie den gesehen haben<block ref="c7edd01af4c95bd0ec0f7072d8035155" prefix=" " category="inline-code"></block> Nachricht:</block>
-  <block id="24b3b18d4ae3c460037fb58156d310c6" category="doc">FAS2700 Systemdokumentation</block>
   <block id="4a548135158bf0dbaee8622657e29f8a" category="doc">Fahren Sie den beeinträchtigten Controller herunter – AFF A220 und FAS2700</block>
   <block id="04f25f5e3cb023eced356b5ed403f57b" category="list-text">Laden Sie Config Advisor auf Ihrem Laptop herunter und installieren Sie es.</block>
   <block id="0997a962f30b3f70c54a54cc63ff6a17" category="paragraph">Teilenummer X6566B-2-R6 (112-00299), 2 m</block>
@@ -4401,7 +4264,6 @@
   <block id="27b080f64d728dcb5d21170ab42a4bb8" category="section-title">Option 1: Verkabeln eines 2-Node-Clusters ohne Switches, Unified Network-Konfiguration</block>
   <block id="a8cb52644fd63b3d401b5a740d7a6af4" category="paragraph">Managementnetzwerk, UTA2-Datennetzwerk und Management-Ports auf den Controllern werden mit Switches verbunden. Die Cluster Interconnect-Ports sind an beiden Controllern verkabelt.</block>
   <block id="3b698ffd7d1122eeee5457612745ea25" category="list-text">Sie können die Verkabelung zwischen den Controllern und den Switches mit der Grafik oder Schritt-für-Schritt-Anleitung ausführen:</block>
-  <block id="2097488b7e9b8b78c5446b3395292b52" category="image-alt">drw 2700 tnsc Unified Network Cabling animiert gif</block>
   <block id="b3c2f136dfc65b975d23edd14bd5efd6" category="paragraph">Verwenden Sie einen der folgenden Kabeltypen, um die UTA2-Daten-Ports mit Ihrem Hostnetzwerk zu verkabeln:</block>
   <block id="3de010ca246e0915dd339c24d8d5e28b" category="paragraph">Ein FC-Host</block>
   <block id="4fd9b26d5ae9474b1fcfcdc6872d0d87" category="list-text">0c und 0d</block>
@@ -4412,39 +4274,29 @@
   <block id="6d4bc3cf86318438b709fd5087158d59" category="section-title">Option 2: Verkabelung eines Switch-Clusters, Unified-Netzwerk-Konfiguration</block>
   <block id="afcfe9ab06da740b8b6db896f79a9ba9" category="paragraph">Managementnetzwerk, UTA2-Datennetzwerk und Management-Ports auf den Controllern werden mit Switches verbunden. Die Cluster-Interconnect-Ports sind mit den Cluster-Interconnect-Switches verbunden.</block>
   <block id="65dc5db3d1655dcd2f6bb2520a3cbef6" category="list-text">Sie können die Verkabelung zwischen den Controllern und den Switches mit der Grafik oder Schritt-für-Schritt-Anleitung ausführen:</block>
-  <block id="73d16383025bb06d3df479450aea8a68" category="image-alt">drw 2700 geschaltete Unified-Netzwerkverkabelung gif animiert</block>
   <block id="0b013a449aa9e2fb582d379b56e1cc6a" category="list-text">**Oder** 0e und 0f</block>
   <block id="336bb5964548d7fa9953ccd8cf7bfea6" category="paragraph">Eine 10GbE</block>
   <block id="3e942a901e66dc0d43ac0710a31f611c" category="list-text">**Oder** e0e und e0f</block>
   <block id="e120ae24c5f3d479f881dd54a4a6a4f1" category="section-title">Option 3: Verkabelung eines 2-Node-Clusters ohne Switches, Ethernet-Netzwerkkonfiguration</block>
   <block id="79a4975b8f78a863afedab1337e7a142" category="paragraph">Managementnetzwerk, Ethernet-Datennetzwerk und Management-Ports auf den Controllern sind mit Switches verbunden. Die Cluster Interconnect-Ports sind an beiden Controllern verkabelt.</block>
-  <block id="00e617034c3fb1b0698ef30fec708668" category="image-alt">drw 2700 tnsc ethernet-Netzwerkverkabelung animiert gif</block>
   <block id="2d4bb42b46d0cffb7d3b74306dfaf645" category="section-title">Option 4: Kabel ein Switch-Cluster, Ethernet-Netzwerk-Konfiguration</block>
   <block id="ec1cec1e423d40a390358261d2f99fa4" category="paragraph">Managementnetzwerk, Ethernet-Datennetzwerk und Management-Ports auf den Controllern sind mit Switches verbunden. Die Cluster-Interconnect-Ports sind mit den Cluster-Interconnect-Switches verbunden.</block>
-  <block id="9e67c381dce7a443f99d338070e65c5f" category="image-alt">drw 2700 Ethernet-Netzwerkverkabelung animiert gif</block>
   <block id="e6de7ea81eaff65fb7b0b6574edd5f39" category="paragraph">Sie müssen die Controller mithilfe der integrierten Storage-Ports mit den Shelfs verkabeln. NetApp empfiehlt MP-HA-Verkabelung für Systeme mit externem Storage. Wenn Sie ein SAS-Bandlaufwerk haben, können Sie Single-Path-Verkabelung verwenden. Wenn Sie keine externen Shelfs haben, ist die MP-HA-Verkabelung zu internen Laufwerken optional (nicht abgebildet), wenn die SAS-Kabel zusammen mit dem System bestellt werden.</block>
   <block id="43f54a2265fad69a31e2f56b8ec07694" category="section-title">Option 1: Kabelspeicherung auf einem HA-Paar mit externen Festplatten-Shelfs</block>
   <block id="ec6e429ca22f363e17fa8c3ce516c146" category="paragraph">Sie müssen die Shelf-Verbindungen verkabeln und dann beide Controller mit den Laufwerk-Shelfs verkabeln.</block>
   <block id="8ab7e2263120080cea820c9dc1549546" category="list-text">Verkabeln Sie das HA-Paar mit externen Festplatten-Shelfs:</block>
   <block id="97a62b9933b5f2f8ee3abccea9c274f6" category="admonition">Das Beispiel verwendet DS224C. Die Verkabelung ist ähnlich wie bei anderen unterstützten Festplatten-Shelfs.</block>
-  <block id="fbf7c560d2202b7ede4f74efc1bcd515" category="image-alt">drw 2700 ha Speicherverkabelung animiert gif</block>
-  <block id="3f2eae2d93f0eea6d4a2ab1c770e2797" category="paragraph"><block ref="3f2eae2d93f0eea6d4a2ab1c770e2797" category="inline-image-macro-rx" type="image"></block></block>
   <block id="237232b07c77237fa40b7ebed514668a" category="paragraph">Verkabeln Sie die Shelf-zu-Shelf-Ports.</block>
   <block id="7855441953000e9377379c90f290c456" category="list-text">Port 3 auf IOM A zu Port 1 auf dem IOM A auf dem Shelf direkt unten.</block>
   <block id="87aa8b15d874bc2416072d646a31810f" category="list-text">Port 3 auf IOM B zu Port 1 auf dem IOM B auf dem Shelf direkt unten.</block>
-  <block id="27a3af9e579b79ddfe29151922596d53" category="paragraph"><block ref="1869c18bf4845d129ab70a2555c3fa58" category="inline-image-macro-rx" type="image"></block> Kabel Mini-SAS HD auf Mini-SAS HD</block>
-  <block id="a50aeec9921e0390bad38d745f1ad53f" category="paragraph"><block ref="a50aeec9921e0390bad38d745f1ad53f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1ebce5301fdee7db58216459dedbddac" category="paragraph">Verbinden Sie jeden Node mit IOM A im Stack.</block>
   <block id="8e1736a5667ca807d2be49036e98d827" category="list-text">Controller 1 Port 0b zu IOM A-Port 3 am letzten Laufwerk-Shelf im Stack.</block>
   <block id="2dc1ce09c88aa3d65bff3e266812d266" category="list-text">Controller 2 Port 0a zu IOM A-Port 1 am ersten Festplatten-Shelf im Stack.</block>
-  <block id="63ea7f34346364a7f538a58d8be64928" category="paragraph"><block ref="63ea7f34346364a7f538a58d8be64928" category="inline-image-macro-rx" type="image"></block></block>
   <block id="491ac40caf1751d565e668d868bc0d41" category="paragraph">Verbinden Sie jeden Node mit IOM B im Stack</block>
   <block id="4b340db6110d657781e4a28d91e76457" category="list-text">Controller 1 Port 0a zu IOM B-Port 1 am ersten Festplatten-Shelf im Stack.</block>
-  <block id="25e9c854cd268404ba760167e55a47b9" category="list-text">Controller 2 Port 0b zu IOM B-Port 3 auf dem letzten Laufwerk-Shelf im Stack.<block ref="1869c18bf4845d129ab70a2555c3fa58" category="inline-image-macro-rx" type="image"></block> Kabel Mini-SAS HD auf Mini-SAS HD</block>
   <block id="ba9a3cf272ff19e49b8066ab84a2b3dc" category="inline-link-macro">Installation und Verkabelung</block>
   <block id="a83c5e67d745b0c85b815af3214463cd" category="section-title">Option 1: Schließen Sie das System-Setup ab, wenn die Netzwerkerkennung aktiviert ist</block>
   <block id="cbd6e530c253bd69eae2efffc8a1d409" category="list-text">Mithilfe der folgenden Animation können Sie eine oder mehrere Laufwerk-Shelf-IDs festlegen</block>
-  <block id="2c51278d41ddd5b0a5e4e43d5d054024" category="admonition">Das Format für die Adresse lautet<block ref="e3a42c8b12a27a5e78828d7419e57eb0" category="inline-link-rx"></block>.</block>
   <block id="77c90a069b30ca068906f4bbc5d904e1" category="doc">Integrierte Verschlüsselungsschlüssel für AFF A220 und FAS2700</block>
   <block id="9b84aee1c6149b8506044c563e4a3178" category="inline-link-macro">Installations- und Setup-Anleitung für AFF A220/FAS2700 Systeme</block>
   <block id="8db94eb390aaecb9128a260b00e455e8" category="paragraph"><block ref="8db94eb390aaecb9128a260b00e455e8" category="inline-link-macro-rx"></block></block>
@@ -4486,7 +4338,6 @@
   <block id="b769c31ad04360afee6ce7c21e51f91b" category="list-text">Drehen Sie das Caching-Modul nach unten in Richtung der Hauptplatine.</block>
   <block id="6fa69afac2c36bdcc90389549843343d" category="list-text">Platzieren Sie den Finger am Ende des Cache-Moduls mit der blauen Taste, drücken Sie das Ende des Cache-Moduls fest nach unten, und heben Sie dann die Verriegelungstaste an, um das Zwischenspeichermodul zu verriegeln.</block>
   <block id="838316a92edbe8e931b912c827cad7b7" category="section-title">Schritt 7: Verschieben Sie die DIMMs</block>
-  <block id="07198f13a474589e15ec90df05d856ff" category="doc">FAS8300 und FAS8700 System Documentation</block>
   <block id="f060498e4a9c2e920e619ab0da23740a" category="doc">Ersetzen Sie eine PCIe- oder Mezzanine-Karte – FAS8300 und FAS8700</block>
   <block id="94aea6f09b1466d3642940029f1b693a" category="doc">Übersicht über den Austausch von Controller-Modulen – FAS8300 und FAS8700</block>
   <block id="3a08488c499949ce994ce7beebe666ee" category="doc">Ersetzen Sie ein Netzteil – FAS8300 und FAS8700</block>
@@ -4643,7 +4494,6 @@
   <block id="ecc08dd2661076f245ef51eb14c4a74d" category="paragraph">Jedes Anschlusspaar, das für multipathed Cabling bestimmt ist, ist durch ein Oval umgeben, das die Farbe ist, die mit dem Stapel verbunden ist, mit dem es verkabelt ist. Jedes Port-Paar, das für Quad-Pathed-Kabel bestimmt ist, wird durch ein Rechteck umkreist, das die Farbe ist, die dem Stack zugeordnet ist, mit dem er verkabelt ist.</block>
   <block id="7c0edd402cd55e5ea26650be4a6f998c" category="section-title">Quad Path HA mit zwei Quad-Port SAS HBAs und zwei Multi-Shelf-Stacks</block>
   <block id="f76dc75f678aa69ffe38bc567a89bca0" category="paragraph">Im folgenden Arbeitsblatt und Verkabelungsbeispiel werden Portpaare 1a/2b (multipathed) und 2a/1d (Quad-pathed) für Stack 1 und Port-Paare 1c/2d (multipathed) und 2c/1b (Quad-pathed) für stapel2 verwendet.</block>
-  <block id="1ba62ddf8cca99736a1b554044171b2e" category="image-alt">drw-Arbeitsblatt qpha-Steckplätze 1 und 2 zwei 4-porthbas-Stapel nau</block>
   <block id="bfaf47370d0e0636d466e95dcd0ebeb2" category="image-alt">drw qpha Steckplätze 1 und 2 4-porthbas zwei Stapel nau</block>
   <block id="0ed20e374c19ba1929de6bdbbdd59fb4" category="summary">Sie können den Zustand Ihres Festplatten-Shelf überwachen, indem Sie die Standort- und Statusbedingungen der LEDs an den Festplatten-Shelf-Komponenten verstehen.</block>
   <block id="0de0a804806f46ef402b06f8cf86d3fd" category="doc">Überwachen Sie Platten-Shelf-LEDs – Shelfs mit IOM12/IOM12B-Modulen</block>
@@ -4772,13 +4622,11 @@
   <block id="263c7d60489662b08bc168e30ef43797" category="paragraph">Bewahren Sie das gesamte Verpackungsmaterial für die Verwendung auf, wenn Sie den defekten Lüfter zurücksenden.</block>
   <block id="1e3e39e2e6318eead89660ab2de160d9" category="list-text">Suchen Sie an der Rückseite des Festplatten-Shelf nach den Warn-LEDs, um das Lüftermodul zu finden, das Sie entfernen müssen.</block>
   <block id="d3ec7e2fd26e47ab7e5f0b12f98df53f" category="paragraph">Sie müssen das Lüftermodul, für das die Warn-LED leuchtet, austauschen.</block>
-  <block id="1ed4cea40d991f4ddac0f5d7a0187c6a" category="image-alt">28 dwg e2860 de460c Einzelgebläse mit LED-Legende</block>
   <block id="b1c23a7b6408627bd440346dc97e6430" category="paragraph">Der Lüfter hat einen Fehler</block>
   <block id="8381a4cbd0b46421f46ed9e6a81a2fa3" category="list-text">Drücken Sie die orangefarbene Lasche, um den Griff des Lüftermoduls zu lösen.</block>
   <block id="3f7cf11429b516c3cb53569b1d4e1f45" category="image-alt">28 dwg e2860 de460c Einzelgebläse mit orangefarbener Lasche Legende</block>
   <block id="cd502c53e12310d019d79673fe2f6a6f" category="cell">Die Registerkarte, auf der Sie drücken, um den Griff des Lüftermoduls zu lösen</block>
   <block id="e4dae0ada00c8c95fbbb526e2193977e" category="list-text">Ziehen Sie das Lüftermodul mithilfe des Griffs aus dem Shelf heraus.</block>
-  <block id="de3d981545a6d8a0394841c913654bc7" category="image-alt">28 DWG e2860 de460c Gebläsegriff mit Legende</block>
   <block id="8874f1e7a2829d0a245568080fc2e410" category="cell">Griff, um das Lüftermodul heraus zu ziehen</block>
   <block id="7dfc346aec83c73e30210e88ca2e6f48" category="list-text">Schieben Sie das Ersatzlüftermodul vollständig in das Regal und schieben Sie den Griff des Lüftermoduls nach links, bis es mit der orangefarbenen Lasche einrastet.</block>
   <block id="ed548d9ada85060c7850298ed30cea6d" category="list-text">Überprüfen Sie die gelbe Warn-LED am neuen Lüftermodul.</block>
@@ -4889,7 +4737,6 @@
   <block id="035f36f8cb7a7149476fc3a606085ac7" category="paragraph">Obwohl die Laufwerke getrennt verpackt sind und das Shelf leichter wird, wiegt ein leeres DS460C Shelf noch immer ungefähr 132 kg. Gehen Sie daher beim Verschieben eines Shelfs folgende Vorsicht vor.</block>
   <block id="c04b249a92156b3830dd23c4f0227ad3" category="admonition">Es wird empfohlen, einen mechanischen Aufzug oder vier Personen mit den Hubgriffen zu verwenden, um ein leeres DS460C-Regal sicher zu bewegen.</block>
   <block id="271ccf7899e5bebc4f9e5879e8b4e969" category="paragraph">Ihre DS460C-Sendung wurde mit vier abnehmbaren Hebegriffen (zwei pro Seite) verpackt. Um die Hebegriffe zu verwenden, installieren Sie sie, indem Sie die Laschen der Griffe in die Schlitze an der Seite des Regals einsetzen und nach oben drücken, bis sie einrasten. Wenn Sie dann das Festplatten-Shelf auf die Schienen schieben, lösen Sie mithilfe der Daumenverriegelung jeweils einen Satz von Griffen. Die folgende Abbildung zeigt, wie ein Hubgriff befestigt wird.</block>
-  <block id="2794022ceac3fcd7a5363d665e5359a5" category="image-alt">drw ds460c Griffe</block>
   <block id="451345ca48e949ee2fe424e0fc68ce3d" category="list-text">Installieren Sie alle zuvor entfernten Netzteile und IOMs neu, bevor Sie das Festplatten-Shelf in das Rack einbauen.</block>
   <block id="3a7aa90b7e6e30d4cea14996d05d2cb4" category="list-text">Wenn Sie ein DS460C Festplatten-Shelf installieren, installieren Sie die Laufwerke in den Laufwerkfächer. Andernfalls fahren Sie mit dem nächsten Schritt fort.</block>
   <block id="f0d969f7b7ef3f514e1ebe9dd5ba1adf" category="paragraph">Tragen Sie stets ein ESD-Handgelenkband, das an einer nicht lackierten Oberfläche am Gehäuse geerdet ist, um statische Entladungen zu vermeiden.</block>
@@ -4898,18 +4745,15 @@
   <block id="2d46a0e0bfeb381cc0efc2e57a23d530" category="admonition">*Gefahr einer Gerätestörung:* um einen korrekten Luftstrom zu ermöglichen und eine Überhitzung zu vermeiden, müssen die ersten vier Laufwerke immer in die vorderen Schlitze (0, 3, 6 und 9) eingesetzt werden.</block>
   <block id="0a420e5d9ce2ddffd04807c20c8775ca" category="list-text">Verteilen Sie bei den verbleibenden Laufwerken gleichmäßig auf alle Fächer.</block>
   <block id="b04a9ecb43c98234e0c97b118b532535" category="paragraph">Die folgende Abbildung zeigt, wie die Laufwerksanzahl bei jedem Laufwerkschublade im Shelf von 0 bis 11 nummeriert ist.</block>
-  <block id="82edbae4acf5762cfee69aaa6facde11" category="image-alt">Dwg trafford Schublade mit hdds-Callouts</block>
   <block id="07f7351fb2334783d3087885957e5f5e" category="list-text">Öffnen Sie die obere Schublade des Regals.</block>
   <block id="74e528b6d2588aa55dd04aa2665edc1e" category="list-text">Nehmen Sie ein Laufwerk aus dem ESD-Beutel.</block>
   <block id="0e3688cee53f6e574cdb43b2a56c23d1" category="list-text">Den Nockengriff am Antrieb senkrecht anheben.</block>
   <block id="fb6f1f4c493441e6a7683a024fb3ec5d" category="list-text">Richten Sie die beiden angehobenen Tasten auf beiden Seiten des Laufwerkträgers an der entsprechenden Lücke im Laufwerkskanal auf der Laufwerksschublade aus.</block>
-  <block id="62d5617d611cd37acd571c7b9d62d93e" category="image-alt">28 DWG e2860 de460c Antrieb Cru</block>
   <block id="5af00bb5ed30b04ab155e3a408b882b4" category="cell">Erhöhte Taste auf der rechten Seite des Laufwerkträgers</block>
   <block id="93f6c5f348acabea66206d901bc5c525" category="list-text">Senken Sie den Antrieb gerade nach unten, und drehen Sie dann den Nockengriff nach unten, bis das Laufwerk unter dem orangefarbenen Freigaberiegel einrastet.</block>
   <block id="1f31fbf7c8c9858d94379ad61f4bfc04" category="list-text">Wiederholen Sie die vorherigen Teilschritte für jedes Laufwerk in der Schublade.</block>
   <block id="41c43d58afa9890ab76a2df946aee3a4" category="paragraph">Stellen Sie sicher, dass die Steckplätze 0, 3, 6 und 9 in jeder Schublade Laufwerke enthalten.</block>
   <block id="52edf13d95e765d22838d8e275a1fbf1" category="list-text">Schieben Sie die Laufwerkschublade vorsichtig wieder in das Gehäuse.</block>
-  <block id="d91e5def3f81a334c72e212cac3b95ee" category="paragraph"><block ref="d91e5def3f81a334c72e212cac3b95ee" category="inline-image-macro-rx" type="image"></block></block>
   <block id="07467fb3d31d7b416b75edd346bb5bfe" category="admonition">*Möglicher Verlust des Datenzugriffs:* Schlingen Sie die Schublade niemals aus. Schieben Sie die Schublade langsam hinein, um zu vermeiden, dass die Schublade einrastet und das Speicher-Array beschädigt wird.</block>
   <block id="0afb1c54f30f3813473eb3b220fdfe91" category="list-text">Schließen Sie die Antriebsschublade, indem Sie beide Hebel in die Mitte schieben.</block>
   <block id="3d2a88f98e197f6bc822064edae59a49" category="list-text">Wiederholen Sie diese Schritte für jede Schublade im Festplatten-Shelf.</block>
@@ -5003,7 +4847,6 @@
   <block id="87e222a1917be35f082aeb99501e10ca" category="doc">Hot-Swap-fähige Festplattenlaufwerke in einem DS460C Festplatten-Shelf – Shelfs mit IOM12/IOM12B-Modulen</block>
   <block id="be233bc92e2ebd68f0afba0d549e1989" category="list-text">Das Ersatzlaufwerk muss von dem DS460C Festplatten-Shelf unterstützt werden.</block>
   <block id="d4639e1d22aa97da774c8bd77f8fb9a4" category="list-text">Das DS460C-Laufwerk-Shelf besteht aus fünf Laufwerksfächer (Laufwerksschublade 1 oben durch Laufwerksschublade 5 unten), die jeweils 12 Laufwerksschächte enthalten.</block>
-  <block id="efdce0991089cb793985d216e3fc1bbc" category="image-alt">28 dwg e2860 de460c vorne keine Rufumbrüche</block>
   <block id="225b71a35f0513a366c7b37f98e6d57e" category="list-text">Identifizieren Sie das ausgefallene Laufwerk über die Warnmeldung der Systemkonsole und die LED für gelbe Warnung am Laufwerkschublade.</block>
   <block id="00e94227f031078673f572b0ebb87e36" category="paragraph">Die 2.5- und 3.5-Zoll-SAS-Laufwerksträger enthalten keine LEDs. Stattdessen müssen Sie die Warn-LEDs in den Laufwerksfächer anzeigen, um zu ermitteln, welches Laufwerk ausfällt.</block>
   <block id="80ec99c0cab09e567838a3b9d4c43092" category="paragraph">Die Warn-LED (gelb) der Laufwerksschublade blinkt, damit Sie das richtige Laufwerk öffnen können, um zu ermitteln, welches Laufwerk ersetzt werden soll.</block>
@@ -5019,7 +4862,6 @@
   <block id="48cb4c1c5e18eec97fe2c35a66b8047c" category="list-text">Den Nockengriff öffnen und den Antrieb leicht herausheben.</block>
   <block id="764a62532760f655a4934a835eafa280" category="list-text">Warten Sie 30 Sekunden.</block>
   <block id="9ac98f01c6ecb5cd4bd8bdd44dc99f6e" category="list-text">Heben Sie den Antrieb mithilfe des Nockengriffs aus dem Regal.</block>
-  <block id="d093bf7d46ae82c8a2944054aedbff98" category="image-alt">92-dwg-D6600-Laufwerk installieren oder entfernen</block>
   <block id="27f99f15ab3f6c5b5bf7e94d09452f30" category="list-text">Setzen Sie das Laufwerk auf eine antistatische, gepolsterte Oberfläche, die von Magnetfeldern entfernt ist.</block>
   <block id="bf529ce9b4f798afc63d9969df949329" category="list-text">Setzen Sie das Ersatzlaufwerk in die Schublade ein:</block>
   <block id="d82cedbc037a62d2e2c1e9a97841e4d9" category="list-text">Den Nockengriff am neuen Antrieb senkrecht anheben.</block>
@@ -5756,8 +5598,6 @@
   <block id="c58504da624719ce30aca73779ca7dbf" category="doc">Systemkonfiguration wiederherstellen und überprüfen - AFF A700s</block>
   <block id="a6528a788f88cf757ff6bbfe3f5da074" category="doc">Ersetzen Sie die Controller-Modul-Hardware - AFF A700s</block>
   <block id="22969388a58653a9ab4e9f8f503beb09" category="list-text">Trennen Sie das Netzteil des Controller-Moduls von der Quelle, und ziehen Sie dann das Kabel vom Netzteil ab.</block>
-  <block id="5996ae5e0447afd212331572a03c94ea" category="image-alt">drw a700s pcm ausbauen</block>
-  <block id="c825d3306198a3e63edc34a58e1f476c" category="image-alt">freiluftkanal drw a700s</block>
   <block id="d9119345c9a007e36472326a6510319b" category="section-title">Schritt 2: Verschieben Sie die NVRAM-Karte</block>
   <block id="63f3a7c41a55885608d548f506cf6e84" category="paragraph">Im Rahmen des Controlleraustauschs müssen Sie die NVRAM-Karte vom Riser 1 im Modul für beeinträchtigte Controller entfernen und die Karte in Riser 1 des Ersatzcontrollermoduls installieren. Sie sollten Riser 1 erst wieder in das Ersatzcontrollermodul einsetzen, nachdem Sie die DIMMs vom beeinträchtigten Controller-Modul in das Ersatzcontrollermodul verschoben haben.</block>
   <block id="1ab810cfbdc8e768a7dd00d6ecd7d645" category="list-text">Entfernen Sie den NVRAM-Riser 1 aus dem Controller-Modul:</block>
@@ -5917,7 +5757,6 @@
   <block id="d00782da692bd9ebe9130b9b13318aa8" category="doc">Wiederherstellen und Überprüfen der Systemkonfiguration – AFF A900</block>
   <block id="b35a00e75330322eefd710713ca83b02" category="doc">AFF A900 Systeme</block>
   <block id="2aba05ee9a4093e5315b48903c27d988" category="doc">Ein E/A-Modul austauschen – AFF A900</block>
-  <block id="d401d7f8340a560f025bd48c41cf9fd1" category="paragraph"><block ref="d401d7f8340a560f025bd48c41cf9fd1" category="inline-image-macro-rx" type="image"></block></block>
   <block id="eee1a85c64e17c1ca9ed30c1f544d35d" category="doc">Ersetzen Sie das Controller-Modul AFF A900</block>
   <block id="3f0db9aa8dd4145d2c4b64ea3481303a" category="list-text">In diesem Verfahren wird das Startgerät vom beeinträchtigten Controller auf den Ersatzcontroller verschoben, so dass der Ersatzcontroller in derselben ONTAP-Version wie das alte Controller-Modul hochstartet.</block>
   <block id="c679e8417b3c86837c70fa5e162e77a6" category="list-text">Die beeinträchtigte Steuerung ist die Steuerung, die ausgetauscht wird.</block>
@@ -5986,12 +5825,9 @@
   <block id="055140d300b472c3cf197b316fc1a111" category="doc">Komplette Systemwiederherstellung - AFF A900</block>
   <block id="6551c0f6e6caf0566c6eae152ecd7b38" category="doc">Ersetzen Sie den Startdatenträger - AFF A900</block>
   <block id="f42f050dc5269ad7b9f62abb5be6f335" category="doc">Entfernen Sie den Controller, ersetzen Sie den Startdatenträger, und übertragen Sie das Startabbild – AFF A900</block>
-  <block id="5d6fb494ffd2ad4919bfe7a89dca376f" category="image-alt">drw a900 PCM entfernen</block>
-  <block id="12fa42e0a81aa9a47bca5bce92d6ae38" category="image-alt">drw a900 PCM offen</block>
   <block id="89c421ecee17b213d1a0c7b9a2dd8106" category="image-alt">drw a900 entfernen Bootdev</block>
   <block id="e81993a1d153ae6594cc7e0070093d6a" category="doc">Hardware - AFF A900 verschieben und ersetzen</block>
   <block id="ba60b428b4c093e111c8f00b60fc4a80" category="image-alt">drw a900 entfernen das Einbauen des Netzteilmoduls</block>
-  <block id="9a673f4738f255def47cc1d92dbc0cf6" category="image-alt">drw a900 Installationlüfter entfernen</block>
   <block id="ba076cc47bbe54dead2d30165db372b5" category="image-alt">entfernen Sie die NV-Batterie des drw a900</block>
   <block id="9c0cca32aafcf28a513162ba96089a15" category="video-title">Animation - USB entfernen/installieren</block>
   <block id="8da7df8c5a74dcac7b5b9a5067e72313" category="image-alt">drw a900 entfernen LED-Mod ersetzen</block>
@@ -5999,7 +5835,6 @@
   <block id="fcc9aa8940599a2c3be38723a65e9e21" category="doc">Ersetzen Sie ein DIMM - AFF A900</block>
   <block id="a2996937d1a0f2d39e753cdc891f28a1" category="image-alt">drw a900 DIMM-Karte</block>
   <block id="77b4701113ac545c98576d64b489fa56" category="video-title">Animation - DIMM ersetzen</block>
-  <block id="cd9ecdfdf99f4eff04ef39f0689a54be" category="image-alt">drw a900 ersetzen PCM-dimms</block>
   <block id="e5fcd011be287f0b85815a5d0c8165aa" category="open-title">In den meisten Konfigurationen</block>
   <block id="6a925f3765a4dc795f4b5a0732579780" category="open-title">Controller befindet sich in einem MetroCluster</block>
   <block id="d994e1a1688cb6d7b8e264a209d763d6" category="doc">Ersetzen Sie das Gehäuse - AFF A900</block>
@@ -6537,8 +6372,6 @@
   <block id="b9130a693f6e37444632fe71a4b60f7b" category="paragraph">Um Ihr AFF C250-System zu installieren, müssen Sie ein Konto erstellen und das System registrieren. Außerdem müssen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp für Ihr System inventarisieren und bestimmte Netzwerkinformationen erfassen.</block>
   <block id="3a4e965359d6ad3b670569d4d81a4897" category="list-text">Verwenden Sie die folgende Animation, um Shelf-IDs für ein oder mehrere Festplatten-Shelfs einzuschalten und festzulegen:</block>
   <block id="5ba23cc00c6685a0d9b231590e5ee1c0" category="paragraph">Für NS224 Laufwerk-Shelfs sind die Shelf-IDs auf 00 und 01 voreingestellt. Wenn Sie die Shelf-IDs ändern möchten, verwenden Sie das gerade gebogene Ende einer Büroklammer oder den Kugelschreiber mit schmaler Spitze, um auf die Shelf-ID-Taste hinter der Frontplatte zuzugreifen.</block>
-  <block id="688ed49ee5cf1b7f7ef70935870d42d8" category="summary">In der Dokumentation zum AFF C250-System können Sie das System installieren, einrichten und warten.</block>
-  <block id="c2deffcaea49ccd174c7da17d80e1edf" category="doc">AFF C250-Systemdokumentation</block>
   <block id="a4829fef0cfb953ea3181e31db648a62" category="paragraph">Sie können ein ausgefallenes SSD-Laufwerk unterbrechungsfrei ersetzen, während I/O ausgeführt wird.</block>
   <block id="d7b7b72f7a0bd85854375ed25ad54137" category="admonition">Es kann mehrere Stunden dauern, bis das Laufwerk in der Liste der ausgefallenen Laufwerke angezeigt wird.</block>
   <block id="f6551f88d88dddb684035802224a0336" category="doc">Fahren Sie den Controller - AFF C250 herunter</block>
@@ -6577,8 +6410,6 @@
   <block id="e6423ca3487b9b75d5af512862698175" category="doc">Ersetzen Sie die Hardware des Controller-Moduls – AFF C400</block>
   <block id="5edd30c4cef8fac3bd29e60266f4cb36" category="doc">Fahren Sie die Controller herunter - AFF C400</block>
   <block id="5254fce53c38649f011fdb307e35d4b3" category="doc">Ersetzen Sie ein DIMM-Modul – AFF C400</block>
-  <block id="d026008f7eb80e36926da619f0e8aa79" category="summary">In der Dokumentation zum AFF C400-System können Sie Ihr System installieren, einrichten und warten.</block>
-  <block id="e8e2cfacbe6cfb70649bd4e2bb33598e" category="doc">AFF C400-Systemdokumentation</block>
   <block id="8db6fdf9679dcdf01a0f39d01d482c0c" category="doc">Integrierte Verschlüsselung prüfen – AFF C400</block>
   <block id="454f2d4445f738afc6491f938272785d" category="doc">System wieder einsetzen und Festplatten neu zuweisen - AFF C400</block>
   <block id="7fc305adae8e903c0dc8bff5a49862c9" category="doc">Ersetzen Sie eine PCIe- oder Zusatzkarte - AFF C400</block>
@@ -6763,8 +6594,6 @@
   <block id="2a6e70f5ba0bf4b1e8256c095ec0cd1c" category="doc">Ersetzen Sie die Hardware des Controller-Moduls – AFF C800</block>
   <block id="90571542a9bc3f19e7a4f29fa9556cff" category="doc">Fahren Sie die Controller herunter - AFF C800</block>
   <block id="96575ba10e2fbb7c8295e344411ca2d1" category="doc">Ersetzen Sie ein DIMM-Modul – AFF C800</block>
-  <block id="0251caa15dc8d2cbd1cfcc6d72965b59" category="summary">In der Dokumentation zum AFF C800-System können Sie das System installieren, einrichten und warten.</block>
-  <block id="9683970b55904c77ccb71ba2bd90666f" category="doc">AFF C800-Systemdokumentation</block>
   <block id="592fdd085a6d32be5ca82d8cf41fd57d" category="doc">Überprüfen Sie die integrierten Verschlüsselungsschlüssel - AFF C800</block>
   <block id="053f6b40fe6bb9b0a6dde49c0f76dc01" category="doc">System wieder einsetzen und Festplatten neu zuweisen – AFF C800</block>
   <block id="1085be18597d7d6c96ecba68a211bd73" category="doc">Ersetzen Sie eine PCIe-Karte - AFF C800</block>
@@ -7002,7 +6831,6 @@
   <block id="48114454330840b73674b4d456819a4e" category="list-text">UTA2-Datennetzwerkkonfigurationen</block>
   <block id="e6746873d55c9a028bc3eae1ed6cd0db" category="list-text">Ethernet-Netzwerkkonfigurationen</block>
   <block id="f9655777cbdbded95ebaf4fdc1ed1c83" category="paragraph">Führen Sie die folgenden Schritte für jedes Controller-Modul durch.</block>
-  <block id="4b7d254b4cff665eba8f89aeb96e16cb" category="list-text">Verkabeln Sie die Cluster Interconnect Ports e0a mit e0a und e0b mit e0b mit dem Cluster Interconnect-Kabel. +<block ref="9a0e89c71564aa69ffecf67eb610bc96" category="inline-image-macro-rx" type="image"></block></block>
   <block id="54254076225178d5782bc5158de2ffd3" category="list-text">Verwenden Sie einen der folgenden Kabeltypen, um die Datenports e0c/0c und e0d/0d oder e0e/0e und e0f/0f mit dem Host-Netzwerk zu verkabeln.</block>
   <block id="43083753a8bd4d126f4e9d226b24d42f" category="list-text">Verwenden Sie das Cat 6 RJ45-Kabel, um die e0c- über e0f-Ports mit Ihrem Hostnetzwerk zu verkabeln. In der folgenden Abbildung.</block>
   <block id="5cb31a934f99a854350d21ffae22067d" category="paragraph">Lesen Sie, wie Sie ein Cluster mit Switches verkabeln.</block>
@@ -7060,20 +6888,14 @@
   <block id="eba4465f65ac7360936f8f238b09999c" category="list-text">Zusätzliche Netzwerkkabel zum Anschließen des Systems an den Netzwerk-Switch und den Laptop oder die Konsole über einen Webbrowser.</block>
   <block id="c7e4a9edbb9ec3bb0052efd3332763a3" category="section-title">Schritt 3: Controller mit Cluster verkabeln</block>
   <block id="089103029c56ad66034dfe6bd70cfdcb" category="paragraph">Verwenden Sie die Animation oder die tabellarischen Schritte, um die Verkabelung zwischen den Controllern und den Switches abzuschließen. Führen Sie die Schritte an jedem Controller aus.</block>
-  <block id="5d8d8fe980b572286e75db6ff18d3cbc" category="paragraph"><block ref="5d8d8fe980b572286e75db6ff18d3cbc" category="inline-image-macro-rx" type="image"></block></block>
   <block id="84e68180cd83b83ca12149fed857f1ac" category="list-text">Verkabeln Sie die Cluster Interconnect Ports e0c und e0d mit den 25-GbE-Cluster Interconnect-Switches.</block>
-  <block id="ee3f9d0ec20204c7d48b52d859e31c4d" category="paragraph"><block ref="ee3f9d0ec20204c7d48b52d859e31c4d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="40a8f8b2f4ff5acd74232849a99a8a04" category="section-title">Schritt 4: Kabel zum Host-Netzwerk oder Speicher (optional)</block>
   <block id="03c1ffcb3fc95b8bfccde9eae4c521cb" category="open-title">Option 1: Kabel zum Fibre-Channel-Hostnetzwerk</block>
   <block id="57f232cf1846457526a67fb857654097" category="paragraph">Führen Sie den Schritt für jedes Controller-Modul durch.</block>
-  <block id="8c69ea1e01dd0a307f5cc8e68a746e18" category="paragraph"><block ref="8c69ea1e01dd0a307f5cc8e68a746e18" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="4d47a33513883c069cdd23a129a70f98" category="paragraph"><block ref="4d47a33513883c069cdd23a129a70f98" category="inline-image-macro-rx" type="image"></block></block>
   <block id="db24b10d7ccee1e6c17be0c81439dce8" category="open-title">Option 3: Controller zum einzelnen Festplatten-Shelf verkabeln</block>
   <block id="8fb418cbd362c972abff9e15e5bbef81" category="paragraph">Schließen Sie die Verkabelung zwischen den Controllern und dem einzelnen Shelf anhand der Animation oder der tabellarischen Schritte ab. Führen Sie die Schritte für jedes Controller-Modul aus.</block>
   <block id="26f36b74d2b5930cb4c8a791d8825169" category="list-text">Verbinden Sie Controller A mit dem Shelf.</block>
-  <block id="18f599f35e14d88c5e3fb9f75197e3c8" category="paragraph"><block ref="18f599f35e14d88c5e3fb9f75197e3c8" category="inline-image-macro-rx" type="image"></block></block>
   <block id="4e9ad1feb0945eeeb8a1d11bf9bf539e" category="list-text">Verbinden Sie Controller B mit dem Shelf.</block>
-  <block id="f822d74484a7588f78ead07185e89b82" category="paragraph"><block ref="f822d74484a7588f78ead07185e89b82" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a363ebbaf5776be0c980b7b95cd927d3" category="inline-link">Vorhandenes Konto erstellen oder ein Konto erstellen</block>
   <block id="50350463d29f0dd6d00e1fbb6e5ee301" category="list-text">Melden Sie sich bei Ihrem an<block ref="7d7bd8ac0b1a83207c698de0ebfd0970" category="inline-link-rx"></block>.</block>
   <block id="d8c9578f313af4d30124d95a9a82f55a" category="list-text"><block ref="45857239f243800c6028823fe1bb7167" category="inline-link-macro-rx"></block> Ihrem System.</block>
@@ -7512,7 +7334,6 @@ SFP+ (Target/Initiator)</block>
   <block id="17eddeb5ca42d640ce98ba7b90523804" category="image-alt">dwr 2800 Einschalten des IEOPS 898</block>
   <block id="5725fc4af65adef1b57d4b7c9a365287" category="paragraph">Wenn die Netzwerkerkennung auf Ihrem Laptop nicht aktiviert ist, führen Sie die Konfiguration und Einrichtung manuell durch.</block>
   <block id="6f196fc99c938b047a2dbbae60694da9" category="image-alt">drw 2800 Laptop zum Umschalten auf Controller IEOPS 1084</block>
-  <block id="1063e487d045f7cd17b5712ab35a43b6" category="doc">FAS2800 Systemdokumentation</block>
   <block id="40ab4deb5c724a3e2d6c8f6d96a94554" category="doc">Fahren Sie die Controller herunter - FAS2800</block>
   <block id="5f81816799fe408c4f5d0d2b06be7dd0" category="doc">Kurzanleitung - FAS2800</block>
   <block id="b0f0e558d3522c3be05dd8c2dd0af1cc" category="inline-link-macro">Installations- und Setup-Anleitung für FAS2800 Systeme</block>
@@ -7759,7 +7580,6 @@ SFP+ (Target/Initiator)</block>
   <block id="b5862dffd2a662580b7e6e08646b8a4e" category="doc">Fahren Sie die Controller herunter - AFF A700</block>
   <block id="a4a9da0210f62016e71b1c10b9e4c492" category="doc">Hot-Swap-fähige Controller-Leistungsmodule (DCPM) - AFF A700</block>
   <block id="5b2f7b92c7435bc4b996d69c57391d11" category="doc">Fahren Sie den gestörten Controller herunter - AFF A700</block>
-  <block id="f27a8269e6be203df5f507129c456764" category="doc">Hot-Swap-fähige Cache-Module – AFF A700</block>
   <block id="cd67f3200bd96874c907fff4c2f87ef0" category="doc">Ersetzen Sie die Hardware des Controller-Moduls – AFF A700</block>
   <block id="c615fd075cbd0c44474042e1097fd7f0" category="doc">Starten Sie das Wiederherstellungs-Image – AFF A700</block>
   <block id="77f4b626bd525dc6753d0c5c459c2958" category="section-title">Option 1: Starten Sie das Wiederherstellungs-Image in den meisten Systemen</block>
@@ -8549,8 +8369,6 @@ SFP+ (Target/Initiator)</block>
   <block id="5590b96dc59eb91eb51b7b3ea51d3fd8" category="image-alt">drw c400 Controller IEOPS 1216 entfernen</block>
   <block id="8a8905b8ba33c894ca2404f3ecc9601d" category="image-alt">drw c400 Freiluftkanal IEOPS 1215</block>
   <block id="7f3e7059150c562376058a9c62805700" category="image-alt">drw c400 Boot-Medium IEOPS 1217 ersetzen</block>
-  <block id="bd017b464f7ccc6f05ea50c47d504548" category="paragraph"><block ref="bd017b464f7ccc6f05ea50c47d504548" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="3964bc8d7e8eb5f4ac34dcc2de182743" category="paragraph"><block ref="3964bc8d7e8eb5f4ac34dcc2de182743" category="inline-image-macro-rx" type="image"></block></block>
   <block id="2e983c0397ba596f716adfed1e1f9821" category="image-alt">Entfernen Sie den IEOPS 1225 des leeren drw c400-Risers</block>
   <block id="a19c61933f90287162c63ef0a40aa0f0" category="paragraph">Riser-Verriegelungen</block>
   <block id="6d9502ea6880092a4496782c893e3da2" category="image-alt">drw c400 netzteil IEOPS 1237</block>
@@ -8607,7 +8425,6 @@ SFP+ (Target/Initiator)</block>
   <block id="5bdb8055b260f02eec19d823c3311a42" category="list-text"><block ref="5bdb8055b260f02eec19d823c3311a42" category="inline-link-rx"></block></block>
   <block id="c68b919518dbc07c3ea6de93e748f2a8" category="list-text"><block ref="c68b919518dbc07c3ea6de93e748f2a8" category="inline-link-rx"></block></block>
   <block id="77072c848f54ead938faeef11b9c0c7f" category="list-text"><block ref="77072c848f54ead938faeef11b9c0c7f" category="inline-link-rx"></block></block>
-  <block id="b5b696403ec1aea418f96649c95377f7" category="list-text"><block ref="b5b696403ec1aea418f96649c95377f7" category="inline-link-rx"></block></block>
   <block id="41bfcd2f6014398965bef92c57ac1de1" category="paragraph">**Systeme der ASA C-Serie**</block>
   <block id="6505edfb90a2164175a72e5b1e50783a" category="list-text"><block ref="6505edfb90a2164175a72e5b1e50783a" category="inline-link-rx"></block></block>
   <block id="503163f0da3a219668f1526d7486559b" category="list-text"><block ref="503163f0da3a219668f1526d7486559b" category="inline-link-rx"></block></block>
@@ -8681,7 +8498,6 @@ SFP+ (Target/Initiator)</block>
   <block id="230fb764922530d0d527b96fb40d15f8" category="paragraph"><block ref="230fb764922530d0d527b96fb40d15f8" category="inline-link-macro-rx"></block></block>
   <block id="9e4682a37df843156979b712e93e942d" category="paragraph"><block ref="9e4682a37df843156979b712e93e942d" category="inline-link-macro-rx"></block></block>
   <block id="370d65afeef540ea21d331a7da8675ec" category="list-text">Verkabeln Sie die Cluster Interconnect-Ports e0c mit e0c und e0d mit e0d mit den 25-GbE-Cluster Interconnect-Kabeln.</block>
-  <block id="45c0f160ca0efa09fc0b198986db5e31" category="image-alt">drw affa250 geschaltete Klistendelverkabelung</block>
   <block id="5407ed45e4a9085a4f72a4611d202d7c" category="sidebar">NS224 Shelfs und SAS-Shelfs von NetApp bieten Performance, Ausfallsicherheit und Flexibilität, die Sie für den digitalen Wandel brauchen.</block>
   <block id="432ba2d883505b11fa27f305c25abca9" category="sidebar">Festplatten-Shelfs für ONTAP Hardwaresysteme</block>
   <block id="4ab265d37ededf839a389d0b0bedcb7f" category="paragraph">30 cm</block>
@@ -8756,4 +8572,191 @@ SFP+ (Target/Initiator)</block>
   <block id="774c0226814e0f61e839b7a7ba1bf4ee" category="sidebar">FAS9500 I/O-MODUL</block>
   <block id="1f07f30ffd2c12b9cf3727d864face5b" category="sidebar">AFF A700 I/O-Modul</block>
   <block id="7c5471ad0d8503f56474b0e9d10bff2a" category="sidebar">AFF A900 I/O-Modul</block>
+  <block id="6a741a9e29ecb23b37045037d60ea43c" category="image-alt">Entfernen eines Lüfters</block>
+  <block id="99bf6ee6c96eb91a9cabaf654e3f27da" category="image-alt">Verschieben der DIMMs</block>
+  <block id="9a64fff961a3ab499fe6c50ac8db419a" category="inline-image-macro">100-GbE-QSFP28-Anschluss</block>
+  <block id="3589992f2b2ea6bba4b18165f47dbe36" category="paragraph"><block ref="3589992f2b2ea6bba4b18165f47dbe36" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e7d617cd83ffff85b1716e3bdf236b13" category="inline-image-macro">GbE SFP Kupfer Connector</block>
+  <block id="a1afb0f3e8ab3c3594052bdc55e1ed7f" category="paragraph"><block ref="a1afb0f3e8ab3c3594052bdc55e1ed7f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="683dcddcc6710a7d671c42be76e2ea15" category="inline-image-macro">RJ-45-Kabelanschluss</block>
+  <block id="a9fb5cff73206f4c5e18ae61d0b8e50f" category="paragraph"><block ref="a9fb5cff73206f4c5e18ae61d0b8e50f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="70f7dea0d750fcdcfe4251acc572c628" category="paragraph"><block ref="70f7dea0d750fcdcfe4251acc572c628" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1c4977fb3d530425789813b09fe4a294" category="image-alt">Vorsicht bei der zweiköpfigen Hebebühne</block>
+  <block id="b6f08137ef915aeef8b0f7a87febae2a" category="image-alt">Kabelanschluss mit Zuglasche oben</block>
+  <block id="fba6f55e0eedb7bfb55d5ae671432c82" category="image-alt">Kabelanschluss mit Zuglasche unten</block>
+  <block id="8310c84e951a895da0b0f8647c1eb8d9" category="image-alt">Wählen Sie ein ONTAP-Symbol aus</block>
+  <block id="c4e6f16ead2370d5b6f107bb474cb8d8" category="list-text"><block ref="c4e6f16ead2370d5b6f107bb474cb8d8" category="inline-link-rx"></block></block>
+  <block id="efd776be7a583ca294bb1a8ce2c4e66e" category="image-alt">Lösen des Controller-Moduls</block>
+  <block id="cc278673be0ce007e60343587ca221b7" category="image-alt">Opoen der Luftkanal</block>
+  <block id="3adccad6709367d60f0645e89c86a994" category="image-alt">Schließen des Luftkanals</block>
+  <block id="025411d9958f9bc8ad2448f521a1ada6" category="image-alt">Entfernen eines Laufwerks</block>
+  <block id="d88c0d1de0c9fce014f21f630d9adb1a" category="image-alt">Öffnen des Verriegelungsmechanismus</block>
+  <block id="813ff1ce3d0de38d3d5b297e098fd16e" category="image-alt">Öffnen der Abdeckung des Controller-Moduls</block>
+  <block id="5c201446503767cfb281ca73fa947b1a" category="image-alt">Entfernen der Zusatzkarte</block>
+  <block id="c9679053598c8ad3e66ec7884b143b7f" category="image-alt">Schließen der Abdeckung des Controller-Moduls</block>
+  <block id="20fa1f64cbfe1c219269ee90549407e6" category="image-alt">Anheben der Abdeckung des Luftkanals</block>
+  <block id="4e6bb88f4f022c54e39743f60f40ba31" category="image-alt">Wiedereinsetzen des Startmediums</block>
+  <block id="e5e7286177d4c76b9ff887c4772666ab" category="image-alt">Installieren des Luftkanals</block>
+  <block id="a6f6a690661da2c2c5e87ee64236f440" category="image-alt">Entfernen der NVMEM-Batterie</block>
+  <block id="5148471b10aa1b589e344d775506e7f3" category="image-alt">Entfernen des Netzteils</block>
+  <block id="a77933a2d6b40b34ab097c0844d65e8a" category="image-alt">Entfernen des Lüftermoduls</block>
+  <block id="569d3e9134d4a0dd550f4fd91dfc5e26" category="image-alt">Austauschen der DIMMs</block>
+  <block id="ec5f6e4f9e23b5f7d32b32b05f071926" category="image-alt">Einsetzen der RTC-Batterie</block>
+  <block id="9ad3f211872df73a1b82667ad4c33846" category="inline-image-macro">OIE Glasfaserkabel für Fibre Channel</block>
+  <block id="f061b4e78310ea86fb738b3e709f7e60" category="paragraph"><block ref="f061b4e78310ea86fb738b3e709f7e60" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0c46a6fa46f929c6b547c327a032b10f" category="paragraph"><block ref="a1afb0f3e8ab3c3594052bdc55e1ed7f" category="inline-image-macro-rx" type="image"></block>:</block>
+  <block id="b5b1f2ce574bc879ffb797775c8cbc5c" category="inline-image-macro">Cluster-Interconnect-Verkabelung in einem 2-Node-Cluster ohne Switches</block>
+  <block id="93ddd75580e8ea4f1aa7111fac1d31ce" category="paragraph"><block ref="93ddd75580e8ea4f1aa7111fac1d31ce" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="385ff03a2251c06929823dd292e11adb" category="image-alt">Verkabelung des Management-Ports</block>
+  <block id="9118774078fb5500ecdc7cf9e9fbc4fd" category="inline-image-macro">Cluster-Interconnect-Verkabelung</block>
+  <block id="c70e1bb54be72f5abb826ad4d460ecab" category="paragraph"><block ref="c70e1bb54be72f5abb826ad4d460ecab" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7c5ebee65c5ddb33677b8dc9d6b7cb9d" category="inline-image-macro">Fibre Channel-Hostverkabelung</block>
+  <block id="79fa782513967e82cd68adb7bbacbe83" category="paragraph"><block ref="79fa782513967e82cd68adb7bbacbe83" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d0175e54fdd0be6c9ad0210ee93766fb" category="inline-image-macro">25-GbE-Verkabelung</block>
+  <block id="c80d8a360aeca78a73d3c1de3e5f14ab" category="paragraph"><block ref="c80d8a360aeca78a73d3c1de3e5f14ab" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="05f04d85747865ee60b26c732b4db800" category="inline-image-macro">Controller-A-Verkabelung</block>
+  <block id="d63cb0bb7471d754822a206796e30fe6" category="paragraph"><block ref="d63cb0bb7471d754822a206796e30fe6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="88eff98cb0773830ecbcdbce31a6639f" category="inline-image-macro">Verkabelung von Controller B</block>
+  <block id="58dd78900f778b4b80068307b943d7b3" category="paragraph"><block ref="58dd78900f778b4b80068307b943d7b3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4e665d8f69c325f5af5596b624107bf3" category="image-alt">Verbindung mit dem Management-Subnetz wird hergestellt</block>
+  <block id="a74ca38c9c52717201c2125c3a6f66f6" category="image-alt">Verkabelung eines HA-Paars mit einem einzelnen Festplatten-Shelf</block>
+  <block id="bcb9595341f3bea1634a7fb706e4740d" category="image-alt">Verkabelung eines HA-Paars mit zwei Festplatten-Shelfs</block>
+  <block id="4db3185a6b561b0ef622a2fd6bb7ee00" category="image-alt">Einsetzen oder Entfernen der Kabelverwaltungs-ARM</block>
+  <block id="9a692b6dcc3f5843d23fe74a4441450a" category="image-alt">Öffnen der Nockenhebelverriegelung</block>
+  <block id="7fdb3a61278778a87931744f9293c985" category="image-alt">Öffnen oder Schließen des Controller-Moduls</block>
+  <block id="0b27851a0736b8e577ff90715b8c32ca" category="image-alt">NV-LED</block>
+  <block id="99269e39aac078ea95290aed4992f064" category="image-alt">Austausch der NVMEM-Batterie</block>
+  <block id="00a173722ba6a6c25c5f0f5812036947" category="image-alt">Position der System-DIMMs</block>
+  <block id="df4c49d6d7d92d1a3dd7d374cec6fe02" category="image-alt">Öffnen des Nockengriffs</block>
+  <block id="c37c47dafebc78840267debda35458f5" category="image-alt">Austauschen eines DIMM</block>
+  <block id="ed1f3672c794d277b346df2c0b57208a" category="image-alt">Anschließen von Kabelverwaltungsgeräten</block>
+  <block id="7ff53c5512085a45fa1535c84012bf20" category="list-text">Verkabeln Sie die Cluster Interconnect Ports e0a mit e0a und e0b mit e0b mit dem Cluster Interconnect-Kabel.
+ +
+<block ref="ef4e72ee430f23080f53c94a6fb7577d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b2baecd46b5c1b243732c3138f835e3f" category="inline-image-macro">Host-Netzwerkverkabelung</block>
+  <block id="2ba25458bee51c7aee46cd7f8b21e235" category="paragraph"><block ref="2ba25458bee51c7aee46cd7f8b21e235" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="228982f8921f07e1151387ebf0b04229" category="paragraph"><block ref="228982f8921f07e1151387ebf0b04229" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4a72025ff79b1efa91ca9b092eb92997" category="inline-image-macro">ClusterInterconnect-Verkabelung</block>
+  <block id="a0e934df593f847fcaa5b1a4a637419d" category="paragraph"><block ref="a0e934df593f847fcaa5b1a4a637419d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f779b0de721ac37a303d9b9169cdb067" category="image-alt">Einschalten der Stromversorgung</block>
+  <block id="776925fc57eed7e10b82310c21dc42b4" category="image-alt">Es wird eine Verbindung zum Konsolenport hergestellt</block>
+  <block id="66f379c14c86776285348d5a4b1f03b1" category="image-alt">Öffnen des Luftkanals</block>
+  <block id="e3fec69b68d0ff60c2fc9d9f6a9e9b40" category="image-alt">Entfernen des Lüfters</block>
+  <block id="381f37fd0c6301b4adcfedecc4eda925" category="image-alt">Vorsicht bei der 4-Personen-Hebebühne</block>
+  <block id="3a0eeccdd4e521f45365f2b428095f2d" category="image-alt">Anschließen des Kabelverwaltungsgeräts</block>
+  <block id="a162b305b95f5e831a9b1a7508d3c45e" category="paragraph"><block ref="a162b305b95f5e831a9b1a7508d3c45e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5ef048ab759bf73977c35349ec483eab" category="inline-image-macro">HA-Paar-Verkabelung</block>
+  <block id="2b1368b4381f3629e96800ab48579d68" category="list-text">e1b bis e1b
+<block ref="aa46ce125e154e60d93093e92fe06f34" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2c33620740c1e041cd4b18210343809a" category="paragraph"><block ref="2c33620740c1e041cd4b18210343809a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4fae04c8c73682a0f5aee781b4ba55e0" category="list-text">e1a bis e1a
+<block ref="ce168455f06d894620cf25f3ad7f95ae" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2d5ce426423eeeead4f35769cd8b1b27" category="inline-image-macro">Schritt 3</block>
+  <block id="86cb292aafaa0232cd67561e32ce40eb" category="paragraph"><block ref="86cb292aafaa0232cd67561e32ce40eb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="75f728010e80f6e306c8d0419ab6e02f" category="inline-image-macro">Achtung-Symbol</block>
+  <block id="a64c1d9519895ea9b4d05af7302a3f5d" category="paragraph"><block ref="a64c1d9519895ea9b4d05af7302a3f5d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a9640555fa5bc248b1730cc507ea1862" category="paragraph">Verkabeln Sie die Cluster-Interconnect-Ports mit den 100-GbE-Cluster-Interconnect-Switches.
+** e0a
+** e1a
+<block ref="03c334f1a71e7086b1987bb740b5b995" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="fae734ae73d4d9ca0d2c390bc2bb7c39" category="inline-image-macro">Fibre Channel-Host-Netzwerkkabel</block>
+  <block id="b2d4d0d6d18aadc5250160804ec5f72c" category="paragraph">Verkabeln Sie die Ports 2a bis 2d mit den FC-Host-Switches.<block ref="f7469edef6c72cc42131f9dced4b36a4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e69c5c6214fe233e92d0ac376a7db30a" category="paragraph">Verkabeln Sie die Ports e4a über e4d mit den 10 GbE Host Netzwerk-Switches.<block ref="54eadf4427f8838bf31ee4b6c63b48ac" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b59904275b4568b543c595eb7fce7adb" category="paragraph"><block ref="b59904275b4568b543c595eb7fce7adb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c40c0173af959ac36faeb49a2d560c3e" category="inline-image-macro">Verkabelung der Controller mit einem einzelnen Shelf</block>
+  <block id="b31a65b0423c1f79c8dda2ba21aaa12f" category="paragraph">Controller A am Shelf verkabeln:    <block ref="110df664c75a0c7a5705a4170e654db5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="893281d73b87540ff15404c730a689fd" category="paragraph"><block ref="893281d73b87540ff15404c730a689fd" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b2610840f20b75c11dd08609296a9dd3" category="inline-image-macro">Verkabelung von Controller B zu einem einzelnen Shelf</block>
+  <block id="4a2893ac0df4f1c0cfdae141c2312c98" category="paragraph">Controller B am Shelf verkabeln:    <block ref="eb21c5b868d7e6aaff675f3a2765c85c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="caeddf182be758b4a13beef4ab311366" category="inline-image-macro">Verkabelung von Controller A mit zwei Shelfs</block>
+  <block id="cc8004a5d6e00e6f6ddf3c56646a201d" category="paragraph">Verbinden Sie Controller A mit den Shelfs:    <block ref="0ff6b5386c4af80a0faa2eedce3801d9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="be6dd92e56e589c43e6ecf9ff2fb511d" category="inline-image-macro">Verkabelung von Controller B mit zwei Shelfs</block>
+  <block id="96d704bc763b695c9de9168784c7737d" category="paragraph">Controller B mit den Shelfs verkabeln:    <block ref="a190910980606e8669e301ec6bfe2395" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9293060aa1ce6aba93f2da08c5b9a87a" category="image-alt">Verbinden eines Laptops oder einer Konsole zum Einschalten des Management-Subnetzes</block>
+  <block id="8354ac591d21bc8f487173406cdc0ff9" category="image-alt">Lösen des Controllers</block>
+  <block id="537c3d5f16e3ab81ae71572e822e02ae" category="image-alt">Anheben der Abdeckung vom Controller-Modul</block>
+  <block id="dc0a61369ab78188b5040b237202d13a" category="inline-image-macro">Entfernen eines PCIe-Moduls</block>
+  <block id="851adb1cfe0add8b264f80f294e53d6e" category="paragraph"><block ref="851adb1cfe0add8b264f80f294e53d6e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b4bed25d7279305fb1486095526c2cbe" category="image-alt">Entfernen oder Installieren des Lüfters</block>
+  <block id="793c006966d00d222996468e86da89f4" category="image-alt">Telco-Rack-Installation zur Mittenmontage</block>
+  <block id="7f615fc773ecf20799d3f2a060bd3afb" category="image-alt">Installation von Telekommunikationsracks</block>
+  <block id="48a4c5d2941af2c3562b0a15dc70a0d8" category="image-alt">Entfernen eines DIMM</block>
+  <block id="f6f0bd2e4727e80f2ce638a745f37465" category="image-alt">Entfernen eines Caching-Moduls</block>
+  <block id="7b421531117f7a333a0bf6943ea821e6" category="image-alt">Entfernen der RTC-Batterie</block>
+  <block id="633a92fd671d3ef2ca3005733f0cb806" category="image-alt">Entfernen des Controller-Moduls</block>
+  <block id="30f12da3c45fbc274058e8468d22ebc9" category="image-alt">Installieren des Controllers</block>
+  <block id="4eeb96fa2c55e758f96ef749dc5e9599" category="list-text">Nutzen Sie Config Advisor. Wechseln Sie zur Config Advisor-Seite auf der NetApp Support Site unter<block ref="071c808bef701043fad188702c37998b" category="inline-link-rx"></block>.</block>
+  <block id="7b54852d269e9b037557fbb048cca323" category="image-alt">Entfernen des Startmediums</block>
+  <block id="50fede2433d772bfdc7aee11d57935dc" category="image-alt">Cache-Modul entfernen</block>
+  <block id="602f1652c88951ac750e629819f5360f" category="inline-image-macro">Entfernen der PCIe-Karten</block>
+  <block id="148d3cda8eafa148ec058e4c32601c3e" category="paragraph"><block ref="148d3cda8eafa148ec058e4c32601c3e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1d53fc5f7f17cd7f32066a7718395744" category="image-alt">Suchen des Startmediums</block>
+  <block id="374900d2cb65aa69562bc3dff6893f0e" category="image-alt">Austauschen des Caching-Moduls</block>
+  <block id="1f64ef61e8a4113c46452f69ac2488ed" category="paragraph"><block ref="1f64ef61e8a4113c46452f69ac2488ed" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1f1e92832e143e090cfa4b652055d540" category="image-alt">Austauschen des Netzteils</block>
+  <block id="49136ce507af20ea51c62b05ac2b352f" category="image-alt">Entfernen der NVDIMM-Batterie</block>
+  <block id="d461a61dff68fdcb5519b0daf99dcef0" category="inline-image-macro">Mini-SAS-zu-Mini-SAS-Anschluss</block>
+  <block id="065babb6c425d208f17452adf684f6f8" category="paragraph"><block ref="065babb6c425d208f17452adf684f6f8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="66615867af958c8a291bb063be5c3c2e" category="image-alt">Entfernen oder Installieren der Kabelführungsarme</block>
+  <block id="62793fbec5f073428ce66f62ff6e5393" category="image-alt">Entfernen des Kabelverwaltungsgeräts</block>
+  <block id="cda77a6b0cdda56cf0b64136e433b225" category="image-alt">Entfernen des Controllers</block>
+  <block id="6f4a225b29c0975663d0e4b9e1f4547f" category="inline-image-macro">Schritt 1</block>
+  <block id="f2e282d746920618067daa3e0c1759f5" category="paragraph"><block ref="f2e282d746920618067daa3e0c1759f5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e31ad1284b7618a9c10777ed99b12e64" category="inline-image-macro">Schritt 2</block>
+  <block id="34320e5ff47aa671d2b068e83eeb193c" category="paragraph"><block ref="34320e5ff47aa671d2b068e83eeb193c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7284590833f91c27979b6410576141a0" category="paragraph"><block ref="7284590833f91c27979b6410576141a0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7882a4b556b6996eaf604413a9e602d9" category="inline-image-macro">Schritt 4</block>
+  <block id="ee32970896d31f879fb413b1b17ef2b9" category="paragraph"><block ref="ee32970896d31f879fb413b1b17ef2b9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2873a4d4f1516534eb25e84b29148dbb" category="image-alt">2-Node-Cluster-Verkabelung ohne Switches in einer Unified Netzwerkkonfiguration</block>
+  <block id="885b26ba98aed4bc9ea9034bad518f2e" category="list-text">e0b bis e0b
+<block ref="ef4e72ee430f23080f53c94a6fb7577d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1bf6fc576a87f7441e82621c0d00c1ad" category="image-alt">Unified Network Cabling mit Switch Lustre</block>
+  <block id="128d79c536d6f8b71a5a6b5f17b84a92" category="image-alt">2-Node-Netzwerkverkabelung ohne Switches</block>
+  <block id="75f7c508f639a0b8d7bf0b4e45aaff78" category="paragraph"><block ref="75f7c508f639a0b8d7bf0b4e45aaff78" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="59f214803ddf0f1e023203b9b4214536" category="image-alt">Geswitchte Ethernet-Verkabelung</block>
+  <block id="72ed3c6e755ee2d28ed796389e524a7c" category="paragraph"><block ref="72ed3c6e755ee2d28ed796389e524a7c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2f2f34a48a078192264a70e05599fedd" category="image-alt">Shelf-Verkabelung in einem HA-Paar</block>
+  <block id="4dda420a3cb9f5f8ef5871e09b0f5007" category="paragraph"><block ref="4dda420a3cb9f5f8ef5871e09b0f5007" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b685fb65d97bbeec5268b45da937ff6a" category="paragraph"><block ref="065babb6c425d208f17452adf684f6f8" category="inline-image-macro-rx" type="image"></block>     Kabel Mini-SAS HD auf Mini-SAS HD</block>
+  <block id="20c5f975de88a185b17029e4f20bff0b" category="paragraph"><block ref="20c5f975de88a185b17029e4f20bff0b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1e448f6afe6009059237e178cc26035e" category="paragraph"><block ref="1e448f6afe6009059237e178cc26035e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f88ec5a2698376424f37fdeb5d261d8f" category="list-text">Controller 2 Port 0b zu IOM B-Port 3 auf dem letzten Laufwerk-Shelf im Stack.
+<block ref="065babb6c425d208f17452adf684f6f8" category="inline-image-macro-rx" type="image"></block>     Kabel Mini-SAS HD auf Mini-SAS HD</block>
+  <block id="8127e33aaf3dd71a914a210c8ced78c0" category="image-alt">Verkabelungsarbeitsblatt für Quad-Path HA</block>
+  <block id="926c0f4c72fca232ba2af81a0b2d2da5" category="image-alt">Anbringen der Hubgriffe</block>
+  <block id="34a9b2c74eff15662c1f632211a0b41d" category="image-alt">Laufwerknummerierung</block>
+  <block id="5b5f1e0efd716ec76021d032e9473f40" category="image-alt">Position der angehobenen Tasten am Laufwerk</block>
+  <block id="e22a4a2a838c15d0c7cbf6bac179373f" category="inline-image-macro">Schließen Sie die Schublade vorsichtig</block>
+  <block id="e57bb4934e3c0d4cbe8c534709c18cf5" category="paragraph"><block ref="e57bb4934e3c0d4cbe8c534709c18cf5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2bfd4a7dcbb75ccb6df54460bb939dd1" category="image-alt">Vorderansicht des Festplatten-Shelfs</block>
+  <block id="09abe6b31262fc452461b2960cfb7f78" category="image-alt">Griff des erweiterten Lüftermoduls</block>
+  <block id="fc949a460dbf1dffaa679c2cd992bc0c" category="image-alt">Installieren oder Entfernen eines Laufwerks</block>
+  <block id="c91fe339b01bc5c90312725fc1abe9fe" category="image-alt">Position der Achtung-LED</block>
+  <block id="d78fee28333c5e926857e2cf983849b5" category="inline-image-macro">SAS-Speicherverkabelung für ONTAP 9.7 und frühere Versionen</block>
+  <block id="69bc043b597bbd2a529b92c5ce7b15a9" category="paragraph"><block ref="69bc043b597bbd2a529b92c5ce7b15a9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e9dee169020ec62435f7ec3637f49d15" category="inline-image-macro">SAS-Speicherverkabelung für ONTAP 9.8 und höher</block>
+  <block id="4c9f996c9f936c79376f7f092c69ee17" category="paragraph"><block ref="4c9f996c9f936c79376f7f092c69ee17" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c27f1c89f251cb0b90259bf8a621e5e8" category="inline-image-macro">Verkabelung des Storage-Systems mit SAS Shelfs</block>
+  <block id="bb242cd36f963ba432ce502a18fb1674" category="paragraph"><block ref="bb242cd36f963ba432ce502a18fb1674" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7b4c59d205fcc35575d2718f564d1010" category="image-alt">Einzel-Shelf-Verkabelung</block>
+  <block id="69be99e5fb3da30dc465ba0430175b3d" category="image-alt">Duale Shelf-Verkabelung</block>
+  <block id="80d146883a1aa36bacaaf3d6c6c5c585" category="image-alt">Verkabelung der Konsole</block>
+  <block id="cd94f8a58c52ff0efd2c72da75a5b0d2" category="image-alt">Verkabelung der Controller-Module mit einem einzelnen Festplatten-Shelf</block>
+  <block id="c14bafda5fc1bf439f2f4cfca3341edc" category="list-text">e0d bis e0d
+<block ref="93ddd75580e8ea4f1aa7111fac1d31ce" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a932057ff0e2d59052e2fa248c1ae65f" category="paragraph"><block ref="a932057ff0e2d59052e2fa248c1ae65f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="303733abd5903144b11873d493c42f36" category="list-text">e0d
+<block ref="c70e1bb54be72f5abb826ad4d460ecab" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e342ccefdad489effa04cf864943b633" category="paragraph">Controller A am Shelf verkabeln:    <block ref="d63cb0bb7471d754822a206796e30fe6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f7125baa982fde1a0522d27380012310" category="paragraph">Controller B am Shelf verkabeln:    <block ref="58dd78900f778b4b80068307b943d7b3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="99d094c3a3728a27f2dbd0ea868eaeb0" category="image-alt">Entfernen der Kabelführungsarme][</block>
+  <block id="ac033649a8809b7bb2cf867adf35c5fa" category="image-alt">Lösen der Flügelschraube, um den Nockengriff zu öffnen</block>
+  <block id="5b96ebd2b1f60b90a157fa68e50437a4" category="image-alt">Startmedien werden entfernt</block>
+  <block id="5cc16253a8aee4b43fffd03ab6bf4dcc" category="image-alt">Entfernen oder Installieren einer PCIe-Karte</block>
+  <block id="19d09ef846ca4e7e9e07b780168aa7e8" category="image-alt">Entfernen eines Netzteils</block>
+  <block id="421c376f4d6d54ea975a03a818082d3d" category="image-alt">Ersetzen von DIMMs</block>
+  <block id="9cb7281bb7eb2acd0ccc0342394f8a2a" category="summary">Die NVMe SSD-FlashCache Module (FlashCache oder Caching-Module) befinden sich ausschließlich an der Vorderseite des NVRAM11-Moduls in Steckplatz 6 der FAS9500 Systeme. Sie können das Caching-Modul dieselbe Kapazität im laufenden Betrieb vom selben oder einem anderen unterstützten Anbieter austauschen.</block>
+  <block id="be156c2254730ffea327aad8b7574600" category="paragraph">Nicht aufgelöste Direktive in &lt;stdin&gt;::./_include/700_9000_Caching_Module_and_Core_dump_Module_replace.adoc[]</block>
+  <block id="c2aecd7a81767c23b66c3ce771bbf967" category="image-alt">drw ozeki sys Kabine unten oben Abmessungen ieops 1803</block>
+  <block id="98c84c18c84bbdb869a3af52fb92fee5" category="admonition">Die minimale Tiefe zwischen vorderen und hinteren Anschlusspunkten für die Installation von SuperRail beträgt 24 Zoll und die maximale Tiefe 32 Zoll.</block>
 </blocks>

@@ -62,7 +62,7 @@ X6566B-05-R6 (112-00297), 0,5 m
 
 X6566B-2-R6 (112-00299), 2 m
  a| 
-image:../media/oie_cable_sfp_gbe_copper.png[""]
+image:../media/oie_cable_sfp_gbe_copper.png["GbE SFP Kupfer Connector"]
  a| 
 Cluster Interconnect-Netzwerk
 
@@ -103,7 +103,7 @@ X6585-R6 (112-00291), 3 m
 
 X6562-R6 (112-00196), 5 m
  a| 
-image:../media/oie_cable_rj45.png[""]
+image:../media/oie_cable_rj45.png["RJ-45-Kabelanschluss"]
  a| 
 Ethernet-Host und Management-Netzwerk
 
@@ -125,7 +125,7 @@ Stromkabel
  a| 
 Keine Angabe
  a| 
-image:../media/oie_cable_power.png[""]
+image:../media/oie_cable_power.png["Stromkabel"]
  a| 
 System einschalten
 
@@ -147,11 +147,11 @@ Installieren Sie Ihr System gegebenenfalls in einem 4-Säulen-Rack oder NetApp S
 NOTE: Sie müssen sich der Sicherheitsbedenken im Zusammenhang mit dem Gewicht des Systems bewusst sein.
 
 +
-image::../media/drw_oie_fas2700_weight_caution.png[drw oie fas2700 Gewicht Achtung]
+image::../media/drw_oie_fas2700_weight_caution.png[Vorsicht bei der zweiköpfigen Hebebühne]
 
 . Schließen Sie Kabelmanagement-Geräte (wie abgebildet) an.
 +
-image::../media/drw_cable_management_arm_install.png[drw-Kabelmanagement-ARM-Installation]
+image::../media/drw_cable_management_arm_install.png[Anschließen von Kabelverwaltungsgeräten]
 
 . Bringen Sie die Blende auf die Vorderseite des Systems an.
 
@@ -200,7 +200,7 @@ Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen 
 
 Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
 
-image::../media/oie_cable_pull_tab_down.png[ziehen Sie die Lasche des oie-Kabels nach unten]
+image::../media/oie_cable_pull_tab_down.png[Kabelanschluss mit Zuglasche unten]
 
 
 NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
@@ -228,7 +228,9 @@ image::../media/drw_c190_tnsc_ethernet_network_cabling_animated_gif.png[drw c190
 Führen Sie die folgenden Schritte für jedes Controller-Modul durch.
 
 .Schritte
-. Verkabeln Sie die Cluster Interconnect Ports e0a mit e0a und e0b mit e0b mit dem Cluster Interconnect-Kabel. +image:../media/drw_c190_u_tnsc_clust_cbling.png[""]
+. Verkabeln Sie die Cluster Interconnect Ports e0a mit e0a und e0b mit e0b mit dem Cluster Interconnect-Kabel.
+ +
+image:../media/drw_c190_u_tnsc_clust_cbling.png["Cluster-Interconnect-Verkabelung"]
 . Verkabeln Sie die Controller entweder mit einem UTA2-Datennetzwerk oder einem Ethernet-Netzwerk.
 +
 UTA2-Datennetzwerkkonfigurationen:: Verwenden Sie einen der folgenden Kabeltypen, um die Datenports e0c/0c und e0d/0d oder e0e/0e und e0f/0f mit dem Host-Netzwerk zu verkabeln.
@@ -240,14 +242,14 @@ image:../media/drw_c190_u_fc_10gbe_cbling.png["Abbildung, die die Anschlüsse de
 Ethernet-Netzwerkkonfigurationen:: Verwenden Sie das Cat 6 RJ45-Kabel, um die e0c- über e0f-Ports mit Ihrem Hostnetzwerk zu verkabeln. In der folgenden Abbildung.
 +
 --
-image:../media/drw_c190_e_rj45_cbling.png[""]
+image:../media/drw_c190_e_rj45_cbling.png["Host-Netzwerkverkabelung"]
 
 --
 
 
 . Verkabeln Sie die E0M-Ports mit den Management-Netzwerk-Switches mit den RJ45-Kabeln.
 +
-image:../media/drw_c190_u_mgmt_cbling.png[""]
+image:../media/drw_c190_u_mgmt_cbling.png["Verkabelung des Management-Ports"]
 
 
 
@@ -264,7 +266,7 @@ Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen 
 
 Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
 
-image::../media/oie_cable_pull_tab_down.png[ziehen Sie die Lasche des oie-Kabels nach unten]
+image::../media/oie_cable_pull_tab_down.png[Kabelanschluss mit Zuglasche unten]
 
 
 NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
@@ -294,7 +296,7 @@ Führen Sie die folgenden Schritte für jedes Controller-Modul durch.
 .Schritte
 . Verkabeln sie e0a und e0b mit dem Cluster Interconnect-Kabel mit den Cluster Interconnect-Switches.
 +
-image:../media/drw_c190_u_switched_clust_cbling.png[""]
+image:../media/drw_c190_u_switched_clust_cbling.png["ClusterInterconnect-Verkabelung"]
 
 . Verkabeln Sie die Controller entweder mit einem UTA2-Datennetzwerk oder einem Ethernet-Netzwerk.
 +
@@ -307,14 +309,14 @@ image:../media/drw_c190_u_fc_10gbe_cbling.png["Abbildung, die die Anschlüsse de
 Ethernet-Netzwerkkonfigurationen:: Verwenden Sie das Cat 6 RJ45-Kabel, um die e0c- über e0f-Ports mit Ihrem Hostnetzwerk zu verkabeln.
 +
 --
-image:../media/drw_c190_e_rj45_cbling.png[""]
+image:../media/drw_c190_e_rj45_cbling.png["Host-Netzwerkverkabelung"]
 
 --
 
 
 . Verkabeln Sie die E0M-Ports mit den Management-Netzwerk-Switches mit den RJ45-Kabeln.
 +
-image:../media/drw_c190_u_mgmt_cbling.png[""]
+image:../media/drw_c190_u_mgmt_cbling.png["Verkabelung des Management-Ports"]
 
 
 
@@ -339,7 +341,7 @@ Erfahren Sie, wie Sie die Systemeinrichtung abschließen Wenn die Netzwerkerkenn
 . Schließen Sie die Stromkabel an die Controller-Netzteile an, und schließen Sie sie dann an Stromquellen auf verschiedenen Stromkreisen an.
 . Schalten Sie die Netzschalter an beide Knoten ein.
 +
-image::../media/drw_turn_on_power_switches_to_psus.png[drw schalten Sie den Netzschalter auf die netzteile ein]
+image::../media/drw_turn_on_power_switches_to_psus.png[Einschalten der Stromversorgung]
 
 +
 
@@ -356,7 +358,7 @@ image::../media/dwr_laptop_to_switch_only.svg[dwr-Laptop nur zum Umschalten]
 
 . Wählen Sie ein ONTAP-Symbol aus, um es zu ermitteln:
 +
-image::../media/drw_autodiscovery_controler_select.png[wählen sie den drw-Kontroller für die automatische Ermittlung aus]
+image::../media/drw_autodiscovery_controler_select.png[Wählen Sie ein ONTAP-Symbol aus]
 
 +
 .. Öffnen Sie Den Datei-Explorer.
@@ -396,11 +398,11 @@ NOTE: Informationen zur Konfiguration des Konsolenport finden Sie in der Online-
 
 .. Schließen Sie das Konsolenkabel an den Laptop oder die Konsole an, und schließen Sie den Konsolenport am Controller mithilfe des im Lieferumfang des Systems verwendeten Konsolenkabels an.
 +
-image::../media/drw_console_connect_fas2700_affa200.png[die drw-Konsole verbindet fas2700 afa200]
+image::../media/drw_console_connect_fas2700_affa200.png[Es wird eine Verbindung zum Konsolenport hergestellt]
 
 .. Verbinden Sie den Laptop oder die Konsole mit dem Switch im Management-Subnetz.
 +
-image::../media/drw_client_to_mgmt_subnet_fas2700_affa220.png[drw-Client zum Management-Subnetz fas2700 afa220]
+image::../media/drw_client_to_mgmt_subnet_fas2700_affa220.png[Verbindung mit dem Management-Subnetz wird hergestellt]
 
 .. Weisen Sie dem Laptop oder der Konsole eine TCP/IP-Adresse zu. Verwenden Sie dabei eine Adresse, die sich im Management-Subnetz befindet.
 
@@ -408,7 +410,7 @@ image::../media/drw_client_to_mgmt_subnet_fas2700_affa220.png[drw-Client zum Man
 . Schließen Sie die Stromkabel an die Controller-Netzteile an, und schließen Sie sie dann an Stromquellen auf verschiedenen Stromkreisen an.
 . Schalten Sie die Netzschalter an beide Knoten ein.
 +
-image::../media/drw_turn_on_power_switches_to_psus.png[drw schalten Sie den Netzschalter auf die netzteile ein]
+image::../media/drw_turn_on_power_switches_to_psus.png[Einschalten der Stromversorgung]
 
 +
 

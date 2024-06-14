@@ -64,7 +64,7 @@ X66240A-05 (112-00595), 0,5 m;
 
 X66240-2 (112-00573), 2 m
  a| 
-image:../media/oie_cable100_gbe_qsfp28.png[""]
+image:../media/oie_cable100_gbe_qsfp28.png["100-GbE-QSFP28-Anschluss"]
  a| 
 Cluster Interconnect-Netzwerk
 
@@ -95,7 +95,7 @@ RJ-45 (je nach Bestellung)
  a| 
 Keine Angabe
  a| 
-image:../media/oie_cable_rj45.png[""]
+image:../media/oie_cable_rj45.png["RJ-45-Kabelanschluss"]
  a| 
 Managementnetzwerk (BMC und Port mit Schraubenschlüssel) und Ethernet-Daten (e0a und e0b)
 
@@ -112,7 +112,7 @@ X66250-15 (112-00346) 15m;
 
 X66250-30 (112-00347) 30 m
  a| 
-image:../media/oie_cable_fc_optical.png[""]
+image:../media/oie_cable_fc_optical.png["OIE Glasfaserkabel für Fibre Channel"]
  a| 
 
 
@@ -133,7 +133,7 @@ Stromkabel
  a| 
 Keine Angabe
  a| 
-image:../media/oie_cable_power.png[""]
+image:../media/oie_cable_power.png["Stromkabel"]
  a| 
 System einschalten
 
@@ -155,7 +155,7 @@ Sie müssen das System je nach Bedarf in einem 4-Säulen-Rack oder NetApp System
 NOTE: Sie müssen sich der Sicherheitsbedenken im Zusammenhang mit dem Gewicht des Systems bewusst sein.
 
 +
-image::../media/drw_affa250_weight_caution.png[drw affa250 Gewicht Achtung]
+image::../media/drw_affa250_weight_caution.png[Vorsicht bei der zweiköpfigen Hebebühne]
 
 . Identifizieren und verwalten Sie Kabel, da dieses System über kein Kabelverwaltungs-Gerät verfügt.
 . Bringen Sie die Blende auf die Vorderseite des Systems an.
@@ -177,7 +177,7 @@ Die Management-, Fibre Channel- und Daten- oder Host-Netzwerk-Ports der Controll
 * Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.
 * Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
 +
-image::../media/oie_cable_pull_tab_down.png[ziehen Sie die Lasche des oie-Kabels nach unten]
+image::../media/oie_cable_pull_tab_down.png[Kabelanschluss mit Zuglasche unten]
 
 +
 
@@ -193,14 +193,14 @@ video::beec3966-0a01-473c-a5de-ac68017fbf29[panopto]
 .Schritte
 . Verwenden Sie das 25-GbE-Cluster-Interconnect-Kabel, um die Cluster-Interconnect-Ports e0c mit e0c und e0d mit e0d zu verbinden.
 +
-image:../media/oie_cable_sfp_gbe_copper.png[""]:
+image:../media/oie_cable_sfp_gbe_copper.png["GbE SFP Kupfer Connector"]:
 
 +
-image:../media/drw_affa250_tnsc_cabling.png[""]
+image:../media/drw_affa250_tnsc_cabling.png["Cluster-Interconnect-Verkabelung in einem 2-Node-Cluster ohne Switches"]
 
 . Die Port-Schraubenschlüssel-Ports mit den Managementnetzwerk-Switches mit den RJ45-Kabeln verkabeln.
 +
-image::../media/drw_affa250_mgmt_cabling.png[drw affa250-Management-Kabel]
+image::../media/drw_affa250_mgmt_cabling.png[Verkabelung des Management-Ports]
 
 
 
@@ -216,7 +216,7 @@ Alle Ports auf den Controllern sind mit Switches verbunden; Cluster Interconnect
 * Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.
 * Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
 +
-image::../media/oie_cable_pull_tab_down.png[ziehen Sie die Lasche des oie-Kabels nach unten]
+image::../media/oie_cable_pull_tab_down.png[Kabelanschluss mit Zuglasche unten]
 
 +
 
@@ -232,11 +232,11 @@ video::bf6759dc-4cbf-488e-982e-ac68017fbef8[panopto]
 .Schritte
 . Verkabeln Sie die Cluster Interconnect Ports e0c und e0d mit den 25-GbE-Cluster Interconnect-Switches.
 +
-image:../media/drw_affa250_switched_clust_cabling.png[""]
+image:../media/drw_affa250_switched_clust_cabling.png["Cluster-Interconnect-Verkabelung"]
 
 . Die Port-Schraubenschlüssel-Ports mit den Managementnetzwerk-Switches mit den RJ45-Kabeln verkabeln.
 +
-image::../media/drw_affa250_mgmt_cabling.png[drw affa250-Management-Kabel]
+image::../media/drw_affa250_mgmt_cabling.png[Verkabelung des Management-Ports]
 
 
 
@@ -261,7 +261,7 @@ Fibre Channel-Ports auf den Controllern sind mit Fibre Channel Host-Netzwerk-Swi
 * Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.
 * Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
 +
-image::../media/oie_cable_pull_tab_up.png[ziehen Sie die Lasche des oie-Kabels nach oben]
+image::../media/oie_cable_pull_tab_up.png[Kabelanschluss mit Zuglasche oben]
 
 +
 
@@ -275,7 +275,7 @@ Führen Sie den folgenden Schritt für jedes Controller-Modul durch.
 .Schritte
 . Verkabeln Sie die Ports 2a bis 2d mit den FC-Host-Switches.
 +
-image:../media/drw_affa250_fc_host_cabling.png[""]
+image:../media/drw_affa250_fc_host_cabling.png["Fibre Channel-Hostverkabelung"]
 
 
 
@@ -288,7 +288,7 @@ image:../media/drw_affa250_fc_host_cabling.png[""]
 * Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.
 * Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
 +
-image::../media/oie_cable_pull_tab_up.png[ziehen Sie die Lasche des oie-Kabels nach oben]
+image::../media/oie_cable_pull_tab_up.png[Kabelanschluss mit Zuglasche oben]
 
 +
 
@@ -302,7 +302,7 @@ Führen Sie den folgenden Schritt für jedes Controller-Modul durch.
 .Schritte
 . Verkabeln Sie die Ports e4a über e4d mit den 10 GbE Host Netzwerk-Switches.
 +
-image:../media/drw_affa250_25gbe_host_cabling.png[""]
+image:../media/drw_affa250_25gbe_host_cabling.png["25-GbE-Verkabelung"]
 
 
 
@@ -314,7 +314,7 @@ Verkabeln Sie jeden Controller mit den NSM-Modulen am NS224-Festplatten-Shelf.
 .Bevor Sie beginnen
 Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
 
-image::../media/oie_cable_pull_tab_up.png[ziehen Sie die Lasche des oie-Kabels nach oben]
+image::../media/oie_cable_pull_tab_up.png[Kabelanschluss mit Zuglasche oben]
 
 
 NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
@@ -327,11 +327,11 @@ video::3f92e625-a19c-4d10-9028-ac68017fbf57[panopto]
 .Schritte
 . Verbinden Sie Controller A mit dem Shelf.
 +
-image:../media/drw_affa250_1shelf_cabling_a.png[""]
+image:../media/drw_affa250_1shelf_cabling_a.png["Controller-A-Verkabelung"]
 
 . Verbinden Sie Controller B mit dem Shelf.
 +
-image:../media/drw_affa250_1shelf_cabling_b.png[""]
+image:../media/drw_affa250_1shelf_cabling_b.png["Verkabelung von Controller B"]
 
 
 
@@ -364,7 +364,7 @@ Weitere Informationen finden Sie in der Online-Hilfe Ihres Notebooks.
 video::d61f983e-f911-4b76-8b3a-ab1b0066909b[panopto]
 . Wählen Sie ein ONTAP-Symbol aus, um es zu ermitteln:
 +
-image::../media/drw_autodiscovery_controler_select.png[wählen sie den drw-Kontroller für die automatische Ermittlung aus]
+image::../media/drw_autodiscovery_controler_select.png[Wählen Sie ein ONTAP-Symbol aus]
 
 +
 .. Öffnen Sie Den Datei-Explorer.
@@ -400,7 +400,7 @@ NOTE: Informationen zur Konfiguration des Konsolenport finden Sie in der Online-
 
 .. Verbinden Sie den Laptop oder die Konsole mit dem Switch im Management-Subnetz.
 +
-image::../media/drw_console_client_mgmt_subnet_affa250.png[drw-Konsole-Client-Management-Subnetz affe250]
+image::../media/drw_console_client_mgmt_subnet_affa250.png[Verbindung mit dem Management-Subnetz wird hergestellt]
 
 .. Weisen Sie dem Laptop oder der Konsole eine TCP/IP-Adresse zu. Verwenden Sie dabei eine Adresse, die sich im Management-Subnetz befindet.
 
