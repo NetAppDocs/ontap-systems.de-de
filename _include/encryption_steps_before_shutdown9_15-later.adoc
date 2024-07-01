@@ -1,0 +1,33 @@
+= 
+:allow-uri-read: 
+
+
+Bevor Sie den beeinträchtigten Controller herunterfahren und den Status der integrierten Verschlüsselungsschlüssel prüfen, müssen Sie den Status des beeinträchtigten Controllers überprüfen, das automatische Giveback deaktivieren und die Version von ONTAP prüfen, die ausgeführt wird.
+
+Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE anzeigt, um die Berechtigung und den Zustand zu erhalten, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^].
+
+.Schritte
+. Den Status des beeinträchtigten Reglers prüfen:
++
+** Wenn sich der Controller mit eingeschränkter Bedieneinheit an der Anmeldeaufforderung befindet, melden Sie sich als an `admin`.
+** Wenn der Controller mit eingeschränkter Einstellung an der LOADER-Eingabeaufforderung steht und Teil der HA-Konfiguration ist, melden Sie sich als an `admin` Auf dem gesunden Controller.
+
+
+. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+Die folgende AutoSupport-Meldung unterdrückt die automatische Fallerstellung für zwei Stunden: `cluster1:*> Systemknoten AutoSupport Invoke -Node * -type all -message MAINT=2h
+
+. Überprüfen Sie die Version von ONTAP, auf der das System auf dem beeinträchtigten Controller ausgeführt wird, wenn er eingeschaltet ist, oder auf dem Partner-Controller, wenn der beeinträchtigte Controller nicht verfügbar ist, über das `version -v` Befehl:
++
+** Wenn in der Befehlsausgabe <lno-DARE> oder <1Ono-DARE> angezeigt wird, unterstützt das System NVE nicht, fahren Sie mit fort https://docs.netapp.com/us-en/ontap-systems/fas2800/bootmedia-impaired-controller-shutdown.html["Schalten Sie den beeinträchtigten Regler aus"].
+** Wenn in der Befehlsausgabe nicht <lno-DARE> angezeigt wird und auf dem System ONTAP 9.6 oder höher ausgeführt wird, fahren Sie mit dem nächsten Abschnitt fort. <<Prüfen Sie NVE oder NSE auf Systemen mit ONTAP 9.6 und höher>>.
+
+
+. Deaktivieren Sie das automatische Giveback vom Controller mit funktionstüchtiger Funktion:
++
+....
+`storage failover modify -node local -auto-giveback false`
+or
+`storage failover modify -node local -auto-giveback-after-panic false`
+....
+

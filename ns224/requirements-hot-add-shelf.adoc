@@ -1,0 +1,60 @@
+---
+permalink: ns224/requirements-hot-add-shelf.html 
+sidebar: sidebar 
+keywords: ns224, shelves, shelf, ns224 shelves, hot-add, ha, pair, requirement 
+summary: Wenn Sie ein NS224 Laufwerk-Shelf während des laufenden Betrieb hinzufügen möchten, muss Ihr HA-Paar bestimmte Anforderungen erfüllen. 
+---
+= Anforderungen und Best Practices für Hot-Add - NS224-Shelfs
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor Sie das Hot-Hinzufügen eines Shelfs beginnen, müssen Sie die Anforderungen und Best Practices überprüfen.
+
+
+
+== Anforderungen
+
+Wenn Sie ein NS224-Shelf während des laufenden Betrieb hinzufügen möchten, muss Ihr HA-Paar bestimmte Anforderungen erfüllen.
+
+* *Unterstützte ONTAP-Version*: Ihr Plattformmodell und Ihre Version von ONTAP müssen das NS224-Shelf und die Laufwerke unterstützen, die Sie bei laufendem Betrieb hinzufügen. Siehe https://hwu.netapp.com["NetApp Hardware Universe"^]
+* *Anzahl der Regale*: Ihr HA-Paar muss weniger als die maximale Anzahl der unterstützten Regale haben, zumindest durch die Anzahl der Regale, die Sie Hot-add planen.
++
+Sie können nach dem Hinzufügen von Shelfs nicht die Höchstzahl der von Ihrem HA-Paar unterstützten Shelfs überschritten haben. Siehe https://hwu.netapp.com["NetApp Hardware Universe"^].
+
+* * Verkabelung*:
++
+** Stellen Sie sicher, dass Sie die richtige Anzahl und den richtigen Kabeltyp zum Anschließen des Shelfs haben. Siehe https://hwu.netapp.com["NetApp Hardware Universe"^].
+** Wenn Sie ein Shelf zu einem HA-Paar hinzufügen, das bereits über ein NS224-Shelf verfügt, können beim HA-Paar keine Fehlermeldungen bei der Storage-Verkabelung ausgegeben werden. Es muss als Multipath HA verkabelt werden.
++
+Sie können ausgeführt  https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^] werden, um Fehlermeldungen bei der Storage-Verkabelung und die zu ergreifenden Korrekturmaßnahmen anzuzeigen.
+
+
+
+
+
+
+
+== Best Practices in sich vereint
+
+Machen Sie sich mit den folgenden Best Practices vertraut, bevor Sie ein NS224-Shelf im laufenden Betrieb hinzufügen.
+
+* *Best Practice:* die Best Practice ist es, die aktuelle Version des https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["Disk Qualification Package"^] zu installieren, bevor Sie ein Shelf Hot-hinzufügen.
++
+Wenn die aktuelle Version des DQP installiert ist, kann Ihr System neu qualifizierte Laufwerke erkennen und verwenden. Dies verhindert, dass Systemereignimeldungen über nicht aktuelle Laufwerksinformationen verfügen und Laufwerkspartitionierung verhindern, da Laufwerke nicht erkannt werden. Das DQP benachrichtigt Sie auch über nicht aktuelle Laufwerk-Firmware.
+
+* *Best Practice:* die Best Practice ist, vor und nach dem Hot-Hinzufügen eines Regals zu laufen https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^] .
++
+Wenn Active IQ Config Advisor ausgeführt wird, bevor ein Shelf hinzugefügt wird, ist ein Schnappschuss der vorhandenen Shelf-Ethernet-Konnektivität (ENET) möglich. Es werden die NVMe Shelf-Versionen (NSM) der Firmware-Versionen überprüft und können Sie eine Shelf-ID überprüfen, die bereits im HA-Paar verwendet wird.
+
++
+Wenn Sie Active IQ Config Advisor nach dem Hinzufügen eines Shelfs im laufenden Betrieb ausführen, können Sie überprüfen, ob Shelfs ordnungsgemäß verkabelt sind und dass Shelf-IDs innerhalb des HA-Paars eindeutig sind.
+
+* *Best Practice:* die Best Practice ist, aktuelle Versionen von und auf Ihrem Speichersystem zu haben https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NSM-Firmware (NVMe-Shelf-Modul)"^] https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Festplatten-Firmware"^] , bevor Sie ein neues Regal hinzufügen.
++
+
+NOTE: Stellen Sie die Firmware nicht auf eine Version zurück, die Ihr Shelf und seine Komponenten nicht unterstützt.
+
+

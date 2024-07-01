@@ -1,0 +1,83 @@
+= 
+:allow-uri-read: 
+
+
+Sie müssen das Controller-Modul aus dem Chassis entfernen, wenn Sie das Controller-Modul ersetzen oder eine Komponente im Controller-Modul ersetzen.
+
+. Drücken Sie auf der Vorderseite des Gehäuses die Daumen, um jedes Laufwerk fest einzuschieben, bis Sie einen positiven Stopp spüren. Dadurch wird sichergestellt, dass die Laufwerke fest an der Mittelplatine des Gehäuses sitzen.
++
+image::../media/drw_a800_drive_seated_IEOPS-960.svg[drw a800-Laufwerk mit IEOPS 960]
+
+. Überprüfen Sie, ob die gelbe NVRAM-Status-LED in Steckplatz 4/5 auf der Rückseite des außer Betrieb genommenen Controller-Moduls ausgeschaltet ist. Suchen Sie nach dem NV-Symbol.
++
+image::../media/drw_a1K-70-90_nvram-led_ieops-1463.svg[Grafik für die NVRAM-Warnungs- und Status-LED zur Lage]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.svg["Legende Nummer 1, Breite=30px"]
+ a| 
+NVRAM-Status-LED
+
+
+
+ a| 
+image:../media/legend_icon_02.svg["Legende Nummer 1, Breite=30px"]
+ a| 
+LED für NVRAM-Warnung
+
+|===
++
+
+NOTE: Wenn die NVRAM-Status-LED blinkt, bedeutet dies möglicherweise, dass das Controller-Modul nicht ordnungsgemäß übernommen oder angehalten wurde (nicht belegte Daten). Wenn das beeinträchtigte Controller-Modul nicht erfolgreich vom Partner-Controller-Modul übernommen wurde, wenden Sie sich an https://mysupport.netapp.com/site/global/dashboard["NetApp Support"] , bevor Sie mit diesem Verfahren fortfahren.
+
++
+Das allgemeine Verhalten der NVRAM-Status-LED am Controller-Modul für beeinträchtigte besteht wie folgt:
+
++
+** Die NVRAM-Status-LED blinkt, wenn die Stromversorgung vom Controller-Modul getrennt wird und sich das Storage-System im Status „Warten auf Rückgabe“ befindet oder das Controller-Modul nicht ordnungsgemäß übernommen oder angehalten wird (nicht belegte Daten).
+** Wenn das Controller-Modul aus dem Chassis entfernt wird, blinkt die NVRAM-Status-LED, sodass das Controller-Modul nicht übernommen oder ordnungsgemäß angehalten wird (nicht belegte Daten). Vergewissern Sie sich, dass das Controller-Modul sauber Übernahme durch das Partner Controller-Modul erfolgt ist oder dass das beeinträchtigte Controller-Modul angezeigt wird `waiting for giveback`. Anschließend kann die blinkende LED ignoriert werden (und das Controller-Modul kann aus dem Gehäuse entfernt werden).
+
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Ziehen Sie die Stromversorgungskabel des Controller-Moduls von den Netzteilen des Controller-Moduls (PSU) ab.
++
+
+NOTE: Wenn Ihr System über Gleichstrom verfügt, trennen Sie den Netzstecker von den Netzteilen.
+
+. Ziehen Sie die Systemkabel und die SFP- und QSFP-Module (falls erforderlich) vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren.
++
+Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation des Kabelverwaltungsgeräts die Kabel organisiert sind.
+
+. Entfernen Sie das Kabelverwaltungsgerät vom Controller-Modul.
+. Drücken Sie beide Verriegelungsriegel nach unten, und drehen Sie dann beide Verriegelungen gleichzeitig nach unten.
++
+Das Controller-Modul wird leicht aus dem Chassis entfernt.
+
++
+image::../media/drw_a70-90_pcm_remove_replace_ieops-1365.svg[Controller Grafik entfernen]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.svg["Legende Nummer 1, Breite=30px"]
+| Eine Verriegelungsverriegelung 
+
+
+ a| 
+image:../media/legend_icon_02.svg["Callout-Nummer 2, Breite=30 px"]
+ a| 
+Sicherungsstift
+
+|===
+. Schieben Sie das Controller-Modul aus dem Gehäuse und platzieren Sie es auf einer Ebenen, stabilen Oberfläche.
++
+Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen, während Sie es aus dem Gehäuse schieben.
+
+

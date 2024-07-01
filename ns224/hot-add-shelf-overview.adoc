@@ -1,0 +1,33 @@
+---
+permalink: ns224/hot-add-shelf-overview.html 
+sidebar: sidebar 
+keywords: ns224, shelves, shelf, ns224 shelves, hot-add, ha, pair, overview 
+summary: Wenn Sie ein NS224 Laufwerk-Shelf während des laufenden Betrieb hinzufügen möchten, muss Ihr HA-Paar bestimmte Anforderungen erfüllen. 
+---
+= Hot-Add-Workflow – NS224-Shelfs
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Führen Sie die folgenden Workflow-Schritte aus, um Ihr NS224-Shelf im laufenden Betrieb hinzuzufügen.
+
+.Bevor Sie beginnen
+Wenn Sie ein NS224-Shelf während des laufenden Betrieb hinzufügen möchten, muss Ihr HA-Paar bestimmte Anforderungen erfüllen. Lesen Sie die link:requirements-hot-add-shelf.html["Hot-Add-Anforderungen und Best Practices"].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:prepare-hot-add-shelf.html["Bereiten Sie sich darauf vor, Ihr Regal heiß hinzuzufügen"]
+[role="quick-margin-para"]
+Je nach Plattformmodell müssen Sie unter Umständen zusätzliche RoCE-fähige PCIe-Karten oder I/O-Module installieren, die nicht dedizierten RoCE-fähigen Ethernet-Ports für Storage-Nutzung konfigurieren und ein vorhandenes Shelf über zwei Portsätze in unterschiedlichen Steckplätzen umbauen, um eine Ausfallsicherheit bei Steckplatzausfällen zu gewährleisten, und deaktivieren Sie die automatische Laufwerkszuweisung, wenn Sie die Laufwerkseigentümerschaft manuell zuweisen.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:install-hot-add-shelf.html["Installieren Sie das Regal"]
+[role="quick-margin-para"]
+Um das Regal zu installieren, installieren Sie das Schienensatz für das Regal, und installieren und sichern Sie dann das Regal im Telco-Rack oder -Schrank. Schließen Sie dann die Netzkabel an das Shelf an und weisen Sie dann eine eindeutige Shelf-ID zu. Dadurch wird sichergestellt, dass das Shelf innerhalb des HA-Paars unterscheidbar ist.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:cable-overview-hot-add-shelf.html["Verkabeln Sie das Regal"]
+[role="quick-margin-para"]
+Verkabeln Sie das Shelf, das Sie im laufenden Betrieb hinzufügen, so dass es über zwei Verbindungen mit jedem Controller im HA-Paar verfügt.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:complete-hot-add-shelf.html["Schließen Sie den Hot-Add ab"]
+[role="quick-margin-para"]
+Wenn Sie die automatische Laufwerkszuordnung im Rahmen der Vorbereitung für das Hot-add deaktiviert haben, müssen Sie manuell den Laufwerkseigentum zuweisen und gegebenenfalls die automatische Laufwerkszuordnung erneut aktivieren.

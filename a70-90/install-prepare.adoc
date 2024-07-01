@@ -1,0 +1,153 @@
+---
+permalink: a70-90/install-prepare.html 
+sidebar: sidebar 
+keywords: aff a70-90k, prepare installation 
+summary: Bereiten Sie die Installation Ihrer AFF A70, AFF A90 Plattform vor. 
+---
+= Vorbereitung der Installation - AFF A70, AFF A90
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bereiten Sie die Installation Ihrer Plattform vor.
+
+.Bevor Sie beginnen
+* Verwenden Sie die https://docs.netapp.com/us-en/ontap/software_setup/index.html["Arbeitsblatt für die Cluster-Einrichtung"] , um die Werte aufzuzeichnen, die Sie benötigen, wenn Sie link:complete-install.html#step-3-configure-your-cluster["Konfigurieren Sie den Cluster"]. Wenn ein Standardwert angegeben ist, können Sie diesen Wert verwenden oder Ihren eigenen Wert eingeben.
+* Vergewissern Sie sich, dass Sie über alle zusätzlichen Geräte und Tools verfügen, die Sie zum Abschluss der Hardwareinstallation benötigen.
++
+** Kreuzschlitzschraubendreher #2
+** Taschenlampe
+** ESD-Riemen
+** Eine Büroklammer oder ein Kugelschreiber mit schmaler Spitze zum Einstellen der NS224-Einschubnummern
+** Laptop oder Konsole mit USB-/serieller Verbindung
+** Zugriff auf einen Webbrowser zur Konfiguration des Speichersystems
+
+
+* Sie sollten sich der Sicherheitsbedenken im Zusammenhang mit dem Gewicht der Plattform bewusst sein.
++
+Eine voll beladene A70-90-Plattform kann bis zu 151.68 kg (68.8 lbs) wiegen und erfordert vier Personen zum Anheben oder Verwenden eines hydraulischen Hubs.
+
++
+image::../media/drw_a70-90_weight_icon_ieops-1730.svg[AFF A90]
+
+* Sie sollten sich der Sicherheitsbedenken im Zusammenhang mit dem Gewicht des Regals bewusst sein.
++
+Ein voll beladenes Regal kann bis zu 30.29 kg (66.78 lbs) wiegen und erfordert zwei Personen zum Anheben oder Verwenden eines hydraulischen Hubs. Entfernen Sie keine Regalkomponenten (von der Vorder- oder Rückseite des Regals), um das Gewicht des Regals zu verringern, da das Regalgewicht unausgeglichen wird.
+
++
+image::../media/drw_ns224_lifting_weight_ieops-1716.svg[NS224 Vorsicht beim Anheben]
+
+* Der Luftstrom durch das Speichersystem gelangt von der Vorderseite, an der die Blende oder die Endkappen installiert sind, und entlüftet die Rückseite, an der sich die Anschlüsse befinden.
+
+
+
+
+== Schritt 1: Bereiten Sie den Standort vor
+
+Stellen Sie sicher, dass der Standort und der Schrank oder das Rack, den Sie verwenden möchten, den Spezifikationen für Ihr Speichersystem entsprechen.
+
+.Schritte
+. Vergewissern Sie sich, dass Ihr Standort die Umwelt- und elektrischen Anforderungen für Ihre Plattform erfüllt, wie in dargestellt https://hwu.netapp.com["NetApp Hardware Universe"^].
+. Stellen Sie sicher, dass ausreichend Platz im Rack vorhanden ist:
++
+** 4 HE für das Plattform-Chassis
+** 2 HE für jedes NS224-Shelf
+
+
+. Installieren Sie alle erforderlichen Netzwerk-Switches in der Nähe der Plattform.
++
+Installationsanweisungen und Kompatibilitätsinformationen finden Sie im https://docs.netapp.com/us-en/ontap-systems-switches/index.html["Switch-Dokumentation"^] link:https://hwu.netapp.com["NetApp Hardware Universe"^] .
+
+
+
+
+
+== Schritt 2: Auspacken der Boxen
+
+Packen Sie alle Kartons aus, und vergleichen Sie den Inhalt mit den Artikeln auf dem Packzettel.
+
+. Öffnen Sie sorgfältig alle Kartons und legen Sie den Inhalt in einer organisierten Art und Weise.
+. Vergleichen Sie den Inhalt, den Sie ausgepackt haben, mit der Liste auf dem Packzettel.
++
+
+NOTE: Sie können Ihre Packliste erhalten, indem Sie den QR-Code auf der Seite des Versandkartons scannen.
+
++
+Die folgenden Elemente sind einige der Inhalte, die Sie in den Feldern sehen können.
+
++
+Stellen Sie sicher, dass alle in den Kartons auf die Liste auf dem Packzettel passen. Wenn Abweichungen auftreten, notieren Sie sie für weitere Maßnahmen.
+
++
+[cols="12,9,4"]
+|===
+
+
+| *Hardware* | * Kabel* |  
+
+
+ a| 
+** Plattform mit installierten Onboard-Laufwerken
+** Shelf (optional)
+** Schienensätze mit Anweisungen (optional)
+** Zwei Kabelverwaltungsgeräte
+** Blende
+
+ a| 
+** Stromkabel
+** Netzwerkkabel
+** Management-Ethernet-Kabel (RJ-45-Kabel)
+** Serielles USB-C-Anschlusskabel
+** Speicherkabel (wenn zusätzlicher Speicher bestellt wird)
+
+|  
+|===
+
+
+
+
+== Schritt 3: Registrieren Sie Ihre Hardware
+
+Registrieren Sie Ihre Plattform, um Support-Vorteile zu erhalten.
+
+.Schritte
+. Suchen Sie die Seriennummer des Systems für Ihre Plattform.
++
+Sie finden die Nummer auf dem Packzettel, in Ihrer Bestätigungs-E-Mail oder auf dem Controller, nachdem Sie es auspacken.
+
++
+image::../media/drw_ssn_label.svg[Beispiel für die Seriennummer des Systems, die den Standort der Nummer anzeigt]
+
+. Besuchen Sie die NetApp Support-Website unter http://mysupport.netapp.com/["mysupport.netapp.com"^].
+. Registrieren der Hardware:
++
+[cols="1a,2a"]
+|===
+| Wenn Sie ein... | Führen Sie die folgenden Schritte aus... 
+
+
+ a| 
+Bestehender NetApp Kunde
+ a| 
+.. Melden Sie sich mit Ihrem Benutzernamen und Passwort an.
+.. Wählen Sie *Systeme* > *Eigene Systeme*.
+.. Vergewissern Sie sich, dass die Seriennummer des neuen Systems aufgeführt ist.
+.. Falls nicht, folgen Sie den Anweisungen für neue NetApp Kunden.
+
+
+
+
+ a| 
+Neuer NetApp Kunde
+ a| 
+.. Klicken Sie auf *Jetzt registrieren* und erstellen Sie ein Konto.
+.. Wählen Sie *Systeme* > *Systeme Registrieren*.
+.. Geben Sie die Seriennummer des Systems und die angeforderten Details ein.
+
+
+Nach der Registrierung können Sie die erforderliche Software herunterladen. Der Genehmigungsprozess kann bis zu 24 Stunden in Anspruch nehmen.
+
+|===
+

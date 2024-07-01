@@ -1,0 +1,34 @@
+= 
+:allow-uri-read: 
+
+
+Sie müssen neue Lizenzen für den Node installieren, wenn der beeinträchtigte Node ONTAP-Funktionen verwendet, für die eine standardmäßige (Node-locked) Lizenz erforderlich ist. Bei Standardlizenzen sollte jeder Node im Cluster über seinen eigenen Schlüssel für die Funktion verfügen.
+
+.Über diese Aufgabe
+Bis Sie die Lizenzschlüssel installieren, sind Funktionen, für die Standardlizenzen erforderlich sind, weiterhin für den Node verfügbar. Wenn der Node jedoch der einzige Node im Cluster mit einer Lizenz für die Funktion war, sind keine Konfigurationsänderungen an der Funktion zulässig. Wenn Sie nicht lizenzierte Funktionen auf dem Node verwenden, kommt es möglicherweise zu Compliance mit Ihrer Lizenzvereinbarung. Daher sollten Sie den Ersatz-Lizenzschlüssel oder die Schlüssel auf dem für den Node installieren.
+
+.Bevor Sie beginnen
+Die Lizenzschlüssel müssen im 28-stelligen Format vorliegen.
+
+Sie haben eine 90-Tage-Nachfrist zur Installation der Lizenzschlüssel. Nach Ablauf der Frist werden alle alten Lizenzen ungültig. Nachdem ein gültiger Lizenzschlüssel installiert wurde, haben Sie 24 Stunden Zeit, um alle Schlüssel zu installieren, bevor die Kulanzzeit endet.
+
+.Schritte
+. Wenn Sie neue Lizenzschlüssel benötigen, holen Sie sich die Ersatzlizenz auf dem https://mysupport.netapp.com/site/global/dashboard["NetApp Support Website"] Im Abschnitt „My Support“ unter „Software-Lizenzen“.
++
+
+NOTE: Die neuen Lizenzschlüssel, die Sie benötigen, werden automatisch generiert und an die E-Mail-Adresse in der Datei gesendet. Wenn Sie die E-Mail mit den Lizenzschlüssel nicht innerhalb von 30 Tagen erhalten, sollten Sie sich an den technischen Support wenden.
+
+. Installieren Sie jeden Lizenzschlüssel: `+system license add -license-code license-key, license-key...+`
+. Entfernen Sie ggf. die alten Lizenzen:
++
+.. Suchen Sie nach nicht verwendeten Lizenzen: `license clean-up -unused -simulate`
+.. Wenn die Liste korrekt aussieht, entfernen Sie die nicht verwendeten Lizenzen: `license clean-up -unused`
+
+
+. Registrieren Sie die Seriennummer des Systems beim NetApp Support.
++
+** Wenn AutoSupport aktiviert ist, senden Sie eine AutoSupport Nachricht, um die Seriennummer zu registrieren.
+** Wenn AutoSupport nicht aktiviert ist, rufen Sie an https://mysupport.netapp.com["NetApp Support"] Um die Seriennummer zu registrieren.
+
+
+

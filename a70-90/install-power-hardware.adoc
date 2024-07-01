@@ -1,0 +1,159 @@
+---
+permalink: a70-90/install-power-hardware.html 
+sidebar: sidebar 
+keywords: aff a70, a90, power controllers 
+summary: Schließen Sie die Netzkabel an und schalten Sie die Shelfs und Controller ein. 
+---
+= Schalten Sie das Speichersystem ein – AFF A70, AFF A90
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nach dem Anschließen des Netzwerks und sämtlicher Shelf-Kabel können Sie die Controller und zusätzliche Shelfs mit Strom versorgen.
+
+
+NOTE: Externe NS224-Shelfs sind optional.
+
+
+
+== Schritt 1: Schalten Sie das Shelf ein und weisen Sie die Shelf-ID zu
+
+In ONTAP Storage-Systemen wird jedes NS224 Shelf durch eine eindeutige Shelf-ID unterschieden. Diese ID stellt sicher, dass das Shelf innerhalb Ihrer Storage-System-Einrichtung unterscheidbar ist. Standardmäßig werden Shelf-IDs in der Regel als ‘00’ und ‘01’ zugewiesen. Möglicherweise müssen Sie diese IDs jedoch anpassen, um die Eindeutigkeit im gesamten Storage-System aufrechtzuerhalten.
+
+
+NOTE: Die ID des Controller-Chassis-Shelfs ist hartcodiert mit „00“. Verwenden Sie nicht die Shelf-ID „00“ für an die Plattform angeschlossene NS224-Shelfs.
+
+.Über diese Aufgabe
+* Gültige Shelf-ID: 00 bis 99.
+* Sie müssen ein Shelf aus- und wieder einschalten (trennen Sie beide Netzkabel, warten Sie die entsprechende Zeit und schließen Sie sie dann wieder an), damit die Shelf-ID wirksam wird.
+
+
+.Schritte
+. Schalten Sie das Shelf ein, indem Sie die Netzkabel zuerst an das Shelf anschließen, sie mit der Netzkabelhalterung sichern und dann die Netzkabel an die Stromversorgung an verschiedenen Stromkreisen anschließen.
++
+Das Shelf wird eingeschaltet und startet automatisch, wenn es an die Stromversorgung angeschlossen ist.
+
+. Entfernen Sie die linke Endkappe, um auf die Shelf-ID-Taste hinter der Frontplatte zuzugreifen.
++
+image::../media/drw_a900_oie_change_ns224_shelf_id_ieops-836.svg[NS224 Shelf-ID ändern]
+
++
+[cols="20%,80%"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[Legende Nummer 1]
+ a| 
+Einlegeboden-Endkappe
+
+
+
+ a| 
+image::../media/legend_icon_02.svg[Legende Nummer 2]
+ a| 
+Ablagefaceplate
+
+
+
+ a| 
+image::../media/legend_icon_03.svg[Legende Nummer 3]
+ a| 
+Shelf-ID-Nummer
+
+
+
+ a| 
+image::../media/legend_icon_04.svg[Legende Nummer 4]
+ a| 
+Zugriffstaste für Shelf-ID
+
+|===
+. Ändern Sie die erste Nummer der Shelf-ID:
++
+.. Führen Sie das gerade gebogene Ende einer Büroklammer oder eines Kugelschreibers mit schmaler Spitze in das kleine Loch ein.
+.. Halten Sie die Taste gedrückt, bis die erste Ziffer auf der digitalen Anzeige blinkt, und lassen Sie dann die Taste los.
++
+Es kann bis zu 15 Sekunden dauern, bis die Ziffer blinkt. Dadurch wird der Programmiermodus für die Shelf-ID aktiviert.
+
++
+
+NOTE: Wenn die ID länger als 15 Sekunden dauert, halten Sie die Taste erneut gedrückt, und drücken Sie sie vollständig.
+
+.. Drücken Sie die Taste und lassen Sie sie los, um die Nummer so lange zu drücken, bis Sie die gewünschte Zahl von 0 auf 9 erreicht haben.
++
+Jede Presse- und Freigabedauer kann eine Sekunde lang sein.
+
++
+Die erste Ziffer blinkt weiterhin.
+
+
+
+. Ändern Sie die zweite Nummer der Shelf-ID:
++
+.. Halten Sie die Taste gedrückt, bis die zweite Ziffer auf der digitalen Anzeige blinkt.
++
+Es kann bis zu drei Sekunden dauern, bis die Ziffer blinkt.
+
++
+Die erste Ziffer auf dem digitalen Display hört auf zu blinken.
+
+.. Drücken Sie die Taste und lassen Sie sie los, um die Nummer so lange zu drücken, bis Sie die gewünschte Zahl von 0 auf 9 erreicht haben.
++
+Die zweite Ziffer blinkt weiterhin.
+
+
+
+. Halten Sie die Taste gedrückt, bis die zweite Ziffer nicht mehr blinkt, und beenden Sie den Programmiermodus.
++
+Es kann bis zu drei Sekunden dauern, bis die Ziffer nicht mehr blinkt.
+
++
+Beide Ziffern auf der digitalen Anzeige blinken, und die gelbe LED auf dem ODP beginnt nach ca. fünf Sekunden zu leuchten, und Sie werden benachrichtigt, dass die ausstehende Shelf-ID noch nicht wirksam wurde.
+
+. Schalten Sie das Shelf mindestens 10 Sekunden aus und wieder ein, damit die Shelf-ID übernommen wird.
++
+.. Ziehen Sie das Netzkabel aus beiden Netzteilen auf dem Shelf ab.
+.. Warten Sie 10 Sekunden.
+.. Schließen Sie die Netzkabel wieder an die Shelf-Netzteile an, um den aus- und Wiedereinschalten zu beenden.
++
+Sobald das Netzkabel angeschlossen ist, wird ein Netzteil eingeschaltet. Die zweifarbige LED sollte grün leuchten.
+
+
+
+. Die linke Endkappe austauschen.
+
+
+
+
+== Schritt 2: Schalten Sie die Controller ein
+
+. Schließen Sie Ihr Laptop an den seriellen Konsolenport an, damit Sie die Boot-Sequenz überwachen können, wenn die Controller mit Strom versorgt werden.
++
+.. Stellen Sie den seriellen Konsolenport am Laptop auf 115,200 Baud mit N-8-1 ein.
++
+
+NOTE: Anweisungen zum Konfigurieren des seriellen Konsolenports finden Sie in der Online-Hilfe Ihres Laptops.
+
+.. Schließen Sie das Konsolenkabel an den Laptop an und verbinden Sie den seriellen Konsolenport am Controller mithilfe des Konsolenkabels, das mit Ihrer Plattform geliefert wurde.
+.. Schließen Sie den Laptop an den Switch im Management-Subnetz an.
++
+image::../media/drw_a1k_70-90_console_connection_ieops-1702.svg[Konsolenverbindungen]
+
+.. Weisen Sie dem Laptop eine TCP/IP-Adresse zu, die sich im Management-Subnetz befindet.
+
+
+. Schließen Sie die Stromkabel an die Controller-Netzteile an, und schließen Sie sie dann an Stromquellen auf verschiedenen Stromkreisen an.
++
+image::../media/drw_affa1k_power_source_icon_ieops-1700.svg[Allgemeiner Netzanschlussplan]
+
++
+** Die Plattform beginnt zu booten. Das erste Booten kann bis zu acht Minuten dauern.
+** Die LEDs blinken auf, und die Lüfter starten, was darauf hinweist, dass die Controller eingeschaltet sind.
+** Die Ventilatoren könnten beim ersten Start sehr laut sein. Das laute Lüftergeräusch beim Start ist normal.
+
+
+. Befestigen Sie die Netzkabel mit dem Sicherungsgerät an jedem Netzteil.
+

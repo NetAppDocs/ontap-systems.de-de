@@ -271,5 +271,5 @@ NOTE: Falls der Befehl fehlschlägt, wenden Sie sich an den Kundendienst.
 . Schließen Sie das Konsolenkabel an den Partner Controller an.
 . Geben Sie den Controller mithilfe des zurück `storage failover giveback -fromnode local` Befehl.
 . Stellen Sie die automatische Rückgabe wieder her, wenn Sie die Funktion mithilfe von deaktivieren `storage failover modify -node local -auto-giveback true` Befehl.
-. Stellen Sie AutoSupport wieder her, wenn sie mithilfe des deaktiviert wurde `system node autosupport invoke -node * -type all -message MAINT=END`
+. Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung mithilfe des wiederherstellen/aufheben `system node autosupport invoke -node * -type all -message MAINT=END`
 

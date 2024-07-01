@@ -27,24 +27,32 @@ https://hwu.netapp.com["NetApp Hardware Universe"^]
 +
 https://hwu.netapp.com["NetApp Hardware Universe"^]
 
-* Ihr HA-Paar muss über genügend verfügbare RoCE-fähige Ports verfügen, um die Anzahl der Shelves zu unterstützen, die Sie im laufenden Betrieb hinzufügen.
+* Das HA-Paar muss über genügend RoCE-fähige Ethernet-Ports verfügen, um die Anzahl der hinzuzufüenden Shelfs zu unterstützen.
 +
-Für jedes Shelf, das Sie hinzufügen, benötigen Sie mindestens zwei RoCE-fähige Ports an jedem Controller. Diese Ports können je nach Plattformmodell auf den Controllern, auf RoCE-fähigen PCIe-Karten oder auf RoCE-fähigen I/O-Modulen integriert werden.
+Für jedes Shelf, das Sie Hot-hinzufügen, benötigen Sie zwei RoCE-fähige Ports auf jedem Controller. Diese Ports können je nach Plattformmodell auf den Controllern, auf RoCE-fähigen PCIe-Karten oder auf RoCE-fähigen I/O-Modulen integriert werden.
 
 +
 Wenn Ihr HA-Paar nicht über ausreichende RoCE-fähige Ports verfügt und Ihr Plattformmodell die Verwendung von RoCE-fähigen PCIe-Karten oder I/O-Modulen unterstützt, müssen Sie die zusätzlichen Karten oder I/O-Module entsprechend Ihrem Plattformmodell in die richtigen Controller-Steckplätze installiert haben.
 
 +
+** Identifizieren Sie die richtigen Controller-Steckplätze für Ihr Plattformmodell.
++
 https://hwu.netapp.com["NetApp Hardware Universe"^]
+
+** Anweisungen zur Installation der PCIe-Karte oder des E/A-Moduls finden Sie in der Dokumentation Ihres Plattformmodells.
++
+https://docs.netapp.com/us-en/ontap-systems/index.html["Dokumentation zu ONTAP Hardwaresystemen"]
 
 +
 [NOTE]
 ====
 Nicht dedizierte RoCE-fähige Ports müssen für den Storage-Einsatz konfiguriert werden (nicht für den Netzwerkeinsatz).
 
-<<Vorbereitung nicht dedizierter RoCE-fähiger Ports für ein Hot-Add-on>>
+<<Prepare non-dedicated RoCE-capable ports for a hot-add>>
 
 ====
+
+
 * Wenn Sie über ein AFF A700 HA-Paar verfügen und das erste NS224-Festplatten-Shelf während des laufenden Betrieb hinzufügen (kein NS224-Festplatten-Shelf in Ihrem HA-Paar vorhanden), müssen Sie in jedem Controller ein Core Dump-Modul (X9170A, NVMe 1 TB SSD) installiert haben, um Core Dumps zu unterstützen (speichern Sie Core-Dateien).
 +
 link:../fas9000/caching-module-and-core-dump-module-replace.html["Ersetzen Sie das Caching-Modul, oder fügen Sie ein Core Dump-Modul hinzu – AFF A700 und FAS9000"^]
@@ -121,12 +129,12 @@ Sie müssen die Vorbereitungsaufgaben für Ihr HA-Paar abschließen, bevor Sie e
 
 
 
-=== Vorbereitung nicht dedizierter RoCE-fähiger Ports für ein Hot-Add-on
+=== Bereiten Sie nicht dedizierte RoCE-fähige Ethernet-Ports für ein Hot-Add vor
 
-Wenn Ihr HA-Paar nicht dedizierte RoCE-fähige Ports aufweist, die Sie zum Hot-Add eines NS224-Laufwerk-Shelfs verwenden, müssen Sie sicherstellen, dass die Ports für die Storage-Verwendung konfiguriert sind (nicht für die Netzwerknutzung). Je nach Plattformmodell sind die RoCE-fähigen Ports an den Controllern, auf RoCE-fähigen PCIe-Karten, einer Kombination aus beiden oder auf RoCE-fähigen I/O-Modulen integriert.
+Wenn das HA-Paar nicht dedizierte RoCE-fähige Ethernet-Ports aufweist, die Sie verwenden, um ein NS224-Laufwerk-Shelf im laufenden Betrieb hinzuzufügen, müssen Sie sicherstellen, dass die Ports für die Storage-Verwendung konfiguriert sind (nicht für die Netzwerkverwendung).
 
 .Bevor Sie beginnen
-Sie müssen die Systemanforderungen erfüllt haben.
+Sie müssen die Anforderungen an das Storage-System erfüllt haben, einschließlich der Installation zusätzlicher RoCE-fähiger PCIe-Karten von I/O-Modulen an jedem Controller.
 
 <<Anforderungen für einen Hot-Add-Zusatz>>
 
@@ -141,13 +149,15 @@ NOTE: Wenn auf dem HA-Paar eine Version von ONTAP 9.6 ausgeführt wird, müssen 
 
 NOTE: Wenn auf dem HA-Paar ONTAP 9.7 oder höher ausgeführt wird, müssen Sie die Controller nicht neu booten, es sei denn, ein oder beide Controller befinden sich im Wartungsmodus. Für diese Vorgehensweise wird vorausgesetzt, dass sich keiner der Controller im Wartungsmodus befindet.
 
++
+
+NOTE: Um Ports von Storage- in Netzwerkverwendung zu ändern, geben Sie den Befehl ein, `storage port modify -node _node_name_ -port _port_name_ -mode network`.
+
 
 
 .Schritte
+. Melden Sie sich beim Cluster über SSH oder den seriellen Konsolenport an.
 . Überprüfen Sie, ob die nicht dedizierten Ports im HA-Paar für den Storage konfiguriert sind: `storage port show`
-+
-Sie können den Befehl an einem der Controller-Module eingeben.
-
 +
 Wenn auf Ihrem HA-Paar ONTAP 9.8 oder höher ausgeführt wird, werden die nicht dedizierten Ports angezeigt `storage` Im `Mode` Spalte.
 
@@ -156,7 +166,7 @@ Wenn auf dem HA-Paar ONTAP 9.7 oder 9.6 ausgeführt wird, werden die nicht-dediz
 
 . Wenn die nicht dedizierten Ports für die Speichernutzung konfiguriert sind, gehen Sie wie folgt vor.
 +
-Andernfalls müssen Sie die Ports konfigurieren, indem Sie die Schritte 3 bis 6 ausführen.
+Andernfalls müssen Sie die Ports konfigurieren, indem Sie die Schritte 4 bis 7 ausführen.
 
 +
 [NOTE]
@@ -181,17 +191,17 @@ Sie müssen den entsprechenden Befehl für jeden zu konfigurierende Port wiederh
  a| 
 ONTAP 9.8 oder höher
  a| 
-`storage port modify -node node name -port port name -mode storage`
+`storage port modify -node _node_name_ -port _port_name_ -mode storage`
 
 
 
  a| 
 ONTAP 9.7 oder 9.6
  a| 
-`storage port enable -node node name -port port name`
+`storage port enable -node _node_name_ -port _port_name_`
 
 |===
-. Wenn auf Ihrem HA-Paar ONTAP 9.6 ausgeführt wird, booten Sie das Controller-Modul neu, damit die Port-Änderungen wirksam werden: `system node reboot -node node name -reason reason for the reboot`
+. Wenn auf Ihrem HA-Paar ONTAP 9.6 ausgeführt wird, booten Sie das Controller-Modul neu, damit die Port-Änderungen wirksam werden: `system node reboot -node _node_name_ -reason _reason_for_the_reboot_`.
 +
 Andernfalls fahren Sie mit dem nächsten Schritt fort.
 
@@ -209,8 +219,8 @@ NOTE: Der Neustart kann bis zu 15 Minuten dauern.
  a| 
 ONTAP 9.7 oder höher
  a| 
-.. Wiederholen Sie Schritt 3.
-.. Fahren Sie mit Schritt 6 fort.
+.. Wiederholen Sie Schritt 4.
+.. Fahren Sie mit Schritt 7 fort.
 
 
 
@@ -218,12 +228,12 @@ ONTAP 9.7 oder höher
  a| 
 ONTAP 9.6
  a| 
-.. Wiederholen Sie die Schritte 3 und 4.
+.. Wiederholen Sie die Schritte 4 und 5.
 +
 
 NOTE: Der erste Controller muss den Neustart bereits abgeschlossen haben.
 
-.. Fahren Sie mit Schritt 6 fort.
+.. Fahren Sie mit Schritt 7 fort.
 
 
 |===
@@ -241,35 +251,33 @@ Wenn auf dem HA-Paar ONTAP 9.7 oder 9.6 ausgeführt wird, werden die nicht-dediz
 
 
 
-=== Bereiten Sie ein AFF A700, AFF A800, AFF C800, AFF A400 oder AFF C400 HA-Paar auf das Hot-Add eines zweiten Shelf vor
+=== Bereiten Sie die vorhandene Shelf-Konnektivität vor, bevor Sie zusätzliche Shelfs während des laufenden Betrieb hinzufügen
 
-Wenn Sie ein AFF A700, AFF A800, AFF C800, AFF A400 oder AFF C400 HA-Paar mit einem NS224-Laufwerk-Shelf haben, das mit einem Satz RoCE-fähiger Ports an jedem Controller verkabelt ist, müssen Sie das Shelf neu verkabeln (Nachdem Sie die zusätzlichen RoCE-fähigen PCIe-Karten oder I/O-Module installiert haben) über beide Port-Sätze auf jedem Controller hinweg, bevor Sie das zweite Shelf Hot-hinzufügen.
+Bevor Sie zusätzliche Shelfs während des laufenden Betriebs hinzufügen können, müssen Sie je nach Plattformmodell möglicherweise ein vorhandenes Shelf (nachdem die zusätzlichen RoCE-fähigen PCIe-Karten oder I/O-Module installiert wurden) über zwei Portsätze in unterschiedlichen Steckplätzen hinweg neu ausstatten, um eine Ausfallsicherheit bei Steckplatzausfällen zu gewährleisten.
 
 .Bevor Sie beginnen
-* Sie müssen die Systemanforderungen erfüllt haben.
+* Sie müssen die Systemvoraussetzungen erfüllen, einschließlich der Installation zusätzlicher RoCE-fähiger PCIe-Karten oder I/O-Module in jedem Controller.
 +
 <<Anforderungen für einen Hot-Add-Zusatz>>
 
-* Sie müssen die Ports auf den RoCE-fähigen PCIe-Karten oder auf den von Ihnen installierten I/O-Modulen aktiviert haben.
+* Sie müssen die nicht dedizierten Ports auf den RoCE-fähigen PCIe-Karten oder die von Ihnen installierten I/O-Module für die Storage-Verwendung überprüft haben.
 +
-<<Vorbereitung nicht dedizierter RoCE-fähiger Ports für ein Hot-Add-on>>
+<<Prepare non-dedicated RoCE-capable ports for a hot-add>>
 
 
 
 .Über diese Aufgabe
 * Die Neuverkabeln von Port-Verbindungen ist ein unterbrechungsfreies Verfahren, wenn Ihr Shelf über Multipath-HA-Konnektivität verfügt.
-+
-Sie können das erste Shelf über beide Ports-Sätze auf jedem Controller neu ansetzen, sodass bei dem Hinzufügen des zweiten Shelfs beide Regale eine stabilere Konnektivität haben.
-
-* Sie ziehen jeweils ein Kabel nach dem anderen, um die Verbindung zum Shelf während dieses Vorgangs jederzeit aufrechtzuerhalten.
-
-
-.Schritte
-. Reverkabelung der Verbindungen des bestehenden Shelfs über beide Portgruppen auf jedem Controller, sofern zutreffend für Ihr Plattformmodell.
+* Sie verschieben jeweils ein Kabel, um während dieses Vorgangs immer die Konnektivität zum Shelf aufrechtzuerhalten.
 +
 
 NOTE: Beim Anschließen eines Kabels muss zwischen dem Abziehen des Kabels von einem Anschluss und dem Anschließen an einen anderen Anschluss keine Wartezeit mehr Zeit in Anspruch genommen werden.
 
+* Wenn Sie über ein AFF A1K HA-Paar verfügen und während des Betriebs ein drittes Shelf hinzufügen und ein drittes oder vorges RoCE-fähiges I/O-Modul in jeden Controller installieren, ist das dritte Shelf nur mit den dritten oder dritten und vierten I/O-Modulen verbunden. Sie müssen keine vorhandenen Shelfs erneut vertragen.
+
+
+.Schritte
+. Vorhandene Shelf-Verbindungen können gegebenenfalls über zwei Sätze RoCE-fähiger Ports in verschiedenen Steckplätzen zurückgeführt werden.
 +
 [cols="1,3"]
 |===
@@ -277,62 +285,76 @@ NOTE: Beim Anschließen eines Kabels muss zwischen dem Abziehen des Kabels von e
 
 
  a| 
-AFF A700 HA-PAAR
+AFF A70 oder AFF A90 HA-Paar und Sie fügen im laufenden Betrieb ein zweites Shelf hinzu
  a| 
+Erstes Shelf über beide RoCE-fähigen I/O-Module hinweg zurückrüsten:
 
-NOTE: Die Unterschritte setzen voraus, dass das vorhandene Shelf in Steckplatz 3 an jedem Controller mit RoCE-fähigen I/O-Modulen verbunden ist.
 
+NOTE: Die Teilschritte gehen davon aus, dass das vorhandene Shelf an jedem Controller mit einem RoCE-fähigen I/O-Modul in Steckplatz 11 verbunden ist.
+
+.. Bewegen Sie das Kabel an Controller A von Steckplatz 11 Port b (e11b) in Steckplatz 8 Port b (e8b).
+.. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
++
 [NOTE]
 ====
-Bei Bedarf können Sie Verkabelungsabbildungen mit einem vorhandenen Single Shelf und dem neu ablsierten Shelf in einer 2-Shelf-Konfiguration verwenden.
+Bei Bedarf können Sie Verkabelungsillustrationen, die ein vorhandenes einzelnes Shelf und das neu verkabelte Shelf in einer zwei-Shelf-Konfiguration zeigen, referenzieren.
 
-<<Verkabeln Sie ein Hot-Add-Shelf für ein AFF A700 HA-Paar>>
+<<Verkabeln Sie ein Hot-Add-Shelf mit einem AFF A70- oder AFF A90 HA-Paar>>
 
 ====
-.. Stellen Sie am Controller A das Kabel von Steckplatz 3 Port b (e3b) in Steckplatz 7 Port b (e7b) um.
+
+
+
+
+ a| 
+AFF A1K HA-Paar und fügen beim laufenden Betrieb ein zweites Shelf hinzu
+ a| 
+Erstes Shelf über beide RoCE-fähigen I/O-Module hinweg zurückrüsten:
+
+
+NOTE: Die Teilschritte gehen davon aus, dass das vorhandene Shelf an jedem Controller mit einem RoCE-fähigen I/O-Modul in Steckplatz 11 verbunden ist.
+
+.. Bewegen Sie das Kabel an Controller A von Steckplatz 11 Port b (e11b) in Steckplatz 10 Port b (e10b).
 .. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
-
-
-
-
- a| 
-AFF A800 oder AFF C800 HA-Paar
- a| 
-
-NOTE: Die Unterschritte gehen davon aus, dass das vorhandene Shelf in jedem Controller-Steckplatz 5 mit RoCE-fähigen PCIe-Karten verbunden ist.
-
++
 [NOTE]
 ====
-Bei Bedarf können Sie Verkabelungsabbildungen mit einem vorhandenen Single Shelf und dem neu ablsierten Shelf in einer 2-Shelf-Konfiguration verwenden.
+Bei Bedarf können Sie Verkabelungsillustrationen, die ein vorhandenes einzelnes Shelf und das neu verkabelte Shelf in einer zwei-Shelf-Konfiguration zeigen, referenzieren.
 
-<<Verkabeln Sie ein Hot-Add-Shelf mit einem AFF A800- oder AFF C800 HA-Paar>>
+<<Verkabeln Sie ein Hot-Add-Shelf für ein AFF A1K HA-Paar>>
 
 ====
-.. Bewegen Sie das Kabel an Controller A von Steckplatz 5 Port b (e5b) in Steckplatz 3 Port b (e3b).
+
+
+
+
+ a| 
+AFF A1K HA-Paar und Sie fügen ein zweites Shelf hinzu
+ a| 
+Wiederbesorgen des dritten Shelfs über die R0CE-fähigen I/O-Module in Steckplatz 9 an jedem Controller:
+
+.. Bewegen Sie das Kabel an Controller A von Steckplatz 9 Port b (e9b) in Steckplatz 8 Port b (e8b).
 .. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
-
-
-
-
- a| 
-HA-PAAR DER AFF A400
- a| 
++
 [NOTE]
 ====
-Bei Bedarf können Sie Verkabelungsabbildungen mit einem vorhandenen Single Shelf und dem neu ablsierten Shelf in einer 2-Shelf-Konfiguration verwenden.
+Bei Bedarf können Sie Verkabelungsillustrationen, die ein vorhandenes einzelnes Shelf und das neu verkabelte Shelf in einer zwei-Shelf-Konfiguration zeigen, referenzieren.
 
-<<Verkabeln Sie ein Hot-Add-Shelf für ein AFF A400 HA-Paar>>
+<<Verkabeln Sie ein Hot-Add-Shelf für ein AFF A1K HA-Paar>>
 
 ====
-.. Bewegen Sie das Kabel an Controller A von Port e0d nach Steckplatz 5 Port b (e5b).
+
+
+
+
+ a| 
+AFF C400 HA-Paar und Sie fügen im laufenden Betrieb ein zweites Shelf hinzu
+ a| 
+Wiederbesorgen des ersten Shelf über beide RoCE-fähigen Ports auf jedem Controller:
+
+.. Bringen Sie das Kabel an Controller A von Steckplatz 4 Port A (e4a) in Steckplatz 5 Port b (e5b).
 .. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
-
-
-
-
- a| 
-AFF C400 HA-Paar
- a| 
++
 [NOTE]
 ====
 Bei Bedarf können Sie Verkabelungsabbildungen mit einem vorhandenen Single Shelf und dem neu ablsierten Shelf in einer 2-Shelf-Konfiguration verwenden.
@@ -340,8 +362,69 @@ Bei Bedarf können Sie Verkabelungsabbildungen mit einem vorhandenen Single Shel
 <<Verkabeln Sie ein Hot-Add-Shelf für ein AFF C400 HA-Paar>>
 
 ====
-.. Bringen Sie das Kabel an Controller A von Steckplatz 4 Port A (e4a) in Steckplatz 5 Port b (e5b).
+
+
+
+
+ a| 
+AFF A800 oder AFF C800 HA-Paar: Sie fügen ein zweites Shelf hinzu
+ a| 
+Wiederbesorgen des ersten Shelf über beide RoCE-fähigen Ports auf jedem Controller:
+
+
+NOTE: Die Unterschritte gehen davon aus, dass das vorhandene Shelf in jedem Controller-Steckplatz 5 mit RoCE-fähigen PCIe-Karten verbunden ist.
+
+.. Bewegen Sie das Kabel an Controller A von Steckplatz 5 Port b (e5b) in Steckplatz 3 Port b (e3b).
 .. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
++
+[NOTE]
+====
+Bei Bedarf können Sie Verkabelungsabbildungen mit einem vorhandenen Single Shelf und dem neu ablsierten Shelf in einer 2-Shelf-Konfiguration verwenden.
+
+<<Verkabeln Sie ein Hot-Add-Shelf mit einem AFF A800- oder AFF C800 HA-Paar>>
+
+====
+
+
+
+
+ a| 
+AFF A400 HA-Paar und Sie fügen während des laufenden Betrieb ein zweites Shelf hinzu
+ a| 
+Wiederbesorgen des ersten Shelf über beide RoCE-fähigen Ports auf jedem Controller:
+
+.. Bewegen Sie das Kabel an Controller A von Port e0d nach Steckplatz 5 Port b (e5b).
+.. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
++
+[NOTE]
+====
+Bei Bedarf können Sie Verkabelungsabbildungen mit einem vorhandenen Single Shelf und dem neu ablsierten Shelf in einer 2-Shelf-Konfiguration verwenden.
+
+<<Verkabeln Sie ein Hot-Add-Shelf für ein AFF A400 HA-Paar>>
+
+====
+
+
+
+
+ a| 
+AFF A700 HA-Paar: Sie fügen ein zweites Shelf hinzu
+ a| 
+Wiederbesorgen des ersten Shelf über beide RoCE-fähigen Ports auf jedem Controller:
+
+
+NOTE: Die Unterschritte setzen voraus, dass das vorhandene Shelf in Steckplatz 3 an jedem Controller mit RoCE-fähigen I/O-Modulen verbunden ist.
+
+.. Stellen Sie am Controller A das Kabel von Steckplatz 3 Port b (e3b) in Steckplatz 7 Port b (e7b) um.
+.. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
++
+[NOTE]
+====
+Bei Bedarf können Sie Verkabelungsabbildungen mit einem vorhandenen Single Shelf und dem neu ablsierten Shelf in einer 2-Shelf-Konfiguration verwenden.
+
+<<Verkabeln Sie ein Hot-Add-Shelf für ein AFF A700 HA-Paar>>
+
+====
 
 
 |===
@@ -366,36 +449,32 @@ Sie müssen die Systemanforderungen erfüllt haben.
 <<Anforderungen für einen Hot-Add-Zusatz>>
 
 .Über diese Aufgabe
-Sie müssen die Laufwerkseigentümer manuell zuweisen, wenn Laufwerke im Shelf Eigentum beider Controller-Module des HA-Paars sind.
+Wenn Sie sich nicht sicher sind, ob Sie die Laufwerkeigentümer manuell zuweisen sollten oder die automatische Zuweisung von Festplatteneigentum für Ihr Storage-System verstehen möchten, lesen Sie https://docs.netapp.com/us-en/ontap/disks-aggregates/disk-autoassignment-policy-concept.html["Allgemeines zur automatischen Zuweisung der Festplatteneigentümer"^]
 
 .Schritte
 . Überprüfen Sie, ob die automatische Laufwerkszuweisung aktiviert ist: `storage disk option show`
 +
-Sie können den Befehl an einem der Controller-Module eingeben.
+Sie können für beide Nodes den Befehl eingeben.
 
 +
-Wenn die automatische Laufwerkszuweisung aktiviert ist, wird die Ausgabe angezeigt `on` Im `Auto Assign` Spalte (für jedes Controller-Modul).
+Wenn die automatische Laufwerkszuordnung aktiviert ist, wird die Ausgabe in der Spalte (für jeden Node) angezeigt `on` `Auto Assign` .
 
-. Wenn die automatische Laufwerkszuweisung aktiviert ist, deaktivieren Sie sie: `storage disk option modify -node node_name -autoassign off`
+. Wenn die automatische Laufwerkszuweisung aktiviert ist, deaktivieren Sie sie: `storage disk option modify -node _node_name_ -autoassign off`
 +
-Sie müssen die automatische Laufwerkszuweisung auf beiden Controller-Modulen deaktivieren.
+Sie müssen die automatische Laufwerkszuweisung auf beiden Nodes deaktivieren.
 
 
 
 
 
-== Installieren Sie ein Laufwerk-Shelf für einen Hot-Add-Zusatz
+== Installieren Sie ein Shelf für ein Hot-Add-System
 
-Bei der Installation eines neuen NS224-Festplatten-Shelfs muss das Shelf in ein Rack oder Schrank installiert werden, die Stromkabel (das Shelf wird automatisch eingeschaltet) anschließen und die Shelf-ID eingestellt werden.
+Beim Installieren eines neuen NS224-Shelf wird das Shelf in einem Rack oder Schrank installiert, die Netzkabel (die das Shelf automatisch einschalten) angeschlossen und anschließend die Shelf-ID festgelegt.
 
 .Bevor Sie beginnen
-* Sie müssen die Systemanforderungen erfüllt haben.
+* Stellen Sie sicher, dass Sie eine Büroklammer mit einer begradigten Seite oder einen Kugelschreiber mit schmaler Spitze haben.
 +
-<<Anforderungen für einen Hot-Add-Zusatz>>
-
-* Sie müssen die entsprechenden Vorbereitungsverfahren abgeschlossen haben.
-+
-<<Bereiten Sie sich auf ein Hot-Add vor>>
+Während des Shelf-ID-Schritts können Sie mit der Büroklammer oder dem Kugelschreiber auf die Shelf-ID-Taste hinter dem Bedienfeld (ODP) zugreifen.
 
 
 
@@ -451,15 +530,15 @@ Wenn die Stromversorgung wiederhergestellt ist, leuchten die LEDs mit zweifarbig
 
 
 
-== Verkabeln Sie ein Festplatten-Shelf für ein Hot-Add-Kabel
+== Verkabeln Sie ein Shelf für ein Hot-Add-Gehäuse
 
-Sie verkabeln jedes NS224-Laufwerk-Shelf, das Sie im laufenden Betrieb hinzufügen, sodass jedes Shelf zwei Verbindungen zu jedem Controller-Modul im HA-Paar hat. Abhängig von der Anzahl der Shelves, die Sie „Hot-hinzufügen“ und Ihrem Plattformmodell verwenden, können Sie RoCE-fähige Ports an Bord der Controller, auf RoCE-fähigen PCIe-Karten, einer Kombination aus beiden oder auf RoCE-fähigen I/O-Modulen verwenden.
+Sie verkabeln jedes NS224-Shelf, das Sie im laufenden Betrieb hinzufügen, so dass jedes Shelf über zwei Verbindungen mit jedem Controller im HA-Paar verfügt.
 
 
 
 === Überlegungen bei der Verkabelung für ein Hot-Add-Kabel
 
-Die richtige Ausrichtung des Kabelsteckers und die Position und Kennzeichnung der Anschlüsse an den NS224 NSM-Laufwerkshelf können vor der Verkabelung Ihres Hot-Added-Shelfs hilfreich sein.
+Vor der Verkabelung Ihres hot-added Shelfs können Sie sich mit der richtigen Ausrichtung des Kabelsteckers und der Position und Beschriftung der Anschlüsse an den NS224 NSM-Shelf-Modulen vertraut machen.
 
 * Die Kabel werden mit der Zuglasche des Steckers nach oben eingesetzt.
 +
@@ -471,9 +550,238 @@ Nachdem Sie beide Enden des Kabels angeschlossen haben, leuchten die LEDs für S
 +
 image::../media/oie_cable_pull_tab_up.png[Kabelanschluss mit Zuglasche oben]
 
-* Sie können die folgende Abbildung verwenden, um Ihnen physisch die Shelf-NSM-Ports, e0a und e0b zu identifizieren:
+* Die folgende Abbildung hilft Ihnen bei der physischen Identifizierung der Shelf-Ports NSM100, e0a und e0b.
 +
-image::../media/drw_ns224_back_ports.png[rückback-Ports für den drw ns224]
+Ein NS224-Shelf enthält zwei NSM100-Module. Das obere Modul befindet sich in Steckplatz A (NSM A) und das untere Modul in Steckplatz B (NSM B).
+
++
+Jedes NSM100-Modul enthält 2 x 100-GbE-QSFP28-Ports: e0a und e0b.
+
++
+image::../media/drw_ns224_back_ports.png[NS224 NSM100-Modulports e0a und e0b]
+
+
+
+
+
+=== Verkabeln Sie ein Hot-Add-Shelf mit einem AFF A70- oder AFF A90 HA-Paar
+
+Wenn zusätzlicher Storage (zum internen Shelf) benötigt wird, können Sie im laufenden Betrieb bis zu zwei NS224 Shelfs zu einem AFF A70 oder AFF A90 HA-Paar hinzufügen.
+
+.Bevor Sie beginnen
+* Sie müssen die Anforderungen an das Storage-System erfüllt haben.
+
+
+<<Anforderungen für einen Hot-Add-Zusatz>>
+
+* Sie müssen die entsprechenden Vorbereitungsverfahren abgeschlossen haben.
+
+
+<<Bereiten Sie sich auf ein Hot-Add vor>>
+
+* Sie müssen die Shelfs installiert und eingeschaltet sowie die Shelf-IDs festlegen.
+
+
+<<Installieren Sie ein Shelf für ein Hot-Add-System>>
+
+.Über diese Aufgabe
+* Bei diesem Verfahren wird vorausgesetzt, dass Ihr HA-Paar nur über internen Storage verfügt (keine externen Shelfs) und dass Sie Hot-Hinzufügen von bis zu zwei zusätzlichen Shelfs und zwei RoCE-fähigen I/O-Modulen pro Controller durchführen.
+* Dieses Verfahren behandelt die folgenden Hot-Add-Szenarien:
++
+** Hinzufügen des ersten Shelfs zu einem HA-Paar mit einem RoCE-fähigen I/O-Modul pro Controller während des laufenden Betriebs
+** Hinzufügen des ersten Shelfs zu einem HA-Paar mit zwei RoCE-fähigen I/O-Modulen pro Controller und während des laufenden Betriebs
+** Hot-Hinzufügen des zweiten Shelf zu einem HA-Paar mit zwei RoCE-fähigen I/O-Modulen pro Controller.
+
+
+
+
+.Schritte
+. Wenn Sie während des laufenden Betriebs ein Shelf mit einem Satz RoCE-fähiger Ports (ein RoCE-fähiges I/O-Modul) in jedem Controller-Modul hinzufügen, und dies das einzige NS224-Shelf in Ihrem HA-Paar ist, führen Sie die folgenden Teilschritte durch.
++
+Andernfalls fahren Sie mit dem nächsten Schritt fort.
+
++
+
+NOTE: Bei diesem Schritt wird davon ausgegangen, dass Sie das RoCE-fähige I/O-Modul in Steckplatz 11 installiert haben.
+
++
+.. Kabel-Shelf NSM A Port e0a zu Controller A-Steckplatz 11 Port A (e11a).
+.. Kabel-Shelf NSM A-Port e0b zum Controller B-Steckplatz 11 Port b (e11b).
+.. Kabel-Shelf NSM B-Port e0a zu Controller B-Steckplatz 11 Port A (e11A)
+.. Kabel-Shelf NSM B-Port e0b zum Controller A-Steckplatz 11 Port b (e11b).
++
+Die folgende Abbildung zeigt die Verkabelung für ein Hot-Added Shelf mit einem RoCE-fähigen I/O-Modul pro Controller-Modul:
+
++
+image::../media/drw_ns224_vino_i_1shelf_1card_ieops-1639.svg[Verkabelung für AFF A70 oder A90 mit einem Shelf und einem IO-Modul]
+
+
+
+. Wenn Sie ein oder zwei Shelfs mit zwei Sets von RoCE-fähigen Ports (zwei RoCE-fähige I/O-Module) in jedem Controller-Modul im laufenden Betrieb hinzufügen, füllen Sie die entsprechenden Teilschritte aus.
++
+
+NOTE: Bei diesem Schritt wird davon ausgegangen, dass Sie die RoCE-fähigen I/O-Module in den Steckplätzen 11 und 8 installiert haben.
+
++
+[cols="1,3"]
+|===
+| Shelfs | Verkabelung 
+
+
+ a| 
+Shelf 1
+ a| 
+.. Verkabeln Sie den NSM A-Port e0a mit dem Controller A-Steckplatz 11, Port A (e11a).
+.. Verkabeln Sie den NSM A-Port e0b mit Controller B-Steckplatz 8, Port b (e8b).
+.. Verbinden Sie den NSM B-Port e0a mit Controller B-Steckplatz 11, Port A (e11a).
+.. Verkabeln Sie den NSM B-Port e0b mit Controller A-Steckplatz 8, Port b (e8b).
+.. Wenn Sie ein zweites Regal heizen, füllen Sie die Unterschritte "`Shelf 2`" aus; andernfalls fahren Sie mit Schritt 3 fort.
+
+
+Die folgende Abbildung zeigt die Verkabelung für ein Hot-Added Shelf mit zwei RoCE-fähigen I/O-Modulen pro Controller-Modul:
+
+image::../media/drw_ns224_vino_i_1shelf_2cards_ieops-1640.svg[Verkabelung für AFF A70 oder A90 mit einem Shelf und zwei IO-Modulen]
+
+
+
+ a| 
+Shelf 2
+ a| 
+.. Verkabeln Sie den NSM A-Port e0a mit dem Controller A-Steckplatz 8, Port A (e8a).
+.. Verkabeln Sie den NSM A-Port e0b mit Controller B-Steckplatz 11, Port b (e11b).
+.. Verbinden Sie den NSM B-Port e0a mit Controller B-Steckplatz 8, Port A (e8a).
+.. Verkabeln Sie den NSM B-Port e0b mit Controller A-Steckplatz 11, Port b (e11b).
+.. Fahren Sie mit Schritt 3 fort.
+
+
+Die folgende Abbildung zeigt die Verkabelung für zwei Hot-Added Shelf mit zwei RoCE-fähigen I/O-Modulen pro Controller-Modul:
+
+image::../media/drw_ns224_vino_i_2shelves_2cards_ieops-1641.svg[Verkabelung für AFF A70 oder A90 mit zwei Einschüben und zwei IO-Modulen]
+
+|===
+. Stellen Sie sicher, dass das Hot-Added Shelf ordnungsgemäß verkabelt ist.
++
+Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
+
++
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"^]
+
+. Wenn Sie die automatische Laufwerkszuweisung als Teil der Vorbereitung für dieses Verfahren deaktiviert haben, müssen Sie manuell die Laufwerkseigentümer festlegen und die automatische Laufwerkszuweisung ggf. erneut aktivieren.
++
+Andernfalls werden Sie mit diesem Verfahren durchgeführt.
+
++
+<<Füllen Sie das Hot Add aus>>
+
+
+
+
+
+=== Verkabeln Sie ein Hot-Add-Shelf für ein AFF A1K HA-Paar
+
+Bei laufendem Betrieb können Sie bis zu drei zusätzliche NS224 Shelfs (also insgesamt vier Shelfs) zu einem AFF A1K HA-Paar hinzufügen.
+
+.Bevor Sie beginnen
+* Sie müssen die Anforderungen an das Storage-System erfüllt haben.
+
+
+<<Anforderungen für einen Hot-Add-Zusatz>>
+
+* Sie müssen die entsprechenden Vorbereitungsverfahren abgeschlossen haben.
+
+
+<<Bereiten Sie sich auf ein Hot-Add vor>>
+
+* Sie müssen die Shelfs installiert und eingeschaltet sowie die Shelf-IDs festlegen.
+
+
+<<Installieren Sie ein Shelf für ein Hot-Add-System>>
+
+.Über diese Aufgabe
+* Bei dieser Vorgehensweise wird vorausgesetzt, dass Ihr HA-Paar mindestens ein vorhandenes NS224-Shelf hat.
+* Dieses Verfahren behandelt die folgenden Hot-Add-Szenarien:
++
+** Hinzufügen eines zweiten Shelf zu einem HA-Paar mit zwei RoCE-fähigen I/O-Modulen pro Controller während des laufenden Betriebs. (Sie haben ein zweites I/O-Modul installiert und das erste Shelf beiden I/O-Modulen erneut verkabelt oder das erste Shelf bereits mit zwei I/O-Modulen verkabelt. Sie verbinden das zweite Shelf mit beiden I/O-Modulen.)
+** Hinzufügen eines dritten Shelf zu einem HA-Paar mit drei RoCE-fähigen I/O-Modulen pro Controller und während des laufenden Betriebs. (Sie haben ein drittes I/O-Modul installiert und verkabeln das dritte Shelf nur mit dem dritten I/O-Modul.)
+** Hinzufügen eines dritten Shelf zu einem HA-Paar mit vier RoCE-fähigen I/O-Modulen pro Controller während des laufenden Betriebs (Sie haben ein drittes und viertes I/O-Modul installiert und verbinden das dritte Shelf mit dem dritten und vierten I/O-Modul).
+** Hinzufügen eines vierten Shelfs zu einem HA-Paar mit vier RoCE-fähigen I/O-Modulen pro Controller während des laufenden Betriebs (Sie haben ein viertes I/O-Modul installiert und das dritte Shelf erneut mit den dritten und vierten I/O-Modulen verbunden oder das dritte Shelf bereits mit den dritten und vierten I/O-Modulen verkabelt. Sie verbinden das vierte Shelf mit dem dritten und vierten I/O-Modul).
+
+
+
+
+.Schritte
+. Wenn das NS224-Shelf, das Sie im Hot-Adding befinden, das zweite NS2224-Shelf im HA-Paar ist, führen Sie die folgenden Teilschritte aus.
++
+Andernfalls fahren Sie mit dem nächsten Schritt fort.
+
++
+.. Kabel-Shelf NSM A-Port e0a zu Controller A-Steckplatz 10 Port A (e10a)
+.. Kabel-Shelf NSM A-Port e0b zum Controller B-Steckplatz 11 Port b (e11b).
+.. Kabel-Shelf NSM B-Port e0a zu Controller B-Steckplatz 10 Port A (e10a)
+.. Kabel-Shelf NSM B-Port e0b zum Controller A-Steckplatz 11 Port b (e11b).
++
+In der folgenden Abbildung ist die Verkabelung des zweiten Shelf im HA-Paar mit zwei RoCE-fähigen I/O-Modulen pro Controller hervorgehoben:
+
++
+image::../media/drw_ns224_vino_m_2shelves_2cards_ieops-1642.svg[Verkabelung für AFF A1K mit zwei Shelfs und zwei I/O-Modulen]
+
+
+
+. Wenn das NS224-Shelf das dritte NS224-Shelf im HA-Paar mit drei RoCE-fähigen I/O-Modulen pro Controller ist, führen Sie die folgenden Teilschritte durch. Andernfalls fahren Sie mit dem nächsten Schritt fort.
++
+.. Verkabeln Sie das Shelf NSM A-Port e0a mit Controller A, Steckplatz 9, Port A (e9a).
+.. Verkabeln Sie den Port e0b des Shelf NSM A mit Controller B-Steckplatz 9, Port b (e9b).
+.. Verkabeln Sie den Shelf NSM B-Port e0a mit Controller B-Steckplatz 9, Port A (e9a).
+.. Verkabeln Sie den Shelf NSM B-Port e0b mit Controller A-Steckplatz 9, Port b (e9b).
++
+In der folgenden Abbildung ist die Verkabelung des dritten Shelf im HA-Paar mit drei RoCE-fähigen I/O-Modulen pro Controller hervorgehoben:
+
++
+image::../media/drw_ns224_vino_m_3shelves_3cards_ieops-1643.svg[Verkabelung für AFF A1K mit drei Shelfs und drei IO-Modulen]
+
+
+
+. Wenn das NS224-Shelf das dritte NS224-Shelf im HA-Paar mit vier RoCE-fähigen I/O-Modulen pro Controller ist, führen Sie die folgenden Teilschritte durch. Andernfalls fahren Sie mit dem nächsten Schritt fort.
++
+.. Verkabeln Sie das Shelf NSM A-Port e0a mit Controller A, Steckplatz 9, Port A (e9a).
+.. Verkabeln Sie den Port e0b des Shelf NSM A mit Controller B-Steckplatz 8, Port b (e8b).
+.. Verkabeln Sie den Shelf NSM B-Port e0a mit Controller B-Steckplatz 9, Port A (e9a).
+.. Verkabeln Sie den Shelf NSM B-Port e0b mit Controller A-Steckplatz 8, Port b (e8b).
++
+In der folgenden Abbildung ist die Verkabelung des dritten Shelf im HA-Paar mit vier RoCE-fähigen I/O-Modulen pro Controller hervorgehoben:
+
++
+image::../media/drw_ns224_vino_m_3shelves_4cards_ieops-1644.svg[Verkabelung für AFF A1K mit drei Shelfs und vier I/O-Modulen]
+
+
+
+. Wenn das NS224-Shelf, das Sie beim Hinzufügen verwenden, das vierte NS224-Shelf im HA-Paar mit vier RoCE-fähigen I/O-Modulen pro Controller ist, führen Sie die folgenden Teilschritte durch.
++
+.. Verkabeln Sie das Shelf NSM A-Port e0a mit Controller A, Steckplatz 8, Port A (e8a).
+.. Verkabeln Sie den Port e0b des Shelf NSM A mit Controller B-Steckplatz 9, Port b (e9b).
+.. Verkabeln Sie den Shelf NSM B-Port e0a mit Controller B-Steckplatz 8, Port A (e8a).
+.. Verkabeln Sie den Shelf NSM B-Port e0b mit Controller A-Steckplatz 9, Port b (e9b).
++
+In der folgenden Abbildung ist die Verkabelung für das vierte Shelf im HA-Paar mit vier RoCE-fähigen I/O-Modulen pro Controller hervorgehoben:
+
++
+image::../media/drw_ns224_vino_m_4shelves_4cards_ieops-1645.svg[Verkabelung für AFF A1K mit vier Shelfs und vier I/O-Modulen]
+
+
+
+. Stellen Sie sicher, dass das Hot-Added Shelf ordnungsgemäß verkabelt ist.
++
+Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
+
++
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"^]
+
+. Wenn Sie die automatische Laufwerkszuweisung als Teil der Vorbereitung für dieses Verfahren deaktiviert haben, müssen Sie manuell die Laufwerkseigentümer festlegen und die automatische Laufwerkszuweisung ggf. erneut aktivieren.
++
+Andernfalls werden Sie mit diesem Verfahren durchgeführt.
+
++
+<<Füllen Sie das Hot Add aus>>
 
 
 
@@ -494,7 +802,7 @@ Wenn zusätzlicher Speicher benötigt wird, können Sie bis zu drei zusätzliche
 
 * Sie müssen die Shelfs installiert und eingeschaltet sowie die Shelf-IDs festlegen.
 +
-<<Installieren Sie ein Laufwerk-Shelf für einen Hot-Add-Zusatz>>
+<<Install a drive shelf for a hot-add>>
 
 
 
@@ -588,7 +896,7 @@ Wenn zusätzlicher Storage benötigt wird, können Sie ein NS224-Festplatten-She
 
 * Sie müssen die Shelfs installiert und eingeschaltet sowie die Shelf-IDs festlegen.
 +
-<<Installieren Sie ein Laufwerk-Shelf für einen Hot-Add-Zusatz>>
+<<Install a drive shelf for a hot-add>>
 
 
 
@@ -640,7 +948,7 @@ Wie Sie ein NS224-Laufwerk-Shelf in einem AFF A700 HA-Paar verkabeln, hängt von
 
 * Sie müssen die Shelfs installiert und eingeschaltet sowie die Shelf-IDs festlegen.
 +
-<<Installieren Sie ein Laufwerk-Shelf für einen Hot-Add-Zusatz>>
+<<Install a drive shelf for a hot-add>>
 
 
 
@@ -741,7 +1049,7 @@ Wie Sie ein NS224-Laufwerk-Shelf in einem AFF A800 oder AFF C800 HA-Paar verkabe
 
 * Sie müssen die Shelfs installiert und eingeschaltet sowie die Shelf-IDs festlegen.
 +
-<<Installieren Sie ein Laufwerk-Shelf für einen Hot-Add-Zusatz>>
+<<Install a drive shelf for a hot-add>>
 
 
 
@@ -846,7 +1154,7 @@ Wie Sie ein NS224-Laufwerk-Shelf in einem AFF A400 HA-Paar verkabeln, hängt dav
 
 * Sie müssen die Shelfs installiert und eingeschaltet sowie die Shelf-IDs festlegen.
 +
-<<Installieren Sie ein Laufwerk-Shelf für einen Hot-Add-Zusatz>>
+<<Install a drive shelf for a hot-add>>
 
 
 
@@ -937,7 +1245,7 @@ Wie Sie ein NS224-Laufwerk-Shelf in einem AFF C400 HA-Paar verkabeln, hängt von
 
 * Sie müssen die Shelfs installiert und eingeschaltet sowie die Shelf-IDs festlegen.
 +
-<<Installieren Sie ein Laufwerk-Shelf für einen Hot-Add-Zusatz>>
+<<Install a drive shelf for a hot-add>>
 
 
 
@@ -1028,7 +1336,7 @@ Wenn zusätzlicher Storage benötigt wird, verkabeln Sie ein zweites NS224-Laufw
 
 * Sie müssen die Shelfs installiert und eingeschaltet sowie die Shelf-IDs festlegen.
 +
-<<Installieren Sie ein Laufwerk-Shelf für einen Hot-Add-Zusatz>>
+<<Install a drive shelf for a hot-add>>
 
 
 
@@ -1072,7 +1380,7 @@ Wenn Sie die automatische Laufwerkszuweisung im Rahmen der Vorbereitung auf das 
 .Bevor Sie beginnen
 Sie müssen das Shelf bereits wie angewiesen über Ihr HA-Paar angeschlossen haben.
 
-<<Verkabeln Sie ein Festplatten-Shelf für ein Hot-Add-Kabel>>
+<<Cable a drive shelf for a hot-add>>
 
 .Schritte
 . Alle Laufwerke ohne Besitzer anzeigen: `storage disk show -container-type unassigned`

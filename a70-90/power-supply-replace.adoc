@@ -1,0 +1,164 @@
+---
+permalink: a70-90/power-supply-replace.html 
+sidebar: sidebar 
+keywords: aff a70, aff a90, replace a power supply 
+summary: Beim Ersetzen eines Netzteils muss das Zielstromnetzteil von der Stromquelle getrennt, das Netzkabel abgezogen, das alte Netzteil entfernt und das Ersatznetzteil installiert werden. Anschließend wird es wieder an die Stromquelle angeschlossen. 
+---
+= Ersetzen Sie ein Netzteil - AFF A70, AFF A90
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Beim Austausch eines Netzteils (PSU) wird das Zielnetzteil von der Stromquelle getrennt, das Netzkabel abgezogen, das alte Netzteil entfernt und das Ersatznetzteil installiert und dann wieder an die Stromquelle angeschlossen.
+
+Die Netzteile sind redundant und Hot-Swap-fähig.
+
+.Über diese Aufgabe
+Dieses Verfahren wird für den Austausch eines Netzteils auf einmal beschrieben.
+
+
+IMPORTANT: Mischen Sie Netzteileinheiten nicht mit unterschiedlichen Effizienzbewertungen oder verschiedenen Eingangstypen. Immer ersetzen wie für „Gefällt mir“.
+
+Verwenden Sie das entsprechende Verfahren für Ihren Netzteiltyp: AC oder DC.
+
+[role="tabbed-block"]
+====
+.Option 1: Wechselstromnetzteil ersetzen
+--
+Führen Sie zum Austauschen eines Netzteils die folgenden Schritte aus.
+
+.Schritte
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Identifizieren Sie das Netzteil, das Sie ersetzen möchten, basierend auf Konsolenfehlermeldungen oder durch die rote Fehler-LED am Netzteil.
+. Trennen Sie das Netzteil:
++
+.. Öffnen Sie die Stromkabelhalterung, und ziehen Sie dann das Netzkabel vom Netzteil ab.
+
+
+. Entfernen Sie das Netzteil, indem Sie den Griff nach oben drehen, die Verriegelungslasche drücken und dann das Netzteil aus dem Controller-Modul herausziehen.
++
+
+CAUTION: Das Netzteil ist kurz. Verwenden Sie immer zwei Hände, um sie zu unterstützen, wenn Sie sie aus dem Controller-Modul entfernen, damit es nicht plötzlich aus dem Controller-Modul schwingen und Sie verletzen.
+
++
+image::../media/drw_a70-90_psu_remove_replace_ieops-1368.svg[Ersetzen Sie die PSU]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.svg["Legende Nummer 1,Breite=30px"]
+ a| 
+Verriegelungslasche für das Terrakotta-Netzteil
+
+|===
+. Installieren Sie das Ersatz-Netzteil im Controller-Modul:
++
+.. Stützen und richten Sie die Kanten des Ersatznetzteils mit beiden Händen an der Öffnung im Controller-Modul aus.
+.. Schieben Sie das Netzteil vorsichtig in das Controller-Modul, bis die Verriegelungsklammer einrastet.
++
+Die Netzteile werden nur ordnungsgemäß mit dem internen Anschluss in Kontakt treten und auf eine Weise verriegeln.
+
++
+
+NOTE: Um eine Beschädigung des internen Anschlusses zu vermeiden, verwenden Sie beim Einschieben des Netzteils in das System keine übermäßige Kraft.
+
+
+
+. Schließen Sie die Netzteilverkabelung wieder an:
++
+.. Schließen Sie das Netzkabel wieder an das Netzteil an.
+.. Befestigen Sie das Netzkabel mit der Netzkabelhalterung am Netzteil.
+
+
++
+Sobald das Netzteil wieder mit Strom versorgt wird, sollte die Status-LED grün leuchten.
+
+. Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"^] Seite für weitere Informationen.
+
+
+--
+.Option 2: Ersetzen Sie ein DC-Netzteil
+--
+Führen Sie zum Austauschen eines DC-Netzteils die folgenden Schritte durch.
+
+.Schritte
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Identifizieren Sie das Netzteil, das Sie ersetzen möchten, basierend auf Konsolenfehlermeldungen oder durch die rote Fehler-LED am Netzteil.
+. Trennen Sie das Netzteil:
++
+.. Schrauben Sie den D-SUB-DC-Kabelstecker mit den Flügelschrauben am Stecker ab.
+.. Ziehen Sie das Kabel vom Netzteil ab, und legen Sie es beiseite.
+
+
+. Entfernen Sie das Netzteil, indem Sie den Griff nach oben drehen, die Verriegelungslasche drücken und dann das Netzteil aus dem Controller-Modul herausziehen.
++
+
+CAUTION: Das Netzteil ist kurz. Verwenden Sie immer zwei Hände, um sie zu unterstützen, wenn Sie sie aus dem Controller-Modul entfernen, damit es nicht plötzlich aus dem Controller-Modul schwingen und Sie verletzen.
+
++
+image::../media/drw_dcpsu_remove-replace-generic_IEOPS-788.svg[Entfernen Sie ein DC-Netzteil]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.svg["Legende Nummer 1,Breite=30px"]
+ a| 
+Flügelschrauben
+
+
+
+ a| 
+image:../media/legend_icon_02.svg["Callout-Nummer 2,Breite=30 px"]
+ a| 
+D-SUB-DC-Netzteilkabelanschluss
+
+
+
+ a| 
+image:../media/legend_icon_03.svg["Callout-Nummer 3,Breite=30 px"]
+ a| 
+Netzteilgriff
+
+
+
+ a| 
+image:../media/legend_icon_04.svg["Legende Nummer 4, Breite=30x"]
+ a| 
+Blaue Netzteilverriegelungslasche
+
+|===
+. Installieren Sie das Ersatz-Netzteil im Controller-Modul:
++
+.. Stützen und richten Sie die Kanten des Ersatznetzteils mit beiden Händen an der Öffnung im Controller-Modul aus.
+.. Schieben Sie das Netzteil vorsichtig in das Controller-Modul, bis die Verriegelungsklammer einrastet.
++
+Die Netzteile werden nur ordnungsgemäß mit dem internen Anschluss in Kontakt treten und auf eine Weise verriegeln.
+
++
+
+NOTE: Um eine Beschädigung des internen Anschlusses zu vermeiden, verwenden Sie beim Einschieben des Netzteils in das System keine übermäßige Kraft.
+
+
+
+. Schließen Sie das D-SUB-Gleichstromkabel wieder an:
++
+.. Schließen Sie den Netzkabelanschluss an das Netzteil an.
+.. Befestigen Sie das Netzkabel mit den Rändelschrauben am Netzteil.
++
+Sobald das Netzteil wieder mit Strom versorgt wird, sollte die Status-LED grün leuchten.
+
+
+
+. Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"^] Seite für weitere Informationen.
+
+
+--
+====

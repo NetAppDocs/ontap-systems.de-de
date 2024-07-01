@@ -1,0 +1,27 @@
+= 
+:allow-uri-read: 
+
+
+.Bevor Sie beginnen
+* Wenn ONTAP aktiviert ist und ausgeführt wird (Controller-Module sind verfügbar, um Daten bereitzustellen), müssen Sie überprüfen, dass alle Laufwerke im Shelf nicht im Besitz von Ersatzteilen oder als Teil des Offline-Aggregats sind.
++
+Sie können den Status der Laufwerke mit überprüfen `storage disk show -shelf _shelf_number_` Befehl. Ausgabe im `Container Type` Spalte sollte angezeigt werden `spare` Oder `broken` Wenn es sich um ein ausgefallenes Laufwerk handelt. Darüber hinaus der `Container Name` Und `Owner` Spalten sollten einen Strich haben.
+
+* Sie benötigen einen Büroklammer mit einer Seite gerade oder einem schmal gekippten Kugelschreiber.
++
+Sie verwenden den Büroklammer oder Kugelschreiber, um durch die kleine Öffnung rechts neben den LEDs im Bedienerdisplay (ODP) auf die Shelf-ID-Taste zuzugreifen.
+
+
+
+.Über diese Aufgabe
+* Gültige Shelf-ID: 00 bis 99.
+* Shelf-IDs müssen innerhalb eines HA-Paars eindeutig sein.
+* Sie müssen ein Shelf aus- und wieder einschalten (trennen Sie beide Netzkabel, warten Sie die entsprechende Zeit, und schließen Sie sie anschließend wieder an), damit die Shelf-ID wirksam wird.
++
+Wie lange Sie warten, bevor Sie die Netzkabel wieder einstecken, hängt vom Zustand von ONTAP ab, wie im Folgenden in diesem Verfahren beschrieben.
+
++
+
+NOTE: Die NS224-Shelves haben keine Netzschalter an den Netzteilen.
+
+

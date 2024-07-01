@@ -12,9 +12,9 @@ Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des
 
 
 .Schritte
-. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
+. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf eines AutoSupport-Befehls: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
 +
-Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+Mit dem folgenden AutoSupport-Befehl wird die automatische Erstellung von Fällen zwei Stunden lang unterdrückt: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
 
 . Deaktivieren Sie das automatische Giveback von der Konsole des gesunden Controllers: `storage failover modify –node local -auto-giveback false`
 . Nehmen Sie den beeinträchtigten Controller zur LOADER-Eingabeaufforderung:
@@ -41,7 +41,7 @@ Drücken Sie Strg-C, und antworten Sie dann `y` Wenn Sie dazu aufgefordert werde
  a| 
 Eingabeaufforderung des Systems oder Passwort (Systempasswort eingeben)
  a| 
-Übernehmen oder stoppen Sie den beeinträchtigten Regler von der gesunden Steuerung: `storage failover takeover -ofnode _impaired_node_name_`
+Halten Sie den Controller für den beeinträchtigten Betrieb an oder übernehmen Sie ihn vom Controller für den ordnungsgemäßen Betrieb: `storage failover takeover -ofnode _impaired_node_name_`
 
 Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drücken Sie Strg-C, und antworten Sie dann `y`.
 

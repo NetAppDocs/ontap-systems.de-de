@@ -1,0 +1,291 @@
+= Schritt 1: Schalten Sie den beeinträchtigten Regler aus
+:allow-uri-read: 
+
+
+Das System-Management-Modul, das sich auf der Rückseite des Controllers in Steckplatz 8 befindet, enthält integrierte Komponenten für die Systemverwaltung sowie Ports für die externe Verwaltung. Der Ziel-Controller muss heruntergefahren werden, um ein funktionsunes System Management-Modul zu ersetzen oder das Boot-Medium zu ersetzen.
+
+Das System-Management-Modul verfügt über die folgenden integrierten Komponenten:
+
+* Boot-Medien, die den Austausch von Startmedien ermöglichen, ohne das Controller-Modul zu entfernen.
+* BMC
+* Management-Switch
+
+
+Das System Management-Modul enthält außerdem die folgenden Ports für die externe Verwaltung:
+
+* RJ45 seriell
+* USB Seriell (Typ C)
+* USB Typ A (Boot-Wiederherstellung)
+* E0M RJ45 Ethernet
+
+
+Um das System-Management-Modul oder das Boot-Medium zu ersetzen, müssen Sie den außer Betrieb genommenen Controller herunterfahren.
+
+.Bevor Sie beginnen
+* Bei diesem Verfahren wird die folgende Terminologie verwendet:
++
+** Der beeinträchtigte Controller ist der Controller, an dem Sie Wartungsarbeiten durchführen.
+** Der gesunde Controller ist der HA-Partner des beeinträchtigten Controllers.
+
+
+* Alle anderen Systemkomponenten müssen ordnungsgemäß funktionieren.
+* Der Partner-Controller muss in der Lage sein, den gestörten Controller zu übernehmen.
+* Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
+
+
+
+
+== Schritt 1: Schalten Sie den beeinträchtigten Regler aus
+
+Fahren Sie den Regler herunter oder übernehmen Sie ihn mit einer der folgenden Optionen.
+
+[role="tabbed-block"]
+====
+.Option 1: Die meisten Systeme
+--
+Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
+
+.Über diese Aufgabe
+* Wenn Sie über ein SAN-System verfügen, müssen Sie Event-Meldungen ) für den beeinträchtigten Controller SCSI Blade überprüft haben  `cluster kernel-service show`. Mit dem `cluster kernel-service show` Befehl (im erweiterten Modus von priv) werden der Knotenname, der Quorum-Status dieses Node, der Verfügbarkeitsstatus dieses Node und der Betriebsstatus dieses Node angezeigt.
++
+Jeder Prozess des SCSI-Blades sollte sich im Quorum mit den anderen Nodes im Cluster befinden. Probleme müssen behoben werden, bevor Sie mit dem Austausch fortfahren.
+
+* Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE anzeigt, um die Berechtigung und den Zustand zu erhalten, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^].
+
+
+.Schritte
+. Wenn AutoSupport aktiviert ist, können Sie die automatische Case-Erstellung durch Aufrufen einer AutoSupport Meldung unterdrücken: `system node autosupport invoke -node * -type all -message MAINT=<# of hours>h`
++
+Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden: `cluster1:> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deaktivieren Sie das automatische Giveback von der Konsole des gesunden Controllers: `storage failover modify –node local -auto-giveback false`
++
+
+NOTE: Wenn Sie sehen _Möchten Sie Auto-Giveback deaktivieren?_, geben Sie ein `y`.
+
+. Nehmen Sie den beeinträchtigten Controller zur LOADER-Eingabeaufforderung:
++
+[cols="1,2"]
+|===
+| Wenn der eingeschränkte Controller angezeigt wird... | Dann... 
+
+
+ a| 
+Die LOADER-Eingabeaufforderung
+ a| 
+Fahren Sie mit dem nächsten Schritt fort.
+
+
+
+ a| 
+Warten auf Giveback...
+ a| 
+Drücken Sie Strg-C, und antworten Sie dann `y` Wenn Sie dazu aufgefordert werden.
+
+
+
+ a| 
+Eingabeaufforderung für das System oder Passwort
+ a| 
+Übernehmen oder stoppen Sie den beeinträchtigten Regler von der gesunden Steuerung: `storage failover takeover -ofnode _impaired_node_name_`
+
+Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drücken Sie Strg-C, und antworten Sie dann `y`.
+
+|===
+
+
+--
+.Option 2: Controller befindet sich in einem MetroCluster
+--
+Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
+
+* Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE anzeigt, um die Berechtigung und den Zustand zu erhalten, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^].
+* Wenn Sie über eine MetroCluster-Konfiguration verfügen, müssen Sie bestätigt haben, dass der MetroCluster-Konfigurationsstatus konfiguriert ist und dass die Nodes in einem aktivierten und normalen Zustand vorliegen (`metrocluster node show`).
+
+
+.Schritte
+. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deaktivieren Sie das automatische Giveback von der Konsole des gesunden Controllers: `storage failover modify –node local -auto-giveback false`
+. Nehmen Sie den beeinträchtigten Controller zur LOADER-Eingabeaufforderung:
++
+[cols="1,2"]
+|===
+| Wenn der eingeschränkte Controller angezeigt wird... | Dann... 
+
+
+ a| 
+Die LOADER-Eingabeaufforderung
+ a| 
+Fahren Sie mit dem nächsten Schritt fort.
+
+
+
+ a| 
+Warten auf Giveback...
+ a| 
+Drücken Sie Strg-C, und antworten Sie dann `y` Wenn Sie dazu aufgefordert werden.
+
+
+
+ a| 
+Eingabeaufforderung des Systems oder Passwort (Systempasswort eingeben)
+ a| 
+Übernehmen oder stoppen Sie den beeinträchtigten Regler von der gesunden Steuerung: `storage failover takeover -ofnode _impaired_node_name_`
+
+Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drücken Sie Strg-C, und antworten Sie dann `y`.
+
+|===
+
+
+--
+====
+
+
+== Schritt 2: Ersetzen Sie das Modul für die Systemverwaltung für beeinträchtigte Störungen
+
+Ersetzen Sie das Management-Modul für beeinträchtigte Systeme.
+
+. Entfernen Sie das System Management-Modul:
++
+
+NOTE: Stellen Sie sicher, dass der NVRAM-Speicher vollständig ist, bevor Sie fortfahren.
+
++
+image::../media/drw_a1k_sys-mgmt_remove_ieops-1384.svg[Ersetzen Sie das System Management-Modul]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[Legende Nummer 1]
+ a| 
+Nockenverriegelung des Systemmanagementmoduls
+
+|===
++
+.. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
++
+
+NOTE: Stellen Sie sicher, dass der NVRAM-Speicher vollständig ist, bevor Sie fortfahren.
+
+.. Entfernen Sie alle Kabel, die am System Management-Modul angeschlossen sind. Achten Sie darauf, dass die Kabel an den richtigen Anschlüssen angeschlossen sind, damit Sie sie beim Wiedereinsetzen des Moduls an die richtigen Anschlüsse anschließen können.
+.. Trennen Sie die Netzkabel vom Netzteil für den beeinträchtigten Controller.
+.. Drehen Sie das Kabelführungs-Fach nach unten, indem Sie die Tasten an beiden Seiten an der Innenseite des Kabelführungs-Fachs ziehen und das Fach dann nach unten drehen.
+.. Drücken Sie die Nockentaste am System Management-Modul.
+.. Den Nockenhebel bis zum gewünschten Winkel nach unten drehen.
+.. Den Finger in das Loch am Nockenhebel stecken und das Modul gerade aus dem System ziehen.
+.. Platzieren Sie das System-Management-Modul auf einer antistatischen Matte, damit das Startmedium zugänglich ist.
+
+
+. Verschieben Sie das Startmedium in das Ersatz-System-Management-Modul:
++
+image::../media/drw_a1k_boot_media_remove_replace_ieops-1377.svg[Boot-Medium ersetzen]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[Legende Nummer 1]
+ a| 
+Nockenverriegelung des Systemmanagementmoduls
+
+
+
+ a| 
+image::../media/legend_icon_02.svg[Legende Nummer 2]
+ a| 
+Verriegelungstaste für Startmedien
+
+
+
+ a| 
+image::../media/legend_icon_03.svg[Legende Nummer 3]
+ a| 
+Boot-Medien
+
+|===
++
+.. Drücken Sie die blaue Taste zum Sperren des Startmediums im Modul für die eingeschränkte Systemverwaltung.
+.. Drehen Sie das Startmedium nach oben und schieben Sie es aus dem Sockel.
+
+
+. Installieren Sie das Startmedium im Ersatz-System-Management-Modul:
++
+.. Richten Sie die Kanten der Startmedien am Buchsengehäuse aus, und schieben Sie sie vorsichtig in die Buchse.
+.. Drehen Sie das Boot-Medium nach unten, bis es die Verriegelungstaste berührt.
+.. Drücken Sie die blaue Verriegelung, drehen Sie die Startmedien ganz nach unten, und lassen Sie die blaue Verriegelungstaste los.
+
+
+. Installieren Sie das Ersatz-System-Management-Modul im Gehäuse:
++
+.. Richten Sie die Kanten des Ersatz-System-Management-Moduls an der Systemöffnung aus und drücken Sie es vorsichtig in das Controller-Modul.
+.. Schieben Sie das Modul vorsichtig in den Steckplatz, bis die Nockenverriegelung mit dem E/A-Nockenbolzen einrastet, und drehen Sie dann die Nockenverriegelung bis zum Anschlag nach oben, um das Modul zu verriegeln.
+
+
+. Drehen Sie die Kabelmanagement-ARM bis zur geschlossenen Position.
+. System-Management-Modul erneut verwenden.
+
+
+
+
+== Schritt 3: Starten Sie das Controller-Modul neu
+
+Starten Sie das Controller-Modul neu.
+
+. Schließen Sie die Stromkabel wieder an das Netzteil an.
++
+Das System wird neu gebootet, normalerweise bis zur LOADER-Eingabeaufforderung.
+
+. Geben Sie an der LOADER-Eingabeaufforderung _bye_ ein.
+. Kehren Sie den Controller in den normalen Betrieb zurück, indem Sie seinen Storage zurückgeben: _Storage Failover Giveback -ofnode _Impaired_Node_Name__
+. Stellen Sie mithilfe der die automatische Rückgabe wieder her `storage failover modify -node local -auto-giveback true` Befehl.
+. Wenn ein AutoSupport-Wartungsfenster ausgelöst wurde, beenden Sie das Fenster mit. Verwenden Sie dazu die `system node autosupport invoke -node * -type all -message MAINT=END` Befehl.
+
+
+
+
+== Schritt 4: Installieren Sie Lizenzen und registrieren Sie die Seriennummer
+
+Sie müssen neue Lizenzen für den Node installieren, wenn der beeinträchtigte Node ONTAP-Funktionen verwendet, für die eine standardmäßige (Node-locked) Lizenz erforderlich ist. Bei Standardlizenzen sollte jeder Node im Cluster über seinen eigenen Schlüssel für die Funktion verfügen.
+
+.Über diese Aufgabe
+Bis Sie die Lizenzschlüssel installieren, sind Funktionen, für die Standardlizenzen erforderlich sind, weiterhin für den Node verfügbar. Wenn der Node jedoch der einzige Node im Cluster mit einer Lizenz für die Funktion war, sind keine Konfigurationsänderungen an der Funktion zulässig. Wenn Sie nicht lizenzierte Funktionen auf dem Node verwenden, kommt es möglicherweise zu Compliance mit Ihrer Lizenzvereinbarung. Daher sollten Sie den Ersatz-Lizenzschlüssel oder die Schlüssel auf dem für den Node installieren.
+
+.Bevor Sie beginnen
+Die Lizenzschlüssel müssen im 28-stelligen Format vorliegen.
+
+Sie haben eine 90-Tage-Nachfrist zur Installation der Lizenzschlüssel. Nach Ablauf der Frist werden alle alten Lizenzen ungültig. Nachdem ein gültiger Lizenzschlüssel installiert wurde, haben Sie 24 Stunden Zeit, um alle Schlüssel zu installieren, bevor die Kulanzzeit endet.
+
+.Schritte
+. Wenn Sie neue Lizenzschlüssel benötigen, holen Sie sich die Ersatzlizenz auf dem https://mysupport.netapp.com/site/global/dashboard["NetApp Support Website"] Im Abschnitt „My Support“ unter „Software-Lizenzen“.
++
+
+NOTE: Die neuen Lizenzschlüssel, die Sie benötigen, werden automatisch generiert und an die E-Mail-Adresse in der Datei gesendet. Wenn Sie die E-Mail mit den Lizenzschlüssel nicht innerhalb von 30 Tagen erhalten, sollten Sie sich an den technischen Support wenden.
+
+. Installieren Sie jeden Lizenzschlüssel: `+system license add -license-code license-key, license-key...+`
+. Entfernen Sie ggf. die alten Lizenzen:
++
+.. Suchen Sie nach nicht verwendeten Lizenzen: `license clean-up -unused -simulate`
+.. Wenn die Liste korrekt aussieht, entfernen Sie die nicht verwendeten Lizenzen: `license clean-up -unused`
+
+
+. Registrieren Sie die Seriennummer des Systems beim NetApp Support.
++
+** Wenn AutoSupport aktiviert ist, senden Sie eine AutoSupport Nachricht, um die Seriennummer zu registrieren.
+** Wenn AutoSupport nicht aktiviert ist, rufen Sie an https://mysupport.netapp.com["NetApp Support"] Um die Seriennummer zu registrieren.
+
+
+
+
+
+
+== Schritt 5: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

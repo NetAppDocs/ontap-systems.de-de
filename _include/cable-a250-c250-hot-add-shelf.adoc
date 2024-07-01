@@ -1,0 +1,37 @@
+= 
+:allow-uri-read: 
+
+
+Wenn zusätzlicher Storage benötigt wird, können Sie im laufenden Betrieb maximal ein NS224-Shelf zu einem AFF A250 oder AFF C250 HA-Paar hinzufügen.
+
+.Bevor Sie beginnen
+* Sie müssen die überprüft haben link:requirements-hot-add-shelf.html["Hot-Add-Anforderungen und Best Practices"].
+* Sie müssen die entsprechenden Verfahren in abgeschlossen haben link:prepare-hot-add-shelf.html["Bei laufendem Betrieb ein Shelf hinzufügen"].
+* Sie müssen die Shelfs installiert, eingeschaltet und die Shelf-IDs wie in festgelegt haben link:prepare-hot-add-shelf.html["Installieren Sie ein Shelf für ein Hot-Add-System"].
+
+
+.Über diese Aufgabe
+Wenn Sie von der Rückseite des Plattform-Chassis aus betrachtet werden, ist der RoCE-fähige Karten-Port auf der linken Seite Port „A“ (e1a) und der Port auf der rechten Seite der Port „b“ (e1b).
+
+.Schritte
+. Shelf-Verbindungen verkabeln:
++
+.. Kabel-Shelf NSM A Port e0a zu Controller A-Steckplatz 1, Port A (e1a)
+.. Kabel-Shelf NSM A-Port e0b zum Controller B-Steckplatz 1 Port b (e1b).
+.. Kabel-Shelf NSM B-Port e0a zu Controller B, Steckplatz 1, Port A (e1a)
+.. Kabel-Shelf NSM B-Port e0b zum Controller A-Steckplatz 1 Port b (e1b). + die folgende Abbildung zeigt die Shelf-Verkabelung, wenn der Vorgang abgeschlossen ist.
++
+image::../media/drw_ns224_a250_c250_f500f_1shelf_ieops-1824.svg[Verkabelung für eine AFF A250]
+
+
+
+. Überprüfen Sie mit https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^].
++
+Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
+
+
+
+.Was kommt als Nächstes?
+Wenn Sie die automatische Laufwerkszuweisung als Teil der Vorbereitung für dieses Verfahren deaktiviert haben, müssen Sie manuell die Laufwerkseigentümer festlegen und die automatische Laufwerkszuweisung ggf. erneut aktivieren. Gehen Sie zu link:complete-hot-add-shelf.html["Füllen Sie das Hot Add aus"].
+
+Andernfalls müssen Sie das Hot-Add-Regal verwenden.

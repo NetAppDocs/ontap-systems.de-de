@@ -1,0 +1,86 @@
+---
+permalink: a70-90/maintain-overview.html 
+sidebar: sidebar 
+keywords: aff a70 aff a90 maintenance, maintenance, repairing aff a70 aff a90, repairing a70 aff a90, replace a70 aff a90 components 
+summary: Wartung der AFF A70, AFF A90 Hardware 
+---
+= Wartung der AFF A70, AFF A90 Hardware
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Für die Speichersysteme AFF A70, AFF A90 können Sie Wartungsverfahren für die folgenden Komponenten durchführen.
+
+
+
+== Boot-Medien
+
+Das Startmedium speichert einen primären und sekundären Satz von Boot-Image-Dateien, die das System beim Booten verwendet.
+
+
+
+== Chassis
+
+Das Chassis ist das physische Gehäuse, in dem alle Controller-Komponenten wie Controller-/CPU-Einheit, Stromversorgung und I/O-Vorgänge untergebracht sind
+
+
+
+== Controller
+
+Ein Controller besteht aus einer Hauptplatine, Firmware und Software. Er steuert die Laufwerke und implementiert die ONTAP-Funktionen.
+
+
+
+== DIMM
+
+Sie müssen ein DIMM (Dual-Inline-Speichermodul) ersetzen, wenn ein Speicherfehler vorliegt oder ein ausgefallenes DIMM vorliegt.
+
+
+
+== Laufwerk
+
+Ein Laufwerk ist ein Gerät, das den physischen Speicher für Daten bereitstellt.
+
+
+
+== Ventilator
+
+Der Lüfter kühlt den Controller.
+
+
+
+== NVRAM
+
+Der NVRAM (Non-Volatile Random Access Memory) ist ein Modul, mit dem der Controller Daten während der Übertragung schützen und speichern kann, wenn das System Strom verliert. Die System-ID befindet sich im NVRAM-Modul. Bei Austausch nimmt der Controller die neue System-ID vom Ersatz-NVRAM-Modul an.
+
+
+
+== NV-Batterie
+
+Die NVRAM-Batterie versorgt das NVRAM-Modul mit Strom, während genutzte Daten nach einem Stromausfall in den Flash-Speicher ausgelagert werden.
+
+
+
+== I/O-Modul
+
+Das E/A-Modul (Eingangs-/Ausgangsmodul) ist eine Hardwarekomponente, die als Vermittler zwischen dem Controller und verschiedenen Geräten oder Systemen dient, die Daten mit dem Controller austauschen müssen.
+
+
+
+== Stromversorgung
+
+Ein Netzteil stellt eine redundante Stromquelle in einem Controller bereit.
+
+
+
+== Akku in Echtzeit
+
+Eine Echtzeituhr-Batterie bewahrt die Systemdaten und -Uhrzeitinformationen, wenn die Stromversorgung ausgeschaltet ist.
+
+
+
+== System Management-Modul
+
+Das System Management-Modul stellt die Schnittstelle zwischen dem Controller und einer Konsole oder einem Laptop für Controller- oder Systemwartungszwecke bereit. Das Systemmanagementmodul enthält das Startmedium und speichert die Seriennummer des Systems (SSN).

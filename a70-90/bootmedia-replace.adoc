@@ -1,0 +1,156 @@
+---
+permalink: a70-90/bootmedia-replace.html 
+sidebar: sidebar 
+keywords: aff a70, aff a90, replace the boot media 
+summary: Sie finden das ausgefallene Startmedium im Controller-Modul, indem Sie Riser 3 am Controller-Modul entfernen, bevor Sie das Boot-Medium ersetzen können. 
+---
+= Ersetzen Sie die Startmedien - AFF A70, AFF A90
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um das Startmedium zu ersetzen, müssen Sie das System Management-Modul von der Rückseite des Systems entfernen, das gestörte Startmedium entfernen, das Ersatz-Startmedium im System Management-Modul installieren und das Startabbild auf ein USB-Flash-Laufwerk übertragen.
+
+
+
+== Schritt 1: Ersetzen Sie die Startmedien
+
+Das Startmedium befindet sich im System Management-Modul und kann durch Entfernen des Moduls aus dem System aufgerufen werden.
+
+image::../media/drw_a70-90_boot_media_remove_replace_ieops-1367.svg[Startmedien ersetzen Grafik]
+
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[Legende Nummer 1]
+ a| 
+Nockenverriegelung des Systemmanagementmoduls
+
+
+
+ a| 
+image::../media/legend_icon_02.svg[Legende Nummer 2]
+ a| 
+Verriegelungstaste für Startmedien
+
+
+
+ a| 
+image::../media/legend_icon_03.svg[Legende Nummer 3]
+ a| 
+Boot-Medien
+
+|===
+. Drücken Sie auf der Vorderseite des Gehäuses die Daumen, um jedes Laufwerk fest einzuschieben, bis Sie einen positiven Stopp spüren. Dadurch wird sichergestellt, dass die Laufwerke fest an der Mittelplatine des Gehäuses sitzen.
++
+image::../media/drw_a800_drive_seated_IEOPS-960.svg[drw a800-Laufwerk mit IEOPS 960]
+
+. Gehen Sie zur Rückseite des Gehäuses. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Trennen Sie die Stromversorgung, indem Sie das Controller-Modul ca. 3 cm herausziehen:
++
+
+NOTE: Wenn Ihr Speichersystem über Gleichstromnetzteile verfügt, trennen Sie den Stromkabelblock von den Netzteilen.
+
++
+.. Drücken Sie beide Verriegelungsriegel nach unten, und drehen Sie dann beide Verriegelungen gleichzeitig nach unten.
+.. Ziehen Sie das Controller-Modul ungefähr 3 Zoll aus dem Chassis, um die Stromversorgung zu trennen.
+.. Entfernen Sie alle Kabel, die am System Management-Modul angeschlossen sind. Achten Sie darauf, dass die Kabel an den richtigen Anschlüssen angeschlossen sind, damit Sie sie beim Wiedereinsetzen des Moduls an die richtigen Anschlüsse anschließen können.
+.. Drehen Sie das Kabelführungs-Fach nach unten, indem Sie die Tasten an beiden Seiten an der Innenseite des Kabelführungs-Fachs ziehen und das Fach dann nach unten drehen.
+.. Drücken Sie die Taste für die Systemverwaltung. Der Nockenhebel bewegt sich vom Gehäuse weg.
+.. Drehen Sie den Nockenhebel ganz nach unten, und entfernen Sie das System-Management-Modul aus dem Controller-Modul.
+.. Platzieren Sie das System-Management-Modul auf einer antistatischen Matte, damit das Startmedium zugänglich ist.
+
+
+. Entfernen Sie das Startmedium aus dem Verwaltungsmodul:
++
+.. Drücken Sie die blaue Verriegelungstaste.
+.. Drehen Sie das Startmedium nach oben, schieben Sie es aus dem Sockel und legen Sie es beiseite.
+
+
+. Installieren Sie das Ersatz-Startmedium im System Management-Modul:
++
+.. Richten Sie die Kanten der Startmedien am Buchsengehäuse aus, und schieben Sie sie vorsichtig in die Buchse.
+.. Drehen Sie das Startmedium nach unten in Richtung Verriegelungstaste.
+.. Drücken Sie die Verriegelungstaste, drehen Sie die Manschettenmedien ganz nach unten, und lassen Sie dann die Verriegelungstaste los.
+
+
+. Installieren Sie das System Management-Modul neu:.
++
+.. Drehen Sie das Kabelführungs-Fach bis in die geschlossene Position.
+.. System-Management-Modul erneut verwenden.
+
+
+
+
+
+
+== Schritt 2: Übertragen Sie das Startabbild auf das Startmedium
+
+Das von Ihnen installierte Ersatzstartmedium ist ohne ein ONTAP-Image, sodass Sie ein ONTAP-Image mithilfe eines USB-Flashlaufwerks übertragen müssen.
+
+.Bevor Sie beginnen
+* Sie müssen über ein USB-Flash-Laufwerk verfügen, das auf FAT32 formatiert ist und eine Kapazität von mindestens 4 GB aufweist.
+* Sie müssen über eine Kopie derselben Image-Version von ONTAP verfügen, wie der beeinträchtigte Controller ausgeführt wurde. Sie können das entsprechende Image im Abschnitt auf der NetApp Support-Website herunterladen https://support.netapp.com/downloads["Downloads"]
++
+** Wenn NVE unterstützt wird, laden Sie das Image mit NetApp Volume Encryption herunter, wie auf der Download-Schaltfläche angegeben.
+** Wenn NVE nicht unterstützt wird, laden Sie das Image ohne NetApp-Volume-Verschlüsselung herunter, wie auf der Download-Schaltfläche angegeben.
+
+
+* Wenn es sich bei Ihrem System um ein HA-Paar handelt, müssen Sie über eine Netzwerkverbindung zwischen den Node-Management-Ports der Controller verfügen (normalerweise die E0M Schnittstellen).
+
+
+.Schritte
+. Laden Sie das entsprechende Service-Image vom auf das USB-Flash-Laufwerk herunter, und kopieren https://mysupport.netapp.com/["NetApp Support Website"] Sie es.
++
+.. Laden Sie das Service-Image über den Link Downloads auf der Seite auf Ihren Arbeitsbereich auf Ihrem Laptop herunter.
+.. Entpacken Sie das Service-Image.
++
+
+NOTE: Wenn Sie den Inhalt mit Windows extrahieren, verwenden Sie WinZip nicht zum Extrahieren des Netzboots-Images. Verwenden Sie ein anderes Extraktionstool, wie 7-Zip oder WinRAR.
+
+
+
++
+Das USB-Flash-Laufwerk sollte über das entsprechende ONTAP-Image des ausgeführten Controllers verfügen.
+
++
+.. Entfernen Sie das USB-Flash-Laufwerk von Ihrem Laptop.
+
+
+. Stecken Sie das USB-Flash-Laufwerk in den USB-Steckplatz des Systemmanagementmoduls.
++
+Stellen Sie sicher, dass Sie das USB-Flash-Laufwerk in den für USB-Geräte gekennzeichneten Steckplatz und nicht im USB-Konsolenport installieren.
+
+. Schließen Sie die Netzkabel an die Netzteile an, und setzen Sie die Stromkabelhalterung wieder ein.
++
+Der Controller beginnt zu starten, sobald die Stromversorgung wieder mit dem System verbunden wird.
+
+. Unterbrechen Sie den Boot-Vorgang, indem Sie Strg-C drücken, um an der LOADER-Eingabeaufforderung zu stoppen.
++
+Wenn Sie diese Meldung verpassen, drücken Sie Strg-C, wählen Sie die Option zum Booten im Wartungsmodus aus, und halten Sie dann den Controller zum Booten in LOADER an.
+
+. Legen Sie den Verbindungstyp für das Netzwerk an der LOADER-Eingabeaufforderung fest:
++
+** Wenn Sie DHCP konfigurieren: `ifconfig e0M -auto`
++
+
+NOTE: Der von Ihnen konfigurierte Zielport ist der Zielport, über den Sie während der Wiederherstellung des var-Dateisystems mit dem beeinträchtigten Controller über den gesunden Controller kommunizieren. Sie können in diesem Befehl auch den Port E0M verwenden.
+
+** Wenn Sie manuelle Verbindungen konfigurieren: `ifconfig e0M -addr=filer_addr -mask=netmask -gw=gateway`
++
+*** Filer_addr ist die IP-Adresse des Speichersystems.
+*** Netmask ist die Netzwerkmaske des Managementnetzwerks, das mit dem HA-Partner verbunden ist.
+*** Das Gateway ist das Gateway für das Netzwerk.
+
+
+
+
++
+
+NOTE: Andere Parameter können für Ihre Schnittstelle erforderlich sein. Sie können Hilfe ifconfig an der Firmware-Eingabeaufforderung für Details eingeben.
+
+

@@ -1,0 +1,70 @@
+= Prüfen Sie NVE oder NSE auf Systemen mit ONTAP 9.15 und höher
+:allow-uri-read: 
+
+
+Bevor Sie den beeinträchtigten Controller herunterfahren und den Status der integrierten Verschlüsselungsschlüssel prüfen, müssen Sie den Status des beeinträchtigten Controllers überprüfen, das automatische Giveback deaktivieren und die Version von ONTAP prüfen, die ausgeführt wird.
+
+Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE anzeigt, um die Berechtigung und den Zustand zu erhalten, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^].
+
+
+
+== Prüfen Sie NVE oder NSE auf Systemen mit ONTAP 9.15 und höher
+
+Bevor Sie den beeinträchtigten Controller herunterfahren, müssen Sie überprüfen, ob der Sicherheitsschlüsselmanager aktiviert oder verschlüsselt ist.
+
+
+
+== Überprüfen Sie die Konfiguration des Sicherheitsschlüsselmanagers
+
+.Schritte
+. Determe, wenn Key Manager mit dem Befehl _Security key-Manager keystore show_ aktiv ist. Weitere Informationen finden Sie im https://docs.netapp.com/us-en/ontap-cli/security-key-manager-keystore-show.html["Security key-Manager keystore zeigen MAN-Seite"^]
++
+
+NOTE: Möglicherweise haben Sie weitere Schlüsselmanager-Typen. Die Typen sind `KMIP`, `AKV`und `GCP`. Der Prozess zur Bestätigung dieser Typen ist der gleiche wie Bestätigungs `external` - oder `onboard` Schlüsselmanager-Typen.
+
++
+** Wenn keine Ausgabe angezeigt wird, fahren Sie mit link:bootmedia-shutdown.html["Schalten Sie den außer Betrieb genommenen Controller aus"] fort, um den Knoten „beeinträchtigt“ herunterzufahren.
+** Wenn die Ausgabe des Befehls angezeigt wird, verfügt das System über `security key-manager` aktive Ressourcen, und Sie müssen Typ und Status anzeigen `Key Manager` .
+
+
+. Zeigen Sie die Informationen für den aktiven `Key Manager` mit dem Befehl _Security key-Manager key query_ an.
++
+** Wenn der `Key Manager` Typ angezeigt wird `external` und die `Restored` Spalte angezeigt `true`wird, ist es sicher, den beeinträchtigten Controller herunterzufahren.
+** Wenn der `Key Manager` Typ angezeigt wird `onboard` und die `Restored` Spalte angezeigt `true`wird, müssen Sie einige zusätzliche Schritte ausführen.
+** Wenn der `Key Manager` Typ angezeigt wird `external` und in der `Restored` Spalte etwas anderes als angezeigt `true`wird, müssen Sie einige zusätzliche Schritte ausführen.
+** Wenn der `Key Manager` Typ angezeigt wird `onboard` und in der `Restored` Spalte etwas anderes als angezeigt `true`wird, müssen Sie einige zusätzliche Schritte ausführen.
+
+
+. Wenn der `Key Manager` Typ angezeigt wird `onboard` und die `Restored` Spalte angezeigt `true`wird, sichern Sie die OKM-Informationen manuell:
++
+.. Geben Sie ein `y` , wenn Sie zum Fortfahren aufgefordert werden: `set -priv advanced`
+.. Geben Sie den Befehl ein, um die Schlüsselverwaltungsinformationen anzuzeigen: _Security key-Manager onboard show-Backup_
+.. Kopieren Sie den Inhalt der Backup-Informationen in eine separate Datei oder eine Protokolldatei. Sie werden es in Disaster-Szenarien benötigen, in denen Sie OKM manuell wiederherstellen müssen.
+.. Sie können den außer Betrieb genommenen Controller sicher herunterfahren.
+
+
+. Wenn der `Key Manager` Typ angezeigt wird `onboard` und in der `Restored` Spalte etwas anderes als angezeigt `true`wird:
++
+.. Geben Sie den Onboard Security Key-Manager Sync-Befehl ein: _Security Key-Manager Onboard Sync_
++
+
+NOTE: Geben Sie an der Eingabeaufforderung die 32-stellige alphanumerische Onboard-Passphrase für die Schlüsselverwaltung ein. Wenn die Passphrase nicht angegeben werden kann, wenden Sie sich an den NetApp-Support. http://mysupport.netapp.com/["mysupport.netapp.com"^]
+
+.. Überprüfen Sie, ob die `Restored` Spalte für alle Authentifizierungsschlüssel angezeigt wird `true` : `security key-manager key query`
+.. Überprüfen Sie, ob der `Key Manager` Typ , anzeigt `onboard`und sichern Sie die OKM-Informationen manuell.
+.. Geben Sie den Befehl ein, um die Backup-Informationen zum Schlüsselmanagement anzuzeigen: _Security key-Manager onboard show-Backup_
+.. Kopieren Sie den Inhalt der Backup-Informationen in eine separate Datei oder eine Protokolldatei. Sie werden es in Disaster-Szenarien benötigen, in denen Sie OKM manuell wiederherstellen müssen.
+.. Sie können den Controller sicher herunterfahren.
+
+
+. Wenn der `Key Manager` Typ angezeigt wird `external` und in der `Restored` Spalte etwas anderes als angezeigt `true`wird:
++
+.. Stellen Sie die Authentifizierungsschlüssel für das externe Verschlüsselungsmanagement auf allen Nodes im Cluster wieder her: `security key-manager external restore`
++
+Wenn der Befehl fehlschlägt, wenden Sie sich an den NetApp-Support unter http://mysupport.netapp.com/["mysupport.netapp.com"^].
+
+.. Vergewissern Sie sich, dass die `Restored` Spalte für alle Authentifizierungsschlüssel angezeigt wird `true` : _Security key-Manager key query_
+.. Sie können den außer Betrieb genommenen Controller sicher herunterfahren.
+
+
+

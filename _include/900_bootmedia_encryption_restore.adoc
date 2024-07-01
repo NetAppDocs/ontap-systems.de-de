@@ -14,6 +14,7 @@ Bestimmen Sie den Abschnitt, den Sie zum Wiederherstellen Ihrer OKM-, NSE- oder 
 
 == Stellen Sie NVE oder NSE wieder her, wenn Onboard Key Manager aktiviert ist
 
+.Schritte
 . Schließen Sie das Konsolenkabel an den Ziel-Controller an.
 . Verwenden Sie den Boot_ontap-Befehl an der LOADER-Eingabeaufforderung, um den Controller zu booten.
 . Überprüfen Sie die Konsolenausgabe:
@@ -101,7 +102,7 @@ Falls das Giveback nach 20 Minuten nicht abgeschlossen ist, wenden Sie sich an d
 
 . Geben Sie an der Eingabeaufforderung für clustershell den Befehl net int show -is-Home false ein, um die logischen Schnittstellen aufzulisten, die sich nicht auf ihrem Home-Controller und Port befinden.
 +
-Wenn Schnittstellen als aufgeführt werden `false`, Zurücksetzen dieser Schnittstellen zurück auf ihren Home-Port mit dem net int revert Befehl.
+Wenn Schnittstellen als aufgeführt werden `false`, Zurücksetzen dieser Schnittstellen zurück zu ihrem Home-Port mit dem `net int revert -vserver Cluster -lif _nodename_` Befehl.
 
 . Bewegen Sie das Konsolenkabel auf den Ziel-Controller, und führen Sie den aus `version -v` Befehl zum Prüfen der ONTAP-Versionen.
 . Stellen Sie die automatische Rückgabe wieder her, wenn Sie die Funktion mithilfe von deaktivieren `storage failover modify -node local -auto-giveback true` Befehl.
@@ -111,6 +112,7 @@ Wenn Schnittstellen als aufgeführt werden `false`, Zurücksetzen dieser Schnitt
 
 == Stellen Sie NSE/NVE auf Systemen mit ONTAP 9.6 und höher wieder her
 
+.Schritte
 . Schließen Sie das Konsolenkabel an den Ziel-Controller an.
 . Verwenden Sie den Boot_ontap-Befehl an der LOADER-Eingabeaufforderung, um den Controller zu booten.
 . Überprüfen Sie die Konsolenausgabe:
@@ -150,7 +152,7 @@ NOTE: Die Beendigung von CIFS kann zu Datenverlust führen.
 . Warten Sie 3 Minuten, und überprüfen Sie den Failover-Status mit dem Befehl „Storage Failover show“.
 . Geben Sie an der Clustershell-Eingabeaufforderung den ein `net int show -is-home false` Befehl zum Auflistung der logischen Schnittstellen, die sich nicht auf ihrem Home Controller und Port befinden.
 +
-Wenn Schnittstellen als aufgeführt werden `false`, Zurücksetzen dieser Schnittstellen zurück zu ihrem Home-Port mit dem `net int revert` Befehl.
+Wenn Schnittstellen als aufgeführt werden `false`, Zurücksetzen dieser Schnittstellen zurück zu ihrem Home-Port mit dem `net int revert -vserver Cluster -lif _nodename_` Befehl.
 
 . Bewegen Sie das Konsolenkabel auf den Ziel-Controller, und führen Sie den aus `version -v` Befehl zum Prüfen der ONTAP-Versionen.
 . Stellen Sie die automatische Rückgabe wieder her, wenn Sie die Funktion mithilfe von deaktivieren `storage failover modify -node local -auto-giveback true` Befehl.
@@ -158,12 +160,12 @@ Wenn Schnittstellen als aufgeführt werden `false`, Zurücksetzen dieser Schnitt
 . Verwenden Sie die `security key-manager key-query` Befehl zum Anzeigen der Verschlüsselung und Authentifizierungsschlüssel, die auf den Verschlüsselungsmanagement-Servern gespeichert sind.
 +
 ** Wenn der `Restored` Spalte = `yes/true`, Sie sind fertig und können den Austauschprozess abschließen.
-** Wenn der `Key Manager type` = `external` Und das `Restored` Spalte = nichts anderes als `yes/true`, Verwenden Sie den Befehl Security Key-Manager External Restore, um die Schlüssel-IDs der Authentifizierungsschlüssel wiederherzustellen.
+** Wenn der `Key Manager type` = `external` Und das `Restored` Spalte = nichts anderes als `yes/true`, Verwenden Sie die `security key-manager external restore` Befehl zum Wiederherstellen der Schlüssel-IDs der Authentifizierungsschlüssel.
 +
 
 NOTE: Falls der Befehl fehlschlägt, wenden Sie sich an den Kundendienst.
 
-** Wenn der `Key Manager type` = `onboard` Und das `Restored` Spalte = nichts anderes als `yes/true`, Verwenden Sie den Onboard Sync-Befehl des Security Key-Managers, um den Key Manager-Typ neu zu synchronisieren.
+** Wenn der `Key Manager type` = `onboard` Und das `Restored` Spalte = nichts anderes als `yes/true`, Verwenden Sie die `security key-manager onboard sync` Befehl zum erneuten Synchronisieren des Key Manager-Typs.
 +
 Verwenden Sie die `security key-manager key-query` Befehl zum Überprüfen des `Restored` Spalte = `yes/true` Für alle Authentifizierungsschlüssel.
 

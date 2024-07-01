@@ -1,0 +1,205 @@
+---
+permalink: a70-90/chassis-replace-move-hardware.html 
+sidebar: sidebar 
+keywords: aff a70, aff a90, move hardware components, replace the chassis 
+summary: Stellen Sie die Netzteile, Festplatten und Controller-Module oder Module vom beeinträchtigten Gehäuse in das neue Gehäuse und tauschen Sie das beeinträchtigte Gehäuse aus dem Geräterrack oder Systemschrank durch das neue Gehäuse des gleichen Modells aus wie das beeinträchtigte Gehäuse. 
+---
+= Tauschen Sie die Hardware aus – AFF A70, AFF A90
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Verschieben Sie die Netzteile, Festplatten und das Controller-Modul vom Gehäuse für beeinträchtigte Störungen in das neue Gehäuse, und tauschen Sie das Gehäuse für beeinträchtigte Störungen durch das neue Gehäuse desselben Modells aus.
+
+
+
+== Schritt 1: Entfernen Sie das Controller-Modul
+
+Sie müssen das Controller-Modul aus dem Chassis entfernen, wenn Sie das Controller-Modul ersetzen oder eine Komponente im Controller-Modul ersetzen.
+
+. Drücken Sie auf der Vorderseite des Gehäuses die Daumen, um jedes Laufwerk fest einzuschieben, bis Sie einen positiven Stopp spüren. Dadurch wird sichergestellt, dass die Laufwerke fest an der Mittelplatine des Gehäuses sitzen.
++
+image::../media/drw_a800_drive_seated_IEOPS-960.svg[drw a800-Laufwerk mit IEOPS 960]
+
+. Überprüfen Sie, ob die gelbe NVRAM-Status-LED in Steckplatz 4/5 auf der Rückseite des außer Betrieb genommenen Controller-Moduls ausgeschaltet ist. Suchen Sie nach dem NV-Symbol.
++
+image::../media/drw_a1K-70-90_nvram-led_ieops-1463.svg[Grafik für die NVRAM-Warnungs- und Status-LED zur Lage]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.svg["Legende Nummer 1, Breite=30px"]
+ a| 
+NVRAM-Status-LED
+
+
+
+ a| 
+image:../media/legend_icon_02.svg["Legende Nummer 1, Breite=30px"]
+ a| 
+LED für NVRAM-Warnung
+
+|===
++
+
+NOTE: Wenn die NVRAM-Status-LED blinkt, bedeutet dies möglicherweise, dass das Controller-Modul nicht ordnungsgemäß übernommen oder angehalten wurde (nicht belegte Daten). Wenn das beeinträchtigte Controller-Modul nicht erfolgreich vom Partner-Controller-Modul übernommen wurde, wenden Sie sich an https://mysupport.netapp.com/site/global/dashboard["NetApp Support"] , bevor Sie mit diesem Verfahren fortfahren.
+
++
+Das allgemeine Verhalten der NVRAM-Status-LED am Controller-Modul für beeinträchtigte besteht wie folgt:
+
++
+** Die NVRAM-Status-LED blinkt, wenn die Stromversorgung vom Controller-Modul getrennt wird und sich das Storage-System im Status „Warten auf Rückgabe“ befindet oder das Controller-Modul nicht ordnungsgemäß übernommen oder angehalten wird (nicht belegte Daten).
+** Wenn das Controller-Modul aus dem Chassis entfernt wird, blinkt die NVRAM-Status-LED, sodass das Controller-Modul nicht übernommen oder ordnungsgemäß angehalten wird (nicht belegte Daten). Vergewissern Sie sich, dass das Controller-Modul sauber Übernahme durch das Partner Controller-Modul erfolgt ist oder dass das beeinträchtigte Controller-Modul angezeigt wird `waiting for giveback`. Anschließend kann die blinkende LED ignoriert werden (und das Controller-Modul kann aus dem Gehäuse entfernt werden).
+
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Ziehen Sie die Stromversorgungskabel des Controller-Moduls von den Netzteilen des Controller-Moduls (PSU) ab.
++
+
+NOTE: Wenn Ihr System über Gleichstrom verfügt, trennen Sie den Netzstecker von den Netzteilen.
+
+. Ziehen Sie die Systemkabel und die SFP- und QSFP-Module (falls erforderlich) vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren.
++
+Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation des Kabelverwaltungsgeräts die Kabel organisiert sind.
+
+. Entfernen Sie das Kabelverwaltungsgerät vom Controller-Modul.
+. Drücken Sie beide Verriegelungsriegel nach unten, und drehen Sie dann beide Verriegelungen gleichzeitig nach unten.
++
+Das Controller-Modul wird leicht aus dem Chassis entfernt.
+
++
+image::../media/drw_a70-90_pcm_remove_replace_ieops-1365.svg[Controller Grafik entfernen]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.svg["Legende Nummer 1, Breite=30px"]
+| Eine Verriegelungsverriegelung 
+
+
+ a| 
+image:../media/legend_icon_02.svg["Callout-Nummer 2, Breite=30 px"]
+ a| 
+Sicherungsstift
+
+|===
+. Schieben Sie das Controller-Modul aus dem Gehäuse und platzieren Sie es auf einer Ebenen, stabilen Oberfläche.
++
+Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen, während Sie es aus dem Gehäuse schieben.
+
+. Wiederholen Sie diese Schritte für das andere Controller-Modul im Chassis.
+
+
+
+
+== Schritt 2: Fahren Sie die Laufwerke in das neue Gehäuse
+
+Sie müssen die Laufwerke von jeder Schachtöffnung im alten Chassis auf dieselbe Schachtöffnung im neuen Chassis verschieben.
+
+. Entfernen Sie vorsichtig die Blende von der Vorderseite des Systems.
+. Entfernen Sie die Laufwerke:
++
+.. Drücken Sie die Entriegelungstaste oben auf der Trägerseite unter den LEDs.
+.. Ziehen Sie den Nockengriff in die vollständig geöffnete Position, um den Antrieb von der Mittelplatine zu lösen, und schieben Sie ihn dann vorsichtig aus dem Chassis heraus.
++
+Das Laufwerk sollte aus dem Gehäuse heraus einrücken und so das Gehäuse frei schieben.
+
++
+
+NOTE: Wenn Sie ein Laufwerk entfernen, verwenden Sie immer zwei Hände, um sein Gewicht zu stützen.
+
++
+
+NOTE: Laufwerke sind zerbrechlich. Behandeln Sie sie so wenig wie möglich, um Schäden an ihnen zu vermeiden.
+
+
+
+. Verfolgen Sie, von welchem Laufwerkschacht jedes Laufwerk stammt, und legen Sie die Laufwerke auf einen statikfreien Wagen oder Tisch.
+
+
+
+
+== Schritt 3: Chassis aus dem Geräte-Rack oder Systemschrank heraus austauschen
+
+Sie müssen das vorhandene Chassis aus dem Rack oder dem Systemschrank entfernen, bevor Sie das Ersatzgehäuse installieren können.
+
+. Entfernen Sie die Schrauben von den Montagepunkten des Gehäuses.
+. Schieben Sie das alte Chassis bei zwei Personen von den Rack-Schienen in einem Systemschrank oder Ausrüstungs-Rack und legen Sie es dann beiseite.
+. Installieren Sie das Ersatzgehäuse mithilfe von zwei Personen in das Rack oder den Systemschrank. Führen Sie das Chassis durch die Rack-Schienen in einem System-Schrank oder Ausrüstungs-Rack.
+. Schieben Sie das Chassis vollständig in das Rack oder den Systemschrank der Ausrüstung.
+. Befestigen Sie die Vorderseite des Chassis mit den Schrauben, die Sie vom alten Chassis entfernt haben, am Rack oder am Systemschrank des Geräts.
+. Installieren Sie die Laufwerke aus dem alten Gehäuse in das Ersatzgehäuse:
++
+.. Richten Sie das Laufwerk aus dem alten Gehäuse an der gleichen Schachtöffnung im neuen Gehäuse aus.
+
+
+. Schieben Sie das Laufwerk vorsichtig so weit wie möglich in das Gehäuse.
++
+Der Nockengriff greift ein und beginnt, sich nach oben zu drehen.
+
++
+.. Schieben Sie den Antrieb ganz fest in das Gehäuse, und verriegeln Sie dann den Nockengriff, indem Sie ihn nach oben und gegen den Laufwerkträger drücken.
++
+Schließen Sie den Nockengriff langsam, damit er korrekt an der Vorderseite des Laufwerkträgers ausgerichtet ist. Zum sicheren Zeitpunkt klickt er.
+
+.. Wiederholen Sie den Vorgang für die übrigen Laufwerke im System.
+
+
+. Falls noch nicht geschehen, befestigen Sie die Blende.
+
+
+
+
+== Schritt 4: Installieren Sie die Controller-Module neu
+
+Installieren Sie das Controller-Modul neu, und starten Sie es neu.
+
+. Stellen Sie sicher, dass der Luftkanal vollständig geschlossen ist, indem Sie ihn bis zum gewünschten Ziel nach unten drehen.
++
+Er muss bündig auf die Metallplatte des Controller-Moduls liegen.
+
+. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
++
+
+NOTE: Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein, wenn Sie dazu aufgefordert werden.
+
+. Das System nach Bedarf neu einsetzen.
++
+Wenn Sie die Transceiver (QSFPs oder SFPs) entfernt haben, müssen Sie sie erneut installieren, wenn Sie Glasfaserkabel verwenden.
+
+. Führen Sie die Neuinstallation des Controller-Moduls durch:
++
+.. Drücken Sie das Controller-Modul fest in das Gehäuse, bis es auf die Mittelebene trifft und vollständig sitzt.
++
+Die Verriegelungen steigen, wenn das Controller-Modul voll eingesetzt ist.
+
+
+
++
+
+NOTE: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige Kraft verwenden, um Schäden an den Anschlüssen zu vermeiden.
+
++
+.. Drehen Sie die Verriegelungen nach oben in die verriegelte Position.
+
+
+. Schließen Sie die Netzkabel an die Netzteile an.
++
+
+NOTE: Wenn Sie über Gleichstromnetzteile verfügen, schließen Sie den Netzteilblock wieder an die Netzteile an, nachdem das Controller-Modul vollständig im Gehäuse eingesetzt ist.
+
++
+Das Controller-Modul wird gestartet, wenn die Stromversorgung wiederhergestellt ist. Wenn sie bis zur LOADER-Eingabeaufforderung gebootet wird, booten Sie den Controller mit dem Befehl neu `boot_ontap` .
+
+. Stellen Sie die automatische Rückgabe wieder her, wenn Sie die Funktion mithilfe von deaktivieren `storage failover modify -node local -auto-giveback true` Befehl.
+. Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung mit dem Befehl wiederherstellen/zurücknehmen. `system node autosupport invoke -node * -type all -message MAINT=END`
+. Wiederholen Sie die vorherigen Schritte, um den zweiten Controller im neuen Chassis zu installieren.
+

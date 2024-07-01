@@ -1,0 +1,14 @@
+= 
+:allow-uri-read: 
+
+
+Bevor Sie den Node _Replacement_ in den Service zurücksenden, sollten Sie überprüfen, ob sich die LIFs auf ihren Home Ports befinden, den Cluster-Zustand prüfen und das automatische Giveback zurücksetzen.
+
+.Schritte
+. Vergewissern Sie sich, dass die logischen Schnittstellen ihrem Home-Server und ihren Ports Berichterstellung: `network interface show -is-home false`
++
+Wenn eine der LIFs als falsch aufgeführt ist, stellen Sie sie auf ihre Home-Ports zurück: `network interface revert -vserver * -lif *`
+
+. Überprüfen Sie den Zustand Ihres Clusters. Weitere Informationen finden Sie im https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["So führen Sie eine Cluster-Integritätsprüfung mit einem Skript in ONTAP durch"^] KB-Artikel.
+. Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut: `storage failover modify -node local -auto-giveback true`
+
