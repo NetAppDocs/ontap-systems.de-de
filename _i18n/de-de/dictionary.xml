@@ -740,7 +740,6 @@
   <block id="3b746021467b635137eb94fcf5c83573" category="section-title">Schritt 3: Ersetzen Sie die RTC-Batterie</block>
   <block id="f663c131d87c9bf95d21d63d6579dfb8" category="paragraph">Um die RTC-Batterie zu ersetzen, suchen Sie sie im Controller, und befolgen Sie die einzelnen Schritte.</block>
   <block id="65c45f25b11ef516aa4180bd435460a0" category="list-text">Suchen Sie den RTC-Akku.</block>
-  <block id="78cdea792972b347c50369463c3d2407" category="image-alt">drw 2600 rtc-Akku</block>
   <block id="e789dadff6ab02fe418b101bca452d66" category="list-text">Schieben Sie den Akku vorsichtig von der Halterung weg, drehen Sie ihn vom Halter weg, und heben Sie ihn dann aus der Halterung.</block>
   <block id="9e5b0cf96e39c07e340d8e7e3f98141d" category="admonition">Beachten Sie die Polarität der Batterie, während Sie sie aus dem Halter entfernen. Der Akku ist mit einem Pluszeichen gekennzeichnet und muss korrekt in der Halterung positioniert werden. Ein Pluszeichen in der Nähe des Halters zeigt an, wie der Akku positioniert werden soll.</block>
   <block id="ea4330063aff847ec18a76ddefbeb737" category="list-text">Entfernen Sie den Ersatzakku aus dem antistatischen Versandbeutel.</block>
@@ -3256,19 +3255,14 @@
   <block id="aeb2812c06ee13b853570b310f30d6da" category="paragraph">Optische Netzwerkkabel (je nach Bestellung)</block>
   <block id="f0b8dbf961f93d5d136181b058ae6f49" category="paragraph">X6536-R6 (112-00090), 5 m</block>
   <block id="ddac2f549f656aa8118a6bcb0bd45703" category="paragraph">X6554-R6 (112-00189), 15 m</block>
-  <block id="caaa8a847335f7164117894cfe79e731" category="paragraph"><block ref="caaa8a847335f7164117894cfe79e731" category="inline-image-macro-rx" type="image"></block></block>
   <block id="fea037cb34a319bd3b823395ee5fdd07" category="paragraph">SFP + FC-Host-Netzwerk</block>
   <block id="490cb76fd3c75ff8166e251d789f799e" category="paragraph">Ethernet-Host und Management-Netzwerk</block>
   <block id="78b39d88cb979ddb300a4cf2c6cdb1be" category="image-alt">drw-Kabelmanagement-ARM-Installation</block>
   <block id="fcca883f68c4e92b98d0f294614cda60" category="admonition">Stecken Sie beim Anschließen an einen optischen Switch den SFP-Port in den Controller-Port, bevor Sie die Verkabelung zum Port durchführen.</block>
-  <block id="73da34bccb5db786798534ea5b6eb1d6" category="image-alt">drw c190 tnsc Unified Network Cabling animiert gif</block>
   <block id="29232642e257cc5bf9288d51db5b38a1" category="paragraph">Verbinden Sie die Cluster-Interconnect-Ports mit dem Cluster Interconnect-Kabel miteinander:</block>
   <block id="c0a9eb11c9962c2eb967f53a4845bf1a" category="paragraph">Verkabeln Sie die E0M-Ports mit den Management-Netzwerk-Switches mit den RJ45-Kabeln:</block>
-  <block id="d7d7ce9a70c375da7dd9edb7b21a9134" category="image-alt">drw c190 Switch Unified Network Cabling animiert (gif)</block>
   <block id="81b22135a51aae23b34a49fb4dc95ad2" category="paragraph">Verkabelung e0a und e0b mit den Cluster Interconnect Switches mit dem Cluster Interconnect-Kabel:</block>
-  <block id="0df32eef6f99f6d05877f5da86a45063" category="image-alt">drw c190 tnsc ethernet-Netzwerkverkabelung animiert gif</block>
   <block id="836e597d16643401627d14a351ba6a9c" category="paragraph">Verwenden Sie das Cat 6 RJ45-Kabel, um e0c über e0f-Ports mit Ihrem Hostnetzwerk zu verkabeln:</block>
-  <block id="ac3d560a40b4d6d28fac097677ecaa8d" category="image-alt">drw c190 geschaltete ethernet-Netzwerkverkabelung animiert</block>
   <block id="e54c29276af1d0eb8b609db7484efd71" category="admonition">Das erste Booten kann bis zu acht Minuten dauern.</block>
   <block id="c148c3a234659fa32cba3b91e58f84d2" category="admonition">Die Standard-Port-Konfiguration für Unified-Konfigurationssysteme ist der CNA-Modus. Wenn Sie eine Verbindung zu einem FC-Host-Netzwerk herstellen, müssen Sie die Ports für den FC-Modus ändern.</block>
   <block id="81b014b89575d4c2c10465dcae392a39" category="doc">Integrierte Verschlüsselungsschlüssel - AFF C190</block>
@@ -3377,7 +3371,6 @@
   <block id="f53e901ff746fe820463f62ff93fcef4" category="paragraph">Beim Austausch eines Controller-Moduls müssen Sie die Cache-Module von den beeinträchtigten Controller-Modulen auf das Ersatzcontrollermodul verschieben.</block>
   <block id="29fe2fec672e63081cef240547ac4ab3" category="list-text">Suchen Sie das Caching-Modul auf der Rückseite des Controller-Moduls, und entfernen Sie es:</block>
   <block id="72899bf5d7c3e86a01a078b9f3c1b933" category="paragraph">Das Speichersystem verfügt über zwei Steckplätze für das Caching-Modul und standardmäßig ist nur ein Steckplatz belegt.</block>
-  <block id="407e11715a937f08e831c6ea7ba60d89" category="image-alt">drw rxl fcache</block>
   <block id="06c9138c9dda8dce357c29f596493704" category="list-text">Vergewissern Sie sich, dass das Caching-Modul ganz und ganz im Sockel sitzt. Entfernen Sie gegebenenfalls das Cache-Modul, und setzen Sie es wieder in den Sockel ein.</block>
   <block id="8f5132f3a780453031116d8c02ee992d" category="list-text">Wiederholen Sie die Schritte, wenn Sie ein zweites Cache-Modul haben. Schließen Sie die Abdeckung des Controller-Moduls.</block>
   <block id="c15449579d92fa124a659aa412ed32be" category="section-title">Schritt 7: Installieren Sie den Controller</block>
@@ -4064,7 +4057,6 @@
   <block id="a6c279177bd30a0d3ee3363a3679bffa" category="doc">Tauschen Sie den Echtzeitakku – AFF A400 aus</block>
   <block id="4f4fd54acab309f1a5e65fa28f282bda" category="paragraph">Sie müssen den RTC-Akku im Controller-Modul finden und anschließend die einzelnen Schritte befolgen. Die Position des RTC-Akkus finden Sie in der FRU-Karte im Controller-Modul.</block>
   <block id="1d865762dc572ea89458b46f1d146cdf" category="paragraph">Sie können die RTC-Batterie mit den folgenden Animationen, Abbildungen oder den schriftlichen Schritten ersetzen.</block>
-  <block id="ec83112a8c30bb826b259d5c77a3c3ca" category="image-alt">drw A400 rtc-Batt</block>
   <block id="194dc21e36278742769698a4affe1491" category="list-text"><block ref="194dc21e36278742769698a4affe1491" category="inline-link-macro-rx"></block></block>
   <block id="919b02614abb383c9e0d986bd496190f" category="list-text"><block ref="919b02614abb383c9e0d986bd496190f" category="inline-link-macro-rx"></block></block>
   <block id="6b9a3fa7bbe5a7acd3b913b48966aec6" category="list-text"><block ref="6b9a3fa7bbe5a7acd3b913b48966aec6" category="inline-link-macro-rx"></block></block>
@@ -4302,11 +4294,9 @@
   <block id="406be05f374ba93dabeb2514a008179a" category="doc">Ersetzen Sie die Controller-Modul-Hardware FAS8300 und FAS8700</block>
   <block id="8555f8973ccc4539a56ac495380c89d5" category="inline-link">Entfernen der leeren Riser aus dem Ersatzcontroller-Modul</block>
   <block id="d5e62cab20ddc280f38e9a81562855fc" category="paragraph"><block ref="d5e62cab20ddc280f38e9a81562855fc" category="inline-link-rx"></block></block>
-  <block id="b8f99a879bdae690f650b2171355b5bb" category="image-alt">drw 8300 Leere Riser entfernen</block>
   <block id="6976de191bb895bccff42aea7f5ef312" category="section-title">Schritt 6: Verschieben Sie Cache-Module</block>
   <block id="1e6c27613480cee2fca639b93121fd62" category="paragraph">Sie können die folgenden Animationen, Abbildungen oder die geschriebenen Schritte verwenden, um Cache-Module in das neue Controller-Modul zu verschieben.</block>
   <block id="1d3cf3e64d50da3c959f6c6aefc86da4" category="video-title">Animation - Verschieben der Caching-Module</block>
-  <block id="98e31120864bf3bc3ac05e5585fc2718" category="image-alt">drw A400 ersetzt flashcache</block>
   <block id="6ce420982732936565ee6cdc23281310" category="list-text">Verschieben Sie die Cache-Module vom beeinträchtigten Controller-Modul auf das Ersatzcontrollermodul:</block>
   <block id="37532f61023625948a2dff3e87ad659d" category="list-text">Drücken Sie die blaue Freigabelasche am Ende des Cache-Moduls, drehen Sie das Modul nach oben und entfernen Sie das Modul aus dem Sockel.</block>
   <block id="d84a3f8a48a291e94be45b2446ab30e1" category="list-text">Verschieben Sie das Cache-Modul in denselben Sockel am Ersatzcontroller-Modul.</block>
@@ -4319,10 +4309,7 @@
   <block id="3a08488c499949ce994ce7beebe666ee" category="doc">Ersetzen Sie ein Netzteil – FAS8300 und FAS8700</block>
   <block id="fe0879209afd1fc2f28d40077ccda980" category="doc">Fahren Sie den beeinträchtigten Controller – FAS8300 und FAS8700 – herunter</block>
   <block id="f406838ab1af1615895d90b4b0439c67" category="doc">Detaillierter Leitfaden – FAS8300 und FAS8700</block>
-  <block id="0082203fcfff94aab099c16763176076" category="image-alt">drw fas8300 TNSC-Netzwerkverkabelung</block>
-  <block id="507f9f4c8680d2c9a9bcba815a7976e8" category="image-alt">drw fas8300-geschaltete Netzwerkverkabelung</block>
   <block id="598ec2ec2714b9a699a42898b690e48d" category="section-title">Option 1: Controller mit SAS-Laufwerk-Shelfs verkabeln</block>
-  <block id="56cbc310abb53560871f37318fe0636d" category="image-alt">drw, fas8300, drei ds224c Shelfs</block>
   <block id="b35abadbe34f4c4e5f4b2befaba8124d" category="doc">Überprüfen Sie die integrierten Verschlüsselungsschlüssel für die AFF fas8300 und FAS8700</block>
   <block id="e9c29b2069e0c6c237cd1e2a30e9c48b" category="doc">Fahren Sie die Controller herunter – FAS8300 und FAS8700</block>
   <block id="ed8e6ac65f869dd5cec262d6da357514" category="doc">Den Ersatzprozess abschließen – FAS8300 und FAS8700</block>
@@ -4342,7 +4329,6 @@
   <block id="70edce28424200208b28981e9b221707" category="list-text">Obwohl der Inhalt des Cache-Moduls verschlüsselt ist, empfiehlt es sich, den Inhalt des Moduls vor dem Ersetzen zu löschen. Weitere Informationen finden Sie im<block ref="89de74d6a86df9137b0ef3fb03a43036" category="inline-link-rx"></block> Für Ihr System auf der NetApp Support Site.</block>
   <block id="bb90eba065615f7ac639d1758ba84812" category="paragraph">Sie können die folgende Animation, Illustration oder die geschriebenen Schritte verwenden, um ein Caching-Modul zu ersetzen.</block>
   <block id="dd6deb08e1adc766a156e3146f0b65e7" category="video-title">Animation - Ersetzen Sie das Caching-Modul</block>
-  <block id="540a3a140ba4c7da7729d8bbfbe06861" category="image-alt">ddw 8300 ersetzen flashcache</block>
   <block id="b08a9c5bee019bb00ec5f4f00b59819e" category="list-text">Suchen Sie mithilfe der FRU-Zuordnung im Controller-Modul das fehlerhafte Caching-Modul und entfernen Sie es:</block>
   <block id="2ceb6141859316070c657f406135cd1c" category="paragraph">Je nach Konfiguration können null, ein oder zwei Caching-Module im Controller-Modul eingesetzt werden. Verwenden Sie die FRU-Zuordnung im Controller-Modul, um das Caching-Modul zu finden.</block>
   <block id="58a5256eec02e1fef80c02b3deffc3f5" category="list-text">Drücken Sie die blaue Freigabelasche.</block>
@@ -5560,7 +5546,6 @@
   <block id="5cee811338d57ecf44d6f22dca7fcd4b" category="list-text">Drehen Sie die Riserverriegelung auf der linken Seite des Riser nach oben und zu den Lüftern.</block>
   <block id="62b41ad108afe6b4d651d8da18394eea" category="paragraph">Der NVRAM-Riser hebt sich leicht vom Controller-Modul an.</block>
   <block id="d3110f91324e5f8cfcd28600df5ac2d9" category="list-text">Heben Sie den NVRAM-Riser an, und verschieben Sie ihn in Richtung der Lüfter, so dass die Metalllippe auf dem Riser den Rand des Controller-Moduls entfernt, heben Sie den Riser gerade aus dem Controller-Modul heraus. Legen Sie sie dann auf eine stabile, flache Oberfläche, sodass Sie auf die NVRAM-Karte zugreifen können.</block>
-  <block id="2d0b5667d44ad59ef139c09efe0999d0" category="image-alt">drw a700s nvme ersetzen</block>
   <block id="f3be4d98894ffbfb83050debf5045c14" category="paragraph">Riserkarte 1 Verriegelungsriegel</block>
   <block id="ae936646ba28c5499caf8ff8a09c1158" category="paragraph">Stecker des NVRAM-Akkukabels, der an die NVRAM-Karte angeschlossen ist</block>
   <block id="2466ce84e0b8be725ba14bd0f97ac7cc" category="paragraph">NVRAM-Karte</block>
@@ -5580,7 +5565,6 @@
   <block id="25e84b8b11804a262c8f96f5c0494341" category="list-text">Drehen Sie die Modulverriegelung auf der linken Seite des Riser nach oben und in Richtung der Lüftermodule.</block>
   <block id="9b87501921d55169b6d5df97c4ac5eff" category="paragraph">Der PCIe-Riser hebt sich leicht vom Controller-Modul an.</block>
   <block id="2995e2f5de5ab5f7e237aaaca60f083f" category="list-text">Heben Sie den PCIe-Riser an, und verschieben Sie ihn zu den Lüftern, sodass die Metalllippe auf dem Riser den Rand des Controller-Moduls entfernt, den Riser aus dem Controller-Modul herausheben und dann auf einer stabilen, flachen Oberfläche platzieren.</block>
-  <block id="8301780f2b7742ba6677d0c2900a7256" category="image-alt">drw a700s pcie ersetzen</block>
   <block id="2bc8b7df71c8cc78b90710217056fad5" category="paragraph">Riser 2 (mittlerer Riser) und PCI-Karten in den Riser-Steckplätzen 2 und 3.</block>
   <block id="e3560786e78900dd0335bb4a2a6903bd" category="list-text">Entfernen Sie den entsprechenden Riser aus dem Ersatzcontrollermodul.</block>
   <block id="a8d388baf53b90495c7c71be1ec89798" category="list-text">Installieren Sie die PCIe-Karte in den gleichen Steckplatz im PCIe-Riser:</block>
@@ -5590,12 +5574,9 @@
   <block id="37574ed52700f32d94a2d5116467a266" category="paragraph">Die Boot-Medien befinden sich unter Riser 2, dem mittleren PCIe-Riser-Modul. Dieses PCIe-Modul muss entfernt werden, um Zugriff auf die Boot-Medien zu erhalten.</block>
   <block id="ea47f8c3d75d0ae8c63333493732e287" category="list-text">Öffnen Sie den Luftkanal, falls erforderlich.</block>
   <block id="95b0ed2bf52614c4803a52c7bfbc4da6" category="list-text">Entfernen Sie bei Bedarf die Riserkarte 2, das mittlere PCIe-Modul, indem Sie die Sperrklinke entriegeln und dann den Riser aus dem Controller-Modul entfernen.</block>
-  <block id="c5f3456e0fd8df43b4786bdc636b23b4" category="image-alt">drw a700s Bootmedium ersetzen</block>
   <block id="3e4e796f89697f9552e6f9741f53026c" category="paragraph">Riser 2 (mittleres PCIe-Modul)</block>
   <block id="b7dbb1be616fad247b3d6aed3164e853" category="admonition">Installieren Sie die Boot-Medien in demselben Sockel im Ersatzcontrollermodul, wie sie im beeinträchtigten Controller-Modul installiert wurde; den primären Bootmediensockel (Steckplatz 1) in den primären Bootmedienanschluss und den sekundären Bootmedienanschluss (Steckplatz 2) in den sekundären Bootmediensockel.</block>
   <block id="db804e965118c7ddc7ce55f19a1af1bc" category="section-title">Schritt 5: Bewegen Sie die Lüfter</block>
-  <block id="fe45ee98537552d5aae5b293496a5f0f" category="image-alt">drw a700s Lüfter austauschen</block>
-  <block id="36ac39cea070e713b0fb0a0f54db88b7" category="image-alt">drw a700s dimm Ersetzen</block>
   <block id="ce1a3d7dcbc5b34bf0ed36bacde61766" category="paragraph">Riser 1 und DIMM-Bank 1-4</block>
   <block id="ac5ffb09cd704fd27e86246b89dcd4aa" category="paragraph">Riser 2 und DIMM Bänke 5-8 und 9-12</block>
   <block id="b305092c73b0e314321c71b8240b1516" category="paragraph">Riser 3 und DIMM-Bank 13-16</block>
@@ -5603,7 +5584,6 @@
   <block id="2661d1dab3604450ea36f1821fc318d9" category="paragraph">Zur Installation des NVRAM-Moduls müssen Sie die entsprechende Sequenz von Schritten befolgen.</block>
   <block id="2a5bbbb0357d478c8456cba18161381d" category="section-title">Schritt 8: Bewegen Sie den NVRAM-Akku</block>
   <block id="50596866677de4b15c95c4f2ac253894" category="list-text">Suchen Sie den NVRAM-Akku auf der linken Seite des Riser-Moduls, Riser 1.</block>
-  <block id="cad0b5b8d9a3a648fed2d2cf9843ff68" category="image-alt">drw a700s nvme-Akku ersetzen</block>
   <block id="5a66fe4f16ba9a8ec80a9b48be30d41b" category="cell">NVRAM-Batteriestecker</block>
   <block id="8e50b634b9172df00520f757e65899a2" category="paragraph">Blaue Verriegelungslasche für NVRAM-Batterien</block>
   <block id="8e6813e3f06c43ddb9bc42125675fecb" category="list-text">Schieben Sie den Akku in das Ersatzcontrollermodul und installieren Sie ihn dann in den NVRAM-Riser:</block>
@@ -5612,7 +5592,6 @@
   <block id="d74d29cbadd2a2644ab75e283955e9e6" category="paragraph">Um einen PCIe-Riser zu installieren, müssen Sie eine bestimmte Sequenz von Schritten befolgen.</block>
   <block id="139ce749ffad6c982ef3cddf9637b110" category="section-title">Schritt 10: Das Netzteil bewegen</block>
   <block id="00fa8cc29d7e57d138649204e3e51f5a" category="paragraph">Sie müssen den Netzteilplatzhalter und den Netzteilplatzhalter vom beeinträchtigten Controller-Modul in das Ersatzcontrollermodul verschieben, wenn Sie ein Controller-Modul ersetzen.</block>
-  <block id="c27a73d454940b40747d6959d070735e" category="image-alt">drw a700s ersetzen das netzteil</block>
   <block id="21b899b642982e6355b933dbbe5ae8d0" category="list-text">Entfernen Sie die PSU-Abdeckplatte aus dem beeinträchtigten Controller-Modul, und setzen Sie sie dann in das Ersatzcontrollermodul ein.</block>
   <block id="fda53941888fba701f57352c8efaee65" category="section-title">Schritt 11: Installieren Sie das Controller-Modul</block>
   <block id="3da447ebdb632dcafa2eee47ac09d128" category="paragraph">Nachdem alle Komponenten vom beeinträchtigten Controller-Modul in das Ersatzcontrollermodul verschoben wurden, müssen Sie das Ersatzcontrollermodul in das Gehäuse installieren und in den Wartungsmodus starten.</block>
@@ -5708,7 +5687,6 @@
   <block id="39d85e49c5dadc98a9a1f6eaef4229dc" category="doc">Stellen Sie OKM, NSE und NVE nach Bedarf wieder her – AFF A700s</block>
   <block id="feb6e7b3091c7242849233efd75d8a7e" category="doc">Senden Sie das fehlgeschlagene Teil an NetApp - AFF A700s zurück</block>
   <block id="28746dbce7c4fc8053d035e3b2295bde" category="doc">Tauschen Sie den Echtzeitbatterie AFF A700s aus</block>
-  <block id="6199e9ac737bb64b5d2e7bfb2a3da5a0" category="image-alt">drw a700s rtc-Akku ersetzen</block>
   <block id="2e7119d7d654a51006d39261079ed460" category="doc">Entfernen Sie das Controller-Modul AFF A700s</block>
   <block id="d00782da692bd9ebe9130b9b13318aa8" category="doc">Wiederherstellen und Überprüfen der Systemkonfiguration – AFF A900</block>
   <block id="b35a00e75330322eefd710713ca83b02" category="doc">AFF A900 Systeme</block>
@@ -8790,4 +8768,36 @@ SFP+ (Target/Initiator)</block>
   <block id="360e760cf4c2611f24bef9936525c878" category="image-alt">Horizontale Anordnung des Antriebsträgers</block>
   <block id="9302993f1cbe0a62b1c08bac8ff42e30" category="image-alt">LEDs für Laufwerkaktivität</block>
   <block id="6daeeb8640b388bf728f2d3fa2ceac68" category="image-alt">LED für Laufwerkswarnung</block>
+  <block id="3d01b4425d5fa4915f6e209ff5ebc5fa" category="image-alt">Ersetzen Sie die NVRAM-Karte</block>
+  <block id="1471ac39cb9785883e4f8e0156141768" category="image-alt">Ersetzen Sie eine PCIe-Karte</block>
+  <block id="d41ba6049ada491c1bedd4e982b5a12a" category="image-alt">Ersetzen Sie einen Lüfter</block>
+  <block id="732cb0105e10dcf3046c4f8dd9a5a991" category="image-alt">Ersetzen Sie die NVRAM-Batterie</block>
+  <block id="ca80c728e158c474fa562e4e6fe53868" category="image-alt">Ersetzen Sie ein Netzteil</block>
+  <block id="ba465a4963e9d81b0df00697f6765e53" category="image-alt">Ersetzen Sie die RTC-Batterie</block>
+  <block id="b64d12e71baab796101791fd15a05a3d" category="image-alt">2-Node-Cluster-Verkabelung ohne Switches</block>
+  <block id="9405a4b49345c23900c5d7b5d872d67a" category="image-alt">Switch-Netzwerkkabel für Cluster</block>
+  <block id="2808a423f10e955f0c8304464c9f2414" category="image-alt">NS224-Shelfs mit den Controllern verkabeln</block>
+  <block id="c0ec9acb24ae98cfebde995d130a61a6" category="image-alt">Verkabeln Sie drei NS224-Shelfs mit den Controllern</block>
+  <block id="92f7f93ee79f5a69c599aa1657e9464d" category="inline-image-macro">Optisches Netzwerkkabel SFP</block>
+  <block id="2fd2c03db6de3bb625cb5f3d864f2dc0" category="paragraph"><block ref="2fd2c03db6de3bb625cb5f3d864f2dc0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="40583e3c9e34e396cefb248dc9173b2d" category="image-alt">Glasfaserkanal Netzwerk-LC-Kabel</block>
+  <block id="c81e616187fdaca7623c438cb82e7556" category="image-alt">Animation zur Unified-Netzwerkverkabelung von 2-Node-Clustern ohne Switches</block>
+  <block id="44fd0bb5c642a9c9019ef389713404b7" category="image-alt">Animation zur Netzwerkverkabelung von zwei-Node-Clustern ohne Switches</block>
+  <block id="ed839f063b04ef2bf205198607e99c45" category="image-alt">Animation der Unified Cluster-Verkabelung von Switches</block>
+  <block id="9aa93e3b751066980500f1c3a9b9a3ad" category="image-alt">Animation der Switch-Cluster-Ethernet-Netzwerkverkabelung</block>
+  <block id="a288981c3d3562c19205360c4a1975aa" category="image-alt">Ersetzen Sie die RTC-Batterie</block>
+  <block id="080a22aca65cc690a4adc58019e01c5b" category="image-alt">Entfernen der Kabelführungsarme</block>
+  <block id="415d68191d2fba8f12396142cd83b078" category="image-alt">Caching-Modul entfernen oder ersetzen</block>
+  <block id="fc29ed0d741870e4e8c36ca82510cf9a" category="image-alt">Entfernen Sie das Cache-Modul und bauen Sie es wieder ein</block>
+  <block id="6bc6ce8422771329317122532e3badfd" category="image-alt">Entfernen Sie das Caching-Modul, und ersetzen Sie es</block>
+  <block id="88d9a1b17863a743c5d31333c8bd6c82" category="image-alt">Entfernen Sie den leeren Riser</block>
+  <block id="8edb2beda5152e63e95d47b37fce7aa7" category="image-alt">Entfernen Sie die Zusatzkarte</block>
+  <block id="3e86dd6511e223ecedd044d86cd934bf" category="image-alt">Verkabelungsdiagramm für Cluster mit zwei Nodes ohne Switches</block>
+  <block id="2d2cf47916959433721b7cc7d46cdea2" category="image-alt">Verkabelungsdiagramm für das Switched Cluster-Netzwerk</block>
+  <block id="f9fdbcb98f873b6faf3dd8bc1752740e" category="image-alt">Drei DS224C Shelf-Verkabelung – Diagramm</block>
+  <block id="4af594348d1cc40a4fa6849ea04fd49a" category="image-alt">Etikett mit der Warnung für das Hebegewicht</block>
+  <block id="3f4027780297605ef158a649078063e9" category="image-alt">Befestigen Sie die Kabelführungsarme</block>
+  <block id="e84bd7a7cafaabc7b1743876dcc73c70" category="image-alt">Composite-Verkabelung des Clusters mit zwei Nodes ohne Switch</block>
+  <block id="0372c9caab5ee11faf1ffac3ef3c46fa" category="inline-image-macro">Verbundkabelplan für Switched Cluster</block>
+  <block id="009e65f17aa2f40deb1c718bea3bf98b" category="paragraph"><block ref="009e65f17aa2f40deb1c718bea3bf98b" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>
