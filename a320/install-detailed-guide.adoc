@@ -100,7 +100,7 @@ X66250-5 (112-00328), 5 m
 
 X66250-30 (112-00331), 30 m
  a| 
-image:../media/oie_cable_etherned_mpo.png[""]
+image:../media/oie_cable_etherned_mpo.png["Ethernet-Kabel – MPO"]
  a| 
 Ethernet-Kabel (je nach Reihenfolge)
 
@@ -186,11 +186,11 @@ Sie müssen das System je nach Bedarf in einem 4-Säulen-Rack oder NetApp System
 NOTE: Sie müssen sich der Sicherheitsbedenken im Zusammenhang mit dem Gewicht des Systems bewusst sein.
 
 +
-image::../media/drw_a320_weight_label.png[drw a320-Gewichtetikett]
+image::../media/drw_a320_weight_label.png[Vorsicht bei der Gewichtszunahme des Systems]
 
 . Schließen Sie Kabelmanagement-Geräte (wie abgebildet) an.
 +
-image::../media/drw_a320_cable_management_arms.png[Entfernen oder Installieren der Kabelführungsarme]
+image::../media/drw_a320_cable_management_arms.png[Entfernen oder installieren Sie die Kabelführungsarme]
 
 . Bringen Sie die Blende auf die Vorderseite des Systems an.
 
@@ -218,7 +218,7 @@ NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er e
 
 . Sie können die Verkabelung zwischen den Controllern und den Switches mit der Abbildung oder Schritt-für-Schritt-Anleitung ausführen:
 +
-image::../media/drw_a320_tnsc_network_cabling_composite_animated_gif.png[drw a320 tnsc Netzwerkverkabelung animiert gif]
+image::../media/drw_a320_tnsc_network_cabling_composite_animated_gif.png[Zusammengesetzte 2-Node-Cluster-Verkabelung ohne Switches]
 
 +
 [cols="1,2"]
@@ -232,7 +232,7 @@ image:../media/oie_legend_icon_1_lg.png["Schritt 1"]
 Cluster-/HA-Ports mit dem 100-GbE-Kabel (QSFP28) miteinander verkabeln:
 
 ** e0a an e0a
-** e0d bis e0dimage:../media/drw_a320_tnsc_cluster_ha_connection_step1a.png[""]
+** e0d bis e0d image:../media/drw_a320_tnsc_cluster_ha_connection_step1a.png["Zwei-Node-Cluster ohne Switches verbinden die Cluster-HA-Verbindungen"]
 
 
 
@@ -242,7 +242,7 @@ image:../media/oie_legend_icon_2_o.png["Schritt 2"]
  a| 
 Wenn Sie Ihre integrierten Ports für eine Datennetzwerkverbindung verwenden, verbinden Sie die 100-GbE- oder 40-GbE-Kabel mit den entsprechenden Datennetzwerk-Switches:
 
-** e0g und e0himage:../media/drw_a320_onboard_data_connection_step2.png[""]
+** e0g und e0h image:../media/drw_a320_onboard_data_connection_step2.png["Anschluss von integrierten Datennetzwerkverbindungen"]
 
 
 
@@ -252,7 +252,7 @@ image:../media/oie_legend_icon_3_dr.png["Schritt 3"]
  a| 
 Wenn Sie Ihre NIC-Karten für Ethernet- oder FC-Verbindungen verwenden, verbinden Sie die NIC-Karte(n) mit den entsprechenden Switches:
 
-image::../media/drw_a320_nic_connections_step3.png[drw a320 nic-Verbindungen Schritt 3]
+image::../media/drw_a320_nic_connections_step3.png[Zwei-Node-Cluster ohne Switches verbinden die NICs]
 
 
 
@@ -261,7 +261,7 @@ image:../media/oie_legend_icon_4_lp.png["Schritt 4"]
  a| 
 Verkabeln Sie die E0M-Ports mit den Management-Netzwerk-Switches mit den RJ45-Kabeln.
 
-image:../media/drw_a320_management_port_connection_step4.png[""]
+image:../media/drw_a320_management_port_connection_step4.png["Verbinden Sie den Managementport"]
 
 
 
@@ -291,7 +291,7 @@ NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er e
 
 . Sie können die Verkabelung zwischen den Controllern und den Switches mit der Abbildung oder Schritt-für-Schritt-Anleitung ausführen:
 +
-image::../media/drw_a320_switched_network_cabling_composite_animated_GIF.png[drw a320-geschaltete Netzwerkverkabelung, animierte GIF]
+image::../media/drw_a320_switched_network_cabling_composite_animated_GIF.png[Composite-Verkabelung bei geswitchten Clustern]
 
 +
 [cols="1,3"]
@@ -305,7 +305,7 @@ image:../media/oie_legend_icon_1_lg.png["Schritt 1"]
 Cluster-/HA-Ports mit dem Cluster/HA-Switch mit dem 100-GbE-Kabel (QSFP28) verkabeln:
 
 ** e0a auf beide Controller zum Cluster/HA-Switch
-** e0d an beiden Controllern zum Cluster/HA-Switchimage:../media/drw_a320_switched_cluster_ha_connection_step1b.png[""]
+** e0d auf beiden Controllern auf den Cluster/HA-Switch image:../media/drw_a320_switched_cluster_ha_connection_step1b.png["Cluster-HA-Verbindungen mit Switches"]
 
 
 
@@ -315,7 +315,7 @@ image:../media/oie_legend_icon_2_o.png["Schritt 2"]
  a| 
 Wenn Sie Ihre integrierten Ports für eine Datennetzwerkverbindung verwenden, verbinden Sie die 100-GbE- oder 40-GbE-Kabel mit den entsprechenden Datennetzwerk-Switches:
 
-** e0g und e0himage:../media/drw_a320_onboard_data_connection_step2.png[""]
+** e0g und e0h image:../media/drw_a320_onboard_data_connection_step2.png["Onboard-Netzwerkverbindungen von Switched-Cluster"]
 
 
 
@@ -325,7 +325,7 @@ image:../media/oie_legend_icon_3_dr.png["Schritt 3"]
  a| 
 Wenn Sie Ihre NIC-Karten für Ethernet- oder FC-Verbindungen verwenden, verbinden Sie die NIC-Karte(n) mit den entsprechenden Switches:
 
-image::../media/drw_a320_nic_connections_step3.png[drw a320 nic-Verbindungen Schritt 3]
+image::../media/drw_a320_nic_connections_step3.png[Switched Cluster Network Connections]
 
 
 
@@ -334,7 +334,7 @@ image:../media/oie_legend_icon_4_lp.png["Schritt 4"]
  a| 
 Verkabeln Sie die E0M-Ports mit den Management-Netzwerk-Switches mit den RJ45-Kabeln.
 
-image:../media/drw_a320_management_port_connection_step4.png[""]
+image:../media/drw_a320_management_port_connection_step4.png["Switched Cluster Management Network Connections"]
 
 
 
@@ -368,7 +368,7 @@ NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er e
 
 . Sie können die Abbildung oder die Schritt-für-Schritt-Anleitung verwenden, um Ihre Controller mit einem einzigen Shelf zu verkabeln.
 +
-image::../media/drw_a320_single_shelf_connections_animated_gif.png[drw a320 EinzelShelf-Verbindungen animiert gif]
+image::../media/drw_a320_single_shelf_connections_animated_gif.png[Shelf-Verkabelung mit einem Laufwerk]
 
 +
 [cols="1,3"]
@@ -379,14 +379,14 @@ image::../media/drw_a320_single_shelf_connections_animated_gif.png[drw a320 Einz
  a| 
 image:../media/oie_legend_icon_1_mb.png["Legende Nummer 1"]
  a| 
-Controller A mit dem Shelf verkabeln image:../media/drw_a320_storage_cabling_controller_a_single_shelf.png[""]
+Verbinden Sie Controller A mit dem Shelf image:../media/drw_a320_storage_cabling_controller_a_single_shelf.png["Controller A mit dem Shelf verkabeln"]
 
 
 
  a| 
 image:../media/oie_legend_icon_2_lo.png["Legende Nummer 2"]
  a| 
-Controller B am Shelf verkabeln: image:../media/drw_a320_storage_cabling_controller_b_single_shelf.png[""]
+Kabel-Controller B zum Shelf: image:../media/drw_a320_storage_cabling_controller_b_single_shelf.png["Controller B mit einem einzelnen Shelf verbinden"]
 
 |===
 . Informationen zum Abschließen der Einrichtung des Systems finden Sie unter <<Führen Sie die Einrichtung und Konfiguration des Systems durch>>
@@ -407,7 +407,7 @@ NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er e
 
 . Sie können die folgende Abbildung bzw. die geschriebenen Schritte verwenden, um die Controller mit zwei Laufwerk-Shelfs zu verkabeln.
 +
-image::../media/drw_a320_2_shevles_cabling_animated_gif.png[drw a320 2-Schalen-Kabel animiert gif]
+image::../media/drw_a320_2_shevles_cabling_animated_gif.png[Verkabeln Sie zwei Regale Animation]
 
 +
 [cols="1-3"]
@@ -418,14 +418,14 @@ image::../media/drw_a320_2_shevles_cabling_animated_gif.png[drw a320 2-Schalen-K
  a| 
 image:../media/oie_legend_icon_1_mb.png["Legende Nummer 1"]
  a| 
-Verbinden Sie Controller A mit den Shelfs: image:../media/drw_a320_2_shelves_cabling_controller_a.png[""]
+Kabel-Controller A zu den Shelfs: image:../media/drw_a320_2_shelves_cabling_controller_a.png["Verkabeln Sie zwei Shelfs mit Controller A"]
 
 
 
  a| 
 image:../media/oie_legend_icon_2_lo.png["Legende Nummer 2"]
  a| 
-Controller B mit den Shelfs verkabeln: image:../media/drw_a320_2_shelves_cabling_controller_b.png[""]
+Kabel-Controller B zu den Shelfs: image:../media/drw_a320_2_shelves_cabling_controller_b.png["Kabel teo-Regale zu Controller b"]
 
 |===
 . Informationen zum Abschließen der Einrichtung des Systems finden Sie unter <<Führen Sie die Einrichtung und Konfiguration des Systems durch>>
@@ -460,7 +460,7 @@ video::d61f983e-f911-4b76-8b3a-ab1b0066909b[panopto]
 image::../media/drw_autodiscovery_controler_select.png[Wählen Sie ein ONTAP-Symbol aus]
 
 +
-.. Öffnen Sie Den Datei-Explorer.
+.. Öffnen Sie Den Datei-Explorer .
 .. Klicken Sie im linken Bereich auf Netzwerk.
 .. Mit der rechten Maustaste klicken und Aktualisieren auswählen.
 .. Doppelklicken Sie auf das ONTAP-Symbol, und akzeptieren Sie alle auf dem Bildschirm angezeigten Zertifikate.
@@ -496,7 +496,7 @@ NOTE: Informationen zur Konfiguration des Konsolenport finden Sie in der Online-
 
 .. Schließen Sie das Konsolenkabel über das im System gelieferte Konsolenkabel an den Laptop oder die Konsole an den Management Switch im Management-Subnetz.
 +
-image::../media/drw_a320_laptop_to_switch_and_controller.png[drw a320-Laptop für Switch und Controller]
+image::../media/drw_a320_laptop_to_switch_and_controller.png[Laptop mit dem Management-Subnetz-Switch verbinden]
 
 .. Weisen Sie dem Laptop oder der Konsole eine TCP/IP-Adresse zu. Verwenden Sie dabei eine Adresse, die sich im Management-Subnetz befindet.
 

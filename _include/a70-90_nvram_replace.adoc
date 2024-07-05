@@ -264,7 +264,7 @@ CAUTION: Eine Neuzuweisung der Festplatte ist nur erforderlich, wenn das NVRAM-M
 
 .Schritte
 . Wenn sich der Controller im Wartungsmodus befindet (es wird die Eingabeaufforderung angezeigt `*>` ), beenden Sie den Wartungsmodus und fahren Sie mit der LOADER-Eingabeaufforderung _stop_ fort
-. Starten Sie an der LOADER-Eingabeaufforderung des Controllers den Controller und geben Sie bei der Eingabeaufforderung „_y_“ ein, um die System-ID aufgrund einer ungleichen System-ID zu überschreiben.
+. Starten Sie an der LOADER-Eingabeaufforderung auf dem Controller den Controller, und geben Sie bei der Eingabeaufforderung „_y_“ ein, um die System-ID aufgrund einer nicht übereinstimmenden System-ID zu überschreiben.
 . Warten Sie, bis Sie auf die Rückgabe warten... Die Meldung wird auf der Konsole des Controllers mit dem Ersatzmodul angezeigt und dann vom fehlerfreien Controller aus überprüft, ob die neue Partnersystem-ID automatisch zugewiesen wurde: _Storage Failover show_
 +
 In der Befehlsausgabe sollte eine Meldung angezeigt werden, dass sich die System-ID auf dem beeinträchtigten Controller geändert hat und die korrekten alten und neuen IDs angezeigt werden. Im folgenden Beispiel wurde node2 ersetzt und hat eine neue System-ID von 151759706.

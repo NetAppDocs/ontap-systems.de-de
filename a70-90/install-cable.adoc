@@ -47,20 +47,24 @@ Verkabeln Sie Ihre Switch-losen Cluster-Verbindungen.
 NOTE: Der Cluster-Interconnect-Verkehr und der HA Traffic nutzen dieselben physischen Ports.
 
 +
-image::../media/oie_cable_25Gb_Ethernet_SFP28_IEOPS-1069.svg[Cluster HA-Kabel]
-
+.. Kabelanschluss e1a an Controller A zu Anschluss E1A an Controller B.
+.. Kabelanschluss e7a an Controller A zu Anschluss E1A an Controller B.
 +
 *Cluster/HA Verbindungskabel*
 
-+
-image::../media/drw_70-90_tnsc_cluster_cabling_ieops-1653.svg[Verkabelungsdiagramm für Cluster mit zwei Nodes ohne Switches]
 
-. Verkabeln Sie die Ethernet-Modulports mit Ihrem Hostnetzwerk.
-+
-Im Folgenden finden Sie einige typische Beispiele für eine Verkabelung im Host-Netzwerk. Informationen zu Ihrer spezifischen Systemkonfiguration finden Sie unter link:https://hwu.netapp.com["NetApp Hardware Universe"^] .
 
-+
-.. Verkabeln Sie die Ports e9a und e9b wie in der Abbildung dargestellt mit dem Ethernet-Datennetzwerk-Switch.
+
+
+image::../media/oie_cable_25Gb_Ethernet_SFP28_IEOPS-1069.svg[Cluster HA-Kabel]
+
++ Bild::../media/drw_70-90_tnsc_Cluster_cabling_ieops-1653.svg[Schaltplan für zwei-Knoten-Cluster ohne Switch, Breite=500px]
+
++ . Verkabeln Sie die Ethernet-Modulports mit Ihrem Hostnetzwerk.
+
++ das folgende sind einige typische Beispiele für eine Verkabelung im Host-Netzwerk. Informationen zu Ihrer spezifischen Systemkonfiguration finden Sie unter link:https://hwu.netapp.com["NetApp Hardware Universe"^] .
+
+. Verkabeln Sie die Ports e9a und e9b wie in der Abbildung dargestellt mit dem Ethernet-Datennetzwerk-Switch.
 +
 
 NOTE: Um eine maximale Systemperformance für Cluster- und HA-Datenverkehr zu erreichen, sollten die Ports e1b und e7b nicht für Host-Netzwerkverbindungen verwendet werden. Verwenden Sie eine separate Hostkarte, um die Leistung zu maximieren.
@@ -74,7 +78,7 @@ image::../media/oie_cable_sfp_gbe_copper.svg[100-GB-Ethernet-Kabel]
 +
 image::../media/drw_70-90_network_cabling1_ieops-1654.svg[Kabel zum 100-GB-Ethernet-Netzwerk]
 
-.. Verkabeln Sie die 10/25-GbE-Host-Netzwerk-Switches.
+. Verkabeln Sie die 10/25-GbE-Host-Netzwerk-Switches.
 +
 *4 Ports, 10/25 GbE Host*
 
@@ -84,9 +88,8 @@ image::../media/oie_cable_sfp_gbe_copper.svg[10/25-GB-Kabel]
 +
 image::../media/drw_70-90_network_cabling2_ieops-1655.svg[Kabel zum 100-GB-Ethernet-Netzwerk]
 
-
-
-. Verbinden Sie die Controller-Management- (Schraubenschlüssel-) Ports mit den Management-Netzwerk-Switches mit 1000BASE-T RJ-45-Kabeln.
++
+.. Verbinden Sie die Controller-Management- (Schraubenschlüssel-) Ports mit den Management-Netzwerk-Switches mit 1000BASE-T RJ-45-Kabeln.
 +
 image::../media/oie_cable_rj45.svg[RJ45-Kabel]
 
@@ -99,7 +102,9 @@ image::../media/drw_70-90_management_connection_ieops-1656.svg[Stellen Sie eine 
 
 
 
-IMPORTANT: Stecken Sie die Netzkabel noch NICHT ein.
+
+
+IMPORTANT: Stecken Sie die Netzkabel noch nicht ein.
 
 --
 .Option 2: Verkabeln des Clusters mit Switches
@@ -170,7 +175,7 @@ image::../media/drw_70-90_management_connection_ieops-1656.svg[Stellen Sie eine 
 
 
 
-IMPORTANT: Stecken Sie die Netzkabel noch NICHT ein.
+IMPORTANT: Stecken Sie die Netzkabel noch nicht ein.
 
 --
 ====
