@@ -1,0 +1,29 @@
+---
+permalink: a70-90/chassis-replace-workflow.html 
+sidebar: sidebar 
+keywords: aff 70, 90, replace the chassis workflow 
+summary: Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen. 
+---
+= Arbeitsablauf für den Austausch des Gehäuses – AFF A70, AFF A90
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Führen Sie die folgenden Workflow-Schritte aus, um das Gehäuse zu ersetzen.
+
+.Bevor Sie beginnen
+Um das Gehäuse auszutauschen, müssen Sie bestimmte Anforderungen erfüllen. Lesen Sie die link:controller-replace-requirements.html["Anforderungen und Überlegungen zum Austausch des Gehäuses"].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:chassis-replace-shutdown.html["Schalten Sie den beeinträchtigten Regler aus"]
+[role="quick-margin-para"]
+Fahren Sie den beeinträchtigten Controller herunter oder übernehmen Sie ihn, damit der funktionsunzuverlässige Controller weiterhin Daten aus dem Speicher für den beeinträchtigten Controller bereitstellen kann.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:chassis-replace-move-hardware.html["Ersetzen Sie das Gehäuse"]
+[role="quick-margin-para"]
+Beim Austausch des Gehäuses müssen die Netzteile, Festplatten und das Controller-Modul vom Gehäuse für beeinträchtigte Störungen in das neue Gehäuse verschoben und das Gehäuse für beeinträchtigte Störungen durch das neue Gehäuse desselben Modells wie das Gehäuse für beeinträchtigte Störungen ersetzt werden.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:chassis-replace-complete-system-restore-rma.html["Vollständiger Gehäuseaustausch"]
+[role="quick-margin-para"]
+Überprüfen Sie den HA-Status des Chassis und senden Sie das fehlerhafte Teil an NetApp zurück.
