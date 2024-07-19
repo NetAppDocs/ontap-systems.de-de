@@ -128,10 +128,11 @@ Um das NVRAM-Modul auszutauschen, suchen Sie es in Steckplatz 4/5 im Gehäuse, u
 image::../media/drw_a800_drive_seated_IEOPS-960.svg[drw a800-Laufwerk mit IEOPS 960]
 
 . Gehen Sie zur Rückseite des Gehäuses. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
-. Ziehen Sie das Netzkabel von beiden Netzteilen ab.
+. Trennen Sie das Controller-Modul von der Stromversorgung, indem Sie das Controller-Modul ungefähr drei Zoll herausziehen:
 +
+.. Drücken Sie beide Verriegelungen des Controller-Moduls nach unten, und drehen Sie beide Verriegelungen gleichzeitig nach unten.
+.. Ziehen Sie das Controller-Modul ungefähr 3 Zoll aus dem Chassis, um die Stromversorgung zu trennen.
 
-NOTE: Wenn Ihr System über Gleichstromnetzteile verfügt, trennen Sie den Stromkabelblock vom Netzteil.
 
 . Drehen Sie das Kabelführungs-Fach nach unten, indem Sie die Tasten an der Innenseite des Kabelführungs-Fachs herausziehen und nach unten drehen.
 . Entfernen des Ziel-NVRAM-Moduls aus dem Chassis:
@@ -173,10 +174,18 @@ DIMM-Verriegelungslaschen
 .. Schieben Sie das Modul vorsichtig bis zum Anschlag in den Steckplatz, und drücken Sie dann die Nockenverriegelung ganz nach oben, um das Modul zu verriegeln.
 
 
-. Wiedereinsetzen des Netzteils.
+. Schließen Sie das Controller-Modul wieder an die Stromversorgung an:
++
+.. Drücken Sie das Controller-Modul fest in das Gehäuse, bis es auf die Mittelebene trifft und vollständig sitzt.
++
+Die Verriegelungen steigen, wenn das Controller-Modul voll eingesetzt ist.
+
+.. Drehen Sie die Verriegelungen nach oben in die verriegelte Position.
+
+
 +
 
-NOTE: Wenn Ihr System über Gleichstromnetzteile verfügt, schließen Sie den Stromkabelblock wieder an das Netzteil an.
+NOTE: Der Controller wird neu gebootet, sobald er vollständig im Chassis eingesetzt ist.
 
 . Drehen Sie das Kabelführungs-Fach bis in die geschlossene Position.
 
@@ -187,11 +196,16 @@ NOTE: Wenn Ihr System über Gleichstromnetzteile verfügt, schließen Sie den St
 
 Um NVRAM-DIMMs im NVRAM-Modul auszutauschen, müssen Sie das NVRAM-Modul entfernen und dann das Ziel-DIMM ersetzen.
 
-. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
-. Ziehen Sie das Netzkabel von beiden Netzteilen ab.
+. Drücken Sie auf der Vorderseite des Gehäuses die Daumen, um jedes Laufwerk fest einzuschieben, bis Sie einen positiven Stopp spüren. Dadurch wird sichergestellt, dass die Laufwerke fest an der Mittelplatine des Gehäuses sitzen.
 +
+image::../media/drw_a800_drive_seated_IEOPS-960.svg[drw a800-Laufwerk mit IEOPS 960]
 
-NOTE: Wenn Ihr System über Gleichstromnetzteile verfügt, trennen Sie den Stromkabelblock vom Netzteil.
+. Gehen Sie zur Rückseite des Gehäuses. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Trennen Sie das Controller-Modul von der Stromversorgung, indem Sie das Controller-Modul ungefähr drei Zoll herausziehen:
++
+.. Drücken Sie beide Verriegelungen des Controller-Moduls nach unten, und drehen Sie beide Verriegelungen gleichzeitig nach unten.
+.. Ziehen Sie das Controller-Modul ungefähr 3 Zoll aus dem Chassis, um die Stromversorgung zu trennen.
+
 
 . Drehen Sie das Kabelführungs-Fach nach unten, indem Sie die Stifte an den Enden des Fachs vorsichtig herausziehen und das Fach nach unten drehen.
 . Entfernen des Ziel-NVRAM-Moduls aus dem Chassis:
@@ -236,26 +250,25 @@ NOTE: Verwenden Sie das FRU-Kartenetikett auf der Seite des NVRAM-Moduls, um die
 .. Schieben Sie das Modul vorsichtig in den Steckplatz, bis die Nockenverriegelung mit dem E/A-Nockenbolzen einrastet, und drehen Sie dann die Nockenverriegelung bis zum Anschlag nach oben, um das Modul zu verriegeln.
 
 
-. Wiedereinsetzen des Netzteils.
+. Schließen Sie das Controller-Modul wieder an die Stromversorgung an:
++
+.. Drücken Sie das Controller-Modul fest in das Gehäuse, bis es auf die Mittelebene trifft und vollständig sitzt.
++
+Die Verriegelungen steigen, wenn das Controller-Modul voll eingesetzt ist.
+
+.. Drehen Sie die Verriegelungen nach oben in die verriegelte Position.
+
+
 +
 
-NOTE: Wenn Ihr System über Gleichstromnetzteile verfügt, schließen Sie den Stromkabelblock wieder an das Netzteil an.
+NOTE: Der Controller wird neu gebootet, sobald er vollständig im Chassis eingesetzt ist.
 
 . Drehen Sie das Kabelführungs-Fach bis in die geschlossene Position.
 
 
 
 
-== Schritt 4: Starten Sie den Controller neu
-
-Nachdem Sie die FRU ersetzt haben, müssen Sie das Controller-Modul neu booten.
-
-. Um ONTAP von der LOADER-Eingabeaufforderung zu booten, geben Sie „_bye_“ ein.
-
-
-
-
-== Schritt 5: Festplatten neu zuweisen
+== Schritt 4: Festplatten neu zuweisen
 
 Sie müssen die Änderung der System-ID bestätigen, wenn Sie den Controller booten, und dann überprüfen, ob die Änderung implementiert wurde.
 
@@ -358,6 +371,6 @@ dr-group-id            cluster node           configuration-state
 
 
 
-== Schritt 6: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+== Schritt 5: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.

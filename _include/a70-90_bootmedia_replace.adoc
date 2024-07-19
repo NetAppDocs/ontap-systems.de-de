@@ -41,15 +41,11 @@ Boot-Medien
 image::../media/drw_a800_drive_seated_IEOPS-960.svg[drw a800-Laufwerk mit IEOPS 960]
 
 . Gehen Sie zur Rückseite des Gehäuses. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
-. Trennen Sie die Stromversorgung, indem Sie das Controller-Modul ca. 3 cm herausziehen:
+. Trennen Sie das Controller-Modul von der Stromversorgung, indem Sie das Controller-Modul ungefähr drei Zoll herausziehen:
 +
-
-NOTE: Wenn Ihr Speichersystem über Gleichstromnetzteile verfügt, trennen Sie den Stromkabelblock von den Netzteilen.
-
-+
-.. Drücken Sie beide Verriegelungsriegel nach unten, und drehen Sie dann beide Verriegelungen gleichzeitig nach unten.
+.. Drücken Sie beide Verriegelungen des Controller-Moduls nach unten, und drehen Sie beide Verriegelungen gleichzeitig nach unten.
 .. Ziehen Sie das Controller-Modul ungefähr 3 Zoll aus dem Chassis, um die Stromversorgung zu trennen.
-.. Entfernen Sie alle Kabel, die am System Management-Modul angeschlossen sind. Achten Sie darauf, dass die Kabel an den richtigen Anschlüssen angeschlossen sind, damit Sie sie beim Wiedereinsetzen des Moduls an die richtigen Anschlüsse anschließen können.
+.. Entfernen Sie alle Kabel, die am System Management-Modul angeschlossen sind. Achten Sie darauf, dass Sie beim Wiedereinsetzen des Moduls die Kabelanschlüsse kennzeichnen, damit Sie sie an die richtigen Anschlüsse anschließen können.
 .. Drehen Sie das Kabelführungs-Fach nach unten, indem Sie die Tasten an beiden Seiten an der Innenseite des Kabelführungs-Fachs ziehen und das Fach dann nach unten drehen.
 .. Drücken Sie die Taste für die Systemverwaltung. Der Nockenhebel bewegt sich vom Gehäuse weg.
 .. Drehen Sie den Nockenhebel ganz nach unten, und entfernen Sie das System-Management-Modul aus dem Controller-Modul.
@@ -69,7 +65,7 @@ NOTE: Wenn Ihr Speichersystem über Gleichstromnetzteile verfügt, trennen Sie d
 .. Drücken Sie die Verriegelungstaste, drehen Sie die Manschettenmedien ganz nach unten, und lassen Sie dann die Verriegelungstaste los.
 
 
-. Installieren Sie das System Management-Modul neu:.
+. Installieren Sie das System Management-Modul neu:
 +
 .. Drehen Sie das Kabelführungs-Fach bis in die geschlossene Position.
 .. System-Management-Modul erneut verwenden.
@@ -112,13 +108,21 @@ Das USB-Flash-Laufwerk sollte über das entsprechende ONTAP-Image des ausgeführ
 .. Entfernen Sie das USB-Flash-Laufwerk von Ihrem Laptop.
 
 
-. Stecken Sie das USB-Flash-Laufwerk in den USB-Steckplatz des Systemmanagementmoduls.
+. Schließen Sie das USB-Flash-Laufwerk an den USB-A-Anschluss des Systemmanagementmoduls an.
 +
 Stellen Sie sicher, dass Sie das USB-Flash-Laufwerk in den für USB-Geräte gekennzeichneten Steckplatz und nicht im USB-Konsolenport installieren.
 
-. Schließen Sie die Netzkabel an die Netzteile an, und setzen Sie die Stromkabelhalterung wieder ein.
+. Schließen Sie das Controller-Modul wieder an die Stromversorgung an:
++
+.. Drücken Sie das Controller-Modul fest in das Gehäuse, bis es auf die Mittelebene trifft und vollständig sitzt.
++
+Die Verriegelungen steigen, wenn das Controller-Modul voll eingesetzt ist.
+
+.. Drehen Sie die Verriegelungen nach oben in die verriegelte Position.
 +
 Der Controller beginnt zu starten, sobald die Stromversorgung wieder mit dem System verbunden wird.
+
+
 
 . Unterbrechen Sie den Boot-Vorgang, indem Sie Strg-C drücken, um an der LOADER-Eingabeaufforderung zu stoppen.
 +

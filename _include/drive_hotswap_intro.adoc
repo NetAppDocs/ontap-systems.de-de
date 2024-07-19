@@ -9,26 +9,23 @@ Wenn ein Laufwerk ausfällt, meldet die Plattform eine Warnmeldung an die System
 
 .Bevor Sie beginnen
 * Befolgen Sie die Best Practice, und installieren Sie die aktuelle Version des DQP (Disk Qualification Package), bevor Sie ein Laufwerk ersetzen.
-* Identifizieren Sie das ausgefallene Laufwerk, indem Sie den ausführen `storage disk show -broken` Befehl über die Systemkonsole.
+* Identifizieren Sie das ausgefallene Laufwerk, indem Sie den Befehl von der Systemkonsole aus ausführen `storage disk show -broken` .
 +
 Das ausgefallene Laufwerk wird in der Liste der ausgefallenen Laufwerke angezeigt. Falls nicht, sollten Sie warten und dann den Befehl erneut ausführen.
 
 +
 
-NOTE: Abhängig vom Laufwerkstyp und der Kapazität kann es bis zu mehrere Stunden dauern, bis das Laufwerk in der Liste der ausgefallenen Laufwerke angezeigt wird.
+NOTE: Je nach Typ und Kapazität kann es bis zu mehrere Stunden dauern, bis das Laufwerk in der Liste der ausgefallenen Laufwerke angezeigt wird.
 
 * Legen Sie fest, ob die SED-Authentifizierung aktiviert ist.
 +
-Wie Sie die Festplatte austauschen, hängt davon ab, wie das Festplattenlaufwerk verwendet wird. Wenn die SED-Authentifizierung aktiviert ist, müssen Sie die SED-Ersatzanweisungen im verwenden https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/home.html["ONTAP 9 – NetApp Verschlüsselungsleitfadens"]. In diesen Anweisungen werden zusätzliche Schritte beschrieben, die vor und nach dem Austausch einer SED ausgeführt werden müssen.
+Wie Sie das Laufwerk austauschen, hängt davon ab, wie das Laufwerk verwendet wird. Wenn die SED-Authentifizierung aktiviert ist, müssen Sie die SED-Ersatzanweisungen im verwenden https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/home.html["ONTAP 9 – NetApp Verschlüsselungsleitfadens"]. In diesen Anweisungen werden zusätzliche Schritte beschrieben, die vor und nach dem Austausch einer SED ausgeführt werden müssen.
 
 * Stellen Sie sicher, dass das Ersatzlaufwerk von Ihrer Plattform unterstützt wird. Siehe https://hwu.netapp.com["NetApp Hardware Universe"].
 * Stellen Sie sicher, dass alle anderen Komponenten im System ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
 
 
 .Über diese Aufgabe
-Die Festplatten-Firmware wird bei neuen Laufwerken, die nicht über aktuelle Firmware-Versionen verfügen, automatisch (unterbrechungsfrei) aktualisiert.
+* Die Festplatten-Firmware wird bei neuen Laufwerken, die nicht über aktuelle Firmware-Versionen verfügen, automatisch (unterbrechungsfrei) aktualisiert.
+* Beim Austauschen eines Laufwerks müssen Sie eine Minute zwischen dem Entfernen des ausgefallenen Laufwerks und dem Einsetzen des Ersatzlaufwerks warten, damit das Speichersystem das vorhandene neue Laufwerk erkennen kann.
 
-Beim Austausch mehrerer Festplattenlaufwerke müssen Sie eine Minute zwischen dem Entfernen jedes ausgefallenen Laufwerks und dem Einsetzen des Ersatzlaufwerks warten, damit das Storage-System die Existenz jeder neuen Festplatte erkennen kann.
-
-.Verfahren
-Ersetzen Sie das ausgefallene Laufwerk, indem Sie die entsprechende Option für die Laufwerke auswählen, die von Ihrer Plattform unterstützt werden.
