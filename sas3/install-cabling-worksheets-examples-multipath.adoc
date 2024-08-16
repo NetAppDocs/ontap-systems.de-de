@@ -20,11 +20,11 @@ NOTE: Diese Informationen gelten für Plattformen ohne internen Speicher.
 * Bei Bedarf können Sie sich auf beziehen link:install-cabling-worksheets-how-to-read-multipath.html["Lesen eines Arbeitsblatts zur Verkabelung von Controller-zu-Stack-Verbindungen für Multipath-Konnektivität"].
 * Verkabelungsbeispiele zeigen Kabel zwischen Controller und Stack als fest oder gestrichelt, um Controller A- und C-Port-Verbindungen von Controller B- und D-Port-Verbindungen zu unterscheiden.
 +
-image::../media/drw_controller_to_stack_cable_type_key.gif[drw-Controller-zu-Stack-Kabelschlüssel]
+image::../media/drw_controller_to_stack_cable_type_key.gif[Schlüssel des Multipath HA-Konfigurationskabels]
 
 * Kabel in den Verkabelungsbeispielen und den entsprechenden Port-Paaren in den Worksheets werden farbcodiert, um die Konnektivität zu jedem Stack im HA-Paar zu unterscheiden.
 +
-image::../media/drw_controller_to_stack_cable_color_key_non2600_4stackcolors.gif[drw-Controller zum Stapeln von Farbschlüssel nicht 2600 4stapelfarben]
+image::../media/drw_controller_to_stack_cable_color_key_non2600_4stackcolors.gif[Farbschlüssel des Multipath HA-Konfigurationskabels]
 
 * Arbeitsblätter und Beispiele für Verkabelung zeigen die Port-Paare in der Reihenfolge an, in der sie im Arbeitsblatt aufgeführt sind.
 
@@ -41,9 +41,9 @@ Sie können die ausgefüllten Verkabelungsarbeitsblätter und Beispiele für Con
 
 Im folgenden Arbeitsblatt und Verkabelungsbeispiel wird das Port-Paar 1a/1d verwendet:
 
-image::../media/drw_worksheet_mpha_slot_1_one_4porthba_one_singleshelf_stack.gif[drw-Arbeitsblatt mpha-Steckplatz 1 ein 4porthba ein Singleshelf-Stack]
+image::../media/drw_worksheet_mpha_slot_1_one_4porthba_one_singleshelf_stack.gif[Arbeitsblatt für die Multipath HA-Verkabelung für einen Quad Port SAS HBA und einen einzelnen Shelf-Stack]
 
-image::../media/drw_mpha_slot_1_one_4porthba_one_singleshelf_stack.gif[drw mpha Steckplatz 1 ein 4porthba ein Singleshelf-Stack]
+image::../media/drw_mpha_slot_1_one_4porthba_one_singleshelf_stack.gif[Beispiel für eine Multipath HA-Verkabelung bei einem SAS HBA mit vier Ports und einem einzelnen Shelf-Stack]
 
 
 
@@ -51,9 +51,9 @@ image::../media/drw_mpha_slot_1_one_4porthba_one_singleshelf_stack.gif[drw mpha 
 
 Im folgenden Arbeitsblatt und Verkabelungsbeispiel werden die Port-Paare 1a/1d und 1c/1b verwendet:
 
-image::../media/drw_worksheet_mpha_slot_1_one_4porthba_two_singleshelf_stacks.gif[drw-Arbeitsblatt mpha-Steckplatz 1 ein 4porthba zwei Singleshelf-Stapel]
+image::../media/drw_worksheet_mpha_slot_1_one_4porthba_two_singleshelf_stacks.gif[Arbeitsblatt für die Multipath HA-Verkabelung für einen SAS HBA mit vier Ports und zwei einzelne Shelf-Stacks]
 
-image::../media/drw_mpha_slot_1_one_4porthba_two_singleshelf_stacks.gif[drw mpha Steckplatz 1 ein 4porthba zwei Singleshelf-Stacks]
+image::../media/drw_mpha_slot_1_one_4porthba_two_singleshelf_stacks.gif[Beispiel für eine Multipath HA-Verkabelung bei einem SAS HBA mit vier Ports und zwei einzelnen Shelf-Stacks]
 
 
 
@@ -66,18 +66,18 @@ NOTE: Wenn Sie mehr Port-Paare haben, als Sie die Stacks in Ihrem System verkabe
 
 Das folgende Arbeitsblatt und das folgende Verkabelungsbeispiel zeigen Portpaare, die in der Reihenfolge verwendet werden, in der sie im Arbeitsblatt aufgeführt sind: 1a/2b, 2a/1d, 1c/2d und 2c/1b.
 
-image::../media/drw_worksheet_mpha_slots_1_and_2_two_4porthbas_two_stacks.gif[drw-Arbeitsblatt mpha-Steckplätze 1 und 2 4-porthbas-Stapel]
+image::../media/drw_worksheet_mpha_slots_1_and_2_two_4porthbas_two_stacks.gif[Arbeitsblatt für die Multipath HA-Verkabelung für zwei SAS HBAs mit vier Ports und zwei Multi-Shelf-Stacks]
 
-image::../media/drw_mpha_slots_1_and_2_4porthbas_4_stacks.gif[drw mpha-Steckplätze 1 und 2 4-porthbas 4-Stapel]
+image::../media/drw_mpha_slots_1_and_2_4porthbas_4_stacks.gif[Beispiel für eine Multipath HA-Verkabelung bei zwei SAS HBAs mit vier Ports und zwei Multi-Shelf-Stacks]
 
 Das folgende Arbeitsblatt und das folgende Verkabelungsbeispiel zeigen, dass Portpaare übersprungen werden, um alle anderen in der Liste zu verwenden: 1a/2b und 1c/2d.
 
 
 NOTE: Wenn später ein dritter Stapel hinzugefügt wird, verwenden Sie das Portpaar, das übersprungen wurde.
 
-image::../media/drw_worksheet_mpha_slots_1_and_2_two_4porthbas_two_stacks_skipped.gif[drw-Arbeitsblatt mpha-Steckplätze 1 und 2 zwei 4-porthbas-Stapel übersprungen]
+image::../media/drw_worksheet_mpha_slots_1_and_2_two_4porthbas_two_stacks_skipped.gif[Arbeitsblatt für die Multipath HA-Verkabelung für zwei Quad-Port-SAS-HBAs und zwei Multi-Shelf-Stacks mit übersprungenen Port-Paaren]
 
-image::../media/drw_mpha_slots_1_and_2_two_4porthbas_two_stacks_skipped.gif[drw mpha Steckplätze 1 und 2 4-porthbas zwei Stapel übersprungen]
+image::../media/drw_mpha_slots_1_and_2_two_4porthbas_two_stacks_skipped.gif[Beispiel für eine Multipath HA-Verkabelung bei zwei SAS HBAs mit vier Ports und zwei Multi-Shelf-Stacks mit übersprungenen Port-Paaren]
 
 
 
@@ -91,9 +91,9 @@ Sie können die ausgefüllten Verkabelungsarbeitsblätter und Beispiele für Con
 
 Im folgenden Arbeitsblatt und Kabel-Beispiel wird Port-Paar 0a/0d verwendet:
 
-image::../media/drw_worksheet_mpha_slot_0_4ports_one_singleshelf_stack.gif[drw-Arbeitsblatt mpha-Steckplatz 0 4 Anschlüsse ein Singleshelf-Stack]
+image::../media/drw_worksheet_mpha_slot_0_4ports_one_singleshelf_stack.gif[Arbeitsblatt für die Multipath HA-Verkabelung für vier integrierte Ports und einen einzelnen Shelf-Stack]
 
-image::../media/drw_mpha_slot_0_4ports_one_singleshelf_stack.gif[drw mpha-Steckplatz 0 4 Ports ein Singleshelf-Stack]
+image::../media/drw_mpha_slot_0_4ports_one_singleshelf_stack.gif[Beispiel für eine Multipath HA-Verkabelung für vier integrierte Ports und einen einzelnen Shelf-Stack]
 
 
 
@@ -101,9 +101,9 @@ image::../media/drw_mpha_slot_0_4ports_one_singleshelf_stack.gif[drw mpha-Steckp
 
 Im folgenden Arbeitsblatt und Kabel-Beispiel werden Port-Paare 0a/0d und 0c/0b verwendet:
 
-image::../media/drw_worksheet_mpha_slot_0_4ports_two_singleshelf_stacks.gif[drw-Arbeitsblatt mpha-Steckplatz 0 4 Anschlüsse zwei Singleshelf-Stacks]
+image::../media/drw_worksheet_mpha_slot_0_4ports_two_singleshelf_stacks.gif[Arbeitsblatt zur Multipath HA-Verkabelung für vier integrierte Ports und zwei einzelne Shelf-Stacks]
 
-image::../media/drw_mpha_slot_0_4ports_two_singleshelf_stacks.gif[drw mpha-Steckplatz 0 4 Ports zwei Singleshelf-Stacks]
+image::../media/drw_mpha_slot_0_4ports_two_singleshelf_stacks.gif[Beispiel für eine Multipath HA-Verkabelung für vier integrierte Ports und zwei einzelne Shelf-Stacks]
 
 
 
@@ -116,15 +116,15 @@ NOTE: Wenn Sie mehr Port-Paare haben, als Sie die Stacks in Ihrem System verkabe
 
 Im folgenden Arbeitsblatt und Verkabelungsbeispiel sind Port-Paare aufgeführt, die in der Reihenfolge verwendet werden, in der sie im Arbeitsblatt aufgeführt sind: 0a/1b, 1a/0d, 0c/1d und 1c/0b.
 
-image::../media/drw_worksheet_mpha_slots_0_and_1_8ports_4stacks.gif[drw-Arbeitsblatt mpha-Steckplätze 0 und 1 8-Port-4-Stapel]
+image::../media/drw_worksheet_mpha_slots_0_and_1_8ports_4stacks.gif[Arbeitsblatt für die Multipath HA-Verkabelung für vier integrierte SAS Ports, SAS HBA mit vier Ports und zwei Multi-Shelf-Stacks]
 
-image::../media/drw_mpha_slots_0_and_1_8ports_4_stacks.gif[drw mpha-Steckplätze 0 und 1 8-Port-4-Stapel]
+image::../media/drw_mpha_slots_0_and_1_8ports_4_stacks.gif[Beispiel für eine Multipath HA-Verkabelung mit vier integrierten SAS Ports, einem SAS HBA mit vier Ports und zwei Multi-Shelf-Stacks]
 
 Im folgenden Arbeitsblatt und Verkabelungsbeispiel werden Port-Paare angezeigt, die nicht ausgelassen werden, um alle anderen in der Liste zu verwenden: 0a/1b und 0c/1d.
 
 
 NOTE: Wenn später ein dritter Stapel hinzugefügt wird, verwenden Sie das Portpaar, das übersprungen wurde.
 
-image::../media/drw_worksheet_mpha_slots_0_and_1_8ports_two_stacks_skipped.gif[drw-Arbeitsblatt mpha-Steckplätze 0 und 1 8 Ports zwei Stapel übersprungen]
+image::../media/drw_worksheet_mpha_slots_0_and_1_8ports_two_stacks_skipped.gif[Arbeitsblatt für die Multipath HA-Verkabelung für vier Onboard Ports, SAS HBA mit vier Ports und zwei Multi-Shelf-Stacks mit übersprungenen Port-Paaren]
 
-image::../media/drw_mpha_slots_0_and_1_8ports_two_stacks_skipped.gif[drw mpha-Steckplätze 0 und 1 8 Ports zwei Stapel übersprungen]
+image::../media/drw_mpha_slots_0_and_1_8ports_two_stacks_skipped.gif[Beispiel für eine Multipath HA-Verkabelung für vier Onboard Ports, einen SAS HBA mit vier Ports und zwei Multi-Shelf-Stacks mit übersprungenen Port-Paaren]

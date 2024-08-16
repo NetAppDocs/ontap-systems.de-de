@@ -19,11 +19,11 @@ NOTE: Diese Informationen gelten nicht für Plattformen des FAS25XX.
 * Bei Bedarf können Sie sich auf beziehen link:install-cabling-rules.html["SAS-Verkabelungsregeln und -Konzepte"] Weitere Informationen zu unterstützten Konfigurationen, Shelf-zu-Shelf-Konnektivität und Controller-zu-Shelf-Konnektivität
 * Beispiele für Verkabelungen zeigen Controller-zu-Stack-Kabel als solide oder gestrichelt, um Controller-0b/0b1-Port-Verbindungen von Controller-0a-Port-Verbindungen zu unterscheiden.
 +
-image::../media/drw_fas2600_controller_to_stack_cable_type_key_IEOPS-947.svg[drw fas2600 Controller zu Stack Kabeltyp Schlüssel IEOPS 947]
+image::../media/drw_fas2600_controller_to_stack_cable_type_key_IEOPS-947.svg[Kabelschlüssel für Plattformen mit integriertem Speicher]
 
 * Verkabelungsbeispiele zeigen Controller-zu-Stack-Verbindungen und Shelf-zu-Shelf-Verbindungen in zwei verschiedenen Farben, um die Konnektivität durch IOM A (Domäne A) und IOM B (Domäne B) zu unterscheiden.
 +
-image::../media/drw_fas2600_cable_color_key.png[drw fas2600-Kabelfarbschlüssel]
+image::../media/drw_fas2600_cable_color_key.png[Kabel-Farbschlüssel für Plattformen mit integriertem Speicher]
 
 
 
@@ -33,7 +33,7 @@ image::../media/drw_fas2600_cable_color_key.png[drw fas2600-Kabelfarbschlüssel]
 
 Das folgende Beispiel zeigt, dass für eine Multipath HA-Konnektivität keine Verkabelung erforderlich ist:
 
-image::../media/drw_fas2800_noshelf_mpha_IEOPS-954.svg[drw fas2800 noshelf mpha IEOPS 954]
+image::../media/drw_fas2800_noshelf_mpha_IEOPS-954.svg[FAS2800 Multipath HA ohne externe Shelfs]
 
 
 
@@ -41,7 +41,7 @@ image::../media/drw_fas2800_noshelf_mpha_IEOPS-954.svg[drw fas2800 noshelf mpha 
 
 Das folgende Verkabelungsbeispiel zeigt die erforderliche Verkabelung zwischen den beiden Controllern, um eine Tri-Path-Konnektivität zu erreichen:
 
-image::../media/drw_fas2800_noshelf_tpha_IEOPS-955.svg[drw fas2800 noshelf tpha IEOPS 955]
+image::../media/drw_fas2800_noshelf_tpha_IEOPS-955.svg[Fas2800 Tri-Path HA-Verkabelung Beispiel ohne externe Regale]
 
 
 
@@ -49,9 +49,9 @@ image::../media/drw_fas2800_noshelf_tpha_IEOPS-955.svg[drw fas2800 noshelf tpha 
 
 Im folgenden Arbeitsblatt und in der Verkabelung wird das Portpaar 0a/0b1 verwendet:
 
-image::../media/drw_fas2800_worksheet_IEOPS-948.svg[drw fas2800 Arbeitsblatt IEOPS 948]
+image::../media/drw_fas2800_worksheet_IEOPS-948.svg[FAS2800 Arbeitsblatt für die HA-Verkabelung mit drei Pfaden, die Port-Paare für Stack 1 zeigen]
 
-image::../media/drw_fas2800_withshelves_tpha_IEOPS-949.svg[drw fas2800 mit Shelfs tpha IEOPS 949]
+image::../media/drw_fas2800_withshelves_tpha_IEOPS-949.svg[FAS2800 HA-Verkabelung von drei Pfaden zu einem Stack]
 
 
 
@@ -62,9 +62,9 @@ Im folgenden Arbeitsblatt und Verkabelungsbeispiel werden Port-Paar 0a/0b verwen
 
 NOTE: Dieser Abschnitt gilt nicht für FAS2800 oder FAS25XX Systeme.
 
-image::../media/drw_fas2600_mpha_worksheet_IEOPS-1255.svg[drw fas2600 mpha Arbeitsblatt IEOPS 1255]
+image::../media/drw_fas2600_mpha_worksheet_IEOPS-1255.svg[Arbeitsblatt für die Multipath HA-Verkabelung für Plattformen mit internem Storage und einem Stack]
 
-image::../media/drw_fas2600_mpha_IEOPS-1256.svg[drw fas2600 mpha IEOPS 1256]
+image::../media/drw_fas2600_mpha_IEOPS-1256.svg[Beispiel: Multipath HA-Verkabelung bei Plattformen mit internem Storage]
 
 
 
@@ -74,12 +74,12 @@ Die folgenden Worksheets und Verkabelungsbeispiele verwenden das Port-Paar 0a/0b
 
 In diesem Beispiel ist der Controller in Steckplatz A des Chassis installiert. Wenn sich ein Controller in Steckplatz A des Chassis befindet, befindet sich sein interner Speicherport (0b) in Domäne A (IOM A). Daher muss Port 0b mit Domäne A (IOM A) im Stack verbunden sein.
 
-image::../media/drw_fas2600_mp_slot_a_worksheet.png[drw fas2600 mp Steckplatz A Arbeitsblatt]
+image::../media/drw_fas2600_mp_slot_a_worksheet.png[Das Arbeitsblatt für die FAS2600-Verkabelung zeigt das Port-Paar für eine Multipath-Konfiguration]
 
-image::../media/drw_fas2600_mp_slot_a.png[drw fas2600 mp Steckplatz A]
+image::../media/drw_fas2600_mp_slot_a.png[Beispiel für eine FAS2600 Multipath-Verkabelung mit Controller im Chassis-Steckplatz 1]
 
 In diesem Beispiel ist der Controller in Steckplatz B des Chassis installiert. Wenn sich ein Controller in Steckplatz B des Chassis befindet, befindet sich sein interner Speicherport (0b) in Domäne B (IOM B). Daher muss Port 0b mit Domäne B (IOM B) im Stack verbunden sein.
 
-image::../media/drw_fas2600_mp_slot_b_worksheet.png[drw fas2600 mp-Steckplatz b-Arbeitsblatt]
+image::../media/drw_fas2600_mp_slot_b_worksheet.png[Das Arbeitsblatt für die FAS2600-Verkabelung zeigt das Port-Paar für eine Multipath-Konfiguration]
 
-image::../media/drw_fas2600_mp_slot_b.png[drw fas2600 mp Steckplatz b]
+image::../media/drw_fas2600_mp_slot_b.png[Beispiel für eine FAS2600 Multipath-Verkabelung mit Controller im Chassis-Steckplatz 2]

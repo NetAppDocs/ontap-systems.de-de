@@ -31,7 +31,7 @@ Für die Arbeitsblattbeispiele wird eine Konfiguration mit zwei Quad-Port-SAS-HB
 * Falls erforderlich, können Sie nach dem Ausfüllen des Arbeitsblatts auf lesen link:install-cabling-worksheets-how-to-read-multipath.html["Lesen eines Arbeitsblatts zur Verkabelung von Controller-zu-Stack-Verbindungen für Multipath-Konnektivität"]
 
 
-image::../media/drw_worksheet_mpha_template.gif[dmw-Arbeitsblatt mpha-Vorlage]
+image::../media/drw_worksheet_mpha_template.gif[Arbeitsblattvorlage für MPHA-Controller-zu-Stack-Verkabelung]
 
 .Schritte
 . Listen Sie in den Feldern über den grauen Feldern alle SAS A-Ports auf Ihrem System und dann alle SAS C-Ports auf Ihrem System in einer Reihe von Steckplätzen (0, 1, 2, 3 usw.) auf.
@@ -54,7 +54,7 @@ Wenn alle Portpaare zur Verkabelung der Stacks in Ihrem System verwendet werden,
 In einer Multipath HA-Konfiguration mit acht SAS-Ports und vier Stacks ist das Port-Paar 1a/2b mit Stack 1 verkabelt, das Port-Paar 2a/1d ist mit Stack 2 verbunden, das Port-Paar 1c/2d ist mit stapel3 verkabelt, und das Port-Paar 2c/1b ist mit Stack 4 verbunden.
 
 +
-image::../media/drw_worksheet_mpha_slots_1_and_2_two_4porthbas_two_stacks.gif[drw-Arbeitsblatt mpha-Steckplätze 1 und 2 4-porthbas-Stapel]
+image::../media/drw_worksheet_mpha_slots_1_and_2_two_4porthbas_two_stacks.gif[Das Arbeitsblatt für die Multipath HA-Verkabelung wurde ausgefüllt]
 
 +
 Wenn nicht alle Portpaare zur Verkabelung der Stacks in Ihrem System benötigt werden, überspringen Sie Portpaare (verwenden Sie jedes andere Portpaar).
@@ -67,14 +67,14 @@ Beispielsweise ist bei einer Multipath HA-Konfiguration mit acht SAS-Ports und z
 NOTE: Wenn Sie mehr Port-Paare haben, als Sie die Stacks in Ihrem System verkabeln müssen, sollten Sie die Best Practice Port-Paare überspringen, um die SAS-Ports auf Ihrem System zu optimieren. Durch die Optimierung von SAS-Ports optimieren Sie die Performance Ihres Systems.
 
 +
-image::../media/drw_worksheet_mpha_skipped_template.gif[drw-Arbeitsblatt mpha-Vorlage übersprungen]
+image::../media/drw_worksheet_mpha_skipped_template.gif[Arbeitsblatt für die Multipath HA-Verkabelung, aus dem übersprungene Port-Paare hervorgeht]
 
 +
 Sie können das ausgefüllte Arbeitsblatt verwenden, um das System zu verkabeln.
 
 . Wenn Sie eine Single-Controller-(Multipath-)Konfiguration haben, geben Sie die Informationen für Controller 2 durch.
 +
-image::../media/drw_worksheet_mp_template.gif[dmw-Arbeitsblatt mp-Vorlage]
+image::../media/drw_worksheet_mp_template.gif[Arbeitsblatt für Multipath-Verkabelung ausgefüllt]
 
 +
 Sie können das ausgefüllte Arbeitsblatt verwenden, um das System zu verkabeln.
