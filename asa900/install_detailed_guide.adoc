@@ -35,7 +35,7 @@ Folgendes müssen Sie an Ihrer Website angeben:
 . Packen Sie den Inhalt aller Boxen aus.
 . Notieren Sie die Seriennummer des Systems von den Controllern.
 +
-image::../media/drw_ssn_label.svg[drw ssn-Etikett]
+image::../media/drw_ssn_label.svg[Beispiel für die Seriennummer des Systems, die den Standort der Nummer anzeigt]
 
 . Notieren Sie sich die Anzahl und die Kabeltypen, die Sie erhalten haben.
 +
@@ -192,7 +192,7 @@ image::../media/drw_9500_cable_management_arms.svg[drw 9500 Kabelführungsarme]
 
 Das folgende Diagramm zeigt, wie ein typisches System aussieht und wo sich die Hauptkomponenten auf der Rückseite des Systems befinden:
 
-image::../media/drw_a900_controller_in _chassis_ID_IEOPS-856.svg[drw a900-Controller in Gehäuse-ID IEOPS 856]
+image::../media/drw_a900_controller_in _chassis_ID_IEOPS-856.svg[Typische Cluster-Konfiguration]
 
 
 
@@ -211,7 +211,7 @@ Sie müssen sich an den Netzwerkadministrator wenden, um Informationen über das
 
 Achten Sie beim Einsetzen der Kabel in die Anschlüsse darauf, die Richtung der Kabelabziehlaschen zu überprüfen. Die Kabelabziehlaschen sind für alle Netzwerkmodulanschlüsse nach oben.
 
-image::../media/oie_cable_pull_tab_up.svg[ziehen Sie die Lasche des oie-Kabels nach oben]
+image::../media/oie_cable_pull_tab_up.svg[Richtung der Zuglasche des Kabels]
 
 
 NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
@@ -221,7 +221,7 @@ NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er e
 .Animation – Verkabeln Sie einen 2-Node-Cluster ohne Switches
 video::37419c37-f56f-48e5-8e6c-afa600095444[panopto]
 +
-image::../media/drw_a900_tnsc_network_cabling_IEOPS-933.svg[drw a900 tnsc Netzwerkverkabelung IEOPS 933]
+image::../media/drw_a900_tnsc_network_cabling_IEOPS-933.svg[2-Node-Netzwerkverkabelung ohne Switches]
 
 +
 |===
@@ -300,7 +300,7 @@ Sie müssen sich an den Netzwerkadministrator wenden, um Informationen über das
 
 Achten Sie beim Einsetzen der Kabel in die Anschlüsse darauf, die Richtung der Kabelabziehlaschen zu überprüfen. Die Kabelabziehlaschen sind für alle Netzwerkmodulanschlüsse nach oben.
 
-image::../media/oie_cable_pull_tab_up.svg[ziehen Sie die Lasche des oie-Kabels nach oben]
+image::../media/oie_cable_pull_tab_up.svg[Richtung der Zuglasche des Kabels]
 
 
 NOTE: Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
@@ -397,7 +397,7 @@ Sie müssen jeden Controller mit den NSM-Modulen am NS224-Laufwerk-Shelf verkabe
 * Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen. Die Kabelabzieher für die Storage-Module sind nach oben und die Abziehlaschen an den Shelves sind nach unten.
 
 
-image::../media/oie_cable_pull_tab_up.svg[ziehen Sie die Lasche des oie-Kabels nach oben]
+image::../media/oie_cable_pull_tab_up.svg[Richtung der Zuglasche des Kabels]
 
 image::../media/oie_cable_pull_tab_down.svg[ziehen Sie die Lasche des oie-Kabels nach unten]
 
@@ -452,7 +452,7 @@ Sie müssen jeden Controller mit den NSM-Modulen der NS224 Laufwerk-Shelfs verka
 * Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen. Die Kabelabzieher für die Storage-Module sind nach oben und die Abziehlaschen an den Shelves sind nach unten.
 
 
-image::../media/oie_cable_pull_tab_up.svg[ziehen Sie die Lasche des oie-Kabels nach oben]
+image::../media/oie_cable_pull_tab_up.svg[Richtung der Zuglasche des Kabels]
 
 image::../media/oie_cable_pull_tab_down.svg[ziehen Sie die Lasche des oie-Kabels nach unten]
 
@@ -521,13 +521,13 @@ Wenn die Netzwerkerkennung auf Ihrem Laptop aktiviert ist, können Sie das Syste
 
 . Verwenden Sie die folgende Animation oder Zeichnung, um eine oder mehrere Laufwerk-Shelf-IDs festzulegen:
 +
-Die NS224-Einschübe sind auf die Shelf-ID 00 und 01 voreingestellt. Wenn Sie die Shelf-IDs ändern möchten, müssen Sie ein Werkzeug erstellen, um in die Öffnung einzufügen, an der sich die Schaltfläche befindet. Siehe https://docs.netapp.com/us-en/ontap-systems/ns224/change-shelf-id.html["Shelf-ID ändern – NS224-Einschübe"] Detaillierte Anweisungen.
+Die NS224-Einschübe sind auf die Shelf-ID 00 und 01 voreingestellt. Wenn Sie die Shelf-IDs ändern möchten, müssen Sie ein Werkzeug erstellen, das in das Loch eingefügt wird, in dem sich link:../ns224/change-shelf-id.html["Shelf-ID ändern – NS224-Einschübe"]die Schaltfläche befindet. Ausführliche Anweisungen finden Sie unter.
 
 +
 .Animation – legt NVMe-Laufwerk-Shelf-IDs fest
 video::95a29da1-faa3-4ceb-8a0b-ac7600675aa6[panopto]
 +
-image::../media/drw_a900_oie_change_ns224_shelf ID_IEOPS-836.svg[drw a900 oie-Änderung ns224 Shelf-ID IEOPS 836]
+image::../media/drw_a900_oie_change_ns224_shelf_ID_IEOPS-836.svg[drw a900 oie-Änderung ns224 Shelf-ID IEOPS 836]
 
 +
 [cols="20%,80%"]
@@ -643,13 +643,13 @@ image::../media/drw_A900_cable_console_switch_controller_IEOPS-953.svg[drw A900 
 
 . Mithilfe der folgenden Animation können Sie eine oder mehrere Laufwerk-Shelf-IDs festlegen:
 +
-Die NS224-Einschübe sind auf die Shelf-ID 00 und 01 voreingestellt. Wenn Sie die Shelf-IDs ändern möchten, müssen Sie ein Werkzeug erstellen, um in die Öffnung einzufügen, an der sich die Schaltfläche befindet. Siehe https://docs.netapp.com/us-en/ontap-systems/ns224/change-shelf-id.html["Shelf-ID ändern – NS224-Einschübe"] Detaillierte Anweisungen.
+Die NS224-Einschübe sind auf die Shelf-ID 00 und 01 voreingestellt. Wenn Sie die Shelf-IDs ändern möchten, müssen Sie ein Werkzeug erstellen, das in das Loch eingefügt wird, in dem sich link:../ns224/change-shelf-id.html["Shelf-ID ändern – NS224-Einschübe"]die Schaltfläche befindet. Ausführliche Anweisungen finden Sie unter.
 
 +
 .Animation – legt NVMe-Laufwerk-Shelf-IDs fest
 video::95a29da1-faa3-4ceb-8a0b-ac7600675aa6[panopto]
 +
-image::../media/drw_a900_oie_change_ns224_shelf ID_IEOPS-836.svg[drw a900 oie-Änderung ns224 Shelf-ID IEOPS 836]
+image::../media/drw_a900_oie_change_ns224_shelf_ID_IEOPS-836.svg[drw a900 oie-Änderung ns224 Shelf-ID IEOPS 836]
 
 +
 [cols="20%,80%"]

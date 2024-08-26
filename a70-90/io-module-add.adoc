@@ -186,7 +186,7 @@ NOTE: Dadurch werden die PCIe-Karten und andere Komponenten neu initialisiert un
 . Wiederholen Sie diese Schritte für Controller B.
 . Stellen Sie die automatische Rückgabe wieder her, wenn Sie die Funktion mithilfe von deaktivieren `storage failover modify -node local -auto-giveback true` Befehl.
 . Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung mit dem Befehl wiederherstellen/zurücknehmen. `system node autosupport invoke -node * -type all -message MAINT=END`
-. Wenn Sie ein Speicher-I/O-Modul installiert haben, installieren und verkabeln Sie die NS224-Shelfs, wie unter beschrieben https://docs.netapp.com/us-en/ontap-systems/ns224/hot-add-shelf-overview.html["Hot-Add-Workflow"^].
+. Wenn Sie ein Speicher-I/O-Modul installiert haben, installieren und verkabeln Sie die NS224-Shelfs, wie unter beschriebenlink:../ns224/hot-add-shelf-overview.html["Hot-Add-Workflow"].
 
 
 
@@ -408,7 +408,7 @@ Verwenden Sie die `storage port modify -node *_<node name>__ -port *_<port name>
  a| 
 Speichermodul
  a| 
-Installieren und verkabeln Sie die NS224-Regale, wie in beschrieben https://docs.netapp.com/us-en/ontap-systems/ns224/hot-add-shelf-overview.html["Hot-Add-Workflow"^].
+Installieren und verkabeln Sie die NS224-Regale, wie in beschrieben link:../ns224/hot-add-shelf-overview.html["Hot-Add-Workflow"].
 
 |===
 . Wiederholen Sie diese Schritte für Controller B.

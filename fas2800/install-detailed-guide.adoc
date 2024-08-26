@@ -48,7 +48,7 @@ IMPORTANT: Kunden mit speziellen Anforderungen an die Stromversorgung müssen di
 .. Erfassen Sie Informationen über Ihr Storage-System, indem Sie das abschließen https://docs.netapp.com/us-en/ontap/task_configure_ontap.html["Arbeitsblatt einrichten^ (URL zum Arbeitsblatt erforderlich)"].
 .. Notieren Sie die Seriennummer des Storage-Systems von den Controllern.
 +
-image::../media/drw_ssn_label.svg[drw ssn-Etikett]
+image::../media/drw_ssn_label.svg[Beispiel für die Seriennummer des Systems, die den Standort der Nummer anzeigt]
 
 
 
@@ -401,7 +401,7 @@ Verkabeln Sie Ihre Controller mit einem externen Speicher.
 Die folgende Tabelle zeigt den Kabeltyp mit der Aufrufnummer und der Kabelfarbe in den Abbildungen zur Verkabelung der Festplatten-Shelfs mit dem Storage-System.
 
 
-NOTE: Das Beispiel verwendet DS224C. Die Verkabelung ist ähnlich wie bei anderen unterstützten Festplatten-Shelfs. Siehe https://docs.netapp.com/us-en/ontap-systems/sas3/install-new-system.html["Einbau- und Kabelregale für eine neue Systeminstallation - Regale mit IOM12/IOM12B-Modulen"^] Finden Sie weitere Informationen.
+NOTE: Das Beispiel verwendet DS224C. Die Verkabelung ist ähnlich wie bei anderen unterstützten Festplatten-Shelfs. Weitere Informationen finden Sie unter link:../sas3/install-new-system.html["Einbau- und Kabelregale für eine neue Systeminstallation - Regale mit IOM12/IOM12B-Modulen"] .
 
 [cols="20%,80%"]
 |===
@@ -436,7 +436,7 @@ image::../media/oie_cable_pull_tab_down.svg[ziehen Sie die Lasche des oie-Kabels
 Verwenden Sie die Animation oder die Schritt-für-Schritt-Anleitung, um die Verkabelung zwischen den Controllern und den Laufwerk-Shelfs abzuschließen.
 
 
-IMPORTANT: Verwenden Sie nicht Port 0b2 an einer FAS2800. Dieser SAS-Port wird von ONTAP nicht verwendet und ist immer deaktiviert. Siehe https://docs.netapp.com/us-en/ontap-systems/sas3/install-new-system.html["Installieren Sie ein Shelf in einem neuen Storage-System"^] Finden Sie weitere Informationen.
+IMPORTANT: Verwenden Sie nicht Port 0b2 an einer FAS2800. Dieser SAS-Port wird von ONTAP nicht verwendet und ist immer deaktiviert. Weitere Informationen finden Sie unter link:../sas3/install-new-system.html["Installieren Sie ein Shelf in einem neuen Storage-System"^] .
 
 .Animation: Kabel für Laufwerkseinschübe
 video::b2a7549d-8141-47dc-9e20-afe8016f4386[panopto]

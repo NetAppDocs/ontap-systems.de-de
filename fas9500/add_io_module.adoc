@@ -162,7 +162,7 @@ NOTE: Dadurch werden die PCIe-Karten und andere Komponenten neu initialisiert un
 . Automatisches Giveback aktivieren, falls deaktiviert: `storage failover modify -node local -auto-giveback true`
 . Wenn Sie die Steckplätze 3 und/oder 7 für Netzwerke verwenden, verwenden Sie den `storage port modify -node __<node name>__ -port __<port name>__ -mode network` Befehl zum Konvertieren des Steckplatzes für die Netzwerkverwendung.
 . Wiederholen Sie diese Schritte für Controller B.
-. Wenn Sie ein Storage-I/O-Modul installiert haben, installieren und verkabeln Sie Ihre SAS-Shelfs, wie unter beschrieben https://docs.netapp.com/us-en/ontap-systems/sas3/install-hot-add-shelf.html["Hot-Adding eines SAS-Shelfs"^].
+. Wenn Sie ein Storage-I/O-Modul installiert haben, installieren und verkabeln Sie die SAS-Shelfs, wie unter beschrieben.link:../sas3/install-hot-add-shelf.html["Hot-Adding eines SAS-Shelfs"]
 
 
 
@@ -387,7 +387,7 @@ NOTE: Wenn beim Neustart ein Problem auftritt, lesen Sie https://mysupport.netap
 
 
  a| 
-NIC-Modul in den Steckplätzen 3 oder 7,
+NIC-Modul in den Steckplätzen 3 oder 7
  a| 
 Verwenden Sie die `storage port modify -node *_<node name>__ -port *_<port name>__ -mode network` Befehl für jeden Port.
 
@@ -396,7 +396,7 @@ Verwenden Sie die `storage port modify -node *_<node name>__ -port *_<port name>
  a| 
 Speichermodul
  a| 
-Installieren und verkabeln Sie Ihre SAS-Shelfs, wie unter beschriebenhttps://docs.netapp.com/us-en/ontap-systems/sas3/install-hot-add-shelf.html["Hot-Adding eines SAS-Shelfs"^].
+Installieren und verkabeln Sie die SAS-Shelfs, wie in beschriebenlink:../sas3/install-hot-add-shelf.html["Hot-Adding eines SAS-Shelfs"].
 
 |===
 . Wiederholen Sie diese Schritte für Controller B.
