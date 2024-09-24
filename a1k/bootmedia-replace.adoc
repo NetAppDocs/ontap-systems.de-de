@@ -11,7 +11,7 @@ summary: Sie finden das ausgefallene Startmedium im Controller-Modul, indem Sie 
 
 
 [role="lead"]
-Um das Startmedium zu ersetzen, müssen Sie das Systemverwaltungsmodul von der Rückseite des Systems entfernen, das gestörte Startmedium entfernen, das Ersatzstartmedium in das Systemverwaltungsmodul installieren und das ONTAP-Image von einem USB-Flash-Laufwerk auf das Ersatzstartmedium übertragen.
+Um das Startmedium zu ersetzen, müssen Sie das System Management-Modul von der Rückseite des Systems entfernen, das gestörte Startmedium entfernen und das Ersatz-Startmedium im System Management-Modul installieren.
 
 
 
@@ -54,7 +54,7 @@ NOTE: Wenn Ihr Speichersystem über Gleichstromnetzteile verfügt, trennen Sie d
 +
 .. Entfernen Sie alle Kabel, die am System Management-Modul angeschlossen sind. Stellen Sie sicher, dass Sie den Ort kennzeichnen, an dem die Kabel angeschlossen wurden, damit Sie sie bei der Neuinstallation des Moduls an die richtigen Anschlüsse anschließen können.
 .. Drehen Sie das Kabelführungs-Fach nach unten, indem Sie die Tasten an beiden Seiten an der Innenseite des Kabelführungs-Fachs ziehen und das Fach dann nach unten drehen.
-.. Drücken Sie die CAM-Taste für die Systemverwaltung. Der Nockenhebel bewegt sich vom Gehäuse weg.
+.. Drücken Sie die CAM-Taste für die Systemverwaltung.
 .. Drehen Sie die Nockenverriegelung so weit wie möglich nach unten.
 .. Entfernen Sie das System-Management-Modul aus dem Gehäuse, indem Sie den Finger in die Öffnung des Nockenhebels stecken und das Modul aus dem Gehäuse ziehen.
 .. Platzieren Sie das System-Management-Modul auf einer antistatischen Matte, damit das Startmedium zugänglich ist.
@@ -90,7 +90,7 @@ NOTE: Wenn Ihr Speichersystem über Gleichstromnetzteile verfügt, trennen Sie d
 
 == Schritt 2: Übertragen Sie das ONTAP-Image auf das Boot-Medium
 
-Das von Ihnen installierte Ersatzstartmedium ist ohne ein ONTAP-Image, sodass Sie ein ONTAP-Image mithilfe eines USB-Flashlaufwerks übertragen müssen.
+Das von Ihnen installierte Ersatzstartmedium ist ohne ein ONTAP-Image. Sie können das ONTAP-Image auf das Ersatz-Startmedium übertragen, indem Sie das entsprechende ONTAP-Service-Image vom https://mysupport.netapp.com/["NetApp Support Website"] auf ein USB-Flash-Laufwerk und dann auf das Ersatz-Startmedium herunterladen.
 
 .Bevor Sie beginnen
 * Sie müssen über ein leeres USB-Flash-Laufwerk verfügen, das mit FAT32 formatiert ist und mindestens 4 GB Kapazität hat.

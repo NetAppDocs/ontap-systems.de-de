@@ -1,0 +1,60 @@
+= Schritt 1: Den Controller wieder zurücknehmen
+:allow-uri-read: 
+
+
+Speicher- und Netzwerkverbindungen neu verbinden und dann den Controller zurückgeben.
+
+
+
+== Schritt 1: Den Controller wieder zurücknehmen
+
+Speicher- und Netzwerkverbindungen des Controller-Moduls wieder herstellen.
+
+.Schritte
+. Wiederverkabel des Controller-Moduls in Speicher- und Netzwerkverbindungen.
+. Überprüfen Sie anhand von, ob die Verkabelung korrekt ist https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"].
++
+.. Laden Sie Config Advisor herunter und installieren Sie es.
+.. Geben Sie die Informationen für das Zielsystem ein, und klicken Sie auf Daten erfassen.
+.. Klicken Sie auf die Registerkarte Verkabelung, und überprüfen Sie die Ausgabe. Stellen Sie sicher, dass alle Festplatten-Shelfs angezeigt werden und alle Festplatten in der Ausgabe angezeigt werden. So beheben Sie mögliche Verkabelungsprobleme.
+.. Überprüfen Sie die andere Verkabelung, indem Sie auf die entsprechende Registerkarte klicken und dann die Ausgabe von Config Advisor überprüfen.
+
+
+
+
+
+
+== Schritt 2: Geben Sie den Controller zurück
+
+Übertragen Sie die Eigentumsrechte an Storage-Ressourcen zurück an den Ersatz-Controller.
+
+. Wenn für Ihr Speichersystem Verschlüsselung konfiguriert ist, müssen Sie die Speicher- oder Volume-Verschlüsselungsfunktion mithilfe des folgenden Verfahrens wiederherstellen, um das System neu zu starten:
++
+.. Starten Sie das Menü, und führen Sie Option 10 aus
+.. Geben Sie die Passphrase ein und sichern Sie die Daten, und führen Sie dann den normalen Start aus. Siehe https://kb.netapp.com/on-prem/ontap/DM/Encryption/Encryption-KBs/Restore_onboard_key_management_encryption_keys["Wiederherstellung der integrierten Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"].
+.. Nur CFO-Rückgabe durchführen
+.. Führen Sie die integrierte Synchronisierung durch, und überprüfen Sie, ob SVM-KEK auf True See gesetzt ist https://kb.netapp.com/on-prem/ontap/DM/Encryption/Encryption-KBs/Onboard_keymanager_sync_fails_after_motherboard_replacement["Giveback, nachdem der MB-Austausch fehlschlägt – Vorgang wurde von keymanager mit einem Veto abgelehnt"]
+.. GiveBack SFO (keine Kraft)
+
+
+. Wenn die Verschlüsselung auf dem System nicht konfiguriert ist, führen Sie die folgenden Schritte aus, um das System neu zu starten:
++
+.. Starten Sie das Menü, und führen Sie Option 1 aus.
+.. Geben Sie den Controller zurück:
+.. Geben Sie von dem ordnungsgemäßen Controller den Storage des ersetzten Controllers wieder: `storage failover giveback -ofnode _replacement_node_name_`
++
+Der _Replacement_ -Controller nimmt den Storage wieder in Anspruch und führt den Startvorgang durch.
+
++
+
+NOTE: Wenn das Rückübertragung ein Vetorecht ist, können Sie erwägen, das Vetos außer Kraft zu setzen.
+
++
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["Finden Sie die Inhalte zur Hochverfügbarkeitskonfiguration Ihrer Version von ONTAP 9"]
+
+.. Nachdem das Giveback abgeschlossen ist, bestätigen Sie, dass das HA-Paar sich gesund befindet und ein Takeover möglich ist: `storage failover show`
+
+
+. Vergewissern Sie sich, dass die erwarteten Volumes für jeden Controller vorhanden sind: `vol show -node node-name`
+. Wenn Sie die automatische Übernahme beim Neustart deaktiviert haben, aktivieren Sie sie vom gesunden Controller: `storage failover modify -node replacement-node-name -onreboot true`
+

@@ -1,0 +1,42 @@
+---
+permalink: asa-r2-70-90/bootmedia-replace-workflow.html 
+sidebar: sidebar 
+keywords: asa r2 a70, a90, replace the boot media 
+summary: Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen. 
+---
+= Workflow für den Austausch von Startmedien – ASA A70 und ASA A90
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Führen Sie die folgenden Workflow-Schritte aus, um die Startmedien zu ersetzen.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:bootmedia-replace-requirements.html["Überprüfen Sie die Anforderungen der Startmedien"]
+[role="quick-margin-para"]
+Um das Boot-Medium zu ersetzen, müssen Sie bestimmte Anforderungen erfüllen.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:bootmedia-encryption-preshutdown-checks.html["Integrierte Verschlüsselungsschlüssel überprüfen"]
+[role="quick-margin-para"]
+Überprüfen Sie, ob der Sicherheitsschlüsselmanager aktiviert oder die Laufwerke verschlüsselt sind.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:bootmedia-shutdown.html["Schalten Sie den beeinträchtigten Regler aus"]
+[role="quick-margin-para"]
+Fahren Sie den beeinträchtigten Controller herunter oder übernehmen Sie ihn, damit der funktionsunzuverlässige Controller weiterhin Daten aus dem Speicher für den beeinträchtigten Controller bereitstellen kann.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:bootmedia-replace.html["Ersetzen Sie das Startmedium"]
+[role="quick-margin-para"]
+Entfernen Sie das fehlerhafte Startmedium aus dem Systemverwaltungsmodul, installieren Sie das Ersatz-Startmedium, und übertragen Sie dann ein ONTAP-Image mithilfe eines USB-Flashlaufwerks auf das Ersatz-Startmedium.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:bootmedia-recovery-image-boot.html["Starten Sie das Recovery-Image"]
+[role="quick-margin-para"]
+Starten Sie das ONTAP-Image vom USB-Laufwerk, stellen Sie das Dateisystem wieder her und überprüfen Sie die Umgebungsvariablen.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sechs"]link:bootmedia-encryption-restore.html["Wiederherstellung der Verschlüsselung"]
+[role="quick-margin-para"]
+Wiederherstellung der Onboard-Schlüsselmanager-Konfiguration oder des externen Schlüsselmanagers aus dem ONATP-Startmenü.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["Sieben"]link:bootmedia-complete-rma.html["Senden Sie das fehlerhafte Teil an NetApp zurück"]
+[role="quick-margin-para"]
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.

@@ -1,0 +1,24 @@
+= 
+:allow-uri-read: 
+
+
+Überprüfen Sie die Anforderungen beim Austausch des Controllers, und wählen Sie die richtige für Ihre Version des Betriebssystems ONTAP aus.
+
+* Alle Festplatten-Shelfs müssen ordnungsgemäß funktionieren.
+* Der gesunde Regler muss in der Lage sein, den zu ersetzenden Regler zu übernehmen (bezeichnet in diesem Verfahren als „`eingeschränkte Steuerung`“).
+* Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
+* Ein Controller-Modul muss durch ein Controller-Modul desselben Modelltyps ersetzt werden. Sie können kein System-Upgrade durch einen Austausch des Controller-Moduls durchführen.
+* Im Rahmen dieses Verfahrens können Laufwerke oder Laufwerk-Shelfs nicht geändert werden.
+* Da sich das Startgerät auf dem Systemverwaltungsmodul befindet, das auf der Rückseite des Systems installiert ist, müssen Sie das Startgerät beim Austausch eines Controller-Moduls nicht verschieben.
+* Es ist wichtig, dass Sie die Befehle in diesen Schritten auf die richtigen Systeme anwenden:
++
+** Die Steuerung _imired_ ist die Steuerung, die ersetzt wird.
+** Die Steuerung _Replacement_ ist die neue Steuerung, die die beeinträchtigte Steuerung ersetzt.
+** Der _Healthy_ Controller ist der überlebende Controller.
+
+
+* Sie müssen immer die Konsolenausgabe des Controllers in einer Textprotokolldatei erfassen.
++
+Auf diese Weise erhalten Sie eine Aufzeichnung des Verfahrens, damit Sie Probleme beheben können, die während des Austauschvorgangs auftreten können.
+
+

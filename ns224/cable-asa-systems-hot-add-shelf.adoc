@@ -13,6 +13,199 @@ summary: Sie verkabeln jedes NS224-Shelf, das Sie im laufenden Betrieb hinzufüg
 [role="lead"]
 Sie verkabeln jedes NS224-Shelf, das Sie im laufenden Betrieb hinzufügen, so dass jedes Shelf über zwei Verbindungen mit jedem Controller im HA-Paar verfügt.
 
+.Kabeleinschub zu ASA A1K
+[%collapsible]
+====
+Bei laufendem Betrieb können Sie bis zu drei zusätzliche NS224 Shelfs (also insgesamt vier Shelfs) zu einem ASA A1K HA-Paar hinzufügen.
+
+.Bevor Sie beginnen
+* Sie müssen die überprüft haben link:requirements-hot-add-shelf.html["Hot-Add-Anforderungen und Best Practices"].
+* Sie müssen die entsprechenden Verfahren in abgeschlossen haben link:prepare-hot-add-shelf.html["Bereiten Sie das Hot-Add eines Faches vor"].
+* Sie müssen die Shelfs installiert, eingeschaltet und die Shelf-IDs wie in festgelegt haben link:prepare-hot-add-shelf.html["Installieren Sie ein Shelf für ein Hot-Add-System"].
+
+
+.Über diese Aufgabe
+* Bei dieser Vorgehensweise wird vorausgesetzt, dass Ihr HA-Paar mindestens ein vorhandenes NS224-Shelf hat.
+* Dieses Verfahren behandelt die folgenden Hot-Add-Szenarien:
++
+** Hinzufügen eines zweiten Shelf zu einem HA-Paar mit zwei RoCE-fähigen I/O-Modulen pro Controller während des laufenden Betriebs. (Sie haben ein zweites I/O-Modul installiert und das erste Shelf beiden I/O-Modulen erneut verkabelt oder das erste Shelf bereits mit zwei I/O-Modulen verkabelt. Sie verbinden das zweite Shelf mit beiden I/O-Modulen.)
+** Hinzufügen eines dritten Shelf zu einem HA-Paar mit drei RoCE-fähigen I/O-Modulen pro Controller und während des laufenden Betriebs. (Sie haben ein drittes I/O-Modul installiert und verkabeln das dritte Shelf nur mit dem dritten I/O-Modul.)
+** Hinzufügen eines dritten Shelf zu einem HA-Paar mit vier RoCE-fähigen I/O-Modulen pro Controller während des laufenden Betriebs (Sie haben ein drittes und viertes I/O-Modul installiert und verbinden das dritte Shelf mit dem dritten und vierten I/O-Modul).
+** Hinzufügen eines vierten Shelfs zu einem HA-Paar mit vier RoCE-fähigen I/O-Modulen pro Controller während des laufenden Betriebs (Sie haben ein viertes I/O-Modul installiert und das dritte Shelf erneut mit den dritten und vierten I/O-Modulen verbunden oder das dritte Shelf bereits mit den dritten und vierten I/O-Modulen verkabelt. Sie verbinden das vierte Shelf mit dem dritten und vierten I/O-Modul).
+
+
+
+
+.Schritte
+. Wenn das NS224-Shelf, das Sie im Hot-Adding befinden, das zweite NS2224-Shelf im HA-Paar ist, führen Sie die folgenden Teilschritte aus.
++
+Andernfalls fahren Sie mit dem nächsten Schritt fort.
+
++
+.. Kabel-Shelf NSM A-Port e0a zu Controller A-Steckplatz 10 Port A (e10a)
+.. Kabel-Shelf NSM A-Port e0b zum Controller B-Steckplatz 11 Port b (e11b).
+.. Kabel-Shelf NSM B-Port e0a zu Controller B-Steckplatz 10 Port A (e10a)
+.. Kabel-Shelf NSM B-Port e0b zum Controller A-Steckplatz 11 Port b (e11b).
++
+In der folgenden Abbildung ist die Verkabelung des zweiten Shelf im HA-Paar mit zwei RoCE-fähigen I/O-Modulen pro Controller hervorgehoben:
+
++
+image::../media/drw_ns224_vino_m_2shelves_2cards_ieops-1642.svg[Verkabelung für ASA A1K mit zwei Shelfs und zwei I/O-Modulen]
+
+
+
+. Wenn das NS224-Shelf das dritte NS224-Shelf im HA-Paar mit drei RoCE-fähigen I/O-Modulen pro Controller ist, führen Sie die folgenden Teilschritte durch. Andernfalls fahren Sie mit dem nächsten Schritt fort.
++
+.. Verkabeln Sie das Shelf NSM A-Port e0a mit Controller A, Steckplatz 9, Port A (e9a).
+.. Verkabeln Sie den Port e0b des Shelf NSM A mit Controller B-Steckplatz 9, Port b (e9b).
+.. Verkabeln Sie den Shelf NSM B-Port e0a mit Controller B-Steckplatz 9, Port A (e9a).
+.. Verkabeln Sie den Shelf NSM B-Port e0b mit Controller A-Steckplatz 9, Port b (e9b).
++
+In der folgenden Abbildung ist die Verkabelung des dritten Shelf im HA-Paar mit drei RoCE-fähigen I/O-Modulen pro Controller hervorgehoben:
+
++
+image::../media/drw_ns224_vino_m_3shelves_3cards_ieops-1643.svg[Verkabelung für ASA A1K mit drei Shelfs und drei IO-Modulen]
+
+
+
+. Wenn das NS224-Shelf das dritte NS224-Shelf im HA-Paar mit vier RoCE-fähigen I/O-Modulen pro Controller ist, führen Sie die folgenden Teilschritte durch. Andernfalls fahren Sie mit dem nächsten Schritt fort.
++
+.. Verkabeln Sie das Shelf NSM A-Port e0a mit Controller A, Steckplatz 9, Port A (e9a).
+.. Verkabeln Sie den Port e0b des Shelf NSM A mit Controller B-Steckplatz 8, Port b (e8b).
+.. Verkabeln Sie den Shelf NSM B-Port e0a mit Controller B-Steckplatz 9, Port A (e9a).
+.. Verkabeln Sie den Shelf NSM B-Port e0b mit Controller A-Steckplatz 8, Port b (e8b).
++
+In der folgenden Abbildung ist die Verkabelung des dritten Shelf im HA-Paar mit vier RoCE-fähigen I/O-Modulen pro Controller hervorgehoben:
+
++
+image::../media/drw_ns224_vino_m_3shelves_4cards_ieops-1644.svg[Verkabelung für ASA A1K mit drei Shelfs und vier I/O-Modulen]
+
+
+
+. Wenn das NS224-Shelf, das Sie beim Hinzufügen verwenden, das vierte NS224-Shelf im HA-Paar mit vier RoCE-fähigen I/O-Modulen pro Controller ist, führen Sie die folgenden Teilschritte durch.
++
+.. Verkabeln Sie das Shelf NSM A-Port e0a mit Controller A, Steckplatz 8, Port A (e8a).
+.. Verkabeln Sie den Port e0b des Shelf NSM A mit Controller B-Steckplatz 9, Port b (e9b).
+.. Verkabeln Sie den Shelf NSM B-Port e0a mit Controller B-Steckplatz 8, Port A (e8a).
+.. Verkabeln Sie den Shelf NSM B-Port e0b mit Controller A-Steckplatz 9, Port b (e9b).
++
+In der folgenden Abbildung ist die Verkabelung für das vierte Shelf im HA-Paar mit vier RoCE-fähigen I/O-Modulen pro Controller hervorgehoben:
+
++
+image::../media/drw_ns224_vino_m_4shelves_4cards_ieops-1645.svg[Verkabelung für ASA A1K mit vier Shelfs und vier I/O-Modulen]
+
+
+
+. Überprüfen Sie mit https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^].
++
+Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
+
+
+
+.Was kommt als Nächstes?
+Wenn Sie die automatische Laufwerkszuweisung als Teil der Vorbereitung für dieses Verfahren deaktiviert haben, müssen Sie manuell die Laufwerkseigentümer festlegen und die automatische Laufwerkszuweisung ggf. erneut aktivieren. Gehen Sie zu link:complete-hot-add-shelf.html["Füllen Sie das Hot Add aus"].
+
+Andernfalls müssen Sie das Hot-Add-Regal verwenden.
+
+====
+.Kabeleinschub zu ASA A70 oder ASA A90
+[%collapsible]
+====
+Wenn zusätzlicher Storage (zum internen Shelf) benötigt wird, können Sie im laufenden Betrieb bis zu zwei NS224 Shelfs zu einem ASA A70 oder ASA A90 HA-Paar hinzufügen.
+
+.Bevor Sie beginnen
+* Sie müssen die überprüft haben link:requirements-hot-add-shelf.html["Hot-Add-Anforderungen und Best Practices"].
+* Sie müssen die entsprechenden Verfahren in abgeschlossen haben link:prepare-hot-add-shelf.html["Bei laufendem Betrieb ein Shelf hinzufügen"].
+* Sie müssen die Shelfs installiert, eingeschaltet und die Shelf-IDs wie in festgelegt haben link:prepare-hot-add-shelf.html["Installieren Sie ein Shelf für ein Hot-Add-System"].
+
+
+.Über diese Aufgabe
+* Bei diesem Verfahren wird vorausgesetzt, dass Ihr HA-Paar nur über internen Storage verfügt (keine externen Shelfs) und dass Sie Hot-Hinzufügen von bis zu zwei zusätzlichen Shelfs und zwei RoCE-fähigen I/O-Modulen pro Controller durchführen.
+* Dieses Verfahren behandelt die folgenden Hot-Add-Szenarien:
++
+** Hinzufügen des ersten Shelfs zu einem HA-Paar mit einem RoCE-fähigen I/O-Modul pro Controller während des laufenden Betriebs
+** Hinzufügen des ersten Shelfs zu einem HA-Paar mit zwei RoCE-fähigen I/O-Modulen pro Controller und während des laufenden Betriebs
+** Hot-Hinzufügen des zweiten Shelf zu einem HA-Paar mit zwei RoCE-fähigen I/O-Modulen pro Controller.
+
+
+
+
+.Schritte
+. Wenn Sie während des laufenden Betriebs ein Shelf mit einem Satz RoCE-fähiger Ports (ein RoCE-fähiges I/O-Modul) in jedem Controller-Modul hinzufügen, und dies das einzige NS224-Shelf in Ihrem HA-Paar ist, führen Sie die folgenden Teilschritte durch.
++
+Andernfalls fahren Sie mit dem nächsten Schritt fort.
+
++
+
+NOTE: Bei diesem Schritt wird davon ausgegangen, dass Sie das RoCE-fähige I/O-Modul in Steckplatz 11 installiert haben.
+
++
+.. Kabel-Shelf NSM A Port e0a zu Controller A-Steckplatz 11 Port A (e11a).
+.. Kabel-Shelf NSM A-Port e0b zum Controller B-Steckplatz 11 Port b (e11b).
+.. Kabel-Shelf NSM B-Port e0a zu Controller B-Steckplatz 11 Port A (e11A)
+.. Kabel-Shelf NSM B-Port e0b zum Controller A-Steckplatz 11 Port b (e11b).
++
+Die folgende Abbildung zeigt die Verkabelung für ein Hot-Added Shelf mit einem RoCE-fähigen I/O-Modul pro Controller-Modul:
+
++
+image::../media/drw_ns224_vino_i_1shelf_1card_ieops-1639.svg[Verkabelung für ASA A70 oder A90 mit einem Shelf und einem IO-Modul]
+
+
+
+. Wenn Sie ein oder zwei Shelfs mit zwei Sets von RoCE-fähigen Ports (zwei RoCE-fähige I/O-Module) in jedem Controller-Modul im laufenden Betrieb hinzufügen, füllen Sie die entsprechenden Teilschritte aus.
++
+
+NOTE: Bei diesem Schritt wird davon ausgegangen, dass Sie die RoCE-fähigen I/O-Module in den Steckplätzen 11 und 8 installiert haben.
+
++
+[cols="1,3"]
+|===
+| Shelfs | Verkabelung 
+
+
+ a| 
+Shelf 1
+ a| 
+.. Verkabeln Sie den NSM A-Port e0a mit dem Controller A-Steckplatz 11, Port A (e11a).
+.. Verkabeln Sie den NSM A-Port e0b mit Controller B-Steckplatz 8, Port b (e8b).
+.. Verbinden Sie den NSM B-Port e0a mit Controller B-Steckplatz 11, Port A (e11a).
+.. Verkabeln Sie den NSM B-Port e0b mit Controller A-Steckplatz 8, Port b (e8b).
+.. Wenn Sie ein zweites Regal heizen, füllen Sie die Unterschritte "`Shelf 2`" aus; andernfalls fahren Sie mit Schritt 3 fort.
+
+
+Die folgende Abbildung zeigt die Verkabelung für ein Hot-Added Shelf mit zwei RoCE-fähigen I/O-Modulen pro Controller-Modul:
+
+image::../media/drw_ns224_vino_i_1shelf_2cards_ieops-1640.svg[Verkabelung für ASA A70 oder A90 mit einem Shelf und zwei IO-Modulen]
+
+
+
+ a| 
+Shelf 2
+ a| 
+.. Verkabeln Sie den NSM A-Port e0a mit dem Controller A-Steckplatz 8, Port A (e8a).
+.. Verkabeln Sie den NSM A-Port e0b mit Controller B-Steckplatz 11, Port b (e11b).
+.. Verbinden Sie den NSM B-Port e0a mit Controller B-Steckplatz 8, Port A (e8a).
+.. Verkabeln Sie den NSM B-Port e0b mit Controller A-Steckplatz 11, Port b (e11b).
+.. Fahren Sie mit Schritt 3 fort.
+
+
+Die folgende Abbildung zeigt die Verkabelung für zwei Hot-Added Shelf mit zwei RoCE-fähigen I/O-Modulen pro Controller-Modul:
+
+image::../media/drw_ns224_vino_i_2shelves_2cards_ieops-1641.svg[Verkabelung für ASA A70 oder A90 mit zwei Einschüben und zwei IO-Modulen]
+
+|===
+. Überprüfen Sie mit https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^].
++
+Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
+
+
+
+.Was kommt als Nächstes?
+Wenn Sie die automatische Laufwerkszuweisung als Teil der Vorbereitung für dieses Verfahren deaktiviert haben, müssen Sie manuell die Laufwerkseigentümer festlegen und die automatische Laufwerkszuweisung ggf. erneut aktivieren. Gehen Sie zu link:complete-hot-add-shelf.html["Füllen Sie das Hot Add aus"].
+
+Andernfalls müssen Sie das Hot-Add-Regal verwenden.
+
+====
 .Kabeleinschub zu ASA A250 oder ASA C250
 [%collapsible]
 ====

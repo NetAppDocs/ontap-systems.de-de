@@ -1,0 +1,80 @@
+---
+permalink: asa-r2-70-90/bootmedia-replace-bmr.html 
+sidebar: sidebar 
+keywords: asa r2 a70, asa r2 a90, replace the boot media 
+summary: Sie suchen das fehlerhafte Startmedium, indem Sie das System Management-Modul entfernen, bevor Sie das Startmedium austauschen können. 
+---
+= Ersetzen Sie die Startmedien – ASA A70 und ASA A90
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um das Startmedium zu ersetzen, müssen Sie das System Management-Modul von der Rückseite des Systems entfernen, das gestörte Startmedium entfernen und das Ersatz-Startmedium im System Management-Modul installieren.
+
+.Schritte
+Das Startmedium befindet sich im System Management-Modul und kann durch Entfernen des Moduls aus dem System aufgerufen werden.
+
+image::../media/drw_a70-90_boot_media_remove_replace_ieops-1367.svg[Startmedien ersetzen Grafik]
+
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[Legende Nummer 1]
+ a| 
+Nockenverriegelung des Systemmanagementmoduls
+
+
+
+ a| 
+image::../media/legend_icon_02.svg[Legende Nummer 2]
+ a| 
+Verriegelungstaste für Startmedien
+
+
+
+ a| 
+image::../media/legend_icon_03.svg[Legende Nummer 3]
+ a| 
+Boot-Medien
+
+|===
+. Drücken Sie auf der Vorderseite des Gehäuses die Daumen, um jedes Laufwerk fest einzuschieben, bis Sie einen positiven Stopp spüren. Dadurch wird sichergestellt, dass die Laufwerke fest an der Mittelplatine des Gehäuses sitzen.
++
+image::../media/drw_a800_drive_seated_IEOPS-960.svg[drw a800-Laufwerk mit IEOPS 960]
+
+. Gehen Sie zur Rückseite des Gehäuses. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Trennen Sie das Controller-Modul von der Stromversorgung, indem Sie das Controller-Modul ungefähr drei Zoll herausziehen:
++
+.. Drücken Sie beide Verriegelungen des Controller-Moduls nach unten, und drehen Sie beide Verriegelungen gleichzeitig nach unten.
+.. Ziehen Sie das Controller-Modul ungefähr 3 Zoll aus dem Chassis, um die Stromversorgung zu trennen.
+.. Entfernen Sie alle Kabel, die am System Management-Modul angeschlossen sind. Achten Sie darauf, dass Sie beim Wiedereinsetzen des Moduls die Kabelanschlüsse kennzeichnen, damit Sie sie an die richtigen Anschlüsse anschließen können.
+.. Drehen Sie das Kabelführungs-Fach nach unten, indem Sie die Tasten an beiden Seiten an der Innenseite des Kabelführungs-Fachs ziehen und das Fach dann nach unten drehen.
+.. Drücken Sie die Taste für die Systemverwaltung. Der Nockenhebel bewegt sich vom Gehäuse weg.
+.. Drehen Sie den Nockenhebel ganz nach unten, und entfernen Sie das System-Management-Modul aus dem Controller-Modul.
+.. Platzieren Sie das System-Management-Modul auf einer antistatischen Matte, damit das Startmedium zugänglich ist.
+
+
+. Entfernen Sie das Startmedium aus dem Verwaltungsmodul:
++
+.. Drücken Sie die blaue Verriegelungstaste.
+.. Drehen Sie das Startmedium nach oben, schieben Sie es aus dem Sockel und legen Sie es beiseite.
+
+
+. Installieren Sie das Ersatz-Startmedium im System Management-Modul:
++
+.. Richten Sie die Kanten der Startmedien am Buchsengehäuse aus, und schieben Sie sie vorsichtig in die Buchse.
+.. Drehen Sie das Startmedium nach unten in Richtung Verriegelungstaste.
+.. Drücken Sie die Verriegelungstaste, drehen Sie die Manschettenmedien ganz nach unten, und lassen Sie dann die Verriegelungstaste los.
+
+
+. Installieren Sie das System Management-Modul neu:
++
+.. Drehen Sie das Kabelführungs-Fach bis in die geschlossene Position.
+.. System-Management-Modul erneut verwenden.
+
+
+

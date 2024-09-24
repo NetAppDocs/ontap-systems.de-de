@@ -14,19 +14,18 @@ Das Bild wird vom USB-Flash-Laufwerk heruntergeladen.
 +
 [cols="1,2"]
 |===
-| Wenn Ihr System... | Dann... 
+| Wenn Ihr System ausgeführt wird... | Dann... 
 
 
  a| 
-Eine Netzwerkverbindung
+ONTAP 9.16.0 oder früher
  a| 
 .. Drücken Sie auf der außer Betrieb genommenen Steuerung _Y_, wenn angezeigt wird `Do you want to restore the backup configuration now?`
 .. Drücken Sie auf dem Controller für beeinträchtigte Störungen _Y_, wenn Sie zum Überschreiben aufgefordert werden `/etc/ssh/ssh_host_ecdsa_key`.
 .. Setzen Sie auf dem funktionierenden Partner-Controller den beeinträchtigten Controller auf die erweiterte Berechtigungsebene: _Set -Privilege Advanced_.
 .. Führen Sie auf dem funktionierenden Partner-Controller den Befehl restore Backup aus: _System Node restore-Backup -Node local -target-address Impaired_Node_IP_address_.
 +
-
-NOTE: Wenn Sie eine andere Meldung als eine erfolgreiche Wiederherstellung sehen, wenden Sie sich an https://support.netapp.com["NetApp Support"].
+*HINWEIS:* Wenn Sie eine andere Nachricht als eine erfolgreiche Wiederherstellung sehen, kontaktieren Sie https://support.netapp.com["NetApp Support"].
 
 .. Geben Sie auf dem funktionstüchtigen Partner-Controller den beeinträchtigten Controller auf die Admin-Ebene: _Set -Privilege admin_ zurück.
 .. Drücken Sie auf dem Controller für beeinträchtigte Störungen _y_, wenn angezeigt wird `Was the restore backup procedure successful?`.
@@ -35,26 +34,35 @@ NOTE: Wenn Sie eine andere Meldung als eine erfolgreiche Wiederherstellung sehen
 .. Wenn das System keine Codierung verwendet, wählen Sie _Option 1 Normal Boot._, andernfalls gehen Sie zu link:bootmedia-encryption-restore.html["Wiederherstellung von Schlüsselmanagern"].
 .. Schließen Sie das Konsolenkabel an den Partner Controller an.
 .. Geben Sie den Controller mithilfe des Befehls „_Storage Failover Giveback -fromnode local_“ zurück.
-+
-... Stellen Sie das automatische Giveback wieder her, wenn Sie es mithilfe des Befehls _Storage Failover modify -Node local -Auto-Giveback true_ deaktiviert haben.
-
-
+.. Stellen Sie das automatische Giveback wieder her, wenn Sie es mithilfe des Befehls _Storage Failover modify -Node local -Auto-Giveback true_ deaktiviert haben.
 .. Wenn AutoSupport aktiviert ist, stellen Sie die automatische Fallerstellung mithilfe des Befehls _System Node AutoSupport Invoke -Node * -type all -message MAINT=END_ wieder her.
++
+*HINWEIS:* Wenn der Prozess fehlschlägt, kontaktieren Sie https://support.netapp.com["NetApp Support"].
 
 
-
-
- a| 
-Keine Netzwerkverbindung
- a| 
-Kontakt https://support.netapp.com["NetApp Support"].
 
 
 
  a| 
-Keine Netzwerkverbindung und befindet sich in einer MetroCluster IP-Konfiguration
+ONTAP 9.16.1 oder höher
  a| 
-Kontakt https://support.netapp.com["NetApp Support"].
+.. Drücken Sie auf dem Controller für beeinträchtigte Vorgänge _y_, wenn Sie dazu aufgefordert werden, die Backup-Konfiguration wiederherzustellen.
++
+Nachdem der Wiederherstellungsvorgang erfolgreich war, wird diese Meldung auf der Konsole - angezeigt `syncflash_partner: Restore from partner complete`.
+
+.. Drücken Sie auf dem Controller für beeinträchtigte Vorgänge bei Aufforderung _y_, um zu bestätigen, ob die Wiederherstellung erfolgreich war.
+.. Drücken Sie auf dem Controller für beeinträchtigte Störungen die Taste _y_, wenn Sie zur Verwendung der wiederhergestellten Konfiguration aufgefordert werden.
+.. Drücken Sie auf dem beeinträchtigten Controller bei Aufforderung _y_, um den Node neu zu booten.
+.. Drücken Sie auf dem beeinträchtigten Controller bei Aufforderung _y_, um den beeinträchtigten Controller neu zu starten, und drücken Sie _Ctrl-c_ für das Startmenü.
+.. Wenn das System keine Codierung verwendet, wählen Sie _Option 1 Normal Boot._, andernfalls gehen Sie zu link:bootmedia-encryption-restore.html["Wiederherstellung von Schlüsselmanagern"].
+.. Schließen Sie das Konsolenkabel an den Partner Controller an.
+.. Geben Sie den Controller mithilfe des Befehls „_Storage Failover Giveback -fromnode local_“ zurück.
+.. Stellen Sie das automatische Giveback wieder her, wenn Sie es mithilfe des Befehls _Storage Failover modify -Node local -Auto-Giveback true_ deaktiviert haben.
+.. Wenn AutoSupport aktiviert ist, stellen Sie die automatische Fallerstellung mithilfe des Befehls _System Node AutoSupport Invoke -Node * -type all -message MAINT=END_ wieder her.
++
+*HINWEIS:* Wenn der Prozess fehlschlägt, kontaktieren Sie https://support.netapp.com["NetApp Support"].
+
+
 
 |===
 

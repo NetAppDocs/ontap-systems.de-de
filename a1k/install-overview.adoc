@@ -2,33 +2,37 @@
 permalink: a1k/install-overview.html 
 sidebar: sidebar 
 keywords: Installation, deployment, Install, deploy, Installing, deploying, a1k 
-summary: Führen Sie diese grundlegenden Schritte aus, um Ihr AFF A1K Storage-System zu installieren und einzurichten und als Node in Ihrem ONTAP System zu implementieren. 
+summary: Führen Sie diese grundlegenden Schritte aus, um Ihr AFF A1K Storage-System zu installieren und einzurichten und als HA-Paar in Ihrem ONTAP System zu implementieren. 
 ---
-= Setup-Workflow installieren – AFF A1K
+= Installations- und Konfigurations-Workflow – AFF A1K
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Führen Sie die folgenden Workflow-Schritte aus, um Ihr AFF A1K-Speichersystem zu installieren, einzurichten und bereitzustellen.
+Zum Installieren und Konfigurieren des AFF A1K Systems überprüfen Sie die Hardwareanforderungen, bereiten den Standort vor, installieren und verkabeln die Hardwarekomponenten, schalten das System ein und richten den ONTAP-Cluster ein.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:install-prepare.html["Installation vorbereiten"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:install-requirements.html["Installationsanforderungen prüfen"]
 [role="quick-margin-para"]
-Um die Installation vorzubereiten, müssen Sie den Standort vorbereiten, die Umwelt- und elektrischen Anforderungen prüfen und sicherstellen, dass genügend Rackplatz vorhanden ist. Packen Sie dann das Gerät aus, vergleichen Sie dessen Inhalt mit dem Packzettel, und registrieren Sie die Hardware, um auf Support-Vorteile zuzugreifen.
+Sehen Sie sich die Geräte und Werkzeuge an, die für die Installation des Speichersystems und der Lagerregale erforderlich sind, und lesen Sie die Hebe- und Sicherheitsvorkehrungen durch.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:install-hardware.html["Hardware installieren"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:install-prepare.html["Bereiten Sie die Installation des AFF A1K-Speichersystems vor"]
 [role="quick-margin-para"]
-Um Hardware zu installieren, installieren Sie die Schienenkits für Ihre Plattform und die Regale, und installieren und sichern Sie dann Ihre Plattform im Schrank oder Telco-Rack. Schieben Sie dann die Regale auf die Schienen. Schließen Sie schließlich die Kabelverwaltungsgeräte an der Rückseite der Plattform an, um die Kabelführung zu organisieren.
+Um die Installation des Systems vorzubereiten, müssen Sie den Standort vorbereiten, die Umgebung und die elektrischen Anforderungen prüfen und sicherstellen, dass genügend Rack-Platz vorhanden ist. Packen Sie dann das Gerät aus, vergleichen Sie dessen Inhalt mit dem Packzettel, und registrieren Sie die Hardware, um auf Support-Vorteile zuzugreifen.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:install-cable.html["Verkabelung der Hardware"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:install-hardware.html["Installieren Sie die Hardware für das AFF A1K-Speichersystem"]
 [role="quick-margin-para"]
-Um die Hardware zu verkabeln, verkabeln Sie die Controller zuerst mit dem Netzwerk und verkabeln dann die Controller mit den Shelfs.
+Um die Hardware zu installieren, installieren Sie die Schienenkits für Ihr Speichersystem und die Regale, und installieren und sichern Sie dann das Speichersystem im Schrank oder im Telco-Rack. Schieben Sie dann die Regale auf die Schienen. Schließen Sie schließlich die Kabelverwaltungsgeräte an der Rückseite des Speichersystems an, um die Kabelführung zu organisieren.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:install-power-hardware.html["Storage-System einschalten"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:install-cable.html["Die Controller und Storage Shelfs für das AFF A1K Storage-System verkabeln"]
 [role="quick-margin-para"]
-Um das System einzuschalten, schalten Sie zuerst jedes NS224-Shelf ein und weisen Sie eine eindeutige Shelf-ID zu, um sicherzustellen, dass jedes Shelf innerhalb des Setups verschieden ist. Schalten Sie dann die Controller ein. Verwenden Sie schließlich das mitgelieferte Sicherungsgerät, um die Stromkabel an jedem Netzteil zu befestigen.
+Um die Hardware zu verkabeln, verbinden Sie zuerst die Storage Controller mit dem Netzwerk und anschließend die Controller mit den Storage-Shelfs.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:install-complete.html["Einrichtung des Storage-Systems abschließen"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:install-power-hardware.html["Schalten Sie das AFF A1K-Speichersystem ein"]
 [role="quick-margin-para"]
-Zum Abschließen der System-Einrichtung rufen Sie die webbasierte Schnittstelle von System Manager auf, indem Sie die IP-Adresse des Controllers in einem Browser aufrufen. Ein Setup-Assistent unterstützt Sie bei den ersten Schritten zur Cluster-Konfiguration. Alternativ können Sie auch die Befehlszeilenschnittstelle (CLI) verwenden.
+Schalten Sie vor dem Einschalten der Controller jedes NS224-Shelf ein und weisen Sie eine eindeutige Shelf-ID zu, damit jedes Shelf im Setup eindeutig identifiziert wird.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sechs"]link:install-complete.html["Einrichtung des Storage-Systems abschließen"]
+[role="quick-margin-para"]
+Die System-Einrichtung lässt sich über den ONTAP System Manager abschließen, indem die IP-Adresse des Controllers in einem Browser angezeigt wird. Ein Setup-Assistent unterstützt Sie bei der vollständigen Cluster-Konfiguration für Ihr AFF A1K Storage-System.

@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: aff a70, a90, prepare installation 
 summary: Führen Sie die Plattformeinrichtung und -Konfiguration mithilfe der Cluster-Erkennung durch, wobei nur eine Verbindung zum Switch und Laptop besteht, oder stellen Sie eine direkte Verbindung zu einem Controller im Storage-System her und stellen Sie dann eine Verbindung zum Management Switch her. 
 ---
-= Komplette Einrichtung und Konfiguration des Storage-Systems – AFF A70, AFF A90
+= Vollständige Einrichtung und Konfiguration des Storage-Systems – AFF A70 und AFF A90
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Nach der Installation der Hardware konfigurieren und verwalten Sie das Speichersystem mit der ONTAP Software.
+Nachdem Sie das Storage-System eingeschaltet haben, können Sie das Cluster-Netzwerk erkennen und ein ONTAP Cluster einrichten.
 
 
 
@@ -19,7 +19,7 @@ Nach der Installation der Hardware konfigurieren und verwalten Sie das Speichers
 
 Falls Sie dies noch nicht getan haben, sammeln Sie die Informationen, die Sie zum Konfigurieren des Clusters benötigen, z. B. den Port der Cluster-Managementoberfläche und die IP-Adresse.
 
-Verwenden Sie das https://docs.netapp.com/us-en/ontap/software_setup/index.html["Arbeitsblatt für die Cluster-Einrichtung"] , um die Werte aufzuzeichnen, die Sie während der Cluster-Einrichtung benötigen. Wenn ein Standardwert angegeben ist, können Sie diesen Wert verwenden oder Ihren eigenen Wert eingeben.
+Verwenden Sie das https://docs.netapp.com/us-en/ontap/software_setup/index.html["Arbeitsblatt für die Cluster-Einrichtung"^] , um die Werte aufzuzeichnen, die Sie während der Cluster-Einrichtung benötigen. Wenn ein Standardwert angegeben ist, können Sie diesen Wert verwenden oder Ihren eigenen Wert eingeben.
 
 
 
@@ -47,10 +47,10 @@ image::../media/drw_autodiscovery_controler_select_ieops-1849.svg[So ermitteln S
 
 NOTE: XXXXX ist die Seriennummer der Plattform für den Ziel-Node.
 
+
+
 +
 System Manager wird geöffnet.
-
-
 
 
 
@@ -60,7 +60,7 @@ System Manager wird geöffnet.
 Wenn die Netzwerkerkennung auf Ihrem Laptop nicht aktiviert ist, schließen Sie die Konfiguration mit dem Cluster-Setup-Assistenten für die ONTAP Befehlszeilenschnittstelle (CLI) ab.
 
 .Bevor Sie beginnen
-Stellen Sie sicher, dass Ihr Laptop mit dem seriellen Konsolenport verbunden ist und die Controller eingeschaltet sind. Anweisungen finden Sie unter link:install-power-hardware.html#step-2-power-on-the-controllers["Schalten Sie die Controller ein"] .
+Stellen Sie sicher, dass Ihr Laptop mit dem seriellen Konsolenport verbunden ist und die Controller eingeschaltet sind. Anweisungen finden Sie unter link:install-power-hardware.html#step-2-power-on-the-controllers["Schalten Sie das Speichersystem ein"] .
 
 .Schritte
 Weisen Sie einem der Nodes eine erste Node-Management-IP-Adresse zu.
@@ -99,9 +99,9 @@ Der Node bootet, und dann startet der Cluster-Setup-Assistent auf der Konsole.
 
 == Schritt 3: Konfigurieren Sie Ihren Cluster
 
-NetApp empfiehlt, zum Einrichten neuer Cluster System Manager zu verwenden. Anweisungen zur Einrichtung finden Sie unter https://docs.netapp.com/us-en/ontap/task_configure_ontap.html["Konfigurieren Sie ONTAP mit System Manager in einem neuen Cluster"] .
+NetApp empfiehlt, zum Einrichten neuer Cluster System Manager zu verwenden. Anweisungen zur Einrichtung finden Sie unter https://docs.netapp.com/us-en/ontap/task_configure_ontap.html["Konfigurieren Sie ONTAP mit System Manager in einem neuen Cluster"^] .
 
 System Manager bietet einen einfachen und einfachen Workflow für die Cluster-Einrichtung und -Konfiguration einschließlich der Zuweisung einer Node-Management-IP-Adresse, Initialisierung des Clusters, Erstellung eines lokalen Tiers, Konfiguration von Protokollen und Erstbereitstellung des angeschlossenen Storage.
 
-
-NOTE: Nachdem der Cluster initialisiert wurde, laden Sie ihn herunter und führen Sie aus  https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"] , um das Setup zu bestätigen.
+.Was kommt als Nächstes?
+Nachdem der Cluster initialisiert wurde, laden Sie ihn herunter und führen Sie aus  https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^] , um das Setup zu bestätigen.

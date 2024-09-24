@@ -1,0 +1,310 @@
+---
+permalink: asa-r2-a1k/bootmedia-recovery-image-boot-bmr.html 
+sidebar: sidebar 
+keywords: asa r2 a1k, boot the recovery image 
+summary: Sie müssen das ONTAP-Image vom USB-Laufwerk starten, das Dateisystem wiederherstellen und die Umgebungsvariablen überprüfen. 
+---
+= Automatische Startwiederherstellung - ASA A1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das Image auf den Boot-Medien vom Partner-Controller mithilfe des automatisierten Boot-Recovery-Prozesses wiederherstellen.
+
+Wählen Sie die automatische Recovery-Option für einen Knoten aus, die Ihrer Konfiguration entspricht.
+
+[role="tabbed-block"]
+====
+.Option 1: Wiederherstellung ohne Verschlüsselung
+--
+Sie können das ONTAP-Image (Boot-Medien-Recovery) vom Partner-Node mithilfe des `boot_recovery -partner` Befehls für ASA r2-Plattformen mit ONTAP 9.16.0 und höher wiederherstellen.
+
+.Bevor Sie beginnen
+Wenn Sie einen Node booten und die Boot-Medien auf diesem Node beschädigt sind, werden an der Loader-Eingabeaufforderung die folgenden Meldungen und der Boot-Prozess mit stop angezeigt:
+
+[listing]
+----
+
+Can't find primary boot device u0a.0
+Can't find backup boot device u0a.1
+ACPI RSDP Found at 0x777fe014
+
+
+Starting AUTOBOOT press Ctrl-C to abort...
+Could not load fat://boot0/X86_64/freebsd/image1/kernel:Device not found
+
+ERROR: Error booting OS on: 'boot0' file: fat://boot0/X86_64/Linux/image1/vmlinuz (boot0,fat)
+
+
+ERROR: Error booting OS on: 'boot0' file: fat://boot0/X86_64/freebsd/image1/kernel (boot0,fat)
+
+
+Autoboot of PRIMARY image failed. Device not found (-6)
+LOADER-A>
+
+----
+Wenn diese Meldung angezeigt wird, müssen Sie das ONTAP-Image wiederherstellen
+
+.Schritte
+. Geben Sie an der Loader-Eingabeaufforderung den Befehl _Boot_Recovery -Partner_ ein.
++
+Auf dem Bildschirm wird die Meldung angezeigt `Starting boot media recovery (BMR) process press Ctrl-C to abort...` und die ersten Überprüfungen werden gestartet.
+
+. Überwachen Sie den Prozess, während Loader die lokalen Cluster-Ports konfiguriert und Netzboot über ausführt `\http://<remote-partner-IP>:65530/recoverydisk/image.tgz`.
++
+Sobald Netzboot ausgeführt wird, `Starting BMR ...` wird auf dem Bildschirm angezeigt, und der Vorgang schließt den Installationsvorgang ab.
+
++
+.. Wenn Key Manager nicht konfiguriert ist, wird die folgende Meldung angezeigt:
++
+....
+key manager is not configured. Exiting.
+....
+.. Wenn die folgende Meldung angezeigt wird, ist Onboard Key Manager (OKM) konfiguriert:
++
+....
+
+key manager is configured.
+Entering Bootmenu Option 10...
+
+This option must be used only in disaster recovery procedures. Are you sure? (y or n):
+
+....
++
+Gehen Sie zu, um den Wiederherstellungsprozess abzuschließen.
+
+.. Wenn die folgende Meldung angezeigt wird, wird External Key Manager (EKM) konfiguriert. Gehen Sie zum EKM-Thema und schließen Sie den Wiederherstellungsprozess ab:
++
+....
+Error when fetching key manager config from partner 169.254.139.209: 28
+Has key manager been configured on this system? {y|n}
+
+....
+
+
+. Überwachen Sie den BMR-Prozess bei der Ausführung von Wiederherstellungskonfiguration, Env-Datei, mdb und rdb vom Partner.
+. Der Knoten wird neu gestartet und BMR ist abgeschlossen, wenn Folgendes angezeigt wird:
+
+
+....
+
+varfs_backup_restore: update checksum for varfs.tgz
+varfs_backup_restore: restore using /cfcard/x86_64/freebsd/oldvarfs.tgz
+varfs_backup_restore: attempting to restore /var/kmip to the boot device
+varfs_backup_restore: failed to restore /var/kmip to the boot device
+varfs_backup_restore: Rebooting to load the new varfs
+.
+Terminated
+varfs_backup_restore: bootarg.abandon_varfs is set! Skipping /var backup.
+
+....
+--
+.Option 2: Wiederherstellung mit Onboard Key Manager vorhanden
+--
+Sie können das ONTAP-Image (Boot-Medien-Recovery) vom Partner-Node mithilfe des `boot_recovery -partner` mit ASA r2-Plattformen unter ONTAP 9.16.0 und höher wiederherstellen.
+
+.Bevor Sie beginnen
+Wenn Sie einen Node booten und die Boot-Medien auf diesem Node beschädigt sind, werden an der Loader-Eingabeaufforderung die folgenden Meldungen und der Boot-Prozess mit stop angezeigt:
+
+....
+
+Can't find primary boot device u0a.0
+Can't find backup boot device u0a.1
+ACPI RSDP Found at 0x777fe014
+
+
+Starting AUTOBOOT press Ctrl-C to abort...
+Could not load fat://boot0/X86_64/freebsd/image1/kernel:Device not found
+
+ERROR: Error booting OS on: 'boot0' file: fat://boot0/X86_64/Linux/image1/vmlinuz (boot0,fat)
+
+
+ERROR: Error booting OS on: 'boot0' file: fat://boot0/X86_64/freebsd/image1/kernel (boot0,fat)
+
+
+Autoboot of PRIMARY image failed. Device not found (-6)
+LOADER-A>
+
+....
+Wenn diese Meldung angezeigt wird, müssen Sie das ONTAP-Image wiederherstellen
+
+.Schritte
+. Geben Sie an der Loader-Eingabeaufforderung den Befehl _Boot_Recovery -Partner_ ein.
++
+Der Bildschirm zeigt die Meldung `Starting boot media recovery (BMR) process press Ctrl-C to abort...` an und beginnt mit der ersten Überprüfung und Installation der Startwiederherstellungsdateien.
+
++
+.. Wenn Onboard Key Manager (OKM) konfiguriert ist, wird Folgendes angezeigt:
++
+....
+key manager is configured.
+Entering Bootmenu Option 10...
+
+This option must be used only in disaster recovery procedures. Are you sure? (y or n):
+....
+
+
+. Geben Sie an der Eingabeaufforderung _y_ ein.
+. Geben Sie die Passphrase für Onboard-Verschlüsselungsmanagement ein, wenn angezeigt wird `Enter the passphrase for onboard key management:`
+. Geben Sie die Passphrase für Onboard Key Manager erneut ein, wenn Sie zur Bestätigung der Passphrase aufgefordert werden.
++
+....
+Enter the passphrase for onboard key management:
+Enter the passphrase again to confirm:
+Enter the backup data:
+TmV0QXBwIEtleSBCbG9iAAECAAAEAAAAcAEAAAAAAAA3yR6UAAAAACEAAAAAAAAA
+QAAAAAAAAACJz1u2AAAAAPX84XY5AU0p4Jcb9t8wiwOZoqyJPJ4L6/j5FHJ9yj/w
+RVDO1sZB1E4HO79/zYc82nBwtiHaSPWCbkCrMWuQQDsiAAAAAAAAACgAAAAAAAAA
+3WTh7gAAAAAAAAAAAAAAAAIAAAAAAAgAZJEIWvdeHr5RCAvHGclo+wAAAAAAAAAA
+IgAAAAAAAAAoAAAAAAAAAEOTcR0AAAAAAAAAAAAAAAACAAAAAAAJAGr3tJA/LRzU
+QRHwv+1aWvAAAAAAAAAAACQAAAAAAAAAgAAAAAAAAABHVFpxAAAAAHUgdVq0EKNp
+.
+.
+.
+.
+....
++
+Nach Abschluss des Wiederherstellungsvorgangs wird Folgendes angezeigt:
+
++
+....
+Trying to recover keymanager secrets....
+Setting recovery material for the onboard key manager
+Recovery secrets set successfully
+Trying to delete any existing km_onboard.wkeydb file.
+
+Successfully recovered keymanager secrets.
+....
+. Überwachen Sie den BMR-Prozess bei der Ausführung von Wiederherstellungskonfiguration, Env-Datei, mdb und rdb vom Partner.
++
+Wenn die Wiederherstellung abgeschlossen ist, wird der Node neu gebootet, um den Prozess abzuschließen.
+
+
+
+--
+.Option 3: Wiederherstellung mit externem Key Manager vorhanden
+--
+Sie können das ONTAP-Image (Boot-Medien-Recovery) vom Partner-Node mithilfe des `boot_recovery -partner` mit ASA r2-Plattformen unter ONTAP 9.16.0 und höher wiederherstellen.
+
+Wenn Sie einen Node booten und die Boot-Medien auf diesem Node beschädigt sind, werden an der Loader-Eingabeaufforderung die folgenden Meldungen und der Boot-Prozess mit stop angezeigt:
+
+....
+
+Can't find primary boot device u0a.0
+Can't find backup boot device u0a.1
+ACPI RSDP Found at 0x777fe014
+
+
+Starting AUTOBOOT press Ctrl-C to abort...
+Could not load fat://boot0/X86_64/freebsd/image1/kernel:Device not found
+
+ERROR: Error booting OS on: 'boot0' file: fat://boot0/X86_64/Linux/image1/vmlinuz (boot0,fat)
+
+
+ERROR: Error booting OS on: 'boot0' file: fat://boot0/X86_64/freebsd/image1/kernel (boot0,fat)
+
+
+Autoboot of PRIMARY image failed. Device not found (-6)
+LOADER-A>
+....
+Wenn diese Meldung angezeigt wird, müssen Sie das ONTAP-Image wiederherstellen.
+
+.Schritte
+. Geben Sie an der Loader-Eingabeaufforderung den Befehl _Boot_Recovery -Partner_ ein.
++
+Der Bildschirm zeigt die Meldung `Starting boot media recovery (BMR) process press Ctrl-C to abort...` an und beginnt mit der ersten Überprüfung und Installation der Startwiederherstellungsdateien.
+
++
+.. Wenn External Key Manager (EKM) konfiguriert ist, wird Folgendes angezeigt:
++
+....
+Error when fetching key manager config from partner 169.254.139.209: 28
+Has key manager been configured on this system? {y|n}
+....
+.. Geben Sie _y_ ein, wenn ein Schlüsselmanager konfiguriert wurde.
++
+....
+key manager is configured.
+Entering Bootmenu Option 11...
+....
+
+
++
+Die Bootmenu-Option 11 fordert den Benutzer zur Eingabe aller EKM-Konfigurationsinformationen auf, damit die Konfigurationsdateien neu erstellt werden können.
+
+. Geben Sie an jeder Eingabeaufforderung die EKM-Konfiguration ein.
++
+*HINWEIS:* die meisten dieser Informationen wurden eingegeben, als EKM ursprünglich aktiviert wurde. Sie sollten die gleichen Informationen eingeben, die während der ursprünglichen EKM-Konfiguration eingegeben wurden.
+
+. Überprüfen Sie, ob `Keystore UUID` und `Cluster UUID` korrekt sind.
++
+.. Rufen Sie auf dem Partner-Node die Cluster-UUID mit dem  `cluster identity show` Befehl ab.
+.. Rufen Sie auf dem Partner-Node die Keystore-UUID mit dem `vserver show -type admin` Befehl und dem `key-manager keystore show -vserver <nodename>` Befehl ab.
+.. Geben Sie bei der entsprechenden Aufforderung die Werte für Keystore-UUID und Cluster-UUID ein.
++
+*HINWEIS:* Wenn der Partnerknoten nicht verfügbar ist, können die Keystore-UUID und die Cluster-UUID vom Mroot-AK-Schlüssel abgerufen werden, der sich auf dem konfigurierten Schlüsselserver befindet.
+
++
+Überprüfen Sie `x-NETAPP-ClusterName: <cluster name>` für die Cluster-UUID und `x-NETAPP-KeyUsage: "MROOT-AK"` für die Keystore-UUID-Attribute, um sicherzustellen, dass Sie über die richtigen Schlüssel verfügen.
+
+
+
+. Überwachen Sie den Abruf und die Wiederherstellung von Mroot-AK im ONTAP-Knoten.
+. Wenn der Prozess den Schlüssel nicht wiederherstellen kann, wird die folgende Meldung angezeigt und E0M über die Menü-System-Shell konfiguriert werden müssen:
++
+....
+ERROR: kmip_init: halting this system with encrypted mroot...
+WARNING: kmip_init: authentication keys might not be available.
+********************************************************
+*                 A T T E N T I O N                    *
+*                                                      *
+*       System cannot connect to key managers.         *
+*                                                      *
+********************************************************
+ERROR: kmip_init: halting this system with encrypted mroot...
+.
+Terminated
+
+Uptime: 11m32s
+System halting...
+
+LOADER-B>
+
+....
++
+.. Führen Sie den `boot_recovery -partner` Befehl auf dem Knoten Wiederherstellung aus.
+.. Wenn Sie aufgefordert werden, die Optionen für EKM (y oder n) auszuführen, wählen Sie _n_ für alle aus.
++
+Nach Auswahl der Option _n_ für die 8 Eingabeaufforderungen wird das System beim Startmenü angehalten.
+
+.. Sammeln Sie die Dateiinformationen /cfcard/kmip/servers.cfg von einem anderen Clusterknoten. Sie erfassen die folgenden Informationen:
++
+*** Die Adresse des KMIP-Servers.
+*** Der KMIP-Port.
+*** Die Keystore-UUID.
+*** Eine Kopie des Clientzertifikats aus der Datei /cfcard/kmip/certs/Client.crt.
+*** Eine Kopie des Client-Schlüssels aus der Datei /cfcard/kmip/certs/client.key.
+*** Eine Kopie der KMIP-Server-CA(s) aus der Datei /cfcard/kmip/certs/CA.pem.
+
+
+.. Geben Sie systemshell über das Startmenü ein, indem Sie an der Eingabeaufforderung _systemshell_ eingeben.
+.. Konfigurieren Sie das Netzwerk über das Menü der Systemshell für E0M, Netmask und Gateway.
+.. Verlassen Sie die Menü-Systemshell mit dem Befehl _exit_.
+.. Das Boot-Menü wird angezeigt. Wählen Sie die Option `11`, um mit der EKM-Wiederherstellung fortzufahren.
+.. Beantworten Sie `y` die folgenden Fragen und geben Sie die erforderlichen Informationen ein, die Sie zuvor bei Aufforderung erfasst haben:
++
+*** Haben Sie eine Kopie der Datei /cfcard/kmip/certs/Client.crt? {J/n}
+*** Haben Sie eine Kopie der Datei /cfcard/kmip/certs/client.key? {J/n}
+*** Haben Sie eine Kopie der Datei /cfcard/kmip/certs/CA.pem? {J/n}
+*** Haben Sie eine Kopie der Datei /cfcard/kmip/servers.cfg? {J/n}
+
+
+
+
+. Wenn der Schlüssel ordnungsgemäß wiederhergestellt ist, wird der Wiederherstellungsprozess fortgesetzt und der Knoten neu gestartet.
+
+
+--
+====

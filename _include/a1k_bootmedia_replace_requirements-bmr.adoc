@@ -1,0 +1,15 @@
+= 
+:allow-uri-read: 
+
+
+Überprüfen Sie vor dem Austauschen des Startmediums die folgenden Anforderungen.
+
+* Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
+* Es ist wichtig, dass Sie die Befehle in diesen Schritten auf dem richtigen Controller anwenden:
++
+** Der Controller _Impared_ ist der Controller, an dem Sie Wartungsarbeiten durchführen.
+** Der _Healthy_ Controller ist der HA-Partner des beeinträchtigten Controllers.
+
+
+* Es dürfen keine fehlerhaften Cluster-Ports auf dem gestörten Controller vorhanden sein.
+

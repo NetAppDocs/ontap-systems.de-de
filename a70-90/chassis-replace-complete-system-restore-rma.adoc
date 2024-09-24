@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: aff a70, aff a90, verify and set HA state, complete the replacement process 
 summary: Sie müssen den HA-Status des Gehäuses überprüfen und das fehlerhafte Teil an NetApp zurücksenden, wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben. 
 ---
-= Vollständiger Chassisaustausch – AFF A70, AFF A90
+= Vollständiger Chassisaustausch – AFF A70 und AFF A90
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -31,7 +31,7 @@ Für den HA-Status kann einer der folgenden Werte vorliegen:
 
 +
 *** `ha`
-*** `mcc`
+*** `mcc` (In ASA nicht unterstützt)
 
 
 .. Bestätigen Sie, dass sich die Einstellung geändert hat: `ha-config show`
@@ -44,4 +44,4 @@ Für den HA-Status kann einer der folgenden Werte vorliegen:
 
 == Schritt 2: Rückgabe des fehlerhaften Teils an NetApp
 
-Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. Siehe https://mysupport.netapp.com/site/info/rma["Teilerückgabe  Austausch"] Seite für weitere Informationen.
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

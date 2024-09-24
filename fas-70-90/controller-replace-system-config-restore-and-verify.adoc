@@ -1,0 +1,70 @@
+---
+permalink: fas-70-90/controller-replace-system-config-restore-and-verify.html 
+sidebar: sidebar 
+keywords: fas70, fas90, restore and verify the system configuration, verify and set the ha state of the controller module 
+summary: Nach dem Austausch und dem Booten der Hardware im Wartungsmodus überprüfen Sie die Low-Level-Systemkonfiguration des Ersatz-Controllers und konfigurieren nach Bedarf die Systemeinstellungen neu. 
+---
+= Stellen Sie die Systemkonfiguration – FAS70 und FAS90 – wieder her und überprüfen Sie sie
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nach dem Austausch der Hardware überprüfen Sie die Low-Level-Systemkonfiguration des Ersatz-Controllers und konfigurieren das System nach Bedarf neu.
+
+
+
+== Schritt 1: Einstellen und Überprüfen der Systemzeit
+
+Sie sollten die Uhrzeit und das Datum auf dem Ersatzcontroller-Modul gegen das gesunde Controller-Modul in einem HA-Paar oder gegen einen zuverlässigen Zeitserver in einer eigenständigen Konfiguration überprüfen. Wenn Zeit und Datum nicht übereinstimmen, müssen Sie sie auf dem Ersatzcontroller-Modul zurücksetzen, um mögliche Ausfälle auf Clients aufgrund von Zeitunterschieden zu verhindern.
+
+.Über diese Aufgabe
+Es ist wichtig, dass Sie die Befehle in den Schritten auf den richtigen Systemen anwenden:
+
+* Der Node _Replacement_ ist der neue Node, der den beeinträchtigten Knoten im Rahmen dieses Verfahrens ersetzt.
+* Der Node _Healthy_ ist der HA-Partner des Node _Replacement_.
+
+
+.Schritte
+. Wenn sich der Node _Replacement_ nicht an der LOADER-Eingabeaufforderung befindet, halten Sie das System an der LOADER-Eingabeaufforderung an.
+. Überprüfen Sie auf dem Node _Healthy_ die Systemzeit: `cluster date show`
++
+Datum und Uhrzeit basieren auf der konfigurierten Zeitzone.
+
+. Prüfen Sie an der LOADER-Eingabeaufforderung Datum und Uhrzeit auf dem Node _Replacement_: `show date`
++
+Datum und Uhrzeit werden in GMT angegeben.
+
+. Legen Sie bei Bedarf das Datum in GMT auf dem Ersatzknoten fest: `set date _mm/dd/yyyy_`
+. Stellen Sie bei Bedarf die Zeit in GMT auf dem Ersatzknoten ein: `set time _hh:mm:ss_`
+. Bestätigen Sie an der LOADER-Eingabeaufforderung Datum und Uhrzeit am Node _Replacement_: `show date`
++
+Datum und Uhrzeit werden in GMT angegeben.
+
+
+
+
+
+== Schritt: Überprüfen Sie den HA-Status des Chassis und legen Sie diesen fest
+
+Sie müssen die überprüfen `HA` Status des Controller-Moduls und, falls erforderlich, aktualisieren Sie den Status entsprechend Ihrer Systemkonfiguration.
+
+. Starten Sie im Wartungsmodus des Ersatz-Controller-Moduls, und vergewissern Sie sich, dass alle Komponenten denselben `HA` Status aufweisen: `ha-config show`
++
+Der HA-Status sollte für alle Komponenten identisch sein.
+
+. Wenn der angezeigte Systemzustand des Controller-Moduls nicht mit der Systemkonfiguration übereinstimmt, setzen Sie das ein `HA` Status für das Controller-Modul: `ha-config modify controller _ha-state_`
++
+Für den HA-Status kann einer der folgenden Werte vorliegen:
+
++
+** `ha`
+** `mcc` (Nicht unterstützt)
+** `mccip` (In ASA Systemen nicht unterstützt)
+** `non-ha` (Nicht unterstützt)
+
+
+. Wenn der angezeigte Systemzustand des Controller-Moduls nicht mit der Systemkonfiguration übereinstimmt, setzen Sie das ein `HA` Status für das Controller-Modul: `ha-config modify controller _ha-state_`
+. Bestätigen Sie, dass sich die Einstellung geändert hat: `ha-config show`
+

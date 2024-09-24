@@ -27,9 +27,9 @@ Sie können ein I/O-Modul zu einem leeren Modulsteckplatz in Ihrem Speichersyste
 
 
 
-=== Schritt 1: Fahren Sie den Knoten mit beeinträchtigten Knoten herunter
+=== Schritt 1: Schalten Sie das Controller-Modul für die gestörte Steuerung aus
 
-Fahren Sie den Regler herunter oder übernehmen Sie ihn mit einer der folgenden Optionen.
+Schalten Sie das Controller-Modul außer Betrieb, oder übernehmen Sie es.
 
 [role="tabbed-block"]
 ====
@@ -80,6 +80,9 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 --
 .Option 2: Controller befindet sich in einem MetroCluster
 --
+
+NOTE: Verwenden Sie dieses Verfahren nicht, wenn sich Ihr System in einer MetroCluster-Konfiguration mit zwei Knoten befindet.
+
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 
 * Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE anzeigt, um die Berechtigung und den Zustand zu erhalten, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^].
@@ -87,9 +90,9 @@ Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des
 
 
 .Schritte
-. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
+. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf eines AutoSupport-Befehls: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
 +
-Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+Mit dem folgenden AutoSupport-Befehl wird die automatische Erstellung von Fällen zwei Stunden lang unterdrückt: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
 
 . Deaktivieren Sie das automatische Giveback von der Konsole des gesunden Controllers: `storage failover modify –node local -auto-giveback false`
 . Nehmen Sie den beeinträchtigten Controller zur LOADER-Eingabeaufforderung:
@@ -116,7 +119,7 @@ Drücken Sie Strg-C, und antworten Sie dann `y` Wenn Sie dazu aufgefordert werde
  a| 
 Eingabeaufforderung des Systems oder Passwort (Systempasswort eingeben)
  a| 
-Übernehmen oder stoppen Sie den beeinträchtigten Regler von der gesunden Steuerung: `storage failover takeover -ofnode _impaired_node_name_`
+Halten Sie den Controller für den beeinträchtigten Betrieb an oder übernehmen Sie ihn vom Controller für den ordnungsgemäßen Betrieb: `storage failover takeover -ofnode _impaired_node_name_`
 
 Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drücken Sie Strg-C, und antworten Sie dann `y`.
 
@@ -150,7 +153,7 @@ image:../media/legend_icon_01.png["Legende Nummer 1"]
 |===
 +
 .. Drücken Sie die Nockenverriegelung am Blindmodul im Zielsteckplatz.
-.. Drehen Sie die Nockenverriegelung so weit wie möglich nach unten. Drehen Sie bei horizontalen Modulen den Nocken so weit wie möglich vom Modul weg.
+.. Drehen Sie die Nockenverriegelung so weit wie möglich vom Modul weg.
 .. Entfernen Sie das Modul aus dem Gehäuse, indem Sie den Finger in die Öffnung des Nockenhebels stecken und das Modul aus dem Gehäuse ziehen.
 
 
@@ -221,9 +224,9 @@ Verwenden Sie System Manager, um die LIFs dauerhaft zu verschiedenen Home Ports 
 
 
 
-=== Schritt 1: Fahren Sie den Knoten mit beeinträchtigten Knoten herunter
+=== Schritt 1: Schalten Sie das Controller-Modul für die gestörte Steuerung aus
 
-Fahren Sie den Regler herunter oder übernehmen Sie ihn mit einer der folgenden Optionen.
+Schalten Sie das Controller-Modul außer Betrieb, oder übernehmen Sie es.
 
 [role="tabbed-block"]
 ====
@@ -348,10 +351,7 @@ image:../media/legend_icon_01.png["Legende Nummer 1"]
 |===
 +
 .. Drücken Sie die Taste für die Nockenverriegelung.
-+
-Die Nockenverriegelung bewegt sich vom Gehäuse weg.
-
-.. Drehen Sie die Nockenverriegelung so weit wie möglich nach unten. Drehen Sie bei horizontalen Modulen den Nocken so weit wie möglich vom Modul weg.
+.. Drehen Sie die Nockenverriegelung so weit wie möglich vom Modul weg.
 .. Entfernen Sie das Modul aus dem Gehäuse, indem Sie den Finger in die Öffnung des Nockenhebels stecken und das Modul aus dem Gehäuse ziehen.
 +
 Stellen Sie sicher, dass Sie den Steckplatz verfolgen, in dem sich das I/O-Modul befand.

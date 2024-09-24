@@ -1,0 +1,34 @@
+---
+permalink: asa-r2-a1k/bootmedia-replace-workflow-bmr.html 
+sidebar: sidebar 
+keywords: asa r2 a1k, replace the boot media 
+summary: Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen. 
+---
+= Workflow für den Austausch von Startmedien – ASA A1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Führen Sie die folgenden Workflow-Schritte aus, um die Startmedien zu ersetzen.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:bootmedia-replace-requirements-bmr.html["Überprüfen Sie die Anforderungen der Startmedien"]
+[role="quick-margin-para"]
+Um das Boot-Medium zu ersetzen, müssen Sie bestimmte Anforderungen erfüllen.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:bootmedia-shutdown-asa-r2.html["Schalten Sie den beeinträchtigten Regler aus"]
+[role="quick-margin-para"]
+Fahren Sie den beeinträchtigten Controller herunter oder übernehmen Sie ihn, damit der funktionsunzuverlässige Controller weiterhin Daten aus dem Speicher für den beeinträchtigten Controller bereitstellen kann.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:bootmedia-replace-bmr.html["Ersetzen Sie das Startmedium"]
+[role="quick-margin-para"]
+Entfernen Sie das fehlerhafte Startmedium aus dem System Management-Modul, und installieren Sie das Ersatz-Startmedium.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:bootmedia-recovery-image-boot-bmr.html["Automatisierte Boot Recovery"]
+[role="quick-margin-para"]
+Stellen Sie das ONTAP-Image vom Partner-Controller wieder her.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:bootmedia-complete-rma.html["Senden Sie das fehlerhafte Teil an NetApp zurück"]
+[role="quick-margin-para"]
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.

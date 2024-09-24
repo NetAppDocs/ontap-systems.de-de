@@ -1,0 +1,117 @@
+= Schritt 1: Bereiten Sie den Standort vor
+:allow-uri-read: 
+
+
+
+
+== Schritt 1: Bereiten Sie den Standort vor
+
+Um Ihr Speichersystem zu installieren, stellen Sie sicher, dass der Standort und der Schrank oder das Rack, den Sie verwenden möchten, den Spezifikationen für Ihre Konfiguration entsprechen.
+
+.Schritte
+. Mit https://hwu.netapp.com["NetApp Hardware Universe"^] können Sie überprüfen, ob Ihr Standort die Umwelt- und elektrischen Anforderungen für Ihr Speichersystem erfüllt.
+. Stellen Sie sicher, dass ausreichend Platz im Rack vorhanden ist:
++
+** 4 HE in einer HA-Konfiguration für die Plattform
+** 2 HE für jedes NS224 Storage-Shelf
+
+
++
+*HINWEIS:* Siehe link:https://hwu.netapp.com["NetApp Hardware Universe"^] für Rack-Platzanforderungen für andere unterstützte Lagerregale.
+
+. Installieren Sie alle erforderlichen Netzwerk-Switches.
++
+Installationsanweisungen und Kompatibilitätsinformationen finden Sie im https://docs.netapp.com/us-en/ontap-systems-switches/index.html["Switch-Dokumentation"^] link:https://hwu.netapp.com["NetApp Hardware Universe"^] .
+
+
+
+
+
+== Schritt 2: Auspacken der Boxen
+
+Nachdem Sie sichergestellt haben, dass der Standort und der Schrank oder das Rack, den Sie für Ihr Speichersystem verwenden möchten, die erforderlichen Spezifikationen erfüllen, packen Sie alle Kartons aus und vergleichen Sie den Inhalt mit den Artikeln auf dem Packzettel.
+
+.Schritte
+. Öffnen Sie sorgfältig alle Kartons und legen Sie den Inhalt in einer organisierten Art und Weise.
+. Vergleichen Sie den Inhalt, den Sie ausgepackt haben, mit der Liste auf dem Packzettel.
++
+
+NOTE: Sie können Ihre Packliste erhalten, indem Sie den QR-Code auf der Seite des Versandkartons scannen.
+
++
+Die folgenden Elemente sind einige der Inhalte, die Sie in den Feldern sehen können.
+
++
+Stellen Sie sicher, dass alle in den Kartons auf die Liste auf dem Packzettel passen. Wenn Abweichungen auftreten, notieren Sie sie für weitere Maßnahmen.
+
++
+[cols="12,9,4"]
+|===
+
+
+| *Hardware* | * Kabel* |  
+
+
+ a| 
+** Blende
+** Kabelverwaltungs-Gerät
+** Plattform
+** Schienensätze mit Anweisungen (optional)
+** Storage Shelf
+
+ a| 
+** Management-Ethernet-Kabel (RJ-45-Kabel)
+** Netzwerkkabel
+** Stromkabel
+** Speicherkabel (wenn Sie zusätzlichen Speicher bestellt haben)
+** Serielles USB-C-Anschlusskabel
+
+|  
+|===
+
+
+
+
+== Schritt 3: Registrieren Sie Ihr Storage-System
+
+Nachdem Sie sichergestellt haben, dass Ihr Standort die Anforderungen für Ihre Storage-Systemspezifikationen erfüllt und überprüft haben, dass alle von Ihnen bestellten Teile vorhanden sind, sollten Sie Ihr System registrieren.
+
+.Schritte
+. Suchen Sie nach der Seriennummer Ihres Storage-Systems.
++
+Sie finden die Nummer auf dem Packzettel, in Ihrer Bestätigungs-E-Mail oder nach dem Auspacken auf dem System Management-Modul des Controllers.
+
++
+image::../media/drw_ssn_label.svg[Beispiel für die Seriennummer des Systems, die den Standort der Nummer anzeigt]
+
+. Gehen Sie zum http://mysupport.netapp.com/["NetApp Support Website"^].
+. Ermitteln Sie, ob Sie Ihr Storage-System registrieren müssen:
++
+[cols="1a,2a"]
+|===
+| Wenn Sie ein... | Führen Sie die folgenden Schritte aus... 
+
+
+ a| 
+Bestehender NetApp Kunde
+ a| 
+.. Melden Sie sich mit Ihrem Benutzernamen und Passwort an.
+.. Wählen Sie *Systeme* > *Eigene Systeme*.
+.. Bestätigen Sie, dass die neue Seriennummer aufgeführt ist.
+.. Falls nicht, folgen Sie den Anweisungen für neue NetApp Kunden.
+
+
+
+
+ a| 
+Neuer NetApp Kunde
+ a| 
+.. Klicken Sie auf *Jetzt registrieren* und erstellen Sie ein Konto.
+.. Wählen Sie *Systeme* > *Systeme Registrieren*.
+.. Geben Sie die Seriennummer des Storage-Systems und die angeforderten Details ein.
+
+
+Nach der Registrierung können Sie die erforderliche Software herunterladen. Der Genehmigungsprozess kann bis zu 24 Stunden in Anspruch nehmen.
+
+|===
+

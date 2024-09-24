@@ -1,0 +1,53 @@
+---
+permalink: asa-r2-a1k/fan-replace.html 
+sidebar: sidebar 
+keywords: asa r2 a1k, replace a fan 
+summary: Sie müssen das Controller-Modul aus dem Gehäuse entfernen, wenn Sie ein ausgefallenes Lüftermodul ersetzen und es durch ein neues Lüftermodul ersetzen. 
+---
+= Ersetzen Sie einen Lüfter - ASA A1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um ein Lüftermodul ohne Unterbrechung des Dienstes zu ersetzen, müssen Sie eine bestimmte Abfolge von Aufgaben durchführen.
+
+.Schritte
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Entfernen Sie die Blende (falls erforderlich) mit zwei Händen, indem Sie die Öffnungen auf beiden Seiten der Blende fassen und dann zu Ihnen ziehen, bis sich die Blende von den Kugelknöpfen am Rahmen des Chassis löst.
+. Ermitteln Sie das Lüftermodul, das Sie ersetzen müssen, indem Sie die Konsolenfehlermeldungen überprüfen und die Warn-LED an jedem Lüftermodul betrachten.
++
+In Richtung des Controller-Moduls sind die Lüftermodule von links nach rechts mit den Nummern 1 bis 5 nummeriert.
+
++
+
+NOTE: Für jeden Lüfter gibt es eine einzelne LED. Sie leuchtet grün, wenn der Lüfter ordnungsgemäß funktioniert, und gelb, wenn nicht.
+
+. Drücken Sie die schwarze Taste am Lüftermodul, und ziehen Sie das Lüftermodul gerade aus dem Gehäuse, und stellen Sie sicher, dass Sie es mit der freien Hand stützen.
++
+
+IMPORTANT: Die Lüftermodule sind kurz. Unterstützen Sie das Lüftermodul immer mit Ihrer freien Hand, damit es nicht plötzlich vom Gehäuse abfällt und Sie verletzt.
+
++
+image::../media/drw_a1k_fan_remove_replace_ieops-1376.svg[Lüfter Austauschen]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.svg["Legende Nummer 1, Breite=30px"]
+ a| 
+Schwarze Entriegelungstaste
+
+|===
+. Setzen Sie das Lüftermodul beiseite.
+. Richten Sie die Kanten des Ersatzlüftermoduls an der Öffnung im Gehäuse aus, und schieben Sie es dann in das Gehäuse, bis es einrastet.
++
+Wenn das Gerät in ein stromführende System eingesteckt wird, erlischt die gelbe Achtung-LED, sobald der Lüfter von diesem System erkannt wird.
+
+. Richten Sie die Blende an den Kugelknöpfen aus, und drücken Sie dann vorsichtig die Blende auf die Kugelbolzen.
+. Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"^]Weitere Informationen finden Sie auf der Seite.
+

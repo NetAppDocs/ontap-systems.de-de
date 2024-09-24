@@ -1,0 +1,96 @@
+---
+permalink: asa-r2-a1k/maintain-overview.html 
+sidebar: sidebar 
+keywords: asa r2 a1k maintenance, maintenance, repairing a1k, repairing asa a1k, replace asa a1k components, replace asa a1k components 
+summary: Wartung der ASA r2 A1K Hardware 
+---
+= Wartung der ASA A1K Hardware
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Möglicherweise müssen Sie Wartungsverfahren für Ihre Hardware durchführen. In diesem Abschnitt finden Sie spezifische Verfahren zur Wartung Ihrer ASA A1K-Systemkomponenten.
+
+Bei den Verfahren in diesem Abschnitt wird davon ausgegangen, dass das A1K-System bereits als Storage Node in der ONTAP-Umgebung implementiert wurde.
+
+
+
+== Systemkomponenten
+
+Für das ASA A1K-Speichersystem können Sie Wartungsverfahren für die folgenden Komponenten durchführen.
+
+[cols="25,65"]
+|===
+
+
+ a| 
+link:bootmedia-overview.html["Boot-Medien"]
+ a| 
+Auf dem Startmedium werden ein primärer und ein sekundärer Satz von ONTAP-Image-Dateien gespeichert, die das System beim Booten verwendet.
+
+
+
+ a| 
+link:controller-replace-workflow.html["Controller"]
+ a| 
+Ein Controller besteht aus einer Hauptplatine, Firmware und Software. Er steuert den Storage, die I/O-Karten und führt die ONTAP Betriebssystemsoftware aus.
+
+
+
+ a| 
+link:dimm-replace.html["DIMM"]
+ a| 
+Ein duales Inline-Speichermodul (DIMM) ist eine Art von Computerspeicher. Sie sind installiert, um einem Controller-Motherboard Systemspeicher hinzuzufügen.
+
+
+
+ a| 
+link:fan-replace.html["Ventilator"]
+ a| 
+Ein Lüfter kühlt den Controller.
+
+
+
+ a| 
+link:nvram-replace.html["NVRAM"]
+ a| 
+Der NVRAM (Non-Volatile Random Access Memory) ist ein Modul, mit dem der Controller Daten während der Übertragung schützen und speichern kann, wenn das System Strom verliert. Die System-ID befindet sich im NVRAM-Modul. Bei Austausch nimmt der Controller die neue System-ID vom Ersatz-NVRAM-Modul an.
+
+
+
+ a| 
+link:nvdimm-battery-replace.html["NV-Batterie"]
+ a| 
+Die NV-Batterie ist dafür verantwortlich, das NVRAM-Modul mit Strom zu versorgen, während die aktiven Daten nach einem Stromausfall in den Flash-Speicher ausgelagert werden.
+
+
+
+ a| 
+link:io-module-overview.html["I/O-Modul"]
+ a| 
+Das E/A-Modul (Eingangs-/Ausgangsmodul) ist eine Hardwarekomponente, die als Vermittler zwischen dem Controller und verschiedenen Geräten oder Systemen dient, die Daten mit dem Controller austauschen müssen.
+
+
+
+ a| 
+link:power-supply-replace.html["Stromversorgung"]
+ a| 
+Ein Netzteil stellt eine redundante Stromquelle in einem Controller bereit.
+
+
+
+ a| 
+link:rtc-battery-replace.html["Akku in Echtzeit"]
+ a| 
+Bei ausgeschaltetem Gerät bleiben Datum und Uhrzeit über eine Echtzeitbatterie erhalten.
+
+
+
+ a| 
+link:system-management-replace.html["Systemmanagement-Modul"]
+ a| 
+Das Systemmanagementmodul stellt die Schnittstelle zwischen dem Controller und einer Konsole oder einem Laptop für Controller- oder Systemwartungszwecke bereit. Das Systemmanagementmodul enthält das Startmedium und speichert die Seriennummer des Systems (SSN).
+
+|===

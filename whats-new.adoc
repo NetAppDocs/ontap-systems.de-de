@@ -1,27 +1,46 @@
 ---
 sidebar: sidebar 
 permalink: whats-new.html 
-keywords: new, features,aff, asa,  fas, legacy, end-of-support 
-summary: Erfahren Sie mehr über die neuen Funktionen der Systeme AFF, ASA und FAS sowie über die alte Hardware, die nicht mehr unterstützt wird. 
+keywords: new, features, asa r2, aff, asa, fas, legacy, end-of-support 
+summary: Erfahren Sie mehr über die neuen Funktionen für ONTAP Hardwaresysteme. 
 ---
-= Neuerungen bei AFF, ASA und FAS Systemen
+= Neuerungen bei ONTAP Hardwaresystemen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/
 
 
 [role="lead"]
-Erfahren Sie mehr über die neuen Funktionen für AFF-, ASA- und FAS-Systeme.
+Erfahren Sie mehr über die neuen Funktionen für ONTAP Hardwaresysteme.
 
 Details zu bekannten Problemen, Einschränkungen und Upgrade-Warnhinweisen in ONTAP 9 Versionen finden Sie im https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508["Versionshinweise zu ONTAP 9"]. Sie müssen sich mit Ihrem NetApp Konto anmelden oder ein Konto erstellen, um auf die Versionshinweise zuzugreifen.
 
 
 
-== Unterstützung für neue Plattformen
+== Plattform-Support
 
 [cols="2*"]
 |===
-| Plattformen (mit Links zu Datenblättern) | Verfügbar ab 
+| Plattformen | Verfügbar ab 
+
+
+ a| 
+https://docs.netapp.com/us-en/asa-r2/get-started/learn-about.html["ASA r2-Systeme"]
+
+* ASA A1K
+* ASA A70
+* ASA A90
+
+ a| 
+ONTAP 9.16.1
+
+
+
+ a| 
+https://www.netapp.com/data-storage/fas/["FAS70 und FAS90"]
+ a| 
+ONTAP 9.16.1
+
 
 
  a| 
@@ -212,7 +231,7 @@ ONTAP 9.6
 |===
 
 
-== Unterstützung für neue Switches
+== Switch-Support
 
 [cols="20,65,15"]
 |===
@@ -296,53 +315,7 @@ ONTAP 9.5P8
 |===
 
 
-== Unterstützung für neue Adapter
-
-[cols="4*"]
-|===
-| Teilenummer des Adapters | Beschreibung | Kategorie | Verfügbar ab 
-
-
- a| 
-https://hwu.netapp.com/adapter/index["X91148A"]
- a| 
-2-Port 100 GbE RoCE QSFP28
- a| 
-* Storage
-* Netzwerkbetrieb
-* HA/MetroCluster
-
- a| 
-ONTAP 9.8
-
-
-
- a| 
-https://hwu.netapp.com/adapter/index["X91122A"]
- a| 
-2-Port 25 GbE RoCE QSFP28
- a| 
-* Netzwerkbetrieb
-* HA/MetroCluster
-
- a| 
-ONTAP 9.8
-
-
-
- a| 
-https://hwu.netapp.com/adapter/index["X9170A"]
- a| 
-NVMe-SSD-Modul (1 TB)
- a| 
-Core Dump-Gerät
- a| 
-ONTAP 9.8
-
-|===
-
-
-== Neue Shelf-Unterstützung
+== Shelf-Unterstützung
 
 [cols="2*"]
 |===
@@ -357,7 +330,7 @@ ONTAP 9.6
 |===
 
 
-== Neue Hardware-Updates
+== Hardware-Updates
 
 [cols="25h,~,~"]
 |===

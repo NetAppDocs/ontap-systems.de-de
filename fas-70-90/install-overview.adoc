@@ -1,0 +1,38 @@
+---
+permalink: fas-70-90/install-overview.html 
+sidebar: sidebar 
+keywords: Installation, deployment, Install, deploy, Installing, deploying, a1k 
+summary: Führen Sie diese grundlegenden Schritte aus, um Ihr FAS70 und FAS90 Storage-System zu installieren und einzurichten und als Node in Ihrem ONTAP System zu implementieren. 
+---
+= Installations- und Konfigurations-Workflow – FAS70 und FAS90
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Zum Installieren und Konfigurieren Ihres FAS70 oder FAS90 Systems überprüfen Sie die Hardware-Anforderungen, bereiten Ihren Standort vor, installieren und verkabeln Sie die Hardwarekomponenten, schalten das System ein und richten den ONTAP Cluster ein.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:install-requirements.html["Installationsanforderungen prüfen"]
+[role="quick-margin-para"]
+Sehen Sie sich die Geräte und Werkzeuge an, die für die Installation des Speichersystems und der Lagerregale erforderlich sind, und lesen Sie die Hebe- und Sicherheitsvorkehrungen durch.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:install-prepare.html["Bereiten Sie die Installation des FAS70 oder FAS90 Storage-Systems vor"]
+[role="quick-margin-para"]
+Um die Installation des Systems vorzubereiten, müssen Sie den Standort vorbereiten, die Umgebung und die elektrischen Anforderungen prüfen und sicherstellen, dass genügend Rack-Platz vorhanden ist. Packen Sie dann das Gerät aus, vergleichen Sie dessen Inhalt mit dem Packzettel, und registrieren Sie die Hardware, um auf Support-Vorteile zuzugreifen.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:install-hardware.html["Installieren Sie die Hardware für das FAS70 oder FAS90 Storage-System"]
+[role="quick-margin-para"]
+Um die Hardware zu installieren, installieren Sie die Schienenkits für Ihr Speichersystem und die Regale, und installieren und sichern Sie dann das Speichersystem im Schrank oder im Telco-Rack. Schieben Sie dann die Regale auf die Schienen. Schließen Sie schließlich die Kabelverwaltungsgeräte an der Rückseite des Speichersystems an, um die Kabelführung zu organisieren.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:install-cable.html["Verkabeln Sie die Controller und Storage Shelfs für das FAS70 oder FAS90 Storage-System"]
+[role="quick-margin-para"]
+Um die Hardware zu verkabeln, verbinden Sie zuerst die Storage Controller mit dem Netzwerk und anschließend die Controller mit den Storage-Shelfs.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:install-power-hardware.html["Schalten Sie das FAS70 oder FAS90 Storage-System ein"]
+[role="quick-margin-para"]
+Bevor Sie die Controller einschalten, schalten Sie jedes Shelf ein und weisen Sie eine eindeutige Shelf-ID zu, um sicherzustellen, dass jedes Shelf im Setup eindeutig identifiziert wird.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sechs"]link:install-complete.html["Einrichtung des Storage-Systems abschließen"]
+[role="quick-margin-para"]
+Die System-Einrichtung lässt sich über den ONTAP System Manager abschließen, indem die IP-Adresse des Controllers in einem Browser angezeigt wird. Ein Setup-Assistent unterstützt Sie bei der vollständigen Konfiguration des Clusters für Ihr Storage-System.

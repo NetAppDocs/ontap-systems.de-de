@@ -1,0 +1,78 @@
+---
+permalink: fas-70-90/controller-replace-recable-reassign-disks.html 
+sidebar: sidebar 
+keywords: fas70, fas90, how to recable the system, how to reassign disks 
+summary: Starten Sie das System neu. 
+---
+= Geben Sie den Controller FAS70 und FAS90 zurück
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Übertragen Sie die Eigentumsrechte an Storage-Ressourcen zurück an den Ersatz-Controller.
+
+.Schritte
+. Wenn für Ihr Speichersystem Verschlüsselung konfiguriert ist, müssen Sie die Speicher- oder Volume-Verschlüsselungsfunktion mithilfe des folgenden Verfahrens wiederherstellen, um das System neu zu starten:
++
+.. Starten Sie das Menü, und führen Sie Option 10 aus
+.. Geben Sie die Passphrase ein und sichern Sie die Daten, und führen Sie dann den normalen Start aus. Siehe https://kb.netapp.com/on-prem/ontap/DM/Encryption/Encryption-KBs/Restore_onboard_key_management_encryption_keys["Wiederherstellung der integrierten Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"].
+.. Nur CFO-Rückgabe durchführen
+.. Führen Sie die integrierte Synchronisierung durch, und überprüfen Sie, ob SVM-KEK auf True See gesetzt ist https://kb.netapp.com/on-prem/ontap/DM/Encryption/Encryption-KBs/Onboard_keymanager_sync_fails_after_motherboard_replacement["Giveback, nachdem der MB-Austausch fehlschlägt – Vorgang wurde von keymanager mit einem Veto abgelehnt"]
+.. GiveBack SFO (keine Kraft)
+
+
+. Wenn die Verschlüsselung auf dem System nicht konfiguriert ist, führen Sie die folgenden Schritte aus, um das System neu zu starten:
++
+.. Starten Sie das Menü, und führen Sie Option 1 aus.
+.. Geben Sie den Controller zurück:
+.. Geben Sie von dem ordnungsgemäßen Controller den Storage des ersetzten Controllers wieder: `storage failover giveback -ofnode _replacement_node_name_`
++
+Der _Replacement_ -Controller nimmt den Storage wieder in Anspruch und führt den Startvorgang durch.
+
++
+
+NOTE: Wenn das Rückübertragung ein Vetorecht ist, können Sie erwägen, das Vetos außer Kraft zu setzen.
+
++
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["Finden Sie die Inhalte zur Hochverfügbarkeitskonfiguration Ihrer Version von ONTAP 9"]
+
+.. Nachdem das Giveback abgeschlossen ist, bestätigen Sie, dass das HA-Paar sich gesund befindet und ein Takeover möglich ist: `storage failover show`
+
+
+. Wenn sich das System in einer MetroCluster-Konfiguration befindet, überwachen Sie den Status des Controllers: `metrocluster node show`
++
+Die MetroCluster-Konfiguration dauert einige Minuten nach dem Austausch und kehrt in den normalen Zustand zurück. Zu diesem Zeitpunkt zeigt jeder Controller einen konfigurierten Status mit aktivierter DR-Spiegelung und einem normalen Modus an. Der `metrocluster node show -fields node-systemid` In der Befehlsausgabe wird die alte System-ID angezeigt, bis die MetroCluster-Konfiguration den normalen Status aufweist.
+
+. Wenn der Controller in einer MetroCluster-Konfiguration befindet, überprüfen Sie abhängig vom Status des MetroCluster, ob im Feld für die DR-Home-ID der ursprüngliche Eigentümer der Festplatte angezeigt wird, wenn der ursprüngliche Eigentümer ein Controller am Disaster-Standort ist.
++
+Dies ist erforderlich, wenn beide der folgenden Werte erfüllt sind:
+
++
+** Die MetroCluster Konfiguration befindet sich in einem Switchover-Zustand.
+** Der Controller _Replacement_ ist der aktuelle Besitzer der Festplatten am Notfallstandort.
++
+https://docs.netapp.com/us-en/ontap-metrocluster/manage/concept_understanding_mcc_data_protection_and_disaster_recovery.html#disk-ownership-changes-during-ha-takeover-and-metrocluster-switchover-in-a-four-node-metrocluster-configuration["Änderungen am Festplattenbesitz während HA Takeover und MetroCluster Switchover in einer MetroCluster Konfiguration mit vier Nodes"]
+
+
+
+. Wenn sich das System in einer MetroCluster-Konfiguration befindet, vergewissern Sie sich, dass jeder Controller konfiguriert ist: `metrocluster node show - fields configuration-state`
++
+[listing]
+----
+node1_siteA::> metrocluster node show -fields configuration-state
+
+dr-group-id            cluster node           configuration-state
+-----------            ---------------------- -------------- -------------------
+1 node1_siteA          node1mcc-001           configured
+1 node1_siteA          node1mcc-002           configured
+1 node1_siteB          node1mcc-003           configured
+1 node1_siteB          node1mcc-004           configured
+
+4 entries were displayed.
+----
+. Vergewissern Sie sich, dass die erwarteten Volumes für jeden Controller vorhanden sind: `vol show -node node-name`
+. Wenn Sie die automatische Übernahme beim Neustart deaktiviert haben, aktivieren Sie sie vom gesunden Controller: `storage failover modify -node replacement-node-name -onreboot true`
+. Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung mit dem Befehl wiederherstellen/zurücknehmen. `system node autosupport invoke -node * -type all -message MAINT=END`
+
