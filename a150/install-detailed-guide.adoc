@@ -15,6 +15,8 @@ Dieser Abschnitt enthält detaillierte Schritt-für-Schritt-Anleitungen zur Inst
 
 Wenn Sie über eine MetroCluster-Konfiguration verfügen, verwenden Sie die https://docs.netapp.com/us-en/ontap-metrocluster/index.html["MetroCluster-Dokumentation"^].
 
+*Warnung:* Wenn Ihr System mit ONTAP 9.13.1P8 - 9.13.1P11, ONTAP 9.14.1P1 - 9.14.1P7 oder ONTAP 9.15.1 - 9.15.1P2 installiert wird und Ihr System 10 oder mehr interne Solid-State-Laufwerke enthält, müssen Sie zusätzliche Schritte zur Vorbereitung des Systems auf die Installation durchführen. Siehe Ausgabe  https://mysupport.netapp.com/site/bugs-online/product/ONTAP/JiraNgage/CONTAP-285173["CONTAP-285173 - ADP hinterlässt keine freie Root-Partition auf einer AFF A150 mit 10 oder mehr internen Laufwerken"^].
+
 
 
 == Schritt 1: Installation vorbereiten
@@ -193,7 +195,7 @@ In der folgenden Tabelle wird der Kabeltyp mit der Aufrufnummer und der Kabelfar
 
 
  a| 
-image::../media/oie_legend_icon_1_lg.svg[oie-Legende-Symbol 1 lg]
+Bild::../media/oie_Legend_Icon_1_lg.svgwidth=40px]
  a| 
 Cluster Interconnect
 

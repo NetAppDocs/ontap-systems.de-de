@@ -28,3 +28,5 @@ Schritt-für-Schritt-Anleitungen mit Live-Links zu weiteren Inhalten
 
 
 Wenn sich das System in einer MetroCluster-IP-Konfiguration befindet, lesen Sie den https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/index.html["MetroCluster-IP-Konfiguration installieren"] Anweisungen.
+
+*Warnung:* Wenn Ihr System mit ONTAP 9.13.1P8 - 9.13.1P11, ONTAP 9.14.1P1 - 9.14.1P7 oder ONTAP 9.15.1 - 9.15.1P2 installiert wird und Ihr System 10 oder mehr interne Solid-State-Laufwerke enthält, müssen Sie zusätzliche Schritte zur Vorbereitung des Systems auf die Installation durchführen. Siehe Ausgabe  https://mysupport.netapp.com/site/bugs-online/product/ONTAP/JiraNgage/CONTAP-285173["CONTAP-285173 - ADP hinterlässt keine freie Root-Partition auf einer AFF A150 mit 10 oder mehr internen Laufwerken"^].
