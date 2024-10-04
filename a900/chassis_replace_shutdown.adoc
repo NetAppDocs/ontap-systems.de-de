@@ -13,30 +13,28 @@ summary: Zum Austausch des Chassis müssen Sie die Controller herunterfahren.
 == Fahren Sie die Controller herunter - AFF A900
 
 [role="lead"]
-Dieses Verfahren gilt nur für Konfigurationen ohne MetroCluster mit 2 Nodes. Wenn Sie ein System mit mehr als zwei Nodes haben, finden Sie weitere Informationen unter https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_perform_a_graceful_shutdown_and_power_up_of_one_HA_pair_in_a_4__node_cluster["So schalten Sie ein HA-Paar in einem Cluster mit 4 Nodes ein und fahren ein paar ordnungsgemäß hoch"^].
+Fahren Sie die Controller herunter, damit Sie Wartungsarbeiten am Chassis durchführen können.
+
+Dieses Verfahren gilt für Systeme mit zwei-Knoten-Konfigurationen. Wenn Sie ein System mit mehr als zwei Knoten haben, siehe https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_perform_a_graceful_shutdown_and_power_up_of_one_HA_pair_in_a_4__node_cluster["So schalten Sie ein HA-Paar in einem Cluster mit vier Nodes ordnungsgemäß aus und wieder ein"^].
 
 .Bevor Sie beginnen
-Sie benötigen:
-
-* Lokale Administratoranmeldeinformationen für ONTAP.
-* NetApp Onboard Key Management (OKM) Cluster-weite Passphrase bei Storage-Verschlüsselung oder NVE/NAE.
-* BMC-Zugriff für jeden Controller.
 * Stoppen Sie den Zugriff aller Clients/Hosts auf Daten auf dem NetApp System.
 * Externe Sicherungsaufträge werden angehalten.
-* Notwendige Werkzeuge und Ausrüstung für den Austausch.
+* Stellen Sie sicher, dass Sie über die erforderlichen Berechtigungen und Anmeldeinformationen verfügen:
++
+** Lokale Administratoranmeldeinformationen für ONTAP.
+** NetApp Onboard Key Management (OKM) Cluster-weite Passphrase bei Storage-Verschlüsselung oder NVE/NAE.
+** BMC-Zugriff für jeden Controller.
 
 
+* Stellen Sie sicher, dass Sie über die erforderlichen Werkzeuge und Geräte für den Austausch verfügen.
+* Als Best Practice vor dem Herunterfahren sollten Sie:
++
+** Zusätzliche Durchführung https://kb.netapp.com/onprem/ontap/os/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["Zustandsberichte zu Systemen"].
+** Führen Sie ein Upgrade von ONTAP auf eine empfohlene Version für das System durch.
+** Lösen Sie alle https://activeiq.netapp.com/["Active IQ Wellness-Alarme und Risiken"]. Notieren Sie sich alle derzeit auftretenden Fehler im System, z. B. LEDs an den Systemkomponenten.
 
-NOTE: Wenn es sich bei dem System um ein NetApp StorageGRID oder ONTAP S3 handelt, das als FabricPool Cloud Tier verwendet wird, finden Sie im https://kb.netapp.com/onprem/ontap/hardware/What_is_the_procedure_for_graceful_shutdown_and_power_up_of_a_storage_system_during_scheduled_power_outage#["Anleitung zur Problemlösung des Speichersystems wird ordnungsgemäß heruntergefahren und gestartet"] Nach Durchführung dieses Verfahrens.
 
-
-NOTE: Wenn Sie SSDs verwenden, finden Sie weitere Informationen unter https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU490["SU490: (Auswirkung: Kritisch) SSD Best Practices: Vermeiden Sie das Risiko von Laufwerksausfällen und Datenverlust, wenn Sie sich für mehr als zwei Monate ausgeschaltet haben"]
-
-Als Best Practice vor dem Herunterfahren sollten Sie:
-
-* Zusätzliche Durchführung https://kb.netapp.com/onprem/ontap/os/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["Zustandsberichte zu Systemen"].
-* Führen Sie ein Upgrade von ONTAP auf eine empfohlene Version für das System durch.
-* Lösen Sie alle https://activeiq.netapp.com/["Active IQ Wellness-Alarme und Risiken"]. Notieren Sie sich alle derzeit auftretenden Fehler im System, z. B. LEDs an den Systemkomponenten.
 
 
 .Schritte
@@ -58,7 +56,7 @@ Wenn Sie eine Konsole oder einen Laptop verwenden, melden Sie sich mit den gleic
 
 NOTE: Öffnen Sie eine SSH-Sitzung für jede SP/BMC-Verbindung, damit Sie den Fortschritt überwachen können.
 
-. Halten Sie die 2 Nodes im beeinträchtigten Chassis an:
+. Halten Sie die beiden Nodes im beeinträchtigten Chassis an:
 +
 `system node halt -node <node>,<node2> -skip-lif-migration-before-shutdown true -ignore-quorum-warnings true -inhibit-takeover true`
 
@@ -69,4 +67,9 @@ NOTE: Bei Clustern mit SnapMirror Synchronous-Betrieb im StructSync-Modus: `syst
 . Geben Sie *y* für jeden Controller im Cluster ein, wenn angezeigt wird `_Warning: Are you sure you want to halt node "cluster <node-name> number"?
 {y|n}:_`
 . Warten Sie, bis die einzelnen Controller angehalten sind, und zeigen Sie die LOADER-Eingabeaufforderung an.
+
+
+.Was kommt als Nächstes?
+* Wenn es sich bei dem System um einen NetApp StorageGRID oder ONTAP S3 handelt, der als FabricPool-Cloud-Tier verwendet wird, lesen Sie nach diesem Herunterfahren das https://kb.netapp.com/onprem/ontap/hardware/What_is_the_procedure_for_graceful_shutdown_and_power_up_of_a_storage_system_during_scheduled_power_outage#["Anleitung zur Problemlösung des Speichersystems wird ordnungsgemäß heruntergefahren und gestartet"].
+* Wenn Sie SSDs verwenden, lesen Sie nach dem Herunterfahren den Abschnitt https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU490["SU490: (Auswirkung: Kritisch) SSD Best Practices: Vermeiden Sie das Risiko von Laufwerksausfällen und Datenverlust, wenn Sie sich für mehr als zwei Monate ausgeschaltet haben"].
 

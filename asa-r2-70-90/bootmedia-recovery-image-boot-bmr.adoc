@@ -11,81 +11,57 @@ summary: Sie können das Image auf den Boot-Medien vom Partner-Controller durch 
 
 
 [role="lead"]
-Sie können das ONTAP-Image (Boot-Medien-Recovery) vom Partner-Node mithilfe des mit ASA r2-Systemen unter ONTAP 9.16.0 und höher wiederherstellen `boot_recovery -partner`.
+Stellen Sie das ONTAP-Image vom Partnerknoten wieder her, wenn das Boot-Medium beschädigt ist.
 
-.Bevor Sie beginnen
-Wenn Sie einen Node booten und die Boot-Medien auf diesem Node beschädigt sind, werden an der Loader-Eingabeaufforderung die folgenden Meldungen und der Boot-Prozess mit stop angezeigt:
+.Über diese Aufgabe
+Wenn das Boot-Medium eines Node beschädigt ist, wird der Boot-Prozess an der Loader-Eingabeaufforderung angehalten und Boot-Fehlermeldungen angezeigt.
 
+Wenn diese Boot-Fehlermeldungen angezeigt werden, müssen Sie das ONTAP-Image vom Partner-Node wiederherstellen.
+
+.Zeigt ein Beispiel für Boot-Fehlermeldungen an
+[%collapsible]
+====
 ....
-
 Can't find primary boot device u0a.0
 Can't find backup boot device u0a.1
 ACPI RSDP Found at 0x777fe014
 
-
 Starting AUTOBOOT press Ctrl-C to abort...
-Could not load fat://boot0/X86_64/freebsd/image1/kernel:Device not found
+Could not load fat://boot0/X86_64/freebsd/image1/kernel: Device not found
 
-ERROR: Error booting OS on: 'boot0' file: fat://boot0/X86_64/Linux/image1/vmlinuz (boot0,fat)
-
-
-ERROR: Error booting OS on: 'boot0' file: fat://boot0/X86_64/freebsd/image1/kernel (boot0,fat)
-
+ERROR: Error booting OS on: 'boot0' file: fat://boot0/X86_64/Linux/image1/vmlinuz (boot0, fat)
+ERROR: Error booting OS on: 'boot0' file: fat://boot0/X86_64/freebsd/image1/kernel (boot0, fat)
 
 Autoboot of PRIMARY image failed. Device not found (-6)
 LOADER-A>
-
 ....
-Wenn diese Meldung angezeigt wird, müssen Sie das ONTAP-Image wiederherstellen
+====
+.Schritte
+. Geben Sie an der Loader-Eingabeaufforderung den Befehl ein:
++
+`boot_recovery -partner`
 
-Wählen Sie die automatische Recovery-Option für einen Knoten aus, die Ihrer Konfiguration entspricht.
++
+Auf dem Bildschirm wird die folgende Meldung angezeigt:
 
++
+`Starting boot media recovery (BMR) process. Press Ctrl-C to abort…`
+
+. Überwachen Sie den Recovery-Prozess für Startmedien, während Loader die lokalen Cluster-Ports konfiguriert und vom Partner-Node aus ausgeführt `netboot` wird.
++
+Wenn Netzboot ausgeführt wird, wird die `Starting BMR` Meldung angezeigt.
+
+. Wählen Sie je nach Verschlüsselungsmethode die Option aus, die zu Ihrer Single-Node-Konfiguration passt:
++
 [role="tabbed-block"]
 ====
-.Option 1: Wiederherstellung ohne Verschlüsselung
+.Keine Verschlüsselung
 --
-Stellen Sie das Startmedienabbild wieder her.
+Wenn keine Verschlüsselung erkannt wird, wird der Wiederherstellungsvorgang des Startmediums ohne Schlüsselmanagement fortgesetzt.
 
-.Schritte
-. Geben Sie an der Loader-Eingabeaufforderung den Befehl _Boot_Recovery -Partner_ ein.
-+
-Auf dem Bildschirm wird die Meldung angezeigt `Starting boot media recovery (BMR) process press Ctrl-C to abort...` und die ersten Überprüfungen werden gestartet.
+Überwachen Sie den Wiederherstellungsprozess weiter, während die Backup-Konfiguration, die env-Datei, mdb und rdb vom Partner-Node wiederhergestellt werden.
 
-. Überwachen Sie den Prozess, während Loader die lokalen Cluster-Ports konfiguriert und Netzboot über ausführt `\http://<remote-partner-IP>:65530/recoverydisk/image.tgz`.
-+
-Sobald Netzboot ausgeführt wird, `Starting BMR ...` wird auf dem Bildschirm angezeigt, und der Vorgang schließt den Installationsvorgang ab.
-
-+
-.. Wenn Key Manager nicht konfiguriert ist, wird die folgende Meldung angezeigt:
-+
-....
-key manager is not configured. Exiting.
-....
-.. Wenn die folgende Meldung angezeigt wird, ist Onboard Key Manager (OKM) konfiguriert:
-+
-....
-
-key manager is configured.
-Entering Bootmenu Option 10...
-
-This option must be used only in disaster recovery procedures. Are you sure? (y or n):
-
-....
-+
-Gehen Sie zu, um den Wiederherstellungsprozess abzuschließen.
-
-.. Wenn die folgende Meldung angezeigt wird, wird External Key Manager (EKM) konfiguriert. Gehen Sie zum EKM-Thema und schließen Sie den Wiederherstellungsprozess ab:
-+
-....
-Error when fetching key manager config from partner 169.254.139.209: 28
-Has key manager been configured on this system? {y|n}
-
-....
-
-
-. Überwachen Sie den BMR-Prozess bei der Ausführung von Wiederherstellungskonfiguration, Env-Datei, mdb und rdb vom Partner.
-. Der Knoten wird neu gestartet und BMR ist abgeschlossen, wenn Folgendes angezeigt wird:
-
+Nach Abschluss der Wiederherstellung wird der Node neu gebootet. Die folgenden Meldungen weisen auf eine erfolgreiche Wiederherstellung hin:
 
 ....
 
@@ -100,30 +76,22 @@ varfs_backup_restore: bootarg.abandon_varfs is set! Skipping /var backup.
 
 ....
 --
-.Option 2: Wiederherstellung mit Onboard Key Manager vorhanden
+.Onboard Key Manager (OKM)
 --
-Stellen Sie das Startmedienabbild wieder her.
+Wenn Onboard Key Manager (OKM) erkannt wird, zeigt das System die folgende Eingabeaufforderung an.
 
-.Schritte
-. Geben Sie an der Loader-Eingabeaufforderung den Befehl _Boot_Recovery -Partner_ ein.
-+
-Der Bildschirm zeigt die Meldung `Starting boot media recovery (BMR) process press Ctrl-C to abort...` an und beginnt mit der ersten Überprüfung und Installation der Startwiederherstellungsdateien.
-
-+
-.. Wenn Onboard Key Manager (OKM) konfiguriert ist, wird Folgendes angezeigt:
-+
 ....
 key manager is configured.
 Entering Bootmenu Option 10...
 
 This option must be used only in disaster recovery procedures. Are you sure? (y or n):
 ....
-
-
-. Geben Sie an der Eingabeaufforderung _y_ ein.
-. Geben Sie die Passphrase für Onboard-Verschlüsselungsmanagement ein, wenn angezeigt wird `Enter the passphrase for onboard key management:`
-. Geben Sie die Passphrase für Onboard Key Manager erneut ein, wenn Sie zur Bestätigung der Passphrase aufgefordert werden.
+.. Geben Sie in der Eingabeaufforderung Bootmenu die Option Bootmedia Recovery ein `Y`, um zu bestätigen, dass Sie die Bootmedia Recovery-Option verwenden möchten.
+.. Geben Sie die Passphrase für Onboard Key Manager ein, wenn Sie dazu aufgefordert werden, und geben Sie die Passphrase erneut ein, um sie zu bestätigen.
 +
+.Beispiel für Passphrase-Eingabeaufforderungen anzeigen
+[%collapsible]
+=====
 ....
 Enter the passphrase for onboard key management:
 Enter the passphrase again to confirm:
@@ -139,8 +107,10 @@ QRHwv+1aWvAAAAAAAAAAACQAAAAAAAAAgAAAAAAAAABHVFpxAAAAAHUgdVq0EKNp
 .
 .
 ....
+=====
+.. Überwachen Sie den Wiederherstellungsprozess weiter, während die Backup-Konfiguration, die env-Datei, mdb und rdb vom Partner-Node wiederhergestellt werden.
 +
-Nach Abschluss des Wiederherstellungsvorgangs wird Folgendes angezeigt:
+Nach Abschluss der Wiederherstellung wird der Node neu gebootet. Die folgenden Meldungen weisen auf eine erfolgreiche Wiederherstellung hin:
 
 +
 ....
@@ -151,59 +121,90 @@ Trying to delete any existing km_onboard.wkeydb file.
 
 Successfully recovered keymanager secrets.
 ....
-. Überwachen Sie den BMR-Prozess bei der Ausführung von Wiederherstellungskonfiguration, Env-Datei, mdb und rdb vom Partner.
-+
-Wenn die Wiederherstellung abgeschlossen ist, wird der Node neu gebootet, um den Prozess abzuschließen.
-
 
 
 --
-.Option 3: Wiederherstellung mit externem Key Manager vorhanden
+.Externer Schlüsselmanager (EKM)
 --
-Stellen Sie das Startmedienabbild wieder her.
+Wenn EKM konfiguriert ist, zeigt das System die folgende Eingabeaufforderung an.
 
-.Schritte
-. Geben Sie an der Loader-Eingabeaufforderung den Befehl _Boot_Recovery -Partner_ ein.
-+
-Der Bildschirm zeigt die Meldung `Starting boot media recovery (BMR) process press Ctrl-C to abort...` an und beginnt mit der ersten Überprüfung und Installation der Startwiederherstellungsdateien.
-
-+
-.. Wenn External Key Manager (EKM) konfiguriert ist, wird Folgendes angezeigt:
-+
 ....
-Error when fetching key manager config from partner 169.254.139.209: 28
+Error when fetching key manager config from partner <IP>: 28
+
 Has key manager been configured on this system? {y|n}
 ....
-.. Geben Sie _y_ ein, wenn ein Schlüsselmanager konfiguriert wurde.
+.. Geben Sie ein `Y`, wenn EKM konfiguriert wurde.
 +
 ....
 key manager is configured.
 Entering Bootmenu Option 11...
 ....
++
+Sie werden aufgefordert, die EKM-Einstellungen einzugeben, die beim Einrichten verwendet wurden.
 
+.. Geben Sie jede EKM-Konfigurationseinstellung ein, wenn Sie dazu aufgefordert werden.
+.. Überprüfen Sie, ob die Attribute für die Cluster-UUID und die Keystore-UUID korrekt sind.
++
+*** Rufen Sie auf dem Partner-Node die Cluster-UUID mit dem folgenden Befehl ab.
++
+`cluster identity show`
+
+*** Rufen Sie auf dem Partner-Node die Keystore-UUID mit den folgenden Befehlen ab.
++
+`vserver show -type admin`
 
 +
-Die Bootmenu-Option 11 fordert den Benutzer zur Eingabe aller EKM-Konfigurationsinformationen auf, damit die Konfigurationsdateien neu erstellt werden können.
+`key-manager keystore show -vserver <nodename>`
 
-. Geben Sie an jeder Eingabeaufforderung die EKM-Konfiguration ein.
+*** Wenn der Partner-Node nicht verfügbar ist, verwenden Sie den Mroot-AK-Schlüssel, um die UUID abzurufen:
 +
-*HINWEIS:* die meisten dieser Informationen wurden eingegeben, als EKM ursprünglich aktiviert wurde. Sie sollten die gleichen Informationen eingeben, die während der ursprünglichen EKM-Konfiguration eingegeben wurden.
+**** Geben Sie für die Cluster-UUID den folgenden Befehl ein:
++
+`x-NETAPP-ClusterName: <cluster name>`
 
-. Überprüfen Sie, ob `Keystore UUID` und `Cluster UUID` korrekt sind.
+**** Geben Sie für die Keystore-UUID den folgenden Befehl ein:
 +
-.. Rufen Sie auf dem Partner-Node die Cluster-UUID mit dem  `cluster identity show` Befehl ab.
-.. Rufen Sie auf dem Partner-Node die Keystore-UUID mit dem `vserver show -type admin` Befehl und dem `key-manager keystore show -vserver <nodename>` Befehl ab.
+`x-NETAPP-KeyUsage: MROOT-AK`
+
+
+
+
+
 .. Geben Sie bei der entsprechenden Aufforderung die Werte für Keystore-UUID und Cluster-UUID ein.
+.. Je nachdem, ob der Schlüssel erfolgreich wiederhergestellt wurde, führen Sie eine der folgenden Aktionen durch:
 +
-*HINWEIS:* Wenn der Partnerknoten nicht verfügbar ist, können die Keystore-UUID und die Cluster-UUID vom Mroot-AK-Schlüssel abgerufen werden, der sich auf dem konfigurierten Schlüsselserver befindet.
-
+*** Wenn der Schlüssel erfolgreich wiederhergestellt wurde, wird der Wiederherstellungsprozess fortgesetzt und der Knoten neu gestartet. Fahren Sie mit Schritt 4 fort.
+*** Wenn der Schlüssel nicht erfolgreich wiederhergestellt wurde, hält das System an und zeigt Fehler- und Warnmeldungen an. Führen Sie den Wiederherstellungsprozess erneut aus.
 +
-Überprüfen Sie `x-NETAPP-ClusterName: <cluster name>` für die Cluster-UUID und `x-NETAPP-KeyUsage: "MROOT-AK"` für die Keystore-UUID-Attribute, um sicherzustellen, dass Sie über die richtigen Schlüssel verfügen.
+.Zeigt ein Beispiel für Fehler und Warnmeldungen bei der Schlüsselwiederherstellung an
+[%collapsible]
+=====
+....
+
+ERROR: kmip_init: halting this system with encrypted mroot...
+
+WARNING: kmip_init: authentication keys might not be available.
+
+System cannot connect to key managers.
+
+ERROR: kmip_init: halting this system with encrypted mroot...
+
+Terminated
+
+Uptime: 11m32s
+
+System halting...
+
+LOADER-B>
+....
+=====
 
 
-
-. Wenn der Schlüssel ordnungsgemäß wiederhergestellt ist, wird der Wiederherstellungsprozess fortgesetzt und der Knoten neu gestartet.
 
 
 --
 ====
+
+
+. Wenn der Node neu gebootet wird, überprüfen Sie, ob die Boot-Medien erfolgreich wiederhergestellt wurden, indem Sie bestätigen, dass das System wieder online und funktionsfähig ist.
+
