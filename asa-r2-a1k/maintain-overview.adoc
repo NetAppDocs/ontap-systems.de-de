@@ -21,14 +21,18 @@ Bei den Verfahren in diesem Abschnitt wird davon ausgegangen, dass das A1K-Syste
 
 Für das ASA A1K-Speichersystem können Sie Wartungsverfahren für die folgenden Komponenten durchführen.
 
-[cols="25,65"]
+[cols="30,70"]
 |===
 
 
  a| 
-link:bootmedia-overview.html["Boot-Medien"]
+link:bootmedia-overview.html["Boot-Medien – manuelle Wiederherstellung"]
+
+link:bootmedia-overview-bmr.html["Boot-Medien – automatisierte Wiederherstellung"]
  a| 
-Auf dem Startmedium werden ein primärer und ein sekundärer Satz von ONTAP-Image-Dateien gespeichert, die das System beim Booten verwendet.
+Sie können fehlerhafte Startmedien manuell durch Verwendung eines USB-Moduls für das Startabbild ersetzen.
+
+Beim automatischen Bootmedienaustausch wird das Boot-Image vom Partner-Node verwendet und automatisch die entsprechende Startmenüoption ausgeführt, um das Boot-Image auf den Ersatz-Boot-Medien zu installieren.
 
 
 

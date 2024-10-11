@@ -11,7 +11,7 @@ summary: Sie suchen das fehlerhafte Startmedium, indem Sie das System Management
 
 
 [role="lead"]
-Um das Startmedium zu ersetzen, müssen Sie das System Management-Modul von der Rückseite des Systems entfernen, das gestörte Startmedium entfernen und das Ersatz-Startmedium im System Management-Modul installieren.
+Sie müssen das Controller-Modul trennen, das System-Management-Modul von der Rückseite des Systems entfernen, das gestörte Startmedium entfernen und das Ersatz-Startmedium im System-Management-Modul installieren.
 
 
 
@@ -86,13 +86,13 @@ image::../media/drw_a800_drive_seated_IEOPS-960.svg[Festplattenlaufwerke einsetz
 
 == Schritt 2: Übertragen Sie das Startabbild auf das Startmedium
 
-Das von Ihnen installierte Ersatzstartmedium ist ohne ein ONTAP-Image, sodass Sie ein ONTAP-Image mithilfe eines USB-Flashlaufwerks übertragen müssen.
+Das von Ihnen installierte Ersatzstartmedium ist ohne ein ONTAP-Image. Sie können das ONTAP-Image auf das Ersatz-Startmedium übertragen, indem Sie das entsprechende ONTAP-Service-Image vom auf ein USB-Flash-Laufwerk und anschließend auf das Ersatz-Startmedium herunterladen https://mysupport.netapp.com/["NetApp Support Website"].
 
 .Bevor Sie beginnen
 * Sie müssen über ein USB-Flash-Laufwerk verfügen, das auf FAT32 formatiert ist und eine Kapazität von mindestens 4 GB aufweist.
-* Sie müssen über eine Kopie derselben Image-Version von ONTAP verfügen, wie der beeinträchtigte Controller ausgeführt wurde. Sie können das entsprechende Image im Abschnitt auf der NetApp Support-Website herunterladen https://support.netapp.com/downloads["Downloads"]
+* Laden Sie eine Kopie der gleichen Bildversion von ONTAP herunter, die den Betrieb des beeinträchtigten Controllers enthält. Sie können das entsprechende Bild im Abschnitt „Downloads“ auf der NetApp Support-Website herunterladen. Verwenden Sie den `version -v` Befehl, um anzuzeigen, ob Ihre Version von ONTAP NVE unterstützt. Wenn die Befehlsausgabe angezeigt wird `<10no- DARE>`, unterstützt Ihre Version von ONTAP NVE nicht.
 +
-** Wenn NVE unterstützt wird, laden Sie das Image mit NetApp Volume Encryption herunter, wie auf der Download-Schaltfläche angegeben.
+** Wenn NVE von Ihrer Version von ONTAP unterstützt wird, laden Sie das Image mit NetApp Volume Encryption herunter, wie auf der Download-Schaltfläche angegeben.
 ** Wenn NVE nicht unterstützt wird, laden Sie das Image ohne NetApp-Volume-Verschlüsselung herunter, wie auf der Download-Schaltfläche angegeben.
 
 
@@ -108,12 +108,9 @@ Das von Ihnen installierte Ersatzstartmedium ist ohne ein ONTAP-Image, sodass Si
 
 NOTE: Wenn Sie den Inhalt mit Windows extrahieren, verwenden Sie WinZip nicht zum Extrahieren des Netzboots-Images. Verwenden Sie ein anderes Extraktionstool, wie 7-Zip oder WinRAR.
 
-
-
 +
 Das USB-Flash-Laufwerk sollte über das entsprechende ONTAP-Image des ausgeführten Controllers verfügen.
 
-+
 .. Entfernen Sie das USB-Flash-Laufwerk von Ihrem Laptop.
 
 

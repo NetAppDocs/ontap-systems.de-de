@@ -13,7 +13,7 @@ summary: 'Das Boot-Medium speichert einen primären und sekundären Satz von Sys
 [role="lead"]
 Das Boot-Medium speichert einen primären und sekundären Satz von Systemdateien (Boot-Image), die das System beim Booten verwendet. Je nach Netzwerkkonfiguration können Sie entweder einen unterbrechungsfreien oder störenden Austausch durchführen.
 
-Sie müssen über ein USB-Flash-Laufwerk verfügen, das auf FAT32 formatiert ist, und über die entsprechende Speichermenge, um die zu speichern `image_xxx.tgz`.
+Sie müssen über ein USB-Flash-Laufwerk verfügen, das auf FAT32 formatiert ist, und über die entsprechende Speichermenge, um die zu speichern `image_xxx.tgz` Datei:
 
 Außerdem müssen Sie die kopieren `image_xxx.tgz` Datei auf dem USB-Flash-Laufwerk zur späteren Verwendung in diesem Verfahren.
 
@@ -23,7 +23,7 @@ Außerdem müssen Sie die kopieren `image_xxx.tgz` Datei auf dem USB-Flash-Laufw
 ** Für den störenden Austausch benötigen Sie keine Netzwerkverbindung, um den wiederherzustellen `var` Dateisystem, aber der Prozess erfordert zwei Neustarts.
 
 
-* Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
+* Sie müssen die ausgefallene Komponente durch eine FRU-Ersatzkomponente ersetzen, die Sie von NetApp erhalten haben.
 * Es ist wichtig, dass Sie die Befehle in diesen Schritten auf dem richtigen Controller anwenden:
 +
 ** Der Controller _Impared_ ist der Controller, an dem Sie Wartungsarbeiten durchführen.

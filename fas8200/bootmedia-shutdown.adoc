@@ -1,10 +1,10 @@
 ---
-permalink: fas8300/bootmedia-impaired-controller-shutdown.html 
+permalink: fas8200/bootmedia-shutdown.html 
 sidebar: sidebar 
-keywords: fas8300, fas8300, shut, down, take, over, impair, controller, procedure, storage, system, hardware, configuration, shut down the impaired controller 
+keywords: fas8200, shut down the impaired controller 
 summary: Sie können den beeinträchtigten Controller je nach Hardwarekonfiguration des Speichersystems mithilfe verschiedener Verfahren herunterfahren oder übernehmen. 
 ---
-= Fahren Sie den beeinträchtigten Controller herunter – AFF FAS8300 und FAS8700
+= Fahren Sie den beeinträchtigten Controller herunter – FAS8200
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -14,7 +14,8 @@ summary: Sie können den beeinträchtigten Controller je nach Hardwarekonfigurat
 
 == Option 1: Die meisten Systeme
 
-Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Controllers durchführen.
+[role="lead"]
+Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Controllers durchführen. Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Controllers durchführen.
 
 .Schritte
 . Nehmen Sie den beeinträchtigten Controller zur LOADER-Eingabeaufforderung:
@@ -55,9 +56,7 @@ NOTE: Dieser Befehl funktioniert möglicherweise nicht, wenn das Startgerät bes
 
 
 
-== Option 2: Controller befindet sich in einem MetroCluster
-
-Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Controllers durchführen.
+== Option 2: Controller befindet sich in einer MetroCluster-Konfiguration
 
 
 NOTE: Verwenden Sie dieses Verfahren nicht, wenn sich Ihr System in einer MetroCluster-Konfiguration mit zwei Knoten befindet.
@@ -108,8 +107,6 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 
 
 == Option 3: Controller befindet sich in einem MetroCluster mit zwei Nodes
-
-Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Controllers durchführen.
 
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller umschalten, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 

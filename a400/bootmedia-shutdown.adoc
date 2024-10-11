@@ -1,17 +1,17 @@
 ---
-permalink: a300/bootmedia-impaired-controller-shutdown.html 
+permalink: a400/bootmedia-shutdown.html 
 sidebar: sidebar 
-keywords: aff a300, shut down the impaired controller 
+keywords: aff a400, aff, a400, shut, down, take, over, impair, controller, procedure, storage, system, hardware, configuration, shut down the impaired controller 
 summary: Sie können den beeinträchtigten Controller je nach Hardwarekonfiguration des Speichersystems mithilfe verschiedener Verfahren herunterfahren oder übernehmen. 
 ---
-= Schalten Sie die beeinträchtigte Steuerung - AFF A300 aus
+= Schalten Sie die beeinträchtigte Steuerung - AFF A400 aus
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Fahren Sie den Controller mit eingeschränkter Konfiguration herunter oder übernehmen Sie ihn entsprechend.
+Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Controllers durchführen. Fahren Sie den Controller mit eingeschränkter Konfiguration herunter oder übernehmen Sie ihn entsprechend.
 
 
 
@@ -59,8 +59,6 @@ NOTE: Dieser Befehl funktioniert möglicherweise nicht, wenn das Startgerät bes
 
 
 == Option 2: Controller befindet sich in einer MetroCluster-Konfiguration
-
-Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Nodes durchführen.
 
 
 NOTE: Verwenden Sie dieses Verfahren nicht, wenn sich Ihr System in einer MetroCluster-Konfiguration mit zwei Knoten befindet.
@@ -111,8 +109,6 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 
 
 == Option 3: Controller befindet sich in einem MetroCluster mit zwei Nodes
-
-Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Nodes durchführen.
 
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller umschalten, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 

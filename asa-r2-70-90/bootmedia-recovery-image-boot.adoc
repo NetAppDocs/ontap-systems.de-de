@@ -14,7 +14,7 @@ summary: Sie müssen das ONTAP-Image vom USB-Laufwerk starten, das Dateisystem w
 Sie müssen das ONTAP-Image vom USB-Laufwerk starten, das Dateisystem wiederherstellen und die Umgebungsvariablen überprüfen.
 
 .Schritte
-. Starten Sie von der LOADER-Eingabeaufforderung aus das Wiederherstellungs-Image vom USB-Flashlaufwerk: _Boot_Recovery_
+. Starten Sie von der LOADER-Eingabeaufforderung das Recovery-Image vom USB-Flash-Laufwerk: `boot_recovery`
 +
 Das Bild wird vom USB-Flash-Laufwerk heruntergeladen.
 
@@ -31,12 +31,12 @@ ONTAP 9.16.0 oder früher
  a| 
 .. Drücken Sie auf der außer Betrieb genommenen Steuerung _Y_, wenn angezeigt wird `Do you want to restore the backup configuration now?`
 .. Drücken Sie auf dem Controller für beeinträchtigte Störungen _Y_, wenn Sie zum Überschreiben aufgefordert werden `/etc/ssh/ssh_host_ecdsa_key`.
-.. Setzen Sie auf dem funktionierenden Partner-Controller den beeinträchtigten Controller auf die erweiterte Berechtigungsebene: _Set -Privilege Advanced_.
-.. Führen Sie auf dem funktionierenden Partner-Controller den Befehl restore Backup aus: _System Node restore-Backup -Node local -target-address Impaired_Node_IP_address_.
+.. Setzen Sie auf dem funktionierenden Partner-Controller den beeinträchtigten Controller auf die erweiterte Berechtigungsebene: `set -privilege admin`.
+.. Führen Sie auf dem gesunden Partner-Controller den Wiederherstellungsbefehl aus: `system node restore-backup -node local -target-address impaired_node_IP_address`.
 +
 *HINWEIS:* Wenn Sie eine andere Nachricht als eine erfolgreiche Wiederherstellung sehen, kontaktieren Sie https://support.netapp.com["NetApp Support"].
 
-.. Geben Sie auf dem funktionstüchtigen Partner-Controller den beeinträchtigten Controller auf die Admin-Ebene: _Set -Privilege admin_ zurück.
+.. Setzen Sie auf dem gesunden Partner-Controller den beeinträchtigten Controller auf Admin-Ebene zurück: `set -privilege admin`.
 .. Drücken Sie auf dem Controller für beeinträchtigte Störungen _y_, wenn angezeigt wird `Was the restore backup procedure successful?`.
 .. Drücken Sie auf dem Controller für beeinträchtigte Störungen _y_, wenn angezeigt wird `...would you like to use this restored copy now?`.
 .. Drücken Sie auf dem beeinträchtigten Controller bei Aufforderung _y_, um den beeinträchtigten Controller neu zu starten, und drücken Sie _Ctrl-c_ für das Startmenü.

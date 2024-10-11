@@ -11,7 +11,7 @@ summary: Sie müssen das Controller-Modul entfernen und öffnen, die Startmedien
 
 
 [role="lead"]
-Sie müssen das Controller-Modul entfernen und öffnen, die Startmedien im Controller suchen und austauschen und dann das Image auf das Ersatzstartmedium übertragen.
+Sie müssen das Controller-Modul trennen, das Controller-Modul entfernen und öffnen, das Boot-Medium im Controller suchen und austauschen und dann das Image auf das Ersatz-Boot-Medium übertragen.
 
 
 
@@ -122,16 +122,29 @@ Sie können das System-Image über ein USB-Flash-Laufwerk, auf dem das Image ins
 
 .Bevor Sie beginnen
 * Sie müssen über ein USB-Flash-Laufwerk verfügen, das auf FAT32 formatiert ist und eine Kapazität von mindestens 4 GB aufweist.
-* Eine Kopie der gleichen Bildversion von ONTAP wie der beeinträchtigte Controller. Das entsprechende Image können Sie im Abschnitt „Downloads“ auf der NetApp Support-Website herunterladen
+* Laden Sie eine Kopie der gleichen Bildversion von ONTAP herunter, die den Betrieb des beeinträchtigten Controllers enthält. Sie können das entsprechende Bild im Abschnitt „Downloads“ auf der NetApp Support-Website herunterladen. Verwenden Sie den `version -v` Befehl, um anzuzeigen, ob Ihre Version von ONTAP NVE unterstützt. Wenn die Befehlsausgabe angezeigt wird `<10no- DARE>`, unterstützt Ihre Version von ONTAP NVE nicht.
 +
-** Wenn NVE aktiviert ist, laden Sie das Image mit NetApp Volume Encryption herunter, wie in der Download-Schaltfläche angegeben.
-** Wenn NVE nicht aktiviert ist, laden Sie das Image ohne NetApp Volume Encryption herunter, wie im Download-Button dargestellt.
+** Wenn NVE von Ihrer Version von ONTAP unterstützt wird, laden Sie das Image mit NetApp Volume Encryption herunter, wie auf der Download-Schaltfläche angegeben.
+** Wenn NVE nicht unterstützt wird, laden Sie das Image ohne NetApp-Volume-Verschlüsselung herunter, wie auf der Download-Schaltfläche angegeben.
 
 
 * Wenn es sich bei Ihrem System um ein eigenständiges System handelt, benötigen Sie keine Netzwerkverbindung, Sie müssen jedoch beim Wiederherstellen des var-Dateisystems einen zusätzlichen Neustart durchführen.
 
 
 .Schritte
+. Wenn Sie dies nicht getan haben, laden Sie das entsprechende Service-Image vom auf das USB-Flash-Laufwerk herunter, und kopieren https://mysupport.netapp.com/["NetApp Support Website"] Sie es.
++
+.. Laden Sie das Service-Image über den Link Downloads auf der Seite auf Ihren Arbeitsbereich auf Ihrem Laptop herunter.
+.. Entpacken Sie das Service-Image.
++
+
+NOTE: Wenn Sie den Inhalt mit Windows extrahieren, verwenden Sie WinZip nicht zum Extrahieren des Netzboots-Images. Verwenden Sie ein anderes Extraktionstool, wie 7-Zip oder WinRAR.
+
++
+Das USB-Flash-Laufwerk sollte über das entsprechende ONTAP-Image des ausgeführten Controllers verfügen.
+
+
+
 . Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
 . Das Controller-Modul nach Bedarf wieder einschalten.
 . Stecken Sie das USB-Flash-Laufwerk in den USB-Steckplatz des Controller-Moduls.

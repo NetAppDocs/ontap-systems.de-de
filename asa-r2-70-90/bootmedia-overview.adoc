@@ -2,23 +2,15 @@
 permalink: asa-r2-70-90/bootmedia-overview.html 
 sidebar: sidebar 
 keywords: asa r2 a70, a90, overview, the boot media 
-summary: Erfahren Sie mehr über die automatisierte Methode und die manuelle Methode zum Austauschen der Boot-Medien. 
+summary: Erfahren Sie mehr über die manuelle Methode zum Austauschen der Startmedien. 
 ---
-= Übersicht über den Austausch der Boot-Medien - ASA A70 und ASA A90
+= Übersicht über manuelle Boot-Medien Wiederherstellung - ASA A70 und ASA A90
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie können fehlerhafte Startmedien manuell durch Verwendung eines USB-Moduls für das Startabbild oder durch die Option zur automatischen Wiederherstellung des Startmediums (BMR) ersetzen.
+Sie können fehlerhafte Startmedien manuell durch Verwendung eines USB-Moduls für das Startabbild ersetzen.
 
-* link:bootmedia-replace-workflow-bmr.html["Automatisierte Recovery von Boot-Medien"]
-+
-Die automatische Boot-Medien-Recovery verwendet das Boot-Image vom Partned-Knoten und führt automatisch die entsprechende Boot-Menüoption aus, um das Boot-Image auf dem Ersatz-Boot-Medium zu installieren.
-
-* link:bootmedia-replace-workflow.html["Manueller Start-Datenträger ersetzen"]
-+
 Beim manuellen Ersetzen von Startmedien wird das ONTAP-Image von der NetApp-Support-Website heruntergeladen, das Image auf ein USB-Laufwerk übertragen, auf das Startmedium heruntergeladen und manuell durch die Optionen des Startmenüs geleitet, um das ONTAP-Image auf dem Ersatz-Startmedium zu installieren.
-
-

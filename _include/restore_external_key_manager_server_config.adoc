@@ -7,19 +7,21 @@ Stellen Sie die externe Schlüsselmanager-Konfiguration aus dem ONATP-Startmenü
 .Bevor Sie beginnen
 Sie benötigen die folgenden Informationen für die Wiederherstellung der Konfiguration des externen Schlüsselmanagers (EKM):
 
-* Sie benötigen eine Kopie der Datei /cfcard/kmip/servers.cfg von einem anderen Clusterknoten oder die folgenden Informationen:
-* Die Adresse des KMIP-Servers.
-* Der KMIP-Port.
-* Eine Kopie der Datei /cfcard/kmip/certs/Client.crt von einem anderen Clusterknoten oder dem Clientzertifikat.
-* Eine Kopie der Datei /cfcard/kmip/certs/client.key von einem anderen Clusterknoten oder dem Client-Schlüssel.
-* Eine Kopie der Datei /cfcard/kmip/certs/CA.pem von einem anderen Clusterknoten oder der KMIP-Server-CA(s).
+* Eine Kopie der Datei /cfcard/kmip/servers.cfg von einem anderen Clusterknoten oder die folgenden Informationen:
++
+** Die Adresse des KMIP-Servers.
+** Der KMIP-Port.
+** Eine Kopie der Datei /cfcard/kmip/certs/Client.crt von einem anderen Clusterknoten oder dem Clientzertifikat.
+** Eine Kopie der Datei /cfcard/kmip/certs/client.key von einem anderen Clusterknoten oder dem Client-Schlüssel.
+** Eine Kopie der Datei /cfcard/kmip/certs/CA.pem von einem anderen Clusterknoten oder der KMIP-Server-CA(s).
+
+
 
 
 .Schritte
 . Wählen Sie Option 11 aus dem ONTAP-Startmenü.
 +
-[listing]
-----
+....
 
 (1)  Normal Boot.
 (2)  Boot without /etc/rc.
@@ -34,7 +36,7 @@ Sie benötigen die folgenden Informationen für die Wiederherstellung der Konfig
 (11) Configure node for external key management.
 Selection (1-11)? 11
 
-----
+....
 . Wenn Sie dazu aufgefordert werden, bestätigen Sie, dass Sie die erforderlichen Informationen gesammelt haben:
 +
 .. `Do you have a copy of the /cfcard/kmip/certs/client.crt file? {y/n}` _Y_
@@ -54,13 +56,14 @@ Stattdessen können Sie auch folgende Eingabeaufforderungen ausführen:
 
 . Geben Sie die Informationen für die folgenden Eingabeaufforderungen an:
 +
-.. `Enter the client certificate (client.crt) file contents:`
-.. `Enter the client key (client.key) file contents:`
-.. `Enter the KMIP server CA(s) (CA.pem) file contents:`
-.. `Enter the server configuration (servers.cfg) file contents:`
+.. _Geben Sie den Dateiinhalt des Client-Zertifikats (Client.crt) ein:_
+.. _Geben Sie den Dateiinhalt des Client-Schlüssels (Client.key) ein:_
+.. _Geben Sie den Dateiinhalt der KMIP-Server-CA(s) (CA.pem) ein:_
+.. _Geben Sie den Dateiinhalt der Serverkonfiguration (Server.cfg) ein:_
+
+
 +
-[listing]
-----
+....
 
 Example
 
@@ -97,13 +100,10 @@ Running command '/sbin/ifconfig e0M'
 ..
 kmip_init: cmd: ReleaseExtraBSDPort e0M
 ​​​​​​
-----
-
-
+....
 . Der Wiederherstellungsprozess wird abgeschlossen:
 +
-[listing]
-----
+....
 
 
 System is ready to utilize external key manager(s).
@@ -111,11 +111,11 @@ Trying to recover keys from key servers....
 [Aug 29 21:06:28]: 0x808806100: 0: DEBUG: kmip2::main: [initOpenssl]:460: Performing initialization of OpenSSL
 Successfully recovered keymanager secrets.
 
-----
+....
 . Wählen Sie Option 1 aus dem Startmenü, um mit dem Booten in ONTAP fortzufahren.
-+
-[listing]
-----
+
+
+....
 
 ***********************************************************************************
 * Select option "(1) Normal Boot." to complete the recovery process.
@@ -136,5 +136,4 @@ Successfully recovered keymanager secrets.
 (11) Configure node for external key management.
 Selection (1-11)? 1
 
-----
-
+....
