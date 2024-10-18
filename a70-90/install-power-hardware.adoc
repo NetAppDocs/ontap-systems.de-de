@@ -17,10 +17,13 @@ Nachdem Sie die Rack-Hardware für das AFF A70 oder AFF A90 Storage-System insta
 
 == Schritt 1: Schalten Sie das Shelf ein und weisen Sie die Shelf-ID zu
 
-Jedes NS224-Shelf wird durch eine eindeutige Shelf-ID unterschieden. Diese ID stellt sicher, dass das Shelf innerhalb Ihrer Storage-System-Einrichtung unterscheidbar ist. Standardmäßig werden Shelf-IDs als ‘00’ und ‘01’ zugewiesen. Möglicherweise müssen Sie diese IDs jedoch anpassen, um die Eindeutigkeit in Ihrem Storage-System aufrechtzuerhalten.
+Jedes Shelf wird durch eine eindeutige Shelf-ID unterschieden. Diese ID stellt sicher, dass das Shelf innerhalb Ihrer Storage-System-Einrichtung unterscheidbar ist.
 
 .Über diese Aufgabe
-* Gültige Shelf-ID: 00 bis 99.
+* Gültige externe Shelf-ID lautet 01 bis 99.
++
+Bei internen, in die Controller integrierten Shelfs (Storage) wird Ihnen eine feste Shelf-ID mit der Nummer 00 zugewiesen.
+
 * Sie müssen ein Shelf aus- und wieder einschalten (trennen Sie beide Netzkabel, warten Sie die entsprechende Zeit und schließen Sie sie dann wieder an), damit die Shelf-ID wirksam wird.
 
 
@@ -98,7 +101,7 @@ Es kann bis zu drei Sekunden dauern, bis die Ziffer blinkt.
 +
 Die erste Ziffer auf dem digitalen Display hört auf zu blinken.
 
-.. Drücken Sie die Shelf-ID-Taste und lassen Sie sie los, um die Nummer vorzurücken, bis Sie die gewünschte Zahl von 0 auf 9 erreichen.
+.. Drücken Sie die Shelf-ID-Taste und lassen Sie sie los, um die Nummer vorzuschieben, bis Sie die gewünschte Zahl von 0 auf 9 oder von 1 auf 9 erreichen, wenn das System über integrierten Speicher verfügt.
 +
 Die zweite Ziffer blinkt weiterhin.
 

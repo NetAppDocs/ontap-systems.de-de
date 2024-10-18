@@ -279,9 +279,13 @@ Er muss bündig auf die Metallplatte des Controller-Moduls liegen.
 
 NOTE: Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein, wenn Sie dazu aufgefordert werden.
 
-. Das System nach Bedarf neu einsetzen.
+. Nach Bedarf Neuvernötigen des Storage-Systems
 +
 Wenn Sie die Transceiver (QSFPs oder SFPs) entfernt haben, müssen Sie sie erneut installieren, wenn Sie Glasfaserkabel verwenden.
+
++
+
+NOTE: Stellen Sie sicher, dass das Konsolenkabel mit dem reparierten Controller-Modul verbunden ist, sodass beim Neustart Konsolenmeldungen empfangen werden. Der reparierte Controller wird von dem funktionstüchtigen Controller mit Strom versorgt und beginnt mit dem Neubooten, sobald er vollständig im Chassis eingesetzt ist.
 
 . Führen Sie die Neuinstallation des Controller-Moduls durch:
 +
@@ -289,23 +293,21 @@ Wenn Sie die Transceiver (QSFPs oder SFPs) entfernt haben, müssen Sie sie erneu
 +
 Die Verriegelungen steigen, wenn das Controller-Modul voll eingesetzt ist.
 
-
-
 +
 
 NOTE: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige Kraft verwenden, um Schäden an den Anschlüssen zu vermeiden.
 
-+
 .. Drehen Sie die Verriegelungen nach oben in die verriegelte Position.
 
+
++
+
+NOTE: Wenn der Controller bis zur Loader-Eingabeaufforderung gebootet wird, booten Sie ihn mit dem Befehl neu `boot_ontap`.
 
 . Schließen Sie die Netzkabel an die Netzteile an.
 +
 
 NOTE: Wenn Sie über Gleichstromnetzteile verfügen, schließen Sie den Netzteilblock wieder an die Netzteile an, nachdem das Controller-Modul vollständig im Gehäuse eingesetzt ist.
-
-+
-Das Controller-Modul wird gestartet, wenn die Stromversorgung wiederhergestellt ist. Wenn sie bis zur LOADER-Eingabeaufforderung gebootet wird, booten Sie den Controller mit dem Befehl neu `boot_ontap` .
 
 . Stellen Sie die automatische Rückgabe wieder her, wenn Sie die Funktion mithilfe von deaktivieren `storage failover modify -node local -auto-giveback true` Befehl.
 . Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung mit dem Befehl wiederherstellen/zurücknehmen. `system node autosupport invoke -node * -type all -message MAINT=END`

@@ -1100,7 +1100,6 @@
   <block id="2ebd3ab8946ee4d6f7d002b180c32cf6" category="paragraph">Die Image-Datei „ungezippte Dienste“ enthält zwei Ordner:</block>
   <block id="881cc4157ed641a365a86452f27ed745" category="list-text">Booten</block>
   <block id="a9585ee26b99b02fd19465902f2fd4d5" category="list-text">efi</block>
-  <block id="cece3275192f19a99192545e91b78506" category="list-text">kopieren Sie den efi-Ordner in das oberste Verzeichnis auf dem USB-Flash-Laufwerk. + das USB-Flash-Laufwerk sollte den efi-Ordner und die gleiche Service Image (BIOS)-Version von dem haben, was der beeinträchtigte Controller läuft.</block>
   <block id="f60ce5122893e395f8d3f6bcf71e89f4" category="list-text">Entfernen Sie das USB-Flash-Laufwerk von Ihrem Laptop.</block>
   <block id="72188531636fc5815089233196e1ec35" category="paragraph">Riser</block>
   <block id="261f06ae9beffb3a4add256d9d6d8670" category="paragraph">Denken Sie beim Neuinstallieren der Medienkonverter (SFPs oder QSFPs) daran, wenn sie entfernt wurden.</block>
@@ -8615,7 +8614,6 @@ SFP+ (Target/Initiator)</block>
   <block id="e1e5cf3c178b5500c9ca99734851f088" category="list-text">Drehen Sie die Verriegelungen nach oben in die verriegelte Position.</block>
   <block id="2e642e4a5011ff5ac26769f55b9fb111" category="list-text">Schließen Sie die Netzkabel an die Netzteile an.</block>
   <block id="73bf3c5901e8959909093f245da79b5c" category="admonition">Wenn Sie über Gleichstromnetzteile verfügen, schließen Sie den Netzteilblock wieder an die Netzteile an, nachdem das Controller-Modul vollständig im Gehäuse eingesetzt ist.</block>
-  <block id="7cb60d31286d9a356a9f1d81c01d5d76" category="paragraph">Das Controller-Modul wird gestartet, wenn die Stromversorgung wiederhergestellt ist. Wenn sie bis zur LOADER-Eingabeaufforderung gebootet wird, booten Sie den Controller mit dem Befehl neu<block ref="ce54ef17bebf280339d340bd40dff593" prefix=" " category="inline-code"></block> .</block>
   <block id="c90c2ae11fe917d8b5a1debf0e0a1a26" category="list-text">*Dieses Verfahren ist störend.* Für ein Cluster mit zwei Nodes tritt ein vollständiger Service-Ausfall und ein teilweiser Ausfall in einem Cluster mit mehreren Nodes auf.</block>
   <block id="7ae4c88c0c1f1ed7c8b6a312fdab75ab" category="paragraph">Zum Austauschen des Controllers müssen Sie den beeinträchtigten Controller entfernen, die FRU-Komponenten vom beeinträchtigten Controller-Modul auf das Ersatz-Controller-Modul verschieben, das Ersatz-Controller-Modul im Chassis einbauen und das System dann im Wartungsmodus booten.</block>
   <block id="2fb967de668a2d809970dd0ee11a24ab" category="paragraph">Bringen Sie die Netzteile zum Ersatzcontroller.</block>
@@ -8779,8 +8777,6 @@ SFP+ (Target/Initiator)</block>
   <block id="9cdea9bbd0e16c22fc991522b7972ed5" category="paragraph">Die Schritte für Systeme mit aktiviertem Onboard Key Manager (OKM), NetApp Storage Encryption (NSE) oder NetApp Volume Encryption (NVE) müssen über die zu Beginn dieses Verfahrens erfassten Einstellungen ausgeführt werden.</block>
   <block id="7b2bdafe064028eef5977d05150f12ac" category="admonition">Wenn NSE oder NVE zusammen mit Onboard oder externem Key Manager aktiviert sind, müssen Sie die Einstellungen wiederherstellen, die Sie zu Beginn dieses Verfahrens erfasst haben.</block>
   <block id="63a4de1bcedff077618555275f624f08" category="open-title">Option 1: Systeme mit integrierter Key Manager Server-Konfiguration</block>
-  <block id="da8f6d618f55e4068dea90bc98f1254e" category="paragraph">Stellen Sie die Onboard-Schlüsselmanager-Konfiguration aus dem ONATP-Startmenü wieder her.</block>
-  <block id="89cb88c9bc1bb6b7dcae6435585c0324" category="paragraph">Beim Wiederherstellen der OKM-Konfiguration benötigen Sie folgende Informationen:</block>
   <block id="7000494e61efaf925f6df5293a176456" category="inline-link">Und ermöglicht integriertes Verschlüsselungsmanagement</block>
   <block id="da204d9262b182aa6636ef0f759e2181" category="list-text">Cluster-weite Passphrase eingegeben<block ref="45fc92ed2fd28afadf25f8be26cb5500" category="inline-link-rx"></block>.</block>
   <block id="f295be867ed42957086669bda6d018d8" category="inline-link">Backup-Informationen für den Onboard Key Manager</block>
@@ -8791,47 +8787,15 @@ SFP+ (Target/Initiator)</block>
   <block id="f9bffba0a703b49e4849f916f5e0b86a" category="admonition">Während der Eingabe der Passphrase zeigt die Konsole keine Eingaben an.</block>
   <block id="13919b42be0dc9d06cf38142917f4b9e" category="paragraph"><block ref="2b673e138bf62e9f201d2fe3f4e48e85" prefix="" category="inline-code"></block></block>
   <block id="0784a1581386529d37ed702d7c0c6404" category="paragraph"><block ref="7c93709ee00a5bf88772022db8bfa591" prefix="" category="inline-code"></block></block>
-  <block id="de5132c93b5d93a59d85652f38a4c1be" category="list-text">Geben Sie die Sicherungsinformationen ein. Fügen Sie den gesamten Inhalt aus der Zeile „START BACKUP“ durch die Zeile „END BACKUP“ ein.</block>
   <block id="23f31e8486de5b0c9919cdb1d6f7bb1f" category="paragraph">Drücken Sie am Ende des Eingangs zweimal die Eingabetaste.</block>
-  <block id="17f4c7292b19bfcfe3d4c928df22bc3c" category="list-text">Der Wiederherstellungsprozess wird abgeschlossen.</block>
   <block id="25a669068aaab50a7c2fd5bce904c674" category="admonition">Fahren Sie nicht fort, wenn die angezeigte Ausgabe etwas anderes als ist<block ref="3f52dc951949a3041638d54635d71099" prefix=" " category="inline-code"></block>. Führen Sie die Fehlerbehebung durch, um den Fehler zu beheben.</block>
   <block id="4ca210717c7b74a5849140e091b8b172" category="list-text">Wählen Sie Option 1 aus dem Startmenü, um mit dem Booten in ONTAP fortzufahren.</block>
-  <block id="de52f5c2d18fad1d9bb02f99ec8dadf5" category="list-text">Vergewissern Sie sich, dass die Konsole des Controllers angezeigt wird<block ref="22714968f3c097ea3249c9d4b9e8119f" prefix=" " category="inline-code"></block></block>
   <block id="36127ab42d959b7fd1802bde97fbbebd" category="paragraph"><block ref="ff552bb89260932a935c259f2e059d29" prefix="" category="inline-code"></block></block>
   <block id="1a397feeabbac5c761b3d1f336523079" category="admonition">Beim Filtern nach FALSE im wiederhergestellten Parameter sollten keine Ergebnisse angezeigt werden.</block>
-  <block id="612c478fd861d23534a26dd856605b43" category="open-title">Option 2: Systeme mit externer Schlüsselmanager-Server-Konfiguration</block>
-  <block id="179622516286b14a2256b085ee45c10a" category="paragraph">Stellen Sie die externe Schlüsselmanager-Konfiguration aus dem ONATP-Startmenü wieder her.</block>
   <block id="075c44463f07a0ee059a3e5089c43ca5" category="paragraph">Sie benötigen die folgenden Informationen für die Wiederherstellung der Konfiguration des externen Schlüsselmanagers (EKM):</block>
   <block id="d60b517023845eb33535660ac501cf18" category="list-text">Die Adresse des KMIP-Servers.</block>
   <block id="70b8d21a07e70130ed6b262a91c18626" category="list-text">Der KMIP-Port.</block>
-  <block id="08abc77c04d9685a10837fbb9135a705" category="list-text">Eine Kopie der Datei /cfcard/kmip/certs/Client.crt von einem anderen Clusterknoten oder dem Clientzertifikat.</block>
-  <block id="db1b600b813d1f6f50a04eba824c70ab" category="list-text">Eine Kopie der Datei /cfcard/kmip/certs/client.key von einem anderen Clusterknoten oder dem Client-Schlüssel.</block>
-  <block id="dbf0b245d6b63885207c70d983243a7b" category="list-text">Eine Kopie der Datei /cfcard/kmip/certs/CA.pem von einem anderen Clusterknoten oder der KMIP-Server-CA(s).</block>
   <block id="e43680b19a57600cbf0bc788265754c7" category="list-text">Wählen Sie Option 11 aus dem ONTAP-Startmenü.</block>
-  <block id="a2a02d01ac6ca6a677201d0767b02f34" category="list-text">Wenn Sie dazu aufgefordert werden, bestätigen Sie, dass Sie die erforderlichen Informationen gesammelt haben:</block>
-  <block id="91edae04cf5f805055ec3dac6c3b7f8c" category="list-text"><block ref="b19458ff12859c393f2fd46d02cb24d4" prefix="" category="inline-code"></block> _Y_</block>
-  <block id="635db4ba4393f4aa6637dd02dc8cabae" category="list-text"><block ref="05ac7348459861360c86dc5851e1ab0b" prefix="" category="inline-code"></block> _Y_</block>
-  <block id="1ea0f8ccc55c1aaa4b40e778eca7d203" category="list-text"><block ref="0daafd01a5c78aa4cf52e57febc9c7d9" prefix="" category="inline-code"></block> _Y_</block>
-  <block id="7edfa6272c16cc3e1b7ef52bbf985294" category="list-text"><block ref="05f6b998dcdacf2a7e5882ef776dfa8e" prefix="" category="inline-code"></block> _Y_</block>
-  <block id="66b0e02903c6c36ff4685952e8a46ec1" category="paragraph">Stattdessen können Sie auch folgende Eingabeaufforderungen ausführen:</block>
-  <block id="db7e8e2b0c1ff16e7d69c69fa0d6a061" category="list-text"><block ref="05f6b998dcdacf2a7e5882ef776dfa8e" prefix="" category="inline-code"></block> _N_</block>
-  <block id="ca2e8c6e7a166833a27d9755f814672b" category="list-text"><block ref="9254f5a10bf0e4d18aa18a91a9321bea" prefix="" category="inline-code"></block> _Y_</block>
-  <block id="d0d46e5c203e3a92bef26e001a5e623d" category="list-text"><block ref="616aa2e195f429a92684489246e90f34" prefix="" category="inline-code"></block> _Y_</block>
-  <block id="83b207edf8a800f4f88cf102b88cf241" category="list-text">Geben Sie die Informationen für die folgenden Eingabeaufforderungen an:</block>
-  <block id="a242b56bad1d07089dce8ccb795966f2" category="list-text">Der Wiederherstellungsprozess wird abgeschlossen:</block>
-  <block id="3bac3ae452491bc05a59b99b3d2476d6" category="paragraph">Fahren Sie mit Schritt 6 fort.</block>
-  <block id="070dd7606e33a466d7a8bb82a9a64b17" category="list-text">Mit dem Befehl _Storage Failover show_ überprüfen Sie, ob der Ziel-Controller für die Rückgabe bereit ist.</block>
-  <block id="378fa36f6e90b3bf6ddbb070e35b0388" category="list-text">Verschieben Sie das Konsolenkabel zum Partner-Controller und geben Sie den Ziel-Controller-Storage mit dem Befehl _Storage Failover Giveback -fromnode local -only-cfo-aggregates true_ zurück.</block>
-  <block id="bd7b047ae429d755acf6b20e1064e5ce" category="list-text">Wenn der Befehl fehlschlägt, weil der Partner „nicht bereit“ ist, warten Sie 5 Minuten, bis das HA-Subsystem mit den Partnern synchronisiert wird.</block>
-  <block id="1bcf977583274fe2567618999a9b0c90" category="list-text">Warten Sie 3 Minuten, und überprüfen Sie den Failover-Status mit dem Befehl _Storage Failover show_.</block>
-  <block id="d92dd32085afaf328cc7fcda13198cc8" category="list-text">Geben Sie an der Eingabeaufforderung clustershell den Befehl _Network Interface show -is-Home false_ ein, um die logischen Schnittstellen aufzulisten, die sich nicht auf ihrem Home-Controller und Port befinden.</block>
-  <block id="e396be98bc8257ac03b57843c10e38b9" category="paragraph">Wenn Schnittstellen als aufgeführt sind<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>, stellen Sie diese Schnittstellen mit dem Befehl _net int revert -vserver Cluster -LIF _nodename_ zurück auf ihren Home-Port.</block>
-  <block id="62de7d9b4c53e76eb0aa2abbb0821ccd" category="list-text">Verschieben Sie das Konsolenkabel zum Ziel-Controller und führen Sie den Befehl _Version -V_ aus, um die ONTAP-Versionen zu überprüfen.</block>
-  <block id="63d74ff14d34f13a62e8eb172d26a62f" category="list-text">Verwenden Sie die<block ref="46353f4e0bb2c136591c37c9eeedcf40" prefix=" " category="inline-code"></block> , um die Ausgabe zu überprüfen.</block>
-  <block id="d9432d5d4d3a21bdc03aa318c2cfdb11" category="list-text">Verwenden Sie den Befehl _Security key-Manager key query_, um die Schlüssel-IDs der Authentifizierungsschlüssel anzuzeigen, die auf den Schlüsselverwaltungs-Servern gespeichert sind.</block>
-  <block id="8064cac27c9219c213e029af9a5800db" category="list-text">Wenn<block ref="aac34f614f4514a3f670bae971a30369" prefix=" " category="inline-code"></block> =<block ref="6a21b6995a068148bbb65c8f949b3fb2" prefix=" " category="inline-code"></block> und die<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> Spalte = nichts anderes als<block ref="0f456cd0d7a5ae4a393a7b207a83284e" prefix=" " category="inline-code"></block>, verwenden Sie den Befehl _Security key-Manager external restore_, um die Schlüssel-IDs der Authentifizierungsschlüssel wiederherzustellen.</block>
-  <block id="8b6a11a09054c203c222c056a501059f" category="list-text">Wenn<block ref="aac34f614f4514a3f670bae971a30369" prefix=" " category="inline-code"></block> =<block ref="c6b9507c26062233f2341cb90db60eaa" prefix=" " category="inline-code"></block> und die<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> Spalte = eine andere als<block ref="0f456cd0d7a5ae4a393a7b207a83284e" prefix=" " category="inline-code"></block>sind, verwenden Sie den Befehl _Security Key-Manager Onboard Sync_, um die fehlenden Onboard-Schlüssel auf dem reparierten Knoten zu synchronisieren.</block>
-  <block id="27b0a5d00d58f515ceda3d56b392bdf7" category="paragraph">Überprüfen Sie mit dem Befehl _Security key-Manager key query_, ob die<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> Spalte für alle Authentifizierungsschlüssel =<block ref="0f456cd0d7a5ae4a393a7b207a83284e" prefix=" " category="inline-code"></block> ist.</block>
   <block id="4f95ab1472771ae8e2475d26cfccfefd" category="paragraph">Die folgende AutoSupport-Meldung unterdrückt die automatische Fallerstellung für zwei Stunden: `cluster1:*&gt; Systemknoten AutoSupport Invoke -Node * -type all -message MAINT=2h</block>
   <block id="46bbc90a4740f73d85b026da0e0ba4db" category="list-text">Deaktivieren Sie das automatische Giveback vom Controller mit funktionstüchtiger Funktion:</block>
   <block id="b719e721c62569ed8b97aaf7ac03691a" category="paragraph">Multi-Cluster Interconnect-Switch</block>
@@ -9238,7 +9202,6 @@ SFP+ (Target/Initiator)</block>
   <block id="3e6277588162255770fd3384bad09d6d" category="list-text">Starten Sie an der LOADER-Eingabeaufforderung auf dem Controller den Controller, und geben Sie bei der Eingabeaufforderung „_y_“ ein, um die System-ID aufgrund einer nicht übereinstimmenden System-ID zu überschreiben.</block>
   <block id="9daabece8db7521a7882f63ebd76a891" category="image-alt">Entfernen Sie ein Laufwerk mit der Entriegelungstaste oben</block>
   <block id="e0bc24820711c466532ba2cb67ababd9" category="image-alt">Entfernen Sie ein Laufwerk mit der Entriegelungstaste in der Mitte</block>
-  <block id="5be3be4e3c78f5ba4233a70fab6255f9" category="paragraph">Schließen Sie nach dem normalen Booten den Austausch der Startmedien ab, indem Sie die abschließenden Prüfungen durchführen und den Speicher zurückgeben.</block>
   <block id="38821947dff053760f4c97b648ca454a" category="admonition">Stecken Sie die Netzkabel noch nicht ein.</block>
   <block id="b0dc4e3ef222885899ea12125b17e5eb" category="list-text">Klicken Sie im linken Fensterbereich auf *Netzwerk*, klicken Sie mit der rechten Maustaste und wählen Sie *Aktualisieren*.</block>
   <block id="a620e4025016adf1d0a58233ca0fabf5" category="image-alt">Entfernen oder ersetzen Sie die RTC-Batterie</block>
@@ -9620,7 +9583,6 @@ SFP+ (Target/Initiator)</block>
   <block id="d6b5f802b07df1179c13649ed53524f0" category="paragraph">Nach Abschluss des Wiederherstellungsvorgangs wird Folgendes angezeigt:</block>
   <block id="c6980bbd79483c6809cc84795b7d14d6" category="paragraph">Wenn die Wiederherstellung abgeschlossen ist, wird der Node neu gebootet, um den Prozess abzuschließen.</block>
   <block id="0afa9147e7fde537954ecea742d84625" category="list-text">Wählen Sie eine der folgenden Optionen aus, um die Onboard-Schlüsselmanager-Konfiguration aus dem ONATP-Startmenü wiederherzustellen.</block>
-  <block id="1f816c392c5ee466677e2fd2587ce8a1" category="section-title">Schritt 2: Schließen Sie den Austausch der Boot-Medien ab</block>
   <block id="417968dd9c410e2ebdf82236e2a6f1d8" category="doc">Schritt 1: Verbinden Sie die Storage Controller mit Ihrem Netzwerk</block>
   <block id="c0b05ac617b77a5c10f26756e6ef04f2" category="list-text">Wenn Sie eine Verbindung zu einem optischen Switch herstellen, stecken Sie den SFP-Transceiver (Small Form-Factor Pluggable) in den Controller-Port ein, bevor Sie den Port verkabeln.</block>
   <block id="1463138ead0bd5def70e2d744eddfc0a" category="paragraph">Verbinden Sie Ihre Controller direkt miteinander und mit Ihrem Host-Netzwerk.</block>
@@ -9670,7 +9632,6 @@ SFP+ (Target/Initiator)</block>
   <block id="871681e86e80556b261166721e0bbe3b" category="list-text">Befestigen Sie den Aufbewahrungs-Shelf mit den mitgelieferten Befestigungsschrauben am Schrank oder Telco-Rack.</block>
   <block id="c5eaaf4a6fa532356e5d0189384e0e34" category="list-text">Schließen Sie die Kabelverwaltungsgeräte an der Rückseite des Speichersystems an.</block>
   <block id="36eaeecf3fe5d82e498290c50c773db1" category="list-text">Befestigen Sie die Blende an der Vorderseite des Speichersystems.</block>
-  <block id="c239b345dc160b2bfc0fb8247acc17eb" category="paragraph">Jedes NS224-Shelf wird durch eine eindeutige Shelf-ID unterschieden. Diese ID stellt sicher, dass das Shelf innerhalb Ihrer Storage-System-Einrichtung unterscheidbar ist. Standardmäßig werden Shelf-IDs als ‘00’ und ‘01’ zugewiesen. Möglicherweise müssen Sie diese IDs jedoch anpassen, um die Eindeutigkeit in Ihrem Storage-System aufrechtzuerhalten.</block>
   <block id="f044e75ec5037aabefb204d1365ba96b" category="image-alt">NS224 Shelf-ID ändern</block>
   <block id="d8147b4a0f272144c59f006b412b8290" category="image-alt">[Legende Nummer 2</block>
   <block id="8c5529e435c4992332c3afef54410f4e" category="image-alt">[Legende Nummer 3</block>
@@ -10375,7 +10336,6 @@ SFP+ (Target/Initiator)</block>
   <block id="5bfc9396e31ecaf44561c35f76ab21a6" category="list-text">Sie müssen bestätigt haben, dass der MetroCluster-Konfigurationsstatus konfiguriert ist und sich die Knoten in einem aktivierten und normalen Zustand befinden <block ref="4d06f3844212ac745a73965bbb3f6e51" prefix="(" category="inline-code"></block>).</block>
   <block id="b53660f761dc53e7b68aefd5edbbae44" category="paragraph">Gehen Sie zum nächsten Abschnitt.</block>
   <block id="cb469b95641c1382be009038b04e5158" category="paragraph">Sie müssen das Controller-Modul trennen, das System-Management-Modul von der Rückseite des Systems entfernen, das gestörte Startmedium entfernen und das Ersatz-Startmedium im System-Management-Modul installieren.</block>
-  <block id="ffffd77faa91cb4a767b88905267cf2b" category="doc">Schritt 1: Überprüfen Sie, ob Ihre Version von ONTAP Verschlüsselung unterstützt</block>
   <block id="ef265e1108b8991c7b12209078d6123e" category="paragraph">Überprüfen Sie vor dem Herunterfahren des beeinträchtigten Controllers, ob Ihre Version von ONTAP NetApp Volume Encryption (NVE) unterstützt und ob Ihr Verschlüsselungsmanagement-System ordnungsgemäß konfiguriert ist.</block>
   <block id="fdb2cbe8b1e451ff001e9714b834c459" category="paragraph">Prüfen Sie, ob Ihre ONTAP Version NetApp Volume Encryption (NVE) unterstützt. Diese Informationen sind entscheidend, um das richtige ONTAP-Image herunterzuladen.</block>
   <block id="1c09443221312bdba5a22ddbba4f768f" category="list-text">Stellen Sie fest, ob Ihre ONTAP-Version Verschlüsselung unterstützt, indem Sie den folgenden Befehl ausführen:</block>
@@ -10385,27 +10345,14 @@ SFP+ (Target/Initiator)</block>
   <block id="d8b3ebaef14f15ddadd58f8788097867" category="list-text">Falls NVE unterstützt wird, laden Sie das ONTAP Image mit NetApp Volume Encryption herunter.</block>
   <block id="723417ff6efb8e61349dd2d6b90d0898" category="list-text">Falls NVE nicht unterstützt wird, laden Sie das ONTAP Image *ohne* NetApp-Volume-Verschlüsselung herunter.</block>
   <block id="6bd78f9c7732510cf857d49ceb4bd776" category="section-title">Schritt 2: Stellen Sie fest, ob es sicher ist, den Controller herunterzufahren</block>
-  <block id="bdaa0edeb07bd0ecc38e28982c4df8d7" category="paragraph">Um einen Controller sicher herunterzufahren, müssen Sie zuerst ermitteln, ob der Onboard Key Manager (OKM) oder der External Key Manager (EKM) aktiv ist. Überprüfen Sie anschließend den verwendeten Schlüsselmanager, zeigen Sie die entsprechenden Schlüsselinformationen an und ergreifen Sie Maßnahmen, die auf dem Status der Authentifizierungsschlüssel basieren.</block>
   <block id="30f7cbebdfdaa0338bc99a69c5ef0e38" category="list-text">Bestimmen Sie, welcher Schlüsselmanager auf Ihrem System aktiviert ist:</block>
-  <block id="aac34f614f4514a3f670bae971a30369" category="cell">Typ des Schlüsselmanagers</block>
-  <block id="a36a9da82fdc17311ba2d5d847082cce" category="paragraph">Stellen Sie fest, ob EKM auf Ihrem System aktiviert ist, indem Sie den folgenden Befehl ausführen:</block>
-  <block id="c62c99e83e1c9d2a44da11eaa2e0b14a" category="paragraph"><block ref="0565c41723caaa37b0079906ad365846" prefix="" category="inline-code"></block></block>
-  <block id="89add348f9d444253c70c9efcfa0b483" category="paragraph">Wenn EKM aktiviert ist,<block ref="6a21b6995a068148bbb65c8f949b3fb2" prefix=" " category="inline-code"></block> wird in der Ausgabe aufgeführt.</block>
-  <block id="518b09108bfe2ee41d9afdf44e6a6e45" category="paragraph">Stellen Sie fest, ob OKM auf Ihrem System aktiviert ist, indem Sie basierend auf der Version von ONTAP, auf der der Node ausgeführt wird, einen der folgenden Befehle ausführen.</block>
-  <block id="f8cefe4e9eda67cd04349f4560aad96f" category="list-text">Geben Sie für ONTAP 9.14.1 oder höher den folgenden Befehl ein:</block>
   <block id="9b5996b90a7a19dc5ca9e91a6d0c7ac9" category="paragraph"><block ref="ed039e134fdf3b84c71d409a4024dbc7" prefix="" category="inline-code"></block></block>
   <block id="67d6aa20f2257cc1b6c99fa4ed444eca" category="paragraph">Wenn OKM aktiviert ist,<block ref="90d4e6078945c9c6155e77edcafa9984" prefix=" " category="inline-code"></block> wird in der Befehlsausgabe aufgelistet.</block>
-  <block id="5114d877b6bdc7484d5c2c9efc040aa0" category="list-text">Geben Sie für ONTAP 9.13.1 oder früher den folgenden Befehl ein:</block>
   <block id="6f76cbf64620dc55dc8a5d1462ae7822" category="paragraph"><block ref="1847f4f206eb3ab8397f6206fcf1bb3f" prefix="" category="inline-code"></block></block>
   <block id="4efa472f82474aa8572aacddb95c4a1b" category="paragraph">Wenn OKM aktiviert ist,<block ref="c6b9507c26062233f2341cb90db60eaa" prefix=" " category="inline-code"></block> wird in der Befehlsausgabe aufgelistet.</block>
-  <block id="b520d3c69ccbf428928a30eeb5fcaeec" category="list-text">Geben Sie den folgenden Abfragebefehl ein, um den Status der Authentifizierungsschlüssel in Ihrem Schlüsselmanager anzuzeigen:</block>
   <block id="2a4a9d693caa859153f77cf2204d30cc" category="paragraph"><block ref="c9b37f9017fc101cecef415e707e7b5f" prefix="" category="inline-code"></block></block>
   <block id="775c4f8ef2eabc8574bb57ddd10b0b23" category="list-text">Überprüfen Sie die Ausgabe für den Wert in der<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> Spalte für Ihren Schlüsselmanager.</block>
   <block id="0244ade962fa9d071f4def5c7ef769cc" category="paragraph">Diese Spalte gibt an, ob die Authentifizierungsschlüssel für Ihren Schlüsselmanager (entweder EKM oder OKM) erfolgreich wiederhergestellt wurden.</block>
-  <block id="5532ef9f6f6fe7cdd455dde7a78eb12c" category="list-text">Wenn der Wert in der Spalte „Restored“ wahr ist, werden die Schlüssel korrekt wiederhergestellt, und es ist sicher, mit dem Herunterfahren des Controllers fortzufahren.</block>
-  <block id="8ec65b3b21949ed324beef5dbc025c92" category="list-text">Wenn der Wert nicht wahr ist, wurden die Schlüssel nicht wiederhergestellt, und Sie müssen weitere Schritte (Wiederherstellen oder Synchronisieren von Schlüsseln) durchführen, je nachdem, ob Sie EKM oder OKM verwenden.</block>
-  <block id="b4bddfeecfd5716741acba5ef08dfdd9" category="list-text">Je nachdem, ob Sie EKM oder OKM verwenden, wählen Sie eine der folgenden Optionen aus und befolgen Sie die entsprechenden Schritte, je nach dem in der Spalte angezeigten Ausgabewert<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block>.</block>
-  <block id="d080cdba04a9e58adbe244b4d170ff25" category="open-title">EKM</block>
   <block id="a26b32b28af2e3521ad3e104fee11f80" category="paragraph">Befolgen Sie je nach dem in der Spalte angezeigten Ausgangswert<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> die entsprechenden Schritte.</block>
   <block id="c9fb391da0641ace637021ed0f9d1c94" category="cell">Ausgabewert in<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> Spalte</block>
   <block id="22cfef4d87bd251ba39dd92d08a6b0bb" category="paragraph"><block ref="b326b5062b2f0e69046810717534cb09" prefix="" category="inline-code"></block></block>
@@ -10414,9 +10361,7 @@ SFP+ (Target/Initiator)</block>
   <block id="1a1cd257525bddea68723047e36e6e90" category="list-text">Stellen Sie die externen Authentifizierungsschlüssel für das Verschlüsselungsmanagement auf allen Nodes im Cluster mit dem folgenden Befehl wieder her:</block>
   <block id="74c90316d25b4cdc5c8e524af066a5a0" category="paragraph"><block ref="24b420efa276a683b4bd02f14a2d6f59" prefix="" category="inline-code"></block></block>
   <block id="581f12d33ebdffd65e567d7483436438" category="paragraph">Wenn der Befehl fehlschlägt, wenden Sie sich an<block ref="1a36b59ecae7684863b79a0f690b6840" category="inline-link-rx"></block>.</block>
-  <block id="c2c27d455a0034831b8e2b3d5a1fdd37" category="list-text">Überprüfen Sie, ob in der<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> Spalte für alle Authentifizierungsschlüssel die angezeigt werden<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>, indem Sie den  Befehl eingeben<block ref="91f9c18d13195a5e3c010df87360adf2" prefix=" " category="inline-code"></block>.</block>
   <block id="90b0be5cd55fef8ba4b2677ba61937be" category="paragraph">Wenn alle Authentifizierungsschlüssel vorhanden sind<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>, können Sie den beeinträchtigten Controller sicher herunterfahren. Gehen Sie zu <block ref="eee94cfaa2087b0a7525f83880646105" category="inline-link-macro-rx"></block>.</block>
-  <block id="90d4e6078945c9c6155e77edcafa9984" category="open-title">OKM</block>
   <block id="f756353c7a60081133f6ef85804b6485" category="paragraph">Sichern Sie die OKM-Informationen manuell.</block>
   <block id="349e0edd7094f31576c430a35f1c73e3" category="list-text">Wechseln Sie in den erweiterten Modus, indem<block ref="8d2cf87827d8c4c105b70542cc18077d" prefix=" " category="inline-code"></block> Sie aufrufen und dann bei Aufforderung eingeben<block ref="57cec4137b614c87cb4e24a3d003a3e0" prefix=" " category="inline-code"></block>.</block>
   <block id="86123e57ff90dca177de37d445925d0d" category="list-text">Geben Sie den folgenden Befehl ein, um die Informationen zum Verschlüsselungsmanagement anzuzeigen:</block>
@@ -10431,20 +10376,8 @@ SFP+ (Target/Initiator)</block>
   <block id="d81a048f736ca3a03a0fc11c4bc74978" category="list-text">Geben Sie den Befehl ein, um die Backup-Informationen für das Verschlüsselungsmanagement anzuzeigen:</block>
   <block id="d019a61bbe760bfae51153af25e806b3" category="doc">Schritt 1: Wiederherstellen des Schlüsselmanagers</block>
   <block id="926dc92762712fb5c888d06d13b2835c" category="list-text">Wählen Sie im ONTAP-Startmenü die entsprechende Option aus:</block>
-  <block id="802134e5cd64408009bf9ca5065786b2" category="list-text">Wählen Sie für ONTAP 9.8 und höher Option 10:</block>
-  <block id="07447cab17885ca45337781e921897fa" category="list-text">Geben Sie für ONTAP 9.7 und früher den Befehl versteckte Option ein<block ref="7191584fa52473c1df15d3c03b065c0b" prefix=" " category="inline-code"></block>.</block>
-  <block id="b8853c4009726e2ece8d95f47908e1c0" category="list-text">Bestätigen Sie die Fortsetzung des Prozesses.<block ref="31d3e9f860a1ea4bc24acbcd0c462856" prefix=" " category="inline-code"></block></block>
-  <block id="2f494951e987e38666c6a1935c0c88be" category="list-text">Geben Sie aus dem Partner-Knoten den Partner-Controller ein:<block ref="291b31306c2e0668f091d41edca7e97f" prefix=" " category="inline-code"></block>.</block>
-  <block id="b6074ec78f4878986cfabd4a86abf5c8" category="list-text">Führen Sie nach dem Start nur mit dem CFO-Aggregat den Befehl _Security key-Manager onboard sync​​​​​​​_ aus.</block>
   <block id="3554bd6dca965e0e8bcb314a54ef655c" category="list-text">Geben Sie die Cluster-weite Passphrase für das Onboard Key Manager ein.</block>
   <block id="68e51e7cb5faf4732838f76bc7db6b45" category="admonition">Wenn die Synchronisierung erfolgreich war, wird die Cluster-Eingabeaufforderung ohne weitere Meldungen zurückgegeben. Wenn die Synchronisierung fehlschlägt, wird eine Fehlermeldung angezeigt, bevor Sie zur Cluster-Eingabeaufforderung zurückkehren. Fahren Sie nicht fort, bis der Fehler behoben ist und die Synchronisierung erfolgreich ausgeführt wird.</block>
-  <block id="ce4fb0e60bb66e89ea3ad1fd2ff46a30" category="list-text">Stellen Sie sicher, dass alle Tasten synchronisiert sind:<block ref="297f477a8524857592ffedfea06bb8d7" prefix=" " category="inline-code"></block>.</block>
-  <block id="39182fbb28bf0718bee46eab1961e1bd" category="list-text">GiveBack des Node vom Partner:<block ref="e23a9f1c6189f372292c98d844a0895f" prefix=" " category="inline-code"></block></block>
-  <block id="61942e8f4689a17c71500d84d0b47041" category="list-text">Eine Kopie der Datei /cfcard/kmip/servers.cfg von einem anderen Clusterknoten oder die folgenden Informationen:</block>
-  <block id="6b7fb6689b4ff21477eda31338d189ce" category="list-text">_Geben Sie den Dateiinhalt des Client-Zertifikats (Client.crt) ein:_</block>
-  <block id="4cf3e6ebf1c573912cdf7f61f3baff04" category="list-text">_Geben Sie den Dateiinhalt des Client-Schlüssels (Client.key) ein:_</block>
-  <block id="8a0822d48c830ac216ea7f9d4db5a9dd" category="list-text">_Geben Sie den Dateiinhalt der KMIP-Server-CA(s) (CA.pem) ein:_</block>
-  <block id="fff930cef46bf6cadd68fad5ec20a254" category="list-text">_Geben Sie den Dateiinhalt der Serverkonfiguration (Server.cfg) ein:_</block>
   <block id="5eadc2e25337518dc852a80577d9cf1e" category="doc">Prüfen Sie die Unterstützung und den Status der Verschlüsselungsschlüssel - AFF A150</block>
   <block id="0dc57322765c9d58ce88190f1690fcde" category="doc">Prüfen Sie die Unterstützung und den Status der Verschlüsselungsschlüssel - AFF A1K</block>
   <block id="8bc64411ac44956417615b1424961016" category="paragraph">Stellen Sie die Verschlüsselung auf dem Knoten wieder her.</block>
@@ -10507,4 +10440,109 @@ SFP+ (Target/Initiator)</block>
   <block id="d431e47bf770a9393ee9f239dc2035b5" category="sidebar">E/A-Modul ASA A70 und ASA A90</block>
   <block id="2d5a952fbb91c4ae00f6cf700a7a8912" category="sidebar">ASA A1K-Controller</block>
   <block id="21b2ca1e48faf28d5918cce56ce73345" category="sidebar">ASA A1K I/O-Modul</block>
+  <block id="de6146d3d2df55568fb2490009341fe7" category="inline-link-macro">EFI-Ordner fehlt in Service-Image-Download-Datei verwendet für Boot-Gerät Recovery für FAS-und AFF-Modelle^</block>
+  <block id="08bb41e143a5dbcb1f95809650758d5d" category="admonition">Wenn das Service-Image keinen efi-Ordner hat, siehe <block ref="ff41085fda5f8dca9d0e49c279b90ce2" category="inline-link-macro-rx"></block>.</block>
+  <block id="fb187e830be89fc21d44062ee3e0783a" category="list-text">Starten Sie von der Loader-Eingabeaufforderung aus das Wiederherstellungs-Image vom USB-Flash-Laufwerk:<block ref="199329b95897fa5b91256fa51b2186ce" prefix=" " category="inline-code"></block></block>
+  <block id="9f4b6474b2791f1e18fb394e0a9d5749" category="list-text">Setzen Sie auf dem funktionierenden Partner-Controller den beeinträchtigten Controller auf die erweiterte Berechtigungsebene:<block ref="0581d0d071ad835f74bf419081ce5d75" prefix=" " category="inline-code"></block>.</block>
+  <block id="852fee667b0218d56efb26732593192d" category="inline-link-macro">Post-Motherboard-Austauschprozess zur Aktualisierung der Lizenzierung auf einem AFF/FAS-System</block>
+  <block id="77464f13a7bfd5b5de3f6d6592b43344" category="admonition">Wenn auf Ihrem System zunächst ONTAP 9.10.1 oder höher ausgeführt wurde, gehen Sie wie in beschrieben <block ref="396f3a939b9056719487db53e0cdf43e" category="inline-link-macro-rx"></block>vor. Wenn Sie sich nicht sicher sind, wie die erste ONTAP-Version für Ihr System ist, finden Sie weitere Informationen unter<block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>.</block>
+  <block id="8137cc3da5d92cb60020874c492d8701" category="list-text">Nach Bedarf Neuvernötigen des Storage-Systems</block>
+  <block id="fc2585bb5dd330e4d87dd2cdbd6c596b" category="admonition">Stellen Sie sicher, dass das Konsolenkabel mit dem reparierten Controller-Modul verbunden ist, sodass beim Neustart Konsolenmeldungen empfangen werden. Der reparierte Controller wird von dem funktionstüchtigen Controller mit Strom versorgt und beginnt mit dem Neubooten, sobald er vollständig im Chassis eingesetzt ist.</block>
+  <block id="1dbff4f0fe05034cfd08080f90023ca9" category="admonition">Wenn der Controller bis zur Loader-Eingabeaufforderung gebootet wird, booten Sie ihn mit dem Befehl neu<block ref="ce54ef17bebf280339d340bd40dff593" prefix=" " category="inline-code"></block>.</block>
+  <block id="c9a687d1939d0b48b69bff3618583e04" category="doc">Schritt: Prüfen Sie, ob Ihre Version von ONTAP NetApp-Volume-Verschlüsselung unterstützt</block>
+  <block id="7a98ae061f92b7a841dcacb8930a02c5" category="paragraph">Um einen Controller sicher herunterzufahren, müssen Sie zuerst ermitteln, ob der External Key Manager (EKM) oder der Onboard Key Manager (OKM) aktiv ist. Überprüfen Sie anschließend den verwendeten Schlüsselmanager, zeigen Sie die entsprechenden Schlüsselinformationen an und ergreifen Sie Maßnahmen, die auf dem Status der Authentifizierungsschlüssel basieren.</block>
+  <block id="8dd09587169b8d8db58ece09496b890f" category="cell">Führen Sie diesen Befehl aus</block>
+  <block id="d5069b83ec1ddf9e9d88f354e8909059" category="paragraph">ONTAP 9.14.1 oder höher</block>
+  <block id="196874775b44aa4bd067da099307af94" category="list-text">Wenn EKM aktiviert ist,<block ref="d080cdba04a9e58adbe244b4d170ff25" prefix=" " category="inline-code"></block> wird in der Befehlsausgabe aufgelistet.</block>
+  <block id="de8ced263989be76729e57ef48af2580" category="list-text">Wenn kein Schlüsselmanager aktiviert ist,<block ref="6f10782c5275dd4037c763904b15d067" prefix=" " category="inline-code"></block> wird in der Befehlsausgabe aufgeführt.</block>
+  <block id="70c9355c5ddc7957399355ec7ad55706" category="paragraph">ONTAP 9.13.1 oder früher</block>
+  <block id="bf7423b09b1d8268d393de84679df3cb" category="list-text">Wenn EKM aktiviert ist,<block ref="6a21b6995a068148bbb65c8f949b3fb2" prefix=" " category="inline-code"></block> wird in der Befehlsausgabe aufgelistet.</block>
+  <block id="3bdaba759104a48c3a95e5443ba7e5e0" category="list-text">Wenn kein Schlüsselmanager aktiviert ist,<block ref="119e62c9aa407bc6041ef3db23b93be8" prefix=" " category="inline-code"></block> wird in der Befehlsausgabe aufgeführt.</block>
+  <block id="4867667f589f1bf5a2892fe48a4b93ba" category="list-text">Wählen Sie eine der folgenden Optionen, je nachdem, ob ein Key Manager auf Ihrem System konfiguriert ist.</block>
+  <block id="52aadd496ee1f92c301bdde94ed48b99" category="open-title">Kein Schlüsselmanager konfiguriert</block>
+  <block id="3bf4a86005a59ea3cd8643586d04cd78" category="open-title">Externer oder integrierter Schlüsselmanager konfiguriert</block>
+  <block id="64d036deb4b248416ccf87deceafe674" category="list-text">Geben Sie den folgenden Abfragebefehl ein, um den Status der Authentifizierungsschlüssel in Ihrem Schlüsselmanager anzuzeigen.</block>
+  <block id="22f8cc1607d6f80a2aa89016db8a184d" category="list-text">Wählen Sie je nachdem, ob das System den External Key Manager oder den Onboard Key Manager verwendet, eine der folgenden Optionen aus.</block>
+  <block id="7f6aa2eddb31d7d07b49d6c308057b6a" category="open-title">Externer Schlüsselmanager</block>
+  <block id="710588d994062c1accbe164eb56effb3" category="list-text">Überprüfen Sie, ob in der<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> Spalte für alle Authentifizierungsschlüssel die angezeigt werden<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>, indem Sie den  Befehl eingeben<block ref="c9b37f9017fc101cecef415e707e7b5f" prefix=" " category="inline-code"></block>.</block>
+  <block id="a32dd2ca79d8d8a0056821cb37fed7f4" category="open-title">Onboard Key Manager</block>
+  <block id="9b9655d38c65764bacf8c0b8b4afb853" category="doc">Option 1: Wiederherstellen der Onboard Key Manager-Konfiguration</block>
+  <block id="7e6403e728a2ec69c3089e7bc3236779" category="paragraph">Sie müssen die Schritte speziell für Systeme mit aktiviertem Onboard Key Manager (OKM), NetApp Storage Encryption (NSE) oder NetApp Volume Encryption (NVE) anhand der Einstellungen abschließen, die Sie zu Beginn des Austauschvorgangs des Boot-Mediums erfasst haben.</block>
+  <block id="be88b9d7f41515efb1dc3a6709cef2ab" category="paragraph">Je nachdem, welcher Key Manager auf Ihrem System konfiguriert ist, wählen Sie eine der folgenden Optionen aus, um ihn im Startmenü wiederherzustellen.</block>
+  <block id="206a7e535a6da65b30f0a9fac61abc1c" category="list-text"><block ref="206a7e535a6da65b30f0a9fac61abc1c" category="inline-link-macro-rx"></block></block>
+  <block id="9969c9b9ffd1f5e74ee3793724d1c3ee" category="inline-link-macro">Option 2: Wiederherstellung der Konfiguration des externen Schlüsselmanagers</block>
+  <block id="68a33ad2037a014f19d73eff657236ff" category="list-text"><block ref="68a33ad2037a014f19d73eff657236ff" category="inline-link-macro-rx"></block></block>
+  <block id="959b1843f7153b31ca9e5042d5534f8c" category="paragraph">Stellen Sie die OKM-Konfiguration (Onboard Key Manager) über das ONTAP-Startmenü wieder her.</block>
+  <block id="8f697727fea4250d67048e2138fdfe91" category="list-text">Stellen Sie sicher, dass Sie beim Wiederherstellen der OKM-Konfiguration folgende Informationen haben:</block>
+  <block id="c7c0fa0163df4e41253409458437d32b" category="list-text">Wählen Sie im ONTAP-Startmenü die entsprechende Option aus dem Startmenü aus.</block>
+  <block id="d94292453b69f94bbc4d0bef7005d22f" category="cell">Wählen Sie diese Option aus</block>
+  <block id="c6cd4470ed1711bc2e8d8495a077a331" category="paragraph">Wählen Sie Option 10.</block>
+  <block id="5aae59241c50fe780033cb1d5baf9473" category="example-title">Beispiel für ein Startmenü anzeigen</block>
+  <block id="5a830b76ff5a71db59759b13f383410c" category="paragraph">ONTAP 9.7 und frühere Versionen</block>
+  <block id="f3f3dc4442f797fb778f168eb6675243" category="paragraph">Wählen Sie die ausgeblendete Option aus<block ref="7191584fa52473c1df15d3c03b065c0b" prefix=" " category="inline-code"></block></block>
+  <block id="2872bac3bb8e962ddbf71990facbbad1" category="list-text">Bestätigen Sie, dass Sie den Wiederherstellungsprozess fortsetzen möchten.</block>
+  <block id="8c93e57015aff70c970b23d7de65c653" category="example-title">Beispiel-Eingabeaufforderung anzeigen</block>
+  <block id="e314c9fb053c84dcecbf01a9551cdbba" category="paragraph"><block ref="9c14d4f8d14519ea4ded790c9f9cd146" prefix="" category="inline-code"></block></block>
+  <block id="ec8983024a1dd9d86d8993145c0634a2" category="list-text">Geben Sie die Sicherungsinformationen ein.</block>
+  <block id="488b5fa5584634f2b60d1dede7597561" category="list-text">Fügen Sie den gesamten Inhalt aus der Zeile „START BACKUP“ durch die Zeile „END BACKUP“ ein.</block>
+  <block id="22533ece7a970e82cf7bf3234ae433b9" category="paragraph">Die Wiederherstellung ist abgeschlossen.</block>
+  <block id="56a002b10eeb1f0bd392165e1ce5d75e" category="list-text">Vergewissern Sie sich, dass an der Konsole des Controllers die folgende Meldung angezeigt wird.</block>
+  <block id="0825b93c2d111f930b63d2cd3e2d04ef" category="paragraph"><block ref="22714968f3c097ea3249c9d4b9e8119f" prefix="" category="inline-code"></block></block>
+  <block id="3f6182c959954ae64a1f0a7915a90752" category="list-text">Geben Sie am Partner-Node den Partner-Controller ein, indem Sie den folgenden Befehl eingeben.</block>
+  <block id="d13607256d488794948c0a4e6b5b5273" category="paragraph"><block ref="291b31306c2e0668f091d41edca7e97f" prefix="" category="inline-code"></block>.</block>
+  <block id="63faa4ccd80cd6495683040b69af8206" category="list-text">Führen Sie nach dem Booten nur mit dem CFO-Aggregat den folgenden Befehl aus.</block>
+  <block id="83b41e54088cea42afe1d3b83e81ef91" category="list-text">Stellen Sie sicher, dass alle Schlüssel synchronisiert wurden, indem Sie den folgenden Befehl eingeben.</block>
+  <block id="a1f1cac1fa107bdba40f9cbe641925e7" category="paragraph"><block ref="297f477a8524857592ffedfea06bb8d7" prefix="" category="inline-code"></block>.</block>
+  <block id="f0069062031757b5fc9b9b11649dfe8f" category="list-text">Geben Sie dem Partner ein Giveback des Node durch Eingabe des folgenden Befehls ein.</block>
+  <block id="d2dafc284c7314e818c45df3a8758637" category="paragraph"><block ref="e23a9f1c6189f372292c98d844a0895f" prefix="" category="inline-code"></block></block>
+  <block id="670813ebc2cd52c023ff4cd4ada7a627" category="list-text">Stellen Sie das automatische Giveback wieder her, wenn Sie es deaktiviert haben, indem Sie den folgenden Befehl eingeben.</block>
+  <block id="50273ef55b3a53bf30771dd1ef5f8b5f" category="list-text">Wenn AutoSupport aktiviert ist, stellen Sie die automatische Fallerstellung durch Eingabe des folgenden Befehls wieder her.</block>
+  <block id="824a761c1584c25f025a384b7b387c56" category="paragraph"><block ref="9ac424c0d7b432975df36a19daf50c9c" prefix="" category="inline-code"></block></block>
+  <block id="02f6f43349cf003c6dd944a923f4ce06" category="paragraph">Stellen Sie die Konfiguration des externen Schlüsselmanagers über das ONTAP-Startmenü wieder her.</block>
+  <block id="9b5c6b418b2bc4f063803a9b7739bb1d" category="paragraph">Sie benötigen die folgenden Informationen für die Wiederherstellung der EKM-Konfiguration (External Key Manager).</block>
+  <block id="2b48a2afe7987203a2b1e9de1f031374" category="list-text">Eine Kopie der Datei /cfcard/kmip/servers.cfg von einem anderen Clusterknoten oder die folgenden Informationen:</block>
+  <block id="482d3df52d0525a7489378dac2f01ff9" category="list-text">Eine Kopie der<block ref="d606236dedb6ed649b29651c1ec53a99" prefix=" " category="inline-code"></block> Datei von einem anderen Cluster-Node oder dem Client-Zertifikat.</block>
+  <block id="97caf745f0852f09d6e00ee59a8529bb" category="list-text">Eine Kopie der<block ref="ccb442c2c2cc4367a087cfc7cd3b4876" prefix=" " category="inline-code"></block> Datei von einem anderen Cluster-Node oder dem Client-Schlüssel.</block>
+  <block id="18c2b9b14349e289338452c8eeaa5868" category="list-text">Eine Kopie der<block ref="443acc94def30bc037fb2dacac4fb7d3" prefix=" " category="inline-code"></block> Datei von einem anderen Cluster-Knoten oder der KMIP-Server-CA(s).</block>
+  <block id="3addeb39344804a6c77f096b5c3fe2fc" category="list-text">Wählen Sie Option 11 aus dem ONTAP-Startmenü.</block>
+  <block id="962741d9207d007a86d85dd741057111" category="list-text">Bestätigen Sie, dass Sie die erforderlichen Informationen gesammelt haben, wenn Sie dazu aufgefordert werden.</block>
+  <block id="8fbd4854fd031dc0c47635c899b74c12" category="list-text">Geben Sie bei der entsprechenden Aufforderung die Client- und Serverinformationen ein.</block>
+  <block id="b1a80a7089afd7d3b9be5936d7cc2c4b" category="example-title">Eingabeaufforderung anzeigen</block>
+  <block id="6015ee0c3c4dbc37f534783a65239e72" category="example-title">Beispiel anzeigen</block>
+  <block id="6758e112526dd1470fdafbd89c3b25df" category="paragraph">Nachdem Sie die Client- und Serverinformationen eingegeben haben, ist der Wiederherstellungsvorgang abgeschlossen.</block>
+  <block id="5c333c9d5086ee50b7f10724d1f9dc2b" category="paragraph">A ONTAP 9.7 und früher A Wählen Sie die versteckte Option aus<block ref="7191584fa52473c1df15d3c03b065c0b" prefix=" " category="inline-code"></block></block>
+  <block id="d9b80a753e6bd9c6b770fc295f295dc3" category="cell">+ . Bestätigen Sie, dass Sie den Wiederherstellungsprozess fortsetzen möchten. + .Beispielaufforderung anzeigen [%kollabierbar]</block>
+  <block id="26b17225b626fb9238849fd60eabdf60" category="paragraph">+</block>
+  <block id="68ce5ec1e3f9c353c053b6feafae61f1" category="paragraph">+ WARNUNG: Fahren Sie nicht fort, wenn die angezeigte Ausgabe etwas anderes als ist<block ref="3f52dc951949a3041638d54635d71099" prefix=" " category="inline-code"></block> . Führen Sie die Fehlerbehebung durch, um den Fehler zu beheben.</block>
+  <block id="1544c9897deafcbdffc044dac2f06610" category="list-text">Vergewissern Sie sich, dass die Konsole des Controllers Folgendes anzeigt:</block>
+  <block id="1ebe17e50ef0f20c9a4943cdde00f20b" category="list-text">Geben Sie vom Partner-Knoten aus das Partner-Controller ein:</block>
+  <block id="24de39ef6b972a13ee81c8f1e764261f" category="list-text">Führen Sie nach dem Booten nur mit CFO-Aggregat den folgenden Befehl aus:</block>
+  <block id="a26071b84ebad6f3f9f4f6902bd06efe" category="paragraph"><block ref="1fd11ad9c6fc9e17e9729cd939a2b47b" prefix="" category="inline-code"></block> Befehl.</block>
+  <block id="93c58e434dc7b5eb5c16678bb00205d0" category="paragraph">+ HINWEIS: Wenn die Synchronisierung erfolgreich war, wird die Cluster-Eingabeaufforderung ohne zusätzliche Meldungen zurückgegeben. Wenn die Synchronisierung fehlschlägt, wird eine Fehlermeldung angezeigt, bevor Sie zur Cluster-Eingabeaufforderung zurückkehren. Fahren Sie nicht fort, bis der Fehler behoben ist und die Synchronisierung erfolgreich ausgeführt wird.</block>
+  <block id="85ea8ad93708cbd62f01b1e93c22f93c" category="list-text">Stellen Sie sicher, dass alle Schlüssel synchronisiert sind:</block>
+  <block id="e4cab1326503c7b85827bb20b6ecc371" category="list-text">GiveBack der Node aus dem Partner:</block>
+  <block id="8c262ff4c019499a1809393e7aaf9ec1" category="list-text">Stellen Sie das automatische Giveback wieder her, falls Sie es deaktiviert haben, indem Sie den folgenden Befehl eingeben:</block>
+  <block id="b0a8481877486fd3aa85b04b4ae588ea" category="list-text">Wenn AutoSupport aktiviert ist, stellen Sie die automatische Fallerstellung wieder her, indem Sie den folgenden Befehl eingeben:</block>
+  <block id="98605073c3b6ddfa49164a951555a334" category="paragraph">Stellen Sie die Konfiguration des External Key Manager über das ONATP-Startmenü wieder her.</block>
+  <block id="44175671016a3c55aa9144d7352ab920" category="list-text">Eine Kopie der Datei /cfcard/kmip/certs/Client.crt von einem anderen Clusterknoten oder dem Clientzertifikat.</block>
+  <block id="d424dce62a7b2ea39afe29d8361240e7" category="list-text">Eine Kopie der Datei /cfcard/kmip/certs/client.key von einem anderen Clusterknoten oder dem Client-Schlüssel.</block>
+  <block id="b8dd2898e8ee20a6f6cb34867845aa17" category="list-text">Eine Kopie der Datei /cfcard/kmip/certs/CA.pem von einem anderen Clusterknoten oder der KMIP-Server-CA(s).</block>
+  <block id="7ae600ed46c79416b9301ce3a1377c21" category="paragraph">+ .Beispiel anzeigen</block>
+  <block id="16080a7eee840ac3e377c36a8da5fb6f" category="paragraph">Das System ist bereit, externe Schlüsselmanager zu verwenden. Es wird versucht, Schlüssel von Schlüsselservern wiederherzustellen [Aug 29 21:06:28]: 0x808806100: 0: DEBUG: Kmip2::main: [InitOpensl]:460: Initialisierung von OpenSSL erfolgreich durchgeführt keymanager Geheimnisse wiederhergestellt.</block>
+  <block id="f9797a252c2780e96d414a71cd6ecf04" category="list-text">Wählen Sie die Option „(1) Normal Boot.“, um den Wiederherstellungsvorgang abzuschließen. *</block>
+  <block id="285251407570005df5c8fe081a777f29" category="paragraph">(1) Normaler Start. (2) Start ohne /etc/rc. (3) Passwort ändern. (4) Reinigen Sie die Konfiguration und initialisieren Sie alle Festplatten. (5) Boot im Wartungsmodus. (6) Aktualisieren Sie Flash von der Backup-Konfiguration. (7) Installieren Sie zuerst neue Software. (8) Node neu booten. (9) Konfigurieren Sie Die Erweiterte Laufwerkpartitionierung. (10) Festlegen von Recovery-Geheimnissen für Onboard Key Manager. (11) Konfigurieren des Node für externes Verschlüsselungsmanagement Auswahl (1-11)? 1</block>
+  <block id="5943dcc79f4be51c7946faa01081c8c7" category="admonition">Wenn auf Ihrem System zunächst ONTAP 9.10.1 oder höher ausgeführt wurde, gehen Sie wie in beschrieben <block ref="b14f44ab326196475bf1d94f7e3821ad" category="inline-link-rx"></block>vor. Wenn Sie sich nicht sicher sind, wie die erste ONTAP-Version für Ihr System ist, finden Sie weitere Informationen unter<block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>.</block>
+  <block id="6379280c267113ec35e5881e1b0f65bb" category="paragraph">Jedes Shelf wird durch eine eindeutige Shelf-ID unterschieden. Diese ID stellt sicher, dass das Shelf innerhalb Ihrer Storage-System-Einrichtung unterscheidbar ist.</block>
+  <block id="937eeb311ae4c7f36059ec45705ae05b" category="list-text">Gültige externe Shelf-ID lautet 01 bis 99.</block>
+  <block id="ce4b2f7741d87ac6c37e8727ca9ad20a" category="paragraph">Bei internen, in die Controller integrierten Shelfs (Storage) wird Ihnen eine feste Shelf-ID mit der Nummer 00 zugewiesen.</block>
+  <block id="9944ff6c526e81f7d9ce060adc105e86" category="list-text">Drücken Sie die Shelf-ID-Taste und lassen Sie sie los, um die Nummer vorzuschieben, bis Sie die gewünschte Zahl von 0 auf 9 oder von 1 auf 9 erreichen, wenn das System über integrierten Speicher verfügt.</block>
+  <block id="52f79b2833c42027e63e45681585067e" category="example-title">Sie können stattdessen diese Eingabeaufforderungen sehen</block>
+  <block id="e65e1ac152dcb95552c1c1f62ceaf393" category="paragraph"><block ref="6f0c6616b99fea33a3020e0e0dcbe3c6" prefix="" category="inline-code"></block> Befehl.</block>
+  <block id="85ef91c4d71faa53c83efc7222148253" category="video-title">Ersetzen Sie das NS224-Shelf-Boot-Medium</block>
+  <block id="bed8800ffb3dfb17d15fabcbf21305be" category="video-title">Ersetzen Sie ein DIMM in einem NS224-Shelf</block>
+  <block id="d0a4089478fc848fcc714a17114651e5" category="video-title">Hot-Swap eines Laufwerks in einem NS224-Shelf</block>
+  <block id="adf9a21a79092388f61e544af11cd756" category="video-title">Ersetzen Sie einen Lüfter in einem NS224-Shelf</block>
+  <block id="f8798e73b2d5e1dfd7612b46ff0e89e2" category="video-title">Ersetzen Sie ein NSM-Modul in einem NS224-Shelf</block>
+  <block id="ed5f0b1fadc9d155c332ddd3a2c8910b" category="video-title">Hot-Swap eines Netzteils in einem NS224-Shelf</block>
+  <block id="4dc161fec1e803228a4a6e64a87cc800" category="video-title">Ersetzen Sie eine RTC-Batterie in einem NS224-Shelf</block>
 </blocks>
