@@ -253,9 +253,9 @@ Starten Sie das Controller-Modul neu.
 Das System wird neu gebootet, normalerweise bis zur LOADER-Eingabeaufforderung.
 
 . Geben Sie an der LOADER-Eingabeaufforderung _bye_ ein.
-. Kehren Sie den Controller in den normalen Betrieb zurück, indem Sie seinen Storage zurückgeben: _Storage Failover Giveback -ofnode _Impaired_Node_Name__
-. Stellen Sie mithilfe der die automatische Rückgabe wieder her `storage failover modify -node local -auto-giveback true` Befehl.
-. Wenn ein AutoSupport-Wartungsfenster ausgelöst wurde, beenden Sie das Fenster mit. Verwenden Sie dazu die `system node autosupport invoke -node * -type all -message MAINT=END` Befehl.
+. Stellen Sie den außer Betrieb genommenen Controller wieder ein, indem Sie seine Speicherung zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`.
+. Wenn die automatische Rückgabe deaktiviert wurde, aktivieren Sie sie erneut: `storage failover modify -node local -auto-giveback true`.
+. Wenn AutoSupport aktiviert ist, kann die automatische Fallerstellung wiederhergestellt/aufgehoben werden: `system node autosupport invoke -node * -type all -message MAINT=END`.
 
 
 

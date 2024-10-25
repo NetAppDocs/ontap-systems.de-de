@@ -131,7 +131,6 @@ NOTE: Dadurch werden die PCIe-Karten und andere Komponenten neu initialisiert un
 . Wiederholen Sie diese Schritte für Controller B.
 . Stellen Sie die automatische Rückgabe wieder her, wenn Sie die Funktion mithilfe von deaktivieren `storage failover modify -node local -auto-giveback true` Befehl.
 . Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung mit dem Befehl wiederherstellen/zurücknehmen. `system node autosupport invoke -node * -type all -message MAINT=END`
-. Wenn Sie ein Speicher-I/O-Modul installiert haben, installieren und verkabeln Sie die NS224-Shelfs, wie unter beschriebenlink:../ns224/hot-add-shelf-overview.html["Hot-Add-Workflow"].
 
 
 
@@ -157,7 +156,7 @@ Die LIFs werden automatisch migriert, wenn das Controller-Modul heruntergefahren
  a| 
 NIC-I/O-Modul mit weniger Ports
  a| 
-Weisen Sie die ASAected LIFs dauerhaft einem anderen Home Port zu. Weitere Informationen zum dauerhaften Verschieben der LIFs mit System Manager finden Sie unter https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html["Migrieren eines LIF"^] .
+Die betroffenen LIFs werden permanent einem anderen Home-Port zugewiesen. Siehe https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html["Migrieren eines LIF"^] Weitere Informationen über die Verwendung von System Manager zum permanenten Verschieben der LIFs
 
 
 

@@ -14,6 +14,7 @@ NOTE: Setzen Sie das Controller-Modul nicht zu stark in das Gehäuse ein, um Bes
 +
 Das Controller-Modul startet, sobald es vollständig im Gehäuse sitzt.
 
-. Stellen Sie die automatische Rückgabe wieder her, wenn Sie die Funktion mithilfe von deaktivieren `storage failover modify -node local -auto-giveback true` Befehl.
-. Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung mit dem Befehl wiederherstellen/zurücknehmen. `system node autosupport invoke -node * -type all -message MAINT=END`
+. Stellen Sie den außer Betrieb genommenen Controller wieder ein, indem Sie seine Speicherung zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`.
+. Wenn die automatische Rückgabe deaktiviert wurde, aktivieren Sie sie erneut: `storage failover modify -node local -auto-giveback true`.
+. Wenn AutoSupport aktiviert ist, kann die automatische Fallerstellung wiederhergestellt/aufgehoben werden: `system node autosupport invoke -node * -type all -message MAINT=END`.
 

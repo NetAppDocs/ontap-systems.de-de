@@ -186,6 +186,9 @@ Die Verriegelungen steigen, wenn das Controller-Modul voll eingesetzt ist.
 NOTE: Der Controller wird neu gebootet, sobald er vollständig im Chassis eingesetzt ist.
 
 . Drehen Sie das Kabelführungs-Fach bis in die geschlossene Position.
+. Stellen Sie den außer Betrieb genommenen Controller wieder ein, indem Sie seine Speicherung zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`.
+. Wenn die automatische Rückgabe deaktiviert wurde, aktivieren Sie sie erneut: `storage failover modify -node local -auto-giveback true` .
+. Wenn AutoSupport aktiviert ist, kann die automatische Fallerstellung wiederhergestellt/aufgehoben werden: `system node autosupport invoke -node * -type all -message MAINT=END`.
 
 
 
@@ -260,6 +263,9 @@ Die Verriegelungen steigen, wenn das Controller-Modul voll eingesetzt ist.
 NOTE: Der Controller wird neu gebootet, sobald er vollständig im Chassis eingesetzt ist.
 
 . Drehen Sie das Kabelführungs-Fach bis in die geschlossene Position.
+. Stellen Sie den außer Betrieb genommenen Controller wieder ein, indem Sie seine Speicherung zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`.
+. Wenn die automatische Rückgabe deaktiviert wurde, aktivieren Sie sie erneut: `storage failover modify -node local -auto-giveback true`.
+. Wenn AutoSupport aktiviert ist, kann die automatische Fallerstellung wiederhergestellt/aufgehoben werden: `system node autosupport invoke -node * -type all -message MAINT=END`.
 
 
 
@@ -361,8 +367,9 @@ dr-group-id            cluster node           configuration-state
 ----
 . Vergewissern Sie sich, dass die erwarteten Volumes für jeden Controller vorhanden sind: `vol show -node node-name`
 . Wenn die Speicherverschlüsselung aktiviert ist, müssen Sie die Funktion wiederherstellen.
-. Wenn Sie die automatische Übernahme beim Neustart deaktiviert haben, aktivieren Sie sie über den funktionstüchtigen Controller: _Storage Failover modify -Node Replacement-Node-Name -onreboot true_
-. Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung mit dem Befehl wiederherstellen/zurücknehmen. `system node autosupport invoke -node * -type all -message MAINT=END`
+. Stellen Sie den außer Betrieb genommenen Controller wieder ein, indem Sie seine Speicherung zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`.
+. Wenn die automatische Rückgabe deaktiviert wurde, aktivieren Sie sie erneut: `storage failover modify -node local -auto-giveback true`.
+. Wenn AutoSupport aktiviert ist, kann die automatische Fallerstellung wiederhergestellt/aufgehoben werden: `system node autosupport invoke -node * -type all -message MAINT=END`.
 
 
 

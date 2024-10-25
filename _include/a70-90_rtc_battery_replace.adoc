@@ -279,8 +279,9 @@ NOTE: Wenn der Controller bis zur Loader-Eingabeaufforderung gebootet wird, boot
 
 NOTE: Wenn Sie über Gleichstromnetzteile verfügen, schließen Sie den Netzteilblock wieder an die Netzteile an, nachdem das Controller-Modul vollständig im Gehäuse eingesetzt ist.
 
-. Stellen Sie die automatische Rückgabe wieder her, wenn Sie die Funktion mithilfe von deaktivieren `storage failover modify -node local -auto-giveback true` Befehl.
-. Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung mit dem Befehl wiederherstellen/zurücknehmen. `system node autosupport invoke -node * -type all -message MAINT=END`
+. Stellen Sie den außer Betrieb genommenen Controller wieder ein, indem Sie seine Speicherung zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`.
+. Wenn die automatische Rückgabe deaktiviert wurde, aktivieren Sie sie erneut: `storage failover modify -node local -auto-giveback true`.
+. Wenn AutoSupport aktiviert ist, kann die automatische Fallerstellung wiederhergestellt/aufgehoben werden: `system node autosupport invoke -node * -type all -message MAINT=END`.
 
 
 
@@ -304,8 +305,6 @@ NOTE: Wenn Ihr System im Boot-Menü stoppt, wählen Sie die Option für  `Reboot
 +
 .. Bestätigen Sie Datum und Uhrzeit auf dem Ziel-Controller.
 .. Geben Sie an der Eingabeaufforderung des LOADERS _bye_ ein, um die PCIe-Karten und andere Komponenten neu zu initialisieren und den Controller neu starten zu lassen.
-.. Kehren Sie den Controller in den normalen Betrieb zurück, indem Sie seinen Storage zurückgeben: _Storage Failover Giveback -ofnode _Impaired_Node_Name__
-.. Wenn das automatische Giveback deaktiviert wurde, aktivieren Sie es erneut: _Storage Failover modify -Node local -Auto-Giveback true_
 
 
 

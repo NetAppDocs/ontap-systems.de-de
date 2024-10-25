@@ -2,7 +2,7 @@
 :allow-uri-read: 
 
 
-Sie müssen ein DIMM im Controller-Modul ersetzen, wenn Ihr System eine steigende Anzahl korrigierbarer Fehlerkorrekturcodes (ECC) registriert; andernfalls wird eine Systempanik verursacht.
+Sie müssen ein DIMM im Controller ersetzen, wenn das Speichersystem auf Fehler wie übermäßige CECC-Fehler (korrigierbare Fehlerkorrekturcodes) stößt, die auf Warnmeldungen der Systemzustandsüberwachung oder nicht korrigierbaren ECC-Fehlern basieren, die normalerweise durch einen einzelnen DIMM-Fehler verursacht werden, der das Starten von ONTAP verhindert.
 
 Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
 
