@@ -154,13 +154,7 @@ image:../media/icon_round_1.png["Legende Nummer 1"]
 .. Schieben Sie das Modul vorsichtig in den Steckplatz bis zum Gehäuse, und drehen Sie dann die Nockenverriegelung ganz nach oben, um das Modul zu verriegeln.
 
 
-. Verkabeln Sie das E/A-Modul.
-+
-Wenn es sich bei dem E/A-Modul um eine NIC handelt, verkabeln Sie das Modul mit den Datenschaltern.
-
-+
-Wenn es sich bei dem I/O-Modul um ein Speichermodul handelt, verkabeln Sie es mit dem NS224-Shelf.
-
+. Verkabeln Sie das E/A-Modul mit dem vorgesehenen Gerät.
 +
 
 NOTE: Stellen Sie sicher, dass alle nicht verwendeten I/O-Steckplätze leer sind, um mögliche thermische Probleme zu vermeiden.
@@ -173,7 +167,7 @@ NOTE: Dadurch werden die PCIe-Karten und andere Komponenten neu initialisiert un
 
 . Den Controller vom Partner-Controller zurückgeben: _Storage Failover Giveback -ofnode target_Node_Name_
 . Wiederholen Sie diese Schritte für Controller B.
-. Stellen Sie die automatische Rückgabe wieder her, wenn Sie die Funktion mithilfe von deaktivieren `storage failover modify -node local -auto-giveback true` Befehl.
+. Stellen Sie im funktionstüchtigen Node das automatische Giveback wieder her, falls Sie es mit dem Befehl deaktiviert `storage failover modify -node local -auto-giveback true` haben.
 . Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung mit dem Befehl wiederherstellen/zurücknehmen. `system node autosupport invoke -node * -type all -message MAINT=END`
 . Wenn Sie ein Speicher-I/O-Modul installiert haben, installieren und verkabeln Sie die NS224-Shelfs, wie unter beschriebenlink:../ns224/hot-add-shelf-overview.html["Hot-Add-Workflow"].
 
@@ -355,7 +349,7 @@ Stellen Sie sicher, dass Sie den Steckplatz verfolgen, in dem sich das I/O-Modul
 .. Schieben Sie das Modul vorsichtig in den Steckplatz bis zum Gehäuse, und drehen Sie dann die Nockenverriegelung ganz nach oben, um das Modul zu verriegeln.
 
 
-. Verkabeln Sie das E/A-Modul.
+. Verkabeln Sie das E/A-Modul mit dem vorgesehenen Gerät.
 . Wiederholen Sie die Schritte zum Entfernen und Installieren, um zusätzliche Module für den Controller zu ersetzen.
 . Drehen Sie das Kabelführungs-Fach bis in die geschlossene Position.
 . Booten Sie den Controller über die LOADER-Eingabeaufforderung:_bye_ neu

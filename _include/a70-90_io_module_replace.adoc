@@ -182,10 +182,6 @@ NOTE: Wenn das neue I/O-Modul nicht das gleiche Modell wie das ausgefallene Modu
 
 NOTE: Dadurch werden die I/O-Karten und andere Komponenten neu initialisiert und der Node neu gestartet.
 
-+
-
-NOTE: Achten Sie darauf, den Wartungsmodus nach Abschluss der Konvertierung zu beenden.
-
 . Kehren Sie den Knoten wieder in den normalen Betrieb zurück: _Storage Failover Giveback -ofnode Impaired_Node_Name_
 . Wenn das automatische Giveback deaktiviert wurde, aktivieren Sie es erneut: _Storage Failover modify -Node local -Auto-Giveback true_
 

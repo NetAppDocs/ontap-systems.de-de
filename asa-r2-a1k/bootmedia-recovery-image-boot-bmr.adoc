@@ -207,4 +207,16 @@ LOADER-B>
 
 
 . Wenn der Node neu gebootet wird, überprüfen Sie, ob die Boot-Medien erfolgreich wiederhergestellt wurden, indem Sie bestätigen, dass das System wieder online und funktionsfähig ist.
+. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben:
++
+`storage failover giveback -ofnode _impaired_node_name_`.
+
+. Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut:
++
+`storage failover modify -node local -auto-giveback true`.
+
+. Wenn AutoSupport aktiviert ist, stellen Sie die automatische Fallerstellung wieder her:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`.
+
 
