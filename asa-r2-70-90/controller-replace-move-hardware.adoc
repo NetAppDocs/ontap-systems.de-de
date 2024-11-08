@@ -46,15 +46,8 @@ LED für NVRAM-Warnung
 
 |===
 +
-
-NOTE: Wenn die NVRAM-Status-LED blinkt, bedeutet dies möglicherweise, dass das Controller-Modul nicht ordnungsgemäß übernommen oder angehalten wurde (nicht belegte Daten). Wenn das beeinträchtigte Controller-Modul nicht erfolgreich vom Partner-Controller-Modul übernommen wurde, wenden Sie sich an https://mysupport.netapp.com/site/global/dashboard["NetApp Support"] , bevor Sie mit diesem Verfahren fortfahren.
-
-+
-Das allgemeine Verhalten der NVRAM-Status-LED am Controller-Modul für beeinträchtigte besteht wie folgt:
-
-+
-** Die NVRAM-Status-LED blinkt, wenn die Stromversorgung vom Controller-Modul getrennt wird und sich das Storage-System im Status „Warten auf Rückgabe“ befindet oder das Controller-Modul nicht ordnungsgemäß übernommen oder angehalten wird (nicht belegte Daten).
-** Wenn das Controller-Modul aus dem Chassis entfernt wird, blinkt die NVRAM-Status-LED, sodass das Controller-Modul nicht übernommen oder ordnungsgemäß angehalten wird (nicht belegte Daten). Vergewissern Sie sich, dass das Controller-Modul sauber Übernahme durch das Partner Controller-Modul erfolgt ist oder dass das beeinträchtigte Controller-Modul angezeigt wird `waiting for giveback`. Anschließend kann die blinkende LED ignoriert werden (und das Controller-Modul kann aus dem Gehäuse entfernt werden).
+** Wenn die NV-LED aus ist, mit dem nächsten Schritt fortfahren.
+** Wenn die NV-LED blinkt, warten Sie, bis das Blinken beendet ist. Wenn das Blinken länger als 5 Minuten andauert, wenden Sie sich an den technischen Support, um Unterstützung zu erhalten.
 
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
@@ -82,7 +75,9 @@ image::../media/drw_a70-90_pcm_remove_replace_ieops-1365.svg[Controller Grafik e
 
  a| 
 image:../media/icon_round_1.png["Legende Nummer 1"]
-| Eine Verriegelungsverriegelung 
+ a| 
+Verriegelungsverschluss
+
 
 
  a| 
@@ -361,14 +356,18 @@ image::../media/drw_a70-90_nvram12_remove_replace_ieops-1370.svg[Entfernen Sie d
 |===
 
 
-| image:../media/icon_round_1.png["Legende Nummer 1"]  a| 
+ a| 
+image:../media/icon_round_1.png["Legende Nummer 1"]
+ a| 
 Nockenverriegelungstaste
 
 
 
  a| 
 image:../media/icon_round_2.png["Legende Nummer 2"]
-| DIMM-Sperrklinke 
+ a| 
+DIMM-Sperrklinke
+
 |===
 . Entfernen Sie das NVRAM-Modul aus dem Controller-Modul für beeinträchtigte Störungen:
 +
@@ -403,14 +402,8 @@ Er muss bündig auf die Metallplatte des Controller-Moduls liegen.
 
 NOTE: Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein, wenn Sie dazu aufgefordert werden.
 
-. Nach Bedarf Neuvernötigen des Storage-Systems
-+
-Wenn Sie die Transceiver (QSFPs oder SFPs) entfernt haben, müssen Sie sie erneut installieren, wenn Sie Glasfaserkabel verwenden.
-
-+
-
-NOTE: Stellen Sie sicher, dass das Konsolenkabel mit dem reparierten Controller-Modul verbunden ist, sodass beim Neustart Konsolenmeldungen empfangen werden. Der reparierte Controller wird von dem funktionstüchtigen Controller mit Strom versorgt und beginnt mit dem Neubooten, sobald er vollständig im Chassis eingesetzt ist.
-
+. Installieren Sie die Kabelmanagement-ARM neu, falls sie entfernt wurde, aber schließen Sie keine Kabel wieder an den Ersatzcontroller an.
+. Schließen Sie das Konsolenkabel an den Konsolenport des Ersatz-Controller-Moduls an, und schließen Sie es wieder an den Laptop an, damit es beim Neustart Konsolenmeldungen erhält. Der Ersatz-Controller wird vom ordnungsgemäßen Controller mit Strom versorgt und startet neu, sobald er vollständig im Chassis eingesetzt ist.
 . Führen Sie die Neuinstallation des Controller-Moduls durch:
 +
 .. Drücken Sie das Controller-Modul fest in das Gehäuse, bis es auf die Mittelebene trifft und vollständig sitzt.
@@ -426,15 +419,21 @@ NOTE: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige
 
 +
 
-NOTE: Wenn der Controller bis zur Loader-Eingabeaufforderung gebootet wird, booten Sie ihn mit dem Befehl neu `boot_ontap`.
+NOTE: Der Controller startet bis zur Loader-Eingabeaufforderung, sobald er vollständig eingesetzt ist.
+
+. Geben Sie an der Eingabeaufforderung Loader ein `show date`, um Datum und Uhrzeit auf dem Ersatz-Controller anzuzeigen. Datum und Uhrzeit sind in GMT.
++
+
+NOTE: Die angezeigte Zeit ist die Ortszeit nicht immer GMT und wird im 24-Stunden-Modus angezeigt.
+
+. Stellen Sie die aktuelle Uhrzeit in GMT mit dem `set time hh:mm:ss` Befehl ein. Sie können die aktuelle GMT vom Partner-Knoten den Befehl `date -U`abrufen.
+. Nach Bedarf Neuvernötigen des Storage-Systems
++
+Wenn Sie die Transceiver (QSFPs oder SFPs) entfernt haben, müssen Sie sie erneut installieren, wenn Sie Glasfaserkabel verwenden.
 
 . Schließen Sie die Netzkabel an die Netzteile an.
 +
 
 NOTE: Wenn Sie über Gleichstromnetzteile verfügen, schließen Sie den Netzteilblock wieder an die Netzteile an, nachdem das Controller-Modul vollständig im Gehäuse eingesetzt ist.
 
-. Stellen Sie den außer Betrieb genommenen Controller wieder ein, indem Sie seine Speicherung zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`.
-. Wenn die automatische Rückgabe deaktiviert wurde, aktivieren Sie sie erneut: `storage failover modify -node local -auto-giveback true`.
-. Wenn AutoSupport aktiviert ist, kann die automatische Fallerstellung wiederhergestellt/aufgehoben werden: `system node autosupport invoke -node * -type all -message MAINT=END`.
-. Wenn Sie dies noch nicht getan haben, installieren Sie das Kabelverwaltungsgerät neu, und stellen Sie den Controller wieder her.
 

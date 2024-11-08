@@ -15,9 +15,17 @@ Er muss bündig auf die Metallplatte des Controller-Moduls liegen.
 NOTE: Setzen Sie das Controller-Modul nicht zu stark in das Gehäuse ein, um Beschädigungen der Anschlüsse zu vermeiden.
 
 +
-Das Controller-Modul startet, sobald es vollständig im Gehäuse sitzt.
 
-. Stellen Sie den außer Betrieb genommenen Controller wieder ein, indem Sie seine Speicherung zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`.
-. Wenn die automatische Rückgabe deaktiviert wurde, aktivieren Sie sie erneut: `storage failover modify -node local -auto-giveback true`.
-. Wenn AutoSupport aktiviert ist, kann die automatische Fallerstellung wiederhergestellt/aufgehoben werden: `system node autosupport invoke -node * -type all -message MAINT=END`.
+NOTE: Der Controller startet bis zur Loader-Eingabeaufforderung, sobald er vollständig eingesetzt ist.
+
+. Geben Sie an der Eingabeaufforderung Loader ein `show date`, um Datum und Uhrzeit auf dem Ersatz-Controller anzuzeigen. Datum und Uhrzeit sind in GMT.
++
+
+NOTE: Die angezeigte Zeit ist die Ortszeit nicht immer GMT und wird im 24-Stunden-Modus angezeigt.
+
+. Stellen Sie die aktuelle Uhrzeit in GMT mit dem `set time hh:mm:ss` Befehl ein. Sie können die aktuelle GMT vom Partner-Knoten den Befehl `date -U`abrufen.
+. Nach Bedarf Neuvernötigen des Storage-Systems
++
+Wenn Sie die Transceiver (QSFPs oder SFPs) entfernt haben, müssen Sie sie erneut installieren, wenn Sie Glasfaserkabel verwenden.
+
 

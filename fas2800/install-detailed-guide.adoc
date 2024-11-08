@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fas2800, detailed, guide, prepare, install, hardware, cable, controllers, node, switchless, cluster, network, configuration, system, storage system, setup, discovery 
 summary: Dieses Verfahren enthält detaillierte Schritt-für-Schritt-Anleitungen zur Installation eines typischen NetApp Storage-Systems. 
 ---
-= Detaillierte Schritte - FAS2800
+= Detaillierte Schritte - FAS2820
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -436,7 +436,7 @@ image::../media/oie_cable_pull_tab_down.png[Richtung der Zuglasche]
 Verwenden Sie die Animation oder die Schritt-für-Schritt-Anleitung, um die Verkabelung zwischen den Controllern und den Laufwerk-Shelfs abzuschließen.
 
 
-IMPORTANT: Verwenden Sie nicht Port 0b2 an einer FAS2800. Dieser SAS-Port wird von ONTAP nicht verwendet und ist immer deaktiviert. Weitere Informationen finden Sie unter link:../sas3/install-new-system.html["Installieren Sie ein Shelf in einem neuen Storage-System"^] .
+IMPORTANT: Verwenden Sie nicht Port 0b2 an einer FAS2820. Dieser SAS-Port wird von ONTAP nicht verwendet und ist immer deaktiviert. Weitere Informationen finden Sie unter link:../sas3/install-new-system.html["Installieren Sie ein Shelf in einem neuen Storage-System"^] .
 
 .Animation: Kabel für Laufwerkseinschübe
 video::b2a7549d-8141-47dc-9e20-afe8016f4386[panopto]

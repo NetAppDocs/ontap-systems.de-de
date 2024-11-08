@@ -48,7 +48,7 @@ Dieses Verfahren gilt für Systeme mit zwei-Knoten-Konfigurationen. Wenn Sie ein
 . Beenden Sie die Cluster-Shell: `exit`
 . Melden Sie sich über SSH beim SP/BMC an. Verwenden Sie dabei die IP-Adresse eines der in der Ausgabe des vorherigen Schritts aufgeführten Nodes.
 +
-Wenn Sie eine Konsole oder einen Laptop verwenden, melden Sie sich mit den gleichen Cluster-Administratorberechtigungen beim Controller an.
+Wenn Sie eine Konsole oder einen Laptop verwenden, melden Sie sich mit den gleichen Cluster-Administrator-Anmeldedaten am Controller an.
 
 +
 
@@ -65,9 +65,4 @@ NOTE: Bei Clustern mit SnapMirror Synchronous-Betrieb im StructSync-Modus: `syst
 . Geben Sie *y* für jeden Controller im Cluster ein, wenn angezeigt wird `_Warning: Are you sure you want to halt node "cluster <node-name> number"?
 {y|n}:_`
 . Warten Sie, bis die einzelnen Controller angehalten sind, und zeigen Sie die LOADER-Eingabeaufforderung an.
-
-
-.Was kommt als Nächstes?
-* Wenn es sich bei dem System um einen NetApp StorageGRID oder ONTAP S3 handelt, der als FabricPool-Cloud-Tier verwendet wird, lesen Sie nach diesem Herunterfahren das https://kb.netapp.com/onprem/ontap/hardware/What_is_the_procedure_for_graceful_shutdown_and_power_up_of_a_storage_system_during_scheduled_power_outage#["Anleitung zur Problemlösung des Speichersystems wird ordnungsgemäß heruntergefahren und gestartet"].
-* Wenn Sie SSDs verwenden, lesen Sie nach dem Herunterfahren den Abschnitt https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU490["SU490: (Auswirkung: Kritisch) SSD Best Practices: Vermeiden Sie das Risiko von Laufwerksausfällen und Datenverlust, wenn Sie sich für mehr als zwei Monate ausgeschaltet haben"].
 

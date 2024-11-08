@@ -1,0 +1,50 @@
+= 
+:allow-uri-read: 
+
+
+Installieren Sie das Controller-Modul neu, und starten Sie es neu.
+
+. Stellen Sie sicher, dass der Luftkanal vollständig geschlossen ist, indem Sie ihn bis zum gewünschten Ziel nach unten drehen.
++
+Er muss bündig auf die Metallplatte des Controller-Moduls liegen.
+
+. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
++
+
+NOTE: Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein, wenn Sie dazu aufgefordert werden.
+
+. Installieren Sie die Kabelmanagement-ARM neu, falls sie entfernt wurde, aber schließen Sie keine Kabel wieder an den Ersatzcontroller an.
+. Schließen Sie das Konsolenkabel an den Konsolenport des Ersatz-Controller-Moduls an, und schließen Sie es wieder an den Laptop an, damit es beim Neustart Konsolenmeldungen erhält. Der Ersatz-Controller wird vom ordnungsgemäßen Controller mit Strom versorgt und startet neu, sobald er vollständig im Chassis eingesetzt ist.
+. Führen Sie die Neuinstallation des Controller-Moduls durch:
++
+.. Drücken Sie das Controller-Modul fest in das Gehäuse, bis es auf die Mittelebene trifft und vollständig sitzt.
++
+Die Verriegelungen steigen, wenn das Controller-Modul voll eingesetzt ist.
+
++
+
+NOTE: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige Kraft verwenden, um Schäden an den Anschlüssen zu vermeiden.
+
+.. Drehen Sie die Verriegelungen nach oben in die verriegelte Position.
+
+
++
+
+NOTE: Der Controller startet bis zur Loader-Eingabeaufforderung, sobald er vollständig eingesetzt ist.
+
+. Geben Sie an der Eingabeaufforderung Loader ein `show date`, um Datum und Uhrzeit auf dem Ersatz-Controller anzuzeigen. Datum und Uhrzeit sind in GMT.
++
+
+NOTE: Die angezeigte Zeit ist die Ortszeit nicht immer GMT und wird im 24-Stunden-Modus angezeigt.
+
+. Stellen Sie die aktuelle Uhrzeit in GMT mit dem `set time hh:mm:ss` Befehl ein. Sie können die aktuelle GMT vom Partner-Knoten den Befehl `date -U`abrufen.
+. Nach Bedarf Neuvernötigen des Storage-Systems
++
+Wenn Sie die Transceiver (QSFPs oder SFPs) entfernt haben, müssen Sie sie erneut installieren, wenn Sie Glasfaserkabel verwenden.
+
+. Schließen Sie die Netzkabel an die Netzteile an.
++
+
+NOTE: Wenn Sie über Gleichstromnetzteile verfügen, schließen Sie den Netzteilblock wieder an die Netzteile an, nachdem das Controller-Modul vollständig im Gehäuse eingesetzt ist.
+
+

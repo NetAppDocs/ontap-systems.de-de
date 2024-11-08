@@ -107,15 +107,8 @@ LED für NVRAM-Warnung
 
 |===
 +
-
-NOTE: Wenn die NVRAM-Status-LED blinkt, bedeutet dies möglicherweise, dass das Controller-Modul nicht ordnungsgemäß übernommen oder angehalten wurde (nicht belegte Daten). Wenn das beeinträchtigte Controller-Modul nicht erfolgreich vom Partner-Controller-Modul übernommen wurde, wenden Sie sich an https://mysupport.netapp.com/site/global/dashboard["NetApp Support"] , bevor Sie mit diesem Verfahren fortfahren.
-
-+
-Das allgemeine Verhalten der NVRAM-Status-LED am Controller-Modul für beeinträchtigte besteht wie folgt:
-
-+
-** Die NVRAM-Status-LED blinkt, wenn die Stromversorgung vom Controller-Modul getrennt wird und sich das Storage-System im Status „Warten auf Rückgabe“ befindet oder das Controller-Modul nicht ordnungsgemäß übernommen oder angehalten wird (nicht belegte Daten).
-** Wenn das Controller-Modul aus dem Chassis entfernt wird, blinkt die NVRAM-Status-LED, sodass das Controller-Modul nicht übernommen oder ordnungsgemäß angehalten wird (nicht belegte Daten). Vergewissern Sie sich, dass das Controller-Modul sauber Übernahme durch das Partner Controller-Modul erfolgt ist oder dass das beeinträchtigte Controller-Modul angezeigt wird `waiting for giveback`. Anschließend kann die blinkende LED ignoriert werden (und das Controller-Modul kann aus dem Gehäuse entfernt werden).
+** Wenn die NV-LED aus ist, mit dem nächsten Schritt fortfahren.
+** Wenn die NV-LED blinkt, warten Sie, bis das Blinken beendet ist. Wenn das Blinken länger als 5 Minuten andauert, wenden Sie sich an den technischen Support, um Unterstützung zu erhalten.
 
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
@@ -143,7 +136,9 @@ image::../media/drw_a70-90_pcm_remove_replace_ieops-1365.svg[Controller Grafik e
 
  a| 
 image:../media/icon_round_1.png["Legende Nummer 1"]
-| Eine Verriegelungsverriegelung 
+ a| 
+Verriegelungsverschluss
+
 
 
  a| 

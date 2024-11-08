@@ -11,37 +11,118 @@ summary: Starten Sie das System neu.
 
 
 [role="lead"]
-Übertragen Sie die Eigentumsrechte an Storage-Ressourcen zurück an den Ersatz-Controller.
+Überprüfen Sie die Storage- und Netzwerkverbindungen, und geben Sie dann den Controller zurück.
 
-.Schritte
-. Wenn für Ihr Speichersystem Verschlüsselung konfiguriert ist, müssen Sie die Speicher- oder Volume-Verschlüsselungsfunktion mithilfe des folgenden Verfahrens wiederherstellen, um das System neu zu starten:
+
+
+== Geben Sie den Controller zurück
+
+Setzen Sie die Verschlüsselung zurück, wenn diese aktiviert ist, und setzen Sie den Controller wieder in den normalen Betrieb ein.
+
+[role="tabbed-block"]
+====
+.Keine Verschlüsselung
+--
+. Geben Sie in der Loader-Eingabeaufforderung `boot_ontap` .
+. Drücken Sie <enter>, wenn die Konsolenmeldungen angehalten werden.
 +
-.. Starten Sie das Menü, und führen Sie Option 10 aus
-.. Geben Sie die Passphrase ein und sichern Sie die Daten, und führen Sie dann den normalen Start aus. Siehe https://kb.netapp.com/on-prem/ontap/DM/Encryption/Encryption-KBs/Restore_onboard_key_management_encryption_keys["Wiederherstellung der integrierten Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"].
-.. Nur CFO-Rückgabe durchführen
-.. Führen Sie die integrierte Synchronisierung durch, und überprüfen Sie, ob SVM-KEK auf True See gesetzt ist https://kb.netapp.com/on-prem/ontap/DM/Encryption/Encryption-KBs/Onboard_keymanager_sync_fails_after_motherboard_replacement["Giveback, nachdem der MB-Austausch fehlschlägt – Vorgang wurde von keymanager mit einem Veto abgelehnt"]
-.. GiveBack SFO (keine Kraft)
+** Wenn die Eingabeaufforderung _Login_ angezeigt wird, fahren Sie mit dem nächsten Schritt am Ende dieses Abschnitts fort.
+** Wenn „_waiting for Giveback_“ angezeigt wird, drücken Sie die Taste <enter>, melden Sie sich beim Partner-Node an und fahren Sie dann mit dem nächsten Schritt am Ende dieses Abschnitts fort.
 
 
-. Wenn die Verschlüsselung auf dem System nicht konfiguriert ist, führen Sie die folgenden Schritte aus, um das System neu zu starten:
+. Stellen Sie den außer Betrieb genommenen Controller wieder ein, indem Sie seine Speicherung zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`.
+. Wenn die automatische Rückgabe deaktiviert wurde, aktivieren Sie sie erneut: `storage failover modify -node local -auto-giveback true`.
+. Wenn AutoSupport aktiviert ist, kann die automatische Fallerstellung wiederhergestellt/aufgehoben werden: `system node autosupport invoke -node * -type all -message MAINT=END`.
+
+
+--
+.Onboard-Verschlüsselung (OKM)
+--
+. Geben Sie in der Loader-Eingabeaufforderung `boot_ontap maint` .
+. Überprüfen Sie die TMP-Firmware-Version mit dem `sysconfig -v` Befehl.
 +
-.. Starten Sie das Menü, und führen Sie Option 1 aus.
-.. Geben Sie den Controller zurück:
-.. Geben Sie von dem ordnungsgemäßen Controller den Storage des ersetzten Controllers wieder: `storage failover giveback -ofnode _replacement_node_name_`
+** Wenn die Version kleiner als 5.63 ist, wenden Sie sich an https://support.netapp.com["NetApp Support"].
+** Wenn die Version mehr als 5.63 ist, beenden Sie die Loader-Eingabeaufforderung: `halt`.
+
+
+. Starten Sie das ONTAP-Menü über die Loader-Eingabeaufforderung `boot_ontap menu`, und wählen Sie Option 10.
+. Geben Sie die OKM-Passphrase ein. Sie können diese Passphrase vom Kunden erhalten, oder wenden Sie sich an https://support.netapp.com["NetApp Support"].
 +
-Der _Replacement_ -Controller nimmt den Storage wieder in Anspruch und führt den Startvorgang durch.
+
+NOTE: Sie werden zweimal zur Eingabe der Passphrase aufgefordert.
+
+. Geben Sie die Daten des Sicherungsschlüssels ein, wenn Sie dazu aufgefordert werden.
+. Geben Sie im Startmenü die Option für den normalen Start ein `1`.
+. Drücken Sie <enter>, wenn _Waiting for Giveback_ angezeigt wird.
+. Schieben Sie das Konsolenkabel zum Partner-Node und melden Sie sich als an `admin`.
+. Stellen Sie sicher, dass alle Core Dumps auf dem reparierten Node gespeichert werden, indem Sie in den erweiterten Modus“ und dann `run local partner savecore` wechseln `set -privilege advanced`.
+. Zurück zum Admin-Hebel: `set privilege admin`.
+. Nur die CFO-Aggregate zurückgeben (das Root-Aggregat): `storage failover giveback -fromnode local -only-cfo-aggregates true`
++
+** Wenn Sie auf Fehler stoßen, wenden Sie sich an https://support.netapp.com["NetApp Support"].
+
+
+. Warten Sie 5 Minuten, nachdem der Giveback-Bericht abgeschlossen ist, und überprüfen Sie den Failover-Status und den Giveback-Status: `storage failover show` Und `storage failover show-giveback`.
+. Schieben Sie das Konsolenkabel zum Ersatzknoten, und geben Sie ein `security key-manager onboard sync`
++
+
+NOTE: Sie werden aufgefordert, die Cluster-weite Passphrase von OKM für den Cluster einzugeben.
+
+. Überprüfen Sie den Status der Tasten mit folgendem Befehl: `security key-manager key query -key-type svm-KEK`.
++
+Wenn in der Spalte _restored_ alles außer _true_ angezeigt wird, kontaktieren Sie https://support.netapp.com["NetApp Support"].
+
+. Stellen Sie den außer Betrieb genommenen Controller wieder ein, indem Sie seine Speicherung zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`.
+. Wenn die automatische Rückgabe deaktiviert wurde, aktivieren Sie sie erneut: `storage failover modify -node local -auto-giveback true`.
+. Wenn AutoSupport aktiviert ist, kann die automatische Fallerstellung wiederhergestellt/aufgehoben werden: `system node autosupport invoke -node * -type all -message MAINT=END`.
+
+
+--
+.Externer Schlüsselmanager (EKM))
+--
+. Wenn das Stammvolume mit External Key Manager verschlüsselt ist und das Konsolenkabel mit dem Ersatzknoten verbunden ist, geben Sie die Option ein `boot_ontap menu` und wählen Sie diese aus `11`.
+. Beantworten Sie `y` oder `n` die folgenden Fragen:
++
+Haben Sie eine Kopie der Datei /cfcard/kmip/certs/Client.crt? {J/n}
+
++
+Haben Sie eine Kopie der Datei /cfcard/kmip/certs/client.key? {J/n}
+
++
+Haben Sie eine Kopie der Datei /cfcard/kmip/certs/CA.pem? {J/n}
+
++
+ODER
+
++
+Haben Sie eine Kopie der Datei /cfcard/kmip/servers.cfg? {J/n}
+
++
+Kennen Sie die KMIP-Serveradresse? {J/n}
+
++
+Kennen Sie den KMIP-Port? {J/n}
 
 +
 
-NOTE: Wenn das Rückübertragung ein Vetorecht ist, können Sie erwägen, das Vetos außer Kraft zu setzen.
+NOTE: Wenden Sie sich https://support.netapp.com["NetApp Support"] bei Problemen an.
 
+. Geben Sie die Informationen an für:
 +
-http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["Finden Sie die Inhalte zur Hochverfügbarkeitskonfiguration Ihrer Version von ONTAP 9"]
+** Der Dateiinhalt des Clientzertifikats (Client.crt).
+** Der Dateiinhalt des Client-Schlüssels (Client.key).
+** Dateiinhalte der KMIP-Server-CA(s) (CA.pem)
+** Die IP-Adresse für den KMIP-Server.
+** Der Port für den KMIP-Server.
 
-.. Nachdem das Giveback abgeschlossen ist, bestätigen Sie, dass das HA-Paar sich gesund befindet und ein Takeover möglich ist: `storage failover show`
+
+. Sobald das System verarbeitet wird, wird das Startmenü angezeigt. Wählen Sie „1“ für den normalen Start.
+. Überprüfen Sie den Übernahmestatus: `storage failover show`.
+. Stellen Sie sicher, dass alle Core Dumps auf dem reparierten Node gespeichert werden, indem Sie in den erweiterten Modus“ und dann `run local partner savecore` wechseln `set -privilege advanced`.
+. Stellen Sie den außer Betrieb genommenen Controller wieder ein, indem Sie seine Speicherung zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`.
+. Wenn die automatische Rückgabe deaktiviert wurde, aktivieren Sie sie erneut: `storage failover modify -node local -auto-giveback true`.
+. Wenn AutoSupport aktiviert ist, kann die automatische Fallerstellung wiederhergestellt/aufgehoben werden: `system node autosupport invoke -node * -type all -message MAINT=END`.
 
 
-. Vergewissern Sie sich, dass die erwarteten Volumes für jeden Controller vorhanden sind: `vol show -node node-name`
-. Wenn Sie die automatische Übernahme beim Neustart deaktiviert haben, aktivieren Sie sie vom gesunden Controller: `storage failover modify -node replacement-node-name -onreboot true`
-. Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung mit dem Befehl wiederherstellen/zurücknehmen. `system node autosupport invoke -node * -type all -message MAINT=END`
-
+--
+====

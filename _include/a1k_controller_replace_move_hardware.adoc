@@ -33,15 +33,8 @@ LED für NVRAM-Warnung
 
 |===
 +
-
-NOTE: Wenn die NVRAM-Status-LED blinkt, bedeutet dies möglicherweise, dass das Controller-Modul nicht ordnungsgemäß übernommen oder angehalten wurde (nicht belegte Daten). Wenn das beeinträchtigte Controller-Modul nicht erfolgreich vom Partner-Controller-Modul übernommen wurde, wenden Sie sich an https://mysupport.netapp.com/site/global/dashboard["NetApp Support"] , bevor Sie mit diesem Verfahren fortfahren.
-
-+
-Das allgemeine Verhalten der NVRAM-Status-LED am Controller-Modul für beeinträchtigte besteht wie folgt:
-
-+
-** Die NVRAM-Status-LED blinkt, wenn die Stromversorgung vom Controller-Modul getrennt wird und sich das Controller-Modul im Status „Warten auf Rückgabe“ befindet oder das Controller-Modul nicht ordnungsgemäß übernommen oder angehalten wird (nicht belegte Daten).
-** Wenn das Controller-Modul aus dem Gehäuse entfernt wird, blinkt die NVRAM-Status-LED, sodass das Controller-Modul nicht übernommen oder ordnungsgemäß angehalten wird (nicht belegte Daten). Vergewissern Sie sich, dass das Controller-Modul sauber Übernahme durch das Partner Controller-Modul erfolgt ist oder dass das beeinträchtigte Controller-Modul angezeigt wird `waiting for giveback`. Anschließend kann die blinkende LED ignoriert werden (und der Controller kann aus dem Gehäuse entfernt werden).
+** Wenn die NV-LED aus ist, mit dem nächsten Schritt fortfahren.
+** Wenn die NV-LED blinkt, warten Sie, bis das Blinken beendet ist. Wenn das Blinken länger als 5 Minuten andauert, wenden Sie sich an den technischen Support, um Unterstützung zu erhalten.
 
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
@@ -195,7 +188,10 @@ NOTE: Prüfen Sie das DIMM visuell, um sicherzustellen, dass es gleichmäßig au
 
 Installieren Sie das Controller-Modul neu, und starten Sie es.
 
-. Wenn Sie dies noch nicht getan haben, schließen Sie den Luftkanal.
+. Stellen Sie sicher, dass der Luftkanal vollständig geschlossen ist, indem Sie ihn bis zum gewünschten Ziel nach unten drehen.
++
+Er muss bündig auf die Metallplatte des Controller-Moduls liegen.
+
 . Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und schieben Sie das Controller-Modul in das Gehäuse, wobei die Hebel von der Vorderseite des Systems weg gedreht sind.
 . Sobald das Controller-Modul Sie daran hindert, es weiter zu schieben, drehen Sie die Nockengriffe nach innen, bis sie wieder unter den Lüftern einrasten
 +
@@ -203,9 +199,17 @@ Installieren Sie das Controller-Modul neu, und starten Sie es.
 NOTE: Setzen Sie das Controller-Modul nicht zu stark in das Gehäuse ein, um Beschädigungen der Anschlüsse zu vermeiden.
 
 +
-Das Controller-Modul startet, sobald es vollständig im Gehäuse sitzt.
 
-. Stellen Sie den außer Betrieb genommenen Controller wieder ein, indem Sie seine Speicherung zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`.
-. Wenn die automatische Rückgabe deaktiviert wurde, aktivieren Sie sie erneut: `storage failover modify -node local -auto-giveback true`.
-. Wenn AutoSupport aktiviert ist, kann die automatische Fallerstellung wiederhergestellt/aufgehoben werden: `system node autosupport invoke -node * -type all -message MAINT=END`.
+NOTE: Der Controller startet bis zur Loader-Eingabeaufforderung, sobald er vollständig eingesetzt ist.
+
+. Geben Sie an der Eingabeaufforderung Loader ein `show date`, um Datum und Uhrzeit auf dem Ersatz-Controller anzuzeigen. Datum und Uhrzeit sind in GMT.
++
+
+NOTE: Die angezeigte Zeit ist die Ortszeit nicht immer GMT und wird im 24-Stunden-Modus angezeigt.
+
+. Stellen Sie die aktuelle Uhrzeit in GMT mit dem `set time hh:mm:ss` Befehl ein. Sie können die aktuelle GMT vom Partner-Knoten den Befehl `date -U`abrufen.
+. Nach Bedarf Neuvernötigen des Storage-Systems
++
+Wenn Sie die Transceiver (QSFPs oder SFPs) entfernt haben, müssen Sie sie erneut installieren, wenn Sie Glasfaserkabel verwenden.
+
 

@@ -47,9 +47,9 @@ https://hwu.netapp.com["NetApp Hardware Universe"^]
 * HA-Paar-Konfigurationen müssen als Multipath HA oder Quad-Path HA-Konfigurationen mit den folgenden Ausnahmen verkabelt werden:
 +
 ** Plattformen mit internem Storage unterstützen keine Quad-Path-HA-Konnektivität.
-** Ein FAS2800 HA-Paar kann als Tri-Path HA verkabelt werden.
+** Ein FAS2820 HA-Paar kann als Tri-Path HA verkabelt werden.
 +
-Informationen zur FAS2800-Konnektivität finden Sie im <<Tri-Path-HA-Konnektivität>> Abschnitt.
+Informationen zur FAS2820-Konnektivität finden Sie im <<Tri-Path-HA-Konnektivität>>Abschnitt.
 
 ** Plattformen mit internem Storage können als Single-Path HA-Konfigurationen verkabelt werden (von Port 0b/0b1 zu externen Shelfs), um die Konnektivität zu einem externen SAS Tape Backup-Gerät (von Port 0a) zu unterstützen.
 
@@ -58,7 +58,7 @@ Informationen zur FAS2800-Konnektivität finden Sie im <<Tri-Path-HA-Konnektivit
 
 [NOTE]
 ====
-Bei FAS2800 HA-Paaren ist die Verkabelung zu externen Shelfs Single-Path-HA, obwohl die interne Verbindung jedes Controllers von Port 0b mit seiner lokalen Erweiterung (IOM12G) und Port 0c mit der Erweiterung seines Partners vorhanden ist, lautet die HA-Paar-Konfiguration Multipath HA.
+Bei FAS2820 HA-Paaren ist die Verkabelung zu externen Shelfs Single-Path-HA, obwohl die interne Verbindung jedes Controllers von Port 0b mit seiner lokalen Erweiterung (IOM12G) und Port 0c mit der Erweiterung seines Partners vorhanden ist, lautet die HA-Paar-Konfiguration Multipath HA.
 
 ====
 * Single Controller-Konfigurationen müssen als Multipath- oder Quad-Path-Konfigurationen verkabelt werden, mit folgenden Ausnahmen:
@@ -296,7 +296,7 @@ image::../media/drw_fas2600_mpha_domain_example_IEOPS-1172.svg[Interner Speicher
 
 === Tri-Path-HA-Konnektivität
 
-Tri-Path-HA-Konnektivität ist auf FAS2800 HA-Paaren verfügbar. Tri-Path-HA-Konnektivität verfügt über drei Pfade von jedem Controller zu internen (IOM12G) und externen Shelfs:
+Tri-Path-HA-Konnektivität ist auf FAS2820 HA-Paaren verfügbar. Tri-Path-HA-Konnektivität verfügt über drei Pfade von jedem Controller zu internen (IOM12G) und externen Shelfs:
 
 * Die interne Verbindung jedes Controllers von Port 0b mit seinem lokalen IOM12G und Port 0c mit dem IOM12G seines Partners erzeugt Multipath HA-Konnektivität zu einem HA-Paar.
 * Die Verkabelung der externen Storage-Ports jedes Controllers, 0a und 0b1, ergibt eine HA-Paar-HA-Konnektivität für drei Pfade.
@@ -309,16 +309,16 @@ Im Folgenden werden die internen Verbindungen und die externen Kabel des Control
 
 image::../media/drw_fas2800_concept_tpha_IEOPS-950.svg[Tri-Path-HA-Konnektivität]
 
-Die FAS2800 externen SAS-Ports:
+Die FAS2820 externen SAS-Ports:
 
 * Der Port 0a stammt aus dem internen HBA (wie andere Plattformen mit einem internen Shelf).
 * Der 0b1-Port stammt vom internen Shelf (wie die 0b-Ports auf anderen Plattformen mit einem internen Shelf).
 * Der port 0b2 wird nicht verwendet. Er ist deaktiviert. Wenn ein Kabel daran angeschlossen ist, wird eine Fehlermeldung ausgegeben.
 
 
-image::../media/drw_sas3_ports_on_fas2800_IEOPS-946.svg[FAS2800 externe sas-Ports]
+image::../media/drw_sas3_ports_on_fas2800_IEOPS-946.svg[FAS2820 externe sas-Ports]
 
-Beispiele für eine FAS2800 HA-Paar-Verkabelung sind im zu finden link:install-cabling-worksheets-examples-fas2600.html["Verkabelungsarbeitsblätter und Beispiele für Plattformen mit internem Storage für den Controller-to-Stack-Stack"] Abschnitt.
+Beispiele für die Verkabelung des FAS2820 HA-Paars finden Sie im link:install-cabling-worksheets-examples-fas2600.html["Verkabelungsarbeitsblätter und Beispiele für Plattformen mit internem Storage für den Controller-to-Stack-Stack"] Abschnitt.
 
 
 

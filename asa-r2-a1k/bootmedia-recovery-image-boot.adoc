@@ -14,41 +14,54 @@ summary: Sie müssen das ONTAP-Image vom USB-Laufwerk starten, das Dateisystem w
 Sie müssen das ONTAP-Image vom USB-Laufwerk starten, das Dateisystem wiederherstellen und die Umgebungsvariablen überprüfen.
 
 .Schritte
-. Starten Sie von der LOADER-Eingabeaufforderung aus das Wiederherstellungs-Image vom USB-Flashlaufwerk: _Boot_Recovery_
+. Starten Sie von der LOADER-Eingabeaufforderung das Recovery-Image vom USB-Flash-Laufwerk: `boot_recovery`
 +
 Das Bild wird vom USB-Flash-Laufwerk heruntergeladen.
 
 . Wenn Sie dazu aufgefordert werden, geben Sie entweder den Namen des Bilds ein oder akzeptieren Sie das Standardbild, das in den Klammern auf dem Bildschirm angezeigt wird.
 . Stellen Sie das var-Dateisystem wieder her:
 +
-[cols="1,2"]
-|===
-| Wenn Ihr System ausgeführt wird... | Dann... 
-
-
- a| 
-ONTAP 9.16.0 oder früher
- a| 
-.. Drücken Sie auf der außer Betrieb genommenen Steuerung _Y_, wenn angezeigt wird `Do you want to restore the backup configuration now?`
-.. Drücken Sie auf dem Controller für beeinträchtigte Störungen _Y_, wenn Sie zum Überschreiben aufgefordert werden `/etc/ssh/ssh_host_ecdsa_key`.
-.. Setzen Sie auf dem funktionierenden Partner-Controller den beeinträchtigten Controller auf die erweiterte Berechtigungsebene: _Set -Privilege Advanced_.
+[role="tabbed-block"]
+====
+.Option 1: ONTAP 9.16.0 oder früher
+--
+.. Drücken Sie auf der außer Betrieb genommenen Steuerung `Y`, wenn angezeigt wird `Do you want to restore the backup configuration now?`
+.. Drücken Sie auf dem Controller für beeinträchtigte Störungen `Y`, wenn Sie dazu aufgefordert werden, _/etc/ssh/ssh_Host_ecdsa_Key_ zu überschreiben.
+.. Setzen Sie auf dem funktionierenden Partner-Controller den beeinträchtigten Controller auf die erweiterte Berechtigungsebene: `set -privilege advanced`.
 .. Führen Sie auf dem gesunden Partner-Controller den Wiederherstellungsbefehl aus: `system node restore-backup -node local -target-address impaired_node_IP_address` .
 +
 *HINWEIS:* Wenn Sie eine andere Nachricht als eine erfolgreiche Wiederherstellung sehen, kontaktieren Sie https://support.netapp.com["NetApp Support"].
 
 .. Setzen Sie auf dem gesunden Partner-Controller den beeinträchtigten Controller auf Admin-Ebene zurück: `set -privilege admin`.
-.. Drücken Sie auf dem Controller für beeinträchtigte Störungen _y_, wenn angezeigt wird `Was the restore backup procedure successful?`.
-.. Drücken Sie auf dem Controller für beeinträchtigte Störungen _y_, wenn angezeigt wird `...would you like to use this restored copy now?`.
-.. Drücken Sie auf dem beeinträchtigten Controller bei Aufforderung _y_, um den beeinträchtigten Controller neu zu starten, und drücken Sie _Ctrl-c_ für das Startmenü.
+.. Drücken Sie auf der außer Betrieb genommenen Steuerung `Y`, wenn angezeigt wird `Was the restore backup procedure successful?`.
+.. Drücken Sie auf der außer Betrieb genommenen Steuerung `Y`, wenn angezeigt wird `...would you like to use this restored copy now?`.
+.. Drücken Sie auf dem Controller für beeinträchtigte `Y` Störungen, wenn Sie dazu aufgefordert werden, den Controller für beeinträchtigte Störungen neu zu starten, und drücken Sie `ctrl-c` für das Startmenü.
 .. Wenn das System keine Codierung verwendet, wählen Sie _Option 1 Normal Boot._, andernfalls gehen Sie zu link:bootmedia-encryption-restore.html["Wiederherstellung von Schlüsselmanagern"].
-.. Schließen Sie das Konsolenkabel an den Partner Controller an.
-.. Geben Sie den Controller mithilfe des Befehls „_Storage Failover Giveback -fromnode local_“ zurück.
-.. Stellen Sie das automatische Giveback wieder her, wenn Sie es mithilfe des Befehls _Storage Failover modify -Node local -Auto-Giveback true_ deaktiviert haben.
-.. Wenn AutoSupport aktiviert ist, stellen Sie die automatische Fallerstellung mithilfe des Befehls _System Node AutoSupport Invoke -Node * -type all -message MAINT=END_ wieder her.
+
+
+--
+.Option 2: ONTAP 9.16.1 oder höher
+--
+.. Drücken Sie auf dem Controller für beeinträchtigte `Y` Vorgänge, wenn Sie dazu aufgefordert werden, die Sicherungskonfiguration wiederherzustellen.
++
+Nachdem der Wiederherstellungsvorgang erfolgreich war, wird diese Meldung auf der Konsole - angezeigt `syncflash_partner: Restore from partner complete`.
+
+.. Drücken Sie auf dem Controller für beeinträchtigte `Y` Vorgänge, wenn Sie dazu aufgefordert werden, um zu bestätigen, ob die Wiederherstellung erfolgreich war.
+.. Drücken Sie auf dem Controller für beeinträchtigte Störungen `Y`, wenn Sie dazu aufgefordert werden, die wiederhergestellte Konfiguration zu verwenden.
+.. Drücken Sie auf dem Controller für beeinträchtigte Störungen `Y` bei der Aufforderung, um den Node neu zu booten.
+.. Drücken Sie auf dem Controller für beeinträchtigte `Y` Störungen, wenn Sie dazu aufgefordert werden, den Controller für beeinträchtigte Störungen neu zu starten, und drücken Sie `ctrl-c` für das Startmenü.
+.. Wenn das System keine Codierung verwendet, wählen Sie _Option 1 Normal Boot._, andernfalls gehen Sie zu link:bootmedia-encryption-restore.html["Wiederherstellung von Schlüsselmanagern"].
+
+
+--
+====
+
+
+. Schließen Sie das Konsolenkabel an den Partner Controller an.
+. Geben Sie den Controller mithilfe des zurück `storage failover giveback -fromnode local` Befehl.
+. Stellen Sie die automatische Rückgabe wieder her, wenn Sie die Funktion mithilfe von deaktivieren `storage failover modify -node local -auto-giveback true` Befehl.
+. Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung mit dem Befehl wiederherstellen/zurücknehmen. `system node autosupport invoke -node * -type all -message MAINT=END`
 +
 *HINWEIS:* Wenn der Prozess fehlschlägt, kontaktieren Sie https://support.netapp.com["NetApp Support"].
 
-
-
-|===
 

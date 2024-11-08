@@ -143,7 +143,9 @@ image:../media/drw_a1k_io_remove_replace_ieops-1382.svg["Entfernen Sie das E/A-M
 
  a| 
 image:../media/icon_round_1.png["Legende Nummer 1"]
-| E/A-Nockenverriegelung 
+ a| 
+E/A-Nockenverriegelung
+
 |===
 +
 Achten Sie darauf, dass Sie die Kabel so kennzeichnen, dass Sie wissen, woher sie stammen.
@@ -187,8 +189,7 @@ NOTE: Wenn das neue I/O-Modul nicht das gleiche Modell wie das ausgefallene Modu
 
 . Starten Sie an der LOADER-Eingabeaufforderung den Node: _Bye_ neu
 +
-
-NOTE: Dadurch werden die I/O-Karten und andere Komponenten neu initialisiert und der Node neu gestartet.
+Dadurch werden die I/O-Karten und andere Komponenten neu initialisiert und der Node neu gestartet.
 
 . Kehren Sie den Knoten wieder in den normalen Betrieb zurück: _Storage Failover Giveback -ofnode Impaired_Node_Name_
 . Wenn das automatische Giveback deaktiviert wurde, aktivieren Sie es erneut: _Storage Failover modify -Node local -Auto-Giveback true_
