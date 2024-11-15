@@ -1,8 +1,8 @@
-= Option 1: Fügen Sie das I/O-Modul zu einem System mit offenen Steckplätzen hinzu
+= 
 :allow-uri-read: 
 
 
-Sie können dem System ein I/O-Modul hinzufügen, indem Sie entweder einem System mit leeren Steckplätzen einen neuen I/O-Knoten hinzufügen oder ein E/A-Modul durch ein neues in einem vollständig bestückten System ersetzen.
+Wenn das Speichersystem über leere Steckplätze verfügt, installieren Sie das neue I/O-Modul in einem der verfügbaren Steckplätze. Wenn alle Steckplätze belegt sind, entfernen Sie ein vorhandenes E/A-Modul, um Platz zu schaffen, und installieren Sie dann das neue.
 
 .Bevor Sie beginnen
 * Prüfen Sie die https://hwu.netapp.com/["NetApp Hardware Universe"^] Vergewissern Sie sich, dass das neue I/O-Modul mit Ihrem System und Ihrer Version von ONTAP kompatibel ist.
@@ -11,119 +11,13 @@ Sie können dem System ein I/O-Modul hinzufügen, indem Sie entweder einem Syste
 * Stellen Sie sicher, dass alle anderen Komponenten ordnungsgemäß funktionieren.
 
 
-
-
-== Option 1: Fügen Sie das I/O-Modul zu einem System mit offenen Steckplätzen hinzu
-
-Sie können ein I/O-Modul zu einem leeren Modulsteckplatz in Ihrem System hinzufügen.
-
-
-
-== Schritt 1: Fahren Sie den Knoten mit beeinträchtigten Knoten herunter
-
-Fahren Sie den Regler herunter oder übernehmen Sie ihn mit einer der folgenden Optionen.
-
 [role="tabbed-block"]
 ====
-.Option 1: Die meisten Systeme
+.E/A-Modul zu einem leeren Steckplatz hinzufügen
 --
-Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
-
-.Über diese Aufgabe
-Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE anzeigt, um die Berechtigung und den Zustand zu erhalten, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^].
+Sie können ein neues I/O-Modul zu einem Speichersystem mit verfügbaren leeren Steckplätzen hinzufügen.
 
 .Schritte
-. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf eines AutoSupport-Meldungsbefehls: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
-+
-Mit dem folgenden AutoSupport-Befehl wird die automatische Erstellung von Fällen zwei Stunden lang unterdrückt: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
-
-. Deaktivieren Sie das automatische Giveback von der Konsole des gesunden Controllers: `storage failover modify –node local -auto-giveback false`
-. Nehmen Sie den beeinträchtigten Controller zur LOADER-Eingabeaufforderung:
-+
-[cols="1,2"]
-|===
-| Wenn der eingeschränkte Controller angezeigt wird... | Dann... 
-
-
- a| 
-Die LOADER-Eingabeaufforderung
- a| 
-Fahren Sie mit dem nächsten Schritt fort.
-
-
-
- a| 
-`Waiting for giveback...`
- a| 
-Drücken Sie Strg-C, und antworten Sie dann `y` Wenn Sie dazu aufgefordert werden.
-
-
-
- a| 
-Eingabeaufforderung des Systems oder Passwort (Systempasswort eingeben)
- a| 
-Halten Sie den Controller für den beeinträchtigten Betrieb an oder übernehmen Sie ihn vom Controller für den ordnungsgemäßen Betrieb: `storage failover takeover -ofnode _impaired_node_name_`
-
-Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drücken Sie Strg-C, und antworten Sie dann `y`.
-
-|===
-
-
---
-.Option 2: Controller befindet sich in einem MetroCluster
---
-
-NOTE: Verwenden Sie dieses Verfahren nicht, wenn sich Ihr System in einer MetroCluster-Konfiguration mit zwei Knoten befindet.
-
-Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
-
-* Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE anzeigt, um die Berechtigung und den Zustand zu erhalten, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^].
-* Wenn Sie über eine MetroCluster-Konfiguration verfügen, müssen Sie bestätigt haben, dass der MetroCluster-Konfigurationsstatus konfiguriert ist und dass die Nodes in einem aktivierten und normalen Zustand vorliegen (`metrocluster node show`).
-
-
-.Schritte
-. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf eines AutoSupport-Befehls: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
-+
-Mit dem folgenden AutoSupport-Befehl wird die automatische Erstellung von Fällen zwei Stunden lang unterdrückt: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
-
-. Deaktivieren Sie das automatische Giveback von der Konsole des gesunden Controllers: `storage failover modify –node local -auto-giveback false`
-. Nehmen Sie den beeinträchtigten Controller zur LOADER-Eingabeaufforderung:
-+
-[cols="1,2"]
-|===
-| Wenn der eingeschränkte Controller angezeigt wird... | Dann... 
-
-
- a| 
-Die LOADER-Eingabeaufforderung
- a| 
-Fahren Sie mit dem nächsten Schritt fort.
-
-
-
- a| 
-Warten auf Giveback...
- a| 
-Drücken Sie Strg-C, und antworten Sie dann `y` Wenn Sie dazu aufgefordert werden.
-
-
-
- a| 
-Eingabeaufforderung des Systems oder Passwort (Systempasswort eingeben)
- a| 
-Halten Sie den Controller für den beeinträchtigten Betrieb an oder übernehmen Sie ihn vom Controller für den ordnungsgemäßen Betrieb: `storage failover takeover -ofnode _impaired_node_name_`
-
-Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drücken Sie Strg-C, und antworten Sie dann `y`.
-
-|===
-
-
---
-====
-
-
-== Schritt 2: E/A-Module hinzufügen
-
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Entfernen Sie die Abdeckung des Zielsteckplatzes:
 +
@@ -156,148 +50,40 @@ NOTE: Dadurch werden die PCIe-Karten und andere Komponenten neu initialisiert un
 . Wenn Sie ein Speicher-I/O-Modul installiert haben, installieren und verkabeln Sie die NS224-Shelfs, wie unter beschriebenlink:../ns224/hot-add-shelf-overview.html["Hot-Add-Workflow"].
 
 
+--
+.Hinzufügen eines E/A-Moduls zu einem vollständig bestückten System
+--
+Sie können ein E/A-Modul zu einem vollständig bestückten System hinzufügen, indem Sie ein vorhandenes E/A-Modul entfernen und ein neues an dessen Stelle installieren.
 
+.Über diese Aufgabe
+Stellen Sie sicher, dass Sie die folgenden Szenarien kennen, um ein neues I/O-Modul zu einem vollständig bestückten System hinzuzufügen:
 
-== Option 2: Fügen Sie ein I/O-Modul in ein System ohne offene Steckplätze hinzu
-
-Wenn Ihr System vollständig bestückt ist, können Sie ein I/O-Modul in einem I/O-Steckplatz ändern, indem Sie ein vorhandenes I/O-Modul entfernen und es durch ein anderes I/O-Modul ersetzen.
-
-. Wenn Sie sind:
-+
 [cols="1,2"]
 |===
-| Ersetzen einer... | Dann... 
+| Szenario | Handeln erforderlich 
 
 
  a| 
-NIC-I/O-Modul mit der gleichen Anzahl an Ports
+NIC zu NIC (gleiche Anzahl von Ports)
  a| 
 Die LIFs werden automatisch migriert, wenn das Controller-Modul heruntergefahren wird.
 
 
 
  a| 
-NIC-I/O-Modul mit weniger Ports
+NIC zu NIC (unterschiedliche Anzahl von Ports)
  a| 
-Die betroffenen LIFs werden permanent einem anderen Home-Port zugewiesen. Siehe https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html["Migrieren eines LIF"^] Weitere Informationen über die Verwendung von System Manager zum permanenten Verschieben der LIFs
+Weisen Sie die ausgewählten LIFs dauerhaft einem anderen Home Port zu. Weitere Informationen finden Sie unter https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html["Migrieren eines LIF"^] .
 
 
 
  a| 
-NIC-I/O-Modul mit Speicher-I/O-Modul
+NIC zu Speicher-I/O-Modul
  a| 
 Verwenden Sie System Manager, um die LIFs dauerhaft zu verschiedenen Home Ports zu migrieren, wie in beschrieben https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html["Migrieren eines LIF"^].
 
 |===
-
-
-
-
-== Schritt 1: Fahren Sie den Knoten mit beeinträchtigten Knoten herunter
-
-Fahren Sie den Regler herunter oder übernehmen Sie ihn mit einer der folgenden Optionen.
-
-[role="tabbed-block"]
-====
-.Option 1: Die meisten Systeme
---
-Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
-
-.Über diese Aufgabe
-Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE anzeigt, um die Berechtigung und den Zustand zu erhalten, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^].
-
 .Schritte
-. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf eines AutoSupport-Meldungsbefehls: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
-+
-Mit dem folgenden AutoSupport-Befehl wird die automatische Erstellung von Fällen zwei Stunden lang unterdrückt: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
-
-. Deaktivieren Sie das automatische Giveback von der Konsole des gesunden Controllers: `storage failover modify –node local -auto-giveback false`
-. Nehmen Sie den beeinträchtigten Controller zur LOADER-Eingabeaufforderung:
-+
-[cols="1,2"]
-|===
-| Wenn der eingeschränkte Controller angezeigt wird... | Dann... 
-
-
- a| 
-Die LOADER-Eingabeaufforderung
- a| 
-Fahren Sie mit dem nächsten Schritt fort.
-
-
-
- a| 
-`Waiting for giveback...`
- a| 
-Drücken Sie Strg-C, und antworten Sie dann `y` Wenn Sie dazu aufgefordert werden.
-
-
-
- a| 
-Eingabeaufforderung des Systems oder Passwort (Systempasswort eingeben)
- a| 
-Halten Sie den Controller für den beeinträchtigten Betrieb an oder übernehmen Sie ihn vom Controller für den ordnungsgemäßen Betrieb: `storage failover takeover -ofnode _impaired_node_name_`
-
-Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drücken Sie Strg-C, und antworten Sie dann `y`.
-
-|===
-
-
---
-.Option 2: Controller befindet sich in einem MetroCluster
---
-
-NOTE: Verwenden Sie dieses Verfahren nicht, wenn sich Ihr System in einer MetroCluster-Konfiguration mit zwei Knoten befindet.
-
-Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
-
-* Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE anzeigt, um die Berechtigung und den Zustand zu erhalten, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^].
-* Wenn Sie über eine MetroCluster-Konfiguration verfügen, müssen Sie bestätigt haben, dass der MetroCluster-Konfigurationsstatus konfiguriert ist und dass die Nodes in einem aktivierten und normalen Zustand vorliegen (`metrocluster node show`).
-
-
-.Schritte
-. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf eines AutoSupport-Befehls: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
-+
-Mit dem folgenden AutoSupport-Befehl wird die automatische Erstellung von Fällen zwei Stunden lang unterdrückt: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
-
-. Deaktivieren Sie das automatische Giveback von der Konsole des gesunden Controllers: `storage failover modify –node local -auto-giveback false`
-. Nehmen Sie den beeinträchtigten Controller zur LOADER-Eingabeaufforderung:
-+
-[cols="1,2"]
-|===
-| Wenn der eingeschränkte Controller angezeigt wird... | Dann... 
-
-
- a| 
-Die LOADER-Eingabeaufforderung
- a| 
-Fahren Sie mit dem nächsten Schritt fort.
-
-
-
- a| 
-Warten auf Giveback...
- a| 
-Drücken Sie Strg-C, und antworten Sie dann `y` Wenn Sie dazu aufgefordert werden.
-
-
-
- a| 
-Eingabeaufforderung des Systems oder Passwort (Systempasswort eingeben)
- a| 
-Halten Sie den Controller für den beeinträchtigten Betrieb an oder übernehmen Sie ihn vom Controller für den ordnungsgemäßen Betrieb: `storage failover takeover -ofnode _impaired_node_name_`
-
-Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drücken Sie Strg-C, und antworten Sie dann `y`.
-
-|===
-
-
---
-====
-
-
-== Schritt 2: E/A-Module ersetzen
-
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Trennen Sie alle Kabel vom Ziel-E/A-Modul.
 . Entfernen Sie das Ziel-I/O-Modul aus dem Gehäuse:
@@ -388,3 +174,6 @@ Installieren und verkabeln Sie die NS224-Regale, wie in beschrieben link:../ns22
 |===
 . Wiederholen Sie diese Schritte für Controller B.
 
+
+--
+====

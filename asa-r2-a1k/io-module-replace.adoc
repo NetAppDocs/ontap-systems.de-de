@@ -122,23 +122,13 @@ Stellen Sie sicher, dass Sie den Steckplatz verfolgen, in dem sich das I/O-Modul
 
 Nachdem Sie ein I/O-Modul ersetzt haben, müssen Sie das Controller-Modul neu starten.
 
-
-NOTE: Wenn das neue I/O-Modul nicht das gleiche Modell wie das ausgefallene Modul ist, müssen Sie zuerst den BMC neu booten.
-
 .Schritte
-. Starten Sie den BMC neu, wenn das Ersatzmodul nicht dasselbe Modell wie das alte Modul ist:
+. Booten Sie an der LOADER-Eingabeaufforderung den Node neu: `bye`
 +
-.. Wechseln Sie an der Eingabeaufforderung des LOADERS in den erweiterten Berechtigungsmodus: _Set Privilege Advanced_
-.. Starten Sie BMC: _Sp reboot_ neu
+Dadurch werden die I/O-Karten und andere Komponenten neu initialisiert und der Node neu gestartet.
 
-
-. Starten Sie an der LOADER-Eingabeaufforderung den Node: _Bye_ neu
-+
-
-NOTE: Dadurch werden die I/O-Karten und andere Komponenten neu initialisiert und der Node neu gestartet.
-
-. Kehren Sie den Knoten wieder in den normalen Betrieb zurück: _Storage Failover Giveback -ofnode Impaired_Node_Name_
-. Wenn das automatische Giveback deaktiviert wurde, aktivieren Sie es erneut: _Storage Failover modify -Node local -Auto-Giveback true_
+. Zurückkehren des Node in den normalen Betrieb: `storage failover giveback -ofnode impaired_node_name`
+. Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut: `storage failover modify -node local -auto-giveback true`
 
 
 

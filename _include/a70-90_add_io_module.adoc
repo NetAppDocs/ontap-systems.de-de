@@ -360,18 +360,12 @@ Stellen Sie sicher, dass Sie den Steckplatz verfolgen, in dem sich das I/O-Modul
 . Drehen Sie das Kabelführungs-Fach in die verriegelte Position.
 . Starten Sie das Controller-Modul über die LOADER-Eingabeaufforderung:_bye_ neu
 +
-.. Überprüfen Sie die BMC-Version auf dem Controller: _System Service-Processor show_
-.. Aktualisieren Sie ggf. die BMC-Firmware: _System Service-Processor image Update_
-.. Starten Sie den Knoten _bye_ neu
-+
+Dadurch werden die PCIe-Karten und andere Komponenten neu initialisiert und der Node wird neu gebootet.
 
-NOTE: Dadurch werden die PCIe-Karten und andere Komponenten neu initialisiert und der Node wird neu gebootet.
 
-+
+
 
 NOTE: Wenn beim Neustart ein Problem auftritt, lesen Sie https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1494308["BURT 1494308 – das Herunterfahren der Umgebung kann während des Austauschs des I/O-Moduls ausgelöst werden"]
-
-
 
 . Geben Sie das Controller-Modul aus dem Partner-Controller-Modul zurück. _Storage Failover Giveback -ofnode target_Node_Name_
 . Aktivieren Sie das automatische Giveback, wenn es deaktiviert wurde: _Storage Failover modify -Node local -Auto-Giveback true_
