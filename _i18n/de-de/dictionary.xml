@@ -2301,14 +2301,8 @@
   <block id="05648a23fc430a3dcc4fb4c1fbb040cd" category="list-text">Wenn Sie die Steckplätze 3 und/oder 7 für Netzwerke verwenden, verwenden Sie den<block ref="476ed8a8b3d60ed59cf37fb920c49f89" prefix=" " category="inline-code"></block> Befehl zum Konvertieren des Steckplatzes für die Netzwerkverwendung.</block>
   <block id="d6c7a664e3819be9a0869782e685c75b" category="list-text">Wiederholen Sie diese Schritte für Controller B.</block>
   <block id="6f8193ca6bfb281db32afbcc9e285f79" category="inline-link">Hot-Adding eines SAS-Shelfs</block>
-  <block id="cebb0168d5bfd94a91f0da51501ba6b8" category="list-text">Wenn Sie sind:</block>
-  <block id="e818b574f8a890f6c21405d9164bb6ef" category="cell">Ersetzen einer...</block>
-  <block id="d6737fd4fc838900efec68220d9b62d5" category="paragraph">NIC-I/O-Modul mit der gleichen Anzahl an Ports</block>
   <block id="c5cb03fb8ac84e8ed0867902373368c5" category="paragraph">Die LIFs werden automatisch migriert, wenn das Controller-Modul heruntergefahren wird.</block>
-  <block id="5b4da5fe899903c4fb7ea38cdcd59059" category="paragraph">NIC-I/O-Modul mit weniger Ports</block>
   <block id="3dca69382eebe0e25d26be588bb3bb7c" category="inline-link">Migrieren eines LIF</block>
-  <block id="c964f542415e7614484e4edf970ab7a8" category="paragraph">Die betroffenen LIFs werden permanent einem anderen Home-Port zugewiesen. Siehe<block ref="8a81e44d8701c7e0abd4b6ad328792f0" category="inline-link-rx"></block> Weitere Informationen über die Verwendung von System Manager zum permanenten Verschieben der LIFs</block>
-  <block id="f83c48dd124994c4062d124a835da954" category="paragraph">NIC-I/O-Modul mit Speicher-I/O-Modul</block>
   <block id="6d351dbc4a7187d4512a1c505c200687" category="paragraph">Verwenden Sie System Manager, um die LIFs dauerhaft zu verschiedenen Home Ports zu migrieren, wie in beschrieben<block ref="8a81e44d8701c7e0abd4b6ad328792f0" category="inline-link-rx"></block>.</block>
   <block id="1270e01f5b82a307cd267071e45adc4f" category="list-text">Herunterfahren von Controller A:</block>
   <block id="fd08cd08ec85105086c22d49a195dfd3" category="list-text">Trennen Sie alle Kabel vom Ziel-E/A-Modul.</block>
@@ -5658,7 +5652,6 @@
   <block id="6f189db9f1b1dfc1be838de48c805168" category="video-title">Animation – legt NVMe-Laufwerk-Shelf-IDs fest</block>
   <block id="1f583998630e94806bf5b9e059227dd4" category="paragraph"><block ref="1f583998630e94806bf5b9e059227dd4" category="inline-link-rx"></block></block>
   <block id="9b0500b65158795cfc5abb2becae4e80" category="paragraph">In der folgenden Tabelle sind die Kabeltypen aufgeführt, die Sie möglicherweise erhalten können. Wenn Sie ein Kabel erhalten, das nicht in der Tabelle aufgeführt ist, lesen Sie die<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block> Um das Kabel zu lokalisieren und dessen Verwendung zu identifizieren.</block>
-  <block id="741ade379895992f2a574e8e60de1571" category="section-title">Schritt 2: E/A-Module hinzufügen</block>
   <block id="55f1569cdcfb82612fcf293f23db4f6f" category="list-text">Prüfen Sie die<block ref="bb9c67b5a4c15a85b5e6aa6c9afd0285" category="inline-link-rx"></block> Vergewissern Sie sich, dass das neue I/O-Modul mit Ihrem System und Ihrer Version von ONTAP kompatibel ist.</block>
   <block id="6e4968851f4373ab9764e16cffb39389" category="list-text">Wenn mehrere Steckplätze verfügbar sind, überprüfen Sie die Steckplatzprioritäten in<block ref="bb9c67b5a4c15a85b5e6aa6c9afd0285" category="inline-link-rx"></block> Und verwenden Sie die beste für Ihr I/O-Modul verfügbare Lösung.</block>
   <block id="757216293ea1da04339a2c9b8eaa2641" category="admonition">Die Datei tar.gz muss auf einer FAT32-formatierten Partition mit mindestens 4 GB abgelegt werden. Während FAT32-Partitionen bis zu 2 TB groß sein können, können integrierte Windows-Tools (z. B. DiskPart) FAT32-Partitionen nicht formatieren, die größer als 32 GB sind.</block>
@@ -7969,14 +7962,10 @@ SFP+ (Target/Initiator)</block>
   <block id="61612a74be5170dd342eb619d607d9a0" category="paragraph">Mit dem folgenden AutoSupport-Befehl wird die automatische Erstellung von Fällen zwei Stunden lang unterdrückt:<block ref="6cf51b10a85b7bdc2a6698400ee841b7" prefix=" " category="inline-code"></block></block>
   <block id="ab859514fa976f71299cd0d5366c702d" category="paragraph">Halten Sie den Controller für den beeinträchtigten Betrieb an oder übernehmen Sie ihn vom Controller für den ordnungsgemäßen Betrieb:<block ref="64d2ac6bbd59fb854ec2bed7b2dbe259" prefix=" " category="inline-code"></block></block>
   <block id="fd9366185c7040d2814e95fefcce2264" category="list-text">Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf eines AutoSupport-Befehls:<block ref="fbcb7868c4849064439910664677cb60" prefix=" " category="inline-code"></block></block>
-  <block id="9f496d341d66d79304a55547445c00a2" category="doc">Option 1: Hinzufügen eines I/O-Moduls zu einem Speichersystem mit leeren Steckplätzen</block>
-  <block id="c4b17ef982ae644ec1d2b995fa1534a8" category="paragraph">Sie können Ihrem Speichersystem ein I/O-Modul hinzufügen, indem Sie entweder ein neues I/O-Modul zu einem Speichersystem mit leeren Steckplätzen hinzufügen oder ein I/O-Modul durch ein neues in einem vollbestückten Speichersystem ersetzen.</block>
   <block id="656450ae55843844fdfca7b44cbc5678" category="list-text">Überprüfen Sie die<block ref="bb9c67b5a4c15a85b5e6aa6c9afd0285" category="inline-link-rx"></block> und stellen Sie sicher, dass das neue I/O-Modul mit Ihrem Storage-System und Ihrer Version von ONTAP kompatibel ist.</block>
-  <block id="9808a3e490e0cd81c2fab70cb489f958" category="paragraph">Sie können ein I/O-Modul zu einem leeren Modulsteckplatz in Ihrem Speichersystem hinzufügen.</block>
   <block id="78263f5226743bdd204519f0e9bd22d2" category="list-text">Drehen Sie das Kabelführungs-Fach nach unten, indem Sie die Tasten an der Innenseite des Kabelführungs-Fachs herausziehen und nach unten drehen.</block>
   <block id="72e0b58a2d456f6ab89ca8d83859264d" category="list-text">Entfernen Sie das Ausblendmodul des Zielsteckplatzes vom Träger:</block>
   <block id="abca9f9a7ffb3d4afa15f947303b1c4c" category="admonition">Diese Abbildung zeigt das Entfernen eines horizontalen und vertikalen E/A-Moduls. In der Regel entfernen Sie nur ein I/O-Modul.</block>
-  <block id="b0fe3ad00c115ca25f49fb3d48769b0b" category="image-alt">Entfernen Sie ein AFF A1K I/O-Modul</block>
   <block id="243dd5ebf726e6d6a9762938953c1a6a" category="cell">Nockenverriegelungstaste</block>
   <block id="3939b3c4c6e868d0268fd9a75f3b3805" category="list-text">Drücken Sie die Nockenverriegelung am Blindmodul im Zielsteckplatz.</block>
   <block id="c053808d9acb931bed74754155a6e86f" category="list-text">Drehen Sie die Nockenverriegelung so weit wie möglich nach unten. Drehen Sie bei horizontalen Modulen den Nocken so weit wie möglich vom Modul weg.</block>
@@ -7984,24 +7973,13 @@ SFP+ (Target/Initiator)</block>
   <block id="f47dbf934d7d51340a5c58741715b2d5" category="list-text">Richten Sie das E/A-Modul an den Kanten der Öffnung des Gehäusesteckplatzes aus.</block>
   <block id="b3fe1b3e8557371fcb101f90a1a32fd0" category="list-text">Schieben Sie das Modul vorsichtig in den Steckplatz bis zum Gehäuse, und drehen Sie dann die Nockenverriegelung ganz nach oben, um das Modul zu verriegeln.</block>
   <block id="be9dc0332662b913cef88d5dcde78acd" category="list-text">Verkabeln Sie das E/A-Modul.</block>
-  <block id="040f840d8fdf859359eb680be25e8992" category="paragraph">Wenn es sich bei dem E/A-Modul um eine NIC handelt, verkabeln Sie das Modul mit den Datenschaltern.</block>
-  <block id="3072040b83655039de255184380a9271" category="paragraph">Wenn es sich bei dem I/O-Modul um ein Speichermodul handelt, verkabeln Sie es mit dem NS224-Shelf.</block>
   <block id="9056e6b74b2e2b546abd76b6e7408f4d" category="list-text">Drehen Sie das Kabelführungs-Fach bis in die geschlossene Position.</block>
-  <block id="a0a7e707ad35c210d4582fab4069c223" category="list-text">Den Controller vom Partner-Controller zurückgeben: _Storage Failover Giveback -ofnode target_Node_Name_</block>
   <block id="6c91356d53993ce0d1f0c1af28c7a48b" category="list-text">Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung mit dem Befehl wiederherstellen/zurücknehmen.<block ref="9ac424c0d7b432975df36a19daf50c9c" prefix=" " category="inline-code"></block></block>
-  <block id="026bf593d893e27d6f090dc74e403a75" category="section-title">Option 2: Fügen Sie ein I/O-Modul in einem Speichersystem ohne leere Steckplätze hinzu</block>
-  <block id="a06ddc697cce62226c19e353e0f2eeba" category="paragraph">Sie können ein I/O-Modul in einem I/O-Steckplatz in einem vollständig bestückten System austauschen, indem Sie ein vorhandenes I/O-Modul entfernen und es durch ein anderes I/O-Modul ersetzen.</block>
-  <block id="47ab52c1da07a0c00e2b876e54778a95" category="paragraph">Weisen Sie die ausgewählten LIFs dauerhaft einem anderen Home Port zu. Weitere Informationen zum dauerhaften Verschieben der LIFs mit System Manager finden Sie unter<block ref="8a81e44d8701c7e0abd4b6ad328792f0" category="inline-link-rx"></block> .</block>
-  <block id="8f6ea8b644b16793208bc55e27bc7669" category="section-title">Schritt 2: Ein E/A-Modul austauschen</block>
-  <block id="900056c17f40fb1a034e134a72eca912" category="image-alt">Entfernen Sie das AFF A1K I/O-Modul</block>
   <block id="8181d3a6b1640b5868632cfe5589a05d" category="list-text">Drücken Sie die Taste für die Nockenverriegelung.</block>
   <block id="0cfc07520b64c5be4e64fac899e6eaa9" category="list-text">Installieren Sie das E/A-Modul im Zielsteckplatz im Gehäuse:</block>
   <block id="7b71c8c5341c95139930e1f1748956d7" category="list-text">Richten Sie das Modul an den Kanten der Öffnung des Gehäusesteckplatzes aus.</block>
   <block id="0169e44348295d5766b174aa4c296a62" category="list-text">Wiederholen Sie die Schritte zum Entfernen und Installieren, um zusätzliche Module für den Controller zu ersetzen.</block>
   <block id="7c99497119e4bb81fd50dbd906dfde72" category="list-text">Booten Sie den Controller über die LOADER-Eingabeaufforderung:_bye_ neu</block>
-  <block id="db89594b0a0cbb483395a2641220f1fe" category="list-text">Aktivieren Sie das automatische Giveback, wenn es deaktiviert wurde: _Storage Failover modify -Node local -Auto-Giveback true_</block>
-  <block id="4e0b6dc04aaa383038bc23130a17cb25" category="cell">Wenn das E/A-Modul ein...</block>
-  <block id="09c2cf2531a14305542e6aff93e691c5" category="paragraph">NIC-Modul</block>
   <block id="a286fff38dd07b679c8ce3d88b6f2962" category="inline-link-macro">Schalten Sie den außer Betrieb genommenen Controller aus</block>
   <block id="4332aa8c798bac1ec6c0f4c83e0df305" category="list-text">Überprüfen Sie, ob der<block ref="c759882cd4e7fcd95f15b0df0ce7f51c" prefix=" " category="inline-code"></block> Typ , anzeigt<block ref="c6b9507c26062233f2341cb90db60eaa" prefix=" " category="inline-code"></block>und sichern Sie die OKM-Informationen manuell.</block>
   <block id="66e5f5f877412d7578e6bec4d8f933b5" category="list-text">Drücken Sie auf der außer Betrieb genommenen Steuerung _Y_, wenn angezeigt wird<block ref="aa48693d0248bb57512e373cd7f7eebc" prefix=" " category="inline-code"></block></block>
@@ -8010,7 +7988,6 @@ SFP+ (Target/Initiator)</block>
   <block id="e9636d3f8e24f08b43c5d1ed71e065ea" category="list-text">Drücken Sie auf dem Controller für beeinträchtigte Störungen _y_, wenn angezeigt wird<block ref="396e369cf75815ba643925818d3ec37e" prefix=" " category="inline-code"></block>.</block>
   <block id="976af5aa217f6c1b1dbf16e0ed0a4bde" category="list-text">Drücken Sie auf dem beeinträchtigten Controller bei Aufforderung _y_, um den beeinträchtigten Controller neu zu starten, und drücken Sie _Ctrl-c_ für das Startmenü.</block>
   <block id="29d550bee6b8b18ca38f7642778d8dad" category="inline-link-macro">Wiederherstellung von Schlüsselmanagern</block>
-  <block id="88045ffbfc0d9ef09cd470c545082621" category="list-text">Wenn das System keine Codierung verwendet, wählen Sie _Option 1 Normal Boot._, andernfalls gehen Sie zu <block ref="f2abf47fd75193a34b6b143e08f5b248" category="inline-link-macro-rx"></block>.</block>
   <block id="55f7c3a98a49a2f2d96cb2d21b95d947" category="list-text">Geben Sie den Controller mithilfe des Befehls „_Storage Failover Giveback -fromnode local_“ zurück.</block>
   <block id="4c6b53c8ce9f5900a70a994f21a32c6b" category="list-text">Stellen Sie das automatische Giveback wieder her, wenn Sie es mithilfe des Befehls _Storage Failover modify -Node local -Auto-Giveback true_ deaktiviert haben.</block>
   <block id="85ef34c14131c3f446c3d96330659ce7" category="list-text">Wenn AutoSupport aktiviert ist, stellen Sie die automatische Fallerstellung mithilfe des Befehls _System Node AutoSupport Invoke -Node * -type all -message MAINT=END_ wieder her.</block>
@@ -8233,23 +8210,10 @@ SFP+ (Target/Initiator)</block>
   <block id="05dceffd3c31a9d53e9b23ec48d1bf77" category="paragraph">Sie müssen neue Lizenzen für den Node installieren, wenn der beeinträchtigte Node ONTAP-Funktionen verwendet, für die eine standardmäßige (Node-locked) Lizenz erforderlich ist. Bei Standardlizenzen sollte jeder Node im Cluster über seinen eigenen Schlüssel für die Funktion verfügen.</block>
   <block id="d498932449bd1680afbe5aad136fb7e3" category="paragraph">Bis Sie die Lizenzschlüssel installieren, sind Funktionen, für die Standardlizenzen erforderlich sind, weiterhin für den Node verfügbar. Wenn der Node jedoch der einzige Node im Cluster mit einer Lizenz für die Funktion war, sind keine Konfigurationsänderungen an der Funktion zulässig. Wenn Sie nicht lizenzierte Funktionen auf dem Node verwenden, kommt es möglicherweise zu Compliance mit Ihrer Lizenzvereinbarung. Daher sollten Sie den Ersatz-Lizenzschlüssel oder die Schlüssel auf dem für den Node installieren.</block>
   <block id="3e508eeaedfdae09fad57a764b5e2b73" category="section-title">Schritt 1: Schalten Sie das Controller-Modul für die gestörte Steuerung aus</block>
-  <block id="6f13230d5681e1c88b50f5ecbce62637" category="paragraph">Fahren Sie das außer Betrieb genommene Controller-Modul mit einer der folgenden Optionen herunter oder übernehmen Sie es.</block>
   <block id="5d053cb0e109f37b3c9cfa31e957c2bc" category="list-text">Ziehen Sie das Controller-Modul ungefähr 3 Zoll aus dem Chassis, um die Stromversorgung zu trennen.</block>
-  <block id="d9d1de25706aa51c5367e4dafd60898e" category="list-text">Entfernen Sie das Abdeckungsmodul des Zielsteckplatzes aus dem Gehäuse:</block>
-  <block id="192d3ce6854b267e65d46222f8f3a24f" category="image-alt">Entfernen Sie ein E/A-Modul</block>
-  <block id="75fa26086844dfcbf14f35086518217a" category="list-text">Entfernen Sie das Blindmodul.</block>
-  <block id="2b6adb50592127273fdb4bb2b68918d5" category="list-text">Richten Sie das E/A-Modul an den Kanten der Öffnung des Controller-Modulsteckplatzes aus.</block>
-  <block id="97366bfb1dcb5b97156c347c8ad89d9a" category="list-text">Schieben Sie das Modul vorsichtig bis in den Schlitz hinein, und drehen Sie dann die Nockenverriegelung ganz nach oben, um das Modul zu verriegeln.</block>
   <block id="6181ce929bc404494408989e6b8a9b52" category="paragraph">Um ein E/A-Modul zu ersetzen, suchen Sie es innerhalb des Controller-Moduls und befolgen Sie die Schritte.</block>
   <block id="8a9a8a0db84d9dd59b0f006930b47193" category="list-text">Drücken Sie die Taste für die Nockenverriegelung.</block>
-  <block id="422e2aa4ec97de509f54db9d23618f37" category="list-text">Entfernen Sie das Modul aus dem Gehäuse, indem Sie den Finger in die Öffnung des Nockenhebels einhaken und das Modul aus dem Gehäuse ziehen.</block>
-  <block id="ce8b63d25565a610d1f9564150f85914" category="list-text">Schieben Sie das Modul vorsichtig in den Steckplatz bis zum Gehäuse, und drehen Sie dann die Nockenverriegelung ganz nach oben, um das Modul zu verriegeln.</block>
-  <block id="fb2068c184d4dbf1c0e520d9e9b173b2" category="list-text">Wiederholen Sie die Schritte zum Entfernen und Installieren, um zusätzliche Module für das Controller-Modul zu ersetzen.</block>
   <block id="ed5714a7b9709284c56117bd6dc4e081" category="list-text">Drehen Sie das Kabelführungs-Fach in die verriegelte Position.</block>
-  <block id="268bccb6c35b538d967467b5d2935b49" category="list-text">Starten Sie das Controller-Modul über die LOADER-Eingabeaufforderung:_bye_ neu</block>
-  <block id="253b24d74d0517388c6e5b078713c86a" category="inline-link">BURT 1494308 – das Herunterfahren der Umgebung kann während des Austauschs des I/O-Moduls ausgelöst werden</block>
-  <block id="fc5ee1a4ca46ff0160eeada84fe673fc" category="admonition">Wenn beim Neustart ein Problem auftritt, lesen Sie<block ref="5f4b19e33781d4df6c59a005be26e607" category="inline-link-rx"></block></block>
-  <block id="cfedf0b233356261eb909e7add24bded" category="list-text">Geben Sie das Controller-Modul aus dem Partner-Controller-Modul zurück. _Storage Failover Giveback -ofnode target_Node_Name_</block>
   <block id="43d656a7b2fb92dbbe5e13b8f00a00b8" category="list-text">Drücken Sie die Taste für die Systemverwaltung. Der Nockenhebel bewegt sich vom Gehäuse weg.</block>
   <block id="f0d27e50eb41ec006d18a96b5254063e" category="list-text">Drehen Sie den Nockenhebel ganz nach unten, und entfernen Sie das System-Management-Modul aus dem Controller-Modul.</block>
   <block id="54a53a09772d42f23357a9952d2d46a1" category="section-title">Schritt 2: Übertragen Sie das Startabbild auf das Startmedium</block>
@@ -8848,7 +8812,6 @@ SFP+ (Target/Initiator)</block>
   <block id="f3585daa539c5917b4fedd0eb7efb3f2" category="sidebar">AFF Systeme</block>
   <block id="6476573ba5b973ad8ea01c57f5b30267" category="sidebar">ASA Systeme</block>
   <block id="9aaba65702056e024efc0836758c1538" category="sidebar">Hot-Add-Vorgang abschließen</block>
-  <block id="b1cd69e899e8ab2e8b0c559899a3f2d7" category="admonition">Die folgende Abbildung zeigt das Entfernen eines horizontalen und vertikalen E/A-Moduls. In der Regel entfernen Sie nur ein I/O-Modul.</block>
   <block id="3e6277588162255770fd3384bad09d6d" category="list-text">Starten Sie an der LOADER-Eingabeaufforderung auf dem Controller den Controller, und geben Sie bei der Eingabeaufforderung „_y_“ ein, um die System-ID aufgrund einer nicht übereinstimmenden System-ID zu überschreiben.</block>
   <block id="9daabece8db7521a7882f63ebd76a891" category="image-alt">Entfernen Sie ein Laufwerk mit der Entriegelungstaste oben</block>
   <block id="e0bc24820711c466532ba2cb67ababd9" category="image-alt">Entfernen Sie ein Laufwerk mit der Entriegelungstaste in der Mitte</block>
@@ -9088,7 +9051,6 @@ SFP+ (Target/Initiator)</block>
   <block id="0e6eb93881093798ffaf4eef324aae16" category="list-text">Installieren und verkabeln Sie die NS224-Regale, wie in beschrieben <block ref="4dfda7c2f93914990922f65bd50f90b3" category="inline-link-macro-rx"></block>.</block>
   <block id="f399facc82d214513205adcdfed1e55f" category="image-alt">Festplattenlaufwerke einsetzen</block>
   <block id="f20a0219f10b0070c92efe4269486629" category="list-text">Wenn Sie ein Speicher-I/O-Modul installiert haben, installieren und verkabeln Sie die NS224-Shelfs, wie unter beschrieben<block ref="4dfda7c2f93914990922f65bd50f90b3" category="inline-link-macro-rx"></block>.</block>
-  <block id="86e8e2badf42560bb0b1ed3bac3933fa" category="paragraph">Installieren und verkabeln Sie die NS224-Regale, wie in beschrieben <block ref="4dfda7c2f93914990922f65bd50f90b3" category="inline-link-macro-rx"></block>.</block>
   <block id="b9c98500ab9d006e0d9fd3d1c95f7904" category="paragraph">Weitere Informationen zur Verkabelung finden Sie unter <block ref="b8ff88c1a2e9444f28ec1504689e0040" category="inline-link-macro-rx"></block>.</block>
   <block id="ef83cb60cd5ea6118e6d106efa30f927" category="image-alt">Hinweise zum Hebegewicht</block>
   <block id="f3badb2cde47b97db55936f633e8bbf1" category="image-alt">Composite-Verkabelung mit zwei Nodes ohne Switch</block>
@@ -9833,7 +9795,6 @@ SFP+ (Target/Initiator)</block>
   <block id="c285ffddf1786cd1a14a26bcf9b74c7d" category="paragraph"><block ref="061047859ec1e213bd771fe5350bda2c" prefix="" category="inline-code"></block></block>
   <block id="811ae15d713f8c846d0516e053f895b2" category="list-text">Überwachen Sie den Recovery-Prozess für Startmedien, während Loader die lokalen Cluster-Ports konfiguriert und vom Partner-Node aus ausgeführt<block ref="83a4445bcfef2bd179eaffaabe3b3c20" prefix=" " category="inline-code"></block> wird.</block>
   <block id="8f616ca67798afd132662e15fc4caa28" category="paragraph">Wenn Netzboot ausgeführt wird, wird die<block ref="f6715e6f2a651bfc51d27566b1be5385" prefix=" " category="inline-code"></block> Meldung angezeigt.</block>
-  <block id="ab8b7433e2ad2aa82ba07b42b4cd465d" category="list-text">Wählen Sie je nach Verschlüsselungsmethode die Option aus, die zu Ihrer Single-Node-Konfiguration passt:</block>
   <block id="39cb6e7651585d511fc148af8198837f" category="open-title">Keine Verschlüsselung</block>
   <block id="aada4d2dac8a2a5bd04bf211104ff2c5" category="paragraph">Wenn keine Verschlüsselung erkannt wird, wird der Wiederherstellungsvorgang des Startmediums ohne Schlüsselmanagement fortgesetzt.</block>
   <block id="69c50e084d31ca90079f6b8b4409607b" category="paragraph">Überwachen Sie den Wiederherstellungsprozess weiter, während die Backup-Konfiguration, die env-Datei, mdb und rdb vom Partner-Node wiederhergestellt werden.</block>
@@ -10190,7 +10151,6 @@ SFP+ (Target/Initiator)</block>
   <block id="13e7cf07309f0d95eee5aa49b6842dc0" category="doc">Prüfen Sie Support und Status der Verschlüsselungsschlüssel - FAS9500</block>
   <block id="e4d9374bc79ce9095fb021e03551599f" category="doc">Wiederherstellung der Verschlüsselung – FAS9500</block>
   <block id="bd5c047c4a41e95a8a9424888875e56a" category="list-text">Verkabeln Sie das E/A-Modul mit dem vorgesehenen Gerät.</block>
-  <block id="2d8241a8fe54414b6494b29d26d8b251" category="list-text">Stellen Sie im funktionstüchtigen Node das automatische Giveback wieder her, falls Sie es mit dem Befehl deaktiviert<block ref="6f0c6616b99fea33a3020e0e0dcbe3c6" prefix=" " category="inline-code"></block> haben.</block>
   <block id="9d462bd05672844aeab0d3d5d323d66a" category="list-text">Setzen Sie den Controller wieder ein, und schließen Sie das Controller-Modul wieder an die Stromversorgung an:</block>
   <block id="4d872659b015ad414d5e68440a7ddfd6" category="paragraph">Der Controller startet, sobald er eingesetzt und wieder mit Strom versorgt wird.</block>
   <block id="6f3fa8086df2fa20b3e903512f693396" category="list-text">Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben:</block>
@@ -10370,9 +10330,6 @@ SFP+ (Target/Initiator)</block>
   <block id="09109aaca603d8ac1da46aa588c46f63" category="paragraph">NIC zu NIC (unterschiedliche Anzahl von Ports)</block>
   <block id="4e7b2ae169cb37276347e7c88d211db4" category="paragraph">Weisen Sie die ausgewählten LIFs dauerhaft einem anderen Home Port zu. Weitere Informationen finden Sie unter<block ref="8a81e44d8701c7e0abd4b6ad328792f0" category="inline-link-rx"></block> .</block>
   <block id="0c3f64052572f9d13d9b078656a055e4" category="paragraph">NIC zu Speicher-I/O-Modul</block>
-  <block id="deaf42dafc1e4522c0ccf86ad58f237e" category="list-text">Den Controller vom Partner-Controller:`sStorage Failover Giveback -ofnode target_Node_Name` zurückgeben</block>
-  <block id="c1d0761e549ef1ce873a404f8d41a2d5" category="list-text">Booten Sie den Controller über die Loader-Eingabeaufforderung neu:<block ref="bfa99df33b137bc8fb5f5407d7e58da8" prefix=" " category="inline-code"></block></block>
-  <block id="5d831aef00c06eb087aebfb790f041b7" category="section-title">Schritt 2: Neues E/A-Modul hinzufügen</block>
   <block id="68c06f8f4688078ddfe1ceedef798cae" category="list-text">Geben Sie den Controller vom Partner-Controller zurück:</block>
   <block id="523f5a38bba8d64b2af1cdee174a06cc" category="paragraph"><block ref="49c908925c3b8a3554612823f81c8964" prefix="" category="inline-code"></block></block>
   <block id="b98036ad0a9b610670da83fe762dadb5" category="list-text">Stellen Sie im funktionstüchtigen Knoten das automatische Giveback wieder her, wenn Sie es deaktiviert haben, indem Sie den folgenden Befehl verwenden:</block>
@@ -10392,4 +10349,6 @@ SFP+ (Target/Initiator)</block>
   <block id="cac74c301a508cf350f8f41a7de866a0" category="paragraph">Sie können Ihrem ASA A1K-Speichersystem ein I/O-Modul hinzufügen, wenn leere Steckplätze verfügbar sind oder wenn alle Steckplätze voll belegt sind.</block>
   <block id="94aa992895c11cf963b2b749b84aa267" category="paragraph">Sie können Ihrem FAS70 und FAS90 Storage-System ein I/O-Modul hinzufügen, wenn leere Steckplätze verfügbar sind oder wenn alle Steckplätze vollständig belegt sind.</block>
   <block id="bc049e4428d592b69605104cc85d56bc" category="section-title">Schritt 2: Fügen Sie die neuen I/O-Module hinzu</block>
+  <block id="a6448c631c301c525a61c500fdf8e46a" category="list-text">Wählen Sie je nach Verschlüsselungsmethode die Option aus, die Ihrer Systemkonfiguration entspricht:</block>
+  <block id="92ba658b9a66d0825f0f084b7da309b7" category="list-text">Wenn das System keine Verschlüsselung verwendet, wählen Sie _Option 1 Normal Boot._, andernfalls gehen Sie zu <block ref="d767082d20397ebb99e586749eda3a08" category="inline-link-macro-rx"></block>.</block>
 </blocks>
