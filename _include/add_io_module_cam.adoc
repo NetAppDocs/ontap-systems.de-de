@@ -2,7 +2,7 @@
 :allow-uri-read: 
 
 
-Wenn das Speichersystem über leere Steckplätze verfügt, installieren Sie das neue I/O-Modul in einem der verfügbaren Steckplätze. Wenn alle Steckplätze belegt sind, entfernen Sie ein vorhandenes E/A-Modul, um Platz zu schaffen, und installieren Sie dann das neue.
+Wenn das Speichersystem über freie Steckplätze verfügt, installieren Sie das neue I/O-Modul in einem der verfügbaren Steckplätze. Wenn alle Steckplätze belegt sind, entfernen Sie ein vorhandenes E/A-Modul, um Platz zu schaffen, und installieren Sie dann das neue.
 
 .Bevor Sie beginnen
 * Überprüfen Sie die https://hwu.netapp.com/["NetApp Hardware Universe"^] und stellen Sie sicher, dass das neue I/O-Modul mit Ihrem Storage-System und Ihrer Version von ONTAP kompatibel ist.
@@ -12,9 +12,9 @@ Wenn das Speichersystem über leere Steckplätze verfügt, installieren Sie das 
 
 [role="tabbed-block"]
 ====
-.E/A-Modul zu einem leeren Steckplatz hinzufügen
+.Fügen Sie ein E/A-Modul zu einem verfügbaren Steckplatz hinzu
 --
-Sie können ein neues I/O-Modul zu einem Speichersystem mit verfügbaren leeren Steckplätzen hinzufügen.
+Sie können ein neues I/O-Modul zu einem Speichersystem mit verfügbaren Steckplätzen hinzufügen.
 
 .Schritte
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
@@ -38,21 +38,24 @@ Sie können ein neues I/O-Modul zu einem Speichersystem mit verfügbaren leeren 
 NOTE: Stellen Sie sicher, dass alle nicht verwendeten I/O-Steckplätze leer sind, um mögliche thermische Probleme zu vermeiden.
 
 . Drehen Sie das Kabelführungs-Fach bis in die geschlossene Position.
-. Starten Sie den Controller von der LOADER-Eingabeaufforderung neu: _Bye_
+. Booten Sie an der LOADER-Eingabeaufforderung den Node neu:
++
+`bye`
+
 +
 
-NOTE: Dadurch werden die PCIe-Karten und andere Komponenten neu initialisiert und der Node wird neu gebootet.
+NOTE: Dadurch werden das I/O-Modul und andere Komponenten neu initialisiert und der Node neu gestartet.
 
 . Geben Sie den Controller vom Partner-Controller zurück:
 +
 `storage failover giveback -ofnode target_node_name`
 
 . Wiederholen Sie diese Schritte für Controller B.
-. Stellen Sie im funktionstüchtigen Knoten das automatische Giveback wieder her, wenn Sie es deaktiviert haben, indem Sie den folgenden Befehl verwenden:
+. Stellen Sie im funktionstüchtigen Knoten das automatische Giveback wieder her, wenn Sie es deaktiviert haben:
 +
-`storage failover modify -node local -auto-giveback true`
+`storage failover modify -node local -auto-giveback _true_`
 
-. Wenn AutoSupport aktiviert ist, stellen Sie die automatische Fallerstellung mithilfe des folgenden Befehls wieder her:
+. Wenn AutoSupport aktiviert ist, stellen Sie die automatische Fallerstellung wieder her:
 +
 `system node autosupport invoke -node * -type all -message MAINT=END`
 
