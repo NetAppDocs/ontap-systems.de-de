@@ -67,43 +67,36 @@ NOTE: Die Laufwerk-Firmware wird alle zwei Minuten überprüft.
 Wenn Sie den nicht kennen `_shelf_name_` Führen Sie den aus `storage shelf show` Befehl.
 
 +
-Ein Regal hat drei Positionen-LEDs: Eine auf dem Bedienfeld und eine auf jedem NSM-Modul. Die Standort-LEDs leuchten 30 Minuten lang. Sie können sie ausschalten, indem Sie den gleichen Befehl eingeben, jedoch mit dem `off` Option.
+Ein Regal hat drei Standort-LEDs: Eine auf dem Bedienfeld und eine auf jedem NSM. Die Standort-LEDs leuchten 30 Minuten lang. Sie können sie deaktivieren, indem Sie denselben Befehl eingeben, jedoch die Option verwenden `off`.
 
 * Wenn Sie das Ersatzlaufwerk auspacken, speichern Sie alle Verpackungsmaterialien für die Verwendung, wenn Sie das ausgefallene Laufwerk zurücksenden.
 +
 Wenn Sie die RMA-Nummer oder zusätzliche Hilfe beim Ersatzverfahren benötigen, wenden Sie sich an den technischen Support unter https://mysupport.netapp.com/site/global/dashboard["NetApp Support"^], 888-463-8277 (Nordamerika), 00-800-44-638277 (Europa) oder +800-800-80-800 (Asien/Pazifik).
 
-* Die folgende Animation bietet einen Überblick über die physischen Teile zum Entfernen und Einsetzen des Hot-Swap-Verfahrens für das Laufwerk.
-+
-.Hot-Swap eines Laufwerks in einem NS224-Shelf
-video::733011a7-e03a-41b0-8723-aa840133bf25[panopto]
-+
+
+
 .Schritte
-.. Wenn Sie dem Ersatzlaufwerk den Besitz eines Laufwerks manuell zuweisen möchten, müssen Sie die automatische Laufwerkszuweisung deaktivieren, wenn diese aktiviert ist.
+. Wenn Sie dem Ersatzlaufwerk den Besitz eines Laufwerks manuell zuweisen möchten, müssen Sie die automatische Laufwerkszuweisung deaktivieren, wenn diese aktiviert ist.
 +
 
-NOTE: Sie müssen die Laufwerkseigentümer manuell zuweisen, wenn Laufwerke im Shelf Eigentum beider Controller-Module des HA-Paars sind.
+NOTE: Sie müssen die Laufwerkseigentümer manuell zuweisen, wenn Laufwerke im Shelf Eigentum beider Controller-Module des HA-Paars sind. Sie führen diese Aufgabe später in diesem Verfahren aus.
 
 +
-
-NOTE: Sie weisen den Antriebseigentum manuell zu und aktivieren dann die automatische Laufwerkszuweisung später in diesem Verfahren.
-
-+
-... Überprüfen Sie, ob die automatische Laufwerkszuweisung aktiviert ist: `storage disk option show`
+.. Überprüfen Sie, ob die automatische Laufwerkszuweisung aktiviert ist: `storage disk option show`
 +
 Sie können den Befehl an einem der Controller-Module eingeben.
 
 +
 Wenn die automatische Laufwerkszuweisung aktiviert ist, wird die Ausgabe angezeigt `on` Im `Auto Assign` Spalte (für jedes Controller-Modul).
 
-... Wenn die automatische Laufwerkszuweisung aktiviert ist, deaktivieren Sie sie: `storage disk option modify -node node_name -autoassign off`
+.. Wenn die automatische Laufwerkszuweisung aktiviert ist, deaktivieren Sie sie: `storage disk option modify -node node_name -autoassign off`
 +
 Sie müssen die automatische Laufwerkszuweisung auf beiden Controller-Modulen deaktivieren.
 
 
 
-.. Richtig gemahlen.
-.. Identifizieren Sie das ausgefallene Laufwerk physisch.
+. Richtig gemahlen.
+. Identifizieren Sie das ausgefallene Laufwerk physisch.
 +
 Wenn ein Laufwerk ausfällt, protokolliert das System eine Warnmeldung an die Systemkonsole und gibt an, welches Laufwerk ausgefallen ist. Darüber hinaus leuchten die Warnungs-LED (gelb) auf der Anzeige des Festplatten-Shelf-Bedieners und des ausgefallenen Laufwerks.
 
@@ -111,49 +104,70 @@ Wenn ein Laufwerk ausfällt, protokolliert das System eine Warnmeldung an die Sy
 
 NOTE: Die Aktivitäts-LED (grün) auf einem ausgefallenen Laufwerk kann leuchten (leuchtet dauerhaft), was darauf hinweist, dass das Laufwerk zwar mit Strom versorgt wird, aber nicht blinken sollte, was auf I/O-Aktivität hinweist. Ein ausgefallenes Laufwerk hat keine I/O-Aktivität.
 
-.. Entfernen Sie das ausgefallene Laufwerk:
+. Entfernen Sie das ausgefallene Laufwerk:
 +
-... Drücken Sie die Entriegelungstaste an der Antriebsfläche, um den Nockengriff zu öffnen.
-... Schieben Sie den Antrieb mithilfe des Nockengriffs aus dem Regal und halten Sie den Antrieb mit der anderen Hand.
+image::../media/drw_nvme_drive_replace_ieops-1904.svg[Entfernen Sie das Laufwerk.]
+
++
+[cols="1,4"]
+|===
 
 
-.. Warten Sie mindestens 70 Sekunden, bevor Sie das Ersatzlaufwerk einsetzen.
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Drücken Sie die Entriegelungstaste an der Antriebsfläche, um den Nockengriff zu öffnen.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Legende Nummer 2]
+ a| 
+Drehen Sie den Nockengriff nach unten, um den Antrieb von der Mittelplatine zu lösen.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Legende Nummer 3]
+ a| 
+Schieben Sie den Antrieb mithilfe des Nockengriffs aus dem Regal und halten Sie den Antrieb mit der anderen Hand.
+
+|===
+. Warten Sie mindestens 70 Sekunden, bevor Sie das Ersatzlaufwerk einsetzen.
 +
 Dadurch erkennt das System, dass ein Laufwerk entfernt wurde.
 
-.. Setzen Sie das Ersatzlaufwerk ein:
+. Setzen Sie das Ersatzlaufwerk ein:
 +
-... Wenn sich der Nockengriff in der geöffneten Position befindet, setzen Sie den Ersatzantrieb mit beiden Händen ein.
-... Drücken Sie, bis das Laufwerk stoppt.
-... Schließen Sie den Nockengriff, so dass der Antrieb fest in der Mittelebene sitzt und der Griff einrastet.
+.. Bei geöffnetem Nockengriff den Antrieb mit beiden Händen einsetzen.
+.. Vorsichtig drücken, bis der Antrieb stoppt.
+.. Schließen Sie den Nockengriff, so dass der Antrieb fest in der Mittelebene sitzt und der Griff einrastet.
 +
 Schließen Sie den Nockengriff langsam, damit er korrekt an der Antriebsfläche ausgerichtet ist.
 
 
 
-.. Vergewissern Sie sich, dass die Aktivitäts-LED (grün) des Laufwerks leuchtet.
+. Vergewissern Sie sich, dass die Aktivitäts-LED (grün) des Laufwerks leuchtet.
 +
 Wenn die Aktivitäts-LED des Laufwerks leuchtet, bedeutet dies, dass das Laufwerk mit Strom versorgt wird. Wenn die Aktivitäts-LED des Laufwerks blinkt, bedeutet dies, dass das Laufwerk gerade mit Strom versorgt wird und der I/O-Vorgang ausgeführt wird. Wenn die Laufwerk-Firmware automatisch aktualisiert wird, blinkt die LED.
 
-.. Wenn Sie ein anderes Laufwerk ersetzen, wiederholen Sie die Schritte 3 bis Schritt 7.
-.. Wenn Sie die automatische Laufwerkszuweisung in Schritt 1 deaktiviert haben, weisen Sie die Laufwerkseigentümer manuell zu und aktivieren Sie bei Bedarf die automatische Laufwerkszuweisung neu:
+. Wenn Sie ein anderes Laufwerk ersetzen, wiederholen Sie die Schritte 3 bis Schritt 7.
+. Wenn Sie die automatische Laufwerkszuweisung in Schritt 1 deaktiviert haben, weisen Sie die Laufwerkseigentümer manuell zu und aktivieren Sie bei Bedarf die automatische Laufwerkszuweisung neu:
 +
-... Alle Laufwerke ohne Besitzer anzeigen: `storage disk show -container-type unassigned`
+.. Alle Laufwerke ohne Besitzer anzeigen: `storage disk show -container-type unassigned`
 +
 Sie können den Befehl an einem der Controller-Module eingeben.
 
-... Weisen Sie jedes Laufwerk zu: `storage disk assign -disk disk_name -owner owner_name`
+.. Weisen Sie jedes Laufwerk zu: `storage disk assign -disk disk_name -owner owner_name`
 +
 Sie können den Befehl an einem der Controller-Module eingeben.
 
 +
 Mit dem Platzhalterzeichen können Sie mehr als ein Laufwerk gleichzeitig zuweisen.
 
-... Bei Bedarf die automatische Laufwerkszuweisung erneut aktivieren: `storage disk option modify -node node_name -autoassign on`
+.. Bei Bedarf die automatische Laufwerkszuweisung erneut aktivieren: `storage disk option modify -node node_name -autoassign on`
 +
 Sie müssen die automatische Laufwerkszuweisung auf beiden Controller-Modulen erneut aktivieren.
-
-
 
 
 

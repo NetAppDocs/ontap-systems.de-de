@@ -19,7 +19,7 @@ Sie können ein ausgefallenes Netzteil unterbrechungsfrei in einem NS224-Laufwer
 Immer ersetzen wie für „Gefällt mir“.
 
 * Wenn Sie mehrere Netzteile ersetzen, müssen Sie dies nacheinander durchführen, damit das Shelf die Stromversorgung aufrecht erhält.
-* *Best Practice:* die beste Praxis ist, das Netzteil innerhalb von zwei Minuten nach dem Entfernen aus dem NSM-Modul zu ersetzen.
+* *Best Practice:* die beste Praxis ist, das Netzteil innerhalb von zwei Minuten nach dem Entfernen aus dem NSM zu ersetzen.
 +
 Wenn Sie die zwei Minuten überschreiten, wird das Shelf weiterhin ausgeführt. ONTAP sendet jedoch Meldungen an die Konsole über das beeinträchtigte Netzteil, bis das Netzteil ersetzt wird.
 
@@ -29,12 +29,20 @@ Wenn Sie die zwei Minuten überschreiten, wird das Shelf weiterhin ausgeführt. 
 Wenn Sie den nicht kennen `shelf_name` Führen Sie den aus `storage shelf show` Befehl.
 
 +
-Ein Regal hat drei Positionen-LEDs: Eine auf dem Bedienfeld und eine auf jedem NSM-Modul. Die Standort-LEDs leuchten 30 Minuten lang. Sie können sie ausschalten, indem Sie denselben Befehl eingeben, jedoch die Option „aus“ verwenden.
+Ein Regal hat drei Standort-LEDs: Eine auf dem Bedienfeld und eine auf jedem NSM. Die Standort-LEDs leuchten 30 Minuten lang. Sie können sie ausschalten, indem Sie denselben Befehl eingeben, jedoch die Option „aus“ verwenden.
 
 * Wenn Sie das Ersatznetzteil auspacken, bewahren Sie alle Verpackungsmaterialien auf, wenn Sie das defekte Netzteil zurücksenden.
 +
 Wenn Sie die RMA-Nummer oder zusätzliche Hilfe beim Ersatzverfahren benötigen, wenden Sie sich an den technischen Support unter https://mysupport.netapp.com/site/global/dashboard["NetApp Support"^], 888-463-8277 (Nordamerika), 00-800-44-638277 (Europa) oder +800-800-80-800 (Asien/Pazifik).
 
+* Wenn Sie ein Wechselstromnetzteil für ein NS224-Shelf durch NSM100-Module ersetzen, können Sie sich die folgende Animation ansehen, um sich mit dem Verfahren vertraut zu machen, bevor Sie beginnen.
++
+.Ersetzen Sie das Wechselstromnetzteil für NS224 durch NSM100-Module
+[%collapsible]
+====
+.Hot-Swap eines Netzteils in einem NS224-Shelf
+video::5794da63-99aa-425a-825f-aa86002f154d[panopto]
+====
 
 
 Verwenden Sie das entsprechende Verfahren für Ihren Netzteiltyp: AC oder DC.
@@ -43,10 +51,8 @@ Verwenden Sie das entsprechende Verfahren für Ihren Netzteiltyp: AC oder DC.
 ====
 .Option 1: Ersetzen Sie ein Wechselstromnetzteil
 --
-Zum Austauschen eines Netzteils können Sie die Animation ansehen oder die folgenden Schritte ausführen.
+Führen Sie die folgenden Schritte durch, um ein Wechselstromnetzteil auszutauschen.
 
-.Hot-Swap eines Netzteils in einem NS224-Shelf
-video::5794da63-99aa-425a-825f-aa86002f154d[panopto]
 .Schritte
 . Richtig gemahlen.
 . Identifizieren Sie das ausgefallene Netzteil physisch.
@@ -59,15 +65,37 @@ Die Netzteile haben keinen Netzschalter.
 
 . Entfernen Sie das Netzteil:
 +
-.. Drehen Sie den Griff nach oben in die horizontale Position, und fassen Sie ihn dann an.
-.. Drücken Sie mit dem Daumen auf die blaue Lasche, um den Verriegelungsmechanismus zu lösen.
-.. Ziehen Sie das Netzteil aus dem NSM-Modul, während Sie die andere Hand verwenden, um das Gewicht zu unterstützen.
+image::../media/drw_t_psu_ac_replace_ieops-2035.svg[Entfernen Sie ein AC-Netzteil]
+
++
+[cols="1,3"]
+|===
 
 
+ a| 
+image:../media/icon_round_1.png["Legende Nummer 1"]
+ a| 
+Drehen Sie den Griff nach oben in die horizontale Position, und fassen Sie ihn dann an.
+
+
+
+ a| 
+image:../media/icon_round_2.png["Legende Nummer 2"]
+ a| 
+Drücken Sie mit dem Daumen auf die blaue Lasche, um den Verriegelungsmechanismus zu lösen.
+
+
+
+ a| 
+image:../media/icon_round_3.png["Legende Nummer 3"]
+ a| 
+Ziehen Sie das Netzteil aus dem NSM, während Sie es mit der anderen Hand tragen.
+
+|===
 . Setzen Sie das Ersatznetzteil ein:
 +
-.. Stützen und richten Sie die Kanten des Netzteils mit beiden Händen an der Öffnung im NSM-Modul aus.
-.. Schieben Sie das Netzteil vorsichtig in das NSM-Modul, bis der Verriegelungsmechanismus einrastet.
+.. Stützen Sie die Kanten des Netzteils mit beiden Händen und richten Sie sie an der Öffnung im NSM aus.
+.. Schieben Sie das Netzteil vorsichtig in den NSM, bis der Verriegelungsmechanismus einrastet.
 +
 
 NOTE: Verwenden Sie keine übermäßige Kraft, oder Sie können den internen Stecker beschädigen.
@@ -103,11 +131,11 @@ In der Abbildung und Tabelle in Schritt 4 sind die beiden Flügelschrauben (Pos.
 . Entfernen Sie das Netzteil:
 +
 .. Drehen Sie den Griff nach oben in die horizontale Position, und fassen Sie ihn dann an.
-.. Drücken Sie mit dem Daumen auf die blaue Lasche, um den Verriegelungsmechanismus zu lösen.
-.. Ziehen Sie das Netzteil aus dem NSM-Modul, während Sie die andere Hand verwenden, um das Gewicht zu unterstützen.
+.. Drücken Sie mit dem Daumen auf die Terrakotta-Lasche, um den Verriegelungsmechanismus zu lösen.
+.. Ziehen Sie das Netzteil aus dem NSM, während Sie es mit der anderen Hand tragen.
 +
 
-NOTE: Das Netzteil ist kurz. Verwenden Sie immer zwei Hände, um es zu stützen, wenn Sie es aus dem NSM-Modul entfernen, so dass es nicht aus dem NSM-Modul schwingt und Sie verletzt.
+NOTE: Das Netzteil ist kurz. Verwenden Sie immer zwei Hände, um es zu stützen, wenn Sie es aus dem NSM entfernen, so dass es nicht frei von der NSM schwingt und Sie verletzt.
 
 +
 image::../media/drw_dcpsu_remove-replace-generic_IEOPS-788.svg[Entfernen Sie ein DC-Netzteil]
@@ -141,15 +169,15 @@ Netzteilgriff
  a| 
 image:../media/icon_round_4.png["Legende Nummer 4"]
  a| 
-Blaue Verriegelungslasche für die Stromversorgung
+Blaue/Terrakotta-Verriegelungslasche für das Netzteil
 
 |===
 
 
 . Setzen Sie das Ersatznetzteil ein:
 +
-.. Stützen und richten Sie die Kanten des Netzteils mit beiden Händen an der Öffnung im NSM-Modul aus.
-.. Schieben Sie das Netzteil vorsichtig in das NSM-Modul, bis der Verriegelungsmechanismus einrastet.
+.. Stützen Sie die Kanten des Netzteils mit beiden Händen und richten Sie sie an der Öffnung im NSM aus.
+.. Schieben Sie das Netzteil vorsichtig in den NSM, bis der Verriegelungsmechanismus einrastet.
 +
 Ein Netzteil muss ordnungsgemäß mit dem internen Anschluss und dem Verriegelungsmechanismus verbunden sein. Wiederholen Sie diesen Schritt, wenn Sie das Netzteil nicht richtig eingesetzt haben.
 

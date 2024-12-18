@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: whats-new.html 
-keywords: new, features, asa r2, aff, asa, fas, legacy, end-of-support 
-summary: Erfahren Sie mehr über die neuen Funktionen für ONTAP Hardwaresysteme. 
+keywords: new, features, asa r2, aff, asa, fas 
+summary: Erfahren Sie mehr über die neuen Plattformen für ONTAP Hardware-Systeme. 
 ---
 = Neuerungen bei ONTAP Hardwaresystemen
 :allow-uri-read: 
@@ -11,367 +11,48 @@ summary: Erfahren Sie mehr über die neuen Funktionen für ONTAP Hardwaresysteme
 
 
 [role="lead"]
-Erfahren Sie mehr über die neuen Funktionen für ONTAP Hardwaresysteme.
+Informieren Sie sich über die Neuerungen bei ONTAP Hardwaresystemen.
 
-Details zu bekannten Problemen, Einschränkungen und Upgrade-Warnhinweisen in ONTAP 9 Versionen finden Sie im https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508["Versionshinweise zu ONTAP 9"]. Sie müssen sich mit Ihrem NetApp Konto anmelden oder ein Konto erstellen, um auf die Versionshinweise zuzugreifen.
 
 
+== Dezember 2024
 
-== Plattform-Support
 
-[cols="2*"]
-|===
-| Plattformen | Verfügbar ab 
 
+=== AFF A20, AFF A30 und AFF A50
 
- a| 
-https://docs.netapp.com/us-en/asa-r2/get-started/learn-about.html["ASA r2-Systeme"]
+Die neuen Hardwaresysteme AFF A20, A30 und A50 bieten noch mehr Kunden und Workloads leistungsstarke, intelligente und umfassende Datenmanagementfunktionen.
 
-* ASA A1K
-* ASA A70
-* ASA A90
+Die Systeme bieten ML-basierte Ransomware-Erkennung in Echtzeit, nahtlose Cloud-Integration und beispiellose Performance für geschäftskritische Workloads wie KI, VMware, Datenbanken und Analysen und unterstützen Block-, File- und Objekt-Storage.
 
- a| 
-ONTAP 9.16.0
+link:https://www.netapp.com/data-storage/aff-a-series/["Weitere Informationen zu den Systemen der AFF A-Serie"].
 
 
 
- a| 
-https://www.netapp.com/data-storage/fas/["FAS70 und FAS90"]
- a| 
-ONTAP 9.15.1
+=== AFF C30, AFF C60 und AFF C80
 
+Mit den neuen Hardwaresystemen AFF C30, AFF C60 und AFF C80 ist die Performance und Effizienz von Flash für Unternehmen einfacher zugänglich, da sie in Implementierungen mit zwei Racks eine Storage-Kapazität von 1,5 PB bieten.
 
+Die Lösung bietet eine außergewöhnliche Dichte mit 60-TB-Laufwerken, höhere Performance und verbesserte I/O-Flexibilität.
 
- a| 
-* https://www.netapp.com/pdf.html?item=/media/7828-DS-3582-AFF-A-Series.pdf["AFF A1K"]
-* https://www.netapp.com/pdf.html?item=/media/7828-DS-3582-AFF-A-Series.pdf["AFF A70"]
-* https://www.netapp.com/pdf.html?item=/media/7828-DS-3582-AFF-A-Series.pdf["AFF A90"]
+link:https://www.netapp.com/data-storage/aff-c-series/["Erfahren Sie mehr über die Systeme der AFF C-Serie"].
 
- a| 
-ONTAP 9.15.1
 
 
+== September 2024
 
- a| 
-https://www.netapp.com/data-storage/all-flash-san-storage-array/["ASA C250"]
- a| 
-ONTAP 9.13.1P1
 
 
+=== ASA r2-Systeme
 
- a| 
-https://www.netapp.com/data-storage/all-flash-san-storage-array/["ASA C400"]
- a| 
-ONTAP 9.13.1P1
+Die neuen ASA r2 Hardwaresysteme (ASA A1K, ASA A70 und ASA A90) bieten eine einheitliche Hardware- und Softwarelösung, mit der speziell auf die Anforderungen von reinen SAN-Kunden eine vereinfachte Benutzererfahrung erzielt wird.
 
+link:https://docs.netapp.com/us-en/asa-r2/get-started/learn-about.html["Erfahren Sie mehr über die ASA r2-Systeme"].
 
 
- a| 
-https://www.netapp.com/data-storage/all-flash-san-storage-array/["ASA C800"]
- a| 
-ONTAP 9.13.1P1
 
+=== FAS70 und FAS90
 
+Die neuen Hardwaresysteme FAS70 und FAS90 bieten kostengünstigen und gleichzeitig hochperformanten Backup-Storage und ermöglichen damit eine sichere Cyber-Vault zur Recovery nach Ransomware-Angriffen.
 
- a| 
-https://hwu.netapp.com/ProductSpecs/Index["FAS2820"]
- a| 
-ONTAP 9.13.1
-
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/85736-DS-4254-NetApp-ASA.pdf["ASA A150"]
- a| 
-ONTAP 9.13.1
-
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/85736-DS-4254-NetApp-ASA.pdf["ASA A250"]
- a| 
-ONTAP 9.13.1
-
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/85736-DS-4254-NetApp-ASA.pdf["ASA A400"]
- a| 
-ONTAP 9.13.1
-
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/85736-DS-4254-NetApp-ASA.pdf["ASA A900"]
- a| 
-ONTAP 9.13.1
-
-
-
- a| 
-* https://www.netapp.com/media/81583-da-4240-aff-c-series.pdf["AFF C250"]
-* https://www.netapp.com/media/81583-da-4240-aff-c-series.pdf["AFF C400"]
-* https://www.netapp.com/media/81583-da-4240-aff-c-series.pdf["AFF C800"]
-
- a| 
-ONTAP 9.12.1P1
-
-ONTAP 9.13.1 GA und neuere ONTAP Versionen
-
-[NOTE]
-====
-Diese Plattformen werden mit ONTAP 9.13.1 RC1 nicht unterstützt.
-
-====
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/7828-DS-3582-AFF-A-Series.pdf["AFF A150"]
-
-[NOTE]
-====
-Versuchen Sie nicht, Ihr AFF A150-Speichersystem mit einer nicht unterstützten ONTAP-Version zu installieren oder zu booten. Wenn Sie versuchen, Ihr System mit einer nicht unterstützten Version von ONTAP zu installieren oder zu starten, lässt ONTAP dies zu (ONTAP blockiert den Versuch nicht). Die Folge ist, dass Ihr AFF A150 Storage-System als FAS2750 Storage-System eingesetzt wird.
-
-==== a| 
-ONTAP 9.13.1 und höhere ONTAP-Versionen
-
-ONTAP 9.12.1P1
-
-ONTAP 9.11.1P8
-
-ONTAP 9.10.1P12
-
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/7819-ds-4020.pdf["FAS9500"]
- a| 
-ONTAP 9.11.1
-
-ONTAP 9.10.1P3
-
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/7828-ds-3582.pdf["AFF A900"]
- a| 
-ONTAP 9.10.1
-
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/7828-ds-3582.pdf["AFF A250/AFF ASA A250"]
- a| 
-ONTAP 9.8
-
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/7819-ds-4020.pdf["FAS500f"]
- a| 
-ONTAP 9.8
-
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/7828-ds-3582.pdf["AFF ASA A800"]
- a| 
-ONTAP 9.8
-
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/7819-ds-4020.pdf["FAS8300"]
- a| 
-ONTAP 9.7
-
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/7819-ds-4020.pdf["FAS8700"]
- a| 
-ONTAP 9.7
-
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/7828-ds-3582.pdf["AFF A400"]
- a| 
-ONTAP 9.7
-
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/17190-na-382.pdf["AFF ASA A220"]
- a| 
-ONTAP 9.7
-
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/7828-ds-3582.pdf["AFF ASA A700"]
- a| 
-ONTAP 9.7
-
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/7623-ds-3989.pdf["AFF C 190"^]
- a| 
-ONTAP 9.6
-
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/17190-na-382.pdf["AFF A320"]
- a| 
-ONTAP 9.6
-
-|===
-
-
-== Switch-Support
-
-[cols="20,65,15"]
-|===
-| Schalter | Beschreibung | Verfügbar ab 
-
-
- a| 
-https://hwu.netapp.com/Switch/Index["NVIDIA IP SN2100-SWITCH"]
- a| 
-Der NVIDIA IP SN2100-Storage-Switch wird in MetroCluster IP-Konfigurationen unterstützt, die die Plattformen A900/FAS9500 verwenden.
- a| 
-ONTAP 9.12.1
-
-
-
- a| 
-https://hwu.netapp.com/Switch/Index["NVIDIA IP SN2100-SWITCH (X190006)"]
- a| 
-Der NVIDIA IP SN2100-Storage-Switch wird in MetroCluster IP-Konfigurationen unterstützt, die die folgenden Plattformen verwenden:
-
-* FAS500f/AFF A250
-* FAS8300/AFF A400
-* FAS8700
-* FAS9000/AFF A700
-* AFF A800
-
- a| 
-ONTAP 9.10.1P3
-
-
-
- a| 
-https://hwu.netapp.com/Switch/Index["100 GbE Cisco Switch mit 36 Ports (X190200)"]
- a| 
-Unterstützung einer Shared IT-Infrastruktur (Cluster, HA und Switch-Attached Storage) auf demselben Paar Cisco Nexus 9336C-FX2 Switches, einschließlich Unterstützung für MetroCluster IP-Konfigurationen.
- a| 
-ONTAP 9.9.1
-
-
-
- a| 
-https://hwu.netapp.com/Switch/Index["100-GbE-Cisco-Switch mit 36 Ports (X190200 und X190210)"]
- a| 
-Cisco Nexus 9336C-FX2 Cluster-Interconnect-Switch und Storage-Switch-Unterstützung für All Flash FAS/FAS Controller sowie für Front-End-Konnektivität für Daten
- a| 
-ONTAP 9.8
-
-
-
- a| 
-https://hwu.netapp.com/Switch/Index["Broadcom BES-53248 Switch (X190005 und X190005R)"]
- a| 
-Unterstützung von Broadcom BES-53248 Cluster-Interconnect-Switches für All Flash FAS/FAS Controller mit 40/100-GbE-Ports
- a| 
-ONTAP 9.8
-
-
-
- a| 
-https://hwu.netapp.com/Switch/Index["100 GbE Cisco Switch mit 36 Ports (X190200)"] https://hwu.netapp.com/Switch/Index["100 GbE Cisco Switch mit 32 Ports (X190100 und X190100R)"]
- a| 
-Cisco Nexus 100 GbE Switch kann als dedizierter Storage-Switch verwendet werden, um NS224 NVMe Laufwerk-Shelfs mit folgenden Plattformen zu verbinden:
-
-* AFF A800/AFF ASA A800
-* AFF A700/AFF ASA A700
-* AFF A400/AFF ASA A400
-* AFF A320
-
- a| 
-ONTAP 9.8
-
-
-
- a| 
-https://hwu.netapp.com/Switch/Index["Broadcom BES-53248 Switch (X190005 und X190005R)"]
- a| 
-Unterstützung von Broadcom BES-53248 Cluster-Interconnect-Switches für All Flash FAS/FAS Controller mit 10/25-GbE-Ports
- a| 
-ONTAP 9.5P8
-
-|===
-
-
-== Shelf-Unterstützung
-
-[cols="2*"]
-|===
-| Shelfs | Verfügbar ab 
-
-
- a| 
-NS224
- a| 
-ONTAP 9.6
-
-|===
-
-
-== Hardware-Updates
-
-[cols="25h,~,~"]
-|===
-| Funktionalität | Beschreibung und wo man mehr erfahren kann | Verfügbar ab 
-
-
- a| 
-Multi-Cluster Interconnect-Switch
- a| 
-Multi-Cluster-Konfigurationen ermöglichen es mehreren Clustern, denselben Cluster-Switch zu nutzen, bereitgestellt durch zwei neue Referenzkonfigurationsdateien für 4x4- und 2x8-Node-Konfigurationen.
- a| 
-ONTAP 9.14.1
-
-
-
- a| 
-Erweiterte Plattformunterstützung für NS224 Festplatten-Shelfs
- a| 
-Die folgenden Plattformen unterstützen NS224 Laufwerk-Shelfs:
-
-* AFF A800/AFF ASA A800
-* AFF A700/AFF ASA A700
-* AFF A250/AFF ASA A250
-* FAS500f
-
- a| 
-ONTAP 9.8
-
-
-
- a| 
-Hot-zusätzliche 12-GB-SAS-Shelfs zu 6-GB-SAS-Storage-Stacks
- a| 
-Ein einziger Wechsel von 6 GB zu 12 GB in einem SAS-Storage-Stack wird jetzt unterstützt. Somit können bestehende 6-GB-Stacks mit 12-GB-Shelfs erweitert werden.
-
-https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-ds-mix-hotadd/home.html["Hot-Adding-Shelfs mit IOM12-Modulen werden in einem Shelf-Stack mit IOM6-Modulen ausgeführt"]
- a| 
-ONTAP 9.7P4
-
-ONTAP 9.6P9
-
-ONTAP 9.5P14
-
-|===
+link:https://www.netapp.com/data-storage/fas/["Erfahren Sie mehr über FAS Systeme"].

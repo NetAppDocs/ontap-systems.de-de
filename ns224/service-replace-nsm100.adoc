@@ -1,10 +1,10 @@
 ---
 permalink: ns224/service-replace-nsm100.html 
 sidebar: sidebar 
-keywords: ns224, shelves, shelf, ns224 shelves, replace, impair, nvme, module, nsm, nondisruptive, drive, i/o, nsm, replace an nsm module 
+keywords: ns224, shelves, shelf, ns224 shelves, replace, impair, nvme, module, nsm, nondisruptive, drive, i/o, nsm, replace an NSM 
 summary: 'Sie können ein beeinträchtigtes NVMe-Shelf-Modul \(NSM\) unterbrechungsfrei in einem NS224-Laufwerk-Shelf ersetzen, das eingeschaltet ist und während I/O-Vorgänge ausgeführt werden.' 
 ---
-= Ersetzen Sie ein NSM-Modul - NS224-Einlegeböden
+= Ersetzen Sie ein NSM - NS224-Einschübe
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -14,7 +14,7 @@ summary: 'Sie können ein beeinträchtigtes NVMe-Shelf-Modul \(NSM\) unterbrechu
 Ein beeinträchtigtes NVMe-Shelf-Modul (NSM) kann in einem eingeschalteten NS224-Laufwerk-Shelf unterbrechungsfrei ersetzt werden, während I/O gerade läuft.
 
 .Bevor Sie beginnen
-* Das Partner-NSM-Modul des Shelfs muss in Betrieb sein und ordnungsgemäß verkabelt sein, damit das Shelf beim Entfernen des fehlerhaften NSM-Moduls die Verbindung aufrecht erhält.
+* Der Partner-NSM des Shelfs muss betriebsbereit sein und ordnungsgemäß verkabelt sein, damit das Shelf weiterhin verbunden bleibt, wenn Sie den ausgefallenen NSM entfernen.
 +
 https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"^]
 
@@ -22,9 +22,14 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 
 
 .Über diese Aufgabe
-* Beim Austausch des NSM-Moduls werden die DIMMs, Lüfter und Netzteile vom beeinträchtigten NSM-Modul auf das Ersatz-NSM-Modul verschoben.
+* Beim Ersetzen des NSM müssen folgende Elemente verschoben werden:
 +
-Sie verschieben den Echtzeitakku (RTC) oder das Boot-Medium nicht. Sie sind im NSM-Ersatzmodul vorinstalliert.
+** *NSM100-Module*: DIMMs, Lüfter und Netzteil vom gestörten NSM zum Ersatz-NSM.
+** *NSM100B-Module*: DIMMs, Lüfter, Boot-Medien, E/A-Modul und Stromversorgung vom gestörten NSM zum Ersatz-NSM.
++
+Die Echtzeituhr (RTC) wird nicht bewegt. Sie sind im Ersatz-NSM vorinstalliert.
+
+
 
 * Mindestens 70 Sekunden zwischen dem aus- und Einbau des NVMe-Shelf-Moduls (NSM) zulassen.
 +
@@ -43,77 +48,81 @@ https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["NetApp
 Stellen Sie die Firmware nicht auf eine Version zurück, die Ihr Shelf und seine Komponenten nicht unterstützt.
 
 ====
-* Die Shelf-(NSM-)Firmware wird automatisch (unterbrechungsfrei) auf einem neuen NSM-Modul aktualisiert, das über eine nicht aktuelle Firmware-Version verfügt.
+* Shelf- (NSM)-Firmware wird automatisch (unterbrechungsfrei) auf einem neuen NSM aktualisiert, das über eine nicht aktuelle Firmware-Version verfügt.
 +
-NSM-Modul-Firmware-Prüfungen finden alle 10 Minuten statt. Ein Update der NSM-Modul-Firmware kann bis zu 30 Minuten dauern.
+Die NSM-Firmware wird alle 10 Minuten überprüft. Eine Aktualisierung der NSM-Firmware kann bis zu 30 Minuten dauern.
 
 * Bei Bedarf können Sie die blauen LEDs am Shelf einschalten, um die physische Suche nach dem betroffenen Shelf zu erleichtern: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
 +
 Wenn Sie den nicht kennen `shelf_name` Führen Sie den aus `storage shelf show` Befehl.
 
 +
-Ein Regal hat drei Positionen-LEDs: Eine auf dem Bedienfeld und eine auf jedem NSM-Modul. Die Standort-LEDs leuchten 30 Minuten lang. Sie können sie ausschalten, indem Sie den gleichen Befehl eingeben, jedoch mit dem `off` Option.
+Ein Regal hat drei Standort-LEDs: Eine auf dem Bedienfeld und eine auf jedem NSM. Die Standort-LEDs leuchten 30 Minuten lang. Sie können sie deaktivieren, indem Sie denselben Befehl eingeben, jedoch die Option verwenden `off`.
 
-* Wenn Sie das Ersatz-NSM-Modul auspacken, bewahren Sie alle Verpackungsmaterialien auf, wenn Sie das fehlerhafte NSM-Modul zurücksenden.
+* Wenn Sie den Ersatz-NSM auspacken, bewahren Sie alle Verpackungsmaterialien zur Verwendung auf, wenn Sie den fehlerhaften NSM zurücksenden.
 +
 Wenn Sie die RMA-Nummer oder zusätzliche Hilfe beim Ersatzverfahren benötigen, wenden Sie sich an den technischen Support unter https://mysupport.netapp.com/site/global/dashboard["NetApp Support"^], 888-463-8277 (Nordamerika), 00-800-44-638277 (Europa) oder +800-800-80-800 (Asien/Pazifik).
 
-* Sie können die folgende Animation oder die schriftlichen Schritte verwenden, um ein NSM-Modul zu ersetzen.
-+
-.Ersetzen Sie ein NSM-Modul in einem NS224-Shelf
+
+
+[role="tabbed-block"]
+====
+.NSM100-Module
+--
+Sie können die folgende Animation oder die schriftlichen Schritte verwenden, um einen NSM zu ersetzen.
+
+.Ersetzen Sie einen NSM in einem NS224-Shelf
 video::f57693b3-b164-4014-a827-aa86002f4b34[panopto]
-
-
 .Schritte
 . Richtig gemahlen.
-. Identifizieren Sie das beeinträchtigte NSM-Modul physisch.
+. Identifizieren Sie die beeinträchtigte NSM physisch.
 +
 Das System protokolliert eine Warnmeldung an die Systemkonsole, die angibt, welches Modul beeinträchtigt ist. Außerdem leuchten die Warnungs-LED (gelb) auf der Bedieneranzeige des Fahrregals und das beeinträchtigte Modul.
 
-. Trennen Sie die Verkabelung vom beeinträchtigten NSM-Modul:
+. Trennen Sie die Verkabelung vom NSM für beeinträchtigte Verbindung:
 +
 .. Ziehen Sie das Netzkabel vom Netzteil ab, indem Sie den Netzkabelhalter öffnen, wenn es sich um ein Netzteil handelt, oder die beiden Daumen-Schrauben lösen, wenn es sich um ein Gleichstromnetzteil handelt, und ziehen Sie dann das Netzkabel vom Netzteil ab.
 +
 Die Netzteile haben keinen Netzschalter.
 
-.. Trennen Sie die Speicherkabel von den NSM-Modulports.
+.. Trennen Sie die Speicherkabel von den NSM-Ports.
 +
-Notieren Sie sich die NSM-Modulanschlüsse, an die jedes Kabel angeschlossen ist. Sie schließen die Kabel später in diesem Verfahren an die gleichen Anschlüsse des NSM-Ersatzmoduls an.
+Notieren Sie sich die NSM-Ports, an die jedes Kabel angeschlossen ist. Schließen Sie die Kabel später in diesem Verfahren wieder an dieselben Ports am Ersatz-NSM an.
 
 
 
-. Entfernen Sie das NSM-Modul aus dem Shelf:
+. Entfernen Sie den NSM aus dem Shelf:
 +
-.. Führen Sie die Zeigefinger durch die Fingerlöcher der Verriegelungsmechanismen auf beiden Seiten des NSM-Moduls.
+.. Führen Sie Ihre Zeigefinger durch die Fingerlöcher der Verriegelungsmechanismen auf beiden Seiten des NSM.
 +
 
-NOTE: Wenn Sie das untere NSM-Modul entfernen und die untere Schiene den Zugriff auf die Verriegelungen behindert, setzen Sie Ihre Zeigefinger durch die Fingerlöcher von innen (durch Überqueren der Arme).
+NOTE: Wenn Sie den unteren NSM entfernen und die untere Schiene den Zugang zu den Verriegelungsmechanismen behindert, legen Sie Ihre Zeigefinger von innen durch die Fingerlöcher (durch Überdrücken der Arme).
 
 .. Drücken Sie bei den Daumen nach unten, und halten Sie die orangefarbenen Laschen über den Verriegelungsmechanismus.
 +
 Die Verriegelungsmechanismen heben sich an und löschen die Verriegelungsstifte am Regal.
 
-.. Ziehen Sie vorsichtig, bis sich das NSM-Modul etwa ein Drittel des Ausschuppens aus dem Regal befindet. Fassen Sie die NSM-Modulseiten mit beiden Händen an, um das Gewicht zu stützen, und legen Sie es dann auf eine flache, stabile Oberfläche.
+.. Ziehen Sie vorsichtig, bis sich der NSM etwa ein Drittel des Ausschubees aus dem Regal befindet, fassen Sie die NSM-Seiten mit beiden Händen an, um sein Gewicht zu tragen, und legen Sie ihn dann auf eine flache, stabile Oberfläche.
 +
-Wenn Sie mit dem Ziehen beginnen, ziehen sich die Arms des Verriegelungsmechanismus aus dem NSM-Modul und sichern sich in ihrer vollständig ausgestreckten Position.
+Wenn Sie mit dem Ziehen beginnen, ziehen sich die Arme des Verriegelungsmechanismus aus dem NSM und rasten in ihrer vollständig ausgefahrenen Position ein.
 
 
 
-. Packen Sie das Ersatz-NSM-Modul aus, und stellen Sie es auf einer Ebenen Fläche in der Nähe des beeinträchtigten NSM-Moduls ein.
-. Öffnen Sie die Abdeckung des beeinträchtigten NSM-Moduls und des NSM-Ersatzmoduls, indem Sie die Daumenschraube auf jeder Abdeckung lösen.
+. Packen Sie den neuen NSM aus, und stellen Sie ihn auf eine Ebene Fläche in der Nähe des außer Betrieb genommenen NSM.
+. Öffnen Sie die Abdeckung des außer Betrieb genommenen NSM und des Ersatz-NSM, indem Sie die Flügelschraube an jeder Abdeckung lösen.
 +
 
-NOTE: Das FRU-Etikett auf der NSM-Modulabdeckung zeigt die Position der DIMMs und Lüfter an.
+NOTE: Das FRU-Etikett auf der NSM-Abdeckung zeigt die Position der DIMMs und Lüfter.
 
-. Bringen Sie die DIMMs vom außer Betrieb genommenen NSM-Modul in das NSM-Ersatzmodul:
+. Bringen Sie die DIMMs vom beeinträchtigten NSM in den Ersatz-NSM:
 +
-.. Beachten Sie die Ausrichtung der DIMMs in den Steckplätzen, damit Sie die DIMMs mit derselben Ausrichtung in das Ersatz-NSM-Modul einsetzen können.
+.. Beachten Sie die Ausrichtung der DIMMs in den Steckplätzen, sodass Sie die DIMMs in der gleichen Ausrichtung in den Ersatz-NSM einsetzen können.
 .. Werfen Sie ein DIMM aus dem Steckplatz, indem Sie die Auswerfer-Laschen an beiden Enden des DIMM-Steckplatzes langsam auseinander drücken und dann das DIMM aus dem Steckplatz herausheben.
 +
 
 NOTE: Halten Sie das DIMM vorsichtig an den Ecken oder Kanten, um Druck auf die Komponenten der DIMM-Platine zu vermeiden. Die Auswerferlaschen bleiben in der geöffneten Position.
 
-.. Halten Sie das DIMM an den Ecken, und setzen Sie das DIMM-Modul anschließend in einen Steckplatz am NSM-Ersatzmodul ein.
+.. Halten Sie das DIMM an den Ecken fest, und setzen Sie das DIMM-Modul in einen Steckplatz am neuen NSM ein.
 +
 Die Kerbe an der Unterseite des DIMM, unter den Stiften, sollte sich mit der Lasche im Steckplatz.
 
@@ -124,24 +133,24 @@ Wenn das DIMM richtig eingesetzt wird, sollte es sich leicht einpassen, aber fes
 .. Wiederholen Sie die Teilschritte 7a bis 7d für die übrigen DIMMs.
 
 
-. Bewegen Sie die Lüfter vom NSM-Modul für beeinträchtigte Störungen in das NSM-Ersatzmodul:
+. Bewegen Sie die Lüfter vom NSM für beeinträchtigte Störungen in den NSM-Ersatz:
 +
 .. Fassen Sie einen Lüfter an den Seiten fest, wo sich die blauen Berührungspunkte befinden, und heben Sie ihn dann vertikal an, um ihn von der Steckdose zu trennen.
 +
 Möglicherweise müssen Sie den Lüfter vor dem Herausheben vorsichtig hin- und herschieben, um ihn zu trennen.
 
-.. Richten Sie den Lüfter an den Führungen im NSM-Ersatzmodul aus, und drücken Sie dann nach unten, bis der Lüftermodulanschluss vollständig in der Buchse sitzt.
+.. Richten Sie den Lüfter an den Führungen im Ersatz-NSM aus, und drücken Sie dann nach unten, bis der Anschluss des Lüftermoduls vollständig im Sockel sitzt.
 .. Wiederholen Sie die Teilschritte 8a und 8b für die restlichen Lüfter.
 
 
-. Schließen Sie die Abdeckung der einzelnen NSM-Module, und ziehen Sie dann die Rändelschraube fest.
-. Stellen Sie das Netzteil vom außer Betrieb genommenen NSM-Modul auf das NSM-Ersatzmodul um:
+. Schließen Sie die Abdeckung jedes NSM, und ziehen Sie dann jede Flügelschraube fest.
+. Stellen Sie das Netzteil vom NSM für beeinträchtigte Störungen in den NSM für den Ersatz ein:
 +
 .. Drehen Sie den Griff nach oben in die horizontale Position, und fassen Sie ihn dann an.
 .. Drücken Sie mit dem Daumen auf die blaue Lasche, um den Verriegelungsmechanismus zu lösen.
-.. Ziehen Sie das Netzteil aus dem NSM-Modul, während Sie die andere Hand verwenden, um das Gewicht zu unterstützen.
-.. Mit beiden Händen die Kanten des Netzteils abstützen und an der Öffnung im NSM-Ersatzmodul ausrichten.
-.. Schieben Sie das Netzteil vorsichtig in das NSM-Modul, bis der Verriegelungsmechanismus einrastet.
+.. Ziehen Sie das Netzteil aus dem NSM, während Sie es mit der anderen Hand tragen.
+.. Stützen Sie die Kanten des Netzteils mit beiden Händen auf die Öffnung im Ersatz-NSM, und richten Sie sie aus.
+.. Schieben Sie das Netzteil vorsichtig in den NSM, bis der Verriegelungsmechanismus einrastet.
 +
 
 NOTE: Verwenden Sie keine übermäßige Kraft, oder Sie können den internen Stecker beschädigen.
@@ -149,30 +158,30 @@ NOTE: Verwenden Sie keine übermäßige Kraft, oder Sie können den internen Ste
 .. Drehen Sie den Griff nach unten, so dass er sich nicht im normalen Betrieb befindet.
 
 
-. Setzen Sie das NSM-Ersatzmodul in das Regal ein:
+. Setzen Sie den Ersatz-NSM in das Shelf ein:
 +
 .. Vergewissern Sie sich, dass die Arms des Verriegelungsmechanismus vollständig ausgefahren sind.
-.. Schieben Sie das NSM-Modul vorsichtig mit beiden Händen in das Regal, bis das Gewicht des NSM-Moduls vollständig vom Regal unterstützt wird.
-.. Schieben Sie das NSM-Modul in das Regal, bis es anhält (etwa einen halben Zoll von der Rückseite des Regals).
+.. Schieben Sie den NSM vorsichtig mit beiden Händen in das Regal, bis das Gewicht des NSM vollständig vom Regal unterstützt wird.
+.. Drücken Sie den NSM in das Regal, bis er anhält (etwa einen halben Zoll von der Rückseite des Shelfs entfernt).
 +
-Sie können Ihre Daumen auf die orangefarbenen Laschen an der Vorderseite jeder Fingerschleife (der Arms des Verriegelungsmechanismus) legen, um das NSM-Modul einzudrücken.
+Sie können Ihre Daumen auf die orangefarbenen Laschen an der Vorderseite jeder Fingerschlaufe (der Arme des Verriegelungsmechanismus) legen, um den NSM einzudrücken.
 
-.. Führen Sie die Zeigefinger durch die Fingerlöcher der Verriegelungsmechanismen auf beiden Seiten des NSM-Moduls.
+.. Führen Sie Ihre Zeigefinger durch die Fingerlöcher der Verriegelungsmechanismen auf beiden Seiten des NSM.
 +
 
-NOTE: Wenn Sie das untere NSM-Modul einsetzen und die untere Schiene den Zugriff auf die Verriegelungen behindert, setzen Sie die Zeigefinger durch die Fingerlöcher von innen (durch Überqueren der Arme).
+NOTE: Wenn Sie den unteren NSM einsetzen und die untere Schiene den Zugang zu den Verriegelungsmechanismen behindert, legen Sie Ihre Zeigefinger von innen durch die Fingerlöcher (durch Überdrücken der Arme).
 
 .. Drücken Sie bei den Daumen nach unten, und halten Sie die orangefarbenen Laschen über den Verriegelungsmechanismus.
 .. Drücken Sie vorsichtig nach vorne, um die Verriegelungen über den Anschlag zu bringen.
 .. Lösen Sie Ihre Daumen von den Spitzen der Verriegelungen, und drücken Sie dann weiter, bis die Verriegelungen einrasten.
 +
-Das NSM-Modul sollte vollständig in das Regal eingeführt und mit den Rändern des Regals bündig eingespült werden.
+Der NSM sollte vollständig in das Regal eingeführt und bündig mit den Kanten des Regals ausgeführt werden.
 
 
 
-. Schließen Sie die Verkabelung wieder an das NSM-Modul an:
+. Schließen Sie die Verkabelung wieder an den NSM an:
 +
-.. Schließen Sie die Speicherkabel wieder an die beiden NSM-Modulports an.
+.. Schließen Sie die Speicherverkabelung wieder an die beiden NSM-Ports an.
 +
 Die Kabel werden mit der Zuglasche des Steckers nach oben eingesetzt. Wenn ein Kabel richtig eingesetzt wird, klickt es an seine Stelle.
 
@@ -181,20 +190,315 @@ Die Kabel werden mit der Zuglasche des Steckers nach oben eingesetzt. Wenn ein K
 Bei ordnungsgemäßer Funktion leuchtet die zweifarbige LED des Netzteils grün.
 
 +
-Außerdem leuchten die beiden NSM-Modulports LNK (grün) LEDs auf. Wenn eine LNK-LED nicht leuchtet, setzen Sie das Kabel wieder ein.
+Außerdem leuchten beide NSM-Port-LNK-LEDs (grün) auf. Wenn eine LNK-LED nicht leuchtet, setzen Sie das Kabel wieder ein.
 
 
 
 . Vergewissern Sie sich, dass die Warnungs-LED (gelb) auf der Anzeige des Shelf-Bedieners nicht mehr leuchtet.
 +
-Nach dem Neustart des NSM-Moduls schaltet sich die LED für die Bedieneranzeige aus. Dies kann drei bis fünf Minuten dauern.
+Nach dem Neustart des NSM erlischt die Warnungs-LED des Bedienfelds. Dies kann drei bis fünf Minuten dauern.
 
-. Überprüfen Sie, ob das NSM-Modul ordnungsgemäß verkabelt ist, indem Sie Active IQ Config Advisor ausführen.
+. Überprüfen Sie, ob der NSM ordnungsgemäß verkabelt ist, indem Sie Active IQ Config Advisor ausführen.
 +
 Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
 
 +
 https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"^]
 
-. Stellen Sie sicher, dass beide NSM-Module im Shelf dieselbe Version von Firmware ausführen: Version 0200 oder höher.
+. Stellen Sie sicher, dass auf beiden NSMs im Shelf die gleiche Firmware-Version ausgeführt wird: Version 0200 oder höher.
 
+
+--
+.NSM100B-Module
+--
+.Schritte
+. Richtig gemahlen.
+. Identifizieren Sie die beeinträchtigte NSM physisch.
++
+Das System protokolliert eine Warnmeldung an die Systemkonsole, die angibt, welches Modul beeinträchtigt ist. Außerdem leuchten die Warnungs-LED (gelb) auf der Bedieneranzeige des Fahrregals und das beeinträchtigte Modul.
+
+. Trennen Sie die Verkabelung vom NSM für beeinträchtigte Verbindung:
++
+.. Ziehen Sie das Netzkabel vom Netzteil ab, indem Sie den Netzkabelhalter öffnen, wenn es sich um ein Netzteil handelt, oder die beiden Daumen-Schrauben lösen, wenn es sich um ein Gleichstromnetzteil handelt, und ziehen Sie dann das Netzkabel vom Netzteil ab.
++
+Die Netzteile haben keinen Netzschalter.
+
+.. Trennen Sie die Speicherkabel von den NSM-Ports.
++
+Notieren Sie sich die NSM-Ports, an die jedes Kabel angeschlossen ist. Schließen Sie die Kabel später in diesem Verfahren wieder an dieselben Ports am Ersatz-NSM an.
+
+
+
+. Entfernen Sie die NSM:
++
+image::../media/drw_g_and_t_handles_remove_ieops-1837.svg[Entfernen Sie den NSM.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Drücken Sie an beiden Enden des NSM die vertikalen Verriegelungslaschen nach außen, um die Griffe zu lösen.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Legende Nummer 2]
+ a| 
+** Ziehen Sie die Griffe zu sich, um den NSM aus der Mittelplatine zu lösen.
++
+Beim Ziehen ziehen die Griffe aus dem Regal heraus. Wenn du Widerstand spürst, ziehe weiter.
+
+** Schieben Sie den NSM aus dem Regal und legen Sie ihn auf eine Ebene, stabile Oberfläche.
++
+Stellen Sie sicher, dass Sie die Unterseite des NSM stützen, während Sie ihn aus dem Regal ziehen.
+
+
+
+
+
+ a| 
+image::../media/icon_round_3.png[Legende Nummer 3]
+ a| 
+Drehen Sie die Griffe aufrecht (neben den Laschen), um sie aus dem Weg zu bewegen.
+
+|===
+. Packen Sie den neuen NSM aus, und stellen Sie ihn auf eine Ebene Fläche in der Nähe des außer Betrieb genommenen NSM.
+. Öffnen Sie die Abdeckungen beider NSMs, indem Sie die Flügelschraube an jeder Abdeckung lösen.
+. Bringen Sie die DIMMs vom außer Betrieb genommenen NSM zum Ersatz zum Ersatz-NSM:
++
+.. Entfernen Sie das DIMM-Modul aus dem NSM für beeinträchtigte Elemente:
++
+image::../media/drw_t_dimm_ieops-1978.svg[Entfernen Sie die DIMMs.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+DIMM-Steckplatznummerierung und -Positionen.
+
+Der NSM enthält DIMMs in den Steckplätzen 1 und 3 und DIMM-Leereinschübe in den Steckplätzen 2 und 4.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Legende Nummer 2]
+ a| 
+*** Beachten Sie die Ausrichtung des DIMM im Sockel, sodass Sie es in der gleichen Ausrichtung in das Ersatz-DIMM einsetzen können.
+*** Werfen Sie das fehlerhafte DIMM aus, indem Sie die beiden DIMM-Auswurfhalterungen an beiden Enden des DIMM-Steckplatzes langsam auseinander drücken.
+
+
+
+IMPORTANT: Halten Sie das DIMM vorsichtig an den Ecken oder Kanten, um Druck auf die Komponenten der DIMM-Platine zu vermeiden.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Legende Nummer 3]
+ a| 
+Heben Sie das DIMM-Modul nach oben und aus dem Steckplatz heraus.
+
+Die Auswerferlaschen bleiben in der geöffneten Position.
+
+|===
+.. Installieren Sie das DIMM-Modul im Ersatz-NSM:
++
+... Halten Sie das DIMM an den Ecken, und setzen Sie das DIMM-Modul anschließend in einen Steckplatz ein.
++
+Die Kerbe an der Unterseite des DIMM, unter den Stiften, sollte sich mit der Lasche im Steckplatz.
+
++
+Wenn das DIMM richtig eingesetzt wird, sollte es sich leicht einpassen, aber fest in den Steckplatz einsetzen. Falls nicht, setzen Sie das DIMM erneut ein.
+
+... Drücken Sie vorsichtig nach unten, aber fest auf der Oberseite des DIMM, bis die Auswurfklammern über den Kerben an beiden Enden des DIMM einrasten.
+... Wiederholen Sie den Vorgang für das andere DIMM.
+
+
+
+
+. Bewegen Sie alle Lüfter vom NSM für beeinträchtigte Störungen zum NSM für Ersatz:
++
+image::../media/drw_t_fan_replace_ieops-1979.svg[Entfernen Sie den defekten Lüfter.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Entfernen Sie den defekten Lüfter, indem Sie die Seiten an den blauen Berührungspunkten fest fassen und ihn dann gerade nach oben aus dem Sockel ziehen.
+
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 2]
+ a| 
+Setzen Sie den Ersatzlüfter in die Führungen ein, und drücken Sie ihn nach unten, bis der Lüfteranschluss vollständig in der Buchse sitzt.
+
+|===
+. Verschieben Sie das Startmedium in den Ersatz-NSM:
++
+.. Entfernen Sie das Startmedium aus dem NSM für beeinträchtigte Störungen:
++
+image::../media/drw_t_boot_media_replace_ieops-1977.svg[Startmedien entfernen.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Speicherort des Startmediums
+
+
+
+ a| 
+image::../media/icon_round_2.png[Legende Nummer 2]
+ a| 
+Drücken Sie auf die blaue Lasche, um das rechte Ende des Startmediums freizugeben.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Legende Nummer 3]
+ a| 
+Heben Sie das rechte Ende des Kofferraummediums in einem leichten Winkel an, um einen guten Halt an den Seiten des Kofferraummediums zu erhalten.
+
+
+
+ a| 
+image::../media/icon_round_4.png[Legende Nummer 4]
+ a| 
+Ziehen Sie das linke Ende des Trägermediums vorsichtig aus dem Sockel.
+
+|===
+.. Installieren Sie das Startmedium im Ersatz-NSM:
++
+... Richten Sie die Kanten der Manschettenmedien am Sockelgehäuse im Ersatz-NSM aus, und drücken Sie sie dann vorsichtig in den Sockel.
+... Drehen Sie das Startmedium nach unten in Richtung Verriegelungstaste.
+... Drücken Sie die Verriegelungstaste, drehen Sie die Manschettenmedien ganz nach unten, und lassen Sie dann die Verriegelungstaste los.
+
+
+
+
+. Bringen Sie das E/A-Modul vom NSM für beeinträchtigte Störungen in den NSM-Ersatz.
++
+.. Entfernen Sie das E/A-Modul vom beeinträchtigten NSM:
++
+image::../media/drw_t_io_module_replace_ieops-1980.svg[Ersetzen Sie das E/A-Modul.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Drehen Sie die Flügelschraube des E/A-Moduls gegen den Uhrzeigersinn, um sie zu lösen.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Legende Nummer 2]
+ a| 
+Ziehen Sie das E/A-Modul mithilfe der Anschlusslasche links und der Rändelschraube aus dem NSM.
+
+|===
+.. Installieren Sie das E/A-Modul im Ersatz-NSM:
++
+... Richten Sie das E/A-Modul an den Kanten des Steckplatzes im Ersatz-NSM aus.
+... Drücken Sie das E/A-Modul vorsichtig bis zum Steckplatz, und achten Sie darauf, dass das Modul ordnungsgemäß in den Anschluss eingesetzt wird.
++
+Sie können die Lasche auf der linken Seite und die Flügelschraube verwenden, um das E/A-Modul einzudrücken.
+
+
+
+
+
+. Schließen Sie die Abdeckung jedes NSM, und ziehen Sie dann jede Flügelschraube fest.
+. Stellen Sie das Netzteil vom NSM für beeinträchtigte Störungen in den NSM für den Ersatz ein:
++
+.. Drehen Sie den Griff nach oben in die horizontale Position, und fassen Sie ihn dann an.
+.. Drücken Sie mit dem Daumen die blaue Lasche (AC-Netzteil) oder die Terracotta-Lasche (DC-Netzteil), um den Verriegelungsmechanismus zu lösen.
+.. Ziehen Sie das Netzteil aus dem NSM, während Sie es mit der anderen Hand tragen.
+.. Stützen Sie die Kanten des Netzteils mit beiden Händen auf die Öffnung im Ersatz-NSM, und richten Sie sie aus.
+.. Schieben Sie das Netzteil vorsichtig in den NSM, bis der Verriegelungsmechanismus einrastet.
++
+
+NOTE: Verwenden Sie keine übermäßige Kraft, oder Sie können den internen Stecker beschädigen.
+
+.. Drehen Sie den Griff nach unten, so dass er sich nicht im normalen Betrieb befindet.
+
+
+. Setzen Sie den NSM in das Regal ein:
++
+image::../media/drw_g_and_t_handles_reinstall_ieops-1838.svg[Ersetzen Sie die NSM.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Wenn Sie die NSM-Griffe senkrecht (neben den Laschen) gedreht haben, um sie während der Wartung des NSM aus dem Weg zu bewegen, drehen Sie sie nach unten in die horizontale Position.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Legende Nummer 2]
+ a| 
+Richten Sie die Rückseite des NSM mit der Öffnung im Regal aus, und drücken Sie den NSM vorsichtig mit den Griffen, bis er vollständig sitzt.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Legende Nummer 3]
+ a| 
+Drehen Sie die Griffe in die aufrechte Position, und fixieren Sie sie mit den Laschen.
+
+|===
+. Schließen Sie die Verkabelung wieder an den NSM an:
++
+.. Schließen Sie die Speicherverkabelung wieder an die beiden NSM-Ports an.
++
+Die Kabel werden mit der Zuglasche des Steckers nach oben eingesetzt. Wenn ein Kabel richtig eingesetzt wird, klickt es an seine Stelle.
+
+.. Schließen Sie das Netzkabel wieder an das Netzteil an, und befestigen Sie das Netzkabel mit der Netzkabelhalterung, wenn es sich um ein Netzteil handelt, oder ziehen Sie die beiden Flügelschrauben fest, wenn es sich um ein Gleichstromnetzteil handelt.
++
+Bei ordnungsgemäßer Funktion leuchtet die zweifarbige LED des Netzteils grün.
+
++
+Außerdem leuchten beide NSM-Port-LNK-LEDs (grün) auf. Wenn eine LNK-LED nicht leuchtet, setzen Sie das Kabel wieder ein.
+
+
+
+. Vergewissern Sie sich, dass die Warnungs-LED (gelb) auf der Anzeige des Shelf-Bedieners nicht mehr leuchtet.
++
+Nach dem Neustart des NSM erlischt die Warnungs-LED des Bedienfelds. Dies kann drei bis fünf Minuten dauern.
+
+. Überprüfen Sie, ob der NSM ordnungsgemäß verkabelt ist, indem Sie Active IQ Config Advisor ausführen.
++
+Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
+
++
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"^]
+
+. Stellen Sie sicher, dass auf beiden NSMs im Shelf die gleiche Firmware-Version ausgeführt wird: Version 0300 oder höher.
+
+
+--
+====

@@ -1,0 +1,22 @@
+---
+permalink: c80/chassis-replace-requirements.html 
+sidebar: sidebar 
+keywords: c80, replace the chassis 
+summary: Sie ersetzen ein Gehäuse mit eingeschränkter Systemfunktion durch das neue Gehäuse desselben Modells wie das Gehäuse mit eingeschränkter Systemfunktion. 
+---
+= Voraussetzungen für den Austausch des Gehäuses – AFF C80
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Chassis ist das physische Gehäuse, in dem alle Controller-Komponenten wie Controller-/CPU-Einheit, Stromversorgung und I/O-Vorgänge untergebracht sind
+
+Bevor Sie das Gehäuse austauschen, müssen Sie die folgenden Anforderungen überprüfen.
+
+* Stellen Sie sicher, dass alle anderen Komponenten des Systems ordnungsgemäß funktionieren. Wenden Sie sich andernfalls an den technischen Support.
+* Sie können das Verfahren zum Austausch des Gehäuses für alle Versionen von ONTAP verwenden, die von Ihrem System unterstützt werden.
+* Es wird angenommen, dass Sie die Blende, die NVMe-Laufwerke und die Controller-Module auf das neue Gehäuse verschieben, und dass das Ersatzgehäuse eine neue Komponente von NetApp ist.
+* *Das Chassis-Austauschverfahren ist störend.* Für ein Cluster mit zwei Nodes tritt ein vollständiger Service-Ausfall und ein teilweiser Ausfall in einem Cluster mit mehreren Nodes auf.
+

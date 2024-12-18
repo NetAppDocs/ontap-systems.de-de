@@ -1,0 +1,162 @@
+---
+permalink: a20-30-50/install-power-hardware.html 
+sidebar: sidebar 
+keywords: aff a20, aff a30, aff a50, power controllers 
+summary: Schließen Sie die Netzkabel an und schalten Sie die Shelfs und Controller ein. 
+---
+= Schalten Sie das Speichersystem ein – AFF A20, AFF A30 und AFF A50
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nachdem Sie die Controller mit dem Netzwerk und den Shelfs im AFF Storage-System A20, AFF A30 oder AFF A50 verkabeln, schalten Sie die Shelfs und Controller ein.
+
+
+
+== Schritt 1: Schalten Sie das Shelf ein und weisen Sie die Shelf-ID zu
+
+Jedes Shelf wird durch eine eindeutige Shelf-ID unterschieden. Diese ID stellt sicher, dass das Shelf innerhalb Ihrer Storage-System-Einrichtung unterscheidbar ist.
+
+.Über diese Aufgabe
+* Gültige Shelf-ID: 01 bis 99.
++
+Bei internen, in die Controller integrierten Shelfs (Storage) wird Ihnen eine feste Shelf-ID mit der Nummer 00 zugewiesen.
+
+* Sie müssen ein Shelf aus- und wieder einschalten (trennen Sie beide Netzkabel, warten Sie die entsprechende Zeit und schließen Sie sie dann wieder an), damit die Shelf-ID wirksam wird.
+
+
+.Schritte
+. Schalten Sie das Shelf ein, indem Sie die Netzkabel zuerst an das Shelf anschließen, sie mit der Netzkabelhalterung sichern und dann die Netzkabel an die Stromversorgung an verschiedenen Stromkreisen anschließen.
++
+Das Shelf wird eingeschaltet und startet automatisch, wenn es an die Stromversorgung angeschlossen ist.
+
+. Entfernen Sie die linke Endkappe, um auf die Shelf-ID-Taste hinter der Frontplatte zuzugreifen.
++
+image::../media/drw_a900_oie_change_ns224_shelf_ID_ieops-836.svg[NS224 Shelf-ID ändern]
+
++
+[cols="20%,80%"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Einlegeboden-Endkappe
+
+
+
+ a| 
+image::../media/icon_round_2.png[[Legende Nummer 2]
+ a| 
+Ablagefaceplate
+
+
+
+ a| 
+image::../media/icon_round_3.png[[Legende Nummer 3]
+ a| 
+Shelf-ID-Nummer
+
+
+
+ a| 
+image::../media/icon_round_4.png[[Legende Nummer 4]
+ a| 
+Shelf-ID-Taste
+
+|===
+. Ändern Sie die erste Nummer der Shelf-ID:
++
+.. Führen Sie das gerade gebogene Ende eines Büroklammer oder eines Kugelschreibers mit schmaler Spitze in das kleine Loch ein, um die Shelf-ID-Taste zu drücken.
+.. Halten Sie die erste Shelf-ID-Taste gedrückt, bis die erste Ziffer auf der digitalen Anzeige blinkt, und lassen Sie dann die Taste los.
++
+Es kann bis zu 15 Sekunden dauern, bis die Ziffer blinkt. Dadurch wird der Programmiermodus für die Shelf-ID aktiviert.
+
++
+
+NOTE: Wenn das Blinken der ID länger als 15 Sekunden dauert, halten Sie die Shelf-ID-Taste erneut gedrückt und vergewissern Sie sich, dass sie vollständig gedrückt wird.
+
+.. Drücken Sie die Shelf-ID-Taste und lassen Sie sie los, um die Nummer vorzurücken, bis Sie die gewünschte Zahl von 0 auf 9 erreichen.
++
+Jede Presse- und Freigabedauer kann eine Sekunde lang sein.
+
++
+Die erste Ziffer blinkt weiterhin.
+
+
+
+. Ändern Sie die zweite Nummer der Shelf-ID:
++
+.. Halten Sie die Taste gedrückt, bis die zweite Ziffer auf der digitalen Anzeige blinkt.
++
+Es kann bis zu drei Sekunden dauern, bis die Ziffer blinkt.
+
++
+Die erste Ziffer auf dem digitalen Display hört auf zu blinken.
+
+.. Drücken Sie die Shelf-ID-Taste und lassen Sie sie los, um die Nummer vorzurücken, bis Sie die gewünschte Zahl von 0 auf 9 erreichen.
++
+Die zweite Ziffer blinkt weiterhin.
+
+
+
+. Sperren Sie die gewünschte Ziffer und beenden Sie den Programmiermodus, indem Sie die Shelf-ID-Taste gedrückt halten, bis die zweite Ziffer nicht mehr blinkt.
++
+Es kann bis zu drei Sekunden dauern, bis die Ziffer nicht mehr blinkt.
+
++
+Beide Ziffern auf der digitalen Anzeige beginnen zu blinken, und die gelbe LED beginnt nach ca. fünf Sekunden zu leuchten, sodass Sie darauf informiert werden, dass die ausstehende Shelf-ID noch nicht wirksam wurde.
+
+. Schalten Sie das Shelf mindestens 10 Sekunden aus und wieder ein, damit die Shelf-ID übernommen wird.
++
+.. Ziehen Sie das Netzkabel aus beiden Netzteilen auf dem Shelf ab.
+.. Warten Sie 10 Sekunden.
+.. Schließen Sie die Netzkabel wieder an die Shelf-Netzteile an, um den aus- und Wiedereinschalten zu beenden.
++
+Sobald das Netzkabel angeschlossen ist, wird ein Netzteil eingeschaltet. Die zweifarbige LED sollte grün leuchten.
+
+
+
+. Die linke Endkappe austauschen.
+
+
+
+
+== Schritt 2: Schalten Sie die Controller ein
+
+Nachdem Sie die Shelfs eingeschaltet und ihnen eindeutige IDs zugewiesen haben, fahren Sie die Storage-Controller ein.
+
+.Schritte
+. Schließen Sie den Laptop an den seriellen Konsolenport an. Auf diese Weise können Sie die Boot-Sequenz überwachen, wenn die Controller eingeschaltet werden.
++
+.. Stellen Sie den seriellen Konsolenport am Laptop auf 115,200 Baud mit N-8-1 ein.
++
+
+NOTE: Anweisungen zum Konfigurieren des seriellen Konsolenports finden Sie in der Online-Hilfe Ihres Laptops.
+
+.. Schließen Sie mithilfe des im Lieferumfang des Storage-Systems enthaltenen Konsolenkabels ein Ende des Konsolenkabels an den Laptop und das andere Ende an den seriellen Konsolenport an Controller A an
+.. Schließen Sie den Laptop an den Switch im Management-Subnetz an.
++
+image::../media/drw_g_isi_console_serial_port_cabling_ieops-1882.svg[Konsolenverbindungen]
+
+
+
+. Weisen Sie dem Laptop eine TCP/IP-Adresse zu, die sich im Management-Subnetz befindet.
+. Schließen Sie die Stromkabel an die Controller-Netzteile an, und schließen Sie sie dann an Stromquellen auf verschiedenen Stromkreisen an.
++
+image::../media/drw_psu_layout_1_ieops-1886.svg[Stromanschlussdiagramm für das Speichersystem A20, A30 oder A50]
+
++
+** Das System beginnt zu booten. Das erste Booten kann bis zu acht Minuten dauern.
+** Die LEDs blinken auf, und die Lüfter starten, was darauf hinweist, dass die Controller eingeschaltet sind.
+** Die Lüfter sind beim ersten Starten möglicherweise sehr laut. Das Lüftergeräusch während des Startvorgangs ist normal.
+
+
+. Sichern Sie die Netzkabel mit dem Sicherungsgerät an jedem Netzteil.
+
+
+.Was kommt als Nächstes?
+Nachdem Sie das Storage-System eingeschaltet haben, können Sie link:install-complete.html["Schließen Sie die System-Einrichtung ab"].

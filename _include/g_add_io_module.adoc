@@ -1,0 +1,268 @@
+= Option 1: Hinzufügen von I/O-Modulen zu einem Speichersystem mit verfügbaren Steckplätzen
+:allow-uri-read: 
+
+
+Sie können dem Speichersystem I/O-Module hinzufügen, indem Sie sie entweder zu verfügbaren Steckplätzen hinzufügen oder indem Sie I/O-Module durch neue in einem vollständig bestückten Speichersystem ersetzen.
+
+.Bevor Sie beginnen
+* Überprüfen Sie die https://hwu.netapp.com/["NetApp Hardware Universe"^] und stellen Sie sicher, dass das neue I/O-Modul mit Ihrem Storage-System und Ihrer Version von ONTAP kompatibel ist.
+* Wenn mehrere Steckplätze verfügbar sind, überprüfen Sie die Steckplatzprioritäten in, und verwenden Sie den besten verfügbaren Steckplatz https://hwu.netapp.com/["NetApp Hardware Universe"^] für Ihr I/O-Modul.
+* Alle anderen Komponenten des Speichersystems müssen ordnungsgemäß funktionieren. Andernfalls müssen Sie sich an Sie wenden, bevor Sie mit https://mysupport.netapp.com/site/global/dashboard["NetApp Support"] diesem Verfahren fortfahren.
+
+
+.Über diese Aufgabe
+* Wenn Sie I/O-Module hinzufügen, fügen Sie jedem Controller denselben Modultyp hinzu. Bei diesem Vorgang können Sie sie einzeln durch Wiederholung der Schritte hinzufügen.
+* Der Controller, in dem Sie ein I/O-Modul hinzufügen, wird als _Impaired_-Controller bezeichnet.
+* Bei Bedarf können Sie die LEDs des Speichersystems (blau) einschalten, um das betroffene Speichersystem physisch zu lokalisieren. Melden Sie sich über SSH bei der BMC an und geben Sie den Befehl ein `system location-led _on_`.
++
+Ein Speichersystem verfügt über drei Standort-LEDs: Eine auf dem Bedienfeld und eine auf jedem Controller. Die Standort-LEDs leuchten 30 Minuten lang.
+
++
+Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led _off_`. Wenn Sie sich nicht sicher sind, ob die LEDs leuchten oder nicht, können Sie ihren Status überprüfen, indem Sie den Befehl eingeben `system location-led show`.
+
+
+
+
+
+== Option 1: Hinzufügen von I/O-Modulen zu einem Speichersystem mit verfügbaren Steckplätzen
+
+Sie können ein I/O-Modul zu einem verfügbaren Steckplatz in jedem Controller hinzufügen.
+
+
+
+=== Schritt 1: Schalten Sie den beeinträchtigten Regler aus
+
+Schalten Sie den außer Betrieb genommenen Controller aus oder übernehmen Sie ihn.
+
+Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
+
+.Bevor Sie beginnen
+Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE anzeigt, um die Berechtigung und den Zustand zu erhalten, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^].
+
+.Schritte
+. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf eines AutoSupport-Meldungsbefehls: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+Mit dem folgenden AutoSupport-Befehl wird die automatische Erstellung von Fällen zwei Stunden lang unterdrückt: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deaktivieren Sie das automatische Giveback von der Konsole des gesunden Controllers: `storage failover modify –node local -auto-giveback false`
+. Nehmen Sie den beeinträchtigten Controller zur LOADER-Eingabeaufforderung:
++
+[cols="1,2"]
+|===
+| Wenn der eingeschränkte Controller angezeigt wird... | Dann... 
+
+
+ a| 
+Die LOADER-Eingabeaufforderung
+ a| 
+Fahren Sie mit dem nächsten Schritt fort.
+
+
+
+ a| 
+`Waiting for giveback...`
+ a| 
+Drücken Sie Strg-C, und antworten Sie dann `y` Wenn Sie dazu aufgefordert werden.
+
+
+
+ a| 
+Eingabeaufforderung des Systems oder Passwort (Systempasswort eingeben)
+ a| 
+Halten Sie den Controller für den beeinträchtigten Betrieb an oder übernehmen Sie ihn vom Controller für den ordnungsgemäßen Betrieb: `storage failover takeover -ofnode _impaired_node_name_`
+
+Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drücken Sie Strg-C, und antworten Sie dann `y`.
+
+|===
+
+
+
+
+=== Schritt 2: Fügen Sie E/A-Module zu verfügbaren Steckplätzen hinzu
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Entfernen Sie auf dem außer Betrieb genommenen Controller das E/A-Blindmodul aus dem Zielsteckplatz.
++
+Nicht verwendete I/O-Steckplätze sollten mit einem Blindmodul ausgestattet sein, um mögliche thermische Probleme zu vermeiden.
+
++
+image::../media/drw_g_io_blanking_module_replace_ieops-1901.svg[Entfernen Sie ein E/A-Blindmodul]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Legende Nummer 1"]
+ a| 
+Drehen Sie am E/A-Blindmodul die Flügelschraube gegen den Uhrzeigersinn, um sie zu lösen.
+
+
+
+ a| 
+image:../media/icon_round_2.png["Legende Nummer 2"]
+ a| 
+Ziehen Sie das E/A-Blindmodul mit der Lasche links und der Rändelschraube aus dem Controller.
+
+|===
+. Installieren Sie das neue E/A-Modul:
++
+.. Richten Sie das E/A-Modul an den Kanten der Öffnung des Controller-Steckplatzes aus.
+.. Drücken Sie das E/A-Modul vorsichtig bis zum Steckplatz, und achten Sie darauf, dass das Modul ordnungsgemäß in den Anschluss eingesetzt wird.
++
+Sie können die Lasche auf der linken Seite und die Flügelschraube verwenden, um das E/A-Modul einzudrücken.
+
+.. Drehen Sie die Rändelschraube im Uhrzeigersinn, um sie festzuziehen.
+
+
+. Verkabeln Sie das E/A-Modul mit den vorgesehenen Geräten.
++
+Wenn Sie ein Speicher-I/O-Modul installiert haben, installieren und verkabeln Sie die NS224-Shelfs, wie unter beschrieben https://docs.netapp.com/us-en/ontap-systems/ns224/hot-add-shelf-overview.html["Hot-Add-Workflow"^].
+
+. Starten Sie den beeinträchtigten Controller über die Loader-Eingabeaufforderung neu: `bye`
++
+Dadurch werden die PCIe-Geräte und andere Komponenten neu initialisiert und der Knoten neu gestartet.
+
+. Den beeinträchtigten Controller vom Partner-Controller zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`
+. Wiederholen Sie diese Schritte, um dem anderen Controller ein I/O-Modul hinzuzufügen.
+. Automatisches Giveback von der Konsole des funktionstüchtigen Controllers wiederherstellen: `storage failover modify -node local -auto-giveback _true_`
+. Wenn AutoSupport aktiviert ist, stellen Sie die automatische Fallerstellung wieder her (heben Sie die Unterdrückung auf): `system node autosupport invoke -node * -type all -message MAINT=END`
+
+
+
+
+== Option 2: Fügen Sie I/O-Module in einem Speichersystem mit nicht verfügbaren Steckplätzen hinzu
+
+Sie können einem vollständig bestückten Speichersystem I/O-Module hinzufügen, indem Sie vorhandene I/O-Module entfernen und durch verschiedene I/O-Module ersetzen.
+
+. Wenn Sie sind:
++
+[cols="1,2"]
+|===
+| Ersetzen einer... | Dann... 
+
+
+ a| 
+NIC-I/O-Modul mit der gleichen Anzahl von Ports
+ a| 
+Die LIFs werden automatisch migriert, wenn der Controller heruntergefahren wird.
+
+
+
+ a| 
+NIC-I/O-Modul mit weniger Ports
+ a| 
+Die betroffenen LIFs werden permanent einem anderen Home-Port zugewiesen. Weitere Informationen zum dauerhaften Verschieben der LIFs mit System Manager finden Sie unter https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html["Migrieren eines LIF"^] .
+
+
+
+ a| 
+NIC-I/O-Modul mit Speicher-I/O-Modul
+ a| 
+Verwenden Sie System Manager, um die LIFs dauerhaft zu verschiedenen Home Ports zu migrieren, wie in beschrieben https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html["Migrieren eines LIF"^].
+
+|===
+
+
+
+
+=== Schritt 1: Schalten Sie den beeinträchtigten Regler aus
+
+Schalten Sie den außer Betrieb genommenen Controller aus oder übernehmen Sie ihn.
+
+Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
+
+.Bevor Sie beginnen
+Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE anzeigt, um die Berechtigung und den Zustand zu erhalten, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^].
+
+.Schritte
+. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf eines AutoSupport-Meldungsbefehls: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+Mit dem folgenden AutoSupport-Befehl wird die automatische Erstellung von Fällen zwei Stunden lang unterdrückt: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deaktivieren Sie das automatische Giveback von der Konsole des gesunden Controllers: `storage failover modify –node local -auto-giveback false`
+. Nehmen Sie den beeinträchtigten Controller zur LOADER-Eingabeaufforderung:
++
+[cols="1,2"]
+|===
+| Wenn der eingeschränkte Controller angezeigt wird... | Dann... 
+
+
+ a| 
+Die LOADER-Eingabeaufforderung
+ a| 
+Fahren Sie mit dem nächsten Schritt fort.
+
+
+
+ a| 
+`Waiting for giveback...`
+ a| 
+Drücken Sie Strg-C, und antworten Sie dann `y` Wenn Sie dazu aufgefordert werden.
+
+
+
+ a| 
+Eingabeaufforderung des Systems oder Passwort (Systempasswort eingeben)
+ a| 
+Halten Sie den Controller für den beeinträchtigten Betrieb an oder übernehmen Sie ihn vom Controller für den ordnungsgemäßen Betrieb: `storage failover takeover -ofnode _impaired_node_name_`
+
+Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drücken Sie Strg-C, und antworten Sie dann `y`.
+
+|===
+
+
+
+
+=== Schritt 2: E/A-Module zu nicht verfügbaren Steckplätzen hinzufügen
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Ziehen Sie am Controller für beeinträchtigte Störungen alle Kabel des Ziel-E/A-Moduls ab.
+. Entfernen Sie das Ziel-I/O-Modul vom Controller:
++
+image::../media/drw_g_io_module_replace_ieops-1900.svg[Entfernen Sie ein E/A-Modul]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Legende Nummer 1"]
+ a| 
+Drehen Sie die Flügelschraube des E/A-Moduls gegen den Uhrzeigersinn, um sie zu lösen.
+
+
+
+ a| 
+image:../media/icon_round_2.png["Legende Nummer 2"]
+ a| 
+Ziehen Sie das E/A-Modul mithilfe der Anschlusslasche links und der Rändelschraube aus dem Controller.
+
+|===
+. Installieren Sie das neue E/A-Modul im Zielsteckplatz:
++
+.. Richten Sie das E/A-Modul an den Kanten des Schlitzes aus.
+.. Drücken Sie das E/A-Modul vorsichtig bis zum Steckplatz, und achten Sie darauf, dass das Modul ordnungsgemäß in den Anschluss eingesetzt wird.
++
+Sie können die Lasche auf der linken Seite und die Flügelschraube verwenden, um das E/A-Modul einzudrücken.
+
+.. Drehen Sie die Rändelschraube im Uhrzeigersinn, um sie festzuziehen.
+
+
+. Verkabeln Sie das E/A-Modul mit den vorgesehenen Geräten.
++
+Wenn Sie ein Speicher-I/O-Modul installiert haben, installieren und verkabeln Sie die NS224-Shelfs, wie unter beschrieben https://docs.netapp.com/us-en/ontap-systems/ns224/hot-add-shelf-overview.html["Hot-Add-Workflow"^].
+
+. Wiederholen Sie die Schritte Entfernen und Installieren des E/A-Moduls, um zusätzliche E/A-Module im Controller hinzuzufügen.
+. Neustart des außer Betrieb genommenen Controllers: `bye`
++
+Dadurch werden die PCIe-Geräte und andere Komponenten neu initialisiert und der Knoten neu gestartet.
+
+. Den beeinträchtigten Controller vom Partner-Controller zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`
+. Automatisches Giveback von der Konsole des funktionstüchtigen Controllers wiederherstellen: `storage failover modify -node local -auto-giveback _true_`
+. Wenn AutoSupport aktiviert ist, stellen Sie die automatische Case-Erstellung wieder her (heben Sie die Unterdrückung auf): System Node AutoSupport Invoke -Node * -type all -message MAINT=END
+. Wenn Sie ein NIC-Modul installiert haben, geben Sie den Verwendungsmodus für jeden Port als _Network_ an: `storage port modify -node *_<node name>_ -port *_<port name>_ -mode network`
+. Wiederholen Sie diese Schritte für den anderen Controller.
+

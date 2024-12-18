@@ -1,7 +1,7 @@
 ---
 permalink: ns224/service-monitor-leds.html 
 sidebar: sidebar 
-keywords: monitor, health, drive, shelf, location, status, condition, led, component, operator, display, panel, nsm, power, supply, drive, monitor drive shelf leds, operator display panel leds, nsm module leds, power supply leds, drive leds 
+keywords: monitor, health, drive, shelf, location, status, condition, led, component, operator, display, panel, nsm, power, supply, drive, monitor drive shelf leds, operator display panel leds, nsm leds, power supply leds, drive leds 
 summary: Sie können den Zustand Ihres Festplatten-Shelf überwachen, indem Sie Informationen über den Speicherort und die Statusbedingungen der LEDs an den Festplatten-Shelf-Komponenten erhalten. 
 ---
 = Überwachen Sie die Festplatten-Shelf-LEDs – NS224-Shelfs
@@ -13,7 +13,7 @@ summary: Sie können den Zustand Ihres Festplatten-Shelf überwachen, indem Sie 
 [role="lead"]
 Sie können den Zustand Ihres Festplatten-Shelf überwachen, indem Sie Informationen über den Speicherort und die Statusbedingungen der LEDs an den Festplatten-Shelf-Komponenten erhalten.
 
-* Die Standort-LEDs (blau) auf dem Bedienfeld des Shelfs (ODP) und beiden NSM-Modulen können aktiviert werden, um die physische Lokalisierung des zu wartende Shelf zu unterstützen: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
+* Die Standort-LEDs (blau) auf dem Bedienfeld des Shelfs (ODP) und auf beiden NSMs können aktiviert werden, um die physische Lokalisierung des Shelf zu unterstützen, das gewartet werden muss: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
 +
 Wenn Sie den nicht kennen `_shelf_name_` Führen Sie den aus `storage shelf show` Befehl.
 
@@ -87,12 +87,16 @@ Der Systemadministrator hat diese LED-Funktion aktiviert.
 |===
 
 
-== NSM-Modul-LEDs
+== NSM-LEDs
 
-Die LEDs an einem NSM-Modul zeigen an, ob das Modul normal funktioniert, ob es für I/O-Datenverkehr bereit ist und ob Probleme mit der Hardware auftreten.
+Die LEDs an einem NSM zeigen an, ob das Modul normal funktioniert, ob es für I/O-Datenverkehr bereit ist und ob Probleme mit der Hardware auftreten.
 
-In der folgenden Abbildung und den folgenden Tabellen werden NSM-Modul-LEDs beschrieben, die mit der Funktion eines Moduls und der Funktion der einzelnen NVMe-Ports auf einem Modul verbunden sind.
+In der folgenden Abbildung und den folgenden Tabellen werden NSM-LEDs beschrieben, die mit der Funktion eines Moduls und der Funktion der einzelnen NVMe-Ports auf einem Modul verbunden sind.
 
+[role="tabbed-block"]
+====
+.NSM100-Module
+--
 image::../media/drw_ns224_nsm_leds_IEOPS-1270.svg[NS224 NSM100-Modul-LEDs]
 
 [cols="1,1,2,4"]
@@ -107,7 +111,7 @@ image::../media/drw_sas3_location_icon.svg[LED für die Position des Bedienfelds
  a| 
 Blau
  a| 
-NSM-Modul: Standort
+NSM: Standort
 
 
 
@@ -118,7 +122,7 @@ image::../media/drw_sas_fault_icon.svg[Warnungs-LED des Bedienfelds]
  a| 
 Gelb
  a| 
-NSM-Modul: Achtung
+NSM: Achtung
 
 
 
@@ -143,6 +147,72 @@ Gelb
 NVMe Port/Link: Achtung
 
 |===
+--
+.NSM100B-Module
+--
+image::../media/drw_ns224_nsmb_leds_ieops-2004.svg[NS224 NSM100B-Modul-LEDs]
+
+[cols="1,1,2,4"]
+|===
+| Anruf | LED-Symbol | Farbe | Beschreibung 
+
+
+ a| 
+image:../media/icon_round_1.png["Legende Nummer 1"]
+ a| 
+LNK
+ a| 
+Grün
+ a| 
+NVMe Port/Link: Status
+
+
+
+ a| 
+image:../media/icon_round_2.png["Legende Nummer 2"]
+ a| 
+image::../media/drw_sas_fault_icon.svg[Warnungs-LED des Bedienfelds]
+ a| 
+Gelb
+ a| 
+NVMe Port/Link: Achtung
+
+
+
+ a| 
+image:../media/icon_round_3.png["Legende Nummer 3"]
+ a| 
+image::../media/drw_sas_fault_icon.svg[Warnungs-LED des Bedienfelds]
+ a| 
+Gelb
+ a| 
+E/A-Modul: Status
+
+
+
+ a| 
+image:../media/icon_round_4.png["Legende Nummer 4"]
+ a| 
+image::../media/drw_sas3_location_icon.svg[LED für die Position des Bedienfelds]
+ a| 
+Blau
+ a| 
+NSM: Standort
+
+
+
+ a| 
+image:../media/icon_round_5.png["Legende Nummer 5"]
+ a| 
+image::../media/drw_sas_fault_icon.svg[Warnungs-LED des Bedienfelds]
+ a| 
+Gelb
+ a| 
+NSM: Achtung
+
+|===
+--
+====
 [cols="2,1,1,1"]
 |===
 | Status | NSM-Warnung (gelb) | Anschluss LNK (grün) | Port-Achtung (Gelb) 

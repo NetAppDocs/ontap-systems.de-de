@@ -14,17 +14,17 @@ summary: Sie können ein fehlerhaftes DIMM in einem NS224-Laufwerk-Shelf, das ei
 Sie können ein fehlerhaftes DIMM in einem NS224-Laufwerk-Shelf, das eingeschaltet ist, unterbrechungsfrei austauschen, während I/O-Vorgänge ausgeführt werden.
 
 .Bevor Sie beginnen
-* Das Partner-NSM-Modul des Shelfs muss in Betrieb sein und ordnungsgemäß verkabelt werden, damit das Shelf beim Entfernen des NSM-Moduls mit der fehlerhaften FRU (Ziel-NSM-Modul) die Verbindung aufrecht erhält.
+* Der Partner-NSM des Shelfs muss betriebsbereit sein und ordnungsgemäß verkabelt sein, damit Ihr Shelf weiterhin Konnektivität erhält, wenn Sie den NSM mit der fehlerhaften FRU (Ziel-NSM) entfernen.
 +
 https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"^]
 
-* Alle anderen Komponenten des Systems, einschließlich der anderen drei DIMMs, müssen ordnungsgemäß funktionieren.
+* Alle anderen Komponenten des Systems, einschließlich der anderen drei DIMMs im NSM100-Modul und eines DIMM im NSM100B-Modul, müssen ordnungsgemäß funktionieren.
 
 
 .Über diese Aufgabe
 * Mindestens 70 Sekunden zwischen dem aus- und Einbau des NVMe-Shelf-Moduls (NSM) zulassen.
 +
-So bleibt ONTAP genügend Zeit, um das NSM-Entfernungsereignis zu bearbeiten.
+Dadurch bleibt ONTAP ausreichend Zeit, um das Ereignis zum Entfernen von NSM zu verarbeiten.
 
 * *Best Practice:* die Best Practice besteht darin, aktuelle Versionen der NSM-Firmware (NVMe Shelf Module) und der Laufwerk-Firmware auf dem System zu haben, bevor FRU-Komponenten ersetzt werden.
 +
@@ -44,52 +44,56 @@ Stellen Sie die Firmware nicht auf eine Version zurück, die Ihr Shelf und seine
 Wenn Sie den nicht kennen `_shelf_name_` Führen Sie den aus `storage shelf show` Befehl.
 
 +
-Ein Regal hat drei Positionen-LEDs: Eine auf dem Bedienfeld und eine auf jedem NSM-Modul. Die Standort-LEDs leuchten 30 Minuten lang. Sie können sie ausschalten, indem Sie den gleichen Befehl eingeben, jedoch mit dem `off` Option.
+Ein Regal hat drei Standort-LEDs: Eine auf dem Bedienfeld und eine auf jedem NSM. Die Standort-LEDs leuchten 30 Minuten lang. Sie können sie deaktivieren, indem Sie denselben Befehl eingeben, jedoch die Option verwenden `off`.
 
 * Wenn Sie das ErsatzDIMM auspacken, speichern Sie alle Verpackungsmaterialien für die Verwendung, wenn Sie das fehlerhafte DIMM zurückgeben.
 +
 Wenn Sie die RMA-Nummer oder zusätzliche Hilfe beim Ersatzverfahren benötigen, wenden Sie sich an den technischen Support unter https://mysupport.netapp.com/site/global/dashboard["NetApp Support"^], 888-463-8277 (Nordamerika), 00-800-44-638277 (Europa) oder +800-800-80-800 (Asien/Pazifik).
 
-* Sie können die folgende Animation oder die geschriebenen Schritte verwenden, um ein DIMM zu ersetzen.
-+
+
+
+[role="tabbed-block"]
+====
+.NSM100-Module
+--
+Sie können die folgende Animation oder die geschriebenen Schritte verwenden, um ein DIMM zu ersetzen.
+
 .Ersetzen Sie ein DIMM in einem NS224-Shelf
 video::eef28b10-ed93-4aa7-bfce-aa86002f20a2[panopto]
-
-
 .Schritte
 . Richtig gemahlen.
-. Trennen Sie die Verkabelung vom NSM-Modul, das die FRU enthält, die Sie ersetzen:
+. Trennen Sie die Verkabelung vom NSM, der die FRU enthält, die Sie ersetzen:
 +
 .. Ziehen Sie das Netzkabel vom Netzteil ab, indem Sie den Netzkabelhalter öffnen, wenn es sich um ein Netzteil handelt, oder die beiden Flügelschrauben lösen, wenn es sich um ein Gleichstromnetzteil handelt, und ziehen Sie dann das Netzkabel vom Netzteil ab.
 +
 Die Netzteile haben keinen Netzschalter.
 
-.. Trennen Sie die Speicherkabel von den NSM-Modulports.
+.. Trennen Sie die Speicherkabel von den NSM-Ports.
 +
-Notieren Sie sich die NSM-Modulanschlüsse, an die jedes Kabel angeschlossen ist. Wenn Sie das NSM-Modul später wieder einsetzen, schließen Sie die Kabel wieder an die gleichen Anschlüsse an.
+Notieren Sie sich die NSM-Ports, an die jedes Kabel angeschlossen ist. Schließen Sie die Kabel wieder an die gleichen Ports an, wenn Sie den NSM wieder einsetzen.
 
 
 
-. Entfernen Sie das NSM-Modul aus dem Shelf:
+. Entfernen Sie den NSM aus dem Shelf:
 +
-.. Führen Sie die Zeigefinger durch die Fingerlöcher der Verriegelungsmechanismen auf beiden Seiten des NSM-Moduls.
+.. Führen Sie Ihre Zeigefinger durch die Fingerlöcher der Verriegelungsmechanismen auf beiden Seiten des NSM.
 +
 
-NOTE: Wenn Sie das untere NSM-Modul entfernen und die untere Schiene den Zugriff auf die Verriegelungen behindert, setzen Sie Ihre Zeigefinger durch die Fingerlöcher von innen (durch Überqueren der Arme).
+NOTE: Wenn Sie den unteren NSM entfernen und die untere Schiene den Zugang zu den Verriegelungsmechanismen behindert, legen Sie Ihre Zeigefinger von innen durch die Fingerlöcher (durch Überdrücken der Arme).
 
 .. Drücken Sie bei den Daumen nach unten, und halten Sie die orangefarbenen Laschen über den Verriegelungsmechanismus.
 +
 Die Verriegelungsmechanismen heben sich an und löschen die Verriegelungsstifte am Regal.
 
-.. Ziehen Sie vorsichtig, bis sich das NSM-Modul etwa ein Drittel des Ausschuppens aus dem Regal befindet. Fassen Sie die NSM-Modulseiten mit beiden Händen an, um das Gewicht zu stützen, und legen Sie es dann auf eine flache, stabile Oberfläche.
+.. Ziehen Sie vorsichtig, bis sich der NSM etwa ein Drittel des Ausschubees aus dem Regal befindet, fassen Sie die NSM-Seiten mit beiden Händen an, um sein Gewicht zu tragen, und legen Sie ihn dann auf eine flache, stabile Oberfläche.
 +
-Wenn Sie mit dem Ziehen beginnen, ziehen sich die Arms des Verriegelungsmechanismus aus dem NSM-Modul und sichern sich in ihrer vollständig ausgestreckten Position.
+Wenn Sie mit dem Ziehen beginnen, ziehen sich die Arme des Verriegelungsmechanismus aus dem NSM und rasten in ihrer vollständig ausgefahrenen Position ein.
 
 
 
-. Lösen Sie die Flügelschraube der NSM-Modulabdeckung, und öffnen Sie die Abdeckung.
+. Lösen Sie die Flügelschraube der NSM-Abdeckung, und öffnen Sie die Abdeckung.
 +
-Das FRU-Etikett auf der NSM-Modulabdeckung zeigt die Position der vier DIMMs, zwei auf beiden Seiten des Kühlkörpers, in der Mitte des NSM-Moduls.
+Das FRU-Etikett auf der NSM-Abdeckung zeigt die Position der vier DIMMs, zwei auf beiden Seiten des Kühlkörpers, in der Mitte des NSM.
 
 . Identifizieren Sie das fehlerhafte DIMM-Modul physisch.
 +
@@ -117,31 +121,31 @@ Wenn das DIMM richtig eingesetzt wird, sollte es sich leicht einpassen, aber fes
 .. Drücken Sie vorsichtig nach unten, aber fest auf der Oberseite des DIMM, bis die Auswurfklammern über den Kerben an beiden Enden des DIMM einrasten.
 
 
-. Schließen Sie die NSM-Modulabdeckung, und ziehen Sie dann die Flügelschraube fest.
-. Setzen Sie das NSM-Modul wieder in das Regal ein:
+. Schließen Sie die NSM-Abdeckung, und ziehen Sie die Flügelschraube fest.
+. Setzen Sie den NSM wieder in das Regal ein:
 +
 .. Vergewissern Sie sich, dass die Arms des Verriegelungsmechanismus vollständig ausgefahren sind.
-.. Schieben Sie das NSM-Modul vorsichtig mit beiden Händen in das Regal, bis das Gewicht des NSM-Moduls vollständig vom Regal unterstützt wird.
-.. Schieben Sie das NSM-Modul in das Regal, bis es anhält (etwa einen halben Zoll von der Rückseite des Regals).
+.. Schieben Sie den NSM vorsichtig mit beiden Händen in das Regal, bis das Gewicht des NSM vollständig vom Regal unterstützt wird.
+.. Drücken Sie den NSM in das Regal, bis er anhält (etwa einen halben Zoll von der Rückseite des Shelfs entfernt).
 +
-Sie können Ihre Daumen auf die orangefarbenen Laschen an der Vorderseite jeder Fingerschleife (der Arms des Verriegelungsmechanismus) legen, um das NSM-Modul einzudrücken.
+Sie können Ihre Daumen auf die orangefarbenen Laschen an der Vorderseite jeder Fingerschlaufe (der Arme des Verriegelungsmechanismus) legen, um den NSM einzudrücken.
 
-.. Führen Sie die Zeigefinger durch die Fingerlöcher der Verriegelungsmechanismen auf beiden Seiten des NSM-Moduls.
+.. Führen Sie Ihre Zeigefinger durch die Fingerlöcher der Verriegelungsmechanismen auf beiden Seiten des NSM.
 +
 
-NOTE: Wenn Sie das untere NSM-Modul einsetzen und die untere Schiene den Zugriff auf die Verriegelungen behindert, setzen Sie die Zeigefinger durch die Fingerlöcher von innen (durch Überqueren der Arme).
+NOTE: Wenn Sie den unteren NSM einsetzen und die untere Schiene den Zugang zu den Verriegelungsmechanismen behindert, legen Sie Ihre Zeigefinger von innen durch die Fingerlöcher (durch Überdrücken der Arme).
 
 .. Drücken Sie bei den Daumen nach unten, und halten Sie die orangefarbenen Laschen über den Verriegelungsmechanismus.
 .. Drücken Sie vorsichtig nach vorne, um die Verriegelungen über den Anschlag zu bringen.
 .. Lösen Sie Ihre Daumen von den Spitzen der Verriegelungen, und drücken Sie dann weiter, bis die Verriegelungen einrasten.
 +
-Das NSM-Modul sollte vollständig in das Regal eingeführt und mit den Rändern des Regals bündig eingespült werden.
+Der NSM sollte vollständig in das Regal eingeführt und bündig mit den Kanten des Regals ausgeführt werden.
 
 
 
-. Schließen Sie die Verkabelung wieder an das NSM-Modul an:
+. Schließen Sie die Verkabelung wieder an den NSM an:
 +
-.. Schließen Sie die Speicherkabel wieder an die beiden NSM-Modulports an.
+.. Schließen Sie die Speicherverkabelung wieder an die beiden NSM-Ports an.
 +
 Die Kabel werden mit der Zuglasche des Steckers nach oben eingesetzt. Wenn ein Kabel richtig eingesetzt wird, klickt es an seine Stelle.
 
@@ -150,15 +154,15 @@ Die Kabel werden mit der Zuglasche des Steckers nach oben eingesetzt. Wenn ein K
 Bei ordnungsgemäßer Funktion leuchtet die zweifarbige LED des Netzteils grün.
 
 +
-Außerdem leuchten die beiden NSM-Modulports LNK (grün) LEDs auf. Wenn eine LNK-LED nicht leuchtet, setzen Sie das Kabel wieder ein.
+Außerdem leuchten beide NSM-Port-LNK-LEDs (grün) auf. Wenn eine LNK-LED nicht leuchtet, setzen Sie das Kabel wieder ein.
 
 
 
-. Stellen Sie sicher, dass die Warn-LEDs am NSM-Modul, das das ausgefallene DIMM enthält, und die Anzeige des Shelf-Bedieners nicht mehr leuchten.
+. Vergewissern Sie sich, dass die Warn-LEDs am NSM, der das ausgefallene DIMM enthält, und am Shelf-Bedienfeld nicht mehr leuchten.
 +
-Die Warnungs-LEDs des NSM-Moduls werden nach einem Neustart des NSM-Moduls ausgeschaltet und ein DIMM-Problem wird nicht mehr erkannt. Dies kann drei bis fünf Minuten dauern.
+Die NSM-Warn-LEDs werden nach dem Neustart des NSM ausgeschaltet und erkennen kein DIMM-Problem mehr. Dies kann drei bis fünf Minuten dauern.
 
-. Überprüfen Sie, ob das NSM-Modul ordnungsgemäß verkabelt ist, indem Sie Active IQ Config Advisor ausführen.
+. Überprüfen Sie, ob der NSM ordnungsgemäß verkabelt ist, indem Sie Active IQ Config Advisor ausführen.
 +
 Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
 
@@ -166,3 +170,169 @@ Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaß
 https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"^]
 
 
+
+--
+.NSM100B-Module
+--
+.Schritte
+. Richtig gemahlen.
+. Trennen Sie die Verkabelung vom NSM, der die FRU enthält, die Sie ersetzen:
++
+.. Ziehen Sie das Netzkabel vom Netzteil ab, indem Sie den Netzkabelhalter öffnen, wenn es sich um ein Netzteil handelt, oder die beiden Flügelschrauben lösen, wenn es sich um ein Gleichstromnetzteil handelt, und ziehen Sie dann das Netzkabel vom Netzteil ab.
++
+Die Netzteile haben keinen Netzschalter.
+
+.. Trennen Sie die Speicherkabel von den NSM-Ports.
++
+Notieren Sie sich die NSM-Ports, an die jedes Kabel angeschlossen ist. Schließen Sie die Kabel wieder an die gleichen Ports an, wenn Sie den NSM wieder einsetzen.
+
+
+
+. Setzen Sie den NSM in das Regal ein:
++
+image::../media/drw_g_and_t_handles_reinstall_ieops-1838.svg[Ersetzen Sie die NSM.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Wenn Sie die NSM-Griffe senkrecht (neben den Laschen) gedreht haben, um sie während der Wartung des NSM aus dem Weg zu bewegen, drehen Sie sie nach unten in die horizontale Position.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Legende Nummer 2]
+ a| 
+Richten Sie die Rückseite des NSM mit der Öffnung im Regal aus, und drücken Sie den NSM vorsichtig mit den Griffen, bis er vollständig sitzt.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Legende Nummer 3]
+ a| 
+Drehen Sie die Griffe in die aufrechte Position, und fixieren Sie sie mit den Laschen.
+
+|===
+. Öffnen Sie die NSM-Abdeckung, indem Sie die Flügelschraube gegen den Uhrzeigersinn drehen, um sie zu lösen, und öffnen Sie dann die Abdeckung.
++
+Das FRU-Etikett auf der NSM-Abdeckung zeigt die Position der beiden DIMMs und der zwei DIMM-Leereinschübe im NSM.
+
+. Identifizieren Sie das fehlerhafte DIMM-Modul physisch.
++
+Wenn ein DIMM defekt ist, protokolliert das System eine Warnmeldung an die Systemkonsole, die angibt, welches DIMM ersetzt werden muss.
+
+. Entfernen Sie das fehlerhafte DIMM:
++
+image::../media/drw_t_dimm_ieops-1978.svg[Entfernen Sie die DIMMs.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+DIMM-Steckplatznummerierung und -Positionen.
+
+Der NSM enthält DIMMs in den Steckplätzen 1 und 3 und DIMM-Leereinschübe in den Steckplätzen 2 und 4.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Legende Nummer 2]
+ a| 
+** Beachten Sie die Ausrichtung des DIMM im Sockel, sodass Sie das Ersatz-DIMM in derselben Ausrichtung einsetzen können.
+** Werfen Sie das fehlerhafte DIMM aus, indem Sie die beiden DIMM-Auswurfhalterungen an beiden Enden des DIMM-Steckplatzes langsam auseinander drücken.
+
+
+
+IMPORTANT: Halten Sie das DIMM vorsichtig an den Ecken oder Kanten, um Druck auf die Komponenten der DIMM-Platine zu vermeiden.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Legende Nummer 3]
+ a| 
+Heben Sie das DIMM-Modul nach oben und aus dem Steckplatz heraus.
+
+Die Auswerferlaschen bleiben in der geöffneten Position.
+
+|===
+. Ersetzen Sie das DIMM:
++
+.. Entfernen Sie das Ersatz-DIMM aus dem antistatischen Versandbeutel.
+.. Halten Sie das DIMM an den Ecken, und setzen Sie das DIMM-Modul anschließend in einen Steckplatz ein.
++
+Die Kerbe an der Unterseite des DIMM, unter den Stiften, sollte sich mit der Lasche im Steckplatz.
+
++
+Wenn das DIMM richtig eingesetzt wird, sollte es sich leicht einpassen, aber fest in den Steckplatz einsetzen. Falls nicht, setzen Sie das DIMM erneut ein.
+
+.. Drücken Sie vorsichtig nach unten, aber fest auf der Oberseite des DIMM, bis die Auswurfklammern über den Kerben an beiden Enden des DIMM einrasten.
+
+
+. Schließen Sie die NSM-Abdeckung, und ziehen Sie die Flügelschraube fest.
+. Setzen Sie den NSM in das Regal ein:
++
+image::../media/drw_g_and_t_handles_reinstall_ieops-1838.svg[Ersetzen Sie die NSM.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Wenn Sie die NSM-Griffe senkrecht (neben den Laschen) gedreht haben, um sie während der Wartung des NSM aus dem Weg zu bewegen, drehen Sie sie nach unten in die horizontale Position.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Legende Nummer 2]
+ a| 
+Richten Sie die Rückseite des NSM mit der Öffnung im Regal aus, und drücken Sie den NSM vorsichtig mit den Griffen, bis er vollständig sitzt.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Legende Nummer 3]
+ a| 
+Drehen Sie die Griffe in die aufrechte Position, und fixieren Sie sie mit den Laschen.
+
+|===
+. Schließen Sie die Verkabelung wieder an den NSM an:
++
+.. Schließen Sie die Speicherverkabelung wieder an die beiden NSM-Ports an.
++
+Die Kabel werden mit der Zuglasche des Steckers nach oben eingesetzt. Wenn ein Kabel richtig eingesetzt wird, klickt es an seine Stelle.
+
+.. Schließen Sie das Netzkabel wieder an das Netzteil an, und befestigen Sie das Netzkabel mit der Netzkabelhalterung, wenn es sich um ein Netzteil handelt, oder ziehen Sie die beiden Flügelschrauben fest, wenn es sich um ein Gleichstromnetzteil handelt.
++
+Bei ordnungsgemäßer Funktion leuchtet die zweifarbige LED des Netzteils grün.
+
++
+Außerdem leuchten beide NSM-Port-LNK-LEDs (grün) auf. Wenn eine LNK-LED nicht leuchtet, setzen Sie das Kabel wieder ein.
+
+
+
+. Vergewissern Sie sich, dass die Warn-LEDs am NSM, der das ausgefallene DIMM enthält, und am Shelf-Bedienfeld nicht mehr leuchten.
++
+Die NSM-Warn-LEDs werden nach dem Neustart des NSM ausgeschaltet und erkennen kein DIMM-Problem mehr. Dies kann drei bis fünf Minuten dauern.
+
+. Überprüfen Sie, ob der NSM ordnungsgemäß verkabelt ist, indem Sie Active IQ Config Advisor ausführen.
++
+Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
+
++
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"^]
+
+
+
+--
+====

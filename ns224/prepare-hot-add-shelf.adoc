@@ -46,15 +46,7 @@ Wenn das HA-Paar über nicht dedizierte RoCE-fähige Ethernet-Ports verfügt, di
 
 .Über diese Aufgabe
 * Wenn bei einigen Plattformmodellen eine RoCE-fähige PCIe-Karte oder ein I/O-Modul in einem unterstützten Steckplatz auf einem Controller installiert ist, werden die Ports automatisch standardmäßig Storage-verwendet (anstelle von Netzwerken). es wird jedoch empfohlen, das folgende Verfahren durchzuführen, um zu überprüfen, ob die RoCE-fähigen Ports für die Speichernutzung konfiguriert sind.
-* Wenn Sie feststellen, dass die nicht-dedizierten RoCE-fähigen Ports in Ihrem HA-Paar nicht für die Storage-Nutzung konfiguriert sind, ist es ein unterbrechungsfreies Konfigurieren der Ports.
-+
-Je nach der Version von ONTAP, auf der Ihr HA-Paar ausgeführt wird, müssen Sie die Controller möglicherweise neu booten:
-
-+
-** Wenn auf dem HA-Paar eine Version von ONTAP 9.6 ausgeführt wird, müssen Sie die Controller nacheinander neu booten.
-** Wenn auf dem HA-Paar ONTAP 9.7 oder höher ausgeführt wird, müssen Sie die Controller nicht neu booten, es sei denn, ein oder beide Controller befinden sich im Wartungsmodus. Für diese Vorgehensweise wird vorausgesetzt, dass sich keiner der Controller im Wartungsmodus befindet.
-
-
+* Wenn Sie feststellen, dass die nicht-dedizierten RoCE-fähigen Ports in Ihrem HA-Paar nicht für die Storage-Nutzung konfiguriert sind, ist es ein unterbrechungsfreies Konfigurieren der Ports. Sie müssen die Controller nur neu booten, wenn sich ein oder beide Controller im Wartungsmodus befinden. Für diese Vorgehensweise wird vorausgesetzt, dass sich keiner der Controller im Wartungsmodus befindet.
 * Wenn Sie in Zukunft die Ports von der Speichernutzung auf die Netzwerkverwendung ändern müssen, geben Sie den Befehl ein, `storage port modify -node _node_name_ -port _port_name_ -mode network`.
 
 
@@ -66,14 +58,14 @@ Je nach der Version von ONTAP, auf der Ihr HA-Paar ausgeführt wird, müssen Sie
 
 +
 ** Wenn auf Ihrem HA-Paar ONTAP 9.8 oder höher ausgeführt wird, werden die nicht dedizierten Ports angezeigt `storage` Im `Mode` Spalte.
-** Wenn auf dem HA-Paar ONTAP 9.7 oder 9.6 ausgeführt wird, werden die nicht-dedizierten Ports, die angezeigt werden `false` Im `Is Dedicated?` Spalte, auch anzeigen `enabled` Im `State` Spalte.
+** Wenn auf Ihrem HA-Paar ONTAP 9.7 ausgeführt wird, werden auch die nicht dedizierten Ports, die in der `Is Dedicated?` Spalte angezeigt werden, in der `State` Spalte `enabled` angezeigt `false`.
 +
 [NOTE]
 ====
 Wenn keine dedizierten Ports für den Storage konfiguriert sind, wird in der Befehlsausgabe Folgendes angezeigt:
 
 *** Wenn auf Ihrem HA-Paar ONTAP 9.8 oder höher ausgeführt wird, werden die nicht dedizierten Ports angezeigt `network` Im `Mode` Spalte.
-*** Wenn auf dem HA-Paar ONTAP 9.7 oder 9.6 ausgeführt wird, werden die nicht-dedizierten Ports, die angezeigt werden `false` Im `Is Dedicated?`` Spalte, auch anzeigen `disabled` Im `State` Spalte.
+*** Wenn auf Ihrem HA-Paar ONTAP 9.7 ausgeführt wird, werden auch die nicht dedizierten Ports, die in der `Is Dedicated?`` Spalte angezeigt werden, in der `State` Spalte `disabled` angezeigt `false`.
 
 
 ====
@@ -101,51 +93,16 @@ ONTAP 9.8 oder höher
 
 
  a| 
-ONTAP 9.7 oder 9.6
+ONTAP 9.7
  a| 
 `storage port enable -node _node_name_ -port _port_name_`
 
 |===
-. Wenn auf dem HA-Paar ONTAP 9.6 ausgeführt wird, booten Sie den Controller neu, damit die Port-Änderungen wirksam werden: `system node reboot -node _node_name_ -reason _reason_for_the_reboot_`.
-+
-Andernfalls fahren Sie mit dem nächsten Schritt fort.
-
-+
-
-NOTE: Der Neustart kann bis zu 15 Minuten dauern.
-
-. Wiederholen Sie die Schritte für den zweiten Controller:
-+
-[cols="1,3"]
-|===
-| Wenn Ihr HA-Paar läuft... | Dann... 
-
-
- a| 
-ONTAP 9.7 oder höher
- a| 
-.. Wiederholen Sie Schritt 4.
-.. Fahren Sie mit Schritt 7 fort.
-
-
-
-
- a| 
-ONTAP 9.6
- a| 
-.. Wiederholen Sie die Schritte 4 und 5.
-+
-
-NOTE: Der erste Controller muss den Neustart bereits abgeschlossen haben.
-
-.. Fahren Sie mit Schritt 7 fort.
-
-
-|===
+. Wiederholen Sie Schritt 4 für den zweiten Controller.
 . Überprüfen Sie, ob die nicht dedizierten Ports auf beiden Controllern für die Speichernutzung konfiguriert sind: `storage port show`
 +
 ** Wenn auf Ihrem HA-Paar ONTAP 9.8 oder höher ausgeführt wird, werden die nicht dedizierten Ports angezeigt `storage` Im `Mode` Spalte.
-** Wenn auf dem HA-Paar ONTAP 9.7 oder 9.6 ausgeführt wird, werden die nicht-dedizierten Ports, die angezeigt werden `false` Im `Is Dedicated?` Spalte, auch anzeigen `enabled` Im `State` Spalte.
+** Wenn auf Ihrem HA-Paar ONTAP 9.7 ausgeführt wird, werden auch die nicht dedizierten Ports, die in der `Is Dedicated?` Spalte angezeigt werden, in der `State` Spalte `enabled` angezeigt `false`.
 
 
 
@@ -205,7 +162,7 @@ Bei den Teilschritten wird davon ausgegangen, dass das dritte Shelf an jedem Con
 
 
 --
-.AFF A70 oder AFF A90
+.AFF A70, AFF A90 oder AFF C80
 --
 Wenn Sie während des laufenden Betriebs ein zweites Shelf hinzufügen, können Sie das erste Shelf über die RoCE-fähigen I/O-Module in Steckplatz 11 und Steckplatz 8 auf jedem Controller neu anschaffen.
 
@@ -266,6 +223,42 @@ Bei den Teilschritten wird davon ausgegangen, dass das vorhandene Shelf an jedem
 .. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
 
 
+
+
+--
+.AFF A900
+--
+Führen Sie einen der folgenden Schritte aus, wenn Sie ein zweites oder ein viertes Shelf im laufenden Betrieb hinzufügen.
+
+* Wenn Sie während des laufenden Betriebs ein zweites Shelf hinzufügen, können Sie das erste Shelf über die RoCE-fähigen I/O-Module in Steckplatz 2 und Steckplatz 10 auf jedem Controller neu anschaffen.
++
+Die Teilschritte gehen davon aus, dass das vorhandene Shelf an jedem Controller mit einem RoCE-fähigen I/O-Modul in Steckplatz 2 verbunden ist.
+
++
+.. Bewegen Sie das Kabel an Controller A von Steckplatz 2 Port b (e2b) in Steckplatz 10 Port b (e10b).
+.. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
+
+
+* Wenn Sie ein viertes Shelf während des laufenden Betriebs hinzufügen, können Sie das dritte Shelf über die RoCE-fähigen I/O-Module in Steckplatz 1 und Steckplatz 11 auf jedem Controller umverteilen.
++
+Bei den Teilschritten wird davon ausgegangen, dass das dritte Shelf an jedem Controller mit einem RoCE-fähigen I/O-Modul in Steckplatz 1 verbunden ist.
+
++
+.. Bewegen Sie das Kabel an Controller A von Steckplatz 1 Port b (e1b) in Steckplatz 11 Port b (e11b).
+.. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
+
+
+
+
+--
+.AFF A30, AFF C30, AFF A50 oder AFF C60
+--
+Wenn Sie während des laufenden Betriebs ein zweites Shelf hinzufügen, können Sie das erste Shelf über die RoCE-fähigen I/O-Module in Steckplatz 3 und Steckplatz 1 auf jedem Controller neu anschaffen.
+
+Die Teilschritte gehen davon aus, dass das vorhandene Shelf an jedem Controller mit einem RoCE-fähigen I/O-Modul in Steckplatz 3 verbunden ist.
+
+. Bewegen Sie das Kabel an Controller A von Steckplatz 3 Port b (e3b) in Steckplatz 1 Port b (e1b).
+. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
 
 
 --

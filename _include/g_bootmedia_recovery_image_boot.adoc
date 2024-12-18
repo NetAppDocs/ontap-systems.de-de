@@ -1,0 +1,45 @@
+= 
+:allow-uri-read: 
+
+
+Sie müssen das ONTAP-Image vom USB-Laufwerk starten, das Dateisystem wiederherstellen und die Umgebungsvariablen überprüfen.
+
+.Schritte
+. Starten Sie von der LOADER-Eingabeaufforderung aus das Wiederherstellungs-Image vom USB-Flashlaufwerk: _Boot_Recovery_
++
+Das Bild wird vom USB-Flash-Laufwerk heruntergeladen.
+
+. Wenn Sie dazu aufgefordert werden, geben Sie entweder den Namen des Bilds ein oder akzeptieren Sie das Standardbild, das in den Klammern auf dem Bildschirm angezeigt wird.
+. Stellen Sie das var-Dateisystem wieder her:
++
+[cols="1,2"]
+|===
+| Wenn Ihr System ausgeführt wird... | Dann... 
+
+
+ a| 
+ONTAP 9.16.0 oder früher
+ a| 
+.. Drücken Sie auf der außer Betrieb genommenen Steuerung _Y_, wenn angezeigt wird `Do you want to restore the backup configuration now?`
+.. Drücken Sie auf dem Controller für beeinträchtigte Störungen _Y_, wenn Sie zum Überschreiben aufgefordert werden `/etc/ssh/ssh_host_ecdsa_key`.
+.. Setzen Sie auf dem funktionierenden Partner-Controller den beeinträchtigten Controller auf die erweiterte Berechtigungsebene: _Set -Privilege Advanced_.
+.. Führen Sie auf dem funktionierenden Partner-Controller den Befehl restore Backup aus: _System Node restore-Backup -Node local -target-address Impaired_Node_IP_address_.
++
+*HINWEIS:* Wenn Sie eine andere Nachricht als eine erfolgreiche Wiederherstellung sehen, kontaktieren Sie https://support.netapp.com["NetApp Support"].
+
+.. Geben Sie auf dem funktionstüchtigen Partner-Controller den beeinträchtigten Controller auf die Admin-Ebene: _Set -Privilege admin_ zurück.
+.. Drücken Sie auf dem Controller für beeinträchtigte Störungen _y_, wenn angezeigt wird `Was the restore backup procedure successful?`.
+.. Drücken Sie auf dem Controller für beeinträchtigte Störungen _y_, wenn angezeigt wird `...would you like to use this restored copy now?`.
+.. Drücken Sie auf dem beeinträchtigten Controller bei Aufforderung _y_, um den beeinträchtigten Controller neu zu starten, und drücken Sie _Ctrl-c_ für das Startmenü.
+.. Wenn das System keine Verschlüsselung verwendet, wählen Sie _Option 1 Normal Boot._, andernfalls gehen Sie zu link:bootmedia-encryption-restore.html["Wiederherstellung von Schlüsselmanagern"].
+.. Schließen Sie das Konsolenkabel an den Partner Controller an.
+.. Geben Sie den Controller mithilfe des Befehls „_Storage Failover Giveback -fromnode local_“ zurück.
+.. Stellen Sie das automatische Giveback wieder her, wenn Sie es mithilfe des Befehls _Storage Failover modify -Node local -Auto-Giveback true_ deaktiviert haben.
+.. Wenn AutoSupport aktiviert ist, stellen Sie die automatische Fallerstellung mithilfe des Befehls _System Node AutoSupport Invoke -Node * -type all -message MAINT=END_ wieder her.
++
+*HINWEIS:* Wenn der Prozess fehlschlägt, kontaktieren Sie https://support.netapp.com["NetApp Support"].
+
+
+
+|===
+

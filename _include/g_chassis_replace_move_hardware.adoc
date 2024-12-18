@@ -1,0 +1,286 @@
+= Schritt 1: Entfernen Sie die Steuerung
+:allow-uri-read: 
+
+
+Verschieben Sie die Laufwerke, alle Laufwerkplatzhalter, Controller und die Blende vom Gehäuse für beeinträchtigte Geräte auf das Ersatzgehäuse (desselben Modells), und ersetzen Sie dann das Gehäuse für beeinträchtigte Geräte im Geräte-Rack oder Systemschrank.
+
+
+
+== Schritt 1: Entfernen Sie die Steuerung
+
+Sie müssen den Controller aus dem Chassis entfernen, wenn Sie den Controller austauschen oder eine Komponente im Controller austauschen.
+
+.Bevor Sie beginnen
+Alle anderen Komponenten des Speichersystems müssen ordnungsgemäß funktionieren. Andernfalls müssen Sie sich an Sie wenden, bevor Sie mit https://mysupport.netapp.com/site/global/dashboard["NetApp Support"] diesem Verfahren fortfahren.
+
+.Schritte
+. Stellen Sie am Controller für beeinträchtigte Störungen sicher, dass die NV-LED nicht leuchtet.
++
+Wenn die NV-LED ausgeschaltet ist, ist die Entrampung abgeschlossen, und es ist sicher, den außer Betrieb genommenen Controller zu entfernen.
+
++
+
+NOTE: Wenn die NV-LED blinkt (grün), wird die Auslagerung ausgeführt. Sie müssen warten, bis die NV-LED erlischt. Wenn das Blinken jedoch länger als fünf Minuten andauert, wenden Sie sich an https://mysupport.netapp.com/site/global/dashboard["NetApp Support"], bevor Sie mit diesem Verfahren fortfahren.
+
++
+Die NV-LED befindet sich neben dem NV-Symbol auf dem Controller.
+
++
+image::../media/drw_g_nvmem_led_ieops-1839.svg[Position der NV-Status-LED]
+
+
+
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+NV-Symbol und LED am Controller
+
+|===
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Trennen Sie die Stromversorgung des außer Betrieb genommenen Controllers:
++
+
+NOTE: Netzteile (PSUs) verfügen über keinen Netzschalter.
+
++
+[cols="1,2"]
+|===
+| Wenn Sie eine Verbindung trennen... | Dann... 
+
+
+ a| 
+NETZTEILEINHEIT
+ a| 
+.. Öffnen Sie die Netzkabelhalterung.
+.. Ziehen Sie das Netzkabel vom Netzteil ab, und legen Sie es beiseite.
+
+
+
+
+ a| 
+DC-NETZTEIL
+ a| 
+.. Lösen Sie die beiden Flügelschrauben am D-SUB-DC-Netzkabelanschluss.
+.. Ziehen Sie das Netzkabel vom Netzteil ab, und legen Sie es beiseite.
+
+
+|===
+. Ziehen Sie alle Kabel vom Controller für beeinträchtigte Verbindung ab.
++
+Verfolgen Sie, wo die Kabel angeschlossen wurden.
+
+. Entfernen Sie die Steuerung für den beeinträchtigten Betrieb:
++
+Die folgende Abbildung zeigt den Betrieb der Controller-Griffe (von der linken Seite des Controllers) beim Entfernen eines Controllers:
+
++
+image::../media/drw_g_and_t_handles_remove_ieops-1837.svg[Controller-Griff zum Entfernen eines Controllers]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Drücken Sie an beiden Enden der Steuerung die vertikalen Verriegelungslaschen nach außen, um die Griffe zu lösen.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Legende Nummer 2]
+ a| 
+** Ziehen Sie die Griffe zu sich, um den Controller von der Mittelplatine zu lösen.
++
+Wenn Sie ziehen, die Griffe aus dem Controller und dann fühlen Sie einen gewissen Widerstand, ziehen Sie weiter.
+
+** Schieben Sie den Controller aus dem Chassis heraus, während Sie die Unterseite des Controllers stützen, und platzieren Sie ihn auf einer Ebenen, stabilen Oberfläche.
+
+
+
+
+ a| 
+image::../media/icon_round_3.png[Legende Nummer 3]
+ a| 
+Drehen Sie die Griffe bei Bedarf aufrecht (neben den Laschen), um sie aus dem Weg zu bewegen.
+
+|===
+. Wiederholen Sie diese Schritte für den anderen Controller im Chassis.
+
+
+
+
+== Schritt 2: Entfernen Sie die Laufwerke aus dem Gehäuse für beeinträchtigte Störungen
+
+Sie müssen alle Laufwerke und alle Laufwerkplatzhalter aus dem Gehäuse für beeinträchtigte Störungen entfernen, damit Sie sie später im Ersatzgehäuse installieren können.
+
+. Entfernen Sie die Blende vorsichtig von der Vorderseite des Speichersystems.
+. Entfernen Sie die Laufwerke und alle Laufwerkplatzhalter:
++
+
+NOTE: Verfolgen Sie, aus welchem Laufwerkschacht jedes Laufwerk und jeder Laufwerkplatzhalter entfernt wurde, da diese in denselben Laufwerksschächten im Ersatzgehäuse installiert werden müssen.
+
++
+image::../media/drw_nvme_drive_replace_ieops-1904.svg[Entfernen Sie das NVMe-Laufwerk]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Drücken Sie die Entriegelungstaste an der Antriebsfläche, um den Nockengriff zu öffnen.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Legende Nummer 2]
+ a| 
+Drehen Sie den Nockengriff nach unten, um den Antrieb von der Mittelplatine zu lösen.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Legende Nummer 3]
+ a| 
+Schieben Sie das Laufwerk mit dem Nockengriff aus dem Laufwerkschacht und stützen Sie das Laufwerk mit der anderen Hand.
+
+Wenn Sie ein Laufwerk entfernen, verwenden Sie immer zwei Hände, um sein Gewicht zu stützen.
+
+
+NOTE: Da Laufwerke zerbrechlich sind, minimieren Sie die Handhabung, um sie nicht zu beschädigen.
+
+|===
+. Legen Sie die Laufwerke auf einen statikfreien Wagen oder Tisch.
+
+
+
+
+== Schritt 3: Ersetzen Sie das Chassis aus dem Geräte-Rack oder Systemschrank heraus
+
+Sie entfernen das Gehäuse für beeinträchtigte Störungen aus dem Geräte-Rack oder Systemschrank, installieren das Ersatzgehäuse, installieren die Laufwerke, alle Laufwerkplatzhalter und installieren dann die Blende.
+
+. Entfernen Sie die Schrauben von den Montagepunkten für das Gehäuse, an denen die Störung beeinträchtigt ist.
++
+Legen Sie die Schrauben beiseite, um sie später in diesem Verfahren zu verwenden.
+
++
+
+NOTE: Wenn das Speichersystem in einem NetApp-Systemschrank geliefert wurde, müssen Sie zusätzliche Schrauben an der Rückseite des Gehäuses entfernen, bevor das Gehäuse entfernt werden kann.
+
+. Entfernen Sie mit zwei Personen oder einem Hebegerät das Gehäuse für beeinträchtigte Personen aus dem Rack oder dem Systemschrank, indem Sie es von den Schienen schieben und dann beiseite legen.
+. Installieren Sie das Ersatzgehäuse mit zwei Personen in das Rack oder den Systemschrank des Geräts, indem Sie es auf die Schienen schieben.
+. Befestigen Sie die Vorderseite des Ersatzgehäuses mit den Schrauben, die Sie aus dem Gehäuse für beeinträchtigte Geräte entfernt haben, am Geräte-Rack oder Systemschrank.
+
+
+
+
+== Schritt 4: Installieren der Controller
+
+Installieren Sie die Controller im Ersatzgehäuse und starten Sie sie neu.
+
+.Über diese Aufgabe
+Die folgende Abbildung zeigt den Betrieb der Controller-Griffe (von der linken Seite eines Controllers) bei der Installation eines Controllers und kann als Referenz für die restlichen Schritte der Controller-Installation verwendet werden.
+
+image::../media/drw_g_and_t_handles_reinstall_ieops-1838.svg[Controller-Handle-Betrieb zum Installieren eines Controllers]
+
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Wenn Sie die Controller-Griffe senkrecht (neben den Laschen) gedreht haben, um sie aus dem Weg zu bewegen, drehen Sie sie nach unten in die horizontale Position.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Legende Nummer 2]
+ a| 
+Drücken Sie die Griffe, um den Controller wieder in das Chassis einzusetzen, und drücken Sie, bis der Controller vollständig eingesetzt ist.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Legende Nummer 3]
+ a| 
+Drehen Sie die Griffe in die aufrechte Position und sichern Sie sie mit den Verriegelungslaschen.
+
+|===
+. Setzen Sie einen der Controller in das Chassis ein:
++
+.. Richten Sie die Rückseite des Controllers an der Öffnung im Gehäuse aus.
+.. Drücken Sie fest auf die Griffe, bis der Controller auf die Mittelplatine trifft und vollständig im Gehäuse sitzt.
++
+
+NOTE: Schieben Sie den Controller nicht zu stark in das Gehäuse, da dadurch die Anschlüsse beschädigt werden können.
+
+.. Drehen Sie die Controller-Griffe nach oben und fixieren Sie sie mit den Laschen.
+
+
+. Bringen Sie den Controller, mit Ausnahme der Netzkabel, nach Bedarf wieder an.
+. Wiederholen Sie diese Schritte, um den zweiten Controller im Chassis zu installieren.
+. Installieren Sie die Laufwerke und alle Laufwerkplatzhalter, die Sie aus dem Gehäuse für beeinträchtigte Personen entfernt haben, im Ersatzgehäuse:
++
+
+NOTE: Die Laufwerke und Laufwerkplatzhalter müssen in denselben Laufwerksschächten im Ersatzgehäuse installiert werden.
+
++
+.. Bei geöffnetem Nockengriff den Antrieb mit beiden Händen einsetzen.
+.. Vorsichtig drücken, bis der Antrieb stoppt.
+.. Schließen Sie den Nockengriff, damit das Laufwerk vollständig in der Mittelplatine sitzt und der Griff einrastet.
++
+Schließen Sie den Nockengriff langsam, damit er korrekt an der Antriebsfläche ausgerichtet ist.
+
+.. Wiederholen Sie den Vorgang für die übrigen Laufwerke.
+
+
+. Befestigen Sie die Blende.
+. Schließen Sie die Netzkabel wieder an die Netzteile (PSU) der Controller an.
++
+Sobald ein Netzteil wieder mit Strom versorgt wird, sollte die Status-LED grün leuchten.
+
++
+
+NOTE: Die Controller starten, sobald die Stromversorgung wiederhergestellt ist.
+
++
+[cols="1,2"]
+|===
+| Wenn Sie eine Verbindung... | Dann... 
+
+
+ a| 
+NETZTEILEINHEIT
+ a| 
+.. Schließen Sie das Netzkabel an das Netzteil an.
+.. Befestigen Sie das Netzkabel mit der Netzkabelhalterung.
+
+
+
+
+ a| 
+DC-NETZTEIL
+ a| 
+.. Schließen Sie den D-SUB-DC-Netzkabelanschluss an das Netzteil an.
+.. Ziehen Sie die beiden Flügelschrauben fest, um den D-SUB DC-Netzkabelanschluss am Netzteil zu befestigen.
+
+
+|===
+. Wenn Controller von der Loader-Eingabeaufforderung gebootet werden, booten Sie die Controller neu:
++
+`boot_ontap`
+
+. AutoSupport wieder einschalten:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`
+
+

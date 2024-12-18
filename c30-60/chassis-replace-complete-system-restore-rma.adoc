@@ -1,0 +1,51 @@
+---
+permalink: c30-60/chassis-replace-complete-system-restore-rma.html 
+sidebar: sidebar 
+keywords: aff c30, aff c60, verify and set HA state, complete the replacement process 
+summary: Sie müssen den HA-Status des Gehäuses überprüfen und das fehlerhafte Teil an NetApp zurücksenden, wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben. 
+---
+= Vollständiger Chassisaustausch – AFF C30 und AFF C60
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen den HA-Status des Gehäuses überprüfen und das fehlerhafte Teil an NetApp zurücksenden, wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben.
+
+
+
+== Schritt: Überprüfen Sie den HA-Status des Chassis und legen Sie diesen fest
+
+Sie müssen den HA-Status des Chassis überprüfen und gegebenenfalls den Status entsprechend Ihrer Storage-Systemkonfiguration aktualisieren.
+
+. Im Wartungsmodus zeigen Sie von jedem Controller aus den HA-Zustand des lokalen Controllers und Chassis an:
++
+`ha-config show`
+
++
+Der HA-Status sollte für alle Komponenten identisch sein.
+
+. Wenn der angezeigte Systemstatus für das Gehäuse nicht mit der Konfiguration des Speichersystems übereinstimmt:
++
+.. Legen Sie für das Chassis den HA-Status fest:
++
+`ha-config modify chassis _HA-state_`
+
++
+Der Wert für HA-State sollte _ha_ sein.
+
+.. Bestätigen Sie, dass sich die Einstellung geändert hat:
++
+`ha-config show`
+
+
+
+. Falls Sie dies noch nicht getan haben, können Sie den Rest Ihres Storage-Systems erneut verstellen.
+
+
+
+
+== Schritt 2: Rückgabe des fehlerhaften Teils an NetApp
+
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

@@ -1,0 +1,132 @@
+---
+permalink: c30-60/bootmedia-controller-reinstall.html 
+sidebar: sidebar 
+keywords: aff c30, aff c60, remove controller 
+summary: Sie müssen das Controller-Modul ersetzen, wenn Ihr System eine steigende Anzahl korrigierbarer ECC-Codes registriert. Andernfalls wird eine Systempanik verursacht. 
+---
+= Installieren Sie den Controller AFF C30 und AFF C60 neu
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Setzen Sie den Controller wieder in das Gehäuse ein und starten Sie ihn neu.
+
+.Über diese Aufgabe
+Die folgende Abbildung zeigt den Betrieb der Controller-Griffe (von der linken Seite eines Controllers) beim Wiedereinbau des Controllers und kann als Referenz für die weiteren Schritte zur Neuinstallation des Controllers verwendet werden.
+
+image::../media/drw_g_and_t_handles_reinstall_ieops-1838.svg[Controller-Handle-Betrieb zum Installieren eines Controllers]
+
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Wenn Sie die Controller-Griffe senkrecht (neben den Laschen) gedreht haben, um sie während der Wartung des Controllers aus dem Weg zu bewegen, drehen Sie sie nach unten in die horizontale Position.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Legende Nummer 2]
+ a| 
+Drücken Sie die Griffe, um den Controller wieder in das Gehäuse einzusetzen, und drücken Sie dann, wenn Sie dazu aufgefordert werden, bis der Controller vollständig eingesetzt ist.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Legende Nummer 3]
+ a| 
+Drehen Sie die Griffe in die aufrechte Position und sichern Sie sie mit den Verriegelungslaschen.
+
+|===
+.Schritte
+. Schließen Sie die Controllerabdeckung, und drehen Sie die Flügelschraube im Uhrzeigersinn, bis sie festgezogen ist.
+. Setzen Sie den Controller zur Hälfte in das Chassis ein.
++
+Richten Sie die Rückseite des Controllers an der Öffnung im Chassis aus, und drücken Sie dann den Controller vorsichtig mit den Griffen.
+
++
+
+NOTE: Setzen Sie den Controller erst dann vollständig in das Chassis ein, wenn Sie dazu aufgefordert werden.
+
+. Schließen Sie das Konsolenkabel an den Konsolen-Port am Controller und am Laptop an, sodass das Laptop beim Neustart des Controllers Konsolenmeldungen erhält.
+. Setzen Sie den Controller vollständig im Chassis ein:
++
+.. Drücken Sie die Griffe fest, bis der Controller auf die Mittelplatine trifft und vollständig sitzt.
++
+
+NOTE: Schieben Sie den Controller nicht zu stark in das Gehäuse, da dadurch die Anschlüsse beschädigt werden können.
+
+.. Drehen Sie die Controller-Griffe nach oben und fixieren Sie sie mit den Laschen.
++
+
+NOTE: Der Controller startet, sobald er vollständig im Gehäuse eingesetzt ist.
+
+
+
+. Bringen Sie den Controller zur Loader-Eingabeaufforderung, indem Sie STRG-C drücken, um den AUTOBOOT abzubrechen.
+. Stellen Sie die Uhrzeit und das Datum auf dem Controller ein:
++
+Stellen Sie sicher, dass Sie sich an der Loader-Eingabeaufforderung des Controllers befinden.
+
++
+.. Datum und Uhrzeit auf dem Controller anzeigen:
++
+`show date`
+
++
+
+NOTE: Die Standardeinstellung für Uhrzeit und Datum ist GMT. Sie haben die Möglichkeit, die Anzeige in der lokalen Zeit und im 24-Stunden-Modus durchzuführen.
+
+.. Aktuelle Zeit in GMT einstellen:
++
+`set time hh:mm:ss`
+
++
+Sie können die aktuelle GMT vom gesunden Knoten abrufen:
+
++
+`date -u`
+
+.. Stellen Sie das aktuelle Datum in GMT ein:
++
+`set date mm/dd/yyyy`
+
++
+Sie können die aktuelle GMT vom gesunden Knoten abrufen: +
+`date -u`
+
+
+
+. Controller nach Bedarf wieder verstellen.
+. Schließen Sie das Netzkabel wieder an das Netzteil an.
++
+Sobald das Netzteil wieder mit Strom versorgt wird, sollte die Status-LED grün leuchten.
+
++
+[cols="1,2"]
+|===
+| Wenn Sie eine Verbindung... | Dann... 
+
+
+ a| 
+NETZTEILEINHEIT
+ a| 
+.. Schließen Sie das Netzkabel an das Netzteil an.
+.. Befestigen Sie das Netzkabel mit der Netzkabelhalterung.
+
+
+
+
+ a| 
+DC-NETZTEIL
+ a| 
+.. Schließen Sie den D-SUB-DC-Netzkabelanschluss an das Netzteil an.
+.. Ziehen Sie die beiden Flügelschrauben fest, um den D-SUB DC-Netzkabelanschluss am Netzteil zu befestigen.
+
+
+|===
+

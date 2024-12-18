@@ -23,14 +23,17 @@ NOTE: Wenn Sie dieses Verfahren mit Aggregaten auf dem Shelf versuchen, entferne
 +
 Sie können das verwenden `storage aggregate offline -aggregate _aggregate_name_` Befehl und dann der `storage aggregate delete -aggregate _aggregate_name_` Befehl.
 
-* Wenn Ihr System in einem Systemschrank ausgeliefert wird, benötigen Sie einen Kreuzschlitzschraubendreher, um die Schrauben zu entfernen, mit denen das Shelf an den hinteren Aufrechten des Gehäuses befestigt ist.
++
+Weitere Informationen zu diesem Schritt und zur Vermeidung potenzieller E/A-Probleme finden Sie im https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["Überblick über Festplatten und Aggregate"^].
+
+* Wenn Ihr System in einem Systemschrank geliefert wurde, benötigen Sie einen Kreuzschlitzschraubendreher, um die Schrauben zu entfernen, mit denen das Regal an den Rack-Schienen des Schranks befestigt ist.
 
 
 .Über diese Aufgabe
 * Wenn Sie im laufenden Betrieb mehr als ein Shelf entfernen, entfernen Sie jeweils ein Shelf.
-* *Best Practice:* die beste Praxis ist, den Laufwerkeigentum zu entfernen, nachdem Sie die Aggregate aus den Laufwerken im Regal entfernt haben, die Sie entfernen.
+* *Best Practice:* die beste Praxis ist, Laufwerk Eigentum zu löschen, nachdem Sie die Aggregate von den Laufwerken im Regal entfernen Sie entfernen.
 +
-Durch das Entfernen von Besitzinformationen von einem Ersatzlaufwerk kann das Laufwerk (je nach Bedarf) ordnungsgemäß in einen anderen Knoten integriert werden.
+Durch das Löschen von Besitzinformationen von einem Ersatzlaufwerk kann das Laufwerk ordnungsgemäß in einen anderen Node integriert werden (falls erforderlich).
 
 +
 Das Verfahren zum Entfernen des Eigentumsrechte von Laufwerken finden Sie in den Festplatten und Aggregaten Inhalt:
@@ -48,12 +51,11 @@ NOTE: Für das Verfahren müssen Sie die automatische Laufwerkszuweisung deaktiv
 Wenn Sie den nicht kennen `_shelf_name_` Führen Sie den aus `storage shelf show` Befehl.
 
 +
-Ein Regal hat drei Positionen-LEDs: Eine auf dem Bedienfeld und eine auf jedem NSM-Modul. Die Standort-LEDs leuchten 30 Minuten lang. Sie können sie ausschalten, indem Sie denselben Befehl eingeben, jedoch die Option „aus“ verwenden.
+Ein Regal hat drei Standort-LEDs: Eine auf dem Bedienfeld und eine auf jedem NSM. Die Standort-LEDs leuchten 30 Minuten lang. Sie können sie ausschalten, indem Sie denselben Befehl eingeben, jedoch die Option „aus“ verwenden.
 
 * Nach dem Trennen eines Shelfs von nicht-dedizierten RoCE-fähigen Ports (an den Controllern, auf RoCE-fähigen PCIe-Karten oder einer Kombination aus beiden oder an I/O-Modulen) haben Sie die Möglichkeit, diese Ports für die Netzwerknutzung neu zu konfigurieren.
 +
-
-NOTE: Wenn auf dem HA-Paar eine Version von ONTAP 9.6 ausgeführt wird, müssen Sie die Controller nacheinander neu booten. Wenn auf dem HA-Paar ONTAP 9.7 oder höher ausgeführt wird, müssen Sie die Controller nicht neu booten, es sei denn, ein oder beide Controller befinden sich im Wartungsmodus. Für diese Vorgehensweise wird vorausgesetzt, dass sich keiner der Controller im Wartungsmodus befindet.
+Wenn auf dem HA-Paar ONTAP 9.7 oder höher ausgeführt wird, müssen Sie die Controller nicht neu booten, es sei denn, ein oder beide Controller befinden sich im Wartungsmodus. Für diese Vorgehensweise wird vorausgesetzt, dass sich keiner der Controller im Wartungsmodus befindet.
 
 
 
@@ -110,11 +112,11 @@ Die Netzteile haben keinen Netzschalter.
 . Entfernen Sie das Shelf physisch aus dem Rack oder Schrank.
 +
 
-NOTE: Ein voll beladenes NS224-Regal kann bis zu 66.78 kg (30.29 kg) wiegen und erfordert zwei Personen, um einen hydraulischen Aufzug zu heben oder zu verwenden. Entfernen Sie keine Regalkomponenten (von der Vorder- oder Rückseite des Regals), um das Gewicht des Regals zu verringern, da das Regalgewicht unausgeglichen wird.
+NOTE: Ein voll beladenes NS224-Regal kann mit NSM100-Modulen bis zu 30.29 kg (25.8 lbs) oder mit NSM100B-Modulen bis zu 56.8 lbs (66.78 kg) wiegen und erfordert zwei Personen zum Anheben oder Verwenden eines hydraulischen Hubs. Entfernen Sie keine Regalkomponenten (von der Vorder- oder Rückseite des Regals), um das Gewicht des Regals zu verringern, da das Regalgewicht unausgeglichen wird.
 
 +
 
-NOTE: Wenn Ihr System in einem Schrank ausgeliefert wurde, müssen Sie zuerst die beiden Kreuzschlitzschrauben herausschrauben, mit denen das Regal an den hinteren Aufrechten befestigt ist. Die Schrauben befinden sich an den inneren Regalwänden des unteren NSM-Moduls. Sie sollten beide NSM-Module entfernen, um auf die Schrauben zuzugreifen.
+NOTE: Wenn Ihr System in einem Schrank geliefert wurde, müssen Sie zunächst die beiden Kreuzschlitzschrauben herausschrauben, mit denen das Regal an den Rackschienen befestigt ist. Die Schrauben befinden sich an den inneren Regalwänden des unteren NSM. Sie sollten beide NSMs entfernen, um Zugang zu den Schrauben zu erhalten.
 
 . Wenn Sie mehr als ein Shelf entfernen, wiederholen Sie die Schritte 2 bis 5.
 +
@@ -124,10 +126,7 @@ Andernfalls fahren Sie mit dem nächsten Schritt fort.
 +
 Sie führen den Befehl an beiden Controller-Modulen aus.
 
-. Sie haben die Möglichkeit, die nicht dedizierten RoCE-fähigen Ports für die Netzwerknutzung neu zu konfigurieren, indem Sie die folgenden Teilschritte ausführen.
-+
-Andernfalls werden Sie mit diesem Verfahren durchgeführt.
-
+. Sie haben die Möglichkeit, die nicht dedizierten RoCE-fähigen Ports für die Netzwerknutzung neu zu konfigurieren, indem Sie die folgenden Teilschritte ausführen. Andernfalls werden Sie mit diesem Verfahren durchgeführt.
 +
 .. Überprüfen Sie die Namen der derzeit für die Speichernutzung konfigurierten nicht-dedizierten Ports: `storage port show`
 +
@@ -135,7 +134,7 @@ Sie können den Befehl an einem der Controller-Module eingeben.
 
 +
 
-NOTE: Die nicht dedizierten Ports, die für die Storage-Verwendung konfiguriert sind, werden in der Ausgabe wie folgt angezeigt: Wenn Ihr HA-Paar ONTAP 9.8 oder höher ausführt, werden die nicht dedizierten Ports angezeigt `storage` Im `Mode` Spalte. Wenn auf dem HA-Paar ONTAP 9.7 oder 9.6 ausgeführt wird, werden die nicht-dedizierten Ports, die angezeigt werden `false` Im `Is Dedicated?` Spalte, auch anzeigen `enabled` Im `State` Spalte.
+NOTE: Die nicht dedizierten Ports, die für die Speichernutzung konfiguriert sind, werden in der Ausgabe wie folgt angezeigt: Wenn auf Ihrem HA-Paar ONTAP 9.8 oder höher ausgeführt wird, werden die nicht dedizierten Ports in der `Mode` Spalte angezeigt `storage`. Wenn auf Ihrem HA-Paar ONTAP 9.7 ausgeführt wird, werden auch die nicht dedizierten Ports, die in der `Is Dedicated?` Spalte angezeigt werden, in der `State` Spalte `enabled` angezeigt `false`.
 
 .. Führen Sie die Schritte auf die Version von ONTAP aus, auf die Ihr HA-Paar ausgeführt wird:
 +
@@ -168,28 +167,6 @@ Sie müssen diesen Befehl für jeden Port ausführen, den Sie neu konfigurieren.
 ... Gehen Sie zu substep 8c, um alle Portänderungen zu überprüfen.
 
 
-
-
- a| 
-Version von ONTAP 9.6
- a| 
-... Konfigurieren Sie die RoCE-fähigen Ports für die Netzwerkverwendung auf dem ersten Controller-Modul neu: `storage port disable -node _node name_ -port _port name_`
-+
-Sie müssen diesen Befehl für jeden Port ausführen, den Sie neu konfigurieren.
-
-... Booten Sie das Controller-Modul neu, damit die Port-Änderungen wirksam werden:
-+
-`system node reboot -node _node name_ -reason _reason_ for the reboot`
-
-+
-
-NOTE: Der Neustart muss abgeschlossen sein, bevor Sie mit dem nächsten Schritt fortfahren. Der Neustart kann bis zu 15 Minuten dauern.
-
-... Konfigurieren Sie die Ports am zweiten Controller-Modul neu, indem Sie den ersten Schritt (A) wiederholen.
-... Booten Sie den zweiten Controller neu, damit die Port-Änderungen wirksam werden, indem Sie den zweiten Schritt (b) wiederholen.
-... Gehen Sie zu substep 8c, um alle Portänderungen zu überprüfen.
-
-
 |===
 .. Überprüfen Sie, ob die nicht dedizierten Ports beider Controller-Module neu konfiguriert werden, um Netzwerke zu verwenden: `storage port show`
 +
@@ -199,7 +176,7 @@ Sie können den Befehl an einem der Controller-Module eingeben.
 Wenn auf Ihrem HA-Paar ONTAP 9.8 oder höher ausgeführt wird, werden die nicht dedizierten Ports angezeigt `network` Im `Mode` Spalte.
 
 +
-Wenn auf dem HA-Paar ONTAP 9.7 oder 9.6 ausgeführt wird, werden die nicht-dedizierten Ports, die angezeigt werden `false` Im `Is Dedicated?` Spalte, auch anzeigen `disabled` Im `State` Spalte.
+Wenn auf Ihrem HA-Paar ONTAP 9.7 ausgeführt wird, werden auch die nicht dedizierten Ports, die in der `Is Dedicated?` Spalte angezeigt werden, in der `State` Spalte `disabled` angezeigt `false`.
 
 
 

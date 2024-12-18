@@ -39,12 +39,6 @@ Setzen Sie die Verschlüsselung zurück, wenn diese aktiviert ist, und setzen Si
 .Onboard-Verschlüsselung (OKM)
 --
 . Geben Sie in der Loader-Eingabeaufforderung `boot_ontap maint` .
-. Überprüfen Sie die TMP-Firmware-Version mit dem `sysconfig -v` Befehl.
-+
-** Wenn die Version kleiner als 5.63 ist, wenden Sie sich an https://support.netapp.com["NetApp Support"].
-** Wenn die Version mehr als 5.63 ist, beenden Sie die Loader-Eingabeaufforderung: `halt`.
-
-
 . Starten Sie das ONTAP-Menü über die Loader-Eingabeaufforderung `boot_ontap menu`, und wählen Sie Option 10.
 . Geben Sie die OKM-Passphrase ein. Sie können diese Passphrase vom Kunden erhalten, oder wenden Sie sich an https://support.netapp.com["NetApp Support"].
 +

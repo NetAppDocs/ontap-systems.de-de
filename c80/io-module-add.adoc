@@ -1,0 +1,158 @@
+---
+permalink: c80/io-module-add.html 
+sidebar: sidebar 
+keywords: c80, add I/O module 
+summary: Um ein E/A-Modul auszutauschen, müssen Sie die Kabel vom Modul trennen, die SFP- und QSFP-Module aus dem Modul entfernen, das Modul entfernen, das Ersatzmodul installieren, die SFP- und QSFP-Module wieder einsetzen und das E/A-Modul anschließend verkabeln. 
+---
+= E/A-Modul hinzufügen – AFF C80
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn das Speichersystem über freie Steckplätze verfügt, installieren Sie das neue I/O-Modul in einem der verfügbaren Steckplätze. Wenn alle Steckplätze belegt sind, entfernen Sie ein vorhandenes E/A-Modul, um Platz zu schaffen, und installieren Sie dann das neue.
+
+.Bevor Sie beginnen
+* Überprüfen Sie die https://hwu.netapp.com/["NetApp Hardware Universe"^] und stellen Sie sicher, dass das neue I/O-Modul mit Ihrem Storage-System und Ihrer Version von ONTAP kompatibel ist.
+* Wenn mehrere Steckplätze verfügbar sind, überprüfen Sie die Steckplatzprioritäten in https://hwu.netapp.com/["NetApp Hardware Universe"^] Und verwenden Sie die beste für Ihr I/O-Modul verfügbare Lösung.
+* Stellen Sie sicher, dass alle anderen Komponenten ordnungsgemäß funktionieren.
+
+
+[role="tabbed-block"]
+====
+.Fügen Sie ein E/A-Modul zu einem verfügbaren Steckplatz hinzu
+--
+Sie können ein neues I/O-Modul zu einem Speichersystem mit verfügbaren Steckplätzen hinzufügen.
+
+.Schritte
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Drehen Sie das Kabelführungs-Fach nach unten, indem Sie die Tasten an der Innenseite des Kabelführungs-Fachs herausziehen und nach unten drehen.
+. Entfernen Sie das Ausblendmodul des Zielsteckplatzes vom Träger:
++
+.. Drücken Sie die Nockenverriegelung am Blindmodul im Zielsteckplatz.
+.. Drehen Sie die Nockenverriegelung so weit wie möglich vom Modul weg.
+.. Entfernen Sie das Modul aus dem Gehäuse, indem Sie den Finger in die Öffnung des Nockenhebels stecken und das Modul aus dem Gehäuse ziehen.
+
+
+. Installieren Sie das E/A-Modul:
++
+.. Richten Sie das E/A-Modul an den Kanten der Öffnung des Gehäusesteckplatzes aus.
+.. Schieben Sie das Modul vorsichtig in den Steckplatz bis zum Gehäuse, und drehen Sie dann die Nockenverriegelung ganz nach oben, um das Modul zu verriegeln.
+
+
+. Verkabeln Sie das E/A-Modul mit dem vorgesehenen Gerät.
++
+
+NOTE: Stellen Sie sicher, dass alle nicht verwendeten I/O-Steckplätze leer sind, um mögliche thermische Probleme zu vermeiden.
+
+. Drehen Sie das Kabelführungs-Fach bis in die geschlossene Position.
+. Booten Sie an der LOADER-Eingabeaufforderung den Node neu:
++
+`bye`
+
++
+
+NOTE: Dadurch werden das I/O-Modul und andere Komponenten neu initialisiert und der Node neu gestartet.
+
+. Geben Sie den Controller vom Partner-Controller zurück:
++
+`storage failover giveback -ofnode target_node_name`
+
+. Wiederholen Sie diese Schritte für Controller B.
+. Stellen Sie im funktionstüchtigen Knoten das automatische Giveback wieder her, wenn Sie es deaktiviert haben:
++
+`storage failover modify -node local -auto-giveback _true_`
+
+. Wenn AutoSupport aktiviert ist, stellen Sie die automatische Fallerstellung wieder her:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`
+
+
+
+--
+.Hinzufügen eines E/A-Moduls zu einem vollständig bestückten System
+--
+Sie können ein E/A-Modul zu einem vollständig bestückten System hinzufügen, indem Sie ein vorhandenes E/A-Modul entfernen und ein neues an dessen Stelle installieren.
+
+.Über diese Aufgabe
+Stellen Sie sicher, dass Sie die folgenden Szenarien kennen, um ein neues I/O-Modul zu einem vollständig bestückten System hinzuzufügen:
+
+[cols="1,2"]
+|===
+| Szenario | Handeln erforderlich 
+
+
+ a| 
+NIC zu NIC (gleiche Anzahl von Ports)
+ a| 
+Die LIFs werden automatisch migriert, wenn das Controller-Modul heruntergefahren wird.
+
+
+
+ a| 
+NIC zu NIC (unterschiedliche Anzahl von Ports)
+ a| 
+Weisen Sie die ausgewählten LIFs dauerhaft einem anderen Home Port zu. Weitere Informationen finden Sie unter https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html["Migrieren eines LIF"^] .
+
+
+
+ a| 
+NIC zu Speicher-I/O-Modul
+ a| 
+Verwenden Sie System Manager, um die LIFs dauerhaft zu verschiedenen Home Ports zu migrieren, wie in beschrieben https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html["Migrieren eines LIF"^].
+
+|===
+.Schritte
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Trennen Sie alle Kabel vom Ziel-E/A-Modul.
+. Drehen Sie das Kabelführungs-Fach nach unten, indem Sie die Tasten an der Innenseite des Kabelführungs-Fachs herausziehen und nach unten drehen.
+. Entfernen Sie das Ziel-I/O-Modul aus dem Gehäuse:
++
+.. Drücken Sie die Taste für die Nockenverriegelung.
+.. Drehen Sie die Nockenverriegelung so weit wie möglich vom Modul weg.
+.. Entfernen Sie das Modul aus dem Gehäuse, indem Sie den Finger in die Öffnung des Nockenhebels stecken und das Modul aus dem Gehäuse ziehen.
++
+Stellen Sie sicher, dass Sie den Steckplatz verfolgen, in dem sich das I/O-Modul befand.
+
+
+
+. Installieren Sie das E/A-Modul im Zielsteckplatz im Gehäuse:
++
+.. Richten Sie das Modul an den Kanten der Öffnung des Gehäusesteckplatzes aus.
+.. Schieben Sie das Modul vorsichtig in den Steckplatz bis zum Gehäuse, und drehen Sie dann die Nockenverriegelung ganz nach oben, um das Modul zu verriegeln.
+
+
+. Verkabeln Sie das E/A-Modul mit dem vorgesehenen Gerät.
+. Wiederholen Sie die Schritte zum Entfernen und Installieren, um zusätzliche Module für den Controller zu ersetzen.
+. Drehen Sie das Kabelführungs-Fach bis in die geschlossene Position.
+. Booten Sie den Controller über die LOADER-Eingabeaufforderung:_bye_ neu
++
+Dadurch werden die PCIe-Karten und andere Komponenten neu initialisiert und der Node wird neu gebootet.
+
++
+
+NOTE: Wenn beim Neustart ein Problem auftritt, lesen Sie https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1494308["BURT 1494308 – das Herunterfahren der Umgebung kann während des Austauschs des I/O-Moduls ausgelöst werden"]
+
+. Geben Sie den Controller vom Partner-Controller zurück:
++
+`storage failover giveback -ofnode target_node_name`
+
+. Automatisches Giveback aktivieren, falls deaktiviert:
++
+`storage failover modify -node local -auto-giveback true`
+
+. Führen Sie einen der folgenden Schritte aus:
++
+** Wenn Sie ein NIC-E/A-Modul entfernt und ein neues NIC-E/A-Modul installiert haben, verwenden Sie für jeden Port den folgenden Netzwerkbefehl:
++
+`storage port modify -node *_<node name>__ -port *_<port name>__ -mode network`
+
+** Wenn Sie ein NIC-I/O-Modul entfernt und ein Speicher-I/O-Modul installiert haben, installieren und verkabeln Sie die NS224-Shelfs, wie unter beschriebenlink:../ns224/hot-add-shelf-overview.html["Hot-Add-Workflow"].
+
+
+. Wiederholen Sie diese Schritte für Controller B.
+
+
+--
+====

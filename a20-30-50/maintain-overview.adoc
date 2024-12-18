@@ -1,0 +1,96 @@
+---
+permalink: a20-30-50/maintain-overview.html 
+sidebar: sidebar 
+keywords: aff a20 aff a30 aff a50 maintenance, maintenance, repairing a20 aff a30 aff a50, replace a20 aff a30 aff a50 components 
+summary: Wartung der Hardware AFF A20, AFF A30 und AFF A50 
+---
+= Überblick über die Hardwarewartung – AFF A20, AFF A30 und AFF A50
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Möglicherweise müssen Sie Wartungsverfahren für Ihre Hardware durchführen. In diesem Abschnitt finden Sie Verfahren zur Wartung der Systemkomponenten AFF A20, AFF A30 und AFF A50.
+
+Bei den Verfahren in diesem Abschnitt wird davon ausgegangen, dass die Storage-Systeme AFF A20, AFF A30 oder AFF A50 bereits als Storage-Nodes in der ONTAP-Umgebung implementiert wurden.
+
+
+
+== Systemkomponenten
+
+Für die Speichersysteme AFF A20, AFF A30 und AFF A50 können Sie Wartungsverfahren für die folgenden Komponenten durchführen.
+
+[cols="25,65"]
+|===
+
+
+ a| 
+link:bootmedia-replace-workflow.html["Boot-Medien"]
+ a| 
+Auf dem Boot-Medium werden ein primärer und ein sekundärer Satz von ONTAP-Image-Dateien sowie Informationen zur Systemkonfiguration gespeichert, die das System beim Booten verwendet.
+
+
+
+ a| 
+link:chassis-replace-workflow.html["Chassis"]
+ a| 
+Das Chassis ist das physische Gehäuse, in dem alle Controller-Komponenten wie Controller-/CPU-Einheit, Stromversorgung und I/O-Vorgänge untergebracht sind
+
+
+
+ a| 
+link:controller-replace-workflow.html["Controller"]
+ a| 
+Ein Controller besteht aus einer Hauptplatine, Firmware und Software. Er steuert die Laufwerke und führt die ONTAP-Betriebssystemsoftware aus.
+
+
+
+ a| 
+link:dimm-replace.html["DIMM"]
+ a| 
+Ein duales Inline-Speichermodul (DIMM) ist eine Art von Computerspeicher. Sie sind installiert, um einem Controller-Motherboard Systemspeicher hinzuzufügen.
+
+
+
+ a| 
+link:drive-replace.html["Laufwerk"]
+ a| 
+Ein Laufwerk ist ein Gerät, das den für Daten erforderlichen physischen Storage bereitstellt.
+
+
+
+ a| 
+link:fan-replace.html["Ventilator"]
+ a| 
+Ein Lüfter kühlt den Controller und die Laufwerke.
+
+
+
+ a| 
+link:io-module-overview.html["I/O-Modul"]
+ a| 
+Das E/A-Modul (Eingangs-/Ausgangsmodul) ist eine Hardwarekomponente, die als Vermittler zwischen dem Controller und verschiedenen Geräten oder Systemen dient, die Daten mit dem Controller austauschen müssen.
+
+
+
+ a| 
+link:nvdimm-battery-replace.html["NV-Batterie"]
+ a| 
+Die nichtflüchtige Speicherbatterie (NV) sorgt dafür, dass die NVMEM-Komponenten mit Strom versorgt werden, während die aktiven Daten nach einem Stromausfall in den Flash-Speicher ausgelagert werden.
+
+
+
+ a| 
+link:power-supply-replace.html["Stromversorgung"]
+ a| 
+Ein Netzteil stellt eine redundante Stromquelle in einem Controller bereit.
+
+
+
+ a| 
+link:rtc-battery-replace.html["Akku in Echtzeit"]
+ a| 
+Bei ausgeschaltetem Gerät bleiben Datum und Uhrzeit über eine Echtzeitbatterie erhalten.
+
+|===

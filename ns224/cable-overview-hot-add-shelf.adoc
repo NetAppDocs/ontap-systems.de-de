@@ -24,6 +24,7 @@ In diesem Verkabelungsabschnitt wird beschrieben, wie das NS224-Shelf mit den fo
 
 == Über diese Aufgabe
 
+* Dieses Verfahren gilt nur für Direct-Attached Storage. Anweisungen zum Schalterspeicher finden Sie in unserer link:cable-as-switch-attached.html["Switch-Attached-Verkabelungsleitfaden"].
 * Machen Sie sich mit der richtigen Ausrichtung des Kabelsteckers und der Position und Beschriftung der Ports an den NS224 NSM100-Shelf-Modulen vertraut.
 +
 ** Die Kabel werden mit der Zuglasche des Steckers nach oben eingesetzt.
@@ -38,14 +39,29 @@ image::../media/oie_cable_pull_tab_up.png[Die Kabel werden mit der Zuglasche des
 
 ** Die folgende Abbildung hilft Ihnen bei der physischen Identifizierung der Shelf-Ports NSM100, e0a und e0b.
 +
-Ein NS224-Shelf enthält zwei NSM100-Module. Das obere Modul befindet sich in Steckplatz A (NSM A) und das untere Modul in Steckplatz B (NSM B).
-
-+
-Jedes NSM100-Modul enthält 2 x 100-GbE-QSFP28-Ports: e0a und e0b.
-
+[role="tabbed-block"]
+====
+.NSM100-Module
+--
+*** Ein NS224-Shelf enthält zwei NSM100-Module. Das obere Modul befindet sich in Steckplatz A (NSM A) und das untere Modul in Steckplatz B (NSM B).
+*** Jedes NSM100-Modul enthält 2 x 100-GbE-QSFP28-Ports: e0a und e0b.
 +
 image::../media/drw_ns224_back_ports.png[Standort der NS224 NSM100-Modulports e0a und e0b]
 
+
+
+--
+.NSM100B-Module
+--
+*** Ein NS224-Shelf enthält zwei NSM100B-Module. Das obere Modul befindet sich in Steckplatz A (NSM A) und das untere Modul in Steckplatz B (NSM B).
+*** Jedes NSM100B-Modul umfasst 2 x 100-GbE-CX6/DX-Ports: e1a und e1b.
++
+image::../media/drw_ns224_nsmb_back_ports_ieops-2006.svg[Standort der NS224 NSM100B-Modulports e0a und e0b]
+
+
+
+--
+====
 
 
 * Nachdem Sie ein Shelf mit Hot-Zusatz angeschlossen haben, erkennt ONTAP das Shelf:

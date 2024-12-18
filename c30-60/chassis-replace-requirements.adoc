@@ -1,0 +1,38 @@
+---
+permalink: c30-60/chassis-replace-requirements.html 
+sidebar: sidebar 
+keywords: aff c30, aff c60, replace the chassis 
+summary: Sie ersetzen ein Gehäuse mit eingeschränkter Systemfunktion durch das neue Gehäuse desselben Modells wie das Gehäuse mit eingeschränkter Systemfunktion. 
+---
+= Anforderungen und Überlegungen - AFF C30 und AFF C60
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor Sie das Gehäuse austauschen, müssen Sie die folgenden Anforderungen und Überlegungen überprüfen.
+
+
+
+== Anforderungen
+
+* Das Ersatzgehäuse muss das gleiche Modell aufweisen wie das Gehäuse für beeinträchtigte Störungen. Dieses Verfahren gilt für einen ähnlichen Austausch, nicht für ein Upgrade.
+* Alle anderen Komponenten des Speichersystems müssen ordnungsgemäß funktionieren. Andernfalls müssen Sie sich an Sie wenden, bevor Sie mit https://mysupport.netapp.com/site/global/dashboard["NetApp Support"] diesem Verfahren fortfahren.
+
+
+
+
+== Überlegungen
+
+* *Das Chassis-Austauschverfahren ist störend.* Für ein Cluster mit zwei Nodes tritt ein vollständiger Service-Ausfall und ein teilweiser Ausfall in einem Cluster mit mehreren Nodes auf.
+* Sie können das Verfahren zum Gehäuseaustausch bei allen Versionen von ONTAP verwenden, die von Ihrem Speichersystem unterstützt werden.
+* Beim Austausch des Gehäuses wird angenommen, dass Sie den Blende, die Laufwerke, etwaige Laufwerkplatzhalter und die Controller auf das neue Gehäuse verschieben.
+* Bei Bedarf können Sie die LEDs des Speichersystems (blau) einschalten, um das betroffene Speichersystem physisch zu lokalisieren. Melden Sie sich über SSH bei der BMC an und geben Sie den Befehl ein `system location-led _on_`.
++
+Ein Speichersystem verfügt über drei Standort-LEDs: Eine auf dem Bedienfeld und eine auf jedem Controller. Die Standort-LEDs leuchten 30 Minuten lang.
+
++
+Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led _off_`. Wenn Sie sich nicht sicher sind, ob die LEDs leuchten oder nicht, können Sie ihren Status überprüfen, indem Sie den Befehl eingeben `system location-led show`.
+
+

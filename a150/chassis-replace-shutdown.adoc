@@ -62,11 +62,11 @@ NOTE: Öffnen Sie eine SSH-Sitzung für jede SP/BMC-Verbindung, damit Sie den Fo
 
 . Halten Sie die beiden Nodes im beeinträchtigten Chassis an:
 +
-`system node halt -node <node>,<node2> -skip-lif-migration-before-shutdown true -ignore-quorum-warnings true -inhibit-takeover true`
+`system node halt -node <node1>,<node2> -skip-lif-migration-before-shutdown true -ignore-quorum-warnings true -inhibit-takeover true`
 
 +
 
-NOTE: Bei Clustern mit SnapMirror Synchronous-Betrieb im StructSync-Modus: `system node halt -node <node>,<node2>  -skip-lif-migration-before-shutdown true -ignore-quorum-warnings true -inhibit-takeover true -ignore-strict-sync-warnings true`
+NOTE: Bei Clustern mit SnapMirror Synchronous-Betrieb im StructSync-Modus: `system node halt -node <node1>,<node2>  -skip-lif-migration-before-shutdown true -ignore-quorum-warnings true -inhibit-takeover true -ignore-strict-sync-warnings true`
 
 . Geben Sie *y* für jeden Controller im Cluster ein, wenn angezeigt wird `_Warning: Are you sure you want to halt node "cluster <node-name> number"?
 {y|n}:_`

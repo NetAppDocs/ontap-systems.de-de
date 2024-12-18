@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ns224, shelves, shelf, ns224 shelves, hot-add, ha, pair, requirement 
 summary: Wenn Sie ein NS224 Laufwerk-Shelf während des laufenden Betrieb hinzufügen möchten, muss Ihr HA-Paar bestimmte Anforderungen erfüllen. 
 ---
-= Anforderungen und Best Practices für Hot-Add - NS224-Shelfs
+= Anforderungen und Best Practices für das Hot-Add von NS224-Shelfs
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -47,7 +47,7 @@ Wenn die aktuelle Version des DQP installiert ist, kann Ihr System neu qualifizi
 
 * *Best Practice:* die Best Practice ist, vor und nach dem Hot-Hinzufügen eines Regals zu laufen https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^] .
 +
-Wenn Active IQ Config Advisor ausgeführt wird, bevor ein Shelf hinzugefügt wird, ist ein Schnappschuss der vorhandenen Shelf-Ethernet-Konnektivität (ENET) möglich. Es werden die NVMe Shelf-Versionen (NSM) der Firmware-Versionen überprüft und können Sie eine Shelf-ID überprüfen, die bereits im HA-Paar verwendet wird.
+Wird Active IQ Config Advisor vor dem Hot-Hinzufügen eines Shelfs ausgeführt, erstellt es einen Snapshot der vorhandenen Shelf-Ethernet (ENET)-Konnektivität, überprüft die Firmware-Versionen des NVMe Shelf-Moduls (NSM) und ermöglicht Ihnen die Überprüfung einer Shelf-ID, die bereits im HA-Paar verwendet wird.
 
 +
 Wenn Sie Active IQ Config Advisor nach dem Hinzufügen eines Shelfs im laufenden Betrieb ausführen, können Sie überprüfen, ob Shelfs ordnungsgemäß verkabelt sind und dass Shelf-IDs innerhalb des HA-Paars eindeutig sind.

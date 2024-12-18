@@ -11,26 +11,26 @@ summary: 'Wenn das Boot-Medium in einem NS224-Laufwerk-Shelf in einem HA-Paar, d
 
 
 [role="lead"]
-Wenn das Boot-Medium in einem NS224-Laufwerk-Shelf in einem HA-Paar, auf dem ONTAP 9.7 oder höher ausgeführt wird, ausfällt oder auf dem Shelf die NVMe-Shelf-Modul-Firmware (NSM) Version 0111 oder höher ausgeführt wird, können Sie die Boot-Medien ersetzen. Der Austausch der Boot-Medien kann unterbrechungsfrei durchgeführt werden, während das Festplatten-Shelf eingeschaltet ist und I/O gerade läuft.
+Sie können fehlerhafte Startmedien in einem NS224-Shelf ersetzen. Der Austausch der Boot-Medien kann unterbrechungsfrei durchgeführt werden, während das Festplatten-Shelf eingeschaltet ist und I/O gerade läuft.
 
 .Bevor Sie beginnen
-* Ihr HA-Paar muss bereits ONTAP 9.7 oder höher ausführen, was die unterstützte Mindestversion der NSM-Firmware hat, oder Ihr HA-Paar muss bereits eine Version von ONTAP 9.6 mit NSM-Firmware-Version 0111 oder höher ausführen.
+* *NS224 nur mit NSM100-Modulen*: Ihr HA-Paar muss bereits ONTAP 9.7 oder höher ausführen, welches die unterstützte Mindestversion der NSM-Firmware hat.
 +
 Sie können den eingeben `storage shelf show -module` Befehl an der Konsole eines der beiden Controller, um die Version der NSM-Firmware auf Ihrem Shelf zu überprüfen.
 
 +
 [NOTE]
 ====
-Wenn im Shelf keine NSM-Firmware-Version 0111 oder höher ausgeführt wird, können Sie das Boot-Medium nicht ersetzen, müssen Sie das NSM-Modul ersetzen.
+Wenn auf dem Shelf nicht die NSM-Firmware-Version 0111 oder höher ausgeführt wird, können Sie die Boot-Medien nicht ersetzen, müssen Sie den NSM ersetzen.
 
-link:service-replace-nsm100.html["Ersetzen Sie ein NSM-Modul - NS224-Einlegeböden"^]
+link:service-replace-nsm100.html["Ersetzen Sie ein NSM - NS224-Einschübe"^]
 
 ====
-* Sie benötigen einen Kreuzschlitzschraubendreher #1.
+* *NS224 nur mit NSM100-Modulen*: Sie benötigen einen Kreuzschlitzschraubendreher #1.
 +
 Die Schraube, mit der das Boot-Medium an der Platine befestigt wird, erfordert einen Kreuzschlitz #1 Schraubendreher; bei Verwendung eines anderen Schraubendrehers kann die Schraube entfernt werden.
 
-* Das Partner-NSM-Modul des Shelfs muss in Betrieb sein und ordnungsgemäß verkabelt werden, damit das Shelf beim Entfernen des NSM-Moduls mit der fehlerhaften FRU (Ziel-NSM-Modul) die Verbindung aufrecht erhält.
+* Der Partner-NSM des Shelfs muss betriebsbereit sein und ordnungsgemäß verkabelt sein, damit Ihr Shelf weiterhin Konnektivität erhält, wenn Sie den NSM mit der fehlerhaften FRU (Ziel-NSM) entfernen.
 +
 https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"^]
 
@@ -38,7 +38,7 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 
 
 .Über diese Aufgabe
-* Nach dem Austausch des Boot-Mediums wird das Boot-Image aus dem Partner-NSM-Modul des Shelfs automatisch auf das Ersatz-Boot-Medium kopiert.
+* Nachdem die Boot-Medien ersetzt wurden, wird das Boot-Image vom Partner-NSM des Shelfs automatisch auf den Ersatz-Boot-Medium kopiert.
 +
 Dies kann bis zu fünf Minuten dauern.
 
@@ -51,51 +51,55 @@ So bleibt ONTAP genügend Zeit, um das NSM-Entfernungsereignis zu bearbeiten.
 Wenn Sie den nicht kennen `_shelf_name_` Führen Sie den aus `storage shelf show` Befehl.
 
 +
-Ein Regal hat drei Positionen-LEDs: Eine auf dem Bedienfeld und eine auf jedem NSM-Modul. Die Standort-LEDs leuchten 30 Minuten lang. Sie können sie ausschalten, indem Sie den gleichen Befehl eingeben, jedoch mit dem `off` Option.
+Ein Regal hat drei Standort-LEDs: Eine auf dem Bedienfeld und eine auf jedem NSM. Die Standort-LEDs leuchten 30 Minuten lang. Sie können sie deaktivieren, indem Sie denselben Befehl eingeben, jedoch die Option verwenden `off`.
 
 * Nach dem Ersetzen der Boot-Medien können Sie das fehlerhafte Teil wie in den mit dem Kit gelieferten RMA-Anweisungen beschrieben an NetApp zurücksenden.
 +
 Wenn Sie die RMA-Nummer oder zusätzliche Hilfe beim Ersatzverfahren benötigen, wenden Sie sich an den technischen Support unter https://mysupport.netapp.com/site/global/dashboard["NetApp Support"^], 888-463-8277 (Nordamerika), 00-800-44-638277 (Europa) oder +800-800-80-800 (Asien/Pazifik).
 
-* Sie können die folgenden Animationen oder die geschriebenen Schritte verwenden, um das Boot-Medium zu ersetzen.
-+
+
+
+[role="tabbed-block"]
+====
+.NSM100-Module
+--
+Sie können die folgenden Animationen oder die geschriebenen Schritte verwenden, um das Boot-Medium zu ersetzen.
+
 .Ersetzen Sie das NS224-Shelf-Boot-Medium
 video::20ed85f9-1f80-4e0e-9219-ab4600070d8a[panopto]
-
-
 .Schritte
-. Stellen Sie sicher, dass beide NSM-Module im Shelf dieselbe Version von Firmware ausführen: Version 0200 oder höher.
+. Stellen Sie sicher, dass auf beiden NSMs im Shelf die gleiche Firmware-Version ausgeführt wird: Version 0200 oder höher.
 . Richtig gemahlen.
-. Trennen Sie die Verkabelung vom NSM-Modul, das die FRU enthält, die Sie ersetzen:
+. Trennen Sie die Verkabelung vom NSM, der die FRU enthält, die Sie ersetzen:
 +
 .. Ziehen Sie das Netzkabel vom Netzteil ab, indem Sie den Netzkabelhalter öffnen, wenn es sich um ein Netzteil handelt, oder die beiden Flügelschrauben lösen, wenn es sich um ein Gleichstromnetzteil handelt, und ziehen Sie dann das Netzkabel vom Netzteil ab.
 +
 Die Netzteile haben keinen Netzschalter.
 
-.. Trennen Sie die Speicherkabel von den NSM-Modulports.
+.. Trennen Sie die Speicherkabel von den NSM-Ports.
 +
-Notieren Sie sich die NSM-Modulanschlüsse, an die jedes Kabel angeschlossen ist. Wenn Sie das NSM-Modul später wieder einsetzen, schließen Sie die Kabel wieder an die gleichen Anschlüsse an.
+Notieren Sie sich die NSM-Ports, an die jedes Kabel angeschlossen ist. Schließen Sie die Kabel wieder an die gleichen Ports an, wenn Sie den NSM wieder einsetzen.
 
 
 
-. Entfernen Sie das NSM-Modul aus dem Shelf:
+. Entfernen Sie den NSM aus dem Shelf:
 +
-.. Führen Sie die Zeigefinger durch die Fingerlöcher der Verriegelungsmechanismen auf beiden Seiten des NSM-Moduls.
+.. Führen Sie Ihre Zeigefinger durch die Fingerlöcher der Verriegelungsmechanismen auf beiden Seiten des NSM.
 +
 
-NOTE: Wenn Sie das untere NSM-Modul entfernen und die untere Schiene den Zugriff auf die Verriegelungen behindert, setzen Sie Ihre Zeigefinger durch die Fingerlöcher von innen (durch Überqueren der Arme).
+NOTE: Wenn Sie den unteren NSM entfernen und die untere Schiene den Zugang zu den Verriegelungsmechanismen behindert, legen Sie Ihre Zeigefinger von innen durch die Fingerlöcher (durch Überdrücken der Arme).
 
 .. Drücken Sie bei den Daumen nach unten, und halten Sie die orangefarbenen Laschen über den Verriegelungsmechanismus.
 +
 Die Verriegelungsmechanismen heben sich an und löschen die Verriegelungsstifte am Regal.
 
-.. Ziehen Sie vorsichtig, bis sich das NSM-Modul etwa ein Drittel des Ausschuppens aus dem Regal befindet. Fassen Sie die NSM-Modulseiten mit beiden Händen an, um das Gewicht zu stützen, und legen Sie es dann auf eine flache, stabile Oberfläche.
+.. Ziehen Sie vorsichtig, bis sich der NSM etwa ein Drittel des Ausschubees aus dem Regal befindet, fassen Sie die NSM-Seiten mit beiden Händen an, um sein Gewicht zu tragen, und legen Sie ihn dann auf eine flache, stabile Oberfläche.
 +
-Wenn Sie mit dem Ziehen beginnen, ziehen sich die Arms des Verriegelungsmechanismus aus dem NSM-Modul und sichern sich in ihrer vollständig ausgestreckten Position.
+Wenn Sie mit dem Ziehen beginnen, ziehen sich die Arme des Verriegelungsmechanismus aus dem NSM und rasten in ihrer vollständig ausgefahrenen Position ein.
 
 
 
-. Lösen Sie die Flügelschraube der NSM-Modulabdeckung, und öffnen Sie die Abdeckung.
+. Lösen Sie die Flügelschraube der NSM-Abdeckung, und öffnen Sie die Abdeckung.
 . Suchen Sie das ausgefallene Startmedium physisch.
 +
 Die Boot-Medien befinden sich an der Wand des Shelf-Chassis gegenüber dem Netzteil.
@@ -122,31 +126,31 @@ NOTE: Ziehen Sie die Schraube so fest, dass sie die Bootsmedien sicher hält, ab
 
 
 
-. Schließen Sie die NSM-Modulabdeckung, und ziehen Sie dann die Flügelschraube fest.
-. Setzen Sie das NSM-Modul wieder in das Regal ein:
+. Schließen Sie die NSM-Abdeckung, und ziehen Sie die Flügelschraube fest.
+. Setzen Sie den NSM wieder in das Regal ein:
 +
 .. Vergewissern Sie sich, dass die Arms des Verriegelungsmechanismus vollständig ausgefahren sind.
-.. Schieben Sie das NSM-Modul vorsichtig mit beiden Händen in das Regal, bis das Gewicht des NSM-Moduls vollständig vom Regal unterstützt wird.
-.. Schieben Sie das NSM-Modul in das Regal, bis es anhält (etwa einen halben Zoll von der Rückseite des Regals).
+.. Schieben Sie den NSM vorsichtig mit beiden Händen in das Regal, bis das Gewicht des NSM vollständig vom Regal unterstützt wird.
+.. Drücken Sie den NSM in das Regal, bis er anhält (etwa einen halben Zoll von der Rückseite des Shelfs entfernt).
 +
-Sie können Ihre Daumen auf die orangefarbenen Laschen an der Vorderseite jeder Fingerschleife (der Arms des Verriegelungsmechanismus) legen, um das NSM-Modul einzudrücken.
+Sie können Ihre Daumen auf die orangefarbenen Laschen an der Vorderseite jeder Fingerschlaufe (der Arme des Verriegelungsmechanismus) legen, um den NSM einzudrücken.
 
-.. Führen Sie die Zeigefinger durch die Fingerlöcher der Verriegelungsmechanismen auf beiden Seiten des NSM-Moduls.
+.. Führen Sie Ihre Zeigefinger durch die Fingerlöcher der Verriegelungsmechanismen auf beiden Seiten des NSM.
 +
 
-NOTE: Wenn Sie das untere NSM-Modul einsetzen und die untere Schiene den Zugriff auf die Verriegelungen behindert, setzen Sie die Zeigefinger durch die Fingerlöcher von innen (durch Überqueren der Arme).
+NOTE: Wenn Sie den unteren NSM einsetzen und die untere Schiene den Zugang zu den Verriegelungsmechanismen behindert, legen Sie Ihre Zeigefinger von innen durch die Fingerlöcher (durch Überdrücken der Arme).
 
 .. Drücken Sie bei den Daumen nach unten, und halten Sie die orangefarbenen Laschen über den Verriegelungsmechanismus.
 .. Drücken Sie vorsichtig nach vorne, um die Verriegelungen über den Anschlag zu bringen.
 .. Lösen Sie Ihre Daumen von den Spitzen der Verriegelungen, und drücken Sie dann weiter, bis die Verriegelungen einrasten.
 +
-Das NSM-Modul sollte vollständig in das Regal eingeführt und mit den Rändern des Regals bündig eingespült werden.
+Der NSM sollte vollständig in das Regal eingeführt und bündig mit den Kanten des Regals ausgeführt werden.
 
 
 
-. Schließen Sie die Verkabelung wieder an das NSM-Modul an:
+. Schließen Sie die Verkabelung wieder an den NSM an:
 +
-.. Schließen Sie die Speicherkabel wieder an die beiden NSM-Modulports an.
+.. Schließen Sie die Speicherverkabelung wieder an die beiden NSM-Ports an.
 +
 Die Kabel werden mit der Zuglasche des Steckers nach oben eingesetzt. Wenn ein Kabel richtig eingesetzt wird, klickt es an seine Stelle.
 
@@ -155,18 +159,18 @@ Die Kabel werden mit der Zuglasche des Steckers nach oben eingesetzt. Wenn ein K
 Bei ordnungsgemäßer Funktion leuchtet die zweifarbige LED des Netzteils grün.
 
 +
-Außerdem leuchten die beiden NSM-Modulports LNK (grün) LEDs auf. Wenn eine LNK-LED nicht leuchtet, setzen Sie das Kabel wieder ein.
+Außerdem leuchten beide NSM-Port-LNK-LEDs (grün) auf. Wenn eine LNK-LED nicht leuchtet, setzen Sie das Kabel wieder ein.
 
 
 
-. Stellen Sie sicher, dass die Warn-LEDs am NSM-Modul, die das ausgefallene Boot-Medium und die Anzeige des Shelf-Bedieners enthalten, nicht mehr leuchten.
+. Vergewissern Sie sich, dass die Warn-LEDs am NSM, der die fehlerhaften Boot-Medien enthält, und am Shelf-Bedienfeld nicht mehr leuchten.
 +
-Es kann zwischen 5 und 10 Minuten dauern, bis die Warn-LEDs ausgeschaltet werden. Dies ist die Zeit, die das NSM-Modul zum Neustart und die Kopie des Boot-Media-Images benötigt.
+Es kann zwischen 5 und 10 Minuten dauern, bis die Warn-LEDs ausgeschaltet werden. Dies ist die Zeit, die der NSM benötigt, um neu zu starten und das Image des Startmediums zu kopieren.
 
 +
 Wenn die Fehler-LEDs weiterhin leuchten, werden die Boot-Medien möglicherweise nicht richtig eingesetzt oder es kann ein weiteres Problem auftreten. Wenden Sie sich an den technischen Support, um Hilfe zu erhalten.
 
-. Überprüfen Sie, ob das NSM-Modul ordnungsgemäß verkabelt ist, indem Sie Active IQ Config Advisor ausführen.
+. Überprüfen Sie, ob der NSM ordnungsgemäß verkabelt ist, indem Sie Active IQ Config Advisor ausführen.
 +
 Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
 
@@ -174,3 +178,168 @@ Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaß
 https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"^]
 
 
+
+--
+.NSM100B-Module
+--
+Führen Sie die folgenden Schritte aus, um das fehlerhafte Startmedium zu ersetzen.
+
+.Schritte
+. Richtig gemahlen.
+. Trennen Sie die Verkabelung vom NSM, der die FRU enthält, die Sie ersetzen:
++
+.. Ziehen Sie das Netzkabel vom Netzteil ab, indem Sie den Netzkabelhalter öffnen, wenn es sich um ein Netzteil handelt, oder die beiden Flügelschrauben lösen, wenn es sich um ein Gleichstromnetzteil handelt, und ziehen Sie dann das Netzkabel vom Netzteil ab.
++
+Die Netzteile haben keinen Netzschalter.
+
+.. Trennen Sie die Speicherkabel von den NSM-Ports.
++
+Notieren Sie sich die NSM-Ports, an die jedes Kabel angeschlossen ist. Schließen Sie die Kabel wieder an die gleichen Ports an, wenn Sie den NSM wieder einsetzen.
+
+
+
+. Entfernen Sie die NSM:
++
+image::../media/drw_g_and_t_handles_remove_ieops-1837.svg[Entfernen Sie den NSM.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Drücken Sie an beiden Enden des NSM die vertikalen Verriegelungslaschen nach außen, um die Griffe zu lösen.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Legende Nummer 2]
+ a| 
+** Ziehen Sie die Griffe zu sich, um den NSM aus der Mittelplatine zu lösen.
++
+Beim Ziehen ziehen die Griffe aus dem Regal heraus. Wenn du Widerstand spürst, ziehe weiter.
+
+** Schieben Sie den NSM aus dem Regal und legen Sie ihn auf eine Ebene, stabile Oberfläche.
++
+Stellen Sie sicher, dass Sie die Unterseite des NSM stützen, während Sie ihn aus dem Regal ziehen.
+
+
+
+
+
+ a| 
+image::../media/icon_round_3.png[Legende Nummer 3]
+ a| 
+Drehen Sie die Griffe aufrecht (neben den Laschen), um sie aus dem Weg zu bewegen.
+
+|===
+. Öffnen Sie die NSM-Abdeckung, indem Sie die Flügelschraube gegen den Uhrzeigersinn drehen, um sie zu lösen, und öffnen Sie dann die Abdeckung.
+. Suchen Sie das ausgefallene Startmedium physisch.
+. Entfernen Sie das Startmedium:
++
+image::../media/drw_t_boot_media_replace_ieops-1977.svg[Startmedien entfernen.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Speicherort des Startmediums
+
+
+
+ a| 
+image::../media/icon_round_2.png[Legende Nummer 2]
+ a| 
+Drücken Sie auf die blaue Lasche, um das rechte Ende des Startmediums freizugeben.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Legende Nummer 3]
+ a| 
+Heben Sie das rechte Ende des Kofferraummediums in einem leichten Winkel an, um einen guten Halt an den Seiten des Kofferraummediums zu erhalten.
+
+
+
+ a| 
+image::../media/icon_round_4.png[Legende Nummer 4]
+ a| 
+Ziehen Sie das linke Ende des Trägermediums vorsichtig aus dem Sockel.
+
+|===
+. Installieren Sie das Ersatz-Startmedium:
++
+.. Richten Sie die Kanten der Startmedien am Buchsengehäuse aus, und schieben Sie sie vorsichtig in die Buchse.
+.. Drehen Sie das Startmedium nach unten in Richtung Verriegelungstaste.
+.. Drücken Sie die Verriegelungstaste, drehen Sie die Manschettenmedien ganz nach unten, und lassen Sie dann die Verriegelungstaste los.
+
+
+. Schließen Sie die NSM-Abdeckung, und ziehen Sie die Flügelschraube fest.
+. Setzen Sie den NSM in das Regal ein:
++
+image::../media/drw_g_and_t_handles_reinstall_ieops-1838.svg[Ersetzen Sie die NSM.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Wenn Sie die NSM-Griffe senkrecht (neben den Laschen) gedreht haben, um sie während der Wartung des NSM aus dem Weg zu bewegen, drehen Sie sie nach unten in die horizontale Position.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Legende Nummer 2]
+ a| 
+Richten Sie die Rückseite des NSM mit der Öffnung im Regal aus, und drücken Sie den NSM vorsichtig mit den Griffen, bis er vollständig sitzt.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Legende Nummer 3]
+ a| 
+Drehen Sie die Griffe in die aufrechte Position, und fixieren Sie sie mit den Laschen.
+
+|===
+. Schließen Sie die Verkabelung wieder an den NSM an:
++
+.. Schließen Sie die Speicherverkabelung wieder an die beiden NSM-Ports an.
++
+Die Kabel werden mit der Zuglasche des Steckers nach oben eingesetzt. Wenn ein Kabel richtig eingesetzt wird, klickt es an seine Stelle.
+
+.. Schließen Sie das Netzkabel wieder an das Netzteil an, und befestigen Sie das Netzkabel mit der Netzkabelhalterung, wenn es sich um ein Netzteil handelt, oder ziehen Sie die beiden Flügelschrauben fest, wenn es sich um ein Gleichstromnetzteil handelt.
++
+Bei ordnungsgemäßer Funktion leuchtet die zweifarbige LED des Netzteils grün.
+
++
+Außerdem leuchten beide NSM-Port-LNK-LEDs (grün) auf. Wenn eine LNK-LED nicht leuchtet, setzen Sie das Kabel wieder ein.
+
+
+
+. Vergewissern Sie sich, dass die Warn-LEDs am NSM, der die fehlerhaften Boot-Medien enthält, und am Shelf-Bedienfeld nicht mehr leuchten.
++
+Es kann zwischen 5 und 10 Minuten dauern, bis die Warn-LEDs ausgeschaltet werden. Dies ist die Zeit, die der NSM benötigt, um neu zu starten und das Image des Startmediums zu kopieren.
+
++
+Wenn die Fehler-LEDs weiterhin leuchten, werden die Boot-Medien möglicherweise nicht richtig eingesetzt oder es kann ein weiteres Problem auftreten. Wenden Sie sich an den technischen Support, um Hilfe zu erhalten.
+
+. Überprüfen Sie, ob der NSM ordnungsgemäß verkabelt ist, indem Sie Active IQ Config Advisor ausführen.
++
+Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
+
++
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp Downloads: Config Advisor"^]
+
+
+
+--
+====

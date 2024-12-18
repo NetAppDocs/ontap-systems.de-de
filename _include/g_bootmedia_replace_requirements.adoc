@@ -1,0 +1,33 @@
+= Anforderungen
+:allow-uri-read: 
+
+
+Bevor Sie die Startmedien austauschen, müssen Sie die folgenden Anforderungen und Überlegungen beachten.
+
+
+
+== Anforderungen
+
+* Sie müssen über ein USB-Flash-Laufwerk verfügen, das auf FAT32 formatiert ist, und über die entsprechende Speichermenge, um die zu speichern `image_xxx.tgz`.
+* Sie müssen die Datei zur späteren Verwendung in diesem Verfahren auf das USB-Flash-Laufwerk kopieren `image_xxx.tgz` .
+* Sie müssen die fehlerhafte Komponente durch eine FRU-Ersatz-Komponente mit derselben Kapazität ersetzen, die Sie von Ihrem Anbieter erhalten haben.
+
+
+
+
+== Überlegungen
+
+* Es ist wichtig, dass Sie die Befehle in diesen Schritten auf dem richtigen Controller anwenden:
++
+** Der Controller _Impared_ ist der Controller, an dem Sie Wartungsarbeiten durchführen.
+** Der _Healthy_ Controller ist der HA-Partner des beeinträchtigten Controllers.
+
+
+* Bei Bedarf können Sie die (blauen) LEDs für die Position des Plattformgehäuses einschalten, um die physische Lokalisierung der betroffenen Plattform zu erleichtern. Melden Sie sich über SSH bei der BMC an und geben Sie den Befehl ein `system location-led _on_`.
++
+Ein Plattformgehäuse verfügt über drei Standort-LEDs: Eine auf dem Bedienfeld und eine auf jedem Controller. Die Standort-LEDs leuchten 30 Minuten lang.
+
++
+Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led _off_`. Wenn Sie sich nicht sicher sind, ob die LEDs leuchten oder nicht, können Sie ihren Status überprüfen, indem Sie den Befehl eingeben `system location-led show`.
+
+

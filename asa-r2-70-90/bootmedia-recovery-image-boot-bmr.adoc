@@ -59,9 +59,9 @@ Wenn Netzboot ausgeführt wird, wird die `Starting BMR` Meldung angezeigt.
 --
 Wenn keine Verschlüsselung erkannt wird, wird der Wiederherstellungsvorgang des Startmediums ohne Schlüsselmanagement fortgesetzt.
 
-Überwachen Sie den Wiederherstellungsprozess weiter, während die Backup-Konfiguration, die env-Datei, mdb und rdb vom Partner-Node wiederhergestellt werden.
+.. Überwachen Sie den Wiederherstellungsprozess weiter, während die Backup-Konfiguration, die env-Datei, mdb und rdb vom Partner-Node wiederhergestellt werden.
+.. Nach Abschluss der Wiederherstellung wird der Node neu gebootet. Die folgenden Meldungen weisen auf eine erfolgreiche Wiederherstellung hin:
 
-Nach Abschluss der Wiederherstellung wird der Node neu gebootet. Die folgenden Meldungen weisen auf eine erfolgreiche Wiederherstellung hin:
 
 ....
 
@@ -73,6 +73,13 @@ Terminated
 varfs_backup_restore: bootarg.abandon_varfs is set! Skipping /var backup.
 
 ....
+.. Wenn der Node neu gebootet wird, überprüfen Sie, ob die Boot-Medien erfolgreich wiederhergestellt wurden, indem Sie bestätigen, dass das System wieder online und funktionsfähig ist.
+.. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben:
++
+`storage failover giveback -ofnode _impaired_node_name_`.
+
+
+
 --
 .Onboard Key Manager (OKM)
 --
@@ -119,6 +126,15 @@ Trying to delete any existing km_onboard.wkeydb file.
 
 Successfully recovered keymanager secrets.
 ....
+.. Wenn der Node neu gebootet wird, überprüfen Sie, ob die Boot-Medien erfolgreich wiederhergestellt wurden, indem Sie bestätigen, dass das System wieder online und funktionsfähig ist.
+.. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben:
++
+`storage failover giveback -ofnode _impaired_node_name_`.
+
+.. Führen Sie nach dem Booten nur mit dem CFO-Aggregat den folgenden Befehl aus.
++
+`security key-manager onboard sync`
+
 
 
 --
@@ -127,7 +143,7 @@ Successfully recovered keymanager secrets.
 Wenn EKM konfiguriert ist, zeigt das System die folgende Eingabeaufforderung an.
 
 ....
-Error when fetching key manager config from partner <IP>: 28
+Error when fetching key manager config from partner <IP>:
 
 Has key manager been configured on this system? {y|n}
 ....
@@ -149,7 +165,7 @@ Sie werden aufgefordert, die EKM-Einstellungen einzugeben, die beim Einrichten v
 
 *** Rufen Sie auf dem Partner-Node die Keystore-UUID mit den folgenden Befehlen ab.
 +
-`vserver show -type admin`
+`vserver show -type admin -fields uuid`
 
 +
 `key-manager keystore show -vserver <nodename>`
@@ -198,16 +214,16 @@ LOADER-B>
 =====
 
 
+.. Wenn der Node neu gebootet wird, überprüfen Sie, ob die Boot-Medien erfolgreich wiederhergestellt wurden, indem Sie bestätigen, dass das System wieder online und funktionsfähig ist.
+.. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben:
++
+`storage failover giveback -ofnode _impaired_node_name_`.
+
 
 
 --
 ====
 
-
-. Wenn der Node neu gebootet wird, überprüfen Sie, ob die Boot-Medien erfolgreich wiederhergestellt wurden, indem Sie bestätigen, dass das System wieder online und funktionsfähig ist.
-. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben:
-+
-`storage failover giveback -ofnode _impaired_node_name_`.
 
 . Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut:
 +

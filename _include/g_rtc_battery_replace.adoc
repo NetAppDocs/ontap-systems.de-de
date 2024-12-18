@@ -1,0 +1,380 @@
+= Schritt 1: Schalten Sie den beeinträchtigten Regler aus
+:allow-uri-read: 
+
+
+Sie ersetzen die Echtzeituhr (RTC)-Batterie im Controller, damit die Dienste und Anwendungen Ihres Speichersystems, die von der genauen Zeitsynchronisierung abhängen, weiterhin funktionieren.
+
+.Bevor Sie beginnen
+Alle anderen Komponenten des Speichersystems müssen ordnungsgemäß funktionieren. Andernfalls müssen Sie sich an Sie wenden, bevor Sie mit https://mysupport.netapp.com/site/global/dashboard["NetApp Support"] diesem Verfahren fortfahren.
+
+.Über diese Aufgabe
+* Sie können dieses Verfahren mit allen Versionen von ONTAP verwenden, die von Ihrem Speichersystem unterstützt werden.
+* Bei Bedarf können Sie die LEDs des Speichersystems (blau) einschalten, um das betroffene Speichersystem physisch zu lokalisieren. Melden Sie sich über SSH bei der BMC an und geben Sie den Befehl ein `system location-led _on_`.
++
+Ein Speichersystem verfügt über drei Standort-LEDs: Eine auf dem Bedienfeld und eine auf jedem Controller. Die Standort-LEDs leuchten 30 Minuten lang.
+
++
+Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led _off_`. Wenn Sie sich nicht sicher sind, ob die LEDs leuchten oder nicht, können Sie ihren Status überprüfen, indem Sie den Befehl eingeben `system location-led show`.
+
+
+
+
+
+== Schritt 1: Schalten Sie den beeinträchtigten Regler aus
+
+Schalten Sie den außer Betrieb genommenen Controller aus oder übernehmen Sie ihn.
+
+Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
+
+.Über diese Aufgabe
+* Wenn Sie über ein SAN-System verfügen, müssen Sie Event-Meldungen ) für den beeinträchtigten Controller SCSI Blade überprüft haben  `cluster kernel-service show`. Mit dem `cluster kernel-service show` Befehl (im erweiterten Modus von priv) werden der Knotenname,  der Node, der Verfügbarkeitsstatus dieses Node und der Betriebsstatus dieses Node angezeigtlink:https://docs.netapp.com/us-en/ontap/system-admin/display-nodes-cluster-task.html["Quorum-Status"].
++
+Jeder Prozess des SCSI-Blades sollte sich im Quorum mit den anderen Nodes im Cluster befinden. Probleme müssen behoben werden, bevor Sie mit dem Austausch fortfahren.
+
+* Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE anzeigt, um die Berechtigung und den Zustand zu erhalten, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^].
+
+
+.Schritte
+. Wenn AutoSupport aktiviert ist, können Sie die automatische Case-Erstellung durch Aufrufen einer AutoSupport Meldung unterdrücken: `system node autosupport invoke -node * -type all -message MAINT=<# of hours>h`
++
+Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden: `cluster1:> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deaktivieren Sie das automatische Giveback von der Konsole des Controller mit dem ordnungsgemäßen Zustand: `storage failover modify -node local -auto-giveback false`
++
+
+NOTE: Wenn Sie sehen _Möchten Sie Auto-Giveback deaktivieren?_, geben Sie ein `y`.
+
+. Nehmen Sie den beeinträchtigten Controller zur LOADER-Eingabeaufforderung:
++
+[cols="1,2"]
+|===
+| Wenn der eingeschränkte Controller angezeigt wird... | Dann... 
+
+
+ a| 
+Die LOADER-Eingabeaufforderung
+ a| 
+Fahren Sie mit dem nächsten Schritt fort.
+
+
+
+ a| 
+Warten auf Giveback...
+ a| 
+Drücken Sie Strg-C, und antworten Sie dann `y` Wenn Sie dazu aufgefordert werden.
+
+
+
+ a| 
+Eingabeaufforderung für das System oder Passwort
+ a| 
+Übernehmen oder stoppen Sie den beeinträchtigten Regler von der gesunden Steuerung: `storage failover takeover -ofnode _impaired_node_name_`
+
+Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drücken Sie Strg-C, und antworten Sie dann `y`.
+
+|===
+
+
+
+
+== Schritt 2: Entfernen Sie die Steuerung
+
+Sie müssen den Controller aus dem Chassis entfernen, wenn Sie den Controller austauschen oder eine Komponente im Controller austauschen.
+
+.Bevor Sie beginnen
+Alle anderen Komponenten des Speichersystems müssen ordnungsgemäß funktionieren. Andernfalls müssen Sie sich an Sie wenden, bevor Sie mit https://mysupport.netapp.com/site/global/dashboard["NetApp Support"] diesem Verfahren fortfahren.
+
+.Schritte
+. Stellen Sie am Controller für beeinträchtigte Störungen sicher, dass die NV-LED nicht leuchtet.
++
+Wenn die NV-LED ausgeschaltet ist, ist die Entrampung abgeschlossen, und es ist sicher, den außer Betrieb genommenen Controller zu entfernen.
+
++
+
+NOTE: Wenn die NV-LED blinkt (grün), wird die Auslagerung ausgeführt. Sie müssen warten, bis die NV-LED erlischt. Wenn das Blinken jedoch länger als fünf Minuten andauert, wenden Sie sich an https://mysupport.netapp.com/site/global/dashboard["NetApp Support"], bevor Sie mit diesem Verfahren fortfahren.
+
++
+Die NV-LED befindet sich neben dem NV-Symbol auf dem Controller.
+
++
+image::../media/drw_g_nvmem_led_ieops-1839.svg[Position der NV-Status-LED]
+
+
+
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+NV-Symbol und LED am Controller
+
+|===
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Trennen Sie die Stromversorgung des außer Betrieb genommenen Controllers:
++
+
+NOTE: Netzteile (PSUs) verfügen über keinen Netzschalter.
+
++
+[cols="1,2"]
+|===
+| Wenn Sie eine Verbindung trennen... | Dann... 
+
+
+ a| 
+NETZTEILEINHEIT
+ a| 
+.. Öffnen Sie die Netzkabelhalterung.
+.. Ziehen Sie das Netzkabel vom Netzteil ab, und legen Sie es beiseite.
+
+
+
+
+ a| 
+DC-NETZTEIL
+ a| 
+.. Lösen Sie die beiden Flügelschrauben am D-SUB-DC-Netzkabelanschluss.
+.. Ziehen Sie das Netzkabel vom Netzteil ab, und legen Sie es beiseite.
+
+
+|===
+. Ziehen Sie alle Kabel vom Controller für beeinträchtigte Verbindung ab.
++
+Verfolgen Sie, wo die Kabel angeschlossen wurden.
+
+. Entfernen Sie die Steuerung für den beeinträchtigten Betrieb:
++
+Die folgende Abbildung zeigt den Betrieb der Controller-Griffe (von der linken Seite des Controllers) beim Entfernen eines Controllers:
+
++
+image::../media/drw_g_and_t_handles_remove_ieops-1837.svg[Controller-Griff zum Entfernen eines Controllers]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Drücken Sie an beiden Enden der Steuerung die vertikalen Verriegelungslaschen nach außen, um die Griffe zu lösen.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Legende Nummer 2]
+ a| 
+** Ziehen Sie die Griffe zu sich, um den Controller von der Mittelplatine zu lösen.
++
+Wenn Sie ziehen, die Griffe aus dem Controller und dann fühlen Sie einen gewissen Widerstand, ziehen Sie weiter.
+
+** Schieben Sie den Controller aus dem Chassis heraus, während Sie die Unterseite des Controllers stützen, und platzieren Sie ihn auf einer Ebenen, stabilen Oberfläche.
+
+
+
+
+ a| 
+image::../media/icon_round_3.png[Legende Nummer 3]
+ a| 
+Drehen Sie die Griffe bei Bedarf aufrecht (neben den Laschen), um sie aus dem Weg zu bewegen.
+
+|===
+. Öffnen Sie die Controllerabdeckung, indem Sie die Flügelschraube gegen den Uhrzeigersinn drehen, um sie zu lösen, und öffnen Sie dann die Abdeckung.
+
+
+
+
+== Schritt 3: Ersetzen Sie die RTC-Batterie
+
+Entfernen Sie die fehlerhafte RTC-Batterie, und setzen Sie die Ersatz-RTC-Batterie ein.
+
+. Suchen Sie den RTC-Akku.
+. Entfernen Sie die RTC-Batterie:
++
+image::../media/drw_g_rtc_battery_replace_ieops-1902.svg[Ersetzen Sie die RTC-Batterie]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Drehen Sie die RTC-Batterie vorsichtig in einem Winkel von der Halterung weg.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Legende Nummer 2]
+ a| 
+Heben Sie die RTC-Batterie aus der Halterung.
+
+|===
+. Setzen Sie die Ersatz-RTC-Batterie ein:
++
+.. Entfernen Sie den Ersatzakku aus dem antistatischen Versandbeutel.
+.. Positionieren Sie den Akku so, dass das Pluszeichen auf der Batterie nach außen zeigt, um mit dem Pluszeichen auf der Hauptplatine zu übereinstimmen.
+.. Setzen Sie die Batterie schräg in die Halterung ein, und drücken Sie sie dann in eine aufrechte Position, sodass sie vollständig in der Halterung sitzt.
+.. Überprüfen Sie die Batterie visuell, um sicherzustellen, dass sie vollständig in der Halterung sitzt und die Polarität korrekt ist.
+
+
+
+
+
+
+== Schritt 4: Installieren Sie den Controller neu
+
+Setzen Sie den Controller wieder in das Gehäuse ein und starten Sie ihn neu.
+
+.Über diese Aufgabe
+Die folgende Abbildung zeigt den Betrieb der Controller-Griffe (von der linken Seite eines Controllers) beim Wiedereinbau des Controllers und kann als Referenz für die weiteren Schritte zur Neuinstallation des Controllers verwendet werden.
+
+image::../media/drw_g_and_t_handles_reinstall_ieops-1838.svg[Controller-Handle-Betrieb zum Installieren eines Controllers]
+
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Wenn Sie die Controller-Griffe senkrecht (neben den Laschen) gedreht haben, um sie während der Wartung des Controllers aus dem Weg zu bewegen, drehen Sie sie nach unten in die horizontale Position.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Legende Nummer 2]
+ a| 
+Drücken Sie die Griffe, um den Controller wieder in das Gehäuse einzusetzen, und drücken Sie dann, wenn Sie dazu aufgefordert werden, bis der Controller vollständig eingesetzt ist.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Legende Nummer 3]
+ a| 
+Drehen Sie die Griffe in die aufrechte Position und sichern Sie sie mit den Verriegelungslaschen.
+
+|===
+.Schritte
+. Schließen Sie die Controllerabdeckung, und drehen Sie die Flügelschraube im Uhrzeigersinn, bis sie festgezogen ist.
+. Setzen Sie den Controller zur Hälfte in das Chassis ein.
++
+Richten Sie die Rückseite des Controllers an der Öffnung im Chassis aus, und drücken Sie dann den Controller vorsichtig mit den Griffen.
+
++
+
+NOTE: Setzen Sie den Controller erst dann vollständig in das Chassis ein, wenn Sie dazu aufgefordert werden.
+
+. Schließen Sie das Konsolenkabel an den Konsolen-Port am Controller und am Laptop an, sodass das Laptop beim Neustart des Controllers Konsolenmeldungen erhält.
+. Setzen Sie den Controller vollständig im Chassis ein:
++
+.. Drücken Sie die Griffe fest, bis der Controller auf die Mittelplatine trifft und vollständig sitzt.
++
+
+NOTE: Schieben Sie den Controller nicht zu stark in das Gehäuse, da dadurch die Anschlüsse beschädigt werden können.
+
+.. Drehen Sie die Controller-Griffe nach oben und fixieren Sie sie mit den Laschen.
++
+
+NOTE: Der Controller startet, sobald er vollständig im Gehäuse eingesetzt ist.
+
+
+
+. Bringen Sie den Controller zur Loader-Eingabeaufforderung, indem Sie STRG-C drücken, um den AUTOBOOT abzubrechen.
+. Stellen Sie die Uhrzeit und das Datum auf dem Controller ein:
++
+Stellen Sie sicher, dass Sie sich an der Loader-Eingabeaufforderung des Controllers befinden.
+
++
+.. Datum und Uhrzeit auf dem Controller anzeigen:
++
+`show date`
+
++
+
+NOTE: Die Standardeinstellung für Uhrzeit und Datum ist GMT. Sie haben die Möglichkeit, die Anzeige in der lokalen Zeit und im 24-Stunden-Modus durchzuführen.
+
+.. Aktuelle Zeit in GMT einstellen:
++
+`set time hh:mm:ss`
+
++
+Sie können die aktuelle GMT vom gesunden Knoten abrufen:
+
++
+`date -u`
+
+.. Stellen Sie das aktuelle Datum in GMT ein:
++
+`set date mm/dd/yyyy`
+
++
+Sie können die aktuelle GMT vom gesunden Knoten abrufen: +
+`date -u`
+
+
+
+. Controller nach Bedarf wieder verstellen.
+. Schließen Sie das Netzkabel wieder an das Netzteil an.
++
+Sobald das Netzteil wieder mit Strom versorgt wird, sollte die Status-LED grün leuchten.
+
++
+[cols="1,2"]
+|===
+| Wenn Sie eine Verbindung... | Dann... 
+
+
+ a| 
+NETZTEILEINHEIT
+ a| 
+.. Schließen Sie das Netzkabel an das Netzteil an.
+.. Befestigen Sie das Netzkabel mit der Netzkabelhalterung.
+
+
+
+
+ a| 
+DC-NETZTEIL
+ a| 
+.. Schließen Sie den D-SUB-DC-Netzkabelanschluss an das Netzteil an.
+.. Ziehen Sie die beiden Flügelschrauben fest, um den D-SUB DC-Netzkabelanschluss am Netzteil zu befestigen.
+
+
+|===
+
+
+
+
+== Schritt 5: Setzen Sie die Uhrzeit und das Datum auf dem Controller zurück
+
+
+NOTE: Nach dem Austauschen der RTC-Batterie, dem Einsetzen des Controllers und dem Einschalten des ersten BIOS-Reset werden folgende Fehlermeldungen angezeigt:
+`RTC date/time error. Reset date/time to default`
+`RTC power failure error` Diese Meldungen werden erwartet und Sie können mit diesem Verfahren fortfahren.
+
+. Überprüfen Sie auf dem Controller mit dem Befehl Datum und Uhrzeit `cluster date show`.
++
+
+NOTE: Wenn Ihr Speichersystem im Boot-Menü stoppt, wählen Sie die Option für  `Reboot node` und antworten Sie bei Aufforderung _y_, und starten Sie dann zu Loader, indem Sie _Strg-C_ drücken.
+
+. Überprüfen Sie auf dem Controller mit eingeschränkter Steuerung an der Loader-Eingabeaufforderung die Uhrzeit und das Datum: `cluster date show`
++
+.. Ändern Sie ggf. das Datum: `set date _mm/dd/yyyy_`
+.. Falls erforderlich, stellen Sie die Uhrzeit in GMT ein: `set time hh:mm:ss`
+.. Bestätigen Sie Datum und Uhrzeit.
+
+
+. Geben Sie an der Eingabeaufforderung des Loader ein `bye`, um die I/O-Module und andere Komponenten neu zu initialisieren, und lassen Sie den Controller neu starten.
+. Wiederherstellung des normalen Betriebs des Controllers durch Zurückgeben des Speichers: `storage failover giveback -ofnode _impaired_node_name_`
+. Wenn das automatische Giveback deaktiviert wurde, aktivieren Sie es erneut: `storage failover modify -node local -auto-giveback _true_`
+
+
+
+
+== Schritt 6: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.
