@@ -147,72 +147,6 @@ Gelb
 NVMe Port/Link: Achtung
 
 |===
---
-.NSM100B-Module
---
-image::../media/drw_ns224_nsmb_leds_ieops-2004.svg[NS224 NSM100B-Modul-LEDs]
-
-[cols="1,1,2,4"]
-|===
-| Anruf | LED-Symbol | Farbe | Beschreibung 
-
-
- a| 
-image:../media/icon_round_1.png["Legende Nummer 1"]
- a| 
-LNK
- a| 
-Grün
- a| 
-NVMe Port/Link: Status
-
-
-
- a| 
-image:../media/icon_round_2.png["Legende Nummer 2"]
- a| 
-image::../media/drw_sas_fault_icon.svg[Warnungs-LED des Bedienfelds]
- a| 
-Gelb
- a| 
-NVMe Port/Link: Achtung
-
-
-
- a| 
-image:../media/icon_round_3.png["Legende Nummer 3"]
- a| 
-image::../media/drw_sas_fault_icon.svg[Warnungs-LED des Bedienfelds]
- a| 
-Gelb
- a| 
-E/A-Modul: Status
-
-
-
- a| 
-image:../media/icon_round_4.png["Legende Nummer 4"]
- a| 
-image::../media/drw_sas3_location_icon.svg[LED für die Position des Bedienfelds]
- a| 
-Blau
- a| 
-NSM: Standort
-
-
-
- a| 
-image:../media/icon_round_5.png["Legende Nummer 5"]
- a| 
-image::../media/drw_sas_fault_icon.svg[Warnungs-LED des Bedienfelds]
- a| 
-Gelb
- a| 
-NSM: Achtung
-
-|===
---
-====
 [cols="2,1,1,1"]
 |===
 | Status | NSM-Warnung (gelb) | Anschluss LNK (grün) | Port-Achtung (Gelb) 
@@ -294,6 +228,180 @@ Alle Bundesstaaten
 Alle Bundesstaaten
 
 |===
+--
+.NSM100B-Module
+--
+image::../media/drw_ns224_nsmb_leds_ieops-2004.svg[NS224 NSM100B-Modul-LEDs]
+
+[cols="1,1,2,4"]
+|===
+| Anruf | LED-Symbol | Farbe | Beschreibung 
+
+
+ a| 
+image:../media/icon_round_1.png["Legende Nummer 1"]
+ a| 
+LNK
+ a| 
+Grün
+ a| 
+NVMe Port/Link: Status
+
+
+
+ a| 
+image:../media/icon_round_2.png["Legende Nummer 2"]
+ a| 
+image::../media/drw_sas_fault_icon.svg[Warnungs-LED des Bedienfelds]
+ a| 
+Gelb
+ a| 
+NVMe Port/Link: Achtung
+
+
+
+ a| 
+image:../media/icon_round_3.png["Legende Nummer 3"]
+ a| 
+image::../media/drw_sas_fault_icon.svg[Warnungs-LED des Bedienfelds]
+ a| 
+Gelb
+ a| 
+I/O-Modul: Achtung
+
+
+
+ a| 
+image:../media/icon_round_4.png["Legende Nummer 4"]
+ a| 
+image::../media/drw_sas3_location_icon.svg[LED für die Position des Bedienfelds]
+ a| 
+Blau
+ a| 
+NSM: Standort
+
+
+
+ a| 
+image:../media/icon_round_5.png["Legende Nummer 5"]
+ a| 
+image::../media/drw_sas_fault_icon.svg[Warnungs-LED des Bedienfelds]
+ a| 
+Gelb
+ a| 
+NSM: Achtung
+
+|===
+[cols="2,1,1,1,1"]
+|===
+| Status | NSM-Warnung (gelb) | Anschluss LNK (grün) | Port-Achtung (Gelb) | E/A-Modul Achtung 
+
+
+ a| 
+NSM normal
+ a| 
+Aus
+ a| 
+Alle Bundesstaaten
+ a| 
+Aus
+ a| 
+Aus
+
+
+
+ a| 
+NSM-Fehler
+ a| 
+Ein
+ a| 
+Alle Bundesstaaten
+ a| 
+Alle Bundesstaaten
+ a| 
+Aus
+
+
+
+ a| 
+NSM VPD-Fehler
+ a| 
+Ein
+ a| 
+Alle Bundesstaaten
+ a| 
+Alle Bundesstaaten
+ a| 
+Aus
+
+
+
+ a| 
+Keine Host-Port-Verbindung
+ a| 
+Alle Bundesstaaten
+ a| 
+Aus
+ a| 
+Aus
+ a| 
+Aus
+
+
+
+ a| 
+Host-Port-Verbindung aktiv
+ a| 
+Alle Bundesstaaten
+ a| 
+Ein/blinkt mit Aktivität
+ a| 
+Alle Bundesstaaten
+ a| 
+Aus
+
+
+
+ a| 
+Host-Port-Verbindung mit Fehler
+ a| 
+Ein
+ a| 
+Ein/aus, wenn alle Spuren fehlerhaft sind
+ a| 
+Ein
+ a| 
+Aus
+
+
+
+ a| 
+BIOS-Start vom BIOS-Image nach dem Einschalten
+ a| 
+Blinken
+ a| 
+Alle Bundesstaaten
+ a| 
+Alle Bundesstaaten
+ a| 
+Aus
+
+
+
+ a| 
+E/A-Modul fehlt
+ a| 
+Ein
+ a| 
+K. A.
+ a| 
+K. A.
+ a| 
+Ein
+
+|===
+--
+====
 
 
 == Netzteil-LEDs

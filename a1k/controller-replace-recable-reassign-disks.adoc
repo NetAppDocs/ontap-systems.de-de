@@ -49,8 +49,6 @@ NOTE: Sie werden zweimal zur Eingabe der Passphrase aufgefordert.
 . Geben Sie im Startmenü die Option für den normalen Start ein `1`.
 . Drücken Sie <enter>, wenn _Waiting for Giveback_ angezeigt wird.
 . Schieben Sie das Konsolenkabel zum Partner-Node und melden Sie sich als an `admin`.
-. Stellen Sie sicher, dass alle Core Dumps auf dem reparierten Node gespeichert werden, indem Sie in den erweiterten Modus“ und dann `run local partner savecore` wechseln `set -privilege advanced`.
-. Zurück zum Admin-Hebel: `set privilege admin`.
 . Nur die CFO-Aggregate zurückgeben (das Root-Aggregat): `storage failover giveback -fromnode local -only-cfo-aggregates true`
 +
 ** Wenn Sie auf Fehler stoßen, wenden Sie sich an https://support.netapp.com["NetApp Support"].

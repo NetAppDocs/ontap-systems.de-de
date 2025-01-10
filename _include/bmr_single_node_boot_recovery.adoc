@@ -38,7 +38,7 @@ Auf dem Bildschirm wird die folgende Meldung angezeigt:
 +
 `Starting boot media recovery (BMR) process. Press Ctrl-C to abort…`
 
-. Überwachen Sie den Recovery-Prozess für Startmedien, während Loader die lokalen Cluster-Ports konfiguriert und vom Partner-Node aus ausgeführt `netboot` wird.
+. Überwachen Sie den Recovery-Prozess für Boot-Medien, während Loader die lokalen Ports konfiguriert und vom Partner-Node aus ausgeführt `netboot` wird.
 +
 Wenn Netzboot ausgeführt wird, wird die `Starting BMR` Meldung angezeigt.
 
@@ -120,9 +120,9 @@ Successfully recovered keymanager secrets.
 .. Wenn der Node neu gebootet wird, überprüfen Sie, ob die Boot-Medien erfolgreich wiederhergestellt wurden, indem Sie bestätigen, dass das System wieder online und funktionsfähig ist.
 .. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben:
 +
-`storage failover giveback -ofnode _impaired_node_name_`.
+`storage failover giveback -ofnode _impaired_node_name_`
 
-.. Führen Sie nach dem Booten nur mit dem CFO-Aggregat den folgenden Befehl aus.
+.. Nachdem der Partner-Node vollständig eingerichtet ist und Daten bereitstellt, synchronisieren Sie die OKM-Schlüssel über das Cluster hinweg.
 +
 `security key-manager onboard sync`
 
