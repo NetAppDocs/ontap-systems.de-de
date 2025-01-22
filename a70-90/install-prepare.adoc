@@ -21,14 +21,13 @@ Um Ihr Speichersystem zu installieren, stellen Sie sicher, dass der Standort und
 
 .Schritte
 . Mit https://hwu.netapp.com["NetApp Hardware Universe"^] können Sie überprüfen, ob Ihr Standort die Umwelt- und elektrischen Anforderungen für Ihr Speichersystem erfüllt.
-. Stellen Sie sicher, dass ausreichend Platz im Rack vorhanden ist:
+. Stellen Sie sicher, dass Sie ausreichend Platz im Schrank oder Rack für Ihr Speichersystem, Ihre Regale und alle Switches haben:
 +
-** 4 HE in einer HA-Konfiguration für das Storage-System
+** 4 HE in einer HA-Konfiguration
 ** 2 HE für jedes NS224 Storage-Shelf
 
 
-+
-*HINWEIS:* Siehe link:https://hwu.netapp.com["NetApp Hardware Universe"^] für Rack-Platzanforderungen für andere unterstützte Lagerregale.
+
 
 . Installieren Sie alle erforderlichen Netzwerk-Switches.
 +
@@ -68,14 +67,14 @@ Stellen Sie sicher, dass alle in den Kartons auf die Liste auf dem Packzettel pa
 ** Kabelverwaltungs-Gerät
 ** Storage-System
 ** Schienensätze mit Anweisungen (optional)
-** Storage Shelf
+** Lagerregal (wenn Sie zusätzlichen Speicher bestellt haben)
 
  a| 
 ** Management-Ethernet-Kabel (RJ-45-Kabel)
 ** Netzwerkkabel
 ** Stromkabel
 ** Speicherkabel (wenn Sie zusätzlichen Speicher bestellt haben)
-** Serielles USB-C-Anschlusskabel
+** Serielles USB-C-Konsolenkabel
 
 |  
 |===
@@ -85,15 +84,19 @@ Stellen Sie sicher, dass alle in den Kartons auf die Liste auf dem Packzettel pa
 
 == Schritt 3: Registrieren Sie Ihr Storage-System
 
-Nachdem Sie sichergestellt haben, dass Ihr Standort die Anforderungen für Ihre Storage-Systemspezifikationen erfüllt und überprüft haben, dass alle von Ihnen bestellten Teile vorhanden sind, sollten Sie Ihr System registrieren.
+Nachdem Sie sichergestellt haben, dass Ihr Standort die Anforderungen für Ihre Storage-Systemspezifikationen erfüllt und überprüft haben, dass alle von Ihnen bestellten Teile vorhanden sind, sollten Sie Ihr Storage-System registrieren.
 
 .Schritte
-. Suchen Sie nach der Seriennummer Ihres Storage-Systems.
+. Suchen Sie für jeden installierten Controller nach den System-Seriennummern (SSN). Die Seriennummern finden Sie an folgenden Stellen:
+. Die Seriennummern finden Sie an folgenden Stellen:
 +
-Sie finden die Nummer auf dem Packzettel, in Ihrer Bestätigungs-E-Mail oder nach dem Auspacken auf dem System Management-Modul des Controllers.
+** Auf dem Packzettel
+** In Ihrer Bestätigungs-E-Mail
+** Im System Management-Modul jedes Controllers
+
 
 +
-image::../media/drw_ssn_label.svg[Beispiel für die Seriennummer des Systems]
+image::../media/drw_ssn_label.svg[Beispiel für die Seriennummer des Systems, die den Standort der Nummer anzeigt]
 
 . Gehen Sie zum http://mysupport.netapp.com/["NetApp Support Website"^].
 . Ermitteln Sie, ob Sie Ihr Storage-System registrieren müssen:
@@ -108,7 +111,7 @@ Bestehender NetApp Kunde
  a| 
 .. Melden Sie sich mit Ihrem Benutzernamen und Passwort an.
 .. Wählen Sie *Systeme* > *Eigene Systeme*.
-.. Bestätigen Sie, dass die neue Seriennummer aufgeführt ist.
+.. Vergewissern Sie sich, dass die neuen Seriennummern aufgeführt sind.
 .. Falls nicht, folgen Sie den Anweisungen für neue NetApp Kunden.
 
 
@@ -119,7 +122,7 @@ Neuer NetApp Kunde
  a| 
 .. Klicken Sie auf *Jetzt registrieren* und erstellen Sie ein Konto.
 .. Wählen Sie *Systeme* > *Systeme Registrieren*.
-.. Geben Sie die Seriennummer des Storage-Systems und die angeforderten Details ein.
+.. Geben Sie die Seriennummern und die angeforderten Details des Storage-Systems ein.
 
 
 Nach der Registrierung können Sie die erforderliche Software herunterladen. Der Genehmigungsprozess kann bis zu 24 Stunden in Anspruch nehmen.

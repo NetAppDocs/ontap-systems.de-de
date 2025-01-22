@@ -20,7 +20,7 @@ Nachdem Sie die Rack-Hardware für das AFF A70 oder AFF A90 Storage-System insta
 Jedes Shelf wird durch eine eindeutige Shelf-ID unterschieden. Diese ID stellt sicher, dass das Shelf innerhalb Ihrer Storage-System-Einrichtung unterscheidbar ist.
 
 .Über diese Aufgabe
-* Gültige externe Shelf-ID lautet 01 bis 99.
+* Gültige Shelf-ID: 01 bis 99.
 +
 Bei internen, in die Controller integrierten Shelfs (Storage) wird Ihnen eine feste Shelf-ID mit der Nummer 00 zugewiesen.
 
@@ -71,10 +71,6 @@ Shelf-ID-Taste
 . Ändern Sie die erste Nummer der Shelf-ID:
 +
 .. Führen Sie das gerade gebogene Ende eines Büroklammer oder eines Kugelschreibers mit schmaler Spitze in das kleine Loch ein, um die Shelf-ID-Taste zu drücken.
-+
-
-NOTE: Bei Shelfs der DS-Serie ist die Shelf-ID-Taste direkt an der Unterseite der Regalabdeckung zugänglich.
-
 .. Halten Sie die erste Shelf-ID-Taste gedrückt, bis die erste Ziffer auf der digitalen Anzeige blinkt, und lassen Sie dann die Taste los.
 +
 Es kann bis zu 15 Sekunden dauern, bis die Ziffer blinkt. Dadurch wird der Programmiermodus für die Shelf-ID aktiviert.
@@ -101,7 +97,7 @@ Es kann bis zu drei Sekunden dauern, bis die Ziffer blinkt.
 +
 Die erste Ziffer auf dem digitalen Display hört auf zu blinken.
 
-.. Drücken Sie die Shelf-ID-Taste und lassen Sie sie los, um die Nummer vorzuschieben, bis Sie die gewünschte Zahl von 0 auf 9 oder von 1 auf 9 erreichen, wenn das System über integrierten Speicher verfügt.
+.. Drücken Sie die Shelf-ID-Taste und lassen Sie sie los, um die Nummer vorzurücken, bis Sie die gewünschte Zahl von 0 auf 9 erreichen.
 +
 Die zweite Ziffer blinkt weiterhin.
 
@@ -131,35 +127,35 @@ Sobald das Netzkabel angeschlossen ist, wird ein Netzteil eingeschaltet. Die zwe
 
 == Schritt 2: Schalten Sie die Controller ein
 
-Nachdem Sie Ihre Storage Shelfs eingeschaltet und ihnen eindeutige IDs zugewiesen haben, schalten Sie die Storage Controller ein.
+Nachdem Sie die Shelfs eingeschaltet und ihnen eindeutige IDs zugewiesen haben, fahren Sie die Storage-Controller ein.
 
 .Schritte
-. Schließen Sie den Laptop an den seriellen Konsolenport an. Dadurch können Sie die Startsequenz überwachen, wenn die Controller eingeschaltet werden.
+. Schließen Sie den Laptop an den seriellen Konsolenport an. Auf diese Weise können Sie die Boot-Sequenz überwachen, wenn die Controller eingeschaltet werden.
 +
 .. Stellen Sie den seriellen Konsolenport am Laptop auf 115,200 Baud mit N-8-1 ein.
 +
 
 NOTE: Anweisungen zum Konfigurieren des seriellen Konsolenports finden Sie in der Online-Hilfe Ihres Laptops.
 
-.. Schließen Sie das Konsolenkabel an den Laptop an und verbinden Sie den seriellen Konsolenport am Controller mithilfe des Konsolenkabels, das mit dem Storage-System geliefert wurde.
+.. Schließen Sie mithilfe des im Lieferumfang des Storage-Systems enthaltenen Konsolenkabels ein Ende des Konsolenkabels an den Laptop und das andere Ende an den seriellen Konsolenport an Controller A an
 .. Schließen Sie den Laptop an den Switch im Management-Subnetz an.
 +
 image::../media/drw_a1k_70-90_console_connection_ieops-1702.svg[Konsolenverbindungen]
 
-.. Weisen Sie dem Laptop eine TCP/IP-Adresse zu, die sich im Management-Subnetz befindet.
 
 
+. Weisen Sie dem Laptop eine TCP/IP-Adresse zu, die sich im Management-Subnetz befindet.
 . Schließen Sie die Stromkabel an die Controller-Netzteile an, und schließen Sie sie dann an Stromquellen auf verschiedenen Stromkreisen an.
 +
-image::../media/drw_affa1k_power_source_icon_ieops-1700.svg[Allgemeiner Netzanschlussplan]
+image::../media/drw_affa1k_power_source_icon_ieops-1700.svg[A1K-Speichersystem und A70- oder A90-Netzanschlussdiagramm]
 
 +
-** Das Speichersystem beginnt zu booten. Das erste Booten kann bis zu acht Minuten dauern.
+** Das System beginnt zu booten. Das erste Booten kann bis zu acht Minuten dauern.
 ** Die LEDs blinken auf, und die Lüfter starten, was darauf hinweist, dass die Controller eingeschaltet sind.
 ** Die Lüfter sind beim ersten Starten möglicherweise sehr laut. Das Lüftergeräusch während des Startvorgangs ist normal.
 
 
-. Befestigen Sie die Netzkabel mit dem Sicherungsgerät an jedem Netzteil.
+. Sichern Sie die Netzkabel mit dem Sicherungsgerät an jedem Netzteil.
 
 
 .Was kommt als Nächstes?
