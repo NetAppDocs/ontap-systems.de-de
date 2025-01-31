@@ -1,7 +1,7 @@
 ---
 permalink: c30-60/install-cable.html 
 sidebar: sidebar 
-keywords: aff c30, aff c60, prepare installation 
+keywords: aff c30, aff c60, cabling, cluster cabling, host network cabling, management network cabling, shelf cabling 
 summary: Management-Netzwerk-Ports auf den Controllern sind mit Switches verbunden. Die HA Interconnect- und Cluster Interconnect-Ports sind an beiden Controllern verkabelt. Die Controller-Module werden bei Bestellung mit einem externen Speicher verbunden. 
 ---
 = Verkabeln Sie die Hardware – AFF C30 und AFF C60
@@ -38,108 +38,152 @@ Verkabeln Sie die Controller mit dem ONTAP-Cluster. Dieses Verfahren hängt von 
 ====
 .Cluster-Verkabelung ohne Switch
 --
-Verkabeln Sie die Controller miteinander, um die ONTAP-Cluster-Verbindungen zu erstellen.
-
-.AFF A30 oder A50 mit zwei 2-Port 100-GbE-I/O-Modulen
+.AFF C30 oder AFF C60 mit zwei 40/100-GbE-I/O-Modulen mit 2 Ports
 [%collapsible]
 =====
-Die I/O-Modulports in Steckplatz 2 und 4 sind 40-GbE-Ports.???? Gilt dies nur für 30-50, wenn ja, lassen Sie die 2 Notizen, wo die sind, aber wenn gilt für alle 3, dann verschieben Sie es yo neuen Absatz unter Abschnitt Lead Text.?????
+Verkabeln Sie die Controller miteinander, um die ONTAP-Cluster-Verbindungen zu erstellen.
 
 .Schritte
 . Verkabeln der Cluster/HA Interconnect-Verbindungen:
 +
 
-NOTE: Der Cluster-Interconnect-Verkehr und der HA Traffic nutzen dieselben physischen Ports.
+NOTE: Der Cluster-Interconnect-Verkehr und der HA Traffic nutzen dieselben physischen Ports (auf den I/O-Modulen in den Steckplätzen 2 und 4). Die Ports sind 40/100 GbE.
 
 +
 .. Kabel-Controller A-Port e2a zu Controller B-Port e2a.
 .. Kabel-Controller A-Anschluss e4a zu Controller B-Anschluss e4a.
 +
 
-NOTE: Die Ports e2b und e4b an den I/O-Modulen in den Steckplätzen 2 und 4 sind ungenutzt und bei Bedarf für Front-End-Konnektivität (Host-Netzwerk) verfügbar.
+NOTE: Die I/O-Modulports e2b und e4b sind nicht verwendet und stehen für die Host-Netzwerk-Konnektivität zur Verfügung.
 
 +
-*Cluster/HA Verbindungskabel*
+*100 GbE Cluster/HA Interconnect-Kabel*
 
 +
-image::../media/oie_cable_25Gb_Ethernet_SFP28_IEOPS-1069.svg[Cluster HA-Kabel]
+image::../media/oie_cable100_gbe_qsfp28.png[Cluster HA 100-GbE-Kabel]
 
 +
-image::../media/drw_isi_a30-50_switchless_2p_100gbe_2card_cabling_ieops-2011.svg[Schaltplan mit zwei-Node-Cluster-Verkabelung ohne Switch und zwei 100-gbe-io-Modulen]
+image::../media/drw_isi_a30-50_switchless_2p_100gbe_2card_cabling_ieops-2011.svg[Diagramm der Switch-losen Cluster-Verkabelung bei a30 und a50 mit zwei 100-gbe-io-Modulen]
 
 
 
 
 
 =====
-.AFF A30 oder A50 mit einem 2-Port 100-GbE-I/O-Modul
+.AFF C30 oder AFF C60 mit einem 40/100-GbE-I/O-Modul mit 2 Anschlüssen
 [%collapsible]
 =====
-Die I/O-Modulports in Steckplatz 2 und 4 sind 40-GbE-Ports.????
+Verkabeln Sie die Controller miteinander, um die ONTAP-Cluster-Verbindungen zu erstellen.
 
 .Schritte
 . Verkabeln der Cluster/HA Interconnect-Verbindungen:
 +
 
-NOTE: Der Cluster-Interconnect-Verkehr und der HA Traffic nutzen dieselben physischen Ports.
+NOTE: Der Cluster-Interconnect-Verkehr und der HA-Verkehr teilen sich dieselben physischen Ports (auf dem I/O-Modul in Steckplatz 4). Die Ports sind 40/100 GbE.
 
 +
 .. Kabel-Controller A-Anschluss e4a zu Controller B-Anschluss e4a.
 .. Kabel Controller A-Port e4b zu Controller B-Port e4b.
 +
-*Cluster/HA Verbindungskabel*
+*100 GbE Cluster/HA Interconnect-Kabel*
 
 +
-image::../media/oie_cable_25Gb_Ethernet_SFP28_IEOPS-1069.svg[Cluster HA-Kabel]
+image::../media/oie_cable100_gbe_qsfp28.png[Cluster HA 100-GbE-Kabel]
 
 +
-image::../media/drw_isi_a30-50_switchless_2p_100gbe_1card_cabling_ieops-1925.svg[Schaltplan für die Verkabelung von Clustern mit zwei Nodes mithilfe eines 100-gbe-io-Moduls]
+image::../media/drw_isi_a30-50_switchless_2p_100gbe_1card_cabling_ieops-1925.svg[Diagramm der Switch-losen Cluster-Verkabelung bei a30 und a50 mit einem 100-gbe-io-Modul]
 
 
 
 
 
 =====
-.AFF A20 mit einem 10/25-GbE-I/O-Modul mit 2 Ports
+.AFF C30 mit einem 10/25-GbE-I/O-Modul mit 2 Ports
 [%collapsible]
 =====
-Beispiel hinzufügen
+Verkabeln Sie die Controller miteinander, um die ONTAP-Cluster-Verbindungen zu erstellen.
 
-+ image:../media/oie_cable_sfp_gbe_copper.png["GbE SFP Kupfer Connector"]
+.Schritte
+. Verkabeln der Cluster/HA Interconnect-Verbindungen:
++
+
+NOTE: Der Cluster-Interconnect-Verkehr und der HA-Verkehr teilen sich dieselben physischen Ports (auf dem I/O-Modul in Steckplatz 4). Die Ports sind 10/25 GbE.
 
 +
+.. Kabel-Controller A-Anschluss e4a zu Controller B-Anschluss e4a.
+.. Kabel Controller A-Port e4b zu Controller B-Port e4b.
++
+*25 GbE Cluster/HA Interconnect-Kabel*
+
++
+image:../media/oie_cable_sfp_gbe_copper.png["GbE SFP Kupfer Connector, Breite=100px"]
+
++
+image::../media/drw_isi_a20_switchless_2p_25gbe_cabling_ieops-2018.svg[a20-Clusterverkabelungsdiagramm ohne Switch mit einem 25-gbe-io-Modul]
+
+
+
+
 
 =====
 --
 .Switch-Cluster-Verkabelung
 --
+.AFF C30 oder AFF C60 mit zwei 40/100-GbE-I/O-Modulen mit 2 Ports
+[%collapsible]
+=====
 Verkabeln Sie die Controller mit den Cluster-Netzwerk-Switches, um die ONTAP-Cluster-Verbindungen zu erstellen.
 
-.AFF A30 oder A50 mit zwei 2-Port 100-GbE-I/O-Modulen
+.Schritte
+. Verkabeln der Cluster/HA Interconnect-Verbindungen:
++
+
+NOTE: Der Cluster-Interconnect-Verkehr und der HA Traffic nutzen dieselben physischen Ports (auf den I/O-Modulen in den Steckplätzen 2 und 4). Die Ports sind 40/100 GbE.
+
++
+.. Verbinden Sie Controller A-Port e4a mit Cluster-Netzwerk-Switch A.
+.. Verbinden Sie Controller A-Port e2a mit Cluster-Netzwerk-Switch B.
+.. Verbinden Sie Controller B-Port e4a mit Cluster-Netzwerk-Switch A.
+.. Verbinden Sie Controller B-Port e2a mit Cluster-Netzwerk-Switch B.
++
+
+NOTE: Die I/O-Modulports e2b und e4b sind nicht verwendet und stehen für die Host-Netzwerk-Konnektivität zur Verfügung.
+
++
+*40/100 GbE Cluster/HA Interconnect-Kabel*
+
++
+image::../media/oie_cable100_gbe_qsfp28.png[Cluster HA 40/100-GbE-Kabel]
+
++
+image::../media/drw_isi_a30-50_switched_2p_100gbe_2card_cabling_ieops-2013.svg[Diagramm der Switch-Cluster-Verkabelung bei a30 und a50 mit zwei 100-gbe-io-Modulen]
+
+
+
+
+
+=====
+.AFF C30 oder AFF C60 mit einem 40/100-GbE-I/O-Modul mit 2 Anschlüssen
 [%collapsible]
 =====
-Beispiel hinzufügen
+Verkabeln Sie die Controller mit den Cluster-Netzwerk-Switches, um die ONTAP-Cluster-Verbindungen zu erstellen.
 
-Hinweis: Die e2b und e4b mit 40/100-GbE-Ports der I/O-Module in den Steckplätzen 2 und 4 werden nicht verwendet und sind bei Bedarf für Front-End-Konnektivität verfügbar.
-
-=====
-.AFF A30 oder A50 mit einem 2-Port 100-GbE-I/O-Modul
-[%collapsible]
-=====
 .Schritte
 . Verkabeln Sie die Controller mit den Cluster-Netzwerk-Switches:
 +
 
-NOTE: Der Cluster-Interconnect-Verkehr und der HA Traffic nutzen dieselben physischen Ports.
+NOTE: Der Cluster-Interconnect-Verkehr und der HA-Verkehr teilen sich dieselben physischen Ports (auf dem I/O-Modul in Steckplatz 4). Die Ports sind 40/100 GbE.
 
 +
-.. Kabel Controller A-Port e4a und Controller B-Port e4a zu Cluster-Netzwerk-Switch A.
-.. Verbinden Sie Controller A-Port e4b und Controller B-Port e4b mit Cluster-Netzwerk-Switch B.
+.. Verbinden Sie Controller A-Port e4a mit Cluster-Netzwerk-Switch A.
+.. Verbinden Sie den Controller A-Port e4b mit dem Cluster-Netzwerk-Switch B.
+.. Verbinden Sie Controller B-Port e4a mit Cluster-Netzwerk-Switch A.
+.. Verbinden Sie Controller B-Port e4b mit Cluster-Netzwerk-Switch B.
 +
-*Cluster/HA Verbindungskabel*
+*40/100 GbE Cluster/HA Interconnect-Kabel*
 
 +
-image::../media/oie_cable100_gbe_qsfp28.png[100-GB-Kabel]
+image::../media/oie_cable100_gbe_qsfp28.png[Cluster HA 40/100-GbE-Kabel]
 
 +
 image::../media/drw_isi_a30-50_2p_100gbe_1card_switched_cabling_ieops-1926.svg[Verkabeln Sie Cluster-Verbindungen mit dem Cluster-Netzwerk]
@@ -149,10 +193,33 @@ image::../media/drw_isi_a30-50_2p_100gbe_1card_switched_cabling_ieops-1926.svg[V
 
 
 =====
-.AFF A20 mit einem 10/25-GbE-I/O-Modul mit 2 Ports
+.AFF C30 mit einem 10/25-GbE-I/O-Modul mit 2 Ports
 [%collapsible]
 =====
-Beispiel hinzufügen
+Verkabeln Sie die Controller mit den Cluster-Netzwerk-Switches, um die ONTAP-Cluster-Verbindungen zu erstellen.
+
+. Verkabeln Sie die Controller mit den Cluster-Netzwerk-Switches:
++
+
+NOTE: Der Cluster-Interconnect-Verkehr und der HA-Verkehr teilen sich dieselben physischen Ports (auf dem I/O-Modul in Steckplatz 4). Die Ports sind 10/25 GbE.
+
++
+.. Verbinden Sie Controller A-Port e4a mit Cluster-Netzwerk-Switch A.
+.. Verbinden Sie den Controller A-Port e4b mit dem Cluster-Netzwerk-Switch B.
+.. Verbinden Sie Controller B-Port e4a mit Cluster-Netzwerk-Switch A.
+.. Verbinden Sie Controller B-Port e4b mit Cluster-Netzwerk-Switch B.
++
+*10/25 GbE Cluster/HA Interconnect-Kabel*
+
++
+image:../media/oie_cable_sfp_gbe_copper.png["GbE SFP Kupfer Connector, Breite=100px"]
+
++
+image:../media/drw_isi_a20_switched_2p_25gbe_cabling_ieops-2019.svg["Verkabelungsdiagramm für a20-Switch-Cluster mit einem 25-gbe-io-Modul"]
+
+
+
+
 
 =====
 --
@@ -161,25 +228,26 @@ Beispiel hinzufügen
 
 == Schritt 2: Verkabeln Sie die Host-Netzwerkverbindungen
 
-Verkabeln Sie die Controller mit dem Host-Netzwerk. Dieses Verfahren hängt von Ihrem Speichersystemmodell und Ihrer I/O-Modulkonfiguration ab. Host-Konnektivität ist 40/100 GbE.???
+Verkabeln Sie die Controller mit dem Host-Netzwerk.
 
-.AFF A30 oder A50 mit zwei 2-Port 100-GbE-I/O-Modulen
+Dieses Verfahren hängt von Ihrem Speichersystemmodell und Ihrer I/O-Modulkonfiguration ab.
+
+.AFF C30 oder AFF C60 mit zwei 40/100-GbE-I/O-Modulen mit 2 Ports
 [%collapsible]
 ====
-Text
-
-====
-.AFF A30 oder A50 mit einem 2-Port 100-GbE-I/O-Modul
-[%collapsible]
-====
+.Schritte
 . Verkabeln Sie die Host-Netzwerkverbindungen.
 +
 Die folgenden Teilschritte sind Beispiele für optionale Verkabelung des Host-Netzwerks. Falls erforderlich, finden  Sie unter link:https://hwu.netapp.com["NetApp Hardware Universe"^] Informationen zu Ihrer spezifischen Konfiguration des Storage-Systems.
 
 +
-.. Optional: Kabel zu 40/100-GbE-Host-Netzwerk-Switches
+.. Optional: Controller mit den Host-Netzwerk-Switches verkabeln.
 +
-Kabel-Ports e2a, e2b, e2c und e2d an jedem Controller mit den Ethernet-Host-Netzwerk-Switches.
+Verbinden Sie an jedem Controller die Ports e2b und e4b mit den Ethernet-Host-Netzwerk-Switches.
+
++
+
+NOTE: Die Ports an E/A-Modulen in Steckplatz 2 und 4 sind 40/100 GbE (Host-Konnektivität ist 40/100 GbE).
 
 +
 *40/100-GbE-Kabel*
@@ -188,17 +256,57 @@ Kabel-Ports e2a, e2b, e2c und e2d an jedem Controller mit den Ethernet-Host-Netz
 image::../media/oie_cable_sfp_gbe_copper.png[40/100-GB-Kabel]
 
 +
-image::../media/drw_isi_a30-50_host_2p_40-100gbe_1card_cabling_ieops-1923.svg[Verkabelung zu 40/100-gbe-ethernet-Host-Netzwerk-Switches]
+image::../media/drw_isi_a30-50_host_2p_40-100gbe_2card_cabling_ieops-2014.svg[Verkabelung zu 40/100-gbe-ethernet-Host-Netzwerk-Switches]
 
-.. Optional: Kabel zu FC Host-Netzwerk-Switches
+.. Optional: Controller mit FC Host-Netzwerk-Switches verkabeln.
 +
-Verkabeln Sie die Ports 1a, 1b, 1c und 1d an jedem Controller mit den FC Host-Netzwerk-Switches.
+Verkabeln Sie an jedem Controller die Ports 1a, 1b, 1c und 1d mit den FC-Host-Netzwerk-Switches.
 
 +
 *64 Gbit/s FC-Kabel*
 
 +
-image::../media/oie_cable_sfp_gbe_copper.png[64-GB-fc-Kabel]
+image:../media/oie_cable_sfp_gbe_copper.png["64-GB-fc-Kabel, Breite=100 px"]
+
++
+image::../media/drw_isi_a30-50_4p_64gb_fc_2card_cabling_ieops-2023.svg[Verkabeln Sie a30- oder a50- bis 64-gb-fc-Host-Netzwerk-Switches mit zwei io-Modulen]
+
+
+
+
+
+====
+.AFF C30 oder AFF C60 mit einem 10/25-GbE-I/O-Modul mit 2 Anschlüssen
+[%collapsible]
+====
+.Schritte
+. Verkabeln Sie die Host-Netzwerkverbindungen.
++
+Die folgenden Teilschritte sind Beispiele für optionale Verkabelung des Host-Netzwerks. Falls erforderlich, finden  Sie unter link:https://hwu.netapp.com["NetApp Hardware Universe"^] Informationen zu Ihrer spezifischen Konfiguration des Storage-Systems.
+
++
+.. Optional: Controller mit den Host-Netzwerk-Switches verkabeln.
++
+Verkabeln Sie bei jedem Controller die Ports e2a, e2b, e2c und e2d mit den Ethernet-Host-Netzwerk-Switches.
+
++
+*10/25-GbE-Kabel*
+
++
+image:../media/oie_cable_sfp_gbe_copper.png["GbE SFP Kupfer Connector, Breite=100px"]
+
++
+image::../media/drw_isi_a30-50_host_2p_40-100gbe_1card_cabling_ieops-1923.svg[Verkabelung zu 40/100-gbe-ethernet-Host-Netzwerk-Switches]
+
+.. Optional: Controller mit FC Host-Netzwerk-Switches verkabeln.
++
+Verkabeln Sie an jedem Controller die Ports 1a, 1b, 1c und 1d mit den FC-Host-Netzwerk-Switches.
+
++
+*64 Gbit/s FC-Kabel*
+
++
+image:../media/oie_cable_sfp_gbe_copper.png["64-GB-fc-Kabel, Breite=100 px"]
 
 +
 image::../media/drw_isi_a30-50_4p_64gb_fc_1card_cabling_ieops-1924.svg[Verkabelung zu 64 gb fc Host Netzwerk-Switches]
@@ -208,10 +316,44 @@ image::../media/drw_isi_a30-50_4p_64gb_fc_1card_cabling_ieops-1924.svg[Verkabelu
 
 
 ====
-.AFF A20 mit einem 2-Port 100-GbE-Modul
+.AFF C30 mit einem 10/25-GbE-Modul mit 2 Ports
 [%collapsible]
 ====
-Text hinzufügen
+.Schritte
+. Verkabeln Sie die Host-Netzwerkverbindungen.
++
+Die folgenden Teilschritte sind Beispiele für optionale Verkabelung des Host-Netzwerks. Falls erforderlich, finden  Sie unter link:https://hwu.netapp.com["NetApp Hardware Universe"^] Informationen zu Ihrer spezifischen Konfiguration des Storage-Systems.
+
++
+.. Optional: Controller mit Host-Netzwerk-Switches verkabeln.
++
+Verkabeln Sie bei jedem Controller die Ports e2a, e2b, e2c und e2d mit den Ethernet-Host-Netzwerk-Switches.
+
++
+*10/25-GbE-Kabel*
+
++
+image:../media/oie_cable_sfp_gbe_copper.png["GbE SFP Kupfer Connector, Breite=100pxx"]
+
++
+image::../media/drw_isi_a20_host_4p_25gbe_cabling_ieops-2017.svg[Verkabelung von a20 zu 40/100-gbe-ethernet-Host-Netzwerk-Switches]
+
+.. Optional: Controller mit FC Host-Netzwerk-Switches verkabeln.
++
+Verkabeln Sie an jedem Controller die Ports 1a, 1b, 1c und 1d mit den FC-Host-Netzwerk-Switches.
+
++
+*64 Gbit/s FC-Kabel*
+
++
+image:../media/oie_cable_sfp_gbe_copper.png["64-GB-fc-Kabel, Breite=100 pxx"]
+
++
+image::../media/drw_isi_a20_4p_64gb_fc_cabling_ieops-2016.svg[Verkabelung von a20 bis 64 gb fc Host-Netzwerk-Switches]
+
+
+
+
 
 ====
 
@@ -239,7 +381,7 @@ IMPORTANT: Stecken Sie die Netzkabel noch nicht ein.
 
 == Schritt 4: Verkabeln Sie die Shelf-Verbindungen
 
-Im folgenden Verfahren wird gezeigt, wie Sie die Controller mit einem NS224-Shelf verkabeln.
+Dieses Verfahren zeigt, wie Sie die Controller mit einem NS224-Shelf verkabeln.
 
 .Über diese Aufgabe
 * Die maximale Anzahl der unterstützten Einschübe für Ihr Speichersystem und alle Verkabelungsoptionen, wie link:https://hwu.netapp.com["NetApp Hardware Universe"^]z. B. optische und Switch-Attached, finden Sie unter .

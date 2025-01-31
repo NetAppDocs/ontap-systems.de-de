@@ -1,7 +1,7 @@
 ---
 permalink: a20-30-50/install-cable.html 
 sidebar: sidebar 
-keywords: aff a20, aff a30, aff a50, prepare installation 
+keywords: aff a20, aff a30, aff a50, cabling, cluster cabling, host network cabling, management network cabling, shelf cabling 
 summary: Management-Netzwerk-Ports auf den Controllern sind mit Switches verbunden. Die HA Interconnect- und Cluster Interconnect-Ports sind an beiden Controllern verkabelt. Die Controller-Module werden bei Bestellung mit einem externen Speicher verbunden. 
 ---
 = Verkabeln Sie die Hardware – AFF A20, AFF A30 und AFF A50
@@ -38,11 +38,11 @@ Verkabeln Sie die Controller mit dem ONTAP-Cluster. Dieses Verfahren hängt von 
 ====
 .Cluster-Verkabelung ohne Switch
 --
+Verkabeln Sie die Controller miteinander, um die ONTAP-Cluster-Verbindungen zu erstellen.
+
 .AFF A30 oder AFF A50 mit zwei 40/100-GbE-I/O-Modulen mit 2 Ports
 [%collapsible]
 =====
-Verkabeln Sie die Controller miteinander, um die ONTAP-Cluster-Verbindungen zu erstellen.
-
 .Schritte
 . Verkabeln der Cluster/HA Interconnect-Verbindungen:
 +
@@ -127,11 +127,10 @@ image::../media/drw_isi_a20_switchless_2p_25gbe_cabling_ieops-2018.svg[a20-Clust
 
 =====
 --
-====
-[role="tabbed-block"]
-====
 .Switch-Cluster-Verkabelung
 --
+Verkabeln Sie die Controller miteinander, um die ONTAP-Cluster-Verbindungen zu erstellen.
+
 .AFF A30 oder AFF A50 mit zwei 40/100-GbE-I/O-Modulen mit 2 Ports
 [%collapsible]
 =====
