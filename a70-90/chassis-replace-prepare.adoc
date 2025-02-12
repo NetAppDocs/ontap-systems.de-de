@@ -1,0 +1,65 @@
+---
+permalink: a70-90/chassis-replace-prepare.html 
+sidebar: sidebar 
+keywords: aff a70, aff a90, replace the chassis 
+summary: Sie ersetzen ein Gehäuse mit eingeschränkter Systemfunktion durch das neue Gehäuse desselben Modells wie das Gehäuse mit eingeschränkter Systemfunktion. 
+---
+= Bereiten Sie den Austausch des Gehäuses vor – AFF A70 und AFF A90
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bereiten Sie vor, das Gehäuse für beeinträchtigte Störungen durch das neue Gehäuse desselben Modells wie das Gehäuse für beeinträchtigte Störungen zu ersetzen.
+
+
+
+== Schritt 1: Suchen und überwachen Sie Ihr System
+
+Sie sollten eine Konsolensitzung öffnen und Sitzungsprotokolle zur späteren Referenz speichern und die LED für die Systemposition einschalten, um das Gehäuse für beeinträchtigte Personen zu finden.
+
+. Stellen Sie eine Verbindung zum seriellen Konsolenport mit der Schnittstelle mit her und überwachen Sie das System.
+. Suchen und Einschalten der Standort-LED des Controllers:
++
+.. Verwenden Sie den `system controller location-led show` Befehl, um den aktuellen Status der Standort-LED anzuzeigen.
+.. Ändern Sie den Status der Standort-LED auf „ein“:
++
+`system controller location-led modify -node _node1_ -state on`.
+
++
+Die Standort-LED leuchtet 30 Minuten lang.
+
+
+
+
+
+
+
+== Schritt 2: Prüfen Sie die Austauschkomponenten
+
+Überprüfen Sie, ob Sie die erforderlichen Komponenten erhalten haben, entfernen Sie sie aus der Verpackung, und bewahren Sie die Verpackung auf.
+
+. Bevor Sie die Verpackung öffnen, sollten Sie auf dem Verpackungsetikett nachsehen und Folgendes überprüfen:
++
+** Teilenummer der Komponente.
+** Teilebeschreibung.
+** Menge im Karton.
+
+
+. Entfernen Sie den Inhalt aus der Verpackung, und verwenden Sie die Verpackung, um die fehlerhafte Komponente an NetApp zurückzugeben.
+
+
+
+
+== Schritt 3: Beschriften Sie die Kabel und Controller-Module und Erden Sie sich selbst.
+
+Bevor Sie die Kabel und Controller aus den Controller-Modulen oder dem Chassis entfernen, sollten Sie die Kabel und Controller beschriften.
+
+. Beschriften Sie alle Kabel, die dem Speichersystem zugeordnet sind. Dies erleichtert die spätere Neueinbringung in diesem Verfahren.
+. Beschriften Sie die Controller-Module.
+. Wenn Sie nicht bereits ordnungsgemäß geerdet sind, Erden Sie sich.
+
+
+.Was kommt als Nächstes?
+Nachdem Sie sich darauf vorbereitet haben, Ihre AFF A70- oder AFF A90-Chassis-Hardware zu ersetzen, müssen Sie link:chassis-replace-shutdown.html["Fahren Sie die Controller herunter"].

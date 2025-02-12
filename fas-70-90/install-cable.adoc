@@ -14,41 +14,38 @@ summary: Management-Netzwerk-Ports auf den Controllern sind mit Switches verbund
 Nachdem Sie die Rack-Hardware für Ihr FAS70 oder FAS90 Storage-System installiert haben, installieren Sie die Netzwerkkabel für die Controller und verbinden Sie die Kabel zwischen den Controllern und Storage Shelfs.
 
 .Bevor Sie beginnen
-Prüfen Sie den Pfeil in der Abbildung in den Verkabelungsdiagrammen auf die richtige Ausrichtung der Zuglasche am Kabelanschluss.
+Wenden Sie sich an Ihren Netzwerkadministrator, um Informationen über das Anschließen des Speichersystems an die Switches zu erhalten.
 
+.Über diese Aufgabe
+* Diese Verfahren zeigen gängige Konfigurationen. Die jeweilige Verkabelung hängt von den für das Speichersystem bestellten Komponenten ab. Ausführliche Informationen zur Konfiguration und zur Steckplatzpriorität finden Sie unter link:https://hwu.netapp.com["NetApp Hardware Universe"^].
+* Die Verkabelungsgrafiken haben Pfeilsymbole, die die richtige Ausrichtung (nach oben oder unten) des Kabelsteckers zeigen, wenn ein Anschluss in einen Anschluss eingesetzt wird.
++
+Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
+
++
 image::../media/drw_cable_pull_tab_direction_ieops-1699.svg[Beispiel für die Ausrichtung der Kabelzuglasche]
 
-* Wenn Sie den Anschluss einsetzen, sollten Sie spüren, dass er einrastet. Wenn Sie ihn nicht einrasten, entfernen Sie ihn, drehen Sie den Kabelkopf um und versuchen Sie es erneut.
-* Wenn Sie ein optisches Gerät mit einem Switch verbinden, stecken Sie das SFP-Modul in den Controller-Port, bevor Sie es mit dem Port verbinden.
+* Wenn Sie eine Verkabelung zu einem optischen Switch vornehmen, stecken Sie den optischen Transceiver in den Controller-Port, bevor Sie ihn mit dem Switch-Port verbinden.
 
 
 
 
 == Schritt 1: Verbinden Sie die Storage Controller mit Ihrem Netzwerk
 
-Verbinden Sie die Storage Controller mit Ihrem Host-Netzwerk.
+Verkabeln Sie die Controller mit dem ONTAP-Cluster. Dieses Verfahren hängt von Ihrem Speichersystemmodell und Ihrer I/O-Modulkonfiguration ab.
 
-.Bevor Sie beginnen
-Informationen zum Anschließen des Speichersystems an die Switches erhalten Sie von Ihrem Netzwerkadministrator.
-
-.Über diese Aufgabe
-Diese Verfahren zeigen gängige Konfigurationen. Beachten Sie, dass die jeweilige Verkabelung von den für Ihr Speichersystem bestellten Komponenten abhängt. Ausführliche Informationen zur Konfiguration und zur Steckplatzpriorität finden Sie unter link:https://hwu.netapp.com["NetApp Hardware Universe"^].
-
-[role="tabbed-block"]
-====
-.Option 1: Verbinden Sie die Controller mit einem ONTAP Cluster ohne Switch
---
-Verbinden Sie die Storage Controller miteinander, um die ONTAP-Cluster-Verbindungen zu erstellen, und verbinden Sie dann die Ethernet-Ports auf jedem Controller mit dem Host-Netzwerk.
-
-.Schritte
-. Verwenden Sie das Cluster/HA-Verbindungskabel, um die Ports e1a mit e1a und die Ports e7a mit e7a zu verbinden.
-+
 
 NOTE: Der Cluster-Interconnect-Verkehr und der HA Traffic nutzen dieselben physischen Ports.
 
-+
-.. Schließen Sie den Port e1a an Controller A an den Port e1a an Controller B. an
-.. Verbinden Sie Port e7a auf Controller A mit Port e7a auf Controller B.
+[role="tabbed-block"]
+====
+.Cluster-Verkabelung ohne Switch
+--
+Verwenden Sie das Cluster/HA-Verbindungskabel, um die Ports e1a mit e1a und die Ports e7a mit e7a zu verbinden.
+
+.Schritte
+. Schließen Sie den Port e1a an Controller A an den Port e1a an Controller B. an
+. Verbinden Sie Port e7a auf Controller A mit Port e7a auf Controller B.
 +
 *Cluster/HA Verbindungskabel*
 
@@ -60,66 +57,14 @@ image::../media/drw_a1k_tnsc_cluster_cabling_ieops-1648.svg[Verkabelungsdiagramm
 
 
 
-. Verbinden Sie die Ethernet-Modulports mit Ihrem Hostnetzwerk.
-+
-Im Folgenden finden Sie einige typische Beispiele für eine Verkabelung im Host-Netzwerk. Informationen zu Ihrer spezifischen Systemkonfiguration finden Sie unter link:https://hwu.netapp.com["NetApp Hardware Universe"^] .
-
-+
-.. Verbinden Sie die Ports e9a und e9b wie in der Abbildung dargestellt mit dem Ethernet-Datennetzwerk-Switch.
-+
-
-NOTE: Verwenden Sie für maximale Systemperformance für Cluster- und HA-Datenverkehr die Ports e1b und e7b nicht für Host-Netzwerkverbindungen. Verwenden Sie eine separate Hostkarte, um die Leistung zu maximieren.
-
-+
-*100-GbE-Kabel*
-
-+
-image::../media/oie_cable_sfp_gbe_copper.png[100-GB-Ethernet-Kabel]
-
-+
-image::../media/drw_a1k_network_cabling1_ieops-1649.svg[Kabel zum 100-GB-Ethernet-Netzwerk]
-
-.. Verbinden Sie Ihre 10/25 GbE Host-Netzwerk-Switches.
-+
-*10/25 GbE Host*
-
-+
-image::../media/oie_cable_sfp_gbe_copper.png[10 GB Ethernet-Kabel]
-
-+
-image::../media/drw_a1k_network_cabling2_ieops-1650.svg[Kabel zu 10/25-GB-Ethernet-Netzwerk]
-
-
-
-. Verwenden Sie die 1000BASE-T RJ-45-Kabel, um die Controller-Management-Ports (Schraubenschlüssel) mit den Management-Netzwerk-Switches zu verbinden.
-+
-image::../media/oie_cable_rj45.png[RJ-45-Kabel]
-
-+
-* 1000BASE-T RJ-45 KABEL*
-
-+
-image::../media/drw_a1k_management_connection_ieops-1651.svg[Stellen Sie eine Verbindung mit dem Managementnetzwerk her]
-
-
-
-
-IMPORTANT: Stecken Sie die Netzkabel noch nicht ein.
-
 --
-.Option 2: Verbinden Sie die Controller mit einem Switch-basierten ONTAP-Cluster
+.Switch-Cluster-Verkabelung
 --
-Verbinden Sie die Storage Controller mit den Cluster-Netzwerk-Switches, um die ONTAP-Cluster-Verbindungen zu erstellen, und verbinden Sie dann die Ethernet-Ports auf jedem Controller mit dem Host-Netzwerk.
+Verwenden Sie das 100-GbE-Kabel, um die Ports e1a an e1a und die Ports e7a an e7a anzuschließen.
 
 .Schritte
-. Stellen Sie die folgenden Kabelverbindungen her:
-+
-
-NOTE: Der Cluster-Interconnect-Verkehr und der HA Traffic nutzen dieselben physischen Ports.
-
-+
-.. Verbinden Sie Port e1a an Controller A und Port e1a an Controller B mit Cluster-Netzwerk-Switch A.
-.. Verbinden Sie Port e7a an Controller A und Port e7a an Controller B mit Cluster-Netzwerk-Switch B.
+. Verbinden Sie Port e1a an Controller A und Port e1a an Controller B mit Cluster-Netzwerk-Switch A.
+. Verbinden Sie Port e7a an Controller A und Port e7a an Controller B mit Cluster-Netzwerk-Switch B.
 +
 *100-GbE-Kabel*
 
@@ -131,12 +76,18 @@ image::../media/drw_a1k_switched_cluster_cabling_ieops-1652.svg[Verkabeln Sie Cl
 
 
 
-. Verbinden Sie die Ethernet-Modulports mit Ihrem Hostnetzwerk.
-+
+--
+====
+
+
+== Schritt 2: Verkabeln Sie die Host-Netzwerkverbindungen
+
+Verbinden Sie die Ethernet-Modulports mit Ihrem Hostnetzwerk.
+
 Im Folgenden finden Sie einige typische Beispiele für eine Verkabelung im Host-Netzwerk. Informationen zu Ihrer spezifischen Systemkonfiguration finden Sie unter link:https://hwu.netapp.com["NetApp Hardware Universe"^] .
 
-+
-.. Verbinden Sie die Ports e9a und e9b wie in der Abbildung dargestellt mit dem Ethernet-Datennetzwerk-Switch.
+.Schritte
+. Verbinden Sie die Ports e9a und e9b mit dem Ethernet-Datennetzwerk-Switch.
 +
 
 NOTE: Verwenden Sie für maximale Systemperformance für Cluster- und HA-Datenverkehr die Ports e1b und e7b nicht für Host-Netzwerkverbindungen. Verwenden Sie eine separate Hostkarte, um die Leistung zu maximieren.
@@ -150,7 +101,7 @@ image::../media/oie_cable_sfp_gbe_copper.png[100-GB-Ethernet-Kabel]
 +
 image::../media/drw_a1k_network_cabling1_ieops-1649.svg[Kabel zum 100-GB-Ethernet-Netzwerk]
 
-.. Verbinden Sie Ihre 10/25 GbE Host-Netzwerk-Switches.
+. Verbinden Sie Ihre 10/25 GbE Host-Netzwerk-Switches.
 +
 *4 Ports, 10/25 GbE Host*
 
@@ -162,36 +113,34 @@ image::../media/drw_a1k_network_cabling2_ieops-1650.svg[Kabel zu 10/25-GB-Ethern
 
 
 
-. Verbinden Sie die Controller-Management-Ports (Schraubenschlüssel) mit den Management-Netzwerk-Switches über 1000BASE-T RJ-45-Kabel.
-+
+
+
+== Schritt 3: Verkabelung der Management-Netzwerkverbindungen
+
+Verwenden Sie die 1000BASE-T RJ-45-Kabel, um die Management-Ports (Schraubenschlüssel) an den einzelnen Controllern mit den Managementnetzwerk-Switches zu verbinden.
+
 image::../media/oie_cable_rj45.png[RJ-45-Kabel]
 
-+
 * 1000BASE-T RJ-45 KABEL*
 
-+
 image::../media/drw_a1k_management_connection_ieops-1651.svg[Stellen Sie eine Verbindung mit dem Managementnetzwerk her]
-
-
 
 
 IMPORTANT: Stecken Sie die Netzkabel noch nicht ein.
 
---
-====
 
 
-== Schritt 2: Controller zu den Shelfs verkabeln
+== Schritt 4: Verkabeln Sie die Shelf-Verbindungen
 
-Verkabeln Sie Ihre Controller mit dem Shelf oder den Shelfs.
+Die folgenden Verkabelungsverfahren zeigen, wie Sie Ihre Controller mit einem Storage Shelf verbinden. Wählen Sie eine der folgenden Verkabelungsoptionen, die Ihrem Setup entsprechen.
 
-Diese Verfahren zeigen, wie Sie Ihre Controller zu einem Shelf oder zwei NS224-Shelfs oder zwei oder vier DS460C Shelfs verkabeln. Sie können bis zu vier NS224 Shelfs direkt mit Ihren Controllern verbinden.
+Die maximale Anzahl der unterstützten Einschübe für Ihr Speichersystem und alle Verkabelungsoptionen finden Sie unter link:https://hwu.netapp.com["NetApp Hardware Universe"^].
 
 [role="tabbed-block"]
 ====
-.Option 1: Verbindung zu einem NS224 Storage-Shelf
+.Option 1: Ein NS224 Storage-Shelf
 --
-Verkabeln Sie jeden Controller mit den NSM-Modulen im NS224-Shelf. Die Grafik zeigt die Verkabelung von jedem der Controller: Controller A-Verkabelung in blau und Controller B-Verkabelung in gelb.
+Verbinden Sie jeden Controller mit den NSM-Modulen im NS224-Shelf. Die Grafik zeigt die Verkabelung von Controller A blau und Controller B gelb.
 
 *100 GbE QSFP28 Kupferkabel*
 
@@ -219,9 +168,9 @@ image:../media/drw_a1k_1shelf_cabling_b_ieops-1704.svg["Verkabeln Sie die Contro
 
 
 --
-.Option 2: Verbindung mit zwei NS224 Storage-Shelfs
+.Option 2: Zwei NS224 Storage-Shelfs
 --
-Verkabeln Sie jeden Controller mit den NSM-Modulen beider NS224-Shelfs. Die Grafik zeigt die Verkabelung von jedem der Controller: Controller A-Verkabelung in blau und Controller B-Verkabelung in gelb.
+Verkabeln Sie jeden Controller mit den NSM-Modulen beider NS224-Shelfs. Die Grafik zeigt die Verkabelung von Controller A blau und Controller B gelb.
 
 *100 GbE QSFP28 Kupferkabel*
 
@@ -253,9 +202,9 @@ image:../media/drw_a1k_2shelf_cabling_b_ieops-1706.svg["Kabel-Controller B-Ansch
 
 
 --
-.Option 3: Kabel zu zwei DS460C Shelfs
+.Option 3: Zwei DS460C Shelfs
 --
-Verkabeln Sie jeden Controller mit den IOM-Modulen beider DS460C Shelfs. Die Grafik zeigt die Verkabelung von jedem der Controller: Controller A-Verkabelung in blau und Controller B-Verkabelung in gelb.
+Verkabeln Sie jeden Controller mit den IOM-Modulen beider DS460C Shelfs. Die Grafik zeigt die Verkabelung von Controller A blau und Controller B gelb.
 
 *Mini-SAS-HD-Kabel*
 

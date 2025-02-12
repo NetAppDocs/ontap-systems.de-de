@@ -13,17 +13,12 @@ summary: Zum Austausch des Chassis müssen Sie die Controller herunterfahren.
 == Fahren Sie die Controller herunter - AFF A900
 
 [role="lead"]
-Fahren Sie die Controller herunter, damit Sie Wartungsarbeiten am Chassis durchführen können.
-
-Dieses Verfahren gilt für Systeme mit zwei-Knoten-Konfigurationen. Wenn Sie ein System mit mehr als zwei Knoten haben, siehe https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_perform_a_graceful_shutdown_and_power_up_of_one_HA_pair_in_a_4__node_cluster["So schalten Sie ein HA-Paar in einem Cluster mit vier Nodes ordnungsgemäß aus und wieder ein"^].
+Dieses Verfahren gilt für Systeme mit zwei-Knoten-Konfigurationen. Weitere Informationen über das ordnungsgemäßes Herunterfahren beim Warten eines Clusters finden Sie unter https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/What_is_the_procedure_for_graceful_shutdown_and_power_up_of_a_storage_system_during_scheduled_power_outage["Anleitung zur Problemlösung für das Speichersystem – NetApp Knowledge Base"].
 
 .Bevor Sie beginnen
-* Stoppen Sie den Zugriff aller Clients/Hosts auf Daten auf dem NetApp System.
-* Externe Sicherungsaufträge werden angehalten.
 * Stellen Sie sicher, dass Sie über die erforderlichen Berechtigungen und Anmeldeinformationen verfügen:
 +
 ** Lokale Administratoranmeldeinformationen für ONTAP.
-** NetApp Onboard Key Management (OKM) Cluster-weite Passphrase bei Storage-Verschlüsselung oder NVE/NAE.
 ** BMC-Zugriff für jeden Controller.
 
 
@@ -39,22 +34,23 @@ Dieses Verfahren gilt für Systeme mit zwei-Knoten-Konfigurationen. Wenn Sie ein
 
 .Schritte
 . Melden Sie sich über SSH beim Cluster an oder von einem beliebigen Node im Cluster mit einem lokalen Konsolenkabel und einem Laptop/einer Konsole an.
-. Schalten Sie AutoSupport aus, und geben Sie an, wie lange das System voraussichtlich offline ist:
+. Stoppen Sie den Zugriff aller Clients/Hosts auf Daten auf dem NetApp System.
+. Externe Sicherungsaufträge werden angehalten.
+. Wenn AutoSupport aktiviert ist, unterdrücken Sie die Case-Erstellung und geben Sie an, wie lange Sie das System voraussichtlich offline sein werden:
 +
-`system node autosupport invoke -node * -type all -message "MAINT=8h Power Maintenance"`
+`system node autosupport invoke -node * -type all -message "MAINT=2h Replace chassis"`
 
-. Ermitteln Sie die SP/BMC-Adresse aller Nodes:
+. Ermitteln Sie die SP/BMC-Adresse aller Cluster-Nodes:
 +
 `system service-processor show -node * -fields address`
 
-. Beenden Sie die Cluster-Shell: `exit`
-. Melden Sie sich über SSH beim SP/BMC an. Verwenden Sie dabei die IP-Adresse eines der in der Ausgabe des vorherigen Schritts aufgeführten Nodes.
+. Beenden Sie die Cluster-Shell:
++
+`exit`
+
+. Melden Sie sich über SSH bei SP/BMC an und verwenden Sie dabei die IP-Adresse eines der in der Ausgabe des vorherigen Schritts aufgeführten Nodes, um den Fortschritt zu überwachen.
 +
 Wenn Sie eine Konsole oder einen Laptop verwenden, melden Sie sich mit den gleichen Cluster-Administrator-Anmeldedaten am Controller an.
-
-+
-
-NOTE: Öffnen Sie eine SSH-Sitzung für jede SP/BMC-Verbindung, damit Sie den Fortschritt überwachen können.
 
 . Halten Sie die beiden Nodes im beeinträchtigten Chassis an:
 +
@@ -64,7 +60,9 @@ NOTE: Öffnen Sie eine SSH-Sitzung für jede SP/BMC-Verbindung, damit Sie den Fo
 
 NOTE: Bei Clustern mit SnapMirror Synchronous-Betrieb im StructSync-Modus: `system node halt -node <node1>,<node2>  -skip-lif-migration-before-shutdown true -ignore-quorum-warnings true -inhibit-takeover true -ignore-strict-sync-warnings true`
 
-. Geben Sie *y* für jeden Controller im Cluster ein, wenn angezeigt wird `_Warning: Are you sure you want to halt node "cluster <node-name> number"?
-{y|n}:_`
+. Geben Sie *y* für jeden Controller im Cluster ein, wenn Folgendes angezeigt wird:
++
+`Warning: Are you sure you want to halt node _<node_name>_? {y|n}:`
+
 . Warten Sie, bis die einzelnen Controller angehalten sind, und zeigen Sie die LOADER-Eingabeaufforderung an.
 

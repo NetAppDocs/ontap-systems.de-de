@@ -11,19 +11,62 @@ summary: Verschieben Sie die Festplatten und das Controller-Modul oder die Modul
 
 
 [role="lead"]
-Verschieben Sie die Festplatten und das Controller-Modul vom Gehäuse für beeinträchtigte Störungen in das neue Gehäuse und ersetzen Sie das Gehäuse für beeinträchtigte Störungen durch das neue Gehäuse desselben Modells wie das Gehäuse für beeinträchtigte Störungen.
+Sie müssen bestimmte Komponenten aus den Controller-Modulen entfernen, bevor Sie das Gehäuse für beeinträchtigte Störungen entfernen, das Chassis austauschen, die Komponenten in den richtigen Controller-Modulen neu installieren und dann den normalen Betrieb der Controller wieder einschalten.
 
 
 
-== Schritt 1: Entfernen Sie das Controller-Modul
+== Schritt 1: Entfernen Sie die Netzteile und Kabel
 
-Sie müssen das Controller-Modul aus dem Chassis entfernen, wenn Sie das Controller-Modul ersetzen oder eine Komponente im Controller-Modul ersetzen.
+Vor dem Entfernen des Controllers müssen Sie alle vier Netzteile (PSUs) entfernen, zwei pro Controller. Wenn sie entfernt werden, wird das Gesamtgewicht jedes Controllers leichter.
 
-. Drücken Sie auf der Vorderseite des Gehäuses die Daumen, um jedes Laufwerk fest einzuschieben, bis Sie einen positiven Stopp spüren. Dadurch wird sichergestellt, dass die Laufwerke fest an der Mittelplatine des Gehäuses sitzen.
+. Entfernen Sie die vier Netzteile:
 +
-image::../media/drw_a800_drive_seated_IEOPS-960.svg[Festplattenlaufwerke einsetzen]
+.. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+.. Ziehen Sie die Netzkabel vom Netzteil des Controller-Moduls ab.
++
+Wenn Ihr System über Gleichstrom verfügt, trennen Sie den Netzstecker von den Netzteilen.
 
-. Überprüfen Sie, ob die gelbe NVRAM-Status-LED in Steckplatz 4/5 auf der Rückseite des außer Betrieb genommenen Controller-Moduls ausgeschaltet ist. Suchen Sie nach dem NV-Symbol.
+.. Entfernen Sie das Netzteil vom Controller, indem Sie den PSU-Griff nach oben drehen, sodass Sie das Netzteil herausziehen können, drücken Sie die Sperrklinke der PSU, und ziehen Sie dann das Netzteil aus dem Controller-Modul heraus.
++
+
+CAUTION: Das Netzteil ist kurz. Verwenden Sie immer zwei Hände, um sie zu unterstützen, wenn Sie sie aus dem Controller-Modul entfernen, damit es nicht plötzlich aus dem Controller-Modul schwingen und Sie verletzen.
+
++
+image::../media/drw_a70-90_psu_remove_replace_ieops-1368.svg[Ersetzen Sie die PSU]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Legende Nummer 1"]
+ a| 
+Verriegelungslasche für das Terrakotta-Netzteil
+
+|===
+.. Wiederholen Sie diese Schritte für die verbleibenden Netzteile.
+
+
+. Entfernen Sie die Kabel:
++
+.. Ziehen Sie die Systemkabel und gegebenenfalls die SFP- und QSFP-Module vom Controller-Modul ab, lassen Sie sie jedoch im Kabelverwaltungssystem liegen, damit sie organisiert sind.
++
+
+NOTE: Die Kabel sollten zu Beginn dieses Verfahrens beschriftet worden sein.
+
+.. Entfernen Sie die Kabelverwaltungseinrichtung von den Controller-Modulen und legen Sie sie beiseite.
+
+
+
+
+
+
+== Schritt 2: Entfernen Sie die Controller-Module und Laufwerke
+
+Entfernen Sie die Controller aus dem Chassis, und entfernen Sie dann die Laufwerke aus dem Chassis.
+
+. Prüfen Sie, ob die gelbe NVRAM-Status-LED in Steckplatz 4/5 auf der Rückseite jedes Controller-Moduls aus ist. Suchen Sie nach dem NV-Symbol.
 +
 image::../media/drw_a1K-70-90_nvram-led_ieops-1463.svg[Grafik für die NVRAM-Warnungs- und Status-LED zur Lage]
 
@@ -46,22 +89,13 @@ LED für NVRAM-Warnung
 
 |===
 +
-** Wenn die NV-LED aus ist, mit dem nächsten Schritt fortfahren.
-** Wenn die NV-LED blinkt, warten Sie, bis das Blinken beendet ist. Wenn das Blinken länger als 5 Minuten andauert, wenden Sie sich an den technischen Support, um Unterstützung zu erhalten.
+** Wenn die NVRAM-LED aus ist, mit dem nächsten Schritt fortfahren.
+** Wenn die NVRAM-LED blinkt, warten Sie, bis das Blinken beendet ist. Wenn das Blinken länger als 5 Minuten andauert, wenden Sie sich an http://mysupport.netapp.com/["NetApp Support Website"^], um Unterstützung zu erhalten.
 
 
-. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
-. Ziehen Sie die Stromversorgungskabel des Controller-Moduls von den Netzteilen des Controller-Moduls (PSU) ab.
+. Entfernen Sie die Controller-Module:
 +
-
-NOTE: Wenn Ihr System über Gleichstrom verfügt, trennen Sie den Netzstecker von den Netzteilen.
-
-. Ziehen Sie die Systemkabel und die SFP- und QSFP-Module (falls erforderlich) vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren.
-+
-Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation des Kabelverwaltungsgeräts die Kabel organisiert sind.
-
-. Entfernen Sie das Kabelverwaltungsgerät vom Controller-Modul.
-. Drücken Sie beide Verriegelungsriegel nach unten, und drehen Sie dann beide Verriegelungen gleichzeitig nach unten.
+.. Drücken Sie beide Verriegelungen am Controller nach unten, und drehen Sie beide Verriegelungen gleichzeitig nach unten.
 +
 Das Controller-Modul wird leicht aus dem Chassis entfernt.
 
@@ -86,97 +120,97 @@ image:../media/icon_round_2.png["Legende Nummer 2"]
 Sicherungsstift
 
 |===
-. Schieben Sie das Controller-Modul aus dem Gehäuse und platzieren Sie es auf einer Ebenen, stabilen Oberfläche.
+.. Schieben Sie das Controller-Modul mithilfe der Verriegelungen aus dem Gehäuse und legen Sie es auf eine Ebene, stabile Oberfläche.
 +
 Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen, während Sie es aus dem Gehäuse schieben.
 
-. Wiederholen Sie diese Schritte für das andere Controller-Modul im Chassis.
+.. Wiederholen Sie diese Schritte für das zweite Controller-Modul.
 
 
-
-
-== Schritt 2: Fahren Sie die Laufwerke in das neue Gehäuse
-
-Sie müssen die Laufwerke von jeder Schachtöffnung im alten Chassis auf dieselbe Schachtöffnung im neuen Chassis verschieben.
-
-. Entfernen Sie vorsichtig die Blende von der Vorderseite des Systems.
 . Entfernen Sie die Laufwerke:
 +
-.. Drücken Sie die Entriegelungstaste oben auf der Trägerseite unter den LEDs.
+.. Entfernen Sie vorsichtig die Blende von der Vorderseite des Systems.
+.. Drücken Sie die Entriegelungstaste oben auf der Laufwerksträgerseite unter den LEDs.
 .. Ziehen Sie den Nockengriff in die vollständig geöffnete Position, um den Antrieb von der Mittelplatine zu lösen, und schieben Sie ihn dann vorsichtig aus dem Chassis heraus.
 +
 Das Laufwerk sollte aus dem Gehäuse heraus einrücken und so das Gehäuse frei schieben.
 
 +
 
-NOTE: Wenn Sie ein Laufwerk entfernen, verwenden Sie immer zwei Hände, um sein Gewicht zu stützen.
+NOTE: Laufwerke sind zerbrechlich. Halten Sie das Antriebsgewicht immer mit zwei Händen, wenn Sie ein Laufwerk entfernen, um Beschädigungen zu vermeiden.
 
+.. Verfolgen Sie, in welchem Laufwerkschacht sich jedes Laufwerk befand, und legen Sie das Laufwerk auf einen statikfreien Wagen oder Tisch.
+.. Wiederholen Sie diesen Schritt für die übrigen Laufwerke im Gehäuse.
+
+
+
+
+
+
+== Schritt 3: Ersetzen Sie das Gehäuse für den beeinträchtigten Betrieb
+
+Entfernen Sie das Gehäuse für beeinträchtigte Störungen, und installieren Sie das Ersatzgehäuse.
+
+. Entfernen Sie das Gehäuse für beeinträchtigte Störungen:
 +
-
-NOTE: Laufwerke sind zerbrechlich. Behandeln Sie sie so wenig wie möglich, um Schäden an ihnen zu vermeiden.
-
-
-
-. Verfolgen Sie, von welchem Laufwerkschacht jedes Laufwerk stammt, und legen Sie die Laufwerke auf einen statikfreien Wagen oder Tisch.
+.. Entfernen Sie die Schrauben von den Montagepunkten des Gehäuses.
+.. Schieben Sie das Gehäuse mit zwei Personen oder einem Aufzug von den Rack-Schienen in einem Systemschrank oder einem Rack und legen Sie es dann beiseite.
 
 
-
-
-== Schritt 3: Chassis aus dem Geräte-Rack oder Systemschrank heraus austauschen
-
-Sie müssen das vorhandene Chassis aus dem Rack oder dem Systemschrank entfernen, bevor Sie das Ersatzgehäuse installieren können.
-
-. Entfernen Sie die Schrauben von den Montagepunkten des Gehäuses.
-. Schieben Sie das alte Chassis bei zwei Personen von den Rack-Schienen in einem Systemschrank oder Ausrüstungs-Rack und legen Sie es dann beiseite.
-. Installieren Sie das Ersatzgehäuse mithilfe von zwei Personen in das Rack oder den Systemschrank. Führen Sie das Chassis durch die Rack-Schienen in einem System-Schrank oder Ausrüstungs-Rack.
-. Schieben Sie das Chassis vollständig in das Rack oder den Systemschrank der Ausrüstung.
-. Befestigen Sie die Vorderseite des Chassis mit den Schrauben, die Sie vom alten Chassis entfernt haben, am Rack oder am Systemschrank des Geräts.
-. Installieren Sie die Laufwerke aus dem alten Gehäuse in das Ersatzgehäuse:
+. Installieren Sie das Ersatzgehäuse:
 +
-.. Richten Sie das Laufwerk aus dem alten Gehäuse an der gleichen Schachtöffnung im neuen Gehäuse aus.
+.. Installieren Sie das Ersatzgehäuse mit zwei Personen oder einem Aufzug in das Rack oder den Systemschrank des Geräts, indem Sie das Gehäuse auf die Rackschienen in einem Systemschrank oder Geräte-Rack führen.
+.. Schieben Sie das Chassis vollständig in das Rack oder den Systemschrank der Ausrüstung.
+.. Befestigen Sie die Vorderseite des Gehäuses mit den Schrauben, die Sie aus dem Gehäuse für beeinträchtigte Geräte entfernt haben, am Geräte-Rack oder Systemschrank.
 
 
-. Schieben Sie das Laufwerk vorsichtig so weit wie möglich in das Gehäuse.
+
+
+
+
+== Schritt 4: Installieren Sie die Gehäusekomponenten
+
+Sobald das Ersatzgehäuse installiert ist, müssen Sie die Controller-Module installieren, wieder einsetzen und anschließend die Laufwerke und Netzteile neu installieren.
+
+. Installieren Sie ab dem unteren Controller-Modul die Controller-Module im Ersatzgehäuse:
 +
-Der Nockengriff greift ein und beginnt, sich nach oben zu drehen.
-
-+
-.. Schieben Sie den Antrieb ganz fest in das Gehäuse, und verriegeln Sie dann den Nockengriff, indem Sie ihn nach oben und gegen den Laufwerkträger drücken.
-+
-Schließen Sie den Nockengriff langsam, damit er korrekt an der Vorderseite des Laufwerkträgers ausgerichtet ist. Zum sicheren Zeitpunkt klickt er.
-
-.. Wiederholen Sie den Vorgang für die übrigen Laufwerke im System.
-
-
-. Falls noch nicht geschehen, befestigen Sie die Blende.
-
-
-
-
-== Schritt 4: Installieren Sie die Controller-Module neu
-
-Setzen Sie die Controller-Module wieder in das Gehäuse ein und starten Sie sie neu.
-
-. Wenn Sie den Luftkanal öffnen, schließen Sie den Luftkanal, indem Sie ihn so weit wie möglich nach unten drehen.
-+
-Er sollte bündig auf die Metallplatte des Controller-Moduls liegen.
-
-. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und schieben Sie den Controller vorsichtig ganz in das Gehäuse.
-+
+.. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und schieben Sie den Controller vorsichtig ganz in das Gehäuse.
 .. Drehen Sie die Verriegelungen nach oben in die verriegelte Position.
 .. Wenn Sie dies noch nicht getan haben, installieren Sie das Kabelverwaltungsgerät neu, und stellen Sie den Controller wieder her.
 +
-Wenn Sie die Medienkonverter (QSFPs oder SFPs) entfernt haben, sollten Sie diese erneut installieren, wenn Sie Glasfaserkabel verwenden.
-
-
-
-. Wiederholen Sie die vorherigen Schritte, um den zweiten Controller im neuen Chassis zu installieren.
-. Schließen Sie die Netzkabel an die Netzteile an.
-+
-
-NOTE: Wenn Sie über Gleichstromnetzteile verfügen, schließen Sie den Netzteilblock wieder an die Netzteile an, nachdem das Controller-Modul vollständig im Gehäuse eingesetzt ist.
+Wenn Sie die Medienkonverter (QSFPs oder SFPs) entfernt haben, müssen Sie sie erneut installieren.
 
 +
-Das Controller-Modul startet, sobald es installiert ist und wieder mit Strom versorgt wird. Wenn sie bis zur LOADER-Eingabeaufforderung gebootet wird, booten Sie den Controller mit dem Befehl neu `boot_ontap` .
+Stellen Sie sicher, dass die Kabel mit den Kabeletiketten verbunden sind.
 
 
+
+. Setzen Sie die Laufwerke wieder in die entsprechenden Laufwerksschächte an der Vorderseite des Gehäuses ein.
+. Installieren Sie alle vier Netzteile:
++
+.. Stützen und richten Sie die Kanten des Netzteils mit beiden Händen an der Öffnung im Controller-Modul aus.
+.. Schieben Sie das Netzteil vorsichtig in das Controller-Modul, bis die Verriegelungsklammer einrastet.
++
+Die Netzteile werden nur ordnungsgemäß mit dem internen Anschluss in Kontakt treten und auf eine Weise verriegeln.
+
++
+
+NOTE: Um eine Beschädigung des internen Anschlusses zu vermeiden, verwenden Sie beim Einschieben des Netzteils in das System keine übermäßige Kraft.
+
+
+
+. Schließen Sie die Netzteilkabel wieder an alle vier Netzteileinheiten an.
++
+.. Befestigen Sie das Netzkabel mit der Netzkabelhalterung am Netzteil.
++
+Wenn Sie über Gleichstromnetzteile verfügen, schließen Sie den Netzstecker wieder an die Netzteile an, nachdem das Controller-Modul vollständig im Gehäuse eingesetzt ist, und befestigen Sie das Stromkabel mit den Rändelschrauben am Netzteil.
+
+
+
++
+Die Controller-Module beginnen zu starten, sobald die Netzteile installiert sind und die Stromversorgung wiederhergestellt ist.
+
+
+
+.Was kommt als Nächstes?
+Nachdem Sie das beeinträchtigte AFF A70 oder AFF A90 Chassis ersetzt und die Komponenten wieder eingebaut haben, müssen Sie link:chassis-replace-complete-system-restore-rma.html["Schließen Sie den Austausch des Gehäuses ab"].

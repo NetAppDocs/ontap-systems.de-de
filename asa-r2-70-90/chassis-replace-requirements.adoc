@@ -11,12 +11,19 @@ summary: Sie ersetzen ein Gehäuse mit eingeschränkter Systemfunktion durch das
 
 
 [role="lead"]
+Lesen Sie die Anforderungen für den Austausch eines Gehäuses mit eingeschränkter Störung durch.
+
 Das Chassis ist das physische Gehäuse, in dem alle Controller-Komponenten wie Controller-/CPU-Einheit, Stromversorgung und I/O-Vorgänge untergebracht sind
 
 Bevor Sie das Gehäuse austauschen, müssen Sie die folgenden Anforderungen überprüfen.
 
-* Stellen Sie sicher, dass alle anderen Komponenten des Systems ordnungsgemäß funktionieren. Wenden Sie sich andernfalls an den technischen Support.
+* Stellen Sie sicher, dass alle anderen Komponenten des Systems ordnungsgemäß funktionieren. Wenden Sie sich andernfalls an, http://mysupport.netapp.com/["NetApp Support Website"^] um Unterstützung zu erhalten.
+* Holen Sie sich lokale Administratoranmeldeinformationen für ONTAP ein, wenn diese nicht vorhanden sind.
+* Stellen Sie sicher, dass Sie über die erforderlichen Werkzeuge und Geräte für den Austausch verfügen.
 * Sie können das Verfahren zum Austausch des Gehäuses für alle Versionen von ONTAP verwenden, die von Ihrem System unterstützt werden.
 * Es wird angenommen, dass Sie die Blende, die NVMe-Laufwerke und die Controller-Module auf das neue Gehäuse verschieben, und dass das Ersatzgehäuse eine neue Komponente von NetApp ist.
 * *Das Chassis-Austauschverfahren ist störend.* Für ein Cluster mit zwei Nodes tritt ein vollständiger Service-Ausfall und ein teilweiser Ausfall in einem Cluster mit mehreren Nodes auf.
 
+
+.Was kommt als Nächstes?
+Nachdem Sie die Anforderungen für den Austausch des Gehäuses überprüft link:chassis-replace-prepare.html["Bereiten Sie den Austausch des Gehäuses vor"]haben, müssen Sie .
