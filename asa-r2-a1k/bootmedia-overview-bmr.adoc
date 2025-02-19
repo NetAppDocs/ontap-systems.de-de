@@ -4,13 +4,28 @@ sidebar: sidebar
 keywords: asa r2 a1k, overview, the boot media 
 summary: Erfahren Sie mehr über die automatisierte Methode zum Austauschen der Boot-Medien. 
 ---
-= Überblick über die automatische Boot-Medien Wiederherstellung - ASA A1K
+= Übersicht über die Wiederherstellung der Startmedien - ASA A1K
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie können fehlerhafte Startmedien über die Option zum automatischen Ersetzen von Startmedien (BMR) ersetzen.
+Die Wiederherstellung der Startmedien verwendet das Startabbild vom Partner-Node und führt automatisch die entsprechende Startmenüoption aus, um das Startabbild auf den Ersatz-Startmedien zu installieren.
 
-Beim automatischen Bootmedienaustausch wird das Boot-Image vom Partner-Node verwendet und automatisch die entsprechende Startmenüoption ausgeführt, um das Boot-Image auf den Ersatz-Boot-Medien zu installieren.
+Wenn beim Booten Meldungen auftreten, müssen Sie die Boot-Medien ersetzen und das ONTAP Image vom Partner-Node wiederherstellen.
+
+....
+Can't find primary boot device u0a.0
+Can't find backup boot device u0a.1
+ACPI RSDP Found at 0x777fe014
+
+Starting AUTOBOOT press Ctrl-C to abort...
+Could not load fat://boot0/X86_64/freebsd/image1/kernel: Device not found
+
+ERROR: Error booting OS on: 'boot0' file: fat://boot0/X86_64/Linux/image1/vmlinuz (boot0, fat)
+ERROR: Error booting OS on: 'boot0' file: fat://boot0/X86_64/freebsd/image1/kernel (boot0, fat)
+
+Autoboot of PRIMARY image failed. Device not found (-6)
+LOADER-A>
+....

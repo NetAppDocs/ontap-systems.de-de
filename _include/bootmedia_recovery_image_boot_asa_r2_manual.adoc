@@ -1,16 +1,7 @@
----
-permalink: asa-r2-70-90/bootmedia-recovery-image-boot.html 
-sidebar: sidebar 
-keywords: asa r2 a70, asa r2 a90, boot the recovery image 
-summary: Sie müssen das ONTAP-Image vom USB-Laufwerk starten, das Dateisystem wiederherstellen und die Umgebungsvariablen überprüfen. 
----
-= Starten Sie das Wiederherstellungs-Image - ASA A70 und ASA A90
+= 
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
 
 
-[role="lead"]
 Sie müssen das ONTAP-Image vom USB-Laufwerk starten, das Dateisystem wiederherstellen und die Umgebungsvariablen überprüfen.
 
 .Schritte
@@ -42,15 +33,30 @@ Das Bild wird vom USB-Flash-Laufwerk heruntergeladen.
 --
 .Option 2: ONTAP 9.16.1 oder höher
 --
-.. Drücken Sie auf dem Controller für beeinträchtigte `Y` Vorgänge, wenn Sie dazu aufgefordert werden, die Sicherungskonfiguration wiederherzustellen.
+.. Konfigurieren Sie an der Loader-Eingabeaufforderung des außer Betrieb genommenen Controllers die IP-Adresse des außer Betrieb genommenen Controller-Moduls:
 +
-Nachdem der Wiederherstellungsvorgang erfolgreich war, wird diese Meldung auf der Konsole - angezeigt `syncflash_partner: Restore from partner complete`.
+`ifconfig e0M - auto`
 
+.. An der Loader-Eingabeaufforderung wird der beeinträchtigte Knoten netboot gestartet:
++
+`netboot \http://_web_server_ip/path_to_web-accessible_directory_/<ontap_version>_image.tgz`
+
+.. Wählen Sie im Boot-Menü die Option `7`.
+.. Geben Sie ein `n`, wenn Sie aufgefordert werden, die Backup-Konfiguration wiederherzustellen.
+.. Geben Sie ein `y`, wenn Sie zum Neubooten des Node aufgefordert werden.
+.. Drücken Sie `ctrl-c`, um zum Startmenü zurückzukehren.
++
+Wenn die Verschlüsselung aktiviert ist, müssen Sie sie wiederherstellen, bevor Sie das Startabbild wiederherstellen. Gehen Sie zu link:bootmedia-encryption-restore.html["Wiederherstellung der Verschlüsselung"].
+
+.. Drücken Sie auf dem Controller für beeinträchtigte `Y` Störungen, wenn Sie dazu aufgefordert werden, den Controller für beeinträchtigte Störungen neu zu starten, und drücken Sie `ctrl-c` für das Startmenü.
+.. Wählen Sie Die Option `6`.
 .. Drücken Sie auf dem Controller für beeinträchtigte `Y` Vorgänge, wenn Sie dazu aufgefordert werden, um zu bestätigen, ob die Wiederherstellung erfolgreich war.
 .. Drücken Sie auf dem Controller für beeinträchtigte Störungen `Y`, wenn Sie dazu aufgefordert werden, die wiederhergestellte Konfiguration zu verwenden.
 .. Drücken Sie auf dem Controller für beeinträchtigte Störungen `Y` bei der Aufforderung, um den Node neu zu booten.
-.. Drücken Sie auf dem Controller für beeinträchtigte `Y` Störungen, wenn Sie dazu aufgefordert werden, den Controller für beeinträchtigte Störungen neu zu starten, und drücken Sie `ctrl-c` für das Startmenü.
-.. Wenn das System keine Verschlüsselung verwendet, wählen Sie _Option 1 Normal Boot._, andernfalls gehen Sie zu link:bootmedia-encryption-restore.html["Wiederherstellung der Verschlüsselung"].
+.. Drücken Sie auf `Y`, wenn Sie dazu aufgefordert werden, die Sicherungskonfiguration wiederherzustellen.
++
+Nachdem der Wiederherstellungsvorgang erfolgreich war, wird diese Meldung auf der Konsole - angezeigt `syncflash_partner: Restore from partner complete`.
+
 
 
 --
