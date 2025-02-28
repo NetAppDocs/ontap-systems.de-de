@@ -1,0 +1,66 @@
+---
+permalink: asa-r2-a20-30-50/chassis-replace-shutdown.html 
+sidebar: sidebar 
+keywords: asa a20, asa a30, asa a50, shutdown the controllers 
+summary: Zum Austausch des Chassis müssen Sie die Controller herunterfahren. 
+---
+= Fahren Sie die Controller herunter – ASA A20, ASA A30 und ASA A50
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Dieses Verfahren gilt für Systeme mit zwei-Knoten-Konfigurationen. Weitere Informationen über das ordnungsgemäßes Herunterfahren beim Warten eines Clusters finden Sie unter https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/What_is_the_procedure_for_graceful_shutdown_and_power_up_of_a_storage_system_during_scheduled_power_outage["Anleitung zur Problemlösung für das Speichersystem – NetApp Knowledge Base"].
+
+.Bevor Sie beginnen
+* Stellen Sie sicher, dass Sie über die erforderlichen Berechtigungen und Anmeldeinformationen verfügen:
++
+** Lokale Administratoranmeldeinformationen für ONTAP.
+** BMC-Zugriff für jeden Controller.
+
+
+* Stellen Sie sicher, dass Sie über die erforderlichen Werkzeuge und Geräte für den Austausch verfügen.
+* Als Best Practice vor dem Herunterfahren sollten Sie:
++
+** Zusätzliche Durchführung https://kb.netapp.com/onprem/ontap/os/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["Zustandsberichte zu Systemen"].
+** Führen Sie ein Upgrade von ONTAP auf eine empfohlene Version für das System durch.
+** Lösen Sie alle https://activeiq.netapp.com/["Active IQ Wellness-Alarme und Risiken"]. Notieren Sie sich alle derzeit auftretenden Fehler im System, z. B. LEDs an den Systemkomponenten.
+
+
+
+
+.Schritte
+. Melden Sie sich über SSH beim Cluster an oder von einem beliebigen Node im Cluster mit einem lokalen Konsolenkabel und einem Laptop/einer Konsole an.
+. Stoppen Sie den Zugriff aller Clients/Hosts auf Daten auf dem NetApp System.
+. Externe Sicherungsaufträge werden angehalten.
+. Wenn AutoSupport aktiviert ist, unterdrücken Sie die Case-Erstellung und geben Sie an, wie lange Sie das System voraussichtlich offline sein werden:
++
+`system node autosupport invoke -node * -type all -message "MAINT=2h Replace chassis"`
+
+. Ermitteln Sie die SP/BMC-Adresse aller Cluster-Nodes:
++
+`system service-processor show -node * -fields address`
+
+. Beenden Sie die Cluster-Shell:
++
+`exit`
+
+. Melden Sie sich über SSH bei SP/BMC an und verwenden Sie dabei die IP-Adresse eines der in der Ausgabe des vorherigen Schritts aufgeführten Nodes, um den Fortschritt zu überwachen.
++
+Wenn Sie eine Konsole oder einen Laptop verwenden, melden Sie sich mit den gleichen Cluster-Administrator-Anmeldedaten am Controller an.
+
+. Halten Sie die beiden Nodes im beeinträchtigten Chassis an:
++
+`system node halt -node <node1>,<node2> -skip-lif-migration-before-shutdown true -ignore-quorum-warnings true -inhibit-takeover true`
+
++
+
+NOTE: Bei Clustern mit SnapMirror Synchronous-Betrieb im StructSync-Modus: `system node halt -node <node1>,<node2>  -skip-lif-migration-before-shutdown true -ignore-quorum-warnings true -inhibit-takeover true -ignore-strict-sync-warnings true`
+
+. Geben Sie *y* für jeden Controller im Cluster ein, wenn Folgendes angezeigt wird:
++
+`Warning: Are you sure you want to halt node _<node_name>_? {y|n}:`
+
+. Warten Sie, bis die einzelnen Controller angehalten sind, und zeigen Sie die LOADER-Eingabeaufforderung an.
+

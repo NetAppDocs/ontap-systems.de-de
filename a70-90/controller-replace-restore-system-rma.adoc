@@ -2,7 +2,7 @@
 permalink: a70-90/controller-replace-restore-system-rma.html 
 sidebar: sidebar 
 keywords: aff a70, aff a90, how to restore NetApp Storage Encryption, how to complete the replacement process 
-summary: 'Um den vollständigen Betrieb des Systems wiederherzustellen, müssen Sie die LIFs überprüfen, den Cluster-Zustand überprüfen und den fehlerhaften Teil an NetApp zurücksenden. Wenden Sie sich an den technischen Support unter https://mysupport.netapp.com/site/global/dashboard["NetApp Support"]der Nummer , 888-463-8277 (Nordamerika), 00-800-44-638277 (Europa) oder +800-800-80-800 (Asien/Pazifik), wenn Sie die RMA-Nummer oder zusätzliche Hilfe beim Austauschverfahren benötigen.' 
+summary: Überprüfen Sie, ob die logischen Schnittstellen an ihren Home Port berichten, führen Sie eine Cluster-Zustandsprüfung durch und senden Sie das fehlerhafte Teil an NetApp zurück, um den letzten Schritt im Workflow zum Austausch des AFF A70- und AFF A90-Controllers abzuschließen. 
 ---
 = Vollständiger Controller-Austausch – AFF A70 und AFF A90
 :allow-uri-read: 
@@ -11,18 +11,18 @@ summary: 'Um den vollständigen Betrieb des Systems wiederherzustellen, müssen 
 
 
 [role="lead"]
-Um den vollständigen Betrieb des Systems wiederherzustellen, müssen Sie die LIFs überprüfen, den Cluster-Zustand überprüfen und den fehlerhaften Teil an NetApp zurücksenden.
+Überprüfen Sie, ob die logischen Schnittstellen an ihren Home Port berichten, führen Sie eine Cluster-Zustandsprüfung durch und senden Sie das fehlerhafte Teil an NetApp zurück, um den letzten Schritt im Workflow zum Austausch des AFF A70- und AFF A90-Controllers abzuschließen.
 
 
 
 == Schritt 1: Verifizieren von LIFs und Überprüfen des Clusterzustands
 
-Bevor Sie den Node _Replacement_ in den Service zurücksenden, sollten Sie überprüfen, ob sich die LIFs auf ihren Home Ports befinden, den Cluster-Zustand prüfen und das automatische Giveback zurücksetzen.
+Bevor Sie den Ersatz-Node an einen Service zurücksenden, überprüfen Sie, ob sich die logischen Schnittstellen auf ihren Home Ports befinden, überprüfen Sie den Cluster-Zustand und setzen Sie das automatische Giveback zurück.
 
 .Schritte
 . Vergewissern Sie sich, dass die logischen Schnittstellen ihrem Home-Server und ihren Ports Berichterstellung: `network interface show -is-home false`
 +
-Wenn eine der LIFs als falsch aufgeführt ist, stellen Sie sie auf ihre Home-Ports zurück: `network interface revert -vserver * -lif *`
+Wenn logische Schnittstellen als falsch aufgeführt sind, setzen Sie sie auf ihre Home-Ports zurück: `network interface revert -vserver * -lif *`
 
 . Überprüfen Sie den Zustand Ihres Clusters. Weitere Informationen finden Sie im https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["So führen Sie eine Cluster-Integritätsprüfung mit einem Skript in ONTAP durch"^] KB-Artikel.
 . Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut: `storage failover modify -node local -auto-giveback true`

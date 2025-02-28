@@ -2,7 +2,7 @@
 permalink: c80/bootmedia-encryption-preshutdown-checks.html 
 sidebar: sidebar 
 keywords: c80, pre-shutdown checks for onboard encryption keys 
-summary: Bevor Sie den beeinträchtigten Controller herunterfahren und den Status der integrierten Verschlüsselungsschlüssel prüfen, müssen Sie den Status des beeinträchtigten Controllers überprüfen, die automatische Rückgabe deaktivieren und überprüfen, welche Version von ONTAP das System ausführt. 
+summary: 'Um die Datensicherheit auf Ihrem AFF C80-Speichersystem zu gewährleisten, müssen Sie die Unterstützung und den Status des Verschlüsselungsschlüssels überprüfen. Überprüfen Sie, ob Ihre ONTAP Version NetApp Volume Encryption (NVE) unterstützt und bevor Sie den Controller herunterfahren, ob der Schlüsselmanager aktiv ist.' 
 ---
 = Prüfen Sie die Unterstützung und den Status der Verschlüsselungsschlüssel - AFF C80
 :allow-uri-read: 
@@ -11,6 +11,8 @@ summary: Bevor Sie den beeinträchtigten Controller herunterfahren und den Statu
 
 
 [role="lead"]
+Um die Datensicherheit auf Ihrem AFF C80-Speichersystem zu gewährleisten, müssen Sie die Unterstützung und den Status des Verschlüsselungsschlüssels überprüfen. Überprüfen Sie, ob Ihre ONTAP Version NetApp Volume Encryption (NVE) unterstützt und bevor Sie den Controller herunterfahren, ob der Schlüsselmanager aktiv ist.
+
 Überprüfen Sie vor dem Herunterfahren des beeinträchtigten Controllers, ob Ihre Version von ONTAP NetApp Volume Encryption (NVE) unterstützt und ob Ihr Verschlüsselungsmanagement-System ordnungsgemäß konfiguriert ist.
 
 

@@ -1,0 +1,35 @@
+---
+permalink: asa-r2-a20-30-50/controller-replace-restore-system-rma.html 
+sidebar: sidebar 
+keywords: asa a20, asa a30, asa a50, how to restore NetApp Storage Encryption, how to complete the replacement process 
+summary: Um den vollständigen Betrieb des Systems wiederherzustellen, müssen Sie die LIFs überprüfen, den Cluster-Zustand überprüfen und den fehlerhaften Teil an NetApp zurücksenden. 
+---
+= Vollständiger Controller-Austausch – ASA A20, ASA A30 und ASA A50
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um den vollständigen Betrieb des Storage-Systems wiederherzustellen, müssen Sie die LIFs überprüfen, den Cluster-Zustand überprüfen und den fehlerhaften Teil an NetApp zurücksenden.
+
+
+
+== Schritt 1: Verifizieren von LIFs und Überprüfen des Clusterzustands
+
+Bevor Sie den Ersatz-Node an einen Service zurücksenden, überprüfen Sie, ob sich die logischen Schnittstellen auf ihren Home Ports befinden, überprüfen Sie den Cluster-Zustand und setzen Sie das automatische Giveback zurück.
+
+.Schritte
+. Vergewissern Sie sich, dass die logischen Schnittstellen ihrem Home-Server und ihren Ports Berichterstellung: `network interface show -is-home false`
++
+Wenn logische Schnittstellen als falsch aufgeführt sind, setzen Sie sie auf ihre Home-Ports zurück: `network interface revert -vserver * -lif *`
+
+. Überprüfen Sie den Zustand Ihres Clusters. Weitere Informationen finden Sie im https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["So führen Sie eine Cluster-Integritätsprüfung mit einem Skript in ONTAP durch"^] KB-Artikel.
+. Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut: `storage failover modify -node local -auto-giveback true`
+
+
+
+
+== Schritt 2: Rückgabe des fehlerhaften Teils an NetApp
+
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.
