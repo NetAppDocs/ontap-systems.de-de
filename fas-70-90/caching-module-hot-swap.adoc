@@ -1,8 +1,8 @@
 ---
 permalink: fas-70-90/caching-module-hot-swap.html 
 sidebar: sidebar 
-keywords: fas70, fas90, hot swap, replace, FlashCache module carrier, caching module, FlashCache 
-summary: 'Der NVMe SSD-FlashCache Modulträger enthält ein oder zwei FlashCache Module (Caching-Module) mit einem einzelnen SSD-Caching-Laufwerk, das in jedes Caching-Modul integriert ist. Die Caching-Module können im laufenden Betrieb ausgetauscht werden, der Flash Cache Modulträger ist jedoch nicht Hot-Swap-fähig.' 
+keywords: fas70, fas90, hot swap, replace, Flash Cache module carrier, caching module, Flash Cache 
+summary: 'Der NVMe SSD Flash Cache Modulträger enthält ein oder zwei Flash Cache Module (Caching-Module) mit einem einzelnen SSD Caching-Laufwerk, das in jedes Caching-Modul integriert ist. Die Caching-Module können im laufenden Betrieb ausgetauscht werden, der Flash Cache Modulträger ist nicht Hot-Swap-fähig.' 
 ---
 = Ersetzen Sie den Flash Cache Modulträger oder ein Caching-Modul – FAS70 und FAS90
 :allow-uri-read: 
@@ -11,24 +11,24 @@ summary: 'Der NVMe SSD-FlashCache Modulträger enthält ein oder zwei FlashCache
 
 
 [role="lead"]
-Der NVMe SSD-FlashCache Modulträger enthält ein oder zwei FlashCache Module (Caching-Module) mit einem einzelnen SSD-FlashCache-Laufwerk, das in jedes Caching-Modul integriert ist.
+Der NVMe SSD Flash Cache Modulträger enthält ein oder zwei Flash Cache Module (Caching-Module) mit einem einzelnen SSD Flash Cache Laufwerk, das in jedes Caching-Modul integriert ist.
 
 FAS70 unterstützt 2-TB-Caching-Module, FAS90 unterstützt 4-TB-Caching-Module. Sie können im Flash Cache Modulträger keine unterschiedlichen Caching-Module mit unterschiedlicher Kapazität kombinieren.
 
-Je nachdem, was ersetzt werden muss, können Sie eine der folgenden Verfahren durchführen: Den gesamten Flashcache-Modulträger oder ein Caching-Modul.
+Je nachdem, was ersetzt werden muss, können Sie eines der folgenden Verfahren durchführen: Den gesamten Flash Cache Modulträger oder ein Caching-Modul.
 
-* <<Ersetzen Sie den FlashCache-Modulträger>>
+* <<Ersetzen Sie den Flash Cache-Modulträger>>
 * <<Ersetzen Sie das Caching-Modul>>
 
 
 
 
-== Ersetzen Sie den FlashCache-Modulträger
+== Ersetzen Sie den Flash Cache-Modulträger
 
-Der FlashCache Modulträger befindet sich in Steckplatz 6 und beherbergt bis zu zwei FlashCache Module. Der Flash Cache Modulträger kann nicht im laufenden Betrieb ausgetauscht werden
+Der Flash Cache Modulträger befindet sich in Steckplatz 6 und beherbergt bis zu zwei Flash Cache Module. Sie können den Flash Cache Modulträger nicht im laufenden Betrieb austauschen
 
 .Bevor Sie beginnen
-* Stellen Sie sicher, dass Ihr Speichersystem über das geeignete Betriebssystem für den Ersatz-FlashCache-Modulträger verfügt.
+* Stellen Sie sicher, dass Ihr Storage-System über das geeignete Betriebssystem für den Flash Cache Ersatzmodulträger verfügt.
 * Vergewissern Sie sich, dass alle anderen Komponenten ordnungsgemäß funktionieren. Falls nicht, wenden Sie sich an den technischen Support.
 
 
@@ -136,15 +136,15 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 ====
 
 
-=== Schritt 2: Ersetzen Sie den FlashCache-Modulträger
+=== Schritt 2: Ersetzen Sie den Flash Cache Modulträger
 
-Führen Sie die folgenden Schritte durch, um den FlashCache-Modulträger zu ersetzen.
+Führen Sie die folgenden Schritte durch, um den Flash Cache Modulträger zu ersetzen.
 
 .Schritte
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
-. Suchen Sie den fehlerhaften FlashCache-Modulträger in Steckplatz 6 an der gelben Warn-LED auf der Vorderseite des FlashCache-Modulträgers.
+. Suchen Sie den fehlerhaften Flash Cache-Modulträger in Steckplatz 6 durch die gelbe Warn-LED auf der Vorderseite des Flash Cache-Modulträgers.
 +
-image::../media/drw_fas70-90_remove_caching_module_carrier_ieops-1772.svg[Entfernen Sie den FlashCache Modulträger]
+image::../media/drw_fas70-90_remove_caching_module_carrier_ieops-1772.svg[Entfernen Sie den Flash Cache Modulträger]
 
 +
 [cols="1,4"]
@@ -168,33 +168,33 @@ Steckplatznummern für Caching-Module
  a| 
 image:../media/icon_round_3.png["Legende Nummer 3"]
  a| 
-Flash Cache Modulträger Nockengriff
+Flash Cache-Modulträger-Nockengriff
 
 
 
  a| 
 image:../media/icon_round_4.png["Legende Nummer 4"]
  a| 
-Fehler-LED für Flash Cache Modulträger
+Fehler-LED für Flash Cache-Modulträger
 
 |===
-. Entfernen Sie den fehlerhaften FlashCache-Modulträger:
+. Entfernen Sie den fehlerhaften Flash Cache-Modulträger:
 +
 .. Drehen Sie das Kabelführungs-Fach nach unten, indem Sie die Tasten an beiden Seiten an der Innenseite des Kabelführungs-Fachs ziehen und das Fach dann nach unten drehen.
-.. Drücken Sie die blaue Lasche unten auf dem FlashCache Modulträger zusammen.
+.. Drücken Sie die blaue Lasche unten im Flash Cache Modulträger zusammen.
 .. Drehen Sie die Lasche vom Modul weg.
 
 
-. Ziehen Sie den FlashCache-Modulträger aus dem Controller-Modul und legen Sie ihn auf eine antistatische Matte.
+. Ziehen Sie den Flash Cache-Modulträger aus dem Controller-Modul und legen Sie ihn auf eine antistatische Matte.
 . Verschieben Sie die Caching-Module auf den Flash Cache Ersatz-Modulträger:
 +
 .. Drücken Sie die Terra Cotta Lasche oben am Cache-Modul zusammen, und drehen Sie den Nockengriff vom Cache-Modul weg.
-.. Entfernen Sie das Modul aus dem Gehäuse, indem Sie den Finger in die Öffnung des Nockenhebels stecken und das Modul aus dem FlashCache-Modulträger ziehen.
-.. Setzen Sie das Caching-Modul in denselben Steckplatz im Ersatz-FlashCache-Modulträger ein, und drehen Sie den Nockengriff in die geschlossene Position am Caching-Modul, um es zu verriegeln.
+.. Entfernen Sie das Modul aus dem Gehäuse, indem Sie den Finger in die Öffnung des Nockenhebels stecken und das Modul aus dem Flash Cache-Modulträger ziehen.
+.. Setzen Sie das Caching-Modul in denselben Steckplatz im Ersatz-Flash Cache-Modulträger ein, und drehen Sie den Nockengriff in die geschlossene Position am Caching-Modul, um es zu verriegeln.
 
 
 . Wiederholen Sie diese Schritte, wenn ein zweites Cache-Modul vorhanden ist.
-. Installieren Sie den Ersatz-FlashCache-Modulträger im System:
+. Installieren Sie den Flash Cache Ersatzmodulträger in das System:
 +
 .. Richten Sie das Modul an den Kanten der Öffnung des Gehäusesteckplatzes aus.
 .. Schieben Sie das Modul vorsichtig in den Steckplatz bis zum Gehäuse, und drehen Sie dann die Nockenverriegelung ganz nach oben, um das Modul zu verriegeln.
@@ -207,7 +207,7 @@ Fehler-LED für Flash Cache Modulträger
 
 === Schritt 3: Starten Sie den Controller neu
 
-Nachdem Sie den FlashCache-Modulträger ersetzt haben, müssen Sie das Controller-Modul neu starten.
+Nachdem Sie den Flash Cache-Modulträger ersetzt haben, müssen Sie das Controller-Modul neu starten.
 
 .Schritte
 . Starten Sie an der LOADER-Eingabeaufforderung den Node: _Bye_ neu
@@ -230,7 +230,7 @@ Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen 
 == Ersetzen Sie das Caching-Modul
 
 .Bevor Sie beginnen
-Die Flash Cache Module (Caching-Module) befinden sich in Steckplatz 6-1 oder in Steckplatz 6-2 oder sowohl in Steckplatz 6-1 als auch in den Steckplatz 6-2.
+Die Flash Cache Module (Caching-Module) befinden sich in Steckplatz 6-1 oder in Steckplatz 6-2 oder sowohl in Steckplatz 6-1 als auch in Steckplatz 6-2.
 
 Sie können die einzelnen Caching-Module im laufenden Betrieb durch Caching-Module ersetzen, die dieselbe Kapazität vom selben Anbieter oder von einem anderen unterstützten Anbieter haben.
 
@@ -292,9 +292,9 @@ Fehler-LED des Caching-Moduls
 .. Drehen Sie das Kabelführungs-Fach nach unten, indem Sie die Tasten an beiden Seiten an der Innenseite des Kabelführungs-Fachs ziehen und das Fach dann nach unten drehen.
 .. Drücken Sie die Entriegelungstaste Terra Cotta auf der Vorderseite des Cache-Moduls.
 .. Drehen Sie den Nockengriff so weit wie möglich.
-.. Entfernen Sie das Caching-Modul aus dem Gehäuse, indem Sie den Finger in die Öffnung des Nockenhebels stecken und das Modul aus dem FlashCache-Modulträger ziehen.
+.. Entfernen Sie das Caching-Modul aus dem Gehäuse, indem Sie den Finger in die Öffnung des Nockenhebels stecken und das Modul aus dem Flash Cache-Modulträger ziehen.
 +
-Achten Sie darauf, das Caching-Modul zu unterstützen, wenn Sie es aus dem FlashCache Modulträger entfernen.
+Achten Sie darauf, das Caching-Modul zu unterstützen, wenn Sie es aus dem Flash Cache Modulträger entfernen.
 
 
 

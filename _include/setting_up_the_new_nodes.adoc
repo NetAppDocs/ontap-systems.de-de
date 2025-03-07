@@ -5,7 +5,7 @@
 Während des Upgrades durch Verschiebung des Storage schalten Sie node3 und node4 ein, starten das Software-Image und konfigurieren die Nodes. Zwischen Original und neuen Nodes kann das physische Port-Layout abweichen. Um das richtige Layout von Ports und Verbindungen zu identifizieren, sollten Ports zwischen Original- und Ersatz-Nodes zugeordnet werden.
 
 .Über diese Aufgabe
-Wenn sich die auf den neuen Nodes ausgeführte ONTAP Version von der Version auf den ursprünglichen Nodes unterscheidet, müssen Sie die richtige Datei <ontap_Version>_image.tgz von der NetApp Support-Website in ein über Web zugängliches Verzeichnis heruntergeladen haben (siehe Schritt 4). Sie benötigen die Datei <ontap_Version>_image.tgz, um einen Netzboot des Systems auszuführen.
+Wenn sich die auf den neuen Knoten ausgeführte ONTAP-Version von der Version auf den ursprünglichen Nodes unterscheidet, müssen Sie die korrekte <xxx_image.tgz>-Datei von der NetApp-Support-Website in ein Verzeichnis heruntergeladen haben, das über das Internet zugänglich ist (siehe Schritt 4). Sie benötigen die <xxx_image.tgz>-Datei, um einen Netzboot Ihres Systems auszuführen.
 
 .Schritte
 . Schalten Sie den Netzschalter auf node3 ein, und drücken Sie dann sofort Strg-C an der Konsole, um auf die LOADER-Eingabeaufforderung zuzugreifen.
@@ -63,11 +63,11 @@ DHCP
  a| 
 *Alle anderen Systeme*
  a| 
-`+netboot http://web_server_ip/path_to_web-accessible_directory/<ontap_version>_image.tgz+`
+`+netboot http://web_server_ip/path_to_web-accessible_directory/<xxx_image.tgz>+`
 
 |===
 +
-Das Verzeichnis path_to_the_Web-accessible_Directory ist der Speicherort der heruntergeladenen Datei <ontap_Version>_image.tgz.
+Das Verzeichnis path_to_the_Web-accessible_Directory ist der Speicherort der heruntergeladenen <xxx_image.tgz>-Datei.
 
 +
 
@@ -77,7 +77,7 @@ NOTE: Wenn Sie die neuen Controller nicht als Netzboot senden können, wenden Si
 +
 Ignorieren Sie die folgende Meldung: „Dieses Verfahren wird nicht für Non-Disruptive Upgrade auf einem HA-Paar unterstützt“. Dies gilt für unterbrechungsfreie Software-Upgrades, nicht für Controller-Upgrades.
 
-. Wenn Sie aufgefordert werden, den Vorgang fortzusetzen, geben Sie ein `y`, Und wenn Sie zur Eingabe des Pakets aufgefordert werden, geben Sie die URL der Bilddatei ein: `+http://web_server_ip/path_to_web-accessible_directory/<ontap_version>_image.tgz+`.
+. Wenn Sie dazu aufgefordert werden, den Vorgang fortzusetzen, geben Sie, ein `y`, und wenn Sie zur Eingabe des Pakets aufgefordert werden, geben Sie die URL der Bilddatei ein: `+http://web_server_ip/path_to_web-accessible_directory/<xxx_image.tgz>+`.
 +
 Geben Sie ggf. Benutzernamen/Passwort ein, oder drücken Sie die Eingabetaste, um fortzufahren.
 

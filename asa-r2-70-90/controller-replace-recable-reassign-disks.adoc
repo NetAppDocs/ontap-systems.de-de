@@ -14,7 +14,7 @@ summary: Sie müssen den Storage neu booten.
 ====
 .Keine Verschlüsselung
 --
-Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie seinen Speicher zurückgeben
+Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie seinen Speicher zurückgeben.
 
 .Schritte
 . Geben Sie in der Loader-Eingabeaufforderung `boot_ontap` .
@@ -39,14 +39,14 @@ Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrie
 
 
 --
-.Onboard-Verschlüsselung (OKM)
+.OKM-Verschlüsselung
 --
 Setzt die integrierte Verschlüsselung zurück und setzt den Controller in den normalen Betrieb zurück.
 
 .Schritte
 . Geben Sie an der LOADER-Eingabeaufforderung Folgendes ein:
 +
-`boot_ontap maint`.
+`boot_ontap maint`
 
 . Starten Sie das ONTAP-Menü über die Loader-Eingabeaufforderung `boot_ontap menu`, und wählen Sie Option 10.
 . Geben Sie die OKM-Passphrase ein. Sie können diese Passphrase vom Kunden erhalten, oder wenden Sie sich an https://support.netapp.com["NetApp Support"].
@@ -99,7 +99,7 @@ Wenn in der Spalte _restored_ alles außer _true_ angezeigt wird, kontaktieren S
 
 
 --
-.Externer Schlüsselmanager (EKM))
+.EKM-Verschlüsselung
 --
 Setzt die Verschlüsselung zurück und setzt den Controller wieder in den normalen Betrieb zurück.
 
@@ -145,14 +145,7 @@ NOTE: Wenden Sie sich https://support.netapp.com["NetApp Support"] bei Problemen
 +
 `storage failover show`.
 
-. Stellen Sie sicher, dass alle Core Dumps auf dem reparierten Node im erweiterten Modus gespeichert werden:
-+
-`set -privilege advanced` Und dann `run local partner savecore`.
-
-. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben:
-+
-`storage failover giveback -ofnode _impaired_node_name_`.
-
+. Stellen Sie den außer Betrieb genommenen Controller wieder ein, indem Sie seine Speicherung zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`.
 . Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut:
 +
 `storage failover modify -node local -auto-giveback true`.

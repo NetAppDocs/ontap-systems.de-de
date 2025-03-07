@@ -2,20 +2,20 @@
 permalink: a70-90/dimm-replace.html 
 sidebar: sidebar 
 keywords: aff a70, aff a90, replace a dimm 
-summary: Ersetzen Sie ein DIMM in Ihrem AFF A70- oder AFF A90-System, wenn zu viele korrigierbare oder nicht korrigierbare Fehler erkannt werden. Diese Probleme, die häufig durch einen Ausfall eines einzelnen DIMM verursacht werden, können das Booten von ONTAP durch das Storage-System verhindern. 
+summary: Ersetzen Sie ein DIMM in Ihrem AFF A70- oder AFF A90-System, wenn zu viele korrigierbare oder nicht korrigierbare Speicherfehler festgestellt werden. Derartige Fehler können das Booten von ONTAP durch das Storage-System verhindern. Beim Austausch wird der beeinträchtigte Controller heruntergefahren, entfernt, das DIMM-Modul ersetzt und anschließend der Controller neu installiert. 
 ---
-= Ersetzen Sie ein DIMM-Modul – AFF A70 und AFF A90
+= Ersetzen Sie ein DIMM durch korrigierbare oder nicht korrigierbare Fehler - AFF A70 und AFF A90
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Ersetzen Sie ein DIMM in Ihrem AFF A70- oder AFF A90-System, wenn zu viele korrigierbare oder nicht korrigierbare Fehler erkannt werden. Diese Probleme, die häufig durch einen Ausfall eines einzelnen DIMM verursacht werden, können das Booten von ONTAP durch das Storage-System verhindern.
+Ersetzen Sie ein DIMM in Ihrem AFF A70- oder AFF A90-System, wenn zu viele korrigierbare oder nicht korrigierbare Speicherfehler festgestellt werden. Derartige Fehler können das Booten von ONTAP durch das Storage-System verhindern. Beim Austausch wird der beeinträchtigte Controller heruntergefahren, entfernt, das DIMM-Modul ersetzt und anschließend der Controller neu installiert.
 
 .Bevor Sie beginnen
-* Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
-* Sie müssen die ausgefallene Komponente durch eine FRU-Ersatzkomponente ersetzen, die Sie von NetApp erhalten haben.
+* Stellen Sie sicher, dass alle anderen Komponenten im System ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+* Stellen Sie sicher, dass Sie die fehlerhafte Komponente durch eine von NetApp erhaltene Austauschkomponente ersetzen.
 
 
 
@@ -208,9 +208,9 @@ Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen,
 
 
 
-== Schritt 3: Ersetzen Sie ein DIMM
+== Schritt 3: Ersetzen Sie die DIMM
 
-Um die DIMMs auszutauschen, suchen Sie sie im Controller und befolgen Sie die Schritte in der jeweiligen Reihenfolge.
+Um das DIMM-Modul auszutauschen, suchen Sie es im Controller, und befolgen Sie die entsprechenden Schritte.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Öffnen Sie den Luftkanal der Steuerung auf der Oberseite der Steuerung.

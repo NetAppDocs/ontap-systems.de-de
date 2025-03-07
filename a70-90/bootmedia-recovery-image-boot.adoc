@@ -2,7 +2,7 @@
 permalink: a70-90/bootmedia-recovery-image-boot.html 
 sidebar: sidebar 
 keywords: aff a70, aff a90, boot the recovery image 
-summary: Wenn das Startmedium in Ihrem AFF A70- oder AFF A90-System beschädigt ist, können Sie das Wiederherstellungs-Image von einem USB-Laufwerk starten, die Konfiguration vom Partnerknoten wiederherstellen und die Umgebungsvariablen überprüfen. 
+summary: Wenn das Startmedium in Ihrem AFF A70- oder AFF A90-System beschädigt ist, können Sie das Wiederherstellungs-Image von einem USB-Laufwerk starten und die Konfiguration vom Partnerknoten wiederherstellen. 
 ---
 = Starten Sie das Wiederherstellungs-Image - AFF A70 und AFF A90
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Wenn das Startmedium in Ihrem AFF A70- oder AFF A90-System beschädigt 
 
 
 [role="lead"]
-Wenn das Startmedium in Ihrem AFF A70- oder AFF A90-System beschädigt ist, können Sie das Wiederherstellungs-Image von einem USB-Laufwerk starten, die Konfiguration vom Partnerknoten wiederherstellen und die Umgebungsvariablen überprüfen.
+Wenn das Startmedium in Ihrem AFF A70- oder AFF A90-System beschädigt ist, können Sie das Wiederherstellungs-Image von einem USB-Laufwerk starten und die Konfiguration vom Partnerknoten wiederherstellen.
 
 Sie müssen das ONTAP-Image vom USB-Laufwerk starten, das Dateisystem wiederherstellen und die Umgebungsvariablen überprüfen.
 
@@ -67,3 +67,6 @@ Nachdem der Wiederherstellungsvorgang erfolgreich war, wird diese Meldung auf de
 *HINWEIS:* Wenn der Prozess fehlschlägt, kontaktieren Sie https://support.netapp.com["NetApp Support"].
 
 
+
+.Was kommt als Nächstes?
+Nach dem Booten des Wiederherstellungs-Images müssen Sie link:bootmedia-encryption-restore.html["Stellen Sie die Verschlüsselung auf dem Startmedium wieder her"].

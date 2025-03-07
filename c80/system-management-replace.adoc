@@ -11,7 +11,7 @@ summary: Sie müssen ersetzen .
 
 
 [role="lead"]
-Das System-Management-Modul, das sich auf der Rückseite des Controllers in Steckplatz 8 befindet, enthält integrierte Komponenten für die Systemverwaltung sowie Ports für die externe Verwaltung. Der Ziel-Controller muss heruntergefahren werden, um ein funktionsunes System Management-Modul zu ersetzen oder das Boot-Medium zu ersetzen.
+Das System-Management-Modul, das sich auf der Rückseite des Controllers in Steckplatz 8 befindet, enthält integrierte Komponenten für die Systemverwaltung sowie Ports für die externe Verwaltung. Der Ziel-Controller muss heruntergefahren werden, um ein funktionsunes System Management-Modul zu ersetzen oder das Startmedium zu ersetzen.
 
 Das System-Management-Modul verfügt über die folgenden integrierten Komponenten:
 
@@ -28,18 +28,17 @@ Das System Management-Modul enthält außerdem die folgenden Ports für die exte
 * E0M RJ45 Ethernet
 
 
-Um das System-Management-Modul oder das Boot-Medium zu ersetzen, müssen Sie den außer Betrieb genommenen Controller herunterfahren.
-
 .Bevor Sie beginnen
-* Bei diesem Verfahren wird die folgende Terminologie verwendet:
-+
-** Der beeinträchtigte Controller ist der Controller, an dem Sie Wartungsarbeiten durchführen.
-** Der gesunde Controller ist der HA-Partner des beeinträchtigten Controllers.
+* Stellen Sie sicher, dass alle anderen Systemkomponenten ordnungsgemäß funktionieren müssen.
+* Stellen Sie sicher, dass der Partner-Controller den beeinträchtigten Controller übernehmen kann.
+* Stellen Sie sicher, dass Sie die fehlerhafte Komponente durch eine von NetApp erhaltene Austauschkomponente ersetzen.
 
 
-* Alle anderen Systemkomponenten müssen ordnungsgemäß funktionieren.
-* Der Partner-Controller muss in der Lage sein, den gestörten Controller zu übernehmen.
-* Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
+.Über diese Aufgabe
+Bei diesem Verfahren wird die folgende Terminologie verwendet:
+
+* Der beeinträchtigte Controller ist der Controller, an dem Sie Wartungsarbeiten durchführen.
+* Der gesunde Controller ist der HA-Partner des beeinträchtigten Controllers.
 
 
 

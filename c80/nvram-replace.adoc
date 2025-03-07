@@ -2,7 +2,7 @@
 permalink: c80/nvram-replace.html 
 sidebar: sidebar 
 keywords: c80, replace an nvdimm 
-summary: 'Das NVRAM-Modul besteht aus NVRAM12 und DIMMs und bis zu zwei NVMe SSD Flash Cache Module (FlashCache oder Caching-Module) pro NVRAM-Modul.' 
+summary: 'Das NVRAM Modul besteht aus den NVRAM12 und DIMMs und bis zu zwei NVMe SSD Flash Cache Modulen (Flash Cache oder Caching-Module) pro NVRAM Modul.' 
 ---
 = Ersetzen Sie das NVRAM-Modul AFF C80
 :allow-uri-read: 
@@ -11,11 +11,12 @@ summary: 'Das NVRAM-Modul besteht aus NVRAM12 und DIMMs und bis zu zwei NVMe SSD
 
 
 [role="lead"]
-Das NVRAM-Modul besteht aus der NVRAM12-Hardware und vor Ort austauschbaren DIMMs. Ein ausgefallenes NVRAM-Modul oder die DIMMs im NVRAM-Modul können Sie ersetzen. Um ein fehlerhaftes NVRAM-Modul zu ersetzen, müssen Sie das Modul aus dem Gehäuse entfernen, die DIMMs in das Ersatzmodul verschieben und das Ersatz-NVRAM-Modul in das Gehäuse einsetzen.
+Das NVRAM-Modul besteht aus der NVRAM12-Hardware und vor Ort austauschbaren DIMMs. Ein ausgefallenes NVRAM-Modul oder die DIMMs im NVRAM-Modul können Sie ersetzen.
 
-Alle anderen Komponenten im System müssen ordnungsgemäß funktionieren; andernfalls müssen Sie sich an https://support.netapp.com["NetApp Support"].
+.Bevor Sie beginnen
+* Stellen Sie sicher, dass Sie das Ersatzteil zur Verfügung haben. Sie müssen die fehlerhafte Komponente durch eine Austauschkomponente ersetzen, die Sie von Ihrem Anbieter erhalten haben.
+* Stellen Sie sicher, dass alle anderen Komponenten des Speichersystems ordnungsgemäß funktionieren. Wenn nicht, wenden Sie sich an https://support.netapp.com["NetApp Support"].
 
-Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
 
 
 
@@ -204,9 +205,9 @@ NOTE: Der Controller wird neu gebootet, sobald er vollständig im Chassis einges
 
 
 
-== Schritt 3: Ersetzen Sie ein NVRAM-DIMM
+== Schritt 3: Ersetzen Sie die NVRAM-DIMMs
 
-Um NVRAM-DIMMs im NVRAM-Modul auszutauschen, müssen Sie das NVRAM-Modul entfernen und dann das Ziel-DIMM ersetzen.
+Um NVRAM-DIMMs im NVRAM-Modul zu ersetzen, müssen Sie zuerst das NVRAM-Modul entfernen und dann das Ziel-DIMM austauschen.
 
 . Drücken Sie auf der Vorderseite des Gehäuses die Daumen, um jedes Laufwerk fest einzuschieben, bis Sie einen positiven Stopp spüren. Dadurch wird sichergestellt, dass die Laufwerke fest an der Mittelplatine des Gehäuses sitzen.
 +

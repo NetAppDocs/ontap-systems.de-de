@@ -41,18 +41,18 @@ Sie können ausgeführt  https://mysupport.netapp.com/site/tools/tool-eula/activ
 
 Machen Sie sich mit den folgenden Best Practices vertraut, bevor Sie ein NS224-Shelf im laufenden Betrieb hinzufügen.
 
-* *Best Practice:* die Best Practice ist es, die aktuelle Version des https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["Disk Qualification Package"^] zu installieren, bevor Sie ein Shelf Hot-hinzufügen.
+* *Disk Qualification Package:* die Best Practice ist es, die aktuelle Version des https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["Disk Qualification Package"^] zu installieren, bevor ein Shelf Hot-adding ausgeführt wird.
 +
 Wenn die aktuelle Version des DQP installiert ist, kann Ihr System neu qualifizierte Laufwerke erkennen und verwenden. Dies verhindert, dass Systemereignimeldungen über nicht aktuelle Laufwerksinformationen verfügen und Laufwerkspartitionierung verhindern, da Laufwerke nicht erkannt werden. Das DQP benachrichtigt Sie auch über nicht aktuelle Laufwerk-Firmware.
 
-* *Best Practice:* die Best Practice ist, vor und nach dem Hot-Hinzufügen eines Regals zu laufen https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^] .
+* *Active IQ Config Advisor:* die Best Practice ist, vor und nach dem Hot-Hinzufügen eines Regals zu laufen https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^].
 +
 Wird Active IQ Config Advisor vor dem Hot-Hinzufügen eines Shelfs ausgeführt, erstellt es einen Snapshot der vorhandenen Shelf-Ethernet (ENET)-Konnektivität, überprüft die Firmware-Versionen des NVMe Shelf-Moduls (NSM) und ermöglicht Ihnen die Überprüfung einer Shelf-ID, die bereits im HA-Paar verwendet wird.
 
 +
 Wenn Sie Active IQ Config Advisor nach dem Hinzufügen eines Shelfs im laufenden Betrieb ausführen, können Sie überprüfen, ob Shelfs ordnungsgemäß verkabelt sind und dass Shelf-IDs innerhalb des HA-Paars eindeutig sind.
 
-* *Best Practice:* die Best Practice ist, aktuelle Versionen von und auf Ihrem Speichersystem zu haben https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NSM-Firmware (NVMe-Shelf-Modul)"^] https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Festplatten-Firmware"^] , bevor Sie ein neues Regal hinzufügen.
+* *NSM-Firmware:* die Best Practice ist, aktuelle Versionen von und https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Festplatten-Firmware"^] auf Ihrem Speichersystem zu haben https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NSM-Firmware (NVMe-Shelf-Modul)"^], bevor Sie ein neues Regal hinzufügen.
 +
 
 NOTE: Stellen Sie die Firmware nicht auf eine Version zurück, die Ihr Shelf und seine Komponenten nicht unterstützt.

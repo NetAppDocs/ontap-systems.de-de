@@ -2,7 +2,7 @@
 permalink: a70-90/controller-replace-recable-reassign-disks.html 
 sidebar: sidebar 
 keywords: aff a70, aff a90, how to recable the system, reboot the system 
-summary: Steuerung der Speicherressourcen wieder an den Ersatz-Controller zurückgeben, damit Ihr AFF A70 oder AFF A90 System den normalen Betrieb wieder aufnehmen kann. 
+summary: RRücksteuerung der Storage-Ressourcen an den Ersatz-Controller, damit Ihr AFF A70 oder AFF A90 System den normalen Betrieb fortsetzen kann. 
 ---
 = Geben Sie den Controller zurück – AFF A70 und AFF A90
 :allow-uri-read: 
@@ -11,13 +11,13 @@ summary: Steuerung der Speicherressourcen wieder an den Ersatz-Controller zurüc
 
 
 [role="lead"]
-Steuerung der Speicherressourcen wieder an den Ersatz-Controller zurückgeben, damit Ihr AFF A70 oder AFF A90 System den normalen Betrieb wieder aufnehmen kann.
+Steuerung der Speicherressourcen wieder an den Ersatz-Controller zurückgeben, damit Ihr AFF A70 oder AFF A90 System den normalen Betrieb wieder aufnehmen kann. Das Give-back-Verfahren variiert je nach dem von Ihrem System verwendeten Verschlüsselungstyp: Keine Verschlüsselung, OKM-Verschlüsselung (Onboard Key Manager) oder EKM-Verschlüsselung (External Key Manager).
 
 [role="tabbed-block"]
 ====
 .Keine Verschlüsselung
 --
-Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie seinen Speicher zurückgeben
+Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie seinen Speicher zurückgeben.
 
 .Schritte
 . Geben Sie in der Loader-Eingabeaufforderung `boot_ontap` .
@@ -42,14 +42,14 @@ Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrie
 
 
 --
-.Onboard-Verschlüsselung (OKM)
+.OKM-Verschlüsselung
 --
 Setzt die integrierte Verschlüsselung zurück und setzt den Controller in den normalen Betrieb zurück.
 
 .Schritte
 . Geben Sie an der LOADER-Eingabeaufforderung Folgendes ein:
 +
-`boot_ontap maint`.
+`boot_ontap maint`
 
 . Starten Sie das ONTAP-Menü über die Loader-Eingabeaufforderung `boot_ontap menu`, und wählen Sie Option 10.
 . Geben Sie die OKM-Passphrase ein. Sie können diese Passphrase vom Kunden erhalten, oder wenden Sie sich an https://support.netapp.com["NetApp Support"].
@@ -102,7 +102,7 @@ Wenn in der Spalte _restored_ alles außer _true_ angezeigt wird, kontaktieren S
 
 
 --
-.Externer Schlüsselmanager (EKM))
+.EKM-Verschlüsselung
 --
 Setzt die Verschlüsselung zurück und setzt den Controller wieder in den normalen Betrieb zurück.
 
@@ -148,14 +148,7 @@ NOTE: Wenden Sie sich https://support.netapp.com["NetApp Support"] bei Problemen
 +
 `storage failover show`.
 
-. Stellen Sie sicher, dass alle Core Dumps auf dem reparierten Node im erweiterten Modus gespeichert werden:
-+
-`set -privilege advanced` Und dann `run local partner savecore`.
-
-. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben:
-+
-`storage failover giveback -ofnode _impaired_node_name_`.
-
+. Stellen Sie den außer Betrieb genommenen Controller wieder ein, indem Sie seine Speicherung zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`.
 . Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut:
 +
 `storage failover modify -node local -auto-giveback true`.
@@ -168,3 +161,5 @@ NOTE: Wenden Sie sich https://support.netapp.com["NetApp Support"] bei Problemen
 
 --
 ====
+.Was kommt als Nächstes?
+Nachdem Sie die Eigentümerschaft der Storage-Ressourcen wieder an den Ersatz-Controller übergeben haben, müssen Sie link:controller-replace-restore-system-rma.html["Schließen Sie den Controller-Austausch ab"]den Vorgang durchführen.

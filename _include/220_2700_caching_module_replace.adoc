@@ -26,7 +26,7 @@ Möglicherweise möchten Sie den Inhalt Ihres Cache-Moduls löschen, bevor Sie e
 .. Löschen Sie die Daten im Cache-Modul: `system controller flash-cache secure-erase run -node _node name_ localhost -device-id _device_number_`
 +
 
-NOTE: Führen Sie die aus `system controller flash-cache show` Befehl, wenn Sie die flashcache Geräte-ID nicht kennen.
+NOTE: Führen Sie den Befehl aus `system controller flash-cache show`, wenn Sie die Flash Cache Geräte-ID nicht kennen.
 
 .. Stellen Sie sicher, dass die Daten aus dem Caching-Modul gelöscht wurden: `system controller flash-cache secure-erase show`
 

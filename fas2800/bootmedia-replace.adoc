@@ -166,29 +166,4 @@ Wenn Sie diese Meldung verpassen, drücken Sie Strg-C, wählen Sie die Option zu
 +
 Das System beginnt mit dem Booten und wird bei DER LOADER-Eingabeaufforderung angehalten.
 
-. Legen Sie den Verbindungstyp für das Netzwerk an der LOADER-Eingabeaufforderung fest:
-+
-** Wenn Sie DHCP konfigurieren: `ifconfig e0a -auto`
-+
-
-NOTE: Der von Ihnen konfigurierte Zielport ist der Zielport, über den Sie während der Wiederherstellung des var-Dateisystems mit dem beeinträchtigten Controller über den gesunden Controller kommunizieren. Sie können in diesem Befehl auch den Port E0M verwenden.
-
-** Wenn Sie manuelle Verbindungen konfigurieren: `ifconfig e0a -addr=filer_addr -mask=netmask -gw=gateway-dns=dns_addr-domain=dns_domain`
-+
-*** Filer_addr ist die IP-Adresse des Speichersystems.
-*** Netmask ist die Netzwerkmaske des Managementnetzwerks, das mit dem HA-Partner verbunden ist.
-*** Das Gateway ist das Gateway für das Netzwerk.
-*** dns_addr ist die IP-Adresse eines Namensservers in Ihrem Netzwerk.
-*** die dns_Domain ist der Domain Name des Domain Name System (DNS).
-+
-Wenn Sie diesen optionalen Parameter verwenden, benötigen Sie keinen vollqualifizierten Domänennamen in der Netzboot-Server-URL. Sie benötigen nur den Hostnamen des Servers.
-
-
-
-
-
-+
-
-NOTE: Andere Parameter können für Ihre Schnittstelle erforderlich sein. Sie können eingeben `help ifconfig` Details finden Sie in der Firmware-Eingabeaufforderung.
-
 

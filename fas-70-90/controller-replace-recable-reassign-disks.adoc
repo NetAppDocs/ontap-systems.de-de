@@ -38,7 +38,10 @@ Setzen Sie die Verschlüsselung zurück, wenn diese aktiviert ist, und setzen Si
 --
 .Onboard-Verschlüsselung (OKM)
 --
-. Geben Sie in der Loader-Eingabeaufforderung `boot_ontap maint` .
+. Geben Sie an der LOADER-Eingabeaufforderung Folgendes ein:
++
+`boot_ontap maint`
+
 . Starten Sie das ONTAP-Menü über die Loader-Eingabeaufforderung `boot_ontap menu`, und wählen Sie Option 10.
 . Geben Sie die OKM-Passphrase ein. Sie können diese Passphrase vom Kunden erhalten, oder wenden Sie sich an https://support.netapp.com["NetApp Support"].
 +
@@ -110,7 +113,6 @@ NOTE: Wenden Sie sich https://support.netapp.com["NetApp Support"] bei Problemen
 
 . Sobald das System verarbeitet wird, wird das Startmenü angezeigt. Wählen Sie „1“ für den normalen Start.
 . Überprüfen Sie den Übernahmestatus: `storage failover show`.
-. Stellen Sie sicher, dass alle Core Dumps auf dem reparierten Node gespeichert werden, indem Sie in den erweiterten Modus“ und dann `run local partner savecore` wechseln `set -privilege advanced`.
 . Stellen Sie den außer Betrieb genommenen Controller wieder ein, indem Sie seine Speicherung zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`.
 . Wenn die automatische Rückgabe deaktiviert wurde, aktivieren Sie sie erneut: `storage failover modify -node local -auto-giveback true`.
 . Wenn AutoSupport aktiviert ist, kann die automatische Fallerstellung wiederhergestellt/aufgehoben werden: `system node autosupport invoke -node * -type all -message MAINT=END`.

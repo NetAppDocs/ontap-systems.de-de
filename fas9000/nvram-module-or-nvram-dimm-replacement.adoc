@@ -2,7 +2,7 @@
 permalink: fas9000/nvram-module-or-nvram-dimm-replacement.html 
 sidebar: sidebar 
 keywords: aff a700, fas9000, replace, nvram, module, dimm, manually, reassign, system, id, ha, system, disk, two, node, restore, storage, volume, encryption, functionality 
-summary: 'Das NVRAM-Modul besteht aus NVRAM10 und DIMMs und bis zu zwei NVMe SSD Flash Cache Module (FlashCache oder Caching-Module) pro NVRAM-Modul.' 
+summary: 'Das NVRAM Modul besteht aus NVRAM10 und DIMMs und bis zu zwei NVMe SSD Flash Cache Modulen (Flash Cache oder Caching-Module) pro NVRAM Modul.' 
 ---
 = Ersetzen Sie das NVRAM-Modul oder die NVRAM-DIMMs – FAS9000
 :allow-uri-read: 
@@ -11,9 +11,9 @@ summary: 'Das NVRAM-Modul besteht aus NVRAM10 und DIMMs und bis zu zwei NVMe SSD
 
 
 [role="lead"]
-Das NVRAM-Modul besteht aus NVRAM10 und DIMMs und bis zu zwei NVMe SSD Flash Cache Module (FlashCache oder Caching-Module) pro NVRAM-Modul. Ein ausgefallenes NVRAM-Modul oder die DIMMs im NVRAM-Modul können Sie ersetzen.
+Das NVRAM Modul besteht aus NVRAM10 und DIMMs und bis zu zwei NVMe SSD Flash Cache Modulen (Flash Cache oder Caching-Module) pro NVRAM Modul. Ein ausgefallenes NVRAM-Modul oder die DIMMs im NVRAM-Modul können Sie ersetzen.
 
-Um ein ausgefallenes NVRAM-Modul zu ersetzen, müssen Sie es aus dem Chassis entfernen, das Flash Cache Modul oder die Module aus dem NVRAM-Modul entfernen, die DIMMs in das Ersatzmodul verschieben, das Flash Cache Modul oder die Module neu installieren und das Ersatz-NVRAM-Modul im Chassis installieren.
+Um ein ausgefallenes NVRAM-Modul zu ersetzen, müssen Sie es aus dem Gehäuse entfernen, das Flash Cache Modul oder die Flash Cache Module aus dem NVRAM Modul entfernen, die DIMMs auf das Ersatzmodul verschieben, das Flash Cache Modul oder die Flash Cache Module wieder einsetzen und das Ersatz-NVRAM-Modul ins Gehäuse einsetzen.
 
 Da die System-ID vom NVRAM-Modul abgeleitet wird, werden beim Ersetzen des Moduls Festplatten, die zum System gehören, der neuen System-ID neu zugewiesen.
 
@@ -196,7 +196,7 @@ Zum Austauschen des NVRAM-Moduls suchen Sie es in Steckplatz 6 im Chassis und be
 
 .Schritte
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
-. Verschieben Sie das Flash Cache Modul vom alten NVRAM-Modul in das neue NVRAM-Modul:
+. Verschieben Sie das Flash Cache Modul aus dem alten NVRAM Modul in das neue NVRAM Modul:
 +
 image::../media/drw_9000_remove_flashcache.png[Ersetzen Sie das Caching-Modul]
 
@@ -208,25 +208,25 @@ image::../media/drw_9000_remove_flashcache.png[Ersetzen Sie das Caching-Modul]
  a| 
 image:../media/icon_round_1.png["Legende Nummer 1"]
  a| 
-Orangefarbene Entriegelungstaste (grau in leeren FlashCache Modulen)
+Orangefarbene Entriegelungstaste (grau bei leeren Flash Cache Modulen)
 
 
 
  a| 
 image:../media/icon_round_2.png["Legende Nummer 2"]
  a| 
-FlashCache Nockengriff
+Flash Cache Nockengriff
 
 |===
 +
-.. Drücken Sie die orangefarbene Taste an der Vorderseite des FlashCache Moduls.
+.. Drücken Sie die orangefarbene Taste auf der Vorderseite des Flash Cache Moduls.
 +
 
-NOTE: Die Freigabetaste bei leeren FlashCache Modulen ist grau.
+NOTE: Die Entriegelungstaste an leeren Flash Cache Modulen ist grau dargestellt.
 
 .. Drehen Sie den Nockengriff heraus, bis das Modul beginnt, aus dem alten NVRAM-Modul zu schieben.
 .. Fassen Sie den Nockengriff des Moduls an, und schieben Sie ihn aus dem NVRAM-Modul und setzen Sie ihn an die Vorderseite des neuen NVRAM-Moduls.
-.. Schieben Sie das FlashCache Modul vorsichtig ganz in das NVRAM-Modul und schwenken Sie dann den Nockengriff, bis das Modul einrastet.
+.. Schieben Sie das Flash Cache-Modul vorsichtig in das NVRAM-Modul, und schwenken Sie den Nockengriff dann zu, bis das Modul einrastet.
 
 
 . Entfernen des Ziel-NVRAM-Moduls aus dem Chassis:

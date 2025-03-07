@@ -2,16 +2,16 @@
 permalink: a70-90/bootmedia-encryption-preshutdown-checks.html 
 sidebar: sidebar 
 keywords: aff a70, aff a90, pre-shutdown checks for onboard encryption keys 
-summary: 'Um die Datensicherheit in Ihrem AFF A70 und AFF A90 Storage-System sicherzustellen, müssen Sie Support und Status der Verschlüsselung überprüfen. Überprüfen Sie, ob Ihre ONTAP Version NetApp Volume Encryption (NVE) unterstützt und bevor Sie den Controller herunterfahren, ob der Schlüsselmanager aktiv ist.' 
+summary: 'Um die Datensicherheit in Ihrem AFF A70 und AFF A90 Storage-System zu gewährleisten, müssen Sie die Unterstützung und den Status des Verschlüsselungsschlüssels auf Ihren Boot-Medien überprüfen. Überprüfen Sie, ob Ihre ONTAP Version NetApp Volume Encryption (NVE) unterstützt und bevor Sie den Controller herunterfahren, ob der Schlüsselmanager aktiv ist.' 
 ---
-= Prüfen Sie die Unterstützung und den Status der Verschlüsselungsschlüssel – AFF A70 und AFF A90
+= Prüfen Sie die Unterstützung und den Status der Verschlüsselungsschlüssel auf dem Boot-Medium - AFF A70 und AFF A90
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Um die Datensicherheit in Ihrem AFF A70 und AFF A90 Storage-System sicherzustellen, müssen Sie Support und Status der Verschlüsselung überprüfen. Überprüfen Sie, ob Ihre ONTAP Version NetApp Volume Encryption (NVE) unterstützt und bevor Sie den Controller herunterfahren, ob der Schlüsselmanager aktiv ist.
+Um die Datensicherheit auf Ihrem AFF A70 oder AFF A90 Storage-System zu gewährleisten, müssen Sie die Unterstützung und den Status der Verschlüsselungsschlüssel auf Ihren Boot-Medien überprüfen. Überprüfen Sie, ob Ihre ONTAP Version NetApp Volume Encryption (NVE) unterstützt und bevor Sie den Controller herunterfahren, ob der Schlüsselmanager aktiv ist.
 
 Überprüfen Sie vor dem Herunterfahren des beeinträchtigten Controllers, ob Ihre Version von ONTAP NetApp Volume Encryption (NVE) unterstützt und ob Ihr Verschlüsselungsmanagement-System ordnungsgemäß konfiguriert ist.
 
@@ -194,3 +194,6 @@ Sie werden es in Disaster-Szenarien benötigen, in denen Sie OKM manuell wiederh
 --
 ====
 
+
+.Was kommt als Nächstes?
+Nachdem Sie die Unterstützung und den Status der Verschlüsselungsschlüssel auf dem Boot-Medium überprüft haben, müssen Sie link:bootmedia-shutdown.html["Fahren Sie den Controller herunter"].
