@@ -2,7 +2,7 @@
 permalink: asa-r2-a1k/io-module-replace.html 
 sidebar: sidebar 
 keywords: asa r2 a1k, replace a pcie card 
-summary: Um eine PCIe-Karte zu ersetzen, müssen Sie die Kabel von den Karten trennen, die SFP- und QSFP-Module von den Karten entfernen, bevor Sie den Riser entfernen, den Riser neu installieren und dann die SFP- und QSFP-Module neu installieren, bevor Sie die Karten verkabeln. 
+summary: Ersetzen Sie ein I/O-Modul in Ihrem ASA A1K-System, wenn das Modul ausfällt oder ein Upgrade erfordert, um höhere Leistung oder zusätzliche Funktionen zu unterstützen. Beim Austausch werden der Controller heruntergefahren, das fehlerhafte I/O-Modul ersetzt, der Controller neu gebootet und das fehlerhafte Teil an NetApp zurückgegeben. 
 ---
 = E/A-Modul austauschen – ASA A1K
 :allow-uri-read: 
@@ -11,10 +11,13 @@ summary: Um eine PCIe-Karte zu ersetzen, müssen Sie die Kabel von den Karten tr
 
 
 [role="lead"]
-Gehen Sie wie folgt vor, um ein fehlerhaftes I/O-Modul zu ersetzen.
+Ersetzen Sie ein I/O-Modul in Ihrem ASA A1K-System, wenn das Modul ausfällt oder ein Upgrade erfordert, um höhere Leistung oder zusätzliche Funktionen zu unterstützen. Beim Austausch werden der Controller heruntergefahren, das fehlerhafte I/O-Modul ersetzt, der Controller neu gebootet und das fehlerhafte Teil an NetApp zurückgegeben.
 
-* Sie können dieses Verfahren mit allen Versionen von ONTAP verwenden, die von Ihrem Speichersystem unterstützt werden.
-* Alle anderen Komponenten des Storage-Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+Sie können dieses Verfahren mit allen Versionen von ONTAP verwenden, die von Ihrem Speichersystem unterstützt werden.
+
+.Bevor Sie beginnen
+* Sie müssen das Ersatzteil zur Verfügung haben.
+* Stellen Sie sicher, dass alle anderen Komponenten des Speichersystems ordnungsgemäß funktionieren. Wenden Sie sich andernfalls an den technischen Support.
 
 
 

@@ -11,19 +11,19 @@ summary: Ersetzen Sie zunächst die Startmedien in Ihrem AFF A70 oder AFF A90 St
 
 
 [role="lead"]
-Ersetzen Sie zunächst die Startmedien in Ihrem AFF A70 oder AFF A90 Storage-System, indem Sie die Ersatzmedien vorbereiten, sie im System installieren, das Startabbild wiederherstellen und die Systemfunktionen überprüfen.
+Wechseln Sie zunächst die Boot-Medien in Ihrem AFF A70 oder AFF A90 Storage-System, indem Sie die Austauschanforderungen überprüfen, den Verschlüsselungsstatus überprüfen, den Controller herunterfahren, die Boot-Medien ersetzen, das Recovery-Image booten, die Verschlüsselung wiederherstellen und die Systemfunktionalität überprüfen.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:bootmedia-replace-requirements.html["Überprüfen Sie die Anforderungen der Startmedien"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:bootmedia-replace-requirements.html["Lesen Sie die Anforderungen für den Austausch des Startmediums durch"]
 [role="quick-margin-para"]
 Überprüfen Sie die Anforderungen für den Austausch des Startmediums.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:bootmedia-encryption-preshutdown-checks.html["Prüfen Sie die Unterstützung und den Status der Verschlüsselungsschlüssel"]
 [role="quick-margin-para"]
-Überprüfen Sie, ob der Sicherheitsschlüsselmanager aktiviert oder die Laufwerke verschlüsselt sind.
+Prüfen Sie, ob der Sicherheitsschlüsselmanager aktiviert oder die Laufwerke verschlüsselt sind.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:bootmedia-shutdown.html["Schalten Sie den beeinträchtigten Regler aus"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:bootmedia-shutdown.html["Fahren Sie den Controller herunter"]
 [role="quick-margin-para"]
-Fahren Sie den beeinträchtigten Controller herunter oder übernehmen Sie ihn, damit der Controller weiterhin Daten aus dem Speicher des beeinträchtigten Controllers bereitstellen kann.
+Fahren Sie den Controller in Ihrem Storage-System herunter, wenn Sie die Boot-Medien austauschen müssen.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:bootmedia-replace.html["Ersetzen Sie das Startmedium"]
 [role="quick-margin-para"]

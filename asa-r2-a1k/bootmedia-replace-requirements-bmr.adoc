@@ -2,16 +2,18 @@
 permalink: asa-r2-a1k/bootmedia-replace-requirements-bmr.html 
 sidebar: sidebar 
 keywords: asa r2 a1k, replace the boot media 
-summary: Erfahren Sie mehr über die Anforderungen für den Austausch der Boot-Medien. 
+summary: Stellen Sie vor dem Austausch der Startmedien in Ihrem ASA A1K-System sicher, dass Sie die erforderlichen Voraussetzungen für einen erfolgreichen Austausch erfüllen. 
 ---
-= Voraussetzungen für den Austausch von Startmedien – ASA A1K
+= Voraussetzungen für den Austausch des Startmediums - ASA A1K
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Überprüfen Sie vor dem Austauschen des Startmediums die folgenden Anforderungen.
+Stellen Sie vor dem Austausch der Startmedien in Ihrem ASA A1K-System sicher, dass Sie die erforderlichen Voraussetzungen für einen erfolgreichen Austausch erfüllen. Dazu gehört die Überprüfung, dass Sie über die richtigen Boot-Ersatzmedien verfügen, die Bestätigung, dass keine fehlerhaften Cluster-Ports auf dem Controller vorhanden sind, und die Bestimmung, ob Onboard Key Manager (OKM) oder External Key Manager (EKM) aktiviert ist.
+
+Überprüfen Sie die folgenden Anforderungen.
 
 * Sie müssen das ausgefallene Boot-Medium durch ein Ersatz-Boot-Medium ersetzen, das Sie von NetApp erhalten haben.
 * Es dürfen keine fehlerhaften Cluster-Ports auf dem gestörten Controller vorhanden sein.
@@ -34,4 +36,4 @@ summary: Erfahren Sie mehr über die Anforderungen für den Austausch der Boot-M
 
 
 .Wie es weiter geht
-Nachdem Sie die Anforderungen für die Startmedien überprüft haben, können Sie link:bootmedia-shutdown-bmr.html["Schalten Sie den außer Betrieb genommenen Controller aus"].
+Nachdem Sie die Anforderungen für die Startmedien überprüft haben, können Sie link:bootmedia-shutdown-bmr.html["Fahren Sie den Controller herunter"].

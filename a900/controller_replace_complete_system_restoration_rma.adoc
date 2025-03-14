@@ -11,7 +11,7 @@ summary: 'Um den Ersatzvorgang abzuschließen und den Betrieb des Systems wieder
 
 
 [role="lead"]
-Um den Ersatzvorgang abzuschließen und den Betrieb des Systems wiederherzustellen, müssen Sie den Storage erneut herstellen, die NetApp Storage Encryption Konfiguration (falls erforderlich) wiederherstellen und die Lizenzen für den neuen Controller installieren. Vor der Wiederherstellung des Systembetriebs müssen Sie eine Reihe von Aufgaben ausführen.
+Um den Austauschvorgang abzuschließen und den Betrieb des Systems wiederherzustellen, stellen Sie die NetApp-Speicherverschlüsselungskonfiguration (falls erforderlich) wieder her, und installieren Sie Lizenzen für den neuen Controller.
 
 
 
@@ -62,6 +62,7 @@ Wenn eine der LIFs als falsch aufgeführt ist, stellen Sie sie auf ihre Home-Por
 ** Wenn AutoSupport nicht aktiviert ist, rufen Sie an https://mysupport.netapp.com["NetApp Support"] Um die Seriennummer zu registrieren.
 
 
+. Überprüfen Sie den Zustand Ihres Clusters. Weitere Informationen finden Sie im https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["So führen Sie eine Cluster-Integritätsprüfung mit einem Skript in ONTAP durch"^] KB-Artikel.
 . Wenn ein AutoSupport-Wartungsfenster ausgelöst wurde, beenden Sie das Fenster mit. Verwenden Sie dazu die `system node autosupport invoke -node * -type all -message MAINT=END` Befehl.
 . Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut: `storage failover modify -node local -auto-giveback true`
 

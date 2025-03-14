@@ -2,20 +2,22 @@
 permalink: fas-70-90/bootmedia-replace-requirements.html 
 sidebar: sidebar 
 keywords: fas70, fas90, replace the boot media 
-summary: Erfahren Sie mehr über die Anforderungen für den Austausch der Boot-Medien. 
+summary: Stellen Sie vor dem Austausch der Boot-Medien in Ihrem FAS70- oder FAS90-System sicher, dass Sie die erforderlichen Anforderungen für einen erfolgreichen Austausch erfüllen. Dazu gehört, dass Sie ein USB-Flash-Laufwerk mit der entsprechenden Speichermenge haben und überprüfen, ob Sie das richtige Ersatz-Boot-Gerät haben. 
 ---
-= Boot-Medien ersetzen Anforderungen – FAS70 und FAS90
+= Voraussetzungen für den Austausch der Boot-Medien – FAS70 und FAS90
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Überprüfen Sie vor dem Austauschen des Startmediums die folgenden Anforderungen.
+Stellen Sie vor dem Austausch der Boot-Medien in Ihrem FAS70- oder FAS90-System sicher, dass Sie die erforderlichen Anforderungen für einen erfolgreichen Austausch erfüllen. Dazu gehört, dass Sie ein USB-Flash-Laufwerk mit der entsprechenden Speichermenge haben und überprüfen, ob Sie das richtige Ersatz-Boot-Gerät haben.
+
+Überprüfen Sie die folgenden Anforderungen.
 
 * Sie müssen über ein USB-Flash-Laufwerk verfügen, das auf FAT32 formatiert ist, und über die entsprechende Speichermenge, um die zu speichern `image_xxx.tgz` Datei:
 * Sie müssen die Datei zur späteren Verwendung in diesem Verfahren auf das USB-Flash-Laufwerk kopieren `image_xxx.tgz` .
-* Sie müssen die fehlerhafte Komponente durch eine FRU-Austauschkomponente ersetzen, die Sie NetApp erhalten haben.
+* Sie müssen die fehlerhafte Komponente durch eine Austauschkomponente ersetzen, die Sie NetApp erhalten haben.
 * Es ist wichtig, dass Sie die Befehle in diesen Schritten auf dem richtigen Controller anwenden:
 +
 ** Der Controller _Impared_ ist der Controller, an dem Sie Wartungsarbeiten durchführen.
@@ -23,3 +25,6 @@ summary: Erfahren Sie mehr über die Anforderungen für den Austausch der Boot-M
 
 
 
+
+.Was kommt als Nächstes?
+Nachdem Sie die Anforderungen für den Austausch des Boot-Mediums überprüft haben, müssen Sie link:bootmedia-encryption-preshutdown-checks.html["Prüfen Sie die Unterstützung und den Status der Verschlüsselungsschlüssel auf dem Startmedium"].

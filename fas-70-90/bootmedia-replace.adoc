@@ -2,7 +2,7 @@
 permalink: fas-70-90/bootmedia-replace.html 
 sidebar: sidebar 
 keywords: fas70, fas90, replace the boot media 
-summary: Sie finden das ausgefallene Startmedium im Controller-Modul, indem Sie Riser 3 am Controller-Modul entfernen, bevor Sie das Boot-Medium ersetzen können. 
+summary: 'Konfigurationsdaten: Wenn das Startmedium fehlschlägt, müssen Sie das Controller-Modul trennen, das System Management-Modul entfernen, das gestörte Startmedium entfernen und das Ersatz-Startmedium im System Management-Modul installieren.' 
 ---
 = Ersetzen Sie die Boot-Medien FAS70 und FAS90
 :allow-uri-read: 
@@ -11,6 +11,8 @@ summary: Sie finden das ausgefallene Startmedium im Controller-Modul, indem Sie 
 
 
 [role="lead"]
+Die Boot-Medien in Ihrem FAS70- oder FAS90-System speichern wichtige Firmware- und Konfigurationsdaten. Wenn das Startmedium fehlschlägt, müssen Sie das Controller-Modul trennen, das System Management-Modul entfernen, das gestörte Startmedium entfernen und das Ersatz-Startmedium im System Management-Modul installieren.
+
 Sie müssen das Controller-Modul trennen, das System-Management-Modul von der Rückseite des Systems entfernen, das gestörte Startmedium entfernen und das Ersatz-Startmedium im System-Management-Modul installieren.
 
 
@@ -131,3 +133,6 @@ Der Controller beginnt zu starten, sobald die Stromversorgung wieder mit dem Sys
 Wenn Sie diese Meldung verpassen, drücken Sie Strg-C, wählen Sie die Option zum Booten im Wartungsmodus aus, und halten Sie dann den Controller zum Booten in LOADER an.
 
 
+
+.Was kommt als Nächstes?
+Nach dem Ersetzen des Boot-Mediums müssen Sie link:bootmedia-recovery-image-boot.html["Starten Sie das Wiederherstellungs-Image"].

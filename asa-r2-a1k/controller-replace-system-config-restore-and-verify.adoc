@@ -2,7 +2,7 @@
 permalink: asa-r2-a1k/controller-replace-system-config-restore-and-verify.html 
 sidebar: sidebar 
 keywords: asa r2 a1k, restore and verify the system configuration, verify and set the ha state of the controller module 
-summary: Nach dem Austausch und dem Booten der Hardware im Wartungsmodus überprüfen Sie die Low-Level-Systemkonfiguration des Ersatz-Controllers und konfigurieren nach Bedarf die Systemeinstellungen neu. 
+summary: Überprüfen Sie, ob die HA-Konfiguration des Controllers im ASA A1K-Storage-System aktiv ist und ordnungsgemäß funktioniert, und vergewissern Sie sich, dass die Adapter des Systems alle Pfade zu den Festplatten auflisten. 
 ---
 = Stellen Sie die Systemkonfiguration wieder her und überprüfen Sie sie – ASA A1K
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Nach dem Austausch und dem Booten der Hardware im Wartungsmodus überpr
 
 
 [role="lead"]
-Nach dem Austausch der Hardware überprüfen Sie die Low-Level-Systemkonfiguration des Ersatz-Controllers und konfigurieren das System nach Bedarf neu.
+Überprüfen Sie, ob die HA-Konfiguration des Controllers im ASA A1K-Storage-System aktiv ist und ordnungsgemäß funktioniert, und vergewissern Sie sich, dass die Adapter des Systems alle Pfade zu den Festplatten auflisten.
 
 
 
@@ -61,3 +61,6 @@ Wenn Sie Probleme sehen, überprüfen Sie die Verkabelung, und setzen Sie die Ka
 
 . Beenden Sie den Wartungsmodus: `halt`.
 
+
+.Was kommt als Nächstes?
+Nachdem Sie die Systemkonfiguration für Ihr ASA A1K-System wiederhergestellt und verifiziert haben, müssen Sie dies link:controller-replace-recable-reassign-disks.html["Geben Sie den Controller zurück"]tun.

@@ -2,16 +2,16 @@
 permalink: a1k/bootmedia-replace-workflow.html 
 sidebar: sidebar 
 keywords: aff a1k, replace the boot media 
-summary: Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen. 
+summary: Erste Schritte sind der Austausch der Boot-Medien in Ihrem AFF A1K Storage-System. Überprüfen Sie dabei die Austauschanforderungen, überprüfen Sie den Verschlüsselungsstatus, fahren Sie den Controller herunter, ersetzen Sie die Boot-Medien, starten Sie das Recovery-Image, stellen Sie die Verschlüsselung wieder her und überprüfen Sie die Systemfunktionalität. 
 ---
-= Workflow für den Austausch von Startmedien – AFF A1K
+= Schnellstart für den Austausch von Boot-Medien – AFF A1K
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Führen Sie die folgenden Workflow-Schritte aus, um die Startmedien zu ersetzen.
+Erste Schritte sind der Austausch der Boot-Medien in Ihrem AFF A1K Storage-System. Überprüfen Sie dabei die Austauschanforderungen, überprüfen Sie den Verschlüsselungsstatus, fahren Sie den Controller herunter, ersetzen Sie die Boot-Medien, starten Sie das Recovery-Image, stellen Sie die Verschlüsselung wieder her und überprüfen Sie die Systemfunktionalität.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:bootmedia-replace-requirements.html["Überprüfen Sie die Anforderungen der Startmedien"]
 [role="quick-margin-para"]
@@ -19,11 +19,11 @@ Führen Sie die folgenden Workflow-Schritte aus, um die Startmedien zu ersetzen.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:bootmedia-encryption-preshutdown-checks.html["Prüfen Sie die Unterstützung und den Status der Verschlüsselungsschlüssel"]
 [role="quick-margin-para"]
-Überprüfen Sie, ob der Sicherheitsschlüsselmanager aktiviert oder die Laufwerke verschlüsselt sind.
+Prüfen Sie, ob der Sicherheitsschlüsselmanager aktiviert oder die Laufwerke verschlüsselt sind.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:bootmedia-shutdown.html["Schalten Sie den beeinträchtigten Regler aus"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:bootmedia-shutdown.html["Fahren Sie den Controller herunter"]
 [role="quick-margin-para"]
-Fahren Sie den beeinträchtigten Controller herunter oder übernehmen Sie ihn, damit der Controller weiterhin Daten aus dem Speicher des beeinträchtigten Controllers bereitstellen kann.
+Fahren Sie den Controller herunter, wenn Sie die Boot-Medien austauschen müssen.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:bootmedia-replace.html["Ersetzen Sie das Startmedium"]
 [role="quick-margin-para"]

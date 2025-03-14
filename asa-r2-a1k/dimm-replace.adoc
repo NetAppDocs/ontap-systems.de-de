@@ -2,7 +2,7 @@
 permalink: asa-r2-a1k/dimm-replace.html 
 sidebar: sidebar 
 keywords: asa r2 a1k, replace a dimm 
-summary: 'Sie müssen ein DIMM im Controller-Modul ersetzen, wenn Ihr System eine steigende Anzahl korrigierbarer Fehlerkorrekturcodes (ECC) registriert; andernfalls wird eine Systempanik verursacht.' 
+summary: Ersetzen Sie ein DIMM in Ihrem ASA A1K-System, wenn zu viele korrigierbare oder nicht korrigierbare Speicherfehler festgestellt werden. Derartige Fehler können das Booten von ONTAP durch das Storage-System verhindern. Beim Austausch wird der beeinträchtigte Controller heruntergefahren, entfernt, das DIMM ersetzt, der Controller neu installiert und das fehlerhafte Teil anschließend an den NetApp zurückgegeben. 
 ---
 = Ersetzen Sie ein DIMM-Modul – ASA A1K
 :allow-uri-read: 
@@ -11,12 +11,12 @@ summary: 'Sie müssen ein DIMM im Controller-Modul ersetzen, wenn Ihr System ein
 
 
 [role="lead"]
-Sie müssen ein DIMM im Controller ersetzen, wenn das Speichersystem auf Fehler wie übermäßige CECC-Fehler (korrigierbare Fehlerkorrekturcodes) stößt, die auf Warnmeldungen der Systemzustandsüberwachung oder nicht korrigierbaren ECC-Fehlern basieren, die normalerweise durch einen einzelnen DIMM-Fehler verursacht werden, der das Starten von ONTAP verhindert.
+Ersetzen Sie ein DIMM in Ihrem ASA A1K-System, wenn zu viele korrigierbare oder nicht korrigierbare Speicherfehler festgestellt werden. Derartige Fehler können das Booten von ONTAP durch das Storage-System verhindern. Beim Austausch wird der beeinträchtigte Controller heruntergefahren, entfernt, das DIMM ersetzt, der Controller neu installiert und das fehlerhafte Teil anschließend an den NetApp zurückgegeben.
 
 .Bevor Sie beginnen
-Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+* Stellen Sie sicher, dass alle anderen Komponenten im System ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+* Stellen Sie sicher, dass Sie die fehlerhafte Komponente durch eine von NetApp erhaltene Austauschkomponente ersetzen.
 
-Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
 
 
 

@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: asa r2 a1k, move the controller module hardware 
 summary: Um ein Controller-Modul auszutauschen, müssen Sie den beeinträchtigten Controller entfernen, FRU-Komponenten in das Ersatzcontrollermodul verschieben, das Ersatzcontrollermodul im Gehäuse installieren und das System dann in den Wartungsmodus booten. 
 ---
-= Ersetzen Sie die Hardware des Controller-Moduls – ASA A1K
+= Ersetzen Sie den Controller - ASA A1K
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Um den Controller auszutauschen, müssen Sie den beeinträchtigten Controller entfernen, die FRU-Komponenten auf das Ersatz-Controller-Modul verschieben, das Ersatz-Controller-Modul im Gehäuse installieren und das System dann im Wartungsmodus booten.
+Tauschen Sie den Controller im ASA A1K-System aus, wenn dies bei einem Hardwareausfall erforderlich ist. Der Austauschprozess umfasst das Entfernen des außer Betrieb genommenen Controllers, das Verschieben der Komponenten auf den Ersatzcontroller, das Installieren des Ersatzcontrollers und das Neustarten des Controllers.
 
 
 
@@ -222,3 +222,6 @@ NOTE: Die angezeigte Zeit ist die Ortszeit nicht immer GMT und wird im 24-Stunde
 Wenn Sie die Transceiver (QSFPs oder SFPs) entfernt haben, müssen Sie sie erneut installieren, wenn Sie Glasfaserkabel verwenden.
 
 
+
+.Was kommt als Nächstes?
+Nachdem Sie den gestörten ASA A1K-Controller ersetzt haben, müssen Sie link:controller-replace-system-config-restore-and-verify.html["Stellen Sie die Systemkonfiguration wieder her"].

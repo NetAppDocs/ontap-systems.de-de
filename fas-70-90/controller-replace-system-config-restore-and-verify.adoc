@@ -2,7 +2,7 @@
 permalink: fas-70-90/controller-replace-system-config-restore-and-verify.html 
 sidebar: sidebar 
 keywords: fas70, fas90, restore and verify the system configuration, verify and set the ha state of the controller module 
-summary: Nach dem Austausch und dem Booten der Hardware im Wartungsmodus überprüfen Sie die Low-Level-Systemkonfiguration des Ersatz-Controllers und konfigurieren nach Bedarf die Systemeinstellungen neu. 
+summary: Überprüfen Sie, ob die HA-Konfiguration des Controllers in Ihrem FAS70 oder FAS90 Storage-System aktiv ist und ordnungsgemäß funktioniert, und vergewissern Sie sich, dass die Systemadapter alle Pfade zu den Festplatten aufgelistet sind. 
 ---
 = Stellen Sie die Systemkonfiguration – FAS70 und FAS90 – wieder her und überprüfen Sie sie
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Nach dem Austausch und dem Booten der Hardware im Wartungsmodus überpr
 
 
 [role="lead"]
-Nach dem Austausch der Hardware überprüfen Sie die Low-Level-Systemkonfiguration des Ersatz-Controllers und konfigurieren das System nach Bedarf neu.
+Überprüfen Sie, ob die HA-Konfiguration des Controllers in Ihrem FAS70 oder FAS90 Storage-System aktiv ist und ordnungsgemäß funktioniert, und vergewissern Sie sich, dass die Systemadapter alle Pfade zu den Festplatten aufgelistet sind.
 
 
 
@@ -61,3 +61,6 @@ Wenn Sie Probleme sehen, überprüfen Sie die Verkabelung, und setzen Sie die Ka
 
 . Beenden Sie den Wartungsmodus: `halt`.
 
+
+.Was kommt als Nächstes?
+Nachdem Sie die Systemkonfiguration für Ihr FAS70 oder FAS90 System wiederhergestellt und verifiziert haben, müssen Sie link:controller-replace-recable-reassign-disks.html["Geben Sie den Controller zurück"].

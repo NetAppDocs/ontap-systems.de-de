@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: aff a20, aff a30, aff a50, boot the recovery image 
 summary: Sie können das Image auf den Boot-Medien vom Partner-Controller durch den automatischen Boot-Recovery-Prozess wiederherstellen. 
 ---
-= Stellen Sie das ONTAP-Image wieder her – AFF A20, AFF A30 und AFF A50
+= Stellen Sie das ONTAP-Image wieder her – ASA A20, ASA A30 und ASA A50
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -15,8 +15,14 @@ summary: Sie können das Image auf den Boot-Medien vom Partner-Controller durch 
 * Stellen Sie fest, ob Onboard Key Manager (OKM) oder Eternal Key Manager (EKM) mithilfe einer der folgenden Methoden konfiguriert ist:
 +
 ** Sie können den Kunden oder Systemadministrator fragen, ob OKM oder EKM aktiviert sind.
-** Um zu überprüfen, ob OKM aktiviert ist, können Sie die verwenden `security key-manager onboard show`.
-** Um zu überprüfen, ob EKM aktiviert ist, können Sie die verwenden `security key-manager external show`.
+** Um zu überprüfen, ob OKM aktiviert ist, verwenden Sie den folgenden Befehl:
++
+`security key-manager onboard show`
+
+** Um zu überprüfen, ob EKM aktiviert ist, verwenden Sie den folgenden Befehl:
++
+`security key-manager external show`
+
 
 
 * Für OKM benötigen Sie den Inhalt der OKM-Passphrase-Datei.

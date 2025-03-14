@@ -2,11 +2,12 @@
 :allow-uri-read: 
 
 
-Überprüfen Sie die Anforderungen beim Austausch des Controllers, und wählen Sie die richtige für Ihre Version des Betriebssystems ONTAP aus.
+Überprüfen Sie die Anforderungen.
 
 * Alle Festplatten-Shelfs müssen ordnungsgemäß funktionieren.
 * Der gesunde Regler muss in der Lage sein, den zu ersetzenden Regler zu übernehmen (bezeichnet in diesem Verfahren als „`eingeschränkte Steuerung`“).
-* Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
+* Sie müssen die ausgefallene Komponente durch eine von NetApp erhaltene Ersatzkomponente ersetzen.
+* Verwenden Sie dieses Verfahren nicht für Controller-Upgrades. Eine Anleitung finden Sie im https://docs.netapp.com/us-en/ontap-systems-upgrade/choose_controller_upgrade_procedure.html["Wählen Sie das Upgrade Ihrer Controller-Hardware aus"].
 * Ein Controller-Modul muss durch ein Controller-Modul desselben Modelltyps ersetzt werden. Sie können kein System-Upgrade durch einen Austausch des Controller-Moduls durchführen.
 * Im Rahmen dieses Verfahrens können Laufwerke oder Laufwerk-Shelfs nicht geändert werden.
 * Da sich das Startgerät auf dem Systemverwaltungsmodul befindet, das auf der Rückseite des Systems installiert ist, müssen Sie das Startgerät beim Austausch eines Controller-Moduls nicht verschieben.

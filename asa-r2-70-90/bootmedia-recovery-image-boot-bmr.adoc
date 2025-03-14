@@ -2,23 +2,31 @@
 permalink: asa-r2-70-90/bootmedia-recovery-image-boot-bmr.html 
 sidebar: sidebar 
 keywords: asa r2 a70, asa r2 a90, boot the recovery image 
-summary: Wenn das Startmedium in Ihrem ASA A70- oder ASA A90-System beschädigt ist, können Sie das Wiederherstellungsabbild starten, die Konfiguration vom Partnerknoten wiederherstellen und die Umgebungsvariablen überprüfen. 
+summary: Nach der Installation des neuen Startmediengeräts in Ihrem ASA A70- oder ASA A90-System können Sie den automatischen Startmedienwiederherstellungsprozess starten, um die Konfiguration vom Partnerknoten wiederherzustellen. 
 ---
-= Stellen Sie das ONTAP-Image wieder her – ASA A70 und ASA A90
+= Stellen Sie das Image auf dem Startmedium wieder her – ASA A70 und ASA A90
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Wenn das Startmedium in Ihrem ASA A70- oder ASA A90-System beschädigt ist, können Sie das Wiederherstellungsabbild starten und die Konfiguration vom Partnerknoten wiederherstellen.
+Nach der Installation des neuen Startmediengeräts in Ihrem ASA A70- oder ASA A90-System können Sie den automatischen Startmedienwiederherstellungsprozess starten, um die Konfiguration vom Partnerknoten wiederherzustellen.
+
+Während des Wiederherstellungsprozesses prüft das System, ob die Verschlüsselung aktiviert ist, und bestimmt den Typ der verwendeten Schlüsselverschlüsselung. Wenn die Schlüsselverschlüsselung aktiviert ist, führt Sie das System durch die entsprechenden Schritte zur Wiederherstellung.
 
 .Bevor Sie beginnen
 * Stellen Sie fest, ob Onboard Key Manager (OKM) oder Eternal Key Manager (EKM) mithilfe einer der folgenden Methoden konfiguriert ist:
 +
 ** Sie können den Kunden oder Systemadministrator fragen, ob OKM oder EKM aktiviert sind.
-** Um zu überprüfen, ob OKM aktiviert ist, können Sie die verwenden `security key-manager onboard show`.
-** Um zu überprüfen, ob EKM aktiviert ist, können Sie die verwenden `security key-manager external show`.
+** Um zu überprüfen, ob OKM aktiviert ist, verwenden Sie den folgenden Befehl:
++
+`security key-manager onboard show`
+
+** Um zu überprüfen, ob EKM aktiviert ist, verwenden Sie den folgenden Befehl:
++
+`security key-manager external show`
+
 
 
 * Für OKM benötigen Sie den Inhalt der OKM-Passphrase-Datei.

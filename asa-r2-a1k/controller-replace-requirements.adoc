@@ -2,20 +2,23 @@
 permalink: asa-r2-a1k/controller-replace-requirements.html 
 sidebar: sidebar 
 keywords: asa r2 a1k, prerequisite, replace the controller module 
-summary: Sie müssen die Voraussetzungen für den Austausch prüfen und die richtige für Ihre Version des ONTAP Betriebssystems auswählen. 
+summary: Bevor Sie den Controller in Ihrem ASA A1K-System austauschen, müssen Sie sicherstellen, dass Sie die erforderlichen Voraussetzungen für einen erfolgreichen Austausch erfüllen. Dazu gehört der richtige Ersatz-Controller, ein Backup Ihrer Systemkonfiguration sowie der Zugriff auf alle erforderlichen Tools und Firmware. 
 ---
-= Voraussetzungen für den Austausch des Controllers – ASA A1K
+= Voraussetzungen für den Austausch des Controllers - ASA A1K
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Überprüfen Sie die Anforderungen beim Austausch des Controllers, und wählen Sie die richtige für Ihre Version des Betriebssystems ONTAP aus.
+Bevor Sie den Controller in Ihrem ASA A1K-System austauschen, müssen Sie sicherstellen, dass Sie die erforderlichen Voraussetzungen für einen erfolgreichen Austausch erfüllen. Dazu gehört der richtige Ersatz-Controller, ein Backup Ihrer Systemkonfiguration sowie der Zugriff auf alle erforderlichen Tools und Firmware.
+
+Überprüfen Sie die Anforderungen.
 
 * Alle Festplatten-Shelfs müssen ordnungsgemäß funktionieren.
 * Der gesunde Regler muss in der Lage sein, den zu ersetzenden Regler zu übernehmen (bezeichnet in diesem Verfahren als „`eingeschränkte Steuerung`“).
-* Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
+* Sie müssen die ausgefallene Komponente durch eine von NetApp erhaltene Ersatzkomponente ersetzen.
+* Verwenden Sie dieses Verfahren nicht für Controller-Upgrades. Eine Anleitung finden Sie im https://docs.netapp.com/us-en/ontap-systems-upgrade/choose_controller_upgrade_procedure.html["Wählen Sie das Upgrade Ihrer Controller-Hardware aus"].
 * Ein Controller-Modul muss durch ein Controller-Modul desselben Modelltyps ersetzt werden. Sie können kein System-Upgrade durch einen Austausch des Controller-Moduls durchführen.
 * Im Rahmen dieses Verfahrens können Laufwerke oder Laufwerk-Shelfs nicht geändert werden.
 * Da sich das Startgerät auf dem Systemverwaltungsmodul befindet, das auf der Rückseite des Systems installiert ist, müssen Sie das Startgerät beim Austausch eines Controller-Moduls nicht verschieben.
@@ -31,3 +34,6 @@ summary: Sie müssen die Voraussetzungen für den Austausch prüfen und die rich
 Auf diese Weise erhalten Sie eine Aufzeichnung des Verfahrens, damit Sie Probleme beheben können, die während des Austauschvorgangs auftreten können.
 
 
+
+.Was kommt als Nächstes?
+Nachdem Sie die Anforderungen für den Austausch Ihres ASA A1K-Controllers überprüft haben, müssen Sie link:controller-replace-shutdown-nomcc.html["Fahren Sie die Controller herunter"].

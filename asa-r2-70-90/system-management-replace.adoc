@@ -1,16 +1,18 @@
 ---
 permalink: asa-r2-70-90/system-management-replace.html 
 sidebar: sidebar 
-keywords: AFF A70, AFF A90, replace the system management module 
-summary: Sie müssen ersetzen . 
+keywords: ASA A70,  ASA A90, replace the system management module 
+summary: Ersetzen Sie das Systemverwaltungsmodul in Ihrem ASA A70- oder ASA A90-System, wenn es defekt ist oder die Firmware beschädigt ist. Beim Austausch werden der Controller heruntergefahren, das fehlerhafte Systemmanagement-Modul ersetzt, der Controller neu gebootet, die Lizenzschlüssel aktualisiert und der fehlerhafte Teil an NetApp zurückgegeben. 
 ---
-= Ersetzen Sie das Systemmanagementmodul – ASA A70 und ASA A90
+= Ersetzen Sie das Systemmanagement-Modul – ASA A70 und ASA A90
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
+Ersetzen Sie das Systemverwaltungsmodul in Ihrem ASA A70- oder ASA A90-System, wenn es defekt ist oder die Firmware beschädigt ist. Beim Austausch werden der Controller heruntergefahren, das fehlerhafte Systemmanagement-Modul ersetzt, der Controller neu gebootet, die Lizenzschlüssel aktualisiert und der fehlerhafte Teil an NetApp zurückgegeben.
+
 Das System-Management-Modul, das sich auf der Rückseite des Controllers in Steckplatz 8 befindet, enthält integrierte Komponenten für die Systemverwaltung sowie Ports für die externe Verwaltung. Der Ziel-Controller muss heruntergefahren werden, um ein funktionsunes System Management-Modul zu ersetzen oder das Boot-Medium zu ersetzen.
 
 Das System-Management-Modul verfügt über die folgenden integrierten Komponenten:
@@ -27,8 +29,6 @@ Das System Management-Modul enthält außerdem die folgenden Ports für die exte
 * USB Typ A (Boot-Wiederherstellung)
 * E0M RJ45 Ethernet
 
-
-Um das System-Management-Modul oder das Boot-Medium zu ersetzen, müssen Sie den außer Betrieb genommenen Controller herunterfahren.
 
 .Bevor Sie beginnen
 * Bei diesem Verfahren wird die folgende Terminologie verwendet:

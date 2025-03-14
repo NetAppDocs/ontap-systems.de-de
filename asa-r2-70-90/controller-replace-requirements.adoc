@@ -4,18 +4,22 @@ sidebar: sidebar
 keywords: asa r2 a70, a90, prerequisite, replace the controller module 
 summary: Sie müssen die Voraussetzungen für den Austausch prüfen und die richtige für Ihre Version des ONTAP Betriebssystems auswählen. 
 ---
-= Anforderungen für den Austausch des Controllers - ASA A70 und ASA A90
+= Voraussetzungen für den Austausch der Steuerung - ASA A70 und ASA A90
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie müssen die Anforderungen für den Controller-Austausch überprüfen und die richtige für Ihre Version des ONTAP Betriebssystems auswählen.
+Stellen Sie vor dem Austausch des Controllers in Ihrem ASA A70 oder ASA A90-System sicher, dass Sie die erforderlichen Voraussetzungen für einen erfolgreichen Austausch erfüllen. Dazu gehört der richtige Ersatz-Controller, ein Backup Ihrer Systemkonfiguration sowie der Zugriff auf alle erforderlichen Tools und Firmware.
+
+Überprüfen Sie die Anforderungen für den Austausch des Controller-Moduls.
 
 * Alle Festplatten-Shelfs müssen ordnungsgemäß funktionieren.
 * Der gesunde Regler muss in der Lage sein, den zu ersetzenden Regler zu übernehmen (bezeichnet in diesem Verfahren als „`eingeschränkte Steuerung`“).
-* Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
+* Verwenden Sie dieses Verfahren nicht für Controller-Upgrades. Eine Anleitung finden Sie im https://docs.netapp.com/us-en/ontap-systems-upgrade/choose_controller_upgrade_procedure.html["Wählen Sie das Upgrade Ihrer Controller-Hardware aus"].
+* Wenn sich Ihr System in einer MetroCluster-Konfiguration befindet, müssen Sie prüfen https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/concept_choosing_the_correct_recovery_procedure_parent_concept.html["Auswahl des richtigen Wiederherstellungsverfahrens"], ob Sie dieses Verfahren verwenden sollten.
+* Sie müssen die ausgefallene Komponente durch die Field-Replaceable Unit (FRU) ersetzen, die Sie von NetApp erhalten haben.
 * Ein Controller-Modul muss durch ein Controller-Modul desselben Modelltyps ersetzt werden. Sie können kein System-Upgrade durch einen Austausch des Controller-Moduls durchführen.
 * Im Rahmen dieses Verfahrens können Laufwerke oder Laufwerk-Shelfs nicht geändert werden.
 * Da sich das Startgerät auf dem Systemverwaltungsmodul befindet, das auf der Rückseite des Systems installiert ist, müssen Sie das Startgerät beim Austausch eines Controller-Moduls nicht verschieben.

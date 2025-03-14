@@ -11,10 +11,12 @@ summary: 'Das NVRAM Modul besteht aus den NVRAM12 und DIMMs und bis zu zwei NVMe
 
 
 [role="lead"]
+Ersetzen Sie die NVRAM in Ihrem AFF c80-System, wenn der nichtflüchtige Speicher fehlerhaft ist oder ein Upgrade erforderlich ist. Beim Austausch wird der beeinträchtigte Controller heruntergefahren, das NVRAM-Modul oder das NVRAM-DIMM ersetzt, die Festplatten neu zugewiesen und das fehlerhafte Teil an NetApp zurückgegeben.
+
 Das NVRAM-Modul besteht aus der NVRAM12-Hardware und vor Ort austauschbaren DIMMs. Ein ausgefallenes NVRAM-Modul oder die DIMMs im NVRAM-Modul können Sie ersetzen.
 
 .Bevor Sie beginnen
-* Stellen Sie sicher, dass Sie das Ersatzteil zur Verfügung haben. Sie müssen die fehlerhafte Komponente durch eine Austauschkomponente ersetzen, die Sie von Ihrem Anbieter erhalten haben.
+* Stellen Sie sicher, dass Sie das Ersatzteil zur Verfügung haben. Sie müssen die ausgefallene Komponente durch eine von NetApp erhaltene Ersatzkomponente ersetzen.
 * Stellen Sie sicher, dass alle anderen Komponenten des Speichersystems ordnungsgemäß funktionieren. Wenn nicht, wenden Sie sich an https://support.netapp.com["NetApp Support"].
 
 
@@ -205,7 +207,7 @@ NOTE: Der Controller wird neu gebootet, sobald er vollständig im Chassis einges
 
 
 
-== Schritt 3: Ersetzen Sie die NVRAM-DIMMs
+== Schritt 3: Ersetzen Sie das NVRAM-DIMM
 
 Um NVRAM-DIMMs im NVRAM-Modul zu ersetzen, müssen Sie zuerst das NVRAM-Modul entfernen und dann das Ziel-DIMM austauschen.
 

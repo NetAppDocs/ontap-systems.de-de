@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: c80, post boot media replacement steps for okm, nse, and nve 
 summary: Stellen Sie die Verschlüsselung auf den Ersatz-Startmedien in Ihrem AFF C80-System wieder her, um eine dauerhafte Datensicherheit zu gewährleisten. Dabei werden die Schlüsselverfügbarkeit überprüft, Verschlüsselungseinstellungen neu angewendet und der sichere Zugriff auf Ihre Daten bestätigt. 
 ---
-= Wiederherstellung der Verschlüsselung – AFF C80
+= Wiederherstellung der Verschlüsselung auf dem Startmedium – AFF C80
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Stellen Sie die Verschlüsselung auf den Ersatz-Startmedien in Ihrem AFF C80-System wieder her, um eine dauerhafte Datensicherheit zu gewährleisten. Dabei werden die Schlüsselverfügbarkeit überprüft, Verschlüsselungseinstellungen neu angewendet und der sichere Zugriff auf Ihre Daten bestätigt.
+Stellen Sie die Verschlüsselung auf den Ersatz-Startmedien in Ihrem AFF C80-System wieder her, um eine dauerhafte Datensicherheit zu gewährleisten. Der Austauschprozess umfasst die Überprüfung der Schlüsselverfügbarkeit, die Anwendung von Verschlüsselungseinstellungen und die Bestätigung des sicheren Zugriffs auf Ihre Daten.
 
 Sie müssen die Schritte speziell für Systeme mit aktiviertem Onboard Key Manager (OKM), NetApp Storage Encryption (NSE) oder NetApp Volume Encryption (NVE) anhand der Einstellungen abschließen, die Sie zu Beginn des Austauschvorgangs des Boot-Mediums erfasst haben.
 
@@ -429,3 +429,6 @@ Selection (1-11)? 1
 `system node autosupport invoke -node * -type all -message MAINT=END`
 
 
+
+.Was kommt als Nächstes?
+Nach dem Wiederherstellen der Verschlüsselung auf dem Boot-Medium müssen Sie link:bootmedia-complete-rma.html["Geben Sie das fehlerhafte Teil an NetApp zurück"].

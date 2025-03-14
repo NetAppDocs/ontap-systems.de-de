@@ -2,24 +2,24 @@
 permalink: asa-r2-a1k/bootmedia-replace-workflow-bmr.html 
 sidebar: sidebar 
 keywords: asa r2 a1k, replace the boot media 
-summary: Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen. 
+summary: Wechseln Sie zunächst die Boot-Medien Ihres ASA A1K Storage-Systems, indem Sie die Austauschanforderungen überprüfen, die Controller herunterfahren, die Boot-Medien austauschen, das Image auf dem Boot-Medium wiederherstellen und die Systemfunktionalität überprüfen. 
 ---
-= Workflow für den Austausch von Startmedien – ASA A1K
+= Schnellstart für den Austausch von Boot-Medien – ASA A1K
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Führen Sie die folgenden Workflow-Schritte aus, um die Startmedien zu ersetzen.
+Beginnen Sie mit dem Austausch der Boot-Medien in Ihrem ASA A1K Storage-System, indem Sie die Austauschanforderungen überprüfen, den Controller herunterfahren, die Boot-Medien austauschen, das Image auf dem Boot-Medium wiederherstellen und die Systemfunktionalität überprüfen.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:bootmedia-replace-requirements-bmr.html["Überprüfen Sie die Anforderungen der Startmedien"]
 [role="quick-margin-para"]
 Überprüfen Sie die Anforderungen für den Austausch von Boot-Medien.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:bootmedia-shutdown-bmr.html["Schalten Sie den beeinträchtigten Regler aus"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:bootmedia-shutdown-bmr.html["Fahren Sie den Controller herunter"]
 [role="quick-margin-para"]
-Fahren Sie den beeinträchtigten Controller herunter oder übernehmen Sie ihn, damit der funktionsunzuverlässige Controller weiterhin Daten aus dem Speicher für den beeinträchtigten Controller bereitstellen kann.
+Fahren Sie den Controller in Ihrem Storage-System herunter, wenn Sie die Boot-Medien austauschen müssen.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:bootmedia-replace-bmr.html["Ersetzen Sie das Startmedium"]
 [role="quick-margin-para"]

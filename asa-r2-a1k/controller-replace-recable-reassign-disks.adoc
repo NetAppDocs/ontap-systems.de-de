@@ -2,7 +2,7 @@
 permalink: asa-r2-a1k/controller-replace-recable-reassign-disks.html 
 sidebar: sidebar 
 keywords: asa r2 a1k, how to recable the system, how to reassign disks 
-summary: Starten Sie das System neu. 
+summary: Geben Sie die Kontrolle über die Speicherressourcen an den Ersatz-Controller zurück, damit Ihr ASA A1K-System den normalen Betrieb wieder aufnehmen kann. 
 ---
 = Geben Sie den Controller zurück – ASA A1K
 :allow-uri-read: 
@@ -11,18 +11,15 @@ summary: Starten Sie das System neu.
 
 
 [role="lead"]
-Überprüfen Sie die Storage- und Netzwerkverbindungen, und geben Sie dann den Controller zurück.
-
-
-
-== Geben Sie den Controller zurück
-
-Setzen Sie die Verschlüsselung zurück, wenn diese aktiviert ist, und setzen Sie den Controller wieder in den normalen Betrieb ein.
+Geben Sie die Kontrolle über die Speicherressourcen an den Ersatz-Controller zurück, damit Ihr ASA A1K-System den normalen Betrieb wieder aufnehmen kann. Das Give-back-Verfahren variiert je nach dem von Ihrem System verwendeten Verschlüsselungstyp: Keine Verschlüsselung, OKM-Verschlüsselung (Onboard Key Manager) oder EKM-Verschlüsselung (External Key Manager).
 
 [role="tabbed-block"]
 ====
 .Keine Verschlüsselung
 --
+Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie seinen Speicher zurückgeben.
+
+.Schritte
 . Geben Sie in der Loader-Eingabeaufforderung `boot_ontap` .
 . Drücken Sie <enter>, wenn die Konsolenmeldungen angehalten werden.
 +
@@ -36,8 +33,11 @@ Setzen Sie die Verschlüsselung zurück, wenn diese aktiviert ist, und setzen Si
 
 
 --
-.Onboard-Verschlüsselung (OKM)
+.OKM-Verschlüsselung
 --
+Setzt die integrierte Verschlüsselung zurück und setzt den Controller in den normalen Betrieb zurück.
+
+.Schritte
 . Geben Sie an der LOADER-Eingabeaufforderung Folgendes ein:
 +
 `boot_ontap maint`
@@ -73,8 +73,11 @@ Wenn in der Spalte _restored_ alles außer _true_ angezeigt wird, kontaktieren S
 
 
 --
-.Externer Schlüsselmanager (EKM))
+.EKM-Verschlüsselung
 --
+Setzt die Verschlüsselung zurück und setzt den Controller wieder in den normalen Betrieb zurück.
+
+.Schritte
 . Wenn das Stammvolume mit External Key Manager verschlüsselt ist und das Konsolenkabel mit dem Ersatzknoten verbunden ist, geben Sie die Option ein `boot_ontap menu` und wählen Sie diese aus `11`.
 . Beantworten Sie `y` oder `n` die folgenden Fragen:
 +
@@ -120,3 +123,5 @@ NOTE: Wenden Sie sich https://support.netapp.com["NetApp Support"] bei Problemen
 
 --
 ====
+.Was kommt als Nächstes?
+Nachdem Sie die Eigentümerschaft der Storage-Ressourcen wieder an den Ersatz-Controller übergeben haben, müssen Sie link:controller-replace-restore-system-rma.html["Schließen Sie den Controller-Austausch ab"]den Vorgang durchführen.

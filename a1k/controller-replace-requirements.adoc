@@ -2,21 +2,24 @@
 permalink: a1k/controller-replace-requirements.html 
 sidebar: sidebar 
 keywords: aff a1k, prerequisite, replace the controller module 
-summary: Sie müssen die Voraussetzungen für den Austausch prüfen und die richtige für Ihre Version des ONTAP Betriebssystems auswählen. 
+summary: Stellen Sie vor dem Austausch des Controllers in Ihrem AFF A1K-System sicher, dass Sie die erforderlichen Voraussetzungen für einen erfolgreichen Austausch erfüllen. Dazu gehört der richtige Ersatz-Controller, ein Backup Ihrer Systemkonfiguration sowie der Zugriff auf alle erforderlichen Tools und Firmware. 
 ---
-= Anforderungen an den Controller-Austausch – AFF A1K
+= Voraussetzungen für den Austausch des Controllers – AFF A1K
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Überprüfen Sie die Anforderungen beim Austausch des Controllers, und wählen Sie die richtige für Ihre Version des Betriebssystems ONTAP aus.
+Stellen Sie vor dem Austausch des Controllers in Ihrem AFF A1K-System sicher, dass Sie die erforderlichen Voraussetzungen für einen erfolgreichen Austausch erfüllen. Dazu gehört der richtige Ersatz-Controller, ein Backup Ihrer Systemkonfiguration sowie der Zugriff auf alle erforderlichen Tools und Firmware.
+
+Überprüfen Sie die Anforderungen für den Austausch des Controllers.
 
 * Alle Festplatten-Shelfs müssen ordnungsgemäß funktionieren.
 * Der gesunde Regler muss in der Lage sein, den zu ersetzenden Regler zu übernehmen (bezeichnet in diesem Verfahren als „`eingeschränkte Steuerung`“).
+* Verwenden Sie dieses Verfahren nicht für Controller-Upgrades. Eine Anleitung finden Sie im https://docs.netapp.com/us-en/ontap-systems-upgrade/choose_controller_upgrade_procedure.html["Wählen Sie das Upgrade Ihrer Controller-Hardware aus"].
 * Wenn sich Ihr System in einer MetroCluster-Konfiguration befindet, müssen Sie im Abschnitt überprüfen https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/concept_choosing_the_correct_recovery_procedure_parent_concept.html["Auswahl des richtigen Wiederherstellungsverfahrens"] , ob Sie diesen Vorgang zum Austausch des Controllers durchführen sollten.
-* Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
+* Sie müssen die ausgefallene Komponente durch die Field-Replaceable Unit (FRU) ersetzen, die Sie von NetApp erhalten haben.
 * Ein Controller-Modul muss durch ein Controller-Modul desselben Modelltyps ersetzt werden. Sie können kein System-Upgrade durch einen Austausch des Controller-Moduls durchführen.
 * Im Rahmen dieses Verfahrens können Laufwerke oder Laufwerk-Shelfs nicht geändert werden.
 * Da sich das Startgerät auf dem Systemverwaltungsmodul befindet, das auf der Rückseite des Systems installiert ist, müssen Sie das Startgerät beim Austausch eines Controller-Moduls nicht verschieben.
@@ -32,3 +35,6 @@ summary: Sie müssen die Voraussetzungen für den Austausch prüfen und die rich
 Auf diese Weise erhalten Sie eine Aufzeichnung des Verfahrens, damit Sie Probleme beheben können, die während des Austauschvorgangs auftreten können.
 
 
+
+.Was kommt als Nächstes?
+Nachdem Sie die Anforderungen für den Austausch Ihres AFF A1K-Controllers überprüft haben, müssen Sie link:controller-replace-shutdown.html["Fahren Sie die Controller herunter"].

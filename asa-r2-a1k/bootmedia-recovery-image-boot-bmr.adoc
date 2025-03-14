@@ -2,23 +2,31 @@
 permalink: asa-r2-a1k/bootmedia-recovery-image-boot-bmr.html 
 sidebar: sidebar 
 keywords: asa r2 a1k, boot the recovery image 
-summary: Sie müssen das ONTAP-Image vom USB-Laufwerk starten, das Dateisystem wiederherstellen und die Umgebungsvariablen überprüfen. 
+summary: Stellen Sie das ONTAP-Image auf dem Ersatz-Startmedium des ASA A1K-Systems wieder her. Dabei wird der Boot-Recovery-Prozess von der Eingabeaufforderung Loader aus initiiert und der Recovery-Prozess überwacht, bis er abgeschlossen ist und der Node neu gebootet wird. 
 ---
-= Automatische Startwiederherstellung - ASA A1K
+= Stellen Sie das Image auf dem Startmedium wieder her - ASA A1K
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Stellen Sie nach dem physischen Ersetzen des beeinträchtigten Startmediums das ONTAP-Image vom Partner-Node wieder her.
+Nach der Installation des neuen Startmediengeräts in Ihrem ASA A1K-System können Sie den automatischen Wiederherstellungsvorgang für die Startmedien starten, um die Konfiguration vom Partner-Node aus wiederherzustellen.
+
+Während des Wiederherstellungsprozesses prüft das System, ob die Verschlüsselung aktiviert ist, und bestimmt den Typ der verwendeten Schlüsselverschlüsselung. Wenn die Schlüsselverschlüsselung aktiviert ist, führt Sie das System durch die entsprechenden Schritte zur Wiederherstellung.
 
 .Bevor Sie beginnen
 * Stellen Sie fest, ob Onboard Key Manager (OKM) oder Eternal Key Manager (EKM) mithilfe einer der folgenden Methoden konfiguriert ist:
 +
 ** Sie können den Kunden oder Systemadministrator fragen, ob OKM oder EKM aktiviert sind.
-** Um zu überprüfen, ob OKM aktiviert ist, können Sie die verwenden `security key-manager onboard show`.
-** Um zu überprüfen, ob EKM aktiviert ist, können Sie die verwenden `security key-manager external show`.
+** Um zu überprüfen, ob OKM aktiviert ist, verwenden Sie den folgenden Befehl:
++
+`security key-manager onboard show`
+
+** Um zu überprüfen, ob EKM aktiviert ist, verwenden Sie den folgenden Befehl:
++
+`security key-manager external show`
+
 
 
 * Für OKM benötigen Sie den Inhalt der OKM-Passphrase-Datei.

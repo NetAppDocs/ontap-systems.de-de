@@ -2,16 +2,16 @@
 permalink: a1k/bootmedia-encryption-preshutdown-checks.html 
 sidebar: sidebar 
 keywords: aff a1k, pre-shutdown checks for onboard encryption keys 
-summary: Bevor Sie den beeinträchtigten Controller herunterfahren und den Status der integrierten Verschlüsselungsschlüssel prüfen, müssen Sie den Status des beeinträchtigten Controllers überprüfen, die automatische Rückgabe deaktivieren und überprüfen, welche Version von ONTAP das System ausführt. 
+summary: Um die Datensicherheit Ihres AFF A1K Storage-Systems zu gewährleisten, müssen Sie die Unterstützung und den Status der Verschlüsselungsschlüssel auf Ihren Boot-Medien überprüfen. Überprüfen Sie, ob Ihre ONTAP-Version NetApp-Volume-Verschlüsselung unterstützt, und bevor Sie den Controller herunterfahren, überprüfen Sie, ob der Schlüsselmanager aktiv ist. 
 ---
-= Prüfen Sie die Unterstützung und den Status der Verschlüsselungsschlüssel - AFF A1K
+= Prüfen Sie die Unterstützung und den Status der Verschlüsselungsschlüssel auf dem Boot-Medium - AFF A1K
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Überprüfen Sie vor dem Herunterfahren des beeinträchtigten Controllers, ob Ihre Version von ONTAP NetApp Volume Encryption (NVE) unterstützt und ob Ihr Verschlüsselungsmanagement-System ordnungsgemäß konfiguriert ist.
+Um die Datensicherheit Ihres AFF A1K Storage-Systems zu gewährleisten, müssen Sie die Unterstützung und den Status der Verschlüsselungsschlüssel auf Ihren Boot-Medien überprüfen. Überprüfen Sie, ob Ihre ONTAP Version NetApp Volume Encryption (NVE) unterstützt und bevor Sie den Controller herunterfahren, ob der Schlüsselmanager aktiv ist.
 
 
 
@@ -192,3 +192,6 @@ Sie werden es in Disaster-Szenarien benötigen, in denen Sie OKM manuell wiederh
 --
 ====
 
+
+.Was kommt als Nächstes?
+Nachdem Sie die Unterstützung und den Status der Verschlüsselungsschlüssel auf dem Boot-Medium überprüft haben, müssen Sie link:bootmedia-shutdown.html["Fahren Sie den Controller herunter"].

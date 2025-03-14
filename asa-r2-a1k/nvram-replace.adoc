@@ -2,7 +2,7 @@
 permalink: asa-r2-a1k/nvram-replace.html 
 sidebar: sidebar 
 keywords: asa r2 a1k, replace an nvdimm 
-summary: 'Das NVRAM Modul besteht aus den NVRAM12 und DIMMs und bis zu zwei NVMe SSD Flash Cache Modulen (Flash Cache oder Caching-Module) pro NVRAM Modul.' 
+summary: Tauschen Sie die NVRAM in Ihrem ASA A1K-System aus, wenn der nichtflüchtige Speicher fehlerhaft ist oder ein Upgrade erforderlich ist. 
 ---
 = Ersetzen Sie das NVRAM-Modul ASA A1K
 :allow-uri-read: 
@@ -11,11 +11,14 @@ summary: 'Das NVRAM Modul besteht aus den NVRAM12 und DIMMs und bis zu zwei NVMe
 
 
 [role="lead"]
-Das NVRAM-Modul besteht aus der NVRAM12-Hardware und vor Ort austauschbaren DIMMs. Ein ausgefallenes NVRAM-Modul oder die DIMMs im NVRAM-Modul können Sie ersetzen. Um ein fehlerhaftes NVRAM-Modul zu ersetzen, müssen Sie das Modul aus dem Gehäuse entfernen, die DIMMs in das Ersatzmodul verschieben und das Ersatz-NVRAM-Modul in das Gehäuse einsetzen.
+Tauschen Sie die NVRAM in Ihrem ASA A1K-System aus, wenn der nichtflüchtige Speicher fehlerhaft ist oder ein Upgrade erforderlich ist. Beim Austausch wird der beeinträchtigte Controller heruntergefahren, das NVRAM-Modul oder das NVRAM-DIMM ersetzt, die Festplatten neu zugewiesen und das fehlerhafte Teil an NetApp zurückgegeben.
 
-Alle anderen Komponenten im System müssen ordnungsgemäß funktionieren; andernfalls müssen Sie sich an https://support.netapp.com["NetApp Support"].
+Das NVRAM-Modul besteht aus der NVRAM12-Hardware und vor Ort austauschbaren DIMMs. Ein ausgefallenes NVRAM-Modul oder die DIMMs im NVRAM-Modul können Sie ersetzen.
 
-Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
+.Bevor Sie beginnen
+* Stellen Sie sicher, dass Sie das Ersatzteil zur Verfügung haben. Sie müssen die ausgefallene Komponente durch eine von NetApp erhaltene Ersatzkomponente ersetzen.
+* Stellen Sie sicher, dass alle anderen Komponenten des Speichersystems ordnungsgemäß funktionieren. Wenn nicht, wenden Sie sich an https://support.netapp.com["NetApp Support"].
+
 
 
 

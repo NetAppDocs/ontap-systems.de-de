@@ -4,16 +4,14 @@ sidebar: sidebar
 keywords: c80, pre-shutdown checks for onboard encryption keys 
 summary: 'Um die Datensicherheit auf Ihrem AFF C80-Speichersystem zu gewährleisten, müssen Sie die Unterstützung und den Status des Verschlüsselungsschlüssels überprüfen. Überprüfen Sie, ob Ihre ONTAP Version NetApp Volume Encryption (NVE) unterstützt und bevor Sie den Controller herunterfahren, ob der Schlüsselmanager aktiv ist.' 
 ---
-= Prüfen Sie die Unterstützung und den Status der Verschlüsselungsschlüssel - AFF C80
+= Prüfen Sie die Unterstützung und den Status der Verschlüsselungsschlüssel auf dem Startmedium - AFF C80
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Um die Datensicherheit auf Ihrem AFF C80-Speichersystem zu gewährleisten, müssen Sie die Unterstützung und den Status des Verschlüsselungsschlüssels überprüfen. Überprüfen Sie, ob Ihre ONTAP Version NetApp Volume Encryption (NVE) unterstützt und bevor Sie den Controller herunterfahren, ob der Schlüsselmanager aktiv ist.
-
-Überprüfen Sie vor dem Herunterfahren des beeinträchtigten Controllers, ob Ihre Version von ONTAP NetApp Volume Encryption (NVE) unterstützt und ob Ihr Verschlüsselungsmanagement-System ordnungsgemäß konfiguriert ist.
+Um die Datensicherheit auf Ihrem AFF C80-Speichersystem zu gewährleisten, müssen Sie die Unterstützung und den Status des Verschlüsselungsschlüssels auf Ihren Boot-Medien überprüfen. Überprüfen Sie, ob Ihre ONTAP Version NetApp Volume Encryption (NVE) unterstützt und bevor Sie den Controller herunterfahren, ob der Schlüsselmanager aktiv ist.
 
 
 
@@ -194,3 +192,6 @@ Sie werden es in Disaster-Szenarien benötigen, in denen Sie OKM manuell wiederh
 --
 ====
 
+
+.Was kommt als Nächstes?
+Nachdem Sie die Unterstützung und den Status der Verschlüsselungsschlüssel auf dem Boot-Medium überprüft haben, müssen Sie link:bootmedia-shutdown.html["Fahren Sie den Controller herunter"].

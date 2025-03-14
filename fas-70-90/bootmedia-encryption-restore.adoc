@@ -2,16 +2,16 @@
 permalink: fas-70-90/bootmedia-encryption-restore.html 
 sidebar: sidebar 
 keywords: fas70, fas90, post boot media replacement steps for okm, nse, and nve 
-summary: 'Sobald Umgebungsvariablen geprüft werden, müssen Sie spezifische Schritte für Systeme mit Onboard Key Manager \(OKM\), NetApp Storage Encryption \(NSE\) oder NetApp Volume Encryption \(NVE\) durchführen.' 
+summary: Stellen Sie die Verschlüsselung auf den Ersatz-Boot-Medien in Ihrem FAS70- oder FAS90-System wieder her, um einen kontinuierlichen Datenschutz zu gewährleisten. Der Austauschprozess umfasst die Überprüfung der Schlüsselverfügbarkeit, die Anwendung von Verschlüsselungseinstellungen und die Bestätigung des sicheren Zugriffs auf Ihre Daten. 
 ---
-= Stellen Sie die Verschlüsselung wieder her – FAS70 und FAS90
+= Stellen Sie die Verschlüsselung auf den Boot-Medien FAS70 und FAS90 wieder her
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Stellen Sie die Verschlüsselung auf dem Ersatz-Startmedium wieder her.
+Stellen Sie die Verschlüsselung auf den Ersatz-Boot-Medien in Ihrem FAS70- oder FAS90-System wieder her, um einen kontinuierlichen Datenschutz zu gewährleisten. Der Austauschprozess umfasst die Überprüfung der Schlüsselverfügbarkeit, die Anwendung von Verschlüsselungseinstellungen und die Bestätigung des sicheren Zugriffs auf Ihre Daten.
 
 Sie müssen die Schritte speziell für Systeme mit aktiviertem Onboard Key Manager (OKM), NetApp Storage Encryption (NSE) oder NetApp Volume Encryption (NVE) anhand der Einstellungen abschließen, die Sie zu Beginn des Austauschvorgangs des Boot-Mediums erfasst haben.
 
@@ -429,3 +429,6 @@ Selection (1-11)? 1
 `system node autosupport invoke -node * -type all -message MAINT=END`
 
 
+
+.Was kommt als Nächstes?
+Nach dem Wiederherstellen der Verschlüsselung auf dem Boot-Medium müssen Sie link:bootmedia-complete-rma.html["Geben Sie das fehlerhafte Teil an NetApp zurück"].
