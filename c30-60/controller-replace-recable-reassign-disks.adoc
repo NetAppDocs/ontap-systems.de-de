@@ -1,8 +1,8 @@
 ---
 permalink: c30-60/controller-replace-recable-reassign-disks.html 
 sidebar: sidebar 
-keywords: aff c30, aff c60, how to recable the system, teboot the system 
-summary: Sie müssen den Storage neu booten. 
+keywords: aff c30, aff c60, how to recable the system, reboot the system 
+summary: Steuerung der Speicherressourcen wieder an den Ersatz-Controller zurückgeben, damit Ihr AFF C30 oder AFF C60 System den normalen Betrieb wieder aufnehmen kann. 
 ---
 = Zurückholen und den Controller zurückgeben - AFF C30 und AFF C60
 :allow-uri-read: 
@@ -11,11 +11,7 @@ summary: Sie müssen den Storage neu booten.
 
 
 [role="lead"]
-Geben Sie den Controller zurück.
-
-
-
-== Geben Sie den Controller zurück
+Steuerung der Speicherressourcen wieder an den Ersatz-Controller zurückgeben, damit Ihr AFF C30 oder AFF C60 System den normalen Betrieb wieder aufnehmen kann. Das Give-back-Verfahren variiert je nach dem von Ihrem System verwendeten Verschlüsselungstyp: Keine Verschlüsselung, OKM-Verschlüsselung (Onboard Key Manager) oder EKM-Verschlüsselung (External Key Manager).
 
 Setzen Sie die Verschlüsselung zurück, wenn diese aktiviert ist, und setzen Sie den Controller wieder in den normalen Betrieb ein.
 
@@ -23,6 +19,9 @@ Setzen Sie die Verschlüsselung zurück, wenn diese aktiviert ist, und setzen Si
 ====
 .Keine Verschlüsselung
 --
+Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie seinen Speicher zurückgeben.
+
+.Schritte
 . Geben Sie in der Loader-Eingabeaufforderung `boot_ontap` .
 . Drücken Sie <enter>, wenn die Konsolenmeldungen angehalten werden.
 +
@@ -38,6 +37,9 @@ Setzen Sie die Verschlüsselung zurück, wenn diese aktiviert ist, und setzen Si
 --
 .Onboard-Verschlüsselung (OKM)
 --
+Setzt die integrierte Verschlüsselung zurück und setzt den Controller in den normalen Betrieb zurück.
+
+.Schritte
 . Geben Sie in der Loader-Eingabeaufforderung `boot_ontap maint` .
 . Starten Sie das ONTAP-Menü über die Loader-Eingabeaufforderung `boot_ontap menu`, und wählen Sie Option 10.
 . Geben Sie die OKM-Passphrase ein.
@@ -80,6 +82,9 @@ Wenn in der Ausgabe Ergebnisse angezeigt werden (die Schlüssel-IDs von Schlüss
 --
 .Externer Schlüsselmanager (EKM)
 --
+Setzt die Verschlüsselung zurück und setzt den Controller wieder in den normalen Betrieb zurück.
+
+.Schritte
 . Wenn das Stammvolume mit External Key Manager verschlüsselt ist und das Konsolenkabel mit dem Ersatzknoten verbunden ist, geben Sie die Option ein `boot_ontap menu` und wählen Sie diese aus `11`.
 . Beantworten Sie `y` oder `n` die folgenden Fragen:
 +
@@ -126,3 +131,5 @@ NOTE: Wenden Sie sich https://support.netapp.com["NetApp Support"] bei Problemen
 
 --
 ====
+.Was kommt als Nächstes?
+Nachdem Sie die Eigentümerschaft der Storage-Ressourcen wieder an den Ersatz-Controller übergeben haben, müssen Sie link:controller-replace-restore-system-rma.html["Schließen Sie den Controller-Austausch ab"]den Vorgang durchführen.

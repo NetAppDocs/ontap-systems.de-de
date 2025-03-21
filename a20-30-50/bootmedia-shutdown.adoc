@@ -2,16 +2,16 @@
 permalink: a20-30-50/bootmedia-shutdown.html 
 sidebar: sidebar 
 keywords: aff a20, aff a30, aff a50, shut down the controller 
-summary: Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Controllers durchführen. 
+summary: Fahren Sie den außer Betrieb genommenen Controller des Speichersystems AFF A20, AFF A30 oder AFF A50 herunter, um Datenverlust zu vermeiden und die Systemstabilität beim Austausch des Startmediums sicherzustellen. 
 ---
-= Schalten Sie die Steuerung für beeinträchtigte Abschaltung aus – AFF A20, AFF A30 und AFF A50
+= Fahren Sie den Controller herunter, um die Startmedien zu ersetzen – AFF A20, AFF A30 und AFF A50
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Schalten Sie den außer Betrieb genommenen Controller aus oder übernehmen Sie ihn.
+Fahren Sie den außer Betrieb genommenen Controller des Speichersystems AFF A20, AFF A30 oder AFF A50 herunter, um Datenverlust zu vermeiden und die Systemstabilität beim Austausch des Startmediums sicherzustellen.
 
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 
@@ -63,3 +63,6 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 
 |===
 
+
+.Was kommt als Nächstes?
+Nach dem Herunterfahren des Controllers müssen Sie link:bootmedia-replace.html["Ersetzen Sie das Startmedium"].

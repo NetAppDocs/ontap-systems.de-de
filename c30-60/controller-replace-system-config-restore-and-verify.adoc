@@ -2,7 +2,7 @@
 permalink: c30-60/controller-replace-system-config-restore-and-verify.html 
 sidebar: sidebar 
 keywords: aff c30, aff c60, restore and verify the system configuration, verify and set the ha state of the controller module 
-summary: Nach dem Austausch und dem Booten der Hardware im Wartungsmodus überprüfen Sie die Low-Level-Systemkonfiguration des Ersatz-Controllers und konfigurieren nach Bedarf die Systemeinstellungen neu. 
+summary: Überprüfen Sie, ob die HA-Konfiguration des Controllers im AFF C30- oder AFF C60-Storage-System aktiv ist und ordnungsgemäß funktioniert, und vergewissern Sie sich, dass die Systemadapter alle Pfade zu den Festplatten aufgelistet sind. 
 ---
 = Stellen Sie die Systemkonfiguration wieder her und überprüfen Sie sie: AFF C30 und AFF C60
 :allow-uri-read: 
@@ -11,6 +11,8 @@ summary: Nach dem Austausch und dem Booten der Hardware im Wartungsmodus überpr
 
 
 [role="lead"]
+Überprüfen Sie, ob die HA-Konfiguration des Controllers im AFF C30- oder AFF C60-Storage-System aktiv ist und ordnungsgemäß funktioniert, und vergewissern Sie sich, dass die Systemadapter alle Pfade zu den Festplatten aufgelistet sind.
+
 Überprüfen Sie die Low-Level-Systemkonfiguration des Ersatz-Controllers und konfigurieren Sie die Systemeinstellungen nach Bedarf neu.
 
 
@@ -77,3 +79,6 @@ Wenn Sie Probleme sehen, überprüfen Sie die Verkabelung, und setzen Sie die Ka
 `halt`
 
 
+
+.Was kommt als Nächstes?
+Nachdem Sie die Systemkonfiguration für Ihr AFF C30 oder AFF C60 System wiederhergestellt und verifiziert haben, müssen Sie link:controller-replace-recable-reassign-disks.html["Geben Sie den Controller zurück"].

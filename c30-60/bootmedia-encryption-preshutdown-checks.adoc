@@ -4,11 +4,14 @@ sidebar: sidebar
 keywords: aff c30, aff c60, pre-shutdown checks for onboard encryption keys 
 summary: Bevor Sie den beeinträchtigten Controller herunterfahren und den Status der integrierten Verschlüsselungsschlüssel prüfen, müssen Sie den Status des beeinträchtigten Controllers überprüfen, die automatische Rückgabe deaktivieren und überprüfen, welche Version von ONTAP das System ausführt. 
 ---
-= Prüfen Sie die integrierten Verschlüsselungsschlüssel – AFF C30 und AFF C60
+= Prüfen Sie die Unterstützung und den Status der Verschlüsselungsschlüssel auf dem Boot-Medium - AFF C30 und AFF C60
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
+
+[role="lead"]
+Um die Datensicherheit auf Ihrem A20-, AFF A30- oder AFF A50-Speichersystem zu gewährleisten, müssen Sie die Unterstützung und den Status der Verschlüsselungsschlüssel auf Ihrem Boot-Medium überprüfen. Überprüfen Sie, ob Ihre ONTAP Version NetApp Volume Encryption (NVE) unterstützt und bevor Sie den Controller herunterfahren, ob der Schlüsselmanager aktiv ist.
 
 
 
@@ -189,3 +192,6 @@ Sie werden es in Disaster-Szenarien benötigen, in denen Sie OKM manuell wiederh
 --
 ====
 
+
+.Was kommt als Nächstes?
+Nachdem Sie die Unterstützung und den Status der Verschlüsselungsschlüssel auf dem Boot-Medium überprüft haben, müssen Sie link:bootmedia-shutdown.html["Fahren Sie den Controller herunter"].

@@ -1,8 +1,8 @@
 ---
 permalink: asa-r2-a20-30-50/bootmedia-replace-requirements-bmr.html 
 sidebar: sidebar 
-keywords: aff a20, aff a30, aff a50, replace the boot media 
-summary: Erfahren Sie mehr über die Anforderungen für den Austausch der Boot-Medien. 
+keywords: asa a20, asa a30, asa a50, replace the boot media 
+summary: 'Bevor Sie die Startmedien in Ihrem ASA A20-, ASA A30- oder ASA A50-Speichersystem austauschen, stellen Sie sicher, dass Sie die erforderlichen Voraussetzungen und Überlegungen für einen erfolgreichen Austausch erfüllen. Dazu gehört die Überprüfung, dass Sie über die richtigen Boot-Ersatzmedien verfügen, die Bestätigung, dass der Port E0S (E0M Schraubenschlüssel) am beeinträchtigten Controller nicht fehlerhaft ist, und die Feststellung, ob Onboard Key Manager (OKM) oder External Key Manager (EKM) aktiviert ist.' 
 ---
 = Anforderungen – ASA A20, ASA A30 und ASA A50
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Erfahren Sie mehr über die Anforderungen für den Austausch der Boot-M
 
 
 [role="lead"]
-Bevor Sie die Startmedien austauschen, müssen Sie die folgenden Anforderungen und Überlegungen beachten.
+Bevor Sie die Startmedien in Ihrem ASA A20-, ASA A30- oder ASA A50-Speichersystem austauschen, stellen Sie sicher, dass Sie die erforderlichen Voraussetzungen und Überlegungen für einen erfolgreichen Austausch erfüllen. Dazu gehört die Überprüfung, dass Sie über die richtigen Boot-Ersatzmedien verfügen, die Bestätigung, dass der Port E0S (E0M Schraubenschlüssel) am beeinträchtigten Controller nicht fehlerhaft ist, und die Feststellung, ob Onboard Key Manager (OKM) oder External Key Manager (EKM) aktiviert ist.
 
 
 
@@ -60,4 +60,50 @@ Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led
 
 
 .Wie es weiter geht
-Nachdem Sie die Anforderungen für die Startmedien überprüft haben, link:bootmedia-shutdown-bmr.html["Schalten Sie den außer Betrieb genommenen Controller aus"].
+Nachdem Sie die Anforderungen für die Startmedien überprüft haben, können Sie link:bootmedia-shutdown-bmr.html["Schalten Sie den außer Betrieb genommenen Controller aus"].
+
+
+
+== Anforderungen
+
+* Sie müssen die ausgefallene Komponente durch eine FRU-Ersatz-Komponente ersetzen, die dieselbe Kapazität hat wie Sie von NetApp erhalten.
+* Der Port E0S (E0M-Schraubenschlüssel) auf dem beeinträchtigten Controller kann nicht fehlerhaft sein.
++
+Der Port E0S wird für die automatische Boot-Wiederherstellung verwendet.
+
+* Stellen Sie fest, ob Onboard Key Manager (OKM) oder Eternal Key Manager (EKM) mithilfe einer der folgenden Methoden konfiguriert ist:
++
+** Sie können den Systemadministrator fragen, ob OKM oder EKM aktiviert sind.
+** Um zu überprüfen, ob OKM aktiviert ist, können Sie die verwenden `security key-manager onboard show`.
+** Um zu überprüfen, ob EKM aktiviert ist, können Sie die verwenden `security key-manager external show`.
+
+
+* Für OKM benötigen Sie den Inhalt der OKM-Passphrase-Datei.
+* Für EKM benötigen Sie Kopien der folgenden Dateien vom Partnerknoten:
++
+** Datei /cfcard/kmip/servers.cfg.
+** Datei /cfcard/kmip/certs/Client.crt.
+** Datei /cfcard/kmip/certs/client.key.
+** Datei /cfcard/kmip/certs/CA.pem.
+
+
+
+
+
+
+== Überlegungen
+
+* Es ist wichtig, dass Sie die Befehle in diesen Schritten auf dem richtigen Controller anwenden:
++
+** Der Controller _Impared_ ist der Controller, an dem Sie Wartungsarbeiten durchführen.
+** Der _Healthy_ Controller ist der HA-Partner des beeinträchtigten Controllers.
+
+
+* Bei Bedarf können Sie die (blauen) LEDs für die Position des Plattformgehäuses einschalten, um die physische Lokalisierung der betroffenen Plattform zu erleichtern. Melden Sie sich über SSH bei der BMC an und geben Sie den Befehl ein `system location-led _on_`.
++
+Ein Plattformgehäuse verfügt über drei Standort-LEDs: Eine auf dem Bedienfeld und eine auf jedem Controller. Die Standort-LEDs leuchten 30 Minuten lang.
+
++
+Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led _off_`. Wenn Sie sich nicht sicher sind, ob die LEDs leuchten oder nicht, können Sie ihren Status überprüfen, indem Sie den Befehl eingeben `system location-led show`.
+
+

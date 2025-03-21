@@ -18,6 +18,10 @@ Wenden Sie sich an Ihren Netzwerkadministrator, um Informationen über das Ansch
 
 .Über diese Aufgabe
 * Diese Verfahren zeigen gängige Konfigurationen. Die jeweilige Verkabelung hängt von den für das Speichersystem bestellten Komponenten ab. Ausführliche Informationen zur Konfiguration und zur Steckplatzpriorität finden Sie unter link:https://hwu.netapp.com["NetApp Hardware Universe"^].
+* Die I/O-Steckplätze bei FAS70 und FAS90 Controllern sind mit den Nummern 1 bis 11 belegt.
++
+image::../media/drw_a1K_back_slots_labeled_ieops-2162.svg[Steckplatznummerierung auf FAS70- und FAS90-Controllern]
+
 * Die Verkabelungsgrafiken haben Pfeilsymbole, die die richtige Ausrichtung (nach oben oder unten) des Kabelsteckers zeigen, wenn ein Anschluss in einen Anschluss eingesetzt wird.
 +
 Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
@@ -135,6 +139,8 @@ IMPORTANT: Stecken Sie die Netzkabel noch nicht ein.
 Die folgenden Verkabelungsverfahren zeigen, wie Sie Ihre Controller mit einem Storage Shelf verbinden. Wählen Sie eine der folgenden Verkabelungsoptionen, die Ihrem Setup entsprechen.
 
 Die maximale Anzahl der unterstützten Einschübe für Ihr Speichersystem und alle Verkabelungsoptionen finden Sie unter link:https://hwu.netapp.com["NetApp Hardware Universe"^].
+
+Weitere Informationen zur Verkabelung des SAS-Shelfs finden Sie unter link:https://docs.netapp.com/us-en/ontap-systems/sas3/install-cabling-rules.html["SAS-Verkabelungsregeln und -Konzepte – Shelfs mit IOM12/IOM12B-Modulen"].
 
 [role="tabbed-block"]
 ====

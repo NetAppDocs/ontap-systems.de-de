@@ -2,16 +2,16 @@
 permalink: c30-60/bootmedia-encryption-restore.html 
 sidebar: sidebar 
 keywords: aff c30, aff c60, post boot media replacement steps for okm, nse, and nve 
-summary: 'Sobald Umgebungsvariablen geprüft werden, müssen Sie spezifische Schritte für Systeme mit Onboard Key Manager \(OKM\), NetApp Storage Encryption \(NSE\) oder NetApp Volume Encryption \(NVE\) durchführen.' 
+summary: Stellen Sie die Verschlüsselung auf den Ersatz-Startmedien in Ihrem AFF C30- oder AFF C60-System wieder her, um einen kontinuierlichen Datenschutz zu gewährleisten. Der Austauschprozess umfasst die Überprüfung der Schlüsselverfügbarkeit, die Anwendung von Verschlüsselungseinstellungen und die Bestätigung des sicheren Zugriffs auf Ihre Daten. 
 ---
-= Wiederherstellung der Verschlüsselung – AFF C30 und AFF C60
+= Stellen Sie die Verschlüsselung auf dem Boot-Medium wieder her – AFF C30 und AFF C60
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Stellen Sie die Verschlüsselung auf dem Ersatz-Startmedium wieder her.
+Stellen Sie die Verschlüsselung auf den Ersatz-Startmedien in Ihrem AFF C30- oder AFF C60-System wieder her, um einen kontinuierlichen Datenschutz zu gewährleisten. Der Austauschprozess umfasst die Überprüfung der Schlüsselverfügbarkeit, die Anwendung von Verschlüsselungseinstellungen und die Bestätigung des sicheren Zugriffs auf Ihre Daten.
 
 Sie müssen die Schritte speziell für Systeme mit aktiviertem Onboard Key Manager (OKM), NetApp Storage Encryption (NSE) oder NetApp Volume Encryption (NVE) anhand der Einstellungen abschließen, die Sie zu Beginn des Austauschvorgangs des Boot-Mediums erfasst haben.
 
@@ -429,3 +429,5 @@ Selection (1-11)? 1
 `system node autosupport invoke -node * -type all -message MAINT=END`
 
 
+
+Nach dem Wiederherstellen der Verschlüsselung auf dem Boot-Medium müssen Sie link:bootmedia-complete-rma.html["Geben Sie das fehlerhafte Teil an NetApp zurück"].

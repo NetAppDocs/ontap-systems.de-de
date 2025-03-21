@@ -2,7 +2,7 @@
 permalink: a20-30-50/dimm-replace.html 
 sidebar: sidebar 
 keywords: aff a20, aff a30, aff a50, replace a dimm 
-summary: 'Sie müssen ein DIMM im Controller-Modul ersetzen, wenn Ihr System eine steigende Anzahl korrigierbarer Fehlerkorrekturcodes (ECC) registriert; andernfalls wird eine Systempanik verursacht.' 
+summary: Ersetzen Sie ein DIMM in Ihrem AFF A20, AFF A30 oder AFF A50-System, wenn zu viele korrigierbare oder nicht korrigierbare Speicherfehler erkannt werden. Derartige Fehler können das Booten von ONTAP durch das Storage-System verhindern. Beim Austausch wird der beeinträchtigte Controller heruntergefahren, entfernt, das DIMM ersetzt, der Controller neu installiert und das fehlerhafte Teil anschließend an den NetApp zurückgegeben. 
 ---
 = Ersetzen Sie ein DIMM-Modul – AFF A20, AFF A30 und AFF A50
 :allow-uri-read: 
@@ -11,6 +11,8 @@ summary: 'Sie müssen ein DIMM im Controller-Modul ersetzen, wenn Ihr System ein
 
 
 [role="lead"]
+Ersetzen Sie ein DIMM in Ihrem AFF A20, AFF A30 oder AFF A50-System, wenn zu viele korrigierbare oder nicht korrigierbare Speicherfehler erkannt werden. Derartige Fehler können das Booten von ONTAP durch das Storage-System verhindern. Beim Austausch wird der beeinträchtigte Controller heruntergefahren, entfernt, das DIMM ersetzt, der Controller neu installiert und das fehlerhafte Teil anschließend an den NetApp zurückgegeben.
+
 Sie müssen ein DIMM im Controller ersetzen, wenn das Speichersystem auf Fehler wie übermäßige CECC-Fehler (korrigierbare Fehlerkorrekturcodes) stößt, die auf Warnmeldungen der Systemzustandsüberwachung oder nicht korrigierbaren ECC-Fehlern basieren, die normalerweise durch einen einzelnen DIMM-Fehler verursacht werden, der das Starten von ONTAP verhindert.
 
 .Bevor Sie beginnen

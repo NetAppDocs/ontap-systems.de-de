@@ -1,7 +1,7 @@
 ---
 permalink: asa-r2-a20-30-50/bootmedia-recovery-image-boot-bmr.html 
 sidebar: sidebar 
-keywords: aff a20, aff a30, aff a50, boot the recovery image 
+keywords: asa a20, asa a30, asa a50, boot the recovery image 
 summary: Sie können das Image auf den Boot-Medien vom Partner-Controller durch den automatischen Boot-Recovery-Prozess wiederherstellen. 
 ---
 = Stellen Sie das ONTAP-Image wieder her – ASA A20, ASA A30 und ASA A50
@@ -10,8 +10,12 @@ summary: Sie können das Image auf den Boot-Medien vom Partner-Controller durch 
 :imagesdir: ../media/
 
 
-.Bevor Sie beginnen
 [role="lead"]
+Nach der Installation des neuen Startmediengeräts in Ihrem ASA A20-, ASA A30- oder ASA A50-Speichersystem können Sie den automatischen Startmedienwiederherstellungsprozess starten, um die Konfiguration vom fehlerfreien Knoten wiederherzustellen.
+
+Während des Wiederherstellungsprozesses prüft das System, ob die Verschlüsselung aktiviert ist, und bestimmt den Typ der verwendeten Schlüsselverschlüsselung. Wenn die Schlüsselverschlüsselung aktiviert ist, führt Sie das System durch die entsprechenden Schritte zur Wiederherstellung.
+
+.Bevor Sie beginnen
 * Stellen Sie fest, ob Onboard Key Manager (OKM) oder Eternal Key Manager (EKM) mithilfe einer der folgenden Methoden konfiguriert ist:
 +
 ** Sie können den Kunden oder Systemadministrator fragen, ob OKM oder EKM aktiviert sind.
@@ -391,3 +395,6 @@ LOADER-B>
 `system node autosupport invoke -node * -type all -message MAINT=END`.
 
 
+
+.Wie es weiter geht
+Nachdem Sie das ONTAP-Image wiederhergestellt haben und der Node ausgeführt wurde und Daten bereitstellt, können Sie link:bootmedia-complete-rma-bmr.html["Geben Sie das fehlerhafte Teil an NetApp zurück"].

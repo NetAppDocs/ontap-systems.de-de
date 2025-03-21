@@ -11,6 +11,8 @@ summary: Sie finden das ausgefallene Startmedium im Controller-Modul, indem Sie 
 
 
 [role="lead"]
+Die Boot-Medien in Ihrem AFF C30 oder AFF C60 System speichern wichtige Firmware- und Konfigurationsdaten. Beim Austausch wird das Controller-Modul entfernt, das gestörte Boot-Medium entfernt, das Ersatz-Boot-Medium installiert und das ONTAP-Image anschließend auf das Ersatz-Boot-Medium übertragen.
+
 Um das Startmedium zu ersetzen, müssen Sie den Controller für beeinträchtigte Geräte entfernen, das Startmedium entfernen, das neue Startmedium installieren und das Startabbild auf ein USB-Flash-Laufwerk übertragen.
 
 
@@ -309,3 +311,6 @@ DC-NETZTEIL
 
 |===
 
+
+.Was kommt als Nächstes?
+Nach dem Ersetzen des Boot-Mediums müssen Sie link:bootmedia-recovery-image-boot.html["Starten Sie das Wiederherstellungs-Image"].

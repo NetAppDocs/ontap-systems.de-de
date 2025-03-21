@@ -2,7 +2,7 @@
 permalink: a20-30-50/bootmedia-replace.html 
 sidebar: sidebar 
 keywords: aff a20, aff a30, aff a50, replace the boot media 
-summary: Sie finden das ausgefallene Startmedium im Controller-Modul, indem Sie Riser 3 am Controller-Modul entfernen, bevor Sie das Boot-Medium ersetzen können. 
+summary: Auf dem Startmedium Ihres AFF A20-, AFF A30- oder AFF A50-Systems werden wichtige Firmware- und Konfigurationsdaten gespeichert. Beim Austausch wird das Controller-Modul entfernt, das gestörte Boot-Medium entfernt, das Ersatz-Boot-Medium installiert und das ONTAP-Image anschließend auf das Ersatz-Boot-Medium übertragen. 
 ---
 = Ersetzen Sie die Startmedien – AFF A20, AFF A30 und AFF A50
 :allow-uri-read: 
@@ -11,6 +11,8 @@ summary: Sie finden das ausgefallene Startmedium im Controller-Modul, indem Sie 
 
 
 [role="lead"]
+Auf dem Startmedium Ihres AFF A20-, AFF A30- oder AFF A50-Systems werden wichtige Firmware- und Konfigurationsdaten gespeichert. Beim Austausch wird das Controller-Modul entfernt, das gestörte Boot-Medium entfernt, das Ersatz-Boot-Medium installiert und das ONTAP-Image anschließend auf das Ersatz-Boot-Medium übertragen.
+
 Um das Startmedium zu ersetzen, müssen Sie den Controller für beeinträchtigte Geräte entfernen, das Startmedium entfernen, das neue Startmedium installieren und das Startabbild auf ein USB-Flash-Laufwerk übertragen.
 
 
@@ -309,3 +311,6 @@ DC-NETZTEIL
 
 |===
 
+
+.Was kommt als Nächstes?
+Nach dem Ersetzen des Boot-Mediums müssen Sie link:bootmedia-recovery-image-boot.html["Starten Sie das Wiederherstellungs-Image"].

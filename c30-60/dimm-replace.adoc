@@ -2,7 +2,7 @@
 permalink: c30-60/dimm-replace.html 
 sidebar: sidebar 
 keywords: aff c30, aff c60, replace a dimm 
-summary: 'Sie müssen ein DIMM im Controller-Modul ersetzen, wenn Ihr System eine steigende Anzahl korrigierbarer Fehlerkorrekturcodes (ECC) registriert; andernfalls wird eine Systempanik verursacht.' 
+summary: Ersetzen Sie ein DIMM im Controller-Modul, wenn Ihr System eine steigende Anzahl korrigierbarer ECC-Codes registriert. Andernfalls entsteht eine Systempanik. 
 ---
 = Ersetzen Sie ein DIMM-Modul – AFF C30 und AFF C60
 :allow-uri-read: 
@@ -11,6 +11,8 @@ summary: 'Sie müssen ein DIMM im Controller-Modul ersetzen, wenn Ihr System ein
 
 
 [role="lead"]
+Ersetzen Sie ein DIMM in Ihrem AFF C30- oder AFF C60-System, wenn zu viele korrigierbare oder nicht korrigierbare Speicherfehler festgestellt werden. Derartige Fehler können das Booten von ONTAP durch das Storage-System verhindern. Beim Austausch wird der beeinträchtigte Controller heruntergefahren, entfernt, das DIMM ersetzt, der Controller neu installiert und das fehlerhafte Teil anschließend an den NetApp zurückgegeben.
+
 Sie müssen ein DIMM im Controller ersetzen, wenn das Speichersystem auf Fehler wie übermäßige CECC-Fehler (korrigierbare Fehlerkorrekturcodes) stößt, die auf Warnmeldungen der Systemzustandsüberwachung oder nicht korrigierbaren ECC-Fehlern basieren, die normalerweise durch einen einzelnen DIMM-Fehler verursacht werden, der das Starten von ONTAP verhindert.
 
 .Bevor Sie beginnen

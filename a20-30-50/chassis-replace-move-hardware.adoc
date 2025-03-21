@@ -2,7 +2,7 @@
 permalink: a20-30-50/chassis-replace-move-hardware.html 
 sidebar: sidebar 
 keywords: aff a20, aff a30, aff a50, move hardware components, replace the chassis 
-summary: Verschieben Sie die Blende, die Laufwerke und die Controller-Module vom Gehäuse für beeinträchtigte Verbindung in das neue Gehäuse und ersetzen Sie das Gehäuse für beeinträchtigte Verbindung vom Geräte-Rack oder Systemschrank durch das neue Gehäuse desselben Modells wie das Gehäuse für beeinträchtigte Verbindung. 
+summary: 'Tauschen Sie das Gehäuse in Ihrem AFF A20, AFF A30 oder AFF A50-System aus, wenn ein Hardwarefehler erforderlich ist. Beim Austausch werden der Controller und die Netzteileinheiten (PSUs) entfernt, die Laufwerke aus dem Gehäuse für beeinträchtigte Störungen entfernt, das Ersatzgehäuse installiert und die Gehäusekomponenten neu installiert.' 
 ---
 = Ersetzen Sie das Gehäuse - AFF A20, AFF A30 und AFF A50
 :allow-uri-read: 
@@ -11,6 +11,8 @@ summary: Verschieben Sie die Blende, die Laufwerke und die Controller-Module vom
 
 
 [role="lead"]
+Tauschen Sie das Gehäuse in Ihrem AFF A20, AFF A30 oder AFF A50-System aus, wenn ein Hardwarefehler erforderlich ist. Beim Austausch werden der Controller und die Netzteileinheiten (PSUs) entfernt, die Laufwerke aus dem Gehäuse für beeinträchtigte Störungen entfernt, das Ersatzgehäuse installiert und die Gehäusekomponenten neu installiert.
+
 Verschieben Sie die Laufwerke, alle Laufwerkplatzhalter, Controller und die Blende vom Gehäuse für beeinträchtigte Geräte auf das Ersatzgehäuse (desselben Modells), und ersetzen Sie dann das Gehäuse für beeinträchtigte Geräte im Geräte-Rack oder Systemschrank.
 
 
@@ -293,3 +295,6 @@ DC-NETZTEIL
 `system node autosupport invoke -node * -type all -message MAINT=END`
 
 
+
+.Was kommt als Nächstes?
+Nachdem Sie das beeinträchtigte AFF A20, AFF A30 oder AFF A50 Chassis ersetzt und die Komponenten wieder eingebaut haben, müssen Sie link:chassis-replace-complete-system-restore-rma.html["Schließen Sie den Austausch des Gehäuses ab"].

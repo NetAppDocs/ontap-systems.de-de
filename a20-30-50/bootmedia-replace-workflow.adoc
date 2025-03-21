@@ -2,7 +2,7 @@
 permalink: a20-30-50/bootmedia-replace-workflow.html 
 sidebar: sidebar 
 keywords: aff a20, aff a30, aff a50, replace the boot media 
-summary: Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen. 
+summary: Beginnen Sie mit dem Austausch der Boot-Medien in Ihrem AFF A20, AFF A30 oder AFF A50 Storage-System, indem Sie die Austauschanforderungen überprüfen, den Verschlüsselungsstatus überprüfen, den Controller herunterfahren, das Boot-Medium ersetzen, das Recovery-Image starten, die Verschlüsselung wiederherstellen und die Systemfunktionalität überprüfen. 
 ---
 = Workflow für den Austausch von Startmedien – AFF A20, AFF A30 und AFF A50
 :allow-uri-read: 
@@ -11,17 +11,17 @@ summary: Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfange
 
 
 [role="lead"]
-Führen Sie die folgenden Workflow-Schritte aus, um die Startmedien zu ersetzen.
+Beginnen Sie mit dem Austausch der Boot-Medien in Ihrem AFF A20, AFF A30 oder AFF A50 Storage-System, indem Sie die Austauschanforderungen überprüfen, den Verschlüsselungsstatus überprüfen, den Controller herunterfahren, das Boot-Medium ersetzen, das Recovery-Image starten, die Verschlüsselung wiederherstellen und die Systemfunktionalität überprüfen.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:bootmedia-replace-requirements.html["Überprüfen Sie die Anforderungen der Startmedien"]
 [role="quick-margin-para"]
-Um das Boot-Medium zu ersetzen, müssen Sie bestimmte Anforderungen erfüllen.
+Überprüfen Sie die Anforderungen für den Austausch des Startmediums.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Eins"]link:bootmedia-encryption-preshutdown-checks.html["Integrierte Verschlüsselungsschlüssel überprüfen"]
 [role="quick-margin-para"]
-Überprüfen Sie, ob der Sicherheitsschlüsselmanager auf Ihrem Speichersystem aktiviert ist oder ob die Laufwerke verschlüsselt sind.
+Prüfen Sie, ob der Sicherheitsschlüsselmanager aktiviert oder die Laufwerke verschlüsselt sind.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Zwei"]link:bootmedia-shutdown.html["Schalten Sie den beeinträchtigten Regler aus"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Zwei"]link:bootmedia-shutdown.html["Fahren Sie den Controller herunter"]
 [role="quick-margin-para"]
 Fahren Sie den beeinträchtigten Controller herunter oder übernehmen Sie ihn, damit der funktionsunzuverlässige Controller weiterhin Daten aus dem Speicher für den beeinträchtigten Controller bereitstellen kann.
 
