@@ -2,7 +2,7 @@
 permalink: asa-r2-a20-30-50/controller-replace-shutdown.html 
 sidebar: sidebar 
 keywords: asa a20, asa a30, asa a50, shut down the impaired controller 
-summary: Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann. 
+summary: Fahren Sie den außer Betrieb genommenen Controller des Speichersystems ASA A20, ASA A30 oder ASA A50 herunter, um Datenverlust zu vermeiden und die Systemstabilität beim Austausch des Controllers sicherzustellen. 
 ---
 = Schalten Sie die Steuerung für beeinträchtigte Störungen aus – ASA A20, ASA A30 und ASA A50
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Um den beeinträchtigten Controller herunterzufahren, müssen Sie den S
 
 
 [role="lead"]
-Schalten Sie den außer Betrieb genommenen Controller aus oder übernehmen Sie ihn.
+Fahren Sie den außer Betrieb genommenen Controller des Speichersystems ASA A20, ASA A30 oder ASA A50 herunter, um Datenverlust zu vermeiden und die Systemstabilität beim Austausch des Controllers sicherzustellen.
 
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 
@@ -63,3 +63,6 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 
 |===
 
+
+.Was kommt als Nächstes?
+Nachdem Sie den Controller heruntergefahren haben, müssen Sie link:controller-replace-move-hardware.html["Ersetzen Sie den Controller"].

@@ -2,7 +2,7 @@
 permalink: asa-r2-a20-30-50/chassis-replace-requirements.html 
 sidebar: sidebar 
 keywords: asa a20, asa a30, asa a50, replace the chassis 
-summary: Sie ersetzen ein Gehäuse mit eingeschränkter Systemfunktion durch das neue Gehäuse desselben Modells wie das Gehäuse mit eingeschränkter Systemfunktion. 
+summary: Bevor Sie das Gehäuse des ASA A20, ASA A30 oder ASA A50-Systems austauschen, stellen Sie sicher, dass Sie die erforderlichen Voraussetzungen für einen erfolgreichen Austausch erfüllen. Dazu gehört die Überprüfung, ob alle anderen Komponenten im System ordnungsgemäß funktionieren, ob das richtige Ersatzgehäuse vorhanden ist und welche Tools erforderlich sind. 
 ---
 = Voraussetzungen für den Austausch des Gehäuses – ASA A20, ASA A30 und ASA A50
 :allow-uri-read: 
@@ -11,7 +11,9 @@ summary: Sie ersetzen ein Gehäuse mit eingeschränkter Systemfunktion durch das
 
 
 [role="lead"]
-Bevor Sie das Gehäuse austauschen, müssen Sie die folgenden Anforderungen und Überlegungen überprüfen.
+Bevor Sie das Gehäuse des ASA A20, ASA A30 oder ASA A50-Systems austauschen, stellen Sie sicher, dass Sie die erforderlichen Voraussetzungen für einen erfolgreichen Austausch erfüllen. Dazu gehört die Überprüfung, ob alle anderen Komponenten im System ordnungsgemäß funktionieren, ob das richtige Ersatzgehäuse vorhanden ist und welche Tools erforderlich sind.
+
+Lesen Sie die folgenden Anforderungen und Überlegungen durch.
 
 
 
@@ -36,3 +38,6 @@ Ein Speichersystem verfügt über drei Standort-LEDs: Eine auf dem Bedienfeld un
 Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led _off_`. Wenn Sie sich nicht sicher sind, ob die LEDs leuchten oder nicht, können Sie ihren Status überprüfen, indem Sie den Befehl eingeben `system location-led show`.
 
 
+
+.Was kommt als Nächstes?
+Nachdem Sie die Anforderungen für den Austausch des Gehäuses überprüft haben, müssen Sie link:chassis-replace-shutdown.html["Fahren Sie die Controller herunter"].

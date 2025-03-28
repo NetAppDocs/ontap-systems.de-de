@@ -1,0 +1,64 @@
+= 
+:allow-uri-read: 
+
+
+Sie können ein ausgefallenes Laufwerk unterbrechungsfrei ersetzen, während I/O gerade läuft.
+
+.Bevor Sie beginnen
+* Das Laufwerk, das Sie installieren, muss von Ihrem Speichersystem unterstützt werden.
++
+https://hwu.netapp.com["NetApp Hardware Universe"^]
+
+* Wenn die SED-Authentifizierung (Self-Encrypting Drive) aktiviert ist, müssen Sie die SED-Ersatzanweisungen in der ONTAP-Dokumentation verwenden.
++
+Anweisungen in der ONTAP-Dokumentation beschreiben zusätzliche Schritte, die vor und nach dem Austausch einer SED ausgeführt werden müssen.
+
++
+https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html["Übersicht über die NetApp Verschlüsselung mit CLI"^]
+
+* Alle anderen Komponenten des Speichersystems müssen ordnungsgemäß funktionieren. Andernfalls müssen Sie sich an Sie wenden, bevor Sie mit https://mysupport.netapp.com/site/global/dashboard["NetApp Support"] diesem Verfahren fortfahren.
+* Vergewissern Sie sich, dass das Laufwerk, das Sie entfernen, fehlgeschlagen ist.
++
+Sie können überprüfen, ob das Laufwerk ausgefallen ist, indem Sie das ausführen `storage disk show -broken` Befehl. Das ausgefallene Laufwerk wird in der Liste der ausgefallenen Laufwerke angezeigt. Falls nicht, sollten Sie warten und dann den Befehl erneut ausführen.
+
++
+
+NOTE: Abhängig vom Laufwerkstyp und der Kapazität kann es bis zu mehrere Stunden dauern, bis das Laufwerk in der Liste der ausgefallenen Laufwerke angezeigt wird.
+
+
+
+.Über diese Aufgabe
+* Beim Austausch eines ausgefallenen Laufwerks müssen Sie zwischen dem Entfernen des Laufwerks und dem Einsetzen des Ersatzlaufwerks 70 Sekunden warten, damit das Speichersystem erkennt, dass ein Laufwerk entfernt wurde.
+* Die beste Vorgehensweise besteht darin, die aktuelle Version des Disk Qualification Package (DQP) vor dem Hot-Swap eines Laufwerks zu installieren.
++
+Wenn die aktuelle Version des DQP installiert ist, kann Ihr System neu qualifizierte Laufwerke erkennen und verwenden. Dies verhindert, dass Systemereignimeldungen über nicht aktuelle Laufwerksinformationen verfügen und Laufwerkspartitionierung verhindern, da Laufwerke nicht erkannt werden. Das DQP benachrichtigt Sie auch über nicht aktuelle Laufwerk-Firmware.
+
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["NetApp Downloads: Disk Qualification Package"^]
+
+* Als Best Practice wird empfohlen, auf dem System aktuelle Versionen der NSM-Firmware (NVMe Shelf Module) und der Festplatten-Firmware zu installieren, bevor FRU-Komponenten ersetzt werden.
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp Downloads: Festplatten-Shelf Firmware"^]
+
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["NetApp Downloads: Festplatten-Firmware"^]
+
++
+[NOTE]
+====
+Stellen Sie die Firmware nicht auf eine Version zurück, die Ihr Shelf und seine Komponenten nicht unterstützt.
+
+====
+* Die Festplatten-Firmware wird für neue Laufwerke, die nicht über aktuelle Firmware-Versionen verfügen, automatisch (unterbrechungsfrei) aktualisiert.
++
+
+NOTE: Die Laufwerk-Firmware wird alle zwei Minuten überprüft.
+
+* Bei Bedarf können Sie die LEDs des Speichersystems (blau) einschalten, um das betroffene Speichersystem physisch zu lokalisieren. Melden Sie sich über SSH bei der BMC an und geben Sie den Befehl ein `system location-led _on_`.
++
+Ein Speichersystem verfügt über drei Standort-LEDs: Eine auf dem Bedienfeld und eine auf jedem Controller. Die Standort-LEDs leuchten 30 Minuten lang.
+
++
+Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led _off_`. Wenn Sie sich nicht sicher sind, ob die LEDs leuchten oder nicht, können Sie ihren Status überprüfen, indem Sie den Befehl eingeben `system location-led show`.
+
+

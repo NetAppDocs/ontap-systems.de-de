@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: asa a20, asa a30, asa a50, replace a pcie card 
 summary: Um eine PCIe-Karte zu ersetzen, müssen Sie die Kabel von den Karten trennen, die SFP- und QSFP-Module von den Karten entfernen, bevor Sie den Riser entfernen, den Riser neu installieren und dann die SFP- und QSFP-Module neu installieren, bevor Sie die Karten verkabeln. 
 ---
-= Ersetzen Sie das E/A-Modul – ASA A20, ASA A30 und ASA A50
+= Ersetzen Sie ein E/A-Modul – ASA A20, ASA A30 und ASA A50
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Gehen Sie wie folgt vor, um ein fehlerhaftes I/O-Modul zu ersetzen.
+Ersetzen Sie ein E/A-Modul in Ihrem ASA A20, ASA A30 oder ASA A50-System, wenn das Modul ausfällt oder ein Upgrade erfordert, um höhere Leistung oder zusätzliche Funktionen zu unterstützen. Beim Austausch werden der Controller heruntergefahren, das fehlerhafte I/O-Modul ersetzt, der Controller neu gebootet und das fehlerhafte Teil an NetApp zurückgegeben.
 
 .Bevor Sie beginnen
 Alle anderen Komponenten des Speichersystems müssen ordnungsgemäß funktionieren. Andernfalls müssen Sie sich an Sie wenden, bevor Sie mit https://mysupport.netapp.com/site/global/dashboard["NetApp Support"] diesem Verfahren fortfahren.

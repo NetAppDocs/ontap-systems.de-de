@@ -11,7 +11,7 @@ summary: Nach dem Austausch und dem Booten der Hardware im Wartungsmodus überpr
 
 
 [role="lead"]
-Überprüfen Sie die Low-Level-Systemkonfiguration des Ersatz-Controllers und konfigurieren Sie die Systemeinstellungen nach Bedarf neu.
+Überprüfen Sie beim ASA A20, ASA A30 oder ASA A50 Storage-System, ob die HA-Konfiguration des Controllers aktiv ist und ordnungsgemäß funktioniert, und vergewissern Sie sich, dass alle Pfade zu den Festplatten von den Systemadaptern aufgelistet sind.
 
 
 
@@ -77,3 +77,6 @@ Wenn Sie Probleme sehen, überprüfen Sie die Verkabelung, und setzen Sie die Ka
 `halt`
 
 
+
+.Was kommt als Nächstes?
+Nachdem Sie die Systemkonfiguration für Ihr ASA A20, ASA A30 oder ASA A50 System wiederhergestellt und verifiziert haben, müssen Sie link:controller-replace-recable-reassign-disks.html["Geben Sie den Controller zurück"].

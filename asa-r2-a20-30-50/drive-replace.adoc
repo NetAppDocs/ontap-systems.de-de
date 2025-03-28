@@ -2,15 +2,17 @@
 permalink: asa-r2-a20-30-50/drive-replace.html 
 sidebar: sidebar 
 keywords: asa a20, asa a30, asa a50, replace the drives 
-summary: Sie können ein ausgefallenes Laufwerk-SSD-Laufwerk unterbrechungsfrei ersetzen, während I/O ausgeführt wird. 
+summary: Ersetzen Sie ein Laufwerk in Ihrem ASA A20, ASA A30 oder ASA A50-System, wenn ein Laufwerk ausfällt oder ein Upgrade erforderlich ist. Der Austauschprozess beinhaltet die Identifizierung des fehlerhaften Laufwerks, das sichere Entfernen und die Installation eines neuen Laufwerks, um den kontinuierlichen Datenzugriff und die Systemleistung zu gewährleisten. 
 ---
-= Ersetzen Sie das Laufwerk - ASA A20, ASA A30 und ASA A50
+= Ersetzen Sie ein Laufwerk - ASA A20, ASA A30 und ASA A50
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
+Ersetzen Sie ein Laufwerk in Ihrem ASA A20, ASA A30 oder ASA A50-System, wenn ein Laufwerk ausfällt oder ein Upgrade erforderlich ist. Der Austauschprozess beinhaltet die Identifizierung des fehlerhaften Laufwerks, das sichere Entfernen und die Installation eines neuen Laufwerks, um den kontinuierlichen Datenzugriff und die Systemleistung zu gewährleisten.
+
 Sie können ein ausgefallenes Laufwerk unterbrechungsfrei ersetzen, während I/O gerade läuft.
 
 .Bevor Sie beginnen
@@ -73,35 +75,10 @@ Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led
 
 
 .Schritte
-. Wenn Sie dem Ersatzlaufwerk den Besitz eines Laufwerks manuell zuweisen möchten, müssen Sie die automatische Laufwerkszuweisung deaktivieren, wenn diese aktiviert ist.
-+
-
-NOTE: Sie weisen den Antriebseigentum manuell zu und aktivieren dann die automatische Laufwerkszuweisung später in diesem Verfahren.
-
-+
-.. Überprüfen Sie, ob die automatische Laufwerkszuweisung aktiviert ist:
-+
-`storage disk option show`
-
-+
-Sie können bei beiden Controllern den Befehl eingeben.
-
-+
-Wenn die automatische Laufwerkszuordnung aktiviert ist, wird die Ausgabe in der `Auto Assign` Spalte (für jeden Controller) angezeigt `on`.
-
-.. Wenn die automatische Laufwerkszuweisung aktiviert ist, deaktivieren Sie sie:
-+
-`storage disk option modify -node node_name -autoassign off`
-
-+
-Sie müssen die automatische Laufwerkszuweisung auf beiden Controllern deaktivieren.
-
-
-
 . Richtig gemahlen.
 . Identifizieren Sie das ausgefallene Laufwerk physisch.
 +
-Wenn ein Laufwerk ausfällt, protokolliert das System eine Warnmeldung an die Systemkonsole und gibt an, welches Laufwerk ausgefallen ist. Darüber hinaus leuchten die Warnungs-LED (gelb) auf der Anzeige des Festplatten-Shelf-Bedieners und des ausgefallenen Laufwerks.
+Wenn ein Laufwerk ausfällt, protokolliert das System eine Warnmeldung an die Systemkonsole und gibt an, welches Laufwerk ausgefallen ist. Außerdem leuchten die Warnungs-LED (gelb) auf der Shelf-Bedienfeldanzeige und das ausgefallene Laufwerk auf.
 
 +
 
@@ -142,9 +119,12 @@ NOTE: Da Laufwerke zerbrechlich sind, minimieren Sie die Handhabung, um sie nich
 
 |===
 . Warten Sie mindestens 70 Sekunden, bevor Sie das Ersatzlaufwerk einsetzen.
++
+Dadurch erkennt das System, dass ein Laufwerk entfernt wurde.
+
 . Setzen Sie das Ersatzlaufwerk ein:
 +
-.. Bei geöffnetem Nockengriff den Antrieb mit beiden Händen einsetzen.
+.. Wenn sich der Nockengriff in der geöffneten Position befindet, setzen Sie den Ersatzantrieb mit beiden Händen ein.
 .. Vorsichtig drücken, bis der Antrieb stoppt.
 .. Schließen Sie den Nockengriff, damit das Laufwerk vollständig in der Mittelplatine sitzt und der Griff einrastet.
 +
@@ -156,35 +136,7 @@ Schließen Sie den Nockengriff langsam, damit er korrekt an der Antriebsfläche 
 +
 Wenn die Aktivitäts-LED des Laufwerks leuchtet, bedeutet dies, dass das Laufwerk mit Strom versorgt wird. Wenn die Aktivitäts-LED des Laufwerks blinkt, bedeutet dies, dass das Laufwerk gerade mit Strom versorgt wird und der I/O-Vorgang ausgeführt wird. Wenn die Laufwerk-Firmware automatisch aktualisiert wird, blinkt die LED.
 
-. Wenn Sie ein anderes Laufwerk ersetzen, wiederholen Sie die Schritte 3 bis Schritt 7.
-. Wenn Sie die automatische Laufwerkszuweisung in Schritt 1 deaktiviert haben, weisen Sie die Laufwerkseigentümer manuell zu und aktivieren Sie bei Bedarf die automatische Laufwerkszuweisung neu:
-+
-.. Alle Laufwerke ohne Besitzer anzeigen:
-+
-`storage disk show -container-type unassigned`
-
-+
-Sie können bei beiden Controllern den Befehl eingeben.
-
-.. Weisen Sie jedes Laufwerk zu:
-+
-`storage disk assign -disk disk_name -owner owner_name`
-
-+
-Sie können bei beiden Controllern den Befehl eingeben.
-
-+
-Mit dem Platzhalterzeichen können Sie mehr als ein Laufwerk gleichzeitig zuweisen.
-
-.. Bei Bedarf die automatische Laufwerkszuweisung erneut aktivieren:
-+
-`storage disk option modify -node node_name -autoassign on`
-
-+
-Sie müssen die automatische Laufwerkszuweisung auf beiden Controllern erneut aktivieren.
-
-
-
+. Wenn Sie ein anderes Laufwerk ersetzen, wiederholen Sie die Schritte 2 bis 6.
 . Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.
 +
 Wenden Sie sich an den technischen Support unter https://mysupport.netapp.com/site/global/dashboard["NetApp Support"], 888-463-8277 (Nordamerika), 00-800-44-638277 (Europa) oder +800-800-80-800 (Asien/Pazifik) wenn Sie die RMA-Nummer oder zusätzliche Hilfe beim Ersatzverfahren benötigen.

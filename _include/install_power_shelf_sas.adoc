@@ -1,21 +1,6 @@
----
-permalink: fas-70-90/install-power-hardware.html 
-sidebar: sidebar 
-keywords: fas70, fas90, power controllers 
-summary: Schließen Sie die Netzkabel an und schalten Sie die Shelfs und Controller ein. 
----
-= Schalten Sie das Storage-System ein – FAS70 und FAS90
+= 
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
 
-
-[role="lead"]
-Nachdem Sie die Rack-Hardware für Ihr FAS70 0r FAS90 Storage-System installiert und die Kabel für die Controller und Storage Shelves installiert haben, sollten Sie Ihre Storage Shelves und Controller einschalten.
-
-
-
-== Schritt 1: Schalten Sie das Shelf ein und weisen Sie die Shelf-ID zu
 
 Jedes Shelf wird durch eine eindeutige Shelf-ID unterschieden. Diese ID stellt sicher, dass das Shelf innerhalb Ihrer Storage-System-Einrichtung unterscheidbar ist.
 
@@ -121,35 +106,3 @@ Wenn ein Netzteil eingeschaltet wird, sollte die zweifarbige LED grün leuchten.
 
 . Die linke Endkappe austauschen.
 
-
-
-
-== Schritt 2: Schalten Sie die Controller ein
-
-Nachdem Sie die Shelfs eingeschaltet und ihnen eindeutige IDs zugewiesen haben, fahren Sie die Storage-Controller ein.
-
-.Schritte
-. Schließen Sie den Laptop an den seriellen Konsolenport an. Auf diese Weise können Sie die Boot-Sequenz überwachen, wenn die Controller eingeschaltet werden.
-+
-.. Stellen Sie den seriellen Konsolenport am Laptop auf 115,200 Baud mit N-8-1 ein.
-+
-
-NOTE: Anweisungen zum Konfigurieren des seriellen Konsolenports finden Sie in der Online-Hilfe Ihres Laptops.
-
-.. Schließen Sie mithilfe des im Lieferumfang des Storage-Systems enthaltenen Konsolenkabels ein Ende des Konsolenkabels an den Laptop und das andere Ende an den seriellen Konsolenport an Controller A an
-.. Schließen Sie den Laptop an den Switch im Management-Subnetz an.
-
-
-. Weisen Sie dem Laptop eine TCP/IP-Adresse zu, die sich im Management-Subnetz befindet.
-. Schließen Sie die Stromkabel an die Controller-Netzteile an, und schließen Sie sie dann an Stromquellen auf verschiedenen Stromkreisen an.
-+
-** Das System beginnt zu booten. Das erste Starten kann bis zu acht Minuten dauern.
-** Die LEDs blinken auf, und die Lüfter starten, was darauf hinweist, dass die Controller eingeschaltet sind.
-** Die Lüfter sind beim ersten Starten möglicherweise sehr laut. Das Lüftergeräusch während des Startvorgangs ist normal.
-
-
-. Sichern Sie die Netzkabel mit dem Sicherungsgerät an jedem Netzteil.
-
-
-.Was kommt als Nächstes?
-Nachdem Sie Ihr FAS70 oder FAS90 Storage-System eingeschaltet haben, können Sie link:install-complete.html["Schließen Sie die System-Einrichtung ab"].
