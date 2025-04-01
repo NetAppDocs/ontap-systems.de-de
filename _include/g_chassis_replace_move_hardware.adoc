@@ -9,7 +9,7 @@
 Sie müssen den Controller aus dem Chassis entfernen, wenn Sie den Controller austauschen oder eine Komponente im Controller austauschen.
 
 .Bevor Sie beginnen
-Alle anderen Komponenten des Speichersystems müssen ordnungsgemäß funktionieren. Andernfalls müssen Sie sich an Sie wenden, bevor Sie mit https://mysupport.netapp.com/site/global/dashboard["NetApp Support"] diesem Verfahren fortfahren.
+Stellen Sie sicher, dass alle anderen Komponenten des Speichersystems ordnungsgemäß funktionieren. Wenn nicht, müssen Sie sich an den entsprechenden Kontakt wenden, bevor Sie https://mysupport.netapp.com/site/global/dashboard["NetApp Support"] mit diesem Verfahren fortfahren.
 
 .Schritte
 . Stellen Sie am Controller für beeinträchtigte Störungen sicher, dass die NV-LED nicht leuchtet.
@@ -113,50 +113,47 @@ Drehen Sie die Griffe bei Bedarf aufrecht (neben den Laschen), um sie aus dem We
 
 
 
-== Schritt 2: Entfernen Sie die Laufwerke aus dem Gehäuse für beeinträchtigte Störungen
+== Schritt 2: Entfernen Sie die Cache-Module aus dem Gehäuse für beeinträchtigte Störungen
 
-Sie müssen alle Laufwerke und alle Laufwerkplatzhalter aus dem Gehäuse für beeinträchtigte Störungen entfernen, damit Sie sie später im Ersatzgehäuse installieren können.
+Sie müssen alle Caching-Module und Laufwerkplatzhalter aus dem Gehäuse für beeinträchtigte Störungen entfernen, damit Sie sie später im Ersatzgehäuse installieren können.
 
 . Entfernen Sie die Blende vorsichtig von der Vorderseite des Speichersystems.
-. Entfernen Sie die Laufwerke und alle Laufwerkplatzhalter:
+. Entfernen Sie die Caching-Module und Laufwerkplatzhalter:
 +
 
-NOTE: Verfolgen Sie, aus welchem Laufwerkschacht jedes Laufwerk und jeder Laufwerkplatzhalter entfernt wurde, da diese in denselben Laufwerksschächten im Ersatzgehäuse installiert werden müssen.
+NOTE: Verfolgen Sie, aus welchem Laufwerkschacht die einzelnen Cache-Module und Laufwerkplatzhalter entfernt wurden, da sie in denselben Laufwerksschächten im Ersatzgehäuse installiert werden müssen.
 
 +
-image::../media/drw_nvme_drive_replace_ieops-1904.svg[Entfernen Sie das NVMe-Laufwerk]
+image::../media/drw_fas50_flash_cache_module_replace_ieops-2173.svg[Grafik zu den Schritten für den Austausch des Cache-Moduls durch das fas50]
 
 +
-[cols="1,4"]
+[cols="20%,80%"]
 |===
 
 
  a| 
 image::../media/icon_round_1.png[Legende Nummer 1]
  a| 
-Drücken Sie die Entriegelungstaste an der Antriebsfläche, um den Nockengriff zu öffnen.
+Drücken Sie die Entriegelungstaste an der Modulfläche, um den Nockengriff zu öffnen.
 
 
 
  a| 
 image::../media/icon_round_2.png[Legende Nummer 2]
  a| 
-Drehen Sie den Nockengriff nach unten, um den Antrieb von der Mittelplatine zu lösen.
+Drehen Sie den Nockengriff nach unten, um das Modul von der Mittelplatine zu lösen.
 
 
 
  a| 
 image::../media/icon_round_3.png[Legende Nummer 3]
  a| 
-Schieben Sie das Laufwerk mit dem Nockengriff aus dem Laufwerkschacht und stützen Sie das Laufwerk mit der anderen Hand.
+Schieben Sie das Modul mithilfe des Nockenhandgriffs aus dem Laufwerkschacht und stützen Sie das Modul mit der anderen Hand.
 
-Wenn Sie ein Laufwerk entfernen, verwenden Sie immer zwei Hände, um sein Gewicht zu stützen.
-
-
-NOTE: Da Laufwerke zerbrechlich sind, minimieren Sie die Handhabung, um sie nicht zu beschädigen.
+Wenn Sie ein Modul entfernen, verwenden Sie immer zwei Hände, um sein Gewicht zu tragen.
 
 |===
-. Legen Sie die Laufwerke auf einen statikfreien Wagen oder Tisch.
+. Legen Sie die Cache-Module auf einen statischen Wagen oder eine Tabelle ab.
 
 
 
@@ -226,23 +223,23 @@ NOTE: Schieben Sie den Controller nicht zu stark in das Gehäuse, da dadurch die
 
 . Bringen Sie den Controller, mit Ausnahme der Netzkabel, nach Bedarf wieder an.
 . Wiederholen Sie diese Schritte, um den zweiten Controller im Chassis zu installieren.
-. Installieren Sie die Laufwerke und alle Laufwerkplatzhalter, die Sie aus dem Gehäuse für beeinträchtigte Personen entfernt haben, im Ersatzgehäuse:
+. Installieren Sie die Caching-Module und Laufwerkplatzhalter, die Sie aus dem Gehäuse für beeinträchtigte Störungen entfernt haben, im Ersatzgehäuse:
 +
 
-NOTE: Die Laufwerke und Laufwerkplatzhalter müssen in denselben Laufwerksschächten im Ersatzgehäuse installiert werden.
+NOTE: Die Caching-Module und Laufwerkplatzhalter müssen in denselben Laufwerksschächten im Ersatzgehäuse installiert werden.
 
-+
-.. Bei geöffnetem Nockengriff den Antrieb mit beiden Händen einsetzen.
-.. Vorsichtig drücken, bis der Antrieb stoppt.
-.. Schließen Sie den Nockengriff, damit das Laufwerk vollständig in der Mittelplatine sitzt und der Griff einrastet.
+
+
+. Bei geöffnetem Nockengriff den Antrieb mit beiden Händen einsetzen.
+. Vorsichtig drücken, bis der Antrieb stoppt.
+. Schließen Sie den Nockengriff, damit das Laufwerk vollständig in der Mittelplatine sitzt und der Griff einrastet.
 +
 Schließen Sie den Nockengriff langsam, damit er korrekt an der Antriebsfläche ausgerichtet ist.
 
-.. Wiederholen Sie den Vorgang für die übrigen Laufwerke.
-
-
-. Befestigen Sie die Blende.
-. Schließen Sie die Netzkabel wieder an die Netzteile (PSU) der Controller an.
+. Wiederholen Sie den Vorgang für die übrigen Laufwerke.
++
+.. Befestigen Sie die Blende.
+.. Schließen Sie die Netzkabel wieder an die Netzteile (PSU) der Controller an.
 +
 Sobald ein Netzteil wieder mit Strom versorgt wird, sollte die Status-LED grün leuchten.
 
@@ -259,8 +256,8 @@ NOTE: Die Controller starten, sobald die Stromversorgung wiederhergestellt ist.
  a| 
 NETZTEILEINHEIT
  a| 
-.. Schließen Sie das Netzkabel an das Netzteil an.
-.. Befestigen Sie das Netzkabel mit der Netzkabelhalterung.
+... Schließen Sie das Netzkabel an das Netzteil an.
+... Befestigen Sie das Netzkabel mit der Netzkabelhalterung.
 
 
 
@@ -268,17 +265,19 @@ NETZTEILEINHEIT
  a| 
 DC-NETZTEIL
  a| 
-.. Schließen Sie den D-SUB-DC-Netzkabelanschluss an das Netzteil an.
-.. Ziehen Sie die beiden Flügelschrauben fest, um den D-SUB DC-Netzkabelanschluss am Netzteil zu befestigen.
+... Schließen Sie den D-SUB-DC-Netzkabelanschluss an das Netzteil an.
+... Ziehen Sie die beiden Flügelschrauben fest, um den D-SUB DC-Netzkabelanschluss am Netzteil zu befestigen.
 
 
 |===
-. Wenn Controller von der Loader-Eingabeaufforderung gebootet werden, booten Sie die Controller neu:
+.. Wenn Controller von der Loader-Eingabeaufforderung gebootet werden, booten Sie die Controller neu:
 +
 `boot_ontap`
 
-. AutoSupport wieder einschalten:
+.. AutoSupport wieder einschalten:
 +
 `system node autosupport invoke -node * -type all -message MAINT=END`
+
+
 
 

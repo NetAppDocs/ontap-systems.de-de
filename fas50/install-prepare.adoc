@@ -1,0 +1,127 @@
+---
+permalink: fas50/install-prepare.html 
+sidebar: sidebar 
+keywords: fas50, prepare installation 
+summary: Bereiten Sie sich auf die Installation Ihrer FAS50-Plattform vor. 
+---
+= Installation vorbereiten - FAS50
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bereiten Sie die Installation Ihres FAS50-Speichersystems vor, indem Sie den Standort vorbereiten, die Kartons auspacken, den Inhalt der Kartons mit dem Packzettel vergleichen und das Speichersystem registrieren, um auf die Supportvorteile zugreifen zu können.
+
+
+
+== Schritt 1: Bereiten Sie den Standort vor
+
+Um Ihr Speichersystem zu installieren, stellen Sie sicher, dass der Standort und der Schrank oder das Rack, den Sie verwenden möchten, den Spezifikationen für Ihre Konfiguration entsprechen.
+
+.Schritte
+. Mit https://hwu.netapp.com["NetApp Hardware Universe"^] können Sie überprüfen, ob Ihr Standort die Umwelt- und elektrischen Anforderungen für Ihr Speichersystem erfüllt.
+. Stellen Sie sicher, dass Sie ausreichend Platz im Schrank oder Rack für Ihr Speichersystem, Ihre Regale und alle Switches haben:
+
+
+. Installieren Sie alle erforderlichen Netzwerk-Switches.
++
+Installationsanweisungen und Kompatibilitätsinformationen finden Sie im https://docs.netapp.com/us-en/ontap-systems-switches/index.html["Switch-Dokumentation"^] link:https://hwu.netapp.com["NetApp Hardware Universe"^] .
+
+
+
+
+
+== Schritt 2: Auspacken der Boxen
+
+Nachdem Sie sichergestellt haben, dass der Standort und der Schrank oder das Rack, den Sie für Ihr Speichersystem verwenden möchten, die erforderlichen Spezifikationen erfüllen, packen Sie alle Kartons aus und vergleichen Sie den Inhalt mit den Artikeln auf dem Packzettel.
+
+.Schritte
+. Öffnen Sie sorgfältig alle Kartons und legen Sie den Inhalt in einer organisierten Art und Weise.
+. Vergleichen Sie den Inhalt, den Sie ausgepackt haben, mit der Liste auf dem Packzettel.
++
+
+NOTE: Sie können Ihre Packliste erhalten, indem Sie den QR-Code auf der Seite des Versandkartons scannen.
+
++
+Die folgenden Elemente sind einige der Inhalte, die Sie in den Feldern sehen können.
+
++
+Stellen Sie sicher, dass alle in den Kartons auf die Liste auf dem Packzettel passen. Wenn Abweichungen auftreten, notieren Sie sie für weitere Maßnahmen.
+
++
+[cols="12,9,4"]
+|===
+
+
+| *Hardware* | * Kabel* |  
+
+
+ a| 
+** Blende
+** Storage-System
+** Schienensätze mit Anweisungen (optional)
+** Lagerregal (wenn Sie zusätzlichen Speicher bestellt haben)
+
+ a| 
+** Management-Ethernet-Kabel (RJ-45-Kabel)
+** Netzwerkkabel
+** Stromkabel
+** Speicherkabel (wenn Sie zusätzlichen Speicher bestellt haben)
+** Serielles USB-C-Konsolenkabel
+
+|  
+|===
+
+
+
+
+== Schritt 3: Registrieren Sie Ihr Storage-System
+
+Nachdem Sie sichergestellt haben, dass Ihr Standort die Anforderungen für Ihre Storage-Systemspezifikationen erfüllt und überprüft haben, dass alle von Ihnen bestellten Teile vorhanden sind, sollten Sie Ihr Storage-System registrieren.
+
+.Schritte
+. Suchen Sie für jeden installierten Controller nach den System-Seriennummern (SSN). Die Seriennummern finden Sie an folgenden Stellen:
+. Die Seriennummern finden Sie an folgenden Stellen:
++
+** Auf dem Packzettel
+** In Ihrer Bestätigungs-E-Mail
+
+
++
+image::../media/drw_ssn_label.svg[Beispiel für die Seriennummer des Systems, die den Standort der Nummer anzeigt]
+
+. Gehen Sie zum http://mysupport.netapp.com/["NetApp Support Website"^].
+. Ermitteln Sie, ob Sie Ihr Storage-System registrieren müssen:
++
+[cols="1a,2a"]
+|===
+| Wenn Sie ein... | Führen Sie die folgenden Schritte aus... 
+
+
+ a| 
+Bestehender NetApp Kunde
+ a| 
+.. Melden Sie sich mit Ihrem Benutzernamen und Passwort an.
+.. Wählen Sie *Systeme* > *Eigene Systeme*.
+.. Vergewissern Sie sich, dass die neuen Seriennummern aufgeführt sind.
+.. Falls nicht, folgen Sie den Anweisungen für neue NetApp Kunden.
+
+
+
+
+ a| 
+Neuer NetApp Kunde
+ a| 
+.. Klicken Sie auf *Jetzt registrieren* und erstellen Sie ein Konto.
+.. Wählen Sie *Systeme* > *Systeme Registrieren*.
+.. Geben Sie die Seriennummern und die angeforderten Details des Storage-Systems ein.
+
+
+Nach der Registrierung können Sie die erforderliche Software herunterladen. Der Genehmigungsprozess kann bis zu 24 Stunden in Anspruch nehmen.
+
+|===
+
+
+.Was kommt als Nächstes?
+Nachdem Sie sich mit der Installation des Storage-Systems vorbereitet haben, profitieren Sie link:install-hardware.html["Installieren Sie die Hardware für Ihr Speichersystem"]von .

@@ -13,6 +13,8 @@ summary: Ersetzen Sie ein Lüftermodul in Ihrem ASA A20, ASA A30 oder ASA A50-Sy
 [role="lead"]
 Ersetzen Sie ein Lüftermodul in Ihrem ASA A20, ASA A30 oder ASA A50-System, wenn ein Lüfter ausfällt oder nicht effizient arbeitet, da dies die Systemkühlung und die Gesamtleistung beeinträchtigen kann. Beim Austausch werden der Controller heruntergefahren, der Controller entfernt, der Lüfter ersetzt, der Controller neu installiert und das fehlerhafte Teil an den NetApp zurückgegeben.
 
+Zum Austauschen eines Lüfters müssen Sie den Controller entfernen, den defekten Lüfter entfernen, den Ersatzlüfter einbauen und den Controller wieder einbauen.
+
 .Über diese Aufgabe
 Bei Bedarf können Sie die LEDs des Speichersystems (blau) einschalten, um das betroffene Speichersystem physisch zu lokalisieren. Melden Sie sich über SSH bei der BMC an und geben Sie den Befehl ein `system location-led _on_`.
 
@@ -23,8 +25,6 @@ Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led
 
 
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
-
-Schalten Sie den außer Betrieb genommenen Controller aus oder übernehmen Sie ihn.
 
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 
@@ -84,7 +84,7 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 Sie müssen den Controller aus dem Chassis entfernen, wenn Sie den Controller austauschen oder eine Komponente im Controller austauschen.
 
 .Bevor Sie beginnen
-Alle anderen Komponenten des Speichersystems müssen ordnungsgemäß funktionieren. Andernfalls müssen Sie sich an Sie wenden, bevor Sie mit https://mysupport.netapp.com/site/global/dashboard["NetApp Support"] diesem Verfahren fortfahren.
+Stellen Sie sicher, dass alle anderen Komponenten des Speichersystems ordnungsgemäß funktionieren. Wenn nicht, müssen Sie sich an den entsprechenden Kontakt wenden, bevor Sie https://mysupport.netapp.com/site/global/dashboard["NetApp Support"] mit diesem Verfahren fortfahren.
 
 .Schritte
 . Stellen Sie am Controller für beeinträchtigte Störungen sicher, dass die NV-LED nicht leuchtet.

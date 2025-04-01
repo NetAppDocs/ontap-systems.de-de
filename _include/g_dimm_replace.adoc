@@ -3,7 +3,7 @@
 
 
 .Bevor Sie beginnen
-* Stellen Sie sicher, dass alle anderen Komponenten des Speichersystems ordnungsgemäß funktionieren. Falls nicht, wenden Sie sich an https://mysupport.netapp.com/site/global/dashboard["NetApp Support"], bevor Sie fortfahren.“
+* Alle anderen Komponenten des Speichersystems müssen ordnungsgemäß funktionieren. Falls nicht, wenden Sie sich vor dem Fortfahren an https://mysupport.netapp.com/site/global/dashboard["NetApp Support"].
 * Sie müssen die fehlerhafte FRU-Komponente durch eine Ersatz-FRU-Komponente ersetzen, die Sie von Ihrem Anbieter erhalten haben.
 
 
@@ -18,6 +18,12 @@ Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led
 
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
+Fahren Sie den Regler herunter oder übernehmen Sie ihn mit einer der folgenden Optionen.
+
+[role="tabbed-block"]
+====
+.Option 1: Die meisten Systeme
+--
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 
 .Über diese Aufgabe
@@ -69,6 +75,54 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 |===
 
 
+--
+.Option 2: Controller befindet sich in einem MetroCluster
+--
+Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
+
+* Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE anzeigt, um die Berechtigung und den Zustand zu erhalten, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^].
+* Sie müssen bestätigt haben, dass der MetroCluster-Konfigurationsstatus konfiguriert ist und sich die Knoten in einem aktivierten und normalen Zustand befinden (`metrocluster node show`).
+
+
+.Schritte
+. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deaktivieren Sie das automatische Giveback von der Konsole des gesunden Controllers: `storage failover modify –node local -auto-giveback false`
+. Nehmen Sie den beeinträchtigten Controller zur LOADER-Eingabeaufforderung:
++
+[cols="1,2"]
+|===
+| Wenn der eingeschränkte Controller angezeigt wird... | Dann... 
+
+
+ a| 
+Die LOADER-Eingabeaufforderung
+ a| 
+Gehen Sie zum nächsten Abschnitt.
+
+
+
+ a| 
+Warten auf Giveback...
+ a| 
+Drücken Sie Strg-C, und antworten Sie dann `y` Wenn Sie dazu aufgefordert werden.
+
+
+
+ a| 
+Eingabeaufforderung des Systems oder Passwort (Systempasswort eingeben)
+ a| 
+Übernehmen oder stoppen Sie den beeinträchtigten Regler von der gesunden Steuerung: `storage failover takeover -ofnode _impaired_node_name_`
+
+Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drücken Sie Strg-C, und antworten Sie dann `y`.
+
+|===
+
+
+--
+====
 
 
 == Schritt 2: Entfernen Sie die Steuerung
@@ -76,7 +130,7 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 Sie müssen den Controller aus dem Chassis entfernen, wenn Sie den Controller austauschen oder eine Komponente im Controller austauschen.
 
 .Bevor Sie beginnen
-Alle anderen Komponenten des Speichersystems müssen ordnungsgemäß funktionieren. Andernfalls müssen Sie sich an Sie wenden, bevor Sie mit https://mysupport.netapp.com/site/global/dashboard["NetApp Support"] diesem Verfahren fortfahren.
+Stellen Sie sicher, dass alle anderen Komponenten des Speichersystems ordnungsgemäß funktionieren. Wenn nicht, müssen Sie sich an den entsprechenden Kontakt wenden, bevor Sie https://mysupport.netapp.com/site/global/dashboard["NetApp Support"] mit diesem Verfahren fortfahren.
 
 .Schritte
 . Stellen Sie am Controller für beeinträchtigte Störungen sicher, dass die NV-LED nicht leuchtet.

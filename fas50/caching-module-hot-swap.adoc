@@ -1,0 +1,74 @@
+---
+permalink: fas50/caching-module-hot-swap.html 
+sidebar: sidebar 
+keywords: fas50, hot swap, replace, Flash Cache 
+summary: 'Sie können im laufenden Betrieb ein NVMe SSD-Flash-Cache-Modul (Caching-Modul) derselben Kapazität desselben oder eines anderen unterstützten Anbieters austauschen.' 
+---
+= Hot-Swap-fähige Caching-Module – FAS50
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können ein NVMe SSD-Caching-Modul (Flash Cache-Modul) im laufenden Betrieb dieselbe Kapazität desselben oder eines anderen unterstützten Anbieters austauschen.
+
+.Bevor Sie beginnen
+Ihr Storage-System muss je nach Ihrer Situation bestimmte Kriterien erfüllen:
+
+* Ihr Speichersystem muss über das entsprechende Betriebssystem für das zu installierende Caching-Modul verfügen.
+* Das Ersatz-Caching-Modul muss die gleiche Kapazität haben wie das ausgefallene Caching-Modul, kann aber von einem anderen unterstützten Anbieter stammen.
+* Alle anderen Komponenten des Speichersystems müssen ordnungsgemäß funktionieren. Falls nicht, wenden Sie sich vor dem Fortfahren an https://mysupport.netapp.com/site/global/dashboard["NetApp Support"].
+
+
+.Schritte
+. Richtig gemahlen.
+. Suchen Sie das fehlerhafte Caching-Modul anhand der gelb leuchtenden Warn-LED an der Vorderseite des Caching-Moduls.
++
+Ein Caching-Modul kann sich in Laufwerkschacht 0 oder 23 befinden.
+
+. Entfernen Sie das Caching-Modul:
++
+image::../media/drw_fas50_flash_cache_module_replace_ieops-2173.svg[Grafik zu den Schritten für den Austausch des Cache-Moduls durch das fas50]
+
++
+[cols="20%,80%"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Drücken Sie die Entriegelungstaste an der Modulfläche, um den Nockengriff zu öffnen.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Legende Nummer 2]
+ a| 
+Drehen Sie den Nockengriff nach unten, um das Modul von der Mittelplatine zu lösen.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Legende Nummer 3]
+ a| 
+Schieben Sie das Modul mithilfe des Nockenhandgriffs aus dem Laufwerkschacht und stützen Sie das Modul mit der anderen Hand.
+
+Wenn Sie ein Modul entfernen, verwenden Sie immer zwei Hände, um sein Gewicht zu tragen.
+
+|===
+. Warten Sie mindestens 70 Sekunden, bevor Sie das Ersatz-Cache-Modul einsetzen.
+. Installieren Sie das Ersatz-Cache-Modul:
++
+.. Bei geöffnetem Nockengriff das Modul mit beiden Händen einsetzen.
+.. Vorsichtig drücken, bis das Modul anhält.
+.. Schließen Sie den Nockengriff, damit das Modul vollständig in der Mittelplatine sitzt und der Griff einrastet.
++
+Achten Sie darauf, den Nockengriff langsam zu schließen, damit er korrekt an der Vorderseite des Moduls ausgerichtet ist.
+
+
+
+. Vergewissern Sie sich, dass die Aktivitäts-LED (grün) des Moduls leuchtet.
+. Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"^]Weitere Informationen finden Sie auf der Seite.
+

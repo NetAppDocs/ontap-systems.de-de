@@ -1,0 +1,86 @@
+---
+permalink: fas50/index.html 
+sidebar: sidebar 
+keywords: aff a70 aff a90 maintenance, maintenance, repairing a70 aff a90,  replace a70 aff a90 components 
+summary: Wartung der FAS50 Hardware 
+---
+= Instandhaltung der FAS50 Hardware
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Für FAS50 Storage-Systeme können Sie Wartungsverfahren an den folgenden Komponenten durchführen.
+
+
+
+== Boot-Medien
+
+Das Startmedium speichert einen primären und sekundären Satz von Boot-Image-Dateien, die das System beim Booten verwendet.
+
+
+
+== Chassis
+
+Das Chassis ist das physische Gehäuse, in dem alle Controller-Komponenten wie Controller-/CPU-Einheit, Stromversorgung und I/O-Vorgänge untergebracht sind
+
+
+
+== Controller
+
+Ein Controller besteht aus einer Hauptplatine, Firmware und Software. Er steuert die Laufwerke und implementiert die ONTAP-Funktionen.
+
+
+
+== DIMM
+
+Sie müssen ein DIMM (Dual-Inline-Speichermodul) ersetzen, wenn ein Speicherfehler vorliegt oder ein ausgefallenes DIMM vorliegt.
+
+
+
+== Laufwerk
+
+Ein Laufwerk ist ein Gerät, das den physischen Speicher für Daten bereitstellt.
+
+
+
+== Ventilator
+
+Der Lüfter kühlt den Controller.
+
+
+
+== NVDIMM
+
+Das NVDIMM (Non-Volatile Dual in-Line Memory Module) verwaltet die Datenübertragung vom flüchtigen Speicher zum nichtflüchtigen Speicher und bewahrt die Datenintegrität im Falle eines Stromausfalls oder Systemabschalts.
+
+
+
+== NVDIMM-Batterie
+
+Eine NVDIMM-Batterie ist für die Aufrechterhaltung der Stromversorgung des NVDIMM-Moduls verantwortlich.
+
+
+
+== PCIe-Karte
+
+Eine PCIe-Karte (Peripheral Component Interconnect Express) ist eine Erweiterungskarte, die in den PCIe-Steckplatz auf der Hauptplatine eingesteckt wird.
+
+
+
+== Stromversorgung
+
+Ein Netzteil stellt eine redundante Stromversorgung in einem Controller Shelf bereit.
+
+
+
+== Akku in Echtzeit
+
+Eine Echtzeituhr-Batterie bewahrt die Systemdaten und -Uhrzeitinformationen, wenn die Stromversorgung ausgeschaltet ist.
+
+
+
+== System Management-Modul
+
+Das System Management-Modul stellt die Schnittstelle zwischen dem Controller und einer Konsole oder einem Laptop für Controller- oder Systemwartungszwecke bereit. Das Systemmanagementmodul enthält das Startmedium und speichert die Seriennummer des Systems (SSN).
