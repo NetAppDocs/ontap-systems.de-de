@@ -25,11 +25,20 @@ Jeder Prozess des SCSI-Blades sollte sich im Quorum mit den anderen Nodes im Clu
 
 
 .Schritte
-. Wenn AutoSupport aktiviert ist, können Sie die automatische Case-Erstellung durch Aufrufen einer AutoSupport Meldung unterdrücken: `system node autosupport invoke -node * -type all -message MAINT=<# of hours>h`
+. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung:
 +
-Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden: `cluster1:> system node autosupport invoke -node * -type all -message MAINT=2h`
+`system node autosupport invoke -node * -type all -message MAINT=<# of hours>h`
 
-. Deaktivieren Sie das automatische Giveback von der Konsole des Controller mit dem ordnungsgemäßen Zustand: `storage failover modify -node local -auto-giveback false`
++
+Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden:
+
++
+`cluster1:> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deaktivieren Sie das automatische Giveback von der Konsole des gesunden Controllers:
++
+`storage failover modify -node local -auto-giveback false`
+
 +
 
 NOTE: Wenn Sie sehen _Möchten Sie Auto-Giveback deaktivieren?_, geben Sie ein `y`.
@@ -58,17 +67,25 @@ Drücken Sie Strg-C, und antworten Sie dann `y` Wenn Sie dazu aufgefordert werde
  a| 
 Eingabeaufforderung für das System oder Passwort
  a| 
-Übernehmen oder stoppen Sie den beeinträchtigten Regler von der gesunden Steuerung: `storage failover takeover -ofnode _impaired_node_name_`
+Übernehmen oder stoppen Sie den beeinträchtigten Regler von der gesunden Steuerung:
 
-Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drücken Sie Strg-C, und antworten Sie dann `y`.
+`storage failover takeover -ofnode _impaired_node_name_ -halt _true_`
+
+Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 
 |===
 
 
 
 
-== Schritt 2: Ersetzen Sie das NVRAM-Modul
+== Schritt 2: Ersetzen Sie das NVRAM-Modul oder das NVRAM-DIMM
 
+Ersetzen Sie das NVRAM-Modul oder die NVRAM-DIMMs mit der entsprechenden Option.
+
+[role="tabbed-block"]
+====
+.Option 1: Ersetzen Sie das NVRAM-Modul
+--
 Um das NVRAM-Modul auszutauschen, suchen Sie es in Steckplatz 4/5 im Gehäuse, und befolgen Sie die entsprechenden Schritte.
 
 . Stellen Sie sicher, dass alle Laufwerke im Gehäuse fest auf der Mittelplatine sitzen, indem Sie mit den Daumen auf die einzelnen Laufwerke drücken, bis Sie einen positiven Anschlag spüren.
@@ -138,10 +155,9 @@ NOTE: Der Controller wird neu gebootet, sobald er vollständig im Chassis einges
 . Drehen Sie das Kabelführungs-Fach bis in die geschlossene Position.
 
 
-
-
-== Schritt 3: Ersetzen Sie ein NVRAM-DIMM
-
+--
+.Option 2: Ersetzen Sie das NVRAM-DIMM
+--
 Um NVRAM-DIMMs im NVRAM-Modul auszutauschen, müssen Sie das NVRAM-Modul entfernen und dann das Ziel-DIMM ersetzen.
 
 . Stellen Sie sicher, dass alle Laufwerke im Gehäuse fest auf der Mittelplatine sitzen, indem Sie mit den Daumen auf die einzelnen Laufwerke drücken, bis Sie einen positiven Anschlag spüren.
@@ -214,9 +230,11 @@ NOTE: Der Controller wird neu gebootet, sobald er vollständig im Chassis einges
 . Drehen Sie das Kabelführungs-Fach bis in die geschlossene Position.
 
 
+--
+====
 
 
-== Schritt 4: Überprüfen Sie den Controller-Status
+== Schritt 3: Überprüfen Sie den Controller-Status
 
 Beim Booten des Controllers müssen Sie den Controller-Status der mit dem Laufwerk-Pool verbundenen Controller bestätigen.
 
@@ -286,6 +304,6 @@ Disk                   Size Shelf Bay Type    Type        Name
 
 
 
-== Schritt 5: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+== Schritt 4: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

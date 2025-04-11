@@ -19,16 +19,18 @@ Um den Controller-Austausch für Ihr AFF A1K-System abzuschließen, stellen Sie 
 
 Sie müssen neue Lizenzen für den Node _Replacement_ installieren, wenn der beeinträchtigte Knoten ONTAP-Funktionen verwendete, die eine Standard-Lizenz (Node-locked) erfordern. Bei Standardlizenzen sollte jeder Node im Cluster über seinen eigenen Schlüssel für die Funktion verfügen.
 
-.Über diese Aufgabe
-Bis Sie Lizenzschlüssel installieren, sind Funktionen, für die Standardlizenzen erforderlich sind, weiterhin für den Node _Replacement_ verfügbar. Wenn der beeinträchtigte Knoten jedoch der einzige Node im Cluster war, der eine Lizenz für die Funktion besitzt, sind keine Konfigurationsänderungen an der Funktion zulässig.
+.Bevor Sie beginnen
+Wenn auf Ihrem System zunächst ONTAP 9.10.1 oder höher ausgeführt wurde, gehen Sie wie in beschrieben  https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/Post_Motherboard_Replacement_Process_to_update_Licensing_on_a_AFF_FAS_system#Internal_Notes^["Post-Motherboard-Austauschprozess zur Aktualisierung der Lizenzierung auf ONTAP-Plattformen"]vor. Wenn Sie sich nicht sicher sind, wie die erste ONTAP-Version für Ihr System ist, finden Sie weitere Informationen unterlink:https://hwu.netapp.com["NetApp Hardware Universe"^].
 
+.Über diese Aufgabe
+* Bis Sie Lizenzschlüssel installieren, sind Funktionen, für die Standardlizenzen erforderlich sind, weiterhin für den Node _Replacement_ verfügbar. Wenn der beeinträchtigte Knoten jedoch der einzige Node im Cluster war, der eine Lizenz für die Funktion besitzt, sind keine Konfigurationsänderungen an der Funktion zulässig.
++
 Durch die Verwendung nicht lizenzierter Funktionen auf dem Knoten können Sie möglicherweise nicht mit Ihrer Lizenzvereinbarung einverstanden sein. Sie sollten daher den Ersatzlizenzschlüssel oder die Schlüssel so schnell wie möglich auf dem Node _Replacement_ installieren.
 
-Die Lizenzschlüssel müssen im 28-stelligen Format vorliegen.
+* Die Lizenzschlüssel müssen im 28-stelligen Format vorliegen.
+* Sie haben eine 90-Tage-Nachfrist zur Installation der Lizenzschlüssel. Nach Ablauf der Frist werden alle alten Lizenzen ungültig. Nachdem ein gültiger Lizenzschlüssel installiert wurde, haben Sie 24 Stunden Zeit, um alle Schlüssel zu installieren, bevor die Kulanzzeit endet.
+* Wenn sich der Node in einer MetroCluster-Konfiguration befindet und alle Nodes an einem Standort ersetzt wurden, müssen vor dem Wechsel die Lizenzschlüssel auf dem Node _Replacement_ oder den Nodes installiert werden.
 
-Sie haben eine 90-Tage-Nachfrist zur Installation der Lizenzschlüssel. Nach Ablauf der Frist werden alle alten Lizenzen ungültig. Nachdem ein gültiger Lizenzschlüssel installiert wurde, haben Sie 24 Stunden Zeit, um alle Schlüssel zu installieren, bevor die Kulanzzeit endet.
-
-Wenn sich der Node in einer MetroCluster-Konfiguration befindet und alle Nodes an einem Standort ersetzt wurden, müssen vor dem Wechsel die Lizenzschlüssel auf dem Node _Replacement_ oder den Nodes installiert werden.
 
 .Schritte
 . Wenn Sie neue Lizenzschlüssel benötigen, holen Sie sich die Ersatzlizenz auf dem https://mysupport.netapp.com/site/global/dashboard["NetApp Support Website"] Im Abschnitt „My Support“ unter „Software-Lizenzen“.

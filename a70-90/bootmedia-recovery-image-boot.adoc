@@ -26,7 +26,7 @@ Das Bild wird vom USB-Flash-Laufwerk heruntergeladen.
 .Option 1: ONTAP 9.16.0 oder früher
 --
 .. Drücken Sie auf der außer Betrieb genommenen Steuerung `Y`, wenn angezeigt wird `Do you want to restore the backup configuration now?`
-.. Drücken Sie auf dem Controller für beeinträchtigte Störungen `Y`, wenn Sie dazu aufgefordert werden, _/etc/ssh/ssh_Host_ecdsa_Key_ zu überschreiben.
+.. Wenn Sie auf dem gestörten Controller dazu aufgefordert werden, drücken Sie `Y`, um _/etc/ssh/ssh_Host_ecdsa_Key_ zu überschreiben.
 .. Setzen Sie auf dem funktionierenden Partner-Controller den beeinträchtigten Controller auf die erweiterte Berechtigungsebene: `set -privilege advanced`.
 .. Führen Sie auf dem gesunden Partner-Controller den Wiederherstellungsbefehl aus: `system node restore-backup -node local -target-address impaired_node_IP_address` .
 +

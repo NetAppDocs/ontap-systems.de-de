@@ -34,10 +34,10 @@ Der HA-Status sollte für alle Komponenten identisch sein.
 
 . Wenn der angezeigte Systemstatus des Controllers nicht mit der Konfiguration des Storage-Systems übereinstimmt, legen Sie den Status für den Controller fest `HA`:
 +
-`ha-config modify controller ha-state`
+`ha-config modify controller ha`
 
 +
-Für den HA-Status kann einer der folgenden Werte vorliegen:
+Für den HA-Status kann einer der folgenden Werte verwendet werden:
 
 +
 ** `ha`

@@ -86,7 +86,7 @@ Setzt die Verschlüsselung zurück und setzt den Controller wieder in den normal
 
 .Schritte
 . Wenn das Stammvolume mit External Key Manager verschlüsselt ist und das Konsolenkabel mit dem Ersatzknoten verbunden ist, geben Sie die Option ein `boot_ontap menu` und wählen Sie diese aus `11`.
-. Beantworten Sie `y` oder `n` die folgenden Fragen:
+. Wenn diese Fragen angezeigt werden, beantworten Sie diese `y` oder `n` gegebenenfalls:
 +
 Haben Sie eine Kopie der Datei /cfcard/kmip/certs/Client.crt? {J/n}
 
@@ -95,9 +95,6 @@ Haben Sie eine Kopie der Datei /cfcard/kmip/certs/client.key? {J/n}
 
 +
 Haben Sie eine Kopie der Datei /cfcard/kmip/certs/CA.pem? {J/n}
-
-+
-ODER
 
 +
 Haben Sie eine Kopie der Datei /cfcard/kmip/servers.cfg? {J/n}
@@ -132,4 +129,4 @@ NOTE: Wenden Sie sich https://support.netapp.com["NetApp Support"] bei Problemen
 --
 ====
 .Was kommt als Nächstes?
-Nachdem Sie die Eigentümerschaft der Storage-Ressourcen wieder an den Ersatz-Controller übergeben haben, müssen Sie link:controller-replace-restore-system-rma.html["Schließen Sie den Controller-Austausch ab"]den Vorgang durchführen.
+Nachdem Sie die Eigentumsrechte an den Storage-Ressourcen an den Ersatz-Controller übertragen haben, müssen Sie link:controller-replace-restore-system-rma.html["Schließen Sie den Controller-Austausch ab"]den Vorgang durchführen.

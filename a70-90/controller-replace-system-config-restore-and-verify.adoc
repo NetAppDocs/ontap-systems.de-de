@@ -37,9 +37,9 @@ NOTE: Wenn Sie _PERSONALITY MISMATCH_ sehen, wenden Sie sich an den Kundendienst
 +
 Der HA-Status sollte für alle Komponenten identisch sein.
 
-. Wenn der angezeigte Systemzustand des Controller-Moduls nicht mit der Systemkonfiguration übereinstimmt, setzen Sie das ein `HA` Status für das Controller-Modul: `ha-config modify controller ha-state`
+. Wenn der angezeigte Systemstatus des Controller-Moduls nicht mit Ihrer Systemkonfiguration übereinstimmt, legen Sie den Status für das Controller-Modul fest `HA`: `ha-config modify controller ha`
 +
-Für den HA-Status kann einer der folgenden Werte vorliegen:
+Für den HA-Status kann einer der folgenden Werte verwendet werden:
 
 +
 ** `ha`

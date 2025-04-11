@@ -1,27 +1,11 @@
----
-permalink: fas50/io-module-replace.html 
-sidebar: sidebar 
-keywords: fas50, replace a pcie card 
-summary: Ersetzen Sie ein I/O-Modul in Ihrem FAS50-System, wenn das Modul ausfällt oder ein Upgrade erfordert, um höhere Leistung oder zusätzliche Funktionen zu unterstützen. Beim Austausch werden der Controller heruntergefahren, das fehlerhafte I/O-Modul ersetzt, der Controller neu gebootet und das fehlerhafte Teil an NetApp zurückgegeben. 
----
-= Ersetzen Sie ein I/O-Modul – FAS50
+= Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
 
-
-[role="lead"]
-Ersetzen Sie ein I/O-Modul in Ihrem FAS50-System, wenn das Modul ausfällt oder ein Upgrade erfordert, um höhere Leistung oder zusätzliche Funktionen zu unterstützen. Beim Austausch werden der Controller heruntergefahren, das fehlerhafte I/O-Modul ersetzt, der Controller neu gebootet und das fehlerhafte Teil an NetApp zurückgegeben.
 
 .Bevor Sie beginnen
-Alle anderen Komponenten des Speichersystems müssen ordnungsgemäß funktionieren. Falls nicht, wenden Sie sich an https://mysupport.netapp.com/site/global/dashboard["NetApp Support"], bevor Sie mit diesem Verfahren fortfahren.
+* Stellen Sie sicher, dass alle anderen Komponenten im System ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+* Stellen Sie sicher, dass Sie die fehlerhafte Komponente durch eine von NetApp erhaltene Austauschkomponente ersetzen.
 
-.Über diese Aufgabe
-Bei Bedarf können Sie die LEDs des Speichersystems (blau) einschalten, um das betroffene Speichersystem physisch zu lokalisieren. Melden Sie sich über SSH bei der BMC an und geben Sie den Befehl ein `system location-led _on_`.
-
-Ein Speichersystem verfügt über drei Standort-LEDs: Eine auf dem Bedienfeld und eine auf jedem Controller. Die Standort-LEDs leuchten 30 Minuten lang.
-
-Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led _off_`. Wenn Sie sich nicht sicher sind, ob die LEDs leuchten oder nicht, können Sie ihren Status überprüfen, indem Sie den Befehl eingeben `system location-led show`.
 
 
 
@@ -159,18 +143,13 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 ====
 
 
-== Schritt 2: Ersetzen Sie ein fehlerhaftes I/O-Modul
+== Schritt 2: Entfernen Sie das Controller-Modul
 
-Um ein ausgefallenes I/O-Modul zu ersetzen, suchen Sie es im Controller, und befolgen Sie die entsprechenden Schritte.
+Sie müssen das Controller-Modul aus dem Gehäuse entfernen, wenn Sie das Controller-Modul austauschen oder eine Komponente im Controller-Modul austauschen.
 
-. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
-. Trennen Sie die Verkabelung vom fehlerhaften E/A-Modul.
+. Überprüfen Sie die NVRAM-Status-LED in Steckplatz 4/5 des Systems. An der Vorderseite des Controller-Moduls befindet sich außerdem eine NVRAM-LED. Suchen Sie nach dem NV-Symbol:
 +
-Achten Sie darauf, dass Sie die Kabel so beschriften, dass Sie wissen, woher sie stammen.
-
-. Entfernen Sie das fehlerhafte I/O-Modul aus dem Controller:
-+
-image::../media/drw_g_io_module_replace_ieops-1900.svg[Entfernen Sie das E/A-Modul]
+image::../media/drw_a1K-70-90_nvram-led_ieops-1463.svg[Grafik für die NVRAM-Warnungs- und Status-LED zur Lage]
 
 +
 [cols="1,4"]
@@ -178,48 +157,143 @@ image::../media/drw_g_io_module_replace_ieops-1900.svg[Entfernen Sie das E/A-Mod
 
 
  a| 
-image::../media/icon_round_1.png[Legende Nummer 1]
+image:../media/icon_round_1.png["Legende Nummer 1"]
  a| 
-Drehen Sie die Flügelschraube des E/A-Moduls gegen den Uhrzeigersinn, um sie zu lösen.
+NVRAM-Status-LED
 
 
 
  a| 
-image::../media/icon_round_2.png[Legende Nummer 2]
+image:../media/icon_round_2.png["Legende Nummer 2"]
  a| 
-Ziehen Sie das E/A-Modul mithilfe der Anschlusslasche links und der Rändelschraube aus dem Controller.
+LED für NVRAM-Warnung
 
 |===
-. Setzen Sie das Ersatz-E/A-Modul in den Zielsteckplatz ein:
 +
-.. Richten Sie das E/A-Modul an den Kanten des Schlitzes aus.
-.. Drücken Sie das E/A-Modul vorsichtig bis zum Steckplatz, und achten Sie darauf, dass das Modul ordnungsgemäß in den Anschluss eingesetzt wird.
+** Wenn die NV-LED aus ist, mit dem nächsten Schritt fortfahren.
+** Wenn die NV-LED blinkt, warten Sie, bis das Blinken beendet ist. Wenn das Blinken länger als 5 Minuten andauert, wenden Sie sich an den technischen Support, um Unterstützung zu erhalten.
+
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Haken Sie an der Vorderseite des Geräts die Finger in die Löcher in den Verriegelungsnocken ein, drücken Sie die Laschen an den Nockenhebeln zusammen, und drehen Sie beide Verriegelungen gleichzeitig vorsichtig, aber fest zu sich hin.
 +
-Sie können die Lasche auf der linken Seite und die Flügelschraube verwenden, um das E/A-Modul einzudrücken.
+Das Controller-Modul bewegt sich leicht aus dem Gehäuse.
 
-.. Drehen Sie die Rändelschraube im Uhrzeigersinn, um sie festzuziehen.
-
-
-. Verkabeln Sie das E/A-Modul.
-
-
-
-
-== Schritt 3: Starten Sie den Controller neu
-
-Nachdem Sie ein I/O-Modul ersetzt haben, müssen Sie den Controller neu starten.
-
-.Schritte
-. Booten Sie den Controller über die Loader-Eingabeaufforderung neu: `bye`
 +
-Durch einen Neustart des außer Betrieb genommenen Controllers werden auch die E/A-Module und andere Komponenten neu initialisiert.
+image::../media/drw_a1k_pcm_remove_replace_ieops-1375.svg[Controller Grafik entfernen]
 
-. Stellen Sie den normalen Betrieb des Node wieder ein: `storage failover giveback -ofnode _impaired_node_name_`
-. Automatisches Giveback von der Konsole des funktionstüchtigen Controllers wiederherstellen: `storage failover modify -node local -auto-giveback _true_`
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Legende Nummer 1"]
+| Verriegelungsnocken 
+|===
+. Schieben Sie das Controller-Modul aus dem Gehäuse und legen Sie es auf eine Ebene, stabile Oberfläche.
++
+Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls stützen, wenn Sie es aus dem Gehäuse herausziehen.
 
 
 
 
-== Schritt 4: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+
+== Schritt 3: Ersetzen Sie ein DIMM
+
+Sie müssen ein DIMM ersetzen, wenn das System einen permanenten Fehler für dieses DIMM meldet.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Öffnen Sie den Luftkanal der Steuerung auf der Oberseite der Steuerung.
++
+.. Stecken Sie Ihre Finger in die Aussparungen an den entfernten Enden des Luftkanals.
+.. Heben Sie den Luftkanal an, und drehen Sie ihn bis zum gewünschten Winkel nach oben.
+
+
+. Suchen Sie die DIMMs auf dem Controller-Modul, und identifizieren Sie das DIMM für den Austausch.
++
+Die DIMMs sind abhängig vom Systemmodell:
+
++
+[cols="1,4"]
+|===
+
+
+| Modell | Position des DIMM-Steckplatzes 
+
+
+| FAS70  a| 
+Steckplätze 3, 10, 19, 26
+
+
+
+ a| 
+FAS90
+ a| 
+Steckplätze 3, 7, 10, 14, 19, 23, 26, 30
+
+|===
+. Werfen Sie das DIMM aus dem Steckplatz, indem Sie die beiden DIMM-Auswerferlaschen auf beiden Seiten des DIMM langsam auseinander drücken und dann das DIMM aus dem Steckplatz schieben.
++
+
+IMPORTANT: Halten Sie das DIMM vorsichtig an den Rändern, um Druck auf die Komponenten auf der DIMM-Leiterplatte zu vermeiden.
+
++
+image::../media/drw_a1k_dimms_ieops-1512.svg[DIMM Austauschen]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Legende Nummer 1"]
+ a| 
+DIMM- und DIMM-Auswurfklammern
+
+|===
+. Entfernen Sie das Ersatz-DIMM aus dem antistatischen Versandbeutel, halten Sie das DIMM an den Ecken und richten Sie es am Steckplatz aus.
++
+Die Kerbe zwischen den Stiften am DIMM sollte mit der Lasche im Sockel aufliegen.
+
+. Vergewissern Sie sich, dass sich die DIMM-Auswerferlaschen am Anschluss in der geöffneten Position befinden und setzen Sie das DIMM-Auswerfer anschließend in den Steckplatz ein.
++
+Das DIMM passt eng in den Steckplatz, sollte aber leicht einpassen. Falls nicht, richten Sie das DIMM-Modul mit dem Steckplatz aus und setzen Sie es wieder ein.
+
++
+
+IMPORTANT: Prüfen Sie das DIMM visuell, um sicherzustellen, dass es gleichmäßig ausgerichtet und vollständig in den Steckplatz eingesetzt ist.
+
+. Drücken Sie vorsichtig, aber fest auf die Oberseite des DIMM, bis die Auswurfklammern über den Kerben an den Enden des DIMM einrasten.
+. Den Luftkanal der Steuerung schließen.
+
+
+
+
+== Schritt 4: Installieren Sie den Controller
+
+Installieren Sie das Controller-Modul neu, und starten Sie es.
+
+. Stellen Sie sicher, dass der Luftkanal vollständig geschlossen ist, indem Sie ihn bis zum gewünschten Ziel nach unten drehen.
++
+Er muss bündig auf die Metallplatte des Controller-Moduls liegen.
+
+. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und schieben Sie das Controller-Modul in das Gehäuse, wobei die Hebel von der Vorderseite des Systems weg gedreht sind.
+. Sobald das Controller-Modul Sie daran hindert, es weiter zu schieben, drehen Sie die Nockengriffe nach innen, bis sie wieder unter den Lüftern einrasten
++
+
+NOTE: Setzen Sie das Controller-Modul nicht zu stark in das Gehäuse ein, um Beschädigungen der Anschlüsse zu vermeiden.
+
++
+Das Controller-Modul startet, sobald es vollständig im Gehäuse sitzt.
+
+. Stellen Sie den außer Betrieb genommenen Controller wieder ein, indem Sie seine Speicherung zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`.
+. Wenn die automatische Rückgabe deaktiviert wurde, aktivieren Sie sie erneut: `storage failover modify -node local -auto-giveback true`.
+. Wenn AutoSupport aktiviert ist, kann die automatische Fallerstellung wiederhergestellt/aufgehoben werden: `system node autosupport invoke -node * -type all -message MAINT=END`.
+
+
+
+
+== Schritt 5: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

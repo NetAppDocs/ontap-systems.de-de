@@ -2,15 +2,17 @@
 permalink: fas50/controller-replace-requirements.html 
 sidebar: sidebar 
 keywords: fas50, prerequisite, replace the controller module 
-summary: Sie müssen die Voraussetzungen für den Austausch prüfen und die richtige für Ihre Version des ONTAP Betriebssystems auswählen. 
+summary: Stellen Sie vor dem Austausch des Controllers in Ihrem FAS50-Speichersystem sicher, dass Sie die erforderlichen Voraussetzungen für einen erfolgreichen Austausch erfüllen. Dazu gehört die Überprüfung aller anderen Komponenten im System auf ordnungsgemäße Funktion, die Überprüfung, ob der richtige Ersatz-Controller vorhanden ist, und das Speichern der Konsolenausgabe des Controllers in einer Textprotokolldatei. 
 ---
-= Anforderungen an den Austausch von Controllern – FAS50
+= Voraussetzung für den Austausch des Controllers – FAS50
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
+Stellen Sie vor dem Austausch des Controllers in Ihrem FAS50-Speichersystem sicher, dass Sie die erforderlichen Voraussetzungen für einen erfolgreichen Austausch erfüllen. Dazu gehört die Überprüfung aller anderen Komponenten im System auf ordnungsgemäße Funktion, die Überprüfung, ob der richtige Ersatz-Controller vorhanden ist, und das Speichern der Konsolenausgabe des Controllers in einer Textprotokolldatei.
+
 Überprüfen Sie die Anforderungen und Überlegungen beim Austausch des Controllers.
 
 
@@ -47,3 +49,6 @@ Ein Speichersystem verfügt über drei Standort-LEDs: Eine auf dem Bedienfeld un
 Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led _off_`. Wenn Sie sich nicht sicher sind, ob die LEDs leuchten oder nicht, können Sie ihren Status überprüfen, indem Sie den Befehl eingeben `system location-led show`.
 
 
+
+.Was kommt als Nächstes?
+Nachdem Sie die Anforderungen überprüft haben, um den beeinträchtigten Controller zu ersetzen, müssen Sie link:controller-replace-shutdown.html["Schalten Sie den außer Betrieb genommenen Controller aus"].

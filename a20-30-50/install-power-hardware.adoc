@@ -142,17 +142,24 @@ NOTE: Anweisungen zum Konfigurieren des seriellen Konsolenports finden Sie in de
 
 .. Schließen Sie mithilfe des im Lieferumfang des Storage-Systems enthaltenen Konsolenkabels ein Ende des Konsolenkabels an den Laptop und das andere Ende an den seriellen Konsolenport an Controller A an
 .. Schließen Sie den Laptop an den Switch im Management-Subnetz an.
++
+image::../media/drw_g_isi_console_serial_port_cabling_ieops-1882.svg[Konsolenverbindungen]
+
 
 
 . Weisen Sie dem Laptop eine TCP/IP-Adresse zu, die sich im Management-Subnetz befindet.
 . Schließen Sie die Stromkabel an die Controller-Netzteile an, und schließen Sie sie dann an Stromquellen auf verschiedenen Stromkreisen an.
 +
+image::../media/drw_psu_layout_1_ieops-1886.svg[Stromanschlussdiagramm für das Speichersystem A20, A30 oder A50]
+
++
 ** Das System beginnt zu booten. Das erste Starten kann bis zu acht Minuten dauern.
 ** Die LEDs blinken auf, und die Lüfter starten, was darauf hinweist, dass die Controller eingeschaltet sind.
 ** Die Lüfter sind beim ersten Starten möglicherweise sehr laut. Das Lüftergeräusch während des Startvorgangs ist normal.
+** Die Shelf-ID-Anzeige an der Vorderseite des System-Chassis leuchtet nicht.
 
 
-. Sichern Sie die Netzkabel mit dem Sicherungsgerät an jedem Netzteil. :a20-30-50!:
+. Sichern Sie die Netzkabel mit dem Sicherungsgerät an jedem Netzteil.
 
 
 .Was kommt als Nächstes?

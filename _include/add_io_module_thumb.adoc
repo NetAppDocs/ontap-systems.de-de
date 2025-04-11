@@ -20,7 +20,7 @@ Sie können ein neues I/O-Modul zu einem Speichersystem mit verfügbaren Steckpl
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Entfernen Sie auf dem außer Betrieb genommenen Controller das E/A-Blindmodul aus dem Zielsteckplatz.
 +
-Nicht verwendete I/O-Steckplätze sollten mit einem Blindmodul ausgestattet sein, um mögliche thermische Probleme zu vermeiden.
+Ungenutzte I/O-Steckplätze sollten mit einem Blindmodul ausgestattet sein, um mögliche thermische Probleme zu vermeiden und die EMV-Konformität zu gewährleisten.
 
 +
 image::../media/drw_g_io_blanking_module_replace_ieops-1901.svg[Entfernen Sie ein E/A-Blindmodul]
@@ -61,7 +61,7 @@ Wenn Sie ein Speicher-I/O-Modul installiert haben, installieren und verkabeln Si
 +
 Durch einen Neustart des außer Betrieb genommenen Controllers werden auch die E/A-Module und andere Komponenten neu initialisiert.
 
-. Den beeinträchtigten Controller vom Partner-Controller zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`
+. Geben Sie den Controller für den beeinträchtigten Betrieb vom Controller für den ordnungsgemäßen Betrieb zurück: `storage failover giveback -ofnode _impaired_node_name_`
 . Wiederholen Sie diese Schritte, um dem anderen Controller ein I/O-Modul hinzuzufügen.
 . Automatisches Giveback von der Konsole des funktionstüchtigen Controllers wiederherstellen: `storage failover modify -node local -auto-giveback _true_`
 . Wenn AutoSupport aktiviert ist, stellen Sie die automatische Fallerstellung wieder her (heben Sie die Unterdrückung auf): `system node autosupport invoke -node * -type all -message MAINT=END`
@@ -144,10 +144,10 @@ Wenn Sie ein Speicher-I/O-Modul installiert haben, installieren und verkabeln Si
 +
 Durch einen Neustart des außer Betrieb genommenen Controllers werden auch die E/A-Module und andere Komponenten neu initialisiert.
 
-. Den beeinträchtigten Controller vom Partner-Controller zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`
+. Geben Sie den Controller für den beeinträchtigten Betrieb vom Controller für den ordnungsgemäßen Betrieb zurück: `storage failover giveback -ofnode _impaired_node_name_`
 . Automatisches Giveback von der Konsole des funktionstüchtigen Controllers wiederherstellen: `storage failover modify -node local -auto-giveback _true_`
-. Wenn AutoSupport aktiviert ist, stellen Sie die automatische Case-Erstellung wieder her (heben Sie die Unterdrückung auf): System Node AutoSupport Invoke -Node * -type all -message MAINT=END
-. Wenn Sie ein NIC-Modul installiert haben, geben Sie den Verwendungsmodus für jeden Port als _Network_ an: `storage port modify -node *_<node name>_ -port *_<port name>_ -mode network`
+. Wenn AutoSupport aktiviert ist, stellen Sie die automatische Fallerstellung wieder her (heben Sie die Unterdrückung auf): `system node autosupport invoke -node * -type all -message MAINT=END`
+. Wenn Sie ein NIC-Modul installiert haben, geben Sie den Verwendungsmodus für jeden Port als _Network_ an: `storage port modify -node _node_name_ -port _port_name_ -mode _network_`
 . Wiederholen Sie diese Schritte für den anderen Controller.
 
 
