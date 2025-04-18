@@ -187,14 +187,14 @@ Local System ID: 118065481
     ...
     ...
 ----
-. Weisen Sie die Eigentumsrechte an der Festplatte (für FAS Systeme) oder an der LUN-Eigentumsrechte (für FlexArray Systeme) neu zu. Verwenden Sie dazu die System-ID-Informationen, die Sie über den Befehl „Festplatte anzeigen“ erhalten haben: `disk reassign -s old system ID`
+. Weisen Sie die Festplatteneigentümer (für FAS Systeme) neu zu. Verwenden Sie dabei die System-ID-Informationen, die vom Befehl Disk show abgerufen werden: `disk reassign -s old system ID`
 +
 Im Fall des vorhergehenden Beispiels lautet der Befehl: `disk reassign -s 118073209`
 
 +
 Sie können antworten `Y` Wenn Sie dazu aufgefordert werden, fortzufahren.
 
-. Überprüfen Sie, ob die Festplatten (oder FlexArray LUNs) korrekt zugeordnet sind: `disk show -a`
+. Überprüfen Sie, ob die Festplatten ordnungsgemäß zugewiesen wurden: `disk show -a`
 +
 Vergewissern Sie sich, dass die Festplatten, die zum Node _Replacement_ gehören, die neue System-ID für den Node _Replacement_ anzeigen. Im folgenden Beispiel zeigen die Festplatten von System-1 jetzt die neue System-ID, 118065481:
 

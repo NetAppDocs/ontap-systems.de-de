@@ -210,12 +210,26 @@ Sie können die Lasche auf der linken Seite und die Flügelschraube verwenden, u
 Nachdem Sie ein I/O-Modul ersetzt haben, müssen Sie den Controller neu starten.
 
 .Schritte
-. Booten Sie den Controller über die Loader-Eingabeaufforderung neu: `bye`
+. Booten Sie den Controller über die LOADER-Eingabeaufforderung neu:
 +
-Durch einen Neustart des außer Betrieb genommenen Controllers werden auch die E/A-Module und andere Komponenten neu initialisiert.
+`bye`
 
-. Stellen Sie den normalen Betrieb des Node wieder ein: `storage failover giveback -ofnode _impaired_node_name_`
-. Automatisches Giveback von der Konsole des funktionstüchtigen Controllers wiederherstellen: `storage failover modify -node local -auto-giveback _true_`
++
+
+NOTE: Durch einen Neustart des außer Betrieb genommenen Controllers werden auch die E/A-Module und andere Komponenten neu initialisiert.
+
+. Zurückkehren des Node in den normalen Betrieb:
++
+`storage failover giveback -ofnode _impaired_node_name_`
+
+. Automatisches Giveback von der Konsole des funktionstüchtigen Controllers wiederherstellen:
++
+`storage failover modify -node local -auto-giveback _true_`
+
+. Wenn AutoSupport aktiviert ist, stellen Sie die automatische Fallerstellung wieder her:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`
+
 
 
 

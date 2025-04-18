@@ -60,6 +60,40 @@ NOTE: Der Ersatz-Controller wird vom funktionsgesunden Controller mit Strom vers
 
 
 
+. Bringen Sie den Controller zur Loader-Eingabeaufforderung, indem Sie STRG-C drücken, um den AUTOBOOT abzubrechen.
+. Stellen Sie die Uhrzeit und das Datum auf dem Controller ein:
++
+Stellen Sie sicher, dass Sie sich an der Loader-Eingabeaufforderung des Controllers befinden.
+
++
+.. Datum und Uhrzeit auf dem Controller anzeigen:
++
+`show date`
+
++
+
+NOTE: Die Standardeinstellung für Uhrzeit und Datum ist GMT. Sie haben die Möglichkeit, die Anzeige in der lokalen Zeit und im 24-Stunden-Modus durchzuführen.
+
+.. Aktuelle Zeit in GMT einstellen:
++
+`set time hh:mm:ss`
+
++
+Sie können die aktuelle GMT vom gesunden Knoten abrufen:
+
++
+`date -u`
+
+.. Stellen Sie das aktuelle Datum in GMT ein:
++
+`set date mm/dd/yyyy`
+
++
+Sie können die aktuelle GMT vom gesunden Knoten abrufen: +
+`date -u`
+
+
+
 . Controller nach Bedarf wieder verstellen.
 . Schließen Sie das Netzkabel wieder an das Netzteil an.
 +

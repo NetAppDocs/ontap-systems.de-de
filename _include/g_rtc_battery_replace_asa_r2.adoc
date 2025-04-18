@@ -278,6 +278,10 @@ Richten Sie die Rückseite des Controllers an der Öffnung im Chassis aus, und d
 NOTE: Setzen Sie den Controller erst dann vollständig in das Chassis ein, wenn Sie dazu aufgefordert werden.
 
 . Schließen Sie das Konsolenkabel an den Konsolen-Port am Controller und am Laptop an, sodass das Laptop beim Neustart des Controllers Konsolenmeldungen erhält.
++
+
+NOTE: Schließen Sie derzeit keine anderen Kabel oder Netzkabel an.
+
 . Setzen Sie den Controller vollständig im Chassis ein:
 +
 .. Drücken Sie die Griffe fest, bis der Controller auf die Mittelplatine trifft und vollständig sitzt.
@@ -288,41 +292,7 @@ NOTE: Schieben Sie den Controller nicht zu stark in das Gehäuse, da dadurch die
 .. Drehen Sie die Controller-Griffe nach oben und fixieren Sie sie mit den Laschen.
 +
 
-NOTE: Der Controller startet, sobald er vollständig im Gehäuse eingesetzt ist.
-
-
-
-. Bringen Sie den Controller zur Loader-Eingabeaufforderung, indem Sie STRG-C drücken, um den AUTOBOOT abzubrechen.
-. Stellen Sie die Uhrzeit und das Datum auf dem Controller ein:
-+
-Stellen Sie sicher, dass Sie sich an der Loader-Eingabeaufforderung des Controllers befinden.
-
-+
-.. Datum und Uhrzeit auf dem Controller anzeigen:
-+
-`show date`
-
-+
-
-NOTE: Die Standardeinstellung für Uhrzeit und Datum ist GMT. Sie haben die Möglichkeit, die Anzeige in der lokalen Zeit und im 24-Stunden-Modus durchzuführen.
-
-.. Aktuelle Zeit in GMT einstellen:
-+
-`set time hh:mm:ss`
-
-+
-Sie können die aktuelle GMT vom gesunden Knoten abrufen:
-
-+
-`date -u`
-
-.. Stellen Sie das aktuelle Datum in GMT ein:
-+
-`set date mm/dd/yyyy`
-
-+
-Sie können die aktuelle GMT vom gesunden Knoten abrufen: +
-`date -u`
+NOTE: Der Ersatz-Controller wird vom funktionsgesunden Controller mit Strom versorgt und startet, sobald er vollständig im Gehäuse eingesetzt ist.
 
 
 

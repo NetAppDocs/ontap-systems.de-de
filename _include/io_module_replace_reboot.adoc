@@ -2,22 +2,22 @@
 :allow-uri-read: 
 
 
-Nachdem Sie ein I/O-Modul ersetzt haben, müssen Sie das Controller-Modul neu starten.
+Nachdem Sie ein I/O-Modul ersetzt haben, müssen Sie den Controller neu starten.
 
 .Schritte
-. Booten Sie an der LOADER-Eingabeaufforderung den Node neu:
+. Booten Sie den Controller über die LOADER-Eingabeaufforderung neu:
 +
 `bye`
 
 +
 
-NOTE: Dadurch werden das I/O-Modul und andere Komponenten neu initialisiert und der Node neu gestartet.
+NOTE: Durch einen Neustart des außer Betrieb genommenen Controllers werden auch die E/A-Module und andere Komponenten neu initialisiert.
 
-. Geben Sie den Controller vom Partner-Controller zurück:
+. Zurückkehren des Node in den normalen Betrieb:
 +
 `storage failover giveback -ofnode _impaired_node_name_`
 
-. Stellen Sie im funktionstüchtigen Knoten das automatische Giveback wieder her, wenn Sie es deaktiviert haben:
+. Automatisches Giveback von der Konsole des funktionstüchtigen Controllers wiederherstellen:
 +
 `storage failover modify -node local -auto-giveback _true_`
 
