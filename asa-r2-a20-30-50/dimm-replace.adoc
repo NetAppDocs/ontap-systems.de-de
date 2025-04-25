@@ -13,8 +13,10 @@ summary: Ersetzen Sie ein DIMM in Ihrem ASA A20, ASA A30 oder ASA A50-System, we
 [role="lead"]
 Ersetzen Sie ein DIMM in Ihrem ASA A20, ASA A30 oder ASA A50-System, wenn zu viele korrigierbare oder nicht korrigierbare Speicherfehler erkannt werden. Derartige Fehler können das Booten von ONTAP durch das Storage-System verhindern. Beim Austausch wird der beeinträchtigte Controller heruntergefahren, entfernt, das DIMM ersetzt, der Controller neu installiert und das fehlerhafte Teil anschließend an den NetApp zurückgegeben.
 
+Sie müssen ein DIMM im Controller ersetzen, wenn das Speichersystem auf Fehler wie übermäßige CECC-Fehler (korrigierbare Fehlerkorrekturcodes) stößt, die auf Warnmeldungen der Systemzustandsüberwachung oder nicht korrigierbaren ECC-Fehlern basieren, die normalerweise durch einen einzelnen DIMM-Fehler verursacht werden, der das Starten von ONTAP verhindert.
+
 .Bevor Sie beginnen
-* Alle anderen Komponenten des Speichersystems müssen ordnungsgemäß funktionieren. Falls nicht, wenden Sie sich vor dem Fortfahren an https://mysupport.netapp.com/site/global/dashboard["NetApp Support"].
+* Stellen Sie sicher, dass alle anderen Komponenten des Speichersystems ordnungsgemäß funktionieren. Falls nicht, wenden Sie sich an https://mysupport.netapp.com/site/global/dashboard["NetApp Support"], bevor Sie fortfahren.“
 * Sie müssen die fehlerhafte FRU-Komponente durch eine Ersatz-FRU-Komponente ersetzen, die Sie von Ihrem Anbieter erhalten haben.
 
 
@@ -29,12 +31,6 @@ Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led
 
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
-Fahren Sie den Regler herunter oder übernehmen Sie ihn mit einer der folgenden Optionen.
-
-[role="tabbed-block"]
-====
-.Option 1: Die meisten Systeme
---
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 
 .Über diese Aufgabe
@@ -97,68 +93,6 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 |===
 
 
---
-.Option 2: Controller befindet sich in einem MetroCluster
---
-Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
-
-* Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE anzeigt, um die Berechtigung und den Zustand zu erhalten, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^].
-* Sie müssen bestätigt haben, dass der MetroCluster-Konfigurationsstatus konfiguriert ist und sich die Knoten in einem aktivierten und normalen Zustand befinden:
-+
-`metrocluster node show`
-
-
-
-.Schritte
-. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung:
-+
-`system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
-
-+
-Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden:
-
-+
-`cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
-
-. Deaktivieren Sie das automatische Giveback von der Konsole des gesunden Controllers:
-+
-`storage failover modify –node local -auto-giveback false`
-
-. Nehmen Sie den beeinträchtigten Controller zur LOADER-Eingabeaufforderung:
-+
-[cols="1,2"]
-|===
-| Wenn der eingeschränkte Controller angezeigt wird... | Dann... 
-
-
- a| 
-Die LOADER-Eingabeaufforderung
- a| 
-Gehen Sie zum nächsten Abschnitt.
-
-
-
- a| 
-Warten auf Giveback...
- a| 
-Drücken Sie Strg-C, und antworten Sie dann `y` Wenn Sie dazu aufgefordert werden.
-
-
-
- a| 
-Eingabeaufforderung des Systems oder Passwort (Systempasswort eingeben)
- a| 
-Übernehmen oder stoppen Sie den beeinträchtigten Regler von der gesunden Steuerung:
-
-`storage failover takeover -ofnode _impaired_node_name_ -halt _true_`
-
-Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
-
-|===
-
-
---
-====
 
 
 == Schritt 2: Entfernen Sie die Steuerung

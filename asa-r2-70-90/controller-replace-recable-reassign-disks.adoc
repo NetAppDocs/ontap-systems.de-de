@@ -27,32 +27,20 @@ Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrie
 ** Wenn „_waiting for Giveback_“ angezeigt wird, drücken Sie die Taste <enter>, melden Sie sich beim Partner-Node an und fahren Sie dann mit dem nächsten Schritt am Ende dieses Abschnitts fort.
 
 
-. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben:
-+
-`storage failover giveback -ofnode _impaired_node_name_`.
-
-. Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut:
-+
-`storage failover modify -node local -auto-giveback true`.
-
-. Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung wiederherstellen/zurücknehmen:
-+
-`system node autosupport invoke -node * -type all -message MAINT=END`.
-
+. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`
+. Wenn das automatische Giveback deaktiviert wurde, aktivieren Sie es erneut: `storage failover modify -node local -auto-giveback _true_`
+. Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung wiederherstellen/zurücknehmen: `system node autosupport invoke -node * -type all -message MAINT=END`
 
 
 --
-.OKM-Verschlüsselung
+.Onboard-Verschlüsselung (OKM)
 --
 Setzt die integrierte Verschlüsselung zurück und setzt den Controller in den normalen Betrieb zurück.
 
 .Schritte
-. Geben Sie an der LOADER-Eingabeaufforderung Folgendes ein:
-+
-`boot_ontap maint`
-
+. Geben Sie in der Loader-Eingabeaufforderung `boot_ontap maint` .
 . Starten Sie das ONTAP-Menü über die Loader-Eingabeaufforderung `boot_ontap menu`, und wählen Sie Option 10.
-. Geben Sie die OKM-Passphrase ein. Sie können diese Passphrase vom Kunden erhalten, oder wenden Sie sich an https://support.netapp.com["NetApp Support"].
+. Geben Sie die OKM-Passphrase ein.
 +
 
 NOTE: Sie werden zweimal zur Eingabe der Passphrase aufgefordert.
@@ -61,48 +49,36 @@ NOTE: Sie werden zweimal zur Eingabe der Passphrase aufgefordert.
 . Geben Sie im Startmenü die Option für den normalen Start ein `1`.
 . Drücken Sie <enter>, wenn _Waiting for Giveback_ angezeigt wird.
 . Schieben Sie das Konsolenkabel zum Partner-Node und melden Sie sich als an `admin`.
-. Nur die CFO-Aggregate zurückgeben (das Root-Aggregat):
+. Nur die CFO-Aggregate zurückgeben (das Root-Aggregat): `storage failover giveback -fromnode local -only-cfo-aggregates _true_`
 +
-`storage failover giveback -fromnode local -only-cfo-aggregates true`
+** Wenn Sie auf Fehler stoßen, wenden Sie sich an https://support.netapp.com["NetApp Support"].
 
+
+. Warten Sie 5 Minuten, nachdem der Giveback-Bericht abgeschlossen ist, und überprüfen Sie den Failover-Status und den Giveback-Status: `storage failover show` Und `storage failover show-giveback`.
+. Synchronisieren und überprüfen Sie den Status der Tasten:
 +
-Wenn Sie auf Fehler stoßen, wenden Sie sich an https://support.netapp.com["NetApp Support"].
-
-. Warten Sie 5 Minuten, nachdem der Giveback-Bericht abgeschlossen ist, und prüfen Sie den Failover-Status und den Giveback-Status:
-+
-`storage failover show` Und `storage failover show-giveback`.
-
-. Schieben Sie das Konsolenkabel zum Ersatzknoten und geben Sie Folgendes ein:
-+
-`security key-manager onboard sync`
-
+.. Bringen Sie das Konsolenkabel wieder zum Ersatzcontroller.
+.. Fehlende Schlüssel synchronisieren: `security key-manager onboard sync`
 +
 
-NOTE: Sie werden aufgefordert, die Cluster-weite Passphrase von OKM für den Cluster einzugeben.
+NOTE: Sie werden aufgefordert, die Cluster-weite Passphrase von OKM für das Cluster einzugeben.
 
-. Überprüfen Sie den Status der Tasten mit folgendem Befehl:
+.. Überprüfen Sie den Status der Schlüssel: `security key-manager key query -restored _false_`
 +
-`security key-manager key query -key-type svm-KEK`.
+Die Ausgabe sollte bei ordnungsgemäßer Synchronisierung keine Ergebnisse zeigen.
 
 +
-Wenn in der Spalte _restored_ alles außer _true_ angezeigt wird, kontaktieren Sie https://support.netapp.com["NetApp Support"].
+Wenn in der Ausgabe Ergebnisse angezeigt werden (die Schlüssel-IDs von Schlüsseln, die nicht in der internen Schlüsseltabelle des Systems vorhanden sind), wenden Sie sich an https://support.netapp.com["NetApp Support"].
 
-. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben:
-+
-`storage failover giveback -ofnode _impaired_node_name_`.
 
-. Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut:
-+
-`storage failover modify -node local -auto-giveback true`.
 
-. Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung wiederherstellen/zurücknehmen:
-+
-`system node autosupport invoke -node * -type all -message MAINT=END`.
-
+. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`
+. Wenn das automatische Giveback deaktiviert wurde, aktivieren Sie es erneut: `storage failover modify -node local -auto-giveback _true_`
+. Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung wiederherstellen/zurücknehmen: `system node autosupport invoke -node * -type all -message MAINT=END`
 
 
 --
-.EKM-Verschlüsselung
+.Externer Schlüsselmanager (EKM)
 --
 Setzt die Verschlüsselung zurück und setzt den Controller wieder in den normalen Betrieb zurück.
 
@@ -133,27 +109,19 @@ NOTE: Wenden Sie sich https://support.netapp.com["NetApp Support"] bei Problemen
 
 . Geben Sie die Informationen an für:
 +
-** Der Dateiinhalt des Clientzertifikats (Client.crt).
-** Der Dateiinhalt des Client-Schlüssels (Client.key).
-** Dateiinhalte der KMIP-Server-CA(s) (CA.pem)
-** Die IP-Adresse für den KMIP-Server.
-** Der Port für den KMIP-Server.
+** Der Dateiinhalt des Clientzertifikats (Client.crt)
+** Der Dateiinhalt des Client-Schlüssels (Client.key)
+** Dateiinhalte der KMIP-Server-CA(s) (CA.pem
+** Die IP-Adresse für den KMIP-Server
+** Der Port für den KMIP-Server
 
 
 . Sobald das System verarbeitet wird, wird das Startmenü angezeigt. Wählen Sie „1“ für den normalen Start.
-. Überprüfen Sie den Übernahmestatus:
-+
-`storage failover show`.
-
-. Stellen Sie den außer Betrieb genommenen Controller wieder ein, indem Sie seine Speicherung zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`.
-. Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut:
-+
-`storage failover modify -node local -auto-giveback true`.
-
-. Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung wiederherstellen/zurücknehmen:
-+
-`system node autosupport invoke -node * -type all -message MAINT=END`.
-
+. Überprüfen Sie den Übernahmestatus: `storage failover show`
+. Stellen Sie sicher, dass alle Core Dumps auf dem reparierten Node gespeichert werden, indem Sie in den erweiterten Modus wechseln `set -privilege advanced` und dann `run local partner nosavecore`.
+. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`
+. Wenn das automatische Giveback deaktiviert wurde, aktivieren Sie es erneut: `storage failover modify -node local -auto-giveback _true_`
+. Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung wiederherstellen/zurücknehmen: `system node autosupport invoke -node * -type all -message MAINT=END`
 
 
 --

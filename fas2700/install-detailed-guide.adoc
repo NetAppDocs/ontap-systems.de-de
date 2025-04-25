@@ -479,13 +479,10 @@ Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
 
 Sie müssen die Controller mithilfe der integrierten Storage-Ports mit den Shelfs verkabeln. NetApp empfiehlt MP-HA-Verkabelung für Systeme mit externem Storage. Wenn Sie ein SAS-Bandlaufwerk haben, können Sie Single-Path-Verkabelung verwenden. Wenn Sie keine externen Shelfs haben, ist die MP-HA-Verkabelung zu internen Laufwerken optional (nicht abgebildet), wenn die SAS-Kabel zusammen mit dem System bestellt werden.
 
+.Bevor Sie beginnen
+* Sie müssen die Shelf-Verbindungen verkabeln und dann beide Controller mit den Laufwerk-Shelfs verkabeln.
+* Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
 
-
-=== Option 1: Kabelspeicherung auf einem HA-Paar mit externen Festplatten-Shelfs
-
-Sie müssen die Shelf-Verbindungen verkabeln und dann beide Controller mit den Laufwerk-Shelfs verkabeln.
-
-Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen.
 
 image::../media/oie_cable_pull_tab_down.png[Kabelanschluss mit Zuglasche unten]
 
@@ -539,12 +536,15 @@ Verbinden Sie jeden Node mit IOM B im Stack
 
 ** Controller 1 Port 0a zu IOM B-Port 1 am ersten Festplatten-Shelf im Stack.
 ** Controller 2 Port 0b zu IOM B-Port 3 auf dem letzten Laufwerk-Shelf im Stack.
+
+
 image:../media/oie_cable_mini_sas_hd_to_mini_sas_hd.png["Mini-SAS-zu-Mini-SAS-Anschluss"]     Kabel Mini-SAS HD auf Mini-SAS HD
 
-
 |===
-+
-Wenn Sie über mehr als einen Festplatten-Shelf-Stack verfügen, lesen Sie die „_Installation and Cabling Guide_“ für den Laufwerk-Shelf-Typ.
+
+
+
+NOTE: Weitere Informationen und Arbeitsblätter zur SAS-Verkabelung finden Sie unter link:../sas3/overview-cabling-rules-examples.html["SAS-Verkabelungsregeln, Arbeitsblätter und Beispiele – Regale mit IOM12-Modulen"]
 
 . Informationen zum Abschließen der Einrichtung des Systems finden Sie unter <<Schritt 5: System-Setup und -Konfiguration abschließen>>
 
@@ -585,12 +585,11 @@ Weitere Informationen finden Sie in der Online-Hilfe Ihres Notebooks.
 video::d61f983e-f911-4b76-8b3a-ab1b0066909b[panopto]
 . Wählen Sie ein ONTAP-Symbol aus, um es zu ermitteln:
 +
-image::../media/drw_autodiscovery_controler_select.png[Wählen Sie ein ONTAP-Symbol aus]
+drw_autodiscensation_controller_select_ieops-1849.svg[ONTAP-Symbol auswählen]
 
 +
 .. Öffnen Sie Den Datei-Explorer.
-.. Klicken Sie im linken Bereich auf Netzwerk.
-.. Mit der rechten Maustaste klicken und Aktualisieren auswählen.
+.. Klicken Sie im linken Fensterbereich auf *Netzwerk*, klicken Sie mit der rechten Maustaste und wählen Sie *Aktualisieren*.
 .. Doppelklicken Sie auf das ONTAP-Symbol, und akzeptieren Sie alle auf dem Bildschirm angezeigten Zertifikate.
 +
 

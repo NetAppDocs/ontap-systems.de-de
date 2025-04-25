@@ -14,6 +14,7 @@ Um auf Komponenten im Controller-Modul zuzugreifen, müssen Sie zunächst das Co
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Trennen Sie die Netzteile des Controller-Moduls von der Quelle.
 . Lösen Sie die Netzkabelhalter, und ziehen Sie anschließend die Kabel von den Netzteilen ab.
+. Ziehen Sie die E/A-Kabel vom Controller-Modul ab.
 . Setzen Sie den Zeigefinger in den Verriegelungsmechanismus auf beiden Seiten des Controller-Moduls ein, drücken Sie den Hebel mit dem Daumen, und ziehen Sie den Controller vorsichtig einige Zentimeter aus dem Gehäuse.
 +
 
@@ -23,6 +24,7 @@ NOTE: Wenn Sie Schwierigkeiten beim Entfernen des Controller-Moduls haben, setze
 image::../media/drw_a250_pcm_remove_install.png[Öffnen des Verriegelungsmechanismus]
 
 +
+[cols="1,4"]
 |===
 
 
@@ -45,6 +47,7 @@ Verriegelungsmechanismus
 image::../media/drw_a250_open_controller_module_cover.png[Öffnen der Abdeckung des Controller-Moduls]
 
 +
+[cols="1,4"]
 |===
 
 
@@ -143,16 +146,13 @@ Die Image-Datei „ungezippte Dienste“ enthält zwei Ordner:
 
 
 .. kopieren Sie den efi-Ordner in das oberste Verzeichnis auf dem USB-Flash-Laufwerk.
-
-
 +
 
 NOTE: Wenn das Service-Image keinen efi-Ordner hat, siehe link:https://kb.netapp.com/onprem/ontap/hardware/EFI_folder_missing_from_Service_Image_download_file_used_for_boot_device_recovery_for_FAS_and_AFF_models["EFI-Ordner fehlt in Service-Image-Download-Datei verwendet für Boot-Gerät Recovery für FAS-und AFF-Modelle^"].
 
 +
-+ das USB-Flash-Laufwerk sollte den efi-Ordner und die gleiche Service Image (BIOS)-Version von dem haben, was der beeinträchtigte Controller läuft.
+Das USB-Flash-Laufwerk sollte den efi-Ordner und die gleiche Service Image (BIOS)-Version des beeinträchtigten Controllers haben.
 
-+
 .. Entfernen Sie das USB-Flash-Laufwerk von Ihrem Laptop.
 .. Wenn Sie dies noch nicht getan haben, den Luftkanal einbauen.
 +
@@ -192,6 +192,7 @@ Stellen Sie sicher, dass Sie das USB-Flash-Laufwerk in den für USB-Geräte geke
 +
 Das Controller-Modul sollte vollständig eingesetzt und mit den Kanten des Gehäuses bündig sein.
 
+.. Schließen Sie die E/A-Kabel des Controller-Moduls wieder an.
 .. Schließen Sie die Netzkabel an die Netzteile an, setzen Sie die Sicherungsmanschette des Netzkabels wieder ein, und schließen Sie dann die Netzteile an die Stromquelle an.
 +
 Das Controller-Modul startet, sobald die Stromversorgung wiederhergestellt ist. Bereiten Sie sich darauf vor, den Bootvorgang zu unterbrechen.

@@ -17,7 +17,10 @@ Nachdem Sie die AFF C30- oder AFF C60-Storage-System-Hardware installiert haben,
 Wenden Sie sich an Ihren Netzwerkadministrator, um Informationen über das Anschließen des Speichersystems an die Netzwerk-Switches zu erhalten.
 
 .Über diese Aufgabe
-* Die Verfahren zur Verkabelung von Cluster/HA und Host-Netzwerk zeigen gemeinsame Konfigurationen. Beachten Sie, dass die jeweilige Verkabelung von den für Ihr Speichersystem bestellten Komponenten abhängt. Ausführliche Informationen zur Konfiguration und zur Steckplatzpriorität finden Sie unter link:https://hwu.netapp.com["NetApp Hardware Universe"^].
+* Die Verfahren zur Verkabelung von Cluster/HA und Host-Netzwerk zeigen gemeinsame Konfigurationen.
++
+Wenn Sie Ihre Konfiguration hier nicht sehen, finden Sie unter link:https://hwu.netapp.com["NetApp Hardware Universe"^]umfassende Informationen zur Konfiguration und Steckplatzpriorität, um das Storage-System zu verkabeln.
+
 * Die Verkabelungsgrafiken haben Pfeilsymbole, die die richtige Ausrichtung (nach oben oder unten) des Kabelsteckers zeigen, wenn ein Anschluss in einen Anschluss eingesetzt wird.
 +
 Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
@@ -61,7 +64,7 @@ NOTE: Die I/O-Modulports e2b und e4b sind nicht verwendet und stehen für die Ho
 image::../media/oie_cable100_gbe_qsfp28.png[Cluster HA 100-GbE-Kabel]
 
 +
-image::../media/drw_isi_a30-50_switchless_2p_100gbe_2card_cabling_ieops-2011.svg[Diagramm der Switch-losen Cluster-Verkabelung bei a30 und a50 mit zwei 100-gbe-io-Modulen]
+image::../media/drw_isi_a30-50_switchless_2p_100gbe_2card_cabling_ieops-2011.svg[Diagramm der Switch-losen Cluster-Verkabelung bei a30 und a60 mit zwei 100-gbe-io-Modulen]
 
 
 
@@ -87,7 +90,7 @@ NOTE: Der Cluster-Interconnect-Verkehr und der HA-Verkehr teilen sich dieselben 
 image::../media/oie_cable100_gbe_qsfp28.png[Cluster HA 100-GbE-Kabel]
 
 +
-image::../media/drw_isi_a30-50_switchless_2p_100gbe_1card_cabling_ieops-1925.svg[Diagramm der Switch-losen Cluster-Verkabelung bei a30 und a50 mit einem 100-gbe-io-Modul]
+image::../media/drw_isi_a30-50_switchless_2p_100gbe_1card_cabling_ieops-1925.svg[Diagramm der Switch-losen Cluster-Verkabelung bei a30 und a60 mit einem 100-gbe-io-Modul]
 
 
 
@@ -122,7 +125,7 @@ NOTE: Die I/O-Modulports e2b und e4b sind nicht verwendet und stehen für die Ho
 image::../media/oie_cable100_gbe_qsfp28.png[Cluster HA 40/100-GbE-Kabel]
 
 +
-image::../media/drw_isi_a30-50_switched_2p_100gbe_2card_cabling_ieops-2013.svg[Diagramm der Switch-Cluster-Verkabelung bei a30 und a50 mit zwei 100-gbe-io-Modulen]
+image::../media/drw_isi_a30-50_switched_2p_100gbe_2card_cabling_ieops-2013.svg[Diagramm der Switch-Cluster-Verkabelung bei a30 und a60 mit zwei 100-gbe-io-Modulen]
 
 
 
@@ -199,7 +202,7 @@ image::../media/drw_isi_a30-50_host_2p_40-100gbe_2card_cabling_ieops-2014.svg[Ve
 *10/25-GbE-Kabel*
 
 +
-image:../media/oie_cable_sfp_gbe_copper.png["GbE SFP Kupfer Connector, Breite=100px"]
+image:../media/oie_cable_sfp_gbe_copper.png["GbE SFP Kupfer Connector"]
 
 +
 image::../media/drw_isi_a30-50_host_2p_40-100gbe_1card_cabling_ieops-1923.svg[Verkabelung zu 40/100-gbe-ethernet-Host-Netzwerk-Switches]

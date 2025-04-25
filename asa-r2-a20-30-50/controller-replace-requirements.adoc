@@ -13,7 +13,7 @@ summary: Bevor Sie den Controller in Ihrem ASA A20, ASA A30 oder ASA A50-System 
 [role="lead"]
 Bevor Sie den Controller in Ihrem ASA A20, ASA A30 oder ASA A50-System austauschen, müssen Sie sicherstellen, dass Sie die erforderlichen Voraussetzungen für einen erfolgreichen Austausch erfüllen. Dazu gehört die Überprüfung aller anderen Komponenten im System auf ordnungsgemäße Funktion, die Überprüfung, ob der richtige Ersatz-Controller vorhanden ist, und das Speichern der Konsolenausgabe des Controllers in einer Textprotokolldatei.
 
-Überprüfen Sie die Anforderungen und Überlegungen beim Austausch des Controllers.
+Sie müssen die Anforderungen und Überlegungen für den Controller-Austausch überprüfen.
 
 
 
@@ -21,7 +21,6 @@ Bevor Sie den Controller in Ihrem ASA A20, ASA A30 oder ASA A50-System austausch
 
 * Alle Regale müssen ordnungsgemäß funktionieren.
 * Der gesunde Regler muss in der Lage sein, den zu ersetzenden Regler zu übernehmen (bezeichnet in diesem Verfahren als „`eingeschränkte Steuerung`“).
-* Wenn sich Ihr System in einer MetroCluster-Konfiguration befindet, müssen Sie den Abschnitt überprüfen https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/concept_choosing_the_correct_recovery_procedure_parent_concept.html["Auswahl des richtigen Wiederherstellungsverfahrens"] Um zu bestimmen, ob Sie dieses Verfahren verwenden sollten.
 * Sie müssen einen Controller durch einen Controller desselben Modelltyps ersetzen. Sie können Ihr System nicht aktualisieren, indem Sie einfach den Controller austauschen.
 * Im Rahmen dieses Verfahrens können keine Laufwerke oder Shelfs geändert werden.
 * Sie müssen immer die Konsolenausgabe des Controllers in einer Textprotokolldatei erfassen.

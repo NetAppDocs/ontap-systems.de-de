@@ -55,7 +55,7 @@ image::../media/drw_ssn_label.png[Beispiel für die Seriennummer des Systems]
 In der folgenden Tabelle sind die Kabeltypen aufgeführt, die Sie möglicherweise erhalten können. Wenn Sie ein Kabel erhalten, das nicht in der Tabelle aufgeführt ist, lesen Sie die link:https://hwu.netapp.com["NetApp Hardware Universe"^] Um das Kabel zu lokalisieren und dessen Verwendung zu identifizieren.
 
 +
-[cols="1,2,1,2"]
+[cols="1,2,2,2"]
 |===
 | Steckverbindertyp | Teilenummer und Länge | Kabeltyp... | Für... 
 
@@ -64,28 +64,19 @@ In der folgenden Tabelle sind die Kabeltypen aufgeführt, die Sie möglicherweis
 100-GbE-Kabel
  a| 
 X6211A-05 (112-00595), 0,5 m
- a| 
-image:../media/oie_cable100_gbe_qsfp28.png["100-GbE-QSFP28-Anschluss"]
- a| 
-HA Interconnect
-
-
-
- a| 
-X6211A-05 (112-00595), 0,5 m;
 
 X6211-1 (112-00573), 1 m
- a| 
-Cluster Interconnect-Netzwerk
 
-
-
- a| 
-X6211-2 (112-00574), 2 m;
+X66211-2 (112-00574), 2 m
 
 X6211-5 (112-00576), 5 m
  a| 
-Storage, Daten
+image:../media/oie_cable100_gbe_qsfp28.png["100-GbE-QSFP28-Anschluss"]
+ a| 
+** HA Interconnect
+** Cluster Interconnect-Netzwerk
+** Storage, Daten
+
 
 
 
@@ -96,7 +87,10 @@ X6566B-3-R6 (112-00300), 3 m;
 
 X6566B-5-R6 (112-00301), 5 m
  a| 
-Daten
+image:../media/oie_cable100_gbe_qsfp28.png["10-GbE-QSFP28-Anschluss"]
+ a| 
+** Daten
+
 
 
 
@@ -107,7 +101,10 @@ X66240A-2 (112-00598), 2 m;
 
 X66240A-5 (112-00600), 5 m
  a| 
-Daten
+image:../media/oie_cable100_gbe_qsfp28.png["25-GbE-QSFP28-Anschluss"]
+ a| 
+** Daten
+
 
 
 
@@ -118,7 +115,8 @@ Keine Angabe
  a| 
 image:../media/oie_cable_rj45.png["RJ-45-Kabelanschluss"]
  a| 
-Vereinfachtes
+** Vereinfachtes
+
 
 
 
@@ -135,6 +133,8 @@ X66250-30 (112-00347) 30 m
  a| 
 image:../media/oie_cable_fc_optical.png["OIE Glasfaserkabel für Fibre Channel"]
  a| 
+** Netzwerk
+
 
 
 
@@ -145,7 +145,8 @@ Keine Angabe
  a| 
 image:../media/oie_cable_micro_usb.png["Micro-USB-Anschluss"]
  a| 
-Konsolenverbindung während der Software-Einrichtung
+** Konsolenverbindung während der Software-Einrichtung
+
 
 
 
@@ -156,7 +157,7 @@ Keine Angabe
  a| 
 image:../media/oie_cable_power.png["Stromkabel"]
  a| 
-System einschalten
+Anschließen der Netzteileinheiten an die Stromquelle
 
 |===
 . Laden Sie die herunter, und füllen Sie die aus link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2839002["Cluster-Konfigurationsdokument"^].
@@ -234,8 +235,9 @@ HA Interconnect Ports verkabeln:
 
 ** e0b bis e0b
 ** e1b bis e1b
-image:../media/drw_affa800_ha_pair_cabling.png["HA-Paar-Verkabelung"]
 
+
+image:../media/drw_affa800_ha_pair_cabling.png["HA-Paar-Verkabelung"]
 
 
 
@@ -246,8 +248,9 @@ Verkabeln Sie die Cluster-Interconnect-Ports:
 
 ** e0a an e0a
 ** e1a bis e1a
-image:../media/drw_affa800_tnsc_clust_cabling.png["Cluster-Interconnect-Verkabelung in einem 2-Node-Cluster ohne Switches"]
 
+
+image:../media/drw_affa800_tnsc_clust_cabling.png["Cluster-Interconnect-Verkabelung in einem 2-Node-Cluster ohne Switches"]
 
 
 
@@ -309,8 +312,9 @@ HA Interconnect Ports verkabeln:
 
 ** e0b bis e0b
 ** e1b bis e1b
-image:../media/drw_affa800_ha_pair_cabling.png["HA-Paar-Verkabelung"]
 
+
+image:../media/drw_affa800_ha_pair_cabling.png["HA-Paar-Verkabelung"]
 
 
 
@@ -318,8 +322,11 @@ image:../media/drw_affa800_ha_pair_cabling.png["HA-Paar-Verkabelung"]
 image:../media/icon_square_2_green.png["Legende Nummer 2"]
  a| 
 Verkabeln Sie die Cluster-Interconnect-Ports mit den 100-GbE-Cluster-Interconnect-Switches.
+
 ** e0a
 ** e1a
+
+
 image:../media/drw_affa800_switched_clust_cabling.png["Cluster-Interconnect-Verkabelung"]
 
 
@@ -547,12 +554,11 @@ Weitere Informationen finden Sie in der Online-Hilfe Ihres Notebooks.
 video::d61f983e-f911-4b76-8b3a-ab1b0066909b[panopto]
 . Wählen Sie ein ONTAP-Symbol aus, um es zu ermitteln:
 +
-image::../media/drw_autodiscovery_controler_select.png[Wählen Sie ein ONTAP-Symbol aus]
+image::../media/drw_autodiscovery_controler_select_ieops-1849.svg[Wählen Sie ein ONTAP-Symbol aus]
 
 +
 .. Öffnen Sie Den Datei-Explorer.
-.. Klicken Sie im linken Fensterbereich auf *Netzwerk*.
-.. Klicken Sie mit der rechten Maustaste, und wählen Sie *Aktualisieren*.
+.. Klicken Sie im linken Fensterbereich auf *Netzwerk*, klicken Sie mit der rechten Maustaste und wählen Sie *Aktualisieren*.
 .. Doppelklicken Sie auf das ONTAP-Symbol, und akzeptieren Sie alle auf dem Bildschirm angezeigten Zertifikate.
 +
 
