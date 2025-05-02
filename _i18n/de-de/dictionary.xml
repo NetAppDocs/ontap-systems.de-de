@@ -7996,20 +7996,17 @@ SFP+ (Target/Initiator)</block>
   <block id="4367e3d6fa33a8e5340bcdfaf20e76b1" category="list-text">Hot-Hinzufügen des zweiten Shelf zu einem HA-Paar mit zwei RoCE-fähigen I/O-Modulen pro Controller.</block>
   <block id="bd7b27778a055163b7315acc047708fd" category="list-text">Wenn Sie während des laufenden Betriebs ein Shelf mit einem Satz RoCE-fähiger Ports (ein RoCE-fähiges I/O-Modul) in jedem Controller-Modul hinzufügen, und dies das einzige NS224-Shelf in Ihrem HA-Paar ist, führen Sie die folgenden Teilschritte durch.</block>
   <block id="7326450dfaf2d352b15c1dbb36a9010e" category="admonition">Bei diesem Schritt wird davon ausgegangen, dass Sie das RoCE-fähige I/O-Modul in Steckplatz 11 installiert haben.</block>
-  <block id="f9ba636c0d9fc6353c91cac13fe6290c" category="image-alt">Verkabelung für AFF A70 oder A90 mit einem Shelf und einem IO-Modul</block>
   <block id="1d99994321fcf88aba221cbb6612805a" category="admonition">Bei diesem Schritt wird davon ausgegangen, dass Sie die RoCE-fähigen I/O-Module in den Steckplätzen 11 und 8 installiert haben.</block>
   <block id="220b4e5517a1a5b99f0642ce282c3975" category="list-text">Verkabeln Sie den NSM A-Port e0a mit dem Controller A-Steckplatz 11, Port A (e11a).</block>
   <block id="635ff36fada70d6b9a46124ec04022cf" category="list-text">Verkabeln Sie den NSM A-Port e0b mit Controller B-Steckplatz 8, Port b (e8b).</block>
   <block id="3adcb5d3f00489780b17f91dbcf4c8b6" category="list-text">Verbinden Sie den NSM B-Port e0a mit Controller B-Steckplatz 11, Port A (e11a).</block>
   <block id="fed38315c77f3f617a7a61ed019eb467" category="list-text">Verkabeln Sie den NSM B-Port e0b mit Controller A-Steckplatz 8, Port b (e8b).</block>
   <block id="8b2cc73a271f9ec9f419e138f66cb109" category="paragraph">Die folgende Abbildung zeigt die Verkabelung für ein Hot-Added Shelf mit zwei RoCE-fähigen I/O-Modulen pro Controller-Modul:</block>
-  <block id="0fd5a3b540c1af5ae188f141b2f40c24" category="image-alt">Verkabelung für AFF A70 oder A90 mit einem Shelf und zwei IO-Modulen</block>
   <block id="efd179e747ea06abffaa97721b0cc372" category="list-text">Verkabeln Sie den NSM A-Port e0a mit dem Controller A-Steckplatz 8, Port A (e8a).</block>
   <block id="9db08de14bb838886cf8eaaee8575093" category="list-text">Verkabeln Sie den NSM A-Port e0b mit Controller B-Steckplatz 11, Port b (e11b).</block>
   <block id="e227bb2c8482a8ac7a342596ddc812fe" category="list-text">Verbinden Sie den NSM B-Port e0a mit Controller B-Steckplatz 8, Port A (e8a).</block>
   <block id="6d4a579eaf72f5aec95723d499d76fe9" category="list-text">Verkabeln Sie den NSM B-Port e0b mit Controller A-Steckplatz 11, Port b (e11b).</block>
   <block id="ae14ce538d268aca5ec54fbb093b2156" category="paragraph">Die folgende Abbildung zeigt die Verkabelung für zwei Hot-Added Shelf mit zwei RoCE-fähigen I/O-Modulen pro Controller-Modul:</block>
-  <block id="25862846eedff523b089999508c204b1" category="image-alt">Verkabelung für AFF A70 oder A90 mit zwei Einschüben und zwei IO-Modulen</block>
   <block id="14ac662b33a52d48f6573c07b50e5b8f" category="list-text">Überprüfen Sie mit<block ref="7064c89577900622f24a070c24ebbaa7" category="inline-link-rx"></block>.</block>
   <block id="58eaebf972358f1cf03d386a4ade1a0f" category="paragraph-title">Was kommt als Nächstes?</block>
   <block id="8d39c366d0f2a2847eeab7a904800822" category="paragraph">Wenn Sie die automatische Laufwerkszuweisung als Teil der Vorbereitung für dieses Verfahren deaktiviert haben, müssen Sie manuell die Laufwerkseigentümer festlegen und die automatische Laufwerkszuweisung ggf. erneut aktivieren. Gehen Sie zu <block ref="27f0c709ab4d9ea809b0da6fd9c1c251" category="inline-link-macro-rx"></block>.</block>
@@ -8023,48 +8020,36 @@ SFP+ (Target/Initiator)</block>
   <block id="244addd6f2bc2e043852c2e18eeb5621" category="list-text">Hinzufügen eines dritten Shelf zu einem HA-Paar mit vier RoCE-fähigen I/O-Modulen pro Controller während des laufenden Betriebs (Sie haben ein drittes und viertes I/O-Modul installiert und verbinden das dritte Shelf mit dem dritten und vierten I/O-Modul).</block>
   <block id="72cdf939e98d17baf87d0a5a64dfcea8" category="list-text">Hinzufügen eines vierten Shelfs zu einem HA-Paar mit vier RoCE-fähigen I/O-Modulen pro Controller während des laufenden Betriebs (Sie haben ein viertes I/O-Modul installiert und das dritte Shelf erneut mit den dritten und vierten I/O-Modulen verbunden oder das dritte Shelf bereits mit den dritten und vierten I/O-Modulen verkabelt. Sie verbinden das vierte Shelf mit dem dritten und vierten I/O-Modul).</block>
   <block id="b5fb112065a7304ad93afe5e3c7fa849" category="paragraph">In der folgenden Abbildung ist die Verkabelung des zweiten Shelf im HA-Paar mit zwei RoCE-fähigen I/O-Modulen pro Controller hervorgehoben:</block>
-  <block id="ea0cc2be4039f5636ca9de5e2c7a3940" category="image-alt">Verkabelung für AFF A1K mit zwei Shelfs und zwei I/O-Modulen</block>
   <block id="7190ee5c0c8079e24da44f24c6b7abbc" category="list-text">Wenn das NS224-Shelf das dritte NS224-Shelf im HA-Paar mit drei RoCE-fähigen I/O-Modulen pro Controller ist, führen Sie die folgenden Teilschritte durch. Andernfalls fahren Sie mit dem nächsten Schritt fort.</block>
   <block id="67a32de8a36abcac3887051fb422a5f5" category="list-text">Verkabeln Sie das Shelf NSM A-Port e0a mit Controller A, Steckplatz 9, Port A (e9a).</block>
   <block id="b94b22c566c53666c9eb824858482f94" category="list-text">Verkabeln Sie den Port e0b des Shelf NSM A mit Controller B-Steckplatz 9, Port b (e9b).</block>
   <block id="daa2e224b274ef312de5853c6cbffaf6" category="list-text">Verkabeln Sie den Shelf NSM B-Port e0a mit Controller B-Steckplatz 9, Port A (e9a).</block>
   <block id="3a8f2e391b6044dec7d6ef6c3e9dda69" category="list-text">Verkabeln Sie den Shelf NSM B-Port e0b mit Controller A-Steckplatz 9, Port b (e9b).</block>
   <block id="6c6e97e4c29594c5856e13f4b1a8be0c" category="paragraph">In der folgenden Abbildung ist die Verkabelung des dritten Shelf im HA-Paar mit drei RoCE-fähigen I/O-Modulen pro Controller hervorgehoben:</block>
-  <block id="94213ae2609c82c94807004beab91de1" category="image-alt">Verkabelung für AFF A1K mit drei Shelfs und drei IO-Modulen</block>
   <block id="46e04d93b6d495a5235036857998eae9" category="list-text">Wenn das NS224-Shelf das dritte NS224-Shelf im HA-Paar mit vier RoCE-fähigen I/O-Modulen pro Controller ist, führen Sie die folgenden Teilschritte durch. Andernfalls fahren Sie mit dem nächsten Schritt fort.</block>
   <block id="abb0dbc2abeae0d456ed2095b4c9ed12" category="list-text">Verkabeln Sie den Port e0b des Shelf NSM A mit Controller B-Steckplatz 8, Port b (e8b).</block>
   <block id="8ff8aa3f78832bf6ceceeea539763fec" category="list-text">Verkabeln Sie den Shelf NSM B-Port e0b mit Controller A-Steckplatz 8, Port b (e8b).</block>
   <block id="863764690b094c2d6a28b8edc2afba72" category="paragraph">In der folgenden Abbildung ist die Verkabelung des dritten Shelf im HA-Paar mit vier RoCE-fähigen I/O-Modulen pro Controller hervorgehoben:</block>
-  <block id="f9d0d9976d1ff7ee0097da8e1b7fb3c2" category="image-alt">Verkabelung für AFF A1K mit drei Shelfs und vier I/O-Modulen</block>
   <block id="3bd0afb8978e34368879d152c8aec251" category="list-text">Wenn das NS224-Shelf, das Sie beim Hinzufügen verwenden, das vierte NS224-Shelf im HA-Paar mit vier RoCE-fähigen I/O-Modulen pro Controller ist, führen Sie die folgenden Teilschritte durch.</block>
   <block id="d10794f4d3cca7a2993e8d2d6a12cd28" category="list-text">Verkabeln Sie das Shelf NSM A-Port e0a mit Controller A, Steckplatz 8, Port A (e8a).</block>
   <block id="ed24faf41d7d53c3a668df6e070aca6d" category="list-text">Verkabeln Sie den Shelf NSM B-Port e0a mit Controller B-Steckplatz 8, Port A (e8a).</block>
   <block id="551d2fc9e8e1159b84b9c23da6d27984" category="paragraph">In der folgenden Abbildung ist die Verkabelung für das vierte Shelf im HA-Paar mit vier RoCE-fähigen I/O-Modulen pro Controller hervorgehoben:</block>
-  <block id="40d57aad6b502bb35f6aa64821041f6a" category="image-alt">Verkabelung für AFF A1K mit vier Shelfs und vier I/O-Modulen</block>
   <block id="8f5d4ff45922bd2a0a4b4ca26b784653" category="paragraph">Wenn zusätzlicher Storage benötigt wird, können Sie im laufenden Betrieb maximal ein NS224-Shelf zu einem AFF A250 oder AFF C250 HA-Paar hinzufügen.</block>
   <block id="3c8f15ce2288517ffd28cbab07b4cd4f" category="paragraph">Ob Sie ein NS224 Shelf für ein Hot-Add verkabeln, hängt davon ab, ob Sie ein AFF A400- oder AFF C400 HA-Paar besitzen.</block>
   <block id="95e9c90f47d7134271c5de6f5d8d41f5" category="paragraph">*Kabel-Shelf zu einem AFF A400 HA-Paar*</block>
   <block id="e47d066c3638efab14a13923e89b312a" category="paragraph">Bei einem AFF A400 HA-Paar können Sie bis zu zwei Shelves im laufenden Betrieb hinzufügen und Onboard Ports e0c/e0d und Ports in Steckplatz 5 je nach Bedarf verwenden.</block>
   <block id="d4e171bee30acee3b4097e177f087224" category="list-text">Wenn Sie jedem Controller ein Shelf Hot-hinzufügen und dabei nur einen Satz RoCE-fähiger Ports (Onboard RoCE-fähige Ports) verwenden, und dies das einzige NS224-Shelf in Ihrem HA-Paar ist, führen Sie die folgenden Teilschritte durch.</block>
   <block id="4df6de3fb6b5eece4bd1d42f75e5ae3d" category="paragraph">In der folgenden Abbildung wird die Verkabelung für ein Hot-Added Shelf mit einem Satz RoCE-fähiger Ports an jedem Controller gezeigt:</block>
-  <block id="672cc22dbbc7622be2f56d3dce98ffcd" category="image-alt">Verkabelung für eine AFF A400 mit einem NS224 Shelf und einem Satz integrierter Ports</block>
   <block id="306fa6b2ff7e9909c6a2a302a380875a" category="list-text">Wenn Sie jedem Controller ein oder zwei Shelfs während des laufenden Einsatzes mit zwei Sets von RoCE-fähigen Ports (Onboard- und PCIe-Karten-RoCE-fähigen Ports) hinzufügen, führen Sie die folgenden Teilschritte durch.</block>
-  <block id="303de4b6b1481e40bb1b8e2368a123b6" category="image-alt">Verkabelung für eine AFF A400 mit zwei NS224-Shelfs und einem Satz integrierter Ports und einem Satz Ports an PCIe-Karten</block>
   <block id="41132f8bc7d00935b8687c18c2c9e35d" category="list-text">Wenn Sie die automatische Laufwerkszuweisung als Teil der Vorbereitung für dieses Verfahren deaktiviert haben, müssen Sie manuell die Laufwerkseigentümer festlegen und bei Bedarf die automatische Laufwerkszuweisung wieder aktivieren. Siehe <block ref="27f0c709ab4d9ea809b0da6fd9c1c251" category="inline-link-macro-rx"></block>.</block>
   <block id="406a6a05dc05bb651919c02b9570c743" category="paragraph">*Kabel-Shelf zu einem AFF C400 HA-Paar*</block>
   <block id="9d6636aae443fd88eb415b0a814eb7ed" category="paragraph">Bei einem AFF C400 HA-Paar können Sie bei Bedarf bis zu zwei Shelfs im laufenden Betrieb hinzufügen und Ports in Steckplatz 4 und 5 verwenden.</block>
   <block id="b6c9c1f2bae5bda1b2ec0ca34865478a" category="list-text">Wenn Sie bei jedem Controller ein Shelf mit einem Satz RoCE-fähiger Ports hinzufügen und dies das einzige NS224-Shelf in Ihrem HA-Paar ist, führen Sie die folgenden Teilschritte durch.</block>
-  <block id="a3c44bf0089bcb64a39869e3500ee7be" category="image-alt">Verkabelung für ein AFF C400 mit einem NS224-Shelf und einem Satz PCIe-Karten-Ports</block>
   <block id="c4dcb8322178395823ac67e2ea704340" category="list-text">Wenn Sie ein oder zwei Shelfs im laufenden Betrieb mit zwei Sets von RoCE-fähigen Ports an jedem Controller hinzufügen, führen Sie die folgenden Teilschritte durch.</block>
-  <block id="8e60b7b6a9c9e9483da2fb013ea4987b" category="image-alt">Verkabelung für einen AFF C400 mit zwei NS224-Einschüben und zwei PCIe-Karten-Ports</block>
   <block id="8b27019cea28c7866ff81a933ac7c02c" category="paragraph">Wie Sie ein NS224-Shelf in einem AFF A800 oder AFF C800 HA-Paar verkabeln, hängt von der Anzahl der hinzuzufüenden Shelfs und der Anzahl der RoCE-fähigen Port-Sets (ein oder zwei), die Sie auf den Controllern verwenden, ab.</block>
   <block id="e6960ae3a6a92d53555f3471da322c41" category="list-text">Wenn Sie bei Bedarf ein Shelf mit einem Satz RoCE-fähiger Ports (eine RoCE-fähige PCIe-Karte) an jedem Controller hinzufügen, und dies das einzige NS224-Shelf in Ihrem HA-Paar ist, führen Sie die folgenden Teilschritte durch.</block>
   <block id="c55555ebd43bc616a6c859bbbad79ac8" category="paragraph">In der folgenden Abbildung wird die Verkabelung für ein Hot-Added Shelf mit einer RoCE-fähigen PCIe-Karte auf jedem Controller gezeigt:</block>
-  <block id="e21205a57cd96b3d3b2ad37564df9874" category="image-alt">Verkabelung für eine AFF A800 oder AFF C800 mit einem NS224-Shelf und einer PCIe-Karte</block>
   <block id="6f313b51958d9ef2aa65c80a9b64de6b" category="list-text">Wenn Sie jedem Controller ein oder zwei Shelfs im laufenden Betrieb mit zwei Sets von RoCE-fähigen Ports (zwei RoCE-fähige PCIe-Karten) hinzufügen, führen Sie die entsprechenden Teilschritte durch.</block>
-  <block id="b44d424c15322ecb36a077b677527005" category="image-alt">Verkabelung für einen AFF A900 mit zwei NS224-Shelfs und zwei IO-Modulen</block>
-  <block id="e896f649bc7a69947f85c288e5cb0b96" category="image-alt">Verkabelung für einen AFF A900 mit drei NS224-Shelfs und vier IO-Modulen</block>
-  <block id="325058948df9e92ff2c1577aeb745fc0" category="image-alt">Verkabelung für einen AFF A900 mit vier NS224-Shelfs und vier IO-Modulen</block>
   <block id="40e6ceebb2eb1677b588bd7f52f95206" category="paragraph">Shelf-ID-Nummer</block>
   <block id="42a63d570d38a93d3cbaddcfd266a58c" category="paragraph">Zugriffstaste für Shelf-ID</block>
   <block id="d6f7de8608837079f0d0dd7fa668c457" category="list-text">Überprüfen Sie den Zustand Ihres Clusters. Weitere Informationen finden Sie im<block ref="9f193d2818f839c9575e0a6969820fd9" category="inline-link-rx"></block> KB-Artikel.</block>
@@ -8572,7 +8557,6 @@ SFP+ (Target/Initiator)</block>
   <block id="cada3ae8b9b850f4721595b91f8ab383" category="doc">Schritt 1: Den Controller wieder zurücknehmen</block>
   <block id="f4c083c41633c63a72a1bbce7db1c159" category="sidebar">Controller zurückgeben</block>
   <block id="a39e0fbfb2db42a80ba7546850d8b5c6" category="paragraph"><block ref="a39e0fbfb2db42a80ba7546850d8b5c6" category="inline-link-rx"></block></block>
-  <block id="4c32ebd39f3a998e8ed434a92fb2337e" category="image-alt">Verkabelung für ein AFF A250 C250 oder FAS500f mit einem NS224-Shelf und einem Satz PCIe-Karten-Ports</block>
   <block id="3512d92434ff4ef9e4eb4253b21a863e" category="image-alt">Die Kabel werden mit der Zuglasche des Steckers nach oben verlegt</block>
   <block id="fa8057e66f11f58b193c0063c5f89d0f" category="image-alt">Standort der NS224 NSM100-Modulports e0a und e0b</block>
   <block id="21631ea576ae592d82bfa53578687d4b" category="image-alt">Betriebsanzeige-LED des Bedienfelds</block>
@@ -9060,15 +9044,8 @@ SFP+ (Target/Initiator)</block>
   <block id="7bf4e86b8c2f5ff036932a932f9dc604" category="list-text"><block ref="7bf4e86b8c2f5ff036932a932f9dc604" category="inline-link-rx"></block></block>
   <block id="3ab6aa369c3f9b8276a331929da6f82c" category="example-title">Kabeleinschub zu ASA A1K</block>
   <block id="5085ff6c350861af4448d82a2c958fe8" category="paragraph">Bei laufendem Betrieb können Sie bis zu drei zusätzliche NS224 Shelfs (also insgesamt vier Shelfs) zu einem ASA A1K HA-Paar hinzufügen.</block>
-  <block id="b96506939d3be5ee82870422bae11f18" category="image-alt">Verkabelung für ASA A1K mit zwei Shelfs und zwei I/O-Modulen</block>
-  <block id="7c5aa1be4042527c8f9979e790cb45ad" category="image-alt">Verkabelung für ASA A1K mit drei Shelfs und drei IO-Modulen</block>
-  <block id="09bb2c93b169f0c519beed078ec84db3" category="image-alt">Verkabelung für ASA A1K mit drei Shelfs und vier I/O-Modulen</block>
-  <block id="568d158739474681892c0a2e2456188d" category="image-alt">Verkabelung für ASA A1K mit vier Shelfs und vier I/O-Modulen</block>
   <block id="ae9e439bbd5c00f8b8a1bc7a935729c7" category="example-title">Kabeleinschub zu ASA A70 oder ASA A90</block>
   <block id="9e4b32259f721cc54024969657de5534" category="paragraph">Wenn zusätzlicher Storage (zum internen Shelf) benötigt wird, können Sie im laufenden Betrieb bis zu zwei NS224 Shelfs zu einem ASA A70 oder ASA A90 HA-Paar hinzufügen.</block>
-  <block id="087914c8dfa7abbb50d9c6d8ec5daab1" category="image-alt">Verkabelung für ASA A70 oder A90 mit einem Shelf und einem IO-Modul</block>
-  <block id="1bc9489d5803221329c048bb065c42ec" category="image-alt">Verkabelung für ASA A70 oder A90 mit einem Shelf und zwei IO-Modulen</block>
-  <block id="cdd4188b076dc68d9ffe52ac80b230c6" category="image-alt">Verkabelung für ASA A70 oder A90 mit zwei Einschüben und zwei IO-Modulen</block>
   <block id="55ec693931401ff7a634100e33ff8cfd" category="doc">Neuerungen bei ONTAP Hardwaresystemen</block>
   <block id="ec6e72d1c4bb7dccdc62b6caf35c95f7" category="sidebar">Dokumentation zu ONTAP Hardwaresystemen</block>
   <block id="64f78e10c5d8a4db6f25299bf9a418cd" category="sidebar">Systeme der AFF A-Series und C-Series wurden entwickelt, damit Unternehmen ihre Infrastruktur transformieren und datenfokussierte Strategien vorantreiben können.</block>
@@ -9669,10 +9646,6 @@ SFP+ (Target/Initiator)</block>
   <block id="e726d5f098bf18b53d3d464c11fbe033" category="list-text">Wenn AutoSupport aktiviert ist, stellen Sie die automatische Case-Erstellung wieder her (heben Sie die Unterdrückung auf): System Node AutoSupport Invoke -Node * -type all -message MAINT=END</block>
   <block id="975c4856a4750ba558520ec8a4820a30" category="list-text">Wenn Sie ein NIC-Modul installiert haben, geben Sie den Verwendungsmodus für jeden Port als _Network_ an:<block ref="2318bc4fadd0b94ffa92c4a515df2262" prefix=" " category="inline-code"></block></block>
   <block id="b6d91a8f20eef2bd8b5f445d19459cac" category="list-text">Wiederholen Sie diese Schritte für den anderen Controller.</block>
-  <block id="fbff7da02a9769667db9e912fa36fc5e" category="paragraph">Wenn zusätzlicher Storage (zum internen Shelf) benötigt wird, können Sie im laufenden Betrieb bis zu zwei NS224-Shelfs zu einem AFF A20-, AFF A30-, AFF C30-, AFF A50- oder AFF C60-HA-Paar hinzufügen.</block>
-  <block id="73a95c42a81e9be601403e3a9d4a84c9" category="list-text">Bei diesem Verfahren wird vorausgesetzt, dass Ihr HA-Paar nur internen Speicher hat (keine externen Regale) und dass Sie entweder:</block>
-  <block id="c6e5816c4606aead75e5bf161bd98726" category="list-text">Hinzufügen eines zusätzlichen Shelfs für das AFF A20 im laufenden Betrieb</block>
-  <block id="11e9efba28ae2ed6dc6e8d713d0a9d85" category="list-text">Und es können bis zu zwei zusätzliche Shelfs und zwei RoCE-fähige I/O-Module in jedem Controller für AFF A30, AFF C30, AFF A50 oder AFF C60 hinzugefügt werden.</block>
   <block id="4a09af6ecaf81ef3c2832bb75c6a0661" category="list-text">Diese Systeme sind mit NS224-Shelfs mit NSM100-Modulen und NS224-Shelfs mit NSM100B-Modulen kompatibel. Um sicherzustellen, dass Sie die Controller mit den richtigen Ports verkabeln, ersetzen Sie das „X“ in jedem Diagramm durch die richtige Portnummer für Ihr Modul:</block>
   <block id="d6df784a5f01190c34ccccae7152455a" category="cell">Modultyp</block>
   <block id="0ef8def66b79f6a75efa2dde40c34190" category="cell">Anschlusskennzeichnung</block>
@@ -9687,7 +9660,6 @@ SFP+ (Target/Initiator)</block>
   <block id="4719f083a14108e1749d33a162c3f72e" category="list-text">Kabel-Shelf-Port NSM A EXB mit Controller B-Steckplatz 3, Port b (e3b).</block>
   <block id="e12dd7341a7320b1bfee16cf7817ae73" category="list-text">Kabel-Shelf-Port NSM B Exa zu Controller B-Steckplatz 3, Port A (e3a).</block>
   <block id="36eb4fa8319a2d5789a89ff95d28ecb4" category="list-text">Kabel-Shelf-Port NSM B EXB mit Controller A-Steckplatz 3, Port b (e3b).</block>
-  <block id="4d6aa4e10ec4c72ec3a386b483422bc8" category="image-alt">Verkabelung für AFF A20</block>
   <block id="d6dc171c9f98fe17e814fd05d2ee1489" category="admonition">Bei diesem Schritt wird davon ausgegangen, dass Sie die RoCE-fähigen I/O-Module in den Steckplätzen 3 und 1 installiert haben.</block>
   <block id="e8becaef69668c291a5f960c6cd5f04e" category="list-text">Kabel NSM A Port Exa zu Controller A Steckplatz 3 Port A (e3a).</block>
   <block id="5d0425db587b395e698ec97c99c625fc" category="list-text">Kabel NSM A Port EXB zu Controller B Steckplatz 1 Port b (e1b).</block>
@@ -10373,7 +10345,6 @@ SFP+ (Target/Initiator)</block>
   <block id="dafdc51bcfddfb75cdc104244fa42b60" category="doc">Ersetzen Sie den Echtzeitakku AFF C80</block>
   <block id="0c760c78e9d0c008701a3538ed8f1c85" category="doc">Ersetzen Sie das System-Management-Modul – AFF C80</block>
   <block id="0e0493531094a28281ba5f32c328ac63" category="paragraph">Ihr Hardwaresystem ist möglicherweise mit NS224-Shelfs mit NSM100-Modulen und NS224-Shelfs mit NSM100B-Modulen kompatibel. Informationen zur Überprüfung der Kompatibilität und der Portnamen für Ihre Hardware und Shelves finden Sie unter<block ref="ed4326c3351d8ac0e334b8b4d9b37c82" category="inline-link-rx"></block>.</block>
-  <block id="c97d3a72e7c1692c1c5f56d517b82c8c" category="example-title">Kabel-Shelf zu AFF A20, AFF A30, AFF A50, AFF C30 oder AFF C60</block>
   <block id="494fa596205dff234fa0bdbd9d667c60" category="example-title">Kabel-Shelf zu AFF A70, AFF A90 oder AFF C80</block>
   <block id="cfa4ea65df4b282eb8322ca03dbd679d" category="inline-link-macro">Switch-Attached-Verkabelungsleitfaden</block>
   <block id="d8ddb474e138beeebfa487dca0fe0955" category="list-text">Dieses Verfahren gilt nur für Direct-Attached Storage. Anweisungen zum Schalterspeicher finden Sie in unserer <block ref="655fd8ce12b9f1cd7287415659488f07" category="inline-link-macro-rx"></block>.</block>
@@ -10614,7 +10585,6 @@ SFP+ (Target/Initiator)</block>
   <block id="dbc74f369dbf214b25d0f839fd4cd2b0" category="list-text">Automatisches Giveback wiederherstellen, wenn Sie es deaktiviert haben:</block>
   <block id="37e73c8cf9d7d3b4aeaa58f23b2fcb81" category="paragraph">Nachdem Sie Ihr AFF A1K Storage-System eingeschaltet haben, können Sie Ihr Cluster-Netzwerk erkennen und ein ONTAP Cluster einrichten.</block>
   <block id="f2cde5cb8aa49228f5cb392e473dff51" category="paragraph">Nachdem der Cluster initialisiert wurde, laden Sie ihn herunter und führen Sie aus<block ref="48865c7c1d8013246e4e5f705a9105de" category="inline-link-rx"></block>, um das Setup zu bestätigen.</block>
-  <block id="5d181ca91be1af691d1f01654691cc7b" category="image-alt">A1K-Speichersystem und A70- oder A90-Netzanschlussdiagramm</block>
   <block id="e826d5b26017ec374bf63b94b8a425d9" category="list-text">Sichern Sie die Netzkabel mit dem Sicherungsgerät an jedem Netzteil. :a1k-a70-90!:</block>
   <block id="0bf1ff1f561d2a96752b8ee596c65068" category="list-text">4 HE in einer HA-Konfiguration</block>
   <block id="3ac4d4a9f6b930345bd4ccdb8435d0fb" category="list-text">Im System Management-Modul jedes Controllers</block>
@@ -10777,7 +10747,6 @@ SFP+ (Target/Initiator)</block>
   <block id="4e3c3284590d1aa1440e67b3bd65ba6e" category="list-text"><block ref="4e3c3284590d1aa1440e67b3bd65ba6e" category="inline-link-macro-rx"></block></block>
   <block id="370d2e6f20948d3881708f9706576691" category="sidebar">Austausch vorbereiten</block>
   <block id="19d944a3a323213d80bcdd66ecd5c26f" category="list-text">Stellen Sie fest, ob Onboard Key Manager (OKM) oder Eternal Key Manager (EKM) mithilfe einer der folgenden Methoden konfiguriert ist:</block>
-  <block id="b3387f173ebbff42e3160605c9db518a" category="list-text">Sie können den Kunden oder Systemadministrator fragen, ob OKM oder EKM aktiviert sind.</block>
   <block id="5dc17ba8443f8aafae4ca9de8cf9545b" category="list-text">Um zu überprüfen, ob OKM aktiviert ist, können Sie die verwenden<block ref="3c690d79c23fa8c25994507c25377567" prefix=" " category="inline-code"></block>.</block>
   <block id="4e447e93a3331607c74749775653cbfc" category="list-text">Um zu überprüfen, ob EKM aktiviert ist, können Sie die verwenden<block ref="001642cb897a8bebce3210207b7e81af" prefix=" " category="inline-code"></block>.</block>
   <block id="161a8b7bf3b6a7aaa3bda387e5eab04b" category="list-text">Für OKM benötigen Sie den Inhalt der OKM-Passphrase-Datei.</block>
@@ -11119,10 +11088,6 @@ SFP+ (Target/Initiator)</block>
   <block id="3b0feb5303f3eeec93eba65f8eb967ae" category="list-text">Stellen Sie sicher, dass alle anderen Systemkomponenten ordnungsgemäß funktionieren.</block>
   <block id="d5607198701fa39cc481498d62a52e7b" category="list-text">Stellen Sie sicher, dass alle anderen Komponenten des Systems ordnungsgemäß funktionieren. Wenden Sie sich andernfalls an,<block ref="468ae937a554dfd3baf209aa53f9f7a6" category="inline-link-rx"></block> um Unterstützung zu erhalten.</block>
   <block id="1b55fb3af000d448310e77a6de6c5161" category="paragraph">Das NVRAM-Modul besteht aus der NVRAM12-Hardware und vor Ort austauschbaren DIMMs. Ein ausgefallenes NVRAM-Modul oder die DIMMs im NVRAM-Modul können Sie ersetzen.</block>
-  <block id="566c293315d81d047304e5fade9a967d" category="list-text">Um zu überprüfen, ob OKM aktiviert ist, verwenden Sie den folgenden Befehl:</block>
-  <block id="248c44cfee0de883f1e8e602cd90cfbb" category="paragraph"><block ref="3c690d79c23fa8c25994507c25377567" prefix="" category="inline-code"></block></block>
-  <block id="a0e65297bb80c27972e34aa4810ab81b" category="list-text">Um zu überprüfen, ob EKM aktiviert ist, verwenden Sie den folgenden Befehl:</block>
-  <block id="49bfbad696a2529ef03d859ad9b3f40a" category="paragraph"><block ref="001642cb897a8bebce3210207b7e81af" prefix="" category="inline-code"></block></block>
   <block id="c174421f5b8f9ca697d7784c901fd0e7" category="paragraph">Um die Datensicherheit auf Ihrem Speichersystem zu gewährleisten, müssen Sie die Unterstützung und den Status des Verschlüsselungsschlüssels auf Ihrem Boot-Medium überprüfen. Überprüfen Sie, ob Ihre ONTAP Version NetApp Volume Encryption (NVE) unterstützt und bevor Sie den Controller herunterfahren, ob der Schlüsselmanager aktiv ist.</block>
   <block id="6e9d75b7e6d83f0d47bf1ca8b289ab30" category="summary">Wenn eine Komponente in Ihrem AFF A1K-System ausfällt, geben Sie das fehlerhafte Teil an NetApp zurück. <block ref="f2d8b0d8f345a4e987bed9853cde2668" category="inline-link-rx"></block>Weitere Informationen finden Sie auf der Seite.</block>
   <block id="e7202980adb67469897852b1c95d1aa0" category="summary">Um die Datensicherheit Ihres AFF A1K Storage-Systems zu gewährleisten, müssen Sie die Unterstützung und den Status der Verschlüsselungsschlüssel auf Ihren Boot-Medien überprüfen. Überprüfen Sie, ob Ihre ONTAP-Version NetApp-Volume-Verschlüsselung unterstützt, und bevor Sie den Controller herunterfahren, überprüfen Sie, ob der Schlüsselmanager aktiv ist.</block>
@@ -11923,4 +11888,50 @@ SFP+ (Target/Initiator)</block>
   <block id="40bde7f2324ee2876dd8a09846b14ff4" category="image-alt">Schalten Sie das Gerät ein</block>
   <block id="512bdc85c8065a0397ce7025381aaf66" category="image-alt">Automatische Erkennung des Systems</block>
   <block id="397249170dcc18ae00c3a7885f97fdc1" category="list-text">Schließen Sie das Konsolenkabel an den Laptop oder die Konsole an, und schließen Sie den Konsolenport am Controller mithilfe des Konsolenkabels des Storage-Systems an. Schließen Sie dann den Laptop oder die Konsole an den Switch im Management-Subnetz an.</block>
+  <block id="caf5b8ffb4d79dceb1fb647290798a01" category="list-text">Bei diesem Verfahren wird vorausgesetzt, dass das HA-Paar nur über internen Storage verfügt (keine externen Shelves) und dass Sie bei laufendem Betrieb zu einem zusätzlichen Shelf hinzufügen.</block>
+  <block id="93594816ce3f17fed74d263c83a0dbf3" category="image-alt">Verkabelung für AFF/ASA A20 mit einem Shelf und einem I/O-Modul</block>
+  <block id="1e105a621d0adba625aea7a6ae6a26c4" category="list-text">Wenn Sie jedem Controller-Modul ein Shelf mit zwei RoCE-fähigen Ports (zwei RoCE-fähige I/O-Module) während des laufenden Betriebs hinzufügen, führen Sie die folgenden Teilschritte durch.</block>
+  <block id="ce8013dd06f3fee752bb7a7d4b9238d2" category="image-alt">Verkabelung für AFF/ASA A20 mit einem Shelf und zwei I/O-Modulen</block>
+  <block id="aa7a979a65afd227664ca4bcf07916aa" category="list-text">Bei diesem Verfahren wird vorausgesetzt, dass Ihr HA-Paar nur über internen Storage verfügt (keine externen Shelfs) und dass Sie das Hinzufügen von bis zu zwei zusätzlichen Shelfs und zwei RoCE-fähigen I/O-Modulen pro Controller Hot-hinzufügen.</block>
+  <block id="f2a9ba351ff729d0ca9404bb3db069f6" category="image-alt">Verkabelung für AFF/ASA A30</block>
+  <block id="22069d1c29859ffdad9469c1e6747cf1" category="image-alt">Verkabelung für AFF A30/ASA</block>
+  <block id="612bdab395b71e87cee7fad47c71f93d" category="image-alt">Verkabelung für AFF/ASA A70 oder A90 mit einem Shelf und einem I/O-Modul</block>
+  <block id="e3292c7d546f92fd0a5ab680be388d1f" category="image-alt">Verkabelung für AFF/ASA A70 oder A90 mit einem Shelf und zwei IO-Modulen</block>
+  <block id="6aa91cf36fd9acfb2a369c09c6c070ca" category="image-alt">Verkabelung für AFF/ASA A70 oder A90 mit zwei Einschüben und zwei IO-Modulen</block>
+  <block id="9bb029ef1a9ff9e816e879a364d3c7b6" category="image-alt">Verkabelung für AFF/ASA A1K mit zwei Shelfs und zwei I/O-Modulen</block>
+  <block id="7376879927d2b84ec553cfa3f1bfd0f4" category="image-alt">Verkabelung für AFF/ASA A1K mit drei Shelfs und drei IO-Modulen</block>
+  <block id="de5bea2fd617f7327f73c1c44e37b9a6" category="image-alt">Verkabelung für AFF/ASA A1K mit drei Shelfs und vier I/O-Modulen</block>
+  <block id="db0e24742d4fd4f6f2a732aeac2ca6a3" category="image-alt">Verkabelung für AFF/ASA A1K mit vier Shelfs und vier I/O-Modulen</block>
+  <block id="ac2f75fe6673cb1f5f103f2229eb9ca0" category="image-alt">Verkabelung für ein AFF/ASA A250 C250 oder FAS500f mit einem NS224-Shelf und einem Satz PCIe-Karten-Ports</block>
+  <block id="eaa19193ad1b64f0162e8f312a6ddc47" category="image-alt">Verkabelung für ein AFF/ASA A400 mit einem NS224-Shelf und einem Satz integrierter Ports</block>
+  <block id="bba30f16a0c3755741b0f3e2032fe595" category="image-alt">Verkabelung für ein /ASA A400 mit zwei NS224-Shelfs und einem Satz integrierter Ports und einem Satz Ports auf PCIe-Karten</block>
+  <block id="062f2d0d7124d747b94b599ceb1f29ed" category="image-alt">Verkabelung für ein AFF/ASA C400 mit einem NS224-Shelf und einem Satz PCIe-Karten-Ports</block>
+  <block id="ea4ee6dbdfefd4ed125fc31c39deee4c" category="image-alt">Verkabelung für ein AFF/ASA C400 mit zwei NS224-Shelfs und zwei PCIe-Karten-Ports</block>
+  <block id="baa82981e40f9200b81a359d31653dd6" category="image-alt">Verkabelung für AFF/ASA A800 oder AFF/ASA C800 mit einem NS224 Shelf und einer PCIe-Karte</block>
+  <block id="c398a3b33f9866994ec7dd506a0affe1" category="image-alt">Verkabelung für ein AFF/ASA A900 mit zwei NS224-Shelfs und zwei IO-Modulen</block>
+  <block id="0e9ff50f94b0a9a55c9b9c4773ddccbe" category="image-alt">Verkabelung für ein AFF/ASA A900 mit drei NS224-Shelfs und vier E/A-Modulen</block>
+  <block id="97f00e66a1cda314ebb07a43f08fca5b" category="image-alt">Verkabelung für ein AFF/ASA A900 mit vier NS224-Shelfs und vier E/A-Modulen</block>
+  <block id="10236a63db20e6dd5b0c0b8f3cbc1c18" category="list-text">Schließen Sie die beiden Netzkabel an die Controller-Netzteile an und verbinden Sie sie dann mit Stromquellen in verschiedenen Stromkreisen.</block>
+  <block id="dba5caf7b75bcd8724abd1b1ca8827fd" category="image-alt">Stromanschlussdiagramm zu AFF A1K AFF A70 oder AFF A90 oder FAS70 oder FAS90</block>
+  <block id="638f4a62fea5cc77db53abd671ddb8ef" category="example-title">Kabeleinschub zu AFF A20</block>
+  <block id="9eec124f47af3a03039f640091e3ed69" category="paragraph">Sie können einem AFF A20 HA-Paar ein NS224 Shelf im laufenden Betrieb hinzufügen, wenn zusätzlicher Storage (zum internen Shelf) benötigt wird.</block>
+  <block id="e76cf9924a9de1dd17f1b48f3a38d0cd" category="example-title">Kabel-Shelf zu AFF A30, AFF A50, AFF C30 oder AFF C60</block>
+  <block id="5820f31f30f8fc695d25c9cec1305cdb" category="paragraph">Wenn zusätzlicher Storage (zum internen Shelf) benötigt wird, können Sie im laufenden Betrieb bis zu zwei NS224-Shelfs zu einem AFF A30-, AFF C30-, AFF A50- oder AFF C60-HA-Paar hinzufügen.</block>
+  <block id="2b5ec68149482145f38e8592a2e4b794" category="example-title">Kabeleinschub zu ASA A20</block>
+  <block id="c84fe478157d5a5e8c65815d80aa16a6" category="paragraph">Sie können einem ASA A20 HA-Paar im laufenden Betrieb maximal ein NS224-Shelf hinzufügen, wenn zusätzlicher Storage (zum internen Shelf) erforderlich ist.</block>
+  <block id="bb5cf394b2e920ea8a139221d234cd8f" category="example-title">Kabel-Shelf zu ASA A30 oder ASA A50</block>
+  <block id="541e9b9bea8f992a6c173f0c44b17452" category="paragraph">Wenn zusätzlicher Storage (zum internen Shelf) benötigt wird, können Sie im laufenden Betrieb bis zu zwei NS224-Shelfs zu einem ASA A30- oder A50-HA-Paar hinzufügen.</block>
+  <block id="46aa3bf0a87f8519f8e9314ed7186c68" category="paragraph">Wenn zusätzlicher Storage benötigt wird, können Sie im laufenden Betrieb maximal ein NS224-Shelf zu einem ASA A250 oder ASA C250 HA-Paar hinzufügen.</block>
+  <block id="74259516da197cf641342dca62af2c0b" category="paragraph">Ob Sie ein NS224 Shelf für ein Hot-Add verkabeln, hängt davon ab, ob Sie ein ASA A400- oder ASA C400 HA-Paar besitzen.</block>
+  <block id="5a9c7ba8fea538e8bddca7cfd05765f9" category="paragraph">Wie Sie ein NS224-Shelf in einem ASA A800 oder ASA C800 HA-Paar verkabeln, hängt von der Anzahl der hinzuzufüenden Shelfs und der Anzahl der RoCE-fähigen Port-Sets (ein oder zwei), die Sie auf den Controllern verwenden, ab.</block>
+  <block id="6bb205a0be0fdef8b8935f61e328f79d" category="paragraph">Wenn zusätzlicher Speicher benötigt wird, können Sie bis zu drei zusätzliche NS224 Laufwerk-Shelves (insgesamt vier Shelves) zu einem ASA A900 HA-Paar hinzufügen.</block>
+  <block id="74375be821a0ccfdaa2aae68f1a39391" category="list-text">Für AFF Systeme:</block>
+  <block id="f7e7abd6131f4502c1bda794831656d2" category="list-text">Für ASA Systeme:</block>
+  <block id="c1ec0f43de6728212fc94985d5f83feb" category="admonition">Wenn Sie über ein ASA A1K HA-Paar verfügen und während des laufenden Betriebs ein drittes Shelf hinzufügen und ein drittes oder viertes RoCE-fähiges I/O-Modul in jeden Controller installieren, ist das dritte Shelf nur mit den dritten, dritten und vierten I/O-Modulen verbunden. Sie müssen keine vorhandenen Shelfs erneut vertragen.</block>
+  <block id="80e4582b9d6f2e4fef63bc13dc0ddad1" category="open-title">ASA A70 oder ASA A90</block>
+  <block id="ba8d903e745090016b0afab400d33f7c" category="open-title">ASA A800 oder ASA C800</block>
+  <block id="ade2052b1dc75cccb7fc7b0760456566" category="open-title">ASA A400 oder ASA C400</block>
+  <block id="18b75697f84707c97e051581b495caae" category="list-text">Auf der ASA A400:</block>
+  <block id="f08c247bf18a7d50e52f66010faca66f" category="list-text">Auf dem ASA C400:</block>
+  <block id="2aba7ab5e3f8f696965da4208fe4dd23" category="open-title">ASA A30 oder ASA A50</block>
 </blocks>

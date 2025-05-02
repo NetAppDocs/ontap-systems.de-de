@@ -2,8 +2,6 @@
 :allow-uri-read: 
 
 
-Wenn zusätzlicher Storage (zum internen Shelf) benötigt wird, können Sie im laufenden Betrieb bis zu zwei NS224 Shelfs zu einem AFF A70, AFF A90 oder AFF C80 HA-Paar hinzufügen.
-
 .Bevor Sie beginnen
 * Sie müssen die überprüft haben link:requirements-hot-add-shelf.html["Hot-Add-Anforderungen und Best Practices"].
 * Sie müssen die entsprechenden Verfahren in abgeschlossen haben link:prepare-hot-add-shelf.html["Bei laufendem Betrieb ein Shelf hinzufügen"].
@@ -39,7 +37,7 @@ NOTE: Bei diesem Schritt wird davon ausgegangen, dass Sie das RoCE-fähige I/O-M
 Die folgende Abbildung zeigt die Verkabelung für ein Hot-Added Shelf mit einem RoCE-fähigen I/O-Modul pro Controller-Modul:
 
 +
-image::../media/drw_ns224_vino_i_1shelf_1card_ieops-1639.svg[Verkabelung für AFF A70 oder A90 mit einem Shelf und einem IO-Modul]
+image::../media/drw_ns224_vino_i_1shelf_1card_ieops-1639.svg[Verkabelung für AFF/ASA A70 oder A90 mit einem Shelf und einem I/O-Modul]
 
 
 
@@ -66,7 +64,7 @@ Shelf 1
 
 Die folgende Abbildung zeigt die Verkabelung für ein Hot-Added Shelf mit zwei RoCE-fähigen I/O-Modulen pro Controller-Modul:
 
-image::../media/drw_ns224_vino_i_1shelf_2cards_ieops-1640.svg[Verkabelung für AFF A70 oder A90 mit einem Shelf und zwei IO-Modulen]
+image::../media/drw_ns224_vino_i_1shelf_2cards_ieops-1640.svg[Verkabelung für AFF/ASA A70 oder A90 mit einem Shelf und zwei IO-Modulen]
 
 
 
@@ -82,7 +80,7 @@ Shelf 2
 
 Die folgende Abbildung zeigt die Verkabelung für zwei Hot-Added Shelf mit zwei RoCE-fähigen I/O-Modulen pro Controller-Modul:
 
-image::../media/drw_ns224_vino_i_2shelves_2cards_ieops-1641.svg[Verkabelung für AFF A70 oder A90 mit zwei Einschüben und zwei IO-Modulen]
+image::../media/drw_ns224_vino_i_2shelves_2cards_ieops-1641.svg[Verkabelung für AFF/ASA A70 oder A90 mit zwei Einschüben und zwei IO-Modulen]
 
 |===
 . Überprüfen Sie mit https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^].

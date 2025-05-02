@@ -53,7 +53,7 @@ Andernfalls fahren Sie mit dem nächsten Schritt fort.
 In der folgenden Abbildung ist die Verkabelung des zweiten Shelf im HA-Paar mit zwei RoCE-fähigen I/O-Modulen pro Controller hervorgehoben:
 
 +
-image::../media/drw_ns224_vino_m_2shelves_2cards_ieops-1642.svg[Verkabelung für AFF A1K mit zwei Shelfs und zwei I/O-Modulen]
+image::../media/drw_ns224_vino_m_2shelves_2cards_ieops-1642.svg[Verkabelung für AFF/ASA A1K mit zwei Shelfs und zwei I/O-Modulen]
 
 
 
@@ -67,7 +67,7 @@ image::../media/drw_ns224_vino_m_2shelves_2cards_ieops-1642.svg[Verkabelung für
 In der folgenden Abbildung ist die Verkabelung des dritten Shelf im HA-Paar mit drei RoCE-fähigen I/O-Modulen pro Controller hervorgehoben:
 
 +
-image::../media/drw_ns224_vino_m_3shelves_3cards_ieops-1643.svg[Verkabelung für AFF A1K mit drei Shelfs und drei IO-Modulen]
+image::../media/drw_ns224_vino_m_3shelves_3cards_ieops-1643.svg[Verkabelung für AFF/ASA A1K mit drei Shelfs und drei IO-Modulen]
 
 
 
@@ -81,7 +81,7 @@ image::../media/drw_ns224_vino_m_3shelves_3cards_ieops-1643.svg[Verkabelung für
 In der folgenden Abbildung ist die Verkabelung des dritten Shelf im HA-Paar mit vier RoCE-fähigen I/O-Modulen pro Controller hervorgehoben:
 
 +
-image::../media/drw_ns224_vino_m_3shelves_4cards_ieops-1644.svg[Verkabelung für AFF A1K mit drei Shelfs und vier I/O-Modulen]
+image::../media/drw_ns224_vino_m_3shelves_4cards_ieops-1644.svg[Verkabelung für AFF/ASA A1K mit drei Shelfs und vier I/O-Modulen]
 
 
 
@@ -95,7 +95,7 @@ image::../media/drw_ns224_vino_m_3shelves_4cards_ieops-1644.svg[Verkabelung für
 In der folgenden Abbildung ist die Verkabelung für das vierte Shelf im HA-Paar mit vier RoCE-fähigen I/O-Modulen pro Controller hervorgehoben:
 
 +
-image::../media/drw_ns224_vino_m_4shelves_4cards_ieops-1645.svg[Verkabelung für AFF A1K mit vier Shelfs und vier I/O-Modulen]
+image::../media/drw_ns224_vino_m_4shelves_4cards_ieops-1645.svg[Verkabelung für AFF/ASA A1K mit vier Shelfs und vier I/O-Modulen]
 
 
 
@@ -111,10 +111,10 @@ Wenn Sie die automatische Laufwerkszuweisung als Teil der Vorbereitung für dies
 Andernfalls müssen Sie das Hot-Add-Regal verwenden.
 
 ====
-.Kabel-Shelf zu AFF A20, AFF A30, AFF A50, AFF C30 oder AFF C60
+.Kabeleinschub zu AFF A20
 [%collapsible]
 ====
-Wenn zusätzlicher Storage (zum internen Shelf) benötigt wird, können Sie im laufenden Betrieb bis zu zwei NS224-Shelfs zu einem AFF A20-, AFF A30-, AFF C30-, AFF A50- oder AFF C60-HA-Paar hinzufügen.
+Sie können einem AFF A20 HA-Paar ein NS224 Shelf im laufenden Betrieb hinzufügen, wenn zusätzlicher Storage (zum internen Shelf) benötigt wird.
 
 .Bevor Sie beginnen
 * Sie müssen die überprüft haben link:requirements-hot-add-shelf.html["Hot-Add-Anforderungen und Best Practices"].
@@ -123,12 +123,100 @@ Wenn zusätzlicher Storage (zum internen Shelf) benötigt wird, können Sie im l
 
 
 .Über diese Aufgabe
-* Bei diesem Verfahren wird vorausgesetzt, dass Ihr HA-Paar nur internen Speicher hat (keine externen Regale) und dass Sie entweder:
+* Bei diesem Verfahren wird vorausgesetzt, dass das HA-Paar nur über internen Storage verfügt (keine externen Shelves) und dass Sie bei laufendem Betrieb zu einem zusätzlichen Shelf hinzufügen.
+* Dieses Verfahren behandelt die folgenden Hot-Add-Szenarien:
 +
-** Hinzufügen eines zusätzlichen Shelfs für das AFF A20 im laufenden Betrieb
-** Und es können bis zu zwei zusätzliche Shelfs und zwei RoCE-fähige I/O-Module in jedem Controller für AFF A30, AFF C30, AFF A50 oder AFF C60 hinzugefügt werden.
+** Hinzufügen des ersten Shelfs zu einem HA-Paar mit einem RoCE-fähigen I/O-Modul pro Controller während des laufenden Betriebs
+** Hinzufügen des ersten Shelfs zu einem HA-Paar mit zwei RoCE-fähigen I/O-Modulen pro Controller und während des laufenden Betriebs
 
 
+* Diese Systeme sind mit NS224-Shelfs mit NSM100-Modulen und NS224-Shelfs mit NSM100B-Modulen kompatibel. Um sicherzustellen, dass Sie die Controller mit den richtigen Ports verkabeln, ersetzen Sie das „X“ in jedem Diagramm durch die richtige Portnummer für Ihr Modul:
++
+[cols="1,4"]
+|===
+| Modultyp | Anschlusskennzeichnung 
+
+
+ a| 
+NSM100
+ a| 
+„0“
+
+Beispiel e0a
+
+
+
+ a| 
+NSM100B
+ a| 
+„1“
+
+Z. B. e1a
+
+|===
+
+
+.Schritte
+. Wenn Sie während des laufenden Betriebs ein Shelf mit einem Satz RoCE-fähiger Ports (ein RoCE-fähiges I/O-Modul) in jedem Controller-Modul hinzufügen, und dies das einzige NS224-Shelf in Ihrem HA-Paar ist, führen Sie die folgenden Teilschritte durch.
++
+Andernfalls fahren Sie mit dem nächsten Schritt fort.
+
++
+
+NOTE: Bei diesem Schritt wird davon ausgegangen, dass Sie das RoCE-fähige I/O-Modul in Steckplatz 3 installiert haben.
+
++
+.. Kabel-Shelf-Port NSM A Exa zu Controller A-Steckplatz 3, Port A (e3a).
+.. Kabel-Shelf-Port NSM A EXB mit Controller B-Steckplatz 3, Port b (e3b).
+.. Kabel-Shelf-Port NSM B Exa zu Controller B-Steckplatz 3, Port A (e3a).
+.. Kabel-Shelf-Port NSM B EXB mit Controller A-Steckplatz 3, Port b (e3b).
++
+Die folgende Abbildung zeigt die Verkabelung für ein Hot-Added Shelf mit einem RoCE-fähigen I/O-Modul pro Controller-Modul:
+
++
+image::../media/drw_ns224_g_1shelf_1card_ieops-2002.svg[Verkabelung für AFF/ASA A20 mit einem Shelf und einem I/O-Modul]
+
+
+
+. Wenn Sie jedem Controller-Modul ein Shelf mit zwei RoCE-fähigen Ports (zwei RoCE-fähige I/O-Module) während des laufenden Betriebs hinzufügen, führen Sie die folgenden Teilschritte durch.
++
+.. Kabel NSM A Port Exa zu Controller A Steckplatz 3 Port A (e3a).
+.. Kabel NSM A Port EXB zu Controller B Steckplatz 1 Port b (e1b).
+.. Kabel NSM B Port Exa zu Controller B Steckplatz 3 Port A (e3a).
+.. Kabel NSM B Port EXB zu Controller A Steckplatz 1 Port b (e1b).
+
+
+
+
+Die folgende Abbildung zeigt die Verkabelung für ein Hot-Added Shelf mit zwei RoCE-fähigen I/O-Modulen pro Controller-Modul:
+
+image::../media/drw_ns224_g_1shelf_2card_ieops-2005.svg[Verkabelung für AFF/ASA A20 mit einem Shelf und zwei I/O-Modulen]
+
+. Überprüfen Sie mit https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^].
++
+Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
+
+
+
+.Was kommt als Nächstes?
+Wenn Sie die automatische Laufwerkszuweisung als Teil der Vorbereitung für dieses Verfahren deaktiviert haben, müssen Sie manuell die Laufwerkseigentümer festlegen und die automatische Laufwerkszuweisung ggf. erneut aktivieren. Gehen Sie zu link:complete-hot-add-shelf.html["Füllen Sie das Hot Add aus"].
+
+Andernfalls müssen Sie das Hot-Add-Regal verwenden.
+
+====
+.Kabel-Shelf zu AFF A30, AFF A50, AFF C30 oder AFF C60
+[%collapsible]
+====
+Wenn zusätzlicher Storage (zum internen Shelf) benötigt wird, können Sie im laufenden Betrieb bis zu zwei NS224-Shelfs zu einem AFF A30-, AFF C30-, AFF A50- oder AFF C60-HA-Paar hinzufügen.
+
+.Bevor Sie beginnen
+* Sie müssen die überprüft haben link:requirements-hot-add-shelf.html["Hot-Add-Anforderungen und Best Practices"].
+* Sie müssen die entsprechenden Verfahren in abgeschlossen haben link:prepare-hot-add-shelf.html["Bei laufendem Betrieb ein Shelf hinzufügen"].
+* Sie müssen die Shelfs installiert, eingeschaltet und die Shelf-IDs wie in festgelegt haben link:prepare-hot-add-shelf.html["Installieren Sie ein Shelf für ein Hot-Add-System"].
+
+
+.Über diese Aufgabe
+* Bei diesem Verfahren wird vorausgesetzt, dass Ihr HA-Paar nur über internen Storage verfügt (keine externen Shelfs) und dass Sie das Hinzufügen von bis zu zwei zusätzlichen Shelfs und zwei RoCE-fähigen I/O-Modulen pro Controller Hot-hinzufügen.
 * Dieses Verfahren behandelt die folgenden Hot-Add-Szenarien:
 +
 ** Hinzufügen des ersten Shelfs zu einem HA-Paar mit einem RoCE-fähigen I/O-Modul pro Controller während des laufenden Betriebs
@@ -180,7 +268,7 @@ NOTE: Bei diesem Schritt wird davon ausgegangen, dass Sie das RoCE-fähige I/O-M
 Die folgende Abbildung zeigt die Verkabelung für ein Hot-Added Shelf mit einem RoCE-fähigen I/O-Modul pro Controller-Modul:
 
 +
-image::../media/drw_ns224_g_1shelf_1card_ieops-2002.svg[Verkabelung für AFF A20,452px,AFF C30]
+image::../media/drw_ns224_g_1shelf_1card_ieops-2002.svg[Verkabelung für AFF/ASA A30,452px,AFF/ASA A50]
 
 
 
@@ -207,7 +295,7 @@ Shelf 1
 
 Die folgende Abbildung zeigt die Verkabelung für ein Hot-Added Shelf mit zwei RoCE-fähigen I/O-Modulen pro Controller-Modul:
 
-image::../media/drw_ns224_g_1shelf_2card_ieops-2005.svg[Verkabelung für AFF A20,452px,AFF C30]
+image::../media/drw_ns224_g_1shelf_2card_ieops-2005.svg[Verkabelung für AFF/ASA A30,452px,AFF/ASA A50]
 
 
 
@@ -223,7 +311,7 @@ Shelf 2
 
 Die folgende Abbildung zeigt die Verkabelung für zwei Hot-Added Shelf mit zwei RoCE-fähigen I/O-Modulen pro Controller-Modul:
 
-image::../media/drw_ns224_g_2shelf_2card_ieops-2003.svg[Verkabelung für AFF A20,452px,AFF C30]
+image::../media/drw_ns224_g_2shelf_2card_ieops-2003.svg[Verkabelung für AFF A30/ASA,452px,AFF/ASA A50]
 
 |===
 . Überprüfen Sie mit https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^].
@@ -278,7 +366,7 @@ NOTE: Bei diesem Schritt wird davon ausgegangen, dass Sie das RoCE-fähige I/O-M
 Die folgende Abbildung zeigt die Verkabelung für ein Hot-Added Shelf mit einem RoCE-fähigen I/O-Modul pro Controller-Modul:
 
 +
-image::../media/drw_ns224_vino_i_1shelf_1card_ieops-1639.svg[Verkabelung für AFF A70 oder A90 mit einem Shelf und einem IO-Modul]
+image::../media/drw_ns224_vino_i_1shelf_1card_ieops-1639.svg[Verkabelung für AFF/ASA A70 oder A90 mit einem Shelf und einem I/O-Modul]
 
 
 
@@ -305,7 +393,7 @@ Shelf 1
 
 Die folgende Abbildung zeigt die Verkabelung für ein Hot-Added Shelf mit zwei RoCE-fähigen I/O-Modulen pro Controller-Modul:
 
-image::../media/drw_ns224_vino_i_1shelf_2cards_ieops-1640.svg[Verkabelung für AFF A70 oder A90 mit einem Shelf und zwei IO-Modulen]
+image::../media/drw_ns224_vino_i_1shelf_2cards_ieops-1640.svg[Verkabelung für AFF/ASA A70 oder A90 mit einem Shelf und zwei IO-Modulen]
 
 
 
@@ -321,7 +409,7 @@ Shelf 2
 
 Die folgende Abbildung zeigt die Verkabelung für zwei Hot-Added Shelf mit zwei RoCE-fähigen I/O-Modulen pro Controller-Modul:
 
-image::../media/drw_ns224_vino_i_2shelves_2cards_ieops-1641.svg[Verkabelung für AFF A70 oder A90 mit zwei Einschüben und zwei IO-Modulen]
+image::../media/drw_ns224_vino_i_2shelves_2cards_ieops-1641.svg[Verkabelung für AFF/ASA A70 oder A90 mit zwei Einschüben und zwei IO-Modulen]
 
 |===
 . Überprüfen Sie mit https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^].
@@ -358,7 +446,7 @@ Wenn Sie von der Rückseite des Plattform-Chassis aus betrachtet werden, ist der
 .. Kabel-Shelf NSM B-Port e0a zu Controller B, Steckplatz 1, Port A (e1a)
 .. Kabel-Shelf NSM B-Port e0b zum Controller A-Steckplatz 1 Port b (e1b). + die folgende Abbildung zeigt die Shelf-Verkabelung, wenn der Vorgang abgeschlossen ist.
 +
-image::../media/drw_ns224_a250_c250_f500f_1shelf_ieops-1824.svg[Verkabelung für ein AFF A250 C250 oder FAS500f mit einem NS224-Shelf und einem Satz PCIe-Karten-Ports]
+image::../media/drw_ns224_a250_c250_f500f_1shelf_ieops-1824.svg[Verkabelung für ein AFF/ASA A250 C250 oder FAS500f mit einem NS224-Shelf und einem Satz PCIe-Karten-Ports]
 
 
 
@@ -403,7 +491,7 @@ Andernfalls fahren Sie mit dem nächsten Schritt fort.
 In der folgenden Abbildung wird die Verkabelung für ein Hot-Added Shelf mit einem Satz RoCE-fähiger Ports an jedem Controller gezeigt:
 
 +
-image::../media/drw_ns224_a400_1shelf.png[Verkabelung für eine AFF A400 mit einem NS224 Shelf und einem Satz integrierter Ports]
+image::../media/drw_ns224_a400_1shelf.png[Verkabelung für ein AFF/ASA A400 mit einem NS224-Shelf und einem Satz integrierter Ports]
 
 
 
@@ -441,7 +529,7 @@ Shelf 2
 Die folgende Abbildung zeigt die Verkabelung für zwei Hot-Added Shelves:
 
 +
-image::../media/drw_ns224_a400_2shelves_IEOPS-983.svg[Verkabelung für eine AFF A400 mit zwei NS224-Shelfs und einem Satz integrierter Ports und einem Satz Ports an PCIe-Karten]
+image::../media/drw_ns224_a400_2shelves_IEOPS-983.svg[Verkabelung für ein /ASA A400 mit zwei NS224-Shelfs und einem Satz integrierter Ports und einem Satz Ports auf PCIe-Karten]
 
 . Überprüfen Sie mit https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^].
 +
@@ -471,7 +559,7 @@ Andernfalls fahren Sie mit dem nächsten Schritt fort.
 In der folgenden Abbildung wird die Verkabelung für ein Hot-Added Shelf mit einem Satz RoCE-fähiger Ports an jedem Controller gezeigt:
 
 +
-image::../media/drw_ns224_c400_1shelf_IEOPS-985.svg[Verkabelung für ein AFF C400 mit einem NS224-Shelf und einem Satz PCIe-Karten-Ports]
+image::../media/drw_ns224_c400_1shelf_IEOPS-985.svg[Verkabelung für ein AFF/ASA C400 mit einem NS224-Shelf und einem Satz PCIe-Karten-Ports]
 
 
 
@@ -509,7 +597,7 @@ Shelf 2
 Die folgende Abbildung zeigt die Verkabelung für zwei Hot-Added Shelves:
 
 +
-image::../media/drw_ns224_c400_2shelves_IEOPS-984.svg[Verkabelung für einen AFF C400 mit zwei NS224-Einschüben und zwei PCIe-Karten-Ports]
+image::../media/drw_ns224_c400_2shelves_IEOPS-984.svg[Verkabelung für ein AFF/ASA C400 mit zwei NS224-Shelfs und zwei PCIe-Karten-Ports]
 
 . Überprüfen Sie mit https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^].
 +
@@ -552,7 +640,7 @@ NOTE: Bei diesem Schritt wird vorausgesetzt, dass Sie die RoCE-fähige PCIe-Kart
 In der folgenden Abbildung wird die Verkabelung für ein Hot-Added Shelf mit einer RoCE-fähigen PCIe-Karte auf jedem Controller gezeigt:
 
 +
-image::../media/drw_ns224_a800_c800_1shelf_IEOPS-964.svg[Verkabelung für eine AFF A800 oder AFF C800 mit einem NS224-Shelf und einer PCIe-Karte]
+image::../media/drw_ns224_a800_c800_1shelf_IEOPS-964.svg[Verkabelung für AFF/ASA A800 oder AFF/ASA C800 mit einem NS224 Shelf und einer PCIe-Karte]
 
 
 
@@ -644,7 +732,7 @@ Andernfalls fahren Sie mit dem nächsten Schritt fort.
 Die folgende Abbildung zeigt die zweite Shelf-Verkabelung (und das erste Shelf).
 
 +
-image::../media/drw_ns224_a900_2shelves.png[Verkabelung für einen AFF A900 mit zwei NS224-Shelfs und zwei IO-Modulen]
+image::../media/drw_ns224_a900_2shelves.png[Verkabelung für ein AFF/ASA A900 mit zwei NS224-Shelfs und zwei IO-Modulen]
 
 
 
@@ -661,7 +749,7 @@ Andernfalls fahren Sie mit dem nächsten Schritt fort.
 Die folgende Abbildung zeigt die dritte Shelf-Verkabelung.
 
 +
-image::../media/drw_ns224_a900_3shelves.png[Verkabelung für einen AFF A900 mit drei NS224-Shelfs und vier IO-Modulen]
+image::../media/drw_ns224_a900_3shelves.png[Verkabelung für ein AFF/ASA A900 mit drei NS224-Shelfs und vier E/A-Modulen]
 
 
 
@@ -678,7 +766,7 @@ Andernfalls fahren Sie mit dem nächsten Schritt fort.
 Die folgende Abbildung zeigt die vierte Shelf-Verkabelung.
 
 +
-image::../media/drw_ns224_a900_4shelves.png[Verkabelung für einen AFF A900 mit vier NS224-Shelfs und vier IO-Modulen]
+image::../media/drw_ns224_a900_4shelves.png[Verkabelung für ein AFF/ASA A900 mit vier NS224-Shelfs und vier E/A-Modulen]
 
 
 

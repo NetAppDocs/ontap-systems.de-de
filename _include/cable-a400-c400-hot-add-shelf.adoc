@@ -2,8 +2,6 @@
 :allow-uri-read: 
 
 
-Ob Sie ein NS224 Shelf für ein Hot-Add verkabeln, hängt davon ab, ob Sie ein AFF A400- oder AFF C400 HA-Paar besitzen.
-
 .Bevor Sie beginnen
 * Sie müssen die überprüft haben link:requirements-hot-add-shelf.html["Hot-Add-Anforderungen und Best Practices"].
 * Sie müssen die entsprechenden Verfahren in abgeschlossen haben link:prepare-hot-add-shelf.html["Bei laufendem Betrieb ein Shelf hinzufügen"].
@@ -28,7 +26,7 @@ Andernfalls fahren Sie mit dem nächsten Schritt fort.
 In der folgenden Abbildung wird die Verkabelung für ein Hot-Added Shelf mit einem Satz RoCE-fähiger Ports an jedem Controller gezeigt:
 
 +
-image::../media/drw_ns224_a400_1shelf.png[Verkabelung für eine AFF A400 mit einem NS224 Shelf und einem Satz integrierter Ports]
+image::../media/drw_ns224_a400_1shelf.png[Verkabelung für ein AFF/ASA A400 mit einem NS224-Shelf und einem Satz integrierter Ports]
 
 
 
@@ -66,7 +64,7 @@ Shelf 2
 Die folgende Abbildung zeigt die Verkabelung für zwei Hot-Added Shelves:
 
 +
-image::../media/drw_ns224_a400_2shelves_IEOPS-983.svg[Verkabelung für eine AFF A400 mit zwei NS224-Shelfs und einem Satz integrierter Ports und einem Satz Ports an PCIe-Karten]
+image::../media/drw_ns224_a400_2shelves_IEOPS-983.svg[Verkabelung für ein /ASA A400 mit zwei NS224-Shelfs und einem Satz integrierter Ports und einem Satz Ports auf PCIe-Karten]
 
 . Überprüfen Sie mit https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^].
 +
@@ -96,7 +94,7 @@ Andernfalls fahren Sie mit dem nächsten Schritt fort.
 In der folgenden Abbildung wird die Verkabelung für ein Hot-Added Shelf mit einem Satz RoCE-fähiger Ports an jedem Controller gezeigt:
 
 +
-image::../media/drw_ns224_c400_1shelf_IEOPS-985.svg[Verkabelung für ein AFF C400 mit einem NS224-Shelf und einem Satz PCIe-Karten-Ports]
+image::../media/drw_ns224_c400_1shelf_IEOPS-985.svg[Verkabelung für ein AFF/ASA C400 mit einem NS224-Shelf und einem Satz PCIe-Karten-Ports]
 
 
 
@@ -134,7 +132,7 @@ Shelf 2
 Die folgende Abbildung zeigt die Verkabelung für zwei Hot-Added Shelves:
 
 +
-image::../media/drw_ns224_c400_2shelves_IEOPS-984.svg[Verkabelung für einen AFF C400 mit zwei NS224-Einschüben und zwei PCIe-Karten-Ports]
+image::../media/drw_ns224_c400_2shelves_IEOPS-984.svg[Verkabelung für ein AFF/ASA C400 mit zwei NS224-Shelfs und zwei PCIe-Karten-Ports]
 
 . Überprüfen Sie mit https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^].
 +

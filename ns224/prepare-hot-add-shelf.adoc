@@ -132,6 +132,8 @@ NOTE: Beim Anschließen eines Kabels muss zwischen dem Abziehen des Kabels von e
 . Vorhandene Shelf-Verbindungen können gegebenenfalls über zwei Sätze RoCE-fähiger Ports in verschiedenen Steckplätzen zurückgeführt werden.
 
 
+* Für AFF Systeme:
++
 [role="tabbed-block"]
 ====
 .AFF A1K
@@ -141,22 +143,22 @@ Führen Sie einen der folgenden Schritte aus, wenn Sie ein zweites oder ein vier
 
 NOTE: Wenn Sie über ein AFF A1K HA-Paar verfügen und während des laufenden Betriebs ein drittes Shelf hinzufügen und ein drittes oder viertes RoCE-fähiges I/O-Modul in jeden Controller installieren, ist das dritte Shelf nur mit den dritten, dritten und vierten I/O-Modulen verbunden. Sie müssen keine vorhandenen Shelfs erneut vertragen.
 
-* Wenn Sie während des laufenden Betriebs ein zweites Shelf hinzufügen, können Sie das erste Shelf über die RoCE-fähigen I/O-Module in Steckplatz 11 und Steckplatz 10 auf jedem Controller neu anschaffen.
+** Wenn Sie während des laufenden Betriebs ein zweites Shelf hinzufügen, können Sie das erste Shelf über die RoCE-fähigen I/O-Module in Steckplatz 11 und Steckplatz 10 auf jedem Controller neu anschaffen.
 +
 Die Teilschritte gehen davon aus, dass das vorhandene Shelf an jedem Controller mit einem RoCE-fähigen I/O-Modul in Steckplatz 11 verbunden ist.
 
 +
-.. Bewegen Sie das Kabel an Controller A von Steckplatz 11 Port b (e11b) in Steckplatz 10 Port b (e10b).
-.. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
+... Bewegen Sie das Kabel an Controller A von Steckplatz 11 Port b (e11b) in Steckplatz 10 Port b (e10b).
+... Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
 
 
-* Wenn Sie ein viertes Shelf während des laufenden Betriebs hinzufügen, können Sie das dritte Shelf über die RoCE-fähigen I/O-Module in Steckplatz 9 und Steckplatz 8 auf jedem Controller umverteilen.
+** Wenn Sie ein viertes Shelf während des laufenden Betriebs hinzufügen, können Sie das dritte Shelf über die RoCE-fähigen I/O-Module in Steckplatz 9 und Steckplatz 8 auf jedem Controller umverteilen.
 +
 Bei den Teilschritten wird davon ausgegangen, dass das dritte Shelf an jedem Controller mit einem RoCE-fähigen I/O-Modul in Steckplatz 9 verbunden ist.
 
 +
-.. Bewegen Sie das Kabel an Controller A von Steckplatz 9 Port b (e9b) in Steckplatz 8 Port b (e8b).
-.. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
+... Bewegen Sie das Kabel an Controller A von Steckplatz 9 Port b (e9b) in Steckplatz 8 Port b (e8b).
+... Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
 
 
 
@@ -168,8 +170,8 @@ Wenn Sie während des laufenden Betriebs ein zweites Shelf hinzufügen, können 
 
 Die Teilschritte gehen davon aus, dass das vorhandene Shelf an jedem Controller mit einem RoCE-fähigen I/O-Modul in Steckplatz 11 verbunden ist.
 
-. Bewegen Sie das Kabel an Controller A von Steckplatz 11 Port b (e11b) in Steckplatz 8 Port b (e8b).
-. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
+.. Bewegen Sie das Kabel an Controller A von Steckplatz 11 Port b (e11b) in Steckplatz 8 Port b (e8b).
+.. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
 
 
 --
@@ -179,8 +181,8 @@ Wenn Sie ein zweites Shelf während des laufenden Betrieb hinzufügen, können S
 
 Die Unterschritte gehen davon aus, dass das vorhandene Shelf in jedem Controller-Steckplatz 5 mit RoCE-fähigen PCIe-Karten verbunden ist.
 
-. Bewegen Sie das Kabel an Controller A von Steckplatz 5 Port b (e5b) in Steckplatz 3 Port b (e3b).
-. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
+.. Bewegen Sie das Kabel an Controller A von Steckplatz 5 Port b (e5b) in Steckplatz 3 Port b (e3b).
+.. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
 
 
 --
@@ -190,8 +192,8 @@ Wenn Sie ein zweites Shelf während des laufenden Betrieb hinzufügen, können S
 
 Die Unterschritte setzen voraus, dass das vorhandene Shelf in Steckplatz 3 an jedem Controller mit RoCE-fähigen I/O-Modulen verbunden ist.
 
-. Stellen Sie am Controller A das Kabel von Steckplatz 3 Port b (e3b) in Steckplatz 7 Port b (e7b) um.
-. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
+.. Stellen Sie am Controller A das Kabel von Steckplatz 3 Port b (e3b) in Steckplatz 7 Port b (e7b) um.
+.. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
 
 
 --
@@ -199,7 +201,7 @@ Die Unterschritte setzen voraus, dass das vorhandene Shelf in Steckplatz 3 an je
 --
 Wenn Sie je nach Plattformmodell im laufenden Betrieb ein zweites Shelf hinzufügen, führen Sie einen der folgenden Schritte aus:
 
-* Auf der AFF A400:
+** Auf der AFF A400:
 +
 Das erste Shelf kann auf jedem Controller über die beiden Sätze von RoCE-fähigen Ports hinweg, Onboard e0c/e0d und in Steckplatz 5, wieder verwendet werden.
 
@@ -207,11 +209,11 @@ Das erste Shelf kann auf jedem Controller über die beiden Sätze von RoCE-fähi
 Die Teilschritte gehen davon aus, dass das vorhandene Shelf an jedem Controller mit RoCE-fähigen Onboard-Ports e0c/e0d verbunden ist.
 
 +
-.. Bewegen Sie das Kabel an Controller A von Port e0d nach Steckplatz 5 Port b (e5b).
-.. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
+... Bewegen Sie das Kabel an Controller A von Port e0d nach Steckplatz 5 Port b (e5b).
+... Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
 
 
-* Auf dem AFF C400:
+** Auf dem AFF C400:
 +
 Wiederbesorgen des ersten Shelf über die beiden RoCE-fähigen Ports in Steckplatz 4 und Steckplatz 5 auf jedem Controller
 
@@ -219,8 +221,8 @@ Wiederbesorgen des ersten Shelf über die beiden RoCE-fähigen Ports in Steckpla
 Bei den Teilschritten wird davon ausgegangen, dass das vorhandene Shelf an jedem Controller an RoCE-fähige Ports in Steckplatz 4 angeschlossen ist.
 
 +
-.. Bringen Sie das Kabel an Controller A von Steckplatz 4 Port A (e4a) in Steckplatz 5 Port b (e5b).
-.. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
+... Bringen Sie das Kabel an Controller A von Steckplatz 4 Port A (e4a) in Steckplatz 5 Port b (e5b).
+... Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
 
 
 
@@ -230,22 +232,22 @@ Bei den Teilschritten wird davon ausgegangen, dass das vorhandene Shelf an jedem
 --
 Führen Sie einen der folgenden Schritte aus, wenn Sie ein zweites oder ein viertes Shelf im laufenden Betrieb hinzufügen.
 
-* Wenn Sie während des laufenden Betriebs ein zweites Shelf hinzufügen, können Sie das erste Shelf über die RoCE-fähigen I/O-Module in Steckplatz 2 und Steckplatz 10 auf jedem Controller neu anschaffen.
+** Wenn Sie während des laufenden Betriebs ein zweites Shelf hinzufügen, können Sie das erste Shelf über die RoCE-fähigen I/O-Module in Steckplatz 2 und Steckplatz 10 auf jedem Controller neu anschaffen.
 +
 Die Teilschritte gehen davon aus, dass das vorhandene Shelf an jedem Controller mit einem RoCE-fähigen I/O-Modul in Steckplatz 2 verbunden ist.
 
 +
-.. Bewegen Sie das Kabel an Controller A von Steckplatz 2 Port b (e2b) in Steckplatz 10 Port b (e10b).
-.. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
+... Bewegen Sie das Kabel an Controller A von Steckplatz 2 Port b (e2b) in Steckplatz 10 Port b (e10b).
+... Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
 
 
-* Wenn Sie ein viertes Shelf während des laufenden Betriebs hinzufügen, können Sie das dritte Shelf über die RoCE-fähigen I/O-Module in Steckplatz 1 und Steckplatz 11 auf jedem Controller umverteilen.
+** Wenn Sie ein viertes Shelf während des laufenden Betriebs hinzufügen, können Sie das dritte Shelf über die RoCE-fähigen I/O-Module in Steckplatz 1 und Steckplatz 11 auf jedem Controller umverteilen.
 +
 Bei den Teilschritten wird davon ausgegangen, dass das dritte Shelf an jedem Controller mit einem RoCE-fähigen I/O-Modul in Steckplatz 1 verbunden ist.
 
 +
-.. Bewegen Sie das Kabel an Controller A von Steckplatz 1 Port b (e1b) in Steckplatz 11 Port b (e11b).
-.. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
+... Bewegen Sie das Kabel an Controller A von Steckplatz 1 Port b (e1b) in Steckplatz 11 Port b (e11b).
+... Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
 
 
 
@@ -257,12 +259,138 @@ Wenn Sie während des laufenden Betriebs ein zweites Shelf hinzufügen, können 
 
 Die Teilschritte gehen davon aus, dass das vorhandene Shelf an jedem Controller mit einem RoCE-fähigen I/O-Modul in Steckplatz 3 verbunden ist.
 
-. Bewegen Sie das Kabel an Controller A von Steckplatz 3 Port b (e3b) in Steckplatz 1 Port b (e1b).
-. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
+.. Bewegen Sie das Kabel an Controller A von Steckplatz 3 Port b (e3b) in Steckplatz 1 Port b (e1b).
+.. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
 
 
 --
 ====
+
+
+* Für ASA Systeme:
++
+[role="tabbed-block"]
+====
+.ASA A1K
+--
+Führen Sie einen der folgenden Schritte aus, wenn Sie ein zweites oder ein viertes Shelf im laufenden Betrieb hinzufügen.
+
+
+NOTE: Wenn Sie über ein ASA A1K HA-Paar verfügen und während des laufenden Betriebs ein drittes Shelf hinzufügen und ein drittes oder viertes RoCE-fähiges I/O-Modul in jeden Controller installieren, ist das dritte Shelf nur mit den dritten, dritten und vierten I/O-Modulen verbunden. Sie müssen keine vorhandenen Shelfs erneut vertragen.
+
+** Wenn Sie während des laufenden Betriebs ein zweites Shelf hinzufügen, können Sie das erste Shelf über die RoCE-fähigen I/O-Module in Steckplatz 11 und Steckplatz 10 auf jedem Controller neu anschaffen.
++
+Die Teilschritte gehen davon aus, dass das vorhandene Shelf an jedem Controller mit einem RoCE-fähigen I/O-Modul in Steckplatz 11 verbunden ist.
+
++
+... Bewegen Sie das Kabel an Controller A von Steckplatz 11 Port b (e11b) in Steckplatz 10 Port b (e10b).
+... Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
+
+
+** Wenn Sie ein viertes Shelf während des laufenden Betriebs hinzufügen, können Sie das dritte Shelf über die RoCE-fähigen I/O-Module in Steckplatz 9 und Steckplatz 8 auf jedem Controller umverteilen.
++
+Bei den Teilschritten wird davon ausgegangen, dass das dritte Shelf an jedem Controller mit einem RoCE-fähigen I/O-Modul in Steckplatz 9 verbunden ist.
+
++
+... Bewegen Sie das Kabel an Controller A von Steckplatz 9 Port b (e9b) in Steckplatz 8 Port b (e8b).
+... Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
+
+
+
+
+--
+.ASA A70 oder ASA A90
+--
+Wenn Sie während des laufenden Betriebs ein zweites Shelf hinzufügen, können Sie das erste Shelf über die RoCE-fähigen I/O-Module in Steckplatz 11 und Steckplatz 8 auf jedem Controller neu anschaffen.
+
+Die Teilschritte gehen davon aus, dass das vorhandene Shelf an jedem Controller mit einem RoCE-fähigen I/O-Modul in Steckplatz 11 verbunden ist.
+
+.. Bewegen Sie das Kabel an Controller A von Steckplatz 11 Port b (e11b) in Steckplatz 8 Port b (e8b).
+.. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
+
+
+--
+.ASA A800 oder ASA C800
+--
+Wenn Sie ein zweites Shelf während des laufenden Betrieb hinzufügen, können Sie das erste Shelf über die beiden RoCE-fähigen Ports in Steckplatz 5 und Steckplatz 3 an jedem Controller neu anschaffen.
+
+Die Unterschritte gehen davon aus, dass das vorhandene Shelf in jedem Controller-Steckplatz 5 mit RoCE-fähigen PCIe-Karten verbunden ist.
+
+.. Bewegen Sie das Kabel an Controller A von Steckplatz 5 Port b (e5b) in Steckplatz 3 Port b (e3b).
+.. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
+
+
+--
+.ASA A400 oder ASA C400
+--
+Wenn Sie je nach Plattformmodell im laufenden Betrieb ein zweites Shelf hinzufügen, führen Sie einen der folgenden Schritte aus:
+
+** Auf der ASA A400:
++
+Das erste Shelf kann auf jedem Controller über die beiden Sätze von RoCE-fähigen Ports hinweg, Onboard e0c/e0d und in Steckplatz 5, wieder verwendet werden.
+
++
+Die Teilschritte gehen davon aus, dass das vorhandene Shelf an jedem Controller mit RoCE-fähigen Onboard-Ports e0c/e0d verbunden ist.
+
++
+... Bewegen Sie das Kabel an Controller A von Port e0d nach Steckplatz 5 Port b (e5b).
+... Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
+
+
+** Auf dem ASA C400:
++
+Wiederbesorgen des ersten Shelf über die beiden RoCE-fähigen Ports in Steckplatz 4 und Steckplatz 5 auf jedem Controller
+
++
+Bei den Teilschritten wird davon ausgegangen, dass das vorhandene Shelf an jedem Controller an RoCE-fähige Ports in Steckplatz 4 angeschlossen ist.
+
++
+... Bringen Sie das Kabel an Controller A von Steckplatz 4 Port A (e4a) in Steckplatz 5 Port b (e5b).
+... Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
+
+
+
+
+--
+.ASA A900
+--
+Führen Sie einen der folgenden Schritte aus, wenn Sie ein zweites oder ein viertes Shelf im laufenden Betrieb hinzufügen.
+
+** Wenn Sie während des laufenden Betriebs ein zweites Shelf hinzufügen, können Sie das erste Shelf über die RoCE-fähigen I/O-Module in Steckplatz 2 und Steckplatz 10 auf jedem Controller neu anschaffen.
++
+Die Teilschritte gehen davon aus, dass das vorhandene Shelf an jedem Controller mit einem RoCE-fähigen I/O-Modul in Steckplatz 2 verbunden ist.
+
++
+... Bewegen Sie das Kabel an Controller A von Steckplatz 2 Port b (e2b) in Steckplatz 10 Port b (e10b).
+... Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
+
+
+** Wenn Sie ein viertes Shelf während des laufenden Betriebs hinzufügen, können Sie das dritte Shelf über die RoCE-fähigen I/O-Module in Steckplatz 1 und Steckplatz 11 auf jedem Controller umverteilen.
++
+Bei den Teilschritten wird davon ausgegangen, dass das dritte Shelf an jedem Controller mit einem RoCE-fähigen I/O-Modul in Steckplatz 1 verbunden ist.
+
++
+... Bewegen Sie das Kabel an Controller A von Steckplatz 1 Port b (e1b) in Steckplatz 11 Port b (e11b).
+... Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
+
+
+
+
+--
+.ASA A30 oder ASA A50
+--
+Wenn Sie während des laufenden Betriebs ein zweites Shelf hinzufügen, können Sie das erste Shelf über die RoCE-fähigen I/O-Module in Steckplatz 3 und Steckplatz 1 auf jedem Controller neu anschaffen.
+
+Die Teilschritte gehen davon aus, dass das vorhandene Shelf an jedem Controller mit einem RoCE-fähigen I/O-Modul in Steckplatz 3 verbunden ist.
+
+.. Bewegen Sie das Kabel an Controller A von Steckplatz 3 Port b (e3b) in Steckplatz 1 Port b (e1b).
+.. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
+
+
+--
+====
+
+
 . Überprüfen Sie mit https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^].
 +
 Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.

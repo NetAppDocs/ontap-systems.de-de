@@ -2,8 +2,6 @@
 :allow-uri-read: 
 
 
-Wie Sie ein NS224-Shelf in einem AFF A800 oder AFF C800 HA-Paar verkabeln, hängt von der Anzahl der hinzuzufüenden Shelfs und der Anzahl der RoCE-fähigen Port-Sets (ein oder zwei), die Sie auf den Controllern verwenden, ab.
-
 .Bevor Sie beginnen
 * Sie müssen die überprüft haben link:requirements-hot-add-shelf.html["Hot-Add-Anforderungen und Best Practices"].
 * Sie müssen die entsprechenden Verfahren in abgeschlossen haben link:prepare-hot-add-shelf.html["Bei laufendem Betrieb ein Shelf hinzufügen"].
@@ -28,7 +26,7 @@ NOTE: Bei diesem Schritt wird vorausgesetzt, dass Sie die RoCE-fähige PCIe-Kart
 In der folgenden Abbildung wird die Verkabelung für ein Hot-Added Shelf mit einer RoCE-fähigen PCIe-Karte auf jedem Controller gezeigt:
 
 +
-image::../media/drw_ns224_a800_c800_1shelf_IEOPS-964.svg[Verkabelung für eine AFF A800 oder AFF C800 mit einem NS224-Shelf und einer PCIe-Karte]
+image::../media/drw_ns224_a800_c800_1shelf_IEOPS-964.svg[Verkabelung für AFF/ASA A800 oder AFF/ASA C800 mit einem NS224 Shelf und einer PCIe-Karte]
 
 
 
