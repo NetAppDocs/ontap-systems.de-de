@@ -1,17 +1,6 @@
----
-permalink: fas50/chassis-replace-move-hardware.html 
-sidebar: sidebar 
-keywords: fas50, move hardware components, replace the chassis 
-summary: Tauschen Sie das Chassis Ihres FAS50 Storage-Systems aus, wenn dies bei einem Hardwareausfall erforderlich ist. Beim Austausch werden die Controller entfernt, Caching-Module und Laufwerkplatzhalter entfernt, das Ersatzgehäuse installiert und die Gehäusekomponenten neu installiert. 
----
-= Ersetzen Sie das Gehäuse durch FAS50
+= Schritt 1: Entfernen Sie die Steuerung
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
 
-
-[role="lead"]
-Tauschen Sie das Chassis Ihres FAS50 Storage-Systems aus, wenn dies bei einem Hardwareausfall erforderlich ist. Beim Austausch werden die Controller entfernt, Caching-Module und Laufwerkplatzhalter entfernt, das Ersatzgehäuse installiert und die Gehäusekomponenten neu installiert.
 
 
 
@@ -290,6 +279,3 @@ DC-NETZTEIL
 `system node autosupport invoke -node * -type all -message MAINT=END`
 
 
-
-.Was kommt als Nächstes?
-Nachdem Sie das funktionslose FAS50-Chassis ersetzt und die Komponenten wieder eingebaut haben, müssen Sie link:chassis-replace-complete-system-restore-rma.html["Schließen Sie den Austausch des Gehäuses ab"].

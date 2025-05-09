@@ -9787,7 +9787,6 @@ SFP+ (Target/Initiator)</block>
   <block id="72b54ea7be3a13b4755dc4521c8d0af6" category="paragraph">Schieben Sie das Laufwerk mit dem Nockengriff aus dem Laufwerkschacht und stützen Sie das Laufwerk mit der anderen Hand.</block>
   <block id="0093c88dee6ce91e0bd8ccb1cfbc03ff" category="admonition">Da Laufwerke zerbrechlich sind, minimieren Sie die Handhabung, um sie nicht zu beschädigen.</block>
   <block id="0649d37403624118b801efa8956dc716" category="section-title">Schritt 3: Ersetzen Sie das Chassis aus dem Geräte-Rack oder Systemschrank heraus</block>
-  <block id="e5a4b20c56ed46e589289f6e1a9368dd" category="paragraph">Sie entfernen das Gehäuse für beeinträchtigte Störungen aus dem Geräte-Rack oder Systemschrank, installieren das Ersatzgehäuse, installieren die Laufwerke, alle Laufwerkplatzhalter und installieren dann die Blende.</block>
   <block id="eb8def779f4d3e61a371ec65c0cc0128" category="list-text">Entfernen Sie die Schrauben von den Montagepunkten für das Gehäuse, an denen die Störung beeinträchtigt ist.</block>
   <block id="16e252393218a73fc25b829675a86fce" category="paragraph">Legen Sie die Schrauben beiseite, um sie später in diesem Verfahren zu verwenden.</block>
   <block id="433916ec8110bbee1005399f55ede944" category="admonition">Wenn das Speichersystem in einem NetApp-Systemschrank geliefert wurde, müssen Sie zusätzliche Schrauben an der Rückseite des Gehäuses entfernen, bevor das Gehäuse entfernt werden kann.</block>
@@ -11808,7 +11807,6 @@ SFP+ (Target/Initiator)</block>
   <block id="64013ec345bda7b07597c5bf34eac5fe" category="open-title">Option 1: NS224-Shelfs</block>
   <block id="8a978cde5ab4fac3e67487580bc3a51a" category="open-title">Option 2: SAS-Shelfs</block>
   <block id="2cc2225989c416fa40923a89f7f8d99c" category="doc">Prüfen Sie die Unterstützung und den Status der Verschlüsselungsschlüssel auf dem Boot-Medium - FAS50</block>
-  <block id="e65767537c6f00cc3bec96359db6404a" category="summary">Tauschen Sie das Chassis Ihres FAS50 Storage-Systems aus, wenn dies bei einem Hardwareausfall erforderlich ist. Beim Austausch werden die Controller und Netzteile (PSUs) entfernt, Caching-Module entfernt, das Ersatzgehäuse installiert und die Gehäusekomponenten neu installiert.</block>
   <block id="aa7129f47a0b0a00e74ba4024fe7ba35" category="paragraph">Tauschen Sie das Chassis Ihres FAS50 Storage-Systems aus, wenn dies bei einem Hardwareausfall erforderlich ist. Beim Austausch werden die Controller entfernt, Caching-Module und Laufwerkplatzhalter entfernt, das Ersatzgehäuse installiert und die Gehäusekomponenten neu installiert.</block>
   <block id="d3f6a519d78eb3e642c0549ced5f8f2f" category="summary">Stellen Sie vor dem Austausch des Controllers in Ihrem FAS50-Speichersystem sicher, dass Sie die erforderlichen Voraussetzungen für einen erfolgreichen Austausch erfüllen. Dazu gehört die Überprüfung aller anderen Komponenten im System auf ordnungsgemäße Funktion, die Überprüfung, ob der richtige Ersatz-Controller vorhanden ist, und das Speichern der Konsolenausgabe des Controllers in einer Textprotokolldatei.</block>
   <block id="3034b89fc8e6fc3ae99585d8f1eab80e" category="doc">Voraussetzung für den Austausch des Controllers – FAS50</block>
@@ -11934,4 +11932,23 @@ SFP+ (Target/Initiator)</block>
   <block id="18b75697f84707c97e051581b495caae" category="list-text">Auf der ASA A400:</block>
   <block id="f08c247bf18a7d50e52f66010faca66f" category="list-text">Auf dem ASA C400:</block>
   <block id="2aba7ab5e3f8f696965da4208fe4dd23" category="open-title">ASA A30 oder ASA A50</block>
+  <block id="e3fb1d8bd564bfe9f807ba42e5cd7b33" category="paragraph">Drücken Sie die Entriegelungstaste auf der Vorderseite des Caching-Moduls, um den Nockengriff zu öffnen.</block>
+  <block id="06269d1797937a16e290698098cc8abd" category="paragraph">Drehen Sie den Nockengriff nach unten, um das Caching-Modul von der Mittelplatine zu lösen.</block>
+  <block id="469c355b09315b0a1d1690c1923180a4" category="paragraph">Schieben Sie das Caching-Modul mithilfe des Nockenhandgriffs aus dem Laufwerkschacht und stützen Sie das Caching-Modul mit der anderen Hand.</block>
+  <block id="e84b84ef6157f4a35245509c8a7fa353" category="paragraph">Wenn Sie ein Zwischenspeichermodul entfernen, verwenden Sie immer zwei Hände, um sein Gewicht zu tragen.</block>
+  <block id="feec4c6e74f9f529edb4ef65e2cc4efc" category="paragraph">Sie entfernen das Gehäuse für beeinträchtigte Störungen aus dem Geräte-Rack oder Systemschrank, installieren das Ersatzgehäuse, installieren die Controller, installieren alle Caching-Module und Laufwerkplatzhalter und installieren dann die Blende.</block>
+  <block id="19b2479c4fb73cb4e1e7a5cd66cd9fa9" category="list-text">Wenn sich der Nockengriff in der geöffneten Position befindet, verwenden Sie beide Hände, um das Caching-Modul einzusetzen.</block>
+  <block id="5b42dc5254df979588b011980c1a8adc" category="list-text">Vorsichtig drücken, bis das Caching-Modul stoppt.</block>
+  <block id="73e8bab771e1e37a562d7cdbeb444153" category="list-text">Schließen Sie den Nockengriff, so dass das Caching-Modul vollständig in die Mittelplatine eingesetzt ist und der Griff einrastet.</block>
+  <block id="82a8073ecc9994385ee15cd53ba7d96a" category="paragraph">Achten Sie darauf, den Nockengriff langsam zu schließen, damit er korrekt an der Vorderseite des Caching-Moduls ausgerichtet ist.</block>
+  <block id="0c1eef5d5ee997a38d2bb1303bcee89d" category="list-text">Wiederholen Sie ggf. den Vorgang für das verbleibende Cache-Modul.</block>
+  <block id="45d69e7bdfec0647cf3523f57e30a808" category="section-title">Schritt 2: Entfernen Sie die Laufwerke aus dem Gehäuse für beeinträchtigte Störungen</block>
+  <block id="c0055725498ec7c6a2d459f6d18aef46" category="paragraph">Sie müssen alle Laufwerke und alle Laufwerkplatzhalter aus dem Gehäuse für beeinträchtigte Störungen entfernen, damit Sie sie später im Ersatzgehäuse installieren können.</block>
+  <block id="3e56a6d3defe800cc97429c918a7c4fb" category="list-text">Entfernen Sie die Laufwerke und alle Laufwerkplatzhalter:</block>
+  <block id="ba52981b53ce10a301f84e2da386c778" category="admonition">Verfolgen Sie, aus welchem Laufwerkschacht jedes Laufwerk und jeder Laufwerkplatzhalter entfernt wurde, da diese in denselben Laufwerksschächten im Ersatzgehäuse installiert werden müssen.</block>
+  <block id="ab32ae446e6fa5de50a5d631bbe01daf" category="list-text">Legen Sie die Laufwerke auf einen statikfreien Wagen oder Tisch.</block>
+  <block id="17df5870a90dff11dc4f027f001751a7" category="section-title">Schritt 2: Ersetzen Sie das Chassis aus dem Geräte-Rack oder Systemschrank heraus</block>
+  <block id="277a5698809db74260fd2ddda1e6acd9" category="paragraph">Sie entfernen das Gehäuse für beeinträchtigte Störungen aus dem Geräte-Rack oder Systemschrank, installieren das Ersatzgehäuse, installieren die Laufwerke, alle Laufwerkplatzhalter und installieren dann die Blende.</block>
+  <block id="a6d6e73e138675b6ffbbb0e4663b2d5d" category="list-text">Installieren Sie die Laufwerke und alle Laufwerkplatzhalter, die Sie aus dem Gehäuse für beeinträchtigte Personen entfernt haben, im Ersatzgehäuse:</block>
+  <block id="4a7738e24d9329241e05c40def3be102" category="admonition">Die Laufwerke und Laufwerkplatzhalter müssen in denselben Laufwerksschächten im Ersatzgehäuse installiert werden.</block>
 </blocks>
