@@ -1,0 +1,51 @@
+---
+permalink: asa-r2-c30/chassis-replace-complete-system-restore-rma.html 
+sidebar: sidebar 
+keywords: asa c30, verify and set HA state, complete the replacement process 
+summary: Überprüfen Sie den HA-Status des Gehäuses und senden Sie das ausgefallene Teil dann an NetApp zurück, um den letzten Schritt im Verfahren zum Austausch des ASA C30-Gehäuses abzuschließen. 
+---
+= Vollständiger Chassisaustausch – ASA C30
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Überprüfen Sie den HA-Status des Gehäuses und senden Sie das ausgefallene Teil dann an NetApp zurück, um den letzten Schritt im Verfahren zum Austausch des ASA C30-Gehäuses abzuschließen.
+
+
+
+== Schritt: Überprüfen Sie den HA-Status des Chassis und legen Sie diesen fest
+
+Sie müssen den HA-Status des Chassis überprüfen und gegebenenfalls den Status entsprechend Ihrer Storage-Systemkonfiguration aktualisieren.
+
+. Im Wartungsmodus zeigen Sie von jedem Controller aus den HA-Zustand des lokalen Controllers und Chassis an:
++
+`ha-config show`
+
++
+Der HA-Status sollte für alle Komponenten identisch sein.
+
+. Wenn der angezeigte Systemstatus für das Gehäuse nicht mit der Konfiguration des Speichersystems übereinstimmt:
++
+.. Legen Sie für das Chassis den HA-Status fest:
++
+`ha-config modify chassis _HA-state_`
+
++
+Der Wert für HA-State sollte _ha_ sein. Der Wert für HA-State kann einer der folgenden Werte sein: *** _Ha_ *** _mcc_ (wird in ASA nicht unterstützt)
+
+.. Bestätigen Sie, dass sich die Einstellung geändert hat:
++
+`ha-config show`
+
+
+
+. Falls Sie dies noch nicht getan haben, können Sie den Rest Ihres Storage-Systems erneut verstellen.
+
+
+
+
+== Schritt 2: Rückgabe des fehlerhaften Teils an NetApp
+
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

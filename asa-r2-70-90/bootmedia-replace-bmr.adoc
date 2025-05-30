@@ -21,10 +21,12 @@ Das Startmedium befindet sich im System Management-Modul und kann durch Entferne
 image::../media/drw_a800_drive_seated_IEOPS-960.svg[drw a800-Laufwerk mit IEOPS 960]
 
 . Gehen Sie zur Rückseite des Gehäuses. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
-. Trennen Sie das Controller-Modul von der Stromversorgung, indem Sie das Controller-Modul ungefähr drei Zoll herausziehen:
+. Ziehen Sie die Netzteile des Controllers ab.
 +
-.. Drücken Sie beide Verriegelungen des Controller-Moduls nach unten, und drehen Sie beide Verriegelungen gleichzeitig nach unten.
-.. Ziehen Sie das Controller-Modul ungefähr 3 Zoll aus dem Chassis, um die Stromversorgung zu trennen.
+
+NOTE: Wenn Ihr System über Gleichstrom verfügt, trennen Sie den Netzstecker von den Netzteilen.
+
++
 .. Entfernen Sie alle Kabel, die am System Management-Modul angeschlossen sind. Achten Sie darauf, dass Sie beim Wiedereinsetzen des Moduls die Kabelanschlüsse kennzeichnen, damit Sie sie an die richtigen Anschlüsse anschließen können.
 .. Drehen Sie das Kabelführungs-Fach nach unten, indem Sie die Tasten an beiden Seiten an der Innenseite des Kabelführungs-Fachs ziehen und das Fach dann nach unten drehen.
 .. Drücken Sie die Taste für die Systemverwaltung. Der Nockenhebel bewegt sich vom Gehäuse weg.
@@ -79,17 +81,10 @@ Boot-Medien
 .. System-Management-Modul erneut verwenden.
 
 
-. Setzen Sie den Controller wieder ein, und schließen Sie das Controller-Modul wieder an die Stromversorgung an:
+. Schließen Sie die Netzkabel an die Netzteile an. Der Controller startet neu, sobald die Stromversorgung wiederhergestellt ist.
 +
-.. Drücken Sie das Controller-Modul fest in das Gehäuse, bis es auf die Mittelebene trifft und vollständig sitzt.
-+
-Die Verriegelungen steigen, wenn das Controller-Modul voll eingesetzt ist.
 
-.. Drehen Sie die Verriegelungen nach oben in die verriegelte Position.
-+
-Der Controller startet, sobald er eingesetzt und wieder mit Strom versorgt wird.
-
-
+NOTE: Wenn Sie über Gleichstromnetzteile verfügen, schließen Sie den Stromblock wieder an die Netzteile an.
 
 . Unterbrechen Sie den Boot-Vorgang, indem Sie Strg-C drücken, um an der LOADER-Eingabeaufforderung zu stoppen.
 

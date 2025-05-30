@@ -22,13 +22,6 @@ Bevor Sie die Startmedien in Ihrem ASA A20-, ASA A30- oder ASA A50-Speichersyste
 +
 Der Port E0S wird für die automatische Boot-Wiederherstellung verwendet.
 
-* Stellen Sie fest, ob Onboard Key Manager (OKM) oder Eternal Key Manager (EKM) mithilfe einer der folgenden Methoden konfiguriert ist:
-+
-** Sie können den Systemadministrator fragen, ob OKM oder EKM aktiviert sind.
-** Um zu überprüfen, ob OKM aktiviert ist, können Sie die verwenden `security key-manager onboard show`.
-** Um zu überprüfen, ob EKM aktiviert ist, können Sie die verwenden `security key-manager external show`.
-
-
 * Für OKM benötigen Sie den Inhalt der OKM-Passphrase-Datei.
 * Für EKM benötigen Sie Kopien der folgenden Dateien vom Partnerknoten:
 +

@@ -7693,7 +7693,6 @@ SFP+ (Target/Initiator)</block>
   <block id="c7e42b88c75788e5a4dd44ffee425837" category="image-alt">Startmedien ersetzen Grafik</block>
   <block id="65c48f838cd0d6bef4f7f9dfeffa6c20" category="paragraph">Nockenverriegelung des Systemmanagementmoduls</block>
   <block id="8805d2e1601760a201715748ea07f6ee" category="paragraph">Verriegelungstaste für Startmedien</block>
-  <block id="69d4901c403551aafed499a69f6a6854" category="list-text">Ziehen Sie die Netzteilkabel von den Netzteilen vom Controller ab.</block>
   <block id="8f95aa0a30128c64f675b79156365155" category="admonition">Wenn Ihr Speichersystem über Gleichstromnetzteile verfügt, trennen Sie den Stromkabelblock von den Netzteilen.</block>
   <block id="f1f9e5f6b36ebaca49f1a330347ef511" category="list-text">Entfernen Sie alle Kabel, die am System Management-Modul angeschlossen sind. Stellen Sie sicher, dass Sie den Ort kennzeichnen, an dem die Kabel angeschlossen wurden, damit Sie sie bei der Neuinstallation des Moduls an die richtigen Anschlüsse anschließen können.</block>
   <block id="ef59e6e115d6a402e96debfbcf2d43a4" category="list-text">Drehen Sie das Kabelführungs-Fach nach unten, indem Sie die Tasten an beiden Seiten an der Innenseite des Kabelführungs-Fachs ziehen und das Fach dann nach unten drehen.</block>
@@ -7814,7 +7813,6 @@ SFP+ (Target/Initiator)</block>
   <block id="be9a1fd60aae57036d44ee7248eef782" category="list-text">Schließen Sie die Abdeckung des NV-Luftkanals.</block>
   <block id="4241925b317fc8692e52a8a332fb8340" category="paragraph">Alle anderen Komponenten im System müssen ordnungsgemäß funktionieren; andernfalls müssen Sie sich an<block ref="dac6ef02422de09259cb8cc562a669a7" category="inline-link-rx"></block>.</block>
   <block id="eaf77e551d9134f3614ee70624c0542a" category="paragraph">Um das NVRAM-Modul auszutauschen, suchen Sie es in Steckplatz 4/5 im Gehäuse, und befolgen Sie die entsprechenden Schritte.</block>
-  <block id="f7a22033f03f49d91738ef92b897c094" category="list-text">Ziehen Sie das Netzkabel von beiden Netzteilen ab.</block>
   <block id="37482fa38231232549f86b1d6fa25993" category="list-text">Drehen Sie das Kabelführungs-Fach nach unten, indem Sie die Stifte an den Enden des Fachs vorsichtig herausziehen und das Fach nach unten drehen.</block>
   <block id="5aaa2c1d195fa72e1355d04b3f634478" category="list-text">Entfernen Sie das außer Betrieb genommene NVRAM-Modul aus dem Gehäuse:</block>
   <block id="61aaaaab1400d8b97407614db657600d" category="list-text">Drücken Sie die Verriegelungsnocken-Taste.</block>
@@ -7834,7 +7832,6 @@ SFP+ (Target/Initiator)</block>
   <block id="f1605e83555ac6fff25674a90928b3e7" category="list-text">Entfernen Sie das DIMM-Modul, indem Sie die DIMM-Sperrklinken nach unten drücken und das DIMM aus dem Sockel heben.</block>
   <block id="23f5629213f6fe0e6f15f79ecad3b590" category="list-text">Installieren Sie das NVRAM-Modul im Gehäuse:</block>
   <block id="566acb9aca693613465c9963de07cf2d" category="list-text">Schieben Sie das Modul vorsichtig in den Steckplatz, bis die Nockenverriegelung mit dem E/A-Nockenbolzen einrastet, und drehen Sie dann die Nockenverriegelung bis zum Anschlag nach oben, um das Modul zu verriegeln.</block>
-  <block id="8c7bd045108e1c5b78c97e914b17c504" category="list-text">Um ONTAP von der LOADER-Eingabeaufforderung zu booten, geben Sie „_bye_“ ein.</block>
   <block id="92c80dd5462d9ebbe458a4d5574a0bcd" category="paragraph">Sie müssen die Änderung der System-ID bestätigen, wenn Sie den Controller booten, und dann überprüfen, ob die Änderung implementiert wurde.</block>
   <block id="4809a5131531611e176d418579ff2bce" category="list-text">Wenn sich der Controller im Wartungsmodus befindet (es wird die Eingabeaufforderung angezeigt<block ref="2cf8a3bab83c4d2618c18eeeca9ebc98" prefix=" " category="inline-code"></block> ), beenden Sie den Wartungsmodus und fahren Sie mit der LOADER-Eingabeaufforderung _stop_ fort</block>
   <block id="4e5f4ae21b25e767c4cce37a6162f267" category="list-text">Warten Sie, bis Sie auf die Rückgabe warten... Die Meldung wird auf der Konsole des Controllers mit dem Ersatzmodul angezeigt und dann vom fehlerfreien Controller aus überprüft, ob die neue Partnersystem-ID automatisch zugewiesen wurde: _Storage Failover show_</block>
@@ -7890,14 +7887,12 @@ SFP+ (Target/Initiator)</block>
   <block id="74f39d10e6192c13072375a409227742" category="list-text">Richten Sie die Kanten des Ersatz-System-Management-Moduls an der Systemöffnung aus und drücken Sie es vorsichtig in das Controller-Modul.</block>
   <block id="c5636b2c060822d9237c298c9b4ed296" category="list-text">Drehen Sie die Kabelmanagement-ARM bis zur geschlossenen Position.</block>
   <block id="d1e3991136db3d982ab25f6e5eeec67c" category="section-title">Schritt 3: Starten Sie das Controller-Modul neu</block>
-  <block id="87faf0594e9a4ac1e4ad3b090942d772" category="list-text">Schließen Sie die Stromkabel wieder an das Netzteil an.</block>
   <block id="5cf314d7d9b8c453e8f6d5ee28dc576f" category="paragraph">Das System wird neu gebootet, normalerweise bis zur LOADER-Eingabeaufforderung.</block>
   <block id="61f88778bfaaa034c04052c8ec25d964" category="list-text">Geben Sie an der LOADER-Eingabeaufforderung _bye_ ein.</block>
   <block id="4ea15f830f2e664204a3efb99fb72b4d" category="section-title">Schritt 4: Installieren Sie Lizenzen und registrieren Sie die Seriennummer</block>
   <block id="05dceffd3c31a9d53e9b23ec48d1bf77" category="paragraph">Sie müssen neue Lizenzen für den Node installieren, wenn der beeinträchtigte Node ONTAP-Funktionen verwendet, für die eine standardmäßige (Node-locked) Lizenz erforderlich ist. Bei Standardlizenzen sollte jeder Node im Cluster über seinen eigenen Schlüssel für die Funktion verfügen.</block>
   <block id="d498932449bd1680afbe5aad136fb7e3" category="paragraph">Bis Sie die Lizenzschlüssel installieren, sind Funktionen, für die Standardlizenzen erforderlich sind, weiterhin für den Node verfügbar. Wenn der Node jedoch der einzige Node im Cluster mit einer Lizenz für die Funktion war, sind keine Konfigurationsänderungen an der Funktion zulässig. Wenn Sie nicht lizenzierte Funktionen auf dem Node verwenden, kommt es möglicherweise zu Compliance mit Ihrer Lizenzvereinbarung. Daher sollten Sie den Ersatz-Lizenzschlüssel oder die Schlüssel auf dem für den Node installieren.</block>
   <block id="3e508eeaedfdae09fad57a764b5e2b73" category="section-title">Schritt 1: Schalten Sie das Controller-Modul für die gestörte Steuerung aus</block>
-  <block id="5d053cb0e109f37b3c9cfa31e957c2bc" category="list-text">Ziehen Sie das Controller-Modul ungefähr 3 Zoll aus dem Chassis, um die Stromversorgung zu trennen.</block>
   <block id="6181ce929bc404494408989e6b8a9b52" category="paragraph">Um ein E/A-Modul zu ersetzen, suchen Sie es innerhalb des Controller-Moduls und befolgen Sie die Schritte.</block>
   <block id="8a9a8a0db84d9dd59b0f006930b47193" category="list-text">Drücken Sie die Taste für die Nockenverriegelung.</block>
   <block id="ed5714a7b9709284c56117bd6dc4e081" category="list-text">Drehen Sie das Kabelführungs-Fach in die verriegelte Position.</block>
@@ -8529,15 +8524,11 @@ SFP+ (Target/Initiator)</block>
   <block id="4f46fe04ed7debd30ef1d3c151e24935" category="sidebar">Arbeitsablauf für den Controller-Austausch</block>
   <block id="1ca4e63b42d944e09b1132b7f6f56b66" category="sidebar">E/A-Modul – Übersicht</block>
   <block id="926cbecf3e76b90a2bcdbc9c4519fc77" category="sidebar">Arbeitsablauf Gehäuseaustausch</block>
-  <block id="1d2bcd4906e89f4b93900e7a729cfa23" category="list-text">Trennen Sie das Controller-Modul von der Stromversorgung, indem Sie das Controller-Modul ungefähr drei Zoll herausziehen:</block>
-  <block id="190e6dffac1e1ea2cdf61c6d2e1aa03f" category="list-text">Drücken Sie beide Verriegelungen des Controller-Moduls nach unten, und drehen Sie beide Verriegelungen gleichzeitig nach unten.</block>
   <block id="18db855640715fe2445fe253feaa5737" category="list-text">Entfernen Sie alle Kabel, die am System Management-Modul angeschlossen sind. Achten Sie darauf, dass Sie beim Wiedereinsetzen des Moduls die Kabelanschlüsse kennzeichnen, damit Sie sie an die richtigen Anschlüsse anschließen können.</block>
   <block id="fd0b5e2ec2a2cf25a20efb1e3056cd3e" category="list-text">Installieren Sie das System Management-Modul neu:</block>
   <block id="cad55b14298ba91aeb9818c5ded8ee54" category="list-text">Schließen Sie das USB-Flash-Laufwerk an den USB-A-Anschluss des Systemmanagementmoduls an.</block>
-  <block id="c81ac37e18f8d2fc1fa9a876a4ec31e6" category="list-text">Schließen Sie das Controller-Modul wieder an die Stromversorgung an:</block>
   <block id="6d5d746399cefcc613daba11aecdc51c" category="paragraph">Speicher- und Netzwerkverbindungen neu verbinden und dann den Controller zurückgeben.</block>
   <block id="539ae767713043504856676d47fbdf4b" category="paragraph">Achten Sie darauf, dass Sie die Kabel so beschriften, dass Sie wissen, woher sie stammen.</block>
-  <block id="959e9a2f2cfb56163a0772785510252a" category="admonition">Der Controller wird neu gebootet, sobald er vollständig im Chassis eingesetzt ist.</block>
   <block id="efafbee0ffbc8d01f41e7d2a1428e535" category="section-title">Schritt 4: Festplatten neu zuweisen</block>
   <block id="d2b549392d50d0e5724cdaa8e0662e54" category="list-text">Identifizieren Sie das ausgefallene Laufwerk, indem Sie den Befehl von der Systemkonsole aus ausführen<block ref="aadfe3f601179615e320615d73c89773" prefix=" " category="inline-code"></block> .</block>
   <block id="9a3ce2ce3fa4d673c8baa3feb35a1d99" category="admonition">Je nach Typ und Kapazität kann es bis zu mehrere Stunden dauern, bis das Laufwerk in der Liste der ausgefallenen Laufwerke angezeigt wird.</block>
@@ -9072,7 +9063,6 @@ SFP+ (Target/Initiator)</block>
   <block id="2d0e9a7694bf5bc701c3af145a6bba71" category="sidebar">Prüfen Sie die Anforderungen</block>
   <block id="f76aaf3aaa7b30238e7a3e2b1a04493b" category="sidebar">Installation vorbereiten</block>
   <block id="03f15d4e5abe2379224af55ea714e8fd" category="sidebar">Systeme ASA A70 und ASA A90</block>
-  <block id="9c00140ee30800a9dd0418b3e4b50890" category="sidebar">Boot-Medien – Übersicht</block>
   <block id="e0f5268186ba6af55aa3b68c29a31380" category="sidebar">Image auf Startmedium wiederherstellen</block>
   <block id="7b51a70874531a1eb0a69494afcf3fc1" category="sidebar">ASA A1K-Systeme</block>
   <block id="7b2d89b8fc4544d7b3fc7e1ae3e2a79b" category="sidebar">FAS70 und FAS90 Systeme</block>
@@ -9259,7 +9249,6 @@ SFP+ (Target/Initiator)</block>
   <block id="9acf79506c541222d53e58985e01eb03" category="doc">Wiederherstellung der Verschlüsselung – AFF A900</block>
   <block id="9eeb212e62f650916daef03f37d7b903" category="paragraph"><block ref="9eeb212e62f650916daef03f37d7b903" category="inline-image-macro-rx" type="image"></block></block>
   <block id="21d7363ee72b4f7dbf229f951faae28f" category="paragraph"><block ref="21d7363ee72b4f7dbf229f951faae28f" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="7b8bb02fade9d4a58e3cfc42ecdcd970" category="summary">Erfahren Sie mehr über die automatisierte Methode zum Austauschen der Boot-Medien.</block>
   <block id="a203ae5b4c010fa4bfba309f112022fe" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block><block ref="bace9ebae872b936af5e4fb32c627436" category="inline-link-macro-rx"></block></block>
   <block id="cb6b9b62927bde4101155fb12ce4739b" category="paragraph">Beim automatischen Bootmedienaustausch wird das Boot-Image vom Partner-Node verwendet und automatisch die entsprechende Startmenüoption ausgeführt, um das Boot-Image auf den Ersatz-Boot-Medien zu installieren.</block>
   <block id="ff419f4954e3dbf64ddba1e44234dfc2" category="paragraph"><block ref="ff419f4954e3dbf64ddba1e44234dfc2" category="inline-image-macro-rx" type="image"></block></block>
@@ -9285,7 +9274,6 @@ SFP+ (Target/Initiator)</block>
   <block id="77464f13a7bfd5b5de3f6d6592b43344" category="admonition">Wenn auf Ihrem System zunächst ONTAP 9.10.1 oder höher ausgeführt wurde, gehen Sie wie in beschrieben <block ref="396f3a939b9056719487db53e0cdf43e" category="inline-link-macro-rx"></block>vor. Wenn Sie sich nicht sicher sind, wie die erste ONTAP-Version für Ihr System ist, finden Sie weitere Informationen unter<block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>.</block>
   <block id="8137cc3da5d92cb60020874c492d8701" category="list-text">Nach Bedarf Neuvernötigen des Storage-Systems</block>
   <block id="fc2585bb5dd330e4d87dd2cdbd6c596b" category="admonition">Stellen Sie sicher, dass das Konsolenkabel mit dem reparierten Controller-Modul verbunden ist, sodass beim Neustart Konsolenmeldungen empfangen werden. Der reparierte Controller wird von dem funktionstüchtigen Controller mit Strom versorgt und beginnt mit dem Neubooten, sobald er vollständig im Chassis eingesetzt ist.</block>
-  <block id="1dbff4f0fe05034cfd08080f90023ca9" category="admonition">Wenn der Controller bis zur Loader-Eingabeaufforderung gebootet wird, booten Sie ihn mit dem Befehl neu<block ref="ce54ef17bebf280339d340bd40dff593" prefix=" " category="inline-code"></block>.</block>
   <block id="c9a687d1939d0b48b69bff3618583e04" category="doc">Schritt: Prüfen Sie, ob Ihre Version von ONTAP NetApp-Volume-Verschlüsselung unterstützt</block>
   <block id="7a98ae061f92b7a841dcacb8930a02c5" category="paragraph">Um einen Controller sicher herunterzufahren, müssen Sie zuerst ermitteln, ob der External Key Manager (EKM) oder der Onboard Key Manager (OKM) aktiv ist. Überprüfen Sie anschließend den verwendeten Schlüsselmanager, zeigen Sie die entsprechenden Schlüsselinformationen an und ergreifen Sie Maßnahmen, die auf dem Status der Authentifizierungsschlüssel basieren.</block>
   <block id="8dd09587169b8d8db58ece09496b890f" category="cell">Führen Sie diesen Befehl aus</block>
@@ -9420,8 +9408,6 @@ SFP+ (Target/Initiator)</block>
   <block id="13e7cf07309f0d95eee5aa49b6842dc0" category="doc">Prüfen Sie Support und Status der Verschlüsselungsschlüssel - FAS9500</block>
   <block id="e4d9374bc79ce9095fb021e03551599f" category="doc">Wiederherstellung der Verschlüsselung – FAS9500</block>
   <block id="bd5c047c4a41e95a8a9424888875e56a" category="list-text">Verkabeln Sie das E/A-Modul mit dem vorgesehenen Gerät.</block>
-  <block id="9d462bd05672844aeab0d3d5d323d66a" category="list-text">Setzen Sie den Controller wieder ein, und schließen Sie das Controller-Modul wieder an die Stromversorgung an:</block>
-  <block id="4d872659b015ad414d5e68440a7ddfd6" category="paragraph">Der Controller startet, sobald er eingesetzt und wieder mit Strom versorgt wird.</block>
   <block id="6f3fa8086df2fa20b3e903512f693396" category="list-text">Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben:</block>
   <block id="c2e17c0358bcab54416e83b4418be536" category="paragraph"><block ref="30edaf7c9fa43c78aeaf4b8fabb7af1a" prefix="" category="inline-code"></block>.</block>
   <block id="32c032e6d73023a7bc6955f5bc422d4d" category="list-text">Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut:</block>
@@ -9487,7 +9473,6 @@ SFP+ (Target/Initiator)</block>
   <block id="b5507fd73a4983529ea95a333b70737d" category="paragraph">Wenn Sie Probleme sehen, überprüfen Sie die Verkabelung, und setzen Sie die Kabel wieder ein.</block>
   <block id="b9b95d927da2cee98d985b1a328995c6" category="list-text">Beenden Sie den Wartungsmodus:<block ref="4a1bde0ea8bcda2a591f42646813c477" prefix=" " category="inline-code"></block>.</block>
   <block id="f1d532893d42eeecb43413920b6d1769" category="list-text">Installieren Sie die Kabelmanagement-ARM neu, falls sie entfernt wurde, aber schließen Sie keine Kabel wieder an den Ersatzcontroller an.</block>
-  <block id="357f0f49c943fa136f00f3dd57ce7e41" category="list-text">Schließen Sie das Konsolenkabel an den Konsolenport des Ersatz-Controller-Moduls an, und schließen Sie es wieder an den Laptop an, damit es beim Neustart Konsolenmeldungen erhält. Der Ersatz-Controller wird vom ordnungsgemäßen Controller mit Strom versorgt und startet neu, sobald er vollständig im Chassis eingesetzt ist.</block>
   <block id="344f921d0ec02fd1e7780b61a619a100" category="admonition">Nach dem Austauschen der RTC-Batterie, dem Einsetzen des Controllers und dem Einschalten des ersten BIOS-Reset werden folgende Fehlermeldungen angezeigt:<block ref="049ec00df3ddcbe28d63cf4fa733682c" prefix=" " category="inline-code"></block><block ref="6c8ad83004cc8bc224a596f5f1682744" prefix=" " category="inline-code"></block> Diese Meldungen werden erwartet und Sie können mit diesem Verfahren fortfahren.</block>
   <block id="f97ccb05cf3baac7ac118d1817e2a5fd" category="open-title">Option 1: ONTAP 9.16.0 oder früher</block>
   <block id="46656bb1c59aea0ac10f1105bf4c8b13" category="list-text">Drücken Sie auf der außer Betrieb genommenen Steuerung<block ref="57cec4137b614c87cb4e24a3d003a3e0" prefix=" " category="inline-code"></block>, wenn angezeigt wird<block ref="aa48693d0248bb57512e373cd7f7eebc" prefix=" " category="inline-code"></block></block>
@@ -10183,7 +10168,6 @@ SFP+ (Target/Initiator)</block>
   <block id="cc9dc8ff5d926a2f202e16be7619d147" category="section-title">Schritt 4: Verkabeln Sie die Shelf-Verbindungen</block>
   <block id="63a714a4848b4ea90e8f63ae1efc6250" category="paragraph">Dieses Verfahren zeigt, wie Sie die Controller mit einem NS224-Shelf verkabeln.</block>
   <block id="02b0ddc9c51a6fd3d072763fb5b859f3" category="list-text">Die maximale Anzahl der unterstützten Einschübe für Ihr Speichersystem und alle Verkabelungsoptionen, wie <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>z. B. optische und Switch-Attached, finden Sie unter .</block>
-  <block id="5721aeeb697208bf3fd5fab5ebf0a599" category="list-text">Sie verkabeln jeden Controller mit jedem NSM100B-Modul im NS224-Shelf mithilfe der Storage-Kabel, die im Lieferumfang des Storage-Systems enthalten sind. Folgende Kabeltypen können verwendet werden:</block>
   <block id="302158186d4e933e7fd1df5cef7e5e27" category="list-text">Die Grafik zeigt die Verkabelung von Controller A blau und Controller B gelb.</block>
   <block id="252938adaa820c554614fbc402a51423" category="list-text">Controller A am Shelf verkabeln:</block>
   <block id="3c4324a5217fea116e9e54ac43c2946d" category="list-text">Kabel-Controller A-Anschluss e3a zu NSM A-Anschluss e1a.</block>
@@ -10242,12 +10226,9 @@ SFP+ (Target/Initiator)</block>
   <block id="c21a1648c7655abd0241b02472ce577b" category="doc">Ersetzen Sie ein Netzteil – AFF A20, AFF A30 und AFF A50</block>
   <block id="d04789e64aa71c747fa327e4d399534e" category="doc">Tauschen Sie die Echtzeituhr-Batterie aus – AFF A20, AFF A30 und AFF A50</block>
   <block id="4bc0f3e72d6123d7efdfe5948cc79a4c" category="doc">Senden Sie das fehlerhafte Teil an NetApp - AFF C30 und AFF C60 zurück</block>
-  <block id="a2465d131f0dc8d809437f68b008c8d1" category="doc">Installieren Sie den Controller AFF C30 und AFF C60 neu</block>
-  <block id="55d316e07dd2e8961ed119f45a3dff33" category="doc">Entfernen Sie den Controller AFF C30 und AFF C60</block>
   <block id="3ec7c47dabf1d4f35a400c4071a00ca3" category="doc">Starten Sie das Wiederherstellungs-Image - AFF C30 und AFF C60</block>
   <block id="b51f305b31269b3c0c90f0c435f98dc7" category="doc">Workflow zum Austausch von Boot-Medien – AFF C30 und AFF C60</block>
   <block id="eff4d8e89759d68c96ebcfc87dc315dd" category="doc">Ersetzen Sie das Startmedium – AFF C30 und AFF C60</block>
-  <block id="5cc55241a9614abe4087e6c9b29624e6" category="doc">Schalten Sie den Controller für beeinträchtigten Betrieb aus - AFF C30 und AFF C60</block>
   <block id="5c067d0c56a9b99bc0f72610745316f6" category="doc">Vollständiger Chassisaustausch – AFF C30 und AFF C60</block>
   <block id="1ef6e58891bf9a008b8184c8021cc060" category="doc">Ersetzen Sie das Gehäuse - AFF C30 und AFF C60</block>
   <block id="aac515bc7c0fef6db4d96f41deee5fd1" category="doc">Fahren Sie die Controller herunter - AFF C30 und AFF C60</block>
@@ -10258,7 +10239,6 @@ SFP+ (Target/Initiator)</block>
   <block id="1bd446701023b8913ca9b526c3e92f2e" category="doc">Stellen Sie die Systemkonfiguration wieder her und überprüfen Sie sie: AFF C30 und AFF C60</block>
   <block id="dffc469bd601fde82121083a3480be81" category="doc">Workflow zum Austausch von Controllern – AFF C30 und AFF C60</block>
   <block id="520d3987267b97f93ef8b0f406babbc3" category="doc">Ersetzen Sie ein DIMM-Modul – AFF C30 und AFF C60</block>
-  <block id="a4e5adc7bc258b17747b6f19d04cc2fa" category="doc">Ersetzen Sie das Laufwerk AFF C30 und AFF C60</block>
   <block id="c610b83162fd42225d6905d0aaa5cac5" category="doc">Ersetzen Sie ein Lüftermodul - AFF C30 und AFF C60</block>
   <block id="d43c251fd920bd85be3d9f4fbae93bd6" category="summary">Wartung der AFF C30 und AFF C60 Hardware</block>
   <block id="612700cc8178837b3b0e4453adecd5ff" category="doc">Wartung von AFF C30 und AFF C60 Hardware</block>
@@ -10735,9 +10715,6 @@ SFP+ (Target/Initiator)</block>
   <block id="98aab8017242eea1d6e23ba928b20ae5" category="list-text"><block ref="98aab8017242eea1d6e23ba928b20ae5" category="inline-link-macro-rx"></block></block>
   <block id="4e3c3284590d1aa1440e67b3bd65ba6e" category="list-text"><block ref="4e3c3284590d1aa1440e67b3bd65ba6e" category="inline-link-macro-rx"></block></block>
   <block id="370d2e6f20948d3881708f9706576691" category="sidebar">Austausch vorbereiten</block>
-  <block id="19d944a3a323213d80bcdd66ecd5c26f" category="list-text">Stellen Sie fest, ob Onboard Key Manager (OKM) oder Eternal Key Manager (EKM) mithilfe einer der folgenden Methoden konfiguriert ist:</block>
-  <block id="5dc17ba8443f8aafae4ca9de8cf9545b" category="list-text">Um zu überprüfen, ob OKM aktiviert ist, können Sie die verwenden<block ref="3c690d79c23fa8c25994507c25377567" prefix=" " category="inline-code"></block>.</block>
-  <block id="4e447e93a3331607c74749775653cbfc" category="list-text">Um zu überprüfen, ob EKM aktiviert ist, können Sie die verwenden<block ref="001642cb897a8bebce3210207b7e81af" prefix=" " category="inline-code"></block>.</block>
   <block id="161a8b7bf3b6a7aaa3bda387e5eab04b" category="list-text">Für OKM benötigen Sie den Inhalt der OKM-Passphrase-Datei.</block>
   <block id="7e8bda9aef5e8fb9e3018b4afe5250d1" category="list-text">Für EKM benötigen Sie Kopien der folgenden Dateien vom Partnerknoten:</block>
   <block id="0408893d877d770be02b8327fb6a5e89" category="list-text">Datei /cfcard/kmip/servers.cfg.</block>
@@ -10804,10 +10781,6 @@ SFP+ (Target/Initiator)</block>
   <block id="c8d49d03a62a2aaa6d3002fec3a650ea" category="list-text">Wählen Sie Die Option<block ref="1679091c5a880faf6fb5e6087eb1b2dc" prefix=" " category="inline-code"></block>.</block>
   <block id="fe5f4b926efaec8f9797da6b1b0b6c71" category="list-text">Drücken Sie auf<block ref="57cec4137b614c87cb4e24a3d003a3e0" prefix=" " category="inline-code"></block>, wenn Sie dazu aufgefordert werden, die Sicherungskonfiguration wiederherzustellen.</block>
   <block id="c22df67eafdbaec72d1c041a4f36d374" category="list-text">Sie müssen das ausgefallene Boot-Medium durch ein Ersatz-Boot-Medium ersetzen, das Sie von NetApp erhalten haben.</block>
-  <block id="0ff7731ee6e151edd45a22c7a84637f0" category="list-text">Sie können den Systemadministrator fragen, ob OKM oder EKM aktiviert sind.</block>
-  <block id="f6482a2d2722297ff58ea916af2984cb" category="doc">Übersicht über Boot-Medien Wiederherstellung - ASA A70 und ASA A90</block>
-  <block id="c987ba69ee60ff652b96f087d2e6ae84" category="paragraph">Die Wiederherstellung der Startmedien verwendet das Startabbild vom Partner-Node und führt automatisch die entsprechende Startmenüoption aus, um das Startabbild auf den Ersatz-Startmedien zu installieren.</block>
-  <block id="4c676d1a7c436f114a574bfe649622ee" category="paragraph">Wenn beim Booten Fehlermeldungen wie der unten gezeigten auftreten, müssen Sie die Boot-Medien ersetzen und das ONTAP Image vom Partner-Node wiederherstellen.</block>
   <block id="01e12de62fa77fda2815719aed8ff892" category="paragraph-title">Wie es weiter geht</block>
   <block id="f88cdb2cd014d9929aa478cc85d4b492" category="inline-link-macro">Geben Sie das fehlerhafte Teil an NetApp zurück</block>
   <block id="7853c5276d1f54917577b980848960c3" category="paragraph">Nachdem Sie das ONTAP-Image wiederhergestellt haben und der Node ausgeführt wurde und Daten bereitstellt, können Sie <block ref="977d546e7889319c9a653d351be92c2b" category="inline-link-macro-rx"></block>.</block>
@@ -10819,11 +10792,8 @@ SFP+ (Target/Initiator)</block>
   <block id="2adbaa1720c6c394fbe2503b6da6fdb7" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block><block ref="ffddb9c4b10a61c1cf9d29a315266845" category="inline-link-macro-rx"></block></block>
   <block id="a9a4115c08aa47aeef8b44d2372274ad" category="inline-link-macro">Ersetzen Sie das Startmedium</block>
   <block id="aa8efed5979835fe328570ee208b1884" category="paragraph">Nach dem Herunterfahren des außer Betrieb genommenen Controllers, Sie <block ref="52c48d39b9a1e431e1d04998ae5045f5" category="inline-link-macro-rx"></block>.</block>
-  <block id="e0bfc72b163c6540df4eb3869f1393ff" category="paragraph"><block ref="e0bfc72b163c6540df4eb3869f1393ff" category="inline-link-macro-rx"></block></block>
   <block id="9d99224aaec79ef0b06c033956f14979" category="paragraph">Sie können ein ausgefallenes Boot-Medium vom Partner-Node für das Boot-Image ersetzen.</block>
   <block id="5d9ac1643aa86c7bddb319af8c3e06e3" category="paragraph">Boot Media Replace verwendet das Boot-Image vom Partner-Node und führt automatisch die entsprechende Boot-Menüoption aus, um das Boot-Image auf den Ersatz-Boot-Medien zu installieren.</block>
-  <block id="d152ad943d3809714aa2acb56114839e" category="doc">Übersicht über die Wiederherstellung der Startmedien - ASA A1K</block>
-  <block id="488cce5b2121242760d58a49c413507e" category="paragraph">Wenn beim Booten Meldungen auftreten, müssen Sie die Boot-Medien ersetzen und das ONTAP Image vom Partner-Node wiederherstellen.</block>
   <block id="a81626227e94d15884d465e1127d3af4" category="sidebar">ASA A70 und ASA A90 Startmedien</block>
   <block id="9482f3836d9bb6259f467a0685f5e3b4" category="sidebar">ASA A1K-Startmedium</block>
   <block id="3636656d79b8f02465b883839da0c32b" category="paragraph">Überprüfen Sie die folgenden Anforderungen.</block>
@@ -10869,8 +10839,6 @@ SFP+ (Target/Initiator)</block>
   <block id="c5a3b9039ee3d286f345090dc5bd7f24" category="summary">Bereiten Sie den Austausch des Gehäuses für beeinträchtigte Personen in Ihrem ASA A70 oder ASA A90-System vor, indem Sie das Gehäuse für beeinträchtigte Personen identifizieren, die Ersatzkomponenten überprüfen und die Kabel und Controller-Module beschriften.</block>
   <block id="5cb5b467ffe15c96f5be4b190434f4d7" category="summary">Überprüfen Sie, ob die HA-Konfiguration des Controllers im ASA A70 oder ASA A90 Storage-System aktiv ist und ordnungsgemäß funktioniert, und vergewissern Sie sich, dass die Systemadapter alle Pfade zu den Festplatten auflisten.</block>
   <block id="9b16f0deb40e2ccd298a84213dfcb3c1" category="summary">Ersetzen Sie ein Laufwerk in Ihrem ASA A70 oder ASA A90-System, wenn ein Laufwerk ausfällt oder ein Upgrade erforderlich ist. Bei diesem Prozess wird das fehlerhafte Laufwerk identifiziert, sicher entfernt und ein neues Laufwerk installiert, um den kontinuierlichen Datenzugriff und die Systemleistung zu gewährleisten.</block>
-  <block id="8e10453b1538c94c1675905e948ad27f" category="doc">Installieren Sie den Controller ASA A20, ASA A30 und ASA A50 neu</block>
-  <block id="77b6dee74a408b2a89351dd1b7874a9d" category="doc">Entfernen Sie den Controller ASA A20, ASA A30 und ASA A50</block>
   <block id="1bd4517f6602bce986a904d28bd0d138" category="paragraph">Entfernen Sie das fehlerhafte Startmedium vom Controller für den beeinträchtigten Betrieb, und installieren Sie das Ersatz-Startmedium.</block>
   <block id="52e36495272e13465007207307f8b233" category="paragraph">Stellen Sie das ONTAP-Image vom fehlerfreien Controller wieder her.</block>
   <block id="8022fc0f0b4485cbb98cfd555c374305" category="doc">Vollständiger Chassisaustausch – ASA A20, ASA A30 und ASA A50</block>
@@ -10887,7 +10855,6 @@ SFP+ (Target/Initiator)</block>
   <block id="fea30c44903d9b686caf9f4ef1fef103" category="summary">Wartung der Hardware ASA A20, ASA A30 und ASA A50</block>
   <block id="0560ae441e964fbd0ea21e048b96e0c1" category="doc">Wartung von ASA A20, ASA A30 und ASA A50 Hardware</block>
   <block id="5e1381a5e0cf586808d824d931af18f5" category="paragraph">Für die Speichersysteme ASA A20, ASA A30 oder ASA A50 können Sie Wartungsverfahren für die folgenden Komponenten durchführen.</block>
-  <block id="d70d74fb3e61a0a9af3ef593945dca19" category="paragraph">Sie können Ihren Speichersystemen ASA A20, ASA A30 und ASA A50 ein I/O-Modul hinzufügen, wenn Steckplätze verfügbar sind oder wenn alle Steckplätze vollständig belegt sind.</block>
   <block id="151d3f9489dc71ef0bf598517f9387d5" category="paragraph">Falls erforderlich, können Sie die (blauen) LEDs des Speichersystems einschalten, um die physische Lokalisierung des ausgewählten Speichersystems zu erleichtern. Melden Sie sich über SSH bei der BMC an und geben Sie den Befehl ein<block ref="748a449bca03582c103ee6b7bcd4a969" prefix=" " category="inline-code"></block>.</block>
   <block id="f7505dbf9cbf21226d33ed67b7c926e6" category="doc">Überblick über die Hardwarewartung – ASA A20, ASA A30 und ASA A50</block>
   <block id="02cbc9c9b92f52062a793fbc039a7a5f" category="paragraph">Für die Speichersysteme ASA A20, ASA A30 und ASA A50 können Sie Wartungsverfahren für die folgenden Komponenten durchführen.</block>
@@ -11138,7 +11105,6 @@ SFP+ (Target/Initiator)</block>
   <block id="1b138e65eb583a747e0e4d3a8398fb6a" category="summary">Ersetzen Sie ein DIMM in Ihrem AFF A70- oder AFF A90-System, wenn zu viele korrigierbare oder nicht korrigierbare Speicherfehler festgestellt werden. Derartige Fehler können das Booten von ONTAP durch das Storage-System verhindern. Beim Austausch wird der beeinträchtigte Controller heruntergefahren, entfernt, das DIMM ersetzt, der Controller neu installiert und das fehlerhafte Teil anschließend an den NetApp zurückgegeben.</block>
   <block id="99d3d3fcd25a3de8482ec4e2a68cd980" category="paragraph">Um den Austauschvorgang abzuschließen und den Betrieb des Systems wiederherzustellen, stellen Sie die NetApp-Speicherverschlüsselungskonfiguration (falls erforderlich) wieder her, und installieren Sie Lizenzen für den neuen Controller.</block>
   <block id="bc8b7a027a67f1503950943beb4e6143" category="paragraph">Wenn eine Komponente in Ihrem ASA A1K-System ausfällt, geben Sie das fehlerhafte Teil an NetApp zurück. <block ref="f2d8b0d8f345a4e987bed9853cde2668" category="inline-link-rx"></block>Weitere Informationen finden Sie auf der Seite.</block>
-  <block id="a2aac55abc6c28c4882557e0112dda0e" category="summary">Die Wiederherstellung der Startmedien für Ihr ASA A70- oder ASA A90-Speichersystem verwendet das Boot-Image des Partner-Knotens und führt automatisch die entsprechende Startmenüoption aus, um das Startabbild auf dem Ersatz-Startmedium zu installieren.</block>
   <block id="bd0c4a219c159fa570da1ded545f36d9" category="summary">Nach der Installation des neuen Startmediengeräts in Ihrem ASA A70- oder ASA A90-System können Sie den automatischen Startmedienwiederherstellungsprozess starten, um die Konfiguration vom Partnerknoten wiederherzustellen.</block>
   <block id="b6bbff6284dec160274ef588afc1a30c" category="doc">Stellen Sie das Image auf dem Startmedium wieder her – ASA A70 und ASA A90</block>
   <block id="24fd70ba02d3ad8edef21fae96195bae" category="paragraph">Nach der Installation des neuen Startmediengeräts in Ihrem ASA A70- oder ASA A90-System können Sie den automatischen Startmedienwiederherstellungsprozess starten, um die Konfiguration vom Partnerknoten wiederherzustellen.</block>
@@ -11175,7 +11141,6 @@ SFP+ (Target/Initiator)</block>
   <block id="41e2f285e686b8f2a3edb4bab2e58d51" category="paragraph">Ersetzen Sie die Echtzeituhr (RTC)-Batterie, die allgemein als Knopfzellenbatterie bezeichnet wird, in Ihrem ASA A70- oder ASA A90-System, um sicherzustellen, dass Dienste und Anwendungen, die auf eine genaue Zeitsynchronisierung angewiesen sind, weiterhin funktionsfähig bleiben.</block>
   <block id="bcde75f7bddc9226b30c2cb1712cb52b" category="summary">Ersetzen Sie das Systemverwaltungsmodul in Ihrem ASA A70- oder ASA A90-System, wenn es defekt ist oder die Firmware beschädigt ist. Beim Austausch werden der Controller heruntergefahren, das fehlerhafte Systemmanagement-Modul ersetzt, der Controller neu gebootet, die Lizenzschlüssel aktualisiert und der fehlerhafte Teil an NetApp zurückgegeben.</block>
   <block id="603c758839f418606126a3dd634c68d9" category="doc">Ersetzen Sie das Systemmanagement-Modul – ASA A70 und ASA A90</block>
-  <block id="73c7c606d50a6cd6a6bf0be619496e05" category="paragraph">Die Wiederherstellung der Startmedien für Ihr ASA A1K-Speichersystem verwendet das Startabbild des Partner-Knotens und führt automatisch die entsprechende Startmenüoption aus, um das Startabbild auf den Ersatz-Startmedien zu installieren.</block>
   <block id="dcfa3de2faa27a3e334c7c433ea50340" category="summary">Stellen Sie das ONTAP-Image auf dem Ersatz-Startmedium des ASA A1K-Systems wieder her. Dabei wird der Boot-Recovery-Prozess von der Eingabeaufforderung Loader aus initiiert und der Recovery-Prozess überwacht, bis er abgeschlossen ist und der Node neu gebootet wird.</block>
   <block id="2cc0e4a695b44179f7b31d704877b9fc" category="doc">Stellen Sie das Image auf dem Startmedium wieder her - ASA A1K</block>
   <block id="955b02a4be265a47dec370f73ec90202" category="paragraph">Nach der Installation des neuen Startmediengeräts in Ihrem ASA A1K-System können Sie den automatischen Wiederherstellungsvorgang für die Startmedien starten, um die Konfiguration vom Partner-Node aus wiederherzustellen.</block>
@@ -11213,7 +11178,6 @@ SFP+ (Target/Initiator)</block>
   <block id="d5c5d5ed06719b517e116422631085f4" category="summary">Ersetzen Sie in Ihrem ASA A1K-System die Echtzeituhr (RTC)-Batterie, die allgemein als Knopfzellenbatterie bezeichnet wird, um sicherzustellen, dass Dienste und Anwendungen, die auf eine genaue Zeitsynchronisierung angewiesen sind, weiterhin funktionsfähig bleiben.</block>
   <block id="9f3c1aa619a31cc111c40fc314f9faa2" category="summary">Tauschen Sie das Systemverwaltungsmodul in Ihrem ASA A1K-System aus, wenn es defekt ist oder die Firmware beschädigt ist. Beim Austausch werden der Controller heruntergefahren, das fehlerhafte Systemmanagement-Modul ersetzt, der Controller neu gebootet, die Lizenzschlüssel aktualisiert und der fehlerhafte Teil an NetApp zurückgegeben.</block>
   <block id="e04a3734ea529efaec431e68c61d0806" category="doc">Senden Sie das fehlerhafte Teil an NetApp - ASA A20, ASA A30 und ASA A50 zurück</block>
-  <block id="23972a0b40b2aebc2048150eeceaebc3" category="doc">Übersicht über die Wiederherstellung von Startmedien – ASA A20, ASA A30 und ASA A50</block>
   <block id="99408db22f283eaf0f69169123395c6f" category="doc">Ersetzen Sie die Startmedien – ASA A20, ASA A30 und ASA A50</block>
   <block id="f61a4b29bc6d3cca219956808d8cd39b" category="doc">Workflow für den Austausch von Startmedien – ASA A20, ASA A30 und ASA A50</block>
   <block id="f08c3d5c20f112189a4f958d78f4d98e" category="paragraph">Nach der Installation des neuen Startmediums in Ihrem AFF C80-System können Sie das Wiederherstellungs-Image von einem USB-Laufwerk starten und die Konfiguration vom Partnerknoten wiederherstellen.</block>
@@ -11370,11 +11334,9 @@ SFP+ (Target/Initiator)</block>
   <block id="05d5663ac0d1fbb9e47fdabe976bff04" category="paragraph">Die I/O-Steckplätze der ASA A1K Controller sind wie in der folgenden Abbildung dargestellt mit 1 bis 11 nummeriert.</block>
   <block id="4d7f3bf998f11ec51e5b1d5c5c650e48" category="image-alt">Steckplatznummerierung auf einem ASA A1K-Controller</block>
   <block id="6cdd2252e3b0e8b6b38ce0acf92e33da" category="paragraph">Wenn eine Komponente in Ihrem ASA A20-, ASA A30- oder ASA A50-Speichersystem ausfällt, geben Sie das fehlerhafte Teil an NetApp zurück. <block ref="f2d8b0d8f345a4e987bed9853cde2668" category="inline-link-rx"></block>Weitere Informationen finden Sie auf der Seite.</block>
-  <block id="87c3a7e23a933ae2a7f97c8b908592e6" category="paragraph">Die Wiederherstellung des Startmediums für Ihr ASA A20-, ASA A30- oder ASA A50-Speichersystem verwendet das Startabbild vom Partnerknoten und führt automatisch die entsprechende Startmenüoption aus, um das Startabbild auf dem Ersatz-Startmedium zu installieren.</block>
   <block id="82ab30608a615aba23a7ce646834847f" category="paragraph">Nach der Installation des neuen Startmediengeräts in Ihrem ASA A20-, ASA A30- oder ASA A50-Speichersystem können Sie den automatischen Startmedienwiederherstellungsprozess starten, um die Konfiguration vom fehlerfreien Knoten wiederherzustellen.</block>
   <block id="884e7c8aa1da8d043f1e79506ee853dc" category="summary">Bevor Sie die Startmedien in Ihrem ASA A20-, ASA A30- oder ASA A50-Speichersystem austauschen, stellen Sie sicher, dass Sie die erforderlichen Voraussetzungen und Überlegungen für einen erfolgreichen Austausch erfüllen. Dazu gehört die Überprüfung, dass Sie über die richtigen Boot-Ersatzmedien verfügen, die Bestätigung, dass der Port E0S (E0M Schraubenschlüssel) am beeinträchtigten Controller nicht fehlerhaft ist, und die Feststellung, ob Onboard Key Manager (OKM) oder External Key Manager (EKM) aktiviert ist.</block>
   <block id="0855cbbfbd39228942736f1dd60ef241" category="paragraph">Nachdem Sie die Anforderungen für die Startmedien überprüft haben, können Sie <block ref="f6f6eaac8bd3f857cf89c647db55229b" category="inline-link-macro-rx"></block>.</block>
-  <block id="2a22ac053b2a9d77374ec7727f46903c" category="summary">Beginnen Sie mit dem Austausch der Startmedien in Ihrem ASA A30, ASA A20 und ASA A50 Speichersystem, indem Sie die Austauschanforderungen überprüfen, den außer Betrieb genommenen Controller herunterfahren, das Startmedium austauschen, das Image auf dem Startmedium wiederherstellen und die Systemfunktionalität überprüfen.</block>
   <block id="2fd545b6948b18df87e2184b90a0ba0b" category="paragraph">Beginnen Sie mit dem Austausch der Startmedien in Ihrem ASA A30-, ASA A20- oder ASA A50-Speichersystem, indem Sie die Austauschanforderungen überprüfen, den außer Betrieb genommenen Controller herunterfahren, das Startmedium austauschen, das Image auf dem Startmedium wiederherstellen und die Systemfunktionalität überprüfen.</block>
   <block id="f78c88bb1e8f1ee3c7a6ac3858965894" category="paragraph">Wenn eine Komponente in Ihrem AFF C30- oder AFF C60-System ausfällt, senden Sie das fehlerhafte Teil an NetApp zurück. <block ref="f2d8b0d8f345a4e987bed9853cde2668" category="inline-link-rx"></block>Weitere Informationen finden Sie auf der Seite.</block>
   <block id="d21e93c705ab8bba60c13a4e0593f4af" category="doc">Prüfen Sie die Unterstützung und den Status der Verschlüsselungsschlüssel auf dem Boot-Medium - AFF C30 und AFF C60</block>
@@ -11950,4 +11912,111 @@ SFP+ (Target/Initiator)</block>
   <block id="3d30da9db64c70df76ae8eab8c37ddf1" category="list-text">Wenn Sie ein Wechselstromnetzteil für ein NS224-Shelf austauschen, können Sie sich die folgende Animation ansehen, um sich mit dem Verfahren vertraut zu machen, bevor Sie beginnen. Die Animation zeigt eine NS224 mit NSM100-Modulen, aber die Schritte sind die gleichen für Shelfs mit NSM100B-Modulen.</block>
   <block id="e772ad168b6f97f132982a96392cd046" category="example-title">Ersetzen Sie das Wechselstromnetzteil für NS224</block>
   <block id="0dcc8efe101bb5e6350d650ce519cbfa" category="video-title">Tauschen Sie im laufenden Betrieb ein Wechselstromnetzteil in einem NS224-Shelf aus</block>
+  <block id="40f990da8c57e47c36081d4d612c9817" category="list-text">Ziehen Sie die Stromversorgungskabel von den Netzteilen ab und ziehen Sie dann das Controllermodul einige Zentimeter aus der Vorderseite des Systems heraus.</block>
+  <block id="5330c5fb5d366be53452014b9ecf03a7" category="paragraph">+ .. Entfernen Sie alle Kabel, die am System Management-Modul angeschlossen sind. Stellen Sie sicher, dass Sie den Ort kennzeichnen, an dem die Kabel angeschlossen wurden, damit Sie sie bei der Neuinstallation des Moduls an die richtigen Anschlüsse anschließen können. .. Drehen Sie das Kabelführungs-Fach nach unten, indem Sie die Tasten an beiden Seiten an der Innenseite des Kabelführungs-Fachs ziehen und das Fach dann nach unten drehen. .. Drücken Sie die CAM-Taste für die Systemverwaltung. .. Drehen Sie die Nockenverriegelung so weit wie möglich nach unten. .. Entfernen Sie das System-Management-Modul aus dem Gehäuse, indem Sie den Finger in die Öffnung des Nockenhebels stecken und das Modul aus dem Gehäuse ziehen. .. Platzieren Sie das System-Management-Modul auf einer antistatischen Matte, damit das Startmedium zugänglich ist. . Entfernen Sie das Startmedium aus dem Verwaltungsmodul:</block>
+  <block id="42daa41b8c19102ddb14e0889d7abbb4" category="paragraph">+ image::../media/drw_a1k_boot_media_remove_replace_ieops-1377.svg[Grafik zum Ersetzen des Bootmediums]</block>
+  <block id="26b17225b626fb9238849fd60eabdf60" category="paragraph">+</block>
+  <block id="193d35b8a9ac476b4099d10d04a128a6" category="list-text">Setzen Sie das Controllermodul vorsichtig wieder an der Vorderseite des Systems ein und verriegeln Sie es.</block>
+  <block id="c65e5ab2ccd40a14e7dbaad19aa0c504" category="list-text">Trennen Sie die Stromversorgungskabel der Netzteile vom Controller und ziehen Sie dann das Controllermodul an der Vorderseite des Systems einige Zentimeter heraus.</block>
+  <block id="2a111f85cafe27d96d705414a1545f34" category="list-text">Stecken Sie die Stromkabel wieder in das Netzteil und setzen Sie das Controllermodul vorsichtig wieder an der Vorderseite des Systems ein und verriegeln Sie es.</block>
+  <block id="fabbb288606bc55258a9e8e717fe5213" category="list-text">Verkabeln Sie den Controller neu.</block>
+  <block id="a97d4703d17abbeceacc3edae4e8fdc4" category="list-text">Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden. Ziehen Sie die Stromversorgungskabel von den Netzteilen ab und ziehen Sie dann das Controllermodul einige Zentimeter aus der Vorderseite des Systems heraus.</block>
+  <block id="fda9664b829519d7882c4d0260276790" category="list-text">Ziehen Sie die Netzteile des Controllers ab.</block>
+  <block id="9ea5392d65d4b774209903c12c0b7a2c" category="list-text">Schließen Sie die Netzkabel an die Netzteile an. Der Controller startet neu, sobald die Stromversorgung wiederhergestellt ist.</block>
+  <block id="b4f9b4ed219fb6f91477aff5ebef3453" category="admonition">Wenn Sie über Gleichstromnetzteile verfügen, schließen Sie den Stromblock wieder an die Netzteile an.</block>
+  <block id="4efb9ea6af03bf03e0cdc2a4164ea43c" category="list-text">Schließen Sie das Konsolenkabel an den Konsolenport des Ersatz-Controller-Moduls an, und schließen Sie es wieder an den Laptop an, damit es beim Neustart Konsolenmeldungen erhält.</block>
+  <block id="fde22c7ade0121628e0502770ed5326e" category="list-text">Schließen Sie die Netzteile an. Sobald die Stromversorgung wiederhergestellt ist, bootet der Controller zur LOADER-Eingabeaufforderung.</block>
+  <block id="ea1ad38d91c2e87ef2e9571bd55654fd" category="list-text">ONTAP 9.17.1</block>
+  <block id="14a1b02d9ac34f22a362671d392a3852" category="list-text">ASA C30</block>
+  <block id="ed57089257c5bf0e9855c2abce5e2f2c" category="paragraph">Die AFF A1K Speichersysteme unterstützen NS224-Shelves mit dem Modul NSM100 oder NSM100B. Die Hauptunterschiede zwischen den Modulen sind:</block>
+  <block id="bee9bdef55e93399a97d85b3925cfca2" category="list-text">NSM100-Regalmodule verwenden die integrierten Ports e0a und e0b.</block>
+  <block id="1d18f8f4fb2168d48bce60e13139f7da" category="list-text">NSM100B-Shelf-Module verwenden die Ports e1a und e1b in Steckplatz 1.</block>
+  <block id="cc71e1eb20bbf56ae364562c6769007c" category="paragraph">Das folgende Verkabelungsbeispiel zeigt NSM100-Module in den NS224-Schränken, wenn auf die Anschlüsse der Regalmodule verwiesen wird.</block>
+  <block id="a93a7a45b049b849ed9c03ad1c596615" category="list-text">Die Verkabelung des NS224-Regals zeigt NSM100B-Module anstelle von NSM100-Modulen. Die Verkabelung ist unabhängig vom Typ der verwendeten NSM-Module gleich, lediglich die Portnamen unterscheiden sich:</block>
+  <block id="30898d03a4ca37450e8ab2be81f38dd5" category="list-text">NSM100B-Module verwenden die Ports e1a und e1b auf einem E/A-Modul in Steckplatz 1.</block>
+  <block id="e6c68585977f6b3e8b2b4ced88ca3d4d" category="list-text">NSM100-Module verwenden integrierte (Onboard-)Ports e0a und e0b.</block>
+  <block id="215caa644827ccfb864125e557ed29f2" category="list-text">Sie verkabeln jeden Controller mit jedem NSM-Modul im NS224-Regal mithilfe der Speicherkabel, die mit Ihrem Speichersystem geliefert wurden. Dabei kann es sich um den folgenden Kabeltyp handeln:</block>
+  <block id="01bd09c5271f772a108914f35e7efcd3" category="paragraph">Die Speichersysteme AFF A70 und 90 unterstützen NS224-Shelves mit dem Modul NSM100 oder NSM100B. Die Hauptunterschiede zwischen den Modulen sind:</block>
+  <block id="2486a91e78743df4d0cc635c5b8b51c8" category="list-text">NSM100-Regalmodule verwenden die integrierten Ports e0a und e0b.</block>
+  <block id="a53b96fad1d9b45d4ddb6e31d5f14d63" category="paragraph">Nach dem physischen Austausch des beschädigten Bootmediums <block ref="dcb4deaaa5f388ac9dd740fbe37648be" category="inline-link-macro-rx"></block> .</block>
+  <block id="023d1fe5c37125b4e245d88460c90d81" category="summary">Beginnen Sie mit dem Austausch der Startmedien in Ihrem ASA A20, ASA A30 und ASA A50 Speichersystem, indem Sie die Austauschanforderungen überprüfen, den außer Betrieb genommenen Controller herunterfahren, das Startmedium austauschen, das Image auf dem Startmedium wiederherstellen und die Systemfunktionalität überprüfen.</block>
+  <block id="34d3dea8236697b4a8d8e9bf094d3ee7" category="paragraph">Überprüfen Sie die Voraussetzungen für den Austausch des Gehäuses.</block>
+  <block id="1fcab41d4b270e3bb13c8e83cf6dbb29" category="paragraph">Ersetzen Sie das Gehäuse, indem Sie die Laufwerke und alle Laufwerksplatzhalter, Controller (mit den Netzteilen) und die Blende vom beschädigten Gehäuse in das neue Gehäuse verschieben und das beschädigte Gehäuse durch das neue Gehäuse desselben Modells wie das beschädigte Gehäuse austauschen.</block>
+  <block id="5e163d153d8c37baaa9fd7de379cf5bf" category="paragraph">Überprüfen Sie die Voraussetzungen für den Austausch des Controllers.</block>
+  <block id="182e45b4e9d9b946f297d6188c6d4585" category="paragraph">Sie können Ihrem ASA C30-Speichersystem ein E/A-Modul hinzufügen, sofern Steckplätze verfügbar sind. Sind alle Steckplätze belegt, können Sie ein vorhandenes Modul ersetzen und ein neues hinzufügen.</block>
+  <block id="008e878c00337b7c1676a1bf2b5e1f88" category="summary">Wenn eine Komponente in Ihrem ASA C30-Speichersystem ausfällt, senden Sie das ausgefallene Teil an NetApp zurück.</block>
+  <block id="1a74384be12ec55525108f8b4b66e4cf" category="doc">Senden Sie das fehlerhafte Teil an NetApp - ASA C30 zurück</block>
+  <block id="5c57ecccb489a807b7ce058e84066112" category="paragraph">Wenn eine Komponente in Ihrem ASA C30-Speichersystem ausfällt, senden Sie das ausgefallene Teil an NetApp zurück. <block ref="f2d8b0d8f345a4e987bed9853cde2668" category="inline-link-rx"></block>Weitere Informationen finden Sie auf der Seite.</block>
+  <block id="998d7afe02e862a99bc2356bb4360a68" category="doc">Controller neu installieren - ASA C30</block>
+  <block id="f7fa8f7e10c9cc8ec8c1a66e7e044c0c" category="doc">Controller ausbauen - ASA C30</block>
+  <block id="a6090718a9aeffd0a4509ab0c7982422" category="summary">Nachdem Sie das neue Boot-Mediengerät in Ihrem ASA C30-Speichersystem installiert haben, können Sie den automatisierten Boot-Medienwiederherstellungsprozess starten, um die Konfiguration vom fehlerfreien Knoten wiederherzustellen.</block>
+  <block id="c2de4d4510a9a64facdf71ce04df1256" category="doc">Wiederherstellen des ONTAP-Images auf dem Bootmedium - ASA C30</block>
+  <block id="ea8fd5bd6c26f06b31f96391b253c778" category="summary">Das Bootmedium in Ihrem ASA C30-Speichersystem speichert wichtige Firmware- und Konfigurationsdaten. Beim Austausch wird das Controller-Modul entfernt, das gestörte Boot-Medium entfernt, das Ersatz-Boot-Medium installiert und das ONTAP-Image anschließend auf das Ersatz-Boot-Medium übertragen.</block>
+  <block id="5daa76a4aa0a675c1ff837ebfd9193de" category="doc">Ersetzen Sie das Startmedium – ASA C30</block>
+  <block id="bd9df02f270ea2cb9436c0038ef3b34a" category="summary">Bevor Sie das Bootmedium in Ihrem ASA C30-Speichersystem austauschen, stellen Sie sicher, dass Sie die notwendigen Voraussetzungen und Überlegungen für einen erfolgreichen Austausch erfüllen. Dazu gehört die Überprüfung, ob Sie das richtige Ersatz-Bootmedium haben, ob der e0S-Port (e0M Wrench) am defekten Controller ordnungsgemäß funktioniert und ob der Onboard Key Manager (OKM) oder External Key Manager (EKM) aktiviert ist.</block>
+  <block id="9711de828f499165b267f4aded9c85e0" category="doc">Voraussetzungen für den Austausch des Startmediums - ASA C30</block>
+  <block id="af64ca3ab36eca3c94582cbfadb2bb6d" category="summary">Beginnen Sie mit dem Ersetzen des Startmediums in Ihrem ASA C30-Speichersystem, indem Sie die Anforderungen für den Austausch überprüfen, den beschädigten Controller herunterfahren, das Startmedium ersetzen, das Image auf dem Startmedium wiederherstellen und die Systemfunktionalität überprüfen.</block>
+  <block id="9e4d05a14fde717f129944022ed99861" category="doc">Workflow für den Austausch von Startmedien – ASA C30</block>
+  <block id="ea792349c9ec99fe28db82adad3adccb" category="summary">Fahren Sie den beschädigten Controller in Ihrem ASA C30-Speichersystem herunter, um Datenverlust zu verhindern und die Systemstabilität beim Austausch des Startmediums sicherzustellen.</block>
+  <block id="c9f4b7c42437a2c4b4690a3b013628ba" category="doc">Fahren Sie den Controller herunter, um das Startmedium - ASA C30 - zu ersetzen</block>
+  <block id="669772d17e2dc353f34f422c36121ce3" category="summary">Überprüfen Sie den HA-Status des Gehäuses und senden Sie das ausgefallene Teil dann an NetApp zurück, um den letzten Schritt im Verfahren zum Austausch des ASA C30-Gehäuses abzuschließen.</block>
+  <block id="23d33c98c35b14fd4a80967e1b3e3457" category="doc">Vollständiger Chassisaustausch – ASA C30</block>
+  <block id="25237d71e9d7f1d0ad7e397e5833e8b3" category="summary">Ersetzen Sie das Gehäuse Ihres ASA C30-Speichersystems, wenn ein Hardwarefehler dies erfordert. Beim Austausch werden die Controller und Netzteile (PSUs) entfernt, die Laufwerke entfernt, das Ersatzgehäuse installiert und die Gehäusekomponenten wieder eingebaut.</block>
+  <block id="635216b917d6fdf5a454b511576ce44d" category="doc">Ersetzen Sie das Gehäuse - ASA C30</block>
+  <block id="aab639c4c9147a73b0546ea341640574" category="summary">Stellen Sie vor dem Austausch des Gehäuses Ihres ASA C30-Speichersystems sicher, dass Sie die notwendigen Voraussetzungen für einen erfolgreichen Austausch erfüllen. Dazu gehört die Überprüfung, ob alle anderen Komponenten im System ordnungsgemäß funktionieren, ob das richtige Ersatzgehäuse vorhanden ist und welche Tools erforderlich sind.</block>
+  <block id="d8d0c8656fc7188d35f6528aa09e4d2f" category="doc">Voraussetzungen für den Austausch des Gehäuses - ASA C30</block>
+  <block id="5e10b31ed571502de1abfffd65faeed4" category="summary">Fahren Sie die Controller in Ihrem ASA C30-Speichersystem herunter, um Datenverlust zu vermeiden und die Systemstabilität beim Austausch des Gehäuses sicherzustellen.</block>
+  <block id="2f826d52c24daa29d9d263625be52c6d" category="doc">Fahren Sie die Controller herunter - ASA C30</block>
+  <block id="ce586186264926dca69594bb6b7d8b7e" category="summary">Der Austausch des Gehäuses in Ihrem ASA C30-Speichersystem umfasst die Überprüfung der Austauschanforderungen, das Herunterfahren der Controller, den Austausch des Gehäuses und die Überprüfung des Systembetriebs.</block>
+  <block id="e2ed0a4168043c9156a55b725d7222e5" category="doc">Arbeitsablauf beim Austausch des Gehäuses – ASA C30</block>
+  <block id="e0ac24275668c9f2a6cc457319a609cf" category="summary">Ersetzen Sie den Controller in Ihrem ASA C30-Speichersystem, wenn ein Hardwarefehler dies erfordert. Der Austauschprozess umfasst das Entfernen des außer Betrieb genommenen Controllers, das Verschieben der Komponenten auf den Ersatzcontroller, das Installieren des Ersatzcontrollers und das Neustarten des Controllers.</block>
+  <block id="05e289dc15f65b50fbc090198495aabb" category="doc">Ersetzen Sie den Controller - ASA C30</block>
+  <block id="46f7be643adbfb35dff8b275ed40b40a" category="summary">Geben Sie die Kontrolle über die Speicherressourcen an den Ersatzcontroller zurück, damit Ihr ASA C30-Speichersystem den Normalbetrieb wieder aufnehmen kann. Das Rückgabeverfahren variiert je nach verwendetem Verschlüsselungstyp Ihres Systems: Keine Verschlüsselung, Onboard Key Manager (OKM)-Verschlüsselung oder External Key Manager (EKM)-Verschlüsselung.</block>
+  <block id="6b422659ac5fffe3ecc8c66789fdeadd" category="doc">Geben Sie den Controller zurück – ASA C30</block>
+  <block id="67cb3952ec89ce8d08815e47cfffe7fb" category="paragraph">Geben Sie die Kontrolle über die Speicherressourcen an den Ersatzcontroller zurück, damit Ihr ASA C30-Speichersystem den Normalbetrieb wieder aufnehmen kann. Das Give-back-Verfahren variiert je nach dem von Ihrem System verwendeten Verschlüsselungstyp: Keine Verschlüsselung, OKM-Verschlüsselung (Onboard Key Manager) oder EKM-Verschlüsselung (External Key Manager).</block>
+  <block id="7ea5dd39204016c48a5829f91be918a1" category="summary">Stellen Sie vor dem Austausch des Controllers in Ihrem ASA C30-Speichersystem sicher, dass Sie die notwendigen Voraussetzungen für einen erfolgreichen Austausch erfüllen. Dazu gehört die Überprüfung aller anderen Komponenten im System auf ordnungsgemäße Funktion, die Überprüfung, ob der richtige Ersatz-Controller vorhanden ist, und das Speichern der Konsolenausgabe des Controllers in einer Textprotokolldatei.</block>
+  <block id="f0de359ba2c82f8ea7884966a3ba0c02" category="doc">Voraussetzungen für den Austausch des Controllers - ASA C30</block>
+  <block id="3b97faedccbb32bf9302724d84bd3849" category="summary">Um den Controlleraustausch für Ihr ASA C30-Speichersystem abzuschließen, stellen Sie zunächst die NetApp Storage Encryption-Konfiguration wieder her (falls erforderlich) und installieren Sie die erforderlichen Lizenzen auf dem neuen Controller. Vergewissern Sie sich als nächstes, dass die logischen Schnittstellen (LIFs) ihren Home Ports berichten und eine Cluster-Zustandsprüfung durchführen. Registrieren Sie abschließend die Seriennummer des neuen Controllers und senden Sie das ausgefallene Teil an NetApp zurück.</block>
+  <block id="c9618ee1abbbc558b8f6afab18e9de6a" category="doc">Kompletter Controller-Austausch - ASA C30</block>
+  <block id="91d5bdb9b8be20419adab0d70c3a9d3f" category="summary">Fahren Sie den beschädigten Controller in Ihrem ASA C30-Speichersystem herunter, um Datenverlust zu verhindern und die Systemstabilität beim Austausch des Controllers sicherzustellen.</block>
+  <block id="fc45a0ec77bb468d6fedb9674ced8528" category="doc">Schalten Sie den außer Betrieb genommenen Controller - ASA C30 aus</block>
+  <block id="91a97d4fdec1af557392f5388e45d03a" category="summary">Überprüfen Sie, ob die HA-Konfiguration des Controllers in Ihrem ASA C30-Speichersystem aktiv ist und ordnungsgemäß funktioniert, und bestätigen Sie, dass die Adapter des Systems alle Pfade zu den Datenträgern auflisten.</block>
+  <block id="bd3d959eef2391eeddbe585e6aa31aaf" category="doc">Stellen Sie die Systemkonfiguration wieder her und überprüfen Sie sie – ASA C30</block>
+  <block id="9d817ef7895689fb3cc5312747a60e5a" category="summary">Beginnen Sie mit dem Ersetzen des Controllers in Ihrem ASA C30-Speichersystem, indem Sie den beschädigten Controller herunterfahren, den Controller entfernen und ersetzen, die Systemkonfiguration wiederherstellen und die Kontrolle über die Speicherressourcen an den Ersatzcontroller zurückgeben.</block>
+  <block id="803e804e07341009008b98487711f181" category="doc">Arbeitsablauf für den Controller-Austausch – ASA C30</block>
+  <block id="c61569158aa3671e77ca597581b887ef" category="summary">Ersetzen Sie ein DIMM in Ihrem ASA C30-Speichersystem, wenn zu viele korrigierbare oder nicht korrigierbare Speicherfehler erkannt werden. Derartige Fehler können das Booten von ONTAP durch das Storage-System verhindern. Beim Austausch wird der beeinträchtigte Controller heruntergefahren, entfernt, das DIMM ersetzt, der Controller neu installiert und das fehlerhafte Teil anschließend an den NetApp zurückgegeben.</block>
+  <block id="ec3e218e5469b0ce628477ad9f004c70" category="doc">Ersetzen Sie ein DIMM-Modul – ASA C30</block>
+  <block id="1803a1112a2904ae0921972c848b5e8f" category="summary">Ersetzen Sie ein Laufwerk in Ihrem ASA C30-Speichersystem, wenn ein Laufwerk ausfällt oder ein Upgrade erforderlich ist. Der Austauschprozess beinhaltet die Identifizierung des fehlerhaften Laufwerks, das sichere Entfernen und die Installation eines neuen Laufwerks, um den kontinuierlichen Datenzugriff und die Systemleistung zu gewährleisten.</block>
+  <block id="23b2049b2eea6424e3c9f2c437632516" category="doc">Laufwerk austauschen - ASA C30</block>
+  <block id="f34d2c681546688dd685a08e6231060d" category="summary">Ersetzen Sie ein Lüftermodul in Ihrem ASA C30-Speichersystem, wenn ein Lüfter ausfällt oder nicht effizient arbeitet, da dies die Systemkühlung und die Gesamtleistung beeinträchtigen kann. Beim Austausch werden der Controller heruntergefahren, der Controller entfernt, der Lüfter ersetzt, der Controller neu installiert und das fehlerhafte Teil an den NetApp zurückgegeben.</block>
+  <block id="4ba0a2181ffa6e88b2a3a96e4335f373" category="doc">Ersetzen Sie ein Lüftermodul - ASA C30</block>
+  <block id="08eb5686abafb87a324c810a07f29f17" category="summary">Für die ASA C30-Speichersysteme können Sie Wartungsarbeiten an den folgenden Komponenten durchführen.</block>
+  <block id="17a891651b2730bc15c982ad663e4f0a" category="doc">Wartung der ASA C30 Hardware</block>
+  <block id="6b9adda1cbf39f0e67bdc239d9aa4627" category="summary">Fügen Sie Ihrem ASA C30-Speichersystem ein E/A-Modul hinzu, um die Netzwerkkonnektivität zu verbessern und die Fähigkeit Ihres Systems zur Verarbeitung des Datenverkehrs zu erweitern.</block>
+  <block id="8129be3599ad6ec9ac772edc71b7c944" category="doc">Fügen Sie ein I/O-Modul hinzu – ASA C30</block>
+  <block id="efbf95fd94ecc04d20688f2a1a7413ed" category="summary">Das ASA C30-Speichersystem bietet Flexibilität beim Erweitern oder Ersetzen von E/A-Modulen zur Verbesserung der Netzwerkkonnektivität und -leistung. Das Hinzufügen oder Austauschen eines E/A-Moduls ist wichtig, wenn die Netzwerkfunktionen aktualisiert oder ein fehlerhaftes Modul behandelt werden soll.</block>
+  <block id="3e1235f9663aca6507f5d16f948427e1" category="doc">Überblick über Hinzufügen und Ersetzen eines E/A-Moduls – ASA C30</block>
+  <block id="c7d9daf18836286b26e5af2f7a1b19f0" category="summary">Ersetzen Sie ein E/A-Modul in Ihrem ASA C30-Speichersystem, wenn das Modul ausfällt oder ein Upgrade benötigt, um eine höhere Leistung oder zusätzliche Funktionen zu unterstützen. Beim Austausch werden der Controller heruntergefahren, das fehlerhafte I/O-Modul ersetzt, der Controller neu gebootet und das fehlerhafte Teil an NetApp zurückgegeben.</block>
+  <block id="04309486482d3d0620657420da172323" category="doc">Ein E/A-Modul austauschen – ASA C30</block>
+  <block id="1bc87c4a07526688d1214c5a431c934a" category="summary">Warten Sie die Hardware Ihres ASA C30 Storage-Systems, um eine langfristige Zuverlässigkeit und optimale Leistung zu gewährleisten. Führen Sie regelmäßige Wartungsaufgaben durch, wie zum Beispiel den Austausch defekter Komponenten, um Ausfallzeiten und Datenverlust zu vermeiden.</block>
+  <block id="2b35d20ce09f7745c49b8451372caf6c" category="doc">Übersicht über die Hardwarewartung - ASA C30</block>
+  <block id="907caac40616ad0b3b73482a664ecc6b" category="paragraph">Bei den Verfahren in diesem Abschnitt wird davon ausgegangen, dass das ASA C30-Speichersystem bereits als Speicherknoten in der ONTAP-Umgebung bereitgestellt wurde.</block>
+  <block id="27bfa0f1b8609e118425afe072093cba" category="paragraph">Für das ASA C30-Speichersystem können Sie Wartungsarbeiten an den folgenden Komponenten durchführen.</block>
+  <block id="754858e1736e8f08294476cdf876df07" category="summary">Ersetzen Sie die NV-Batterie in Ihrem ASA C30-Speichersystem, wenn die Batterie an Ladung verliert oder ausfällt, da sie für die Erhaltung kritischer Systemdaten bei Stromausfällen verantwortlich ist. Beim Austausch wird der Controller heruntergefahren, das Controller-Modul entfernt, die NV-Batterie ersetzt, das Controller-Modul wieder eingebaut und das fehlerhafte Teil wieder an den NetApp zurückgegeben.</block>
+  <block id="30439362b4a418aafdf1f5fca92ba9ae" category="doc">Ersetzen Sie die NV-Batterie - ASA C30</block>
+  <block id="34010b5f9d4ebf5305f175c19ab977fc" category="summary">Ersetzen Sie ein AC- oder DC-Netzteil (PSU) in Ihrem ASA C30-Speichersystem, wenn es ausfällt oder defekt wird, und stellen Sie so sicher, dass Ihr System weiterhin die erforderliche Leistung für einen stabilen Betrieb erhält. Beim Austausch wird das fehlerhafte Netzteil von der Stromquelle getrennt, das Netzkabel abgezogen, das fehlerhafte Netzteil ersetzt und dann wieder an die Stromquelle angeschlossen.</block>
+  <block id="b51e59bcca51590e8f0da1f045973db3" category="doc">Ersetzen Sie ein Netzteil - ASA C30</block>
+  <block id="9c0bdb399f0e50ec7c09183c83cb3eae" category="summary">Ersetzen Sie die Echtzeituhrbatterie (RTC), allgemein als Knopfzellenbatterie bekannt, in Ihrem ASA C30-Speichersystem, um sicherzustellen, dass Dienste und Anwendungen, die auf eine genaue Zeitsynchronisierung angewiesen sind, betriebsbereit bleiben.</block>
+  <block id="fe9d07d7f91e1b374f95ba72708ba4ca" category="doc">Ersetzen Sie den Echtzeitakku ASA C30</block>
+  <block id="e30552dfe91bf978ebf6787b261fac5c" category="doc">Herunterfahren des Controllers zum Ersetzen des Bootmediums - AFF C30 und AFF C60</block>
+  <block id="0b7c680449e211bdbdb9d43223f6c69c" category="paragraph">Fahren Sie den Controller in Ihrem AFF C30- oder AFF C60-Speichersystem herunter, um Datenverlust zu vermeiden und die Systemstabilität beim Austausch des Startmediums sicherzustellen.</block>
+  <block id="dda626e5ca7d24a899a17030ee1e8338" category="doc">Laufwerk austauschen - AFF C30 und AFF C60</block>
+  <block id="5ff448003ebaf80171d13e6e73920334" category="section-title">Mai 2025</block>
+  <block id="5a4e5cd19493dae0777edfcd18341c6e" category="paragraph">Das neue ASA C30-System erweitert leistungsstarke, intelligente und umfassende Datenverwaltungsfunktionen auf mehr Kunden und Workloads.</block>
+  <block id="4b59a84869b0ee3437aa8c8b9dd4c786" category="sidebar">ASA C30-Systeme</block>
+  <block id="527a051a36c26b816e479ad211bc96ea" category="sidebar">ASA C30 Wartung</block>
+  <block id="63a52a2f30db6359822003e267bb9514" category="sidebar">ASA C30-Bootmedium</block>
+  <block id="b4a3b44dc7350cb88f59a4a2eb7dda1d" category="sidebar">ASA C30 Fahrgestell</block>
+  <block id="cb330090f109eb2fa5d8e0cb697b8627" category="sidebar">Controller-Modul ASA C30</block>
+  <block id="d6cf13e3e73df787bea3a13aaa745efd" category="sidebar">ASA C30 I/O-Modul</block>
 </blocks>

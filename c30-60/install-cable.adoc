@@ -261,7 +261,13 @@ Dieses Verfahren zeigt, wie Sie die Controller mit einem NS224-Shelf verkabeln.
 
 .Über diese Aufgabe
 * Die maximale Anzahl der unterstützten Einschübe für Ihr Speichersystem und alle Verkabelungsoptionen, wie link:https://hwu.netapp.com["NetApp Hardware Universe"^]z. B. optische und Switch-Attached, finden Sie unter .
-* Sie verkabeln jeden Controller mit jedem NSM100B-Modul im NS224-Shelf mithilfe der Storage-Kabel, die im Lieferumfang des Storage-Systems enthalten sind. Folgende Kabeltypen können verwendet werden:
+* Die Verkabelung des NS224-Regals zeigt NSM100B-Module anstelle von NSM100-Modulen. Die Verkabelung ist unabhängig vom Typ der verwendeten NSM-Module gleich, lediglich die Portnamen unterscheiden sich:
++
+** NSM100B-Module verwenden die Ports e1a und e1b auf einem E/A-Modul in Steckplatz 1.
+** NSM100-Module verwenden integrierte (Onboard-)Ports e0a und e0b.
+
+
+* Sie verkabeln jeden Controller mit jedem NSM-Modul im NS224-Regal mithilfe der Speicherkabel, die mit Ihrem Speichersystem geliefert wurden. Dabei kann es sich um den folgenden Kabeltyp handeln:
 +
 *100 GbE QSFP28 Kupferkabel*
 

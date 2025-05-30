@@ -1,0 +1,130 @@
+---
+permalink: asa-r2-c30/controller-replace-recable-reassign-disks.html 
+sidebar: sidebar 
+keywords: asa c30, how to recable the system, reboot the system 
+summary: 'Geben Sie die Kontrolle über die Speicherressourcen an den Ersatzcontroller zurück, damit Ihr ASA C30-Speichersystem den Normalbetrieb wieder aufnehmen kann. Das Rückgabeverfahren variiert je nach verwendetem Verschlüsselungstyp Ihres Systems: Keine Verschlüsselung, Onboard Key Manager (OKM)-Verschlüsselung oder External Key Manager (EKM)-Verschlüsselung.' 
+---
+= Geben Sie den Controller zurück – ASA C30
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Geben Sie die Kontrolle über die Speicherressourcen an den Ersatzcontroller zurück, damit Ihr ASA C30-Speichersystem den Normalbetrieb wieder aufnehmen kann. Das Give-back-Verfahren variiert je nach dem von Ihrem System verwendeten Verschlüsselungstyp: Keine Verschlüsselung, OKM-Verschlüsselung (Onboard Key Manager) oder EKM-Verschlüsselung (External Key Manager).
+
+[role="tabbed-block"]
+====
+.Keine Verschlüsselung
+--
+Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie seinen Speicher zurückgeben.
+
+.Schritte
+. Geben Sie in der Loader-Eingabeaufforderung `boot_ontap` .
+. Drücken Sie <enter>, wenn die Konsolenmeldungen angehalten werden.
++
+** Wenn die Eingabeaufforderung _Login_ angezeigt wird, fahren Sie mit dem nächsten Schritt am Ende dieses Abschnitts fort.
+** Wenn „_waiting for Giveback_“ angezeigt wird, drücken Sie die Taste <enter>, melden Sie sich beim Partner-Node an und fahren Sie dann mit dem nächsten Schritt am Ende dieses Abschnitts fort.
+
+
+. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`
+. Wenn das automatische Giveback deaktiviert wurde, aktivieren Sie es erneut: `storage failover modify -node local -auto-giveback _true_`
+. Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung wiederherstellen/zurücknehmen: `system node autosupport invoke -node * -type all -message MAINT=END`
+
+
+--
+.Onboard-Verschlüsselung (OKM)
+--
+Setzt die integrierte Verschlüsselung zurück und setzt den Controller in den normalen Betrieb zurück.
+
+.Schritte
+. Geben Sie in der Loader-Eingabeaufforderung `boot_ontap maint` .
+. Starten Sie das ONTAP-Menü über die Loader-Eingabeaufforderung `boot_ontap menu`, und wählen Sie Option 10.
+. Geben Sie die OKM-Passphrase ein.
++
+
+NOTE: Sie werden zweimal zur Eingabe der Passphrase aufgefordert.
+
+. Geben Sie die Daten des Sicherungsschlüssels ein, wenn Sie dazu aufgefordert werden.
+. Geben Sie im Startmenü die Option für den normalen Start ein `1`.
+. Drücken Sie <enter>, wenn _Waiting for Giveback_ angezeigt wird.
+. Schieben Sie das Konsolenkabel zum Partner-Node und melden Sie sich als an `admin`.
+. Nur die CFO-Aggregate zurückgeben (das Root-Aggregat): `storage failover giveback -fromnode local -only-cfo-aggregates _true_`
++
+** Wenn Sie auf Fehler stoßen, wenden Sie sich an https://support.netapp.com["NetApp Support"].
+
+
+. Warten Sie 5 Minuten, nachdem der Giveback-Bericht abgeschlossen ist, und überprüfen Sie den Failover-Status und den Giveback-Status: `storage failover show` Und `storage failover show-giveback`.
+. Synchronisieren und überprüfen Sie den Status der Tasten:
++
+.. Bringen Sie das Konsolenkabel wieder zum Ersatzcontroller.
+.. Fehlende Schlüssel synchronisieren: `security key-manager onboard sync`
++
+
+NOTE: Sie werden aufgefordert, die Cluster-weite Passphrase von OKM für das Cluster einzugeben.
+
+.. Überprüfen Sie den Status der Schlüssel: `security key-manager key query -restored _false_`
++
+Die Ausgabe sollte bei ordnungsgemäßer Synchronisierung keine Ergebnisse zeigen.
+
++
+Wenn in der Ausgabe Ergebnisse angezeigt werden (die Schlüssel-IDs von Schlüsseln, die nicht in der internen Schlüsseltabelle des Systems vorhanden sind), wenden Sie sich an https://support.netapp.com["NetApp Support"].
+
+
+
+. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`
+. Wenn das automatische Giveback deaktiviert wurde, aktivieren Sie es erneut: `storage failover modify -node local -auto-giveback _true_`
+. Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung wiederherstellen/zurücknehmen: `system node autosupport invoke -node * -type all -message MAINT=END`
+
+
+--
+.Externer Schlüsselmanager (EKM)
+--
+Setzt die Verschlüsselung zurück und setzt den Controller wieder in den normalen Betrieb zurück.
+
+.Schritte
+. Wenn das Stammvolume mit External Key Manager verschlüsselt ist und das Konsolenkabel mit dem Ersatzknoten verbunden ist, geben Sie die Option ein `boot_ontap menu` und wählen Sie diese aus `11`.
+. Wenn diese Fragen angezeigt werden, beantworten Sie diese `y` oder `n` gegebenenfalls:
++
+Haben Sie eine Kopie der Datei /cfcard/kmip/certs/Client.crt? {J/n}
+
++
+Haben Sie eine Kopie der Datei /cfcard/kmip/certs/client.key? {J/n}
+
++
+Haben Sie eine Kopie der Datei /cfcard/kmip/certs/CA.pem? {J/n}
+
++
+Haben Sie eine Kopie der Datei /cfcard/kmip/servers.cfg? {J/n}
+
++
+Kennen Sie die KMIP-Serveradresse? {J/n}
+
++
+Kennen Sie den KMIP-Port? {J/n}
+
++
+
+NOTE: Wenden Sie sich https://support.netapp.com["NetApp Support"] bei Problemen an.
+
+. Geben Sie die Informationen an für:
++
+** Der Dateiinhalt des Clientzertifikats (Client.crt)
+** Der Dateiinhalt des Client-Schlüssels (Client.key)
+** Dateiinhalte der KMIP-Server-CA(s) (CA.pem
+** Die IP-Adresse für den KMIP-Server
+** Der Port für den KMIP-Server
+
+
+. Sobald das System verarbeitet wird, wird das Startmenü angezeigt. Wählen Sie „1“ für den normalen Start.
+. Überprüfen Sie den Übernahmestatus: `storage failover show`
+. Stellen Sie sicher, dass alle Core Dumps auf dem reparierten Node gespeichert werden, indem Sie in den erweiterten Modus wechseln `set -privilege advanced` und dann `run local partner nosavecore`.
+. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`
+. Wenn das automatische Giveback deaktiviert wurde, aktivieren Sie es erneut: `storage failover modify -node local -auto-giveback _true_`
+. Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung wiederherstellen/zurücknehmen: `system node autosupport invoke -node * -type all -message MAINT=END`
+
+
+--
+====
+.Was kommt als Nächstes?
+Nachdem Sie die Eigentumsrechte an den Storage-Ressourcen an den Ersatz-Controller übertragen haben, müssen Sie link:controller-replace-restore-system-rma.html["Schließen Sie den Controller-Austausch ab"]den Vorgang durchführen.

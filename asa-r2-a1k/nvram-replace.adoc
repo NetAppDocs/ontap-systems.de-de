@@ -100,8 +100,7 @@ Ersetzen Sie das NVRAM-Modul oder die NVRAM-DIMMs mit der entsprechenden Option.
 --
 Um das NVRAM-Modul auszutauschen, suchen Sie es in Steckplatz 4/5 im Gehäuse, und befolgen Sie die entsprechenden Schritte.
 
-. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
-. Ziehen Sie das Netzkabel von beiden Netzteilen ab.
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden. Ziehen Sie die Stromversorgungskabel von den Netzteilen ab und ziehen Sie dann das Controllermodul einige Zentimeter aus der Vorderseite des Systems heraus.
 . Drehen Sie das Kabelführungs-Fach nach unten, indem Sie die Stifte an den Enden des Fachs vorsichtig herausziehen und das Fach nach unten drehen.
 . Entfernen Sie das außer Betrieb genommene NVRAM-Modul aus dem Gehäuse:
 +
@@ -147,7 +146,7 @@ DIMM-Verriegelungslaschen
 Um NVRAM-DIMMs im NVRAM-Modul auszutauschen, müssen Sie das NVRAM-Modul entfernen und dann das Ziel-DIMM ersetzen.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
-. Ziehen Sie das Netzkabel von beiden Netzteilen ab.
+. Ziehen Sie die Stromversorgungskabel von den Netzteilen ab und ziehen Sie dann das Controllermodul einige Zentimeter aus der Vorderseite des Systems heraus.
 . Drehen Sie das Kabelführungs-Fach nach unten, indem Sie die Stifte an den Enden des Fachs vorsichtig herausziehen und das Fach nach unten drehen.
 . Entfernen Sie das NVRAM-Zielmodul aus dem Gehäuse.
 +
@@ -182,7 +181,6 @@ NOTE: Verwenden Sie das FRU-Kartenetikett auf der Seite des NVRAM-Moduls, um die
 .. Schieben Sie das Modul vorsichtig in den Steckplatz, bis die Nockenverriegelung mit dem E/A-Nockenbolzen einrastet, und drehen Sie dann die Nockenverriegelung bis zum Anschlag nach oben, um das Modul zu verriegeln.
 
 
-. Netzteileinheiten wieder verstellen.
 . Drehen Sie das Kabelführungs-Fach bis in die geschlossene Position.
 
 
@@ -194,7 +192,10 @@ NOTE: Verwenden Sie das FRU-Kartenetikett auf der Seite des NVRAM-Moduls, um die
 
 Nachdem Sie die FRU ersetzt haben, müssen Sie das Controller-Modul neu booten.
 
-. Um ONTAP von der LOADER-Eingabeaufforderung zu booten, geben Sie „_bye_“ ein.
+. Stecken Sie die Stromkabel wieder in das Netzteil und setzen Sie das Controllermodul vorsichtig wieder an der Vorderseite des Systems ein und verriegeln Sie es.
++
+Das System wird neu gebootet, normalerweise bis zur LOADER-Eingabeaufforderung.
+
 
 
 

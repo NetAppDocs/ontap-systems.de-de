@@ -37,7 +37,7 @@ Boot-Medien
 
 |===
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
-. Ziehen Sie die Netzteilkabel von den Netzteilen vom Controller ab.
+. Trennen Sie die Stromversorgungskabel der Netzteile vom Controller und ziehen Sie dann das Controllermodul an der Vorderseite des Systems einige Zentimeter heraus.
 +
 
 NOTE: Wenn Ihr Speichersystem über Gleichstromnetzteile verfügt, trennen Sie den Stromkabelblock von den Netzteilen.
@@ -113,9 +113,9 @@ Das USB-Flash-Laufwerk sollte über das entsprechende ONTAP-Image des ausgeführ
 +
 Stellen Sie sicher, dass Sie das USB-Flash-Laufwerk in den für USB-Geräte gekennzeichneten Steckplatz und nicht im USB-Konsolenport installieren.
 
-. Schließen Sie die Netzkabel an die Netzteile an, und setzen Sie die Stromkabelhalterung wieder ein.
+. Stecken Sie die Stromkabel wieder in das Netzteil und setzen Sie das Controllermodul vorsichtig wieder an der Vorderseite des Systems ein und verriegeln Sie es.
 +
-Der Controller beginnt zu starten, sobald die Stromversorgung wieder mit dem System verbunden wird.
+Das System wird neu gebootet, normalerweise bis zur LOADER-Eingabeaufforderung.
 
 . Unterbrechen Sie den Boot-Vorgang, indem Sie Strg-C drücken, um an der LOADER-Eingabeaufforderung zu stoppen.
 +

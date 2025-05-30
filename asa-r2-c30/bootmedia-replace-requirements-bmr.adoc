@@ -1,0 +1,56 @@
+---
+permalink: asa-r2-c30/bootmedia-replace-requirements-bmr.html 
+sidebar: sidebar 
+keywords: asa c30, replace the boot media 
+summary: 'Bevor Sie das Bootmedium in Ihrem ASA C30-Speichersystem austauschen, stellen Sie sicher, dass Sie die notwendigen Voraussetzungen und Überlegungen für einen erfolgreichen Austausch erfüllen. Dazu gehört die Überprüfung, ob Sie das richtige Ersatz-Bootmedium haben, ob der e0S-Port (e0M Wrench) am defekten Controller ordnungsgemäß funktioniert und ob der Onboard Key Manager (OKM) oder External Key Manager (EKM) aktiviert ist.' 
+---
+= Voraussetzungen für den Austausch des Startmediums - ASA C30
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor Sie das Bootmedium in Ihrem ASA C30-Speichersystem austauschen, stellen Sie sicher, dass Sie die notwendigen Voraussetzungen und Überlegungen für einen erfolgreichen Austausch erfüllen. Dazu gehört die Überprüfung, ob Sie das richtige Ersatz-Bootmedium haben, ob der e0S-Port (e0M Wrench) am defekten Controller ordnungsgemäß funktioniert und ob der Onboard Key Manager (OKM) oder External Key Manager (EKM) aktiviert ist.
+
+
+
+== Anforderungen
+
+* Sie müssen die ausgefallene Komponente durch eine FRU-Ersatz-Komponente ersetzen, die dieselbe Kapazität hat wie Sie von NetApp erhalten.
+* Der Port E0S (E0M-Schraubenschlüssel) auf dem beeinträchtigten Controller kann nicht fehlerhaft sein.
++
+Der Port E0S wird für die automatische Boot-Wiederherstellung verwendet.
+
+* Für OKM benötigen Sie den Inhalt der OKM-Passphrase-Datei.
+* Für EKM benötigen Sie Kopien der folgenden Dateien vom Partnerknoten:
++
+** Datei /cfcard/kmip/servers.cfg.
+** Datei /cfcard/kmip/certs/Client.crt.
+** Datei /cfcard/kmip/certs/client.key.
+** Datei /cfcard/kmip/certs/CA.pem.
+
+
+
+
+
+
+== Überlegungen
+
+* Es ist wichtig, dass Sie die Befehle in diesen Schritten auf dem richtigen Controller anwenden:
++
+** Der Controller _Impared_ ist der Controller, an dem Sie Wartungsarbeiten durchführen.
+** Der _Healthy_ Controller ist der HA-Partner des beeinträchtigten Controllers.
+
+
+* Bei Bedarf können Sie die (blauen) LEDs für die Position des Plattformgehäuses einschalten, um die physische Lokalisierung der betroffenen Plattform zu erleichtern. Melden Sie sich über SSH bei der BMC an und geben Sie den Befehl ein `system location-led _on_`.
++
+Ein Plattformgehäuse verfügt über drei Standort-LEDs: Eine auf dem Bedienfeld und eine auf jedem Controller. Die Standort-LEDs leuchten 30 Minuten lang.
+
++
+Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led _off_`. Wenn Sie sich nicht sicher sind, ob die LEDs leuchten oder nicht, können Sie ihren Status überprüfen, indem Sie den Befehl eingeben `system location-led show`.
+
+
+
+.Wie es weiter geht
+Nachdem Sie die Anforderungen für die Startmedien überprüft haben, können Sie link:bootmedia-shutdown-bmr.html["Fahren Sie den Controller herunter"].

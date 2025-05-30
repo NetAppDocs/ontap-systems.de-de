@@ -1,0 +1,34 @@
+---
+permalink: asa-r2-c30/bootmedia-replace-workflow-bmr.html 
+sidebar: sidebar 
+keywords: asa c30, replace the boot media 
+summary: Beginnen Sie mit dem Ersetzen des Startmediums in Ihrem ASA C30-Speichersystem, indem Sie die Anforderungen für den Austausch überprüfen, den beschädigten Controller herunterfahren, das Startmedium ersetzen, das Image auf dem Startmedium wiederherstellen und die Systemfunktionalität überprüfen. 
+---
+= Workflow für den Austausch von Startmedien – ASA C30
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Beginnen Sie mit dem Ersetzen des Startmediums in Ihrem ASA C30-Speichersystem, indem Sie die Anforderungen für den Austausch überprüfen, den beschädigten Controller herunterfahren, das Startmedium ersetzen, das Image auf dem Startmedium wiederherstellen und die Systemfunktionalität überprüfen.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:bootmedia-replace-requirements-bmr.html["Überprüfen Sie die Anforderungen der Startmedien"]
+[role="quick-margin-para"]
+Überprüfen Sie die Anforderungen für den Austausch von Boot-Medien.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:bootmedia-shutdown-bmr.html["Schalten Sie den beeinträchtigten Regler aus"]
+[role="quick-margin-para"]
+Fahren Sie den beeinträchtigten Controller herunter oder übernehmen Sie ihn, damit der funktionsunzuverlässige Controller weiterhin Daten aus dem Speicher für den beeinträchtigten Controller bereitstellen kann.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:bootmedia-replace-bmr.html["Ersetzen Sie das Startmedium"]
+[role="quick-margin-para"]
+Entfernen Sie das fehlerhafte Startmedium vom Controller für den beeinträchtigten Betrieb, und installieren Sie das Ersatz-Startmedium.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:bootmedia-recovery-image-boot-bmr.html["Stellen Sie das Image auf dem Startmedium wieder her"]
+[role="quick-margin-para"]
+Stellen Sie das ONTAP-Image vom fehlerfreien Controller wieder her.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:bootmedia-complete-rma-bmr.html["Senden Sie das fehlerhafte Teil an NetApp zurück"]
+[role="quick-margin-para"]
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.

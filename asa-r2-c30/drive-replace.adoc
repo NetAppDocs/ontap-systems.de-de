@@ -1,0 +1,196 @@
+---
+permalink: asa-r2-c30/drive-replace.html 
+sidebar: sidebar 
+keywords: asa c30, replace the drives 
+summary: Ersetzen Sie ein Laufwerk in Ihrem ASA C30-Speichersystem, wenn ein Laufwerk ausfällt oder ein Upgrade erforderlich ist. Der Austauschprozess beinhaltet die Identifizierung des fehlerhaften Laufwerks, das sichere Entfernen und die Installation eines neuen Laufwerks, um den kontinuierlichen Datenzugriff und die Systemleistung zu gewährleisten. 
+---
+= Laufwerk austauschen - ASA C30
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ersetzen Sie ein Laufwerk in Ihrem ASA C30-Speichersystem, wenn ein Laufwerk ausfällt oder ein Upgrade erforderlich ist. Der Austauschprozess beinhaltet die Identifizierung des fehlerhaften Laufwerks, das sichere Entfernen und die Installation eines neuen Laufwerks, um den kontinuierlichen Datenzugriff und die Systemleistung zu gewährleisten.
+
+Sie können ein ausgefallenes SSD-Laufwerk unterbrechungsfrei ersetzen, während I/O ausgeführt wird.
+
+.Bevor Sie beginnen
+* Das Laufwerk, das Sie installieren, muss von Ihrem Speichersystem unterstützt werden.
++
+https://hwu.netapp.com["NetApp Hardware Universe"^]
+
+* Wenn die SED-Authentifizierung (Self-Encrypting Drive) aktiviert ist, müssen Sie die SED-Ersatzanweisungen in der ONTAP-Dokumentation verwenden.
++
+Anweisungen in der ONTAP-Dokumentation beschreiben zusätzliche Schritte, die vor und nach dem Austausch einer SED ausgeführt werden müssen.
+
++
+https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html["Übersicht über die NetApp Verschlüsselung mit CLI"^]
+
+* Alle anderen Komponenten des Speichersystems müssen ordnungsgemäß funktionieren. Falls nicht, wenden Sie sich an https://mysupport.netapp.com/site/global/dashboard["NetApp Support"], bevor Sie mit diesem Verfahren fortfahren.
+* Vergewissern Sie sich, dass das Laufwerk, das Sie entfernen, fehlgeschlagen ist.
++
+Sie können überprüfen, ob das Laufwerk ausgefallen ist, indem Sie das ausführen `storage disk show -broken` Befehl. Das ausgefallene Laufwerk wird in der Liste der ausgefallenen Laufwerke angezeigt. Falls nicht, sollten Sie warten und dann den Befehl erneut ausführen.
+
++
+
+NOTE: Abhängig vom Laufwerkstyp und der Kapazität kann es bis zu mehrere Stunden dauern, bis das Laufwerk in der Liste der ausgefallenen Laufwerke angezeigt wird.
+
+
+
+.Über diese Aufgabe
+* Beim Austausch eines ausgefallenen Laufwerks müssen Sie zwischen dem Entfernen des Laufwerks und dem Einsetzen des Ersatzlaufwerks 70 Sekunden warten, damit das Speichersystem erkennt, dass ein Laufwerk entfernt wurde.
+* Die beste Vorgehensweise besteht darin, die aktuelle Version des Disk Qualification Package (DQP) vor dem Hot-Swap eines Laufwerks zu installieren.
++
+Wenn die aktuelle Version des DQP installiert ist, kann Ihr System neu qualifizierte Laufwerke erkennen und verwenden. Dies verhindert, dass Systemereignimeldungen über nicht aktuelle Laufwerksinformationen verfügen und Laufwerkspartitionierung verhindern, da Laufwerke nicht erkannt werden. Das DQP benachrichtigt Sie auch über nicht aktuelle Laufwerk-Firmware.
+
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["NetApp Downloads: Disk Qualification Package"^]
+
+* Als Best Practice wird empfohlen, auf dem System aktuelle Versionen der NSM-Firmware (NVMe Shelf Module) und der Festplatten-Firmware zu installieren, bevor FRU-Komponenten ersetzt werden.
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp Downloads: Festplatten-Shelf Firmware"^]
+
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["NetApp Downloads: Festplatten-Firmware"^]
+
++
+[NOTE]
+====
+Stellen Sie die Firmware nicht auf eine Version zurück, die Ihr Shelf und seine Komponenten nicht unterstützt.
+
+====
+* Die Festplatten-Firmware wird für neue Laufwerke, die nicht über aktuelle Firmware-Versionen verfügen, automatisch (unterbrechungsfrei) aktualisiert.
++
+
+NOTE: Die Laufwerk-Firmware wird alle zwei Minuten überprüft.
+
+* Bei Bedarf können Sie die LEDs des Speichersystems (blau) einschalten, um das betroffene Speichersystem physisch zu lokalisieren. Melden Sie sich über SSH bei der BMC an und geben Sie den Befehl ein `system location-led _on_`.
++
+Ein Speichersystem verfügt über drei Standort-LEDs: Eine auf dem Bedienfeld und eine auf jedem Controller. Die Standort-LEDs leuchten 30 Minuten lang.
+
++
+Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led _off_`. Wenn Sie sich nicht sicher sind, ob die LEDs leuchten oder nicht, können Sie ihren Status überprüfen, indem Sie den Befehl eingeben `system location-led show`.
+
+
+
+.Schritte
+. Wenn Sie dem Ersatzlaufwerk den Besitz eines Laufwerks manuell zuweisen möchten, müssen Sie die automatische Laufwerkszuweisung deaktivieren, wenn diese aktiviert ist.
++
+
+NOTE: Sie weisen den Antriebseigentum manuell zu und aktivieren dann die automatische Laufwerkszuweisung später in diesem Verfahren.
+
++
+.. Überprüfen Sie, ob die automatische Laufwerkszuweisung aktiviert ist:
++
+`storage disk option show`
+
++
+Sie können bei beiden Controllern den Befehl eingeben.
+
++
+Wenn die automatische Laufwerkszuordnung aktiviert ist, wird die Ausgabe in der `Auto Assign` Spalte (für jeden Controller) angezeigt `on`.
+
+.. Wenn die automatische Laufwerkszuweisung aktiviert ist, deaktivieren Sie sie:
++
+`storage disk option modify -node node_name -autoassign off`
+
++
+Sie müssen die automatische Laufwerkszuweisung auf beiden Controllern deaktivieren.
+
+
+
+. Richtig gemahlen.
+. Entfernen Sie die Blende von der Vorderseite des Speichersystems.
+. Identifizieren Sie das ausgefallene Laufwerk physisch.
++
+Wenn ein Laufwerk ausfällt, protokolliert das System eine Warnmeldung an die Systemkonsole und gibt an, welches Laufwerk ausgefallen ist. Darüber hinaus leuchten die Warnungs-LED (gelb) auf der Anzeige des Festplatten-Shelf-Bedieners und des ausgefallenen Laufwerks.
+
++
+
+NOTE: Die Aktivitäts-LED (grün) auf einem ausgefallenen Laufwerk kann leuchten (leuchtet dauerhaft), was darauf hinweist, dass das Laufwerk zwar mit Strom versorgt wird, aber nicht blinken sollte, was auf I/O-Aktivität hinweist. Ein ausgefallenes Laufwerk hat keine I/O-Aktivität.
+
+. Entfernen Sie das ausgefallene Laufwerk:
++
+image::../media/drw_nvme_drive_replace_ieops-1904.svg[Entfernen Sie das NVMe-Laufwerk]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Drücken Sie die Entriegelungstaste an der Antriebsfläche, um den Nockengriff zu öffnen.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Legende Nummer 2]
+ a| 
+Drehen Sie den Nockengriff nach unten, um den Antrieb von der Mittelplatine zu lösen.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Legende Nummer 3]
+ a| 
+Schieben Sie das Laufwerk mit dem Nockengriff aus dem Laufwerkschacht und stützen Sie das Laufwerk mit der anderen Hand.
+
+Wenn Sie ein Laufwerk entfernen, verwenden Sie immer zwei Hände, um sein Gewicht zu stützen.
+
+
+NOTE: Da Laufwerke zerbrechlich sind, minimieren Sie die Handhabung, um sie nicht zu beschädigen.
+
+|===
+. Warten Sie mindestens 70 Sekunden, bevor Sie das Ersatzlaufwerk einsetzen.
+. Setzen Sie das Ersatzlaufwerk ein:
++
+.. Bei geöffnetem Nockengriff den Antrieb mit beiden Händen einsetzen.
+.. Vorsichtig drücken, bis der Antrieb stoppt.
+.. Schließen Sie den Nockengriff, damit das Laufwerk vollständig in der Mittelplatine sitzt und der Griff einrastet.
++
+Schließen Sie den Nockengriff langsam, damit er korrekt an der Antriebsfläche ausgerichtet ist.
+
+
+
+. Vergewissern Sie sich, dass die Aktivitäts-LED (grün) des Laufwerks leuchtet.
++
+Wenn die Aktivitäts-LED des Laufwerks leuchtet, bedeutet dies, dass das Laufwerk mit Strom versorgt wird. Wenn die Aktivitäts-LED des Laufwerks blinkt, bedeutet dies, dass das Laufwerk gerade mit Strom versorgt wird und der I/O-Vorgang ausgeführt wird. Wenn die Laufwerk-Firmware automatisch aktualisiert wird, blinkt die LED.
+
+. Wenn Sie ein anderes Laufwerk ersetzen, wiederholen Sie die Schritte 3 bis Schritt 8.
+. Setzen Sie die Blende auf der Vorderseite des Speichersystems wieder ein.
+. Wenn Sie die automatische Laufwerkszuweisung in Schritt 1 deaktiviert haben, weisen Sie die Laufwerkseigentümer manuell zu und aktivieren Sie bei Bedarf die automatische Laufwerkszuweisung neu:
++
+.. Alle Laufwerke ohne Besitzer anzeigen:
++
+`storage disk show -container-type unassigned`
+
++
+Sie können bei beiden Controllern den Befehl eingeben.
+
+.. Weisen Sie jedes Laufwerk zu:
++
+`storage disk assign -disk disk_name -owner owner_name`
+
++
+Sie können bei beiden Controllern den Befehl eingeben.
+
++
+Mit dem Platzhalterzeichen können Sie mehr als ein Laufwerk gleichzeitig zuweisen.
+
+.. Bei Bedarf die automatische Laufwerkszuweisung erneut aktivieren:
++
+`storage disk option modify -node node_name -autoassign on`
+
++
+Sie müssen die automatische Laufwerkszuweisung auf beiden Controllern erneut aktivieren.
+
+
+
+. Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.
++
+Wenden Sie sich an den technischen Support unter https://mysupport.netapp.com/site/global/dashboard["NetApp Support"], 888-463-8277 (Nordamerika), 00-800-44-638277 (Europa) oder +800-800-80-800 (Asien/Pazifik) wenn Sie die RMA-Nummer oder zusätzliche Hilfe beim Ersatzverfahren benötigen.
+
+
