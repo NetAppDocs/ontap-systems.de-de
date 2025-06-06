@@ -142,6 +142,17 @@ Die maximale Anzahl der unterstützten Einschübe für Ihr Speichersystem und al
 
 Weitere Informationen zur Verkabelung des SAS-Shelfs finden Sie unter link:https://docs.netapp.com/us-en/ontap-systems/sas3/install-cabling-rules.html["SAS-Verkabelungsregeln und -Konzepte – Shelfs mit IOM12/IOM12B-Modulen"].
 
+.Über diese Aufgabe
+Die Speichersysteme FAS70 und FAS90 unterstützen DS212C-, DS224C-, DS460C- und NS224-Shelves entweder mit dem Modul NSM100 oder NSM100B.
+
+Die Hauptunterschiede zwischen den NS224-Modulen sind:
+
+* NSM100-Regalmodule verwenden die integrierten Ports e0a und e0b.
+* NSM100B-Shelf-Module verwenden die Ports e1a und e1b in Steckplatz 1.
+
+
+Das folgende NS224-Verkabelungsbeispiel zeigt NSM100-Module in den NS224-Einschüben, wenn auf die Einschubmodul-Ports verwiesen wird.
+
 [role="tabbed-block"]
 ====
 .Option 1: Ein NS224 Storage-Shelf

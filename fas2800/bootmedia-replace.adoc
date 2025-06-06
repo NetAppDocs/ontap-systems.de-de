@@ -16,7 +16,7 @@ Zum Austauschen des Startmediums müssen Sie das beeinträchtigte Controller-Mod
 
 == Schritt 1: Entfernen Sie das Controller-Modul
 
-[role="lead"]
+.Schritte
 Um auf Komponenten innerhalb des Controllers zuzugreifen, müssen Sie zuerst das Controller-Modul aus dem System entfernen und dann die Abdeckung am Controller-Modul entfernen.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
@@ -48,8 +48,6 @@ Entriegelungstaste der Steuermodulabdeckung
 
 Suchen Sie die Startmedien im Controller-Modul unter der Zusatzkarte, und befolgen Sie die Anweisungen zum Austauschen.
 
-.Animation - Ersetzen Sie das Startmedium
-video::10a29a01-a86e-451c-b05a-af4701726f57[panopto]
 image:../media/drw_2850_replace_boot_media_IEOPS-696.svg["Ersetzen Sie das Startmedium"]
 
 [cols="1,2"]
@@ -126,19 +124,10 @@ Siehe https://kb.netapp.com/onprem/ontap/os/Which_ONTAP_image_should_I_download%
 NOTE: Wenn Sie den Inhalt mit Windows extrahieren, verwenden Sie WinZip nicht zum Extrahieren des Netzboots-Images. Verwenden Sie ein anderes Extraktionstool, wie 7-Zip oder WinRAR.
 
 +
-Die Image-Datei „ungezippte Dienste“ enthält zwei Ordner:
+Der USB-Speicherstick sollte über dieselbe Service Image (BIOS)-Version verfügen wie die, die auf dem fehlerhaften Controller ausgeführt wird.
 
 +
-** `boot`
-** `efi`
-+
-... Kopieren Sie die `efi` Ordner zum obersten Verzeichnis auf dem USB-Flash-Laufwerk.
-+
-Das USB-Flash-Laufwerk sollte den efi-Ordner und die gleiche Service Image (BIOS)-Version des beeinträchtigten Controllers haben.
-
-... Entfernen Sie das USB-Flash-Laufwerk von Ihrem Laptop.
-
-
+.. Entfernen Sie das USB-Flash-Laufwerk von Ihrem Laptop.
 
 
 . Installieren Sie das Controller-Modul:

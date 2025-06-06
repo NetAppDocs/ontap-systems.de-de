@@ -8937,8 +8937,6 @@ SFP+ (Target/Initiator)</block>
   <block id="789b5a8a8cbbdce99d0cd8864ee0122a" category="doc">Fahren Sie den beeinträchtigten Controller – FAS70 und FAS90 – herunter</block>
   <block id="2902ee20441450339d3c624a2432953d" category="list-text"><block ref="402920e7db99056d01d15836c97d7e6e" category="inline-xref-macro-rx"></block></block>
   <block id="0ead7a2e2db558cfd790c55a9c76462e" category="list-text">Vergewissern Sie sich, dass alle anderen Komponenten ordnungsgemäß funktionieren. Falls nicht, wenden Sie sich an den technischen Support.</block>
-  <block id="fd39955a756e9aaa81ca55b2791f9b72" category="example-title">Option 1, die meisten Systeme</block>
-  <block id="d4373786f422d4c41e16fcb4a1e26b83" category="example-title">Option 2 MetroCluster-Konfiguration</block>
   <block id="1cc5afe23260cb08d578b3171ed8bb0d" category="paragraph">Steckplatznummern für Caching-Module</block>
   <block id="9c7e22c30b9aa93d97efb0ef5d7ccaa8" category="list-text">Drehen Sie die Lasche vom Modul weg.</block>
   <block id="21c6d5df7d87902fb54560352086c7e1" category="list-text">Drücken Sie die Terra Cotta Lasche oben am Cache-Modul zusammen, und drehen Sie den Nockengriff vom Cache-Modul weg.</block>
@@ -11249,7 +11247,6 @@ SFP+ (Target/Initiator)</block>
   <block id="35ac4e474d14cd3235380c2e767e83a3" category="paragraph">Ersetzen Sie die NVRAM in Ihrem FAS70- oder FAS90-System, wenn der nichtflüchtige Speicher fehlerhaft ist oder ein Upgrade erforderlich ist. Beim Austausch wird der beeinträchtigte Controller heruntergefahren, das NVRAM-Modul oder das NVRAM-DIMM ersetzt, die Festplatten neu zugewiesen und das fehlerhafte Teil an NetApp zurückgegeben.</block>
   <block id="a7188c3f4745ef552e2d05d7b35f5f28" category="summary">Ersetzen Sie in Ihrem FAS70- oder FAS90-System die Echtzeituhr (RTC)-Batterie, die allgemein als Knopfzellenbatterie bezeichnet wird, um sicherzustellen, dass Dienste und Anwendungen, die auf eine genaue Zeitsynchronisierung angewiesen sind, weiterhin funktionsfähig bleiben.</block>
   <block id="2ffef1288a7f6acf62a54035268660b1" category="summary">Ersetzen Sie das System-Management-Modul in Ihrem FAS70- oder FAS90-System, wenn es defekt oder die Firmware beschädigt ist. Beim Austausch werden der Controller heruntergefahren, das fehlerhafte Systemmanagement-Modul ersetzt, der Controller neu gebootet, die Lizenzschlüssel aktualisiert und der fehlerhafte Teil an NetApp zurückgegeben.</block>
-  <block id="5058f1af8388633f609cadb75a75dc9d" category="paragraph">.</block>
   <block id="83755d1a8b686dba4bc8143c0cb7f397" category="doc">Workflow für den Austausch von Startmedien – AFF A1K</block>
   <block id="25602a3f0e04b149a4c958bcec65c371" category="summary">Auf dem Startmedium Ihres AFF A1K-Systems werden wichtige Firmware- und Konfigurationsdaten gespeichert. Beim Austausch wird das Systemverwaltungsmodul entfernt, das gestörte Startmedium entfernt, das Ersatz-Startmedium installiert und das ONTAP-Image anschließend auf das Ersatz-Startmedium übertragen.</block>
   <block id="b33207f5d0f2655fdef88d9bbf915f24" category="summary">Fahren Sie den außer Betrieb genommenen Controller in Ihrem AFF A1K-Speichersystem herunter, um Datenverlust zu vermeiden und die Systemstabilität beim Austausch des Startmediums sicherzustellen.</block>
@@ -11913,9 +11910,6 @@ SFP+ (Target/Initiator)</block>
   <block id="e772ad168b6f97f132982a96392cd046" category="example-title">Ersetzen Sie das Wechselstromnetzteil für NS224</block>
   <block id="0dcc8efe101bb5e6350d650ce519cbfa" category="video-title">Tauschen Sie im laufenden Betrieb ein Wechselstromnetzteil in einem NS224-Shelf aus</block>
   <block id="40f990da8c57e47c36081d4d612c9817" category="list-text">Ziehen Sie die Stromversorgungskabel von den Netzteilen ab und ziehen Sie dann das Controllermodul einige Zentimeter aus der Vorderseite des Systems heraus.</block>
-  <block id="5330c5fb5d366be53452014b9ecf03a7" category="paragraph">+ .. Entfernen Sie alle Kabel, die am System Management-Modul angeschlossen sind. Stellen Sie sicher, dass Sie den Ort kennzeichnen, an dem die Kabel angeschlossen wurden, damit Sie sie bei der Neuinstallation des Moduls an die richtigen Anschlüsse anschließen können. .. Drehen Sie das Kabelführungs-Fach nach unten, indem Sie die Tasten an beiden Seiten an der Innenseite des Kabelführungs-Fachs ziehen und das Fach dann nach unten drehen. .. Drücken Sie die CAM-Taste für die Systemverwaltung. .. Drehen Sie die Nockenverriegelung so weit wie möglich nach unten. .. Entfernen Sie das System-Management-Modul aus dem Gehäuse, indem Sie den Finger in die Öffnung des Nockenhebels stecken und das Modul aus dem Gehäuse ziehen. .. Platzieren Sie das System-Management-Modul auf einer antistatischen Matte, damit das Startmedium zugänglich ist. . Entfernen Sie das Startmedium aus dem Verwaltungsmodul:</block>
-  <block id="42daa41b8c19102ddb14e0889d7abbb4" category="paragraph">+ image::../media/drw_a1k_boot_media_remove_replace_ieops-1377.svg[Grafik zum Ersetzen des Bootmediums]</block>
-  <block id="26b17225b626fb9238849fd60eabdf60" category="paragraph">+</block>
   <block id="193d35b8a9ac476b4099d10d04a128a6" category="list-text">Setzen Sie das Controllermodul vorsichtig wieder an der Vorderseite des Systems ein und verriegeln Sie es.</block>
   <block id="c65e5ab2ccd40a14e7dbaad19aa0c504" category="list-text">Trennen Sie die Stromversorgungskabel der Netzteile vom Controller und ziehen Sie dann das Controllermodul an der Vorderseite des Systems einige Zentimeter heraus.</block>
   <block id="2a111f85cafe27d96d705414a1545f34" category="list-text">Stecken Sie die Stromkabel wieder in das Netzteil und setzen Sie das Controllermodul vorsichtig wieder an der Vorderseite des Systems ein und verriegeln Sie es.</block>
@@ -11926,7 +11920,6 @@ SFP+ (Target/Initiator)</block>
   <block id="b4f9b4ed219fb6f91477aff5ebef3453" category="admonition">Wenn Sie über Gleichstromnetzteile verfügen, schließen Sie den Stromblock wieder an die Netzteile an.</block>
   <block id="4efb9ea6af03bf03e0cdc2a4164ea43c" category="list-text">Schließen Sie das Konsolenkabel an den Konsolenport des Ersatz-Controller-Moduls an, und schließen Sie es wieder an den Laptop an, damit es beim Neustart Konsolenmeldungen erhält.</block>
   <block id="fde22c7ade0121628e0502770ed5326e" category="list-text">Schließen Sie die Netzteile an. Sobald die Stromversorgung wiederhergestellt ist, bootet der Controller zur LOADER-Eingabeaufforderung.</block>
-  <block id="ea1ad38d91c2e87ef2e9571bd55654fd" category="list-text">ONTAP 9.17.1</block>
   <block id="14a1b02d9ac34f22a362671d392a3852" category="list-text">ASA C30</block>
   <block id="ed57089257c5bf0e9855c2abce5e2f2c" category="paragraph">Die AFF A1K Speichersysteme unterstützen NS224-Shelves mit dem Modul NSM100 oder NSM100B. Die Hauptunterschiede zwischen den Modulen sind:</block>
   <block id="bee9bdef55e93399a97d85b3925cfca2" category="list-text">NSM100-Regalmodule verwenden die integrierten Ports e0a und e0b.</block>
@@ -12019,4 +12012,9 @@ SFP+ (Target/Initiator)</block>
   <block id="b4a3b44dc7350cb88f59a4a2eb7dda1d" category="sidebar">ASA C30 Fahrgestell</block>
   <block id="cb330090f109eb2fa5d8e0cb697b8627" category="sidebar">Controller-Modul ASA C30</block>
   <block id="d6cf13e3e73df787bea3a13aaa745efd" category="sidebar">ASA C30 I/O-Modul</block>
+  <block id="8acf9575f7f79494b7321c6428846a4b" category="paragraph">Ersetzen Sie das Startmedium.</block>
+  <block id="8fdc5ec3ff56b023a707d257557cb7c1" category="paragraph">Die Speichersysteme FAS70 und FAS90 unterstützen DS212C-, DS224C-, DS460C- und NS224-Shelves entweder mit dem Modul NSM100 oder NSM100B.</block>
+  <block id="cb1d7f2de7963108d3fe1b590a415523" category="paragraph">Die Hauptunterschiede zwischen den NS224-Modulen sind:</block>
+  <block id="a1c52b2edb23bc93318c0b82dc9baead" category="paragraph">Das folgende NS224-Verkabelungsbeispiel zeigt NSM100-Module in den NS224-Einschüben, wenn auf die Einschubmodul-Ports verwiesen wird.</block>
+  <block id="29cc4b807f94b06bddae2e11c6a56c1e" category="paragraph">Der USB-Speicherstick sollte über dieselbe Service Image (BIOS)-Version verfügen wie die, die auf dem fehlerhaften Controller ausgeführt wird.</block>
 </blocks>
