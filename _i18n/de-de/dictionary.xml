@@ -52,7 +52,6 @@
   <block id="3e5a02473a086978bae6a6516ad46c5e" category="list-text">Entfernen Sie die Kabelführungsgeräte von der linken und rechten Seite des Controller-Moduls und stellen Sie sie zur Seite.</block>
   <block id="3db53350c8daded7e4295f79671ca172" category="list-text">Wenn Sie nach dem Entfernen der Kabel die SFP-Module im System belassen, verschieben Sie sie in das neue Controller-Modul.</block>
   <block id="1b96f3aa099b152fc864dedb115af912" category="list-text">Drücken Sie die Verriegelung am Nockengriff, bis sie loslässt, öffnen Sie den Nockengriff vollständig, um das Controller-Modul aus der Mittelplatine zu lösen, und ziehen Sie das Controller-Modul anschließend mit zwei Händen aus dem Gehäuse heraus.</block>
-  <block id="d6daae29261c119313124d1d21a1c267" category="image-alt">drw 2240 x Öffnungsnockenverriegelung</block>
   <block id="5fb9af22ffedd74df1492c91f96b8d7a" category="list-text">Drehen Sie das Controller-Modul um und legen Sie es auf eine flache, stabile Oberfläche.</block>
   <block id="99734ded605f0a86173c861064992678" category="list-text">Öffnen Sie die Abdeckung, indem Sie die blauen Laschen einschieben, um die Abdeckung zu lösen, und schwenken Sie dann die Abdeckung nach oben und öffnen Sie sie.</block>
   <block id="2a2508e145c26be9a521a151ff4382ee" category="section-title">Schritt 2: Verschieben Sie die Startmedien</block>
@@ -69,7 +68,6 @@
   <block id="3c6ea2c01213e3cce235755697efaef0" category="list-text">Überprüfen Sie die NVMEM-LED:</block>
   <block id="ab01e8bc0bdcfd1b8e9fd68e8f127d6e" category="list-text">Wenn sich Ihr System in einer HA-Konfiguration befindet, fahren Sie mit dem nächsten Schritt fort.</block>
   <block id="992ba8f6a09995675199e12cea75d2b6" category="list-text">Wenn sich das System in einer eigenständigen Konfiguration befindet, fahren Sie das Controller-Modul ordnungsgemäß herunter, und überprüfen Sie dann die NVRAM-LED, die durch das NV-Symbol gekennzeichnet ist.</block>
-  <block id="8d2c918ab807c3bf6748afd3be858588" category="image-alt">drw-hw-nvram-Symbol</block>
   <block id="0d2f41567416b9039d5fd64d9cda09a2" category="admonition">Die NVRAM-LED blinkt während des Auslagerung des Inhalts in den Flash-Speicher, wenn Sie das System anhalten. Nach Abschluss der Abscheidungen schaltet sich die LED aus.</block>
   <block id="3d12d323463409975d1721c7acad53e3" category="list-text">Wenn die Stromversorgung ohne eine saubere Abschaltung unterbrochen wird, blinkt die NVMEM-LED bis zum Abschluss des Destages und die LED erlischt.</block>
   <block id="9452f6d1d428f83bab1f0e5a0924350f" category="list-text">Wenn die LED eingeschaltet ist und eingeschaltet ist, werden nicht geschriebene Daten auf NVMEM gespeichert.</block>
@@ -1912,7 +1910,6 @@
   <block id="d6169892b964cd0670a4fb5049d61160" category="list-text">Entfernen Sie das E/A-Modul aus dem Gehäuse, indem Sie an den Zuglaschen an den Seiten der Modulfläche ziehen.</block>
   <block id="e9a79f0407fd89b04b8d674513b95d8e" category="paragraph">Stellen Sie sicher, dass Sie den Steckplatz verfolgen, in dem sich das I/O-Modul befand.</block>
   <block id="c593377a30c937702f96d13d76989bc2" category="video-title">Animation - E/A-Modul entfernen/installieren</block>
-  <block id="5ef805c7229de31e948db97478049a11" category="image-alt">drw 9500 entfernen das PCIe-Modul</block>
   <block id="c6e52defde912721ad3ec5315c5d9664" category="paragraph">Gerettete und nummerierte E/A-Nockenverriegelung</block>
   <block id="b420c5d091613dc4f6f811eee1e9bceb" category="paragraph">E/A-Nockenverriegelung vollständig entriegelt</block>
   <block id="a44a301051bfeed34fcfe0a667ddbb2c" category="list-text">Legen Sie das E/A-Modul beiseite.</block>
@@ -1958,7 +1955,6 @@
   <block id="dac273d93724b47a21b755da953f81be" category="paragraph">Der Status des NVMe-Steckplatzes wird angezeigt<block ref="006ec0ed628b8a842343b62d6db2dedc" prefix=" " category="inline-code"></block> In der Bildschirmausgabe des Cache-Moduls, das ersetzt werden muss.</block>
   <block id="9cdb076245d84700443d3aee5a21f0ff" category="inline-link">Befehlsman-Pages</block>
   <block id="d614131c818f5cecd09732e6431d6f96" category="list-text">Entfernen Sie das Caching-Modul:</block>
-  <block id="68607949342d7df39c7770d809d0a5f2" category="image-alt">drw 9500 entfernen flashcache</block>
   <block id="5e8d2460689245ee00f6d51f5db543dc" category="paragraph">Entriegelungstaste Terra cotta.</block>
   <block id="6c970e65de87e21858f8f433fe6199bf" category="paragraph">Nockengriff für das Caching-Modul.</block>
   <block id="948a2b625585740c830fda62dae13d97" category="list-text">Drücken Sie die Entriegelungstaste Terra Cotta auf der Vorderseite des Cache-Moduls.</block>
@@ -1991,10 +1987,8 @@
   <block id="c4f162b9feccf5f963d674a3299a9f00" category="paragraph">Das NVRAM-Modul geht aus dem Chassis heraus und bewegt sich einige Zentimeter heraus.</block>
   <block id="ca401bca71da68589a6c9f6ae6d2abdf" category="list-text">Entfernen Sie das NVRAM-Modul aus dem Gehäuse, indem Sie an den Zuglaschen an den Seiten der Modulfläche ziehen.</block>
   <block id="f8cc7bd538c729e18dab57ecfd18b69e" category="video-title">Animation: Ersetzen Sie das NVRAM-Modul</block>
-  <block id="9b191eaf82da57faf3acb37f96f84ca6" category="image-alt">ddw 9500 Move entfernen NVRAM-Modul</block>
   <block id="0e50691d6ac3e9df529fa546f2486bd7" category="paragraph">E/A-Riegel vollständig entriegelt</block>
   <block id="eafa33dcde1775d804ec271bdff3229f" category="list-text">Setzen Sie das NVRAM-Modul auf eine stabile Fläche und entfernen Sie die Abdeckung vom NVRAM-Modul, indem Sie die blaue Verriegelungstaste auf der Abdeckung nach unten drücken und dann, während Sie die blaue Taste gedrückt halten, den Deckel aus dem NVRAM-Modul schieben.</block>
-  <block id="1b75d6028af1363f62eb9a45010f31c4" category="image-alt">drw 9500 entfernt den Inhalt des NVRAM-Moduls</block>
   <block id="870ce8034da9f6c249302e25daedfefc" category="paragraph">Verriegelungsknopf für die Abdeckung</block>
   <block id="924c27ff82defaaf482486b520ff7a4c" category="paragraph">DIMM- und DIMM-Auswurfklammern</block>
   <block id="e14c2599c6caaa2dd36597d6664749f1" category="list-text">Entfernen Sie nacheinander die DIMMs aus dem alten NVRAM-Modul und installieren Sie sie im ErsatzNVRAM-Modul.</block>
@@ -2035,7 +2029,6 @@
   <block id="5d0c9dbc5140fd9bc61987a41aa6e82e" category="admonition">Das DCPM-Modul muss innerhalb von fünf Minuten nach dem Ausbau im Gehäuse ausgetauscht werden, oder der zugehörige Controller wird heruntergefahren.</block>
   <block id="6acd2520bad86e2719b0a66d04f59f28" category="list-text">Drücken Sie die Sperrtaste für Terrakotta am Modulgriff, und schieben Sie das DCPM-Modul aus dem Gehäuse.</block>
   <block id="1738e7d625dcae031916a2d329f6a6b1" category="video-title">Animation - DCPM entfernen/installieren</block>
-  <block id="450c055f11dd33524e41f3c84160e631" category="image-alt">drw 9500 NV-Batterie entfernen</block>
   <block id="dd70305ea5f8fef426dbcb35b56b5a51" category="paragraph">DCPM-Modul Terra cotta Verriegelungsknopf</block>
   <block id="1e3e36e08215d7340bc57faa93175817" category="list-text">Richten Sie das Ende des DCPM-Moduls an der Gehäuseöffnung aus, und schieben Sie es dann vorsichtig in das Gehäuse, bis es einrastet.</block>
   <block id="5757182a1de9468716f0a4f7c8a637d5" category="admonition">Modul und Steckplatz sind codiert. Das Modul nicht in die Öffnung zwingen. Wenn das Modul nicht leicht einarbeitet, richten Sie das Modul aus und schieben Sie es in das Gehäuse.</block>
@@ -2084,7 +2077,6 @@
   <block id="113c5b43783d0048ca249335849a1d63" category="paragraph">CAT 6, RJ-45 (je nach Bestellung)</block>
   <block id="2b6cb07b127bb08f592213e99876957c" category="paragraph">Teilenummern X6585-R6 (112-00291), 3m</block>
   <block id="543e9525464a6a7b9d9364e7bb542f5c" category="paragraph">Managementnetzwerk und Ethernet-Daten</block>
-  <block id="9a7819d4ddc611b1438c0a7f4633f619" category="image-alt">oie Kabel Mini sas hd auf Mini sas hd</block>
   <block id="6dcfa32e861b657cd137a281916a5188" category="paragraph">Verbindung über die Konsole während der Software-Einrichtung auf Laptops/Konsolen, die nicht von Windows stammen</block>
   <block id="28746f946d763ce537494ffe0d6c6727" category="list-text">Überprüfen Sie die<block ref="31fb422f2cdfc1b2e916b587bec00136" category="inline-link-rx"></block> Und sammeln Sie die in diesem Handbuch aufgeführten erforderlichen Informationen.</block>
   <block id="6aaee4945b201c5a5677251dde867361" category="paragraph">Auf dem Etikett links wird ein leeres Gehäuse angezeigt, während das Etikett auf der rechten Seite auf ein vollständig bestücktes System hinweist.</block>
@@ -2095,7 +2087,6 @@
   <block id="fd2cb99acafb4f0144bfb5e0e4c31373" category="admonition">Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.</block>
   <block id="d50b249d8e309dd400e0180a12ceae23" category="list-text">Verwenden Sie die Animation oder Abbildung, um die Verkabelung zwischen den Controllern und den Switches abzuschließen:</block>
   <block id="ce43cf0f3fdd398cbca499ba447d6df2" category="video-title">Animation – 2-Node-Cluster-Verkabelung ohne Switches</block>
-  <block id="b78339b4bcd807d0cb07b09d3b379c86" category="image-alt">drw 9500 tnsc Netzwerkverkabelung</block>
   <block id="d718ffb6aaa936306ccf33aefa9f9462" category="paragraph">Verkabelung der Cluster Interconnect Ports:</block>
   <block id="832e6447f3f0b4b7127bf98e691dabe2" category="list-text">Steckplatz A4 und B4 (e4a)</block>
   <block id="afb27063fb1efe124e2c7a172cae259c" category="list-text">Steckplatz A8 und B8 (e8a)</block>
@@ -2110,7 +2101,6 @@
   <block id="84252b20b7e0ac6281a9b368a8f95d01" category="open-title">Option 2: Cluster mit Switch</block>
   <block id="64f550ceb718fb87884d6c018d99b0d3" category="paragraph">Managementnetzwerk, Datennetzwerk und Management-Ports auf den Controllern sind mit Switches verbunden. Die Cluster Interconnect- und HA-Ports sind mit dem Cluster/HA-Switch verbunden.</block>
   <block id="0815daeb3f5819b5b26f2d852a3480ed" category="video-title">Animation - Switch Cluster Verkabelung</block>
-  <block id="ab4ba237fa2abf24783610d2c0f56a3a" category="image-alt">drw 9500-geschaltete Netzwerkverkabelung</block>
   <block id="5f4965084173e3c414637c35200b73a8" category="paragraph">Cluster-Interconnect-Ports verkabeln:</block>
   <block id="765c3c3f314b105120b116fa72fa83ec" category="list-text">Steckplatz A4 und B4 (e4a) zum Cluster-Netzwerk-Switch.</block>
   <block id="370ef18034bcd8124be9ef4b4b76a551" category="list-text">Steckplatz A8 und B8 (e8a) zum Cluster-Netzwerk-Switch</block>
@@ -2119,15 +2109,11 @@
   <block id="d882321e2eb0b3930cc4d89826524491" category="inline-link">SAS-Verkabelungsregeln, Arbeitsblätter und Beispiele – Regale mit IOM12-Modulen</block>
   <block id="581d8b893cc4a239df32042db4e658a7" category="list-text">Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen. Die Kabelabzieher für die Storage-Module sind nach oben und die Abziehlaschen an den Shelves sind nach unten.</block>
   <block id="3e86e158b18295e17a62b9c2ae164933" category="list-text">Die folgenden Animationen oder Zeichnungen verwenden Sie, um Ihre Controller mit drei (1 Stack eines Laufwerks-Shelfs und einem Stack mit zwei Laufwerk-Shelfs) DS224C-Laufwerk-Shelfs zu verkabeln.</block>
-  <block id="b198e959073372c8a4e521b4b4a94fb3" category="video-title">Animation - Verkabeln Sie Ihre Laufwerk-Regale</block>
-  <block id="dd012e2b911cefcb3afb5c18a9eea983" category="image-alt">drw 9500-sas-Shelf-Verkabelung</block>
   <block id="b216213c8469f70fd4cd72ba7795f4aa" category="paragraph">Verbinden Sie den Laufwerk-Shelf-Stack mithilfe der Grafik als Referenz mit den Controllern.</block>
   <block id="ff080081ab0602360a6573f88141ada1" category="paragraph">Verbinden Sie den Laufwerk-Shelf-Stack 2 mit den Controllern. Verwenden Sie dazu die Grafik als Referenz.</block>
   <block id="591a460534c5cea6a44feabf56c126fc" category="section-title">Schritt 5: System-Setup und -Konfiguration abschließen</block>
   <block id="1a012ae90c41b7530ce0df40b8053d54" category="open-title">Option 1: Wenn die Netzwerkerkennung aktiviert ist</block>
   <block id="5eadc00e7d9146c2fd474e7d8d5f5137" category="list-text">Verwenden Sie die folgende Animation oder Zeichnung, um eine oder mehrere Laufwerk-Shelf-IDs festzulegen:</block>
-  <block id="219d4ec85f928925cadb5590292cbb49" category="video-title">Animation - Festlegen der Shelf-ID&amp;#8217;s</block>
-  <block id="6b39390f8836ac9ddcaf033f6ec9d535" category="image-alt">drw-Laufwerk für Set-Shelf-ID</block>
   <block id="543ab7831f0589c951278e6073647eb0" category="paragraph">Entfernen Sie die Endkappe.</block>
   <block id="77b9275f6fd711644f4214aa9c1fd216" category="paragraph">Halten Sie die erste Shelf-ID-Taste gedrückt, bis die erste Ziffer blinkt. Drücken Sie dann, um den Status 0 bis 9 zu erweitern.</block>
   <block id="6029e94957ee34ca18227d08b799c166" category="admonition">Die erste Ziffer blinkt weiterhin</block>
@@ -2137,7 +2123,6 @@
   <block id="241b3d2acad120dfd8decf92e173cd23" category="paragraph">Warten Sie 10 Sekunden auf die Bernstein-LED (!) Um angezeigt zu werden, schalten Sie dann das Laufwerk-Shelf aus und wieder ein, um die Shelf-ID festzulegen.</block>
   <block id="d01f82c054ee1a7df429f478c56a204a" category="list-text">Schalten Sie die Netzschalter an beide Knoten ein.</block>
   <block id="a308cbadd7ff9683558704008014a7a5" category="video-title">Animation: Schalten Sie die Stromversorgung der Controller ein</block>
-  <block id="92ffcfe5fdb4d48f02fe79bb44448ab3" category="image-alt">drw 9500 eingeschaltet</block>
   <block id="c7f2defea9cd5b73fda5cc58aadedfcc" category="admonition">Das erste Booten kann bis zu acht Minuten dauern.</block>
   <block id="bd21e6ec29256eee4c7a9b34dd71c9ba" category="image-alt">dwr-Laptop nur zum Umschalten</block>
   <block id="382f497663af8b0b026d3c66f6a2bfce" category="list-text">Konfigurieren Sie das System mithilfe von System Manager geführten Setups anhand der Daten, die Sie im erfasst haben<block ref="31fb422f2cdfc1b2e916b587bec00136" category="inline-link-rx"></block>.</block>
@@ -2149,7 +2134,6 @@
   <block id="208ee0864fe983f53622b3619eef5932" category="open-title">Option 2: Wenn die Netzwerkerkennung nicht aktiviert ist</block>
   <block id="b3364f412d1466e4f6e340836fff9abb" category="paragraph">Wenn Sie keinen Windows- oder Mac-basierten Laptop oder keine Konsole verwenden oder die automatische Erkennung nicht aktiviert ist, müssen Sie die Konfiguration und das Setup mit dieser Aufgabe abschließen.</block>
   <block id="89b878b89413c1b8d2254e6380e13c0d" category="list-text">Verbinden Sie das Konsolenkabel mit dem Laptop oder der Konsole über das im Lieferumfang des Systems enthalten Konsolenkabel, und verbinden Sie dann den Laptop mit dem Switch im Management-Subnetz.</block>
-  <block id="27daaf3028854170e8321e8ffc573b7a" category="image-alt">controller des drw 9500-Kabelkonsolenschalters</block>
   <block id="11991b3479fcd322fec352f130b7b364" category="admonition">Das Format für die Adresse ist +https://x.x.x.x+.</block>
   <block id="c1ba9dd5eac89f4e8a8e84e18e1785d1" category="list-text">Konfigurieren Sie das System anhand der Daten, die Sie im erfasst haben<block ref="31fb422f2cdfc1b2e916b587bec00136" category="inline-link-rx"></block> .</block>
   <block id="b4c31341ab0f1e49529261f974be146d" category="summary">Vor dem Herunterfahren des Node mit beeinträchtigten Funktionen und dem Überprüfen des Status der integrierten Verschlüsselungsschlüssel müssen Sie den Status des Node mit eingeschränkter Funktion überprüfen, die automatische Rückgabe deaktivieren und überprüfen, welche Version von ONTAP das System ausgeführt wird.</block>
@@ -2209,7 +2193,6 @@
   <block id="d03ce52cbc852de34ed883d28f104af2" category="list-text">Ziehen Sie die Kabel vom beeinträchtigten Controller-Modul ab, und verfolgen Sie, wo die Kabel angeschlossen waren.</block>
   <block id="4cc95bf9d5b32fe7d0352f48b0791827" category="list-text">Schieben Sie die Terrakotta-Taste am Nockengriff nach unten, bis sie entsperrt wird.</block>
   <block id="abc219c929a34cf7b62e36c2503b63ac" category="video-title">Animation - Controller-Modul entfernen</block>
-  <block id="0b3bd9d9290b20b7deabeee68dbd8982" category="image-alt">drw 9500 PCM-Quelle entfernen</block>
   <block id="b05aea0ff1931b3ce07289e5c24c4357" category="paragraph">Freigabetaste für den CAM-Griff</block>
   <block id="b733ab833a64f07b84375a26a6af83f0" category="paragraph">CAM-Griff</block>
   <block id="1ce9441378e5288a31f9dee89eb4cb1d" category="list-text">Drehen Sie den Nockengriff so, dass er das Controller-Modul vollständig aus dem Gehäuse herausrückt, und schieben Sie dann das Controller-Modul aus dem Gehäuse.</block>
@@ -2249,17 +2232,14 @@
   <block id="060c350ffa4e24bde01789b8be8138f7" category="paragraph">Wenn Sie die Netzteile entfernen, wenn Sie ein Gehäuse ersetzen, müssen Sie das Gerät ausschalten, trennen und dann das Netzteil vom alten Gehäuse entfernen.</block>
   <block id="12ccb6284dde6c218f4afb3d3857d96e" category="list-text">Halten Sie die Terrakotta-Taste am Netzteilgriff gedrückt, und ziehen Sie dann das Netzteil aus dem Gehäuse.</block>
   <block id="262047271a9f0ac7ba69952e78e4ced1" category="video-title">Animation - Netzteil entfernen/installieren</block>
-  <block id="9494be0e4fc0cc7bf5a561ba23cc37dd" category="image-alt">drw 9500 das Einbauen des Netzteilmoduls entfernen</block>
   <block id="5c35096da376ba0c64381e3c367a4347" category="paragraph">Verriegelungsknopf</block>
   <block id="054df480664fe94c9e8d364821d03768" category="section-title">Schritt 2: Entfernen Sie die Lüfter</block>
   <block id="108e4a1ced8c93c999d4ff2cae213cdf" category="paragraph">Um die Lüftermodule beim Austausch des Gehäuses zu entfernen, müssen Sie eine bestimmte Sequenz von Aufgaben durchführen.</block>
   <block id="cf4805b12d3714cb1c102043670019d7" category="list-text">Drücken Sie auf die Terrakotta-Taste am Lüftermodul, und ziehen Sie das Lüftermodul gerade aus dem Gehäuse, um sicherzustellen, dass Sie es mit Ihrer freien Hand unterstützen.</block>
   <block id="29aa4a699a26a575f893c69af8527aa7" category="video-title">Animation - Lüfter entfernen/installieren</block>
-  <block id="2966eb224d8489f097a42690752e472a" category="image-alt">drw 9500 Ausbau des Lüfters</block>
   <block id="4693df7fc44203724111e55493c1f236" category="paragraph">Entriegelungstaste Terra cotta</block>
   <block id="a6b7b1f6b451582b4f3e4ee818b0b022" category="paragraph">Schieben Sie den Lüfter in das Gehäuse ein-/heraus</block>
   <block id="7bb3e2efcb7169f8ff52d523079a8978" category="paragraph">Um das Chassis auszutauschen, müssen Sie das Controller-Modul oder die Module aus dem alten Chassis entfernen.</block>
-  <block id="2c2b9a83665e5336275a4320efcb9a16" category="image-alt">drw 9500 PCM entfernen</block>
   <block id="27289e7e37a8ebe804b1a49b34e69e35" category="section-title">Schritt 4: Entfernen Sie die E/A-Module</block>
   <block id="f237f7ef0851804ffdea97155b697410" category="list-text">Wiederholen Sie den vorherigen Schritt für die verbleibenden I/O-Module des alten Chassis.</block>
   <block id="e3ffa7ef57fa247f588e5917dee58499" category="section-title">Schritt 5: Entfernen Sie das Leistungsmodul des De-Stage-Controllers</block>
@@ -2272,7 +2252,6 @@
   <block id="2834e565715a41ff993b9c2943f280ab" category="section-title">Schritt 7: Bewegen Sie das USB-LED-Modul in das neue Gehäuse</block>
   <block id="b4a38be56b21c45f912ddf9dedc5b37f" category="paragraph">Sobald das neue Gehäuse im Rack oder Schrank installiert ist, müssen Sie das USB-LED-Modul vom alten Gehäuse in das neue Gehäuse verlegen.</block>
   <block id="cae2fd913220da36fb401366df2ed0b8" category="video-title">Animation - USB-Modul entfernen/installieren</block>
-  <block id="0161d43ee09fff69cc35ae43ed1f07f5" category="image-alt">drw 9500 entfernen LED-Mod ersetzen</block>
   <block id="6b058f6aab05ab39cfb929fd3a13e5ad" category="paragraph">Das Modul auswerfen.</block>
   <block id="fdbcf566dc8794b2a2c635f286edfa2b" category="paragraph">Schieben Sie es aus dem Chassis heraus.</block>
   <block id="6c635da61d5bee17e345cd63f48521e8" category="list-text">Suchen Sie das USB-LED-Modul an der Vorderseite des alten Gehäuses direkt unter den Netzteilschächten.</block>
@@ -2301,10 +2280,7 @@
   <block id="ef20366d8eeda4ed0725f1a5a164c558" category="paragraph">Die grüne Betriebs-LED leuchtet, wenn das Netzteil vollständig in das Gehäuse eingesetzt wird und die gelbe Warnungs-LED zunächst blinkt, schaltet sich jedoch nach ein paar Augenblicken aus.</block>
   <block id="3e5fda4bdb63c28cc3aa53cadbde1129" category="doc">Ersetzen Sie ein DIMM - FAS9500</block>
   <block id="9c50a16ad09918eb5e84e11b90826699" category="video-title">Animation - Entfernen Sie den Controller</block>
-  <block id="31006bbd619d2a77e6fe8ac85bee0cc0" category="image-alt">drw 9500 PCM offen</block>
-  <block id="3b0d2698116982bc6cc48e12fb31e0d2" category="image-alt">ddw 9500 DIMM-Karte</block>
   <block id="a0ab299f7b0b0e1628580e5c326625a7" category="video-title">Animation - DIMMs ersetzen</block>
-  <block id="3c882fe343465f148bf8900ab7dde11b" category="image-alt">drw 9500 Austauschen der PCM-dimms</block>
   <block id="cfc8a707905d308742a0633fefb9ba76" category="paragraph">DIMM-Auswerferlaschen</block>
   <block id="cf3978c4f41003aa5f5fa0b3f484dfbe" category="paragraph">DIMM</block>
   <block id="f9ffaa324d2f30413eeae6adf9ff41a1" category="section-title">Schritt 4: Installieren Sie den Controller</block>
@@ -2351,7 +2327,6 @@
   <block id="a1828edb3cde53f0ba3419e2ebe71f61" category="paragraph">Die folgende Animation zeigt den gesamten Prozess der Bewegung von Komponenten vom beeinträchtigten zum Ersatzcontroller.</block>
   <block id="58f1a63de110893e27e2b9974273d710" category="video-title">Animation - Controller-Modul ersetzen, Vorgang abschließen</block>
   <block id="d2e659a165a5fc9686cffcf720df161a" category="paragraph">Sie müssen das Bootmedium ausfindig machen und die Anweisungen befolgen, um es aus dem alten Controller zu entfernen und in den neuen Controller einzufügen.</block>
-  <block id="eee0b061ed19ecc08e6c30167f3b0ca9" category="image-alt">drw 9500 Entw. Entfernen</block>
   <block id="844463768f93b4eeabac9c4516ca0130" category="section-title">Schritt 3: Verschieben Sie die System-DIMMs</block>
   <block id="4fef68ca1ff02e0b42a6d41ea4dcc715" category="paragraph">Um die DIMMs zu bewegen, suchen und bewegen Sie sie vom alten Controller in den Ersatz-Controller und befolgen Sie die entsprechenden Schritte.</block>
   <block id="663cf84575ea94d5357677274272109e" category="paragraph">Nachdem Sie die Komponenten in das Ersatzcontroller-Modul installiert haben, müssen Sie das Ersatzcontrollermodul im Systemgehäuse installieren und das Betriebssystem booten.</block>
@@ -2365,7 +2340,6 @@
   <block id="5ab3b65334d9648ac44bf62025764ce2" category="section-title">Schritt 2: Entfernen Sie die Steuerung</block>
   <block id="2b73e226597ff4d1285ad08cb73c1c2c" category="paragraph">Zum Austauschen der RTC-Batterie müssen Sie den defekten Akku im Controller-Modul suchen, ihn aus dem Halter entfernen und dann den Ersatzakku in den Halter einsetzen.</block>
   <block id="65b7d00d22ce12162c084039ae28de63" category="video-title">Animation - Ersetzen des RTC-Akkus</block>
-  <block id="53eb8664ee63f8ed2095fd3f5e8eb8f1" category="image-alt">drw 9500 die RTC-Batterie ausbauen</block>
   <block id="e0ec09ab8cb93f04e1ddb90be314a159" category="paragraph">Batterie nach oben drehen</block>
   <block id="0c724ad091d5fbe112bba9f946140f9b" category="paragraph">Schieben Sie die Batterie aus dem Gehäuse heraus</block>
   <block id="34b0fd94c5c9f42571c8dbe794b3702c" category="list-text">Bringen Sie die Abdeckung des Controller-Moduls wieder an.</block>
@@ -6094,9 +6068,7 @@
   <block id="ca067501330c228a786fd00d17229575" category="paragraph">Hinzufügen eines Platten-Shelfs zum Ende eines Stacks mit Multipath HA, Multipath HA, Multipath, Quad-Path HA oder Quad-Path-Konnektivität zu den Controllern</block>
   <block id="fa3d4e5360018aa45e5104272d43148c" category="paragraph">Der Stack muss die im angegebenen Anforderungen erfüllen <block ref="d7ead9d51e0253f97f9c0ae83a2ee9eb" category="inline-xref-macro-rx"></block> Abschnitt dieses Verfahrens.</block>
   <block id="ba1ddb4c1d6bdc698ece9a974aae0713" category="paragraph">Schalten Sie den außer Betrieb genommenen Controller aus oder übernehmen Sie ihn.</block>
-  <block id="1a829a672d8f4a1ab6936c766164f3fe" category="image-alt">drw 2850 pcm ausbauen Installation IEOPS 694</block>
   <block id="5d9c656065fa74e7cb14500497b33617" category="list-text">Öffnen Sie die Abdeckung, indem Sie die blauen Tasten an den Seiten des Controller-Moduls drücken, um die Abdeckung zu lösen, und drehen Sie dann die Abdeckung nach oben und von dem Controller-Modul.</block>
-  <block id="206f40d3d3a553b715b00b4ada962595" category="image-alt">drw 2850 Open-Controller-Modulabdeckung IEOPS 695</block>
   <block id="ac250ab529052385767cc5abd9d02efe" category="paragraph">Entriegelungstaste der Steuermodulabdeckung</block>
   <block id="02196554e362859bf13fdb8c354bd53c" category="paragraph">Suchen Sie die Startmedien im Controller-Modul unter der Zusatzkarte, und befolgen Sie die Anweisungen zum Austauschen.</block>
   <block id="6b6e58fb741960f0300c7783438276a5" category="paragraph">Verriegelungslasche für Startmedien</block>
@@ -6122,7 +6094,6 @@
   <block id="a3dc3f912569e20eb3139702fd4a6206" category="inline-link">Welches ONTAP Image sollte ich herunterladen? Mit oder ohne Volume-Verschlüsselung?</block>
   <block id="1532b93706d24d095538566641303954" category="list-text">Wenn NVE nicht auf dem Cluster unterstützt wird, laden Sie das Image ohne NetApp Volume Encryption herunter.
 Siehe<block ref="087e4d006962c8ba6c4d8fdb71ff8e38" category="inline-link-rx"></block> Entnehmen.</block>
-  <block id="b455521e9b63749ce3c5c792316849ca" category="list-text">Entpacken Sie das heruntergeladene Bild.</block>
   <block id="0f844d6324319ebe9b4aabd24f1b88dd" category="list-text">Installieren Sie das Controller-Modul:</block>
   <block id="6bfde1459ef866428e3532004887b3b8" category="list-text">Controller-Modul wieder einsetzen.</block>
   <block id="db5c04ca6cb958f296ff071cf8420f54" category="paragraph">Ersetzen Sie die Mezzanine-Karte, indem Sie die Kabel und alle SFP- und QSFP-Module von der Karte trennen, die fehlerhafte Mezzanine-Karte austauschen und die Karten wieder einsetzen.</block>
@@ -6130,7 +6101,6 @@ Siehe<block ref="087e4d006962c8ba6c4d8fdb71ff8e38" category="inline-link-rx"></b
   <block id="a0ff1a6d16d908c33e10409aed0ac623" category="paragraph">Entfernen Sie das Controller-Modul aus dem System, und entfernen Sie dann die Abdeckung des Controller-Moduls.</block>
   <block id="cf6800eb49ae54456676c105c115a1fa" category="section-title">Schritt 3: Ersetzen Sie die Zusatzkarte</block>
   <block id="6918dd1d1ecfa7a18a047a925c4f30ee" category="paragraph">Setzen Sie die Zusatzkarte wieder ein.</block>
-  <block id="808ce573561d6717a3c0cc395df3a504" category="image-alt">drw 2850 HIC IEOPS 700 austauschen</block>
   <block id="83b54898f0ac014b1e217ee413643205" category="paragraph">PCIe-Zusatzkarte</block>
   <block id="64016c063cf6b470fdcccc5a97f852b1" category="list-text">Lösen Sie die Rändelschrauben auf der Zusatzkarte, und heben Sie die Zusatzkarte gerade nach oben.</block>
   <block id="4bca5310f65e82fe5c4eec2c7a1c6c17" category="list-text">Richten Sie den Anschluss am Ersatz-Zusatzkartenstecker an der Buchse auf der Hauptplatine aus, und setzen Sie die Karte vorsichtig in den Sockel ein.</block>
@@ -6143,7 +6113,6 @@ Siehe<block ref="087e4d006962c8ba6c4d8fdb71ff8e38" category="inline-link-rx"></b
   <block id="2a0805526339647b20ef0fc7df37dd6f" category="paragraph">Entfernen und öffnen Sie das Controller-Modul.</block>
   <block id="9ae3f8b33ac65ec233f1c5afa0e5b31c" category="paragraph">Entfernen Sie die fehlerhafte NVMEM-Batterie aus dem System und ersetzen Sie sie durch eine neue NVMEM-Batterie.</block>
   <block id="6858cb3dca131d0d76332f3bd5160ce7" category="video-title">Animation: Ersetzen Sie die NV-Batterie</block>
-  <block id="cf7e5cd262adf1cc20a08505755f07a3" category="image-alt">drw 2850 nvbattery IEOPS 715 ersetzen</block>
   <block id="168d99dab7a9fe08ab26290312dd16e7" category="paragraph">Akkufreigabelasche</block>
   <block id="33d1a8451c69f74459695562e91ceef8" category="paragraph">Batterieanschluss</block>
   <block id="c0c80117cce7bb03ee803f73b530673c" category="list-text">Entfernen Sie die fehlerhafte Batterie aus dem Controller-Modul:</block>
@@ -6175,7 +6144,6 @@ Setzen Sie den Ersatzakku ein:</block>
   <block id="099cf7f6040f65b3c9d7fb3f7393d4c3" category="list-text">Heben Sie die Zusatzkarte gerade nach oben und legen Sie sie auf eine antistatische Oberfläche.</block>
   <block id="3356d87e196ed94acd2635f8d405e53f" category="paragraph">Entfernen Sie das Startmedium aus dem Controller-Modul für beeinträchtigten Betrieb, und setzen Sie es in das Ersatz-Controller-Modul ein.</block>
   <block id="fed0c92cdbae5ea9c1adbf11ed80e55a" category="list-text">Suchen Sie nach dem Entfernen der Mezzanine-Karte das Boot-Medium anhand der folgenden Abbildung oder der FRU-Zuordnung auf dem Controller-Modul:</block>
-  <block id="45602b20a419ba91959f6389b3e025a3" category="image-alt">drw 2850 Boot-Medium IEOPS 696 ersetzen</block>
   <block id="a9ddd021b293dcac2e98382851f85f92" category="paragraph">Startmedien-Entriegelungstaste</block>
   <block id="f77adf36adb0721ff6a3bdb4c40ae967" category="list-text">Entfernen Sie das Startmedium:</block>
   <block id="7716b5b822ee00aa2c3fbd58b6ff2117" category="list-text">Drücken Sie die blaue Taste am Gehäuse des Bootmediums, um das Boot-Medium aus dem Gehäuse zu lösen.</block>
@@ -6187,7 +6155,6 @@ Setzen Sie den Ersatzakku ein:</block>
   <block id="507e7243ab4a1d0bdbfa4edd5c9733d3" category="list-text">Richten Sie die Zusatzkarte am Anschluss auf der Hauptplatine aus.</block>
   <block id="fc7fc35188ad3f7c32f3328839f4dff2" category="list-text">Drücken Sie die Karte vorsichtig nach unten, um sie in den Steckplatz zu setzen.</block>
   <block id="ec782fd2b49f0e4d6edd263c0d30d7f7" category="paragraph">Entfernen Sie die DIMMs aus dem Controller-Modul für beeinträchtigte Störungen, und setzen Sie sie in das Ersatz-Controller-Modul ein.</block>
-  <block id="64b66263e264f63be40a6135bb7e5f04" category="image-alt">drw 2850 dimms IEOPS 699 ersetzen</block>
   <block id="2a7c25f4f62d559672aaa2da18086b65" category="paragraph">DIMM-Verriegelungsriegel</block>
   <block id="97d11e594531d9157ff1f8acb63fd22c" category="list-text">Suchen Sie die DIMMs auf dem Controller-Modul</block>
   <block id="dab2480c00fbe3b34d9af825595e97ae" category="admonition">Notieren Sie sich die Position des DIMM-Moduls in den Sockeln, damit Sie das DIMM an der gleichen Stelle in das Ersatz-Controller-Modul und in der richtigen Ausrichtung einsetzen können.</block>
@@ -6200,7 +6167,6 @@ Setzen Sie den Ersatzakku ein:</block>
   <block id="3ef62fc6a162d755622021a1d6a1ed56" category="list-text">Wiederholen Sie diese Schritte für das andere DIMM.</block>
   <block id="873b72e260492016e7a701ecefab8d34" category="section-title">Schritt 7: Verschieben Sie ein Cache-Modul</block>
   <block id="2123f32d0c6f36af91430296709196a1" category="paragraph">Entfernen Sie das Cache-Modul aus dem Controller-Modul für beeinträchtigte Störungen, und setzen Sie es in das Controller-Ersatzmodul ein.</block>
-  <block id="60f4158622c1b93ba749ee47777762b7" category="image-alt">drw 2850 Caching-Modul IEOPS 697 ersetzen</block>
   <block id="bdf54b9db8bfe07cda14f003e5b4afea" category="paragraph">Sperrtaste für Caching-Modul</block>
   <block id="d6be971cb9546606b4106e2ce6594564" category="list-text">Suchen Sie das Caching-Modul in der Nähe der Rückseite des Controller-Moduls, und entfernen Sie es:</block>
   <block id="86afc3ba2df9db0892f3d7b13977fdb3" category="list-text">Drücken Sie die blaue Verriegelungstaste, und drehen Sie das Zwischenspeichermodul nach oben.</block>
@@ -6236,11 +6202,9 @@ Setzen Sie den Ersatzakku ein:</block>
   <block id="58a4b1c93d94014eec48898453bccf6b" category="list-text">Wenn ein AutoSupport-Wartungsfenster ausgelöst wurde, beenden Sie das Fenster mit. Verwenden Sie dazu die<block ref="9ac424c0d7b432975df36a19daf50c9c" prefix=" " category="inline-code"></block></block>
   <block id="f13ddfa8c0e2762d2f399acfc6f0806b" category="summary">Beim Austausch eines Netzteils muss das funktionsunbestimmte Netzteil ausgeschaltet, getrennt und entfernt werden. Außerdem muss das Ersatznetzteil installiert, angeschlossen und eingeschaltet werden.</block>
   <block id="9b0f331e43ad447dbbb78d71a44b1734" category="video-title">Animation: Ersetzen Sie das Netzteil</block>
-  <block id="ad74e1b8d39de33b6e8b9df71820c85f" category="image-alt">drw 2850 Netzteil IEOPS 702 ersetzen</block>
   <block id="2675f497966bc5cad0cdd88dbe6eab31" category="list-text">Warten Sie auf das<block ref="f1cce1d6823a5337ea1ed313f3bc1d65" prefix=" " category="inline-code"></block> Befehl zum Abschließen, bevor Sie das Giveback ausgeben.</block>
   <block id="578b3122a990bee5553a818b631268ef" category="admonition">Wenn die Rückgabe ein Veto eingelegt wird, lösen Sie das Veto-Problem. Wenn das Veto nicht entscheidend ist, können Sie das Veto überschreiben.</block>
   <block id="103256b354864966fcc74d6466bc1cc4" category="paragraph">Tauschen Sie die RTC-Batterie aus, indem Sie sie in der Steuerung einsetzen und die entsprechenden Schritte befolgen.</block>
-  <block id="51f7be1d2b3585b769547e04e7036ed9" category="image-alt">drw 2850 rtc-Batterie IEOPS 701 ersetzen</block>
   <block id="9f463a2feadd622498da11734b7d3548" category="paragraph">Installieren Sie das Controller-Modul neu, und starten Sie es bis zur LOADER-Eingabeaufforderung.</block>
   <block id="8133c5bbfd79c61b3d28f53fd52d6b77" category="section-title">Schritt 5: Stellen Sie die Uhrzeit/das Datum nach dem Austausch der RTC-Batterie ein</block>
   <block id="e8b941fcc944e0bbefda4636b0900a37" category="list-text"><block ref="e8b941fcc944e0bbefda4636b0900a37" category="inline-link-macro-rx"></block></block>
@@ -6308,7 +6272,6 @@ SFP+ (Target/Initiator)</block>
   <block id="3fc162aa6870cf22cf3e0a947b89615a" category="video-title">Animation: Kabel für Laufwerkseinschübe</block>
   <block id="6ac0c621e44f0d6d3cfb9a6035ba969b" category="list-text">Port 1 auf IOM A zu Port 3 auf IOM A auf dem Shelf direkt unten.</block>
   <block id="a2a4a3ef1017cf43a3cf109d61286633" category="list-text">Port 1 auf IOM B zu Port 3 auf IOM B auf dem Shelf direkt unten.</block>
-  <block id="9f8e1f093714df2b4e4cea2483986e1f" category="paragraph">*Mini-SAS HD auf Mini-SAS HD Kabel*</block>
   <block id="5725fc4af65adef1b57d4b7c9a365287" category="paragraph">Wenn die Netzwerkerkennung auf Ihrem Laptop nicht aktiviert ist, führen Sie die Konfiguration und Einrichtung manuell durch.</block>
   <block id="041e48089a1444bcdc82526d41790e40" category="paragraph">Entfernen Sie das Controller-Modul aus dem System, und entfernen Sie dann die Abdeckung des Controller-Moduls.</block>
   <block id="8caaa86fafbf22c9627e97fb31c1eea5" category="paragraph">Suchen Sie das DIMM im Controller, entfernen Sie es, und ersetzen Sie es.</block>
@@ -7217,7 +7180,6 @@ SFP+ (Target/Initiator)</block>
   <block id="1c893d208d4a91c970226886751e800d" category="paragraph">Die folgende Tabelle zeigt den Kabeltyp mit der Aufrufnummer und der Kabelfarbe in den Abbildungen für Cluster mit zwei Nodes ohne Switch und mit Switch.</block>
   <block id="1ab7eafd757e6d1eae57d16228e5edc3" category="list-text">Wenden Sie sich an Ihren Netzwerkadministrator, um Informationen über das Anschließen des Speichersystems an die Switches zu erhalten.</block>
   <block id="089568b0e72f52eda465bac3d797022f" category="list-text">Prüfen Sie den Pfeil auf der Abbildung, ob die Zuglasche des Kabelsteckers richtig ausgerichtet ist.</block>
-  <block id="cef25943b26eeebcaa1241ede0442fb2" category="paragraph">Verwenden Sie die Animation oder die Schritt-für-Schritt-Anleitung, um die Verkabelung zwischen den Controllern und den Switches abzuschließen.</block>
   <block id="86ef3e62afc46d4fbce176cfff238447" category="paragraph">Die folgende Tabelle zeigt den Kabeltyp mit der Aufrufnummer und der Kabelfarbe in den Abbildungen zur Verkabelung der Festplatten-Shelfs mit dem Storage-System.</block>
   <block id="8a811c8bdca2987d299cfb24cf85ad86" category="paragraph">Shelf-zu-Shelf-Verkabelung</block>
   <block id="3fa1bc4f962d0649f457ff7e994b46d8" category="paragraph">Controller A zu den Laufwerk-Shelfs</block>
@@ -7226,7 +7188,6 @@ SFP+ (Target/Initiator)</block>
   <block id="9aca62ddbd88e63be7ec9f9c2469acab" category="section-title">Schritt 5: Vollständige Einrichtung und Konfiguration des Storage-Systems</block>
   <block id="b3308aded4f838607d118fa8281f0f4e" category="paragraph">Führen Sie die Einrichtung und Konfiguration des Speichersystems mit einer der folgenden Optionen durch: Wenn die Netzwerkerkennung aktiviert ist, oder mit Option 2: Wenn die Netzwerkerkennung nicht aktiviert ist.</block>
   <block id="cc76013bd2ca10d4b55bab3a0f8d5331" category="paragraph">Wenn die Netzwerkerkennung auf Ihrem Laptop aktiviert ist, schließen Sie die Einrichtung und Konfiguration des Storage-Systems mithilfe der automatischen Cluster-Erkennung ab.</block>
-  <block id="89fb7289455abb973e1e1d1887a8172d" category="list-text">Verwenden Sie die folgende Animation, um die Shelf-Stromversorgung einzuschalten und Shelf-IDs festzulegen.</block>
   <block id="9be08f77b7ab4837ae1dadad63405dc2" category="list-text">Schalten Sie die Controller ein</block>
   <block id="4a8d781d6ae79557515be034fcf4bd6e" category="list-text">Verwenden Sie die Grafik oder die Schritte, um den Storage-System-Node zu ermitteln und Folgendes zu konfigurieren:</block>
   <block id="38c0c9e875391d2dc0f78f243ecc4f59" category="admonition">XXXXX ist die Seriennummer des Storage-Systems für den Ziel-Node.</block>
@@ -9171,7 +9132,6 @@ SFP+ (Target/Initiator)</block>
   <block id="cbb5640a4c423d549c9eb57b27dbd4ea" category="image-alt">Symbol Quadrat 1 grün</block>
   <block id="0b9a61d1a01d980aaf6ca850e1b286f5" category="paragraph"><block ref="0b9a61d1a01d980aaf6ca850e1b286f5" category="inline-link-macro-rx"></block></block>
   <block id="96a5f900d6bd8337209c17fce1a47ae5" category="image-alt">Legende Nummer 3]</block>
-  <block id="b88e980e78bfd532f1f6322cf703cb25" category="image-alt">Symbol Quadrat 1 blau</block>
   <block id="f8fda7956963dfb2e60c6e0d0ffa6ede" category="list-text"><block ref="f8fda7956963dfb2e60c6e0d0ffa6ede" category="inline-link-macro-rx"></block></block>
   <block id="cd5ec5f3586869573f3f0b3112426052" category="sidebar">TR-4290 - SAP HANA auf NetApp FAS Systemen mit NFS</block>
   <block id="1e4893fc6c634f02ace3ba7beb78d669" category="inline-link-macro">Quorum-Status</block>
@@ -10964,7 +10924,6 @@ SFP+ (Target/Initiator)</block>
   <block id="045e51ef9fd14e92bed7263f56f60f6a" category="doc">Ersetzen Sie die Controller AFF A70 und AFF A90</block>
   <block id="7802e205f19ce9b3c1e4b5875798ebef" category="inline-link-macro">Stellen Sie die Systemkonfiguration wieder her</block>
   <block id="44505b1d85314cbb257a6a2a6bf388ab" category="paragraph">Nachdem Sie die gestörte AFF A70 oder AFF A90 Controller ersetzt haben, müssen Sie <block ref="ba0281d4e0b6e4cebf5e13fd7e583c92" category="inline-link-macro-rx"></block>.</block>
-  <block id="13b0f53aec80ac13170530410c42bc46" category="paragraph">Steuerung der Speicherressourcen wieder an den Ersatz-Controller zurückgeben, damit Ihr AFF A70 oder AFF A90 System den normalen Betrieb wieder aufnehmen kann. Das Give-back-Verfahren variiert je nach dem von Ihrem System verwendeten Verschlüsselungstyp: Keine Verschlüsselung, OKM-Verschlüsselung (Onboard Key Manager) oder EKM-Verschlüsselung (External Key Manager).</block>
   <block id="a61002aab76d792f612bedb7d53fdd4f" category="inline-link-macro">Schließen Sie den Controller-Austausch ab</block>
   <block id="8e4a77cdcca9305c0b2b2aaff9ccf95f" category="paragraph">Nachdem Sie die Eigentümerschaft der Storage-Ressourcen wieder an den Ersatz-Controller übergeben haben, müssen Sie <block ref="d6f5f08e0612b966d919b4ea0b494c53" category="inline-link-macro-rx"></block>den Vorgang durchführen.</block>
   <block id="09d0394dd9f4460ac15da27cea6fffaf" category="summary">Überprüfen Sie, ob die logischen Schnittstellen an ihren Home Port berichten, führen Sie eine Cluster-Integritätsprüfung durch und senden Sie das fehlerhafte Teil anschließend an NetApp zurück, um den letzten Schritt beim Austausch des AFF A70- und AFF A90-Controllers abzuschließen.</block>
@@ -11062,7 +11021,6 @@ SFP+ (Target/Initiator)</block>
   <block id="12f231246c1957ecc017d5e14e8fa5ce" category="doc">Ersetzen Sie den Controller - AFF A1K</block>
   <block id="a7a4c58bcecc6da48011ed379f160841" category="paragraph">Nachdem Sie den gestörten AFF A1K-Controller ersetzt haben, müssen Sie <block ref="ba0281d4e0b6e4cebf5e13fd7e583c92" category="inline-link-macro-rx"></block>.</block>
   <block id="65cfd4efc075696b5b4fa182bd8310b6" category="summary">Steuerung der Speicherressourcen wieder an den Ersatz-Controller zurückgeben, damit Ihr AFF A1K System den normalen Betrieb wieder aufnehmen kann.</block>
-  <block id="18ffded833a06eab340a3512c997924e" category="paragraph">Steuerung der Speicherressourcen wieder an den Ersatz-Controller zurückgeben, damit Ihr AFF A1K System den normalen Betrieb wieder aufnehmen kann. Das Give-back-Verfahren variiert je nach dem von Ihrem System verwendeten Verschlüsselungstyp: Keine Verschlüsselung, OKM-Verschlüsselung (Onboard Key Manager) oder EKM-Verschlüsselung (External Key Manager).</block>
   <block id="c0fde7c58eda00a5144709bacf24bfe9" category="doc">Voraussetzungen für den Austausch des Controllers – AFF A1K</block>
   <block id="6911c42baf5226ca6d00478ac1b258b9" category="summary">Überprüfen Sie, ob die logischen Schnittstellen (LIFs) an ihren Home Port berichten, führen Sie eine Cluster-Zustandsprüfung durch und senden Sie das fehlerhafte Teil anschließend an NetApp zurück, um den letzten Schritt beim Austausch des AFF A1K-Controllers abzuschließen.</block>
   <block id="3559feca6c2a12a75b7a78f13f084dc8" category="summary">Überprüfen Sie, ob die HA-Konfiguration des Controllers im AFF A1K Storage-System aktiv ist und ordnungsgemäß funktioniert, und vergewissern Sie sich, dass die Systemadapter alle Pfade zu den Festplatten auflisten.</block>
@@ -11121,7 +11079,6 @@ SFP+ (Target/Initiator)</block>
   <block id="f27d9a5f7d5680dbe736e6836d3c1a9f" category="summary">Tauschen Sie den Controller im ASA A70 oder ASA A90 System aus, wenn dies bei einem Hardware-Ausfall erforderlich ist. Bei diesem Vorgang wird der beeinträchtigte Controller entfernt, die Komponenten zum Ersatzcontroller verschoben, der Ersatzcontroller installiert und das System neu gestartet.</block>
   <block id="2c72ab76cb7a954eb5f3546d4abad687" category="doc">Ersetzen Sie die Controller ASA A70 und ASA A90</block>
   <block id="1a68c286a29e94a07ffe7e1a8e288e40" category="summary">Steuerung der Speicherressourcen wieder an den Ersatz-Controller zurückgeben, damit Ihr ASA A70 oder ASA A90 System den normalen Betrieb wieder aufnehmen kann.</block>
-  <block id="33973baa5847fa5dcb8ee97041c826ae" category="paragraph">Steuerung der Speicherressourcen wieder an den Ersatz-Controller zurückgeben, damit Ihr ASA A70 oder ASA A90 System den normalen Betrieb wieder aufnehmen kann. Das Give-back-Verfahren variiert je nach dem von Ihrem System verwendeten Verschlüsselungstyp: Keine Verschlüsselung, OKM-Verschlüsselung (Onboard Key Manager) oder EKM-Verschlüsselung (External Key Manager).</block>
   <block id="b25f0fb243bad5e39db497ca9643ee35" category="doc">Voraussetzungen für den Austausch der Steuerung - ASA A70 und ASA A90</block>
   <block id="1e60488a65d744862b8f6292544da3f0" category="doc">Vollständiger Controller-Austausch – ASA A70 und ASA A90</block>
   <block id="bb9f8e902211727b75f62da6100f446a" category="summary">Ersetzen Sie ein DIMM in Ihrem ASA A70- oder ASA A90-System, wenn zu viele korrigierbare oder nicht korrigierbare Speicherfehler festgestellt werden. Derartige Fehler können das Booten von ONTAP durch das Storage-System verhindern. Beim Austausch wird der beeinträchtigte Controller heruntergefahren, entfernt, das DIMM ersetzt, der Controller neu installiert und das fehlerhafte Teil anschließend an den NetApp zurückgegeben.</block>
@@ -11152,7 +11109,6 @@ SFP+ (Target/Initiator)</block>
   <block id="f36c76518c1338c3f03a21b9d4c06d87" category="paragraph">Tauschen Sie den Controller im ASA A1K-System aus, wenn dies bei einem Hardwareausfall erforderlich ist. Der Austauschprozess umfasst das Entfernen des außer Betrieb genommenen Controllers, das Verschieben der Komponenten auf den Ersatzcontroller, das Installieren des Ersatzcontrollers und das Neustarten des Controllers.</block>
   <block id="f501a4282c0407a5377e73a38c2fe79c" category="paragraph">Nachdem Sie den gestörten ASA A1K-Controller ersetzt haben, müssen Sie <block ref="ba0281d4e0b6e4cebf5e13fd7e583c92" category="inline-link-macro-rx"></block>.</block>
   <block id="0b7aa62fd5de84b2f6b9168c29cd9699" category="summary">Geben Sie die Kontrolle über die Speicherressourcen an den Ersatz-Controller zurück, damit Ihr ASA A1K-System den normalen Betrieb wieder aufnehmen kann.</block>
-  <block id="650cd8dda24c1d628d2370fc896e2898" category="paragraph">Geben Sie die Kontrolle über die Speicherressourcen an den Ersatz-Controller zurück, damit Ihr ASA A1K-System den normalen Betrieb wieder aufnehmen kann. Das Give-back-Verfahren variiert je nach dem von Ihrem System verwendeten Verschlüsselungstyp: Keine Verschlüsselung, OKM-Verschlüsselung (Onboard Key Manager) oder EKM-Verschlüsselung (External Key Manager).</block>
   <block id="6a41dab46dde5ea92e32bfe9162ff999" category="doc">Voraussetzungen für den Austausch des Controllers - ASA A1K</block>
   <block id="1a197d6edeae9c94e0721ab454a5fb33" category="summary">Überprüfen Sie, ob die logischen Schnittstellen (LIFs) an ihren Home Port berichten, führen Sie eine Cluster-Zustandsprüfung durch und senden Sie das fehlerhafte Teil anschließend an NetApp zurück, um den letzten Schritt beim ASA A1K-Controller-Austausch abzuschließen.</block>
   <block id="95155c153887de18d244e072071f2b3a" category="summary">Überprüfen Sie, ob die HA-Konfiguration des Controllers im ASA A1K-Storage-System aktiv ist und ordnungsgemäß funktioniert, und vergewissern Sie sich, dass die Adapter des Systems alle Pfade zu den Festplatten auflisten.</block>
@@ -11193,7 +11149,6 @@ SFP+ (Target/Initiator)</block>
   <block id="d13e978f047aec74606199ffff94e6ba" category="doc">Ersetzen Sie den Controller - AFF C80</block>
   <block id="02a9e9984c956e264ae67617477e3c81" category="paragraph">Tauschen Sie den Controller im AFF C80-System aus, wenn ein Hardwarefehler erforderlich ist. Bei diesem Vorgang wird der beeinträchtigte Controller entfernt, die Komponenten zum Ersatzcontroller verschoben, der Ersatzcontroller installiert und das System neu gestartet.</block>
   <block id="7fe746cff776821811860f80a8a2766b" category="paragraph">Nachdem Sie die gestörte AFF C80 Controller ersetzt haben, müssen Sie <block ref="ba0281d4e0b6e4cebf5e13fd7e583c92" category="inline-link-macro-rx"></block>.</block>
-  <block id="70ca6ca8fd81886c4dcc82d957e79ee9" category="paragraph">Geben Sie die Kontrolle über die Speicherressourcen an den Ersatz-Controller zurück, damit Ihr AFF C80-System den normalen Betrieb wieder aufnehmen kann. Das Give-back-Verfahren variiert je nach dem von Ihrem System verwendeten Verschlüsselungstyp: Keine Verschlüsselung, OKM-Verschlüsselung (Onboard Key Manager) oder EKM-Verschlüsselung (External Key Manager).</block>
   <block id="c59af556b2a6209df2da47002b6b6559" category="doc">Voraussetzungen für den Austausch des Controllers - AFF C80</block>
   <block id="993406729b186cdaf4296a5964b58d0c" category="summary">Überprüfen Sie, ob die logischen Schnittstellen an ihren Home Port berichten, führen Sie eine Cluster-Integritätsprüfung durch und senden Sie das fehlerhafte Teil an NetApp zurück, um den letzten Schritt beim Austausch des AFF C80-Controllers abzuschließen.</block>
   <block id="179b17b78c730160d70c7ea7bf15c4b0" category="paragraph">Nachdem Sie die Systemkonfiguration für Ihr AFF C80 System wiederhergestellt und verifiziert haben, müssen Sie <block ref="f96992113d4cc080f9d372523b7a919c" category="inline-link-macro-rx"></block>.</block>
@@ -11226,7 +11181,6 @@ SFP+ (Target/Initiator)</block>
   <block id="2e49773a386b54a9cb9b9ac6679c6e79" category="doc">Ersetzen Sie die Controller FAS70 und FAS90</block>
   <block id="a09bde82e257a9efc5c840b3d64e8e4f" category="paragraph">Nachdem Sie den beeinträchtigten FAS70 oder FAS90 Controller ersetzt haben, müssen Sie <block ref="ba0281d4e0b6e4cebf5e13fd7e583c92" category="inline-link-macro-rx"></block>.</block>
   <block id="1e70422005019f4903b79a5a577df1a1" category="summary">Geben Sie die Kontrolle über die Speicherressourcen an den Ersatz-Controller zurück, damit Ihr FAS70 oder FAS90 System den normalen Betrieb wieder aufnehmen kann.</block>
-  <block id="493e5e25ac20d8aedaf3aae396a4ec29" category="paragraph">Geben Sie die Kontrolle über die Speicherressourcen an den Ersatz-Controller zurück, damit Ihr FAS70 oder FAS90 System den normalen Betrieb wieder aufnehmen kann. Das Give-back-Verfahren variiert je nach dem von Ihrem System verwendeten Verschlüsselungstyp: Keine Verschlüsselung, OKM-Verschlüsselung (Onboard Key Manager) oder EKM-Verschlüsselung (External Key Manager).</block>
   <block id="819d0a4d339e34d2e8daf63b772aae13" category="doc">Voraussetzung für den Austausch des Controllers – FAS70 und FAS90</block>
   <block id="6dd3fde43a5f29446a4c49fb87879b65" category="summary">Überprüfen Sie, ob die logischen Schnittstellen (LIFs) an ihren Home Port berichten, führen Sie eine Cluster-Zustandsprüfung durch und geben Sie das fehlerhafte Teil anschließend an NetApp zurück, um den letzten Schritt beim Austausch des FAS70 oder FAS90 Controllers abzuschließen.</block>
   <block id="dcac0d4d44ce3609f70b9f6817380eb7" category="summary">Überprüfen Sie, ob die HA-Konfiguration des Controllers in Ihrem FAS70 oder FAS90 Storage-System aktiv ist und ordnungsgemäß funktioniert, und vergewissern Sie sich, dass die Systemadapter alle Pfade zu den Festplatten aufgelistet sind.</block>
@@ -11412,7 +11366,6 @@ SFP+ (Target/Initiator)</block>
   <block id="85ff23f588feef29eb74730158d32ac1" category="list-text">Schalten Sie den Netzschalter an jedem Netzteil aus.</block>
   <block id="8d2d400bb8fd6bedd576a4f6ecb3b00e" category="list-text">Schalten Sie den Netzschalter an jedem Netzteil ein, um das aus- und Wiedereinschalten abzuschließen.</block>
   <block id="8e07696a8d5e9a7e9c31668e6a3d49b7" category="paragraph">Wenn ein Netzteil eingeschaltet wird, sollte die zweifarbige LED grün leuchten.</block>
-  <block id="efd27c031d08beb4f219a6bb74784e23" category="paragraph">Um den Controller-Austausch für Ihr AFF A1K-System abzuschließen, stellen Sie zuerst die NetApp-Speicherverschlüsselungskonfiguration (falls erforderlich) wieder her und installieren Sie die erforderlichen Lizenzen auf dem neuen Controller. Vergewissern Sie sich als nächstes, dass die logischen Schnittstellen (LIFs) ihren Home Ports berichten und eine Cluster-Zustandsprüfung durchführen. Registrieren Sie abschließend die Seriennummer des neuen Controllers und senden Sie das ausgefallene Teil an NetApp zurück.</block>
   <block id="6c7364d4c1c4b5063efec0f8c273bf0e" category="doc">Fügen Sie ein I/O-Modul hinzu – AFF A1K</block>
   <block id="a9c0987fd2b31f999e6738087d128cfb" category="doc">Überblick über Hinzufügen und Ersetzen eines E/A-Moduls – AFF A1K</block>
   <block id="5bd705ad3d1ea061d9af69ede4ff4f69" category="doc">Ein E/A-Modul austauschen – AFF A1K</block>
@@ -11429,7 +11382,6 @@ SFP+ (Target/Initiator)</block>
   <block id="dc5c74d1abe195182477161220f736cb" category="summary">Tauschen Sie das Gehäuse des AFF A70 oder AFF A90 Systems aus, wenn es aufgrund eines Hardwarefehlers erforderlich ist. Beim Austausch werden die Controller und Netzteile (PSUs) entfernt, die Laufwerke entfernt, das Ersatzgehäuse installiert und die Gehäusekomponenten wieder eingebaut.</block>
   <block id="d40f146aa7a5b4915ec82bbac5b1b200" category="summary">Ersetzen Sie zunächst das Gehäuse Ihres AFF A70 oder AFF A90 Storage-Systems, indem Sie die Austauschanforderungen überprüfen, die Controller herunterfahren, das Chassis austauschen und die Systemvorgänge überprüfen.</block>
   <block id="cdab9753bdddb0aefefab44fd8865fbb" category="summary">Stellen Sie vor dem Austausch des Controllers des AFF A70 oder AFF A90-Systems sicher, dass Sie die erforderlichen Voraussetzungen für einen erfolgreichen Austausch erfüllen. Dazu gehört die Überprüfung aller anderen Komponenten im System auf ordnungsgemäße Funktion, die Überprüfung, ob der richtige Ersatz-Controller vorhanden ist, und das Speichern der Konsolenausgabe des Controllers in einer Textprotokolldatei.</block>
-  <block id="da2e83722a9d109b38820bde87ddb7a8" category="paragraph">Um den Controller-Austausch für Ihr AFF A70- und AFF A90-System abzuschließen, stellen Sie zuerst die NetApp-Speicherverschlüsselungskonfiguration (falls erforderlich) wieder her und installieren Sie die erforderlichen Lizenzen auf dem neuen Controller. Vergewissern Sie sich als nächstes, dass die logischen Schnittstellen (LIFs) ihren Home Ports berichten und eine Cluster-Zustandsprüfung durchführen. Registrieren Sie abschließend die Seriennummer des neuen Controllers und senden Sie das ausgefallene Teil an NetApp zurück.</block>
   <block id="caea42c273f28398fdc8ee7ee846cba1" category="image-alt">Symbol für AFF A90 AFF A70 und C80 Gewicht Vorsicht</block>
   <block id="d33e53b401671bb9e3a6e4281b9c3735" category="doc">Fügen Sie ein I/O-Modul hinzu - AFF A70 und AFF A90</block>
   <block id="52f502f025ccffe3d4cc228d684b7404" category="doc">Überblick über Hinzufügen und Ersetzen eines E/A-Moduls – AFF A70 und AFF A90</block>
@@ -11438,13 +11390,11 @@ SFP+ (Target/Initiator)</block>
   <block id="634fb6b2414a0adde8fe288c6e3a4d20" category="summary">Tauschen Sie das Gehäuse des ASA A70 oder ASA A90-Systems aus, wenn es aufgrund eines Hardwarefehlers erforderlich ist. Beim Austausch werden die Controller und Netzteile (PSUs) entfernt, die Laufwerke entfernt, das Ersatzgehäuse installiert und die Gehäusekomponenten wieder eingebaut.</block>
   <block id="626e429540858707bd287f5035fff3d8" category="summary">Stellen Sie vor dem Austausch des Gehäuses Ihres ASA A70 oder ASA A90 Systems sicher, dass Sie die erforderlichen Voraussetzungen für einen erfolgreichen Austausch erfüllen. Dazu gehört die Überprüfung, ob alle anderen Komponenten im System ordnungsgemäß funktionieren, ob Sie über lokale Administratoranmeldedaten für ONTAP, das richtige Ersatzgehäuse und die erforderlichen Tools verfügen.</block>
   <block id="5fcac3b7d3646c7d8da4eed2bc7243ed" category="summary">Ersetzen Sie zunächst das Gehäuse Ihres ASA A70 oder ASA A90 Storage-Systems, indem Sie die Controller herunterfahren, das Gehäuse austauschen und den Systembetrieb prüfen.</block>
-  <block id="eb60074f3f47ce499f250468ad5726d5" category="paragraph">Um den Controller-Austausch für Ihr ASA A70- und ASA A90-System abzuschließen, stellen Sie zuerst die NetApp-Speicherverschlüsselungskonfiguration (falls erforderlich) wieder her und installieren Sie die erforderlichen Lizenzen auf dem neuen Controller. Vergewissern Sie sich als nächstes, dass die logischen Schnittstellen (LIFs) ihren Home Ports berichten und eine Cluster-Zustandsprüfung durchführen. Registrieren Sie abschließend die Seriennummer des neuen Controllers und senden Sie das ausgefallene Teil an NetApp zurück.</block>
   <block id="7123adf741599afcbf244e4e98d663f5" category="doc">Ersetzen Sie ein SSD-Laufwerk – ASA A70 und ASA A90</block>
   <block id="9b6a53cb25d5ad933496e9c5e800035c" category="doc">Fügen Sie ein E/A-Modul hinzu - ASA A70 und ASA A90</block>
   <block id="69d316c0d65bb5a04b4bf5e833d3782c" category="doc">Überblick über Hinzufügen und Ersetzen eines E/A-Moduls – ASA A70 und ASA A90</block>
   <block id="be95fdb39b28a4328a79fd4d94cbeb8a" category="doc">Ersetzen Sie ein E/A-Modul – ASA A70 und ASA A90</block>
   <block id="77847efd1cd22c7d12c880345c3d2cbd" category="summary">Ersetzen Sie ein Netzteil (Netzteil) in Ihrem ASA A70 oder ASA A90-System, wenn es ausfällt oder fehlerhaft wird, und stellen Sie sicher, dass Ihr System weiterhin die erforderliche Stromversorgung erhält, um einen stabilen Betrieb zu gewährleisten. Beim Austausch wird das fehlerhafte Netzteil von der Stromquelle getrennt, das Netzkabel abgezogen, das fehlerhafte Netzteil ersetzt und anschließend wieder an die Stromquelle angeschlossen.</block>
-  <block id="114a1e34144ca96c18dd9f4b501897b1" category="paragraph">Um den Controller-Austausch für Ihr ASA A1K-System abzuschließen, stellen Sie zuerst die NetApp-Speicherverschlüsselungskonfiguration (falls erforderlich) wieder her und installieren Sie die erforderlichen Lizenzen auf dem neuen Controller. Vergewissern Sie sich als nächstes, dass die logischen Schnittstellen (LIFs) ihren Home Ports berichten und eine Cluster-Zustandsprüfung durchführen. Registrieren Sie abschließend die Seriennummer des neuen Controllers und senden Sie das ausgefallene Teil an NetApp zurück.</block>
   <block id="ced875171f078cb35825b28e1856dd9d" category="doc">Fügen Sie ein I/O-Modul hinzu – ASA A1K</block>
   <block id="8c1b02887a2e6fb34ad3351d42ea690b" category="doc">Überblick über Hinzufügen und Ersetzen eines E/A-Moduls - ASA A1K</block>
   <block id="b69d7ce462751c8d58c3cff284a4f258" category="doc">Ein E/A-Modul austauschen – ASA A1K</block>
@@ -11499,12 +11449,10 @@ SFP+ (Target/Initiator)</block>
   <block id="148c37b997fbf92672f09bf3d72bdde2" category="summary">Tauschen Sie das Gehäuse des AFF C80-Systems aus, wenn es aufgrund eines Hardwarefehlers erforderlich ist. Beim Austausch werden die Controller und Netzteile (PSUs) entfernt, die Laufwerke entfernt, das Ersatzgehäuse installiert und die Gehäusekomponenten wieder eingebaut.</block>
   <block id="5e4f388782b23b352ea8d9214c80bfd5" category="summary">Bevor Sie das Gehäuse des AFF C80-Systems austauschen, überprüfen Sie, ob alle anderen Komponenten des Systems ordnungsgemäß funktionieren. Stellen Sie sicher, dass Sie über lokale Administratoranmeldeinformationen für ONTAP, das richtige Ersatzgehäuse und die erforderlichen Tools verfügen.</block>
   <block id="149d9cc9170faac13c9c0680a914233c" category="summary">Beginnen Sie mit dem Austausch des Gehäuses Ihres AFF C80-Systems, indem Sie die Austauschanforderungen überprüfen, die Controller herunterfahren, das Gehäuse austauschen und den Systembetrieb überprüfen.</block>
-  <block id="69da385d0b4ed938e7f5432f78900f88" category="paragraph">Um den Controller-Austausch für Ihr AFF C80-System abzuschließen, stellen Sie zuerst die NetApp-Speicherverschlüsselungskonfiguration (falls erforderlich) wieder her, und installieren Sie die erforderlichen Lizenzen auf dem neuen Controller. Vergewissern Sie sich als nächstes, dass die logischen Schnittstellen (LIFs) ihren Home Ports berichten und eine Cluster-Zustandsprüfung durchführen. Registrieren Sie abschließend die Seriennummer des neuen Controllers und senden Sie das ausgefallene Teil an NetApp zurück.</block>
   <block id="2084cec6febad8ab72f79daa8b23a355" category="doc">Fügen Sie ein I/O-Modul hinzu – AFF C80</block>
   <block id="79787f56fde4cb3ddec3ad369a61f158" category="doc">Überblick über Hinzufügen und Ersetzen eines E/A-Moduls – AFF C80</block>
   <block id="41528475327a8cca2a4718c8cf712b2d" category="doc">Ein E/A-Modul austauschen – AFF C80</block>
   <block id="52c303d0882103b7a06ffa380685a14d" category="summary">Ersetzen Sie ein AC- oder DC-Netzteil (PSU) in Ihrem AFF C80-System, wenn es ausfällt oder fehlerhaft wird, und stellen Sie sicher, dass Ihr System weiterhin die erforderliche Stromversorgung für einen stabilen Betrieb erhält. Beim Austausch wird das fehlerhafte Netzteil von der Stromquelle getrennt, das Netzkabel abgezogen, das fehlerhafte Netzteil ersetzt und anschließend wieder an die Stromquelle angeschlossen.</block>
-  <block id="4050cf454bfa73771654e36df1daa1f3" category="paragraph">Um den Controller-Austausch für Ihr FAS70 und FAS90 System abzuschließen, stellen Sie zuerst die Konfiguration der NetApp Storage Encryption (falls erforderlich) wieder her und installieren Sie die erforderlichen Lizenzen auf dem neuen Controller. Vergewissern Sie sich als nächstes, dass die logischen Schnittstellen (LIFs) ihren Home Ports berichten und eine Cluster-Zustandsprüfung durchführen. Registrieren Sie abschließend die Seriennummer des neuen Controllers und senden Sie das ausgefallene Teil an NetApp zurück.</block>
   <block id="049a0642927141e1d119692b5063c175" category="doc">Fügen Sie ein E/A-Modul hinzu – FAS70 und FAS90</block>
   <block id="a4612f2df8f0746881d188cca57452da" category="doc">Überblick über Hinzufügen und Ersetzen eines E/A-Moduls - FAS70 und FAS90</block>
   <block id="c10739f7f976ccb066c6001d422a250a" category="doc">Ersetzen Sie ein E/A-Modul – FAS70 und FAS90</block>
@@ -11825,13 +11773,6 @@ SFP+ (Target/Initiator)</block>
   <block id="d3a1b9f7d22d4b09db0b92c5183f1170" category="image-alt">25-GB-Ethernet-Anschluss</block>
   <block id="ee151691d95fa34033bab458f921f308" category="image-alt">Switched Cluster Connections</block>
   <block id="422b19e9df415d67d88bd9b0fb3451d2" category="image-alt">Managementnetzwerkverbindung</block>
-  <block id="fb8d77e1874a8ce16ad0e1d15408d8cd" category="image-alt">Mini-SAS-zu-Mini-SAS-Anschluss</block>
-  <block id="ead5f0e9b0fc157a5b141be2ccd44dbd" category="paragraph">+ Bild::./media/drw_2800_Shelf-to-Shelf_cabling_IEOPS-895.svg[Shelf-to-Shelf-Verkabelung]</block>
-  <block id="b672b75ae62195a280bf8f67f6923701" category="paragraph">+ . Verkabeln Sie Controller A mit den Laufwerk-Shelfs. .. Controller A-Port 0a zu IOM B-Port 1 am ersten Festplatten-Shelf im Stack. .. Controller A-Port 0b1 zu IOM A-Port 3 auf dem letzten Festplatten-Shelf im Stack.</block>
-  <block id="331c92c74ae2411dbfdce0b34bc0251f" category="paragraph">+ Bild::../media/oie_cable_mini_sas_hd_to_mini_sas_hd.svg[Mini-SAS-zu-Mini-SAS-Anschluss]</block>
-  <block id="2525bc76b22ae63a5087b660ed944490" category="paragraph">+ Bild::../media/dwr-2800_controller1-to Shelfs_IEOPS-896.svg[Controller A zu Shelf-Verbindung]</block>
-  <block id="d93bc8a87f3c34f95017b69aa2590230" category="paragraph">+ . Controller B mit den Laufwerk-Shelfs verbinden. .. Controller B Port 0a zu IOM A Port 1 am ersten Festplatten-Shelf im Stack. .. Controller B Port 0b1 zu IOM B Port 3 auf dem letzten Festplatten-Shelf im Stack.</block>
-  <block id="05a6bd9e18c93cca4d9b550746dfd5d1" category="paragraph">+ Bild::../media/dwr-2800_controller2-to Shelfs_IEOPS-897.svg[Controller B zu Shelf-Anschluss]</block>
   <block id="40bde7f2324ee2876dd8a09846b14ff4" category="image-alt">Schalten Sie das Gerät ein</block>
   <block id="512bdc85c8065a0397ce7025381aaf66" category="image-alt">Automatische Erkennung des Systems</block>
   <block id="397249170dcc18ae00c3a7885f97fdc1" category="list-text">Schließen Sie das Konsolenkabel an den Laptop oder die Konsole an, und schließen Sie den Konsolenport am Controller mithilfe des Konsolenkabels des Storage-Systems an. Schließen Sie dann den Laptop oder die Konsole an den Switch im Management-Subnetz an.</block>
@@ -12016,5 +11957,68 @@ SFP+ (Target/Initiator)</block>
   <block id="8fdc5ec3ff56b023a707d257557cb7c1" category="paragraph">Die Speichersysteme FAS70 und FAS90 unterstützen DS212C-, DS224C-, DS460C- und NS224-Shelves entweder mit dem Modul NSM100 oder NSM100B.</block>
   <block id="cb1d7f2de7963108d3fe1b590a415523" category="paragraph">Die Hauptunterschiede zwischen den NS224-Modulen sind:</block>
   <block id="a1c52b2edb23bc93318c0b82dc9baead" category="paragraph">Das folgende NS224-Verkabelungsbeispiel zeigt NSM100-Module in den NS224-Einschüben, wenn auf die Einschubmodul-Ports verwiesen wird.</block>
-  <block id="29cc4b807f94b06bddae2e11c6a56c1e" category="paragraph">Der USB-Speicherstick sollte über dieselbe Service Image (BIOS)-Version verfügen wie die, die auf dem fehlerhaften Controller ausgeführt wird.</block>
+  <block id="e275ee75ac16491873bfc9c9d1565329" category="paragraph">Geben Sie die Kontrolle über die Speicherressourcen an den Ersatz-Controller zurück, damit Ihr AFF A1K-System den normalen Betrieb wieder aufnehmen kann. Das Rückgabeverfahren variiert je nach dem von Ihrem System verwendeten Verschlüsselungstyp: keine Verschlüsselung oder Onboard Key Manager (OKM)-Verschlüsselung.</block>
+  <block id="7c43eb5994700149a54fedd4ee1d8391" category="paragraph">Um den Controlleraustausch für Ihr AFF A1K-System abzuschließen, stellen Sie zunächst die NetApp Storage Encryption-Konfiguration wieder her (falls erforderlich). Vergewissern Sie sich als nächstes, dass die logischen Schnittstellen (LIFs) ihren Home Ports berichten und eine Cluster-Zustandsprüfung durchführen. Senden Sie anschließend das ausgefallene Teil an NetApp zurück.</block>
+  <block id="7b78a43d2ef1cd56888972224b322cba" category="section-title">Schritt 1: Verifizieren von LIFs und Überprüfen des Clusterzustands</block>
+  <block id="8cd41611fab4233f826795a5cff7057f" category="paragraph">Steuerung der Speicherressourcen wieder an den Ersatz-Controller zurückgeben, damit Ihr AFF A70 oder AFF A90 System den normalen Betrieb wieder aufnehmen kann. Das Rückgabeverfahren variiert je nach dem von Ihrem System verwendeten Verschlüsselungstyp: keine Verschlüsselung oder Onboard Key Manager (OKM)-Verschlüsselung.</block>
+  <block id="2097fe5d6db2ee8034ca3ec430540bd7" category="paragraph">Um den Controlleraustausch für Ihr AFF A70- oder AFF A90-System abzuschließen, stellen Sie zunächst die NetApp Storage Encryption-Konfiguration wieder her (falls erforderlich). Vergewissern Sie sich als nächstes, dass die logischen Schnittstellen (LIFs) ihren Home Ports berichten und eine Cluster-Zustandsprüfung durchführen. Senden Sie anschließend das ausgefallene Teil an NetApp zurück.</block>
+  <block id="26625a50fa6e85a829f4ae9e66e4eeaf" category="paragraph">Steuerung der Speicherressourcen wieder an den Ersatz-Controller zurückgeben, damit Ihr ASA A70 oder ASA A90 System den normalen Betrieb wieder aufnehmen kann. Das Rückgabeverfahren variiert je nach dem von Ihrem System verwendeten Verschlüsselungstyp: keine Verschlüsselung oder Onboard Key Manager (OKM)-Verschlüsselung.</block>
+  <block id="7c549e4c601c8fdf656eed56c26fc0b1" category="paragraph">Um den Controlleraustausch für Ihr ASA A70- oder ASA A90-System abzuschließen, stellen Sie zunächst die NetApp Storage Encryption-Konfiguration wieder her (falls erforderlich). Vergewissern Sie sich als nächstes, dass die logischen Schnittstellen (LIFs) ihren Home Ports berichten und eine Cluster-Zustandsprüfung durchführen. Senden Sie anschließend das ausgefallene Teil an NetApp zurück.</block>
+  <block id="313b22307115c166dbbc63f27c50f3d7" category="paragraph">Geben Sie die Kontrolle über die Speicherressourcen an den Ersatz-Controller zurück, damit Ihr ASA A1K-System den normalen Betrieb wieder aufnehmen kann. Das Rückgabeverfahren variiert je nach dem von Ihrem System verwendeten Verschlüsselungstyp: keine Verschlüsselung oder Onboard Key Manager (OKM)-Verschlüsselung.</block>
+  <block id="641052e443b693ce41e21f05c5994e69" category="paragraph">Um den Controlleraustausch für Ihr ASA A1K-System abzuschließen, stellen Sie zunächst die NetApp Storage Encryption-Konfiguration wieder her (falls erforderlich). Vergewissern Sie sich als nächstes, dass die logischen Schnittstellen (LIFs) ihren Home Ports berichten und eine Cluster-Zustandsprüfung durchführen. Senden Sie anschließend das ausgefallene Teil an NetApp zurück.</block>
+  <block id="9004880577dcf1d74c99d6bebf00183c" category="paragraph">Geben Sie die Kontrolle über die Speicherressourcen an den Ersatz-Controller zurück, damit Ihr AFF C80-System den normalen Betrieb wieder aufnehmen kann. Das Rückgabeverfahren variiert je nach dem von Ihrem System verwendeten Verschlüsselungstyp: keine Verschlüsselung oder Onboard Key Manager (OKM)-Verschlüsselung.</block>
+  <block id="d87e0bc356d5924fdcb4486c339c3ed6" category="paragraph">Um den Controlleraustausch für Ihr AFF C80-System abzuschließen, stellen Sie zunächst die NetApp Storage Encryption-Konfiguration wieder her (falls erforderlich). Vergewissern Sie sich als nächstes, dass die logischen Schnittstellen (LIFs) ihren Home Ports berichten und eine Cluster-Zustandsprüfung durchführen. Senden Sie anschließend das ausgefallene Teil an NetApp zurück.</block>
+  <block id="f99fbeb85893ef928614af3af04b57f9" category="paragraph">Geben Sie die Kontrolle über die Speicherressourcen an den Ersatz-Controller zurück, damit Ihr FAS70 oder FAS90 System den normalen Betrieb wieder aufnehmen kann. Das Rückgabeverfahren variiert je nach dem von Ihrem System verwendeten Verschlüsselungstyp: keine Verschlüsselung oder Onboard Key Manager (OKM)-Verschlüsselung.</block>
+  <block id="e72336b4018af60c67f4cbf23f269180" category="paragraph">Sie müssen das beschädigte Controllermodul entfernen und öffnen, das Bootmedium im Controller suchen und ersetzen, das Boot-Image auf ein USB-Laufwerk übertragen, das USB-Laufwerk in den Controller einstecken und dann den Controller booten.</block>
+  <block id="058a58abf3e6b9d728a2756ffe61127f" category="paragraph">Der Controller beginnt mit dem Booten, sobald er vollständig im Gehäuse installiert ist, und stoppt bei der LOADER-Eingabeaufforderung.</block>
+  <block id="21c4edb5ca29e24e278c8cc8630ccac2" category="image-alt">Öffnen Sie das Controllermodul</block>
+  <block id="a665ff03cf3a259d8b99ade952697613" category="image-alt">Ersetzen Sie das Caching</block>
+  <block id="d3ec6e2694028a650f125d7451009961" category="image-alt">Entfernen Sie die Abdeckung</block>
+  <block id="9379754ed9f3ab421dc04083411d001d" category="image-alt">Verschieben Sie die Mezzanine-Karte</block>
+  <block id="191a2899fb1c6d81badd1d85126edeb4" category="image-alt">Verschieben Sie das Caching-Modul</block>
+  <block id="408690a10a3a39e404462d2e1558a022" category="image-alt">NV-Symbol</block>
+  <block id="df44d7e45332b82ddd2a2cb6eb3f7a38" category="image-alt">Ersetzen Sie die DIMMs</block>
+  <block id="5ec55e0a37fd9e86ae241589ac05d8d2" category="paragraph">Zum Verkabeln Ihrer Controller mit Ihrem Netzwerk können Sie entweder die entsprechende Animation oder die detaillierten Schritte in der Tabelle verwenden.</block>
+  <block id="0b13de20fe6ea39ec286743f12673e9b" category="image-alt">Verkabelung von Regal zu Regal</block>
+  <block id="b1905c91f00e1e7ad75a290938d0c0ae" category="list-text">Verkabeln Sie Controller A mit den Laufwerk-Shelfs.</block>
+  <block id="7414b28752291f5ed73122cbbe85acd3" category="list-text">Controller A-Port 0a zu IOM B-Port 1 am ersten Festplatten-Shelf im Stack.</block>
+  <block id="d490aaf97e1fdf82eb244edca242e5f7" category="list-text">Controller A-Port 0b1 zu IOM A-Port 3 auf dem letzten Festplatten-Shelf im Stack.</block>
+  <block id="0b2a648dd1d045b83d1fa5142e7649da" category="image-alt">Verbindung von Controller A zum Regal</block>
+  <block id="575f5a968bfa57f9d0a99b09b5f73ff2" category="list-text">Controller B mit den Laufwerk-Shelfs verbinden.</block>
+  <block id="49fefb8508936cb5a0f672b0146c0013" category="list-text">Controller B Port 0a zu IOM A Port 1 am ersten Festplatten-Shelf im Stack.</block>
+  <block id="0cbd55a3e4a33973ae5e025f7565fe75" category="list-text">Controller B Port 0b1 zu IOM B Port 3 auf dem letzten Festplatten-Shelf im Stack.</block>
+  <block id="b6843b9add1e2cb558dffaed47319e3d" category="image-alt">Verbindung von Controller B zum Regal</block>
+  <block id="b1b862857f003aefeb508f3763b1caad" category="paragraph">Verwenden Sie die folgende Animation in beiden Optionen, wenn die Einstellung der Regal-ID erforderlich ist:</block>
+  <block id="56632d1795a7d32b89a455a3b633b7f5" category="list-text">Schalten Sie die Regalstromversorgung ein und legen Sie die Regal-IDs mithilfe der Animation am Anfang dieses Schritts fest.</block>
+  <block id="6a3ffb8f58252e034e90b5eb7a9cc233" category="list-text">Schalten Sie die Regalstromversorgung ein und legen Sie die Regal-IDs mithilfe der Animation am Anfang dieses Schritts fest.</block>
+  <block id="cb102c5c1eccde9b442d1de001f76cc3" category="image-alt">Entfernen Sie die Controller-Abdeckung</block>
+  <block id="8fca7d700183532fd08f68b674a86c60" category="image-alt">Öffnen Sie den Controller</block>
+  <block id="6abebf9335209d6b986ad1d41e48f43b" category="image-alt">Ersetzen einer Zusatzkarte</block>
+  <block id="9f8a96e46f0e86179108737100c29b9d" category="list-text">Bringen Sie die Controller-Abdeckung wieder an.</block>
+  <block id="627450f7182bd50247300c6db6f17129" category="image-alt">Entfernen eines PCI-Moduls</block>
+  <block id="ec6f3c3168126d55e199d31103c5eff8" category="image-alt">Entfernen eines Netzteils</block>
+  <block id="f2382f3ee3a7ff64d7ec97d77b5ab15c" category="image-alt">Entfernen eines Lüfters</block>
+  <block id="4bfdd5a73e3720ad79c2b5323672c823" category="image-alt">Entfernen Sie das LED-Modul</block>
+  <block id="c23afc0489b14bba326028378555b9c1" category="image-alt">Installieren Sie den Controller neu</block>
+  <block id="e16243c0ca21c7afdd6fc0990b04c048" category="image-alt">Ersetzen Sie die NV-Batterie (DCPM)</block>
+  <block id="5052644d2a37d1cfee946a38ee7221f2" category="image-alt">System-DIMM-Zuordnung</block>
+  <block id="376b1cae869bbe8ab1cce68fdb30b696" category="image-alt">Ersetzen Sie die DIMMs</block>
+  <block id="b8de587b448eba855f302087e9db5abe" category="image-alt">Schließen Sie den Controller</block>
+  <block id="cae1523af1f42548daf31beb55c076e0" category="image-alt">Entfernen oder Installieren des Controllers</block>
+  <block id="8d0301aa96154a1dd899f6aadef9857e" category="image-alt">Ersetzen Sie den Lüfter</block>
+  <block id="fe50dc87275089b9495d8023e008b820" category="video-title">Animation: Switchless-Clusterverkabelung mit zwei Knoten</block>
+  <block id="7008a581ef7d44f47c027e3b2e9746e8" category="image-alt">TNSC-Netzwerkverkabelungsdiagramm</block>
+  <block id="f22ce3022c33416700b0499a02c630a6" category="video-title">Animation Switched Cluster Verkabelung</block>
+  <block id="2f208beb3bb9a5b6070bc5ce129978b3" category="video-title">Animation: Verkabeln Sie Ihre Laufwerksregale</block>
+  <block id="813131c928daa8bd0b445b14f11fdefd" category="image-alt">SAS-Shelf-Verkabelung</block>
+  <block id="131cc8f642319d66d2eee46367e4254b" category="image-alt">Mini-SAS-HD-Kabel</block>
+  <block id="41c5dae76a3f9314369f86b5e52c3453" category="video-title">Animation Legen Sie Ihre Regal-IDs fest</block>
+  <block id="ce8dd9fe7cfc645c2eaac3f8f1775ee7" category="image-alt">Einschalten und Regal-ID festlegen</block>
+  <block id="05e7f3a9aff7390f8890fd6714b7fc4a" category="video-title">Animation Schalten Sie die Stromversorgung der Controller ein</block>
+  <block id="921b8127a66db9c0d2ddd74b4aef6f67" category="video-title">Animation: Verbinden Sie Ihren Laptop mit dem Management-Switch</block>
+  <block id="7b7f09122e68189a8cc5eade0ea74852" category="image-alt">Verkabelung vom Laptop zum Switch</block>
+  <block id="c19c878358034620e42421b1d0e88979" category="image-alt">Verbindung zwischen Konsole und Switch</block>
+  <block id="bcbe9ce5b2d50ad0b254f40cda6fc7e1" category="image-alt">Einschalten und Regal-ID festlegen</block>
+  <block id="43f978a7787080590a53cc2abdd637c9" category="image-alt">Ersetzen Sie das LED-Modul</block>
+  <block id="a54c219a955221bc0586ab22f8a07401" category="image-alt">Ersetzen Sie die RTC-Batterie</block>
 </blocks>

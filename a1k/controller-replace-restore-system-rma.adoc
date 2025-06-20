@@ -11,66 +11,25 @@ summary: 'Überprüfen Sie, ob die logischen Schnittstellen (LIFs) an ihren Home
 
 
 [role="lead"]
-Um den Controller-Austausch für Ihr AFF A1K-System abzuschließen, stellen Sie zuerst die NetApp-Speicherverschlüsselungskonfiguration (falls erforderlich) wieder her und installieren Sie die erforderlichen Lizenzen auf dem neuen Controller. Vergewissern Sie sich als nächstes, dass die logischen Schnittstellen (LIFs) ihren Home Ports berichten und eine Cluster-Zustandsprüfung durchführen. Registrieren Sie abschließend die Seriennummer des neuen Controllers und senden Sie das ausgefallene Teil an NetApp zurück.
+Um den Controlleraustausch für Ihr AFF A1K-System abzuschließen, stellen Sie zunächst die NetApp Storage Encryption-Konfiguration wieder her (falls erforderlich). Vergewissern Sie sich als nächstes, dass die logischen Schnittstellen (LIFs) ihren Home Ports berichten und eine Cluster-Zustandsprüfung durchführen. Senden Sie anschließend das ausgefallene Teil an NetApp zurück.
 
 
 
-== Schritt 1: Installieren Sie Lizenzen für den Ersatz-Controller in ONTAP
+== Schritt 1: Verifizieren von LIFs und Überprüfen des Clusterzustands
 
-Sie müssen neue Lizenzen für den Node _Replacement_ installieren, wenn der beeinträchtigte Knoten ONTAP-Funktionen verwendete, die eine Standard-Lizenz (Node-locked) erfordern. Bei Standardlizenzen sollte jeder Node im Cluster über seinen eigenen Schlüssel für die Funktion verfügen.
-
-.Bevor Sie beginnen
-Wenn auf Ihrem System zunächst ONTAP 9.10.1 oder höher ausgeführt wurde, gehen Sie wie in beschrieben  https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/Post_Motherboard_Replacement_Process_to_update_Licensing_on_a_AFF_FAS_system#Internal_Notes^["Post-Motherboard-Austauschprozess zur Aktualisierung der Lizenzierung auf ONTAP-Plattformen"]vor. Wenn Sie sich nicht sicher sind, wie die erste ONTAP-Version für Ihr System ist, finden Sie weitere Informationen unterlink:https://hwu.netapp.com["NetApp Hardware Universe"^].
-
-.Über diese Aufgabe
-* Bis Sie Lizenzschlüssel installieren, sind Funktionen, für die Standardlizenzen erforderlich sind, weiterhin für den Node _Replacement_ verfügbar. Wenn der beeinträchtigte Knoten jedoch der einzige Node im Cluster war, der eine Lizenz für die Funktion besitzt, sind keine Konfigurationsänderungen an der Funktion zulässig.
-+
-Durch die Verwendung nicht lizenzierter Funktionen auf dem Knoten können Sie möglicherweise nicht mit Ihrer Lizenzvereinbarung einverstanden sein. Sie sollten daher den Ersatzlizenzschlüssel oder die Schlüssel so schnell wie möglich auf dem Node _Replacement_ installieren.
-
-* Die Lizenzschlüssel müssen im 28-stelligen Format vorliegen.
-* Sie haben eine 90-Tage-Nachfrist zur Installation der Lizenzschlüssel. Nach Ablauf der Frist werden alle alten Lizenzen ungültig. Nachdem ein gültiger Lizenzschlüssel installiert wurde, haben Sie 24 Stunden Zeit, um alle Schlüssel zu installieren, bevor die Kulanzzeit endet.
-* Wenn sich der Node in einer MetroCluster-Konfiguration befindet und alle Nodes an einem Standort ersetzt wurden, müssen vor dem Wechsel die Lizenzschlüssel auf dem Node _Replacement_ oder den Nodes installiert werden.
-
-
-.Schritte
-. Wenn Sie neue Lizenzschlüssel benötigen, holen Sie sich die Ersatzlizenz auf dem https://mysupport.netapp.com/site/global/dashboard["NetApp Support Website"] Im Abschnitt „My Support“ unter „Software-Lizenzen“.
-+
-
-NOTE: Die neuen Lizenzschlüssel, die Sie benötigen, werden automatisch generiert und an die E-Mail-Adresse in der Datei gesendet. Wenn Sie die E-Mail mit den Lizenzschlüssel nicht innerhalb von 30 Tagen erhalten, sollten Sie sich an den technischen Support wenden.
-
-. Installieren Sie jeden Lizenzschlüssel: `+system license add -license-code license-key, license-key...+`
-. Entfernen Sie ggf. die alten Lizenzen:
-+
-.. Suchen Sie nach nicht verwendeten Lizenzen: `license clean-up -unused -simulate`
-.. Wenn die Liste korrekt aussieht, entfernen Sie die nicht verwendeten Lizenzen: `license clean-up -unused`
-
-
-
-
-
-
-== Schritt 2: Überprüfen Sie LIFs, registrieren Sie die Seriennummer und überprüfen Sie den Zustand des Clusters
-
-Bevor Sie den Node _Replacement_ zum Service zurücksenden, sollten Sie überprüfen, ob sich die LIFs auf ihren Home-Ports befinden, und bei aktiviertem AutoSupport die Seriennummer des Node _Replacement_ registrieren.
+Bevor Sie den Ersatz-Node an einen Service zurücksenden, überprüfen Sie, ob sich die logischen Schnittstellen auf ihren Home Ports befinden, überprüfen Sie den Cluster-Zustand und setzen Sie das automatische Giveback zurück.
 
 .Schritte
 . Vergewissern Sie sich, dass die logischen Schnittstellen ihrem Home-Server und ihren Ports Berichterstellung: `network interface show -is-home false`
 +
-Wenn eine der LIFs als falsch aufgeführt ist, stellen Sie sie auf ihre Home-Ports zurück: `network interface revert -vserver * -lif *`
-
-. Registrieren Sie die Seriennummer des Systems beim NetApp Support.
-+
-** Wenn AutoSupport aktiviert ist, senden Sie eine AutoSupport Nachricht, um die Seriennummer zu registrieren.
-** Wenn AutoSupport nicht aktiviert ist, rufen Sie an https://mysupport.netapp.com["NetApp Support"] Um die Seriennummer zu registrieren.
-
+Wenn logische Schnittstellen als falsch aufgeführt sind, setzen Sie sie auf ihre Home-Ports zurück: `network interface revert -vserver * -lif *`
 
 . Überprüfen Sie den Zustand Ihres Clusters. Weitere Informationen finden Sie im https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["So führen Sie eine Cluster-Integritätsprüfung mit einem Skript in ONTAP durch"^] KB-Artikel.
-. Wenn ein AutoSupport-Wartungsfenster ausgelöst wurde, beenden Sie das Fenster mit. Verwenden Sie dazu die `system node autosupport invoke -node * -type all -message MAINT=END` Befehl.
 . Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut: `storage failover modify -node local -auto-giveback true`
 
 
 
 
-== Schritt 3: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+== Schritt 2: Rückgabe des fehlerhaften Teils an NetApp
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

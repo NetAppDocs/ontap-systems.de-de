@@ -233,17 +233,18 @@ Host-Netzwerk-Switches
 
 image::../media/oie_cable_pull_tab_down.png[Richtung der Zuglasche]
 
+Zum Verkabeln Ihrer Controller mit Ihrem Netzwerk können Sie entweder die entsprechende Animation oder die detaillierten Schritte in der Tabelle verwenden.
+
+.Animation – Verkabelung einer 2-Node-Cluster-Verkabelung ohne Switches
+video::90577508-fa79-46cf-b18a-afe8016325af[panopto]
+.Animation - Switch Cluster Verkabelung
+video::6553a3db-57dd-4247-b34a-afe8016315d4[panopto]
 [role="tabbed-block"]
 ====
 .Option 1: Verkabeln eines 2-Node-Clusters ohne Switches
 --
 Verkabeln Sie die Netzwerkverbindungen und die Cluster-Interconnect-Ports für ein Cluster mit zwei Nodes ohne Switches.
 
-.Über diese Aufgabe
-Verwenden Sie die Animation oder die Schritt-für-Schritt-Anleitung, um die Verkabelung zwischen den Controllern und den Switches abzuschließen.
-
-.Animation – Verkabelung einer 2-Node-Cluster-Verkabelung ohne Switches
-video::90577508-fa79-46cf-b18a-afe8016325af[panopto]
 .Schritte
 . Verkabeln Sie die Cluster Interconnect Ports e0a mit e0a und e0b mit e0b mit dem Cluster Interconnect-Kabel:
 +
@@ -320,11 +321,6 @@ IMPORTANT: Schließen Sie DIE Netzkabel NICHT an.
 --
 Verkabeln Sie die Netzwerkverbindungen und die Cluster Interconnect Ports für ein Switch Cluster.
 
-.Über diese Aufgabe
-Verwenden Sie die Animation oder die Schritt-für-Schritt-Anleitung, um die Verkabelung zwischen den Controllern und den Switches abzuschließen.
-
-.Animation - Switch Cluster Verkabelung
-video::6553a3db-57dd-4247-b34a-afe8016315d4[panopto]
 .Schritte
 . Verkabeln Sie die Cluster Interconnect Ports e0a mit e0a und e0b mit e0b mit dem Cluster Interconnect-Kabel:
 +
@@ -446,31 +442,29 @@ video::b2a7549d-8141-47dc-9e20-afe8016f4386[panopto]
 .. Port 1 auf IOM A zu Port 3 auf IOM A auf dem Shelf direkt unten.
 .. Port 1 auf IOM B zu Port 3 auf IOM B auf dem Shelf direkt unten.
 +
-image::../media/oie_cable_mini_sas_hd_to_mini_sas_hd.svg[Mini-SAS-zu-Mini-SAS-Anschluss]
+image::../media/drw_2800_shelf-to-shelf_cabling_IEOPS-895.svg[Verkabelung von Regal zu Regal]
 
 
 
+. Verkabeln Sie Controller A mit den Laufwerk-Shelfs.
++
+.. Controller A-Port 0a zu IOM B-Port 1 am ersten Festplatten-Shelf im Stack.
+.. Controller A-Port 0b1 zu IOM A-Port 3 auf dem letzten Festplatten-Shelf im Stack.
++
+image::../media/dwr-2800_controller1-to shelves_IEOPS-896.svg[Verbindung von Controller A zum Regal]
 
 
-*Mini-SAS HD auf Mini-SAS HD Kabel*
 
-+ Bild::./media/drw_2800_Shelf-to-Shelf_cabling_IEOPS-895.svg[Shelf-to-Shelf-Verkabelung]
+. Controller B mit den Laufwerk-Shelfs verbinden.
++
+.. Controller B Port 0a zu IOM A Port 1 am ersten Festplatten-Shelf im Stack.
+.. Controller B Port 0b1 zu IOM B Port 3 auf dem letzten Festplatten-Shelf im Stack.
 
-+ . Verkabeln Sie Controller A mit den Laufwerk-Shelfs. .. Controller A-Port 0a zu IOM B-Port 1 am ersten Festplatten-Shelf im Stack. .. Controller A-Port 0b1 zu IOM A-Port 3 auf dem letzten Festplatten-Shelf im Stack.
 
-+ Bild::../media/oie_cable_mini_sas_hd_to_mini_sas_hd.svg[Mini-SAS-zu-Mini-SAS-Anschluss]
++
+image::../media/dwr-2800_controller2-to shelves_IEOPS-897.svg[Verbindung von Controller B zum Regal]
 
-*Mini-SAS HD auf Mini-SAS HD Kabel*
 
-+ Bild::../media/dwr-2800_controller1-to Shelfs_IEOPS-896.svg[Controller A zu Shelf-Verbindung]
-
-+ . Controller B mit den Laufwerk-Shelfs verbinden. .. Controller B Port 0a zu IOM A Port 1 am ersten Festplatten-Shelf im Stack. .. Controller B Port 0b1 zu IOM B Port 3 auf dem letzten Festplatten-Shelf im Stack.
-
-+ Bild::../media/oie_cable_mini_sas_hd_to_mini_sas_hd.svg[Mini-SAS-zu-Mini-SAS-Anschluss]
-
-*Mini-SAS HD auf Mini-SAS HD Kabel*
-
-+ Bild::../media/dwr-2800_controller2-to Shelfs_IEOPS-897.svg[Controller B zu Shelf-Anschluss]
 
 
 
@@ -478,6 +472,10 @@ image::../media/oie_cable_mini_sas_hd_to_mini_sas_hd.svg[Mini-SAS-zu-Mini-SAS-An
 
 Führen Sie die Einrichtung und Konfiguration des Speichersystems mit einer der folgenden Optionen durch: Wenn die Netzwerkerkennung aktiviert ist, oder mit Option 2: Wenn die Netzwerkerkennung nicht aktiviert ist.
 
+Verwenden Sie die folgende Animation in beiden Optionen, wenn die Einstellung der Regal-ID erforderlich ist:
+
+.Animation: Legen Sie die Festplatten-Shelf-IDs fest
+video::c600f366-4d30-481a-89d9-ab1b0066589b[panopto]
 [role="tabbed-block"]
 ====
 .Option 1: Wenn die Netzwerkerkennung aktiviert ist
@@ -485,10 +483,7 @@ Führen Sie die Einrichtung und Konfiguration des Speichersystems mit einer der 
 Wenn die Netzwerkerkennung auf Ihrem Laptop aktiviert ist, schließen Sie die Einrichtung und Konfiguration des Storage-Systems mithilfe der automatischen Cluster-Erkennung ab.
 
 .Schritte
-. Verwenden Sie die folgende Animation, um die Shelf-Stromversorgung einzuschalten und Shelf-IDs festzulegen.
-+
-.Animation: Legen Sie die Festplatten-Shelf-IDs fest
-video::c600f366-4d30-481a-89d9-ab1b0066589b[panopto]
+. Schalten Sie die Regalstromversorgung ein und legen Sie die Regal-IDs mithilfe der Animation am Anfang dieses Schritts fest.
 . Schalten Sie die Controller ein
 +
 .. Schließen Sie die Stromkabel an die Controller-Netzteile an, und schließen Sie sie dann an Stromquellen auf verschiedenen Stromkreisen an.
@@ -560,10 +555,7 @@ image::../media/drw_2800_laptop_to_switch_to_controller_IEOPS-1084.svg[Laptop zu
 .. Weisen Sie dem Laptop oder der Konsole eine TCP/IP-Adresse zu. Verwenden Sie dabei eine Adresse, die sich im Management-Subnetz befindet.
 
 
-. Mithilfe der folgenden Animation können Sie eine oder mehrere Laufwerk-Shelf-IDs festlegen:
-+
-.Animation: Legen Sie die Festplatten-Shelf-IDs fest
-video::c600f366-4d30-481a-89d9-ab1b0066589b[panopto]
+. Schalten Sie die Regalstromversorgung ein und legen Sie die Regal-IDs mithilfe der Animation am Anfang dieses Schritts fest.
 . Schließen Sie die Stromkabel an die Controller-Netzteile an, und schließen Sie sie dann an Stromquellen auf verschiedenen Stromkreisen an.
 . Schalten Sie die Netzschalter an beide Knoten ein.
 +
