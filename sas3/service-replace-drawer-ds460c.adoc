@@ -11,7 +11,7 @@ summary: 'Wenn Sie eine Laufwerksschublade in einem Shelf ersetzen, müssen Sie 
 
 
 [role="lead"]
-Wenn Sie eine Laufwerksschublade in einem Shelf ersetzen, müssen Sie entweder das gesamte Storage-System (HA-Paar) anhalten. Auf diese Weise können Sie Datenaggregate auf dem Shelf aufbewahren. Alternativ können Sie das HA-Paar aktiv halten. Allerdings müssen sämtliche Daten aus den Datenaggregaten auf den Festplattenlaufwerken verschoben und offline sein sowie die Datenaggregate löschen. Wenn jedoch das Regal ein Wurzelaggregat enthält, müssen Sie das HA-Paar anhalten.
+Um eine Laufwerksschublade in einem Shelf auszutauschen, können Sie das gesamte Speichersystem (HA-Paar) anhalten. Dadurch bleiben die Datenaggregate im Shelf erhalten. Alternativ können Sie das HA-Paar aktiv halten. Dazu müssen Sie alle Daten aus den Datenaggregaten auf die Festplatten des Shelfs verschieben und diese anschließend offline löschen. Enthält das Shelf ein Root-Aggregat, müssen Sie das HA-Paar anhalten.
 
 .Bevor Sie beginnen
 Sie benötigen folgende Elemente für dieses Verfahren:
@@ -88,7 +88,7 @@ NOTE: Datenaggregate können beim Anhalten des HA-Paars auf dem Shelf bleiben.
 NOTE: Wenn Sie versuchen, eine Schublade durch Aggregate im Festplatten-Shelf zu ersetzen, kann dies zu einer Systemunterbrechung und mehreren fehlerhaften Festplatten führen.
 
 +
-.. Verschieben Sie alle Daten von den Datenaggregaten auf den Festplatten.
+.. Verschieben Sie alle Daten aus den Datenaggregaten, die sich auf allen Festplatten im Regal befinden.
 +
 Daten umfassen unter anderem Volumes und LUNs, sind aber nicht darauf beschränkt.
 

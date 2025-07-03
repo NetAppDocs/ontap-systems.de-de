@@ -17,10 +17,6 @@ Nachdem Sie die Hardware Ihres FAS50 Storage-Systems installiert haben, verkabel
 Wenden Sie sich an Ihren Netzwerkadministrator, um Informationen über das Anschließen des Speichersystems an die Netzwerk-Switches zu erhalten.
 
 .Über diese Aufgabe
-* Die Verfahren zur Verkabelung von Cluster/HA und Host-Netzwerk zeigen gemeinsame Konfigurationen.
-+
-Wenn Sie Ihre Konfiguration hier nicht sehen, finden Sie unter link:https://hwu.netapp.com["NetApp Hardware Universe"^]umfassende Informationen zur Konfiguration und Steckplatzpriorität, um das Storage-System zu verkabeln.
-
 * Die Verkabelungsgrafiken haben Pfeilsymbole, die die richtige Ausrichtung (nach oben oder unten) des Kabelsteckers zeigen, wenn ein Anschluss in einen Anschluss eingesetzt wird.
 +
 Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
@@ -35,8 +31,15 @@ image:../media/drw_cable_pull_tab_direction_ieops-1699.svg["Richtung der Zuglasc
 
 == Schritt 1: Cluster/HA-Verbindungen verkabeln
 
-Verkabeln Sie die Controller, um die ONTAP-Cluster-Verbindungen zu erstellen.
+Erstellen Sie die ONTAP-Cluster-Verbindungen. Bei Clustern ohne Switch verbinden Sie die Controller miteinander. Verbinden Sie bei geswitchten Clustern die Controller mit den Cluster-Netzwerk-Switches.
 
+[NOTE]
+====
+Die Cluster-/HA-Verkabelungsbeispiele zeigen gängige Konfigurationen.
+
+Wenn Sie Ihre Konfiguration hier nicht sehen, finden Sie unter link:https://hwu.netapp.com["NetApp Hardware Universe"^]umfassende Informationen zur Konfiguration und Steckplatzpriorität, um das Storage-System zu verkabeln.
+
+====
 [role="tabbed-block"]
 ====
 .Cluster-Verkabelung ohne Switch
@@ -105,6 +108,13 @@ image:../media/drw_isi_fas50_2p_100gbe_switched_cluster_cabling_ieops-1936.svg["
 
 Verkabeln Sie die Controller mit dem Ethernet- oder FC-Hostnetzwerk.
 
+[NOTE]
+====
+Die Beispiele für die Hostnetzwerkverkabelung zeigen gängige Konfigurationen.
+
+Wenn Sie Ihre Konfiguration hier nicht sehen, finden Sie unter link:https://hwu.netapp.com["NetApp Hardware Universe"^]umfassende Informationen zur Konfiguration und Steckplatzpriorität, um das Storage-System zu verkabeln.
+
+====
 [role="tabbed-block"]
 ====
 .Ethernet-Hostverkabelung

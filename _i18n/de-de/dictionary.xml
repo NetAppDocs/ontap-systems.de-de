@@ -4513,7 +4513,6 @@
   <block id="319d072de0a7eb80654d8506bc74de47" category="paragraph">Die DCM2-Antriebs-Schubladen zeichnen sich durch einen blauen Streifen und das Label "DCM2" aus:</block>
   <block id="d5240bafd6bf54bcb59e9a9f899b324e" category="section-title">Bereiten Sie den Austausch eines Laufwerksschubs vor</block>
   <block id="38cd7f0eca6a82b183b0f9dc3599583a" category="paragraph">Bevor Sie eine Laufwerksschublade ersetzen, müssen Sie sicherstellen, dass Sie bei Bedarf die IOM12 FW aktualisieren und entweder das HA-Paar anhalten, um Datenaggregate auf dem Shelf zu halten. Alternativ können Sie das HA-Paar aktiv halten. Allerdings müssen sämtliche Daten aus den Datenaggregaten auf den Festplattenlaufwerken verschoben und offline sein sowie die Datenaggregate löschen. Wenn jedoch das Regal ein Wurzelaggregat enthält, müssen Sie das HA-Paar anhalten. Abschließend müssen Sie das Regal ausschalten.</block>
-  <block id="fca3ffea6534176432f58b5a22ed22e1" category="list-title">Schritte</block>
   <block id="f1d6fcc8467c66247fc38fc5bb1e448c" category="list-text">Ermitteln Sie, ob beim Austausch der ausgefallenen Laufwerksschublade eine Kombination aus IOM12 Modulen und einer beliebigen Anzahl von DCM2-Laufwerksschubladen ergibt.</block>
   <block id="bb92ef0e860f1f3c67a9c3a453b2781c" category="list-text">Wenn das Shelf über eine Kombination aus IOM12 Modulen und einer beliebigen Anzahl von DCM2-Laufwerksfächer verfügt, müssen Sie das IOM12 FW auf Version 0300 oder höher aktualisieren; andernfalls mit dem nächsten Schritt fortfahren.</block>
   <block id="62f67af3803932031f11d177b5600361" category="list-text">Wenn das Shelf das Root-Aggregat aus einem Controller im HA-Paar enthält oder wenn Sie das HA-Paar anhalten möchten (anstatt das HA-Paar in Betrieb zu halten), führen Sie die folgenden Teilschritte durch. Andernfalls fahren Sie mit dem nächsten Schritt fort.</block>
@@ -4524,7 +4523,6 @@
   <block id="4bd0b0c2b519de54df41bc77088d8182" category="list-text">Gehen Sie zum Abschnitt, <block ref="f9b764c55080d7cf77ed91e890c43565" category="inline-xref-macro-rx"></block>.</block>
   <block id="eb1a8e53bca0fcb026633a23b562bfff" category="list-text">Wenn Sie sich dafür entscheiden, das HA-Paar am Laufen zu halten, führen Sie die folgenden Teilschritte aus:</block>
   <block id="1aea84d8e76217145d77f4dd7efe6f8f" category="admonition">Wenn Sie versuchen, eine Schublade durch Aggregate im Festplatten-Shelf zu ersetzen, kann dies zu einer Systemunterbrechung und mehreren fehlerhaften Festplatten führen.</block>
-  <block id="ea0b163daac6d7d1dbcf0110733b7a5c" category="list-text">Verschieben Sie alle Daten von den Datenaggregaten auf den Festplatten.</block>
   <block id="a3285b442e65f70add01ba5f44551d15" category="paragraph">Daten umfassen unter anderem Volumes und LUNs, sind aber nicht darauf beschränkt.</block>
   <block id="cf798cab97b54ad5fe43c91a959754ca" category="list-text">OFine und löschen Sie die Aggregate, damit die Festplatten zu Reserveträgern werden:</block>
   <block id="19613506a0ea4d74ae9e654ba0e170e6" category="paragraph">Befehle können aus der Clustershell eines der beiden Controller eingegeben werden.</block>
@@ -10073,7 +10071,6 @@ SFP+ (Target/Initiator)</block>
   <block id="d16a227aab66041a81c6f88b290eb486" category="section-title">Schritt 1: Cluster/HA-Verbindungen verkabeln</block>
   <block id="134e0586a0879fa097abfb47d5e64dbe" category="open-title">Cluster-Verkabelung ohne Switch</block>
   <block id="ee68cf12a16ca46d58bedd8cf9051f32" category="example-title">AFF A30 oder AFF A50 mit zwei 40/100-GbE-I/O-Modulen mit 2 Ports</block>
-  <block id="1de8dab1beab3d5ee0495c66a3c814b7" category="paragraph">Verkabeln Sie die Controller miteinander, um die ONTAP-Cluster-Verbindungen zu erstellen.</block>
   <block id="a8d16746fb80901317600cba36862a10" category="list-text">Verkabeln der Cluster/HA Interconnect-Verbindungen:</block>
   <block id="6780657f10ef4bbe5e784f3b1e7777e3" category="admonition">Der Cluster-Interconnect-Verkehr und der HA Traffic nutzen dieselben physischen Ports (auf den I/O-Modulen in den Steckplätzen 2 und 4). Die Ports sind 40/100 GbE.</block>
   <block id="efe3bfda2c730f42fd2741bc4722e6f0" category="list-text">Kabel-Controller A-Port e2a zu Controller B-Port e2a.</block>
@@ -10544,7 +10541,6 @@ SFP+ (Target/Initiator)</block>
   <block id="b3fb7cc55fec6d7df9078e2ee7739718" category="paragraph">Wenn das DIMM richtig eingesetzt wird, lässt es sich leicht einsetzen, passt aber fest in den Steckplatz. Falls nicht, setzen Sie das DIMM erneut ein.</block>
   <block id="7e08ee4b466dc677d31c40c8b0488339" category="list-text">Überprüfen Sie das DIMM visuell, um sicherzustellen, dass es gleichmäßig ausgerichtet und vollständig in den Steckplatz eingesetzt ist.</block>
   <block id="34f650ca44fabe66ff7e4095a137da22" category="list-text">Stellen Sie sicher, dass alle anderen Komponenten des Speichersystems ordnungsgemäß funktionieren. Falls nicht, wenden Sie sich an<block ref="eb2c61027d5e6c8b35692c1e74187026" category="inline-link-rx"></block>, bevor Sie fortfahren.“</block>
-  <block id="54d890bf92693607c99bccb67f9933f5" category="paragraph">Verkabeln Sie die Controller, um die ONTAP-Cluster-Verbindungen zu erstellen.</block>
   <block id="d48b3cfe096b47bcb7f13e683c934beb" category="paragraph">Verkabeln Sie die Controller mit dem Ethernet- oder FC-Hostnetzwerk.</block>
   <block id="bb8661c49545cac68358046e25b8f950" category="open-title">Ethernet-Hostverkabelung</block>
   <block id="3c90cea8d34e6c024dcfcf7fbe2bc396" category="example-title">AFF A20, A30 oder AFF A50 mit einem 10/25-GbE-I/O-Modul mit 4 Anschlüssen</block>
@@ -11729,7 +11725,6 @@ SFP+ (Target/Initiator)</block>
   <block id="db424e93139f05b40145c02ca1496dab" category="image-alt">Ersetzen Sie die NVDIMM-Batterie</block>
   <block id="f01c12d2b181f3fa692e46f31483240d" category="list-text">Stellen Sie sicher, dass die Führungsstifte des Gehäuses oder des Telco-Racks sicher in den Schlitzen der Gehäuseführung sind.</block>
   <block id="0ce45b8799d32fa93b50aed5301e827b" category="list-text">Controller 2 Port 0b zu IOM B-Port 3 auf dem letzten Laufwerk-Shelf im Stack. + <block ref="065babb6c425d208f17452adf684f6f8" category="inline-image-macro-rx" type="image"></block> Mini-SAS HD auf Mini-SAS HD Kabel</block>
-  <block id="ce48b5f9c255c35e0431b311322885fc" category="list-text">Die Verfahren zur Verkabelung von Cluster/HA und Host-Netzwerk zeigen gemeinsame Konfigurationen.</block>
   <block id="11695514a878032b3fb5ecdf5e659b5b" category="paragraph">Wenn Sie Ihre Konfiguration hier nicht sehen, finden Sie unter <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>umfassende Informationen zur Konfiguration und Steckplatzpriorität, um das Storage-System zu verkabeln.</block>
   <block id="2e169c8e6f4cc1f6315545b46d7284a2" category="inline-image-macro">64-GB-fc-Kabel</block>
   <block id="0bf370304560205688213d22ba637c07" category="paragraph"><block ref="0bf370304560205688213d22ba637c07" category="inline-image-macro-rx" type="image"></block></block>
@@ -12021,4 +12016,15 @@ SFP+ (Target/Initiator)</block>
   <block id="bcbe9ce5b2d50ad0b254f40cda6fc7e1" category="image-alt">Einschalten und Regal-ID festlegen</block>
   <block id="43f978a7787080590a53cc2abdd637c9" category="image-alt">Ersetzen Sie das LED-Modul</block>
   <block id="a54c219a955221bc0586ab22f8a07401" category="image-alt">Ersetzen Sie die RTC-Batterie</block>
+  <block id="14d4a75ecbe13082ebd840dc7d091f2c" category="section-title">Schritt 4: Installieren Sie die Controller und Laufwerke</block>
+  <block id="7aa6db479f57ead7ac39225f410bdf2d" category="paragraph">Installieren Sie die Controller und Laufwerke im Ersatzgehäuse und starten Sie die Controller neu.</block>
+  <block id="3dbc14ba753f9b6deb52fc17f8c85cec" category="paragraph">Tauschen Sie das Gehäuse des AFF A20-, AFF A30- oder AFF A50-Systems aus, wenn es aufgrund eines Hardwarefehlers erforderlich ist. Der Austauschvorgang umfasst das Entfernen der Controller, das Entfernen der Laufwerke, die Installation des Ersatzgehäuses und die Neuinstallation der Gehäusekomponenten.</block>
+  <block id="fde22ae5f3a1cc39c61853ffe9a68675" category="paragraph">Erstellen Sie die ONTAP-Cluster-Verbindungen. Bei Clustern ohne Switch verbinden Sie die Controller miteinander. Verbinden Sie bei geswitchten Clustern die Controller mit den Cluster-Netzwerk-Switches.</block>
+  <block id="4a1975a1a386f2f3f28c4859f5ea4976" category="paragraph">Die Cluster-/HA-Verkabelungsbeispiele zeigen gängige Konfigurationen.</block>
+  <block id="8c3a29fca49d6a772e0a2f8ab6ab7280" category="paragraph">Die Beispiele für die Hostnetzwerkverkabelung zeigen gängige Konfigurationen.</block>
+  <block id="6ce95ae69a1e0ed801b4369491228162" category="paragraph">Tauschen Sie das Gehäuse des ASA A20-, ASA A30- oder ASA A50-Systems aus, wenn es aufgrund eines Hardwarefehlers erforderlich ist. Der Austauschvorgang umfasst das Entfernen der Controller, das Entfernen der Laufwerke, die Installation des Ersatzgehäuses und die Neuinstallation der Gehäusekomponenten.</block>
+  <block id="d756679882bcf80d5a80fd42020d0f25" category="paragraph">Ersetzen Sie das Gehäuse Ihres ASA C30-Speichersystems, wenn ein Hardwarefehler dies erfordert. Der Austauschvorgang umfasst das Entfernen der Controller, das Entfernen der Laufwerke, die Installation des Ersatzgehäuses und die Neuinstallation der Gehäusekomponenten.</block>
+  <block id="72dc238e73081e826d88e29df24b4c58" category="paragraph">Tauschen Sie das Gehäuse des AFF C30- oder AFF C60-Systems aus, wenn es aufgrund eines Hardwarefehlers erforderlich ist. Der Austauschvorgang umfasst das Entfernen der Controller, das Entfernen der Laufwerke, die Installation des Ersatzgehäuses und die Neuinstallation der Gehäusekomponenten.</block>
+  <block id="149eed3e03e259c4e52b1de45a4fe3e9" category="paragraph">Um eine Laufwerksschublade in einem Shelf auszutauschen, können Sie das gesamte Speichersystem (HA-Paar) anhalten. Dadurch bleiben die Datenaggregate im Shelf erhalten. Alternativ können Sie das HA-Paar aktiv halten. Dazu müssen Sie alle Daten aus den Datenaggregaten auf die Festplatten des Shelfs verschieben und diese anschließend offline löschen. Enthält das Shelf ein Root-Aggregat, müssen Sie das HA-Paar anhalten.</block>
+  <block id="12e16a41f9ae5c97288e4e9e78b0bbf6" category="list-text">Verschieben Sie alle Daten aus den Datenaggregaten, die sich auf allen Festplatten im Regal befinden.</block>
 </blocks>
