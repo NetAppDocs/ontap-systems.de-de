@@ -40,8 +40,8 @@ NOTE: Sie werden zweimal zur Eingabe der Passphrase aufgefordert.
 . Schieben Sie das Konsolenkabel zum Partner-Node und melden Sie sich als an `admin`.
 . Nur die CFO-Aggregate zurückgeben (das Root-Aggregat): `storage failover giveback -fromnode local -only-cfo-aggregates _true_`
 +
-** Wenn Sie auf Fehler stoßen, wenden Sie sich an https://support.netapp.com["NetApp Support"].
 
+NOTE: Wenn Sie auf Fehler stoßen, wenden Sie sich an https://support.netapp.com["NetApp Support"].
 
 . Warten Sie 5 Minuten, nachdem der Giveback-Bericht abgeschlossen ist, und überprüfen Sie den Failover-Status und den Giveback-Status: `storage failover show` Und `storage failover show-giveback`.
 . Synchronisieren und überprüfen Sie den Status der Tasten:

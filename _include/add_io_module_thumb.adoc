@@ -61,10 +61,19 @@ Wenn Sie ein Speicher-I/O-Modul installiert haben, installieren und verkabeln Si
 +
 Durch einen Neustart des außer Betrieb genommenen Controllers werden auch die E/A-Module und andere Komponenten neu initialisiert.
 
-. Geben Sie den Controller für den beeinträchtigten Betrieb vom Controller für den ordnungsgemäßen Betrieb zurück: `storage failover giveback -ofnode _impaired_node_name_`
+. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben:
++
+`storage failover giveback -ofnode _impaired_node_name_`.
+
 . Wiederholen Sie diese Schritte, um dem anderen Controller ein I/O-Modul hinzuzufügen.
-. Automatisches Giveback von der Konsole des funktionstüchtigen Controllers wiederherstellen: `storage failover modify -node local -auto-giveback _true_`
-. Wenn AutoSupport aktiviert ist, stellen Sie die automatische Fallerstellung wieder her (heben Sie die Unterdrückung auf): `system node autosupport invoke -node * -type all -message MAINT=END`
+. Automatisches Giveback von der Konsole des funktionstüchtigen Controllers wiederherstellen:
++
+`storage failover modify -node local -auto-giveback true`
+
+. Wenn AutoSupport aktiviert ist, stellen Sie die automatische Fallerstellung wieder her (heben Sie die Unterdrückung auf): +
++
+`system node autosupport invoke -node * -type all -message MAINT=END`
+
 
 
 --
@@ -140,14 +149,29 @@ Sie können die Lasche auf der linken Seite und die Flügelschraube verwenden, u
 Wenn Sie ein Speicher-I/O-Modul installiert haben, installieren und verkabeln Sie die NS224-Shelfs, wie unter beschrieben https://docs.netapp.com/us-en/ontap-systems/ns224/hot-add-shelf-overview.html["Hot-Add-Workflow"^].
 
 . Wiederholen Sie die Schritte Entfernen und Installieren des E/A-Moduls, um zusätzliche E/A-Module im Controller hinzuzufügen.
-. Starten Sie den beeinträchtigten Controller über die Loader-Eingabeaufforderung neu: `bye`
+. Starten Sie den fehlerhaften Controller über die LOADER-Eingabeaufforderung neu:
++
+`bye`
+
 +
 Durch einen Neustart des außer Betrieb genommenen Controllers werden auch die E/A-Module und andere Komponenten neu initialisiert.
 
-. Geben Sie den Controller für den beeinträchtigten Betrieb vom Controller für den ordnungsgemäßen Betrieb zurück: `storage failover giveback -ofnode _impaired_node_name_`
-. Automatisches Giveback von der Konsole des funktionstüchtigen Controllers wiederherstellen: `storage failover modify -node local -auto-giveback _true_`
-. Wenn AutoSupport aktiviert ist, stellen Sie die automatische Fallerstellung wieder her (heben Sie die Unterdrückung auf): `system node autosupport invoke -node * -type all -message MAINT=END`
-. Wenn Sie ein NIC-Modul installiert haben, geben Sie den Verwendungsmodus für jeden Port als _Network_ an: `storage port modify -node _node_name_ -port _port_name_ -mode _network_`
+. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben:
++
+`storage failover giveback -ofnode _impaired_node_name_`
+
+. Automatisches Giveback von der Konsole des funktionstüchtigen Controllers wiederherstellen:
++
+`storage failover modify -node local -auto-giveback true`
+
+. Wenn AutoSupport aktiviert ist, stellen Sie die automatische Fallerstellung wieder her (heben Sie die Unterdrückung auf):
++
+`system node autosupport invoke -node * -type all -message MAINT=END`
+
+. Wenn Sie ein NIC-Modul installiert haben, geben Sie den Nutzungsmodus für jeden Port als _Netzwerk_ an:
++
+`storage port modify -node _node_name_ -port _port_name_ -mode _network_`
+
 . Wiederholen Sie diese Schritte für den anderen Controller.
 
 

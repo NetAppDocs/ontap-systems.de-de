@@ -417,6 +417,18 @@ DC-NETZTEIL
 
 
 |===
+. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben:
++
+`storage failover giveback -ofnode _impaired_node_name_`
+
+. Automatisches Giveback von der Konsole des funktionstüchtigen Controllers wiederherstellen:
++
+`storage failover modify -node local -auto-giveback true`
+
+. Wenn AutoSupport aktiviert ist, stellen Sie die automatische Fallerstellung wieder her (heben Sie die Unterdrückung auf):
++
+`system node autosupport invoke -node * -type all -message MAINT=END`
+
 
 
 

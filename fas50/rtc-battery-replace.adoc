@@ -401,6 +401,18 @@ DC-NETZTEIL
 
 
 |===
+. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben:
++
+`storage failover giveback -ofnode _impaired_node_name_`
+
+. Automatisches Giveback von der Konsole des funktionstüchtigen Controllers wiederherstellen:
++
+`storage failover modify -node local -auto-giveback true`
+
+. Wenn AutoSupport aktiviert ist, stellen Sie die automatische Fallerstellung wieder her (heben Sie die Unterdrückung auf):
++
+`system node autosupport invoke -node * -type all -message MAINT=END`
+
 
 
 
@@ -412,21 +424,31 @@ NOTE: Nach dem Austauschen der RTC-Batterie, dem Einsetzen des Controllers und d
 `RTC date/time error. Reset date/time to default`
 `RTC power failure error` Diese Meldungen werden erwartet und Sie können mit diesem Verfahren fortfahren.
 
-. Überprüfen Sie auf dem Controller mit dem Befehl Datum und Uhrzeit `cluster date show`.
+. Überprüfen Sie auf dem fehlerfreien Controller Datum und Uhrzeit:
++
+`cluster date show`
+
 +
 
 NOTE: Wenn Ihr Speichersystem im Boot-Menü stoppt, wählen Sie die Option für  `Reboot node` und antworten Sie bei Aufforderung _y_, und starten Sie dann zu Loader, indem Sie _Strg-C_ drücken.
 
-. Überprüfen Sie auf dem Controller mit eingeschränkter Steuerung an der Loader-Eingabeaufforderung die Uhrzeit und das Datum: `cluster date show`
+. Überprüfen Sie auf dem fehlerhaften Controller bei der LOADER-Eingabeaufforderung Uhrzeit und Datum:
 +
-.. Ändern Sie ggf. das Datum: `set date _mm/dd/yyyy_`
-.. Falls erforderlich, stellen Sie die Uhrzeit in GMT ein: `set time hh:mm:ss`
+`cluster date show`
+
++
+.. Passen Sie bei Bedarf das Datum an:
++
+`set date _mm/dd/yyyy_`
+
+.. Stellen Sie bei Bedarf die Uhrzeit in GMT ein:
++
+`set time hh:mm:ss`
+
 .. Bestätigen Sie Datum und Uhrzeit.
 
 
 . Geben Sie an der Eingabeaufforderung des Loader ein `bye`, um die I/O-Module und andere Komponenten neu zu initialisieren, und lassen Sie den Controller neu starten.
-. Wiederherstellung des normalen Betriebs des Controllers durch Zurückgeben des Speichers: `storage failover giveback -ofnode _impaired_node_name_`
-. Wenn das automatische Giveback deaktiviert wurde, aktivieren Sie es erneut: `storage failover modify -node local -auto-giveback _true_`
 
 
 
