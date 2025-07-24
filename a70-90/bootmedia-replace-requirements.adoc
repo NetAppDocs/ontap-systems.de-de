@@ -2,9 +2,9 @@
 permalink: a70-90/bootmedia-replace-requirements.html 
 sidebar: sidebar 
 keywords: aff a70, a90, replace the boot media 
-summary: Stellen Sie vor dem Austausch der Startmedien in Ihrem AFF AA70- oder AFF A90-System sicher, dass Sie die erforderlichen Voraussetzungen für einen erfolgreichen Austausch erfüllen. Dazu gehört, dass Sie ein USB-Flash-Laufwerk mit der entsprechenden Speichermenge haben und überprüfen, ob Sie das richtige Ersatz-Boot-Gerät haben. 
+summary: Stellen Sie vor dem Austausch der Startmedien in Ihrem AFF A70- oder AFF A90-System sicher, dass Sie die erforderlichen Voraussetzungen für einen erfolgreichen Austausch erfüllen. Dazu gehört, dass Sie ein USB-Flash-Laufwerk mit der entsprechenden Speichermenge haben und überprüfen, ob Sie das richtige Ersatz-Boot-Gerät haben. 
 ---
-= Voraussetzungen für den Austausch der Boot-Medien – AFF A70 und AFF A90
+= Voraussetzungen für die manuelle Boot-Medienwiederherstellung – AFF A70 und AFF A90
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,17 +13,22 @@ summary: Stellen Sie vor dem Austausch der Startmedien in Ihrem AFF AA70- oder A
 [role="lead"]
 Stellen Sie vor dem Austausch der Startmedien in Ihrem AFF A70- oder AFF A90-System sicher, dass Sie die erforderlichen Voraussetzungen für einen erfolgreichen Austausch erfüllen. Dazu gehört, dass Sie ein USB-Flash-Laufwerk mit der entsprechenden Speichermenge haben und überprüfen, ob Sie das richtige Ersatz-Boot-Gerät haben.
 
-Überprüfen Sie die folgenden Anforderungen.
-
-* Sie müssen über ein USB-Flash-Laufwerk verfügen, das auf FAT32 formatiert ist, und über die entsprechende Speichermenge, um die zu speichern `image_xxx.tgz` Datei:
-* Sie müssen die Datei zur späteren Verwendung in diesem Verfahren auf das USB-Flash-Laufwerk kopieren `image_xxx.tgz` .
-* Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
-* Es ist wichtig, dass Sie die Befehle in diesen Schritten auf dem richtigen Controller anwenden:
-+
-** Der Controller _Impared_ ist der Controller, an dem Sie Wartungsarbeiten durchführen.
-** Der _Healthy_ Controller ist der HA-Partner des beeinträchtigten Controllers.
+.USB-Speicherstick
+* Stellen Sie sicher, dass Sie einen USB-Stick haben, der auf FAT32 formatiert ist.
+* Der USB-Stick muss über ausreichend Speicherkapazität verfügen, um die  `image_xxx.tgz` Datei.
 
 
+.Dateivorbereitung
+Kopieren Sie die  `image_xxx.tgz` Datei auf den USB-Stick. Diese Datei wird verwendet, wenn Sie das ONTAP Image mit dem USB-Stick übertragen.
+
+.Komponentenaustausch
+Ersetzen Sie die ausgefallene Komponente durch die von NetApp bereitgestellte Ersatzkomponente.
+
+.Controller-Identifikation
+Es ist wichtig, die Befehle auf den richtigen Controller anzuwenden, wenn Sie das beschädigte Startmedium ersetzen:
+
+* Der _beschädigte Controller_ ist der Controller, an dem Sie Wartungsarbeiten durchführen.
+* Der _gesunde Controller_ ist der HA-Partner des beeinträchtigten Controllers.
 
 
 .Was kommt als Nächstes?

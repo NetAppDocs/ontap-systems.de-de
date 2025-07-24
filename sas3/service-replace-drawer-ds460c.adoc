@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: i/o activity, power, off, shelf, replacing, replace, drive, drawer, disk, replace a drive drawer in a ds460c disk shelf, dcm2, dcm 
 summary: 'Wenn Sie eine Laufwerksschublade in einem Shelf ersetzen, müssen Sie entweder das gesamte Storage-System (HA-Paar) anhalten. Auf diese Weise können Sie Datenaggregate auf dem Shelf aufbewahren. Alternativ können Sie das HA-Paar aktiv halten. Allerdings müssen sämtliche Daten aus den Datenaggregaten auf den Festplattenlaufwerken verschoben und offline sein sowie die Datenaggregate löschen. Wenn jedoch das Regal ein Wurzelaggregat enthält, müssen Sie das HA-Paar anhalten.' 
 ---
-= Ersetzen Sie eine Laufwerksschublade in einem DS460C Festplatten-Shelf – Shelfs durch IOM12/IOM12B-Module
+= Ersetzen einer Laufwerksschublade - DS460C
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -12,6 +12,8 @@ summary: 'Wenn Sie eine Laufwerksschublade in einem Shelf ersetzen, müssen Sie 
 
 [role="lead"]
 Um eine Laufwerksschublade in einem Shelf auszutauschen, können Sie das gesamte Speichersystem (HA-Paar) anhalten. Dadurch bleiben die Datenaggregate im Shelf erhalten. Alternativ können Sie das HA-Paar aktiv halten. Dazu müssen Sie alle Daten aus den Datenaggregaten auf die Festplatten des Shelfs verschieben und diese anschließend offline löschen. Enthält das Shelf ein Root-Aggregat, müssen Sie das HA-Paar anhalten.
+
+Dieses Verfahren gilt für Regale mit IOM12- oder IOM12B-Modulen.
 
 .Bevor Sie beginnen
 Sie benötigen folgende Elemente für dieses Verfahren:
@@ -27,20 +29,20 @@ NOTE: *Möglicher Hardwareschaden:* um elektrostatische Entladungsschäden am La
 
 
 .Über diese Aufgabe
-* Dieses Verfahren gilt für Regale mit DCM-Antriebsschubladen und/oder DCM2-Laufwerkschubladen. (Die Shelfs verfügen außerdem über zwei IOM12-Module oder zwei IOM12B-Module.)
+* Dieses Verfahren gilt für Regale mit DCM-Laufwerksschubladen und/oder DCM2- oder DCM3-Laufwerksschubladen. (Regale können auch zwei IOM12-Module oder zwei IOM12B-Module enthalten.)
 +
-Wenn ein DCM- oder DCM2-Laufwerkschublade ausfällt, erhalten Sie ein DCM- oder DCM2-Laufwerkschublade, um es auszutauschen.
+Wenn eine DCM-, DCM2- oder DCM3-Laufwerksschublade ausfällt, erhalten Sie als Ersatz eine DCM-, DCM2- oder DCM3-Laufwerksschublade.
 
 
 
 [NOTE]
 ====
-Wenn Sie eine ausgefallene Laufwerksschublade ersetzen, führt dies zu einer Kombination aus IOM12 Modulen und einer beliebigen Anzahl von DCM2-Laufwerksfächer, Sie müssen die IOM12 FW auf Version 0300 oder höher aktualisieren, da die IOM12-Module eine FW-Version benötigen, die DCM2-Laufwerkschubladen unterstützt.
+Wenn Sie eine ausgefallene Laufwerksschublade durch eine neuere DCM2- oder DCM3-Laufwerksschublade ersetzen, stellen Sie sicher, dass die ONTAP -Software und die Firmware des IOM12- oder IOM12B-Moduls die Mindestversionen ausführen, die zur Unterstützung von DCM2- oder DCM3-Schubladen erforderlich sind.
 
 Das IOM12 FW Upgrade kann vor oder nach dem Austausch einer Laufwerkschublade durchgeführt werden. Bei diesem Verfahren wird die FW im Rahmen der Vorbereitung für den Austausch der Schublade aktualisiert.
 
 ====
-* Die DCM-Antriebs-Schubladen und die DCM2-Antriebkästen lassen sich durch ihr Aussehen unterscheiden:
+* Die Laufwerksschubladen DCM, DCM2 und DCM3 können anhand ihres Aussehens unterschieden werden:
 +
 Die DCM-Antriebs-Schubladen sehen wie folgt aus:
 
@@ -53,22 +55,41 @@ Die DCM2-Antriebs-Schubladen zeichnen sich durch einen blauen Streifen und das L
 +
 image::../media/dcm2.png[Vorderansicht eines DCM2-Laufwerks-Shelfs]
 
++
+Die DCM3-Laufwerksschubladen sind an einem blau-grauen Streifen und der Aufschrift „DCM3“ zu erkennen:
+
++
+image::../media/drw_dcm3_ieops-2176.svg[Vorderansicht eines DCM3-Laufwerksregals]
 
 
 
 
-== Bereiten Sie den Austausch eines Laufwerksschubs vor
 
-Bevor Sie eine Laufwerksschublade ersetzen, müssen Sie sicherstellen, dass Sie bei Bedarf die IOM12 FW aktualisieren und entweder das HA-Paar anhalten, um Datenaggregate auf dem Shelf zu halten. Alternativ können Sie das HA-Paar aktiv halten. Allerdings müssen sämtliche Daten aus den Datenaggregaten auf den Festplattenlaufwerken verschoben und offline sein sowie die Datenaggregate löschen. Wenn jedoch das Regal ein Wurzelaggregat enthält, müssen Sie das HA-Paar anhalten. Abschließend müssen Sie das Regal ausschalten.
+== Schritt 1: Vorbereiten des Austauschs einer Laufwerksschublade
+
+Bevor Sie ein Laufwerk austauschen, müssen Sie bei Bedarf die IOM-Firmware und ONTAP aktualisieren und entweder das HA-Paar anhalten, um die Datenaggregate im Shelf zu behalten, oder das HA-Paar am Laufen halten. Dazu müssen Sie alle Daten aus den Datenaggregaten auf den Festplatten verschieben. Anschließend müssen Sie die Datenaggregate offline schalten und löschen. Enthält das Shelf jedoch ein Root-Aggregat, müssen Sie das HA-Paar anhalten. Abschließend müssen Sie das Shelf ausschalten.
 
 .Schritte
 . Ermitteln Sie, ob beim Austausch der ausgefallenen Laufwerksschublade eine Kombination aus IOM12 Modulen und einer beliebigen Anzahl von DCM2-Laufwerksschubladen ergibt.
-. Wenn das Shelf über eine Kombination aus IOM12 Modulen und einer beliebigen Anzahl von DCM2-Laufwerksfächer verfügt, müssen Sie das IOM12 FW auf Version 0300 oder höher aktualisieren; andernfalls mit dem nächsten Schritt fortfahren.
+. Stellen Sie fest, ob Sie Ihre IOM-Firmware aktualisieren müssen:
 +
-Aktuelle Versionen der Firmware finden Sie auf der NetApp Support Site.
+** Wenn das Shelf über eine Kombination aus IOM12 Modulen und einer beliebigen Anzahl von DCM2-Laufwerksfächer verfügt, müssen Sie das IOM12 FW auf Version 0300 oder höher aktualisieren; andernfalls mit dem nächsten Schritt fortfahren.
+** Wenn das Regal eine Kombination aus IOM12-Modulen und einer beliebigen Anzahl von DCM3-Laufwerksschubladen enthält, müssen Sie die IOM12-Firmware auf Version 0401 oder höher aktualisieren.
+** Wenn das Regal eine Kombination aus IOM12B-Modulen und einer beliebigen Anzahl von DCM3-Laufwerksschubladen enthalten soll, müssen Sie die IOM12B-Firmware auf Version 0202 oder höher aktualisieren.
+
 
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp Downloads: Festplatten-Shelf Firmware"]
+Bei Bedarf können Sie auf der NetApp Support-Site nach  https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Laden Sie aktuelle Versionen der Disk Shelf-Firmware herunter"] . Andernfalls fahren Sie mit dem nächsten Schritt fort.
+
+. Wenn Ihr Shelf eine Kombination aus IOM12- oder IOM12B-Modulen mit einer beliebigen Anzahl von DCM3-Laufwerksschubladen enthält, muss auf Ihrem System mindestens die folgenden ONTAP-Versionen ausgeführt werden:
++
+** ONTAP 9.17.1RC1
+** ONTAP 9.16.1P3
+** ONTAP 9.15.1P11
+** ONTAP 9.14.1P13
+** ONTAP 9.13.1P16
+** ONTAP 9.12.1P18
+
 
 . Wenn das Shelf das Root-Aggregat aus einem Controller im HA-Paar enthält oder wenn Sie das HA-Paar anhalten möchten (anstatt das HA-Paar in Betrieb zu halten), führen Sie die folgenden Teilschritte durch. Andernfalls fahren Sie mit dem nächsten Schritt fort.
 +
@@ -79,7 +100,7 @@ NOTE: Datenaggregate können beim Anhalten des HA-Paars auf dem Shelf bleiben.
 .. Halten Sie beide Controller im HA-Paar am Stoppen.
 .. Überprüfen Sie, ob Ihr HA-Paar durch Überprüfen der Speichersystemkonsole angehalten wurde.
 .. Schalten Sie das Shelf aus.
-.. Gehen Sie zum Abschnitt, <<Die Kabelketten entfernen>>.
+.. Gehen Sie zum Abschnitt, <<remove_cable_chains,Die Kabelketten entfernen>> .
 
 
 . Wenn Sie sich dafür entscheiden, das HA-Paar am Laufen zu halten, führen Sie die folgenden Teilschritte aus:
@@ -122,12 +143,19 @@ NOTE: Wenn Sie Festplattenlaufwerke im Shelf ausgefallen sind, `broken` Wird im 
 
 
 
-== Die Kabelketten entfernen
+== Schritt 2: Entfernen Sie die Kabelketten
 
 Die linken und rechten Kabelketten für jede Laufwerksschublade im DS460C-Laufwerkseinschub ermöglichen es, die Schubladen ein- und auszuschieben. Bevor Sie eine Laufwerksschublade entfernen können, müssen Sie beide Kabelketten entfernen.
 
+.Über diese Aufgabe
+Jede Antriebsschublade hat linke und rechte Kabelketten. Die Metallenden an den Kabelketten schieben sich wie folgt in die entsprechenden vertikalen und horizontalen Halterungen innerhalb des Gehäuses:
+
+* Die vertikalen Halterungen links und rechts verbinden die Kabelkette mit der Mittelplatine des Gehäuses.
+* Die linken und rechten horizontalen Halterungen verbinden die Kabelkette mit der jeweiligen Schublade.
+
+
 .Bevor Sie beginnen
-* Sie haben den abgeschlossen <<Bereiten Sie den Austausch eines Laufwerksschubs vor>> Schritte, damit Ihr HA-Paar angehalten wird oder Sie alle Daten aus den Datenaggregaten auf den Festplatten verschoben haben, und die Datenaggregate in den Offline- bzw. löschten, damit die Festplatten zu Spares werden können.
+* Sie haben die <<prepare_to_replace_drive_drawer,Bereiten Sie den Austausch eines Laufwerksschubs vor>> Schritte, sodass Ihr HA-Paar angehalten wird oder Sie alle Daten aus den auf den Festplattenlaufwerken befindlichen Datenaggregaten verschoben und die Datenaggregate offline geschaltet und gelöscht haben, damit die Festplattenlaufwerke als Ersatzlaufwerke dienen können.
 * Sie haben das Regal ausgeschaltet.
 * Sie haben die folgenden Punkte erhalten:
 +
@@ -139,13 +167,6 @@ NOTE: *Möglicher Hardwareschaden:* um elektrostatische Entladungsschäden am Re
 ** Taschenlampe
 
 
-
-
-.Über diese Aufgabe
-Jede Antriebsschublade hat linke und rechte Kabelketten. Die Metallenden an den Kabelketten schieben sich wie folgt in die entsprechenden vertikalen und horizontalen Halterungen innerhalb des Gehäuses:
-
-* Die vertikalen Halterungen links und rechts verbinden die Kabelkette mit der Mittelplatine des Gehäuses.
-* Die linken und rechten horizontalen Halterungen verbinden die Kabelkette mit der jeweiligen Schublade.
 
 
 .Schritte
@@ -270,7 +291,7 @@ Die Abbildung zeigt den orangefarbenen Ring an der horizontalen Halterung, der n
 
 
 
-== Entfernen Sie eine Laufwerksschublade
+== Schritt 3: Entfernen einer Laufwerksschublade
 
 Nachdem Sie die rechten und linken Kabelketten entfernt haben, können Sie die Laufwerksschublade aus dem Laufwerk-Shelf entfernen. Durch das Entfernen einer Laufwerkschublade kann der Schubladenteil des Ausschubs herausgezogen, die Laufwerke entfernt und die Laufwerkschublade entfernt werden.
 
@@ -325,7 +346,7 @@ image:../media/icon_round_1.png["Legende Nummer 1"]
 
 
 
-== Setzen Sie eine Laufwerksschublade ein
+== Schritt 4: Installieren einer Laufwerksschublade
 
 Wenn Sie eine Laufwerksschublade in ein Laufwerk-Shelf einbauen, schieben Sie die Schublade in den leeren Steckplatz, installieren Sie die Laufwerke und ersetzen Sie die Frontblende.
 
@@ -421,7 +442,7 @@ NOTE: *Gefahr einer Gerätestörung:* Verschließen Sie die Antriebsschublade du
 
 
 
-== Die Kabelketten befestigen
+== Schritt 5: Befestigen Sie die Kabelketten
 
 Der letzte Schritt beim Einbau einer Laufwerkschublade ist das Befestigen der linken und rechten Ersatzkabelketten am Laufwerk-Shelf. Beim Anschließen einer Kabelkette die Reihenfolge umkehren, die Sie beim Trennen der Kabelkette verwendet haben. Sie müssen den horizontalen Stecker der Kette in die horizontale Halterung im Gehäuse stecken, bevor Sie den vertikalen Anschluss der Kette in die vertikale Halterung im Gehäuse einsetzen.
 
@@ -549,11 +570,5 @@ image:../media/icon_round_1.png["Legende Nummer 1"]
 
 
 . Wenn Sie das HA-Paar angehalten haben, Booten von ONTAP auf beiden Controllern; ansonsten fahren Sie mit dem nächsten Schritt fort.
-. Wenn Sie Daten aus dem Shelf verschoben und die Datenaggregate gelöscht hatten, können Sie jetzt die freien Festplatten im Shelf zur Aggregaterstellung oder -Erweiterung verwenden.
-+
-https://docs.netapp.com/us-en/ontap/disks-aggregates/aggregate-creation-workflow-concept.html["Aggregat-Erstellung"]
-
-+
-https://docs.netapp.com/us-en/ontap/disks-aggregates/aggregate-expansion-workflow-concept.html["Aggregat-Erweiterungs-Workflow"]
-
+. Wenn Sie Daten aus dem Shelf verschoben und die Datenaggregate gelöscht haben, können Sie nun die Ersatzfestplatten im Shelf für die Erstellung oder Erweiterung von Aggregaten verwenden. Weitere Informationen zu diesen Verfahren finden Sie im  https://docs.netapp.com/us-en/ontap/disks-aggregates/aggregate-creation-workflow-concept.html["Aggregat-Erstellung"] Und  https://docs.netapp.com/us-en/ontap/disks-aggregates/aggregate-expansion-workflow-concept.html["Aggregat-Erweiterungs-Workflow"] .
 

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: hot-swap, fail, power, supply, ds460c, ds224c, ds212c, disk, shelf-nondisruptively, shelf, nondisruptive, system, power, i/o, progress, hot-swap a power supply 
 summary: Sie können ein ausgefallenes Netzteil im laufenden Betrieb in einem Festplatten-Shelf DS460C, DS224C oder DS212C austauschen. 
 ---
-= Hot-Swap-A-Netzteil – Regale mit IOM12/IOM12B-Modulen
+= Hot-Swap eines Netzteils – DS212C, DS224C oder DS460C
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,28 +13,19 @@ summary: Sie können ein ausgefallenes Netzteil im laufenden Betrieb in einem Fe
 [role="lead"]
 Sie können ein ausgefallenes Netzteil im laufenden Betrieb in einem Festplatten-Shelf DS460C, DS224C oder DS212C austauschen.
 
-.Bevor Sie beginnen
-Alle anderen Komponenten im System - einschließlich des anderen Netzteils - müssen ordnungsgemäß funktionieren.
+Dieses Verfahren gilt für Regale mit IOM12- oder IOM12B-Modulen.
 
-.Über diese Aufgabe
+.Bevor Sie beginnen
+* Alle anderen Komponenten im System - einschließlich des anderen Netzteils - müssen ordnungsgemäß funktionieren.
 * Wenn Sie mehrere Netzteile ersetzen, müssen Sie dies nacheinander ausführen, damit das Festplatten-Shelf die Stromversorgung aufrecht erhalten kann.
 * Sie müssen ein Netzteil innerhalb von zwei Minuten nach dem Entfernen ersetzen, um Unterbrechungen des Luftstroms des Festplatten-Shelfs zu minimieren.
 * Verwenden Sie immer zwei Hände, wenn Sie ein Netzteil entfernen, installieren oder tragen, um das Gewicht zu halten.
-* Als Best Practice wird empfohlen, die aktuellen Versionen der Festplatten-Shelf- (IOM) und Festplatten-Firmware auf dem System zu installieren, bevor neue Festplatten-Shelfs, Shelf-FRU-Komponenten oder SAS-Kabel hinzugefügt werden.
-+
-Aktuelle Versionen der Firmware finden Sie auf der NetApp Support Site.
-
-+
-https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp Downloads: Festplatten-Shelf Firmware"]
-
-+
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["NetApp Downloads: Festplatten-Firmware"]
-
+* *Best Practice*: Stellen Sie sicher, dass Ihr System über die aktuelle Version der Disk Shelf (IOM)-Firmware und der Festplatten-Firmware verfügt, bevor Sie neue Disk Shelfs, Shelf-FRU-Komponenten oder SAS-Kabel hinzufügen. Besuchen Sie die NetApp Support-Website, um  https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Disk Shelf-Firmware herunterladen"] Und  https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Laden Sie die Firmware für das Festplattenlaufwerk herunter"] .
 * Bei Bedarf können Sie die (blauen) LEDs des Festplatten-Shelfs einschalten, um Hilfe bei der physischen Suche nach dem betroffenen Festplatten-Shelf zu leisten: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
 +
 Ein Festplatten-Shelf verfügt über drei Standort-LEDs: Eine auf der Bedieneranzeige und eine an jedem Shelf-IOM. Die Standort-LEDs leuchten 30 Minuten lang. Sie können sie ausschalten, indem Sie denselben Befehl eingeben, jedoch die Option „aus“ verwenden.
 
-* Falls erforderlich, finden Sie Informationen über die Bedeutung und Lage der Festplatten-Shelf-LEDs auf der Bedieneranzeige und den FRU-Komponenten.
+* Bei Bedarf können Sie sich an die link:/sas3/service-monitor-leds.html#operator-display-panel-leds["Überwachung der Festplatten-Shelf-LEDs"] Informationen zur Bedeutung und Position der Festplatten-Einbau-LEDs auf dem Bedienfeld und den FRU-Komponenten finden Sie im Handbuch.
 
 
 .Schritte
@@ -60,17 +51,17 @@ image::../media/drw_2600_psu.gif[Öffnen des Nockenhebelgriffs des Netzteils]
 
 . Schieben Sie das Netzteil mithilfe des Nockengriffs aus dem Platten-Shelf heraus.
 +
-Wenn Sie über ein DS224C oder DS212C Festplatten-Shelf verfügen, während Sie das Netzteil entfernen, schwingt eine Klappe an ihrer Stelle, um den leeren Schacht zu blockieren. Dadurch wird der Luftstrom und die Kühlung aufrechterhalten.
+Wenn Sie ein DS224C- oder DS212C-Festplattenfach besitzen, schwenkt beim Entfernen des Netzteils eine Klappe ein, um den leeren Schacht zu verschließen. Dies trägt zur Aufrechterhaltung der Luftzirkulation und Kühlung bei.
 
 +
 
 NOTE: Verwenden Sie bei der Handhabung eines Netzteils immer zwei Hände, um sein Gewicht zu stützen.
 
 . Stellen Sie sicher, dass sich der ein-/Ausschalter des neuen Netzteils in der Stellung aus befindet.
-. Mit zwei Händen, wobei der Nockengriff des neuen Netzteils in der offenen Position liegt, stützen und richten Sie die Kanten des neuen Netzteils an der Öffnung im Platten-Shelf aus. Drücken Sie dann das neue Netzteil fest, bis es auf die mittlere Ebene trifft.
+. Halten Sie den Nockengriff des neuen Netzteils in geöffneter Position und stützen Sie es mit beiden Händen, um die Kanten an der Öffnung im Festplattenfach auszurichten. Drücken Sie das neue Netzteil dann fest hinein, bis es die Mittelebene berührt.
 +
 
-NOTE: Beim Einschieben des Netzteils in das Festplatten-Shelf keine übermäßige Kraft verwenden, da die Anschlüsse beschädigt werden können.
+CAUTION: Beim Einschieben des Netzteils in das Festplatten-Shelf keine übermäßige Kraft verwenden, da die Anschlüsse beschädigt werden können.
 
 . Schließen Sie den Nockengriff, so dass die Verriegelung in die verriegelte Position einrastet und das Netzteil vollständig eingesetzt ist.
 . Schließen Sie das Netzkabel wieder an, und schalten Sie das neue Netzteil ein:
@@ -79,7 +70,7 @@ NOTE: Beim Einschieben des Netzteils in das Festplatten-Shelf keine übermäßig
 .. Schließen Sie das Netzkabel wieder an das Netzteil an, und befestigen Sie das Netzkabel mit der Netzkabelhalterung.
 .. Schalten Sie den Netzschalter ein.
 +
-Die Strom- (grüne) LED und die Warnungs-LED (gelb) des Netzteils leuchten auf, und die Warnungs-LED (gelb) erlischt innerhalb von 40 Sekunden.
+Die grüne Betriebs-LED und die gelbe Achtung-LED des Netzteils leuchten. Innerhalb von 40 Sekunden erlischt die gelbe Achtung-LED.
 
 
 

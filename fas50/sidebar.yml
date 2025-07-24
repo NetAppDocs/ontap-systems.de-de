@@ -24,10 +24,25 @@ entries:
   entries:
   - title: Wartungsübersicht
     url: "/fas50/maintain-overview.html"
-  - title: Boot-Medien
+  - title: Bootmedium – automatisierte Wiederherstellung
     pdf-filename: FAS50 Boot-Medien
     entries:
-    - title: Startmedien ersetzen Workflow
+    - title: Workflow für den Austausch von Startmedien
+      url: "/fas50/bootmedia-replace-workflow-bmr.html"
+    - title: Prüfen Sie die Anforderungen
+      url: "/fas50/bootmedia-replace-requirements-bmr.html"
+    - title: Schalten Sie den beeinträchtigten Controller aus
+      url: "/fas50/bootmedia-shutdown-bmr.html"
+    - title: Ersetzen Sie Startmedien
+      url: "/fas50/bootmedia-replace-bmr.html"
+    - title: Recovery-Image starten
+      url: "/fas50/bootmedia-recovery-image-boot-bmr.html"
+    - title: Rückgabe fehlgeschlagen. Teil an NetApp
+      url: "/fas50/bootmedia-complete-rma-bmr.html"
+  - title: Bootmedium - manuelle Wiederherstellung
+    pdf-filename: FAS50 Boot-Medien
+    entries:
+    - title: Workflow für den Austausch von Startmedien
       url: "/fas50/bootmedia-replace-workflow.html"
     - title: Prüfen Sie die Anforderungen
       url: "/fas50/bootmedia-replace-requirements.html"
@@ -86,6 +101,8 @@ entries:
       url: "/fas50/io-module-overview.html"
     - title: E/A-Modul hinzufügen
       url: "/fas50/io-module-add.html"
+    - title: Hot-Swap-Cluster/HA-Modul
+      url: "/fas50/io-module-hotswap-ha-slot4.html"
     - title: Ersetzen Sie das E/A-Modul
       url: "/fas50/io-module-replace.html"
   - title: NV-Batterie

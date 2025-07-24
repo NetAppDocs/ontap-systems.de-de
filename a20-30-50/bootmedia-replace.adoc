@@ -2,18 +2,26 @@
 permalink: a20-30-50/bootmedia-replace.html 
 sidebar: sidebar 
 keywords: aff a20, aff a30, aff a50, replace the boot media 
-summary: Auf dem Startmedium Ihres AFF A20-, AFF A30- oder AFF A50-Systems werden wichtige Firmware- und Konfigurationsdaten gespeichert. Beim Austausch wird das Controller-Modul entfernt, das gestörte Boot-Medium entfernt, das Ersatz-Boot-Medium installiert und das ONTAP-Image anschließend auf das Ersatz-Boot-Medium übertragen. 
+summary: Das Bootmedium in Ihrem AFF A20-, AFF A30- oder AFF A50-System speichert wichtige Firmware- und Konfigurationsdaten. Der Austauschprozess umfasst das Entfernen des Controllermoduls, das Entfernen des beschädigten Bootmediums, die Installation des Ersatz-Bootmediums und die manuelle Übertragung des ONTAP Images mithilfe eines USB-Sticks auf das Ersatz-Bootmedium. 
 ---
-= Ersetzen Sie die Startmedien – AFF A20, AFF A30 und AFF A50
+= Ersetzen Sie das Bootmedium und bereiten Sie die manuelle Boot-Wiederherstellung vor – AFF A20, AFF A30 und AFF A50
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Auf dem Startmedium Ihres AFF A20-, AFF A30- oder AFF A50-Systems werden wichtige Firmware- und Konfigurationsdaten gespeichert. Beim Austausch wird das Controller-Modul entfernt, das gestörte Boot-Medium entfernt, das Ersatz-Boot-Medium installiert und das ONTAP-Image anschließend auf das Ersatz-Boot-Medium übertragen.
+Das Bootmedium in Ihrem AFF A20-, AFF A30- oder AFF A50-System speichert wichtige Firmware- und Konfigurationsdaten. Der Austauschprozess umfasst das Entfernen des Controllermoduls, das Entfernen des beschädigten Bootmediums, die Installation des Ersatz-Bootmediums und die manuelle Übertragung des ONTAP Images mithilfe eines USB-Sticks auf das Ersatz-Bootmedium.
 
-Um das Startmedium zu ersetzen, müssen Sie den Controller für beeinträchtigte Geräte entfernen, das Startmedium entfernen, das neue Startmedium installieren und das Startabbild auf ein USB-Flash-Laufwerk übertragen.
+
+
+== Über diese Aufgabe
+
+Bei Bedarf können Sie die (blauen) LEDs für die Position des Plattformgehäuses einschalten, um die physische Lokalisierung der betroffenen Plattform zu erleichtern. Melden Sie sich über SSH bei der BMC an und geben Sie den Befehl ein `system location-led _on_`.
+
+Ein Plattformgehäuse verfügt über drei Standort-LEDs: Eine auf dem Bedienfeld und eine auf jedem Controller. Die Standort-LEDs leuchten 30 Minuten lang.
+
+Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led _off_`. Wenn Sie sich nicht sicher sind, ob die LEDs leuchten oder nicht, können Sie ihren Status überprüfen, indem Sie den Befehl eingeben `system location-led show`.
 
 
 

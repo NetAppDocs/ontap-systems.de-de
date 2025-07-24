@@ -1,8 +1,16 @@
-= Schritt 1: Entfernen Sie die Steuerung
+= Über diese Aufgabe
 :allow-uri-read: 
 
 
-Um das Startmedium zu ersetzen, müssen Sie den Controller für beeinträchtigte Geräte entfernen, das Startmedium entfernen, das neue Startmedium installieren und das Startabbild auf ein USB-Flash-Laufwerk übertragen.
+
+
+== Über diese Aufgabe
+
+Bei Bedarf können Sie die (blauen) LEDs für die Position des Plattformgehäuses einschalten, um die physische Lokalisierung der betroffenen Plattform zu erleichtern. Melden Sie sich über SSH bei der BMC an und geben Sie den Befehl ein `system location-led _on_`.
+
+Ein Plattformgehäuse verfügt über drei Standort-LEDs: Eine auf dem Bedienfeld und eine auf jedem Controller. Die Standort-LEDs leuchten 30 Minuten lang.
+
+Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led _off_`. Wenn Sie sich nicht sicher sind, ob die LEDs leuchten oder nicht, können Sie ihren Status überprüfen, indem Sie den Befehl eingeben `system location-led show`.
 
 
 

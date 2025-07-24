@@ -1,23 +1,30 @@
 ---
 permalink: asa-r2-a20-30-50/io-module-overview.html 
 sidebar: sidebar 
-keywords: ASA A90, ASA A70, replace io module 
-summary: 'Sie müssen die ausgefallene Komponente durch eine FRU-Komponente (Field Replaceable Unit) ersetzen, die Sie von Ihrem Anbieter erhalten haben.' 
+keywords: ASA A90, ASA A70, replace io module, io module add, io module hotswap 
+summary: Die Systeme ASA A20, ASA A30 und ASA A50 bieten Flexibilität bei der Erweiterung oder dem Austausch von E/A-Modulen zur Verbesserung der Netzwerkkonnektivität und -leistung. Das Hinzufügen, Hot-Swapping oder der Austausch eines E/A-Moduls ist unerlässlich, wenn Sie die Netzwerkkapazität erweitern oder ein ausgefallenes Modul reparieren möchten. 
 ---
-= Überblick über Hinzufügen und Ersetzen eines E/A-Moduls – ASA A20, ASA A30 und ASA A50
+= Übersicht über das Hinzufügen, Hot-Swapping und Ersetzen eines E/A-Moduls – ASA A20, ASA A30 und ASA A50
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Die Systeme ASA A20, ASA A30 und ASA A50 bieten Flexibilität beim erweitern oder Ersetzen von I/O-Modulen, um die Netzwerkkonnektivität und -Leistung zu verbessern. Das Hinzufügen oder Austauschen eines E/A-Moduls ist wichtig, wenn die Netzwerkfunktionen aktualisiert oder ein fehlerhaftes Modul behandelt werden soll.
+Die Systeme ASA A20, ASA A30 und ASA A50 bieten Flexibilität bei der Erweiterung oder dem Austausch von E/A-Modulen zur Verbesserung der Netzwerkkonnektivität und -leistung. Das Hinzufügen, Hot-Swapping oder der Austausch eines E/A-Moduls ist unerlässlich, wenn Sie die Netzwerkkapazität erweitern oder ein ausgefallenes Modul reparieren möchten.
 
-Sie können ein ausgefallenes I/O-Modul in Ihrem Speichersystem durch denselben I/O-Modultyp oder durch einen anderen E/A-Modultyp ersetzen. Sie können auch ein I/O-Modul zu einem Speichersystem mit verfügbaren Steckplätzen hinzufügen.
+Sie können ein ausgefallenes E/A-Modul in Ihrem Speichersystem durch ein E/A-Modul desselben Typs oder durch ein anderes ersetzen. Sie können Cluster- und HA-E/A-Module im laufenden Betrieb austauschen, wenn Ihr Speichersystem bestimmte Anforderungen erfüllt. Sie können einem Speichersystem mit freien Steckplätzen auch ein E/A-Modul hinzufügen.
 
 * link:io-module-add.html["Fügen Sie ein I/O-Modul hinzu"]
 +
 Durch das Hinzufügen zusätzlicher I/O-Module kann die Redundanz verbessert werden, wodurch sichergestellt wird, dass das Speichersystem auch bei Ausfall eines I/O-Moduls betriebsbereit bleibt.
+
+* link:io-module-hotswap-ha-slot4.html["Hot-Swap eines Clusters und eines HA-E/A-Moduls"]
++
+Durch Hot-Swapping eines ausgefallenen Clusters und HA-E/A-Moduls kann das Speichersystem wieder in den optimalen Betriebszustand versetzt werden. Der Hot-Swapping-Vorgang erfolgt, ohne dass der defekte Controller manuell übernommen werden muss.
+
++
+Um dieses Verfahren zu verwenden, muss auf Ihrem Speichersystem ONTAP 9.17.1 oder höher ausgeführt werden und bestimmte Systemanforderungen erfüllen.
 
 * link:io-module-replace.html["Ersetzen Sie ein E/A-Modul"]
 +

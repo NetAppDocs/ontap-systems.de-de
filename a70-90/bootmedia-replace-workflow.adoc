@@ -2,16 +2,20 @@
 permalink: a70-90/bootmedia-replace-workflow.html 
 sidebar: sidebar 
 keywords: aff a70, a90, replace the boot media 
-summary: Ersetzen Sie zunächst die Startmedien in Ihrem AFF A70 oder AFF A90 Storage-System, indem Sie die Ersatzmedien vorbereiten, sie im System installieren, das Startabbild wiederherstellen und die Systemfunktionen überprüfen. 
+summary: Die manuelle Wiederherstellung des Boot-Images erfordert die Verwendung eines USB-Laufwerks, um ONTAP auf dem Ersatz-Boot-Medium des AFF A70 oder AFF A90 Systems neu zu installieren. Laden Sie das entsprechende ONTAP Wiederherstellungsimage von der NetApp Support-Website herunter und kopieren Sie es auf ein USB-Laufwerk. Dieses vorbereitete USB-Laufwerk wird dann verwendet, um die Wiederherstellung durchzuführen und das System wieder betriebsbereit zu machen. 
 ---
-= Workflow zum Austausch von Boot-Medien – AFF A70 und AFF A90
+= Manueller Wiederherstellungsworkflow für Bootmedien – AFF A70 und AFF A90
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Wechseln Sie zunächst die Boot-Medien in Ihrem AFF A70 oder AFF A90 Storage-System, indem Sie die Austauschanforderungen überprüfen, den Verschlüsselungsstatus überprüfen, den Controller herunterfahren, die Boot-Medien ersetzen, das Recovery-Image booten, die Verschlüsselung wiederherstellen und die Systemfunktionalität überprüfen.
+Die manuelle Wiederherstellung des Boot-Images erfordert die Verwendung eines USB-Laufwerks, um ONTAP auf dem Ersatz-Boot-Medium des AFF A70 oder AFF A90 Systems neu zu installieren. Laden Sie das entsprechende ONTAP Wiederherstellungsimage von der NetApp Support-Website herunter und kopieren Sie es auf ein USB-Laufwerk. Dieses vorbereitete USB-Laufwerk wird dann verwendet, um die Wiederherstellung durchzuführen und das System wieder betriebsbereit zu machen.
+
+Wenn Ihr System unter ONTAP 9.17.1 oder höher läuft, verwenden Sie die link:bootmedia-replace-workflow-bmr.html["automatische Boot-Wiederherstellung"] .
+
+Überprüfen Sie zunächst die Wiederherstellungsanforderungen, fahren Sie den Controller herunter, ersetzen Sie das Startmedium, verwenden Sie das USB-Laufwerk zum Wiederherstellen des Images und wenden Sie die Verschlüsselungseinstellungen bei Bedarf erneut an.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:bootmedia-replace-requirements.html["Lesen Sie die Anforderungen für den Austausch des Startmediums durch"]
 [role="quick-margin-para"]
@@ -23,7 +27,7 @@ Prüfen Sie, ob der Sicherheitsschlüsselmanager aktiviert oder die Laufwerke ve
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:bootmedia-shutdown.html["Fahren Sie den Controller herunter"]
 [role="quick-margin-para"]
-Fahren Sie den Controller in Ihrem Storage-System herunter, wenn Sie die Boot-Medien austauschen müssen.
+Fahren Sie den Controller herunter, wenn Sie die Boot-Medien austauschen müssen.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:bootmedia-replace.html["Ersetzen Sie das Startmedium"]
 [role="quick-margin-para"]
@@ -35,7 +39,7 @@ Starten Sie das ONTAP-Image vom USB-Laufwerk, stellen Sie das Dateisystem wieder
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sechs"]link:bootmedia-encryption-restore.html["Wiederherstellung der Verschlüsselung"]
 [role="quick-margin-para"]
-Wiederherstellung der Onboard-Schlüsselmanager-Konfiguration oder des externen Schlüsselmanagers aus dem ONATP-Startmenü.
+Stellen Sie die Konfiguration des integrierten Schlüsselmanagers oder des externen Schlüsselmanagers über das ONTAP Startmenü wieder her.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["Sieben"]link:bootmedia-complete-rma.html["Senden Sie das fehlerhafte Teil an NetApp zurück"]
 [role="quick-margin-para"]

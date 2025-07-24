@@ -4,20 +4,17 @@ sidebar: sidebar
 keywords: hot-swap, fail, disk, drive, ds460c, nondisruptive, replace, system, power, serving, data, i/o, hot-swap a disk drive in a ds460c disk shelf 
 summary: Sie können ein ausgefallenes Festplattenlaufwerk in einem DS460C Festplatten-Shelf Hot-Swap verwenden. 
 ---
-= Hot-Swap-fähige Festplattenlaufwerke in einem DS460C Festplatten-Shelf – Shelfs mit IOM12/IOM12B-Modulen
+= Hot-Swap eines Festplattenlaufwerks – DS460C
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie können ein ausgefallenes Festplattenlaufwerk in einem DS460C Festplatten-Shelf Hot-Swap verwenden.
+Sie können ein ausgefallenes Festplattenlaufwerk in einem DS460C-Festplattenregal mit IOM12- oder IOM12B-Modulen im laufenden Betrieb austauschen.
 
 .Bevor Sie beginnen
-* Das Ersatzlaufwerk muss von dem DS460C Festplatten-Shelf unterstützt werden.
-+
-https://hwu.netapp.com["NetApp Hardware Universe"]
-
+* Das Ersatzlaufwerk muss vom DS460C-Laufwerksregal unterstützt werden. Sie finden die für Ihre Konfiguration unterstützten Laufwerke im  https://hwu.netapp.com["NetApp Hardware Universe"] .
 * Alle anderen Komponenten im System müssen ordnungsgemäß funktionieren. Wenden Sie sich andernfalls an den technischen Support.
 * Das zu entfernenden Festplattenlaufwerk muss fehlerhaft sein.
 +
@@ -29,10 +26,7 @@ NOTE: Abhängig vom Laufwerkstyp und der Kapazität kann es bis zu mehrere Stund
 
 * Wenn Sie eine SED (Self-Encrypting Disk) ersetzen, müssen Sie die Anweisungen zum Ersetzen einer SED in der ONTAP-Dokumentation für Ihre ONTAP-Version befolgen.
 +
-Anweisungen in der ONTAP-Dokumentation beschreiben zusätzliche Schritte, die vor und nach dem Austausch einer SED ausgeführt werden müssen.
-
-+
-https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html["Übersicht über die NetApp Verschlüsselung mit CLI"]
+Anweisungen in der  https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html["Übersicht über die NetApp Verschlüsselung mit CLI"] In der Dokumentation werden zusätzliche Schritte beschrieben, die Sie vor und nach dem Austausch eines SED durchführen müssen.
 
 
 
@@ -67,23 +61,11 @@ NOTE: Legen Sie keine Hände auf die Festplattenplatinen, die auf der Unterseite
 
 NOTE: Magnetfelder können alle Daten auf dem Festplattenlaufwerk zerstören und irreparable Schäden an der Schaltung des Festplattenlaufwerks verursachen.
 
-* Als Best Practice empfiehlt es sich, die aktuelle Version des DQP (Disk Qualification Package) vor dem Hot-Swap eines Laufwerks installiert zu haben.
+* *Best Practice*: Stellen Sie sicher, dass Ihr System neu qualifizierte Festplattenlaufwerke erkennen und nutzen kann, indem Sie  https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["Herunterladen der aktuellen Version des Disk Qualification Package (DQP)"^] bevor Sie ein Festplattenlaufwerk im laufenden Betrieb austauschen.
 +
-Wenn die aktuelle Version des DQP installiert ist, kann Ihr System neu qualifizierte Festplattenlaufwerke erkennen und verwenden. Dadurch werden Systemereignismeldungen über nicht aktuelle Laufwerksinformationen vermieden. Außerdem wird eine mögliche Verhinderung der Festplattenpartitionierung vermieden, da die Festplattenlaufwerke nicht erkannt werden. Das DQP benachrichtigt Sie auch über nicht aktuelle Festplatten-Firmware.
+Die Installation der aktuellen Version des DQP ermöglicht Ihrem System, neu qualifizierte Festplatten zu erkennen und zu nutzen. Dadurch werden Systemereignismeldungen über veraltete Festplatteninformationen vermieden. Außerdem wird die Festplattenpartitionierung aufgrund nicht erkannter Festplatten verhindert. Der DQP weist Sie auf veraltete Festplattenfirmware hin.
 
-+
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["NetApp Downloads: Disk Qualification Package"^]
-
-* Als Best Practice wird empfohlen, die aktuellen Versionen der Festplatten-Shelf- (IOM) und Festplatten-Firmware auf dem System zu installieren, bevor neue Festplatten-Shelfs, Shelf-FRU-Komponenten oder SAS-Kabel hinzugefügt werden.
-+
-Aktuelle Versionen der Firmware finden Sie auf der NetApp Support Site.
-
-+
-https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp Downloads: Festplatten-Shelf Firmware"]
-
-+
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["NetApp Downloads: Festplatten-Firmware"]
-
+* *Best Practice*: Stellen Sie sicher, dass Ihr System über die aktuelle Version der Disk Shelf (IOM)-Firmware und der Festplatten-Firmware verfügt, bevor Sie neue Disk Shelfs, Shelf-FRU-Komponenten oder SAS-Kabel hinzufügen. Besuchen Sie die NetApp Support-Website, um  https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Disk Shelf-Firmware herunterladen"^] Und  https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Laden Sie die Firmware für das Festplattenlaufwerk herunter"^] .
 * Festplatten-Firmware wird auf neuen Festplatten ohne aktuelle Firmware-Versionen automatisch (unterbrechungsfrei) aktualisiert.
 +
 

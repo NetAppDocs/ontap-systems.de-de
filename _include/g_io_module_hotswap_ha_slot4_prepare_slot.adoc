@@ -1,0 +1,59 @@
+= 
+:allow-uri-read: 
+
+
+Bereiten Sie das Speichersystem und den E/A-Modulsteckplatz 4 vor, sodass der ausgefallene Cluster und das HA-E/A-Modul sicher entfernt werden können:
+
+. Richtig gemahlen.
+. Trennen Sie die Kabel vom ausgefallenen Cluster und HA-E/A-Modul.
++
+Denken Sie daran, die Kabel zu beschriften, damit Sie sie später in diesem Vorgang wieder an dieselben Anschlüsse anschließen können.
+
+. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung:
++
+`system node autosupport invoke -node * -type all -message MAINT=<number of hours down>h`
+
++
+Beispielsweise unterdrückt die folgende AutoSupport Meldung die automatische Fallerstellung für zwei Stunden:
+
++
+`node2::> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deaktivieren Sie die automatische Rückgabe von der Konsole des beeinträchtigten Controllers:
++
+`storage failover modify -node local -auto-giveback false`
+
++
+
+NOTE: Wenn Sie sehen _Möchten Sie Auto-Giveback deaktivieren?_, geben Sie ein `y`.
+
+. Bereiten Sie den ausgefallenen Cluster und das HA-Modul in Steckplatz 4 für die Entfernung vor, indem Sie es außer Betrieb nehmen und ausschalten:
++
+`system controller slot module remove -node _impaired_node_name_ -slot _slot_number_`
+
++
+
+NOTE: Wenn Sie _Möchten Sie fortfahren?_ sehen, geben Sie ein  `y` .
+
++
+Beispielsweise bereitet der folgende Befehl das Modul in Steckplatz 4 auf Knoten2 (dem beeinträchtigten Controller) zum Entfernen vor und zeigt eine Meldung an, dass das Entfernen sicher ist:
+
++
+[listing]
+----
+node2::> system controller slot module remove -node node2 -slot 4
+
+Warning: IO_2X_100GBE_NVDA_NIC module in slot 4 of node node2 will be powered off for removal.
+
+Do you want to continue? {y|n}: y
+
+The module has been successfully removed from service and powered off. It can now be safely removed.
+----
+. Überprüfen Sie, ob der ausgefallene Cluster und das HA-Modul in Steckplatz 4 ausgeschaltet sind:
++
+`system controller slot module show`
+
++
+Die Ausgabe sollte zeigen  `_powered-off_` in der Statusspalte für das ausgefallene Modul in Steckplatz 4.
+
+

@@ -15,6 +15,16 @@ Tauschen Sie den Controller im ASA A20, ASA A30 oder ASA A50-System aus, wenn ei
 
 
 
+== Über diese Aufgabe
+
+Bei Bedarf können Sie die LEDs des Speichersystems (blau) einschalten, um das betroffene Speichersystem physisch zu lokalisieren. Melden Sie sich über SSH bei der BMC an und geben Sie den Befehl ein `system location-led _on_`.
+
+Ein Speichersystem verfügt über drei Standort-LEDs: Eine auf dem Bedienfeld und eine auf jedem Controller. Die Standort-LEDs leuchten 30 Minuten lang.
+
+Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led _off_`. Wenn Sie sich nicht sicher sind, ob die LEDs leuchten oder nicht, können Sie ihren Status überprüfen, indem Sie den Befehl eingeben `system location-led show`.
+
+
+
 == Schritt 1: Entfernen Sie die Steuerung
 
 Sie müssen den Controller aus dem Chassis entfernen, wenn Sie den Controller austauschen oder eine Komponente im Controller austauschen.

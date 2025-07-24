@@ -1,0 +1,22 @@
+= 
+:allow-uri-read: 
+
+
+* Sie müssen die ausgefallene Komponente durch eine FRU-Ersatz-Komponente ersetzen, die dieselbe Kapazität hat wie Sie von NetApp erhalten.
+* Der e0S-Port (e0M-Schraubenschlüssel) dient der Kommunikation zwischen den beiden Controllern während der automatischen Boot-Wiederherstellung. Stellen Sie sicher, dass der e0S-Port des defekten Controllers ordnungsgemäß funktioniert.
+* Für OKM benötigen Sie den Inhalt der OKM-Passphrase-Datei.
+* Für EKM benötigen Sie Kopien der folgenden Dateien vom Partnerknoten:
++
+** Datei /cfcard/kmip/servers.cfg.
+** Datei /cfcard/kmip/certs/Client.crt.
+** Datei /cfcard/kmip/certs/client.key.
+** Datei /cfcard/kmip/certs/CA.pem.
+
+
+* Es ist wichtig, die Befehle auf den richtigen Controller anzuwenden, wenn Sie das beschädigte Startmedium ersetzen:
++
+** Der _beschädigte Controller_ ist der Controller, an dem Sie Wartungsarbeiten durchführen.
+** Der _gesunde Controller_ ist der HA-Partner des beeinträchtigten Controllers.
+
+
+

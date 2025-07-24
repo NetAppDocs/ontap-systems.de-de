@@ -4,16 +4,36 @@ sidebar: sidebar
 keywords: hot-remove, disk, shelf, iom12, module, nondisruptive, module-nondisruptively, system, power, serving, data, i/o, progress, hot-remove, stack, shelves, hot-remove a disk shelf with iom12 modules, DS460C, transport DS460C, move DS460C, remove drives from DS460C, DS460C drive handling, iom12b 
 summary: 'Sie können ein Platten-Shelf in Betrieb nehmen mit IOM12-Modulen (ein Platten-Shelf wird unterbrechungsfrei von einem eingeschalteten System entfernt und die I/O wird gerade ausgeführt), wenn Sie das Platten-Shelf verschieben oder ersetzen müssen. Sie können ein oder mehrere Platten-Shelfs innerhalb eines Stacks mit Platten-Shelfs Hot-entfernen oder einen Stack von Festplatten-Shelfs entfernen.' 
 ---
-= Regal für die Warmentferne - Regale mit IOM12/IOM12B-Modulen
+= Ein Regal im laufenden Betrieb entfernen – DS212C, DS224C und DS460C
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie können ein Platten-Shelf in Betrieb nehmen mit IOM12/IOM12B-Modulen (ein Platten-Shelf kann unterbrechungsfrei von einem System entfernt werden, das eingeschaltet ist und I/O im Gange ist), wenn Sie ein Platten-Shelf verschieben oder ersetzen müssen. Sie können ein oder mehrere Platten-Shelfs innerhalb eines Stacks mit Platten-Shelfs Hot-entfernen oder einen Stack von Festplatten-Shelfs entfernen.
+Sie können ein Festplattenregal mit IOM12- oder IOM12B-Modulen im laufenden Betrieb entfernen (unterbrechungsfrei aus einem eingeschalteten System mit laufenden E/A-Vorgängen entfernen), wenn Sie ein Festplattenregal verschieben oder ersetzen müssen. Sie können ein oder mehrere Festplattenregale im laufenden Betrieb von einer beliebigen Stelle innerhalb eines Stapels entfernen oder einen Stapel von Festplattenregalen entfernen.
+
+.Über diese Aufgabe
+* Wenn Sie ein Platten-Shelf im laufenden Betrieb aus einem Stapel entfernen (jedoch den Stack behalten), können Sie erneut einen Pfad nach nacheinander überprüfen (Pfad A dann Pfad B), um das Festplatten-Shelf, das Sie entfernen, zu umgehen, damit Sie stets die Single-Path-Verbindung von den Controllern zum Stack aufrechterhalten.
++
+
+NOTE: Wenn Sie die Single-Path-Konnektivität von den Controllern nicht zum Stack aufrechterhalten, wenn Sie den Stack neu verkabeln, um das Festplatten-Shelf zu umgehen, das Sie entfernen, können Sie das System mit einer Multidisk-Panik fehlschlagen.
+
+* *Mögliche Regalschäden:* Wenn Sie ein DS460C Shelf entfernen und es in einen anderen Teil des Datacenters verschieben oder an einen anderen Ort transportieren, lesen Sie am Ende dieses Verfahrens den Abschnitt „Verschieben oder Transportieren der DS460C Shelfs“.
+
 
 .Bevor Sie beginnen
+* *Best Practice*: Entfernen Sie den Festplattenbesitz, nachdem Sie die Aggregate von den Festplattenlaufwerken in den Festplattenregalen entfernt haben, die Sie entfernen.
++
+Durch das Entfernen von Besitzinformationen von einer Ersatzfestplatte kann das Festplattenlaufwerk (je nach Bedarf) ordnungsgemäß in einen anderen Knoten integriert werden.
+
+
+
+[NOTE]
+====
+Sie müssen die automatische Zuweisung von Festplatteneigentümern deaktivieren, bevor Sie die Eigentümerschaft von Festplatten entfernen. Sie können diese Funktion am Ende dieses Vorgangs wieder aktivieren. Weitere Informationen zu Festplattenaggregaten finden Sie unter  https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["Überblick über Festplatten und Aggregate"^] .
+
+====
 * Ihr System muss Multipath HA, Multipath HA, Multipath, Quad-Path HA oder Quad-Path-Konfiguration sein.
 +
 Bei Plattformen mit internem Storage muss der externe Storage als Multipath HA, Tri-Path HA oder Multipath verkabelt werden.
@@ -24,38 +44,19 @@ NOTE: Das System ist für ein Single-Controller-System der FAS2600 Serie mit dem
 
 * Ihr System kann keine Fehlermeldungen bei der SAS-Verkabelung haben.
 +
-Sie können Active IQ Config Advisor herunterladen und ausführen, um alle Fehlermeldungen der SAS-Verkabelung sowie die Korrekturmaßnahmen anzuzeigen, die Sie ergreifen sollten.
-
-+
-https://mysupport.netapp.com/site/tools["NetApp Downloads: Config Advisor"^]
+Um Fehlermeldungen zur SAS-Verkabelung und die erforderlichen Korrekturmaßnahmen anzuzeigen, laden Sie die  https://mysupport.netapp.com/site/tools["Active IQ Config Advisor"^] .
 
 * DIE HA-Paar-Konfigurationen können nicht im Übernahmemodus liegen.
 * Sie müssen alle Aggregate von den Festplatten entfernt haben (die Festplatten müssen Ersatzteile sein) in den Festplatten-Regalen, die Sie entfernen.
 +
 
-NOTE: Wenn Sie dieses Verfahren mit Aggregaten auf dem Festplatten-Shelf versuchen, entfernen Sie, könnten Sie das System mit mehreren fehlerhaften Festplatten fehlschlagen.
+CAUTION: Wenn Sie dieses Verfahren mit Aggregaten auf dem Festplatten-Shelf versuchen, entfernen Sie, könnten Sie das System mit mehreren fehlerhaften Festplatten fehlschlagen.
 
 +
 Sie können das verwenden `storage aggregate offline -aggregate _aggregate_name_` Befehl und dann der `storage aggregate delete -aggregate _aggregate_name_` Befehl.
 
 * Wenn Sie ein oder mehrere Platten-Shelfs aus einem Stack entfernen, müssen Sie die Entfernung berücksichtigt haben, um die entfernenden Platten-Shelfs zu umgehen. Wenn die aktuellen Kabel nicht lang genug sind, müssen Sie längere Kabel zur Verfügung haben.
-
-
-.Über diese Aufgabe
-* *Best Practice:* die beste Praxis ist, Festplatten Eigentum zu entfernen, nachdem Sie die Aggregate von den Festplatten in den Platten-Shelves, die Sie entfernen.
-+
-Durch das Entfernen von Besitzinformationen von einer Ersatzfestplatte kann das Festplattenlaufwerk (je nach Bedarf) ordnungsgemäß in einen anderen Knoten integriert werden.
-
-
-
-[NOTE]
-====
-Um das Eigentum von Festplatten zu entfernen, müssen Sie die automatische Zuweisung der Festplatteneigentümer deaktivieren. Am Ende dieses Vorgangs wird die automatische Zuweisung zum Festplattenbesitzer wieder aktiviert.
-
-https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["Überblick über Festplatten und Aggregate"^]
-
-====
-* Bei einem Clustered ONTAP System mit mehr als zwei Nodes empfiehlt es sich, Epsilon auf ein anderes HA-Paar zuzuweisen, das während der geplanten Wartung arbeitet.
+* *Best Practice*: Weisen Sie Epsilon bei einem Clustered ONTAP System mit mehr als zwei Knoten einem anderen HA-Paar zu als dem, das einer geplanten Wartung unterzogen wird.
 +
 Das erneute Signieren des Epsilon minimiert das Risiko unvorhergesehener Fehler, die auf alle Nodes in einem Clustered ONTAP System beeinträchtigt werden. Anhand der folgenden Schritte können Sie feststellen, ob der Knoten Epsilon und Epsilon bei Bedarf neu zugewiesen werden:
 
@@ -70,12 +71,6 @@ Der Knoten, auf dem das Epsilon steht, wird angezeigt `true` Im `Epsilon` Spalte
 .. Zurück zur Administratorberechtigungsebene: `set -privilege admin`
 
 
-* Wenn Sie ein Platten-Shelf im laufenden Betrieb aus einem Stapel entfernen (jedoch den Stack behalten), können Sie erneut einen Pfad nach nacheinander überprüfen (Pfad A dann Pfad B), um das Festplatten-Shelf, das Sie entfernen, zu umgehen, damit Sie stets die Single-Path-Verbindung von den Controllern zum Stack aufrechterhalten.
-+
-
-NOTE: Wenn Sie die Single-Path-Konnektivität von den Controllern nicht zum Stack aufrechterhalten, wenn Sie den Stack neu verkabeln, um das Festplatten-Shelf zu umgehen, das Sie entfernen, können Sie das System mit einer Multidisk-Panik fehlschlagen.
-
-* *Mögliche Regalschäden:* Wenn Sie ein DS460C Shelf entfernen und es in einen anderen Teil des Datacenters verschieben oder an einen anderen Ort transportieren, lesen Sie am Ende dieses Verfahrens den Abschnitt „Verschieben oder Transportieren der DS460C Shelfs“.
 
 
 .Schritte

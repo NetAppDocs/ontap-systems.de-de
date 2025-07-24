@@ -11,9 +11,9 @@ summary: Wartung der Hardware Ihrer FAS50 Storage-Systeme, um langfristige Zuver
 
 
 [role="lead"]
-Wartung der Hardware Ihrer FAS50 Storage-Systeme, um langfristige Zuverlässigkeit und optimale Performance zu gewährleisten. Führen Sie regelmäßige Wartungsaufgaben durch, wie zum Beispiel den Austausch defekter Komponenten, um Ausfallzeiten und Datenverlust zu vermeiden.
+Warten Sie die Hardware Ihres FAS50-Speichersystems, um langfristige Zuverlässigkeit und optimale Leistung zu gewährleisten. Führen Sie regelmäßige Wartungsarbeiten durch, z. B. den Austausch defekter Komponenten, um Ausfallzeiten und Datenverlust zu vermeiden.
 
-Bei den Wartungsverfahren wird davon ausgegangen, dass die FAS50 Systeme bereits als Storage Nodes in der ONTAP Umgebung implementiert wurden.
+Bei den Wartungsverfahren wird davon ausgegangen, dass das FAS50-Speichersystem bereits als Speicherknoten in der ONTAP Umgebung bereitgestellt wurde.
 
 
 
@@ -26,9 +26,16 @@ Für FAS50 Storage-Systeme können Sie Wartungsverfahren an den folgenden Kompon
 
 
  a| 
-link:bootmedia-replace-workflow.html["Boot-Medien"]
+link:bootmedia-replace-workflow-bmr.html["Bootmedium – automatisierte Wiederherstellung"]
  a| 
-Auf dem Boot-Medium werden ein primärer und ein sekundärer Satz von ONTAP-Image-Dateien sowie Informationen zur Systemkonfiguration gespeichert, die das System beim Booten verwendet.
+Das Bootmedium speichert einen primären und einen sekundären Satz von ONTAP -Imagedateien, die das Speichersystem verwendet, um das Image vom Partnerknoten zu booten und automatisch die entsprechende Bootmenüoption auszuführen, um das Boot-Image auf Ihrem Ersatz-Bootmedium zu installieren. Die automatische Wiederherstellung des Bootmediums wird nur in ONTAP 9.17.1 und höher unterstützt. Wenn Ihr Speichersystem eine frühere Version von ONTAP verwendet, verwenden Sie die link:bootmedia-replace-workflow.html["manuelle Boot-Wiederherstellung"] .
+
+
+
+ a| 
+link:bootmedia-replace-workflow.html["Bootmedium – manuelle Wiederherstellung"]
+ a| 
+Das Bootmedium speichert einen primären und einen sekundären Satz von ONTAP Imagedateien, die das Speichersystem verwendet, um das Image von einem USB-Laufwerk zu booten und die Konfiguration vom Partnerknoten wiederherzustellen.
 
 
 

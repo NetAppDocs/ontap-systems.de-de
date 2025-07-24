@@ -2,18 +2,26 @@
 permalink: fas50/bootmedia-replace.html 
 sidebar: sidebar 
 keywords: fas50, replace the boot media 
-summary: Die Boot-Medien in Ihrem FAS50-System speichern wichtige Firmware- und Konfigurationsdaten. Beim Austausch wird das Controller-Modul entfernt, das gestörte Boot-Medium entfernt, das Ersatz-Boot-Medium installiert und das ONTAP-Image anschließend auf das Ersatz-Boot-Medium übertragen. 
+summary: Das Bootmedium in Ihrem FAS50-System speichert wichtige Firmware- und Konfigurationsdaten. Der Austauschvorgang umfasst das Entfernen des Controllermoduls, das Entfernen des beschädigten Bootmediums, die Installation des Ersatz-Bootmediums und die manuelle Übertragung des ONTAP Images mithilfe eines USB-Sticks auf das Ersatz-Bootmedium. 
 ---
-= Ersetzen Sie das Boot-Medium - FAS50
+= Ersetzen Sie das Startmedium und bereiten Sie die manuelle Startwiederherstellung vor – FAS50
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Die Boot-Medien in Ihrem FAS50-System speichern wichtige Firmware- und Konfigurationsdaten. Beim Austausch wird das Controller-Modul entfernt, das gestörte Boot-Medium entfernt, das Ersatz-Boot-Medium installiert und das ONTAP-Image anschließend auf das Ersatz-Boot-Medium übertragen.
+Das Bootmedium in Ihrem FAS50-System speichert wichtige Firmware- und Konfigurationsdaten. Der Austauschvorgang umfasst das Entfernen des Controllermoduls, das Entfernen des beschädigten Bootmediums, die Installation des Ersatz-Bootmediums und die manuelle Übertragung des ONTAP Images mithilfe eines USB-Sticks auf das Ersatz-Bootmedium.
 
-Um das Startmedium zu ersetzen, müssen Sie den Controller für beeinträchtigte Geräte entfernen, das Startmedium entfernen, das neue Startmedium installieren und das Startabbild auf ein USB-Flash-Laufwerk übertragen.
+
+
+== Über diese Aufgabe
+
+Bei Bedarf können Sie die (blauen) LEDs für die Position des Plattformgehäuses einschalten, um die physische Lokalisierung der betroffenen Plattform zu erleichtern. Melden Sie sich über SSH bei der BMC an und geben Sie den Befehl ein `system location-led _on_`.
+
+Ein Plattformgehäuse verfügt über drei Standort-LEDs: Eine auf dem Bedienfeld und eine auf jedem Controller. Die Standort-LEDs leuchten 30 Minuten lang.
+
+Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led _off_`. Wenn Sie sich nicht sicher sind, ob die LEDs leuchten oder nicht, können Sie ihren Status überprüfen, indem Sie den Befehl eingeben `system location-led show`.
 
 
 

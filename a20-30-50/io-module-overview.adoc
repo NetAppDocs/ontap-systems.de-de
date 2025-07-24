@@ -1,23 +1,30 @@
 ---
 permalink: a20-30-50/io-module-overview.html 
 sidebar: sidebar 
-keywords: AFF A90, AFF A70, replace io module 
-summary: Die Systeme AFF A20, AFF A30 und AFF A50 bieten Flexibilität beim erweitern oder Ersetzen von I/O-Modulen, um die Netzwerkkonnektivität und -Leistung zu verbessern. Das Hinzufügen oder Austauschen eines E/A-Moduls ist wichtig, wenn die Netzwerkfunktionen aktualisiert oder ein fehlerhaftes Modul behandelt werden soll. 
+keywords: AFF A20, AFF A30, and AFF A50, replace io module, add io module, hotswap io module 
+summary: Die Speichersysteme AFF A20, AFF A30 und AFF A50 bieten Flexibilität bei der Erweiterung oder dem Austausch von E/A-Modulen zur Verbesserung der Netzwerkkonnektivität und -leistung. Das Hinzufügen, Hot-Swapping oder der Austausch eines E/A-Moduls ist unerlässlich, wenn die Netzwerkkapazität erweitert oder ein ausgefallenes Modul repariert werden soll. 
 ---
-= Überblick über Hinzufügen und Ersetzen eines E/A-Moduls – AFF A20, AFF A30 und AFF A50
+= Übersicht über das Hinzufügen, Hot-Swapping und Ersetzen eines E/A-Moduls – AFF A20, AFF A30 und AFF A50
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Die Systeme AFF A20, AFF A30 und AFF A50 bieten Flexibilität beim erweitern oder Ersetzen von I/O-Modulen, um die Netzwerkkonnektivität und -Leistung zu verbessern. Das Hinzufügen oder Austauschen eines E/A-Moduls ist wichtig, wenn die Netzwerkfunktionen aktualisiert oder ein fehlerhaftes Modul behandelt werden soll.
+Die Speichersysteme AFF A20, AFF A30 und AFF A50 bieten Flexibilität bei der Erweiterung oder dem Austausch von E/A-Modulen zur Verbesserung der Netzwerkkonnektivität und -leistung. Das Hinzufügen, Hot-Swapping oder der Austausch eines E/A-Moduls ist unerlässlich, wenn die Netzwerkkapazität erweitert oder ein ausgefallenes Modul repariert werden soll.
 
-Sie können ein ausgefallenes I/O-Modul in Ihrem Speichersystem durch denselben I/O-Modultyp oder durch einen anderen E/A-Modultyp ersetzen. Sie können auch ein I/O-Modul zu einem Speichersystem mit verfügbaren Steckplätzen hinzufügen.
+Sie können ein ausgefallenes E/A-Modul in Ihrem Speichersystem durch ein E/A-Modul desselben Typs oder durch ein anderes ersetzen. Sie können Cluster- und HA-E/A-Module im laufenden Betrieb austauschen, wenn Ihr Speichersystem bestimmte Anforderungen erfüllt. Sie können einem Speichersystem mit freien Steckplätzen auch ein E/A-Modul hinzufügen.
 
 * link:io-module-add.html["Fügen Sie ein I/O-Modul hinzu"]
 +
 Durch das Hinzufügen zusätzlicher I/O-Module kann die Redundanz verbessert werden, wodurch sichergestellt wird, dass das Speichersystem auch bei Ausfall eines I/O-Moduls betriebsbereit bleibt.
+
+* link:io-module-hotswap-ha-slot4.html["Hot-Swap eines Clusters und eines HA-E/A-Moduls"]
++
+Durch Hot-Swapping eines ausgefallenen Clusters und HA-E/A-Moduls kann das Speichersystem wieder in den optimalen Betriebszustand versetzt werden. Der Hot-Swapping-Vorgang erfolgt, ohne dass der defekte Controller manuell übernommen werden muss.
+
++
+Um dieses Verfahren zu verwenden, muss auf Ihrem Speichersystem ONTAP 9.17.1 oder höher ausgeführt werden und bestimmte Speichersystemanforderungen erfüllen.
 
 * link:io-module-replace.html["Ersetzen Sie ein E/A-Modul"]
 +

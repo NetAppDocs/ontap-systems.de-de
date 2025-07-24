@@ -2,16 +2,16 @@
 permalink: a70-90/bootmedia-recovery-image-boot.html 
 sidebar: sidebar 
 keywords: aff a70, aff a90, boot the recovery image 
-summary: Nach der Installation des neuen Startmediengeräts in Ihrem AFF A70- oder AFF A90-System können Sie das Wiederherstellungs-Image von einem USB-Laufwerk starten und die Konfiguration vom Partnerknoten wiederherstellen. 
+summary: Nachdem Sie das neue Boot-Mediengerät in Ihrem AFF A70 oder AFF A90 -System installiert haben, können Sie das Wiederherstellungsimage manuell von einem USB-Laufwerk booten, um die Konfiguration vom Partnerknoten wiederherzustellen. 
 ---
-= Starten Sie das Wiederherstellungs-Image - AFF A70 und AFF A90
+= Manuelle Boot-Medienwiederherstellung von einem USB-Laufwerk - AFF A70 und AFF A90
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Nach der Installation des neuen Startmediengeräts in Ihrem AFF A70- oder AFF A90-System können Sie das Wiederherstellungs-Image von einem USB-Laufwerk starten und die Konfiguration vom Partnerknoten wiederherstellen.
+Nachdem Sie das neue Boot-Mediengerät in Ihrem AFF A70 oder AFF A90 -System installiert haben, können Sie das Wiederherstellungsimage manuell von einem USB-Laufwerk booten, um die Konfiguration vom Partnerknoten wiederherzustellen.
 
 .Schritte
 . Starten Sie von der LOADER-Eingabeaufforderung das Recovery-Image vom USB-Flash-Laufwerk: `boot_recovery`
@@ -28,7 +28,7 @@ Das Bild wird vom USB-Flash-Laufwerk heruntergeladen.
 .. Drücken Sie auf der außer Betrieb genommenen Steuerung `Y`, wenn angezeigt wird `Do you want to restore the backup configuration now?`
 .. Wenn Sie auf dem gestörten Controller dazu aufgefordert werden, drücken Sie `Y`, um _/etc/ssh/ssh_Host_ecdsa_Key_ zu überschreiben.
 .. Setzen Sie auf dem funktionierenden Partner-Controller den beeinträchtigten Controller auf die erweiterte Berechtigungsebene: `set -privilege advanced`.
-.. Führen Sie auf dem gesunden Partner-Controller den Wiederherstellungsbefehl aus: `system node restore-backup -node local -target-address impaired_node_IP_address` .
+.. Führen Sie auf dem gesunden Partner-Controller den Wiederherstellungsbefehl aus: `system node restore-backup -node local -target-address impaired_node_IP_address`.
 +
 *HINWEIS:* Wenn Sie eine andere Nachricht als eine erfolgreiche Wiederherstellung sehen, kontaktieren Sie https://support.netapp.com["NetApp Support"].
 

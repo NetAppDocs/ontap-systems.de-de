@@ -2,7 +2,7 @@
 permalink: asa-r2-a20-30-50/bootmedia-replace-bmr.html 
 sidebar: sidebar 
 keywords: asa a20, asa a30, asa a50, replace the boot media 
-summary: Sie suchen das fehlerhafte Startmedium, indem Sie das System Management-Modul entfernen, bevor Sie das Startmedium austauschen können. 
+summary: Das Bootmedium in Ihrem ASA A20-, ASA A30- oder ASA A50-System speichert wichtige Firmware- und Konfigurationsdaten. Der Austauschvorgang umfasst das Entfernen des Controllermoduls, das Entfernen des beschädigten Bootmediums, das Installieren des Ersatz-Bootmediums und die anschließende Neuinstallation des Controllermoduls. 
 ---
 = Ersetzen Sie die Startmedien – ASA A20, ASA A30 und ASA A50
 :allow-uri-read: 
@@ -11,7 +11,17 @@ summary: Sie suchen das fehlerhafte Startmedium, indem Sie das System Management
 
 
 [role="lead"]
-Auf dem Startmedium Ihres ASA A20-, ASA A30- oder ASA A50-Systems werden wichtige Firmware- und Konfigurationsdaten gespeichert. Beim Austausch wird das Controller-Modul entfernt, das gestörte Boot-Medium entfernt, das Ersatz-Boot-Medium installiert und das ONTAP-Image anschließend auf das Ersatz-Boot-Medium übertragen.
+Das Bootmedium in Ihrem ASA A20-, ASA A30- oder ASA A50-System speichert wichtige Firmware- und Konfigurationsdaten. Der Austauschvorgang umfasst das Entfernen des Controllermoduls, das Entfernen des beschädigten Bootmediums, das Installieren des Ersatz-Bootmediums und die anschließende Neuinstallation des Controllermoduls.
+
+
+
+== Über diese Aufgabe
+
+Bei Bedarf können Sie die (blauen) LEDs für die Position des Plattformgehäuses einschalten, um die physische Lokalisierung der betroffenen Plattform zu erleichtern. Melden Sie sich über SSH bei der BMC an und geben Sie den Befehl ein `system location-led _on_`.
+
+Ein Plattformgehäuse verfügt über drei Standort-LEDs: Eine auf dem Bedienfeld und eine auf jedem Controller. Die Standort-LEDs leuchten 30 Minuten lang.
+
+Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led _off_`. Wenn Sie sich nicht sicher sind, ob die LEDs leuchten oder nicht, können Sie ihren Status überprüfen, indem Sie den Befehl eingeben `system location-led show`.
 
 
 

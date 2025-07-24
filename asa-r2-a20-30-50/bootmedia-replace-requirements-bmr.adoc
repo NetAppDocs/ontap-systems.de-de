@@ -2,7 +2,7 @@
 permalink: asa-r2-a20-30-50/bootmedia-replace-requirements-bmr.html 
 sidebar: sidebar 
 keywords: asa a20, asa a30, asa a50, replace the boot media 
-summary: 'Bevor Sie die Startmedien in Ihrem ASA A20-, ASA A30- oder ASA A50-Speichersystem austauschen, stellen Sie sicher, dass Sie die erforderlichen Voraussetzungen und Überlegungen für einen erfolgreichen Austausch erfüllen. Dazu gehört die Überprüfung, dass Sie über die richtigen Boot-Ersatzmedien verfügen, die Bestätigung, dass der Port E0S (E0M Schraubenschlüssel) am beeinträchtigten Controller nicht fehlerhaft ist, und die Feststellung, ob Onboard Key Manager (OKM) oder External Key Manager (EKM) aktiviert ist.' 
+summary: 'Bevor Sie das Bootmedium in Ihrem ASA A20-, ASA A30- oder ASA A50-Speichersystem austauschen, stellen Sie sicher, dass Sie die notwendigen Voraussetzungen und Überlegungen für einen erfolgreichen Austausch erfüllen. Dazu gehört die Überprüfung, ob Sie das richtige Ersatz-Bootmedium haben, ob der e0S-Port (e0M Wrench) am defekten Controller ordnungsgemäß funktioniert und ob der Onboard Key Manager (OKM) oder External Key Manager (EKM) aktiviert ist.' 
 ---
 = Voraussetzungen für den Austausch der Startmedien – ASA A20, ASA A30 und ASA A50
 :allow-uri-read: 
@@ -11,17 +11,12 @@ summary: 'Bevor Sie die Startmedien in Ihrem ASA A20-, ASA A30- oder ASA A50-Spe
 
 
 [role="lead"]
-Bevor Sie die Startmedien in Ihrem ASA A20-, ASA A30- oder ASA A50-Speichersystem austauschen, stellen Sie sicher, dass Sie die erforderlichen Voraussetzungen und Überlegungen für einen erfolgreichen Austausch erfüllen. Dazu gehört die Überprüfung, dass Sie über die richtigen Boot-Ersatzmedien verfügen, die Bestätigung, dass der Port E0S (E0M Schraubenschlüssel) am beeinträchtigten Controller nicht fehlerhaft ist, und die Feststellung, ob Onboard Key Manager (OKM) oder External Key Manager (EKM) aktiviert ist.
+Bevor Sie das Bootmedium in Ihrem ASA A20-, ASA A30- oder ASA A50-Speichersystem austauschen, stellen Sie sicher, dass Sie die notwendigen Voraussetzungen und Überlegungen für einen erfolgreichen Austausch erfüllen. Dazu gehört die Überprüfung, ob Sie das richtige Ersatz-Bootmedium haben, ob der e0S-Port (e0M Wrench) am defekten Controller ordnungsgemäß funktioniert und ob der Onboard Key Manager (OKM) oder External Key Manager (EKM) aktiviert ist.
 
-
-
-== Anforderungen
+Überprüfen Sie die folgenden Anforderungen.
 
 * Sie müssen die ausgefallene Komponente durch eine FRU-Ersatz-Komponente ersetzen, die dieselbe Kapazität hat wie Sie von NetApp erhalten.
-* Der Port E0S (E0M-Schraubenschlüssel) auf dem beeinträchtigten Controller kann nicht fehlerhaft sein.
-+
-Der Port E0S wird für die automatische Boot-Wiederherstellung verwendet.
-
+* Der e0S-Port (e0M-Schraubenschlüssel) dient der Kommunikation zwischen den beiden Controllern während der automatischen Boot-Wiederherstellung. Stellen Sie sicher, dass der e0S-Port des defekten Controllers ordnungsgemäß funktioniert.
 * Für OKM benötigen Sie den Inhalt der OKM-Passphrase-Datei.
 * Für EKM benötigen Sie Kopien der folgenden Dateien vom Partnerknoten:
 +
@@ -31,24 +26,11 @@ Der Port E0S wird für die automatische Boot-Wiederherstellung verwendet.
 ** Datei /cfcard/kmip/certs/CA.pem.
 
 
-
-
-
-
-== Überlegungen
-
-* Es ist wichtig, dass Sie die Befehle in diesen Schritten auf dem richtigen Controller anwenden:
+* Es ist wichtig, die Befehle auf den richtigen Controller anzuwenden, wenn Sie das beschädigte Startmedium ersetzen:
 +
-** Der Controller _Impared_ ist der Controller, an dem Sie Wartungsarbeiten durchführen.
-** Der _Healthy_ Controller ist der HA-Partner des beeinträchtigten Controllers.
+** Der _beschädigte Controller_ ist der Controller, an dem Sie Wartungsarbeiten durchführen.
+** Der _gesunde Controller_ ist der HA-Partner des beeinträchtigten Controllers.
 
-
-* Bei Bedarf können Sie die (blauen) LEDs für die Position des Plattformgehäuses einschalten, um die physische Lokalisierung der betroffenen Plattform zu erleichtern. Melden Sie sich über SSH bei der BMC an und geben Sie den Befehl ein `system location-led _on_`.
-+
-Ein Plattformgehäuse verfügt über drei Standort-LEDs: Eine auf dem Bedienfeld und eine auf jedem Controller. Die Standort-LEDs leuchten 30 Minuten lang.
-
-+
-Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led _off_`. Wenn Sie sich nicht sicher sind, ob die LEDs leuchten oder nicht, können Sie ihren Status überprüfen, indem Sie den Befehl eingeben `system location-led show`.
 
 
 

@@ -1,0 +1,24 @@
+= 
+:allow-uri-read: 
+
+
+Überprüfen Sie die folgenden Anforderungen.
+
+* Sie müssen das ausgefallene Boot-Medium durch ein Ersatz-Boot-Medium ersetzen, das Sie von NetApp erhalten haben.
+* Die Cluster-Ports dienen der Kommunikation zwischen den beiden Controllern während der automatischen Boot-Wiederherstellung. Stellen Sie sicher, dass die Cluster-Ports auf dem beeinträchtigten Controller ordnungsgemäß funktionieren.
+* Für OKM benötigen Sie den Inhalt der OKM-Passphrase-Datei.
+* Für EKM benötigen Sie Kopien der folgenden Dateien vom Partnerknoten:
++
+** /cfcard/kmip/servers.cfg
+** /cfcard/kmip/certs/client.crt
+** /cfcard/kmip/certs/client.key
+** /cfcard/kmip/certs/CA.pem
+
+
+* Es ist wichtig, die Befehle auf den richtigen Controller anzuwenden, wenn Sie das beschädigte Startmedium ersetzen:
++
+** Der _beschädigte Controller_ ist der Controller, an dem Sie Wartungsarbeiten durchführen.
+** Der _gesunde Controller_ ist der HA-Partner des beeinträchtigten Controllers.
+
+
+

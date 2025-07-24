@@ -2,45 +2,33 @@
 permalink: fas50/bootmedia-replace-requirements.html 
 sidebar: sidebar 
 keywords: fas50, replace the boot media 
-summary: Bevor Sie die Startmedien in Ihrem FAS50-System austauschen, stellen Sie sicher, dass Sie die erforderlichen Voraussetzungen für einen erfolgreichen Austausch erfüllen. Dazu gehört, dass Sie ein USB-Flash-Laufwerk mit der entsprechenden Speichermenge haben und überprüfen, ob Sie das richtige Ersatz-Boot-Gerät haben. 
+summary: Bevor Sie das Bootmedium in Ihrem FAS50-Speichersystem austauschen, stellen Sie sicher, dass die Voraussetzungen für einen erfolgreichen Austausch erfüllt sind. Stellen Sie dazu sicher, dass Sie über einen USB-Stick mit ausreichend Speicherplatz verfügen und dass Sie das richtige Ersatz-Bootmedium verwenden. 
 ---
-= Voraussetzungen für den Austausch von Boot-Medien – FAS50
+= Voraussetzungen für die manuelle Wiederherstellung von Bootmedien – FAS50
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Bevor Sie die Startmedien in Ihrem FAS50-System austauschen, stellen Sie sicher, dass Sie die erforderlichen Voraussetzungen für einen erfolgreichen Austausch erfüllen. Dazu gehört, dass Sie ein USB-Flash-Laufwerk mit der entsprechenden Speichermenge haben und überprüfen, ob Sie das richtige Ersatz-Boot-Gerät haben.
+Bevor Sie das Bootmedium in Ihrem FAS50-Speichersystem austauschen, stellen Sie sicher, dass die Voraussetzungen für einen erfolgreichen Austausch erfüllt sind. Stellen Sie dazu sicher, dass Sie über einen USB-Stick mit ausreichend Speicherplatz verfügen und dass Sie das richtige Ersatz-Bootmedium verwenden.
 
-Bevor Sie die Startmedien austauschen, müssen Sie die folgenden Anforderungen und Überlegungen beachten.
-
-
-
-== Anforderungen
-
-* Sie müssen über ein USB-Flash-Laufwerk verfügen, das auf FAT32 formatiert ist, und über die entsprechende Speichermenge, um die zu speichern `image_xxx.tgz`.
-* Sie müssen die Datei zur späteren Verwendung in diesem Verfahren auf das USB-Flash-Laufwerk kopieren `image_xxx.tgz` .
-* Sie müssen die fehlerhafte Komponente durch eine FRU-Ersatz-Komponente mit derselben Kapazität ersetzen, die Sie von Ihrem Anbieter erhalten haben.
+.USB-Speicherstick
+* Stellen Sie sicher, dass Sie einen USB-Stick haben, der auf FAT32 formatiert ist.
+* Der USB-Stick muss über ausreichend Speicherkapazität verfügen, um die  `image_xxx.tgz` Datei.
 
 
+.Dateivorbereitung
+Kopieren Sie die  `image_xxx.tgz` Datei auf den USB-Stick. Diese Datei wird verwendet, wenn Sie das ONTAP Image mit dem USB-Stick übertragen.
 
+.Komponentenaustausch
+Ersetzen Sie die ausgefallene Komponente durch die von NetApp bereitgestellte Ersatzkomponente.
 
-== Überlegungen
+.Controller-Identifikation
+Es ist wichtig, die Befehle auf den richtigen Controller anzuwenden, wenn Sie das beschädigte Startmedium ersetzen:
 
-* Es ist wichtig, dass Sie die Befehle in diesen Schritten auf dem richtigen Controller anwenden:
-+
-** Der Controller _Impared_ ist der Controller, an dem Sie Wartungsarbeiten durchführen.
-** Der _Healthy_ Controller ist der HA-Partner des beeinträchtigten Controllers.
-
-
-* Bei Bedarf können Sie die (blauen) LEDs für die Position des Plattformgehäuses einschalten, um die physische Lokalisierung der betroffenen Plattform zu erleichtern. Melden Sie sich über SSH bei der BMC an und geben Sie den Befehl ein `system location-led _on_`.
-+
-Ein Plattformgehäuse verfügt über drei Standort-LEDs: Eine auf dem Bedienfeld und eine auf jedem Controller. Die Standort-LEDs leuchten 30 Minuten lang.
-
-+
-Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led _off_`. Wenn Sie sich nicht sicher sind, ob die LEDs leuchten oder nicht, können Sie ihren Status überprüfen, indem Sie den Befehl eingeben `system location-led show`.
-
+* Der _beschädigte Controller_ ist der Controller, an dem Sie Wartungsarbeiten durchführen.
+* Der _gesunde Controller_ ist der HA-Partner des beeinträchtigten Controllers.
 
 
 .Was kommt als Nächstes?

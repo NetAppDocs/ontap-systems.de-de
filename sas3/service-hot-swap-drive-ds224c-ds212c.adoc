@@ -4,20 +4,30 @@ sidebar: sidebar
 keywords: hot-swap, fail, disk, drive, ds224c, ds212c, disk, shelf-nondisruptive, nondisruptive, replace, i/o, hot-swap a disk drive in a ds224c or ds212c disk shelf 
 summary: Sie können ein ausgefallenes Festplattenlaufwerk im laufenden Betrieb in einem DS224C oder DS212C Festplatten-Shelf austauschen. 
 ---
-= Hot-Swap-fähige Laufwerke in einem DS224C oder DS212C Festplatten-Shelf – Shelfs mit IOM12/IOM12B-Modulen
+= Hot-Swap eines Festplattenlaufwerks – DS212C, DS224C
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie können ein ausgefallenes Festplattenlaufwerk im laufenden Betrieb in einem DS224C oder DS212C Festplatten-Shelf austauschen.
+Sie können ein ausgefallenes Festplattenlaufwerk in einem DS224C- oder DS212C-Festplattenregal mit IOM12- oder IOM12B-Modulen im laufenden Betrieb austauschen.
+
+.Über diese Aufgabe
+* Festplatten-Firmware wird auf neuen Festplatten ohne aktuelle Firmware-Versionen automatisch (unterbrechungsfrei) aktualisiert.
++
+
+NOTE: Die Firmware der Festplattenlaufwerke werden alle zwei Minuten überprüft.
+
+* Bei Bedarf können Sie die (blauen) LEDs des Festplatten-Shelfs einschalten, um Hilfe bei der physischen Suche nach dem betroffenen Festplatten-Shelf zu leisten: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
++
+Ein Festplatten-Shelf verfügt über drei Standort-LEDs: Eine auf der Bedieneranzeige und eine an jedem Shelf-IOM. Die Standort-LEDs leuchten 30 Minuten lang. Sie können sie ausschalten, indem Sie denselben Befehl eingeben, jedoch die Option „aus“ verwenden.
+
+* Falls erforderlich, finden Sie Informationen über die Bedeutung und Lage der Festplatten-Shelf-LEDs auf der Bedieneranzeige und den FRU-Komponenten.
+
 
 .Bevor Sie beginnen
-* Das Festplattenlaufwerk, das Sie installieren, muss vom DS224C oder DS212C Festplatten-Shelf unterstützt werden.
-+
-https://hwu.netapp.com["NetApp Hardware Universe"^]
-
+* Das zu installierende Laufwerk muss vom DS224C- oder DS212C-Laufwerksregal unterstützt werden. Sie finden die für Ihre Konfiguration unterstützten Laufwerke im  https://hwu.netapp.com["NetApp Hardware Universe"] .
 * Alle anderen Komponenten im System müssen ordnungsgemäß funktionieren. Wenden Sie sich andernfalls an den technischen Support.
 * Das zu entfernenden Festplattenlaufwerk muss fehlerhaft sein.
 +
@@ -29,14 +39,13 @@ NOTE: Abhängig vom Laufwerkstyp und der Kapazität kann es bis zu mehrere Stund
 
 * Wenn Sie eine SED (Self-Encrypting Disk) ersetzen, müssen Sie die Anweisungen zum Ersetzen einer SED in der ONTAP-Dokumentation für Ihre ONTAP-Version befolgen.
 +
-Anweisungen in der ONTAP-Dokumentation beschreiben zusätzliche Schritte, die vor und nach dem Austausch einer SED ausgeführt werden müssen.
+Anweisungen in der  https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html["Übersicht über die NetApp Verschlüsselung mit CLI"] In der Dokumentation werden zusätzliche Schritte beschrieben, die Sie vor und nach dem Austausch eines SED durchführen müssen.
 
+* *Best Practice*: Stellen Sie sicher, dass Ihr System neu qualifizierte Festplattenlaufwerke erkennen und nutzen kann, indem Sie  https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["Herunterladen der aktuellen Version des Disk Qualification Package (DQP)"^] bevor Sie ein Laufwerk im laufenden Betrieb austauschen.
 +
-https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html["Übersicht über die NetApp Verschlüsselung mit CLI"^]
+Dadurch vermeiden Sie Systemereignismeldungen über veraltete Laufwerksinformationen. Außerdem vermeiden Sie, dass die Festplattenpartitionierung aufgrund nicht erkannter Laufwerke möglicherweise verhindert wird. Der DQP benachrichtigt Sie über veraltete Laufwerksfirmware.
 
-
-
-.Über diese Aufgabe
+* *Best Practice*: Stellen Sie sicher, dass Ihr System über die aktuelle Version der Disk Shelf (IOM)-Firmware und der Festplatten-Firmware verfügt, bevor Sie neue Disk Shelfs, Shelf-FRU-Komponenten oder SAS-Kabel hinzufügen. Besuchen Sie die NetApp Support-Website, um  https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Disk Shelf-Firmware herunterladen"^] Und  https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Laden Sie die Firmware für das Festplattenlaufwerk herunter"^] .
 * Sie sollten Maßnahmen ergreifen, um elektrostatische Entladungen (ESD) zu vermeiden:
 +
 ** Halten Sie das Festplattenlaufwerk in der ESD-Tasche, bis Sie bereit sind, es zu installieren.
@@ -67,33 +76,6 @@ NOTE: Legen Sie keine Hände auf die Festplattenplatinen, die auf der Unterseite
 
 NOTE: Magnetfelder können alle Daten auf dem Festplattenlaufwerk zerstören und irreparable Schäden an der Schaltung des Festplattenlaufwerks verursachen.
 
-* Als Best Practice empfiehlt es sich, die aktuelle Version des DQP (Disk Qualification Package) vor dem Hot-Swap eines Laufwerks installiert zu haben.
-+
-Wenn die aktuelle Version des DQP installiert ist, kann Ihr System neu qualifizierte Festplattenlaufwerke erkennen und verwenden. Dadurch werden Systemereignismeldungen über nicht aktuelle Laufwerksinformationen vermieden. Außerdem wird eine mögliche Verhinderung der Festplattenpartitionierung vermieden, da die Festplattenlaufwerke nicht erkannt werden. Das DQP benachrichtigt Sie auch über nicht aktuelle Festplatten-Firmware.
-
-+
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["NetApp Downloads: Disk Qualification Package"^]
-
-* Als Best Practice wird empfohlen, die aktuellen Versionen der Festplatten-Shelf- (IOM) und Festplatten-Firmware auf dem System zu installieren, bevor neue Festplatten-Shelfs, Shelf-FRU-Komponenten oder SAS-Kabel hinzugefügt werden.
-+
-Aktuelle Versionen der Firmware finden Sie auf der NetApp Support Site.
-
-+
-https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp Downloads: Festplatten-Shelf Firmware"^]
-
-+
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["NetApp Downloads: Festplatten-Firmware"^]
-
-* Festplatten-Firmware wird auf neuen Festplatten ohne aktuelle Firmware-Versionen automatisch (unterbrechungsfrei) aktualisiert.
-+
-
-NOTE: Die Firmware der Festplattenlaufwerke werden alle zwei Minuten überprüft.
-
-* Bei Bedarf können Sie die (blauen) LEDs des Festplatten-Shelfs einschalten, um Hilfe bei der physischen Suche nach dem betroffenen Festplatten-Shelf zu leisten: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
-+
-Ein Festplatten-Shelf verfügt über drei Standort-LEDs: Eine auf der Bedieneranzeige und eine an jedem Shelf-IOM. Die Standort-LEDs leuchten 30 Minuten lang. Sie können sie ausschalten, indem Sie denselben Befehl eingeben, jedoch die Option „aus“ verwenden.
-
-* Falls erforderlich, finden Sie Informationen über die Bedeutung und Lage der Festplatten-Shelf-LEDs auf der Bedieneranzeige und den FRU-Komponenten.
 
 
 .Schritte

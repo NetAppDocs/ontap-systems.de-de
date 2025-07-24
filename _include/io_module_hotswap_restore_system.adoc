@@ -1,0 +1,20 @@
+= 
+:allow-uri-read: 
+
+
+Stellen Sie den Normalbetrieb Ihres Speichersystems wieder her, indem Sie dem fehlerfreien Controller Speicher zurückgeben, die automatische Rückgabe wiederherstellen und die automatische Fallerstellung von AutoSupport erneut aktivieren.
+
+.Schritte
+. Bringen Sie den fehlerfreien Controller (den Controller, der übernommen wurde) wieder in den Normalbetrieb, indem Sie seinen Speicher zurückgeben:
++
+`storage failover giveback -ofnode _healthy_node_name_`
+
+. Stellen Sie die automatische Rückgabe von der Konsole des beeinträchtigten Controllers (des Controllers, der den intakten Controller übernommen hat) wieder her:
++
+`storage failover modify -node local -auto-giveback _true_`
+
+. Wenn AutoSupport aktiviert ist, stellen Sie die automatische Fallerstellung wieder her:
++
+`system node autosupport invoke -node * -type all -message MAINT=end`
+
+

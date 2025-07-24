@@ -1,0 +1,38 @@
+---
+permalink: fas-70-90/bootmedia-replace-workflow-bmr.html 
+sidebar: sidebar 
+keywords: fas70, fas90, replace the boot media 
+summary: Bei der automatisierten Wiederherstellung des Boot-Images erkennt und wählt das System automatisch die entsprechende Boot-Menüoption aus. Das Boot-Image auf dem Partnerknoten wird verwendet, um ONTAP auf dem Ersatz-Bootmedium in Ihrem FAS70- oder FAS90-Speichersystem neu zu installieren. 
+---
+= Automatisierter Wiederherstellungsworkflow für Bootmedien – FAS70 und FAS90
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bei der automatisierten Wiederherstellung des Boot-Images erkennt und wählt das System automatisch die entsprechende Boot-Menüoption aus. Das Boot-Image auf dem Partnerknoten wird verwendet, um ONTAP auf dem Ersatz-Bootmedium in Ihrem FAS70- oder FAS90-Speichersystem neu zu installieren.
+
+Der automatisierte Boot-Medien-Wiederherstellungsprozess wird nur in ONTAP 9.17.1 und höher unterstützt. Wenn Ihr Speichersystem eine frühere Version von ONTAP verwendet, verwenden Sie die link:bootmedia-replace-workflow.html["manuelle Boot-Wiederherstellung"] .
+
+Überprüfen Sie zunächst die Anforderungen für den Austausch, fahren Sie den Controller herunter, ersetzen Sie das Startmedium, lassen Sie das System das Image wiederherstellen und überprüfen Sie die Systemfunktionalität.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:bootmedia-replace-requirements-bmr.html["Überprüfen Sie die Anforderungen der Startmedien"]
+[role="quick-margin-para"]
+Überprüfen Sie die Anforderungen für den Austausch von Boot-Medien.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:bootmedia-shutdown-bmr.html["Fahren Sie den Controller herunter"]
+[role="quick-margin-para"]
+Fahren Sie den Controller in Ihrem Storage-System herunter, wenn Sie die Boot-Medien austauschen müssen.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:bootmedia-replace-bmr.html["Ersetzen Sie das Startmedium"]
+[role="quick-margin-para"]
+Entfernen Sie das fehlerhafte Startmedium aus dem System Management-Modul, und installieren Sie das Ersatz-Startmedium.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:bootmedia-recovery-image-boot-bmr.html["Stellen Sie das Image auf dem Startmedium wieder her"]
+[role="quick-margin-para"]
+Stellen Sie das ONTAP-Image vom Partner-Controller wieder her.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:bootmedia-complete-rma-bmr.html["Senden Sie das fehlerhafte Teil an NetApp zurück"]
+[role="quick-margin-para"]
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.

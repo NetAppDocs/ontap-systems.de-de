@@ -2,16 +2,20 @@
 permalink: a1k/bootmedia-replace-workflow.html 
 sidebar: sidebar 
 keywords: aff a1k, replace the boot media 
-summary: Erste Schritte sind der Austausch der Boot-Medien in Ihrem AFF A1K Storage-System. Überprüfen Sie dabei die Austauschanforderungen, überprüfen Sie den Verschlüsselungsstatus, fahren Sie den Controller herunter, ersetzen Sie die Boot-Medien, starten Sie das Recovery-Image, stellen Sie die Verschlüsselung wieder her und überprüfen Sie die Systemfunktionalität. 
+summary: Die manuelle Wiederherstellung des Boot-Images erfordert die Verwendung eines USB-Laufwerks, um ONTAP auf dem Ersatz-Bootmedium des AFF A1K Systems neu zu installieren. Laden Sie das entsprechende ONTAP Wiederherstellungsimage von der NetApp Support-Website herunter und kopieren Sie es auf ein USB-Laufwerk. Dieses vorbereitete USB-Laufwerk wird dann verwendet, um die Wiederherstellung durchzuführen und das System wieder betriebsbereit zu machen. 
 ---
-= Workflow für den Austausch von Startmedien – AFF A1K
+= Manueller Wiederherstellungsworkflow für Bootmedien – AFF A1K
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Erste Schritte sind der Austausch der Boot-Medien in Ihrem AFF A1K Storage-System. Überprüfen Sie dabei die Austauschanforderungen, überprüfen Sie den Verschlüsselungsstatus, fahren Sie den Controller herunter, ersetzen Sie die Boot-Medien, starten Sie das Recovery-Image, stellen Sie die Verschlüsselung wieder her und überprüfen Sie die Systemfunktionalität.
+Die manuelle Wiederherstellung des Boot-Images erfordert die Verwendung eines USB-Laufwerks, um ONTAP auf dem Ersatz-Bootmedium des AFF A1K Systems neu zu installieren. Laden Sie das entsprechende ONTAP Wiederherstellungsimage von der NetApp Support-Website herunter und kopieren Sie es auf ein USB-Laufwerk. Dieses vorbereitete USB-Laufwerk wird dann verwendet, um die Wiederherstellung durchzuführen und das System wieder betriebsbereit zu machen.
+
+Wenn Ihr System unter ONTAP 9.17.1 oder höher läuft, verwenden Sie die link:bootmedia-replace-workflow-bmr.html["automatische Boot-Wiederherstellung"] .
+
+Überprüfen Sie zunächst die Wiederherstellungsanforderungen, fahren Sie den Controller herunter, ersetzen Sie das Startmedium, verwenden Sie das USB-Laufwerk zum Wiederherstellen des Images und wenden Sie die Verschlüsselungseinstellungen bei Bedarf erneut an.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:bootmedia-replace-requirements.html["Überprüfen Sie die Anforderungen der Startmedien"]
 [role="quick-margin-para"]
@@ -29,13 +33,13 @@ Fahren Sie den Controller herunter, wenn Sie die Boot-Medien austauschen müssen
 [role="quick-margin-para"]
 Entfernen Sie das fehlerhafte Startmedium aus dem Systemverwaltungsmodul, installieren Sie das Ersatz-Startmedium, und übertragen Sie dann ein ONTAP-Image mithilfe eines USB-Flashlaufwerks.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:bootmedia-recovery-image-boot.html["Starten Sie das Recovery-Image"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:bootmedia-recovery-image-boot.html["Stellen Sie das Image auf dem Startmedium wieder her"]
 [role="quick-margin-para"]
 Starten Sie das ONTAP-Image vom USB-Laufwerk, stellen Sie das Dateisystem wieder her und überprüfen Sie die Umgebungsvariablen.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sechs"]link:bootmedia-encryption-restore.html["Wiederherstellung der Verschlüsselung"]
 [role="quick-margin-para"]
-Wiederherstellung der Onboard-Schlüsselmanager-Konfiguration oder des externen Schlüsselmanagers aus dem ONATP-Startmenü.
+Stellen Sie die Konfiguration des integrierten Schlüsselmanagers oder des externen Schlüsselmanagers über das ONTAP Startmenü wieder her.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["Sieben"]link:bootmedia-complete-rma.html["Senden Sie das fehlerhafte Teil an NetApp zurück"]
 [role="quick-margin-para"]

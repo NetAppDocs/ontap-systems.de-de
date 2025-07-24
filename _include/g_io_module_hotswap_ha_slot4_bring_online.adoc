@@ -1,0 +1,105 @@
+= 
+:allow-uri-read: 
+
+
+Bringen Sie den Ersatzcluster und das HA-E/A-Modul in Steckplatz 4 online, überprüfen Sie, ob die Modulports erfolgreich initialisiert wurden, überprüfen Sie, ob Steckplatz 4 eingeschaltet ist, und überprüfen Sie dann, ob das Modul online ist und erkannt wird.
+
+. Bringen Sie den Ersatzcluster und das HA-E/A-Modul online:
++
+`system controller slot module insert -node impaired_node_name_ -slot _slot_name_`
+
++
+
+NOTE: Wenn Sie _Möchten Sie fortfahren?_ sehen, geben Sie ein  `y` .
+
++
+Die Ausgabe sollte bestätigen, dass der Cluster und das HA-E/A-Modul erfolgreich online geschaltet wurden (eingeschaltet, initialisiert und in Betrieb genommen).
+
++
+Beispielsweise bringt der folgende Befehl Steckplatz 4 auf Knoten2 (den beeinträchtigten Controller) online und zeigt eine Meldung an, dass der Vorgang erfolgreich war:
+
++
+[listing]
+----
+node2::> system controller slot module insert -node node2 -slot 4
+
+Warning: IO_2X_100GBE_NVDA_NIC module in slot 4 of node node2 will be powered on and initialized.
+
+Do you want to continue? {y|n}: `y`
+
+The module has been successfully powered on, initialized and placed into service.
+----
+. Überprüfen Sie, ob alle Ports im Cluster und HA-E/A-Modul erfolgreich initialisiert wurden:
++
+`event log show -event \*hotplug.init*`
+
++
+
+NOTE: Es kann mehrere Minuten dauern, bis alle erforderlichen Firmware-Updates und die Port-Initialisierung durchgeführt werden.
+
++
+Die Ausgabe sollte ein hotplug.init.success EMS-Ereignis anzeigen, das für jeden Port im Cluster und HA-E/A-Modul protokolliert wurde mit  `_hotplug.init.success:_` im  `_Event_` Spalte.
+
++
+Die folgende Ausgabe zeigt beispielsweise, dass die Initialisierung für die Cluster- und HA-E/A-Modulports e4b und e4a erfolgreich war:
+
++
+[listing]
+----
+node2::> event log show -event *hotplug.init*
+
+Time                Node             Severity      Event
+
+------------------- ---------------- ------------- ---------------------------
+
+7/11/2025 16:04:06  node2      NOTICE        hotplug.init.success: Initialization of ports "e4b" in slot 4 succeeded
+
+7/11/2025 16:04:06  node2      NOTICE        hotplug.init.success: Initialization of ports "e4a" in slot 4 succeeded
+
+2 entries were displayed.
+----
+. Überprüfen Sie, ob der E/A-Modulsteckplatz 4 eingeschaltet und betriebsbereit ist:
++
+`system controller slot module show`
+
++
+Die Ausgabe sollte den Status von Steckplatz 4 wie folgt anzeigen:  `_powered-on_` und somit betriebsbereit für den Ersatzcluster und das HA-E/A-Modul.
+
+. Überprüfen Sie, ob der Ersatzcluster und das HA-E/A-Modul online sind und erkannt werden.
++
+Geben Sie den Befehl von der Konsole des beeinträchtigten Controllers ein:
+
++
+`system controller config show -node local -slot4`
+
++
+Wenn der Ersatzcluster und das HA-E/A-Modul erfolgreich online geschaltet wurden und erkannt werden, zeigt die Ausgabe E/A-Modulinformationen, einschließlich Portinformationen, für Steckplatz 4 an.
+
++
+Sie sollten beispielsweise eine Ausgabe ähnlich der folgenden sehen:
+
++
+[listing]
+----
+node2::> system controller config show -node local -slot 4
+
+Node: node2
+Sub- Device/
+Slot slot Information
+---- ---- -----------------------------
+   4    - Dual 40G/100G Ethernet Controller CX6-DX
+                  e4a MAC Address: d0:39:ea:59:69:74 (auto-100g_cr4-fd-up)
+                          QSFP Vendor:        CISCO-BIZLINK
+                          QSFP Part Number:   L45593-D218-D10
+                          QSFP Serial Number: LCC2807GJFM-B
+                  e4b MAC Address: d0:39:ea:59:69:75 (auto-100g_cr4-fd-up)
+                          QSFP Vendor:        CISCO-BIZLINK
+                          QSFP Part Number:   L45593-D218-D10
+                          QSFP Serial Number: LCC2809G26F-A
+                  Device Type:        CX6-DX PSID(NAP0000000027)
+                  Firmware Version:   22.44.1700
+                  Part Number:        111-05341
+                  Hardware Revision:  20
+                  Serial Number:      032403001370
+----
+

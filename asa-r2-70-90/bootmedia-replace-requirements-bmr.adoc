@@ -11,19 +11,25 @@ summary: Stellen Sie vor dem Austausch der Startmedien in Ihrem ASA A70 oder A90
 
 
 [role="lead"]
-Stellen Sie vor dem Austausch der Startmedien in Ihrem ASA A70- oder ASA A90-System sicher, dass Sie die erforderlichen Voraussetzungen für einen erfolgreichen Austausch erfüllen. Dazu gehört die Überprüfung, dass Sie über die richtigen Boot-Ersatzmedien verfügen, die Bestätigung, dass keine fehlerhaften Cluster-Ports auf dem Controller vorhanden sind, und die Bestimmung, ob Onboard Key Manager (OKM) oder External Key Manager (EKM) aktiviert ist.
+Bevor Sie das Bootmedium in Ihrem ASA A70- oder ASA A90-System austauschen, stellen Sie sicher, dass die Voraussetzungen für einen erfolgreichen Austausch erfüllt sind. Dazu gehört die Überprüfung, ob Sie das richtige Ersatz-Bootmedium haben, ob die Cluster-Ports des fehlerhaften Controllers ordnungsgemäß funktionieren und ob der Onboard Key Manager (OKM) oder der External Key Manager (EKM) aktiviert ist.
 
 Überprüfen Sie die folgenden Anforderungen.
 
 * Sie müssen das ausgefallene Boot-Medium durch ein Ersatz-Boot-Medium ersetzen, das Sie von NetApp erhalten haben.
-* Es dürfen keine fehlerhaften Cluster-Ports auf dem gestörten Controller vorhanden sein.
+* Die Cluster-Ports dienen der Kommunikation zwischen den beiden Controllern während der automatischen Boot-Wiederherstellung. Stellen Sie sicher, dass die Cluster-Ports auf dem beeinträchtigten Controller ordnungsgemäß funktionieren.
 * Für OKM benötigen Sie den Inhalt der OKM-Passphrase-Datei.
 * Für EKM benötigen Sie Kopien der folgenden Dateien vom Partnerknoten:
 +
-** Datei /cfcard/kmip/servers.cfg.
-** Datei /cfcard/kmip/certs/Client.crt.
-** Datei /cfcard/kmip/certs/client.key.
-** Datei /cfcard/kmip/certs/CA.pem.
+** /cfcard/kmip/servers.cfg
+** /cfcard/kmip/certs/client.crt
+** /cfcard/kmip/certs/client.key
+** /cfcard/kmip/certs/CA.pem
+
+
+* Es ist wichtig, die Befehle auf den richtigen Controller anzuwenden, wenn Sie das beschädigte Startmedium ersetzen:
++
+** Der _beschädigte Controller_ ist der Controller, an dem Sie Wartungsarbeiten durchführen.
+** Der _gesunde Controller_ ist der HA-Partner des beeinträchtigten Controllers.
 
 
 

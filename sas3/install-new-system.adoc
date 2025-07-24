@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: install, cabling, cable, disk, shelves, shelf, iom12, module, system, installation, system, ha, pair, single-controller, configuration, cabinet, rack, requirement, install and cable disk shelves with iom12 modules for a new system installation, requirements for installing and cabling disk shelves with iom12 modules for a new system installation, considerations for installing and cabling disk shelves with iom12 modules for a new system installation, install disk shelves with iom12 modules for a new system installation, cable disk shelves with iom12 modules for a new system installation, DS460C, transport DS460C, move DS460C, remove drives from DS460C, DS460C drive handling, iom12b 
 summary: Wenn die neue System--HA-Paar- oder Single-Controller-Konfiguration nicht in einem Rack installiert wurde, müssen Sie die Festplatten-Shelfs in einem Rack installieren und verkabeln. 
 ---
-= Einbau- und Kabelregale für eine neue Systeminstallation - Regale mit IOM12/IOM12B-Modulen
+= Regale installieren und verkabeln – DS212C, DS224C oder DS460C
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,36 +13,7 @@ summary: Wenn die neue System--HA-Paar- oder Single-Controller-Konfiguration nic
 [role="lead"]
 Wenn das neue System--HA-Paar oder die Single-Controller-Konfiguration nicht in einem Rack installiert wurde, können Sie die Festplatten-Shelfs in einem Rack installieren und verkabeln.
 
-
-
-== Anforderungen an die Installation und Verkabelung von Platten-Shelves mit IOM12/IOM12B Modulen für eine neue Systeminstallation
-
-Vor der Installation und Verkabelung der Festplatten-Shelfs müssen Sie bestimmte Anforderungen erfüllen.
-
-* Sie benötigen die Installations- und Setup-Anweisungen für Ihr Plattformmodell.
-+
-Die Installations- und Setup-Anweisungen beziehen sich auf den vollständigen Vorgang für die Installation, Einrichtung und Konfiguration Ihres Systems. Sie verwenden dieses Verfahren (_Install and cable Shelves for a New System Installation_) zusammen mit der Installations- und Setup-Anleitung für die Plattform, wenn Sie ausführliche Informationen zur Installation oder Verkabelung der Festplatten-Shelfs an Ihr Storage-System benötigen.
-
-+
-Installations- und Setup-Anweisungen finden Sie, indem Sie zur Dokumentation Ihres Plattformmodells navigieren.
-
-+
-link:../index.html["AFF und FAS Systemdokumentation"]
-
-* Festplatten-Shelfs und Controller dürfen derzeit nicht eingeschaltet werden.
-* Wenn Sie Mini-SAS HD-SAS-optische Kabel verwenden, müssen Sie die Regeln in erfüllt haben link:install-cabling-rules.html#mini-sas-hd-sas-optical-cable-rules["Kabelregeln für optische Mini-SAS-HD-SAS-Kabel"].
-
-
-
-
-== Überlegungen zur Installation und Verkabelung von Platten-Shelfs mit IOM12/IOM12B-Modulen für eine neue Systeminstallation
-
-Sie sollten sich vor der Installation und Verkabelung der Festplatten-Shelfs mit Aspekten und Best Practices dieses Verfahrens vertraut machen.
-
-
-
-=== Allgemeine Überlegungen
-
+.Über diese Aufgabe
 * Platten-Shelfs mit IOM12/IOM12B Modulen werden mit voreingestellten Shelf-IDs auf 00 geliefert.
 +
 
@@ -51,70 +22,63 @@ NOTE: Wenn Sie ein HA-Paar mit mindestens zwei Stacks haben, ist das Festplatten
 +
 Sie müssen Shelf-IDs festlegen, sodass sie innerhalb des HA-Paars oder der Single-Controller-Konfiguration eindeutig sind. Sie können Shelf-IDs manuell festlegen oder Shelf-IDs automatisch allen Festplatten-Shelfs des HA-Paars oder der Single-Controller-Konfiguration zuweisen. Verwenden Sie dazu einen Befehl im Wartungsmodus. Anweisungen für beide Methoden werden bereitgestellt.
 
-* Festplatten-Shelfs, die die Root-Aggregate enthalten, können durch die Etiketten auf der Festplatten-Shelf-Box und dem Festplatten-Shelf-Chassis identifiziert werden.
+* Sie können die Disk-Shelfs, die die Root-Aggregate enthalten, anhand der Etiketten auf der Disk-Shelf-Box und dem Disk-Shelf-Gehäuse identifizieren.
 +
 Auf den Etiketten wird die Stapelnummer angezeigt, z. B. *Loop oder Stack #: 1* und *Loop oder Stack #: 2*. Bei Festplatten-Shelfs, die keine Root-Aggregate enthalten, wird nur die Festplatten-Shelf-Seriennummer auf den Etiketten angezeigt.
 
-* Wenn Sie bei der Einrichtung und Konfiguration des Systems nicht so konfigurieren, dass das System die automatische Festplatteneigentümer-Zuweisung verwendet, müssen Sie die Festplatteneigentümer manuell zuweisen.
+* Wenn Sie bei der Systemeinrichtung und -konfiguration das System nicht für die automatische Zuweisung von Datenträgereigentumsrechten konfigurieren, müssen Sie die Datenträgereigentumsrechte manuell zuweisen.
 * IBACP (in-Band Alternate Control Path) wird automatisch aktiviert.
 +
 IBACP wird nicht bei Single-Path-HA- oder Single-Path-Konfigurationen unterstützt.
 
 
 
+.Bevor Sie beginnen
+Sie müssen bestimmte Anforderungen erfüllen und sich mit den Best Practices und Überlegungen zu diesem Verfahren vertraut machen, bevor Sie die Festplatten-Shelves installieren und verkabeln.
 
-
-=== Überlegungen zu Best Practices
-
-* Die beste Vorgehensweise besteht darin, dass die aktuelle Version des DQP (Disk Qualification Package) installiert ist.
+* Besorgen Sie sich die Installations- und Einrichtungsanweisungen für Ihr Plattformmodell.
 +
-Wenn die aktuelle Version des DQP installiert ist, kann Ihr System neu qualifizierte Festplattenlaufwerke erkennen und verwenden. Dadurch werden Systemereignismeldungen über nicht aktuelle Laufwerksinformationen vermieden. Außerdem wird eine mögliche Verhinderung der Festplattenpartitionierung vermieden, da die Festplattenlaufwerke nicht erkannt werden. Das DQP benachrichtigt Sie auch über nicht aktuelle Festplatten-Firmware.
+Die Installations- und Einrichtungsanweisungen beschreiben die vollständige Vorgehensweise für die Installation, Einrichtung und Konfiguration Ihres Systems. Verwenden Sie diese Vorgehensweise nur in Verbindung mit den Anweisungen zur Plattforminstallation und -einrichtung, wenn Sie detaillierte Informationen zur Installation oder Verkabelung der Festplatten-Shelves mit Ihrem Speichersystem benötigen.
 
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["NetApp Downloads: Disk Qualification Package"^]
+Installations- und Einrichtungsanweisungen finden Sie, indem Sie zu Ihrer Plattform navigieren im link:../index.html["AFF und FAS Systemdokumentation"] .
 
-* Als Best Practice wird empfohlen, Config Advisor nach einer neuen System-Installation herunterzuladen und auszuführen.
+* Festplatten-Shelfs und Controller dürfen derzeit nicht eingeschaltet werden.
+* *Best Practice*: Stellen Sie sicher, dass Ihr System neu qualifizierte Festplattenlaufwerke erkennen und nutzen kann, indem Sie  https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["Herunterladen der aktuellen Version des Disk Qualification Package (DQP)"^] .
 +
-Wenn Sie Config Advisor nach einer neuen Systeminstallation ausführen, können Sie überprüfen, ob die SAS-Verbindungen ordnungsgemäß verkabelt sind und dass Shelf-IDs innerhalb des HA-Paars oder der Konfiguration mit einem Controller eindeutig sind.
+Dadurch vermeiden Sie Systemereignismeldungen über veraltete Laufwerksinformationen. Außerdem vermeiden Sie, dass die Festplattenpartitionierung aufgrund nicht erkannter Laufwerke möglicherweise verhindert wird. Der DQP benachrichtigt Sie über veraltete Laufwerksfirmware.
 
+* *Best Practice*: Überprüfen Sie, ob die SAS-Verbindungen korrekt verkabelt sind und ob die Shelf-IDs innerhalb des HA-Paares oder der Einzelcontroller-Konfiguration eindeutig sind.  https://mysupport.netapp.com/site/tools["Herunterladen und Ausführen von Config Advisor"^] nach einer neuen Systeminstallation.
 +
 Wenn SAS-Verkabelung oder doppelte Shelf-ID-Fehler generiert werden, folgen Sie den Korrekturmaßnahmen.
 
 +
 Zum Download von Config Advisor benötigen Sie Netzwerkzugriff.
 
+* Machen Sie sich mit den Überlegungen zum ordnungsgemäßen Umgang mit SAS-Kabeln vertraut:
 +
-https://mysupport.netapp.com/site/tools["NetApp Downloads: Config Advisor"^]
-
-
-
-
-
-=== Überlegungen zur Handhabung von SAS-Kabeln
-
-* Überprüfen Sie den SAS-Anschluss, um die richtige Ausrichtung des Anschlusses zu prüfen, bevor Sie ihn anschließen.
+** Wenn Sie Mini-SAS HD-SAS-optische Kabel verwenden, müssen Sie die Regeln in erfüllt haben link:install-cabling-rules.html#mini-sas-hd-sas-optical-cable-rules["Kabelregeln für optische Mini-SAS-HD-SAS-Kabel"].
+** Überprüfen Sie den SAS-Anschluss, um die richtige Ausrichtung des Anschlusses zu prüfen, bevor Sie ihn anschließen.
 +
 Die SAS-Kabelanschlüsse sind codiert. Wenn sie korrekt an einen SAS-Port orientiert sind, klickt der Anschluss an und wenn das Festplatten-Shelf zum Zeitpunkt eingeschaltet ist, leuchtet die Festplatten-Shelf-SAS-Port LNK-LED grün. Bei Festplatten-Shelfs stecken Sie einen SAS-Kabelanschluss mit nach unten (auf der Unterseite des Connectors) gerichteter Zuglasche.
 
 +
 Bei Controllern kann die Ausrichtung der SAS-Ports je nach Plattformmodell variieren. Daher variiert die korrekte Ausrichtung des SAS-Kabelsteckers.
 
-* Um eine verminderte Leistung zu vermeiden, dürfen die Kabel nicht verdreht, gefaltet, gequetscht oder treten.
+** Um eine verminderte Leistung zu vermeiden, dürfen die Kabel nicht verdreht, gefaltet, gequetscht oder treten.
 +
 Kabel haben einen minimalen Biegeradius. Die Spezifikationen des Kabelherstellers definieren den minimalen Biegeradius; eine allgemeine Richtlinie für den minimalen Biegeradius ist jedoch das 10-fache des Kabeldurchmessers.
 
-* Die Verwendung von Klettverschlüssen anstelle von Bindebrockeln zur Bündelung und Befestigung von Systemkabeln ermöglicht eine einfachere Kabelanpassung.
+** *Best Practice*: Verwenden Sie Klettverschlüsse anstelle von Kabelbindern, um Systemkabel zu bündeln und zu sichern und so die Kabelanpassung zu erleichtern.
 
 
-
-
-=== Überlegungen zur Handhabung von DS460C Laufwerken
-
-* Die Laufwerke sind getrennt vom Shelf-Chassis verpackt.
+* Machen Sie sich mit den Überlegungen zum ordnungsgemäßen Umgang mit DS460C-Laufwerken vertraut:
++
+** Die Laufwerke sind getrennt vom Shelf-Chassis verpackt.
 +
 Sie sollten eine Bestandsaufnahme der Laufwerke zusammen mit der restlichen Systemausrüstung durchführen, die Sie erhalten haben.
 
-* Nachdem Sie die Laufwerke ausgepackt haben, sollten Sie das Verpackungsmaterial für den zukünftigen Einsatz speichern.
+** Nachdem Sie die Laufwerke ausgepackt haben, sollten Sie das Verpackungsmaterial für den zukünftigen Einsatz speichern.
 +
 
 CAUTION: *Möglicher Verlust des Datenzugriffs:* Wenn Sie in Zukunft das Regal auf einen anderen Teil des Rechenzentrums verschieben oder das Regal an einen anderen Ort transportieren, müssen Sie die Laufwerke aus den Laufwerkschubladen entfernen, um mögliche Schäden an den Antriebshächern und den Laufwerken zu vermeiden.
@@ -123,7 +87,7 @@ CAUTION: *Möglicher Verlust des Datenzugriffs:* Wenn Sie in Zukunft das Regal a
 
 NOTE: Halten Sie Festplatten in ihrem ESD-Beutel, bis Sie bereit sind, sie zu installieren.
 
-* Tragen Sie bei der Handhabung der Laufwerke immer ein ESD-Handgelenkband, das auf einer unbemalten Oberfläche des Gehäuses geerdet ist, um statische Entladungen zu vermeiden.
+** Tragen Sie bei der Handhabung der Laufwerke immer ein ESD-Handgelenkband, das auf einer unbemalten Oberfläche des Gehäuses geerdet ist, um statische Entladungen zu vermeiden.
 +
 Wenn ein Handgelenkband nicht verfügbar ist, berühren Sie eine unlackierte Oberfläche des Speichergehäuses, bevor Sie das Festplattenlaufwerk behandeln.
 
@@ -131,7 +95,9 @@ Wenn ein Handgelenkband nicht verfügbar ist, berühren Sie eine unlackierte Obe
 
 
 
-== Installieren Sie Platten-Shelfs mit IOM12/IOM12B-Modulen für eine neue Systeminstallation
+
+
+== Schritt 1: Installieren von Festplattenregalen für eine neue Systeminstallation
 
 Die Festplatten-Shelfs lassen sich mit den Rack-Mount-Kits, die zusammen mit den Festplatten-Shelfs geliefert wurden, in einem Rack installieren.
 
@@ -142,27 +108,24 @@ NOTE: Wenn Sie mehrere Platten-Shelfs installieren, sollten Sie diese von unten 
 
 +
 
-NOTE: Montieren Sie das Festplatten-Shelf nicht in ein Telco-Rack, da es aufgrund des Gewichts des Festplatten-Shelfs zu einem Einsturz des Racks mit seinem eigenen Gewicht führen kann.
+CAUTION: Montieren Sie das Festplatten-Shelf nicht in ein Telco-Rack, da es aufgrund des Gewichts des Festplatten-Shelfs zu einem Einsturz des Racks mit seinem eigenen Gewicht führen kann.
 
 . Installieren und befestigen Sie das Festplatten-Shelf mit dem im Kit enthaltenen Installationsflyer an den Halterungen und am Rack.
 +
 Damit ein Platten-Shelf leichter und leichter zu manövrieren kann, entfernen Sie die Netzteile und I/O-Module (IOMs).
 
 +
-Obwohl die Laufwerke getrennt verpackt sind und das Shelf leichter wird, wiegt ein leeres DS460C Shelf noch immer ungefähr 132 kg. Gehen Sie daher beim Verschieben eines Shelfs folgende Vorsicht vor.
+
+CAUTION: Obwohl die Laufwerke in den DS460C-Regalen separat verpackt sind, was das Regal leichter macht, wiegt ein leeres DS460C-Regal immer noch ca. 60 kg. Es wird empfohlen, einen mechanischen Hebelift oder vier Personen an den Hebegriffen zu verwenden, um ein leeres DS460C-Regal sicher zu bewegen.
 
 +
-
-CAUTION: Es wird empfohlen, einen mechanischen Aufzug oder vier Personen mit den Hubgriffen zu verwenden, um ein leeres DS460C-Regal sicher zu bewegen.
-
-+
-Ihre DS460C-Sendung wurde mit vier abnehmbaren Hebegriffen (zwei pro Seite) verpackt. Um die Hebegriffe zu verwenden, installieren Sie sie, indem Sie die Laschen der Griffe in die Schlitze an der Seite des Regals einsetzen und nach oben drücken, bis sie einrasten. Wenn Sie dann das Festplatten-Shelf auf die Schienen schieben, lösen Sie mithilfe der Daumenverriegelung jeweils einen Satz von Griffen. Die folgende Abbildung zeigt, wie ein Hubgriff befestigt wird.
+Im Lieferumfang des DS460C sind vier abnehmbare Hebegriffe enthalten (zwei pro Seite). Um die Hebegriffe zu verwenden, befestigen Sie sie, indem Schieben Sie anschließend den Einschub auf die Schienen und lösen Sie jeweils einen Hebegriff mit dem Daumenriegel. Die folgende Abbildung zeigt die Befestigung eines Hebegriffs.
 
 +
 image::../media/drw_ds460c_handles.gif[Anbringen der Hubgriffe]
 
 . Installieren Sie alle zuvor entfernten Netzteile und IOMs neu, bevor Sie das Festplatten-Shelf in das Rack einbauen.
-. Wenn Sie ein DS460C Festplatten-Shelf installieren, installieren Sie die Laufwerke in den Laufwerkfächer. Andernfalls fahren Sie mit dem nächsten Schritt fort.
+. Wenn Sie ein DS460C-Festplattenfach installieren, installieren Sie die Laufwerke in den Laufwerksschubladen. Fahren Sie andernfalls mit dem nächsten Schritt fort.
 +
 [NOTE]
 ====
@@ -172,7 +135,7 @@ Wenn ein Handgelenkband nicht verfügbar ist, berühren Sie eine unlackierte Obe
 
 ====
 +
-Wenn Sie ein teilweise bestücktes Shelf erworben haben, das heißt, dass das Shelf weniger als die 60 von ihm unterstützten Laufwerke für jede Schublade enthält, installieren Sie die Laufwerke wie folgt:
+Wenn Sie ein teilweise bestücktes Regal gekauft haben, d. h., das Regal hat weniger als die 60 Laufwerke, die es unterstützt, installieren Sie die Laufwerke in jeder Schublade wie folgt:
 
 +
 ** Installieren Sie die ersten vier Laufwerke in den vorderen Steckplätzen (0, 3, 6 und 9).
@@ -213,19 +176,12 @@ Stellen Sie sicher, dass die Steckplätze 0, 3, 6 und 9 in jeder Schublade Laufw
 
 ... Schieben Sie die Laufwerkschublade vorsichtig wieder in das Gehäuse.
 +
-|===
-
-
- a| 
 image:../media/2860_dwg_e2860_de460c_gentle_close.gif["Schließen Sie die Schublade vorsichtig"]
 
-
-
- a| 
++
 
 CAUTION: *Möglicher Verlust des Datenzugriffs:* Schlingen Sie die Schublade niemals aus. Schieben Sie die Schublade langsam hinein, um zu vermeiden, dass die Schublade einrastet und das Speicher-Array beschädigt wird.
 
-|===
 ... Schließen Sie die Antriebsschublade, indem Sie beide Hebel in die Mitte schieben.
 ... Wiederholen Sie diese Schritte für jede Schublade im Festplatten-Shelf.
 ... Befestigen Sie die Frontverkleidung.
@@ -241,15 +197,26 @@ NOTE: Schalten Sie die Festplatten-Shelfs derzeit nicht ein.
 
 
 
-== Verkabeln Sie die Platten-Shelves mit IOM12/IOM12B-Modulen für eine neue Systeminstallation
+== Schritt 2: Festplattenregale für eine neue Systeminstallation verkabeln
 
 Sie verkabeln Festplatten-Shelf-SAS-Verbindungen --Shelf-zu-Shelf (falls zutreffend) und Controller-zu-Shelf-, um Storage-Konnektivität für das System herzustellen.
 
-.Bevor Sie beginnen
-Sie müssen die Anforderungen in erfüllt haben <<Anforderungen an die Installation und Verkabelung von Platten-Shelves mit IOM12/IOM12B Modulen für eine neue Systeminstallation>> Und installierte die Festplatten-Shelfs im Rack.
-
 .Über diese Aufgabe
 Nachdem Sie die Festplatten-Shelfs verkabeln, schalten Sie sie ein, legen die Shelf-IDs fest und schließen die Einrichtung und Konfiguration des Systems ab.
+
+.Bevor Sie beginnen
+Sie müssen die folgenden Anforderungen erfüllt und die Festplatteneinschübe im Rack installiert haben.
+
+* Sie benötigen die Installations- und Setup-Anweisungen für Ihr Plattformmodell.
++
+Die Installations- und Einrichtungsanweisungen beschreiben die vollständige Vorgehensweise für die Installation, Einrichtung und Konfiguration Ihres Systems. Verwenden Sie diese Vorgehensweise nur in Verbindung mit den Anweisungen zur Plattforminstallation und -einrichtung, wenn Sie detaillierte Informationen zur Installation oder Verkabelung der Festplatten-Shelves mit Ihrem Speichersystem benötigen.
+
++
+Installations- und Einrichtungsanweisungen finden Sie, indem Sie zu Ihrer Plattform navigieren im link:../index.html["AFF und FAS Systemdokumentation"] .
+
+* Festplatten-Shelfs und Controller dürfen derzeit nicht eingeschaltet werden.
+* Wenn Sie Mini-SAS HD-SAS-optische Kabel verwenden, müssen Sie die Regeln in erfüllt haben link:install-cabling-rules.html#mini-sas-hd-sas-optical-cable-rules["Kabelregeln für optische Mini-SAS-HD-SAS-Kabel"].
+
 
 .Schritte
 . Verkabeln Sie die Shelf-zu-Shelf-Verbindungen innerhalb jedes Stacks, wenn der Stack über mehr als ein Festplatten-Shelf verfügt. Andernfalls fahren Sie mit dem nächsten Schritt fort:
@@ -408,12 +375,9 @@ Sie können das Platzhalterzeichen verwenden, um mehr als eine Festplatte gleich
 
 
 
-. Laden Sie Config Advisor gemäß den Anweisungen zur Installation und Einrichtung des Plattformmodells herunter, um zu überprüfen, ob die SAS-Verbindungen korrekt verkabelt sind und es keine doppelten Shelf-IDs im System gibt.
+. Überprüfen Sie, ob die SAS-Verbindungen korrekt verkabelt sind und keine doppelten Shelf-IDs im System vorhanden sind.  https://mysupport.netapp.com/site/tools["Herunterladen und Ausführen von Config Advisor"^] gemäß den Installations- und Einrichtungsanweisungen für Ihr Plattformmodell.
 +
 Wenn SAS-Verkabelung oder doppelte Shelf-ID-Fehler generiert werden, folgen Sie den Korrekturmaßnahmen.
-
-+
-https://mysupport.netapp.com/site/tools["NetApp Downloads: Config Advisor"^]
 
 +
 Sie können auch die ausführen `storage shelf show -fields shelf-id` Befehl, um eine Liste der bereits verwendeten Shelf-IDs (und Duplikate, falls vorhanden) in Ihrem System anzuzeigen.
@@ -426,11 +390,11 @@ In der Ausgabe wird „`in-Band`“ für jeden Knoten als „`aktiv`“ aufgefü
 
 
 
-== Verschieben oder Transport von DS460C Shelfs
+== (Optional) Schritt 3: DS460C-Regale verschieben oder transportieren
 
-Wenn Sie in Zukunft DS460C Shelfs zu einem anderen Teil des Datacenters verschieben oder die Shelfs an einen anderen Ort transportieren, müssen Sie die Laufwerke aus den Laufwerkfächer entfernen, um mögliche Beschädigungen der Laufwerkfächer und Laufwerke zu vermeiden.
+Wenn Sie DS460C-Regale künftig in einen anderen Teil des Rechenzentrums verschieben oder die Regale an einen anderen Standort transportieren, müssen Sie die Laufwerke aus den Laufwerksschubladen entfernen, um mögliche Schäden an den Laufwerksschubladen und Laufwerken zu vermeiden.
 
-* Wenn Sie DS460C Shelfs als Teil der neuen Systeminstallation installiert haben, haben Sie das Verpackungsmaterial des Laufwerks gespeichert. Verwenden Sie diese, um die Laufwerke vor deren Verschiebung zu verpacken.
+* Wenn Sie beim Einbau der DS460C-Fachböden im Rahmen der Installation Ihres neuen Systems das Verpackungsmaterial für die Laufwerke aufbewahrt haben, verwenden Sie es, um die Laufwerke vor dem Transport neu zu verpacken.
 +
 Wenn Sie das Verpackungsmaterial nicht gespeichert haben, sollten Sie Antriebe auf gepolsterten Oberflächen platzieren oder eine alternative gepolsterte Verpackung verwenden. Laufwerke nie aufeinander stapeln.
 
