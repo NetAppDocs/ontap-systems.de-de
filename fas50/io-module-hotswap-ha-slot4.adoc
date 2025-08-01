@@ -13,20 +13,23 @@ summary: Das Cluster- und HA-E/A-Modul unterstützt Interconnects für Clusterin
 [role="lead"]
 Das Cluster- und HA-E/A-Modul unterstützt Interconnects für Clustering und Hochverfügbarkeit. Sie können das Modul in Ihrem FAS50-Speichersystem im laufenden Betrieb austauschen, wenn es ausfällt und Ihr Speichersystem bestimmte Anforderungen erfüllt.
 
-Der Hot-Swap-Prozess umfasst die Vorbereitung des Speichersystems und des E/A-Modulsteckplatzes 4, sodass das ausgefallene Modul sicher entfernt werden kann, den Hot-Swap des ausgefallenen Moduls gegen ein gleichwertiges Modul, die Online-Schaltung des Ersatzmoduls, die Wiederherstellung des Normalbetriebs des Speichersystems und die Rückgabe des ausgefallenen Moduls an NetApp.
+Um ein Modul im laufenden Betrieb auszutauschen, stellen Sie sicher, dass Ihr Speichersystem die Verfahrensanforderungen erfüllt, bereiten Sie das Speichersystem und das E/A-Modul in Steckplatz 4 vor, tauschen Sie das ausgefallene Modul im laufenden Betrieb gegen ein gleichwertiges aus, bringen Sie das Ersatzmodul online, stellen Sie den Normalbetrieb des Speichersystems wieder her und senden Sie das ausgefallene Modul an NetApp zurück.
 
-.Bevor Sie beginnen
-* Damit Sie dieses Verfahren verwenden können, muss Ihr Speichersystem alle folgenden Anforderungen erfüllen.
-+
 
-NOTE: Wenn Ihr Speichersystem nicht alle der folgenden Anforderungen erfüllt, müssen Sie die link:io-module-replace.html["Vorgehensweise zum Ersetzen eines E/A-Moduls"] .
 
-+
-** Auf Ihrem Speichersystem muss ONTAP 9.17.1 oder höher ausgeführt werden.
-** Das ausgefallene E/A-Modul muss ein Cluster- und HA-E/A-Modul in Steckplatz 4 sein und muss durch ein anderes Cluster- und HA-E/A-Modul ersetzt werden. Der E/A-Modultyp kann nicht geändert werden.
-** Ihre Speichersystemkonfiguration darf nur über ein Cluster- und HA-E/A-Modul in Steckplatz 4 verfügen, nicht über zwei Cluster- und HA-E/A-Module.
-** Ihr Speichersystem muss eine Clusterkonfiguration mit zwei Knoten (ohne oder mit Switch) sein.
-** Der Controller mit dem ausgefallenen Cluster und HA-E/A-Modul (der beeinträchtigte Controller) muss den fehlerfreien Partnercontroller bereits übernommen haben. Die Übernahme sollte automatisch erfolgen, wenn das E/A-Modul ausgefallen ist.
+== Schritt 1: Sicherstellen, dass das Speichersystem die Verfahrensanforderungen erfüllt
+
+Um dieses Verfahren nutzen zu können, muss Ihr Speichersystem alle Voraussetzungen erfüllen.  Lesen Sie die Hinweise, um weitere Informationen zu diesem Verfahren zu erhalten.
+
+
+NOTE: Wenn Ihr Speichersystem nicht alle Anforderungen erfüllt, müssen Sie dielink:io-module-replace.html["Vorgehensweise zum Ersetzen eines E/A-Moduls"] .
+
+.Anforderungen
+* Auf Ihrem Speichersystem muss ONTAP 9.17.1 oder höher ausgeführt werden.
+* Bei dem ausgefallenen E/A-Modul muss es sich um ein Cluster- und HA-E/A-Modul in Steckplatz 4 handeln und Sie müssen es durch ein gleichwertiges Cluster- und HA-E/A-Modul ersetzen. Der E/A-Modultyp kann nicht geändert werden.
+* Ihre Speichersystemkonfiguration darf nur über ein Cluster- und HA-E/A-Modul in Steckplatz 4 verfügen, nicht über zwei Cluster- und HA-E/A-Module.
+* Ihr Speichersystem muss eine Clusterkonfiguration mit zwei Knoten (ohne oder mit Switch) sein.
+* Der Controller mit dem ausgefallenen Cluster und HA-E/A-Modul (der beeinträchtigte Controller) muss den fehlerfreien Partnercontroller bereits übernommen haben. Die Übernahme sollte automatisch erfolgen, wenn das E/A-Modul ausgefallen ist.
 +
 Bei Clustern mit zwei Knoten kann das Speichersystem nicht erkennen, welcher Controller das ausgefallene E/A-Modul enthält. Daher kann jeder der beiden Controller die Übernahme einleiten. Der Hot-Swap-Vorgang für Cluster- und HA-E/A-Module wird nur unterstützt, wenn der Controller mit dem ausgefallenen E/A-Modul (der beeinträchtigte Controller) den fehlerfreien Controller übernommen hat.
 
@@ -36,12 +39,10 @@ Sie können überprüfen, ob der beeinträchtigte Controller den fehlerfreien Co
 +
 Wenn Sie nicht sicher sind, bei welchem Controller sich das fehlerhafte E/A-Modul befindet, wenden Sie sich an  https://mysupport.netapp.com/site/global/dashboard["NetApp Support"] .
 
-
-
 * Alle anderen Komponenten des Speichersystems müssen ordnungsgemäß funktionieren. Falls nicht, wenden Sie sich an https://mysupport.netapp.com/site/global/dashboard["NetApp Support"], bevor Sie mit diesem Verfahren fortfahren.
 
 
-.Über diese Aufgabe
+.Überlegungen
 * Durch Hot-Swapping des Clusters und des HA-E/A-Moduls müssen Sie keine manuelle Übernahme durchführen; der beeinträchtigte Controller (der Controller mit dem ausgefallenen Cluster und HA-E/A-Modul) hat automatisch den fehlerfreien Controller übernommen.
 +
 Wenn der beeinträchtigte Controller den fehlerfreien Controller übernommen hat, besteht die einzige Möglichkeit zur Wiederherstellung ohne Ausfall darin, das Modul im laufenden Betrieb auszutauschen.
@@ -63,7 +64,7 @@ Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led
 
 
 
-== Schritt 1: Speichersystem und I/O-Modulsteckplatz 4 vorbereiten
+== Schritt 2: Speichersystem und I/O-Modulsteckplatz 4 vorbereiten
 
 Bereiten Sie das Speichersystem und den E/A-Modulsteckplatz 4 vor, sodass der ausgefallene Cluster und das HA-E/A-Modul sicher entfernt werden können:
 
@@ -82,24 +83,24 @@ Beispielsweise unterdrückt die folgende AutoSupport Meldung die automatische Fa
 +
 `node2::> system node autosupport invoke -node * -type all -message MAINT=2h`
 
-. Deaktivieren Sie die automatische Rückgabe von der Konsole des beeinträchtigten Controllers:
+. Automatische Rückgabe deaktivieren:
++
+.. Geben Sie den folgenden Befehl von der Konsole des beeinträchtigten Controllers ein:
 +
 `storage failover modify -node local -auto-giveback false`
 
-+
+.. Eingeben `y` wenn die Eingabeaufforderung _Möchten Sie die automatische Rückgabe deaktivieren?_ angezeigt wird
 
-NOTE: Wenn Sie sehen _Möchten Sie Auto-Giveback deaktivieren?_, geben Sie ein `y`.
 
 . Bereiten Sie den ausgefallenen Cluster und das HA-Modul in Steckplatz 4 für die Entfernung vor, indem Sie es außer Betrieb nehmen und ausschalten:
 +
+.. Geben Sie den folgenden Befehl ein:
++
 `system controller slot module remove -node _impaired_node_name_ -slot _slot_number_`
 
+.. Eingeben `y` wenn die Eingabeaufforderung _Möchten Sie fortfahren?_ angezeigt wird
 +
-
-NOTE: Wenn Sie _Möchten Sie fortfahren?_ sehen, geben Sie ein  `y` .
-
-+
-Beispielsweise bereitet der folgende Befehl das Modul in Steckplatz 4 auf Knoten2 (dem beeinträchtigten Controller) zum Entfernen vor und zeigt eine Meldung an, dass das Entfernen sicher ist:
+Beispielsweise bereitet der folgende Befehl das Modul in Steckplatz 4 auf Knoten 2 (dem beeinträchtigten Controller) zum Entfernen vor und zeigt eine Meldung an, dass das Entfernen sicher ist:
 
 +
 [listing]
@@ -112,6 +113,8 @@ Do you want to continue? {y|n}: y
 
 The module has been successfully removed from service and powered off. It can now be safely removed.
 ----
+
+
 . Überprüfen Sie, ob der ausgefallene Cluster und das HA-Modul in Steckplatz 4 ausgeschaltet sind:
 +
 `system controller slot module show`
@@ -123,7 +126,7 @@ Die Ausgabe sollte zeigen  `_powered-off_` in der Statusspalte für das ausgefal
 
 
 
-== Schritt 2: Ersetzen Sie den ausgefallenen Cluster und das HA-E/A-Modul
+== Schritt 3: Ersetzen Sie den ausgefallenen Cluster und das HA-E/A-Modul
 
 Ersetzen Sie den ausgefallenen Cluster und das HA-E/A-Modul in Steckplatz 4 durch ein gleichwertiges E/A-Modul:
 
@@ -166,23 +169,22 @@ Zum Eindrücken des I/O-Moduls können Sie die Lasche links und die Rändelschra
 
 
 
-== Schritt 3: Bringen Sie den Ersatzcluster und das HA-E/A-Modul online
+== Schritt 4: Bringen Sie den Ersatzcluster und das HA-E/A-Modul online
 
 Bringen Sie den Ersatzcluster und das HA-E/A-Modul in Steckplatz 4 online, überprüfen Sie, ob die Modulports erfolgreich initialisiert wurden, überprüfen Sie, ob Steckplatz 4 eingeschaltet ist, und überprüfen Sie dann, ob das Modul online ist und erkannt wird.
 
 . Bringen Sie den Ersatzcluster und das HA-E/A-Modul online:
 +
-`system controller slot module insert -node impaired_node_name_ -slot _slot_name_`
-
+.. Geben Sie den folgenden Befehl ein:
 +
+`system controller slot module insert -node _impaired_node_name_ -slot _slot_name_`
 
-NOTE: Wenn Sie _Möchten Sie fortfahren?_ sehen, geben Sie ein  `y` .
-
+.. Eingeben `y` wenn die Eingabeaufforderung „Möchten Sie fortfahren?“ angezeigt wird
 +
 Die Ausgabe sollte bestätigen, dass der Cluster und das HA-E/A-Modul erfolgreich online geschaltet wurden (eingeschaltet, initialisiert und in Betrieb genommen).
 
 +
-Beispielsweise bringt der folgende Befehl Steckplatz 4 auf Knoten2 (den beeinträchtigten Controller) online und zeigt eine Meldung an, dass der Vorgang erfolgreich war:
+Beispielsweise bringt der folgende Befehl Steckplatz 4 auf Knoten 2 (den beeinträchtigten Controller) online und zeigt eine Meldung an, dass der Vorgang erfolgreich war:
 
 +
 [listing]
@@ -195,6 +197,8 @@ Do you want to continue? {y|n}: `y`
 
 The module has been successfully powered on, initialized and placed into service.
 ----
+
+
 . Überprüfen Sie, ob alle Ports im Cluster und HA-E/A-Modul erfolgreich initialisiert wurden:
 +
 `event log show -event \*hotplug.init*`
@@ -272,7 +276,7 @@ Slot slot Information
 
 
 
-== Schritt 4: Wiederherstellen des Normalbetriebs des Speichersystems
+== Schritt 5: Wiederherstellen des Normalbetriebs des Speichersystems
 
 Stellen Sie den Normalbetrieb Ihres Speichersystems wieder her, indem Sie dem fehlerfreien Controller Speicher zurückgeben, die automatische Rückgabe wiederherstellen und die automatische Fallerstellung von AutoSupport erneut aktivieren.
 
@@ -293,6 +297,6 @@ Stellen Sie den Normalbetrieb Ihres Speichersystems wieder her, indem Sie dem fe
 
 
 
-== Schritt 5: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+== Schritt 6: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

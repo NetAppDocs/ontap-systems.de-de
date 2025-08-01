@@ -19,24 +19,24 @@ Beispielsweise unterdrückt die folgende AutoSupport Meldung die automatische Fa
 +
 `node2::> system node autosupport invoke -node * -type all -message MAINT=2h`
 
-. Deaktivieren Sie die automatische Rückgabe von der Konsole des beeinträchtigten Controllers:
+. Automatische Rückgabe deaktivieren:
++
+.. Geben Sie den folgenden Befehl von der Konsole des beeinträchtigten Controllers ein:
 +
 `storage failover modify -node local -auto-giveback false`
 
-+
+.. Eingeben `y` wenn die Eingabeaufforderung _Möchten Sie die automatische Rückgabe deaktivieren?_ angezeigt wird
 
-NOTE: Wenn Sie sehen _Möchten Sie Auto-Giveback deaktivieren?_, geben Sie ein `y`.
 
 . Bereiten Sie den ausgefallenen Cluster und das HA-Modul in Steckplatz 4 für die Entfernung vor, indem Sie es außer Betrieb nehmen und ausschalten:
 +
+.. Geben Sie den folgenden Befehl ein:
++
 `system controller slot module remove -node _impaired_node_name_ -slot _slot_number_`
 
+.. Eingeben `y` wenn die Eingabeaufforderung _Möchten Sie fortfahren?_ angezeigt wird
 +
-
-NOTE: Wenn Sie _Möchten Sie fortfahren?_ sehen, geben Sie ein  `y` .
-
-+
-Beispielsweise bereitet der folgende Befehl das Modul in Steckplatz 4 auf Knoten2 (dem beeinträchtigten Controller) zum Entfernen vor und zeigt eine Meldung an, dass das Entfernen sicher ist:
+Beispielsweise bereitet der folgende Befehl das Modul in Steckplatz 4 auf Knoten 2 (dem beeinträchtigten Controller) zum Entfernen vor und zeigt eine Meldung an, dass das Entfernen sicher ist:
 
 +
 [listing]
@@ -49,6 +49,8 @@ Do you want to continue? {y|n}: y
 
 The module has been successfully removed from service and powered off. It can now be safely removed.
 ----
+
+
 . Überprüfen Sie, ob der ausgefallene Cluster und das HA-Modul in Steckplatz 4 ausgeschaltet sind:
 +
 `system controller slot module show`

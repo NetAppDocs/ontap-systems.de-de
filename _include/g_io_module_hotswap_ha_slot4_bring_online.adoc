@@ -6,17 +6,16 @@ Bringen Sie den Ersatzcluster und das HA-E/A-Modul in Steckplatz 4 online, über
 
 . Bringen Sie den Ersatzcluster und das HA-E/A-Modul online:
 +
-`system controller slot module insert -node impaired_node_name_ -slot _slot_name_`
-
+.. Geben Sie den folgenden Befehl ein:
 +
+`system controller slot module insert -node _impaired_node_name_ -slot _slot_name_`
 
-NOTE: Wenn Sie _Möchten Sie fortfahren?_ sehen, geben Sie ein  `y` .
-
+.. Eingeben `y` wenn die Eingabeaufforderung „Möchten Sie fortfahren?“ angezeigt wird
 +
 Die Ausgabe sollte bestätigen, dass der Cluster und das HA-E/A-Modul erfolgreich online geschaltet wurden (eingeschaltet, initialisiert und in Betrieb genommen).
 
 +
-Beispielsweise bringt der folgende Befehl Steckplatz 4 auf Knoten2 (den beeinträchtigten Controller) online und zeigt eine Meldung an, dass der Vorgang erfolgreich war:
+Beispielsweise bringt der folgende Befehl Steckplatz 4 auf Knoten 2 (den beeinträchtigten Controller) online und zeigt eine Meldung an, dass der Vorgang erfolgreich war:
 
 +
 [listing]
@@ -29,6 +28,8 @@ Do you want to continue? {y|n}: `y`
 
 The module has been successfully powered on, initialized and placed into service.
 ----
+
+
 . Überprüfen Sie, ob alle Ports im Cluster und HA-E/A-Modul erfolgreich initialisiert wurden:
 +
 `event log show -event \*hotplug.init*`

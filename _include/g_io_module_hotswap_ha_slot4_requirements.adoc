@@ -1,0 +1,46 @@
+= 
+:allow-uri-read: 
+
+
+Um dieses Verfahren nutzen zu können, muss Ihr Speichersystem alle Voraussetzungen erfüllen.  Lesen Sie die Hinweise, um weitere Informationen zu diesem Verfahren zu erhalten.
+
+
+NOTE: Wenn Ihr Speichersystem nicht alle Anforderungen erfüllt, müssen Sie dielink:io-module-replace.html["Vorgehensweise zum Ersetzen eines E/A-Moduls"] .
+
+.Anforderungen
+* Auf Ihrem Speichersystem muss ONTAP 9.17.1 oder höher ausgeführt werden.
+* Bei dem ausgefallenen E/A-Modul muss es sich um ein Cluster- und HA-E/A-Modul in Steckplatz 4 handeln und Sie müssen es durch ein gleichwertiges Cluster- und HA-E/A-Modul ersetzen. Der E/A-Modultyp kann nicht geändert werden.
+* Ihre Speichersystemkonfiguration darf nur über ein Cluster- und HA-E/A-Modul in Steckplatz 4 verfügen, nicht über zwei Cluster- und HA-E/A-Module.
+* Ihr Speichersystem muss eine Clusterkonfiguration mit zwei Knoten (ohne oder mit Switch) sein.
+* Der Controller mit dem ausgefallenen Cluster und HA-E/A-Modul (der beeinträchtigte Controller) muss den fehlerfreien Partnercontroller bereits übernommen haben. Die Übernahme sollte automatisch erfolgen, wenn das E/A-Modul ausgefallen ist.
++
+Bei Clustern mit zwei Knoten kann das Speichersystem nicht erkennen, welcher Controller das ausgefallene E/A-Modul enthält. Daher kann jeder der beiden Controller die Übernahme einleiten. Der Hot-Swap-Vorgang für Cluster- und HA-E/A-Module wird nur unterstützt, wenn der Controller mit dem ausgefallenen E/A-Modul (der beeinträchtigte Controller) den fehlerfreien Controller übernommen hat.
+
++
+Sie können überprüfen, ob der beeinträchtigte Controller den fehlerfreien Controller erfolgreich übernommen hat, indem Sie Folgendes eingeben:  `storage failover show` Befehl.
+
++
+Wenn Sie nicht sicher sind, bei welchem Controller sich das fehlerhafte E/A-Modul befindet, wenden Sie sich an  https://mysupport.netapp.com/site/global/dashboard["NetApp Support"] .
+
+* Alle anderen Komponenten des Speichersystems müssen ordnungsgemäß funktionieren. Falls nicht, wenden Sie sich an https://mysupport.netapp.com/site/global/dashboard["NetApp Support"], bevor Sie mit diesem Verfahren fortfahren.
+
+
+.Überlegungen
+* Durch Hot-Swapping des Clusters und des HA-E/A-Moduls müssen Sie keine manuelle Übernahme durchführen; der beeinträchtigte Controller (der Controller mit dem ausgefallenen Cluster und HA-E/A-Modul) hat automatisch den fehlerfreien Controller übernommen.
++
+Wenn der beeinträchtigte Controller den fehlerfreien Controller übernommen hat, besteht die einzige Möglichkeit zur Wiederherstellung ohne Ausfall darin, das Modul im laufenden Betrieb auszutauschen.
+
+* Es ist wichtig, die Befehle auf den richtigen Controller anzuwenden, wenn Sie den Cluster und das HA-E/A-Modul im laufenden Betrieb austauschen:
++
+** Der _beeinträchtigte Controller_ ist der Controller, auf dem Sie den Cluster und das HA-E/A-Modul im laufenden Betrieb austauschen, und es ist der Controller, der den fehlerfreien Controller übernommen hat.
+** Der _gesunde Controller_ ist der HA-Partner des beeinträchtigten Controllers und es handelt sich um den Controller, der vom beeinträchtigten Controller übernommen wurde.
+
+
+* Bei Bedarf können Sie die LEDs des Speichersystems (blau) einschalten, um das betroffene Speichersystem physisch zu lokalisieren. Melden Sie sich über SSH bei der BMC an und geben Sie den Befehl ein `system location-led _on_`.
++
+Ein Speichersystem verfügt über drei Standort-LEDs: Eine auf dem Bedienfeld und eine auf jedem Controller. Die Standort-LEDs leuchten 30 Minuten lang.
+
++
+Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led _off_`. Wenn Sie sich nicht sicher sind, ob die LEDs leuchten oder nicht, können Sie ihren Status überprüfen, indem Sie den Befehl eingeben `system location-led show`.
+
+

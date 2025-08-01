@@ -16,7 +16,10 @@ Bevor Sie das Bootmedium in Ihrem ASA A20-, ASA A30- oder ASA A50-Speichersystem
 Überprüfen Sie die folgenden Anforderungen.
 
 * Sie müssen die ausgefallene Komponente durch eine FRU-Ersatz-Komponente ersetzen, die dieselbe Kapazität hat wie Sie von NetApp erhalten.
-* Der e0S-Port (e0M-Schraubenschlüssel) dient der Kommunikation zwischen den beiden Controllern während der automatischen Boot-Wiederherstellung. Stellen Sie sicher, dass der e0S-Port des defekten Controllers ordnungsgemäß funktioniert.
+* Stellen Sie sicher, dass der e0M-Anschluss (Schraubenschlüssel) am beeinträchtigten Controller angeschlossen und nicht fehlerhaft ist.
++
+Der e0M-Port wird während des automatisierten Boot-Wiederherstellungsprozesses zur Kommunikation zwischen den beiden Controllern verwendet.
+
 * Für OKM benötigen Sie den Inhalt der OKM-Passphrase-Datei.
 * Für EKM benötigen Sie Kopien der folgenden Dateien vom Partnerknoten:
 +

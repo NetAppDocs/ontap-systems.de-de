@@ -14,7 +14,10 @@ summary: 'Bevor Sie das Bootmedium in Ihrem ASA C30-Speichersystem austauschen, 
 Bevor Sie das Bootmedium in Ihrem ASA C30-Speichersystem austauschen, stellen Sie sicher, dass Sie die notwendigen Voraussetzungen und Überlegungen für einen erfolgreichen Austausch erfüllen. Dazu gehört die Überprüfung, ob Sie das richtige Ersatz-Bootmedium haben, ob der e0S-Port (e0M Wrench) am defekten Controller ordnungsgemäß funktioniert und ob der Onboard Key Manager (OKM) oder External Key Manager (EKM) aktiviert ist.
 
 * Sie müssen die ausgefallene Komponente durch eine FRU-Ersatz-Komponente ersetzen, die dieselbe Kapazität hat wie Sie von NetApp erhalten.
-* Der e0S-Port (e0M-Schraubenschlüssel) dient der Kommunikation zwischen den beiden Controllern während der automatischen Boot-Wiederherstellung. Stellen Sie sicher, dass der e0S-Port des defekten Controllers ordnungsgemäß funktioniert.
+* Stellen Sie sicher, dass der e0M-Anschluss (Schraubenschlüssel) am beeinträchtigten Controller angeschlossen und nicht fehlerhaft ist.
++
+Der e0M-Port wird während des automatisierten Boot-Wiederherstellungsprozesses zur Kommunikation zwischen den beiden Controllern verwendet.
+
 * Für OKM benötigen Sie den Inhalt der OKM-Passphrase-Datei.
 * Für EKM benötigen Sie Kopien der folgenden Dateien vom Partnerknoten:
 +

@@ -13,8 +13,6 @@ summary: Ersetzen Sie ein Lüftermodul in Ihrem ASA C30-Speichersystem, wenn ein
 [role="lead"]
 Ersetzen Sie ein Lüftermodul in Ihrem ASA C30-Speichersystem, wenn ein Lüfter ausfällt oder nicht effizient arbeitet, da dies die Systemkühlung und die Gesamtleistung beeinträchtigen kann. Beim Austausch werden der Controller heruntergefahren, der Controller entfernt, der Lüfter ersetzt, der Controller neu installiert und das fehlerhafte Teil an den NetApp zurückgegeben.
 
-Zum Austauschen eines Lüfters müssen Sie den Controller entfernen, den defekten Lüfter entfernen, den Ersatzlüfter einbauen und den Controller wieder einbauen.
-
 .Über diese Aufgabe
 Bei Bedarf können Sie die LEDs des Speichersystems (blau) einschalten, um das betroffene Speichersystem physisch zu lokalisieren. Melden Sie sich über SSH bei der BMC an und geben Sie den Befehl ein `system location-led _on_`.
 
@@ -203,6 +201,7 @@ Drehen Sie die Griffe bei Bedarf aufrecht (neben den Laschen), um sie aus dem We
 
 Um einen Lüfter zu ersetzen, entfernen Sie den defekten Lüfter, und ersetzen Sie ihn durch einen neuen Lüfter.
 
+.Schritte
 . Identifizieren Sie den Lüfter, den Sie ersetzen müssen, indem Sie die Fehlermeldungen der Konsole überprüfen.
 . Entfernen Sie den defekten Lüfter:
 +
