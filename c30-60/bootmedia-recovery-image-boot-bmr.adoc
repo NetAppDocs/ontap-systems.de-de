@@ -2,7 +2,7 @@
 permalink: c30-60/bootmedia-recovery-image-boot-bmr.html 
 sidebar: sidebar 
 keywords: aff c30, aff c60, boot the recovery image 
-summary: Nachdem Sie das neue Bootmediengerät in Ihrem AFF C30- und AFF C80-Speichersystem installiert haben, können Sie den automatisierten Bootmedienwiederherstellungsprozess starten, um die Konfiguration vom Partnerknoten wiederherzustellen. 
+summary: Nach der Installation des neuen Bootmediums in Ihrem AFF C30- und AFF C80-Speichersystem können Sie den automatisierten Bootmedium-Wiederherstellungsprozess starten, um die Konfiguration vom Partnerknoten wiederherzustellen. Während des Wiederherstellungsprozesses prüft das System, ob die Verschlüsselung aktiviert ist und ermittelt den Typ der verwendeten Schlüsselverschlüsselung. Wenn die Schlüsselverschlüsselung aktiviert ist, führt Sie das System durch die entsprechenden Schritte zur Wiederherstellung. 
 ---
 = Automatisierte Boot-Medienwiederherstellung vom Partnerknoten - AFF C30 und AFF C80
 :allow-uri-read: 
@@ -16,7 +16,7 @@ Nach der Installation des neuen Bootmediums in Ihrem AFF C30- und AFF C80-Speich
 Der automatisierte Boot-Medien-Wiederherstellungsprozess wird nur in ONTAP 9.17.1 und höher unterstützt. Wenn Ihr Speichersystem eine frühere Version von ONTAP verwendet, verwenden Sie die link:bootmedia-replace-workflow.html["manuelle Boot-Wiederherstellung"] .
 
 .Bevor Sie beginnen
-* Für OKM benötigen Sie den Inhalt der OKM-Passphrase-Datei.
+* Für OKM benötigen Sie die clusterweite Passphrase und auch die Sicherungsdaten.
 * Für EKM benötigen Sie Kopien der folgenden Dateien vom Partnerknoten:
 +
 ** Datei /cfcard/kmip/servers.cfg.
@@ -85,7 +85,7 @@ Verschlüsselung ist nicht auf dem System installiert. Führen Sie folgende Schr
  a| 
 Fahren Sie mit Schritt 4 fort, um den entsprechenden Schlüsselmanager wiederherzustellen.
 
-Der Node greift auf das Boot-Menü zu und führt Folgendes aus:
+Der Knoten greift auf das Startmenü zu und führt Folgendes aus:
 
 ** Option 10 für Systeme mit Onboard Key Manager (OKM).
 ** Option 11 für Systeme mit externem Key Manager (EKM).
@@ -107,20 +107,32 @@ Entering Bootmenu Option 10...
 This option must be used only in disaster recovery procedures. Are you sure? (y or n):
 ....
 .. Geben Sie an der Eingabeaufforderung ein `Y`, um zu bestätigen, dass Sie den OKM-Wiederherstellungsprozess starten möchten.
-.. Geben Sie die Passphrase für Onboard Key Manager ein, wenn Sie dazu aufgefordert werden, und geben Sie die Passphrase erneut ein, wenn Sie dazu aufgefordert werden.
+.. Geben Sie bei der entsprechenden Aufforderung Folgendes ein:
 +
-.Beispiel für Passphrase-Eingabeaufforderungen anzeigen
+... Die Passphrase
+... Die Passphrase erneut, wenn Sie zur Bestätigung aufgefordert werden
+... Sicherungsdaten für den integrierten Schlüsselmanager
++
+.Beispiel für Eingabeaufforderungen für Passphrasen und Sicherungsdaten anzeigen
 [%collapsible]
 =====
 ....
 Enter the passphrase for onboard key management:
-Enter the passphrase again to confirm:
-Enter the backup data:
 -----BEGIN PASSPHRASE-----
 <passphrase_value>
 -----END PASSPHRASE-----
+Enter the passphrase again to confirm:
+-----BEGIN PASSPHRASE-----
+<passphrase_value>
+-----END PASSPHRASE-----
+Enter the backup data:
+-----BEGIN BACKUP-----
+<passphrase_value>
+-----END ACKUP-----
 ....
 =====
+
+
 .. Überwachen Sie den Recovery-Prozess weiterhin, wenn die entsprechenden Dateien vom Partner-Node wiederhergestellt werden.
 +
 Nach Abschluss der Wiederherstellung wird der Node neu gebootet. Die folgenden Meldungen weisen auf eine erfolgreiche Wiederherstellung hin:
@@ -181,7 +193,7 @@ Wenn `AUTOBOOT` nicht festgelegt ist, geben Sie den entsprechenden Boot-Befehl e
 
 
  a| 
-ONTAP 9.16.1
+ONTAP 9.16.1 und höher
  a| 
 Fahren Sie mit dem nächsten Schritt fort.
 
@@ -259,6 +271,8 @@ xxx.xxx.xxx.xxx:5696.netapp_keystore_uuid=<id_value>
 
  a| 
 Geben Sie bei der entsprechenden Aufforderung die ONTAP-Cluster-UUID des Partners ein.
+
+Sie können die Cluster-UUID vom Partnerknoten aus überprüfen, indem Sie Folgendes verwenden: `cluster identify show` Befehl.
  a| 
 .Beispiel für eine ONTAP-Cluster-UUID anzeigen
 [%collapsible]
@@ -276,6 +290,13 @@ System is ready to utilize external key manager(s).
 
  a| 
 Wenn Sie dazu aufgefordert werden, geben Sie die temporäre Netzwerkschnittstelle und die Einstellungen für den Knoten ein.
+
+Sie müssen Folgendes eingeben:
+
+... Die IP-Adresse für den Port
+... Die Netzmaske für den Port
+... Die IP-Adresse des Standard-Gateways
+
  a| 
 .Beispiel für eine temporäre Netzwerkeinstellung anzeigen
 [%collapsible]
@@ -298,44 +319,11 @@ Trying to recover keys from key servers....
 |===
 .. Je nachdem, ob der Schlüssel erfolgreich wiederhergestellt wurde, führen Sie eine der folgenden Aktionen durch:
 +
-*** Wenn die EKM-Konfiguration erfolgreich wiederhergestellt wurde, versucht der Prozess, die entsprechenden Dateien vom Partnerknoten wiederherzustellen und den Knoten neu zu starten. Mit Schritt d. fortfahren
+*** Wenn Sie sehen `kmip2_client: Successfully imported the keys from external key server: xxx.xxx.xxx.xxx:5696` In der Ausgabe wurde die EKM-Konfiguration erfolgreich wiederhergestellt.
 +
-.Zeigt ein Beispiel für erfolgreiche 9.16.0 Wiederherstellungsmeldungen an
-[%collapsible]
-=====
-....
+Der Prozess versucht, die entsprechenden Dateien vom Partnerknoten wiederherzustellen und startet den Knoten neu.  Fahren Sie mit Schritt d fort.
 
-kmip2_client: Importing keys from external key server: xxx.xxx.xxx.xxx:5696
-[Feb  6 04:57:43]: 0x80cc09000: 0: DEBUG: kmip2::kmipCmds::KmipLocateCmdUtils: [locateMrootAkUuids]:420: Locating local cluster MROOT-AK with keystore UUID: <uuid>
-[Feb  6 04:57:43]: 0x80cc09000: 0: DEBUG: kmip2::kmipCmds::KmipLocateCmdBase: [doCmdImp]:79: Calling KMIP Locate for the following attributes: [<x-NETAPP-ClusterId, <uuid>>, <x-NETAPP-KeyUsage, MROOT-AK>, <x-NETAPP-KeystoreUuid, <uuid>>, <x-NETAPP-Product, Data ONTAP>]
-[Feb  6 04:57:44]: 0x80cc09000: 0: DEBUG: kmip2::kmipCmds::KmipLocateCmdBase: [doCmdImp]:84: KMIP Locate executed successfully!
-[Feb  6 04:57:44]: 0x80cc09000: 0: DEBUG: kmip2::kmipCmds::KmipLocateCmdBase: [setUuidList]:50: UUID returned: <uuid>
-...
-kmip2_client: Successfully imported the keys from external key server: xxx.xxx.xxx.xxx:5696
-
-GEOM_ELI: Device nvd0s4.eli created.
-GEOM_ELI: Encryption: AES-XTS 256
-GEOM_ELI:     Crypto: software
-Feb 06 05:02:37 [_server-name_]: crypto_get_mroot_ak:140 MROOT-AK is requested.
-Feb 06 05:02:37 [_server-name_]: crypto_get_mroot_ak:162 Returning MROOT-AK.
-....
-=====
-+
-.Zeigt ein Beispiel für erfolgreiche 9.16.1 Wiederherstellungsmeldungen an
-[%collapsible]
-=====
-....
-
-System is ready to utilize external key manager(s).
-Trying to recover keys from key servers....
-[discover_versions]
-[status=SUCCESS reason= message=]
-...
-kmip2_client: Successfully imported the keys from external key server: xxx.xxx.xxx.xxx:xxxx
-Successfully recovered keymanager secrets.
-....
-=====
-*** Wenn der Schlüssel nicht erfolgreich wiederhergestellt wurde, wird das System angehalten und zeigt an, dass der Schlüssel nicht wiederhergestellt werden konnte. Die Fehler- und Warnmeldungen werden angezeigt. Führen Sie den Wiederherstellungsprozess erneut aus:
+*** Wenn der Schlüssel nicht erfolgreich wiederhergestellt werden kann, wird das System angehalten und zeigt an, dass der Schlüssel nicht wiederhergestellt werden konnte.  Die Fehler- und Warnmeldungen werden angezeigt.  Sie müssen den Wiederherstellungsprozess erneut ausführen:
 +
 `boot_recovery -partner`
 

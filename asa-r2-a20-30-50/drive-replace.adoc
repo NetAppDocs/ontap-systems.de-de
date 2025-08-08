@@ -2,7 +2,7 @@
 permalink: asa-r2-a20-30-50/drive-replace.html 
 sidebar: sidebar 
 keywords: asa a20, asa a30, asa a50, replace the drives 
-summary: Ersetzen Sie ein Laufwerk in Ihrem ASA A20, ASA A30 oder ASA A50-System, wenn ein Laufwerk ausfällt oder ein Upgrade erforderlich ist. Der Austauschprozess beinhaltet die Identifizierung des fehlerhaften Laufwerks, das sichere Entfernen und die Installation eines neuen Laufwerks, um den kontinuierlichen Datenzugriff und die Systemleistung zu gewährleisten. 
+summary: Ersetzen Sie ein Laufwerk in Ihrem ASA A20-, ASA A30- oder ASA A50-Speichersystem, wenn ein Laufwerk ausfällt oder ein Upgrade erforderlich ist.  Der Austauschvorgang umfasst die Identifizierung des fehlerhaften Laufwerks, dessen sichere Entfernung und die Installation eines neuen Laufwerks, um einen kontinuierlichen Datenzugriff und eine kontinuierliche Systemleistung sicherzustellen. 
 ---
 = Ersetzen Sie ein Laufwerk - ASA A20, ASA A30 und ASA A50
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Ersetzen Sie ein Laufwerk in Ihrem ASA A20, ASA A30 oder ASA A50-System
 
 
 [role="lead"]
-Ersetzen Sie ein Laufwerk in Ihrem ASA A20, ASA A30 oder ASA A50-System, wenn ein Laufwerk ausfällt oder ein Upgrade erforderlich ist. Der Austauschprozess beinhaltet die Identifizierung des fehlerhaften Laufwerks, das sichere Entfernen und die Installation eines neuen Laufwerks, um den kontinuierlichen Datenzugriff und die Systemleistung zu gewährleisten.
+Ersetzen Sie ein Laufwerk in Ihrem ASA A20-, ASA A30- oder ASA A50-Speichersystem, wenn ein Laufwerk ausfällt oder ein Upgrade erforderlich ist.  Der Austauschvorgang umfasst die Identifizierung des fehlerhaften Laufwerks, dessen sichere Entfernung und die Installation eines neuen Laufwerks, um einen kontinuierlichen Datenzugriff und eine kontinuierliche Systemleistung sicherzustellen.
 
 Sie können ein ausgefallenes Laufwerk unterbrechungsfrei ersetzen, während I/O gerade läuft.
 
@@ -79,11 +79,9 @@ Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led
 . Entfernen Sie die Blende von der Vorderseite des Speichersystems.
 . Identifizieren Sie das ausgefallene Laufwerk physisch.
 +
-Wenn ein Laufwerk ausfällt, protokolliert das System eine Warnmeldung an die Systemkonsole und gibt an, welches Laufwerk ausgefallen ist. Außerdem leuchten die Warnungs-LED (gelb) auf der Shelf-Bedienfeldanzeige und das ausgefallene Laufwerk auf.
+** Wenn ein Laufwerk ausfällt, protokolliert das System eine Warnmeldung an die Systemkonsole und gibt an, welches Laufwerk ausgefallen ist. Außerdem leuchten die Warnungs-LED (gelb) auf der Shelf-Bedienfeldanzeige und das ausgefallene Laufwerk auf.
+** Die Aktivitäts-LED (grün) auf einem ausgefallenen Laufwerk kann leuchten (leuchtet dauerhaft), was darauf hinweist, dass das Laufwerk zwar mit Strom versorgt wird, aber nicht blinken sollte, was auf I/O-Aktivität hinweist. Ein ausgefallenes Laufwerk hat keine I/O-Aktivität.
 
-+
-
-NOTE: Die Aktivitäts-LED (grün) auf einem ausgefallenen Laufwerk kann leuchten (leuchtet dauerhaft), was darauf hinweist, dass das Laufwerk zwar mit Strom versorgt wird, aber nicht blinken sollte, was auf I/O-Aktivität hinweist. Ein ausgefallenes Laufwerk hat keine I/O-Aktivität.
 
 . Entfernen Sie das ausgefallene Laufwerk:
 +
@@ -115,8 +113,7 @@ Schieben Sie das Laufwerk mit dem Nockengriff aus dem Laufwerkschacht und stütz
 
 Wenn Sie ein Laufwerk entfernen, verwenden Sie immer zwei Hände, um sein Gewicht zu stützen.
 
-
-NOTE: Da Laufwerke zerbrechlich sind, minimieren Sie die Handhabung, um sie nicht zu beschädigen.
+Da Laufwerke zerbrechlich sind, minimieren Sie die Handhabung, um sie nicht zu beschädigen.
 
 |===
 . Warten Sie mindestens 70 Sekunden, bevor Sie das Ersatzlaufwerk einsetzen.
@@ -141,6 +138,6 @@ Wenn die Aktivitäts-LED des Laufwerks leuchtet, bedeutet dies, dass das Laufwer
 . Setzen Sie die Blende auf der Vorderseite des Speichersystems wieder ein.
 . Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.
 +
-Wenden Sie sich an den technischen Support unter https://mysupport.netapp.com/site/global/dashboard["NetApp Support"], 888-463-8277 (Nordamerika), 00-800-44-638277 (Europa) oder +800-800-80-800 (Asien/Pazifik) wenn Sie die RMA-Nummer oder zusätzliche Hilfe beim Ersatzverfahren benötigen.
+Kontaktieren Sie den technischen Support https://mysupport.netapp.com/site/global/dashboard["NetApp Support"] wenn Sie die RMA-Nummer oder zusätzliche Hilfe beim Austauschverfahren benötigen.
 
 

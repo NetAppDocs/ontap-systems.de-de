@@ -13,7 +13,7 @@ summary: Um eine PCIe-Karte zu ersetzen, müssen Sie die Kabel von den Karten tr
 [role="lead"]
 Ersetzen Sie ein I/O-Modul in Ihrem ASA A70 oder ASA A90-System, wenn das Modul ausfällt oder ein Upgrade erfordert, um eine höhere Leistung oder zusätzliche Funktionen zu unterstützen. Beim Austausch werden der Controller heruntergefahren, das fehlerhafte I/O-Modul ersetzt, der Controller neu gebootet und das fehlerhafte Teil an NetApp zurückgegeben.
 
-Sie können dieses Verfahren mit allen Versionen von ONTAP verwenden, die von Ihrem Speichersystem unterstützt werden.
+Sie können dieses Verfahren mit allen von Ihrem Speichersystem unterstützten ONTAP -Versionen verwenden.
 
 .Bevor Sie beginnen
 * Sie müssen das Ersatzteil zur Verfügung haben.
@@ -92,8 +92,10 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 
 == Schritt 2: Ersetzen Sie ein fehlerhaftes I/O-Modul
 
+.Schritte
 Um ein E/A-Modul zu ersetzen, suchen Sie es innerhalb des Controller-Moduls und befolgen Sie die Schritte.
 
+.Schritte
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Trennen Sie alle Kabel vom Ziel-E/A-Modul.
 +

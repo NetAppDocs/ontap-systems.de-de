@@ -13,23 +13,6 @@ summary: Ersetzen Sie das Systemverwaltungsmodul in Ihrem ASA A70- oder ASA A90-
 [role="lead"]
 Ersetzen Sie das Systemverwaltungsmodul in Ihrem ASA A70- oder ASA A90-System, wenn es defekt ist oder die Firmware beschädigt ist. Beim Austausch werden der Controller heruntergefahren, das fehlerhafte Systemmanagement-Modul ersetzt, der Controller neu gebootet, die Lizenzschlüssel aktualisiert und der fehlerhafte Teil an NetApp zurückgegeben.
 
-Das System-Management-Modul, das sich auf der Rückseite des Controllers in Steckplatz 8 befindet, enthält integrierte Komponenten für die Systemverwaltung sowie Ports für die externe Verwaltung. Der Ziel-Controller muss heruntergefahren werden, um ein funktionsunes System Management-Modul zu ersetzen oder das Boot-Medium zu ersetzen.
-
-Das System-Management-Modul verfügt über die folgenden integrierten Komponenten:
-
-* Boot-Medien, die den Austausch von Startmedien ermöglichen, ohne das Controller-Modul zu entfernen.
-* BMC
-* Management-Switch
-
-
-Das System Management-Modul enthält außerdem die folgenden Ports für die externe Verwaltung:
-
-* RJ45 seriell
-* USB Seriell (Typ C)
-* USB Typ A (Boot-Wiederherstellung)
-* E0M RJ45 Ethernet
-
-
 .Bevor Sie beginnen
 * Bei diesem Verfahren wird die folgende Terminologie verwendet:
 +
@@ -41,6 +24,9 @@ Das System Management-Modul enthält außerdem die folgenden Ports für die exte
 * Der Partner-Controller muss in der Lage sein, den gestörten Controller zu übernehmen.
 * Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
 
+
+.Über diese Aufgabe
+Das System-Management-Modul, das sich auf der Rückseite des Controllers in Steckplatz 8 befindet, enthält integrierte Komponenten für die Systemverwaltung sowie Ports für die externe Verwaltung. Der Ziel-Controller muss heruntergefahren werden, um ein funktionsunes System Management-Modul zu ersetzen oder das Boot-Medium zu ersetzen.
 
 
 
@@ -112,15 +98,13 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 
 
 
-== Schritt 2: Ersetzen Sie das Modul für die Systemverwaltung für beeinträchtigte Störungen
+== Schritt 2: Ersetzen Sie das Systemverwaltungsmodul
 
 Ersetzen Sie das Management-Modul für beeinträchtigte Systeme.
 
+.Schritte
 . Stellen Sie sicher, dass alle Laufwerke im Gehäuse fest auf der Mittelplatine sitzen, indem Sie mit den Daumen auf die einzelnen Laufwerke drücken, bis Sie einen positiven Anschlag spüren.
-+
-
-NOTE: Stellen Sie sicher, dass der NVRAM-Speicher vollständig ist, bevor Sie fortfahren. Wenn die LED am NV-Modul aus ist, wird NVRAM abgestapft. Wenn die LED blinkt, warten Sie, bis das Blinken beendet ist. Wenn das Blinken länger als 5 Minuten andauert, wenden Sie sich an den technischen Support, um Unterstützung zu erhalten.
-
+. Stellen Sie sicher, dass der NVRAM-Speicher vollständig ist, bevor Sie fortfahren. Wenn die LED am NV-Modul aus ist, wird NVRAM abgestapft. Wenn die LED blinkt, warten Sie, bis das Blinken beendet ist. Wenn das Blinken länger als 5 Minuten andauert, wenden Sie sich an den technischen Support, um Unterstützung zu erhalten.
 +
 image::../media/drw_a800_drive_seated_IEOPS-960.svg[Festplattenlaufwerke einsetzen]
 
@@ -131,9 +115,7 @@ image::../media/drw_a800_drive_seated_IEOPS-960.svg[Festplattenlaufwerke einsetz
 NOTE: Wenn Ihr System über Gleichstrom verfügt, trennen Sie den Netzstecker von den Netzteilen.
 
 . Drehen Sie das Kabelführungs-Fach nach unten, indem Sie die Tasten an beiden Seiten an der Innenseite des Kabelführungs-Fachs ziehen und das Fach dann nach unten drehen.
-. Entfernen Sie das System Management-Modul:
-+
-.. Entfernen Sie alle Kabel, die am System Management-Modul angeschlossen sind. Achten Sie darauf, dass die Kabel an den richtigen Anschlüssen angeschlossen sind, damit Sie sie beim Wiedereinsetzen des Moduls an die richtigen Anschlüsse anschließen können.
+. Entfernen Sie alle Kabel, die am System Management-Modul angeschlossen sind. Achten Sie darauf, dass die Kabel an den richtigen Anschlüssen angeschlossen sind, damit Sie sie beim Wiedereinsetzen des Moduls an die richtigen Anschlüsse anschließen können.
 +
 image::../media/drw_70-90_sys-mgmt_remove_ieops-1817.svg[Ersetzen Sie das System Management-Modul]
 
@@ -148,8 +130,6 @@ image::../media/icon_round_1.png[Legende Nummer 1]
 Nockenverriegelung des Systemmanagementmoduls
 
 |===
-
-
 . Entfernen Sie das System Management-Modul:
 +
 .. Drücken Sie die Taste für die Systemverwaltung. Der Nockenhebel bewegt sich vom Gehäuse weg.
@@ -215,14 +195,46 @@ NOTE: Wenn Sie über Gleichstromnetzteile verfügen, schließen Sie den Stromblo
 
 
 
-== Schritt 3: Starten Sie das Controller-Modul neu
+== Schritt 3: Starten Sie den Controller neu
 
 Starten Sie das Controller-Modul neu.
 
+.Schritte
 . Geben Sie an der LOADER-Eingabeaufforderung _bye_ ein.
-. Kehren Sie den Controller in den normalen Betrieb zurück, indem Sie seinen Storage zurückgeben: _Storage Failover Giveback -ofnode _Impaired_Node_Name__
-. Stellen Sie mithilfe der die automatische Rückgabe wieder her `storage failover modify -node local -auto-giveback true` Befehl.
-. Wenn ein AutoSupport-Wartungsfenster ausgelöst wurde, beenden Sie das Fenster mit. Verwenden Sie dazu die `system node autosupport invoke -node * -type all -message MAINT=END` Befehl.
+. Wiederherstellung des normalen Betriebs des Controllers durch Zurückgeben des Speichers:
++
+`storage failover giveback -ofnode _impaired_node_name_`
+
+. Automatische Rückgabe wiederherstellen:
++
+`storage failover modify -node local -auto-giveback true`
+
+. Wenn ein AutoSupport Wartungsfenster ausgelöst wurde, beenden Sie es:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`
+
+
+
+
+
+== Schritt 3: Starten Sie den Controller neu
+
+Starten Sie das Controller-Modul neu.
+
+.Schritte
+. Geben Sie an der LOADER-Eingabeaufforderung _bye_ ein.
+. Wiederherstellung des normalen Betriebs des Controllers durch Zurückgeben des Speichers:
++
+`storage failover giveback -ofnode _impaired_node_name_`
+
+. Automatische Rückgabe wiederherstellen:
++
+`storage failover modify -node local -auto-giveback true`
+
+. Wenn ein AutoSupport Wartungsfenster ausgelöst wurde, beenden Sie es:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`
+
 
 
 

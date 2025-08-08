@@ -28,14 +28,14 @@ Für das AFF C80-Speichersystem können Sie Wartungsvorgänge an den folgenden K
  a| 
 link:bootmedia-replace-workflow-bmr.html["Bootmedium – automatisierte Wiederherstellung"]
  a| 
-Das Bootmedium speichert einen primären und einen sekundären Satz von ONTAP -Imagedateien, die das Speichersystem verwendet, um das Image vom Partnerknoten zu booten und automatisch die entsprechende Bootmenüoption auszuführen, um das Boot-Image auf Ihrem Ersatz-Bootmedium zu installieren. Die automatische Wiederherstellung des Bootmediums wird nur in ONTAP 9.17.1 und höher unterstützt. Wenn Ihr Speichersystem eine frühere Version von ONTAP verwendet, verwenden Sie die link:bootmedia-replace-workflow.html["manuelle Boot-Wiederherstellung"] .
+Das Bootmedium speichert einen primären und einen sekundären Satz von ONTAP Imagedateien, die das Speichersystem zum Booten verwendet.  Während der automatischen Wiederherstellung ruft das System das Boot-Image vom Partnerknoten ab und führt automatisch die entsprechende Boot-Menüoption aus, um das Image auf Ihrem Ersatz-Boot-Medium zu installieren. Die automatische Wiederherstellung des Bootmediums wird nur in ONTAP 9.17.1 und höher unterstützt. Wenn Ihr Speichersystem eine frühere Version von ONTAP verwendet, verwenden Sie die link:bootmedia-replace-workflow.html["manuelle Boot-Wiederherstellung"] .
 
 
 
  a| 
 link:bootmedia-replace-workflow.html["Bootmedium – manuelle Wiederherstellung"]
  a| 
-Das Bootmedium speichert einen primären und einen sekundären Satz von ONTAP Imagedateien, die das Speichersystem verwendet, um das Image von einem USB-Laufwerk zu booten und die Konfiguration vom Partnerknoten wiederherzustellen.
+Das Bootmedium speichert einen primären und einen sekundären Satz von ONTAP Imagedateien, die das Speichersystem verwendet, um das Image von einem USB-Laufwerk zu booten und die Konfiguration vom Partnerknoten wiederherzustellen
 
 
 

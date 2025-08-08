@@ -2,7 +2,7 @@
 permalink: c30-60/controller-replace-restore-system-rma.html 
 sidebar: sidebar 
 keywords: aff c30, aff c60, how to restore NetApp Storage Encryption, how to complete the replacement process 
-summary: Um den vollständigen Betrieb des Systems wiederherzustellen, müssen Sie die LIFs überprüfen, den Cluster-Zustand überprüfen und den fehlerhaften Teil an NetApp zurücksenden. 
+summary: Um den Controller-Austausch für Ihr AFF C30- oder AFF C60-Speichersystem abzuschließen, stellen Sie zunächst gegebenenfalls die NetApp Storage Encryption-Konfiguration wieder her und installieren Sie die erforderlichen Lizenzen auf dem neuen Controller.  Bestätigen Sie als Nächstes, dass die logischen Schnittstellen-LIFs an ihre Home-Ports berichten, und führen Sie eine Cluster-Integritätsprüfung durch.  Registrieren Sie abschließend die Seriennummer des neuen Controllers und senden Sie das defekte Teil an NetApp zurück. 
 ---
 = Vollständiger Controller-Austausch – AFF C30 und AFF C60
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Um den vollständigen Betrieb des Systems wiederherzustellen, müssen S
 
 
 [role="lead"]
-Um den Controller-Austausch für Ihr AFF C30- oder AFF C60-System abzuschließen, stellen Sie zuerst die NetApp-Speicherverschlüsselungskonfiguration (falls erforderlich) wieder her, und installieren Sie die erforderlichen Lizenzen auf dem neuen Controller. Vergewissern Sie sich als nächstes, dass die logischen Schnittstellen (LIFs) ihren Home Ports berichten und eine Cluster-Zustandsprüfung durchführen. Registrieren Sie abschließend die Seriennummer des neuen Controllers und senden Sie das ausgefallene Teil an NetApp zurück.
+Um den Controlleraustausch für Ihr AFF C30- oder AFF C60-Speichersystem abzuschließen, stellen Sie zunächst die NetApp Storage Encryption-Konfiguration wieder her (falls erforderlich) und installieren Sie die erforderlichen Lizenzen auf dem neuen Controller.  Bestätigen Sie als Nächstes, dass die logischen Schnittstellen (LIFs) an ihre Home-Ports berichten, und führen Sie eine Cluster-Integritätsprüfung durch.  Registrieren Sie abschließend die Seriennummer des neuen Controllers und senden Sie das defekte Teil anschließend an NetApp zurück.
 
 
 

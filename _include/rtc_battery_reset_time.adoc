@@ -1,0 +1,23 @@
+= 
+:allow-uri-read: 
+
+
+Nachdem Sie die RTC-Batterie ausgetauscht, den Controller eingesetzt und das Gerät für den ersten BIOS-Reset eingeschaltet haben, werden die folgenden Fehlermeldungen angezeigt:
+
+`RTC date/time error. Reset date/time to default`
+
+`RTC power failure error`
+
+Diese Meldungen sind erwartungsgemäß und Sie können mit diesem Verfahren fortfahren.
+
+.Schritte
+. Überprüfen Sie Datum und Uhrzeit auf dem fehlerfreien Controller mit dem `cluster date show` Befehl.  + Wenn Ihr System beim Bootmenü stoppt, wählen Sie die Option für `Reboot node` und antworten Sie mit _y_, wenn Sie dazu aufgefordert werden. Starten Sie dann LOADER, indem Sie _Strg-C_ drücken
++
+.. Überprüfen Sie an der LOADER-Eingabeaufforderung auf dem Ziel-Controller die Zeit und das Datum mit dem `cluster date show` Befehl.
+.. Ändern Sie bei Bedarf das Datum mit dem `set date mm/dd/yyyy` Befehl.
+.. Stellen Sie bei Bedarf die Uhrzeit in GMT mithilfe des ein `set time hh:mm:ss` Befehl.
+
+
+. Bestätigen Sie Datum und Uhrzeit auf dem Ziel-Controller.
+. Geben Sie an der Eingabeaufforderung des LOADERS _bye_ ein, um die PCIe-Karten und andere Komponenten neu zu initialisieren und den Controller neu starten zu lassen.
+

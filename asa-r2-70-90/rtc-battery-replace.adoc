@@ -91,6 +91,7 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 
 Sie müssen das Controller-Modul aus dem Chassis entfernen, wenn Sie das Controller-Modul ersetzen oder eine Komponente im Controller-Modul ersetzen.
 
+.Schritte
 . Stellen Sie sicher, dass alle Laufwerke im Gehäuse fest auf der Mittelplatine sitzen, indem Sie mit den Daumen auf die einzelnen Laufwerke drücken, bis Sie einen positiven Anschlag spüren.
 +
 image::../media/drw_a800_drive_seated_IEOPS-960.svg[Festplattenlaufwerke einsetzen]
@@ -170,6 +171,7 @@ Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen,
 
 Entfernen Sie die fehlerhafte RTC-Batterie, und setzen Sie die Ersatz-RTC-Batterie ein.
 
+.Schritte
 . Öffnen Sie den Luftkanal der Steuerung auf der Oberseite der Steuerung.
 +
 .. Stecken Sie Ihre Finger in die Aussparungen an den entfernten Enden des Luftkanals.
@@ -191,8 +193,7 @@ image:../media/icon_round_1.png["Legende Nummer 1"]
 |===
 . Schieben Sie den Akku vorsichtig von der Halterung weg, drehen Sie ihn vom Halter weg, und heben Sie ihn dann aus der Halterung.
 +
-
-NOTE: Beachten Sie die Polarität der Batterie, während Sie sie aus dem Halter entfernen. Der Akku ist mit einem Pluszeichen gekennzeichnet und muss korrekt in der Halterung positioniert werden. Ein Pluszeichen in der Nähe des Halters zeigt an, wie der Akku positioniert werden soll.
+Beachten Sie die Polarität der Batterie, während Sie sie aus dem Halter entfernen. Der Akku ist mit einem Pluszeichen gekennzeichnet und muss korrekt in der Halterung positioniert werden. Ein Pluszeichen in der Nähe des Halters zeigt an, wie der Akku positioniert werden soll.
 
 . Entfernen Sie den Ersatzakku aus dem antistatischen Versandbeutel.
 . Notieren Sie die Polarität der RTC-Batterie, und setzen Sie sie anschließend in den Halter ein, indem Sie die Batterie schräg kippen und nach unten drücken.
@@ -205,6 +206,7 @@ NOTE: Beachten Sie die Polarität der Batterie, während Sie sie aus dem Halter 
 
 Installieren Sie das Controller-Modul neu, und starten Sie es neu.
 
+.Schritte
 . Stellen Sie sicher, dass der Luftkanal vollständig geschlossen ist, indem Sie ihn bis zum gewünschten Ziel nach unten drehen.
 +
 Er muss bündig auf die Metallplatte des Controller-Moduls liegen.
@@ -219,8 +221,7 @@ NOTE: Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein,
 Wenn Sie die Transceiver (QSFPs oder SFPs) entfernt haben, müssen Sie sie erneut installieren, wenn Sie Glasfaserkabel verwenden.
 
 +
-
-NOTE: Stellen Sie sicher, dass das Konsolenkabel mit dem reparierten Controller-Modul verbunden ist, sodass beim Neustart Konsolenmeldungen empfangen werden. Der reparierte Controller wird von dem funktionstüchtigen Controller mit Strom versorgt und beginnt mit dem Neubooten, sobald er vollständig im Chassis eingesetzt ist.
+Stellen Sie sicher, dass das Konsolenkabel mit dem reparierten Controller-Modul verbunden ist, sodass beim Neustart Konsolenmeldungen empfangen werden. Der reparierte Controller wird von dem funktionstüchtigen Controller mit Strom versorgt und beginnt mit dem Neubooten, sobald er vollständig im Chassis eingesetzt ist.
 
 . Führen Sie die Neuinstallation des Controller-Moduls durch:
 +
@@ -228,49 +229,52 @@ NOTE: Stellen Sie sicher, dass das Konsolenkabel mit dem reparierten Controller-
 +
 Die Verriegelungen steigen, wenn das Controller-Modul voll eingesetzt ist.
 
-
-
 +
+Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige Kraft verwenden, um Schäden an den Anschlüssen zu vermeiden.
 
-NOTE: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige Kraft verwenden, um Schäden an den Anschlüssen zu vermeiden.
-
-+
 .. Drehen Sie die Verriegelungen nach oben in die verriegelte Position.
 
 
 . Schließen Sie die Netzkabel an die Netzteile an. Der Controller startet neu, sobald die Stromversorgung wiederhergestellt ist.
 +
+Wenn Sie über Gleichstromnetzteile verfügen, schließen Sie den Netzteilblock wieder an die Netzteile an, nachdem das Controller-Modul vollständig im Gehäuse eingesetzt ist.
 
-NOTE: Wenn Sie über Gleichstromnetzteile verfügen, schließen Sie den Netzteilblock wieder an die Netzteile an, nachdem das Controller-Modul vollständig im Gehäuse eingesetzt ist.
+. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben:
++
+`storage failover giveback -ofnode _impaired_node_name_`.
 
-. Stellen Sie den außer Betrieb genommenen Controller wieder ein, indem Sie seine Speicherung zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`.
-. Wenn die automatische Rückgabe deaktiviert wurde, aktivieren Sie sie erneut: `storage failover modify -node local -auto-giveback true`.
-. Wenn AutoSupport aktiviert ist, kann die automatische Fallerstellung wiederhergestellt/aufgehoben werden: `system node autosupport invoke -node * -type all -message MAINT=END`.
+. Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut:
++
+`storage failover modify -node local -auto-giveback true`.
+
+. Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung wiederherstellen/zurücknehmen:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`.
+
 
 
 
 
 == Schritt 5: Setzen Sie die Uhrzeit und das Datum auf dem Controller zurück
 
+Nachdem Sie die RTC-Batterie ausgetauscht, den Controller eingesetzt und das Gerät für den ersten BIOS-Reset eingeschaltet haben, werden die folgenden Fehlermeldungen angezeigt:
 
-NOTE: Nach dem Austauschen der RTC-Batterie, dem Einsetzen des Controllers und dem Einschalten des ersten BIOS-Rücksetzens werden folgende Fehlermeldungen angezeigt:
 `RTC date/time error. Reset date/time to default`
-`RTC power failure error` Diese Meldungen werden entfernt, und Sie können mit diesem Verfahren fortfahren.
 
-. Überprüfen Sie mit dem Befehl Datum und Uhrzeit auf dem Controller für den ordnungsgemäßen Zustand `cluster date show` .
+`RTC power failure error`
 
+Diese Meldungen sind erwartungsgemäß und Sie können mit diesem Verfahren fortfahren.
 
-
-NOTE: Wenn Ihr System im Boot-Menü stoppt, wählen Sie die Option für  `Reboot node` und antworten Sie bei der entsprechenden Aufforderung _y_, und starten Sie dann mit _Strg-C_ zum LOADER
-
-. Überprüfen Sie an der LOADER-Eingabeaufforderung auf dem Ziel-Controller die Zeit und das Datum mit dem `cluster date show` Befehl.
-. Ändern Sie bei Bedarf das Datum mit dem `set date mm/dd/yyyy` Befehl.
-. Stellen Sie bei Bedarf die Uhrzeit in GMT mithilfe des ein `set time hh:mm:ss` Befehl.
+.Schritte
+. Überprüfen Sie Datum und Uhrzeit auf dem fehlerfreien Controller mit dem `cluster date show` Befehl.  + Wenn Ihr System beim Bootmenü stoppt, wählen Sie die Option für `Reboot node` und antworten Sie mit _y_, wenn Sie dazu aufgefordert werden. Starten Sie dann LOADER, indem Sie _Strg-C_ drücken
 +
-.. Bestätigen Sie Datum und Uhrzeit auf dem Ziel-Controller.
-.. Geben Sie an der Eingabeaufforderung des LOADERS _bye_ ein, um die PCIe-Karten und andere Komponenten neu zu initialisieren und den Controller neu starten zu lassen.
+.. Überprüfen Sie an der LOADER-Eingabeaufforderung auf dem Ziel-Controller die Zeit und das Datum mit dem `cluster date show` Befehl.
+.. Ändern Sie bei Bedarf das Datum mit dem `set date mm/dd/yyyy` Befehl.
+.. Stellen Sie bei Bedarf die Uhrzeit in GMT mithilfe des ein `set time hh:mm:ss` Befehl.
 
 
+. Bestätigen Sie Datum und Uhrzeit auf dem Ziel-Controller.
+. Geben Sie an der Eingabeaufforderung des LOADERS _bye_ ein, um die PCIe-Karten und andere Komponenten neu zu initialisieren und den Controller neu starten zu lassen.
 
 
 

@@ -19,6 +19,7 @@ Um die Datensicherheit auf Ihrem Speichersystem zu gewährleisten, müssen Sie d
 
 Prüfen Sie, ob Ihre ONTAP Version NetApp Volume Encryption (NVE) unterstützt. Diese Informationen sind entscheidend, um das richtige ONTAP-Image herunterzuladen.
 
+.Schritte
 . Stellen Sie fest, ob Ihre ONTAP-Version Verschlüsselung unterstützt, indem Sie den folgenden Befehl ausführen:
 +
 `version -v`
@@ -40,6 +41,7 @@ Wenn die Ausgabe enthält `1Ono-DARE`, wird NVE auf Ihrer Cluster-Version nicht 
 
 Um einen Controller sicher herunterzufahren, müssen Sie zuerst ermitteln, ob der External Key Manager (EKM) oder der Onboard Key Manager (OKM) aktiv ist. Überprüfen Sie anschließend den verwendeten Schlüsselmanager, zeigen Sie die entsprechenden Schlüsselinformationen an und ergreifen Sie Maßnahmen, die auf dem Status der Authentifizierungsschlüssel basieren.
 
+.Schritte
 . Bestimmen Sie, welcher Schlüsselmanager auf Ihrem System aktiviert ist:
 +
 [cols="1a,2a"]

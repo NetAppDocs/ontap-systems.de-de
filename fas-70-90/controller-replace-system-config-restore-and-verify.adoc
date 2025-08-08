@@ -19,6 +19,7 @@ summary: Überprüfen Sie, ob die HA-Konfiguration des Controllers in Ihrem FAS7
 
 Sie müssen die überprüfen `HA` Status des Controller-Moduls und, falls erforderlich, aktualisieren Sie den Status entsprechend Ihrer Systemkonfiguration.
 
+.Schritte
 . Booten im Wartungsmodus: `boot_ontap maint`
 +
 .. Geben Sie ein `y`, wenn _Continue with Boot?_ angezeigt wird.
@@ -55,6 +56,7 @@ Für den HA-Status kann einer der folgenden Werte verwendet werden:
 
 == Schritt 2: Überprüfen Sie die Datenträgerliste
 
+.Schritte
 . Überprüfen Sie, ob der Adapter die Pfade zu allen Festplatten mit auflistet `storage show disk -p`.
 +
 Wenn Sie Probleme sehen, überprüfen Sie die Verkabelung, und setzen Sie die Kabel wieder ein.

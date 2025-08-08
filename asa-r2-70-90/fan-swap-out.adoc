@@ -13,8 +13,6 @@ summary: Ersetzen Sie ein Lüftermodul in Ihrem ASA A70- oder ASA A90-System, we
 [role="lead"]
 Ersetzen Sie ein Lüftermodul in Ihrem ASA A70- oder ASA A90-System, wenn ein Lüfter ausfällt oder nicht effizient arbeitet, da dies die Systemkühlung und die Gesamtleistung beeinträchtigen kann. Beim Austausch werden der Controller heruntergefahren, der Controller entfernt, der Lüfter ersetzt, der Controller neu installiert und das fehlerhafte Teil an den NetApp zurückgegeben.
 
-Entfernen Sie zum Austauschen eines Lüfters das fehlerhafte Lüftermodul und ersetzen Sie es durch ein neues Lüftermodul.
-
 
 
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
@@ -89,6 +87,7 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 
 Sie müssen das Controller-Modul aus dem Chassis entfernen, wenn Sie das Controller-Modul ersetzen oder eine Komponente im Controller-Modul ersetzen.
 
+.Schritte
 . Stellen Sie sicher, dass alle Laufwerke im Gehäuse fest auf der Mittelplatine sitzen, indem Sie mit den Daumen auf die einzelnen Laufwerke drücken, bis Sie einen positiven Anschlag spüren.
 +
 image::../media/drw_a800_drive_seated_IEOPS-960.svg[Festplattenlaufwerke einsetzen]
@@ -168,6 +167,7 @@ Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen,
 
 Entfernen Sie zum Austauschen eines Lüfters das fehlerhafte Lüftermodul und ersetzen Sie es durch ein neues Lüftermodul.
 
+.Schritte
 . Ermitteln Sie das Lüftermodul, das Sie ersetzen müssen, indem Sie die Fehlermeldungen der Konsole überprüfen.
 . Entfernen Sie das Lüftermodul, indem Sie die Verriegelungslaschen an der Seite des Lüftermoduls einklemmen und dann das Lüftermodul gerade aus dem Controller-Modul herausheben.
 +
@@ -196,6 +196,7 @@ image:../media/icon_round_2.png["Legende Nummer 2"]
 
 Installieren Sie das Controller-Modul neu, und starten Sie es neu.
 
+.Schritte
 . Stellen Sie sicher, dass der Luftkanal vollständig geschlossen ist, indem Sie ihn bis zum gewünschten Ziel nach unten drehen.
 +
 Er muss bündig auf die Metallplatte des Controller-Moduls liegen.
@@ -210,8 +211,7 @@ NOTE: Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein,
 Wenn Sie die Transceiver (QSFPs oder SFPs) entfernt haben, müssen Sie sie erneut installieren, wenn Sie Glasfaserkabel verwenden.
 
 +
-
-NOTE: Stellen Sie sicher, dass das Konsolenkabel mit dem reparierten Controller-Modul verbunden ist, sodass beim Neustart Konsolenmeldungen empfangen werden. Der reparierte Controller wird von dem funktionstüchtigen Controller mit Strom versorgt und beginnt mit dem Neubooten, sobald er vollständig im Chassis eingesetzt ist.
+Stellen Sie sicher, dass das Konsolenkabel mit dem reparierten Controller-Modul verbunden ist, sodass beim Neustart Konsolenmeldungen empfangen werden. Der reparierte Controller wird von dem funktionstüchtigen Controller mit Strom versorgt und beginnt mit dem Neubooten, sobald er vollständig im Chassis eingesetzt ist.
 
 . Führen Sie die Neuinstallation des Controller-Moduls durch:
 +
@@ -219,24 +219,28 @@ NOTE: Stellen Sie sicher, dass das Konsolenkabel mit dem reparierten Controller-
 +
 Die Verriegelungen steigen, wenn das Controller-Modul voll eingesetzt ist.
 
-
-
 +
+Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige Kraft verwenden, um Schäden an den Anschlüssen zu vermeiden.
 
-NOTE: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige Kraft verwenden, um Schäden an den Anschlüssen zu vermeiden.
-
-+
 .. Drehen Sie die Verriegelungen nach oben in die verriegelte Position.
 
 
 . Schließen Sie die Netzkabel an die Netzteile an. Der Controller startet neu, sobald die Stromversorgung wiederhergestellt ist.
 +
+Wenn Sie über Gleichstromnetzteile verfügen, schließen Sie den Netzteilblock wieder an die Netzteile an, nachdem das Controller-Modul vollständig im Gehäuse eingesetzt ist.
 
-NOTE: Wenn Sie über Gleichstromnetzteile verfügen, schließen Sie den Netzteilblock wieder an die Netzteile an, nachdem das Controller-Modul vollständig im Gehäuse eingesetzt ist.
+. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben:
++
+`storage failover giveback -ofnode _impaired_node_name_`.
 
-. Stellen Sie den außer Betrieb genommenen Controller wieder ein, indem Sie seine Speicherung zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`.
-. Wenn die automatische Rückgabe deaktiviert wurde, aktivieren Sie sie erneut: `storage failover modify -node local -auto-giveback true`.
-. Wenn AutoSupport aktiviert ist, kann die automatische Fallerstellung wiederhergestellt/aufgehoben werden: `system node autosupport invoke -node * -type all -message MAINT=END`.
+. Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut:
++
+`storage failover modify -node local -auto-giveback true`.
+
+. Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung wiederherstellen/zurücknehmen:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`.
+
 
 
 

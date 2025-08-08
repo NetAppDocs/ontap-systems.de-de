@@ -15,9 +15,10 @@ Tauschen Sie die NVRAM in Ihrem ASA A70 oder ASA A90-System aus, wenn der nichtf
 
 Das NVRAM-Modul besteht aus der NVRAM12-Hardware und vor Ort austauschbaren DIMMs. Ein ausgefallenes NVRAM-Modul oder die DIMMs im NVRAM-Modul können Sie ersetzen.
 
-Alle anderen Komponenten im System müssen ordnungsgemäß funktionieren; andernfalls müssen Sie sich an https://support.netapp.com["NetApp Support"].
+.Bevor Sie beginnen
+* Stellen Sie sicher, dass Sie das Ersatzteil zur Verfügung haben. Sie müssen die ausgefallene Komponente durch eine von NetApp erhaltene Ersatzkomponente ersetzen.
+* Stellen Sie sicher, dass alle anderen Komponenten des Speichersystems ordnungsgemäß funktionieren. Wenn nicht, wenden Sie sich an https://support.netapp.com["NetApp Support"].
 
-Stellen Sie sicher, dass Sie die fehlerhafte Komponente durch eine von NetApp erhaltene Austauschkomponente ersetzen.
 
 
 
@@ -91,7 +92,7 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 
 == Schritt 2: Ersetzen Sie das NVRAM-Modul oder das NVRAM-DIMM
 
-Ersetzen Sie das NVRAM-Modul oder die NVRAM-DIMMs mit der entsprechenden Option.
+Ersetzen Sie das NVRAM Modul oder die NVRAM -DIMMs mithilfe der entsprechenden Option.
 
 [role="tabbed-block"]
 ====
@@ -99,6 +100,7 @@ Ersetzen Sie das NVRAM-Modul oder die NVRAM-DIMMs mit der entsprechenden Option.
 --
 Um das NVRAM-Modul auszutauschen, suchen Sie es in Steckplatz 4/5 im Gehäuse, und befolgen Sie die entsprechenden Schritte.
 
+.Schritte
 . Stellen Sie sicher, dass alle Laufwerke im Gehäuse fest auf der Mittelplatine sitzen, indem Sie mit den Daumen auf die einzelnen Laufwerke drücken, bis Sie einen positiven Anschlag spüren.
 +
 image::../media/drw_a800_drive_seated_IEOPS-960.svg[Festplattenlaufwerke einsetzen]
@@ -163,6 +165,7 @@ NOTE: Wenn Sie über Gleichstromnetzteile verfügen, schließen Sie den Stromblo
 --
 Um NVRAM-DIMMs im NVRAM-Modul auszutauschen, müssen Sie das NVRAM-Modul entfernen und dann das Ziel-DIMM ersetzen.
 
+.Schritte
 . Stellen Sie sicher, dass alle Laufwerke im Gehäuse fest auf der Mittelplatine sitzen, indem Sie mit den Daumen auf die einzelnen Laufwerke drücken, bis Sie einen positiven Anschlag spüren.
 +
 image::../media/drw_a800_drive_seated_IEOPS-960.svg[Festplattenlaufwerke einsetzen]

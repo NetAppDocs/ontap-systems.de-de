@@ -2,7 +2,7 @@
 permalink: asa-r2-a20-30-50/io-module-add.html 
 sidebar: sidebar 
 keywords: asa a20, asa a30, asa a50, add I/O module 
-summary: Um ein E/A-Modul auszutauschen, müssen Sie die Kabel vom Modul trennen, die SFP- und QSFP-Module aus dem Modul entfernen, das Modul entfernen, das Ersatzmodul installieren, die SFP- und QSFP-Module wieder einsetzen und das E/A-Modul anschließend verkabeln. 
+summary: Fügen Sie Ihrem ASA A20-, ASA A30- oder ASA A50-Speichersystem ein E/A-Modul hinzu, um die Netzwerkkonnektivität zu verbessern und die Fähigkeit Ihres Systems zur Verarbeitung des Datenverkehrs zu erweitern. 
 ---
 = Fügen Sie ein E/A-Modul hinzu – ASA A20, ASA A30 und ASA A50
 :allow-uri-read: 
@@ -11,9 +11,9 @@ summary: Um ein E/A-Modul auszutauschen, müssen Sie die Kabel vom Modul trennen
 
 
 [role="lead"]
-Fügen Sie Ihrem ASA A20, ASA A30 oder ASA A50 ein I/O-Modul hinzu, um die Netzwerkkonnektivität zu verbessern und die Fähigkeit Ihres Systems zu erweitern, den Datenverkehr zu bewältigen.
+Fügen Sie Ihrem ASA A20-, ASA A30- oder ASA A50-Speichersystem ein E/A-Modul hinzu, um die Netzwerkkonnektivität zu verbessern und die Fähigkeit Ihres Systems zur Verarbeitung des Datenverkehrs zu erweitern.
 
-Sie können Ihrem ASA C30-Speichersystem ein E/A-Modul hinzufügen, sofern Steckplätze verfügbar sind. Sind alle Steckplätze belegt, können Sie ein vorhandenes Modul ersetzen und ein neues hinzufügen.
+Sie können Ihrem ASA A20-, ASA A30- oder ASA A50-Speichersystem ein E/A-Modul hinzufügen, wenn Steckplätze verfügbar sind.  Wenn alle Steckplätze vollständig belegt sind, können Sie ein vorhandenes Modul ersetzen, um ein neues hinzuzufügen.
 
 .Über diese Aufgabe
 Falls erforderlich, können Sie die (blauen) LEDs des Speichersystems einschalten, um die physische Lokalisierung des ausgewählten Speichersystems zu erleichtern. Melden Sie sich über SSH bei der BMC an und geben Sie den Befehl ein `system location-led _on_`.

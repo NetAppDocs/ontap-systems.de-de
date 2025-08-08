@@ -2,7 +2,7 @@
 permalink: c30-60/dimm-replace.html 
 sidebar: sidebar 
 keywords: aff c30, aff c60, replace a dimm 
-summary: Ersetzen Sie ein DIMM im Controller-Modul, wenn Ihr System eine steigende Anzahl korrigierbarer ECC-Codes registriert. Andernfalls entsteht eine Systempanik. 
+summary: Ersetzen Sie ein DIMM in Ihrem AFF C30- oder AFF C60-Speichersystem, wenn übermäßig viele korrigierbare oder nicht korrigierbare Speicherfehler erkannt werden.  Solche Fehler können verhindern, dass das Speichersystem ONTAP bootet.  Der Austauschvorgang umfasst das Herunterfahren des beschädigten Controllers, dessen Entfernung, den Austausch des DIMM, die Neuinstallation des Controllers und die anschließende Rücksendung des defekten Teils an NetApp. 
 ---
 = Ersetzen Sie ein DIMM-Modul – AFF C30 und AFF C60
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Ersetzen Sie ein DIMM im Controller-Modul, wenn Ihr System eine steigen
 
 
 [role="lead"]
-Ersetzen Sie ein DIMM in Ihrem AFF C30- oder AFF C60-System, wenn zu viele korrigierbare oder nicht korrigierbare Speicherfehler festgestellt werden. Derartige Fehler können das Booten von ONTAP durch das Storage-System verhindern. Beim Austausch wird der beeinträchtigte Controller heruntergefahren, entfernt, das DIMM ersetzt, der Controller neu installiert und das fehlerhafte Teil anschließend an den NetApp zurückgegeben.
+Ersetzen Sie ein DIMM in Ihrem AFF C30- oder AFF C60-Speichersystem, wenn übermäßig viele korrigierbare oder nicht korrigierbare Speicherfehler erkannt werden.  Solche Fehler können verhindern, dass das Speichersystem ONTAP bootet.  Der Austauschvorgang umfasst das Herunterfahren des beschädigten Controllers, dessen Entfernung, den Austausch des DIMM, die Neuinstallation des Controllers und die anschließende Rücksendung des defekten Teils an NetApp.
 
 .Bevor Sie beginnen
 * Alle anderen Komponenten des Speichersystems müssen ordnungsgemäß funktionieren. Falls nicht, wenden Sie sich vor dem Fortfahren an https://mysupport.netapp.com/site/global/dashboard["NetApp Support"].

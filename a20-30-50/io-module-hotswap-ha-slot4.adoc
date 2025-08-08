@@ -2,7 +2,7 @@
 permalink: a20-30-50/io-module-hotswap-ha-slot4.html 
 sidebar: sidebar 
 keywords: aff a20, aff a30, aff a50, hotswap a cluster ha card 
-summary: Das Cluster- und HA-E/A-Modul unterstützt Interconnects für Clustering und Hochverfügbarkeit. Bei einem Modulausfall können Sie das Modul in Ihrem AFF A20-, AFF A30- oder AFF A50-Speichersystem im laufenden Betrieb austauschen. 
+summary: Das Cluster- und HA-E/A-Modul unterstützt Interconnects für Clustering und Hochverfügbarkeit. Sie können das Modul in Ihrem AFF A20-, AFF A30- oder AFF A50-Speichersystem im laufenden Betrieb austauschen, wenn das Modul ausfällt und Ihr Speichersystem bestimmte Anforderungen erfüllt. 
 ---
 = Hot-Swap eines für Cluster- und HA-Verkehr verwendeten E/A-Moduls – AFF A20, AFF A30 und AFF A50
 :allow-uri-read: 
@@ -15,34 +15,7 @@ Das Cluster- und HA-E/A-Modul unterstützt Interconnects für Clustering und Hoc
 
 Um ein Modul im laufenden Betrieb auszutauschen, stellen Sie sicher, dass Ihr Speichersystem die Verfahrensanforderungen erfüllt, bereiten Sie das Speichersystem und das E/A-Modul in Steckplatz 4 vor, tauschen Sie das ausgefallene Modul im laufenden Betrieb gegen ein gleichwertiges aus, bringen Sie das Ersatzmodul online, stellen Sie den Normalbetrieb des Speichersystems wieder her und senden Sie das ausgefallene Modul an NetApp zurück.
 
-
-
-== Schritt 1: Sicherstellen, dass das Speichersystem die Verfahrensanforderungen erfüllt
-
-Um dieses Verfahren nutzen zu können, muss Ihr Speichersystem alle Voraussetzungen erfüllen.  Lesen Sie die Hinweise, um weitere Informationen zu diesem Verfahren zu erhalten.
-
-
-NOTE: Wenn Ihr Speichersystem nicht alle Anforderungen erfüllt, müssen Sie dielink:io-module-replace.html["Vorgehensweise zum Ersetzen eines E/A-Moduls"] .
-
-.Anforderungen
-* Auf Ihrem Speichersystem muss ONTAP 9.17.1 oder höher ausgeführt werden.
-* Bei dem ausgefallenen E/A-Modul muss es sich um ein Cluster- und HA-E/A-Modul in Steckplatz 4 handeln und Sie müssen es durch ein gleichwertiges Cluster- und HA-E/A-Modul ersetzen. Der E/A-Modultyp kann nicht geändert werden.
-* Ihre Speichersystemkonfiguration darf nur über ein Cluster- und HA-E/A-Modul in Steckplatz 4 verfügen, nicht über zwei Cluster- und HA-E/A-Module.
-* Ihr Speichersystem muss eine Clusterkonfiguration mit zwei Knoten (ohne oder mit Switch) sein.
-* Der Controller mit dem ausgefallenen Cluster und HA-E/A-Modul (der beeinträchtigte Controller) muss den fehlerfreien Partnercontroller bereits übernommen haben. Die Übernahme sollte automatisch erfolgen, wenn das E/A-Modul ausgefallen ist.
-+
-Bei Clustern mit zwei Knoten kann das Speichersystem nicht erkennen, welcher Controller das ausgefallene E/A-Modul enthält. Daher kann jeder der beiden Controller die Übernahme einleiten. Der Hot-Swap-Vorgang für Cluster- und HA-E/A-Module wird nur unterstützt, wenn der Controller mit dem ausgefallenen E/A-Modul (der beeinträchtigte Controller) den fehlerfreien Controller übernommen hat.
-
-+
-Sie können überprüfen, ob der beeinträchtigte Controller den fehlerfreien Controller erfolgreich übernommen hat, indem Sie Folgendes eingeben:  `storage failover show` Befehl.
-
-+
-Wenn Sie nicht sicher sind, bei welchem Controller sich das fehlerhafte E/A-Modul befindet, wenden Sie sich an  https://mysupport.netapp.com/site/global/dashboard["NetApp Support"] .
-
-* Alle anderen Komponenten des Speichersystems müssen ordnungsgemäß funktionieren. Falls nicht, wenden Sie sich an https://mysupport.netapp.com/site/global/dashboard["NetApp Support"], bevor Sie mit diesem Verfahren fortfahren.
-
-
-.Überlegungen
+.Über diese Aufgabe
 * Durch Hot-Swapping des Clusters und des HA-E/A-Moduls müssen Sie keine manuelle Übernahme durchführen; der beeinträchtigte Controller (der Controller mit dem ausgefallenen Cluster und HA-E/A-Modul) hat automatisch den fehlerfreien Controller übernommen.
 +
 Wenn der beeinträchtigte Controller den fehlerfreien Controller übernommen hat, besteht die einzige Möglichkeit zur Wiederherstellung ohne Ausfall darin, das Modul im laufenden Betrieb auszutauschen.
@@ -64,10 +37,37 @@ Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led
 
 
 
+== Schritt 1: Sicherstellen, dass das Speichersystem die Verfahrensanforderungen erfüllt
+
+Um dieses Verfahren zu verwenden, stellen Sie sicher, dass Ihr Speichersystem alle Anforderungen erfüllt.
+
+
+NOTE: Wenn Ihr Speichersystem nicht alle Anforderungen erfüllt, müssen Sie dielink:io-module-replace.html["Vorgehensweise zum Ersetzen eines E/A-Moduls"] .
+
+* Auf Ihrem Speichersystem muss ONTAP 9.17.1 oder höher ausgeführt werden.
+* Bei dem ausgefallenen E/A-Modul muss es sich um ein Cluster- und HA-E/A-Modul in Steckplatz 4 handeln und Sie müssen es durch ein gleichwertiges Cluster- und HA-E/A-Modul ersetzen. Der E/A-Modultyp kann nicht geändert werden.
+* Ihre Speichersystemkonfiguration darf nur über ein Cluster- und HA-E/A-Modul in Steckplatz 4 verfügen, nicht über zwei Cluster- und HA-E/A-Module.
+* Ihr Speichersystem muss eine Clusterkonfiguration mit zwei Knoten (ohne oder mit Switch) sein.
+* Der Controller mit dem ausgefallenen Cluster und HA-E/A-Modul (der beeinträchtigte Controller) muss den fehlerfreien Partnercontroller bereits übernommen haben. Die Übernahme sollte automatisch erfolgen, wenn das E/A-Modul ausgefallen ist.
++
+Bei Clustern mit zwei Knoten kann das Speichersystem nicht erkennen, welcher Controller das ausgefallene E/A-Modul enthält. Daher kann jeder der beiden Controller die Übernahme einleiten. Der Hot-Swap-Vorgang für Cluster- und HA-E/A-Module wird nur unterstützt, wenn der Controller mit dem ausgefallenen E/A-Modul (der beeinträchtigte Controller) den fehlerfreien Controller übernommen hat.
+
++
+Sie können überprüfen, ob der beeinträchtigte Controller den fehlerfreien Controller erfolgreich übernommen hat, indem Sie Folgendes eingeben:  `storage failover show` Befehl.
+
++
+Wenn Sie nicht sicher sind, bei welchem Controller sich das fehlerhafte E/A-Modul befindet, wenden Sie sich an  https://mysupport.netapp.com/site/global/dashboard["NetApp Support"] .
+
+* Alle anderen Komponenten des Speichersystems müssen ordnungsgemäß funktionieren. Falls nicht, wenden Sie sich an https://mysupport.netapp.com/site/global/dashboard["NetApp Support"], bevor Sie mit diesem Verfahren fortfahren.
+
+
+
+
 == Schritt 2: Speichersystem und I/O-Modulsteckplatz 4 vorbereiten
 
 Bereiten Sie das Speichersystem und den E/A-Modulsteckplatz 4 vor, sodass der ausgefallene Cluster und das HA-E/A-Modul sicher entfernt werden können:
 
+.Schritte
 . Richtig gemahlen.
 . Trennen Sie die Kabel vom ausgefallenen Cluster und HA-E/A-Modul.
 +
@@ -173,6 +173,7 @@ Zum Eindrücken des I/O-Moduls können Sie die Lasche links und die Rändelschra
 
 Bringen Sie den Ersatzcluster und das HA-E/A-Modul in Steckplatz 4 online, überprüfen Sie, ob die Modulports erfolgreich initialisiert wurden, überprüfen Sie, ob Steckplatz 4 eingeschaltet ist, und überprüfen Sie dann, ob das Modul online ist und erkannt wird.
 
+.Schritte
 . Bringen Sie den Ersatzcluster und das HA-E/A-Modul online:
 +
 .. Geben Sie den folgenden Befehl ein:

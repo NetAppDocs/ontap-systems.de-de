@@ -2,7 +2,7 @@
 permalink: asa-r2-a20-30-50/dimm-replace.html 
 sidebar: sidebar 
 keywords: asa a20, asa a30, asa a50, replace a dimm 
-summary: Ersetzen Sie ein DIMM in Ihrem ASA A20, ASA A30 oder ASA A50-System, wenn zu viele korrigierbare oder nicht korrigierbare Speicherfehler erkannt werden. Derartige Fehler können das Booten von ONTAP durch das Storage-System verhindern. Beim Austausch wird der beeinträchtigte Controller heruntergefahren, entfernt, das DIMM ersetzt, der Controller neu installiert und das fehlerhafte Teil anschließend an den NetApp zurückgegeben. 
+summary: Ersetzen Sie ein DIMM in Ihrem ASA A20-, ASA A30- oder ASA A50-Speichersystem, wenn übermäßig viele korrigierbare oder nicht korrigierbare Speicherfehler erkannt werden.  Solche Fehler können verhindern, dass das Speichersystem ONTAP bootet.  Der Austauschvorgang umfasst das Herunterfahren des beschädigten Controllers, dessen Entfernung, den Austausch des DIMM, die Neuinstallation des Controllers und die anschließende Rücksendung des defekten Teils an NetApp. 
 ---
 = Ersetzen Sie ein DIMM-Modul – ASA A20, ASA A30 und ASA A50
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Ersetzen Sie ein DIMM in Ihrem ASA A20, ASA A30 oder ASA A50-System, we
 
 
 [role="lead"]
-Ersetzen Sie ein DIMM in Ihrem ASA A20, ASA A30 oder ASA A50-System, wenn zu viele korrigierbare oder nicht korrigierbare Speicherfehler erkannt werden. Derartige Fehler können das Booten von ONTAP durch das Storage-System verhindern. Beim Austausch wird der beeinträchtigte Controller heruntergefahren, entfernt, das DIMM ersetzt, der Controller neu installiert und das fehlerhafte Teil anschließend an den NetApp zurückgegeben.
+Ersetzen Sie ein DIMM in Ihrem ASA A20-, ASA A30- oder ASA A50-Speichersystem, wenn übermäßig viele korrigierbare oder nicht korrigierbare Speicherfehler erkannt werden.  Solche Fehler können verhindern, dass das Speichersystem ONTAP bootet.  Der Austauschvorgang umfasst das Herunterfahren des beschädigten Controllers, dessen Entfernung, den Austausch des DIMM, die Neuinstallation des Controllers und die anschließende Rücksendung des defekten Teils an NetApp.
 
 Sie müssen ein DIMM im Controller ersetzen, wenn das Speichersystem auf Fehler wie übermäßige CECC-Fehler (korrigierbare Fehlerkorrekturcodes) stößt, die auf Warnmeldungen der Systemzustandsüberwachung oder nicht korrigierbaren ECC-Fehlern basieren, die normalerweise durch einen einzelnen DIMM-Fehler verursacht werden, der das Starten von ONTAP verhindert.
 

@@ -2,7 +2,7 @@
 permalink: asa-r2-c30/bootmedia-replace-requirements-bmr.html 
 sidebar: sidebar 
 keywords: asa c30, replace the boot media 
-summary: 'Bevor Sie das Bootmedium in Ihrem ASA C30-Speichersystem austauschen, stellen Sie sicher, dass Sie die notwendigen Voraussetzungen und Überlegungen für einen erfolgreichen Austausch erfüllen. Dazu gehört die Überprüfung, ob Sie das richtige Ersatz-Bootmedium haben, ob der e0S-Port (e0M Wrench) am defekten Controller ordnungsgemäß funktioniert und ob der Onboard Key Manager (OKM) oder External Key Manager (EKM) aktiviert ist.' 
+summary: 'Stellen Sie vor dem Austausch des Startmediums in Ihrem ASA C30-Speichersystem sicher, dass Sie die erforderlichen Anforderungen und Überlegungen für einen erfolgreichen Austausch erfüllen.  Dazu gehört die Überprüfung, ob Sie über das richtige Ersatz-Bootmedium verfügen, die Bestätigung, dass der e0M-Port (Schraubenschlüssel) am beschädigten Controller ordnungsgemäß funktioniert, und die Feststellung, ob Onboard Key Manager (OKM) oder External Key Manager (EKM) aktiviert ist.' 
 ---
 = Voraussetzungen für den Austausch des Startmediums - ASA C30
 :allow-uri-read: 
@@ -11,14 +11,14 @@ summary: 'Bevor Sie das Bootmedium in Ihrem ASA C30-Speichersystem austauschen, 
 
 
 [role="lead"]
-Bevor Sie das Bootmedium in Ihrem ASA C30-Speichersystem austauschen, stellen Sie sicher, dass Sie die notwendigen Voraussetzungen und Überlegungen für einen erfolgreichen Austausch erfüllen. Dazu gehört die Überprüfung, ob Sie das richtige Ersatz-Bootmedium haben, ob der e0S-Port (e0M Wrench) am defekten Controller ordnungsgemäß funktioniert und ob der Onboard Key Manager (OKM) oder External Key Manager (EKM) aktiviert ist.
+Stellen Sie vor dem Austausch des Startmediums in Ihrem ASA C30-Speichersystem sicher, dass Sie die erforderlichen Anforderungen und Überlegungen für einen erfolgreichen Austausch erfüllen.  Dazu gehört die Überprüfung, ob Sie über das richtige Ersatz-Bootmedium verfügen, die Bestätigung, dass der e0M-Port (Schraubenschlüssel) am beschädigten Controller ordnungsgemäß funktioniert, und die Feststellung, ob Onboard Key Manager (OKM) oder External Key Manager (EKM) aktiviert ist.
 
 * Sie müssen die ausgefallene Komponente durch eine FRU-Ersatz-Komponente ersetzen, die dieselbe Kapazität hat wie Sie von NetApp erhalten.
 * Stellen Sie sicher, dass der e0M-Anschluss (Schraubenschlüssel) am beeinträchtigten Controller angeschlossen und nicht fehlerhaft ist.
 +
 Der e0M-Port wird während des automatisierten Boot-Wiederherstellungsprozesses zur Kommunikation zwischen den beiden Controllern verwendet.
 
-* Für OKM benötigen Sie den Inhalt der OKM-Passphrase-Datei.
+* Für OKM benötigen Sie die clusterweite Passphrase und auch die Sicherungsdaten.
 * Für EKM benötigen Sie Kopien der folgenden Dateien vom Partnerknoten:
 +
 ** Datei /cfcard/kmip/servers.cfg.
