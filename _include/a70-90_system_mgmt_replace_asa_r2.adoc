@@ -1,4 +1,4 @@
-= Schritt 3: Starten Sie den Controller neu
+= 
 :allow-uri-read: 
 
 
@@ -93,26 +93,4 @@ Boot-Medien
 NOTE: Wenn Sie über Gleichstromnetzteile verfügen, schließen Sie den Stromblock wieder an die Netzteile an.
 
 . Drehen Sie das Kabelführungs-Fach bis in die geschlossene Position.
-
-
-
-
-== Schritt 3: Starten Sie den Controller neu
-
-Starten Sie das Controller-Modul neu.
-
-.Schritte
-. Geben Sie an der LOADER-Eingabeaufforderung _bye_ ein.
-. Wiederherstellung des normalen Betriebs des Controllers durch Zurückgeben des Speichers:
-+
-`storage failover giveback -ofnode _impaired_node_name_`
-
-. Automatische Rückgabe wiederherstellen:
-+
-`storage failover modify -node local -auto-giveback true`
-
-. Wenn ein AutoSupport Wartungsfenster ausgelöst wurde, beenden Sie es:
-+
-`system node autosupport invoke -node * -type all -message MAINT=END`
-
 

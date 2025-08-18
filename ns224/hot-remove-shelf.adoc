@@ -13,6 +13,9 @@ summary: 'Sie können ein NS224-Festplatten-Shelf bei laufendem Betrieb entferne
 [role="lead"]
 Sie können ein NS224-Festplatten-Shelf im Betrieb entfernen, bei dem die Aggregate von den Laufwerken entfernt wurden, in einem HA-Paar, das noch Daten bereitstellt (I/O wird gerade ausgeführt).
 
+
+NOTE: Dieses Verfahren gilt nicht für ASA r2-Systeme.
+
 .Bevor Sie beginnen
 * Ihr HA-Paar kann sich nicht in einem Übernahmemodus befinden.
 * Sie müssen alle Aggregate aus den Laufwerken entfernt haben (die Laufwerke müssen Ersatzteile sein) im Regal, das Sie entfernen.

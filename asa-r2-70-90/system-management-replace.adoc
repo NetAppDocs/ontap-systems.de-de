@@ -217,28 +217,6 @@ Starten Sie das Controller-Modul neu.
 
 
 
-== Schritt 3: Starten Sie den Controller neu
-
-Starten Sie das Controller-Modul neu.
-
-.Schritte
-. Geben Sie an der LOADER-Eingabeaufforderung _bye_ ein.
-. Wiederherstellung des normalen Betriebs des Controllers durch Zurückgeben des Speichers:
-+
-`storage failover giveback -ofnode _impaired_node_name_`
-
-. Automatische Rückgabe wiederherstellen:
-+
-`storage failover modify -node local -auto-giveback true`
-
-. Wenn ein AutoSupport Wartungsfenster ausgelöst wurde, beenden Sie es:
-+
-`system node autosupport invoke -node * -type all -message MAINT=END`
-
-
-
-
-
 == Schritt 4: Installieren Sie Lizenzen und registrieren Sie die Seriennummer
 
 Sie müssen neue Lizenzen für den Node installieren, wenn der beeinträchtigte Node ONTAP-Funktionen verwendet, für die eine standardmäßige (Node-locked) Lizenz erforderlich ist. Bei Standardlizenzen sollte jeder Node im Cluster über seinen eigenen Schlüssel für die Funktion verfügen.
