@@ -33,13 +33,14 @@ Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Ca
 +
 `cluster1:> system node autosupport invoke -node * -type all -message MAINT=2h`
 
-. Deaktivieren Sie das automatische Giveback von der Konsole des gesunden Controllers:
+. Automatische Rückgabe deaktivieren:
++
+.. Geben Sie den folgenden Befehl von der Konsole des fehlerfreien Controllers ein:
 +
 `storage failover modify -node local -auto-giveback false`
 
-+
+.. Eingeben `y` wenn die Eingabeaufforderung _Möchten Sie die automatische Rückgabe deaktivieren?_ angezeigt wird
 
-NOTE: Wenn Sie sehen _Möchten Sie Auto-Giveback deaktivieren?_, geben Sie ein `y`.
 
 . Nehmen Sie den beeinträchtigten Controller zur LOADER-Eingabeaufforderung:
 +
