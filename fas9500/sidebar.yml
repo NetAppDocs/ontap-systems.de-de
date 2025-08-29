@@ -6,60 +6,75 @@ entries:
   pdf-filename: FAS9500 Installation und Setup
   entries:
   - title: Wählen Sie Installations- und Setup-Erfahrung
-    url: "/fas9500/install_setup.html"
+    url: "/fas9500/install-setup.html"
   - title: Schnelle Schritte
-    url: "/fas9500/install_quick_guide.html"
+    url: "/fas9500/install-quick-guide.html"
   - title: Videoschritte
-    url: "/fas9500/install_videos.html"
+    url: "/fas9500/install-videos.html"
   - title: Detaillierte Schritte
-    url: "/fas9500/install_detailed_guide.html"
+    url: "/fas9500/install-detailed-guide.html"
 - title: Wartung
   pdf-filename: FAS9500 Wartung
   entries:
-  - title: Überblick
+  - title: Wartungsübersicht
     url: "/fas9500/maintain-overview.html"
-  - title: Boot-Medien
-    pdf-filename: FAS9500 Boot-Medien
+  - title: Bootmedium – automatisierte Wiederherstellung
+    pdf-filename: FAS9500 Boot-Medien automatisiert
     entries:
-    - title: Überblick
-      url: "/fas9500/bootmedia_replace_overview.html"
+    - title: Workflow für den Austausch von Startmedien
+      url: "/fas9500/bootmedia-replace-workflow-bmr.html"
+    - title: Prüfen Sie die Anforderungen
+      url: "/fas9500/bootmedia-replace-requirements-bmr.html"
+    - title: Fahren Sie den Controller herunter
+      url: "/fas9500/bootmedia-shutdown-bmr.html"
+    - title: Ersetzen Sie Startmedien
+      url: "/fas9500/bootmedia-replace-bmr.html"
+    - title: Image auf Startmedium wiederherstellen
+      url: "/fas9500/bootmedia-recovery-image-boot-bmr.html"
+    - title: Rückgabe fehlgeschlagen. Teil an NetApp
+      url: "/fas9500/bootmedia-complete-rma-bmr.html"
+  - title: Bootmedium - manuelle Wiederherstellung
+    pdf-filename: FAS9500 Boot Media-Handbuch
+    entries:
+    - title: Workflow für den Austausch von Startmedien
+      url: "/fas9500/bootmedia-replace-workflow.html"
+    - title: Prüfen Sie die Anforderungen
+      url: "/fas9500/bootmedia-replace-requirements.html"
     - title: Überprüfen Sie die Verschlüsselung
-      url: "/fas9500/bootmedia_encryption_preshutdown_checks.html"
-    - title: Schalten Sie den beeinträchtigten Regler aus
+      url: "/fas9500/bootmedia-encryption-preshutdown-checks.html"
+    - title: Schalten Sie den beeinträchtigten Controller aus
       url: "/fas9500/bootmedia-shutdown.html"
     - title: Ersetzen Sie Startmedien
-      url: "/fas9500/bootmedia_replace.html"
-    - title: Starten Sie das Recovery-Image
-      url: "/fas9500/bootmedia_recovery_image.html"
-    - title: Schritte zum Austausch von Medien nach dem Booten für OKM, NSE und NVE
-      url: "/fas9500/bootmedia_encryption_restore.html"
-    - title: Senden Sie das fehlerhafte Teil an NetApp zurück
-      url: "/fas9500/bootmedia_complete_rma.html"
-  - title: Caching-Modul
-    url: "/fas9500/caching_module_hot_swap.html"
+      url: "/fas9500/bootmedia-replace.html"
+    - title: Recovery-Image starten
+      url: "/fas9500/bootmedia-recovery-image.html"
+    - title: Wiederherstellung der Verschlüsselung
+      url: "/fas9500/bootmedia-encryption-restore.html"
+    - title: Rückgabe fehlgeschlagen. Teil an NetApp
+      url: "/fas9500/bootmedia-complete-rma.html"
   - title: Chassis
     pdf-filename: FAS9500 Chassis
     entries:
     - title: Überblick
       url: "/fas9500/chassis_replace_overview.html"
-    - title: Schalten Sie den beeinträchtigten Regler aus
+    - title: Schalten Sie den beeinträchtigten Controller aus
       url: "/fas9500/chassis_replace_shutdown.html"
-    - title: Ersetzen Sie die Hardware
+    - title: Ersetzen Sie das Gehäuse
       url: "/fas9500/chassis_replace_move_hardware.html"
-    - title: Wiederherstellen und Überprüfen der Konfiguration
+    - title: Stellen Sie die Konfiguration wieder her und überprüfen Sie sie
       url: "/fas9500/chassis_replace_complete_system_restore_rma.html"
-  - title: Controller-Modul
+  - title: Controller
     pdf-filename: FAS9500 Controller-Modul
     entries:
     - title: Überblick
       url: "/fas9500/controller_replace_overview.html"
-    - title: Schalten Sie den beeinträchtigten Regler aus
+    - title: Schalten Sie den beeinträchtigten Controller aus
       url: "/fas9500/controller_replace_shutdown.html"
-    - title: Ersetzen Sie die Controller-Modul-Hardware
+    - title: Controller austauschen
       url: "/fas9500/controller_replace.html"
     - title: Stellen Sie die Systemkonfiguration wieder her und überprüfen Sie sie
       url: "/fas9500/controller_replace_system_config_restore_and_verify.html"
-    - title: Das System neu aufführen
+    - title: System neu auffindbar
       url: "/fas9500/controller_replace_recable_reassign_disks.html"
     - title: Vollständige Systemwiederherstellung
       url: "/fas9500/controller_replace_complete_system_restoration_rma.html"

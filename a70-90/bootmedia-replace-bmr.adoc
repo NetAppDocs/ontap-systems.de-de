@@ -18,9 +18,32 @@ Der automatisierte Boot-Medien-Wiederherstellungsprozess wird nur in ONTAP 9.17.
 Das Startmedium befindet sich im System Management-Modul und kann durch Entfernen des Moduls aus dem System aufgerufen werden.
 
 .Schritte
-. Stellen Sie sicher, dass alle Laufwerke im Gehäuse fest auf der Mittelplatine sitzen, indem Sie mit den Daumen auf die einzelnen Laufwerke drücken, bis Sie einen positiven Anschlag spüren.
+. Stellen Sie sicher, dass der NVRAM-Speicher vollständig ist, bevor Sie fortfahren. Wenn die LED am NV-Modul aus ist, wird NVRAM abgestapft. Wenn die LED blinkt, warten Sie, bis das Blinken beendet ist. Wenn das Blinken länger als 5 Minuten andauert, wenden Sie sich an den technischen Support, um Unterstützung zu erhalten.
 +
-image::../media/drw_a800_drive_seated_IEOPS-960.svg[drw a800-Laufwerk mit IEOPS 960]
+image::../media/drw_a1K-70-90_nvram-led_ieops-1463.svg[Grafik für die NVRAM-Warnungs- und Status-LED zur Lage]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Legende Nummer 1"]
+ a| 
+NVRAM-Status-LED
+
+
+
+ a| 
+image:../media/icon_round_2.png["Legende Nummer 2"]
+ a| 
+LED für NVRAM-Warnung
+
+|===
++
+** Wenn die NV-LED aus ist, mit dem nächsten Schritt fortfahren.
+** Wenn die NV-LED blinkt, warten Sie, bis das Blinken beendet ist. Wenn das Blinken länger als 5 Minuten andauert, wenden Sie sich an den technischen Support, um Unterstützung zu erhalten.
+
 
 . Gehen Sie zur Rückseite des Gehäuses. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Ziehen Sie die Netzteile des Controllers ab.

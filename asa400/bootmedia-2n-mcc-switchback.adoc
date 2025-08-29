@@ -13,6 +13,8 @@ summary: 'Nachdem Sie in einer MetroCluster Konfiguration mit zwei Nodes den FRU
 [role="lead"]
 Nachdem Sie in einer MetroCluster Konfiguration mit zwei Nodes den FRU-Austausch abgeschlossen haben, können Sie den MetroCluster SwitchBack-Vorgang durchführen. Damit wird die Konfiguration in ihren normalen Betriebszustand zurückversetzt, wobei die Synchronisations-Storage Virtual Machines (SVMs) auf dem ehemals beeinträchtigten Standort jetzt aktiv sind und Daten aus den lokalen Festplattenpools bereitstellen.
 
+Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie das manuelle Boot-Wiederherstellungsverfahren verwenden.
+
 Dieser Task gilt nur für MetroCluster-Konfigurationen mit zwei Nodes.
 
 .Schritte

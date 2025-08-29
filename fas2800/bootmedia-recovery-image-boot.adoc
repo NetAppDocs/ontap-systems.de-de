@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fas2800, boot, recovery, image, restore, file, system, environmental, varible 
 summary: Sie müssen das ONTAP-Image vom USB-Laufwerk starten, das Dateisystem wiederherstellen und die Umgebungsvariablen überprüfen. 
 ---
-= Starten Sie das Recovery-Image – FAS2820
+= Manuelle Wiederherstellung eines Bootmediums von einem USB-Laufwerk – FAS2820
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -12,6 +12,8 @@ summary: Sie müssen das ONTAP-Image vom USB-Laufwerk starten, das Dateisystem w
 
 [role="lead"]
 Nach der Installation des neuen Startmediengeräts im System können Sie das Wiederherstellungsabbild von einem USB-Laufwerk starten und die Konfiguration vom Partnerknoten wiederherstellen.
+
+Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie das manuelle Boot-Wiederherstellungsverfahren verwenden.
 
 .Schritte
 . Starten Sie von der LOADER-Eingabeaufforderung das Recovery-Image vom USB-Flash-Laufwerk: `boot_recovery`

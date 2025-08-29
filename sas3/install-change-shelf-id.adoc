@@ -67,7 +67,7 @@ Sie müssen beide Netzschalter ausschalten, die entsprechende Zeit warten und da
 
 +
 ** Wenn ONTAP noch nicht läuft oder Sie ein Shelf im laufenden Betrieb hinzufügen (das noch nicht mit dem System verbunden war), warten Sie mindestens 10 Sekunden.
-** Wenn ONTAP ausgeführt wird (Controller Daten bereitstellen können) und alle Festplatten im Shelf ohne Besitzer, Ersatzteile oder einen Teil des Offline-Aggregats sind, warten Sie mindestens 70 Sekunden.
+** Wenn ONTAP ausgeführt wird (Controller sind für die Datenbereitstellung verfügbar) und alle Festplattenlaufwerke im Shelf nicht im Besitz der Benutzer sind, Ersatzlaufwerke sind oder Teil offline geschalteter Aggregate sind, warten Sie mindestens 120 Sekunden.
 +
 Diese Zeit ermöglicht es ONTAP, die alte Shelf-Adresse ordnungsgemäß zu löschen und die Kopie der neuen Shelf-Adresse zu aktualisieren.
 

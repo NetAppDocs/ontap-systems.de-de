@@ -13,6 +13,9 @@ summary: Das Verfahren zum Booten des beeinträchtigten Knotens vom Wiederherste
 [role="lead"]
 Sie müssen das ONTAP-Image vom USB-Laufwerk starten, das Dateisystem wiederherstellen und die Umgebungsvariablen überprüfen.
 
+Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie das manuelle Boot-Wiederherstellungsverfahren verwenden.
+
+.Schritte
 . Starten Sie von der LOADER-Eingabeaufforderung das Recovery-Image vom USB-Flash-Laufwerk: `boot_recovery`
 +
 Das Bild wird vom USB-Flash-Laufwerk heruntergeladen.
@@ -88,7 +91,7 @@ Wenn Sie aufgefordert werden, mit der Aktualisierung fortzufahren, drücken Sie 
 
 . Das nächste hängt von Ihrer Systemkonfiguration ab:
 +
-** Wenn keymanager, NSE oder NVE in Ihrem System integriert sind, finden Sie unter xref:bootmedia_encryption_restore.adoc[Schritte zum Austausch von Medien nach dem Booten für OKM, NSE und NVE]
+** Wenn keymanager, NSE oder NVE in Ihrem System integriert sind, finden Sie unter xref:bootmedia-encryption-restore.adoc[Schritte zum Austausch von Medien nach dem Booten für OKM, NSE und NVE]
 ** Wenn keymanager, NSE oder NVE auf Ihrem System nicht konfiguriert sind, führen Sie die Schritte in diesem Abschnitt aus.
 
 

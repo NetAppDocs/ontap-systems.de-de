@@ -1,10 +1,10 @@
 ---
 permalink: fas8300/bootmedia-recovery-image-boot.html 
 sidebar: sidebar 
-keywords: fas8300, fas8300, procedure, boot, impair, controller, recovery, image, system, two-node, metrocluster, configuration, boot the recovery image 
+keywords: fas8300, fas8700, procedure, boot, impair, controller, recovery, image, system, two-node, metrocluster, configuration, boot the recovery image 
 summary: Das Verfahren zum Booten des beeinträchtigten Controllers über das Recovery-Image hängt davon ab, ob sich das System in einer MetroCluster-Konfiguration mit zwei Knoten befindet. 
 ---
-= Booten des Recovery-Images – AFF FAS8300 und FAS8700
+= Manuelle Wiederherstellung eines Bootmediums von einem USB-Laufwerk – FAS8300 und FAS8700
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -12,6 +12,8 @@ summary: Das Verfahren zum Booten des beeinträchtigten Controllers über das Re
 
 [role="lead"]
 Nach der Installation des neuen Startmediengeräts im System können Sie das Wiederherstellungsabbild von einem USB-Laufwerk starten und die Konfiguration vom Partnerknoten wiederherstellen.
+
+Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie das manuelle Boot-Wiederherstellungsverfahren verwenden.
 
 .Schritte
 . Starten Sie von der LOADER-Eingabeaufforderung das Recovery-Image vom USB-Flash-Laufwerk: `boot_recovery`

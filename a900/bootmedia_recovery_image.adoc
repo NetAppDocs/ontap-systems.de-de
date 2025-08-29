@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords:  
 summary: Das Verfahren zum Booten des beeinträchtigten Controllers über das Recovery-Image hängt davon ab, ob sich das System in einer MetroCluster-Konfiguration mit zwei Knoten befindet. 
 ---
-= Starten Sie das Recovery-Image - AFF A900
+= Manuelle Wiederherstellung eines Bootmediums von einem USB-Laufwerk – AFF A900
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -12,6 +12,8 @@ summary: Das Verfahren zum Booten des beeinträchtigten Controllers über das Re
 
 [role="lead"]
 Nach der Installation des neuen Startmediengeräts im System können Sie das Wiederherstellungsabbild von einem USB-Laufwerk starten und die Konfiguration vom Partnerknoten wiederherstellen.
+
+Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie das manuelle Boot-Wiederherstellungsverfahren verwenden.
 
 .Schritte
 . Starten Sie von der LOADER-Eingabeaufforderung das Recovery-Image vom USB-Flash-Laufwerk: `boot_recovery`

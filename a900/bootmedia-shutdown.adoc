@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords:  
 summary: Sie können den beeinträchtigten Controller je nach Hardwarekonfiguration des Speichersystems mithilfe verschiedener Verfahren herunterfahren oder übernehmen. 
 ---
-= Schalten Sie den beeinträchtigten Regler AFF A900 aus
+= Fahren Sie den Controller für die manuelle Wiederherstellung des Bootmediums herunter - AFF A900
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,11 +13,15 @@ summary: Sie können den beeinträchtigten Controller je nach Hardwarekonfigurat
 [role="lead"]
 Fahren Sie den Controller mit eingeschränkter Konfiguration herunter oder übernehmen Sie ihn entsprechend.
 
+Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie das manuelle Boot-Wiederherstellungsverfahren verwenden.
+
 [role="tabbed-block"]
 ====
 .In den meisten Konfigurationen
 --
 Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Controllers durchführen.
+
+Wenn auf Ihrem Speichersystem ONTAP 9.17.1 oder höher ausgeführt wird, verwenden Sie das automatisierte Boot-Wiederherstellungsverfahren.  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie den manuellen Boot-Wiederherstellungsprozess verwenden.
 
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 

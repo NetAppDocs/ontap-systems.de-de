@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: asa c800, replace the boot media 
 summary: Sie finden das ausgefallene Startmedium im Controller-Modul, indem Sie Riser 3 am Controller-Modul entfernen, bevor Sie das Boot-Medium ersetzen können. 
 ---
-= Ersetzen Sie das Startmedium – ASA C800
+= Ersetzen Sie das Startmedium und bereiten Sie die manuelle Startwiederherstellung vor - ASA C800
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -12,6 +12,8 @@ summary: Sie finden das ausgefallene Startmedium im Controller-Modul, indem Sie 
 
 [role="lead"]
 Zum Austauschen des Startmediums müssen Sie das beeinträchtigte Controller-Modul entfernen, das Ersatzstartmedium installieren und das Boot-Image auf ein USB-Flash-Laufwerk übertragen.
+
+Wenn auf Ihrem Speichersystem ONTAP 9.17.1 oder höher ausgeführt wird, verwenden Sie das automatisierte Boot-Wiederherstellungsverfahren.  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie den manuellen Boot-Wiederherstellungsprozess verwenden.
 
 
 

@@ -1,5 +1,5 @@
 ---
-section: asa-c-400
+section: asa-c400
 title: ASA C400-Systeme
 entries:
 - title: Installation und Einrichtung
@@ -16,13 +16,30 @@ entries:
 - title: Wartung
   pdf-filename: ASA C400 Wartung
   entries:
-  - title: Überblick
+  - title: Wartungsübersicht
     url: "/asa-c400/maintain-overview.html"
-  - title: Boot-Medien
-    pdf-filename: ASA C400-Startmedium
+  - title: Bootmedium – automatisierte Wiederherstellung
+    pdf-filename: ASA C400 Boot-Medien automatisiert
     entries:
-    - title: Überblick
-      url: "/asa-c400/bootmedia-replace-overview.html"
+    - title: Workflow für den Austausch von Startmedien
+      url: "/asa-c400/bootmedia-replace-workflow-bmr.html"
+    - title: Prüfen Sie die Anforderungen
+      url: "/asa-c400/bootmedia-replace-requirements-bmr.html"
+    - title: Fahren Sie den Controller herunter
+      url: "/asa-c400/bootmedia-shutdown-bmr.html"
+    - title: Ersetzen Sie Startmedien
+      url: "/asa-c400/bootmedia-replace-bmr.html"
+    - title: Image auf Startmedium wiederherstellen
+      url: "/asa-c400/bootmedia-recovery-image-boot-bmr.html"
+    - title: Rückgabe fehlgeschlagen. Teil an NetApp
+      url: "/asa-c400/bootmedia-complete-rma-bmr.html"
+  - title: Bootmedium - manuelle Wiederherstellung
+    pdf-filename: ASA C400 Boot Media Handbuch
+    entries:
+    - title: Workflow für den Austausch von Startmedien
+      url: "/asa-c400/bootmedia-replace-workflow.html"
+    - title: Prüfen Sie die Anforderungen
+      url: "/asa-c400/bootmedia-replace-requirements.html"
     - title: Überprüfen Sie die Verschlüsselung
       url: "/asa-c400/bootmedia-encryption-preshutdown-checks.html"
     - title: Schalten Sie den beeinträchtigten Controller aus
@@ -31,8 +48,6 @@ entries:
       url: "/asa-c400/bootmedia-replace.html"
     - title: Recovery-Image starten
       url: "/asa-c400/bootmedia-recovery-image-boot.html"
-    - title: Schalten Sie die MetroCluster-Konfiguration zurück
-      url: "/asa-c400/bootmedia-2n-mcc-switchback.html"
     - title: Wiederherstellung der Verschlüsselung
       url: "/asa-c400/bootmedia-encryption-restore.html"
     - title: Rückgabe fehlgeschlagen. Teil an NetApp
@@ -70,10 +85,10 @@ entries:
     pdf-filename: ASA C400 Lüftermodul
     url: "/asa-c400/fan-swap-out.html"
   - title: NVDIMM-Batterie
-    pdf-filename: ASA C400 NVDIMM-Batterie
+    pdf-filename: ASA C400 NVDIMM-Akku
     url: "/asa-c400/nvdimm-battery-replace.html"
   - title: NVDIMM
-    pdf-filename: ASA A320 NVDIMM
+    pdf-filename: ASA C400 NVDIMM
     url: "/asa-c400/nvdimm-replace.html"
   - title: PCIe oder Mezzanine-Karte
     pdf-filename: ASA C400 PCIe- oder Zusatzkarte

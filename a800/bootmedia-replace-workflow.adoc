@@ -1,0 +1,44 @@
+---
+permalink: a800/bootmedia-replace-workflow.html 
+sidebar: sidebar 
+keywords: aff a800, replace the boot media 
+summary: Beginnen Sie mit dem Ersetzen des Bootmediums in Ihrem AFF A800 Speichersystem, indem Sie die Anforderungen für den Austausch überprüfen, den Verschlüsselungsstatus prüfen, den Controller herunterfahren, das Bootmedium ersetzen, das Wiederherstellungsimage booten, die Verschlüsselung wiederherstellen und die Systemfunktionalität überprüfen. 
+---
+= Manueller Wiederherstellungsworkflow für Bootmedien – AFF A800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Beginnen Sie mit dem Ersetzen des Bootmediums in Ihrem AFF A800 Speichersystem, indem Sie die Anforderungen für den Austausch überprüfen, den Verschlüsselungsstatus prüfen, den Controller herunterfahren, das Bootmedium ersetzen, das Wiederherstellungsimage booten, die Verschlüsselung wiederherstellen und die Systemfunktionalität überprüfen.
+
+Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie das manuelle Boot-Wiederherstellungsverfahren verwenden.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:bootmedia-replace-requirements.html["Überprüfen Sie die Anforderungen der Startmedien"]
+[role="quick-margin-para"]
+Überprüfen Sie die Anforderungen für den Austausch des Startmediums.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:bootmedia-encryption-preshutdown-checks.html["Prüfen Sie die Unterstützung und den Status der Verschlüsselungsschlüssel"]
+[role="quick-margin-para"]
+Prüfen Sie, ob der Sicherheitsschlüsselmanager aktiviert oder die Laufwerke verschlüsselt sind.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:bootmedia-shutdown.html["Fahren Sie den Controller herunter"]
+[role="quick-margin-para"]
+Fahren Sie den Controller herunter, wenn Sie die Boot-Medien austauschen müssen.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:bootmedia-replace.html["Ersetzen Sie das Startmedium"]
+[role="quick-margin-para"]
+Entfernen Sie das fehlerhafte Startmedium aus dem Systemverwaltungsmodul, installieren Sie das Ersatz-Startmedium, und übertragen Sie dann ein ONTAP-Image mithilfe eines USB-Flashlaufwerks.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:bootmedia-recovery-image-boot.html["Starten Sie das Recovery-Image"]
+[role="quick-margin-para"]
+Starten Sie das ONTAP-Image vom USB-Laufwerk, stellen Sie das Dateisystem wieder her und überprüfen Sie die Umgebungsvariablen.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sechs"]link:bootmedia-encryption-restore.html["Wiederherstellung der Verschlüsselung"]
+[role="quick-margin-para"]
+Stellen Sie die Konfiguration des integrierten Schlüsselmanagers oder des externen Schlüsselmanagers über das ONATP Startmenü wieder her.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["Sieben"]link:bootmedia-complete-rma.html["Senden Sie das fehlerhafte Teil an NetApp zurück"]
+[role="quick-margin-para"]
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.

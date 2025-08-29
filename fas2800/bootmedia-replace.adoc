@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fas2800, replace, boot, media, controller, module, fru map 
 summary: Sie müssen das Startmedium im Controller finden und die Anweisungen befolgen, um es zu ersetzen. 
 ---
-= Ersetzen Sie das Boot-Medium - FAS2820
+= Ersetzen Sie das Startmedium und bereiten Sie die manuelle Startwiederherstellung vor – FAS2820
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -12,6 +12,8 @@ summary: Sie müssen das Startmedium im Controller finden und die Anweisungen be
 
 [role="lead"]
 Sie müssen das beschädigte Controllermodul entfernen und öffnen, das Bootmedium im Controller suchen und ersetzen, das Boot-Image auf ein USB-Laufwerk übertragen, das USB-Laufwerk in den Controller einstecken und dann den Controller booten.
+
+Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie das manuelle Boot-Wiederherstellungsverfahren verwenden.
 
 
 

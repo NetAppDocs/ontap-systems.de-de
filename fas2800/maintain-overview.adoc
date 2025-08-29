@@ -1,7 +1,7 @@
 ---
 permalink: fas2800/maintain-overview.html 
 sidebar: sidebar 
-keywords: fas2800 maintenance, maintenance, repairing, repairing fas2700, replace fas2800 components, replace fas2800 components 
+keywords: fas2800 maintenance, maintenance, repairing, repairing fas2800, replace fas2800 components, replace fas2800 components 
 summary: Wartung der FAS2820 Hardware 
 ---
 = Instandhaltung der FAS2820 Hardware
@@ -11,64 +11,93 @@ summary: Wartung der FAS2820 Hardware
 
 
 [role="lead"]
+Warten Sie die Hardware Ihres FAS2820 Speichersystems, um langfristige Zuverlässigkeit und optimale Leistung zu gewährleisten. Führen Sie regelmäßige Wartungsarbeiten durch, z. B. den Austausch defekter Komponenten, um Ausfallzeiten und Datenverlust zu vermeiden.
+
+Bei den Wartungsverfahren wird davon ausgegangen, dass das FAS2820 Speichersystem bereits als Speicherknoten in der ONTAP Umgebung bereitgestellt wurde.
+
+
+
+== Systemkomponenten
+
 Für das FAS2820 Storage-System können Sie Wartungsverfahren für die folgenden Komponenten durchführen.
 
+[cols="25,65"]
+|===
 
 
-== Boot-Medien
+ a| 
+link:bootmedia-replace-workflow-bmr.html["Bootmedium – automatisierte Wiederherstellung"]
+ a| 
+Das Bootmedium speichert einen primären und einen sekundären Satz von ONTAP Imagedateien, die das Speichersystem zum Booten verwendet.  Während der automatischen Wiederherstellung ruft das System das Boot-Image vom Partnerknoten ab und führt automatisch die entsprechende Boot-Menüoption aus, um das Image auf Ihrem Ersatz-Boot-Medium zu installieren. Die automatische Wiederherstellung des Bootmediums wird nur in ONTAP 9.17.1 und höher unterstützt. Wenn Ihr Speichersystem eine frühere Version von ONTAP verwendet, verwenden Sie die link:bootmedia-replace-workflow.html["manuelle Boot-Wiederherstellung"] .
 
-Das Startmedium speichert einen primären und sekundären Satz von Boot-Image-Dateien, die das System beim Booten verwendet.
+
+
+ a| 
+link:bootmedia-replace-workflow.html["Bootmedium - manuelle Wiederherstellung"]
+ a| 
+Das Bootmedium speichert einen primären und einen sekundären Satz von ONTAP Imagedateien, die das Speichersystem zum Booten verwendet. Bei der manuellen Wiederherstellung starten Sie das Speichersystem von einem USB-Laufwerk und stellen das Dateisystem-Image und die Konfiguration manuell wieder her.  Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .
 
 
 
-== Caching-Modul
-
+ a| 
+link:caching-module-replace.html["Caching-Modul"]
+ a| 
 Sie müssen das Caching-Modul des Controllers ersetzen, wenn Ihr System eine einzelne AutoSupport-Meldung (ASUP) registriert, dass das Modul offline gegangen ist.
 
 
 
-== Chassis
-
+ a| 
+link:chassis-replace-overview.html["Chassis"]
+ a| 
 Das Chassis ist das physische Gehäuse, in dem alle Controller-Komponenten wie Controller-/CPU-Einheit, Stromversorgung und I/O-Vorgänge untergebracht sind
 
 
 
-== Controller
-
+ a| 
+link:controller-replace-overview.html["Controller"]
+ a| 
 Ein Controller besteht aus einer Hauptplatine, Firmware und Software. Er steuert die Laufwerke und implementiert die ONTAP-Funktionen.
 
 
 
-== DIMM
-
+ a| 
+link:dimm-replace.html["DIMM"]
+ a| 
 Sie müssen ein DIMM (Dual-Inline-Speichermodul) ersetzen, wenn ein Speicherfehler vorliegt oder ein ausgefallenes DIMM vorliegt.
 
 
 
-== Laufwerk
-
+ a| 
+link:drive-replace.html["Laufwerk"]
+ a| 
 Ein Laufwerk ist ein Gerät, das den physischen Speicher für Daten bereitstellt.
 
 
 
-== NVMEM-Akku
-
+ a| 
+link:nvmem-nvram-battery-replace.html["NVMEM-Akku"]
+ a| 
 Im Lieferumfang des Controllers ist eine Batterie enthalten, die zwischengespeicherte Daten bewahrt, wenn der Netzstrom ausfällt.
 
 
 
-== Mezzanine-Karte
-
-Eine Mezzanine-Karte ist eine Erweiterungskarte, die in einen speziellen Steckplatz auf der Hauptplatine eingesetzt werden soll.
-
-
-
-== Stromversorgung
-
-Ein Netzteil stellt eine redundante Stromversorgung in einem Controller Shelf bereit.
+ a| 
+link:pci-cards-and-risers-replace.html["Mezzanine-Karte"]
+ a| 
+Eine Mezzanine-Karte ist eine Erweiterungskarte, die in einen speziellen Steckplatz auf der Hauptplatine eingesetzt wird und die E/A-Karten der Karte enthält.
 
 
 
-== Akku in Echtzeit
+ a| 
+link:power-supply-swap-out.html["Stromversorgung"]
+ a| 
+Ein Netzteil stellt eine redundante Stromquelle in einem Controller bereit.
 
+
+
+ a| 
+link:rtc-battery-replace.html["Akku in Echtzeit"]
+ a| 
 Eine Echtzeituhr-Batterie bewahrt die Systemdaten und -Uhrzeitinformationen, wenn die Stromversorgung ausgeschaltet ist.
+
+|===

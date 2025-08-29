@@ -16,13 +16,30 @@ entries:
 - title: Wartung
   pdf-filename: ASA C800 Wartung
   entries:
-  - title: Überblick
+  - title: Wartungsübersicht
     url: "/asa-c800/maintain-overview.html"
-  - title: Boot-Medien
-    pdf-filename: ASA C800-Startmedium
+  - title: Bootmedium – automatisierte Wiederherstellung
+    pdf-filename: ASA C800 Boot-Medien automatisiert
     entries:
-    - title: Überblick
-      url: "/asa-c800/bootmedia-replace-overview.html"
+    - title: Workflow für den Austausch von Startmedien
+      url: "/asa-c800/bootmedia-replace-workflow-bmr.html"
+    - title: Prüfen Sie die Anforderungen
+      url: "/asa-c800/bootmedia-replace-requirements-bmr.html"
+    - title: Fahren Sie den Controller herunter
+      url: "/asa-c800/bootmedia-shutdown-bmr.html"
+    - title: Ersetzen Sie Startmedien
+      url: "/asa-c800/bootmedia-replace-bmr.html"
+    - title: Image auf Startmedium wiederherstellen
+      url: "/asa-c800/bootmedia-recovery-image-boot-bmr.html"
+    - title: Rückgabe fehlgeschlagen. Teil an NetApp
+      url: "/asa-c800/bootmedia-complete-rma-bmr.html"
+  - title: Bootmedium - manuelle Wiederherstellung
+    pdf-filename: ASA C800 Boot Media Handbuch
+    entries:
+    - title: Workflow für den Austausch von Startmedien
+      url: "/asa-c800/bootmedia-replace-workflow.html"
+    - title: Prüfen Sie die Anforderungen
+      url: "/asa-c800/bootmedia-replace-requirements.html"
     - title: Überprüfen Sie die Verschlüsselung
       url: "/asa-c800/bootmedia-encryption-preshutdown-checks.html"
     - title: Schalten Sie den beeinträchtigten Controller aus

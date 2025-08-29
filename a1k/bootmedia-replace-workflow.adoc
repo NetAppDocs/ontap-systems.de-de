@@ -13,7 +13,7 @@ summary: Die manuelle Wiederherstellung des Boot-Images erfordert die Verwendung
 [role="lead"]
 Die manuelle Wiederherstellung des Boot-Images erfordert die Verwendung eines USB-Laufwerks, um ONTAP auf dem Ersatz-Bootmedium des AFF A1K Systems neu zu installieren. Laden Sie das entsprechende ONTAP Wiederherstellungsimage von der NetApp Support-Website herunter und kopieren Sie es auf ein USB-Laufwerk. Dieses vorbereitete USB-Laufwerk wird dann verwendet, um die Wiederherstellung durchzuführen und das System wieder betriebsbereit zu machen.
 
-Wenn Ihr System unter ONTAP 9.17.1 oder höher läuft, verwenden Sie die link:bootmedia-replace-workflow-bmr.html["automatische Boot-Wiederherstellung"] .
+Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie das manuelle Boot-Wiederherstellungsverfahren verwenden.
 
 Überprüfen Sie zunächst die Wiederherstellungsanforderungen, fahren Sie den Controller herunter, ersetzen Sie das Startmedium, verwenden Sie das USB-Laufwerk zum Wiederherstellen des Images und wenden Sie die Verschlüsselungseinstellungen bei Bedarf erneut an.
 

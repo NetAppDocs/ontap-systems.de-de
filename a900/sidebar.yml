@@ -6,35 +6,52 @@ entries:
   pdf-filename: Installation und Einrichtung von AFF A900
   entries:
   - title: Wählen Sie Installations- und Setup-Erfahrung
-    url: "/a900/install_setup.html"
+    url: "/a900/install-setup.html"
   - title: Schnelle Schritte
-    url: "/a900/install_quick_guide.html"
+    url: "/a900/install-quick-guide.html"
   - title: Videoschritte
-    url: "/a900/install_videos.html"
+    url: "/a900/install-videos.html"
   - title: Detaillierte Schritte
-    url: "/a900/install_detailed_guide.html"
+    url: "/a900/install-detailed-guide.html"
 - title: Wartung
   pdf-filename: AFF A900 Wartung
   entries:
-  - title: Überblick
+  - title: Wartungsübersicht
     url: "/a900/maintain-overview.html"
-  - title: Boot-Medien
-    pdf-filename: AFF A900-Startmedien
+  - title: Bootmedium – automatisierte Wiederherstellung
+    pdf-filename: AFF A900 Boot-Medien automatisiert
     entries:
-    - title: Überblick
-      url: "/a900/bootmedia_replace_overview.html"
+    - title: Workflow für den Austausch von Startmedien
+      url: "/a900/bootmedia-replace-workflow-bmr.html"
+    - title: Prüfen Sie die Anforderungen
+      url: "/a900/bootmedia-replace-requirements-bmr.html"
+    - title: Fahren Sie den Controller herunter
+      url: "/a900/bootmedia-shutdown-bmr.html"
+    - title: Ersetzen Sie Startmedien
+      url: "/a900/bootmedia-replace-bmr.html"
+    - title: Image auf Startmedium wiederherstellen
+      url: "/a900/bootmedia-recovery-image-boot-bmr.html"
+    - title: Rückgabe fehlgeschlagen. Teil an NetApp
+      url: "/a900/bootmedia-complete-rma-bmr.html"
+  - title: Bootmedium - manuelle Wiederherstellung
+    pdf-filename: AFF A900 Boot Media Handbuch
+    entries:
+    - title: Workflow für den Austausch von Startmedien
+      url: "/a900/bootmedia-replace-workflow.html"
+    - title: Prüfen Sie die Anforderungen
+      url: "/a900/bootmedia-replace-requirements.html"
     - title: Überprüfen Sie die Verschlüsselung
-      url: "/a900/bootmedia_encryption_preshutdown_checks.html"
+      url: "/a900/bootmedia-encryption-preshutdown-checks.html"
     - title: Schalten Sie den beeinträchtigten Controller aus
       url: "/a900/bootmedia-shutdown.html"
-    - title: Boot-Image ersetzen
-      url: "/a900/bootmedia_replace.html"
+    - title: Ersetzen Sie Startmedien
+      url: "/a900/bootmedia-replace.html"
     - title: Recovery-Image starten
       url: "/a900/bootmedia_recovery_image.html"
     - title: Wiederherstellung der Verschlüsselung
       url: "/a900/bootmedia-encryption-restore.html"
     - title: Rückgabe fehlgeschlagen. Teil an NetApp
-      url: "/a900/bootmedia_complete_rma.html"
+      url: "/a900/bootmedia-complete-rma.html"
   - title: Chassis
     pdf-filename: AFF A900-Gehäuse
     entries:

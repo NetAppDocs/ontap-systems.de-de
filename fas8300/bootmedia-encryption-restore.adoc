@@ -1,10 +1,10 @@
 ---
 permalink: fas8300/bootmedia-encryption-restore.html 
 sidebar: sidebar 
-keywords: fas8300, fas8300, environment, variable, complete, system, onboard, key, manager, okm, storage, volume, netapp, encryption, post, boot, media, replacement, post boot media replacement stpes for okm nse and nve 
+keywords: fas8300, fas8700, environment, variable, complete, system, onboard, key, manager, okm, storage, volume, netapp, encryption, post, boot, media, replacement, post boot media replacement stpes for okm nse and nve 
 summary: 'Sobald Umgebungsvariablen geprüft werden, müssen Sie spezifische Schritte für Systeme mit Onboard Key Manager \(OKM\), NetApp Storage Encryption \(NSE\) oder NetApp Volume Encryption \(NVE\) durchführen.' 
 ---
-= Wiederherstellung der Verschlüsselung – AFF FAS8300 und FAS8700
+= Verschlüsselung wiederherstellen – FAS8300 und FAS8700
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -12,6 +12,8 @@ summary: 'Sobald Umgebungsvariablen geprüft werden, müssen Sie spezifische Sch
 
 [role="lead"]
 Stellen Sie die Verschlüsselung auf dem Ersatz-Startmedium wieder her.
+
+Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie das manuelle Boot-Wiederherstellungsverfahren verwenden.
 
 Sie müssen die Schritte speziell für Systeme mit aktiviertem Onboard Key Manager (OKM), NetApp Storage Encryption (NSE) oder NetApp Volume Encryption (NVE) anhand der Einstellungen abschließen, die Sie zu Beginn des Austauschvorgangs des Boot-Mediums erfasst haben.
 

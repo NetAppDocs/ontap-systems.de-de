@@ -1,0 +1,41 @@
+---
+permalink: fas8300/bootmedia-replace-requirements-bmr.html 
+sidebar: sidebar 
+keywords: fas8300, replace the boot media 
+summary: Stellen Sie vor dem Austausch des Bootmediums in Ihrem FAS8300 oder FAS8700 -System sicher, dass Sie die notwendigen Voraussetzungen für einen erfolgreichen Austausch erfüllen. 
+---
+= Voraussetzungen für die automatische Wiederherstellung von Bootmedien – FAS8300 und FAS8700
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor Sie das Bootmedium in Ihrem FAS8300 oder FAS8700 austauschen, stellen Sie sicher, dass Sie die notwendigen Voraussetzungen für einen erfolgreichen Austausch erfüllen.  Dazu gehört die Überprüfung, ob Sie über das richtige Ersatz-Bootmedium verfügen, die Bestätigung, dass der e0S-Port (e0M Wrench) am beeinträchtigten Controller nicht fehlerhaft ist, und die Feststellung, ob Onboard Key Manager (OKM) oder External Key Manager (EKM) aktiviert ist.
+
+Der automatisierte Boot-Medien-Wiederherstellungsprozess wird nur in ONTAP 9.17.1 und höher unterstützt. Wenn Ihr Speichersystem eine frühere Version von ONTAP verwendet, verwenden Sie die link:bootmedia-replace-workflow.html["manuelle Boot-Wiederherstellung"] .
+
+* Sie müssen die ausgefallene Komponente durch eine FRU-Ersatz-Komponente ersetzen, die dieselbe Kapazität hat wie Sie von NetApp erhalten.
+* Stellen Sie sicher, dass der e0M-Anschluss (Schraubenschlüssel) am beeinträchtigten Controller angeschlossen und nicht fehlerhaft ist.
++
+Der e0M-Port wird während des automatisierten Boot-Wiederherstellungsprozesses zur Kommunikation zwischen den beiden Controllern verwendet.
+
+* Für OKM benötigen Sie die clusterweite Passphrase und auch die Sicherungsdaten.
+* Für EKM benötigen Sie Kopien der folgenden Dateien vom Partnerknoten:
++
+** Datei /cfcard/kmip/servers.cfg.
+** Datei /cfcard/kmip/certs/Client.crt.
+** Datei /cfcard/kmip/certs/client.key.
+** Datei /cfcard/kmip/certs/CA.pem.
+
+
+* Es ist wichtig, die Befehle auf den richtigen Controller anzuwenden, wenn Sie das beschädigte Startmedium ersetzen:
++
+** Der _beschädigte Controller_ ist der Controller, an dem Sie Wartungsarbeiten durchführen.
+** Der _gesunde Controller_ ist der HA-Partner des beeinträchtigten Controllers.
+
+
+
+
+.Wie es weiter geht
+Nachdem Sie die Anforderungen für die Startmedien überprüft haben, können Sie link:bootmedia-shutdown-bmr.html["Fahren Sie den Controller herunter"].

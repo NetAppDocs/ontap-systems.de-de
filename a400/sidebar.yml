@@ -16,23 +16,38 @@ entries:
 - title: Wartung
   pdf-filename: AFF A400 beibehalten
   entries:
-  - title: Überblick
+  - title: Wartungsübersicht
     url: "/a400/maintain-overview.html"
-  - title: Boot-Medien
+  - title: Bootmedium – automatisierte Wiederherstellung
+    pdf-filename: AFF A400 Boot-Medien automatisiert
+    entries:
+    - title: Workflow für den Austausch von Startmedien
+      url: "/a400/bootmedia-replace-workflow-bmr.html"
+    - title: Prüfen Sie die Anforderungen
+      url: "/a400/bootmedia-replace-requirements-bmr.html"
+    - title: Fahren Sie den Controller herunter
+      url: "/a400/bootmedia-shutdown-bmr.html"
+    - title: Ersetzen Sie Startmedien
+      url: "/a400/bootmedia-replace-bmr.html"
+    - title: Recovery-Image starten
+      url: "/a400/bootmedia-recovery-image-boot-bmr.html"
+    - title: Rückgabe fehlgeschlagen. Teil an NetApp
+      url: "/a400/bootmedia-complete-rma-bmr.html"
+  - title: Bootmedium - manuelle Wiederherstellung
     pdf-filename: AFF A400-Startmedien
     entries:
-    - title: Überblick
-      url: "/a400/bootmedia-replace-overview.html"
+    - title: Workflow für den Austausch von Startmedien
+      url: "/a400/bootmedia-replace-workflow.html"
+    - title: Prüfen Sie die Anforderungen
+      url: "/a400/bootmedia-replace-requirements.html"
     - title: Überprüfen Sie die Verschlüsselung
       url: "/a400/bootmedia-encryption-preshutdown-checks.html"
-    - title: Schalten Sie den beeinträchtigten Controller aus
+    - title: Fahren Sie den Controller herunter
       url: "/a400/bootmedia-shutdown.html"
     - title: Ersetzen Sie Startmedien
       url: "/a400/bootmedia-replace.html"
     - title: Recovery-Image starten
       url: "/a400/bootmedia-recovery-image-boot.html"
-    - title: Schalten Sie die MetroCluster-Konfiguration zurück
-      url: "/a400/bootmedia-2n-mcc-switchback.html"
     - title: Wiederherstellung der Verschlüsselung
       url: "/a400/bootmedia-encryption-restore.html"
     - title: Rückgabe fehlgeschlagen. Teil an NetApp

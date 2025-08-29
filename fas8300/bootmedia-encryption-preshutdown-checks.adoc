@@ -1,10 +1,10 @@
 ---
 permalink: fas8300/bootmedia-encryption-preshutdown-checks.html 
 sidebar: sidebar 
-keywords: fas8300, fas8300, shut, down, impair, controller, check, status, onboard, encryption, keys, status, disable, automatic, giveback, version, ontap, system, run, pre-shutdown, check, pre-shutdown checks for onboard encryption keys 
+keywords: fas8300, fas8700, shut, down, impair, controller, check, status, onboard, encryption, keys, status, disable, automatic, giveback, version, ontap, system, run, pre-shutdown, check, pre-shutdown checks for onboard encryption keys 
 summary: Bevor Sie den beeinträchtigten Controller herunterfahren und den Status der integrierten Verschlüsselungsschlüssel prüfen, müssen Sie den Status des beeinträchtigten Controllers überprüfen, die automatische Rückgabe deaktivieren und überprüfen, welche Version von ONTAP das System ausführt. 
 ---
-= Prüfen Sie die Unterstützung und den Status der Verschlüsselungsschlüssel – AFF FAS8300 und FAS8700
+= Überprüfen Sie die Unterstützung und den Status des Verschlüsselungsschlüssels – FAS8300 und FAS8700
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -12,6 +12,8 @@ summary: Bevor Sie den beeinträchtigten Controller herunterfahren und den Statu
 
 [role="lead"]
 Um die Datensicherheit auf Ihrem Speichersystem zu gewährleisten, müssen Sie die Unterstützung und den Status des Verschlüsselungsschlüssels auf Ihrem Boot-Medium überprüfen. Überprüfen Sie, ob Ihre ONTAP Version NetApp Volume Encryption (NVE) unterstützt und bevor Sie den Controller herunterfahren, ob der Schlüsselmanager aktiv ist.
+
+Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie das manuelle Boot-Wiederherstellungsverfahren verwenden.
 
 
 

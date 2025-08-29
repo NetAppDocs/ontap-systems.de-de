@@ -1,0 +1,172 @@
+---
+permalink: asa-c800/bootmedia-replace-bmr.html 
+sidebar: sidebar 
+keywords: asa c800, replace the boot media 
+summary: Das Bootmedium in Ihrem ASA C800 -System speichert wichtige Firmware- und Konfigurationsdaten.  Der Austauschvorgang umfasst das Entfernen des Controllermoduls, das Entfernen des beschädigten Startmediums, das Installieren des Ersatz-Startmediums im Controllermodul und anschließend das erneute Installieren des Controllermoduls. 
+---
+= Ersetzen Sie das Bootmedium für die automatische Boot-Wiederherstellung - ASA C800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Bootmedium in Ihrem ASA C800 -System speichert wichtige Firmware- und Konfigurationsdaten.  Der Austauschvorgang umfasst das Entfernen und Öffnen des Controllermoduls, das Entfernen des beschädigten Startmediums, das Installieren des Ersatz-Startmediums im Controllermodul und die anschließende Neuinstallation des Controllermoduls.
+
+Der automatisierte Boot-Medien-Wiederherstellungsprozess wird nur in ONTAP 9.17.1 und höher unterstützt. Wenn Ihr Speichersystem eine frühere Version von ONTAP verwendet, verwenden Sie die link:bootmedia-replace-workflow.html["manuelle Boot-Wiederherstellung"] .
+
+Das Startmedium befindet sich im Controllermodul unter dem Luftkanal und ist zugänglich, indem das Controllermodul aus dem System entfernt wird.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Stellen Sie sicher, dass alle Laufwerke im Gehäuse fest auf der Mittelplatine sitzen, indem Sie mit den Daumen auf die einzelnen Laufwerke drücken, bis Sie einen positiven Anschlag spüren.
++
+image::../media/drw_a800_drive_seated_IEOPS-960.svg[Festplattenlaufwerke einsetzen]
+
+. Trennen Sie die Netzteile des Controller-Moduls von der Quelle.
+. Lösen Sie die Netzkabelhalter, und ziehen Sie anschließend die Kabel von den Netzteilen ab.
+. Lösen Sie den Haken- und Schlaufenriemen, mit dem die Kabel an das Kabelmanagement-Gerät gebunden sind, und ziehen Sie dann die Systemkabel und SFP- und QSFP-Module (falls erforderlich) vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren.
++
+Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation des Kabelverwaltungsgeräts die Kabel organisiert sind.
+
+. Entfernen Sie das Kabelführungs-Gerät aus dem Controller-Modul und legen Sie es beiseite.
+. Drücken Sie beide Verriegelungsriegel nach unten, und drehen Sie dann beide Verriegelungen gleichzeitig nach unten.
++
+Das Controller-Modul wird leicht aus dem Chassis entfernt.
+
++
+image::../media/drw_a800_pcm_remove.png[Lösen des Controller-Moduls]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Legende Nummer 1"]
+ a| 
+Verriegelungsverschluss
+
+
+
+ a| 
+image:../media/icon_round_2.png["Legende Nummer 2"]
+ a| 
+Sicherungsstift
+
+|===
+. Schieben Sie das Controller-Modul aus dem Gehäuse.
++
+Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen, während Sie es aus dem Gehäuse schieben.
+
+. Das Steuermodul auf eine stabile, flache Oberfläche legen und den Luftkanal öffnen:
++
+.. Drücken Sie die Verriegelungslaschen an den Seiten des Luftkanals in Richtung der Mitte des Controller-Moduls.
+.. Schieben Sie den Luftkanal in Richtung der Lüftermodule, und drehen Sie ihn dann nach oben in die vollständig geöffnete Position.
++
+image::../media/drw_a800_open_air_duct.png[Öffnen des Luftkanals]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Legende Nummer 1"]
+ a| 
+Verriegelungsklammern für Luftkanäle
+
+
+
+ a| 
+image:../media/icon_round_2.png["Legende Nummer 2"]
+ a| 
+Schieben Sie den Luftkanal in Richtung Lüftermodule
+
+
+
+ a| 
+image:../media/icon_round_3.png["Legende Nummer 3"]
+ a| 
+Luftkanal in Richtung Lüftermodule drehen
+
+|===
+
+
+. Suchen Sie das Startmedium im Controllermodul und ersetzen Sie es:
++
+image::../media/drw_a800_boot_media_replace.png[Ersetzen Sie das Startmedium]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Legende Nummer 1"]
+ a| 
+Luftkanal
+
+
+
+ a| 
+image:../media/icon_round_2.png["Legende Nummer 2"]
+ a| 
+Riser 3
+
+
+
+ a| 
+image:../media/icon_round_3.png["Legende Nummer 3"]
+ a| 
+Kreuzschlitzschraubendreher #1
+
+
+
+ a| 
+image:../media/icon_round_4.png["Legende Nummer 4"]
+ a| 
+Schraube für Boot-Medien
+
+
+
+ a| 
+image:../media/icon_round_5.png["Legende Nummer 5"]
+ a| 
+Boot-Medien
+
+|===
++
+.. Entfernen Sie mit einem #1 Kreuzschlitzschraubendreher die Schraube, mit der das Bootmedium befestigt ist, und setzen Sie die Schraube an einem sicheren Ort beiseite.
+.. Fassen Sie die Seiten des Startmediums an, drehen Sie die Startmedien vorsichtig nach oben, ziehen Sie dann die Startmedien gerade aus dem Sockel und legen Sie sie beiseite.
+
+
+. Installieren Sie die Ersatzstartmedien in das Controller-Modul:
++
+.. Richten Sie die Kanten der Startmedien am Buchsengehäuse aus, und schieben Sie sie vorsichtig in die Buchse.
+.. Drehen Sie das Startmedium nach unten zur Hauptplatine.
+.. Befestigen Sie das Bootmedium mit der Boot-Medienschraube am Motherboard.
++
+Ziehen Sie die Schraube nicht zu fest, oder beschädigen Sie die Bootsmedien möglicherweise nicht.
+
+
+
+. Setzen Sie den Riser wieder in das Controller-Modul ein.
+. Luftkanal schließen:
++
+.. Den Luftkanal nach unten drehen.
+.. Schieben Sie den Luftkanal in Richtung der Steigleitungen, bis er einrastet.
+
+
+. Installieren Sie das Controller-Modul:
++
+.. Richten Sie das Ende des Controllermoduls an der Öffnung im Gehäuse aus und schieben Sie das Controllermodul dann vorsichtig zur Hälfte in das System hinein.
+.. Verkabeln Sie das Controllermodul neu, drücken Sie den Nockengriff fest, um das Controllermodul vollständig einzusetzen, drücken Sie den Nockengriff in die geschlossene Position und ziehen Sie dann die Rändelschraube fest.
++
+Das Controllermodul beginnt mit dem Booten und stoppt bei der LOADER-Eingabeaufforderung.
+
+
+
+
+
+.Wie es weiter geht
+Nach dem physischen Austausch der gestörten Startmedien, link:bootmedia-recovery-image-boot-bmr.html["Stellen Sie das ONTAP-Image vom Partner-Node wieder her"].

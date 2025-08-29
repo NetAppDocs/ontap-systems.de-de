@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fas2800, shut, down, impaired, controller, take, over 
 summary: Sie können den beeinträchtigten Controller je nach Hardwarekonfiguration des Speichersystems mithilfe verschiedener Verfahren herunterfahren oder übernehmen. 
 ---
-= Fahren Sie den beeinträchtigten Controller herunter - FAS2820
+= Fahren Sie den Controller für die manuelle Wiederherstellung des Startmediums herunter – FAS2820
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -12,6 +12,8 @@ summary: Sie können den beeinträchtigten Controller je nach Hardwarekonfigurat
 
 [role="lead"]
 Schalten Sie den außer Betrieb genommenen Controller aus oder übernehmen Sie ihn.
+
+Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie das manuelle Boot-Wiederherstellungsverfahren verwenden.
 
 Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Controllers durchführen.
 

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ASA A900, replace, boot, media, controller, directions. replace boot media, transfer image 
 summary: Sie müssen das Controller-Modul entfernen und öffnen, die Startmedien im Controller suchen und austauschen und dann das Image auf das Ersatzstartmedium übertragen. 
 ---
-= Ersetzen Sie das Startmedium – ASA A900
+= Ersetzen Sie das Startmedium und bereiten Sie die manuelle Startwiederherstellung vor - ASA A900
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -12,6 +12,8 @@ summary: Sie müssen das Controller-Modul entfernen und öffnen, die Startmedien
 
 [role="lead"]
 Sie müssen das Controller-Modul trennen, das Controller-Modul entfernen und öffnen, das Boot-Medium im Controller suchen und austauschen und dann das Image auf das Ersatz-Boot-Medium übertragen.
+
+Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie das manuelle Boot-Wiederherstellungsverfahren verwenden.
 
 
 
@@ -80,7 +82,7 @@ Sie müssen das Startmedium im Controller finden und die Anweisungen befolgen, u
 .Animation - Bootmedium ersetzen
 video::c5080658-765e-4d29-8456-adf2000e1495[panopto]
 +
-image::../media/drw_a900_remove_boot_dev.png[Startmedien entfernen]
+image::../media/drw_9000_remove_boot_dev.svg[Startmedien entfernen]
 
 +
 [cols="1,4"]
@@ -162,7 +164,7 @@ Wenn Sie diese Meldung verpassen, drücken Sie Strg-C, wählen Sie die Option zu
 . Wenn sich der Controller in einem Stretch- oder Fabric-Attached MetroCluster befindet, müssen Sie die FC-Adapterkonfiguration wiederherstellen:
 +
 .. Start in Wartungsmodus: `boot_ontap maint`
-.. Legen Sie die MetroCluster-Ports als Initiatoren fest: `ucadmin modify -m fc -t iniitator adapter_name`
+.. Legen Sie die MetroCluster -Ports als Initiatoren fest: `ucadmin modify -m fc -t initiator adapter_name`
 .. Anhalten, um zum Wartungsmodus zurückzukehren: `halt`
 
 

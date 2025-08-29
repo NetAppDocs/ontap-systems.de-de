@@ -16,13 +16,30 @@ entries:
 - title: Wartung
   pdf-filename: ASA A800 Wartung
   entries:
-  - title: Überblick
+  - title: Wartungsübersicht
     url: "/asa800/maintain-overview.html"
-  - title: Boot-Medien
-    pdf-filename: ASA A800 Boot-Medien
+  - title: Bootmedium – automatisierte Wiederherstellung
+    pdf-filename: ASA A800 Boot-Medien automatisiert
     entries:
-    - title: Überblick
-      url: "/asa800/bootmedia-replace-overview.html"
+    - title: Workflow für den Austausch von Startmedien
+      url: "/asa800/bootmedia-replace-workflow-bmr.html"
+    - title: Prüfen Sie die Anforderungen
+      url: "/asa800/bootmedia-replace-requirements-bmr.html"
+    - title: Fahren Sie den Controller herunter
+      url: "/asa800/bootmedia-shutdown-bmr.html"
+    - title: Ersetzen Sie Startmedien
+      url: "/asa800/bootmedia-replace-bmr.html"
+    - title: Image auf Startmedium wiederherstellen
+      url: "/asa800/bootmedia-recovery-image-boot-bmr.html"
+    - title: Rückgabe fehlgeschlagen. Teil an NetApp
+      url: "/asa800/bootmedia-complete-rma-bmr.html"
+  - title: Bootmedium - manuelle Wiederherstellung
+    pdf-filename: ASA A800 Boot Media Handbuch
+    entries:
+    - title: Workflow für den Austausch von Startmedien
+      url: "/asa800/bootmedia-replace-workflow.html"
+    - title: Prüfen Sie die Anforderungen
+      url: "/asa800/bootmedia-replace-requirements.html"
     - title: Überprüfen Sie die Verschlüsselung
       url: "/asa800/bootmedia-encryption-preshutdown-checks.html"
     - title: Schalten Sie den beeinträchtigten Controller aus

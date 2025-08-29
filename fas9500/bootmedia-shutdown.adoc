@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords:  
 summary: Sie können den beeinträchtigten Controller je nach Hardwarekonfiguration des Speichersystems mithilfe verschiedener Verfahren herunterfahren oder übernehmen. 
 ---
-= Schalten Sie den beeinträchtigten Regler aus - FAS9500
+= Fahren Sie den Controller für die manuelle Wiederherstellung des Startmediums herunter – FAS9500
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -14,6 +14,8 @@ summary: Sie können den beeinträchtigten Controller je nach Hardwarekonfigurat
 Fahren Sie den Regler herunter oder übernehmen Sie ihn mit einer der folgenden Optionen.
 
 Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Nodes durchführen.
+
+Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie das manuelle Boot-Wiederherstellungsverfahren verwenden.
 
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 

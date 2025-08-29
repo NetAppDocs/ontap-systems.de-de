@@ -16,13 +16,30 @@ entries:
 - title: Wartung
   pdf-filename: AFF C800 Wartung
   entries:
-  - title: Überblick
+  - title: Wartungsübersicht
     url: "/c800/maintain-overview.html"
-  - title: Boot-Medien
-    pdf-filename: AFF C800-Startmedium
+  - title: Bootmedium – automatisierte Wiederherstellung
+    pdf-filename: AFF C800 Boot-Medien automatisiert
     entries:
-    - title: Überblick
-      url: "/c800/bootmedia-replace-overview.html"
+    - title: Workflow für den Austausch von Startmedien
+      url: "/c800/bootmedia-replace-workflow-bmr.html"
+    - title: Prüfen Sie die Anforderungen
+      url: "/c800/bootmedia-replace-requirements-bmr.html"
+    - title: Fahren Sie den Controller herunter
+      url: "/c800/bootmedia-shutdown-bmr.html"
+    - title: Ersetzen Sie Startmedien
+      url: "/c800/bootmedia-replace-bmr.html"
+    - title: Image auf Startmedium wiederherstellen
+      url: "/c800/bootmedia-recovery-image-boot-bmr.html"
+    - title: Rückgabe fehlgeschlagen. Teil an NetApp
+      url: "/c800/bootmedia-complete-rma-bmr.html"
+  - title: Bootmedium - manuelle Wiederherstellung
+    pdf-filename: AFF C800 Boot Media Handbuch
+    entries:
+    - title: Workflow für den Austausch von Startmedien
+      url: "/c800/bootmedia-replace-workflow.html"
+    - title: Prüfen Sie die Anforderungen
+      url: "/c800/bootmedia-replace-requirements.html"
     - title: Überprüfen Sie die Verschlüsselung
       url: "/c800/bootmedia-encryption-preshutdown-checks.html"
     - title: Schalten Sie den beeinträchtigten Controller aus

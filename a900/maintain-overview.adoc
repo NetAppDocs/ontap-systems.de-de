@@ -2,7 +2,7 @@
 permalink: a900/maintain-overview.html 
 sidebar: sidebar 
 keywords: aff A900 maintenance, maintenance, repairing aff A900, repairing aff A900, replace aff A900 components, replace aff A900 components 
-summary: Wartung der ASA A900 Hardware 
+summary: Wartung der AFF A900 Hardware 
 ---
 = Wartung der AFF A900 Hardware
 :allow-uri-read: 
@@ -11,70 +11,100 @@ summary: Wartung der ASA A900 Hardware
 
 
 [role="lead"]
+Warten Sie die Hardware Ihres AFF A900 Speichersystems, um langfristige Zuverlässigkeit und optimale Leistung zu gewährleisten. Führen Sie regelmäßige Wartungsarbeiten durch, z. B. den Austausch defekter Komponenten, um Ausfallzeiten und Datenverlust zu vermeiden.
+
+Bei den Wartungsverfahren wird davon ausgegangen, dass das AFF A900 Speichersystem bereits als Speicherknoten in der ONTAP Umgebung bereitgestellt wurde.
+
+
+
+== Systemkomponenten
+
 Für das AFF A900-Speichersystem können Sie Wartungsverfahren für die folgenden Komponenten durchführen.
 
+[cols="25,65"]
+|===
 
 
-== Boot-Medien
+ a| 
+link:bootmedia-replace-workflow-bmr.html["Bootmedium – automatisierte Wiederherstellung"]
+ a| 
+Das Bootmedium speichert einen primären und einen sekundären Satz von ONTAP Imagedateien, die das Speichersystem zum Booten verwendet. Während der automatischen Wiederherstellung ruft das Speichersystem das Boot-Image vom Partnerknoten ab und führt automatisch die entsprechende Boot-Menüoption aus, um das Image auf Ihrem Ersatz-Boot-Medium zu installieren. Die automatische Wiederherstellung des Bootmediums wird nur in ONTAP 9.17.1 und höher unterstützt. Wenn Ihr Speichersystem eine frühere Version von ONTAP verwendet, verwenden Sie die link:bootmedia-replace-workflow.html["manuelle Boot-Wiederherstellung"] .
 
-Das Startmedium speichert einen primären und sekundären Satz von Boot-Image-Dateien, die das System beim Booten verwendet.
+
+
+ a| 
+link:bootmedia-replace-workflow.html["Bootmedium - manuelle Wiederherstellung"]
+ a| 
+Das Bootmedium speichert einen primären und einen sekundären Satz von ONTAP Imagedateien, die das Speichersystem zum Booten verwendet. Bei der manuellen Wiederherstellung starten Sie das Speichersystem von einem USB-Laufwerk und stellen das Dateisystem-Image und die Konfiguration manuell wieder her.  Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .
 
 
 
-== Chassis
-
+ a| 
+link:chassis_replace_overview.html["Chassis"]
+ a| 
 Das Chassis ist das physische Gehäuse, in dem alle Controller-Komponenten wie Controller-/CPU-Einheit, Stromversorgung und I/O-Vorgänge untergebracht sind
 
 
 
-== Controller
-
+ a| 
+link:controller_replace_overview.html["Controller"]
+ a| 
 Ein Controller besteht aus einer Hauptplatine, Firmware und Software. Er steuert die Laufwerke und implementiert die ONTAP-Funktionen.
 
 
 
-== DIMM
-
+ a| 
+link:dimm_replace.html["DIMM"]
+ a| 
 Sie müssen ein DIMM (Dual-Inline-Speichermodul) ersetzen, wenn ein Speicherfehler vorliegt oder ein ausgefallenes DIMM vorliegt.
 
 
 
-== DFPM
-
+ a| 
+link:dcpm-nvram11-battery-replace.html["DFPM"]
+ a| 
 Die DCPM (Controller-Stromversorgungsmodul der Auslagerung) enthält die NVRAM11-Batterie.
 
 
 
-== Ventilator
-
+ a| 
+link:fan_swap_out.html["Ventilator"]
+ a| 
 Der Lüfter kühlt den Controller.
 
 
 
-== I/O-Modul
-
+ a| 
+link:pci_cards_and_risers_replace.html["I/O-Modul"]
+ a| 
 Das E/A-Modul (Eingangs-/Ausgangsmodul) ist eine Hardwarekomponente, die als Vermittler zwischen dem Controller und verschiedenen Geräten oder Systemen dient, die Daten mit dem Controller austauschen müssen.
 
 
 
-== LED USB
-
+ a| 
+link:led_module_replace.html["LED USB"]
+ a| 
 Das USB-LED-Modul stellt Verbindungen zu Konsolenports und Systemstatus bereit.
 
 
 
-== NVRAM
-
-Das NVRAM-Modul (Non-Volatile Random Access Memory) ermöglicht es dem Controller, Daten während des aus- und Einschaltzyklus oder beim Neustart des Systems aufzubewahren.
-
-
-
-== Stromversorgung
-
-Ein Netzteil stellt eine redundante Stromversorgung in einem Controller Shelf bereit.
+ a| 
+link:nvram_module_or_nvram_dimm_replacement.html["NVRAM"]
+ a| 
+Das NVRAM Modul (Non-Volatile Random Access Memory) ermöglicht es dem Controller, Daten über Stromzyklen oder Systemneustarts hinweg beizubehalten, während das NVRAM DIMM die NVRAM Einstellungen beibehält.
 
 
 
-== Akku in Echtzeit
+ a| 
+link:power_supply_swap_out.html["Stromversorgung"]
+ a| 
+Ein Netzteil stellt eine redundante Stromquelle in einem Controller bereit.
 
+
+
+ a| 
+link:rtc_battery_replace.html["Akku in Echtzeit"]
+ a| 
 Eine Echtzeituhr-Batterie bewahrt die Systemdaten und -Uhrzeitinformationen, wenn die Stromversorgung ausgeschaltet ist.
+
+|===

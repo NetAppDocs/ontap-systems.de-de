@@ -1,0 +1,101 @@
+---
+permalink: fas2800/bootmedia-replace-bmr.html 
+sidebar: sidebar 
+keywords: fas2800, replace the boot media 
+summary: Das Bootmedium in Ihrem FAS2800-System speichert wichtige Firmware- und Konfigurationsdaten.  Der Austauschvorgang umfasst das Entfernen des Controllermoduls, das Entfernen des beschädigten Startmediums, das Installieren des Ersatz-Startmediums im Controllermodul und anschließend das erneute Installieren des Controllermoduls. 
+---
+= Ersetzen Sie das Startmedium für die automatische Startwiederherstellung – FAS2800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Bootmedium in Ihrem FAS2800-System speichert wichtige Firmware- und Konfigurationsdaten.  Der Austauschvorgang umfasst das Entfernen und Öffnen des Controllermoduls, das Entfernen des beschädigten Startmediums, das Installieren des Ersatz-Startmediums im Controllermodul und die anschließende Neuinstallation des Controllermoduls.
+
+Der automatisierte Boot-Medien-Wiederherstellungsprozess wird nur in ONTAP 9.17.1 und höher unterstützt. Wenn Ihr Speichersystem eine frühere Version von ONTAP verwendet, verwenden Sie die link:bootmedia-replace-workflow.html["manuelle Boot-Wiederherstellung"] .
+
+Das Startmedium befindet sich im Controllermodul und ist zugänglich, indem das Controllermodul aus dem Gehäuse entfernt und die Controllermodulabdeckung vom System entfernt wird.
+
+.Schritte
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Lösen Sie den Haken- und Schlaufenriemen, mit dem die Kabel am Kabelführungsgerät befestigt sind, und ziehen Sie dann die Systemkabel und SFPs (falls erforderlich) vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren.
+. Drücken Sie die Verriegelung am Nockengriff, bis sie loslässt, öffnen Sie den Nockengriff vollständig, um das Controller-Modul aus der Mittelplatine zu lösen, und ziehen Sie das Controller-Modul anschließend mit zwei Händen aus dem Gehäuse heraus.
++
+image::../media/drw_2850_pcm_remove_install_IEOPS-694.svg[Entfernen Sie den Controller]
+
+. Drehen Sie das Controller-Modul um und legen Sie es auf eine flache, stabile Oberfläche.
+. Öffnen Sie die Abdeckung, indem Sie die blauen Tasten an den Seiten des Controller-Moduls drücken, um die Abdeckung zu lösen, und drehen Sie dann die Abdeckung nach oben und von dem Controller-Modul.
++
+image::../media/drw_2850_open_controller_module_cover_IEOPS-695.svg[Öffnen Sie den Controller]
+
++
+[cols="1,2"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Entriegelungstaste der Steuermodulabdeckung
+
+|===
+. Suchen Sie die Startmedien im Controller-Modul unter der Zusatzkarte, und befolgen Sie die Anweisungen zum Austauschen.
++
+image:../media/drw_2850_replace_boot_media_IEOPS-696.svg["Ersetzen Sie das Startmedium"]
+
++
+[cols="1,2"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Verriegelungslasche für Startmedien
+
+|===
+. Entfernen Sie die Mezzanine-Karte mithilfe der folgenden Abbildung oder der FRU-Zuordnung auf dem Controller-Modul:
++
+.. Entfernen Sie die E/A-Platte, indem Sie sie gerade aus dem Controller-Modul herausschieben.
+.. Lösen Sie die Rändelschrauben auf der Zusatzkarte.
++
+
+NOTE: Sie können die Rändelschrauben mit den Fingern oder einem Schraubendreher lösen. Wenn Sie Ihre Finger verwenden, müssen Sie den NV-Akku möglicherweise nach oben drehen, um den Finger besser an der Daumenschraube daneben zu kaufen.
+
+.. Heben Sie die Zusatzkarte gerade nach oben.
+
+
+. Ersetzen Sie die Startmedien:
++
+.. Drücken Sie die blaue Taste am Startmediengehäuse, um die Startmedien aus dem Gehäuse zu lösen, drehen Sie die Startmedien nach oben und ziehen Sie sie dann vorsichtig gerade aus dem Startmediensockel.
++
+
+NOTE: Drehen oder ziehen Sie die Boot-Medien nicht gerade nach oben, da dadurch der Sockel oder das Boot-Medium beschädigt werden kann.
+
+.. Richten Sie die Kanten des Ersatzstartmediums an der Buchse des Boot-Mediums aus, und schieben Sie ihn dann vorsichtig in die Buchse.
+Überprüfen Sie die Startmedien, um sicherzustellen, dass sie korrekt und vollständig in den Sockel eingesetzt sind. Entfernen Sie gegebenenfalls die Startmedien, und setzen Sie sie wieder in den Sockel ein.
+.. Drücken Sie die blaue Verriegelungstaste, drehen Sie das Startmedium ganz nach unten, und lassen Sie dann die Verriegelungstaste los, um das Startmedium zu verriegeln.
+
+
+. Setzen Sie die Zusatzkarte wieder ein:
++
+.. Richten Sie den Sockel auf der Hauptplatine mit dem Sockel auf der Zusatzkarte aus, und setzen Sie die Karte vorsichtig in den Sockel ein.
+.. Ziehen Sie die drei Rändelschrauben auf der Zusatzkarte fest.
+.. Setzen Sie die E/A-Platte wieder ein.
+
+
+. Setzen Sie die Abdeckung des Controller-Moduls wieder ein, und verriegeln Sie sie.
+. Installieren Sie das Controller-Modul:
++
+.. Richten Sie das Ende des Controllermoduls an der Öffnung im Gehäuse aus und schieben Sie das Controllermodul dann vorsichtig zur Hälfte in das System hinein.
+.. Verkabeln Sie den Controller neu, drücken Sie den Nockengriff fest, um das Controllermodul vollständig einzusetzen, drücken Sie den Nockengriff in die geschlossene Position und ziehen Sie dann die Rändelschraube fest.
++
+Der Controller beginnt mit dem Booten und stoppt bei der LOADER-Eingabeaufforderung.
+
+
+
+
+
+.Wie es weiter geht
+Nach dem physischen Austausch der gestörten Startmedien, link:bootmedia-recovery-image-boot-bmr.html["Stellen Sie das ONTAP-Image vom Partner-Node wieder her"].
