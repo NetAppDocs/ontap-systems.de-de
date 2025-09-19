@@ -1,0 +1,67 @@
+---
+permalink: asa-r2-a1k/chassis-replace-prepare.html 
+sidebar: sidebar 
+keywords: asa a1k, replace the chassis 
+summary: Bereiten Sie den Austausch des beschädigten Gehäuses in Ihrem ASA A1K-System vor, indem Sie das beschädigte Gehäuse identifizieren, die Ersatzkomponenten überprüfen und die Kabel und Controllermodule beschriften. 
+---
+= Vorbereitung zum Austausch des Chassis - ASA A1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bereiten Sie den Austausch des beschädigten Gehäuses in Ihrem ASA A1K-System vor, indem Sie das beschädigte Gehäuse identifizieren, die Ersatzkomponenten überprüfen und die Kabel und das Controllermodul beschriften.
+
+
+
+== Schritt 1: Suchen und überwachen Sie Ihr System
+
+Sie sollten eine Konsolensitzung öffnen und Sitzungsprotokolle zur späteren Referenz speichern und die LED für die Systemposition einschalten, um das Gehäuse für beeinträchtigte Personen zu finden.
+
+.Schritte
+. Stellen Sie eine Verbindung zum seriellen Konsolenport mit der Schnittstelle mit her und überwachen Sie das System.
+. Suchen und Einschalten der Standort-LED des Controllers:
++
+.. Verwenden Sie den `system controller location-led show` Befehl, um den aktuellen Status der Standort-LED anzuzeigen.
+.. Ändern Sie den Status der Standort-LED auf „ein“:
++
+`system controller location-led modify -node _node1_ -state on`
+
++
+Die Standort-LED leuchtet 30 Minuten lang.
+
+
+
+
+
+
+
+== Schritt 2: Prüfen Sie die Austauschkomponenten
+
+Überprüfen Sie, ob Sie die erforderlichen Komponenten erhalten haben, entfernen Sie sie aus der Verpackung, und bewahren Sie die Verpackung auf.
+
+.Schritte
+. Bevor Sie die Verpackung öffnen, sollten Sie auf dem Verpackungsetikett nachsehen und Folgendes überprüfen:
++
+** Teilenummer der Komponente.
+** Teilebeschreibung.
+** Menge im Karton.
+
+
+. Entfernen Sie den Inhalt aus der Verpackung, und verwenden Sie die Verpackung, um die fehlerhafte Komponente an NetApp zurückzugeben.
+
+
+
+
+== Schritt 3: Beschriften Sie die Kabel
+
+Sie sollten die Kabel beschriften, bevor Sie sie von den E/A-Modulen auf der Rückseite des Systems entfernen.
+
+.Schritte
+. Beschriften Sie alle Kabel, die dem Speichersystem zugeordnet sind. Dies erleichtert die spätere Neueinbringung in diesem Verfahren.
+. Wenn Sie nicht bereits ordnungsgemäß geerdet sind, Erden Sie sich.
+
+
+.Was kommt als Nächstes?
+Nachdem Sie den Austausch Ihrer ASA A1K-Gehäusehardware vorbereitet haben, müssen Sielink:chassis-replace-shutdown.html["Fahren Sie den Controller herunter"] .

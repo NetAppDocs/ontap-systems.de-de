@@ -38,7 +38,7 @@ Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Ca
 +
 .. Geben Sie den folgenden Befehl von der Konsole des fehlerfreien Controllers ein:
 +
-`storage failover modify -node local -auto-giveback false`
+`storage failover modify -node _impaired_node_name_ -auto-giveback false`
 
 .. Eingeben `y` wenn die Eingabeaufforderung _Möchten Sie die automatische Rückgabe deaktivieren?_ angezeigt wird
 

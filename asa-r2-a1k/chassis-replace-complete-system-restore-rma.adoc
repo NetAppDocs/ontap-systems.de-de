@@ -1,0 +1,54 @@
+---
+permalink: asa-r2-a1k/chassis-replace-complete-system-restore-rma.html 
+sidebar: sidebar 
+keywords: asa a1k,  verify and set HA state, complete the replacement process 
+summary: Starten Sie den Controller neu, überprüfen Sie den Systemzustand und senden Sie das ausgefallene Teil an NetApp zurück, um den letzten Schritt im Verfahren zum Austausch des ASA A1K-Gehäuses abzuschließen. 
+---
+= Kompletter Chassis-Austausch - ASA A1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Starten Sie den Controller neu, überprüfen Sie den Systemzustand und senden Sie das ausgefallene Teil an NetApp zurück, um den letzten Schritt im Verfahren zum Austausch des ASA A1K-Gehäuses abzuschließen.
+
+
+
+== Schritt 1: Starten Sie die Controller und geben Sie die Controller zurück
+
+Nachdem die Controller neu gebootet wurden, booten Sie ONTAP und geben Sie die Controller zurück.
+
+.Schritte
+. Überprüfen Sie die Konsolenausgabe:
++
+.. Wenn der Controller bis zur Loader-Eingabeaufforderung gebootet wird, booten Sie den Controller mit dem Befehl neu `boot_ontap`.
+.. Wenn die Konsole nach dem Neubooten angezeigt wird `waiting for giveback`, loggen Sie sich beim Partner-Controller ein und überprüfen Sie, ob der ausgetauschte Controller mit dem Befehl bereit ist, die Rückgabe durchzuführen `storage failover show`.
+
+
+. Giveback durchführen:
++
+.. Schließen Sie das Konsolenkabel an den Partner Controller an.
+.. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`
+.. Wenn die automatische Rückgabe deaktiviert war, aktivieren Sie sie erneut: `storage failover modify -node _impaired_node_name_ -auto-giveback _true_`
+.. Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung wiederherstellen/zurücknehmen: `system node autosupport invoke -node * -type all -message MAINT=END`
+
+
+
+
+
+
+== Schritt 2: Überprüfen Sie den Zustand des Storage-Systems
+
+Nachdem der Controller den Speicher zurückgegeben hat, sollten Sie den Gesamtzustand mit überprüfen https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"].
+
+.Schritte
+. Nachdem die Rückgabe abgeschlossen ist, führen Sie Active IQ Config Advisor aus, um den Zustand des Storage-Systems zu überprüfen.
+. Beheben Sie alle Probleme, die auftreten.
+
+
+
+
+== Schritt 3: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.
