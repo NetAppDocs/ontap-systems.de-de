@@ -1,0 +1,75 @@
+---
+permalink: fru-reference/fru-overview.html 
+sidebar: sidebar 
+keywords: FRU reference, field replaceable units, platform FRUs, hardware components, replacement procedures 
+summary: Übersicht über vor Ort austauschbare Einheiten der Plattform und Links zu Austauschverfahren nach FRU-Typ. 
+---
+= Plattform-FRU-Referenz
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bei ONTAP Hardwaresystemen können Sie Wartungsvorgänge an den folgenden vor Ort austauschbaren Komponenten (Field Replaceable Units, FRUs) durchführen.
+
+[cols="1,2"]
+|===
+
+
+| FRU-Verfahren | Beschreibung 
+
+
+| link:bootmedia-fru-links.html["Verfahren zum Ersetzen des Bootmediums nach Plattform"^] | Das Startmedium speichert einen primären und sekundären Satz von Boot-Image-Dateien, die das System beim Booten verwendet. 
+
+
+| link:caching-module-fru-links.html["Verfahren zum Ersetzen von Caching-Modulen nach Plattform"^] | Sie müssen das Caching-Modul des Controllers ersetzen, wenn Ihr System eine einzelne AutoSupport-Meldung (ASUP) registriert, dass das Modul offline gegangen ist. 
+
+
+| link:chassis-fru-links.html["Verfahren zum Austausch des Chassis nach Plattform"^] | Das Chassis ist das physische Gehäuse, in dem alle Controllerkomponenten untergebracht sind, wie etwa die Controller-/CPU-Einheit, das Netzteil und die E/A. 
+
+
+| link:controller-fru-links.html["Verfahren zum Austauschen von Controllern nach Plattform"^] | Ein Controller besteht aus einer Hauptplatine, Firmware und Software. Er steuert die Laufwerke und implementiert die ONTAP-Funktionen. 
+
+
+| link:dcpm-power-fru-links.html["Verfahren zum Austausch des DCPM-Stromversorgungsmoduls nach Plattform"^] | Das Stromversorgungsmodul für den persistenten Speicher des Rechenzentrums (DCPM) bietet bei unerwarteten Stromausfällen Notstromversorgung für DCPM-Module. 
+
+
+| link:dimm-fru-links.html["DIMM-Austauschverfahren nach Plattform"^] | Sie müssen ein DIMM (Dual-Inline-Speichermodul) ersetzen, wenn ein Speicherfehler vorliegt oder ein ausgefallenes DIMM vorliegt. 
+
+
+| link:drive-fru-links.html["Verfahren zum Laufwerksaustausch nach Plattform"^] | Ein Laufwerk ist ein Gerät, das den physischen Speicher für Daten bereitstellt. 
+
+
+| link:fan-fru-links.html["Verfahren zum Austauschen von Lüftern nach Plattform"^] | Ein Lüfter sorgt für einen Luftstrom zur Kühlung der Systemkomponenten und zur Aufrechterhaltung der richtigen Betriebstemperaturen. 
+
+
+| link:io-module-fru-links.html["Verfahren zum Austausch von E/A-Modulen nach Plattform"^] | Ein E/A-Modul stellt Netzwerk- und Speicherkonnektivitätsschnittstellen für den Controller bereit. 
+
+
+| link:led-module-fru-links.html["Verfahren zum Austauschen von LED-Modulen nach Plattform"^] | Das LED-Modul bietet visuelle Statusanzeigen für den Systemzustand und den Komponentenstatus. 
+
+
+| link:mezzanine-fru-links.html["Verfahren zum Austausch von Zwischengeschossen nach Plattform"^] | Eine Mezzanine-Karte bietet zusätzliche E/A-Konnektivität und Erweiterungsmöglichkeiten für den Controller. 
+
+
+| link:nvdimm-fru-links.html["NVDIMM-Austauschverfahren nach Plattform"^] | Sie müssen ein NVDIMM (nichtflüchtiges Dual-In-Line-Speichermodul) ersetzen, wenn das Modul ausfällt oder Fehler anzeigt. 
+
+
+| link:nvmem-battery-fru-links.html["Verfahren zum Austauschen von NVMEM/ NVRAM Batterien nach Plattform"^] | Ein Akku ist im Lieferumfang eines Controllers enthalten und behält zwischengespeicherte Daten bei Ausfall des Netzstroms bei. 
+
+
+| link:nvram-module-fru-links.html["Verfahren zum Austauschen von NVRAM -Modulen nach Plattform"^] | Das NVRAM Modul bietet nichtflüchtigen Speicher für Systemmetadaten und zwischengespeicherte Schreibdaten. 
+
+
+| link:pci-cards-fru-links.html["Verfahren zum Austausch von PCI-Karten und Risern nach Plattform"^] | PCI-Karten und Riser bieten Erweiterungssteckplätze für zusätzliche Funktionen und E/A-Konnektivität. 
+
+
+| link:power-supply-fru-links.html["Verfahren zum Austauschen der Stromversorgung nach Plattform"^] | Ein Netzteil stellt eine redundante Stromversorgung in einem Controller Shelf bereit. 
+
+
+| link:rtc-battery-fru-links.html["Verfahren zum Austauschen der RTC-Batterie nach Plattform"^] | Bei ausgeschaltetem Gerät bleiben Datum und Uhrzeit über eine Echtzeitbatterie erhalten. 
+
+
+| link:system-management-fru-links.html["Verfahren zum Ersetzen des Systemverwaltungsmoduls nach Plattform"^] | Das Systemverwaltungsmodul bietet Out-of-Band-Verwaltungsfunktionen für das System. 
+|===

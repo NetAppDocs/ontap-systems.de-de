@@ -1,0 +1,117 @@
+---
+permalink: a250/overview.html 
+sidebar: sidebar 
+summary: Wichtige Spezifikationen für die A250-Plattformgruppe 
+---
+= Wichtige Spezifikationen für AFF A250
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Im Folgenden finden Sie ausgewählte Spezifikationen für das AFF A250 -Speichersystem in einem einzelnen Hochverfügbarkeitspaar.  Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).
+
+
+
+== Wichtige Spezifikationen für AFF A250
+
+* Plattformkonfiguration: AFF A250 Single Chassis HA Pair
+* Max. Rohkapazität: 1,1016 PB
+* Arbeitsspeicher: 128.0000 GB
+* Formfaktor: 2U-Gehäuse mit 2 HA-Controllern und 24 Laufwerkssteckplätzen
+* ONTAP -Version: ONTAP: 9.16.1P2
+* PCIe-Erweiterungssteckplätze: 4
+* Mindest ONTAP -Version: ONTAP 9.8RC1 == Scaleout-Maxima
+* Typ: NAS; HA-Paare: 12; Rohkapazität: 13,2 PB / 11,7 PiB; Max. Speicher: 1536 GB
+* Typ: SAN; HA-Paare: 6; Rohkapazität: 6,6 PB / 5,9 PiB; Max. Speicher: 768 GB
+* Typ: HA-Paar; Rohkapazität: 1,1 PB / 1,0 PiB; Max. Speicher: 128.0000
+
+
+
+
+== E/A
+
+
+
+=== Integrierte E/A
+
+* Protokoll: Ethernet 25 Gbit/s; Ports: 4
+* Protokoll: Ethernet 10 Gbit/s; Ports: 4
+
+
+
+
+=== Gesamt-E/A
+
+* Protokoll: Ethernet 100 Gbit/s; Ports: 4
+* Protokoll: Ethernet 25 Gbit/s; Ports: 20
+* Protokoll: Ethernet 10 Gbit/s; Ports: 4
+* Protokoll: FC 32 Gbit/s; Ports: 16
+* Protokoll: NVMe/FC 32 Gbit/s; Ports: 16
+* Anschlüsse: 0
+* Protokoll: SAS 12 Gbit/s; Ports: 8
+
+
+
+
+=== Verwaltungsports
+
+* Protokoll: Ethernet 1 Gbit/s; Ports: 2
+* Protokoll: RS-232 115 Kbps; Ports: 4
+* Protokoll: USB 12 Mbit/s; Anschlüsse: 4
+
+
+
+
+== Speichernetzwerke werden unterstützt
+
+* CIFS
+* FC
+* iSCSI
+* NFS v3
+* NFS v4.0
+* NFS v4.1
+* NFS v4.2
+* NVMe/FC
+* NVMe/TCP
+* S3
+* S3 mit NAS
+* KMU 2.0
+* SMB 2.1
+* SMB 2.x
+* KMU 3.0
+* KMU 3.1
+* SMB 3.1.1 == Systemumgebungsspezifikationen
+* Typische Leistung: 2642 BTU/h
+* Leistung im schlimmsten Fall: 3476 BTU/h
+* Gewicht: 54.3 lb 24.6 kg
+* Höhe: 2U
+* Breite: 19 Zoll, IEC-Rack-kompatibel (17,6 Zoll, 44,7 cm)
+* Tiefe:
+* Betriebstemperatur/Höhe/Luftfeuchtigkeit: 10 °C bis 35 °C (50 °F bis 95 °F) bei 3048 m (10000 Fuß) Höhe; 8 % bis 80 % relative Luftfeuchtigkeit, nicht kondensierend
+* Temperatur/Luftfeuchtigkeit außerhalb des Betriebs: -40 °C bis 70 °C (-40 °F bis 158 °F) bis zu 12.192 m (40.000 Fuß) 10 % bis 95 % relative Luftfeuchtigkeit, nicht kondensierend, im Originalbehälter
+* Akustisches Rauschen: Angegebene Schallleistung (LwAd): 7,2 Schalldruck (LpAm) (in der Nähe): 69,1 dB
+
+
+
+
+== Einhaltung
+
+* Zertifizierungen EMC/EMI: AMCA, FCC, ICES, KC, Marokko, VCCI
+* Zertifizierungen Sicherheit: BIS, CB, CSA, G_K_U-SoR, IRAM, NOM, NRCS, SONCAP, TBS
+* Zertifizierungen Sicherheit/EMV/EMI: EAC, UKRSEPRO
+* Zertifizierungen Sicherheit/EMV/EMI/RoHS: BSMI, CE DoC, UKCA DoC
+* Normen EMV/EMI: BS-EN-55024, BS-EN55035, CISPR 32, EN55022, EN55024, EN55032, EN55035, EN61000-3-2, EN61000-3-3, FCC Teil 15 Klasse A, ICES-003, KS C 9832, KS C 9835
+* Sicherheitsstandards: ANSI/UL60950-1, ANSI/UL62368-1, BS-EN62368-1, CAN/CSA C22.2 Nr. 60950-1, CAN/CSA C22.2 Nr. 62368-1, CNS 14336, EN60825-1, EN62368-1, IEC 62368-1, IEC60950-1, IS 13252 (Teil 1)
+
+
+
+
+== Hochverfügbarkeit
+
+* Ethernet-basierter Baseboard Management Controller (BMC) und ONTAP Verwaltungsschnittstelle
+* Redundante Hot-Swap-fähige Controller
+* Redundante Hot-Swap-fähige Netzteile
+* SAS-In-Band-Management über SAS-Verbindungen für externe Regale
+

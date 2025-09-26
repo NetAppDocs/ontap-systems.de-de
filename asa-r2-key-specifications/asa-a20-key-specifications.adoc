@@ -1,0 +1,101 @@
+---
+permalink: asa-r2-key-specifications/asa-a20-key-specifications.html 
+sidebar: sidebar 
+summary: Wichtige Spezifikationen für ASA A20 
+---
+= Wichtige Spezifikationen für ASA A20
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Im Folgenden finden Sie ausgewählte Spezifikationen für das ASA A20-Speichersystem in einem einzelnen Hochverfügbarkeitspaar.  Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).
+
+
+
+== Wichtige Spezifikationen zu Kapazität, Speicher, Formfaktor und ONTAP -Version
+
+* Plattformkonfiguration: ASA A20 Single Chassis HA-Paar
+* Max. Rohkapazität: 0,7344 PB
+* Arbeitsspeicher: 128.0000 GB
+* Formfaktor: 2U-Gehäuse mit 2 HA-Controllern und 24 Laufwerkssteckplätzen
+* ONTAP -Version: ONTAP: 9.16.1P2
+* PCIe-Erweiterungssteckplätze: 8
+* Mindest ONTAP -Version: ONTAP 9.16.1 == Scaleout-Maxima
+* Typ: NAS
+* Typ: SAN; HA-Paare: 3; Rohkapazität: 2,2 PB / 2,0 PiB; Max. Speicher: 384 GB
+* Typ: HA-Paar; Rohkapazität: 0,7 PB / 0,7 PiB; Max. Speicher: 128.0000
+
+
+
+
+== E/A
+
+
+
+=== Integrierte E/A
+
+Keine Onboard-E/A-Daten.
+
+
+
+=== Gesamt-E/A
+
+* Protokoll: Ethernet 100 Gbit/s; Ports: 12
+* Protokoll: Ethernet 25 Gbit/s; Ports: 32
+* Protokoll: Ethernet 10 Gbit/s; Ports: 24
+* Protokoll: FC 64 Gbit/s; Ports: 24
+* Protokoll: NVMe/FC 64 Gbit/s; Ports: 24
+* Anschlüsse: 0
+
+
+
+
+=== Verwaltungsports
+
+* Protokoll: Ethernet 1 Gbit/s; Ports: 2
+* Protokoll: RS-232 115 Kbps; Ports: 4
+* Protokoll: USB 600 Mbit/s; Anschlüsse: 2
+
+
+
+
+== Speichernetzwerke werden unterstützt
+
+* FC
+* iSCSI
+* NVMe/FC
+* NVMe/TCP == Systemumgebungsspezifikationen
+* Typische Leistung: 2489 BTU/h
+* Leistung im schlimmsten Fall: 3890 BTU/h
+* Gewicht: 60.7 lb 27.5 kg
+* Höhe: 2U
+* Breite: 19 Zoll, IEC-Rack-kompatibel (17,6 Zoll, 44,7 cm)
+* Tiefe:
+* Betriebstemperatur/Höhe/Luftfeuchtigkeit: 10 °C bis 35 °C (50 °F bis 95 °F) bei 3048 m (10000 Fuß) Höhe; 8 % bis 80 % relative Luftfeuchtigkeit, nicht kondensierend
+* Temperatur/Luftfeuchtigkeit außerhalb des Betriebs: -40 °C bis 70 °C (-40 °F bis 158 °F) bis zu 12.192 m (40.000 Fuß) 10 % bis 95 % relative Luftfeuchtigkeit, nicht kondensierend, im Originalbehälter
+* Akustisches Rauschen: Angegebene Schallleistung (LwAd): 8,0 Schalldruck (LpAm) (in der Nähe): 70,5 dB
+
+
+
+
+== Einhaltung
+
+* Zertifizierungen EMC/EMI: AMCA, FCC, ICES, KC, Marokko, VCCI
+* Zertifizierungen Sicherheit: BIS, CB, CSA, G_K_U-SoR, IRAM, NOM, NRCS, SONCAP, TBS
+* Zertifizierungen Sicherheit/EMV/EMI: EAC, UKRSEPRO
+* Zertifizierungen Sicherheit/EMV/EMI/RoHS: BSMI, CE DoC, UKCA DoC
+* Normen EMV/EMI: BS-EN-55032, BS-EN55035, CISPR 32, EN55022, EN55024, EN55032, EN55035, EN61000-3-2, EN61000-3-3, FCC Teil 15 Klasse A, ICES-003, KS C 9832, KS C 9835
+* Sicherheitsstandards: ANSI/UL60950-1, ANSI/UL62368-1, BS-EN62368-1, CAN/CSA C22.2 Nr. 60950-1, CAN/CSA C22.2 Nr. 62368-1, CNS 15598-1, EN60825-1, EN62368-1, IEC 62368-1, IEC60950-1, IS 13252 (Teil 1)
+
+
+
+
+== Hochverfügbarkeit
+
+* Ethernet-basierter Baseboard Management Controller (BMC) und ONTAP Verwaltungsschnittstelle
+* Redundante Hot-Swap-fähige Controller
+* Redundante Hot-Swap-fähige Netzteile
+* SAS-In-Band-Management über SAS-Verbindungen für externe Regale
+
