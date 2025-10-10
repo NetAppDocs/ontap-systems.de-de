@@ -11,7 +11,7 @@ summary: 'Das NVRAM Modul besteht aus den NVRAM12 und DIMMs und bis zu zwei NVMe
 
 
 [role="lead"]
-Ersetzen Sie die NVRAM in Ihrem AFF c80-System, wenn der nichtflüchtige Speicher fehlerhaft ist oder ein Upgrade erforderlich ist. Beim Austausch wird der beeinträchtigte Controller heruntergefahren, das NVRAM-Modul oder das NVRAM-DIMM ersetzt, die Festplatten neu zugewiesen und das fehlerhafte Teil an NetApp zurückgegeben.
+Ersetzen Sie den NVRAM in Ihrem AFF c80-System, wenn der nichtflüchtige Speicher fehlerhaft ist oder ein Upgrade benötigt.  Der Austauschvorgang umfasst das Herunterfahren des beschädigten Controllers, das vollständige Unterbrechen der Stromversorgung durch Herausziehen des Controllers um einige Zentimeter, das Ersetzen des NVRAM Moduls oder des NVRAM DIMM, die Neuzuweisung der Festplatten und die Rückgabe des ausgefallenen Teils an NetApp.
 
 Ersetzen Sie das NVRAM-Modul oder die NVRAM-DIMMs mit der entsprechenden Option.
 
@@ -32,6 +32,7 @@ image::../media/drw_a800_drive_seated_IEOPS-960.svg[Festplattenlaufwerke einsetz
 
 NOTE: Wenn Ihr System über Gleichstrom verfügt, trennen Sie den Netzstecker von den Netzteilen.
 
+. Drücken Sie beide Verriegelungsriegel am Controller nach unten, drehen Sie beide Riegel gleichzeitig nach unten und ziehen Sie den Controller etwa 3 bis 4 Zoll heraus.
 . Drehen Sie das Kabelführungs-Fach nach unten, indem Sie die Tasten an der Innenseite des Kabelführungs-Fachs herausziehen und nach unten drehen.
 . Entfernen des Ziel-NVRAM-Moduls aus dem Chassis:
 +
@@ -72,7 +73,20 @@ DIMM-Verriegelungslaschen
 .. Schieben Sie das Modul vorsichtig bis zum Anschlag in den Steckplatz, und drücken Sie dann die Nockenverriegelung ganz nach oben, um das Modul zu verriegeln.
 
 
-. Schließen Sie die Netzkabel an die Netzteile an. Der Controller startet neu, sobald die Stromversorgung wiederhergestellt ist.
+. Installieren Sie das Controllermodul neu.  Der Controller startet neu, sobald er vollständig eingesteckt ist.
++
+.. Drücken Sie das Controller-Modul fest in das Gehäuse, bis es auf die Mittelebene trifft und vollständig sitzt.
++
+Die Verriegelungen steigen, wenn das Controller-Modul voll eingesetzt ist.
+
++
+
+NOTE: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige Kraft verwenden, um Schäden an den Anschlüssen zu vermeiden.
+
+.. Drehen Sie die Verriegelungen nach oben in die verriegelte Position.
+
+
+. Schließen Sie die Netzkabel an die Netzteile an.
 +
 
 NOTE: Wenn Sie über Gleichstromnetzteile verfügen, schließen Sie den Stromblock wieder an die Netzteile an.
@@ -98,6 +112,7 @@ image::../media/drw_a800_drive_seated_IEOPS-960.svg[Festplattenlaufwerke einsetz
 
 NOTE: Wenn Ihr System über Gleichstrom verfügt, trennen Sie den Netzstecker von den Netzteilen.
 
+. Drücken Sie beide Verriegelungsriegel am Controller nach unten, drehen Sie beide Riegel gleichzeitig nach unten und ziehen Sie den Controller etwa 3 bis 4 Zoll heraus.
 . Drehen Sie das Kabelführungs-Fach nach unten, indem Sie die Stifte an den Enden des Fachs vorsichtig herausziehen und das Fach nach unten drehen.
 . Entfernen des Ziel-NVRAM-Moduls aus dem Chassis:
 +
@@ -141,7 +156,20 @@ NOTE: Verwenden Sie das FRU-Kartenetikett auf der Seite des NVRAM-Moduls, um die
 .. Schieben Sie das Modul vorsichtig in den Steckplatz, bis die Nockenverriegelung mit dem E/A-Nockenbolzen einrastet, und drehen Sie dann die Nockenverriegelung bis zum Anschlag nach oben, um das Modul zu verriegeln.
 
 
-. Schließen Sie die Netzkabel an die Netzteile an. Der Controller startet neu, sobald die Stromversorgung wiederhergestellt ist.
+. Installieren Sie das Controllermodul neu.  Der Controller startet neu, sobald er vollständig eingesteckt ist.
++
+.. Drücken Sie das Controller-Modul fest in das Gehäuse, bis es auf die Mittelebene trifft und vollständig sitzt.
++
+Die Verriegelungen steigen, wenn das Controller-Modul voll eingesetzt ist.
+
++
+
+NOTE: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige Kraft verwenden, um Schäden an den Anschlüssen zu vermeiden.
+
+.. Drehen Sie die Verriegelungen nach oben in die verriegelte Position.
+
+
+. Schließen Sie die Netzkabel an die Netzteile an.
 +
 
 NOTE: Wenn Sie über Gleichstromnetzteile verfügen, schließen Sie den Stromblock wieder an die Netzteile an.
