@@ -1,0 +1,96 @@
+---
+permalink: afx-1k/maintain-overview.html 
+sidebar: sidebar 
+keywords: afx 1k maintenance, maintenance, repairing a1k, repairing afx 1k, replace afx 1k components, replace afx 1k components 
+summary: Warten Sie die Hardware Ihres AFX 1K-Speichersystems, um langfristige Zuverlässigkeit und optimale Leistung sicherzustellen. Führen Sie regelmäßige Wartungsarbeiten durch, z. B. den Austausch defekter Komponenten, um Ausfallzeiten und Datenverlust zu vermeiden. 
+---
+= Übersicht der Wartungsvorgänge - AFX 1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Warten Sie die Hardware Ihres AFX 1K-Speichersystems, um langfristige Zuverlässigkeit und optimale Leistung sicherzustellen. Führen Sie regelmäßige Wartungsarbeiten durch, z. B. den Austausch defekter Komponenten, um Ausfallzeiten und Datenverlust zu vermeiden.
+
+Bei den Wartungsverfahren wird davon ausgegangen, dass das AFX 1K-Speichersystem bereits als Speicherknoten in der ONTAP Umgebung bereitgestellt wurde.
+
+
+
+== Systemkomponenten
+
+Für das AFX 1K-Speichersystem können Sie Wartungsvorgänge an den folgenden Komponenten durchführen.
+
+[cols="25,65"]
+|===
+
+
+ a| 
+link:bootmedia-replace-workflow.html["Boot-Medien"]
+ a| 
+Das Bootmedium speichert einen primären und einen sekundären Satz von ONTAP Imagedateien, die das System beim Booten verwendet.
+
+
+
+ a| 
+link:controller-replace-workflow.html["Controller"]
+ a| 
+Ein Controller besteht aus einer Hauptplatine, Firmware und Software. Er steuert die Laufwerke und führt die ONTAP-Betriebssystemsoftware aus.
+
+
+
+ a| 
+link:dimm-replace.html["DIMM"]
+ a| 
+Ein duales Inline-Speichermodul (DIMM) ist eine Art von Computerspeicher. Sie sind installiert, um einem Controller-Motherboard Systemspeicher hinzuzufügen.
+
+
+
+ a| 
+link:fan-replace.html["Ventilator"]
+ a| 
+Ein Lüfter kühlt den Controller.
+
+
+
+ a| 
+link:nvram-replace.html["NVRAM-Modul"]
+ a| 
+Das NVRAM Modul (Non-Volatile Random Access Memory) ermöglicht dem Controller, während des Flugs gespeicherte Daten zu schützen und zu speichern, falls das System die Stromversorgung verliert.  Die System-ID wird im NVRAM -Modul gespeichert.  Beim Austausch verwendet der Controller die neue System-ID vom Ersatz NVRAM -Modul.
+
+
+
+ a| 
+link:nvdimm-battery-replace.html["NV-Batterie"]
+ a| 
+Die NV-Batterie ist dafür verantwortlich, das NVRAM-Modul mit Strom zu versorgen, während die aktiven Daten nach einem Stromausfall in den Flash-Speicher ausgelagert werden.
+
+
+
+ a| 
+link:io-module-overview.html["I/O-Modul"]
+ a| 
+Das E/A-Modul (Eingangs-/Ausgangsmodul) ist eine Hardwarekomponente, die als Vermittler zwischen dem Controller und verschiedenen Geräten oder Systemen dient, die Daten mit dem Controller austauschen müssen.
+
+
+
+ a| 
+link:power-supply-replace.html["Stromversorgung"]
+ a| 
+Ein Netzteil stellt eine redundante Stromquelle in einem Controller bereit.
+
+
+
+ a| 
+link:rtc-battery-replace.html["Akku in Echtzeit"]
+ a| 
+Bei ausgeschaltetem Gerät bleiben Datum und Uhrzeit über eine Echtzeitbatterie erhalten.
+
+
+
+ a| 
+link:system-management-replace.html["Systemmanagement-Modul"]
+ a| 
+Das Systemmanagementmodul stellt die Schnittstelle zwischen dem Controller und einer Konsole oder einem Laptop für Controller- oder Systemwartungszwecke bereit. Das Systemmanagementmodul enthält das Startmedium und speichert die Seriennummer des Systems (SSN).
+
+|===

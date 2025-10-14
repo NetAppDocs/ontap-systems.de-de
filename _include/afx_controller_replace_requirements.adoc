@@ -1,0 +1,23 @@
+= 
+:allow-uri-read: 
+
+
+Überprüfen Sie die Anforderungen für den Austausch des Controllers.
+
+* Es ist wichtig, dass Sie die Befehle in diesen Schritten auf die richtigen Systeme anwenden:
++
+** Die Steuerung _imired_ ist die Steuerung, die ersetzt wird.
+** Die Steuerung _Replacement_ ist die neue Steuerung, die die beeinträchtigte Steuerung ersetzt.
+** Der _Healthy_ Controller ist der überlebende Controller.
+
+
+* Alle Festplatten-Shelfs müssen ordnungsgemäß funktionieren.
+* Der gesunde Regler muss in der Lage sein, den zu ersetzenden Regler zu übernehmen (bezeichnet in diesem Verfahren als „`eingeschränkte Steuerung`“).
+* Sie müssen die ausgefallene Komponente durch die Field-Replaceable Unit (FRU) ersetzen, die Sie von NetApp erhalten haben.
+* Ein Controller-Modul muss durch ein Controller-Modul desselben Modelltyps ersetzt werden. Sie können kein System-Upgrade durch einen Austausch des Controller-Moduls durchführen.
+* Im Rahmen dieses Verfahrens können Laufwerke oder Laufwerk-Shelfs nicht geändert werden.
+* Sie müssen immer die Konsolenausgabe des Controllers in einer Textprotokolldatei erfassen.
++
+Auf diese Weise erhalten Sie eine Aufzeichnung des Verfahrens, damit Sie Probleme beheben können, die während des Austauschvorgangs auftreten können.
+
+

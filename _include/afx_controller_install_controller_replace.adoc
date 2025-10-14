@@ -1,0 +1,32 @@
+= 
+:allow-uri-read: 
+
+
+Installieren Sie das Controller-Modul neu, und starten Sie es.
+
+. Stellen Sie sicher, dass der Luftkanal vollständig geschlossen ist, indem Sie ihn bis zum gewünschten Ziel nach unten drehen.
++
+Er muss bündig auf die Metallplatte des Controller-Moduls liegen.
+
+. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und schieben Sie das Controller-Modul in das Gehäuse, wobei die Hebel von der Vorderseite des Systems weg gedreht sind.
+. Sobald das Controller-Modul Sie daran hindert, es weiter zu schieben, drehen Sie die Nockengriffe nach innen, bis sie wieder unter den Lüftern einrasten
++
+
+NOTE: Setzen Sie das Controller-Modul nicht zu stark in das Gehäuse ein, um Beschädigungen der Anschlüsse zu vermeiden.
+
++
+
+NOTE: Der Controller startet bis zur Loader-Eingabeaufforderung, sobald er vollständig eingesetzt ist.
+
+. Geben Sie an der Eingabeaufforderung Loader ein `show date`, um Datum und Uhrzeit auf dem Ersatz-Controller anzuzeigen. Datum und Uhrzeit sind in GMT.
++
+
+NOTE: Die Zeit wird in Ortszeit und im 24-Stunden-Format angezeigt.
+
+. Stellen Sie ggf. das aktuelle Datum mit der `set date mm/dd/yyyy` Befehl.
+. Stellen Sie bei Bedarf die Uhrzeit in GMT mithilfe des ein `set time hh:mm:ss` Befehl.
++
+.. Die aktuelle GMT-Zeit können Sie vom Partnerknoten mit dem `date -u` Befehl.
+
+
+

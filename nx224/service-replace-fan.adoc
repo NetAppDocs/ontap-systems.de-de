@@ -1,0 +1,179 @@
+---
+permalink: nx224/service-replace-fan.html 
+sidebar: sidebar 
+keywords: nx224, shelves, shelf, nx224 shelves, fail, fan, nondisruptive, power, i/o, progress, replace, replace a fan 
+summary: Sie können einen ausgefallenen Lüfter in einem eingeschalteten NX224-Regal ohne Unterbrechung austauschen, während E/A-Vorgänge ausgeführt werden. 
+---
+= Ersetzen eines Lüftermoduls – NX224-Einschübe
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn einer oder beide Lüfter in Ihrem Lüftermodul ausfallen, können Sie Ihr Lüftermodul austauschen.  Dieser Vorgang kann unterbrechungsfrei in einem eingeschalteten NX224-Shelf mit laufenden E/A-Vorgängen abgeschlossen werden.
+
+.Über diese Aufgabe
+* Mindestens 70 Sekunden zwischen dem aus- und Einbau des NVMe-Shelf-Moduls (NSM) zulassen.
++
+So bleibt ONTAP genügend Zeit, um das NSM-Entfernungsereignis zu bearbeiten.
+
+* *Best Practice:* Die beste Vorgehensweise besteht darin, aktuelle Versionen der NSM-Firmware und der Laufwerksfirmware auf Ihrem System zu haben, bevor Sie FRU-Komponenten austauschen. Besuchen Sie die NetApp Support-Website, um  https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Disk Shelf-Firmware herunterladen"^] Und  https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Laden Sie die Firmware für das Festplattenlaufwerk herunter"^] .
++
+[NOTE]
+====
+Stellen Sie die Firmware nicht auf eine Version zurück, die Ihr Shelf und seine Komponenten nicht unterstützt.
+
+====
+* Bei Bedarf können Sie die blauen LEDs am Shelf einschalten, um die physische Suche nach dem betroffenen Shelf zu erleichtern: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
++
+Wenn Sie den nicht kennen `_shelf_name_` Führen Sie den aus `storage shelf show` Befehl.
+
++
+Ein Regal hat drei Standort-LEDs: Eine auf dem Bedienfeld und eine auf jedem NSM. Die Standort-LEDs leuchten 30 Minuten lang. Sie können sie deaktivieren, indem Sie denselben Befehl eingeben, jedoch die Option verwenden `off`.
+
+* Wenn Sie den Ersatzlüfter auspacken, bewahren Sie alle Verpackungsmaterialien auf, wenn Sie den defekten Lüfter zurücksenden.
++
+Wenn Sie die RMA-Nummer oder zusätzliche Hilfe beim Ersatzverfahren benötigen, wenden Sie sich an den technischen Support unter https://mysupport.netapp.com/site/global/dashboard["NetApp Support"^], 888-463-8277 (Nordamerika), 00-800-44-638277 (Europa) oder +800-800-80-800 (Asien/Pazifik).
+
+
+
+.Bevor Sie beginnen
+Das Partner-NSM des Shelfs muss betriebsbereit und korrekt verkabelt sein, damit Ihr Shelf die Konnektivität aufrechterhält, wenn Sie das NSM mit der ausgefallenen FRU (Ziel-NSM) entfernen.  Sie können den Status des Partner-NSM überprüfen, indem Sie https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Herunterladen und Ausführen von Config Advisor"^] .
+
+.Schritte
+. Richtig gemahlen.
+. Trennen Sie die Verkabelung vom NSM, der die FRU enthält, die Sie ersetzen:
++
+.. Trennen Sie das Netzkabel vom Netzteil, indem Sie die Netzkabelhalterung öffnen und dann das Netzkabel vom Netzteil abziehen.
++
+Die Netzteile haben keinen Netzschalter.
+
+.. Trennen Sie die Regalverkabelung von den NSM-Ports.
++
+Notieren Sie sich die NSM-Ports, an die jedes Kabel angeschlossen ist. Sie schließen die Kabel wieder an dieselben Ports an, wenn Sie den NSM später in diesem Verfahren wieder einsetzen.
+
+
+
+. Entfernen Sie die NSM:
++
+image::../media/drw_g_and_t_handles_remove_ieops-1837.svg[Entfernen Sie den NSM.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Drücken Sie an beiden Enden des NSM die vertikalen Verriegelungslaschen nach außen, um die Griffe zu lösen.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Legende Nummer 2]
+ a| 
+** Ziehen Sie die Griffe zu sich, um den NSM aus der Mittelplatine zu lösen.
++
+Beim Ziehen ziehen die Griffe aus dem Regal heraus. Wenn du Widerstand spürst, ziehe weiter.
+
+** Schieben Sie den NSM aus dem Regal und legen Sie ihn auf eine Ebene, stabile Oberfläche.
++
+Stellen Sie sicher, dass Sie die Unterseite des NSM stützen, während Sie ihn aus dem Regal ziehen.
+
+
+
+
+
+ a| 
+image::../media/icon_round_3.png[Legende Nummer 3]
+ a| 
+Drehen Sie die Griffe aufrecht (neben den Laschen), um sie aus dem Weg zu bewegen.
+
+|===
+. Öffnen Sie die NSM-Abdeckung, indem Sie die Flügelschraube gegen den Uhrzeigersinn drehen, um sie zu lösen, und öffnen Sie dann die Abdeckung.
++
+
+NOTE: Das FRU-Etikett auf der NSM-Abdeckung zeigt die Position der fünf Lüfter entlang der Rückwand des NSM.
+
+. Identifizieren Sie den ausgefallenen Lüfter physisch.
++
+Wenn ein Lüfter ausfällt, protokolliert das System eine Warnmeldung an die Systemkonsole und gibt an, welcher Lüfter ausfällt.
+
+. Ersetzen Sie den ausgefallenen Lüfter:
++
+image::../media/drw_tp_fan_replace_ieops-2203.svg[Entfernen Sie den defekten Lüfter.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Entfernen Sie den defekten Lüfter, indem Sie die Seiten an den blauen Berührungspunkten fest fassen und ihn dann gerade nach oben aus dem Sockel ziehen.
+
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 2]
+ a| 
+Setzen Sie den Ersatzlüfter in die Führungen ein, und drücken Sie ihn nach unten, bis der Lüfteranschluss vollständig in der Buchse sitzt.
+
+|===
+. Schließen Sie die NSM-Abdeckung, und ziehen Sie die Flügelschraube fest.
+. Setzen Sie den NSM in das Regal ein:
++
+image::../media/drw_g_and_t_handles_reinstall_ieops-1838.svg[Ersetzen Sie die NSM.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Wenn Sie die NSM-Griffe senkrecht (neben den Laschen) gedreht haben, um sie während der Wartung des NSM aus dem Weg zu bewegen, drehen Sie sie nach unten in die horizontale Position.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Legende Nummer 2]
+ a| 
+Richten Sie die Rückseite des NSM mit der Öffnung im Regal aus, und drücken Sie den NSM vorsichtig mit den Griffen, bis er vollständig sitzt.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Legende Nummer 3]
+ a| 
+Drehen Sie die Griffe in die aufrechte Position, und fixieren Sie sie mit den Laschen.
+
+|===
+. Schließen Sie die Verkabelung wieder an den NSM an:
++
+.. Schließen Sie die Regalverkabelung erneut an dieselben acht NSM-Ports an.
++
+Die Kabel werden mit der Zuglasche des Steckers nach oben eingesetzt. Wenn ein Kabel richtig eingesetzt wird, klickt es an seine Stelle.
+
+.. Schließen Sie das Netzkabel wieder an die Stromversorgung an und sichern Sie das Netzkabel anschließend mit der Netzkabelhalterung.
++
+Bei ordnungsgemäßer Funktion leuchtet die zweifarbige LED des Netzteils grün.
+
++
+Außerdem leuchten beide NSM-Port-LNK-LEDs (grün) auf. Wenn eine LNK-LED nicht leuchtet, setzen Sie das Kabel wieder ein.
+
+
+
+. Vergewissern Sie sich, dass die Warn-LEDs am NSM, der den ausgefallenen Lüfter enthält, und am Shelf-Bedienfeld nicht mehr leuchten.
++
+Die NSM-Warn-LEDs werden nach dem Neustart des NSM ausgeschaltet und erkennen kein Lüfterproblem mehr. Dies kann drei bis fünf Minuten dauern.
+
+. Überprüfen Sie, ob das NSM richtig verkabelt ist, indem Sie https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Ausführen von Active IQ Config Advisor"^] .
++
+Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
+
+

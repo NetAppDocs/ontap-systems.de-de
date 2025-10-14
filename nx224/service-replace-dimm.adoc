@@ -1,0 +1,199 @@
+---
+permalink: nx224/service-replace-dimm.html 
+sidebar: sidebar 
+keywords: nx224, shelves, shelf, nx224 shelves, replace, nondisruptive, dimm, i/o, replace a dimm 
+summary: Sie können ein fehlerhaftes DIMM unterbrechungsfrei in einem eingeschalteten NX224-Laufwerksregal ersetzen, während ein E/A-Vorgang läuft. 
+---
+= Ersetzen eines DIMM - NX224-Einschübe
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können ein fehlerhaftes DIMM unterbrechungsfrei in einem eingeschalteten NX224-Laufwerksregal ersetzen, während ein E/A-Vorgang läuft.
+
+.Über diese Aufgabe
+* Mindestens 70 Sekunden zwischen dem aus- und Einbau des NVMe-Shelf-Moduls (NSM) zulassen.
++
+Dadurch bleibt ONTAP ausreichend Zeit, um das Ereignis zum Entfernen von NSM zu verarbeiten.
+
+* *Best Practice:* Die beste Vorgehensweise besteht darin, aktuelle Versionen der NVMe Shelf Module (NSM)-Firmware und der Laufwerks-Firmware auf Ihrem System zu haben, bevor Sie FRU-Komponenten austauschen. Besuchen Sie die NetApp Support-Website, um  https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Disk Shelf-Firmware herunterladen"^] Und  https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Laden Sie die Firmware für das Festplattenlaufwerk herunter"^] .
++
+[NOTE]
+====
+Stellen Sie die Firmware nicht auf eine Version zurück, die Ihr Shelf und seine Komponenten nicht unterstützt.
+
+====
+* Bei Bedarf können Sie die blauen LEDs am Shelf einschalten, um die physische Suche nach dem betroffenen Shelf zu erleichtern: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
++
+Wenn Sie den nicht kennen `_shelf_name_` Führen Sie den aus `storage shelf show` Befehl.
+
++
+Ein Regal hat drei Standort-LEDs: Eine auf dem Bedienfeld und eine auf jedem NSM. Die Standort-LEDs leuchten 30 Minuten lang. Sie können sie deaktivieren, indem Sie denselben Befehl eingeben, jedoch die Option verwenden `off`.
+
+* Wenn Sie das ErsatzDIMM auspacken, speichern Sie alle Verpackungsmaterialien für die Verwendung, wenn Sie das fehlerhafte DIMM zurückgeben.
++
+Wenn Sie die RMA-Nummer oder zusätzliche Hilfe beim Ersatzverfahren benötigen, wenden Sie sich an den technischen Support unter https://mysupport.netapp.com/site/global/dashboard["NetApp Support"^], 888-463-8277 (Nordamerika), 00-800-44-638277 (Europa) oder +800-800-80-800 (Asien/Pazifik).
+
+
+
+.Bevor Sie beginnen
+* Das Partner-NSM des Shelfs muss betriebsbereit und korrekt verkabelt sein, damit die Konnektivität Ihres Shelfs erhalten bleibt, wenn Sie das NSM mit der ausgefallenen FRU (Ziel-NSM) entfernen.  Sie können den Status des Partner-NSM überprüfen, indem Sie https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Herunterladen und Ausführen von Config Advisor"^] .
+* Alle anderen Komponenten im System, einschließlich der anderen drei DIMMs, müssen ordnungsgemäß funktionieren.
+
+
+.Schritte
+. Richtig gemahlen.
+. Trennen Sie die Verkabelung vom NSM, der die FRU enthält, die Sie ersetzen:
++
+.. Trennen Sie das Netzkabel vom Netzteil, indem Sie die Netzkabelhalterung öffnen und dann das Netzkabel vom Netzteil abziehen.
++
+Die Netzteile haben keinen Netzschalter.
+
+.. Trennen Sie die Speicherkabel von den NSM-Ports.
++
+Notieren Sie sich die NSM-Ports, an die jedes Kabel angeschlossen ist. Schließen Sie die Kabel wieder an die gleichen Ports an, wenn Sie den NSM wieder einsetzen.
+
+
+
+. Setzen Sie den NSM in das Regal ein:
++
+image::../media/drw_g_and_t_handles_reinstall_ieops-1838.svg[Ersetzen Sie die NSM.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Wenn Sie die NSM-Griffe senkrecht (neben den Laschen) gedreht haben, um sie während der Wartung des NSM aus dem Weg zu bewegen, drehen Sie sie nach unten in die horizontale Position.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Legende Nummer 2]
+ a| 
+Richten Sie die Rückseite des NSM mit der Öffnung im Regal aus, und drücken Sie den NSM vorsichtig mit den Griffen, bis er vollständig sitzt.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Legende Nummer 3]
+ a| 
+Drehen Sie die Griffe in die aufrechte Position, und fixieren Sie sie mit den Laschen.
+
+|===
+. Öffnen Sie die NSM-Abdeckung, indem Sie die Flügelschraube gegen den Uhrzeigersinn drehen, um sie zu lösen, und öffnen Sie dann die Abdeckung.
++
+Das FRU-Etikett auf der NSM-Abdeckung zeigt die Position der vier DIMMs im NSM.
+
+. Identifizieren Sie das fehlerhafte DIMM-Modul physisch.
++
+Wenn ein DIMM defekt ist, protokolliert das System eine Warnmeldung an die Systemkonsole, die angibt, welches DIMM ersetzt werden muss.
+
+. Entfernen Sie das fehlerhafte DIMM:
++
+image::../media/drw_tp_dimm_replace_ieops-2202.svg[Entfernen Sie die DIMMs.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+DIMM-Steckplatznummerierung und -Positionen.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Legende Nummer 2]
+ a| 
+** Beachten Sie die Ausrichtung des DIMM im Sockel, sodass Sie das Ersatz-DIMM in derselben Ausrichtung einsetzen können.
+** Werfen Sie das fehlerhafte DIMM aus, indem Sie die beiden DIMM-Auswurfhalterungen an beiden Enden des DIMM-Steckplatzes langsam auseinander drücken.
+
+
+
+IMPORTANT: Halten Sie das DIMM vorsichtig an den Ecken oder Kanten, um Druck auf die Komponenten der DIMM-Platine zu vermeiden.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Legende Nummer 3]
+ a| 
+Heben Sie das DIMM-Modul nach oben und aus dem Steckplatz heraus.
+
+Die Auswerferlaschen bleiben in der geöffneten Position.
+
+|===
+. Ersetzen Sie das DIMM:
++
+.. Entfernen Sie das Ersatz-DIMM aus dem antistatischen Versandbeutel.
+.. Halten Sie das DIMM an den Ecken, und setzen Sie das DIMM-Modul anschließend in einen Steckplatz ein.
++
+Die Kerbe an der Unterseite des DIMM, unter den Stiften, sollte sich mit der Lasche im Steckplatz.
+
++
+Wenn das DIMM richtig eingesetzt wird, sollte es sich leicht einpassen, aber fest in den Steckplatz einsetzen. Falls nicht, setzen Sie das DIMM erneut ein.
+
+.. Drücken Sie vorsichtig nach unten, aber fest auf der Oberseite des DIMM, bis die Auswurfklammern über den Kerben an beiden Enden des DIMM einrasten.
+
+
+. Schließen Sie die NSM-Abdeckung, und ziehen Sie die Flügelschraube fest.
+. Setzen Sie den NSM in das Regal ein:
++
+image::../media/drw_g_and_t_handles_reinstall_ieops-1838.svg[Ersetzen Sie die NSM.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Wenn Sie die NSM-Griffe senkrecht (neben den Laschen) gedreht haben, um sie während der Wartung des NSM aus dem Weg zu bewegen, drehen Sie sie nach unten in die horizontale Position.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Legende Nummer 2]
+ a| 
+Richten Sie die Rückseite des NSM mit der Öffnung im Regal aus, und drücken Sie den NSM vorsichtig mit den Griffen, bis er vollständig sitzt.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Legende Nummer 3]
+ a| 
+Drehen Sie die Griffe in die aufrechte Position, und fixieren Sie sie mit den Laschen.
+
+|===
+. Schließen Sie die Verkabelung wieder an den NSM an:
++
+.. Schließen Sie die Speicherverkabelung erneut an dieselben acht NSM-Ports an.
++
+Die Kabel werden mit der Zuglasche des Steckers nach oben eingesetzt. Wenn ein Kabel richtig eingesetzt wird, klickt es an seine Stelle.
+
+.. Schließen Sie das Netzkabel wieder an die Stromversorgung an und sichern Sie das Netzkabel anschließend mit der Netzkabelhalterung.
++
+Bei ordnungsgemäßer Funktion leuchtet die zweifarbige LED des Netzteils grün.
+
++
+Außerdem leuchten beide NSM-Port-LNK-LEDs (grün) auf. Wenn eine LNK-LED nicht leuchtet, setzen Sie das Kabel wieder ein.
+
+
+
+. Vergewissern Sie sich, dass die Warn-LEDs am NSM, der das ausgefallene DIMM enthält, und am Shelf-Bedienfeld nicht mehr leuchten.
++
+Die NSM-Warn-LEDs werden nach dem Neustart des NSM ausgeschaltet und erkennen kein DIMM-Problem mehr. Dies kann drei bis fünf Minuten dauern.
+
+. Überprüfen Sie, ob das NSM richtig verkabelt ist, indem Sie https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Ausführen von Config Advisor"^] .
++
+Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
+
+

@@ -1,0 +1,19 @@
+= 
+:allow-uri-read: 
+
+
+Bevor Sie den Ersatzknoten wieder in Betrieb nehmen, stellen Sie sicher, dass sich die logischen Schnittstellen auf ihren Home-Ports befinden, überprüfen Sie die Clusterintegrität und setzen Sie die automatische Rückgabe zurück.
+
+.Schritte
+. Überprüfen Sie, ob die logischen Schnittstellen an ihren Home-Server und ihre Ports berichten:
++
+`network interface show -is-home false`
+
++
+Wenn logische Schnittstellen als „false“ aufgeführt sind, kehren Sie zu ihren Home-Ports zurück:
+
++
+`network interface revert -vserver * -lif *`
+
+. Überprüfen Sie den Zustand Ihres Clusters. Weitere Informationen finden Sie im https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["So führen Sie eine Cluster-Integritätsprüfung mit einem Skript in ONTAP durch"^] KB-Artikel.
+

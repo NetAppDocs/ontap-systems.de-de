@@ -1,0 +1,220 @@
+---
+permalink: nx224/hot-add-shelf.html 
+sidebar: sidebar 
+keywords: nx224, shelves, shelf, nx224 shelves, hot-add, ha, pair, install, hot-add an nx224 drive shelf 
+summary: Sie können ein NX224-Laufwerksregal im laufenden Betrieb hinzufügen, nachdem Ihr AFX-Cluster bestimmte Anforderungen erfüllt und die für Ihren AFX-Cluster geltenden Vorbereitungsaufgaben abgeschlossen sind. 
+---
+= Ein Regal im laufenden Betrieb hinzufügen – NX224-Regale
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Ihre Speicherkapazitäten erweitern, indem Sie Ihrer vorhandenen AFX-Clusterkonfiguration im laufenden Betrieb ein NX224-Regal hinzufügen.
+
+.Über diese Aufgabe
+* Nachdem Sie ein im laufenden Betrieb hinzugefügtes Regal verkabelt haben, erkennt ONTAP das Regal.  Die NSM-Shelf-Firmware und die Laufwerks-Firmware sollten bei Bedarf automatisch aktualisiert werden.
++
+
+NOTE: Firmware-Updates können bis zu 30 Minuten dauern.
+
+
+
+.Bevor Sie beginnen
+* Bevor Sie ein Regal im laufenden Betrieb hinzufügen, stellen Sie sicher, dass Sie Folgendes haben:
++
+** Eine Büroklammer mit einer geraden Seite oder ein Kugelschreiber mit schmaler Spitze.
++
+Um die Shelf-ID zu ändern, verwenden Sie die Büroklammer oder den Kugelschreiber, um auf die Shelf-ID-Taste hinter dem Bedienfeld (ODP) für den Schritt Shelf-ID ändern zuzugreifen.
+
+** Die richtige Anzahl und Art von Kabeln zum Anschluss des Regals. Sehen https://hwu.netapp.com["NetApp Hardware Universe"^] .
+
+
+* Bedenken Sie, dass ein voll beladenes NX224-Regal durchschnittlich 25,8 kg (56,8 lbs) wiegen kann und zum Anheben zwei Personen oder eine Hebebühne erforderlich sind.  Vermeiden Sie das Entfernen von Regalkomponenten (von der Vorder- oder Rückseite des Regals), um das Regalgewicht zu reduzieren, da das Regalgewicht dadurch aus dem Gleichgewicht gerät.
+* Ein NX224-Shelf enthält zwei NSM140-Module.  Das obere Modul kommt in Steckplatz A (NSM A) und das untere Modul kommt in Steckplatz B (NSM B).
+* Ihr Plattformmodell und Ihre ONTAP -Version müssen das NX224-Shelf und die Laufwerke unterstützen, die Sie im laufenden Betrieb hinzufügen. Sehen https://hwu.netapp.com["NetApp Hardware Universe"^]
+* Ihr AFX-Cluster muss weniger als die maximal unterstützte Anzahl an Shelfs haben, und zwar mindestens um die Anzahl an Shelfs, die Sie im laufenden Betrieb hinzufügen möchten.
++
+Sie dürfen die maximale Anzahl von Regalen, die von Ihrem AFX-Cluster unterstützt werden, nach dem Hot-Adding von Regalen nicht überschritten haben. Sehen https://hwu.netapp.com["NetApp Hardware Universe"^] .
+
+* *Best Practice:* Stellen Sie sicher, dass Sie die aktuelle Version des https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["Disk Qualification Package"^] vor dem Hinzufügen eines Regals im laufenden Betrieb installiert werden.
++
+Wenn die aktuelle Version des DQP installiert ist, kann Ihr System neu qualifizierte Laufwerke erkennen und verwenden. Dies verhindert, dass Systemereignimeldungen über nicht aktuelle Laufwerksinformationen verfügen und Laufwerkspartitionierung verhindern, da Laufwerke nicht erkannt werden. Das DQP benachrichtigt Sie auch über nicht aktuelle Laufwerk-Firmware.
+
+* *Best Practice*: Ausführen https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^] vor und nach dem Hot-Adding eines Regals, um alle Fehlermeldungen zur Speicherverkabelung und die Korrekturmaßnahmen anzuzeigen, die Sie ergreifen sollten.
++
+Durch Ausführen von Active IQ Config Advisor vor dem Hot-Adding eines Shelfs wird ein Snapshot der vorhandenen Shelf-Ethernet-Konnektivität (ENET) erstellt, die Firmware-Versionen des NVMe-Shelf-Moduls (NSM) überprüft und die Überprüfung einer Shelf-ID ermöglicht, die bereits im AFX-Cluster verwendet wird.
+
++
+Durch Ausführen von Active IQ Config Advisor nach dem Hot-Adding eines Shelfs können Sie überprüfen, ob die Shelfs richtig verkabelt sind und ob die Shelf-IDs innerhalb des AFX-Clusters eindeutig sind.
+
+* *Best Practice:* Stellen Sie sicher, dass Sie über aktuelle Versionen von https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NSM-Firmware (NVMe-Shelf-Modul)"^] Und https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Festplatten-Firmware"^] auf Ihrem Lagersystem, bevor Sie ein neues Regal hinzufügen.
++
+
+NOTE: Stellen Sie die Firmware nicht auf eine Version zurück, die Ihr Shelf und seine Komponenten nicht unterstützt.
+
+
+
+
+
+== Schritt 1: Installieren Sie ein Regal für einen Hot-Add
+
+Sie müssen ein NX224-Regal in einem Schrank oder Telco-Rack installieren, die Netzkabel anschließen (wodurch das Regal automatisch eingeschaltet wird) und die Regal-ID festlegen.
+
+.Schritte
+. Montieren Sie den Schienensatz für das Regal nach Bedarf gemäß den Anweisungen im Kit.
++
+
+NOTE: Verwenden Sie immer das entsprechende Schienensatz für Ihr Regal, um das Regal in einem Rack oder Schrank zu installieren.
+
+. Setzen Sie das Shelf ein:
++
+.. Positionieren Sie die Rückseite des Regals auf den Schienen, und stützen Sie das Regal von unten ab, und schieben Sie es in den Schrank oder das Telco-Rack.
++
+Es wird empfohlen, alle Regale in der Nähe der Switches im selben Rack zu installieren.
+
+.. Befestigen Sie das Regal mit den im Kit enthaltenen Befestigungsschrauben am Schrank oder Telco-Rack.
+
+
+. Anschließen der Stromversorgung:
++
+.. Schließen Sie die Netzkabel an das Regal an und befestigen Sie sie mit den Netzkabelhaltern.
+.. Schließen Sie die Netzkabel an verschiedene Stromquellen an, um die Ausfallsicherheit zu erhöhen.
++
+Ein Shelf schaltet sich ein, wenn es mit einer Stromquelle verbunden ist. Es verfügt nicht über Netzschalter. Bei ordnungsgemäßer Funktion leuchtet die zweifarbige LED des Netzteils grün.
+
+
+
+. Legen Sie die Shelf-ID auf eine Nummer fest, die innerhalb des AFX-Clusters eindeutig ist:
++
+Ausführlichere Anweisungen finden Sie unterlink:change-shelf-id.html["Ändern einer Regal-ID – NX224-Regale"^] .
+
++
+image::../media/drw_tp_change_shelf_id_ieops-2381.svg[NX224-Regal-ID ändern]
+
++
+[cols="20%,80%"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Einlegeboden-Endkappe
+
+
+
+ a| 
+image::../media/icon_round_2.png[[Legende Nummer 2]
+ a| 
+Ablagefaceplate
+
+
+
+ a| 
+image::../media/icon_round_3.png[[Legende Nummer 3]
+ a| 
+Shelf-ID-Nummer
+
+
+
+ a| 
+image::../media/icon_round_4.png[[Legende Nummer 4]
+ a| 
+Zugriff auf die Regal-ID-Taste
+
+|===
++
+.. Entfernen Sie die linke Endkappe, und suchen Sie die kleine Öffnung rechts neben den LEDs.
+.. Setzen Sie das Ende einer Büroklammer oder eines ähnlichen Werkzeugs in die kleine Öffnung ein, um die Shelf-ID-Taste zu erreichen.
+.. Halten Sie die Taste (bis zu 15 Sekunden lang) gedrückt, bis die erste Ziffer auf der digitalen Anzeige blinkt. Lassen Sie dann die Taste los.
++
+Wenn die ID länger als 15 Sekunden dauert, halten Sie die Taste erneut gedrückt, und drücken Sie sie vollständig.
+
+.. Drücken Sie die Taste und lassen Sie sie los, um die Nummer so lange zu drücken, bis Sie die gewünschte Zahl von 0 auf 9 erreicht haben.
+.. Wiederholen Sie die Unterschritte 4c und 4d, um die zweite Nummer der Shelf-ID festzulegen.
++
+Es kann bis zu drei Sekunden (statt 15 Sekunden) dauern, bis die Ziffer blinkt.
+
+.. Halten Sie die Taste gedrückt, bis die zweite Ziffer nicht mehr blinkt.
++
+Nach etwa fünf Sekunden beginnen beide Ziffern zu blinken, und die gelbe LED am ODP leuchtet auf.
+
+.. Schalten Sie das Shelf aus und wieder ein, damit die Shelf-ID übernommen wird.
++
+Sie müssen beide Netzkabel aus dem Regal ziehen, 10 Sekunden warten und dann wieder anschließen.
+
++
+Wenn die Stromversorgung wiederhergestellt ist, leuchten die LEDs mit zweifarbigen LEDs grün.
+
+
+
+
+
+
+
+== Schritt 2: Kabelregal für Hot-Add
+
+Sie verkabeln jedes NX224-Shelf, das Sie im laufenden Betrieb hinzufügen, so dass jedes Shelf über acht Verbindungen zu jedem Switch verfügt.
+
+.Bevor Sie beginnen
+* Machen Sie sich mit der richtigen Ausrichtung der Kabelstecker sowie der Position und Beschriftung der Anschlüsse an den NX224 NSM140-Shelfmodulen vertraut.
++
+** Die Kabel werden mit der Zuglasche des Steckers nach oben eingesetzt.
++
+Wenn ein Kabel richtig eingesetzt wird, klickt es an seine Stelle.
+
++
+Nachdem Sie beide Enden des Kabels angeschlossen haben, leuchten die LEDs für Shelf und Controller-Port LNK (grün) auf. Wenn eine LNK-LED-Schnittstelle nicht leuchtet, setzen Sie das Kabel wieder ein.
+
++
+image::../media/oie_cable_pull_tab_up.png[Die Kabel werden mit der Zuglasche des Steckers nach oben verlegt]
+
+** Jedes NSM140-Modul umfasst 4 x 100GbE CX7 Path_A-Ports (e1a, e2a, e3a und e4a) und 4 x 100GbE CX7 Path_B-Ports (e1b, e2b, e3b und e4b).
++
+
+NOTE: Für die Anschlüsse Path_A und Path_B an jedem NSM140-Modul sind separate Breakout-Kabel erforderlich, insgesamt also vier Breakout-Kabel pro Regal.
+
++
+Die folgende Abbildung hebt die Path_A- und Path_B-Ports auf den NSM140-Modulen hervor:
+
++
+image::../media/drw_tp_nsm_ports_ieops-2301.svg[Standort der NX224 NSM140 Path_A- und Path_B-Ports.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Path_A-Ports (blaue Ports)
+
+
+
+ a| 
+image::../media/icon_round_2.png[Legende Nummer 2]
+ a| 
+Path_B-Ports (rote Ports)
+
+|===
+
+
+
+
+.Schritte
+. Kabelregal NSM A und NSM B Path_A-Ports e1a, e2a, e3a und e4a zu einem beliebigen Port auf Switch A.
+. Kabelregal NSM A und NSM B Path_B-Ports e1b, e2b, e3b und e4b zu einem beliebigen Port auf Switch B.
++
+Die folgende Abbildung zeigt die Verkabelung für das Hot-Adding eines zusätzlichen Shelfs zu einer Switch-Konfiguration.  Um zusätzliche Regale hinzuzufügen, folgen Sie der gleichen Switch-basierten Verkabelungsmethode.
+
++
+image::../media/drw_nx224_afx_a1k_ieops-2344.svg[NX224-Switch-Verkabelung zu AFX A1K]
+
+. Überprüfen Sie mit https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^].
++
+Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
+
+

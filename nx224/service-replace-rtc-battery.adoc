@@ -1,0 +1,185 @@
+---
+permalink: nx224/service-replace-rtc-battery.html 
+sidebar: sidebar 
+keywords: nx224, shelves, shelf, nx224 shelves, replace, fail, real-time, clock, rtc, battery, nondisruptive, power, i/o, replace the real-time clock battery 
+summary: 'Sie können eine ausgefallene Echtzeituhrbatterie (RTC) unterbrechungsfrei in einem eingeschalteten NX224-Shelf austauschen, während E/A-Vorgänge ausgeführt werden.' 
+---
+= Ersetzen der Echtzeituhrbatterie - NX224-Regale
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eine ausgefallene Echtzeituhrbatterie (RTC) unterbrechungsfrei in einem eingeschalteten NX224-Shelf austauschen, während E/A-Vorgänge ausgeführt werden.
+
+.Bevor Sie beginnen
+* Das Partner-NSM des Shelfs muss betriebsbereit und korrekt verkabelt sein, damit Ihr Shelf die Konnektivität aufrechterhält, wenn Sie das NSM mit der ausgefallenen FRU (Ziel-NSM) entfernen.  Sie können den Status des Partner-NSM überprüfen, indem Sie https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Herunterladen und Ausführen von Config Advisor"^] .
+* Alle anderen Komponenten im System müssen ordnungsgemäß funktionieren.
+
+
+.Über diese Aufgabe
+* Mindestens 70 Sekunden zwischen dem aus- und Einbau des NVMe-Shelf-Moduls (NSM) zulassen.
++
+So bleibt ONTAP genügend Zeit, um das NSM-Entfernungsereignis zu bearbeiten.
+
+* Nachdem Sie die RTC-Batterie ausgetauscht haben, installieren Sie den NSM neu, und das Modul startet, wird die Echtzeituhr von ONTAP aktualisiert.
+* *Best Practice:* Die beste Vorgehensweise besteht darin, aktuelle Versionen der NVMe Shelf Module (NSM)-Firmware und der Laufwerks-Firmware auf Ihrem System zu haben, bevor Sie FRU-Komponenten austauschen. Besuchen Sie die NetApp Support-Website, um  https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Disk Shelf-Firmware herunterladen"^] Und  https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Laden Sie die Firmware für das Festplattenlaufwerk herunter"^] .
++
+[NOTE]
+====
+Stellen Sie die Firmware nicht auf eine Version zurück, die Ihr Shelf und seine Komponenten nicht unterstützt.
+
+====
+* Bei Bedarf können Sie die blauen LEDs am Shelf einschalten, um die physische Suche nach dem betroffenen Shelf zu erleichtern: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
++
+Wenn Sie den nicht kennen `shelf_name` Führen Sie den aus `storage shelf show` Befehl.
+
++
+Ein Regal hat drei Standort-LEDs: Eine auf dem Bedienfeld und eine auf jedem NSM. Die Standort-LEDs leuchten 30 Minuten lang. Sie können sie deaktivieren, indem Sie denselben Befehl eingeben, jedoch die Option verwenden `off`.
+
+* Wenn Sie den Ersatz-RTC-Akku auspacken, bewahren Sie alle Verpackungsmaterialien auf, wenn Sie den ausgefallenen RTC-Akku zurückgeben.
++
+Wenn Sie die RMA-Nummer oder zusätzliche Hilfe beim Ersatzverfahren benötigen, wenden Sie sich an den technischen Support unter https://mysupport.netapp.com/site/global/dashboard["NetApp Support"^], 888-463-8277 (Nordamerika), 00-800-44-638277 (Europa) oder +800-800-80-800 (Asien/Pazifik).
+
+
+
+.Schritte
+. Richtig gemahlen.
+. Trennen Sie die Verkabelung vom NSM, der die FRU enthält, die Sie ersetzen:
++
+.. Trennen Sie das Netzkabel vom Netzteil, indem Sie die Netzkabelhalterung öffnen und dann das Netzkabel vom Netzteil abziehen.
++
+Die Netzteile haben keinen Netzschalter.
+
+.. Trennen Sie die Speicherkabel von den NSM-Ports.
++
+Notieren Sie sich die NSM-Ports, an die jedes Kabel angeschlossen ist. Schließen Sie die Kabel wieder an die gleichen Ports an, wenn Sie den NSM wieder einsetzen.
+
+
+
+. Entfernen Sie die NSM:
++
+image::../media/drw_g_and_t_handles_remove_ieops-1837.svg[Entfernen Sie den NSM.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Drücken Sie an beiden Enden des NSM die vertikalen Verriegelungslaschen nach außen, um die Griffe zu lösen.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Legende Nummer 2]
+ a| 
+** Ziehen Sie die Griffe zu sich, um den NSM aus der Mittelplatine zu lösen.
++
+Beim Ziehen ziehen die Griffe aus dem Regal heraus. Wenn du Widerstand spürst, ziehe weiter.
+
+** Schieben Sie den NSM aus dem Regal und legen Sie ihn auf eine Ebene, stabile Oberfläche.
++
+Stellen Sie sicher, dass Sie die Unterseite des NSM stützen, während Sie ihn aus dem Regal ziehen.
+
+
+
+
+
+ a| 
+image::../media/icon_round_3.png[Legende Nummer 3]
+ a| 
+Drehen Sie die Griffe aufrecht (neben den Laschen), um sie aus dem Weg zu bewegen.
+
+|===
+. Öffnen Sie die Modulabdeckung, indem Sie die Flügelschraube gegen den Uhrzeigersinn drehen, um sie zu lösen, und öffnen Sie dann die Abdeckung.
+. Suchen Sie die RTC-Batterie, und ersetzen Sie sie.
++
+.. Entfernen Sie die defekte Batterie:
++
+image::../media/drw_tp_rtc_battery_replace_ieops-2205.svg[Ersetzen Sie die RTC-Batterie]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Drehen Sie die RTC-Batterie vorsichtig in einem Winkel von der Halterung weg.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Legende Nummer 2]
+ a| 
+Heben Sie die RTC-Batterie aus der Halterung.
+
+|===
+.. Entfernen Sie den Ersatzakku aus dem antistatischen Versandbeutel.
+.. Notieren Sie die Polarität der RTC-Batterie, und setzen Sie sie anschließend in den Halter ein, indem Sie die Batterie schräg kippen und nach unten drücken.
++
+
+NOTE: Sie müssen sicherstellen, dass das Pluszeichen auf der Batterie dem Pluszeichen auf der Hauptplatine entspricht.
+
+.. Überprüfen Sie die Batterie visuell, um sicherzustellen, dass sie vollständig in den Halter eingebaut ist und die Polarität korrekt ist.
+
+
+. Schließen Sie die NSM-Abdeckung, und drehen Sie die Flügelschraube im Uhrzeigersinn, bis sie festgezogen ist.
+. Setzen Sie den NSM in das Regal ein:
++
+image::../media/drw_g_and_t_handles_reinstall_ieops-1838.svg[Ersetzen Sie die NSM.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Wenn Sie die NSM-Griffe senkrecht (neben den Laschen) gedreht haben, um sie während der Wartung des NSM aus dem Weg zu bewegen, drehen Sie sie nach unten in die horizontale Position.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Legende Nummer 2]
+ a| 
+Richten Sie die Rückseite des NSM mit der Öffnung im Regal aus, und drücken Sie den NSM vorsichtig mit den Griffen, bis er vollständig sitzt.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Legende Nummer 3]
+ a| 
+Drehen Sie die Griffe in die aufrechte Position, und fixieren Sie sie mit den Laschen.
+
+|===
+. NSM wieder verstellen.
++
+.. Schließen Sie die Speicherverkabelung erneut an dieselben acht NSM-Ports an.
++
+Die Kabel werden mit der Zuglasche des Steckers nach oben eingesetzt. Wenn ein Kabel richtig eingesetzt wird, klickt es an seine Stelle.
+
+.. Schließen Sie das Netzkabel wieder an die Stromversorgung an und sichern Sie das Netzkabel anschließend mit der Netzkabelhalterung.
++
+Bei ordnungsgemäßer Funktion leuchtet die zweifarbige LED des Netzteils grün.
+
++
+Außerdem leuchten beide NSM-Port-LNK-LEDs (grün) auf. Wenn eine LNK-LED nicht leuchtet, setzen Sie das Kabel wieder ein.
+
+
+
+. Vergewissern Sie sich, dass die Warnungs-LEDs (gelb) am NSM, der die fehlerhafte RTC-Batterie enthält, und am Bedienfeld des Shelfs nicht mehr leuchten
++
+Die NSM-Warn-LEDs werden nach dem Neustart des NSM ausgeschaltet und erkennen kein Problem mehr mit der RTC-Batterie. Dies kann drei bis fünf Minuten dauern.
+
+. Überprüfen Sie, ob das NSM richtig verkabelt ist, indem Sie https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Ausführen von Active IQ Config Advisor"^] .
++
+Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
+
+

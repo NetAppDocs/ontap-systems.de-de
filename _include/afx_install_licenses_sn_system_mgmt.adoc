@@ -1,0 +1,40 @@
+= 
+:allow-uri-read: 
+
+
+Wenn Sie das Systemverwaltungsmodul austauschen, ändert sich die Systemseriennummer (SSN) des Controllers.  Sie müssen neue Lizenzen für den Knoten installieren, wenn der beeinträchtigte Knoten ONTAP Funktionen verwendet hat, für die eine Standardlizenz (knotengebunden) erforderlich ist.  Bei Funktionen mit Standardlizenzen sollte jeder Knoten im Cluster über einen eigenen Schlüssel für die Funktion verfügen.
+
+.Über diese Aufgabe
+Bis Sie die Lizenzschlüssel installieren, sind Funktionen, für die Standardlizenzen erforderlich sind, weiterhin für den Node verfügbar. Wenn der Node jedoch der einzige Node im Cluster mit einer Lizenz für die Funktion war, sind keine Konfigurationsänderungen an der Funktion zulässig. Wenn Sie nicht lizenzierte Funktionen auf dem Node verwenden, kommt es möglicherweise zu Compliance mit Ihrer Lizenzvereinbarung. Daher sollten Sie den Ersatz-Lizenzschlüssel oder die Schlüssel auf dem für den Node installieren.
+
+.Bevor Sie beginnen
+Für die neue Systemseriennummer ist eine NetApp -Lizenzdatei (NLF) erforderlich.  Weitere Informationen zu NetApp -Lizenzdateien finden Sie unterlink:https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/ONTAP_9.10.1_and_later_licensing_overview["ONTAP 9.10.1 und höher – Lizenzübersicht"^] .
+
+Sie haben 90 Tage Zeit, die Lizenzschlüssel zu installieren, danach verlieren alle alten Lizenzen ihre Gültigkeit.  Nachdem Sie einen gültigen Lizenzschlüssel installiert haben, haben Sie 24 Stunden Zeit, alle Schlüssel zu installieren, bevor die Nachfrist endet.
+
+
+NOTE: Wenn Ihr System ursprünglich ONTAP 9.15.1 oder höher ausgeführt hat, verwenden Sie das inlink:https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/Post_Motherboard_Replacement_Process_to_update_Licensing_on_a_AFF_FAS_system["Post-Motherboard-Austauschprozess zur Aktualisierung der Lizenzierung auf einem AFF/FAS-System"^] .  Wenn Sie sich bezüglich der ersten ONTAP Version für Ihr System nicht sicher sind, lesen Sielink:https://hwu.netapp.com["NetApp Hardware Universe"^] für weitere Informationen.
+
+.Schritte
+. Wenn Sie neue Lizenzschlüssel benötigen, holen Sie sich die Ersatzlizenz auf dem https://mysupport.netapp.com/site/global/dashboard["NetApp Support Website"] Im Abschnitt „My Support“ unter „Software-Lizenzen“.
++
+
+NOTE: Die neuen Lizenzschlüssel, die Sie benötigen, werden automatisch generiert und an die E-Mail-Adresse in der Datei gesendet. Wenn Sie die E-Mail mit den Lizenzschlüssel nicht innerhalb von 30 Tagen erhalten, sollten Sie sich an den technischen Support wenden.
+
+. Installieren Sie jeden Lizenzschlüssel über ONTAP System Manager.
++
+Weitere Informationen finden Sie unter link:https://docs.netapp.com/us-en/ontap/task_admin_enable_new_features.html["Aktivieren Sie neue Funktionen, indem Sie Lizenzschlüssel mit ONTAP System Manager hinzufügen"^] .
+
+. Entfernen Sie ggf. die alten Lizenzen:
++
+.. Suchen Sie nach nicht verwendeten Lizenzen: `license clean-up -unused -simulate`
+.. Wenn die Liste korrekt aussieht, entfernen Sie die nicht verwendeten Lizenzen: `license clean-up -unused`
+
+
+. Registrieren Sie die Seriennummer des Systems beim NetApp Support.
++
+** Wenn AutoSupport aktiviert ist, senden Sie eine AutoSupport Nachricht, um die Seriennummer zu registrieren.
+** Wenn AutoSupport nicht aktiviert ist, rufen Sie an https://mysupport.netapp.com["NetApp Support"] Um die Seriennummer zu registrieren.
+
+
+

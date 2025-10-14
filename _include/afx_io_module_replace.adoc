@@ -1,0 +1,206 @@
+= Schritt 1: Fahren Sie den Knoten mit beeinträchtigten Knoten herunter
+:allow-uri-read: 
+
+
+Sie können dieses Verfahren mit allen Versionen von ONTAP verwenden, die von Ihrem Speichersystem unterstützt werden.
+
+.Bevor Sie beginnen
+* Sie müssen das Ersatzteil zur Verfügung haben.
+* Stellen Sie sicher, dass alle anderen Komponenten des Speichersystems ordnungsgemäß funktionieren. Wenden Sie sich andernfalls an den technischen Support.
+
+
+
+
+== Schritt 1: Fahren Sie den Knoten mit beeinträchtigten Knoten herunter
+
+Schalten Sie den außer Betrieb genommenen Controller aus oder übernehmen Sie ihn.
+
+Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers ermitteln und gegebenenfalls eine Speicher-Failover-Übernahme des Controllers durchführen, damit der fehlerfreie Controller weiterhin Daten aus dem beeinträchtigten Controller-Speicher bereitstellt.
+
+.Über diese Aufgabe
+* Wenn Sie einen Cluster mit mehr als vier Knoten haben, muss dieser im Quorum sein.  Um Clusterinformationen zu Ihren Knoten anzuzeigen, verwenden Sie die `cluster show` Befehl.  Weitere Informationen zum `cluster show` Befehl, siehelink:https://docs.netapp.com/us-en/ontap/system-admin/display-nodes-cluster-task.html["Anzeigen von Details auf Knotenebene in einem ONTAP Cluster"^] .
+* Wenn der Cluster nicht im Quorum ist oder wenn der Zustand oder die Berechtigung eines Controllers (mit Ausnahme des beeinträchtigten Controllers) als falsch angezeigt wird, müssen Sie das Problem beheben, bevor Sie den beeinträchtigten Controller herunterfahren. Sehen link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^] .
+
+
+.Schritte
+. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung:
++
+`system node autosupport invoke -node * -type all -message MAINT=<# of hours>h`
+
++
+Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden:
+
++
+`cluster1:> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deaktivieren Sie die automatische Rückgabe von der Konsole des beeinträchtigten Controllers:
++
+`storage failover modify -node impaired-node -auto-giveback-of false`
+
++
+
+NOTE: Wenn Sie _Möchten Sie die automatische Rückgabe deaktivieren?_ sehen, geben Sie ein `y` .
+
++
+.. Wenn Sie ONTAP Version 9.17.1 ausführen und der beeinträchtigte Controller nicht hochgefahren werden kann oder bereits übernommen wurde, müssen Sie die HA-Verbindung vom fehlerfreien Controller trennen, bevor Sie den beeinträchtigten Controller hochfahren.  Dadurch wird verhindert, dass der beeinträchtigte Controller eine automatische Rückgabe durchführt.
++
+`system ha interconnect link off -node healthy-node -link 0`
+
++
+`system ha interconnect link off -node healthy-node -link 1`
+
++
+
+NOTE: Wenn Sie nicht ONTAP Version 9.17.1 ausführen, überspringen Sie den obigen Schritt und fahren Sie mit Schritt 3 fort.
+
+
+
+. Nehmen Sie den beeinträchtigten Controller zur LOADER-Eingabeaufforderung:
++
+[cols="1,2"]
+|===
+| Wenn der eingeschränkte Controller angezeigt wird... | Dann... 
+
+
+ a| 
+Die LOADER-Eingabeaufforderung
+ a| 
+Fahren Sie mit dem nächsten Schritt fort.
+
+
+
+ a| 
+Eingabeaufforderung für das System oder Passwort
+ a| 
+Übernehmen oder stoppen Sie den beeinträchtigten Controller vom fehlerfreien Controller:
+`storage failover takeover -ofnode _impaired_node_name_ -halt _true_`
+
+Der Parameter _-halt true_ bringt den beeinträchtigten Knoten zur LOADER-Eingabeaufforderung.
+
+|===
+
+
+
+
+== Schritt 2: Ersetzen Sie ein fehlerhaftes I/O-Modul
+
+Um ein E/A-Modul zu ersetzen, suchen Sie es im Gehäuse und befolgen Sie die entsprechenden Schritte.
+
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Trennen Sie alle Kabel vom Ziel-E/A-Modul.
++
+
+NOTE: Achten Sie darauf, die Anschlussstellen der Kabel zu kennzeichnen, damit Sie diese bei der Neuinstallation des Moduls an die richtigen Anschlüsse anschließen können.
+
+. Drehen Sie das Kabelführungs-Fach nach unten, indem Sie die Tasten an beiden Seiten an der Innenseite des Kabelführungs-Fachs ziehen und das Fach dann nach unten drehen.
++
+
+NOTE: Diese Abbildung zeigt das Entfernen eines horizontalen und vertikalen E/A-Moduls. In der Regel entfernen Sie nur ein I/O-Modul.
+
++
+image:../media/drw_a1k_io_remove_replace_ieops-1382.svg["Entfernen Sie das E/A-Modul"]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Legende Nummer 1"]
+ a| 
+E/A-Nockenverriegelung
+
+|===
++
+Achten Sie darauf, dass Sie die Kabel so kennzeichnen, dass Sie wissen, woher sie stammen.
+
+. Entfernen Sie das Ziel-E/A-Modul aus dem Gehäuse:
++
+.. Drücken Sie die Nockentaste am Zielmodul.
+.. Drehen Sie die Nockenverriegelung so weit wie möglich vom Modul weg.
+.. Entfernen Sie das Modul aus dem Gehäuse, indem Sie den Finger in die Öffnung des Nockenhebels stecken und das Modul aus dem Gehäuse ziehen.
++
+Stellen Sie sicher, dass Sie den Steckplatz verfolgen, in dem sich das I/O-Modul befand.
+
+
+
+. Legen Sie das E/A-Modul beiseite.
+. Installieren Sie das Ersatz-E/A-Modul im Gehäuse:
++
+.. Richten Sie das Modul an den Kanten der Öffnung des Gehäusesteckplatzes aus.
+.. Schieben Sie das Modul vorsichtig in den Steckplatz bis zum Gehäuse, und drehen Sie dann die Nockenverriegelung ganz nach oben, um das Modul zu verriegeln.
+
+
+. Verkabeln Sie das E/A-Modul neu.
+. Drehen Sie das Kabelführungs-Fach bis in die geschlossene Position.
+
+
+
+
+== Schritt 3: Starten Sie den Controller neu
+
+Nachdem Sie ein I/O-Modul ersetzt haben, müssen Sie den Controller neu starten.
+
+. Booten Sie den Controller über die LOADER-Eingabeaufforderung neu:
++
+`bye`
+
++
+
+NOTE: Durch einen Neustart des außer Betrieb genommenen Controllers werden auch die E/A-Module und andere Komponenten neu initialisiert.
+
+. Drücken Sie <enter>, wenn die Konsolenmeldungen angehalten werden.
++
+** Wenn die _Anmeldeaufforderung_ angezeigt wird, fahren Sie mit dem nächsten Schritt fort.
+** Wenn keine Anmeldeaufforderung angezeigt wird, melden Sie sich beim Partnerknoten an.
+
+
+. Geben Sie nur die Wurzel mit der Option „override-destination-checks“ zurück:
++
+`storage failover giveback -ofnode impaired-node -only-root true -override -destination-checks true`
+
++
+
+NOTE: Der folgende Befehl ist nur auf der Berechtigungsebene „Diagnosemodus“ verfügbar.  Weitere Informationen zu Berechtigungsstufen finden Sie unterlink:https://docs.netapp.com/us-en/ontap/system-admin/administrative-privilege-levels-concept.html["Verstehen Sie die Berechtigungsstufen für ONTAP CLI-Befehle"^] .
+
++
+Wenn Sie auf Fehler stoßen, wenden Sie sich an https://support.netapp.com["NetApp Support"].
+
+. Warten Sie 5 Minuten, nachdem der Giveback-Bericht abgeschlossen ist, und prüfen Sie den Failover-Status und den Giveback-Status:
++
+`storage failover show`Und `storage failover show-giveback`
+
++
+
+NOTE: Der folgende Befehl ist nur auf der Berechtigungsebene „Diagnosemodus“ verfügbar.
+
+. Wenn die HA-Interconnect-Links deaktiviert wurden, stellen Sie sie wieder her:
++
+`system ha interconnect link on -node healthy-node -link 0`
+
++
+`system ha interconnect link on -node healthy-node -link 1`
+
+. Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut:
++
+`storage failover modify -ofnode impaired-node -automatic-giveback true`
+
+. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben:
++
+`storage failover giveback -ofnode _impaired_node_name_`
+
+. Automatisches Giveback von der Konsole des funktionstüchtigen Controllers wiederherstellen:
++
+`storage failover modify -node local -auto-giveback-of true`
+
+. Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung wiederherstellen/zurücknehmen:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`
+
+
+
+
+
+== Schritt 4: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

@@ -1,0 +1,121 @@
+---
+permalink: nx224/service-replace-drive.html 
+sidebar: sidebar 
+keywords: nx224, shelves, shelf, nx224 shelves, fail, replace, drive, nondisruptive, i/o, hot-swap, hot-swap a drive 
+summary: Sie können ein ausgefallenes Laufwerk unterbrechungsfrei in einem eingeschalteten NX224-Shelf austauschen, während E/A-Vorgänge ausgeführt werden. 
+---
+= Hot-Swap eines Laufwerks – NX224-Shelves
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können ein ausgefallenes Laufwerk unterbrechungsfrei in einem eingeschalteten NX224-Shelf austauschen, während E/A-Vorgänge ausgeführt werden.
+
+.Bevor Sie beginnen
+* Das Laufwerk, das Sie installieren, muss vom NX224-Shelf unterstützt werden.  Sie können die kompatiblen Laufwerke Ihres Shelfs im https://hwu.netapp.com["NetApp Hardware Universe"^] .
+* Wenn die SED-Authentifizierung aktiviert ist, müssen Sie die SED-Ersatzanweisungen in der ONTAP-Dokumentation verwenden.
++
+Die weiteren Schritte, die vor und nach dem Austausch eines SED durchgeführt werden müssen, können Sie im https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html["NetApp Verschlüsselungsübersicht mit der CLI-Dokumentation"^] .
+
+* Alle anderen Komponenten im System müssen ordnungsgemäß funktionieren. Wenden Sie sich andernfalls an den technischen Support.
+* Vergewissern Sie sich, dass das Laufwerk, das Sie entfernen, fehlgeschlagen ist.
++
+Sie können überprüfen, ob das Laufwerk ausgefallen ist, indem Sie das ausführen `storage disk show -broken` Befehl. Das ausgefallene Laufwerk wird in der Liste der ausgefallenen Laufwerke angezeigt. Falls nicht, sollten Sie warten und dann den Befehl erneut ausführen.
+
++
+
+NOTE: Abhängig vom Laufwerkstyp und der Kapazität kann es bis zu mehrere Stunden dauern, bis das Laufwerk in der Liste der ausgefallenen Laufwerke angezeigt wird.
+
+
+
+.Über diese Aufgabe
+* *Best Practice:* Stellen Sie sicher, dass Ihr System neu qualifizierte Laufwerke erkennen und verwenden kann, indem Sie https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["Herunterladen der aktuellen Version des Disk Qualification Package"^] .
++
+Dadurch werden Systemereignismeldungen über nicht aktuelle Laufwerksinformationen vermieden und die Laufwerkspartitionierung wird verhindert, weil Laufwerke nicht erkannt werden.  Das DQP benachrichtigt Sie auch über nicht aktuelle Laufwerksfirmware.
+
+* *Best Practice:* Die beste Vorgehensweise besteht darin, aktuelle Versionen der NVMe Shelf Module (NSM)-Firmware und der Laufwerks-Firmware auf Ihrem System zu haben, bevor Sie FRU-Komponenten austauschen. Besuchen Sie die NetApp Support-Website, um  https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Disk Shelf-Firmware herunterladen"^] Und  https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Laden Sie die Firmware für das Festplattenlaufwerk herunter"^] .
++
+[NOTE]
+====
+Stellen Sie die Firmware nicht auf eine Version zurück, die Ihr Shelf und seine Komponenten nicht unterstützt.
+
+====
+* Die Festplatten-Firmware wird für neue Laufwerke, die nicht über aktuelle Firmware-Versionen verfügen, automatisch (unterbrechungsfrei) aktualisiert.
++
+
+NOTE: Die Laufwerk-Firmware wird alle zwei Minuten überprüft.
+
+* Bei Bedarf können Sie die blauen LEDs am Shelf einschalten, um die physische Suche nach dem betroffenen Shelf zu erleichtern: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
++
+Wenn Sie den nicht kennen `_shelf_name_` Führen Sie den aus `storage shelf show` Befehl.
+
++
+Ein Regal hat drei Standort-LEDs: Eine auf dem Bedienfeld und eine auf jedem NSM. Die Standort-LEDs leuchten 30 Minuten lang. Sie können sie deaktivieren, indem Sie denselben Befehl eingeben, jedoch die Option verwenden `off`.
+
+* Wenn Sie das Ersatzlaufwerk auspacken, speichern Sie alle Verpackungsmaterialien für die Verwendung, wenn Sie das ausgefallene Laufwerk zurücksenden.
++
+Wenn Sie die RMA-Nummer oder zusätzliche Hilfe beim Ersatzverfahren benötigen, wenden Sie sich an den technischen Support unter https://mysupport.netapp.com/site/global/dashboard["NetApp Support"^], 888-463-8277 (Nordamerika), 00-800-44-638277 (Europa) oder +800-800-80-800 (Asien/Pazifik).
+
+
+
+.Schritte
+. Richtig gemahlen.
+. Identifizieren Sie das ausgefallene Laufwerk physisch.
++
+Wenn ein Laufwerk ausfällt, protokolliert das System eine Warnmeldung an die Systemkonsole und gibt an, welches Laufwerk ausgefallen ist. Außerdem leuchten die Warnungs-LED (gelb) auf der Shelf-Bedienfeldanzeige und das ausgefallene Laufwerk auf.
+
++
+
+NOTE: Die Aktivitäts-LED (grün) auf einem ausgefallenen Laufwerk kann leuchten (leuchtet dauerhaft), was darauf hinweist, dass das Laufwerk zwar mit Strom versorgt wird, aber nicht blinken sollte, was auf I/O-Aktivität hinweist. Ein ausgefallenes Laufwerk hat keine I/O-Aktivität.
+
+. Entfernen Sie das ausgefallene Laufwerk:
++
+image::../media/drw_nvme_drive_replace_ieops-1904.svg[Entfernen Sie das Laufwerk.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Legende Nummer 1]
+ a| 
+Drücken Sie die Entriegelungstaste an der Antriebsfläche, um den Nockengriff zu öffnen.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Legende Nummer 2]
+ a| 
+Drehen Sie den Nockengriff nach unten, um den Antrieb von der Mittelplatine zu lösen.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Legende Nummer 3]
+ a| 
+Schieben Sie den Antrieb mithilfe des Nockengriffs aus dem Regal und halten Sie den Antrieb mit der anderen Hand.
+
+|===
+. Warten Sie mindestens 70 Sekunden, bevor Sie das Ersatzlaufwerk einsetzen.
++
+Dadurch erkennt das System, dass ein Laufwerk entfernt wurde.
+
+. Setzen Sie das Ersatzlaufwerk ein:
++
+.. Bei geöffnetem Nockengriff den Antrieb mit beiden Händen einsetzen.
+.. Vorsichtig drücken, bis der Antrieb stoppt.
+.. Schließen Sie den Nockengriff, so dass der Antrieb fest in der Mittelebene sitzt und der Griff einrastet.
++
+Schließen Sie den Nockengriff langsam, damit er korrekt an der Antriebsfläche ausgerichtet ist.
+
+
+
+. Vergewissern Sie sich, dass die Aktivitäts-LED (grün) des Laufwerks leuchtet.
++
+Wenn die Aktivitäts-LED des Laufwerks leuchtet, bedeutet dies, dass das Laufwerk mit Strom versorgt wird. Wenn die Aktivitäts-LED des Laufwerks blinkt, bedeutet dies, dass das Laufwerk gerade mit Strom versorgt wird und der I/O-Vorgang ausgeführt wird. Wenn die Laufwerk-Firmware automatisch aktualisiert wird, blinkt die LED.
+
+. Wenn Sie ein anderes Laufwerk ersetzen, wiederholen Sie die Schritte 3 bis Schritt 7.
+

@@ -1,0 +1,29 @@
+---
+permalink: afx-1k/bootmedia-replace-requirements.html 
+sidebar: sidebar 
+keywords: afx 1k, replace the boot media 
+summary: 'Stellen Sie vor dem Austauschen des Startmediums in Ihrem AFX 1K-Speichersystem sicher, dass Sie die notwendigen Voraussetzungen für einen erfolgreichen Austausch erfüllen.  Dazu gehört die Überprüfung, ob Sie über das richtige Ersatz-Bootmedium verfügen, die Bestätigung, dass keine defekten Cluster-Ports auf dem Controller vorhanden sind, und die Feststellung, ob Onboard Key Manager (OKM) oder External Key Manager (EKM) aktiviert ist.' 
+---
+= Voraussetzungen zum Ersetzen des Bootmediums - AFX 1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Stellen Sie vor dem Austauschen des Startmediums in Ihrem AFX 1K-Speichersystem sicher, dass Sie die notwendigen Voraussetzungen für einen erfolgreichen Austausch erfüllen.  Dazu gehört die Überprüfung, ob Sie über das richtige Ersatz-Bootmedium verfügen, die Bestätigung, dass keine defekten Cluster-Ports auf dem Controller vorhanden sind, und die Feststellung, ob Onboard Key Manager (OKM) oder External Key Manager (EKM) aktiviert ist.
+
+Überprüfen Sie vor dem Austauschen des Startmediums die folgenden Anforderungen.
+
+* Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
+* Es ist wichtig, dass Sie die Befehle in diesen Schritten auf dem richtigen Controller anwenden:
++
+** Der Controller _Impared_ ist der Controller, an dem Sie Wartungsarbeiten durchführen.
+** Der _Healthy_ Controller ist der HA-Partner des beeinträchtigten Controllers.
+
+
+* Es dürfen keine fehlerhaften Cluster-Ports auf dem gestörten Controller vorhanden sein.
+
+
+.Was kommt als Nächstes?
+Nachdem Sie die Voraussetzungen für den Austausch des Bootmediums überprüft haben, müssen Sielink:bootmedia-shutdown.html["Fahren Sie den Controller herunter"] .

@@ -40,7 +40,24 @@ Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Qu
 +
 Mit dem folgenden AutoSupport-Befehl wird die automatische Erstellung von Fällen zwei Stunden lang unterdrückt: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
 
-. Deaktivieren Sie das automatische Giveback von der Konsole des gesunden Controllers: `storage failover modify –node local -auto-giveback false`
+. Deaktivieren Sie die automatische Rückgabe von der Konsole des beeinträchtigten Controllers:
++
+`storage failover modify -node impaired-node -auto-giveback-of false`
+
++
+
+NOTE: Wenn Sie _Möchten Sie die automatische Rückgabe deaktivieren?_ sehen, geben Sie ein `y` .
+
++
+.. Wenn der beeinträchtigte Controller nicht hochgefahren werden kann oder bereits übernommen wurde, müssen Sie die HA-Verbindung vom fehlerfreien Controller trennen, bevor Sie den beeinträchtigten Controller hochfahren.  Dadurch wird verhindert, dass der beeinträchtigte Controller eine automatische Rückgabe durchführt.
++
+`system ha interconnect link off -node healthy-node -link 0`
+
++
+`system ha interconnect link off -node healthy-node -link 1`
+
+
+
 . Nehmen Sie den beeinträchtigten Controller zur LOADER-Eingabeaufforderung:
 +
 [cols="1,2"]
@@ -52,13 +69,6 @@ Mit dem folgenden AutoSupport-Befehl wird die automatische Erstellung von Fälle
 Die LOADER-Eingabeaufforderung
  a| 
 Fahren Sie mit dem nächsten Schritt fort.
-
-
-
- a| 
-`Waiting for giveback...`
- a| 
-Drücken Sie Strg-C, und antworten Sie dann `y` Wenn Sie dazu aufgefordert werden.
 
 
 

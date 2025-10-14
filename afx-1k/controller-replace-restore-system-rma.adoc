@@ -1,0 +1,40 @@
+---
+permalink: afx-1k/controller-replace-restore-system-rma.html 
+sidebar: sidebar 
+keywords: afx 1k, how to restore NetApp Storage Encryption, how to complete the replacement process 
+summary: 'Überprüfen Sie, ob die logischen Schnittstellen (LIFs) an ihren Home-Port berichten, führen Sie eine Cluster-Integritätsprüfung durch und senden Sie dann das ausgefallene Teil an NetApp zurück, um den letzten Schritt im Verfahren zum Austausch des AFX 1K-Controllers abzuschließen.' 
+---
+= Kompletter Controller-Austausch - AFX 1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Überprüfen Sie, ob die logischen Schnittstellen (LIFs) an ihren Home-Port berichten, führen Sie eine Cluster-Integritätsprüfung durch und senden Sie dann das ausgefallene Teil an NetApp zurück, um den letzten Schritt im Verfahren zum Austausch des AFX 1K-Controllers abzuschließen.
+
+
+
+== Schritt 1: Verifizieren von LIFs und Überprüfen des Clusterzustands
+
+Bevor Sie den Ersatzknoten wieder in Betrieb nehmen, stellen Sie sicher, dass sich die logischen Schnittstellen auf ihren Home-Ports befinden, überprüfen Sie die Clusterintegrität und setzen Sie die automatische Rückgabe zurück.
+
+.Schritte
+. Überprüfen Sie, ob die logischen Schnittstellen an ihren Home-Server und ihre Ports berichten:
++
+`network interface show -is-home false`
+
++
+Wenn logische Schnittstellen als „false“ aufgeführt sind, kehren Sie zu ihren Home-Ports zurück:
+
++
+`network interface revert -vserver * -lif *`
+
+. Überprüfen Sie den Zustand Ihres Clusters. Weitere Informationen finden Sie im https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["So führen Sie eine Cluster-Integritätsprüfung mit einem Skript in ONTAP durch"^] KB-Artikel.
+
+
+
+
+== Schritt 2: Rückgabe des fehlerhaften Teils an NetApp
+
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.
