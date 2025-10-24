@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: aff c800, replace a power supply 
 summary: Beim Ersetzen eines Netzteils muss das Zielstromnetzteil von der Stromquelle getrennt, das Netzkabel abgezogen, das alte Netzteil entfernt und das Ersatznetzteil installiert werden. Anschließend wird es wieder an die Stromquelle angeschlossen. 
 ---
-= Ersetzen Sie ein Netzteil - AFF C800
+= Hot-Swap eines Netzteils – AFF C800
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,7 +13,7 @@ summary: Beim Ersetzen eines Netzteils muss das Zielstromnetzteil von der Stromq
 [role="lead"]
 Beim Austausch eines Netzteils (PSU) wird das Zielnetzteil von der Stromquelle getrennt, das Netzkabel abgezogen, das alte Netzteil entfernt und das Ersatznetzteil installiert und dann wieder an die Stromquelle angeschlossen.
 
-Die Netzteile sind redundant und Hot-Swap-fähig.
+Die Netzteile sind redundant und Hot-Swap-fähig. Sie müssen den Controller nicht herunterfahren, um ein Netzteil auszutauschen.
 
 .Über diese Aufgabe
 Dieses Verfahren wird für den Austausch eines Netzteils auf einmal beschrieben.
@@ -28,7 +28,7 @@ Verwenden Sie das entsprechende Verfahren für Ihren Netzteiltyp: AC oder DC.
 
 [role="tabbed-block"]
 ====
-.Option 1: Wechselstromnetzteil ersetzen
+.Option 1: Hot-Swap eines AC-Netzteils
 --
 Führen Sie zum Austauschen eines Netzteils die folgenden Schritte aus.
 
@@ -92,7 +92,7 @@ Sobald das Netzteil wieder mit Strom versorgt wird, sollte die Status-LED grün 
 
 
 --
-.Option 2: Ersetzen Sie ein DC-Netzteil
+.Option 2: Hot-Swap eines DC-Netzteils
 --
 Führen Sie zum Austauschen eines DC-Netzteils die folgenden Schritte durch.
 

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: aff a1k, replace a power supply 
 summary: 'Ersetzen Sie ein AC- oder DC-Netzteil (PSU) in Ihrem AFF A1K-System, wenn es ausfällt oder fehlerhaft wird, und stellen Sie sicher, dass Ihr System weiterhin die erforderliche Stromversorgung für einen stabilen Betrieb erhält. Beim Austausch wird das fehlerhafte Netzteil von der Stromquelle getrennt, das Netzkabel abgezogen, das fehlerhafte Netzteil ersetzt und anschließend wieder an die Stromquelle angeschlossen.' 
 ---
-= Ersetzen Sie ein Netzteil - AFF A1K
+= Hot-Swap eines Netzteils – AFF A1K
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,6 +13,8 @@ summary: 'Ersetzen Sie ein AC- oder DC-Netzteil (PSU) in Ihrem AFF A1K-System, w
 [role="lead"]
 Ersetzen Sie ein AC- oder DC-Netzteil (PSU) in Ihrem AFF A1K-System, wenn es ausfällt oder fehlerhaft wird, und stellen Sie sicher, dass Ihr System weiterhin die erforderliche Stromversorgung für einen stabilen Betrieb erhält. Beim Austausch wird das fehlerhafte Netzteil von der Stromquelle getrennt, das Netzkabel abgezogen, das fehlerhafte Netzteil ersetzt und anschließend wieder an die Stromquelle angeschlossen.
 
+Die Netzteile sind redundant und Hot-Swap-fähig. Sie müssen den Controller nicht herunterfahren, um ein Netzteil auszutauschen.
+
 .Über diese Aufgabe
 * Dieses Verfahren wird für den Austausch eines Netzteils auf einmal beschrieben.
 +
@@ -20,12 +22,11 @@ Ersetzen Sie ein AC- oder DC-Netzteil (PSU) in Ihrem AFF A1K-System, wenn es aus
 IMPORTANT: Vermischen Sie PSUs nicht mit unterschiedlichen Effizienzwerten. Immer ersetzen wie für „Gefällt mir“.
 
 * Verwenden Sie das entsprechende Verfahren für Ihren Netzteiltyp: AC oder DC.
-* Die Netzteile sind redundant und Hot-Swap-fähig; Sie müssen den Controller nicht übernehmen, um diese Aufgabe auszuführen.
 
 
 [role="tabbed-block"]
 ====
-.Option 1: Wechselstromnetzteil ersetzen
+.Option 1: Hot-Swap eines AC-Netzteils
 --
 Führen Sie zum Austauschen eines Netzteils die folgenden Schritte aus.
 
@@ -82,7 +83,7 @@ Sobald das Netzteil wieder mit Strom versorgt wird, sollte die Status-LED grün 
 
 
 --
-.Option 2: Ersetzen Sie ein DC-Netzteil
+.Option 2: Hot-Swap eines DC-Netzteils
 --
 Führen Sie zum Austauschen eines DC-Netzteils die folgenden Schritte durch.
 

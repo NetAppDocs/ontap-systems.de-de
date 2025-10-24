@@ -1,7 +1,8 @@
 ---
 permalink: asa150/overview.html 
 sidebar: sidebar 
-summary: Wichtige Spezifikationen für die ASA150-Plattformgruppe 
+keywords: ASA A150 specifications, ASA A150 specs, NetApp ASA A150, ASA A150 hardware 
+summary: Wichtige Spezifikationen für das ASA A150 -Speichersystem 
 ---
 = Wichtige Spezifikationen für ASA A150
 :allow-uri-read: 
@@ -10,66 +11,117 @@ summary: Wichtige Spezifikationen für die ASA150-Plattformgruppe
 
 
 [role="lead"]
-Im Folgenden finden Sie ausgewählte Spezifikationen für das ASA A150 -Speichersystem in einem einzelnen Hochverfügbarkeitspaar.  Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).
+Im Folgenden finden Sie ausgewählte Spezifikationen für den ASA A150.  Besuchen https://hwu.netapp.com["NetApp Hardware Universe"^] (HWU) für eine vollständige Liste der ASA A150 Spezifikationen.  Diese Seite spiegelt ein einzelnes Paar mit hoher Verfügbarkeit wider.
 
 
 
-== Wichtige Spezifikationen für ASA A150
+=== Wichtige Spezifikationen für ASA A150
 
-* Plattformkonfiguration: ASA A150 UTA2 Einzelgehäuse HA-Paar
-* Max. Rohkapazität: 0,5472 PB
-* Arbeitsspeicher: 64.0000 GB
-* Formfaktor: 2U-Gehäuse mit 2 HA-Controllern und 24 Laufwerkssteckplätzen
-* ONTAP -Version: ONTAP: 9.16.1P2
-* Mindest ONTAP -Version: ONTAP 9.13.1 == Scaleout-Maxima
-* Typ: NAS
-* Typ: SAN; HA-Paare: 6; Rohkapazität: 3,3 PB / 2,9 PiB; Max. Speicher: 384 GB
-* Typ: HA-Paar; Rohkapazität: 0,5 PB / 0,5 PiB; Max. Speicher: 64.0000
+Plattformkonfiguration: ASA A150 UTA2 Einzelgehäuse HA-Paar
 
+Max. Rohkapazität: 0,5472 PB
 
+Arbeitsspeicher: 64.0000 GB
 
+Formfaktor: 2U-Gehäuse mit 2 HA-Controllern und 24 Laufwerkssteckplätzen
 
-== E/A
+ONTAP -Version: b_startONTAP: 9.16.1P2b_end
 
+PCIe-Erweiterungssteckplätze:
 
-
-=== Integrierte E/A
-
-* Protokoll: Ethernet 10 Gbit/s; Ports: 12
-* Protokoll: FC 16 Gbit/s; Ports: 8
-* Protokoll: SAS 12 Gbit/s; Ports: 4
+Mindestens erforderliche ONTAP -Version: ONTAP 9.13.1
 
 
 
+=== Scaleout-Maximalwerte
 
-=== Gesamt-E/A
-
-* Protokoll: Ethernet 10 Gbit/s; Ports: 12
-* Protokoll: FC 16 Gbit/s; Ports: 8
-* Protokoll: SAS 12 Gbit/s; Ports: 4
+|===
 
 
+| Typ | HA-Paare | Rohkapazität | Max. Speicher 
 
 
-=== Verwaltungsports
-
-* Protokoll: Ethernet 1 Gbit/s; Ports: 2
-* Protokoll: RS-232 115 Kbps; Ports: 4
-* Protokoll: USB 12 Mbit/s; Anschlüsse: 2
+| NAS |  |  |  
 
 
+| SAN | 6 | 3,3 PB / 2,9 PiB | 384 GB 
 
 
-== Speichernetzwerke werden unterstützt
+| HA-Paar |  | 0,5 PB / 0,5 PiB | 64,0000 
+|===
 
-* FC
-* iSCSI
-* NVMe/TCP == Systemumgebungsspezifikationen. Keine Umgebungsdaten verfügbar.
+
+=== IO
 
 
 
+==== Integrierte E/A
 
-== Einhaltung
+|===
+
+
+| Protokoll | Häfen 
+
+
+| Ethernet 10 Gbit/s | 12 
+
+
+| FC 16 Gbit/s | 8 
+
+
+| SAS 12 Gbit/s | 4 
+|===
+
+
+==== Gesamt-IO
+
+|===
+
+
+| Protokoll | Häfen 
+
+
+| Ethernet 10 Gbit/s | 12 
+
+
+| FC 16 Gbit/s | 8 
+
+
+| SAS 12 Gbit/s | 4 
+|===
+
+
+==== Verwaltungsports
+
+|===
+
+
+| Protokoll | Häfen 
+
+
+| Ethernet 1 Gbit/s | 2 
+
+
+| RS-232 115 Kbps | 4 
+
+
+| USB 12 Mbit/s | 2 
+|===
+
+
+=== Unterstützte Speichernetzwerke
+
+FC; iSCSI; NVMe/TCP;
+
+
+
+=== Spezifikationen der Systemumgebung
+
+Keine Umgebungsdaten verfügbar.
+
+
+
+=== Einhaltung
 
 * Zertifizierungen EMC/EMI: AMCA, FCC, ICES, KC, Marokko, VCCI
 * Zertifizierungen Sicherheit: BIS, CB, CSA, G_K_U-SoR, IRAM, NOM, NRCS, SONCAP, TBS
@@ -81,10 +133,6 @@ Im Folgenden finden Sie ausgewählte Spezifikationen für das ASA A150 -Speicher
 
 
 
-== Hochverfügbarkeit
+=== Hohe Verfügbarkeit
 
-* Ethernet-basierter Baseboard Management Controller (BMC) und ONTAP Verwaltungsschnittstelle
-* Redundante Hot-Swap-fähige Controller
-* Redundante Hot-Swap-fähige Netzteile
-* SAS-In-Band-Verwaltung über SAS-Verbindungen
-
+Ethernet-basierter Baseboard Management Controller (BMC) und ONTAP -Management-Schnittstelle; Redundante Hot-Swap-fähige Controller; Redundante Hot-Swap-fähige Netzteile; SAS-In-Band-Management über SAS-Verbindungen; [//] 2025-10-15 ontap-systems-internal/issues/1357

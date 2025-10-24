@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: asa r2 a70, asa r2 a90, replace a power supply 
 summary: 'Ersetzen Sie ein Netzteil (Netzteil) in Ihrem ASA A70 oder ASA A90-System, wenn es ausfällt oder fehlerhaft wird, und stellen Sie sicher, dass Ihr System weiterhin die erforderliche Stromversorgung erhält, um einen stabilen Betrieb zu gewährleisten. Beim Austausch wird das fehlerhafte Netzteil von der Stromquelle getrennt, das Netzkabel abgezogen, das fehlerhafte Netzteil ersetzt und anschließend wieder an die Stromquelle angeschlossen.' 
 ---
-= Ersetzen Sie ein Netzteil - ASA A70 und ASA A90
+= Hot-Swap eines Netzteils – ASA A70 und ASA A90
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,7 +13,7 @@ summary: 'Ersetzen Sie ein Netzteil (Netzteil) in Ihrem ASA A70 oder ASA A90-Sys
 [role="lead"]
 Ersetzen Sie ein Netzteil (Netzteil) in Ihrem ASA A70 oder ASA A90-System, wenn es ausfällt oder fehlerhaft wird, und stellen Sie sicher, dass Ihr System weiterhin die erforderliche Stromversorgung erhält, um einen stabilen Betrieb zu gewährleisten. Beim Austausch wird das fehlerhafte Netzteil von der Stromquelle getrennt, das Netzkabel abgezogen, das fehlerhafte Netzteil ersetzt und anschließend wieder an die Stromquelle angeschlossen.
 
-Die Netzteile sind redundant und Hot-Swap-fähig.
+Die Netzteile sind redundant und Hot-Swap-fähig. Sie müssen den Controller nicht herunterfahren, um ein Netzteil auszutauschen.
 
 .Über diese Aufgabe
 Dieses Verfahren wird für den Austausch eines Netzteils auf einmal beschrieben.
@@ -25,7 +25,7 @@ Verwenden Sie das entsprechende Verfahren für Ihren Netzteiltyp: AC oder DC.
 
 [role="tabbed-block"]
 ====
-.Option 1: Wechselstromnetzteil ersetzen
+.Option 1: Hot-Swap eines AC-Netzteils
 --
 Führen Sie zum Austauschen eines Netzteils die folgenden Schritte aus.
 
@@ -81,7 +81,7 @@ Sobald das Netzteil wieder mit Strom versorgt wird, sollte die Status-LED grün 
 
 
 --
-.Option 2: Ersetzen Sie ein DC-Netzteil
+.Option 2: Hot-Swap eines DC-Netzteils
 --
 Führen Sie zum Austauschen eines DC-Netzteils die folgenden Schritte durch.
 

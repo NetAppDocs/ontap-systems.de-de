@@ -1,7 +1,8 @@
 ---
 permalink: a400/overview.html 
 sidebar: sidebar 
-summary: Wichtige Spezifikationen für die A400-Plattformgruppe 
+keywords: AFF A400 specifications, AFF A400 specs, NetApp AFF A400, AFF A400 hardware 
+summary: Wichtige Spezifikationen des AFF A400 Speichersystems 
 ---
 = Wichtige Spezifikationen für AFF A400
 :allow-uri-read: 
@@ -10,96 +11,138 @@ summary: Wichtige Spezifikationen für die A400-Plattformgruppe
 
 
 [role="lead"]
-Im Folgenden finden Sie ausgewählte Spezifikationen für das AFF A400 Speichersystem in einem einzelnen Hochverfügbarkeitspaar.  Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).
+Nachfolgend sind ausgewählte Spezifikationen für den AFF A400 aufgeführt.  Besuchen https://hwu.netapp.com["NetApp Hardware Universe"^] (HWU) für eine vollständige Liste der AFF A400 Spezifikationen.  Diese Seite spiegelt ein einzelnes Paar mit hoher Verfügbarkeit wider.
 
 
 
-== Wichtige Spezifikationen für AFF A400
+=== Wichtige Spezifikationen für AFF A400
 
-* Plattformkonfiguration: AFF A400 Single Chassis HA-Paar, Ethernet-Paket
-* Max. Rohkapazität: 14,6880 PB
-* Arbeitsspeicher: 256.0000 GB
-* Formfaktor: 4U-Gehäuse mit 2 HA-Controllern
-* ONTAP -Version: ONTAP: 9.16.1P2
-* PCIe-Erweiterungssteckplätze: 10
-* Mindest ONTAP -Version: ONTAP 9.7RC1 == Scaleout-Maxima
-* Typ: NAS; HA-Paare: 12; Rohkapazität: 176,3 PB / 156,5 PiB; Max. Speicher: 3072 GB
-* Typ: SAN; HA-Paare: 6; Rohkapazität: 88,1 PB / 78,3 PiB; Max. Speicher: 1536 GB
-* Typ: HA-Paar; Rohkapazität: 14,7 PB / 13,0 PiB; Max. Speicher: 256.0000
+Plattformkonfiguration: AFF A400 Single Chassis HA-Paar, Ethernet-Paket
 
+Max. Rohkapazität: 14,6880 PB
 
+Arbeitsspeicher: 256.0000 GB
 
+Formfaktor: 4U-Gehäuse mit 2 HA-Controllern
 
-== E/A
+ONTAP -Version: b_startONTAP: 9.16.1P2b_end
+
+PCIe-Erweiterungssteckplätze: 10
+
+Mindestversion von ONTAP : ONTAP 9.7RC1
 
 
 
-=== Integrierte E/A
+=== Scaleout-Maximalwerte
 
-* Protokoll: Ethernet 100 Gbit/s; Ports: 4
-* Protokoll: Ethernet 25 Gbit/s; Ports: 12
-* Protokoll: SAS 12 Gbit/s; Ports: 8
+|===
 
 
+| Typ | HA-Paare | Rohkapazität | Max. Speicher 
 
 
-=== Gesamt-E/A
-
-* Protokoll: Ethernet 100 Gbit/s; Ports: 20
-* Protokoll: Ethernet 25 Gbit/s; Ports: 24
-* Protokoll: Ethernet 10 Gbit/s; Ports: 32
-* Protokoll: FC 32 Gbit/s; Ports: 24
-* Protokoll: NVMe/FC 32 Gbit/s; Ports: 24
-* Anschlüsse: 0
-* Protokoll: SAS 12 Gbit/s; Ports: 32
+| NAS | 12 | 176,3 PB / 156,5 PiB | 3072 GB 
 
 
+| SAN | 6 | 88,1 PB / 78,3 PiB | 1536 GB 
 
 
-=== Verwaltungsports
+| HA-Paar |  | 14,7 PB / 13,0 PiB | 256,0000 
+|===
 
-* Protokoll: Ethernet 1 Gbit/s; Ports: 2
-* Protokoll: RS-232 115 Kbps; Ports: 4
-* Protokoll: USB 12 Mbit/s; Anschlüsse: 4
+
+=== IO
 
 
 
+==== Integrierte E/A
 
-== Speichernetzwerke werden unterstützt
+|===
 
-* CIFS
-* FC
-* iSCSI
-* NFS v3
-* NFS v4.0
-* NFS v4.1
-* NFS v4.2
-* NFSv3/RDMA
-* NFSv4/RDMA
-* NVMe/FC
-* NVMe/TCP
-* S3
-* S3 mit NAS
-* KMU 2.0
-* SMB 2.1
-* SMB 2.x
-* KMU 3.0
-* KMU 3.1
-* SMB 3.1.1 == Systemumgebungsspezifikationen
+
+| Protokoll | Häfen 
+
+
+| Ethernet 100 Gbit/s | 4 
+
+
+| Ethernet 25 Gbit/s | 12 
+
+
+| SAS 12 Gbit/s | 8 
+|===
+
+
+==== Gesamt-IO
+
+|===
+
+
+| Protokoll | Häfen 
+
+
+| Ethernet 100 Gbit/s | 20 
+
+
+| Ethernet 25 Gbit/s | 24 
+
+
+| Ethernet 10 Gbit/s | 32 
+
+
+| FC 32 Gbit/s | 24 
+
+
+| NVMe/FC 32 Gbit/s | 24 
+
+
+|  | 0 
+
+
+| SAS 12 Gbit/s | 32 
+|===
+
+
+==== Verwaltungsports
+
+|===
+
+
+| Protokoll | Häfen 
+
+
+| Ethernet 1 Gbit/s | 2 
+
+
+| RS-232 115 Kbps | 4 
+
+
+| USB 12 Mbit/s | 4 
+|===
+
+
+=== Unterstützte Speichernetzwerke
+
+CIFS; FC; iSCSI; NFS v3; NFS v4.0; NFS v4.1; NFS v4.2; NFSv3/RDMA; NFSv4/RDMA; NVMe/FC; NVMe/TCP; S3; S3 mit NAS; SMB 2.0; SMB 2.1; SMB 2.x; SMB 3.0; SMB 3.1; SMB 3.1.1;
+
+
+
+=== Spezifikationen der Systemumgebung
+
 * Typische Leistung: 4209 BTU/h
 * Leistung im schlimmsten Fall: 5215 BTU/h
-* Gewicht: 110.0 lb 49.9 kg
+* Gewicht: 110,0 lbbr/49,9 kg
 * Höhe: 4U
 * Breite: 19 Zoll, IEC-Rack-kompatibel (17,6 Zoll, 44,7 cm)
 * Tiefe: 32,6 Zoll (34,7 Zoll mit Kabelführungshalterung)
-* Betriebstemperatur/Höhe/Luftfeuchtigkeit: 10 °C bis 35 °C (50 °F bis 95 °F) bei 3048 m (10000 Fuß) Höhe; 8 % bis 80 % relative Luftfeuchtigkeit, nicht kondensierend
-* Temperatur/Luftfeuchtigkeit außerhalb des Betriebs: -40 °C bis 70 °C (-40 °F bis 158 °F) bis zu 12.192 m (40.000 Fuß) 10 % bis 95 % relative Luftfeuchtigkeit, nicht kondensierend, im Originalbehälter
-* Akustisches Rauschen: Angegebene Schallleistung (LwAd): 8,5 Schalldruck (LpAm) (in der Nähe): 67,2 dB
+* Betriebstemperatur/Höhe/Luftfeuchtigkeit: 10 °C bis 35 °C (br/50 °F bis br/95 °F) bei br/= 3048 mbr/= 10000 ft) Höhe; 8 % bis 80 % (br/relative Luftfeuchtigkeit, nicht kondensierend)
+* Temperatur/Luftfeuchtigkeit außerhalb des Betriebs: -40 °C bis 70 °C (-40 °F bis 158 °F) bis zu 12.192 m (40.000 Fuß)<br/>10 % bis 95 % relative Luftfeuchtigkeit, nicht kondensierend, im Originalbehälter
+* Akustisches Rauschen: Angegebene Schallleistung (LwAd): 8,5;br/Schalldruck (LpAm) (in der Nähe): 67,2 dB
 
 
 
 
-== Einhaltung
+=== Einhaltung
 
 * Zertifizierungen EMC/EMI: AMCA, FCC, ICES, KC, Marokko, VCCI
 * Zertifizierungen Sicherheit: BIS, CB, CSA, G_K_U-SoR, IRAM, NOM, NRCS, SONCAP, TBS
@@ -111,10 +154,6 @@ Im Folgenden finden Sie ausgewählte Spezifikationen für das AFF A400 Speichers
 
 
 
-== Hochverfügbarkeit
+=== Hohe Verfügbarkeit
 
-* Ethernet-basierter Baseboard Management Controller (BMC) und ONTAP Verwaltungsschnittstelle
-* Redundante Hot-Swap-fähige Controller
-* Redundante Hot-Swap-fähige Netzteile
-* SAS-In-Band-Verwaltung über SAS-Verbindungen
-
+Ethernet-basierter Baseboard Management Controller (BMC) und ONTAP -Management-Schnittstelle; Redundante Hot-Swap-fähige Controller; Redundante Hot-Swap-fähige Netzteile; SAS-In-Band-Management über SAS-Verbindungen; [//] 2025-10-15 ontap-systems-internal/issues/1357

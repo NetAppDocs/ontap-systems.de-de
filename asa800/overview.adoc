@@ -1,7 +1,8 @@
 ---
 permalink: asa800/overview.html 
 sidebar: sidebar 
-summary: Wichtige Spezifikationen für die ASA800-Plattformgruppe 
+keywords: ASA A800 specifications, ASA A800 specs, NetApp ASA A800, ASA A800 hardware 
+summary: Wichtige Spezifikationen für das ASA A800 -Speichersystem 
 ---
 = Wichtige Spezifikationen für ASA A800
 :allow-uri-read: 
@@ -10,71 +11,126 @@ summary: Wichtige Spezifikationen für die ASA800-Plattformgruppe
 
 
 [role="lead"]
-Im Folgenden finden Sie ausgewählte Spezifikationen für das ASA A800 -Speichersystem in einem einzelnen Hochverfügbarkeitspaar.  Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).
+Im Folgenden finden Sie ausgewählte Spezifikationen für den ASA A800.  Besuchen https://hwu.netapp.com["NetApp Hardware Universe"^] (HWU) für eine vollständige Liste der ASA A800 Spezifikationen.  Diese Seite spiegelt ein einzelnes Paar mit hoher Verfügbarkeit wider.
 
 
 
-== Wichtige Spezifikationen für ASA A800
+=== Wichtige Spezifikationen für ASA A800
 
-* Plattformkonfiguration: ASA A800 Single Chassis HA-Paar
-* Max. Rohkapazität: 6,6096 PB
-* Arbeitsspeicher: 1280.0000 GB
-* Formfaktor: 4U-Gehäuse mit 2 HA-Controllern und 48 Laufwerkssteckplätzen
-* ONTAP -Version: ONTAP: 9.16.1P2
-* PCIe-Erweiterungssteckplätze: 10
-* Mindest ONTAP -Version: ONTAP 9.13.1 == Scaleout-Maxima
-* Typ: NAS
-* Typ: SAN; HA-Paare: 6; Rohkapazität: 39,7 PB / 35,2 PiB; Max. Speicher: 7680 GB
-* Typ: HA-Paar; Rohkapazität: 6,6 PB / 5,9 PiB; Max. Speicher: 1280.0000
+Plattformkonfiguration: ASA A800 Single Chassis HA-Paar
 
+Max. Rohkapazität: 6,6096 PB
 
+Arbeitsspeicher: 1280.0000 GB
 
+Formfaktor: 4U-Gehäuse mit 2 HA-Controllern und 48 Laufwerkssteckplätzen
 
-== E/A
+ONTAP -Version: b_startONTAP: 9.16.1P2b_end
+
+PCIe-Erweiterungssteckplätze: 10
+
+Mindestens erforderliche ONTAP -Version: ONTAP 9.13.1
 
 
 
-=== Integrierte E/A
+=== Scaleout-Maximalwerte
 
-* Protokoll: Ethernet 100 Gbit/s; Ports: 4
-
-
+|===
 
 
-=== Gesamt-E/A
-
-* Protokoll: Ethernet 100 Gbit/s; Ports: 20
-* Protokoll: Ethernet 25 Gbit/s; Ports: 16
-* Protokoll: Ethernet 10 Gbit/s; Ports: 32
-* Protokoll: FC 32 Gbit/s; Ports: 32
-* Protokoll: NVMe/FC 32 Gbit/s; Ports: 32
-* Anschlüsse: 0
-* Anschlüsse: 0
-* Protokoll: SAS 12 Gbit/s; Ports: 32
+| Typ | HA-Paare | Rohkapazität | Max. Speicher 
 
 
+| NAS |  |  |  
 
 
-=== Verwaltungsports
+| SAN | 6 | 39,7 PB / 35,2 PiB | 7680 GB 
 
-* Protokoll: Ethernet 1 Gbit/s; Ports: 4
-* Protokoll: RS-232 115 Kbps; Ports: 4
-* Protokoll: USB 12 Mbit/s; Anschlüsse: 4
+
+| HA-Paar |  | 6,6 PB / 5,9 PiB | 1280,0000 
+|===
+
+
+=== IO
 
 
 
+==== Integrierte E/A
 
-== Speichernetzwerke werden unterstützt
-
-* FC
-* iSCSI
-* NVMe/FC
-* NVMe/TCP == Systemumgebungsspezifikationen. Keine Umgebungsdaten verfügbar.
+|===
 
 
+| Protokoll | Häfen 
 
 
-== Einhaltung
+| Ethernet 100 Gbit/s | 4 
+|===
+
+
+==== Gesamt-IO
+
+|===
+
+
+| Protokoll | Häfen 
+
+
+| Ethernet 100 Gbit/s | 20 
+
+
+| Ethernet 25 Gbit/s | 16 
+
+
+| Ethernet 10 Gbit/s | 32 
+
+
+| FC 32 Gbit/s | 32 
+
+
+| NVMe/FC 32 Gbit/s | 32 
+
+
+|  | 0 
+
+
+|  | 0 
+
+
+| SAS 12 Gbit/s | 32 
+|===
+
+
+==== Verwaltungsports
+
+|===
+
+
+| Protokoll | Häfen 
+
+
+| Ethernet 1 Gbit/s | 4 
+
+
+| RS-232 115 Kbps | 4 
+
+
+| USB 12 Mbit/s | 4 
+|===
+
+
+=== Unterstützte Speichernetzwerke
+
+FC; iSCSI; NVMe/FC ; NVMe/TCP;
+
+
+
+=== Spezifikationen der Systemumgebung
+
+Keine Umgebungsdaten verfügbar.
+
+
+
+=== Einhaltung
 
 * Zertifizierungen EMC/EMI: AMCA, FCC, ICES, KC, Marokko, VCCI
 * Zertifizierungen Sicherheit: BIS, CB, CSA, G_K_U-SoR, IRAM, NOM, NRCS, SONCAP, TBS
@@ -86,10 +142,6 @@ Im Folgenden finden Sie ausgewählte Spezifikationen für das ASA A800 -Speicher
 
 
 
-== Hochverfügbarkeit
+=== Hohe Verfügbarkeit
 
-* Ethernet-basierter Baseboard Management Controller (BMC) und ONTAP Verwaltungsschnittstelle
-* Redundante Hot-Swap-fähige Controller
-* Redundante Hot-Swap-fähige Netzteile
-* SAS-In-Band-Management über SAS-Verbindungen für externe Regale
-
+Ethernet-basierter Baseboard Management Controller (BMC) und ONTAP -Management-Schnittstelle; Redundante Hot-Swap-fähige Controller; Redundante Hot-Swap-fähige Netzteile; SAS-In-Band-Management über SAS-Verbindungen für externe Shelves; [//] 2025-10-15 ontap-systems-internal/issues/1357

@@ -1,10 +1,10 @@
 ---
 permalink: asa400/power-supply-replace.html 
 sidebar: sidebar 
-keywords: asa a400, asa, a400, replace, replacing, power, supply, psu, disconnect, target, psu, unplug, power, cable, removing, remove, replacement, source, replace a power supply 
-summary: 'Beim Austausch eines Netzteils \ (PSU\) muss das Zielnetzteil von der Stromquelle getrennt, das Netzkabel abgezogen, das alte Netzteil entfernt und das Ersatznetzteil installiert werden. Anschließend muss das Ersatznetzteil wieder an die Stromquelle angeschlossen werden.' 
+keywords: asa a400, replace a power supply 
+summary: 'Beim Austausch eines Netzteils muss das Ziellaufwerk (Netzteil) von der Stromquelle getrennt, das Netzkabel abgezogen, das alte Netzteil entfernt und das Ersatznetzteil installiert werden. Anschließend muss das Netzteil wieder an die Stromquelle angeschlossen werden.' 
 ---
-= Austauschen eines Netzteils - ASA A400
+= Hot-Swap eines Netzteils – ASA A400
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,7 +13,7 @@ summary: 'Beim Austausch eines Netzteils \ (PSU\) muss das Zielnetzteil von der 
 [role="lead"]
 Beim Austausch eines Netzteils (Netzteils) muss das Zielnetzteil von der Stromquelle getrennt, das Netzkabel abgezogen, das alte Netzteil entfernt und das Ersatznetzteil installiert werden. Anschließend muss das Ersatznetzteil wieder an die Stromquelle angeschlossen werden.
 
-* Die Netzteile sind redundant und Hot-Swap-fähig.
+* Die Netzteile sind redundant und Hot-Swap-fähig. Sie müssen den Controller nicht herunterfahren, um ein Netzteil auszutauschen.
 * Dieses Verfahren ist für den Austausch eines Netzteils nach dem anderen beschrieben.
 +
 

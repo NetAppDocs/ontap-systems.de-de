@@ -64,7 +64,7 @@ image::../media/drw_70-90_tnsc_cluster_cabling_ieops-1653.svg[Verkabelungsdiagra
 --
 .Switch-Cluster-Verkabelung
 --
-Verwenden Sie das 100-GbE-Kabel, um die Ports e1a an e1a und die Ports e7a an e7a anzuschließen.
+Verwenden Sie das 100-GbE-Kabel, um die Ports e1a und e7a der Controller A und B mit den Cluster-Netzwerk-Switches A und B zu verbinden.
 
 .Schritte
 . Verbinden Sie Port e1a an Controller A und Port e1a an Controller B mit Cluster-Netzwerk-Switch A.
@@ -94,7 +94,7 @@ Im Folgenden finden Sie einige typische Beispiele für eine Verkabelung im Host-
 . Verbinden Sie die Ports e9a und e9b mit dem Ethernet-Datennetzwerk-Switch.
 +
 
-NOTE: Verwenden Sie für maximale Systemperformance für Cluster- und HA-Datenverkehr die Ports e1b und e7b nicht für Host-Netzwerkverbindungen. Verwenden Sie eine separate Hostkarte, um die Leistung zu maximieren.
+NOTE: Verwenden Sie die Ports e1b und e7b nicht für Host-Netzwerkverbindungen. Verwenden Sie eine separate Hostkarte.
 
 +
 *100-GbE-Kabel*

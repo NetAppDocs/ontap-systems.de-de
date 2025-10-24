@@ -768,7 +768,6 @@
   <block id="07915727e4f5cb3e1172a8852c17c2bb" category="list-text">Wenn sich Ihr System in einer MetroCluster-Konfiguration befindet, müssen Sie den Abschnitt überprüfen<block ref="dbcae02c495cc3db61b37ce85396171e" category="inline-link-rx"></block> Um zu bestimmen, ob Sie dieses Verfahren verwenden sollten.</block>
   <block id="1bab600dfeb5dd52557d4dc719a4016b" category="admonition">Die BIOS-Version des _Replacement_ Controllers darf nicht entsprechend dem Partner Controller oder dem alten Controller-Modul heruntergestuft werden.</block>
   <block id="9fc6e6ebb195a8b268f686a0f8256e7b" category="summary">Beim Ersetzen eines Netzteils muss das Zielstromnetzteil von der Stromquelle getrennt, das Netzkabel abgezogen, das alte Netzteil entfernt und das Ersatznetzteil installiert werden. Anschließend wird es wieder an die Stromquelle angeschlossen.</block>
-  <block id="80185b76790082a23c34d9ebf9a01f7e" category="doc">Ersetzen Sie ein Netzteil – AFF A800</block>
   <block id="af9d8ec1fd1a942d04dce1dd9b6787b7" category="paragraph">Beim Austausch eines Netzteils muss das Ziellaufwerk (Netzteil) von der Stromquelle getrennt, das Netzkabel abgezogen, das alte Netzteil entfernt und das Ersatznetzteil installiert werden. Anschließend muss das Netzteil wieder an die Stromquelle angeschlossen werden.</block>
   <block id="76c422e38c98bcea8a54ea2c31b96d23" category="admonition">Als Best Practice empfiehlt es sich, das Netzteil innerhalb von zwei Minuten vom Gehäuse zu ersetzen. Das System funktioniert weiterhin, aber ONTAP sendet Meldungen an die Konsole über das beeinträchtigte Netzteil, bis das Netzteil ersetzt wird.</block>
   <block id="6c35991313f21e9038f629e9e809488a" category="admonition">Vermischen Sie PSUs nicht mit unterschiedlichen Effizienzwerten. Immer ersetzen wie für „Gefällt mir“.</block>
@@ -1442,7 +1441,6 @@
   <block id="04dfd32abff05e80971ee43ebd97b0fe" category="list-text">Lösen Sie Ihre Daumen von oben auf den Verriegelungs-Mechanismen und drücken Sie weiter, bis die Verriegelungen einrasten.</block>
   <block id="004ff61696f63d2eb687e57371ce86bd" category="paragraph">Das Controller-Modul sollte vollständig eingesetzt und mit den Kanten des Gehäuses bündig sein.</block>
   <block id="2bf23db896fc6ece8a7fd4c8db50ab7d" category="doc">Überblick über den Austausch von Controller-Modulen - FAS500f</block>
-  <block id="b94c622729a1c3b9f221ed4f8376e65b" category="doc">Ersetzen Sie ein Netzteil - FAS500f</block>
   <block id="1661dbd7e15cf50b73ab10b3561b2d66" category="paragraph">Sie können das folgende Video oder die tabellarischen Schritte verwenden, um das Netzteil zu ersetzen:</block>
   <block id="1419ac825716a209020b33adb96907c3" category="video-title">Animation - Ersetzen Sie das Netzteil</block>
   <block id="9cba1bd90da040950cfda65ba6af50aa" category="doc">Tauschen Sie die NVMEM-Batterie FAS500f aus</block>
@@ -1688,7 +1686,6 @@
   <block id="1654c00921a4540ccc78b0e715f2d722" category="doc">Übersicht über den Austausch von Controller-Modulen - AFF A320</block>
   <block id="e92b8f690c724e2a393908da2704794c" category="paragraph">Beachten Sie, dass das Verfahren zum Austausch des Controllers bei einem Controller in einer MetroCluster Konfiguration mit vier oder acht Nodes mit dem bei einem HA-Paar identisch ist. Es sind keine MetroCluster-spezifischen Schritte erforderlich, da der Ausfall auf ein HA-Paar beschränkt ist und Storage Failover-Befehle zur unterbrechungsfreien Ausführung während des Austauschs genutzt werden können.</block>
   <block id="d6cd25c7a2ec0fe6ad8621d4562ce0ae" category="summary">Beim Austausch eines Netzteils \ (PSU\) muss das Zielnetzteil von der Stromquelle getrennt, das Netzkabel abgezogen, das alte Netzteil entfernt und das Ersatznetzteil installiert werden. Anschließend muss das Ersatznetzteil wieder an die Stromquelle angeschlossen werden.</block>
-  <block id="e944774dbb716679ef719542153680f0" category="doc">Ersetzen Sie ein Netzteil - AFF A320</block>
   <block id="f044adaf132925553df56c50232bae8a" category="paragraph">Beim Austausch eines Netzteils (Netzteils) muss das Zielnetzteil von der Stromquelle getrennt, das Netzkabel abgezogen, das alte Netzteil entfernt und das Ersatznetzteil installiert werden. Anschließend muss das Ersatznetzteil wieder an die Stromquelle angeschlossen werden.</block>
   <block id="0b8bc61409e02494497fb415b526324c" category="list-text">Entfernen Sie das Netzteil:</block>
   <block id="bd5e4756909c5ec64e5959e1f7d9e160" category="list-text">Drehen Sie den Nockengriff so, dass er zum Herausziehen der Stromversorgung aus dem Gehäuse verwendet werden kann.</block>
@@ -2244,7 +2241,6 @@
   <block id="55b0e11d7fc34ae2b7fbd2be3acb1424" category="list-text">Schieben Sie das Controller-Modul mit dem Nockengriff in die offene Position in das Gehäuse und schieben Sie das Controller-Modul fest hinein, bis es auf die Mittelebene trifft und vollständig sitzt. Schließen Sie dann den Nockengriff, bis er in die verriegelte Position einrastet.</block>
   <block id="b77690ba581630e6f3bd4cee96dd675a" category="admonition">Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige Kraft verwenden, da die Anschlüsse beschädigt werden können.</block>
   <block id="45c20771cb1532f5746ddda7446e7140" category="list-text">Booten jedes Node im Wartungsmodus:</block>
-  <block id="1aa73ef56da88752323de5876f9b3750" category="doc">Tauschen Sie ein Netzteil aus – FAS9500</block>
   <block id="ef20366d8eeda4ed0725f1a5a164c558" category="paragraph">Die grüne Betriebs-LED leuchtet, wenn das Netzteil vollständig in das Gehäuse eingesetzt wird und die gelbe Warnungs-LED zunächst blinkt, schaltet sich jedoch nach ein paar Augenblicken aus.</block>
   <block id="3e5fda4bdb63c28cc3aa53cadbde1129" category="doc">Ersetzen Sie ein DIMM - FAS9500</block>
   <block id="9c50a16ad09918eb5e84e11b90826699" category="video-title">Animation - Entfernen Sie den Controller</block>
@@ -3193,7 +3189,6 @@
   <block id="953946f657bfabfff9e2ced20f22e7a6" category="doc">Systemkonfiguration – AFF A200 wiederherstellen und überprüfen</block>
   <block id="34618f776812de6f5f59a70ca2c17728" category="doc">Ersetzen Sie ein DIMM – AFF A200</block>
   <block id="dd33af940cfd986282d97dc9269783a9" category="summary">Beim Austausch eines Netzteils muss das Netzteil \ (PSU\) von der Stromquelle getrennt, das Netzkabel abgezogen, das alte Netzteil entfernt und das Ersatznetzteil installiert werden. Anschließend wird es wieder an die Stromquelle angeschlossen.</block>
-  <block id="b122a7303b98280f8acc1bef20b1890d" category="doc">Ersetzen Sie ein Netzteil - AFF A250</block>
   <block id="a73367a24d737b005906f745ac5c73c2" category="doc">Ersetzen Sie die Hardware - AFF A250</block>
   <block id="586424cb167133a0adfaf4650a20127e" category="paragraph">Verwenden Sie zum Austauschen des Gehäuses das folgende Video oder die tabellarischen Schritte. Es wird davon ausgegangen, dass die Blende entfernt und ausgetauscht wird:</block>
   <block id="b0a5349e52bfc1b486c0f4bb7f8c6b18" category="doc">Schalten Sie die Controller aus - AFF A250</block>
@@ -3332,7 +3327,6 @@
   <block id="37d55b9e3f3a09bc1c5307fdcb0cff08" category="paragraph">Um den Controller wiederherzustellen, müssen Sie das System erneut einspielen, das Controller-Modul zurückgeben und dann das automatische Giveback wieder aktivieren.</block>
   <block id="61c752abcbb868d9432b6f4a5da1593b" category="doc">Übersicht über den Austausch von Controller-Modulen - AFF A400</block>
   <block id="855366b23fbc8af0c5a01bb5529b380c" category="list-text">Der _Replacement Node_ ist der neue Controller, der den beeinträchtigten Controller ersetzt.</block>
-  <block id="897fb2e62dec5276f207c3447d27e6c4" category="doc">Austauschen eines Netzteils – AFF A400</block>
   <block id="54f4c70c653781a776673e986d65e502" category="paragraph">Sie können die folgende Animation, Abbildung oder die schriftlichen Schritte zum Austausch des Netzteils verwenden.</block>
   <block id="e7391aa0081cf0bb76d099d43b77df97" category="video-title">Animation - Ersetzen Sie ein Netzteil</block>
   <block id="d21dc442f2ac95e798154d9d5d6e5d0a" category="doc">Schalten Sie die beeinträchtigte Steuerung - AFF A400 aus</block>
@@ -3645,7 +3639,6 @@
   <block id="838316a92edbe8e931b912c827cad7b7" category="section-title">Schritt 7: Verschieben Sie die DIMMs</block>
   <block id="f060498e4a9c2e920e619ab0da23740a" category="doc">Ersetzen Sie eine PCIe- oder Mezzanine-Karte – FAS8300 und FAS8700</block>
   <block id="94aea6f09b1466d3642940029f1b693a" category="doc">Übersicht über den Austausch von Controller-Modulen – FAS8300 und FAS8700</block>
-  <block id="3a08488c499949ce994ce7beebe666ee" category="doc">Ersetzen Sie ein Netzteil – FAS8300 und FAS8700</block>
   <block id="fe0879209afd1fc2f28d40077ccda980" category="doc">Fahren Sie den beeinträchtigten Controller – FAS8300 und FAS8700 – herunter</block>
   <block id="f406838ab1af1615895d90b4b0439c67" category="doc">Detaillierter Leitfaden – FAS8300 und FAS8700</block>
   <block id="598ec2ec2714b9a699a42898b690e48d" category="section-title">Option 1: Controller mit SAS-Laufwerk-Shelfs verkabeln</block>
@@ -4707,7 +4700,6 @@
   <block id="212a7c63df3073a24c5ba97aaad63e51" category="doc">Hardware ersetzen - AFF A700s</block>
   <block id="5c60f6a11c073c93d814de24719fd7f8" category="section-title">Schritt 4: Installieren der Controller</block>
   <block id="f99e3c0be135f8d468eda1703b7345f9" category="summary">Beim Austausch eines Netzteils wurde das Netzteil \(PSU\) von der Stromquelle getrennt, das Netzkabel abgezogen, das alte Netzteil entfernt und das Ersatznetzteil installiert und dann wieder an die Stromquelle angeschlossen.</block>
-  <block id="e603d2510eeff2fb744840a8b8277f7c" category="doc">Tauschen Sie ein Netzteil aus - AFF A700s</block>
   <block id="25b17a241b7878627647c78d24614092" category="paragraph">Beim Austausch eines Netzteils wurde das Netzteil von der Stromquelle getrennt, das Netzkabel abgezogen, das alte Netzteil entfernt und das Ersatznetzteil installiert. Anschließend muss das Netzteil wieder an die Stromquelle angeschlossen werden.</block>
   <block id="667ec5d2e7ff49916ac90c31eb178520" category="list-text">Schließen Sie den Nockengriff, indem Sie ihn so weit wie möglich nach unten schaukeln.</block>
   <block id="24907dee7e4205c74e589d14a85e4bbd" category="doc">Ersetzen Sie ein DIMM - AFF A700s</block>
@@ -4800,7 +4792,6 @@
   <block id="6551c0f6e6caf0566c6eae152ecd7b38" category="doc">Ersetzen Sie den Startdatenträger - AFF A900</block>
   <block id="e81993a1d153ae6594cc7e0070093d6a" category="doc">Hardware - AFF A900 verschieben und ersetzen</block>
   <block id="9c0cca32aafcf28a513162ba96089a15" category="video-title">Animation - USB entfernen/installieren</block>
-  <block id="d35fd8965949830b92555b33686beb19" category="doc">Tauschen Sie ein Netzteil aus – AFF A900</block>
   <block id="fcc9aa8940599a2c3be38723a65e9e21" category="doc">Ersetzen Sie ein DIMM - AFF A900</block>
   <block id="77b4701113ac545c98576d64b489fa56" category="video-title">Animation - DIMM ersetzen</block>
   <block id="e5fcd011be287f0b85815a5d0c8165aa" category="open-title">In den meisten Konfigurationen</block>
@@ -5169,7 +5160,6 @@
   <block id="c2df61cd54941946b9e1d41669228517" category="paragraph"><block ref="c2df61cd54941946b9e1d41669228517" category="inline-link-rx"></block></block>
   <block id="a7d0c7f24713f4f2e4432bb2b91f97d0" category="paragraph"><block ref="a7d0c7f24713f4f2e4432bb2b91f97d0" category="inline-link-rx"></block></block>
   <block id="c4c07270ebbe6cd1bc5aa6f45be76f02" category="video-title">Animation - Installation und Einrichtung eines AFF A150</block>
-  <block id="15bdfa06733933ff3285c6dd92cad9c7" category="doc">Tauschen Sie ein Netzteil aus – AFF A150</block>
   <block id="f9195e4f2cbce0b6d30752619eae4687" category="doc">Ersetzen Sie die Hardware des Controller-Moduls – AFF A150</block>
   <block id="890166d65f80913ec2882e814dc85cff" category="doc">Fahren Sie die Controller herunter - AFF A150</block>
   <block id="7befdc0c8cc35d0c1711e11bd7feb970" category="list-text">Löschen Sie die Daten im Cache-Modul:<block ref="6daf7f4112fcf7c7be366c44ff70faf2" prefix=" " category="inline-code"></block></block>
@@ -5197,7 +5187,6 @@
   <block id="5e7787ae07713719c2880dedfbaa61f7" category="doc">Wiederherstellen und Überprüfen der Systemkonfiguration - AFF C250</block>
   <block id="2fe38375bb3f7a0d45a583d876016df5" category="doc">Ersetzen Sie ein DIMM-Modul – AFF C250</block>
   <block id="157f430cb5493d5d45b9bcab28a74c47" category="doc">Ersetzen Sie das Startmedium – AFF C250</block>
-  <block id="9c0f44d79b852189eca9e0c3c970c0ff" category="doc">Ersetzen Sie ein Netzteil - AFF C250</block>
   <block id="3801b936526098c0a13cec6739840593" category="doc">System wieder einsetzen und Festplatten neu zuweisen - AFF C250</block>
   <block id="9173003f27a48b6c3802570ab91f9690" category="summary">Dieser Abschnitt enthält detaillierte Schritt-für-Schritt-Anleitungen zur Installation eines AFF C250-Systems.</block>
   <block id="650ebf976037bb8321f0f947063e1da1" category="doc">Detaillierte Schritte - AFF C250</block>
@@ -5224,7 +5213,6 @@
   <block id="a637f1b4c2a1d9b5cb9f0347c7e77539" category="doc">Stellen Sie die Systemkonfiguration wieder her und überprüfen Sie sie: AFF C400</block>
   <block id="b1c4aeeae550bfbe7c6574898398d781" category="doc">Ersetzen Sie die NVDIMM-Batterie - AFF C400</block>
   <block id="76f50c3f31d2ab405df556357b00ae41" category="doc">Übersicht über den Austausch von Controller-Modulen - AFF C400</block>
-  <block id="327f4c7d5141a205c506afea880dfdef" category="doc">Austauschen eines Netzteils - AFF C400</block>
   <block id="59278043c69406fc3ad5a92b1268c7a1" category="list-text"><block ref="59278043c69406fc3ad5a92b1268c7a1" category="inline-link-macro-rx"></block></block>
   <block id="207fa20809605ec76418419987911de1" category="list-text"><block ref="207fa20809605ec76418419987911de1" category="inline-link-macro-rx"></block></block>
   <block id="8ec5a018cdb8c2ff183e79e6526679cf" category="list-text"><block ref="8ec5a018cdb8c2ff183e79e6526679cf" category="inline-link-macro-rx"></block></block>
@@ -5248,7 +5236,6 @@
   <block id="311f323a046afbcf6ce4b152ad2dee93" category="list-text">Dieses Verfahren wird für den Austausch eines Netzteils auf einmal beschrieben.</block>
   <block id="be0020622e775d64818f3acc7c2d856d" category="admonition">Es empfiehlt sich, das Netzteil innerhalb von zwei Minuten nach dem Entfernen aus dem Gehäuse auszutauschen. Das System funktioniert weiterhin, aber ONTAP sendet Meldungen über das heruntergestufte Netzteil an die Konsole, bis das Netzteil ersetzt wird.</block>
   <block id="e5b2987f321084b00bed28fd97c58226" category="paragraph">Wenden Sie das entsprechende Verfahren für Ihren Netzteiltyp an: AC oder DC.</block>
-  <block id="f93bc8f892972bb47d2b0ca4cd480fad" category="open-title">Option 1: Wechselstromnetzteil ersetzen</block>
   <block id="19a7bfc2c20931ac9f3593ce3f8c7632" category="paragraph">Verwenden Sie das folgende Video oder die tabellarischen Schritte, um das Netzteil zu ersetzen:</block>
   <block id="a2528ca750816c5cbcc2ab1df78a8eb6" category="video-title">Animation: Ersetzen Sie das Netzteil</block>
   <block id="ba076df359148e35b1b589b37e5d2faa" category="list-text">Identifizieren Sie das Netzteil, das Sie ersetzen möchten, basierend auf Konsolenfehlermeldungen oder durch die rote Fehler-LED am Netzteil.</block>
@@ -5265,7 +5252,6 @@
   <block id="965cc3fcca40fe72903f2bf567787bd9" category="list-text">Schließen Sie das Netzkabel wieder an das Netzteil an.</block>
   <block id="774e50999ed71aed779cdb839371a69d" category="list-text">Befestigen Sie das Netzkabel mit der Netzkabelhalterung am Netzteil.</block>
   <block id="eb3ac9b9efdc3a8db20ea72534f74755" category="paragraph">Sobald das Netzteil wieder mit Strom versorgt wird, sollte die Status-LED grün leuchten.</block>
-  <block id="88ff7f55200d397b9c241c6c03ccd6ab" category="open-title">Option 2: Ersetzen Sie ein DC-Netzteil</block>
   <block id="6a5cc777b5cea5516ed3c04946243c15" category="paragraph">Führen Sie zum Austauschen eines DC-Netzteils die folgenden Schritte durch.</block>
   <block id="81118bbf4dc8e737a15cb33e309d5928" category="list-text">Lösen Sie den D-SUB-DC-Netzkabelanschluss mit den Flügelschrauben am Stecker.</block>
   <block id="a11fffebed2ec4e6399a05866d830825" category="list-text">Ziehen Sie das Netzkabel vom Netzteil ab, und legen Sie es beiseite.</block>
@@ -5345,7 +5331,6 @@
   <block id="e00efce1b44b4a70e33640aa4e4da7ab" category="doc">Ersetzen Sie einen Lüfter - AFF C800</block>
   <block id="7bb5b3f1026a3e755afd3077cd503481" category="doc">Ersetzen Sie die NVDIMM-Batterie - AFF C800</block>
   <block id="47b1e09c5a04b6651d4bc03190565935" category="doc">Überblick über den Austausch von Controller-Modulen – AFF C800</block>
-  <block id="555193cbb314d41872f483748d489825" category="doc">Ersetzen Sie ein Netzteil - AFF C800</block>
   <block id="3898efc1e45ee027e1343af6cd87375e" category="list-text"><block ref="3898efc1e45ee027e1343af6cd87375e" category="inline-link-macro-rx"></block></block>
   <block id="76908712922b1fbfdbdf730f794b109c" category="list-text"><block ref="76908712922b1fbfdbdf730f794b109c" category="inline-link-macro-rx"></block></block>
   <block id="96ec8a0dff9ea2637e9a0469cd7bf45e" category="list-text"><block ref="96ec8a0dff9ea2637e9a0469cd7bf45e" category="inline-link-macro-rx"></block></block>
@@ -6057,7 +6042,6 @@ SFP+ (Target/Initiator)</block>
   <block id="7449f0c5fea223a0e8f25794fa6bfcf2" category="paragraph">Nachdem Sie die Controller-Module in das neue Gehäuse installiert haben, müssen Sie das System booten.</block>
   <block id="456c80751c3f09b31ee496c3872f0c25" category="paragraph">Sie müssen den HA-Status des Gehäuses überprüfen und das fehlerhafte Teil an NetApp zurücksenden, wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben.</block>
   <block id="8d25d311e353251341d471f4c2d37620" category="section-title">Schritt 2: Rückgabe des fehlerhaften Teils an NetApp</block>
-  <block id="689f5d1d68f65bf1f76cf70ed891009d" category="doc">Ersetzen Sie ein Netzteil - ASA A250</block>
   <block id="508de305feb20c63f33ef9eff7de5eb4" category="doc">Ersetzen Sie das Startmedium – ASA A250</block>
   <block id="a4117f1bf6bfe8785548e1e7a31f9864" category="summary">Dieser Abschnitt enthält detaillierte Schritt-für-Schritt-Anleitungen zur Installation des Systems.</block>
   <block id="cef403fe8ffcaa9e4b76963ad5fbdfd9" category="doc">Detaillierte Schritte - ASA A250</block>
@@ -6138,7 +6122,6 @@ SFP+ (Target/Initiator)</block>
   <block id="6b97317afb01b5239c7991717942bc31" category="doc">Übersicht über den Austausch von Controller-Modulen – AFF A700</block>
   <block id="ceeabc8de1992b857f097aa39825ded7" category="doc">Ersetzen Sie ein DIMM-Modul – AFF A700</block>
   <block id="b00bdc86703139105ae05ab07b807a6a" category="paragraph">Das NVDIMM (Non-Volatile Dual in-Line Memory Module) verwaltet die Datenübertragung vom flüchtigen Speicher zum nichtflüchtigen Speicher und bewahrt die Datenintegrität im Falle eines Stromausfalls oder Systemabschalts.</block>
-  <block id="53cf1eb17a3e9045dac329b1022412e7" category="doc">Tauschen Sie ein Netzteil aus – AFF A700</block>
   <block id="b5862dffd2a662580b7e6e08646b8a4e" category="doc">Fahren Sie die Controller herunter - AFF A700</block>
   <block id="a4a9da0210f62016e71b1c10b9e4c492" category="doc">Hot-Swap-fähige Controller-Leistungsmodule (DCPM) - AFF A700</block>
   <block id="5b2f7b92c7435bc4b996d69c57391d11" category="doc">Fahren Sie den gestörten Controller herunter - AFF A700</block>
@@ -6184,7 +6167,6 @@ SFP+ (Target/Initiator)</block>
   <block id="caa8aa4a595b6f33857d21fb97a3622e" category="paragraph">Auf dieser Seite finden Sie grafische Anweisungen für eine typische Installation Ihres Systems, vom Rack über die Verkabelung bis hin zum ersten Systemaufbau. Verwenden Sie die <block ref="0cdb4981396afec17d02c8ce5d1b8e06" category="inline-link-macro-rx"></block> Wenn Sie mit der Installation von NetApp Systemen vertraut sind.</block>
   <block id="f0d6a8fa292b0f0965c180c3ec81b98c" category="admonition">Für das ASA A800 wird dasselbe Installationsverfahren wie für das AFF A800 System verwendet.</block>
   <block id="1809d57833f6aee6ca28a7a9976f3c02" category="doc">Ersetzen Sie das SSD- oder Festplattenlaufwerk - ASA A800</block>
-  <block id="8efb05cbcb76a25c9260967bb6da74ea" category="doc">Ersetzen Sie das Netzteil - ASA A800</block>
   <block id="ab40c87c67587a22552f3f86175f6b6c" category="doc">Ersetzen Sie den Controller - ASA A800</block>
   <block id="3e1e482bf99769f878506ac262ea9469" category="doc">Ersetzen Sie das Gehäuse - ASA A800</block>
   <block id="cf89ec61d7d165d24a4540839ef73f51" category="doc">Vollständiger Chassisaustausch – ASA A800</block>
@@ -6211,7 +6193,6 @@ SFP+ (Target/Initiator)</block>
   <block id="7c14198274ad186b196f84339867747a" category="doc">Vollständige Systemwiederherstellung - FAS9000</block>
   <block id="92106d784bab2c2d0ac64d21da8379b3" category="doc">Überblick über den Austausch von Controller-Modulen – FAS9000</block>
   <block id="d9f3feb3ff9dd83a5d862eb64cc9a110" category="doc">Ersetzen Sie ein DIMM-Modul – FAS9000</block>
-  <block id="6a2bdbf29fe66b28017ff3dc4e7ce2b1" category="doc">Tauschen Sie ein Netzteil aus – FAS9000</block>
   <block id="7354c77553fbaba43d86f13f4a4b476e" category="doc">Fahren Sie die Controller herunter - FAS9000</block>
   <block id="74aa9c71bfd41b33dc21e26b67720c49" category="doc">Hot-Swap-fähige Controller-Leistungsmodule (DCPM) - FAS9000</block>
   <block id="14e88a77d6efea55ca64c457b9ab65da" category="doc">Schalten Sie den Controller für die Außerbetriebnahme - FAS9000 aus</block>
@@ -6261,7 +6242,6 @@ SFP+ (Target/Initiator)</block>
   <block id="ae383c4833f526c25894b4e6dec33459" category="paragraph">Für das ASA A900-Speichersystem können Sie Wartungsverfahren für die folgenden Komponenten durchführen.</block>
   <block id="1cf6ac8a974aa424dc7fbb078c513f07" category="doc">Ersetzen Sie den Echtzeitakku - ASA A900</block>
   <block id="0b03535505d87f108fe49abb6aa06130" category="doc">Ersetzen Sie ein DIMM-Modul – ASA A900</block>
-  <block id="028f92edd9500c0efb168e412294a861" category="doc">Tauschen Sie ein Netzteil aus – ASA A900</block>
   <block id="ed6183c79360d84f37e156e80fe33aa6" category="doc">Fahren Sie die Controller herunter - ASA A900</block>
   <block id="67bcd92a05c94a3a813d8e595b1f5283" category="doc">Vollständige Systemwiederherstellung - ASA A900</block>
   <block id="eb192783589d844d1af1ecb849489b22" category="section-title">Schritt 1: Installieren Sie die Lizenzen für den neuen Controller</block>
@@ -6296,7 +6276,6 @@ SFP+ (Target/Initiator)</block>
   <block id="185d6bc662c8cd2db9d58c8a722d974e" category="paragraph">Für das FAS2700 Storage-System können Sie Wartungsverfahren für die folgenden Komponenten durchführen.</block>
   <block id="4091c5e7156fea8e74fb2f6ff3fe34fd" category="doc">Ersetzen Sie die Echtzeituhr-Batterie - FAS2700</block>
   <block id="b8e850ed2869826d3faae08f01220ae6" category="doc">Ersetzen Sie ein DIMM - FAS2700</block>
-  <block id="de599e8ee2b792a05ff2446e93b3a7e5" category="doc">Austausch eines Netzteils - FAS2700</block>
   <block id="38b5b8ea2b8764ef3d6b86337c41db64" category="doc">Fahren Sie die Controller herunter - FAS2700</block>
   <block id="478014c57de308398851e19e48a955f6" category="summary">Um den vollständigen Betrieb des Systems wiederherzustellen, müssen Sie die NetApp-Speicherverschlüsselungskonfiguration (falls erforderlich) wiederherstellen, Lizenzen für den neuen Controller installieren und das fehlerhafte Teil an NetApp zurückgeben.</block>
   <block id="dd3e1b2974ba653fef81686173aafcb6" category="doc">Vollständige Systemwiederherstellung - FAS2700</block>
@@ -6371,7 +6350,6 @@ SFP+ (Target/Initiator)</block>
   <block id="76f8020a6c211d0a85b51e324867f828" category="paragraph">Für das ASA A150-Speichersystem können Sie Wartungsverfahren für die folgenden Komponenten durchführen.</block>
   <block id="25e4ca3cea9556bf60cfd34a863bcc83" category="doc">Ersetzen Sie den Echtzeitakku - ASA A150</block>
   <block id="b2d9da7407ab97d4d923ee0f45653d7f" category="doc">Ersetzen Sie das DIMM-Modul ASA A150</block>
-  <block id="044e314ccb891749cf1ff6ab7bb779e9" category="doc">Tauschen Sie ein Netzteil aus – ASA A150</block>
   <block id="17d46fdea79baa1b0abb75060c4b26eb" category="doc">Fahren Sie die Controller herunter - ASA A150</block>
   <block id="15f3dc209220fcd5ed53507c602a5619" category="doc">Wiederherstellung von OKM, NSE und NVE – ASA A150</block>
   <block id="3481ad4d7a2afb32f38e558fa9328a94" category="list-text"><block ref="3481ad4d7a2afb32f38e558fa9328a94" category="inline-link-macro-rx"></block></block>
@@ -6423,7 +6401,6 @@ SFP+ (Target/Initiator)</block>
   <block id="b8a21ef26361bcf497970ad95729f649" category="doc">Vollständige Systemwiederherstellung - ASA A400</block>
   <block id="b65dcf1c7ad6c86f6d2d5bed4626bcc6" category="doc">Kurzanleitung - ASA A400</block>
   <block id="5eb8101a6e8a2a3f54c56549ab21ade4" category="admonition">Für die ASA A400 gilt dasselbe Installationsverfahren wie für das AFF A400 System.</block>
-  <block id="b26cf0fc163ec7e9ea966514eed60da1" category="doc">Austauschen eines Netzteils - ASA A400</block>
   <block id="2d7c6c8ec11dfd6f4583d91c8d94d5d0" category="doc">Ersetzen Sie den Controller - ASA A400</block>
   <block id="1952c1c21894126b1d43fd1b446add88" category="doc">Übersicht über den Gehäuseaustausch - ASA A400</block>
   <block id="8a5c79d05f266b99fd8b21d069b75d78" category="doc">Vollständiger Chassisaustausch – ASA A400</block>
@@ -6657,7 +6634,6 @@ SFP+ (Target/Initiator)</block>
   <block id="967b266f7bf42739746ff8ee10704ec8" category="doc">Vollständige Systemwiederherstellung - ASA C400</block>
   <block id="a2e400b53e6df30e6ea808a7a8d9cf03" category="doc">System wieder einsetzen und Festplatten neu zuweisen - ASA C400</block>
   <block id="d87d17cd765dde0b8f553a33b6d61945" category="doc">Ersetzen Sie die Hardware - ASA C400</block>
-  <block id="6b6916e7dab19d8ffcd0bc0fa006d0c2" category="doc">Austauschen eines Netzteils - ASA C400</block>
   <block id="d8548c2140dedaa5fc883590a1f7009a" category="doc">Ersetzen Sie den Echtzeitakku ASA C400</block>
   <block id="90276cd1568977c0a841334b01c793ee" category="doc">Stellen Sie die Systemkonfiguration wieder her und überprüfen Sie sie: ASA C400</block>
   <block id="9f50c74c54d6b3ee3b7485498ed65016" category="doc">Schließen Sie den Wiederherstellungs- und Austauschprozess ab – ASA C400</block>
@@ -6686,7 +6662,6 @@ SFP+ (Target/Initiator)</block>
   <block id="e6b4abf5b92977063300e1d579857b79" category="doc">System wieder einsetzen und Festplatten neu zuweisen - ASA C250</block>
   <block id="12e315d8c52faa94677b1901adfb8eb4" category="doc">Ersetzen Sie die Hardware - ASA C250</block>
   <block id="e6d96f81a26c1a2a35065ae9c3793837" category="doc">Ersetzen Sie die NVMEM-Batterie – ASA C250</block>
-  <block id="5a3293bed167a0eb16f492a5ce0b1ed5" category="doc">Ersetzen Sie ein Netzteil - ASA C250</block>
   <block id="7382bde7f210f74c2e89d6849d2c853c" category="doc">Ersetzen Sie den Echtzeitakku - ASA C250</block>
   <block id="d39ab7984d0a9959c51323b1566d39fd" category="doc">Wiederherstellen und Überprüfen der Systemkonfiguration - ASA C250</block>
   <block id="4011a7882485055cdc06ec93e7092124" category="doc">Schließen Sie den Wiederherstellungs- und Austauschprozess ab - ASA C250</block>
@@ -6716,7 +6691,6 @@ SFP+ (Target/Initiator)</block>
   <block id="7aceb406cd07b754209377738399299c" category="doc">Vollständige Systemwiederherstellung - ASA C800</block>
   <block id="7eb1428cde412a152576637c584b14c0" category="doc">System wieder einsetzen und Festplatten neu zuweisen – ASA C800</block>
   <block id="ea1dc19906ddc0d31254dd6f8ec34328" category="doc">Austausch und Austausch von Hardware – ASA C800</block>
-  <block id="5bb05bb37b0f50f78a66bcb870b4f799" category="doc">Ersetzen Sie ein Netzteil - ASA C800</block>
   <block id="bf0c9d599368cd33e5930b660050f4e0" category="doc">Ersetzen Sie den Echtzeitakku ASA C800</block>
   <block id="d7839b53c88c4bbaff7e95ac9d3c76fc" category="doc">Stellen Sie die Systemkonfiguration wieder her und überprüfen Sie sie – ASA C800</block>
   <block id="cbc21197c1871348bbf882e4a113a8cf" category="doc">Schließen Sie den Wiederherstellungs- und Austauschprozess ab – ASA C800</block>
@@ -7777,7 +7751,6 @@ SFP+ (Target/Initiator)</block>
   <block id="807b26d7111f209057a30d265b88f6ae" category="paragraph">Das E/A-Modul (Eingangs-/Ausgangsmodul) ist eine Hardwarekomponente, die als Vermittler zwischen dem Controller und verschiedenen Geräten oder Systemen dient, die Daten mit dem Controller austauschen müssen.</block>
   <block id="517e65cbfa02ca306eec69200485822d" category="paragraph">Ein Netzteil stellt eine redundante Stromquelle in einem Controller bereit.</block>
   <block id="f133a8ed8a0b7a76b6c1b28bc00b0fb1" category="doc">Ersetzen Sie das NVRAM-Modul AFF A1K</block>
-  <block id="6794ac4e17218aaa4a21099cb6c428a5" category="doc">Ersetzen Sie ein Netzteil - AFF A1K</block>
   <block id="5dae7574a50de0a82f041d98e2b363d4" category="doc">Ersetzen Sie den Echtzeitakku AFF A1K</block>
   <block id="6f088e5455bf9d5415570fed055240bc" category="paragraph">Bei den Speichersystemen AFF A70 und A90 können Sie Wartungsverfahren für die folgenden Komponenten durchführen.</block>
   <block id="1fba4a247f94ae0adebcaa57fd54e768" category="image-alt">Beispiel für die Ausrichtung der Kabelzuglasche</block>
@@ -8335,7 +8308,6 @@ SFP+ (Target/Initiator)</block>
   <block id="a353ad5d28eb41a61c5aaf6e3cdd653a" category="paragraph">Nachdem Sie die Rack-Hardware für das AFF A1K Storage-System installiert haben, installieren Sie die Netzwerkkabel für die Controller und verbinden Sie die Kabel zwischen den Controllern und Storage-Shelfs.</block>
   <block id="c4cbbd77402de8c27a0e7a305bcd7a83" category="list-text">Schließen Sie den Port e1a an Controller A an den Port e1a an Controller B. an</block>
   <block id="e2e054e25b28fb3d74a683482ef337a6" category="list-text">Verbinden Sie Port e7a auf Controller A mit Port e7a auf Controller B.</block>
-  <block id="b1a78b15892ed366f203ff3009cb08d9" category="admonition">Verwenden Sie für maximale Systemperformance für Cluster- und HA-Datenverkehr die Ports e1b und e7b nicht für Host-Netzwerkverbindungen. Verwenden Sie eine separate Hostkarte, um die Leistung zu maximieren.</block>
   <block id="bf419afe8104f0626b8c6f35d7546f54" category="list-text">Verbinden Sie Port e1a an Controller A und Port e1a an Controller B mit Cluster-Netzwerk-Switch A.</block>
   <block id="cf5e5d4912cff0cbaa590fc1ae9ce6d7" category="list-text">Verbinden Sie Port e7a an Controller A und Port e7a an Controller B mit Cluster-Netzwerk-Switch B.</block>
   <block id="8bff2f2dabc32a6a40817e91a3008934" category="open-title">Option 1: Verbindung zu einem NS224 Storage-Shelf</block>
@@ -8417,7 +8389,6 @@ SFP+ (Target/Initiator)</block>
   <block id="e78eb711e1e947ddb92f05657d0347d1" category="inline-link-macro">Vorbereitung der Installation des AFF A70 oder AFF A90 Storage-Systems</block>
   <block id="2f2189cfd66651c01e836375bb7f1b05" category="paragraph">Nachdem Sie die Hardwareanforderungen überprüft haben, können Sie <block ref="cee013a212eeca03333769e1fffc4483" category="inline-link-macro-rx"></block>.</block>
   <block id="45246f3dd0a53426b7b68a7138275eae" category="doc">Ersetzen Sie die NV-Batterie – AFF A70 und AFF A90</block>
-  <block id="142aed9b4219bef04d9ce41b26e16e98" category="doc">Ersetzen Sie ein Netzteil – AFF A70 und AFF A90</block>
   <block id="09667d54b485aed2ff058a0b9116b943" category="doc">Ersetzen Sie die Echtzeituhr-Batterie - AFF A70 und AFF A90</block>
   <block id="1d04f5bb7d7b81fc8fded3b79cc0c8d3" category="doc">Installation und Einrichtung Ihrer ASA r2-Systeme</block>
   <block id="22d05c38a6e8032e35e9ff8d6b826ee0" category="inline-link">Dokumentation zu ASA r2-Systemen</block>
@@ -8452,7 +8423,6 @@ SFP+ (Target/Initiator)</block>
   <block id="5f402dad935ff3ab451b558b0df9b4f3" category="paragraph">Ein Controller besteht aus einer Hauptplatine, Firmware und Software. Er steuert den Storage, die I/O-Karten und führt die ONTAP Betriebssystemsoftware aus.</block>
   <block id="33a7e77eb8f382b670aecd2f25304362" category="doc">Die NV-Batterie austauschen – ASA A70 und ASA A90</block>
   <block id="124b0b12b52d6ff2b5c211d8ab2b86c6" category="doc">Ersetzen Sie NVRAM - ASA A70 und ASA A90</block>
-  <block id="778b3919afeff8e8a35cc6a213bb7784" category="doc">Ersetzen Sie ein Netzteil - ASA A70 und ASA A90</block>
   <block id="591fbd5c7a0e4469981c4bc0919fffdb" category="doc">Ersetzen Sie die Echtzeituhr-Batterie - ASA A70 und ASA A90</block>
   <block id="77dbbb0add58d8d5b96d74c1b27689bb" category="doc">Senden Sie das fehlerhafte Teil an NetApp - ASA A1K zurück</block>
   <block id="1c1be2f74300d879eb6d6d09021f9e6f" category="doc">Ersetzen Sie das Startmedium – ASA A1K</block>
@@ -8465,7 +8435,6 @@ SFP+ (Target/Initiator)</block>
   <block id="3f3cad89dab9930e656089557bd4ab26" category="doc">Wartung der ASA A1K Hardware</block>
   <block id="c0948273a639518682bdf15da7ef7782" category="paragraph">Für das ASA A1K-Speichersystem können Sie Wartungsverfahren für die folgenden Komponenten durchführen.</block>
   <block id="d40d4bbeff22abe0ae50f578804e3f1d" category="doc">Ersetzen Sie das NVRAM-Modul ASA A1K</block>
-  <block id="8280bf46cc1987c5763fa466b06ce943" category="doc">Ersetzen Sie ein Netzteil - ASA A1K</block>
   <block id="53211074b0edd2a1e49952ae0a99c70e" category="doc">Ersetzen Sie den Echtzeitakku ASA A1K</block>
   <block id="791c7d7e48c500e265e759e91a1190c4" category="paragraph">Die folgenden Systeme, Shelfs und Switches werden ab der angegebenen Version von ONTAP nicht mehr unterstützt.</block>
   <block id="e039aa1be61543fd84f1c4eb5d3e9f6b" category="section-title">ONTAP Hardwaresysteme</block>
@@ -8553,7 +8522,6 @@ SFP+ (Target/Initiator)</block>
   <block id="5060dc7c2f8e62d845323bb56c316f67" category="paragraph">Nachdem Sie die Hardwareanforderungen überprüft haben, können Sie <block ref="f9fa58ae9ecc3e85b1db488d30bad78e" category="inline-link-macro-rx"></block>.</block>
   <block id="3a36e6b466e0265c25d241c486f64e02" category="paragraph">Flash Cache beschleunigt den Zugriff auf Daten durch intelligente Cache-Speicherung von kürzlich gelesenen Anwenderdaten und NetApp Metadaten in Echtzeit. Es bringt Vorteile bei Random Read-intensiven Workloads, einschließlich Datenbanken, E-Mail und File Services.</block>
   <block id="c4ed6403201dfa217ff707bb31f7629c" category="doc">Ersetzen Sie NVRAM - FAS70 und FAS90</block>
-  <block id="031f9f009940597777a75796e5b17818" category="doc">Ersetzen Sie ein Netzteil – FAS70 und FAS90</block>
   <block id="6edcaa0f49095aafb0fa011d3fa4d4c5" category="doc">Ersetzen Sie den Echtzeitakku FAS70 und FAS90</block>
   <block id="d387637ce68cde3388b8e2a316fb8a4b" category="summary">Sie installieren Hardwarekomponenten, verkabeln die Hardware und konfigurieren Ihren Storage in ONTAP, um ONTAP Hardwaresysteme einzusetzen.</block>
   <block id="b11226c776ec1b74f6a42f871e3194c9" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> Installation des Storage-Systems und der Storage-Shelfs</block>
@@ -9449,7 +9417,6 @@ SFP+ (Target/Initiator)</block>
   <block id="87e83e1392e33b9e82110521a139bad8" category="list-text">Entfernen Sie die NV-Batterie:</block>
   <block id="d61cc7e5822a30588ead2cb9b0e8c0d8" category="list-text">Setzen Sie die NV-Ersatzbatterie ein:</block>
   <block id="216cd6b3556908b9bf9092308aacc2f2" category="list-text">Setzen Sie die NV-Batterie in das entsprechende Fach ein.</block>
-  <block id="29e74344b0f8f3bb2a741f7b4a504193" category="paragraph">Die Netzteile sind redundant und Hot-Swap-fähig.</block>
   <block id="a9f9d19ee0352e6fe7d4ace8f91528b4" category="list-text">WICHTIG: Mischen Sie Netzteileinheiten nicht mit unterschiedlichen Effizienzwerten oder unterschiedlichen Eingangstypen. Immer ersetzen wie für „Gefällt mir“.</block>
   <block id="f6454949377394cc2236360f10f7e56e" category="list-text">Identifizieren Sie das fehlerhafte Netzteil anhand von Konsolenfehlermeldungen oder über die rote Warn-LED am Netzteil.</block>
   <block id="6f48d98c2df2386d39c71bc10860a818" category="list-text">Ziehen Sie das Netzkabel vom Netzteil ab, indem Sie die Netzkabelhalterung öffnen und das Netzkabel vom Netzteil abziehen.</block>
@@ -9509,7 +9476,6 @@ SFP+ (Target/Initiator)</block>
   <block id="7638bec0a959f7fd0b1433ed8d2deca8" category="list-text">Lagerregal (wenn Sie zusätzlichen Speicher bestellt haben)</block>
   <block id="4aaf4b6268f5873187a9eb7110d1ec2e" category="list-text">Serielles USB-C-Konsolenkabel</block>
   <block id="8f6507883f353b8fbeb448f5d296b420" category="paragraph">Nachdem Sie sichergestellt haben, dass Ihr Standort die Anforderungen für Ihre Storage-Systemspezifikationen erfüllt und überprüft haben, dass alle von Ihnen bestellten Teile vorhanden sind, sollten Sie Ihr Storage-System registrieren.</block>
-  <block id="2ab82a0b93ec71d9918e64fb9b828444" category="list-text">Suchen Sie für jeden installierten Controller nach den System-Seriennummern (SSN). Die Seriennummern finden Sie an folgenden Stellen:</block>
   <block id="3db53907b5ca9a298d8e8517cdd30a44" category="list-text">Die Seriennummern finden Sie an folgenden Stellen:</block>
   <block id="3fc885acbf9f3f66cb5fefc99c0d76c6" category="list-text">Auf dem Packzettel</block>
   <block id="cf163ceac39b37fd1108b3cf9ff2b719" category="list-text">In Ihrer Bestätigungs-E-Mail</block>
@@ -9707,7 +9673,6 @@ SFP+ (Target/Initiator)</block>
   <block id="90173eb1ed454afdf58b9269bb20c2b9" category="paragraph">Ein Lüfter kühlt den Controller und die Laufwerke.</block>
   <block id="05a221444243ea0ca6f4dad99fe28c6c" category="paragraph">Die nichtflüchtige Speicherbatterie (NV) sorgt dafür, dass die NVMEM-Komponenten mit Strom versorgt werden, während die aktiven Daten nach einem Stromausfall in den Flash-Speicher ausgelagert werden.</block>
   <block id="93cffbd214791f6c73bd02d80e0804ab" category="doc">Die NV-Batterie austauschen – AFF A20, AFF A30 und AFF A50</block>
-  <block id="c21a1648c7655abd0241b02472ce577b" category="doc">Ersetzen Sie ein Netzteil – AFF A20, AFF A30 und AFF A50</block>
   <block id="d04789e64aa71c747fa327e4d399534e" category="doc">Tauschen Sie die Echtzeituhr-Batterie aus – AFF A20, AFF A30 und AFF A50</block>
   <block id="4bc0f3e72d6123d7efdfe5948cc79a4c" category="doc">Senden Sie das fehlerhafte Teil an NetApp - AFF C30 und AFF C60 zurück</block>
   <block id="5c067d0c56a9b99bc0f72610745316f6" category="doc">Vollständiger Chassisaustausch – AFF C30 und AFF C60</block>
@@ -10303,7 +10268,6 @@ SFP+ (Target/Initiator)</block>
   <block id="f7505dbf9cbf21226d33ed67b7c926e6" category="doc">Überblick über die Hardwarewartung – ASA A20, ASA A30 und ASA A50</block>
   <block id="02cbc9c9b92f52062a793fbc039a7a5f" category="paragraph">Für die Speichersysteme ASA A20, ASA A30 und ASA A50 können Sie Wartungsverfahren für die folgenden Komponenten durchführen.</block>
   <block id="c62c530fe1e7e769964d1cac42c0c1ca" category="doc">Die NV-Batterie austauschen – ASA A20, ASA A30 und ASA A50</block>
-  <block id="db9511faddf8c60d659417ec7880bb9b" category="doc">Ersetzen Sie ein Netzteil – ASA A20, ASA A30 und ASA A50</block>
   <block id="69ddcdcae3c05843aa3be62f304e023b" category="doc">Tauschen Sie die Echtzeituhr-Batterie aus – ASA A20, ASA A30 und ASA A50</block>
   <block id="3d68bd292ff38f0f7a42e75bafb71ae7" category="summary">Wenn eine Komponente in Ihrem AFF C80-System ausfällt, senden Sie das fehlerhafte Teil an NetApp zurück. <block ref="f2d8b0d8f345a4e987bed9853cde2668" category="inline-link-rx"></block>Weitere Informationen finden Sie auf der Seite.</block>
   <block id="f48200b4fe7f2f013c6d085467e08b85" category="summary">Ersetzen Sie den Controller im AFF C80-System, wenn ein Hardware-Ausfall oder ein Upgrade erforderlich ist. Bei diesem Vorgang wird der beeinträchtigte Controller entfernt, die Komponenten zum Ersatzcontroller verschoben, der Ersatzcontroller installiert und das System neu gestartet.</block>
@@ -12547,14 +12511,7 @@ SFP+ (Target/Initiator)</block>
   <block id="810944644ddbd9a71f9a53ebcd73f51d" category="list-text">Normen EMV/EMI: BS-EN-55024, BS-EN55035, CISPR 32, EN55022, EN55024, EN55032, EN55035, EN61000-3-2, EN61000-3-3, FCC Teil 15 Klasse A, ICES-003, KS C 9832, KS C 9835</block>
   <block id="9b3b75c67a53d54bba73c70cd1786aed" category="list-text">Sicherheitsstandards: ANSI/UL60950-1, ANSI/UL62368-1, BS-EN62368-1, CAN/CSA C22.2 Nr. 60950-1, CAN/CSA C22.2 Nr. 62368-1, CNS 14336, EN60825-1, EN62368-1, IEC 62368-1, IEC60950-1, IS 13252 (Teil 1)</block>
   <block id="520b661a272c9e6f55f469cc9c24193d" category="section-title">Hohe Verfügbarkeit</block>
-  <block id="e447884015fc6cccd73419a58f4a2dc9" category="paragraph">Ethernet-basierter Baseboard Management Controller (BMC) und ONTAP Verwaltungsschnittstelle; redundante Hot-Swap-fähige Controller; redundante Hot-Swap-fähige Netzteile; SAS-In-Band-Verwaltung über SAS-Verbindungen;</block>
-  <block id="953484270d99ac98b7edea761c8accc5" category="summary">Wichtige Spezifikationen für die A150-Plattformgruppe</block>
-  <block id="98cf7c8810f9cbc80da978f12dfd11de" category="paragraph">Im Folgenden finden Sie ausgewählte Spezifikationen für das AFF A150 -Speichersystem in einem einzelnen Hochverfügbarkeitspaar.  Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).</block>
   <block id="f5046e4779952c40dda2055325e842f6" category="list-text">ONTAP -Version: ONTAP: 9.16.1P2</block>
-  <block id="f31908f038c51788c271c5c4f452a2f9" category="list-text">Mindest ONTAP -Version: ONTAP 9.10.1P12 == Scaleout-Maxima</block>
-  <block id="b88ea7120b8d94ca7802d027ea4ae35d" category="list-text">Typ: NAS; HA-Paare: 12; Rohkapazität: 6,6 PB / 5,8 PiB; Max. Speicher: 768 GB</block>
-  <block id="a4e92d69d00158d7ae606a77ce4fd213" category="list-text">Typ: SAN; HA-Paare: 6; Rohkapazität: 3,3 PB / 2,9 PiB; Max. Speicher: 384 GB</block>
-  <block id="c00cb3237fcdb94d446acf8665539403" category="list-text">Typ: HA-Paar; Rohkapazität: 0,5 PB / 0,5 PiB; Max. Speicher: 64.0000</block>
   <block id="014e996a6a164aaf40b8b3e72704fc2e" category="section-title">E/A</block>
   <block id="c9517cd5cbe4fac6d0c526d61f3fcc39" category="section-title">Integrierte E/A</block>
   <block id="81754037ddc5b97d9b806acad96f8815" category="list-text">Protokoll: Ethernet 10 Gbit/s; Ports: 12</block>
@@ -12716,11 +12673,6 @@ SFP+ (Target/Initiator)</block>
   <block id="caee1a6bd998eef961868a45bd4dbc8b" category="list-text">Leistung im schlimmsten Fall: 3476 BTU/h</block>
   <block id="7d5423ead4cc9c9c7523162c96b9a70a" category="list-text">Gewicht: 54,3 lbbr/24,6 kg</block>
   <block id="bfb224eca9d5778fa9096edb45c6e0a6" category="list-text">Akustisches Rauschen: Angegebene Schallleistung (LwAd): 7,2;br/Schalldruck (LpAm) (in der Nähe): 69,1 dB</block>
-  <block id="72c1a142348c9ef5cd0bfa8785831482" category="summary">Wichtige Spezifikationen für die A250-Plattformgruppe</block>
-  <block id="d4ece2dd07e2b088387c9e6101f7374b" category="paragraph">Im Folgenden finden Sie ausgewählte Spezifikationen für das AFF A250 -Speichersystem in einem einzelnen Hochverfügbarkeitspaar.  Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).</block>
-  <block id="141231dc194fb8130baba1dedc3a1437" category="list-text">Mindest ONTAP -Version: ONTAP 9.8RC1 == Scaleout-Maxima</block>
-  <block id="e09d173ed5c31e4dd78ba88f30e765c1" category="list-text">Typ: NAS; HA-Paare: 12; Rohkapazität: 13,2 PB / 11,7 PiB; Max. Speicher: 1536 GB</block>
-  <block id="883fa3568cecac0f4750af6ef669d774" category="list-text">Typ: SAN; HA-Paare: 6; Rohkapazität: 6,6 PB / 5,9 PiB; Max. Speicher: 768 GB</block>
   <block id="8620fd4a54bd59df48445495cc60d6a1" category="list-text">Typ: HA-Paar; Rohkapazität: 1,1 PB / 1,0 PiB; Max. Speicher: 128.0000</block>
   <block id="f350094c762b190b03da78050fac38f6" category="list-text">Protokoll: Ethernet 25 Gbit/s; Ports: 4</block>
   <block id="ae6233ad0fe7d541d74b7fcbd8e20ee1" category="list-text">Protokoll: Ethernet 10 Gbit/s; Ports: 4</block>
@@ -12749,17 +12701,10 @@ SFP+ (Target/Initiator)</block>
   <block id="99190bf361f23d7f60b0311ed65db52c" category="list-text">Höhe: 4U</block>
   <block id="fd82bddbad5203300e57904c991cb840" category="list-text">Tiefe: 32,6 Zoll (34,7 Zoll mit Kabelführungshalterung)</block>
   <block id="9725247c68aace7973804f231cbdd26b" category="list-text">Akustisches Rauschen: Angegebene Schallleistung (LwAd): 8,5;br/Schalldruck (LpAm) (in der Nähe): 67,2 dB</block>
-  <block id="2ecaf45e6d941aa8787c5207d6e14cbf" category="summary">Wichtige Spezifikationen für die A400-Plattformgruppe</block>
-  <block id="f0e9d60af7684125f1b3ec54132594db" category="paragraph">Im Folgenden finden Sie ausgewählte Spezifikationen für das AFF A400 Speichersystem in einem einzelnen Hochverfügbarkeitspaar.  Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).</block>
   <block id="8d6f1126e03ba70819901e3191bf6358" category="list-text">Mindest ONTAP -Version: ONTAP 9.7RC1 == Scaleout-Maxima</block>
-  <block id="af08be515a9d4c3e3b541572ab14ca83" category="list-text">Typ: NAS; HA-Paare: 12; Rohkapazität: 176,3 PB / 156,5 PiB; Max. Speicher: 3072 GB</block>
-  <block id="93b63827e9f32e325a3be96e3d1d0d01" category="list-text">Typ: SAN; HA-Paare: 6; Rohkapazität: 88,1 PB / 78,3 PiB; Max. Speicher: 1536 GB</block>
-  <block id="d9dd3b93e031a157b272db3164ac9cef" category="list-text">Typ: HA-Paar; Rohkapazität: 14,7 PB / 13,0 PiB; Max. Speicher: 256.0000</block>
   <block id="603170cd5591c91144ede853fb7004e9" category="list-text">Protokoll: Ethernet 25 Gbit/s; Ports: 12</block>
   <block id="c3346d55fb4bcd313308cf344c3c9956" category="list-text">Protokoll: Ethernet 100 Gbit/s; Ports: 20</block>
   <block id="1f9a9c48fecfca4a044d529a9d033783" category="list-text">Protokoll: Ethernet 10 Gbit/s; Ports: 32</block>
-  <block id="637b290f820eaaf5033dfa8ab5a60528" category="list-text">Protokoll: FC 32 Gbit/s; Ports: 24</block>
-  <block id="53650a5ecd2e7e6bd89acc186768c407" category="list-text">Protokoll: NVMe/FC 32 Gbit/s; Ports: 24</block>
   <block id="4930a203d4d9fe648c8369b3361ea867" category="list-text">Protokoll: SAS 12 Gbit/s; Ports: 32</block>
   <block id="24679701c4662127aa11de2c774f57f7" category="list-text">Gewicht: 110.0 lb 49.9 kg</block>
   <block id="f8c2b681f9f457cefef2b7a4d0a49b52" category="list-text">Tiefe: 32,6 Zoll (34,7 Zoll mit Kabelführungshalterung)</block>
@@ -12922,10 +12867,6 @@ SFP+ (Target/Initiator)</block>
   <block id="8d316cb0dd32e6a29db7a99bc113d716" category="paragraph">Mindestens erforderliche ONTAP -Version: ONTAP 9.13.1</block>
   <block id="f0ed92d1c0fd3e909c924094a93243f1" category="paragraph">FC; iSCSI; NVMe/TCP;</block>
   <block id="fd49e13a7e97bd8bb1e4c38997b7c545" category="paragraph">Keine Umgebungsdaten verfügbar.</block>
-  <block id="0e1c2f19527964f6e08154d6482b5e30" category="summary">Wichtige Spezifikationen für die ASA150-Plattformgruppe</block>
-  <block id="4dbc96329d5818883df31ecb13a05ebd" category="paragraph">Im Folgenden finden Sie ausgewählte Spezifikationen für das ASA A150 -Speichersystem in einem einzelnen Hochverfügbarkeitspaar.  Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).</block>
-  <block id="541cac174e166b24f88392f26d40f404" category="list-text">Mindest ONTAP -Version: ONTAP 9.13.1 == Scaleout-Maxima</block>
-  <block id="18f87be5c5603f09112f8af3908b1280" category="list-text">NVMe/TCP == Systemumgebungsspezifikationen. Keine Umgebungsdaten verfügbar.</block>
   <block id="680d950d544b60547a8bacca951d6718" category="summary">Wichtige Spezifikationen für das ASA A250 -Speichersystem</block>
   <block id="a97c7cd2a22344db01c67b788d791334" category="doc">Wichtige Spezifikationen für ASA A250</block>
   <block id="20955af66ca82e86dac8266497f64dec" category="paragraph">Im Folgenden finden Sie ausgewählte Spezifikationen für den ASA A250.  Besuchen<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block> (HWU) für eine vollständige Liste der ASA A250 Spezifikationen.  Diese Seite spiegelt ein einzelnes Paar mit hoher Verfügbarkeit wider.</block>
@@ -12933,9 +12874,6 @@ SFP+ (Target/Initiator)</block>
   <block id="8a7a6a6e68946412c0d94b0a69520833" category="cell">4,4 PB / 3,9 PiB</block>
   <block id="adb1577c933e08c5e605d6b3e683d150" category="cell">0,7 PB / 0,7 PiB</block>
   <block id="1978f393885cf00f05ab1be479828e8f" category="paragraph">FC; iSCSI; NVMe/FC ; NVMe/TCP;</block>
-  <block id="65f5bdc4ea585a25db7e798fe434a135" category="summary">Wichtige Spezifikationen für die ASA250-Plattformgruppe</block>
-  <block id="81dee4edf751df8f6f2a9351c3c1054e" category="paragraph">Im Folgenden finden Sie ausgewählte Spezifikationen für das ASA A250 -Speichersystem in einem einzelnen Hochverfügbarkeitspaar.  Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).</block>
-  <block id="a87f27eafdf3369f35e9efc3c479e4f7" category="list-text">Typ: SAN; HA-Paare: 6; Rohkapazität: 4,4 PB / 3,9 PiB; Max. Speicher: 768 GB</block>
   <block id="8635c55a722f7078767bf23390e4512b" category="list-text">Protokoll: FC 32 Gbit/s; Ports: 8</block>
   <block id="836d5b409933ca37fd9abb594f9ffa51" category="list-text">Protokoll: NVMe/FC 32 Gbit/s; Ports: 8</block>
   <block id="1e9ab1ef21b71ca54d8fb332aba59c57" category="summary">Wichtige Spezifikationen für das ASA A400 -Speichersystem</block>
@@ -12943,8 +12881,6 @@ SFP+ (Target/Initiator)</block>
   <block id="50c7467b088c1359dd4f78f13eee0b4a" category="paragraph">Im Folgenden finden Sie ausgewählte Spezifikationen für den ASA A400.  Besuchen<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block> (HWU) für eine vollständige Liste der ASA A400 Spezifikationen.  Diese Seite spiegelt ein einzelnes Paar mit hoher Verfügbarkeit wider.</block>
   <block id="c34e8a3f11aa9b5bf96f8f039946f5ac" category="paragraph">Plattformkonfiguration: ASA A400 Single Chassis HA-Paar, Ethernet-Bundle</block>
   <block id="171ad46774f32c56db17e5cc8a1c27ca" category="list-text">Leistung im schlimmsten Fall: 5212 BTU/h</block>
-  <block id="36fb5b627c2dfb6e53810cdd3e6be3f3" category="summary">Wichtige Spezifikationen für die ASA400-Plattformgruppe</block>
-  <block id="1976618cf00c0b6aea89a517e457a8c1" category="paragraph">Im Folgenden finden Sie ausgewählte Spezifikationen für das ASA A400 -Speichersystem in einem einzelnen Hochverfügbarkeitspaar.  Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).</block>
   <block id="65d0afe8c0786bff1dd86021fdc07256" category="summary">Wichtige Spezifikationen für das ASA A800 -Speichersystem</block>
   <block id="59a59c8ca4ad93f3a28d68343d4dc062" category="doc">Wichtige Spezifikationen für ASA A800</block>
   <block id="263fbe530f95144e2f9fc1764572e731" category="paragraph">Im Folgenden finden Sie ausgewählte Spezifikationen für den ASA A800.  Besuchen<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block> (HWU) für eine vollständige Liste der ASA A800 Spezifikationen.  Diese Seite spiegelt ein einzelnes Paar mit hoher Verfügbarkeit wider.</block>
@@ -12952,8 +12888,6 @@ SFP+ (Target/Initiator)</block>
   <block id="9aa49a71aa0866fdf22c763b884cf447" category="cell">39,7 PB / 35,2 PiB</block>
   <block id="857fbb927f9301cb274cfbbe50576f34" category="cell">7680 GB</block>
   <block id="0a74815927318643e615dd9f6d9ef36c" category="cell">1280,0000</block>
-  <block id="580e58da3f4c8c0e004338e2d5463568" category="summary">Wichtige Spezifikationen für die ASA800-Plattformgruppe</block>
-  <block id="06eb93fc791c5a505c106b277c7d4f76" category="paragraph">Im Folgenden finden Sie ausgewählte Spezifikationen für das ASA A800 -Speichersystem in einem einzelnen Hochverfügbarkeitspaar.  Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).</block>
   <block id="1cb06846bf340ec24f77328a4840931c" category="summary">Wichtige Spezifikationen für das ASA A900 -Speichersystem</block>
   <block id="cdca003ab9116f8c6df61f92c170e74f" category="doc">Wichtige Spezifikationen für ASA A900</block>
   <block id="b9cb6f539efb85bd3dbecb8f63b109da" category="paragraph">Im Folgenden finden Sie ausgewählte Spezifikationen für den ASA A900.  Besuchen<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block> (HWU) für eine vollständige Liste der ASA A900 Spezifikationen.  Diese Seite spiegelt ein einzelnes Paar mit hoher Verfügbarkeit wider.</block>
@@ -12964,8 +12898,6 @@ SFP+ (Target/Initiator)</block>
   <block id="d5badd98590f7c8475031c722bee9f13" category="list-text">Gewicht: 220,5 lbbr/100,0 kg</block>
   <block id="d7dbfe33d50154da8ce85d1c1065e7be" category="list-text">Tiefe: 28,8 Zoll (36,8 Zoll mit Kabelführungshalterung)</block>
   <block id="a57159585077204011cc6d81536a227c" category="list-text">Akustisches Rauschen: Angegebene Schallleistung (LwAd): 7,4;br/Schalldruck (LpAm) (in der Nähe): 65,0 dB</block>
-  <block id="fa224ab2852d40c3701e238592589a35" category="summary">Wichtige Spezifikationen für die ASA900-Plattformgruppe</block>
-  <block id="dae772a251ba6ae7609ce9eb445c4ca7" category="paragraph">Im Folgenden finden Sie ausgewählte Spezifikationen für das ASA A900 Speichersystem in einem einzelnen Hochverfügbarkeitspaar.  Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).</block>
   <block id="18dc17338011190ae60489762b18bbba" category="summary">Wichtige Spezifikationen des AFF C250 -Speichersystems</block>
   <block id="06b4db325464ed97a14422979b4d8924" category="doc">Wichtige Spezifikationen für AFF C250</block>
   <block id="12dc95d0bc892a4d68c08990a2e0e93f" category="paragraph">Nachfolgend sind ausgewählte Spezifikationen für den AFF C250 aufgeführt.  Besuchen<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block> (HWU) für eine vollständige Liste der AFF C250 Spezifikationen.  Diese Seite spiegelt ein einzelnes Paar mit hoher Verfügbarkeit wider.</block>
@@ -12975,10 +12907,6 @@ SFP+ (Target/Initiator)</block>
   <block id="ca0c9966bf6d8b13874c9a33d9b103fa" category="cell">8,8 PB / 7,9 PiB</block>
   <block id="4dfae59c5327b0ed3524f4482c118eaa" category="cell">1,5 PB / 1,3 PiB</block>
   <block id="acd481bb21a2d48c85590f748324f123" category="paragraph">Ethernet-basierter Baseboard Management Controller (BMC) und ONTAP Verwaltungsschnittstelle; redundante Hot-Swap-fähige Controller; redundante Hot-Swap-fähige Netzteile;</block>
-  <block id="4f598ad0067992538a9b25a635fd7ebe" category="summary">Wichtige Spezifikationen für die C250-Plattformgruppe</block>
-  <block id="c77413b9effec9f5e6d3543e5e5b357a" category="paragraph">Im Folgenden finden Sie ausgewählte Spezifikationen für das AFF C250 -Speichersystem in einem einzelnen Hochverfügbarkeitspaar.  Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).</block>
-  <block id="f15eebaf1ae51e81f921eaf53eb1297d" category="list-text">Mindest ONTAP -Version: ONTAP 9.10.1P15 == Scaleout-Maxima</block>
-  <block id="bdf24340dd03a1e6485e317e7694b9b2" category="list-text">Typ: NAS; HA-Paare: 12; Rohkapazität: 17,7 PB / 15,7 PiB; Max. Speicher: 1536 GB</block>
   <block id="121ccbb25c187ccfd21ddfb63cddb37b" category="summary">Wichtige Spezifikationen für AFF C30</block>
   <block id="ac83142a3cf60457afcf64302dc699f8" category="paragraph">Im Folgenden finden Sie ausgewählte Spezifikationen für das AFF C30-Speichersystem in einem einzelnen Hochverfügbarkeitspaar.  Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).</block>
   <block id="bdb291fe6613a36b2df9dcf579e18d44" category="section-title">AFF C30 Spezifikationen im Überblick</block>
@@ -13008,9 +12936,6 @@ SFP+ (Target/Initiator)</block>
   <block id="73378505345b16bafe8e8e0adc36335b" category="cell">2,9 PB / 2,6 PiB</block>
   <block id="33e75ff09dd601bbe69f351039152189" category="cell">28</block>
   <block id="d645920e395fedad7bbbed0eca3fe2e0" category="cell">40</block>
-  <block id="cc2197d8b97e0d4876bce9bda259529b" category="summary">Wichtige Spezifikationen für die C400-Plattformgruppe</block>
-  <block id="14bd00edae2bf24d6d6bb1e970380fcd" category="paragraph">Im Folgenden finden Sie ausgewählte Spezifikationen für das AFF C400 Speichersystem in einem einzelnen Hochverfügbarkeitspaar.  Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).</block>
-  <block id="e2904e96770de9235975509793655256" category="list-text">Typ: NAS; HA-Paare: 12; Rohkapazität: 35,4 PB / 31,4 PiB; Max. Speicher: 3072 GB</block>
   <block id="08bd3bd31dd4639c8d1ce08094a5c7ef" category="summary">Wichtige Spezifikationen des AFF C80-Speichersystems</block>
   <block id="2d33040a8a66f0c30e2c415a9eec7d8d" category="doc">Wichtige Spezifikationen für AFF C80</block>
   <block id="67e389a0ebc658619776b9d5ac7e49d5" category="paragraph">Nachfolgend sind ausgewählte Spezifikationen für den AFF C80 aufgeführt.  Besuchen<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block> (HWU) für eine vollständige Liste der AFF C80-Spezifikationen.  Diese Seite spiegelt ein einzelnes Paar mit hoher Verfügbarkeit wider.</block>
@@ -13025,12 +12950,6 @@ SFP+ (Target/Initiator)</block>
   <block id="4e635c54d834641513e2b2c8e225a127" category="cell">Ethernet 200 Gbit/s</block>
   <block id="19ca14e7ea6328a42e0eb13d585e4c22" category="cell">36</block>
   <block id="9f61408e3afb633e50cdf1b20de6f466" category="cell">56</block>
-  <block id="866524d146caf6d5d5ca58414133dfcb" category="summary">Wichtige Spezifikationen für die C80-Plattformgruppe</block>
-  <block id="fc53799482b5c72e371c896c296eeaca" category="paragraph">Im Folgenden finden Sie ausgewählte Spezifikationen für das AFF C80-Speichersystem in einem einzelnen Hochverfügbarkeitspaar.  Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).</block>
-  <block id="790f2f7025a49405ecf494550abd2025" category="list-text">Typ: NAS; HA-Paare: 12; Rohkapazität: 176,8 PB / 157,0 PiB; Max. Speicher: 6144 GB</block>
-  <block id="4668001b533dcb01a288e13e438ef996" category="list-text">Typ: SAN; HA-Paare: 6; Rohkapazität: 88,4 PB / 78,5 PiB; Max. Speicher: 3072 GB</block>
-  <block id="88fef25d7d076a46933eb5cfece64d7d" category="list-text">Typ: HA-Paar; Rohkapazität: 14,7 PB / 13,1 PiB; Max. Speicher: 512.0000</block>
-  <block id="48f850c93d74da66ee33ca24f09bc3d1" category="list-text">SMB 3.1.1 == Systemumgebungsspezifikationen. Keine Umgebungsdaten verfügbar.</block>
   <block id="c16047b0b69bcd197b44430d6882aab1" category="summary">Wichtige Spezifikationen für das AFF C800 Speichersystem</block>
   <block id="198b715fa6258cbda0053099c7bc668e" category="doc">Wichtige Spezifikationen für AFF C800</block>
   <block id="f7695e44bea62e5b28836a193e3bda64" category="paragraph">Nachfolgend sind ausgewählte Spezifikationen für den AFF C800 aufgeführt.  Besuchen<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block> (HWU) für eine vollständige Liste der AFF C800 Spezifikationen.  Diese Seite spiegelt ein einzelnes Paar mit hoher Verfügbarkeit wider.</block>
@@ -13040,9 +12959,6 @@ SFP+ (Target/Initiator)</block>
   <block id="439e4902245729253229992fd0a361ae" category="list-text">Gewicht: 132,5 lbbr/60,1 kg</block>
   <block id="f60520e90b3a6d873ecb44d71d75b734" category="list-text">Betriebstemperatur/Höhe/Luftfeuchtigkeit: 5 °C bis 40 °C (br/41 °F bis br/104 °F) bei br/= 3048 mbr/= 10000 ft) Höhe; 8 % bis 90 % (br/relative Luftfeuchtigkeit, nicht kondensierend)</block>
   <block id="d5cacbff7b82ab3d26541de685b1a32b" category="list-text">Akustisches Rauschen: Angegebene Schallleistung (LwAd): 8,0;br/Schalldruck (LpAm) (in der Nähe): 62,8 dB</block>
-  <block id="de73ab042d31fbcaea0758773ba2aed7" category="summary">Wichtige Spezifikationen für die C800-Plattformgruppe</block>
-  <block id="fc95a14b356ccae993f1c5a596003764" category="paragraph">Im Folgenden finden Sie ausgewählte Spezifikationen für das AFF C800 Speichersystem in einem einzelnen Hochverfügbarkeitspaar.  Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).</block>
-  <block id="3a02dddbfe8af1c44ece16bc861685bb" category="list-text">Typ: NAS; HA-Paare: 12; Rohkapazität: 88,4 PB / 78,5 PiB; Max. Speicher: 15360 GB</block>
   <block id="8403c0175395ff495c9af55099b8fef4" category="summary">Wichtige Spezifikationen für FAS70</block>
   <block id="c96eb561070b12daad5027ae91335418" category="paragraph">Im Folgenden finden Sie ausgewählte Spezifikationen für das FAS70-Speichersystem in einem einzelnen Hochverfügbarkeitspaar.  Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).</block>
   <block id="c692e4fa105561892a2a9228b34bffae" category="section-title">FAS70-Spezifikationen auf einen Blick</block>
@@ -13108,12 +13024,6 @@ SFP+ (Target/Initiator)</block>
   <block id="5914ff703c6686a6800588a76dacab74" category="list-text">Typische Leistung: 2319 BTU/h</block>
   <block id="1c28248d81d6ff87ee55b4eb47056a8c" category="list-text">Leistung im schlimmsten Fall: 3872 BTU/h</block>
   <block id="b95d880eb71d3f28802d99353d93f6f0" category="list-text">Gewicht: 52,2 lbbr/23,7 kg</block>
-  <block id="1c52b559c1f437da01a94de79dc7f45c" category="summary">Wichtige Spezifikationen für die FAS50-Plattformgruppe</block>
-  <block id="18f027e2b7707b7ff7767f76d5927af2" category="paragraph">Im Folgenden finden Sie ausgewählte Spezifikationen für das FAS50-Speichersystem in einem einzelnen Hochverfügbarkeitspaar.  Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).</block>
-  <block id="f0a067ccea8b26d0b2f17d9fbdb931ad" category="list-text">Typ: NAS; HA-Paare: 4; Rohkapazität: 42,2 PB / 37,5 PiB; Max. Speicher: 512 GB</block>
-  <block id="3a0f42ee3e73e3f8370b07da4111f5b5" category="list-text">Typ: SAN; HA-Paare: 4; Rohkapazität: 42,2 PB / 37,5 PiB; Max. Speicher: 512 GB</block>
-  <block id="2283cd8fe9d3e6788a5f1e28f24f55a4" category="list-text">Typ: HA-Paar; Rohkapazität: 10,6 PB / 9,4 PiB; Max. Speicher: 128.0000</block>
-  <block id="656b17c351d41c4973d279414ea79cc9" category="list-text">Gewicht: 52.2 lb 23.7 kg</block>
   <block id="c0abf347ba9cbc3892abfa80eb2e4397" category="summary">Wichtige Spezifikationen für FAS8300</block>
   <block id="e0fa95a49988723bdb3a71e39da9c698" category="paragraph">Im Folgenden finden Sie ausgewählte Spezifikationen für das FAS8300 Speichersystem in einem einzelnen Hochverfügbarkeitspaar.  Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).</block>
   <block id="39d93cb8cb49b1e34ce4682195baa972" category="section-title">FAS8300 Spezifikationen auf einen Blick</block>
@@ -13133,7 +13043,6 @@ SFP+ (Target/Initiator)</block>
   <block id="0d53ee5ca699c3621f3c0a505c890b66" category="list-text">Typische Leistung: 5430 BTU/h</block>
   <block id="36a13f3d826d9f6cf7fc56d6627d7528" category="list-text">Leistung im schlimmsten Fall: 5796 BTU/h</block>
   <block id="d61c7e37be329d2ba5a7e809fb08d9c5" category="list-text">Gewicht: 108.9 lb 49.4 kg</block>
-  <block id="e495c9f38a737b6da2117ebaa52ba7ac" category="doc">FAS9500 Übersicht</block>
   <block id="40d3675d7a1ade404a4fdd374833eb73" category="paragraph">Plattformkonfiguration: FAS9500 Single Chassis HA-Paar</block>
   <block id="ce98aac2c839cd0ed245c16a1a40165a" category="summary">Wichtige Spezifikationen für das Speichersystem FAS9500</block>
   <block id="1ea1a140190bf37eb933a90c35b37442" category="doc">Wichtige Spezifikationen für FAS9500</block>
@@ -13144,12 +13053,6 @@ SFP+ (Target/Initiator)</block>
   <block id="5d1cd462bd74ff5016c71d1735d844d0" category="cell">90,0 PB / 79,9 PiB</block>
   <block id="6ec20c5ffb71fc8e6407815aba709ebe" category="cell">15,0 PB / 13,3 PiB</block>
   <block id="e71a112fcba059348a330658e07fff85" category="list-text">Betriebstemperatur/Höhe/Luftfeuchtigkeit: 10 °C bis 35 °C (br/50 °F bis br/95 °F) bei br/= 3048 mbr/= 10000 ft) Höhe; 8 % bis 90 % (br/relative Luftfeuchtigkeit, nicht kondensierend)</block>
-  <block id="fd64ba1b0614f4ffd66207f445196c93" category="summary">Wichtige Spezifikationen für die FAS9500 Plattformgruppe</block>
-  <block id="8d8c60ca9b0b29f222ed76c52c6cf55b" category="list-text">Mindest ONTAP -Version: ONTAP 9.10.1P3 == Scaleout-Maxima</block>
-  <block id="014f2208129cdc831cee84fc30f9247f" category="list-text">Typ: NAS; HA-Paare: 12; Rohkapazität: 180,0 PB / 159,9 PiB; Max. Speicher: 24576 GB</block>
-  <block id="42af051dd0fff696f5ce895c1bb97de4" category="list-text">Typ: SAN; HA-Paare: 6; Rohkapazität: 90,0 PB / 79,9 PiB; Max. Speicher: 12288 GB</block>
-  <block id="8f449cf0254f2ad40d59dd095542b714" category="list-text">Typ: HA-Paar; Rohkapazität: 15,0 PB / 13,3 PiB; Max. Speicher: 2048.0000</block>
-  <block id="f931f7d58dafa987aed167fe956586d0" category="list-text">Betriebstemperatur/Höhe/Luftfeuchtigkeit: 10 °C bis 35 °C (50 °F bis 95 °F) bei 3048 m (10000 Fuß) Höhe; 8 % bis 90 % relative Luftfeuchtigkeit, nicht kondensierend</block>
   <block id="65a4d6fcc372057dd61e6cc7abb8c696" category="inline-link-macro">AFF A1K (Automatische Wiederherstellung)</block>
   <block id="94bd55fe0571dbfa433cb6e80d3e228b" category="inline-link-macro">AFF A1K (Manuelle Wiederherstellung)</block>
   <block id="3c9419b0744beccd4fd6272e84be9db0" category="inline-link-macro">AFF A20/30/50 (Automatisierte Wiederherstellung)</block>
@@ -14170,7 +14073,6 @@ SFP+ (Target/Initiator)</block>
   <block id="4bf81e37c38393eea22b0e46d9f43158" category="paragraph">Das FAS50-System bietet die niedrigsten Kosten pro Gigabyte für sekundären Speicher und sicheren Cyber-Tresor sowie eine höhere Leistung für sekundäre Workloads mit schnelleren Backups, höheren IOPS und geringer Latenz von 5–10 ms.</block>
   <block id="beb7924c631bd72f6f5181a6a1773865" category="paragraph"><block ref="6fb9af7bf62d637bf3890d9d97180d06" category="inline-link-macro-rx"></block> .</block>
   <block id="7b619a398942b2af52ce099821518739" category="section-title">Veröffentlichungen 2024</block>
-  <block id="e17f7565f95df58a416490dff287f6c1" category="paragraph"><block ref="b5bce7716321adf42716e3b598ed224d" category="inline-link-macro-rx"></block> .</block>
   <block id="7b2fa3ce2f1cc4527c7d0a4e0f774ce1" category="paragraph"><block ref="9086cf3a37365194865877acb82e7669" category="inline-link-macro-rx"></block> .</block>
   <block id="e3dd50b258bede9c23ca84687d397bed" category="paragraph"><block ref="028bf0170285d2584dcfed56c7103ca0" category="inline-link-macro-rx"></block> .</block>
   <block id="728d7df870ee1451558451c200b714aa" category="sidebar">Das NetApp AFX-Speichersystem ist eine disaggregierte Hardware- und Softwarelösung, die auf die besonderen Anforderungen von Hochleistungs-NAS- und S3-Kunden ausgerichtet ist. Die Leistung und Skalierbarkeit sind speziell auf die Anforderungen von KI- und ML-Workloads ausgelegt.</block>
@@ -14202,4 +14104,88 @@ SFP+ (Target/Initiator)</block>
   <block id="d3bca45bb48d04c6d999281b772fa015" category="sidebar">AFX A1K-Gehäuse</block>
   <block id="9a4e2ca13bc5368ad30e628996c8e94e" category="sidebar">AFX 1K Controller</block>
   <block id="4c052a07dcf923d8d73e0be9a32b97a7" category="sidebar">AFX 1K IO-Modul</block>
+  <block id="35be92b1079dd4d454c4f763e5723f8a" category="list-text">Die Netzteile sind redundant und Hot-Swap-fähig. Sie müssen den Controller nicht herunterfahren, um ein Netzteil auszutauschen.</block>
+  <block id="1053cf7d108791c08478ce9591984516" category="open-title">Option 1: Hot-Swap eines AC-Netzteils</block>
+  <block id="3d70b6b1c750645a1540b9185ec5dbfc" category="open-title">Option 2: Hot-Swap eines DC-Netzteils</block>
+  <block id="27b8025bf920b2fdec95f4719d7e3772" category="paragraph">Die Netzteile sind redundant und Hot-Swap-fähig. Sie müssen den Controller nicht herunterfahren, um ein Netzteil auszutauschen.</block>
+  <block id="41221ad2b8f379d044b6e4c034575270" category="list-text">Suchen Sie die Systemseriennummern (SSN) für jeden zu installierenden Controller.</block>
+  <block id="639a764bd23851da6594721b4ee0a7d1" category="paragraph">Ethernet-basierter Baseboard Management Controller (BMC) und ONTAP -Management-Schnittstelle; Redundante Hot-Swap-fähige Controller; Redundante Hot-Swap-fähige Netzteile; SAS-In-Band-Management über SAS-Verbindungen; [//] 2025-10-15 ontap-systems-internal/issues/1357</block>
+  <block id="67bfe38eadb8acf6e70be93f4020561b" category="doc">Hot-Swap eines Netzteils – AFF A150</block>
+  <block id="5ea0f09670f21c71300695e92b2cd256" category="admonition">Verwenden Sie die Ports e1b und e7b nicht für Host-Netzwerkverbindungen. Verwenden Sie eine separate Hostkarte.</block>
+  <block id="e0c35bf779836a3b5e187a211457a2b9" category="list-text">SAS-In-Band-Management über SAS-Verbindungen für externe Regale [//] 2025-10-15 ontap-systems-internal/issues/1357</block>
+  <block id="25b7a8eef02360c09d8cb7847663af3e" category="doc">Hot-Swap eines Netzteils – AFF A1K</block>
+  <block id="db8171f7944e9dc66fab5b089698d3fc" category="doc">Hot-Swap eines Netzteils – AFF A20, AFF A30 und AFF A50</block>
+  <block id="6d20796c812619e842f3483504be63f4" category="doc">Hot-Swap eines Netzteils – AFF A250</block>
+  <block id="057cab5a212fb0cce841ca14b2cfeda3" category="doc">Hot-Swap eines Netzteils – AFF A320</block>
+  <block id="3bebfde8a4d27ae5e27f0cd50cf9a5de" category="doc">Hot-Swap eines Netzteils – AFF A400</block>
+  <block id="30432b9617d110e91bb55e0ee6592cdb" category="paragraph">Ethernet-basierter Baseboard Management Controller (BMC) und ONTAP -Management-Schnittstelle; Redundante Hot-Swap-fähige Controller; Redundante Hot-Swap-fähige Netzteile; SAS-In-Band-Management über SAS-Verbindungen für externe Shelves; [//] 2025-10-15 ontap-systems-internal/issues/1357</block>
+  <block id="3076b9da82c66ef1cac1e7179b746828" category="paragraph">Verwenden Sie das 100-GbE-Kabel, um die Ports e1a und e7a der Controller A und B mit den Cluster-Netzwerk-Switches A und B zu verbinden.</block>
+  <block id="92998a9e2d395c7927371ced81dc9182" category="admonition">Verwenden Sie die Ports e1b und e7b nicht für Host-Netzwerkverbindungen. Verwenden Sie eine separate Hostkarte.</block>
+  <block id="ec3eca6cbff6c81c2c7efdc9ca0afcf4" category="doc">Hot-Swap eines Netzteils – AFF A70 und AFF A90</block>
+  <block id="b61c2071102a270d16023e40ee5b949e" category="doc">Hot-Swap eines Netzteils – AFF A700</block>
+  <block id="9fdca944f84d0d7c1dd5bec5b33c4dad" category="doc">Hot-Swap eines Netzteils – AFF A700s</block>
+  <block id="c88ebc5327d1036601d0eda773d3a9b3" category="doc">Hot-Swap eines Netzteils – AFF A800</block>
+  <block id="000e33b346cf40ffbe68a52c2d14f2ea" category="list-text">SAS-In-Band-Management über SAS-Verbindungen [//] 2025-10-15 ontap-systems-internal/issues/1357</block>
+  <block id="8548a56c519034463f28eadc644360ab" category="doc">Hot-Swap eines Netzteils – AFF A900</block>
+  <block id="20c8ebc12d960783bc610a9a7c628624" category="list-text">Redundante Hot-Swap-fähige Netzteile [//] 2025-10-15 ontap-systems-internal/issues/1357</block>
+  <block id="98c78afbee9a38af4c14116fcea041ee" category="doc">Hot-Swap eines Netzteils – ASA C250</block>
+  <block id="a93641a4525fdc7b24b1b838539eaefd" category="doc">Hot-Swap eines Netzteils – ASA C400</block>
+  <block id="c5fdd34e2ef42364012a118012d79fb4" category="doc">Hot-Swap eines Netzteils – ASA C800</block>
+  <block id="55db671ae8020eca8e8aeb4349a2b054" category="doc">Hot-Swap eines Netzteils – ASA A70 und ASA A90</block>
+  <block id="c9a369c5554de29ccc1c26e1a891a293" category="doc">Hot-Swap eines Netzteils – ASA A1K</block>
+  <block id="9bb2e7ff1d23ef0e1b53976314308a35" category="doc">Hot-Swap eines Netzteils – ASA A20, ASA A30 und ASA A50</block>
+  <block id="06d8fe566407f64414a820ada76ed8c0" category="doc">Hot-Swap eines Netzteils – ASA A150</block>
+  <block id="b63c7571644d5ccca1e3715abbae44ca" category="doc">Hot-Swap eines Netzteils – ASA A250</block>
+  <block id="2c050786a43c0ea0115e636878783956" category="doc">Hot-Swap eines Netzteils – ASA A400</block>
+  <block id="a2ada69f15b8dc349c947f1966fadfab" category="doc">Hot-Swap eines Netzteils – ASA A800</block>
+  <block id="afa34f783768c8c33178d16016fc5fc4" category="doc">Hot-Swap eines Netzteils – ASA A900</block>
+  <block id="a09a90cc8fcac9f4d3e4b984533b8cad" category="paragraph">[//] 2025-10-15 ontap-systems-internal/issues/1357</block>
+  <block id="5e227aeb2fcad7eaeead32f5302682f3" category="doc">Hot-Swap eines Netzteils – AFF C250</block>
+  <block id="41002485b29502010a8644065a0c7d58" category="doc">Hot-Swap eines Netzteils – AFF C400</block>
+  <block id="7b4a1a3080b004d0b85c18311475acc2" category="paragraph">Verwenden Sie das 100-GbE-Kabel, um die Ports e1a und e7a der Controller A und B mit den Cluster-Netzwerk-Switches A und B zu verbinden. .Schritte . Verbinden Sie Port e1a auf Controller A und Port e1a auf Controller B mit Cluster-Netzwerk-Switch A. . Verbinden Sie Port e7a auf Controller A und Port e7a auf Controller B mit Cluster-Netzwerk-Switch B.</block>
+  <block id="a6b43aa69cfefff427f0aa588edab24d" category="paragraph">+ *100 GbE-Kabel*</block>
+  <block id="e8b86e4a9e550f2cd1adce1d2f24708b" category="paragraph">Ethernet-basierter Baseboard Management Controller (BMC) und ONTAP Management-Schnittstelle; Redundante Hot-Swap-fähige Controller; Redundante Hot-Swap-fähige Netzteile; [//] 2025-10-15 ontap-systems-internal/issues/1357</block>
+  <block id="e742e13f0573253743538a54686b965c" category="doc">Hot-Swap eines Netzteils – AFF C800</block>
+  <block id="bb9a46a830b86006c64c8c357fbcb73c" category="doc">Hot-Swap eines Netzteils – FAS70 und FAS90</block>
+  <block id="c0fb977424a2b5bca01ac503e2f1b009" category="doc">Hot-Swap eines Netzteils – FAS2700</block>
+  <block id="58c298876292ce3ccb07434a6eb98ee8" category="doc">Hot-Swap eines Netzteils – FAS500f</block>
+  <block id="265e5afbc76b65a563c8e31441a1e485" category="doc">Hot-Swap eines Netzteils – FAS8300 und FAS8700</block>
+  <block id="653496b123c4243a527d8a9ea55d4f8f" category="doc">Hot-Swap eines Netzteils – FAS9000</block>
+  <block id="048c525dc48e40a1d09bef0038c82ef7" category="doc">Hot-Swap eines Netzteils – FAS9500</block>
+  <block id="80f1b598bcc25f7ec82fc65712322c5f" category="inline-link-macro">AFX A1K</block>
+  <block id="456595a68c845460a0bce72ae205008b" category="list-text"><block ref="456595a68c845460a0bce72ae205008b" category="inline-link-macro-rx"></block></block>
+  <block id="bc43101d4663f6af1088f44fa1f4971c" category="open-title">Regalsysteme</block>
+  <block id="4118c4e0c27fbed6f04b04d3aa72ac24" category="list-text"><block ref="4118c4e0c27fbed6f04b04d3aa72ac24" category="inline-link-macro-rx"></block></block>
+  <block id="ce10d24d102f61248a1ca7225202165a" category="inline-link-macro">NX224</block>
+  <block id="125f10a9ef50430953cfa201c04d3fc7" category="list-text"><block ref="125f10a9ef50430953cfa201c04d3fc7" category="inline-link-macro-rx"></block></block>
+  <block id="a15565e937e16d1f4615ffae54386c32" category="list-text"><block ref="a15565e937e16d1f4615ffae54386c32" category="inline-link-macro-rx"></block></block>
+  <block id="3c91bcd5af8e3e8a07bca4d6122e6b3e" category="list-text"><block ref="3c91bcd5af8e3e8a07bca4d6122e6b3e" category="inline-link-macro-rx"></block></block>
+  <block id="2eea8cfe67bfbaf554197cde256262be" category="list-text"><block ref="2eea8cfe67bfbaf554197cde256262be" category="inline-link-macro-rx"></block></block>
+  <block id="ed07672fb572f93f885feb990d0a637f" category="list-text"><block ref="ed07672fb572f93f885feb990d0a637f" category="inline-link-macro-rx"></block></block>
+  <block id="7a51e753de7bf2934296fac2cdc9d593" category="list-text"><block ref="7a51e753de7bf2934296fac2cdc9d593" category="inline-link-macro-rx"></block></block>
+  <block id="1397e21113f4acf414d8754488a466fc" category="list-text"><block ref="1397e21113f4acf414d8754488a466fc" category="inline-link-macro-rx"></block></block>
+  <block id="66fcce69e4503a0a9c8c46637435aa8c" category="list-text"><block ref="66fcce69e4503a0a9c8c46637435aa8c" category="inline-link-macro-rx"></block></block>
+  <block id="badea07b223f33f206dbb3f59038b884" category="list-text"><block ref="badea07b223f33f206dbb3f59038b884" category="inline-link-macro-rx"></block></block>
+  <block id="54d8c26f8a704f2ae1cd358913de64ac" category="list-text"><block ref="54d8c26f8a704f2ae1cd358913de64ac" category="inline-link-macro-rx"></block></block>
+  <block id="4b4484c2e067a790a8b029f0e7157ba8" category="list-text"><block ref="4b4484c2e067a790a8b029f0e7157ba8" category="inline-link-macro-rx"></block></block>
+  <block id="d4ec2b21b63964207f65fe842cdcf1d9" category="list-text"><block ref="d4ec2b21b63964207f65fe842cdcf1d9" category="inline-link-macro-rx"></block></block>
+  <block id="f9eb62938eec55221ed8ab27033b19b9" category="list-text"><block ref="f9eb62938eec55221ed8ab27033b19b9" category="inline-link-macro-rx"></block></block>
+  <block id="7ca1678229ac5064dbd99a27e4886773" category="list-text"><block ref="7ca1678229ac5064dbd99a27e4886773" category="inline-link-macro-rx"></block></block>
+  <block id="bd57b67f8598879d2601631d0c721137" category="summary">Hier finden Sie Verfahren zum Austausch von NVMe-Shelf-Modulen (NSM) für Ihr NetApp Speicher-Shelf, sortiert nach Shelf-Modell. Dieses Nachschlagewerk enthält direkte Links zu schrittweisen NSM-Austauschabläufen für NS224- und NX224-Regale, damit Sie schnell das richtige Verfahren für Ihr spezielles Regalmodell finden.</block>
+  <block id="09836515455d31781ff12c48f8614517" category="doc">NSM-Austauschverfahren nach Regalmodell</block>
+  <block id="1a82a6fe55e3f2f61872867b5fd0dceb" category="list-text"><block ref="1a82a6fe55e3f2f61872867b5fd0dceb" category="inline-link-macro-rx"></block></block>
+  <block id="f39104a2d7ac4b866439486ba176811c" category="list-text"><block ref="f39104a2d7ac4b866439486ba176811c" category="inline-link-macro-rx"></block></block>
+  <block id="8f5f4bdbc294c6f2651fcd2e526c8a78" category="list-text"><block ref="8f5f4bdbc294c6f2651fcd2e526c8a78" category="inline-link-macro-rx"></block></block>
+  <block id="211bc6ebaac1ad5d04c5e33045e9bf83" category="list-text"><block ref="211bc6ebaac1ad5d04c5e33045e9bf83" category="inline-link-macro-rx"></block></block>
+  <block id="09fad4d466bf3d1fedb9b890171a4ef4" category="list-text"><block ref="09fad4d466bf3d1fedb9b890171a4ef4" category="inline-link-macro-rx"></block></block>
+  <block id="fb22f4b778e12fb8fce97075a2c2e7cc" category="list-text"><block ref="fb22f4b778e12fb8fce97075a2c2e7cc" category="inline-link-macro-rx"></block></block>
+  <block id="7e67c0810c8ad6d0694164958ee67278" category="list-text"><block ref="7e67c0810c8ad6d0694164958ee67278" category="inline-link-macro-rx"></block></block>
+  <block id="5b2fbd0784647c22ca81799fe3de9d4b" category="list-text"><block ref="5b2fbd0784647c22ca81799fe3de9d4b" category="inline-link-macro-rx"></block></block>
+  <block id="9dfce2bdad58de88bbfaf4eb1ffec4c6" category="list-text"><block ref="9dfce2bdad58de88bbfaf4eb1ffec4c6" category="inline-link-macro-rx"></block></block>
+  <block id="9942cbccf0648199db8728c675a51861" category="list-text"><block ref="9942cbccf0648199db8728c675a51861" category="inline-link-macro-rx"></block></block>
+  <block id="53293de4445d9809b5beb36bf8b2bdd2" category="list-text"><block ref="53293de4445d9809b5beb36bf8b2bdd2" category="inline-link-macro-rx"></block></block>
+  <block id="b1a10fdec821bde7511fcf1b956e5382" category="paragraph"><block ref="b6b8a8462966204b648f1ae9c887611d" category="inline-link-macro-rx"></block>.</block>
+  <block id="8a484401787078890bc1e7fd9beb44fb" category="sidebar">NSM-Austauschverfahren</block>
+  <block id="9dd7ce2f864cf38177fc70779cbe6635" category="sidebar">AFF A70 Übersicht</block>
+  <block id="045d04f83b324cbd691c0a2eef106f65" category="sidebar">AFF A90 Übersicht</block>
 </blocks>
