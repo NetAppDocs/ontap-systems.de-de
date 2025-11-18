@@ -13,35 +13,39 @@ summary: Bevor Sie den beeinträchtigten Controller herunterfahren und den Statu
 [role="lead"]
 Um die Datensicherheit auf Ihrem Speichersystem zu gewährleisten, müssen Sie die Unterstützung und den Status des Verschlüsselungsschlüssels auf Ihrem Boot-Medium überprüfen. Überprüfen Sie, ob Ihre ONTAP Version NetApp Volume Encryption (NVE) unterstützt und bevor Sie den Controller herunterfahren, ob der Schlüsselmanager aktiv ist.
 
-Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie das manuelle Boot-Wiederherstellungsverfahren verwenden.
+Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie den manuellen Boot-Wiederherstellungsprozess verwenden.
 
 
 
-== Schritt: Prüfen Sie, ob Ihre Version von ONTAP NetApp-Volume-Verschlüsselung unterstützt
+== Schritt 1: NVE-Unterstützung prüfen und das richtige ONTAP Image herunterladen
 
-Prüfen Sie, ob Ihre ONTAP Version NetApp Volume Encryption (NVE) unterstützt. Diese Informationen sind entscheidend, um das richtige ONTAP-Image herunterzuladen.
+Prüfen Sie, ob Ihre ONTAP Version NetApp Volume Encryption (NVE) unterstützt, damit Sie das richtige ONTAP Image für den Austausch des Bootmediums herunterladen können.
 
 .Schritte
-. Stellen Sie fest, ob Ihre ONTAP-Version Verschlüsselung unterstützt, indem Sie den folgenden Befehl ausführen:
+. Prüfen Sie, ob Ihre ONTAP Version Verschlüsselung unterstützt:
 +
 `version -v`
 
 +
 Wenn die Ausgabe enthält `1Ono-DARE`, wird NVE auf Ihrer Cluster-Version nicht unterstützt.
 
-. Je nachdem, ob NVE auf Ihrem System unterstützt wird, führen Sie eine der folgenden Aktionen durch:
+. Laden Sie das passende ONTAP Image basierend auf der NVE-Unterstützung herunter:
 +
-** Falls NVE unterstützt wird, laden Sie das ONTAP Image mit NetApp Volume Encryption herunter.
-** Falls NVE nicht unterstützt wird, laden Sie das ONTAP Image *ohne* NetApp-Volume-Verschlüsselung herunter.
+** Wenn NVE unterstützt wird: Laden Sie das ONTAP Image mit NetApp Volume Encryption herunter.
+** Falls NVE nicht unterstützt wird: Laden Sie das ONTAP Image ohne NetApp Volume Encryption herunter.
++
+
+NOTE: Laden Sie das ONTAP Image von der NetApp -Support-Website auf Ihren HTTP- oder FTP-Server oder in einen lokalen Ordner herunter.  Sie benötigen diese Image-Datei während des Austauschs des Startmediums.
 
 
 
 
 
 
-== Schritt 2: Stellen Sie fest, ob es sicher ist, den Controller herunterzufahren
 
-Um einen Controller sicher herunterzufahren, müssen Sie zuerst ermitteln, ob der External Key Manager (EKM) oder der Onboard Key Manager (OKM) aktiv ist. Überprüfen Sie anschließend den verwendeten Schlüsselmanager, zeigen Sie die entsprechenden Schlüsselinformationen an und ergreifen Sie Maßnahmen, die auf dem Status der Authentifizierungsschlüssel basieren.
+== Schritt 2: Überprüfen Sie den Status des Schlüsselmanagers und sichern Sie die Konfiguration.
+
+Bevor Sie den betroffenen Controller herunterfahren, überprüfen Sie die Konfiguration des Schlüsselmanagers und sichern Sie die notwendigen Informationen.
 
 .Schritte
 . Bestimmen Sie, welcher Schlüsselmanager auf Ihrem System aktiviert ist:
@@ -74,125 +78,134 @@ ONTAP 9.13.1 oder früher
 
 
 |===
-. Wählen Sie eine der folgenden Optionen, je nachdem, ob ein Key Manager auf Ihrem System konfiguriert ist.
+. Je nachdem, ob auf Ihrem System ein Schlüsselmanager konfiguriert ist, führen Sie einen der folgenden Schritte aus:
 +
-[role="tabbed-block"]
-====
-.Kein Schlüsselmanager konfiguriert
---
-Sie können den außer Betrieb genommenen Controller sicher herunterfahren. Gehen Sie zu link:bootmedia-shutdown.html["Schalten Sie den außer Betrieb genommenen Controller aus"].
+*Falls kein Schlüsselmanager konfiguriert ist:*
 
---
-.Externer oder integrierter Schlüsselmanager konfiguriert
---
-.. Geben Sie den folgenden Abfragebefehl ein, um den Status der Authentifizierungsschlüssel in Ihrem Schlüsselmanager anzuzeigen.
++
+Sie können den defekten Controller gefahrlos herunterfahren und mit dem Herunterfahrvorgang fortfahren.
+
++
+*Wenn ein Schlüsselmanager (EKM oder OKM) konfiguriert ist:*
+
++
+.. Geben Sie den folgenden Abfragebefehl ein, um den Status der Authentifizierungsschlüssel in Ihrem Schlüsselmanager anzuzeigen:
 +
 `security key-manager key query`
 
-.. Überprüfen Sie die Ausgabe für den Wert in der `Restored` Spalte für Ihren Schlüsselmanager.
-+
-Diese Spalte gibt an, ob die Authentifizierungsschlüssel für Ihren Schlüsselmanager (entweder EKM oder OKM) erfolgreich wiederhergestellt wurden.
+.. Überprüfen Sie die Ausgabe und den Wert im `Restored` Spalte.  Diese Spalte zeigt an, ob die Authentifizierungsschlüssel für Ihren Schlüsselmanager (entweder EKM oder OKM) erfolgreich wiederhergestellt wurden.
 
 
-
---
-====
-
-
-. Wählen Sie je nachdem, ob Ihr System den External Key Manager oder den Onboard Key Manager verwendet, eine der folgenden Optionen aus.
+. Führen Sie das entsprechende Verfahren entsprechend Ihrem Schlüsselmanagertyp durch:
 +
 [role="tabbed-block"]
 ====
-.Externer Schlüsselmanager
+.Externer Schlüsselmanager (EKM)
 --
-Befolgen Sie je nach dem in der Spalte angezeigten Ausgangswert `Restored` die entsprechenden Schritte.
+Führen Sie diese Schritte anhand des Wertes im `Restored` Spalte.
 
-[cols="1a,2a"]
-|===
-| Ausgabewert in `Restored` Spalte | Führen Sie die folgenden Schritte aus... 
+*Wenn alle Tasten angezeigt werden `true` in der Spalte „Wiederhergestellt“:*
 
+Sie können den defekten Controller gefahrlos herunterfahren und mit dem Herunterfahrvorgang fortfahren.
 
- a| 
-`true`
- a| 
-Sie können den außer Betrieb genommenen Controller sicher herunterfahren. Gehen Sie zu link:bootmedia-shutdown.html["Schalten Sie den außer Betrieb genommenen Controller aus"].
+*Wenn ein Schlüssel einen anderen Wert als `true` in der Spalte „Wiederhergestellt“:*
 
-
-
- a| 
-Alles andere als `true`
- a| 
-.. Stellen Sie die externen Authentifizierungsschlüssel für das Verschlüsselungsmanagement auf allen Nodes im Cluster mit dem folgenden Befehl wieder her:
+.. Stellen Sie die Authentifizierungsschlüssel für die externe Schlüsselverwaltung auf allen Knoten im Cluster wieder her:
 +
 `security key-manager external restore`
 
 +
-Wenn der Befehl fehlschlägt, wenden Sie sich an http://mysupport.netapp.com/["NetApp Support"^].
+Falls der Befehl fehlschlägt, wenden Sie sich an den NetApp -Support.
 
-.. Überprüfen Sie, ob in der `Restored` Spalte für alle Authentifizierungsschlüssel die angezeigt werden `true`, indem Sie den  Befehl eingeben `security key-manager key query`.
-+
-Wenn alle Authentifizierungsschlüssel vorhanden sind `true`, können Sie den beeinträchtigten Controller sicher herunterfahren. Gehen Sie zu link:bootmedia-shutdown.html["Schalten Sie den außer Betrieb genommenen Controller aus"].
-
-
-
-|===
---
-.Onboard Key Manager
---
-Befolgen Sie je nach dem in der Spalte angezeigten Ausgangswert `Restored` die entsprechenden Schritte.
-
-[cols="1a,2a"]
-|===
-| Ausgabewert in `Restored` Spalte | Führen Sie die folgenden Schritte aus... 
-
-
- a| 
-`true`
- a| 
-Sichern Sie die OKM-Informationen manuell.
-
-.. Wechseln Sie in den erweiterten Modus, indem `set -priv advanced` Sie aufrufen und dann bei Aufforderung eingeben `Y`.
-.. Geben Sie den folgenden Befehl ein, um die Informationen zum Verschlüsselungsmanagement anzuzeigen:
-+
-`security key-manager onboard show-backup`
-
-.. Kopieren Sie den Inhalt der Backup-Informationen in eine separate Datei oder eine Protokolldatei.
-+
-Sie werden es in Disaster-Szenarien benötigen, in denen Sie OKM manuell wiederherstellen müssen.
-
-.. Sie können den außer Betrieb genommenen Controller sicher herunterfahren. Gehen Sie zu link:bootmedia-shutdown.html["Schalten Sie den außer Betrieb genommenen Controller aus"].
-
-
-
-
- a| 
-Alles andere als `true`
- a| 
-.. Geben Sie den integrierten Sicherheitsschlüssel-Manager Sync-Befehl ein:
-+
-`security key-manager onboard sync`
-
-.. Geben Sie bei Aufforderung die 32-stellige alphanumerische Passphrase für das Onboard-Verschlüsselungsmanagement ein.
-+
-Wenn die Passphrase nicht angegeben werden kann, wenden Sie sich an http://mysupport.netapp.com/["NetApp Support"^].
-
-.. Überprüfen Sie, ob die `Restored` Spalte für alle Authentifizierungsschlüssel angezeigt wird `true`:
+.. Überprüfen Sie, ob alle Authentifizierungsschlüssel wiederhergestellt wurden:
 +
 `security key-manager key query`
 
-.. Überprüfen Sie, ob der `Key Manager` Typ , anzeigt `onboard`und sichern Sie die OKM-Informationen manuell.
-.. Geben Sie den Befehl ein, um die Backup-Informationen für das Verschlüsselungsmanagement anzuzeigen:
++
+Bestätigen Sie, dass die `Restored` Spaltenanzeigen `true` für alle Authentifizierungsschlüssel.
+
+.. Sind alle Schlüssel wiederhergestellt, können Sie den betroffenen Controller sicher herunterfahren und mit dem Herunterfahrvorgang fortfahren.
+
+
+--
+.Onboard Key Manager (OKM)
+--
+Führen Sie diese Schritte anhand des Wertes im `Restored` Spalte.
+
+*Wenn alle Tasten angezeigt werden `true` in der Spalte „Wiederhergestellt“:*
+
+.. Sichern Sie die OKM-Informationen:
++
+... In den erweiterten Berechtigungsmodus wechseln:
++
+`set -priv advanced`
+
++
+Eingeben `y` wenn er zur Fortsetzung aufgefordert wird.
+
+... Informationen zur Schlüsselverwaltung und Datensicherung anzeigen:
 +
 `security key-manager onboard show-backup`
 
-.. Kopieren Sie den Inhalt der Backup-Informationen in eine separate Datei oder eine Protokolldatei.
+... Kopieren Sie die Sicherungsinformationen in eine separate Datei oder Ihre Protokolldatei.
 +
-Sie werden es in Disaster-Szenarien benötigen, in denen Sie OKM manuell wiederherstellen müssen.
+Sie benötigen diese Sicherungsinformationen, falls Sie OKM während des Austauschvorgangs manuell wiederherstellen müssen.
 
-.. Sie können den außer Betrieb genommenen Controller sicher herunterfahren. Gehen Sie zu link:bootmedia-shutdown.html["Schalten Sie den außer Betrieb genommenen Controller aus"].
+... Zurück zum Administratormodus:
++
+`set -priv admin`
 
 
-|===
+
+.. Sie können den defekten Controller gefahrlos herunterfahren und mit dem Herunterfahrvorgang fortfahren.
+
+
+*Wenn ein Schlüssel einen anderen Wert als `true` in der Spalte „Wiederhergestellt“:*
+
+.. Synchronisieren Sie den integrierten Schlüsselmanager:
++
+`security key-manager onboard sync`
+
++
+Geben Sie bei Aufforderung die 32-stellige alphanumerische Passphrase für die Onboard-Schlüsselverwaltung ein.
+
++
+
+NOTE: Dies ist die clusterweite Passphrase, die Sie bei der Erstkonfiguration des Onboard Key Managers erstellt haben.  Falls Sie diese Passphrase nicht haben, wenden Sie sich bitte an den NetApp -Support.
+
+.. Überprüfen Sie, ob alle Authentifizierungsschlüssel wiederhergestellt wurden:
++
+`security key-manager key query`
+
++
+Bestätigen Sie, dass die `Restored` Spaltenanzeigen `true` für alle Authentifizierungsschlüssel und die `Key Manager` Typ zeigt `onboard` Die
+
+.. Sichern Sie die OKM-Informationen:
++
+... In den erweiterten Berechtigungsmodus wechseln:
++
+`set -priv advanced`
+
++
+Eingeben `y` wenn er zur Fortsetzung aufgefordert wird.
+
+... Informationen zur Schlüsselverwaltung und Datensicherung anzeigen:
++
+`security key-manager onboard show-backup`
+
+... Kopieren Sie die Sicherungsinformationen in eine separate Datei oder Ihre Protokolldatei.
++
+Sie benötigen diese Sicherungsinformationen, falls Sie OKM während des Austauschvorgangs manuell wiederherstellen müssen.
+
+... Zurück zum Administratormodus:
++
+`set -priv admin`
+
+
+
+.. Sie können den defekten Controller gefahrlos herunterfahren und mit dem Herunterfahrvorgang fortfahren.
+
+
 --
 ====
 

@@ -15,9 +15,9 @@ Starten Sie die Controller neu, überprüfen Sie den Systemzustand und senden Si
 
 
 
-== Schritt 1: Starten Sie die Controller und geben Sie die Controller zurück
+== Schritt 1: Controller starten und Giveback durchführen
 
-Nachdem die Controller neu gebootet wurden, booten Sie ONTAP und geben Sie die Controller zurück.
+Starten Sie ONTAP auf den Controllern und führen Sie eine Controller-Rückgabe durch, um die Speicherhoheit zurückzuerlangen.
 
 .Schritte
 . Überprüfen Sie die Konsolenausgabe:
@@ -38,12 +38,7 @@ Nachdem die Controller neu gebootet wurden, booten Sie ONTAP und geben Sie die C
 
 == Schritt 2: Überprüfen Sie den Zustand des Storage-Systems
 
-Nachdem der Controller den Speicher zurückgegeben hat, sollten Sie den Gesamtzustand mit überprüfen https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"].
-
-.Schritte
-. Nachdem die Rückgabe abgeschlossen ist, führen Sie Active IQ Config Advisor aus, um den Zustand des Storage-Systems zu überprüfen.
-. Beheben Sie alle Probleme, die auftreten.
-
+Nachdem die Controller-Rückgabe abgeschlossen ist, überprüfen Sie den Systemzustand mit https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"] Die  Beheben Sie alle festgestellten Probleme.
 
 
 

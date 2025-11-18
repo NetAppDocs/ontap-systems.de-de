@@ -15,9 +15,9 @@ Starten Sie den Controller neu, überprüfen Sie den Systemzustand und senden Si
 
 
 
-== Schritt 1: Starten Sie die Controller und geben Sie die Controller zurück
+== Schritt 1: Controller hochfahren und Systemzustand überprüfen
 
-Nachdem die Controller neu gebootet wurden, booten Sie ONTAP und geben Sie die Controller zurück.
+Nach dem Neustart der Controller starten Sie ONTAP, geben die Controller zurück und überprüfen den Zustand des Speichersystems.
 
 .Schritte
 . Überprüfen Sie die Konsolenausgabe:
@@ -34,21 +34,11 @@ Nachdem die Controller neu gebootet wurden, booten Sie ONTAP und geben Sie die C
 .. Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung wiederherstellen/zurücknehmen: `system node autosupport invoke -node * -type all -message MAINT=END`
 
 
+. Nachdem die Rückgabe abgeschlossen ist, führen Sie Folgendes aus: https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"] um den Zustand des Speichersystems zu überprüfen und etwaige auftretende Probleme zu beheben.
 
 
 
 
-== Schritt 2: Überprüfen Sie den Zustand des Storage-Systems
-
-Nachdem der Controller den Speicher zurückgegeben hat, sollten Sie den Gesamtzustand mit überprüfen https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"].
-
-.Schritte
-. Nachdem die Rückgabe abgeschlossen ist, führen Sie Active IQ Config Advisor aus, um den Zustand des Storage-Systems zu überprüfen.
-. Beheben Sie alle Probleme, die auftreten.
-
-
-
-
-== Schritt 3: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+== Schritt 2: Rückgabe des fehlerhaften Teils an NetApp
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

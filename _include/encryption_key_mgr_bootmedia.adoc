@@ -1,0 +1,166 @@
+= 
+:allow-uri-read: 
+
+
+.Schritte
+. Bestimmen Sie, welcher Schlüsselmanager auf Ihrem System aktiviert ist:
++
+[cols="1a,2a"]
+|===
+| ONTAP-Version | Führen Sie diesen Befehl aus 
+
+
+ a| 
+ONTAP 9.14.1 oder höher
+ a| 
+`security key-manager keystore show`
+
+** Wenn EKM aktiviert ist, `EKM` wird in der Befehlsausgabe aufgelistet.
+** Wenn OKM aktiviert ist, `OKM` wird in der Befehlsausgabe aufgelistet.
+** Wenn kein Schlüsselmanager aktiviert ist, `No key manager keystores configured` wird in der Befehlsausgabe aufgeführt.
+
+
+
+
+ a| 
+ONTAP 9.13.1 oder früher
+ a| 
+`security key-manager show-key-store`
+
+** Wenn EKM aktiviert ist, `external` wird in der Befehlsausgabe aufgelistet.
+** Wenn OKM aktiviert ist, `onboard` wird in der Befehlsausgabe aufgelistet.
+** Wenn kein Schlüsselmanager aktiviert ist, `No key managers configured` wird in der Befehlsausgabe aufgeführt.
+
+
+|===
+. Je nachdem, ob auf Ihrem System ein Schlüsselmanager konfiguriert ist, führen Sie einen der folgenden Schritte aus:
++
+*Falls kein Schlüsselmanager konfiguriert ist:*
+
++
+Sie können den defekten Controller gefahrlos herunterfahren und mit dem Herunterfahrvorgang fortfahren.
+
++
+*Wenn ein Schlüsselmanager (EKM oder OKM) konfiguriert ist:*
+
++
+.. Geben Sie den folgenden Abfragebefehl ein, um den Status der Authentifizierungsschlüssel in Ihrem Schlüsselmanager anzuzeigen:
++
+`security key-manager key query`
+
+.. Überprüfen Sie die Ausgabe und den Wert im `Restored` Spalte.  Diese Spalte zeigt an, ob die Authentifizierungsschlüssel für Ihren Schlüsselmanager (entweder EKM oder OKM) erfolgreich wiederhergestellt wurden.
+
+
+. Führen Sie das entsprechende Verfahren entsprechend Ihrem Schlüsselmanagertyp durch:
++
+[role="tabbed-block"]
+====
+.Externer Schlüsselmanager (EKM)
+--
+Führen Sie diese Schritte anhand des Wertes im `Restored` Spalte.
+
+*Wenn alle Tasten angezeigt werden `true` in der Spalte „Wiederhergestellt“:*
+
+Sie können den defekten Controller gefahrlos herunterfahren und mit dem Herunterfahrvorgang fortfahren.
+
+*Wenn ein Schlüssel einen anderen Wert als `true` in der Spalte „Wiederhergestellt“:*
+
+.. Stellen Sie die Authentifizierungsschlüssel für die externe Schlüsselverwaltung auf allen Knoten im Cluster wieder her:
++
+`security key-manager external restore`
+
++
+Falls der Befehl fehlschlägt, wenden Sie sich an den NetApp -Support.
+
+.. Überprüfen Sie, ob alle Authentifizierungsschlüssel wiederhergestellt wurden:
++
+`security key-manager key query`
+
++
+Bestätigen Sie, dass die `Restored` Spaltenanzeigen `true` für alle Authentifizierungsschlüssel.
+
+.. Sind alle Schlüssel wiederhergestellt, können Sie den betroffenen Controller sicher herunterfahren und mit dem Herunterfahrvorgang fortfahren.
+
+
+--
+.Onboard Key Manager (OKM)
+--
+Führen Sie diese Schritte anhand des Wertes im `Restored` Spalte.
+
+*Wenn alle Tasten angezeigt werden `true` in der Spalte „Wiederhergestellt“:*
+
+.. Sichern Sie die OKM-Informationen:
++
+... In den erweiterten Berechtigungsmodus wechseln:
++
+`set -priv advanced`
+
++
+Eingeben `y` wenn er zur Fortsetzung aufgefordert wird.
+
+... Informationen zur Schlüsselverwaltung und Datensicherung anzeigen:
++
+`security key-manager onboard show-backup`
+
+... Kopieren Sie die Sicherungsinformationen in eine separate Datei oder Ihre Protokolldatei.
++
+Sie benötigen diese Sicherungsinformationen, falls Sie OKM während des Austauschvorgangs manuell wiederherstellen müssen.
+
+... Zurück zum Administratormodus:
++
+`set -priv admin`
+
+
+
+.. Sie können den defekten Controller gefahrlos herunterfahren und mit dem Herunterfahrvorgang fortfahren.
+
+
+*Wenn ein Schlüssel einen anderen Wert als `true` in der Spalte „Wiederhergestellt“:*
+
+.. Synchronisieren Sie den integrierten Schlüsselmanager:
++
+`security key-manager onboard sync`
+
++
+Geben Sie bei Aufforderung die 32-stellige alphanumerische Passphrase für die Onboard-Schlüsselverwaltung ein.
+
++
+
+NOTE: Dies ist die clusterweite Passphrase, die Sie bei der Erstkonfiguration des Onboard Key Managers erstellt haben.  Falls Sie diese Passphrase nicht haben, wenden Sie sich bitte an den NetApp -Support.
+
+.. Überprüfen Sie, ob alle Authentifizierungsschlüssel wiederhergestellt wurden:
++
+`security key-manager key query`
+
++
+Bestätigen Sie, dass die `Restored` Spaltenanzeigen `true` für alle Authentifizierungsschlüssel und die `Key Manager` Typ zeigt `onboard` Die
+
+.. Sichern Sie die OKM-Informationen:
++
+... In den erweiterten Berechtigungsmodus wechseln:
++
+`set -priv advanced`
+
++
+Eingeben `y` wenn er zur Fortsetzung aufgefordert wird.
+
+... Informationen zur Schlüsselverwaltung und Datensicherung anzeigen:
++
+`security key-manager onboard show-backup`
+
+... Kopieren Sie die Sicherungsinformationen in eine separate Datei oder Ihre Protokolldatei.
++
+Sie benötigen diese Sicherungsinformationen, falls Sie OKM während des Austauschvorgangs manuell wiederherstellen müssen.
+
+... Zurück zum Administratormodus:
++
+`set -priv admin`
+
+
+
+.. Sie können den defekten Controller gefahrlos herunterfahren und mit dem Herunterfahrvorgang fortfahren.
+
+
+--
+====
+

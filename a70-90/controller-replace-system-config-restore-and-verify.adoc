@@ -13,20 +13,16 @@ summary: Überprüfen Sie, ob die HA-Konfiguration des Controllers in Ihrem AFF 
 [role="lead"]
 Überprüfen Sie, ob die HA-Konfiguration des Controllers in Ihrem AFF A70 oder AFF A90 Storage-System aktiv und ordnungsgemäß funktioniert, und vergewissern Sie sich, dass die Adapter des Systems alle Pfade zu den Festplatten auflisten.
 
-
-
-== Schritt: Überprüfen Sie HA-Konfigurationseinstellungen
-
-Sie müssen die überprüfen `HA` Status des Controller-Moduls und, falls erforderlich, aktualisieren Sie den Status entsprechend Ihrer Systemkonfiguration.
+Überprüfen Sie die HA-Konfigurationseinstellungen und die Festplattenliste, bevor Sie das System wieder in Betrieb nehmen.
 
 .Schritte
-. Booten im Wartungsmodus: `boot_ontap maint`
+. Booten im Wartungsmodus:
 +
-.. Geben Sie ein `y`, wenn _Continue with Boot?_ angezeigt wird.
+`boot_ontap maint`
+
+. Geben Sie ein `y`, wenn _Continue with Boot?_ angezeigt wird.
 +
 Wenn die Warnmeldung _System ID Mismatch_ angezeigt wird, geben Sie ein `y`.
-
-
 
 . Geben Sie den Inhalt der Anzeige ein `sysconfig -v` und erfassen Sie diesen.
 +
@@ -34,11 +30,17 @@ Wenn die Warnmeldung _System ID Mismatch_ angezeigt wird, geben Sie ein `y`.
 NOTE: Wenn Sie _PERSONALITY MISMATCH_ sehen, wenden Sie sich an den Kundendienst.
 
 . Vergleichen Sie in der `sysconfig -v` Ausgabe die Adapterkarteninformationen mit den Karten und Positionen im Ersatzcontroller.
-. Vergewissern Sie sich, dass alle Komponenten denselben `HA` Status aufweisen: `ha-config show`
+. Vergewissern Sie sich, dass alle Komponenten denselben `HA` Status aufweisen:
++
+`ha-config show`
+
 +
 Der HA-Status sollte für alle Komponenten identisch sein.
 
-. Wenn der angezeigte Systemstatus des Controller-Moduls nicht mit Ihrer Systemkonfiguration übereinstimmt, legen Sie den Status für das Controller-Modul fest `HA`: `ha-config modify controller ha`
+. Wenn der angezeigte Systemstatus des Controllermoduls nicht mit Ihrer Systemkonfiguration übereinstimmt, stellen Sie die `HA` Status des Controller-Moduls:
++
+`ha-config modify controller ha`
+
 +
 Für den HA-Status kann einer der folgenden Werte verwendet werden:
 
@@ -49,21 +51,15 @@ Für den HA-Status kann einer der folgenden Werte verwendet werden:
 ** `non-ha` (Nicht unterstützt)
 
 
-. Bestätigen Sie, dass sich die Einstellung geändert hat: `ha-config show`
+. Bestätigen Sie, dass sich die Einstellung geändert hat:
++
+`ha-config show`
 
-
-
-
-== Schritt 2: Überprüfen Sie die Datenträgerliste
-
-Sie müssen die Adapterliste und die Pfade zu allen Ihren Systemfestplatten überprüfen.
-
-.Schritte
-. Überprüfen Sie, ob der Adapter die Pfade zu allen Festplatten mit auflistet `storage show disk -p`.
+. Überprüfen Sie, ob der Adapter die Pfade zu allen Datenträgern auflistet: `storage show disk -p`
 +
 Wenn Sie Probleme sehen, überprüfen Sie die Verkabelung, und setzen Sie die Kabel wieder ein.
 
-. Beenden Sie den Wartungsmodus: `halt`.
+. Beenden des Wartungsmodus: `halt`
 
 
 .Was kommt als Nächstes?

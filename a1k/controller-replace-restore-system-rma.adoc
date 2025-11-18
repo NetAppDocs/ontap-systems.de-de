@@ -20,12 +20,21 @@ Um den Controlleraustausch für Ihr AFF A1K-System abzuschließen, stellen Sie z
 Bevor Sie den Ersatz-Node an einen Service zurücksenden, überprüfen Sie, ob sich die logischen Schnittstellen auf ihren Home Ports befinden, überprüfen Sie den Cluster-Zustand und setzen Sie das automatische Giveback zurück.
 
 .Schritte
-. Vergewissern Sie sich, dass die logischen Schnittstellen ihrem Home-Server und ihren Ports Berichterstellung: `network interface show -is-home false`
+. Überprüfen Sie, ob die logischen Schnittstellen an ihren Home-Server und ihre Ports berichten:
 +
-Wenn logische Schnittstellen als falsch aufgeführt sind, setzen Sie sie auf ihre Home-Ports zurück: `network interface revert -vserver * -lif *`
+`network interface show -is-home false`
 
-. Überprüfen Sie den Zustand Ihres Clusters. Weitere Informationen finden Sie im https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["So führen Sie eine Cluster-Integritätsprüfung mit einem Skript in ONTAP durch"^] KB-Artikel.
-. Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut: `storage failover modify -node local -auto-giveback true`
++
+Falls logische Schnittstellen als „false“ aufgeführt sind, werden sie wieder auf ihre ursprünglichen Ports zurückgesetzt:
+
++
+`network interface revert -vserver * -lif *`
+
+. Überprüfen Sie den Zustand Ihres Clusters.  Siehe die https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["So führen Sie eine Cluster-Integritätsprüfung mit einem Skript in ONTAP durch"^] KB-Artikel.
+. Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut:
++
+`storage failover modify -node local -auto-giveback true`
+
 
 
 

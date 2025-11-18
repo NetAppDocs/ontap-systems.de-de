@@ -5,22 +5,22 @@
 Überprüfen Sie die Anforderungen für den Austausch des Controller-Moduls.
 
 * Alle Festplatten-Shelfs müssen ordnungsgemäß funktionieren.
-* Der gesunde Regler muss in der Lage sein, den zu ersetzenden Regler zu übernehmen (bezeichnet in diesem Verfahren als „`eingeschränkte Steuerung`“).
-* Verwenden Sie dieses Verfahren nicht für Controller-Upgrades. Eine Anleitung finden Sie im https://docs.netapp.com/us-en/ontap-systems-upgrade/choose_controller_upgrade_procedure.html["Wählen Sie das Upgrade Ihrer Controller-Hardware aus"].
-* Wenn sich Ihr System in einer MetroCluster-Konfiguration befindet, müssen Sie prüfen https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/concept_choosing_the_correct_recovery_procedure_parent_concept.html["Auswahl des richtigen Wiederherstellungsverfahrens"], ob Sie dieses Verfahren verwenden sollten.
-* Sie müssen die ausgefallene Komponente durch die Field-Replaceable Unit (FRU) ersetzen, die Sie von NetApp erhalten haben.
-* Ein Controller-Modul muss durch ein Controller-Modul desselben Modelltyps ersetzt werden. Sie können kein System-Upgrade durch einen Austausch des Controller-Moduls durchführen.
-* Im Rahmen dieses Verfahrens können Laufwerke oder Laufwerk-Shelfs nicht geändert werden.
-* Da sich das Startgerät auf dem Systemverwaltungsmodul befindet, das auf der Rückseite des Systems installiert ist, müssen Sie das Startgerät beim Austausch eines Controller-Moduls nicht verschieben.
-* Es ist wichtig, dass Sie die Befehle in diesen Schritten auf die richtigen Systeme anwenden:
+* Der intakte Regler muss in der Lage sein, den zu ersetzenden Regler (im Folgenden als beeinträchtigter Regler bezeichnet) zu übernehmen.
+* Dieses Verfahren darf nicht für Controller-Upgrades verwendet werden.  Siehe https://docs.netapp.com/us-en/ontap-systems-upgrade/choose_controller_upgrade_procedure.html["Wählen Sie das Upgrade Ihrer Controller-Hardware aus"] zur Orientierung.
+* Wenn Ihr System in einer MetroCluster -Konfiguration vorliegt, überprüfen Sie https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/concept_choosing_the_correct_recovery_procedure_parent_concept.html["Auswahl des richtigen Wiederherstellungsverfahrens"] um zu entscheiden, ob dieses Verfahren angewendet werden soll.
+* Ersetzen Sie die defekte Komponente durch die von NetApp erhaltene vor Ort austauschbare Einheit (FRU).
+* Ersetzen Sie das Steuergerät durch ein Steuergerät desselben Modelltyps.  Ein Upgrade des Systems durch Austausch des Controller-Moduls ist nicht möglich.
+* Im Rahmen dieses Vorgangs dürfen Sie weder Laufwerke noch Laufwerksschächte austauschen.
+* Das Boot-Gerät befindet sich auf dem Systemverwaltungsmodul, das an der Rückseite des Systems installiert ist.  Beim Austausch eines Controllermoduls muss das Boot-Gerät nicht versetzt werden.
+* Machen Sie sich mit der in diesem Verfahren verwendeten Controller-Terminologie vertraut:
 +
-** Die Steuerung _imired_ ist die Steuerung, die ersetzt wird.
-** Die Steuerung _Replacement_ ist die neue Steuerung, die die beeinträchtigte Steuerung ersetzt.
+** Der _beeinträchtigte_ Controller ist der Controller, der ersetzt wird.
+** Der _Ersatz_-Controller ist der neue Controller, der den defekten Controller ersetzt.
 ** Der _Healthy_ Controller ist der überlebende Controller.
 
 
-* Sie müssen immer die Konsolenausgabe des Controllers in einer Textprotokolldatei erfassen.
+* Die Konsolenausgabe des Controllers soll in einer Textprotokolldatei gespeichert werden.
 +
-Auf diese Weise erhalten Sie eine Aufzeichnung des Verfahrens, damit Sie Probleme beheben können, die während des Austauschvorgangs auftreten können.
+Dies dient der Dokumentation des Vorgehens zur Behebung von Problemen während des Austauschprozesses.
 
 

@@ -11,57 +11,32 @@ summary: Bereiten Sie vor, das Gehäuse für beeinträchtigte Personen in Ihrem 
 
 
 [role="lead"]
-Bereiten Sie den Austausch des Gehäuses für beeinträchtigte Personen in Ihrem AFF A70- oder AFF A90-System vor, indem Sie das Gehäuse für beeinträchtigte Personen ermitteln, die Ersatzkomponenten überprüfen und die Kabel und Controller-Module beschriften.
-
-
-
-== Schritt 1: Suchen und überwachen Sie Ihr System
-
-Sie sollten eine Konsolensitzung öffnen und Sitzungsprotokolle zur späteren Referenz speichern und die LED für die Systemposition einschalten, um das Gehäuse für beeinträchtigte Personen zu finden.
+Bereiten Sie vor, das Gehäuse für beeinträchtigte Personen in Ihrem C80-System auszutauschen, indem Sie das Gehäuse für beeinträchtigte Personen identifizieren, die Ersatzkomponenten überprüfen und die Kabel und Controller-Module beschriften.
 
 .Schritte
 . Stellen Sie eine Verbindung zum seriellen Konsolenport mit der Schnittstelle mit her und überwachen Sie das System.
-. Suchen und Einschalten der Standort-LED des Controllers:
+. Schalten Sie die Standort-LED des Controllers ein:
 +
-.. Verwenden Sie den `system controller location-led show` Befehl, um den aktuellen Status der Standort-LED anzuzeigen.
-.. Ändern Sie den Status der Standort-LED auf „ein“:
+.. Verwenden Sie die `system controller location-led show` Befehl zur Anzeige des aktuellen Status der Standort-LED.
+.. Standort-LED einschalten:
 +
-`system controller location-led modify -node _node1_ -state on`.
+`system controller location-led modify -node _node1_ -state on`
 
 +
 Die Standort-LED leuchtet 30 Minuten lang.
 
 
 
-
-
-
-
-== Schritt 2: Prüfen Sie die Austauschkomponenten
-
-Überprüfen Sie, ob Sie die erforderlichen Komponenten erhalten haben, entfernen Sie sie aus der Verpackung, und bewahren Sie die Verpackung auf.
-
-.Schritte
-. Bevor Sie die Verpackung öffnen, sollten Sie auf dem Verpackungsetikett nachsehen und Folgendes überprüfen:
+. Prüfen Sie vor dem Öffnen der Verpackung das Verpackungsetikett und vergewissern Sie sich, dass Folgendes vorhanden ist:
 +
-** Teilenummer der Komponente.
-** Teilebeschreibung.
-** Menge im Karton.
+** Bauteilnummer
+** Teilebeschreibung
+** Menge in der Box
 
 
-. Entfernen Sie den Inhalt aus der Verpackung, und verwenden Sie die Verpackung, um die fehlerhafte Komponente an NetApp zurückzugeben.
-
-
-
-
-== Schritt 3: Beschriften Sie die Kabel und Controller-Module
-
-Sie sollten die Kabel und Controller-Module beschriften, bevor Sie sie aus den Controller-Modulen oder dem Chassis entfernen.
-
-.Schritte
-. Beschriften Sie alle Kabel, die dem Speichersystem zugeordnet sind. Dies erleichtert die spätere Neueinbringung in diesem Verfahren.
-. Beschriften Sie die Controller-Module.
-. Wenn Sie nicht bereits ordnungsgemäß geerdet sind, Erden Sie sich.
+. Nehmen Sie den Inhalt aus der Verpackung und bewahren Sie die Verpackung auf, um die defekte Komponente an NetApp zurückzusenden.
+. Beschriften Sie alle an das Speichersystem angeschlossenen Kabel.  Dadurch wird eine ordnungsgemäße Neuverkabelung im weiteren Verlauf dieses Verfahrens sichergestellt.
+. Erden Sie sich, falls Sie noch nicht geerdet sind.
 
 
 .Was kommt als Nächstes?

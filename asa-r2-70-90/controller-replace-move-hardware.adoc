@@ -164,7 +164,7 @@ image::../media/icon_round_2.png[Legende Nummer 2]
 Lüftermodul
 
 |===
-. Schieben Sie das Lüftermodul in das Ersatzcontrollermodul, und installieren Sie dann das Lüftermodul, indem Sie die Kanten an der Öffnung im Controller-Modul ausrichten und das Lüftermodul dann in das Controller-Modul schieben, bis die Verriegelungen einrasten.
+. Setzen Sie das Lüftermodul auf das Ersatzsteuergerät und montieren Sie es anschließend, indem Sie seine Kanten mit der Öffnung im Steuergerät ausrichten und es hineinschieben, bis die Verriegelungsriegel einrasten.
 . Wiederholen Sie diese Schritte für die übrigen Lüftermodule.
 
 
@@ -283,8 +283,16 @@ NOTE: Prüfen Sie das DIMM visuell, um sicherzustellen, dass es gleichmäßig au
 
 Bringen Sie die E/A-Module in das Ersatz-Controller-Modul.
 
+.Schritte
+. Trennen Sie alle Kabel vom Ziel-E/A-Modul.
++
+Achten Sie darauf, dass Sie die Kabel so kennzeichnen, dass Sie wissen, woher sie stammen.
+
+. Drehen Sie die Kabelmanagement-ARM nach unten, indem Sie die Tasten an der Innenseite der Kabelmanagement-ARM ziehen und nach unten drehen.
++
 image::../media/drw_a70_90_io_remove_replace_ieops-1532.svg[Entfernen Sie das E/A-Modul]
 
++
 [cols="1,4"]
 |===
 
@@ -293,12 +301,6 @@ image::../media/drw_a70_90_io_remove_replace_ieops-1532.svg[Entfernen Sie das E/
 image::../media/icon_round_1.png[Legende Nummer 1]
 | E/A-Modul Nockenhebel 
 |===
-.Schritte
-. Trennen Sie alle Kabel vom Ziel-E/A-Modul.
-+
-Achten Sie darauf, dass Sie die Kabel so kennzeichnen, dass Sie wissen, woher sie stammen.
-
-. Drehen Sie die Kabelmanagement-ARM nach unten, indem Sie die Tasten an der Innenseite der Kabelmanagement-ARM ziehen und nach unten drehen.
 . Entfernen Sie die E/A-Module aus dem Controller-Modul:
 +
 .. Drücken Sie die Verriegelungstaste des Ziel-E/A-Moduls.
@@ -329,8 +331,12 @@ NOTE: Um die E/A-Module aus den Steckplätzen 6 und 7 zu verschieben, müssen Si
 
 Verschieben Sie das System-Management-Modul auf das Ersatz-Controller-Modul.
 
+.Schritte
+. Entfernen Sie das System-Management-Modul aus dem Controller-Modul für beeinträchtigte Störungen:
++
 image::../media/drw_70-90_sys-mgmt_remove_ieops-1817.svg[Verschieben Sie das Modul System Management]
 
++
 [cols="1,4"]
 |===
 
@@ -341,8 +347,6 @@ image::../media/icon_round_1.png[Legende Nummer 1]
 Nockenverriegelung des Systemmanagementmoduls
 
 |===
-.Schritte
-. Entfernen Sie das System-Management-Modul aus dem Controller-Modul für beeinträchtigte Störungen:
 +
 .. Drücken Sie die Taste für die Systemverwaltung.
 .. Den Nockenhebel ganz nach unten drehen.
@@ -363,8 +367,12 @@ Nockenverriegelung des Systemmanagementmoduls
 
 Setzen Sie das NVRAM-Modul auf das Ersatz-Controller-Modul.
 
+.Schritte
+. Entfernen Sie das NVRAM-Modul aus dem Controller-Modul für beeinträchtigte Störungen:
++
 image::../media/drw_a70-90_nvram12_remove_replace_ieops-1370.svg[Entfernen Sie das NVRAM12-Modul und die DIMMs]
 
++
 [cols="1,4"]
 |===
 
@@ -382,8 +390,6 @@ image:../media/icon_round_2.png["Legende Nummer 2"]
 DIMM-Sperrklinke
 
 |===
-.Schritte
-. Entfernen Sie das NVRAM-Modul aus dem Controller-Modul für beeinträchtigte Störungen:
 +
 .. Drücken Sie die Taste für die Nockenverriegelung.
 +
@@ -452,3 +458,6 @@ Wenn Sie die Transceiver (QSFPs oder SFPs) entfernt haben, müssen Sie sie erneu
 NOTE: Wenn Sie über Gleichstromnetzteile verfügen, schließen Sie den Netzteilblock wieder an die Netzteile an, nachdem das Controller-Modul vollständig im Gehäuse eingesetzt ist.
 
 
+
+.Was kommt als Nächstes?
+Nachdem Sie den defekten ASA A70- oder ASA A90-Controller ausgetauscht haben, müssen Sie Folgendes tun:link:controller-replace-system-config-restore-and-verify.html["Stellen Sie die Systemkonfiguration wieder her"] Die

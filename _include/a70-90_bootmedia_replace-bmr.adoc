@@ -2,10 +2,18 @@
 :allow-uri-read: 
 
 
-Das Startmedium befindet sich im System Management-Modul und kann durch Entfernen des Moduls aus dem System aufgerufen werden.
+Tauschen Sie das Bootmedium aus, das sich im Systemverwaltungsmodul auf der Rückseite des Controllers befindet.
+
+.Bevor Sie beginnen
+* Sie benötigen ein Ersatz-Bootmedium.
+* Für das Systemmanagementmodul sollte eine antistatische Matte bereitliegen.
+
 
 .Schritte
-. Stellen Sie sicher, dass der NVRAM-Speicher vollständig ist, bevor Sie fortfahren. Wenn die LED am NV-Modul aus ist, wird NVRAM abgestapft. Wenn die LED blinkt, warten Sie, bis das Blinken beendet ist. Wenn das Blinken länger als 5 Minuten andauert, wenden Sie sich an den technischen Support, um Unterstützung zu erhalten.
+. Vergewissern Sie sich, dass die NVRAM Destaging-Operation abgeschlossen ist, bevor Sie fortfahren.  Wenn die LED am NV-Modul aus ist, wird der NVRAM deaktiviert.
++
+Wenn die LED blinkt, warten Sie, bis das Blinken aufhört.  Sollte das Blinken länger als 5 Minuten anhalten, wenden Sie sich bitte an den NetApp Support.
+
 +
 image::../media/drw_a1K-70-90_nvram-led_ieops-1463.svg[Grafik für die NVRAM-Warnungs- und Status-LED zur Lage]
 
@@ -27,26 +35,26 @@ image:../media/icon_round_2.png["Legende Nummer 2"]
 LED für NVRAM-Warnung
 
 |===
+. Begeben Sie sich zur Rückseite des Chassis und erden Sie sich ordnungsgemäß, falls Sie noch nicht geerdet sind.
+. Trennen Sie die Stromversorgung des Controllers:
 +
-** Wenn die NV-LED aus ist, mit dem nächsten Schritt fortfahren.
-** Wenn die NV-LED blinkt, warten Sie, bis das Blinken beendet ist. Wenn das Blinken länger als 5 Minuten andauert, wenden Sie sich an den technischen Support, um Unterstützung zu erhalten.
+** Bei Wechselstromnetzteilen trennen Sie die Netzkabel von den Netzteilen.
+** Bei Gleichstromversorgungen muss der Netzstecker von der Stromversorgung getrennt werden.
 
 
-. Gehen Sie zur Rückseite des Gehäuses. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
-. Ziehen Sie die Netzteile des Controllers ab.
+. Entfernen Sie das System Management-Modul:
 +
-
-NOTE: Wenn Ihr System über Gleichstrom verfügt, trennen Sie den Netzstecker von den Netzteilen.
-
+.. Entfernen Sie alle mit dem Systemverwaltungsmodul verbundenen Kabel. Beschriften Sie die Kabel, um die korrekten Anschlüsse für die Wiederinstallation zu kennzeichnen.
+.. Klappen Sie den Kabelmanagementarm nach unten, indem Sie die Knöpfe an beiden Seiten des Kabelmanagementarms ziehen.
+.. Drücken Sie die Taste für die Systemverwaltung.
 +
-.. Entfernen Sie alle Kabel, die am System Management-Modul angeschlossen sind. Achten Sie darauf, dass Sie beim Wiedereinsetzen des Moduls die Kabelanschlüsse kennzeichnen, damit Sie sie an die richtigen Anschlüsse anschließen können.
-.. Drehen Sie das Kabelführungs-Fach nach unten, indem Sie die Tasten an beiden Seiten an der Innenseite des Kabelführungs-Fachs ziehen und das Fach dann nach unten drehen.
-.. Drücken Sie die Taste für die Systemverwaltung. Der Nockenhebel bewegt sich vom Gehäuse weg.
-.. Drehen Sie den Nockenhebel ganz nach unten, und entfernen Sie das System-Management-Modul aus dem Controller-Modul.
-.. Platzieren Sie das System-Management-Modul auf einer antistatischen Matte, damit das Startmedium zugänglich ist.
+Der Nockenhebel bewegt sich vom Chassis weg.
+
+.. Drehen Sie den Nockenhebel ganz nach unten und entnehmen Sie das Systemmanagementmodul vom Controller.
+.. Platzieren Sie das Systemmanagementmodul auf einer antistatischen Matte, sodass das Bootmedium zugänglich ist.
 
 
-. Entfernen Sie das Startmedium aus dem Verwaltungsmodul:
+. Entfernen Sie das Bootmedium aus dem Systemverwaltungsmodul:
 +
 image::../media/drw_a70-90_boot_media_remove_replace_ieops-1367.svg[Startmedien ersetzen Grafik]
 
@@ -77,7 +85,7 @@ Boot-Medien
 |===
 +
 .. Drücken Sie die blaue Verriegelungstaste.
-.. Drehen Sie das Startmedium nach oben, schieben Sie es aus dem Sockel und legen Sie es beiseite.
+.. Drehen Sie das Bootmedium nach oben, schieben Sie es aus dem Steckplatz und legen Sie es beiseite.
 
 
 . Installieren Sie das Ersatz-Startmedium im System Management-Modul:
@@ -89,14 +97,21 @@ Boot-Medien
 
 . Installieren Sie das System Management-Modul neu:
 +
-.. Drehen Sie das Kabelführungs-Fach bis in die geschlossene Position.
-.. System-Management-Modul erneut verwenden.
+.. Richten Sie die Kanten des Systemmanagementmoduls an der Gehäuseöffnung aus.
+.. Schieben Sie das Modul vorsichtig in das Gehäuse, bis die Nockenverriegelung einrastet.
+.. Drehen Sie den Nockenriegel ganz nach oben, um das Modul zu verriegeln.
+.. Schließen Sie die Kabel mithilfe der während des Ausbaus erstellten Etiketten wieder an das Systemverwaltungsmodul an.
+.. Drehen Sie die Kabelmanagement-ARM bis zur geschlossenen Position.
 
 
-. Schließen Sie die Netzkabel an die Netzteile an. Der Controller startet neu, sobald die Stromversorgung wiederhergestellt ist.
+. Schließen Sie die Stromversorgung des Controllers wieder an:
 +
+** Bei Wechselstromnetzteilen stecken Sie die Netzkabel in die Netzteile.
+** Bei Gleichstromversorgungen schließen Sie den Netzstecker wieder an die Stromversorgung an.
++
+Der Controller startet automatisch neu, sobald die Stromversorgung wiederhergestellt ist.
 
-NOTE: Wenn Sie über Gleichstromnetzteile verfügen, schließen Sie den Stromblock wieder an die Netzteile an.
 
-. Unterbrechen Sie den Boot-Vorgang, indem Sie Strg-C drücken, um an der LOADER-Eingabeaufforderung zu stoppen.
+
+. Unterbrechen Sie den Startvorgang durch Drücken `Ctrl-C` An der Eingabeaufforderung LOADER anhalten.
 
