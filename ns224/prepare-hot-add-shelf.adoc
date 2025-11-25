@@ -73,7 +73,7 @@ Wenn keine dedizierten Ports für den Storage konfiguriert sind, wird in der Bef
 
 . Wenn die nicht dedizierten Ports für die Speichernutzung konfiguriert sind, gehen Sie wie folgt vor.
 +
-Andernfalls müssen Sie die Ports konfigurieren, indem Sie die Schritte 4 bis 7 ausführen.
+Andernfalls müssen Sie die Ports konfigurieren, indem Sie die folgenden Schritte ausführen.
 
 . Konfigurieren Sie die nicht dedizierten Ports für die Speichernutzung auf einem der Controller:
 +
@@ -98,7 +98,7 @@ ONTAP 9.7
 `storage port enable -node _node_name_ -port _port_name_`
 
 |===
-. Wiederholen Sie Schritt 4 für den zweiten Controller.
+. Wiederholen Sie den vorherigen Schritt für den zweiten Controller.
 . Überprüfen Sie, ob die nicht dedizierten Ports auf beiden Controllern für die Speichernutzung konfiguriert sind: `storage port show`
 +
 ** Wenn auf Ihrem HA-Paar ONTAP 9.8 oder höher ausgeführt wird, werden die nicht dedizierten Ports angezeigt `storage` Im `Mode` Spalte.

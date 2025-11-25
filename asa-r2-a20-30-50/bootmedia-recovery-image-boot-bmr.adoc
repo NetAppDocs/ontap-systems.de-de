@@ -63,7 +63,7 @@ Auf dem System ist keine Verschlüsselung installiert.
 +
 `storage failover giveback -ofnode _impaired_node_name_`
 
-.. Gehen Sie zu Schritt 6, um die automatische Rückgabe wieder zu aktivieren, falls diese deaktiviert war.
+.. Gehe zu <<reenable-auto-giveback,automatische Rückvergütung wieder aktivieren>> wenn es deaktiviert war.
 
 
 
@@ -71,13 +71,16 @@ Auf dem System ist keine Verschlüsselung installiert.
  a| 
 `key manager is configured.`
  a| 
-Die Verschlüsselung ist installiert.  Fahren Sie mit Schritt 4 fort, um den Schlüsselmanager wiederherzustellen.
+Die Verschlüsselung ist installiert. Gehe zu<<restore-key-manager,Wiederherstellung des Schlüsselmanagers>> .
 
 |===
 +
 
 NOTE: Kann das System die Konfiguration des Schlüsselmanagers nicht identifizieren, wird eine Fehlermeldung angezeigt, und Sie werden aufgefordert zu bestätigen, ob ein Schlüsselmanager konfiguriert ist und um welchen Typ es sich handelt (intern oder extern).  Beantworten Sie die Anweisungen, um fortzufahren.
 
+
+
+[[restore-key-manager]]
 . Stellen Sie den Schlüsselmanager mithilfe der für Ihre Konfiguration geeigneten Vorgehensweise wieder her:
 +
 [role="tabbed-block"]
@@ -138,7 +141,7 @@ Successfully recovered keymanager secrets.
 `security key-manager onboard sync`
 
 +
-Gehen Sie zu Schritt 5, um die automatische Rückgabe wieder zu aktivieren, falls diese deaktiviert war.
+Gehe zu <<reenable-auto-giveback,automatische Rückvergütung wieder aktivieren>> wenn es deaktiviert war.
 
 
 
@@ -282,7 +285,7 @@ LOADER-B>
 `storage failover giveback -ofnode _impaired_node_name_`
 
 +
-Gehen Sie zu Schritt 5, um die automatische Rückgabe wieder zu aktivieren, falls diese deaktiviert war.
+Gehe zu <<reenable-auto-giveback,automatische Rückvergütung wieder aktivieren>> wenn es deaktiviert war.
 
 
 
@@ -290,6 +293,7 @@ Gehen Sie zu Schritt 5, um die automatische Rückgabe wieder zu aktivieren, fall
 ====
 
 
+[[reenable-auto-giveback]]
 . Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut:
 +
 `storage failover modify -node local -auto-giveback true`

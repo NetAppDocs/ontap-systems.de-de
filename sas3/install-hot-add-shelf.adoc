@@ -269,7 +269,7 @@ NOTE: Firmware-Updates können bis zu 30 Minuten dauern.
 Sie müssen die Festplatteneigentümer manuell zuweisen, wenn Festplatten im Stack Eigentum beider Controller in einem HA-Paar sind.
 
 +
-Sie deaktivieren die automatische Zuweisung der Festplattenbesitzer, bevor Sie die im laufenden Betrieb hinzugefügten Platten-Shelfs verkabeln und dann später, in Schritt 7, aktivieren Sie sie nach der Verkabelung der Hot-Added Platten-Shelfs neu.
+Sie deaktivieren die automatische Zuweisung der Datenträgerbesitzrechte, bevor Sie die im laufenden Betrieb hinzugefügten Datenträgergehäuse verkabeln, und aktivieren sie dann später in diesem Verfahren wieder, nachdem Sie die im laufenden Betrieb hinzugefügten Datenträgergehäuse verkabelt haben.
 
 +
 .. Überprüfen Sie, ob die automatische Zuweisung für die Festplatteneigentümer aktiviert ist:``storage disk option show``
@@ -285,7 +285,7 @@ Sie müssen die automatische Zuweisung der Festplattenbesitzer auf beiden Contro
 
 
 
-. Wenn Sie einen Stapel an Platten-Shelfs während des laufenden Betrieb direkt zu einem Controller hinzufügen, führen Sie die folgenden Teilschritte durch; anderenfalls fahren Sie mit Schritt 3 fort.
+. Wenn Sie einen Stapel Disk-Shelches direkt an einen Controller anschließen, führen Sie die folgenden Teilschritte aus; andernfalls fahren Sie mit dem nächsten Schritt fort.
 +
 .. Wenn der Stack, den Sie hinzufügen, mehr als nur ein Festplatten-Shelf hat, verkabeln Sie die Shelf-to-Shelf-Verbindungen. Andernfalls fahren Sie mit dem Unterschritt B. fort
 +
