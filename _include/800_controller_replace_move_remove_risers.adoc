@@ -1,0 +1,39 @@
+= 
+:allow-uri-read: 
+
+
+.Schritte
+. Entfernen Sie den PCIe-Riser aus dem Controller-Modul:
++
+.. Entfernen Sie alle SFP- oder QSFP-Module, die sich möglicherweise in den PCIe-Karten enthalten haben.
+.. Drehen Sie die Riserverriegelung auf der linken Seite des Riser nach oben und in Richtung der Lüftermodule.
++
+Der Riser hebt sich leicht vom Controller-Modul auf.
+
+.. Heben Sie den Riser an, und legen Sie ihn in Richtung der Lüfter, so dass die Metalllippe auf dem Riser den Rand des Controller-Moduls entfernt, heben Sie den Riser aus dem Controller-Modul und legen Sie ihn dann auf eine stabile, flache Oberfläche.
++
+image::../media/drw_a800_riser_2_3_remove.png[Entfernen Sie die Steigleitungen 2 und 3]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Legende Nummer 1"]
+ a| 
+Luftkanal
+
+
+
+ a| 
+image:../media/icon_round_2.png["Legende Nummer 2"]
+ a| 
+Riserkarte 1 (linker Riser), Riserkarte 2 (mittlere Riser) und 3 (rechter Riser) Verriegelungsriegel
+
+|===
+
+
+. Wiederholen Sie den vorherigen Schritt für die verbleibenden Riser im Modul für beeinträchtigte Controller.
+. Wiederholen Sie die oben genannten Schritte mit den leeren Riser in der Ersatzsteuerung und bringen Sie sie weg.
+

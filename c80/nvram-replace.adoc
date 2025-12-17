@@ -170,12 +170,51 @@ Ersetzen Sie das NVRAM-Modul oder die NVRAM-DIMMs mit der entsprechenden Option.
 --
 Um das NVRAM-Modul auszutauschen, suchen Sie es in Steckplatz 4/5 im Gehäuse, und befolgen Sie die entsprechenden Schritte.
 
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Stellen Sie sicher, dass alle Laufwerke im Gehäuse fest auf der Mittelplatine sitzen, indem Sie mit den Daumen auf die einzelnen Laufwerke drücken, bis Sie einen positiven Anschlag spüren.
 +
-image::../media/drw_a800_drive_seated_IEOPS-960.svg[Festplattenlaufwerke einsetzen]
+.Video – Fahrersitz bestätigen
+video::2c46e4af-2c21-4f12-b065-b38b003d0ea2[panopto]
++
+image::../media/drw_a800_drive_seated_IEOPS-960.svg[Setzen Sie die Antriebe ein]
 
-. Gehen Sie zur Rückseite des Gehäuses. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
-. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Überprüfen Sie die Controller-Laufwerke anhand des Systemstatus:
++
+.. Überprüfen Sie auf dem fehlerfreien Controller, ob sich eine aktive RAID-Gruppe in einem beeinträchtigten Zustand, einem Fehlerzustand oder beidem befindet:
++
+[source, cli]
+----
+storage aggregate show -raidstatus !*normal*
+----
++
+*** Wenn der Befehl zurückkehrt `There are no entries matching your query.` weiter<<Check-missing-drives,Fahren Sie mit dem nächsten Teilschritt fort, um nach fehlenden Laufwerken zu suchen.>> Die
+*** Falls der Befehl andere Ergebnisse liefert, erfassen Sie die AutoSupport Daten von beiden Controllern und wenden Sie sich an den NetApp -Support, um weitere Unterstützung zu erhalten.
++
+[source, cli]
+----
+system node autosupport invoke -node * -type all -message '<message_name>'
+----
+
+
+.. [[Check-missing-drives]]Prüfen Sie, ob sowohl das Dateisystem als auch Ersatzlaufwerke auf fehlende Laufwerke überprüft werden:
++
+[source, cli]
+----
+event log show -severity * -node * -message-name *disk.missing*
+----
++
+*** Wenn der Befehl zurückkehrt `There are no entries matching your query.` weiter<<Go-to-the-rear,zum nächsten Schritt>> Die
+*** Falls der Befehl andere Ergebnisse liefert, erfassen Sie die AutoSupport Daten von beiden Controllern und wenden Sie sich an den NetApp -Support, um weitere Unterstützung zu erhalten.
++
+[source, cli]
+----
+system node autosupport invoke -node * -type all -message '<message_name>'
+----
+
+
+
+
+. [[Go-to-the-rear]]Gehe zum hinteren Teil des Chassis.
 . Ziehen Sie die Netzteile des Controllers ab.
 +
 
@@ -251,11 +290,51 @@ NOTE: Wenn Sie über Gleichstromnetzteile verfügen, schließen Sie den Stromblo
 --
 Um NVRAM-DIMMs im NVRAM-Modul zu ersetzen, müssen Sie zuerst das NVRAM-Modul entfernen und dann das Ziel-DIMM austauschen.
 
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Stellen Sie sicher, dass alle Laufwerke im Gehäuse fest auf der Mittelplatine sitzen, indem Sie mit den Daumen auf die einzelnen Laufwerke drücken, bis Sie einen positiven Anschlag spüren.
 +
-image::../media/drw_a800_drive_seated_IEOPS-960.svg[Festplattenlaufwerke einsetzen]
+.Video – Fahrersitz bestätigen
+video::2c46e4af-2c21-4f12-b065-b38b003d0ea2[panopto]
++
+image::../media/drw_a800_drive_seated_IEOPS-960.svg[Setzen Sie die Antriebe ein]
 
-. Gehen Sie zur Rückseite des Gehäuses. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Überprüfen Sie die Controller-Laufwerke anhand des Systemstatus:
++
+.. Überprüfen Sie auf dem fehlerfreien Controller, ob sich eine aktive RAID-Gruppe in einem beeinträchtigten Zustand, einem Fehlerzustand oder beidem befindet:
++
+[source, cli]
+----
+storage aggregate show -raidstatus !*normal*
+----
++
+*** Wenn der Befehl zurückkehrt `There are no entries matching your query.` weiter<<Check-missing-drives,Fahren Sie mit dem nächsten Teilschritt fort, um nach fehlenden Laufwerken zu suchen.>> Die
+*** Falls der Befehl andere Ergebnisse liefert, erfassen Sie die AutoSupport Daten von beiden Controllern und wenden Sie sich an den NetApp -Support, um weitere Unterstützung zu erhalten.
++
+[source, cli]
+----
+system node autosupport invoke -node * -type all -message '<message_name>'
+----
+
+
+.. [[Check-missing-drives]]Prüfen Sie, ob sowohl das Dateisystem als auch Ersatzlaufwerke auf fehlende Laufwerke überprüft werden:
++
+[source, cli]
+----
+event log show -severity * -node * -message-name *disk.missing*
+----
++
+*** Wenn der Befehl zurückkehrt `There are no entries matching your query.` weiter<<Go-to-the-rear,zum nächsten Schritt>> Die
+*** Falls der Befehl andere Ergebnisse liefert, erfassen Sie die AutoSupport Daten von beiden Controllern und wenden Sie sich an den NetApp -Support, um weitere Unterstützung zu erhalten.
++
+[source, cli]
+----
+system node autosupport invoke -node * -type all -message '<message_name>'
+----
+
+
+
+
+. [[Go-to-the-rear]]Gehe zum hinteren Teil des Chassis.
 . Ziehen Sie die Netzteile des Controllers ab.
 +
 

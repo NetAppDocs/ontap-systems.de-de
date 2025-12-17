@@ -11,13 +11,13 @@ summary: Zum Austauschen der NVDIMM-Batterie müssen Sie das Controller-Modul en
 
 
 [role="lead"]
-Zum Austauschen der NVDIMM-Batterie müssen Sie das Controller-Modul entfernen, den Akku entfernen, den Akku austauschen und dann das Controller-Modul wieder einsetzen.
-
-Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+Tauschen Sie die NV-Batterie in Ihrem AFF A800 -System aus, sobald die Batterie an Ladung verliert oder ausfällt, da sie für die Erhaltung wichtiger Systemdaten bei Stromausfällen verantwortlich ist. Der Austauschvorgang umfasst das Herunterfahren des beschädigten Controllers, das Entfernen des Controllermoduls, das Ersetzen der NV-Batterie, das Neuinstallieren des Controllermoduls und die Rücksendung des defekten Teils an NetApp.
 
 
 
-== Schritt 1: Schalten Sie den beeinträchtigten Regler aus
+== Schritt 1: Den defekten Controller herunterfahren
+
+Schalten Sie den außer Betrieb genommenen Controller aus oder übernehmen Sie ihn.
 
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 
@@ -88,14 +88,53 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 
 Sie müssen das Controller-Modul aus dem Chassis entfernen, wenn Sie das Controller-Modul ersetzen oder eine Komponente im Controller-Modul ersetzen.
 
+.Schritte
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Stellen Sie sicher, dass alle Laufwerke im Gehäuse fest auf der Mittelplatine sitzen, indem Sie mit den Daumen auf die einzelnen Laufwerke drücken, bis Sie einen positiven Anschlag spüren.
 +
-image::../media/drw_a800_drive_seated_IEOPS-960.svg[Festplattenlaufwerke einsetzen]
+.Video – Fahrersitz bestätigen
+video::2c46e4af-2c21-4f12-b065-b38b003d0ea2[panopto]
++
+image::../media/drw_a800_drive_seated_IEOPS-960.svg[Setzen Sie die Antriebe ein]
 
-. Trennen Sie die Netzteile des Controller-Moduls von der Quelle.
-. Lösen Sie die Netzkabelhalter, und ziehen Sie anschließend die Kabel von den Netzteilen ab.
-. Lösen Sie den Haken- und Schlaufenriemen, mit dem die Kabel an das Kabelmanagement-Gerät gebunden sind, und ziehen Sie dann die Systemkabel und SFP- und QSFP-Module (falls erforderlich) vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren. Lösen Sie den Haken und den Schlaufenriemen, mit dem die Kabel am Kabelführungsgerät befestigt sind, und ziehen Sie dann die Systemkabel vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren.
+. Überprüfen Sie die Controller-Laufwerke anhand des Systemstatus:
++
+.. Überprüfen Sie auf dem fehlerfreien Controller, ob sich eine aktive RAID-Gruppe in einem beeinträchtigten Zustand, einem Fehlerzustand oder beidem befindet:
++
+[source, cli]
+----
+storage aggregate show -raidstatus !*normal*
+----
++
+*** Wenn der Befehl zurückkehrt `There are no entries matching your query.` weiter<<Check-missing-drives,Fahren Sie mit dem nächsten Teilschritt fort, um nach fehlenden Laufwerken zu suchen.>> Die
+*** Falls der Befehl andere Ergebnisse liefert, erfassen Sie die AutoSupport Daten von beiden Controllern und wenden Sie sich an den NetApp -Support, um weitere Unterstützung zu erhalten.
++
+[source, cli]
+----
+system node autosupport invoke -node * -type all -message '<message_name>'
+----
+
+
+.. [[Check-missing-drives]]Prüfen Sie, ob sowohl das Dateisystem als auch Ersatzlaufwerke auf fehlende Laufwerke überprüft werden:
++
+[source, cli]
+----
+event log show -severity * -node * -message-name *disk.missing*
+----
++
+*** Wenn der Befehl zurückkehrt `There are no entries matching your query.` weiter<<remove-power-cables,zum nächsten Schritt>> Die
+*** Falls der Befehl andere Ergebnisse liefert, erfassen Sie die AutoSupport Daten von beiden Controllern und wenden Sie sich an den NetApp -Support, um weitere Unterstützung zu erhalten.
++
+[source, cli]
+----
+system node autosupport invoke -node * -type all -message '<message_name>'
+----
+
+
+
+
+. [[remove-power-cables]]Entfernen Sie die Halterungen der Stromkabel und ziehen Sie dann die Kabel von den Netzteilen ab.
+. Lösen Sie den Klettverschluss am Kabelmanagement-Gerät.  Trennen Sie die Systemkabel und gegebenenfalls die SFP/QSFP-Module vom Controller-Modul.  Notieren Sie sich die Position jedes Kabels.
 +
 Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation des Kabelverwaltungsgeräts die Kabel organisiert sind.
 
@@ -105,7 +144,7 @@ Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation
 Das Controller-Modul wird leicht aus dem Chassis entfernt.
 
 +
-image::../media/drw_a800_pcm_remove.png[Lösen Sie das Controller-Modul]
+image::../media/drw_a800_pcm_remove.png[Entfernen des Controller-Moduls]
 
 +
 [cols="1,4"]
@@ -125,19 +164,19 @@ image:../media/icon_round_2.png["Legende Nummer 2"]
 Sicherungsstift
 
 |===
-. Schieben Sie das Controller-Modul aus dem Gehäuse.
+. Schieben Sie das Controller-Modul aus dem Gehäuse und legen Sie es auf eine stabile, flache Oberfläche.
 +
-Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen, während Sie es aus dem Gehäuse schieben.
+Stützen Sie das Controllermodul an der Unterseite ab, während Sie es aus dem Gehäuse herausschieben.
 
-. Stellen Sie das Controller-Modul an einem sicheren Ort beiseite.
 
 
 
 
 == Schritt 3: Ersetzen Sie den NVDIMM-Akku
 
-Zum Austauschen der NVDIMM-Batterie müssen Sie eine fehlerhafte Batterie aus dem Controller-Modul entfernen und die Ersatzbatterie in das Controller-Modul installieren.
+Tauschen Sie die NVDIMM-Batterie aus, indem Sie die defekte Batterie aus dem Controllermodul entfernen und die Ersatzbatterie in das Controllermodul einsetzen.
 
+.Schritte
 . Öffnen Sie die Luftkanalabdeckung, und suchen Sie den NVDIMM-Akku im Riser.
 +
 image::../media/drw_a800_nvdimm_battery_replace.png[Tauschen Sie die NVDIMM-Batterie aus]
@@ -188,10 +227,11 @@ Vergewissern Sie sich, dass der Stecker in die Steckdose einrastet.
 
 
 
-== Schritt 4: Installieren Sie das Controller-Modul neu und starten Sie das System
+== Schritt 4: Installieren Sie das Controller-Modul neu
 
-Nachdem Sie eine FRU im Controller-Modul ersetzt haben, müssen Sie das Controller-Modul neu installieren und neu starten.
+Installieren Sie das Controller-Modul neu, und starten Sie es neu.
 
+.Schritte
 . Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
 +
 
@@ -218,6 +258,18 @@ Das Controller-Modul startet, sobald die Stromversorgung wiederhergestellt ist. 
 
 .. Wenn Sie dies noch nicht getan haben, installieren Sie das Kabelverwaltungsgerät neu.
 
+
+. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben:
++
+`storage failover giveback -ofnode _impaired_node_name_`.
+
+. Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut:
++
+`storage failover modify -node local -auto-giveback true`.
+
+. Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung wiederherstellen/zurücknehmen:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`.
 
 
 

@@ -11,9 +11,9 @@ summary: Sie müssen das ONTAP-Image vom USB-Laufwerk starten, das Dateisystem w
 
 
 [role="lead"]
-Nach der Installation des neuen Startmediengeräts im System können Sie das Wiederherstellungsabbild von einem USB-Laufwerk starten und die Konfiguration vom Partnerknoten wiederherstellen.
+Nach der Installation des neuen Bootmediums in Ihrem ASA C800 -System können Sie das Wiederherstellungsimage von einem USB-Laufwerk starten und die Konfiguration vom Partnerknoten wiederherstellen.
 
-Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow.html["manuelle Boot-Wiederherstellung"]
+Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie das manuelle Boot-Wiederherstellungsverfahren verwenden.
 
 .Bevor Sie beginnen
 * Stellen Sie sicher, dass Ihre Konsole mit dem defekten Controller verbunden ist.
@@ -104,3 +104,6 @@ Nach erfolgreichem Wiederherstellungsvorgang wird folgende Meldung angezeigt: `s
 `system node autosupport invoke -node * -type all -message MAINT=END`
 
 
+
+.Was kommt als Nächstes?
+Nach dem Booten des Wiederherstellungs-Images müssen Sie link:bootmedia-encryption-restore.html["Stellen Sie die Verschlüsselung auf dem Startmedium wieder her"].

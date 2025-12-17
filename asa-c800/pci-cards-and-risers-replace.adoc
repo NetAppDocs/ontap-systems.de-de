@@ -11,15 +11,20 @@ summary: Um eine PCIe-Karte zu ersetzen, müssen Sie die Kabel von den Karten tr
 
 
 [role="lead"]
-Um eine PCIe-Karte zu ersetzen, müssen Sie die Kabel von den Karten trennen, die SFP- und QSFP-Module von den Karten entfernen, bevor Sie den Riser entfernen, den Riser neu installieren und dann die SFP- und QSFP-Module neu installieren, bevor Sie die Karten verkabeln.
+Ersetzen oder ergänzen Sie ein E/A-Modul in Ihrem ASA C800 -System, wenn das Modul ausfällt, ein Upgrade zur Unterstützung höherer Leistung oder zusätzlicher Funktionen erforderlich ist. Der Austauschprozess umfasst das Herunterfahren des Controllers, den Austausch des ausgefallenen I/O-Moduls, den Neustart des Controllers und die Rücksendung des ausgefallenen Moduls an NetApp.
 
-* Sie können dieses Verfahren bei allen Versionen von ONTAP verwenden, die von Ihrem System unterstützt werden
+.Bevor Sie beginnen
+* Sie benötigen ein neues oder Ersatzteil von NetApp .
+* Stellen Sie sicher, dass alle anderen Komponenten des Speichersystems ordnungsgemäß funktionieren. Wenden Sie sich andernfalls an den technischen Support.
+* Sie können dieses Verfahren bei allen Versionen von ONTAP verwenden, die von Ihrem System unterstützt werden.
 * Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
 
 
 
 
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
+
+Schalten Sie den außer Betrieb genommenen Controller aus oder übernehmen Sie ihn.
 
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 
@@ -90,14 +95,53 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 
 Sie müssen das Controller-Modul aus dem Chassis entfernen, wenn Sie das Controller-Modul ersetzen oder eine Komponente im Controller-Modul ersetzen.
 
+.Schritte
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Stellen Sie sicher, dass alle Laufwerke im Gehäuse fest auf der Mittelplatine sitzen, indem Sie mit den Daumen auf die einzelnen Laufwerke drücken, bis Sie einen positiven Anschlag spüren.
 +
-image::../media/drw_a800_drive_seated_IEOPS-960.svg[Festplattenlaufwerke einsetzen]
+.Video – Fahrersitz bestätigen
+video::2c46e4af-2c21-4f12-b065-b38b003d0ea2[panopto]
++
+image::../media/drw_a800_drive_seated_IEOPS-960.svg[Setzen Sie die Antriebe ein]
 
-. Trennen Sie die Netzteile des Controller-Moduls von der Quelle.
-. Lösen Sie die Netzkabelhalter, und ziehen Sie anschließend die Kabel von den Netzteilen ab.
-. Lösen Sie den Haken- und Schlaufenriemen, mit dem die Kabel an das Kabelmanagement-Gerät gebunden sind, und ziehen Sie dann die Systemkabel und SFP- und QSFP-Module (falls erforderlich) vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren.
+. Überprüfen Sie die Controller-Laufwerke anhand des Systemstatus:
++
+.. Überprüfen Sie auf dem fehlerfreien Controller, ob sich eine aktive RAID-Gruppe in einem beeinträchtigten Zustand, einem Fehlerzustand oder beidem befindet:
++
+[source, cli]
+----
+storage aggregate show -raidstatus !*normal*
+----
++
+*** Wenn der Befehl zurückkehrt `There are no entries matching your query.` weiter<<Check-missing-drives,Fahren Sie mit dem nächsten Teilschritt fort, um nach fehlenden Laufwerken zu suchen.>> Die
+*** Falls der Befehl andere Ergebnisse liefert, erfassen Sie die AutoSupport Daten von beiden Controllern und wenden Sie sich an den NetApp -Support, um weitere Unterstützung zu erhalten.
++
+[source, cli]
+----
+system node autosupport invoke -node * -type all -message '<message_name>'
+----
+
+
+.. [[Check-missing-drives]]Prüfen Sie, ob sowohl das Dateisystem als auch Ersatzlaufwerke auf fehlende Laufwerke überprüft werden:
++
+[source, cli]
+----
+event log show -severity * -node * -message-name *disk.missing*
+----
++
+*** Wenn der Befehl zurückkehrt `There are no entries matching your query.` weiter<<remove-power-cables,zum nächsten Schritt>> Die
+*** Falls der Befehl andere Ergebnisse liefert, erfassen Sie die AutoSupport Daten von beiden Controllern und wenden Sie sich an den NetApp -Support, um weitere Unterstützung zu erhalten.
++
+[source, cli]
+----
+system node autosupport invoke -node * -type all -message '<message_name>'
+----
+
+
+
+
+. [[remove-power-cables]]Entfernen Sie die Halterungen der Stromkabel und ziehen Sie dann die Kabel von den Netzteilen ab.
+. Lösen Sie den Klettverschluss am Kabelmanagement-Gerät.  Trennen Sie die Systemkabel und gegebenenfalls die SFP/QSFP-Module vom Controller-Modul.  Notieren Sie sich die Position jedes Kabels.
 +
 Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation des Kabelverwaltungsgeräts die Kabel organisiert sind.
 
@@ -107,7 +151,7 @@ Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation
 Das Controller-Modul wird leicht aus dem Chassis entfernt.
 
 +
-image::../media/drw_a800_pcm_remove.png[Lösen Sie das Controller-Modul]
+image::../media/drw_a800_pcm_remove.png[Entfernen des Controller-Moduls]
 
 +
 [cols="1,4"]
@@ -127,52 +171,19 @@ image:../media/icon_round_2.png["Legende Nummer 2"]
 Sicherungsstift
 
 |===
-. Schieben Sie das Controller-Modul aus dem Gehäuse.
+. Schieben Sie das Controller-Modul aus dem Gehäuse und legen Sie es auf eine stabile, flache Oberfläche.
 +
-Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen, während Sie es aus dem Gehäuse schieben.
-
-. Das Steuermodul auf eine stabile, flache Oberfläche legen und den Luftkanal öffnen:
-+
-.. Drücken Sie die Verriegelungslaschen an den Seiten des Luftkanals in Richtung der Mitte des Controller-Moduls.
-.. Schieben Sie den Luftkanal in Richtung der Lüftermodule, und drehen Sie ihn dann nach oben in die vollständig geöffnete Position.
-+
-image::../media/drw_a800_open_air_duct.png[Öffnen Sie den Luftkanal]
-
-+
-[cols="1,4"]
-|===
-
-
- a| 
-image:../media/icon_round_1.png["Legende Nummer 1"]
- a| 
-Verriegelungsklammern für Luftkanäle
-
-
-
- a| 
-image:../media/icon_round_2.png["Legende Nummer 2"]
- a| 
-Schieben Sie den Luftkanal in Richtung Lüftermodule
-
-
-
- a| 
-image:../media/icon_round_3.png["Legende Nummer 3"]
- a| 
-Luftkanal in Richtung Lüftermodule drehen
-
-|===
+Stützen Sie das Controllermodul an der Unterseite ab, während Sie es aus dem Gehäuse herausschieben.
 
 
 
 
 
+== Schritt 3: Ersetzen Sie die PCIe-Karte
 
-== Schritt 3: Ersetzen Sie eine PCIe-Karte
+Eine PCIe-Karte wird ausgetauscht, indem die Verkabelung sowie alle QSFPs und SFPs von den Ports der PCIe-Karten im Ziel-Riser entfernt werden, der Riser vom Controller-Modul abgenommen wird, die PCIe-Karte entfernt und ersetzt wird, der Riser und alle QSFPs und SFPs wieder an den Ports installiert und die Ports neu verkabelt werden.
 
-Um eine PCIe-Karte zu ersetzen, müssen Sie die Verkabelung und alle QSFPs und SFPs von den Ports auf den PCIe-Karten im Ziel-Riser entfernen, den Riser aus dem Controller-Modul entfernen und ersetzen, die PCIe-Karte und QSFPs wieder an den Ports installieren. Und verkabeln Sie die Ports.
-
+.Schritte
 . Stellen Sie fest, ob die Karte, die Sie austauschen, von Riser 1 stammt oder von Riser 2 oder 3 stammt.
 +
 ** Wenn Sie die 100-GbE-PCIe-Karte in Riser 1 ersetzen, verwenden Sie die Schritte 2 - 3 und die Schritte 6 - 7.
@@ -319,45 +330,17 @@ Bei der Verriegelung ist die Verriegelung bündig mit der Oberseite des Riser un
 
 == Schritt 4: Installieren Sie das Controller-Modul neu
 
-Nachdem Sie eine Komponente im Controller-Modul ausgetauscht haben, müssen Sie das Controller-Modul im Systemgehäuse neu installieren und starten.
+Installieren Sie das Controller-Modul neu, und starten Sie es neu.
 
-. Wenn Sie dies noch nicht getan haben, schließen Sie den Luftkanal:
-+
-.. Schwenken Sie den Luftkanal bis nach unten zum Controller-Modul.
-.. Schieben Sie den Luftkanal in Richtung der Steigleitungen, bis die Verriegelungslaschen einrasten.
-.. Überprüfen Sie den Luftkanal, um sicherzustellen, dass er richtig sitzt und fest sitzt.
-+
-image::../media/drw_a800_close_air_duct.png[Schließen Sie den Luftkanal]
-
-+
-[cols="1,4"]
-|===
-
-
- a| 
-image:../media/icon_round_1.png["Legende Nummer 1"]
- a| 
-Verriegelungslaschen
-
-
-
- a| 
-image:../media/icon_round_2.png["Legende Nummer 2"]
- a| 
-Stößel schieben
-
-|===
-
-
+.Schritte
 . Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
 +
 
 NOTE: Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein, wenn Sie dazu aufgefordert werden.
 
-. Verkabeln Sie nur die Management- und Konsolen-Ports, sodass Sie auf das System zugreifen können, um die Aufgaben in den folgenden Abschnitten auszuführen.
+. Das System nach Bedarf neu einsetzen.
 +
-
-NOTE: Sie schließen die übrigen Kabel später in diesem Verfahren an das Controller-Modul an.
+Wenn Sie die Medienkonverter (QSFPs oder SFPs) entfernt haben, sollten Sie diese erneut installieren, wenn Sie Glasfaserkabel verwenden.
 
 . Führen Sie die Neuinstallation des Controller-Moduls durch:
 +
@@ -370,19 +353,25 @@ Die Verriegelungen steigen, wenn das Controller-Modul voll eingesetzt ist.
 NOTE: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige Kraft verwenden, um Schäden an den Anschlüssen zu vermeiden.
 
 .. Drehen Sie die Verriegelungsriegel nach oben, und kippen Sie sie so, dass sie die Sicherungsstifte entfernen und dann in die verriegelte Position absenken.
-
-
-. Schließen Sie die Systemkabel und die Transceiver-Module an das Controller-Modul an, und installieren Sie das Kabelmanagement-Gerät neu.
-. Schließen Sie die Stromkabel an die Netzteile an, und setzen Sie die Netzkabelhalter wieder ein.
+.. Schließen Sie die Netzkabel an die Netzteile an, setzen Sie die Sicherungsmanschette des Netzkabels wieder ein, und schließen Sie dann die Netzteile an die Stromquelle an.
 +
-Das Controller-Modul startet, sobald es an die Stromversorgung angeschlossen ist. Bereiten Sie sich darauf vor, den Bootvorgang zu unterbrechen.
+Das Controller-Modul startet, sobald die Stromversorgung wiederhergestellt ist. Bereiten Sie sich darauf vor, den Bootvorgang zu unterbrechen.
 
+.. Wenn Sie dies noch nicht getan haben, installieren Sie das Kabelverwaltungsgerät neu.
+
+
+. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben:
 +
+`storage failover giveback -ofnode _impaired_node_name_`.
 
-NOTE: Wenn Ihr System über Gleichstromnetzteile verfügt, stellen Sie sicher, dass die Rändelschrauben des Netzteilkabels fest angezogen sind.
+. Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut:
++
+`storage failover modify -node local -auto-giveback true`.
 
-. Wiederherstellung des normalen Betriebs des Controllers durch Zurückgeben des Speichers: `storage failover giveback -ofnode _impaired_node_name_`
-. Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut: `storage failover modify -node local -auto-giveback true`
+. Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung wiederherstellen/zurücknehmen:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`.
+
 
 
 

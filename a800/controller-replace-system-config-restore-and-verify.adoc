@@ -11,6 +11,8 @@ summary: Nach dem Austausch und dem Booten der Hardware im Wartungsmodus überpr
 
 
 [role="lead"]
+Übergeben Sie die Kontrolle über die Speicherressourcen wieder an den Ersatzcontroller, damit Ihr AFF A800 -System den normalen Betrieb wiederaufnehmen kann.  Das Rückgabeverfahren variiert je nach Art der von Ihrem System verwendeten Verschlüsselung: keine Verschlüsselung oder Onboard Key Manager (OKM)-Verschlüsselung.
+
 Nach dem Austausch und dem Booten der Hardware im Wartungsmodus überprüfen Sie die Low-Level-Systemkonfiguration des Ersatz-Controllers und konfigurieren nach Bedarf die Systemeinstellungen neu.
 
 
@@ -68,3 +70,6 @@ Für den HA-Status kann einer der folgenden Werte vorliegen:
 . Wenn der angezeigte Systemzustand des Controller-Moduls nicht mit der Systemkonfiguration übereinstimmt, setzen Sie das ein `HA` Status für das Controller-Modul: `ha-config modify controller ha-state`
 . Bestätigen Sie, dass sich die Einstellung geändert hat: `ha-config show`
 
+
+.Was kommt als Nächstes?
+Nachdem Sie die Eigentümerschaft der Storage-Ressourcen wieder an den Ersatz-Controller übergeben haben, müssen Sie link:controller-replace-restore-system-rma.html["Schließen Sie den Controller-Austausch ab"]den Vorgang durchführen.

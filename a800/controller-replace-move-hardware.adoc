@@ -11,7 +11,7 @@ summary: Um ein Controller-Modul auszutauschen, müssen Sie den beeinträchtigte
 
 
 [role="lead"]
-Um den Controller auszutauschen, müssen Sie den beeinträchtigten Controller entfernen, die FRU-Komponenten auf das Ersatz-Controller-Modul verschieben, das Ersatz-Controller-Modul im Chassis einbauen und das System dann im Wartungsmodus booten.
+Tauschen Sie den Controller in Ihrem AFF A800 -System aus, wenn ein Hardwaredefekt dies erfordert. Der Austauschvorgang umfasst das Entfernen des beschädigten Controllers, das Verschieben der Komponenten auf den Ersatzcontroller, die Installation des Ersatzcontrollers und dessen Neustart.
 
 
 
@@ -19,14 +19,53 @@ Um den Controller auszutauschen, müssen Sie den beeinträchtigten Controller en
 
 Sie müssen das Controller-Modul aus dem Chassis entfernen, wenn Sie das Controller-Modul ersetzen oder eine Komponente im Controller-Modul ersetzen.
 
+.Schritte
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Stellen Sie sicher, dass alle Laufwerke im Gehäuse fest auf der Mittelplatine sitzen, indem Sie mit den Daumen auf die einzelnen Laufwerke drücken, bis Sie einen positiven Anschlag spüren.
 +
-image::../media/drw_a800_drive_seated_IEOPS-960.svg[Festplattenlaufwerke einsetzen]
+.Video – Fahrersitz bestätigen
+video::2c46e4af-2c21-4f12-b065-b38b003d0ea2[panopto]
++
+image::../media/drw_a800_drive_seated_IEOPS-960.svg[Setzen Sie die Antriebe ein]
 
-. Gehen Sie zur Rückseite des Gehäuses. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
-. Trennen Sie die Netzteile des Controller-Moduls von der Quelle.
-. Lösen Sie die Netzkabelhalter, und ziehen Sie anschließend die Kabel von den Netzteilen ab.
-. Lösen Sie den Haken- und Schlaufenriemen, mit dem die Kabel an das Kabelmanagement-Gerät gebunden sind, und ziehen Sie dann die Systemkabel und SFP- und QSFP-Module (falls erforderlich) vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren.
+. Überprüfen Sie die Controller-Laufwerke anhand des Systemstatus:
++
+.. Überprüfen Sie auf dem fehlerfreien Controller, ob sich eine aktive RAID-Gruppe in einem beeinträchtigten Zustand, einem Fehlerzustand oder beidem befindet:
++
+[source, cli]
+----
+storage aggregate show -raidstatus !*normal*
+----
++
+*** Wenn der Befehl zurückkehrt `There are no entries matching your query.` weiter<<Check-missing-drives,Fahren Sie mit dem nächsten Teilschritt fort, um nach fehlenden Laufwerken zu suchen.>> Die
+*** Falls der Befehl andere Ergebnisse liefert, erfassen Sie die AutoSupport Daten von beiden Controllern und wenden Sie sich an den NetApp -Support, um weitere Unterstützung zu erhalten.
++
+[source, cli]
+----
+system node autosupport invoke -node * -type all -message '<message_name>'
+----
+
+
+.. [[Check-missing-drives]]Prüfen Sie, ob sowohl das Dateisystem als auch Ersatzlaufwerke auf fehlende Laufwerke überprüft werden:
++
+[source, cli]
+----
+event log show -severity * -node * -message-name *disk.missing*
+----
++
+*** Wenn der Befehl zurückkehrt `There are no entries matching your query.` weiter<<remove-power-cables,zum nächsten Schritt>> Die
+*** Falls der Befehl andere Ergebnisse liefert, erfassen Sie die AutoSupport Daten von beiden Controllern und wenden Sie sich an den NetApp -Support, um weitere Unterstützung zu erhalten.
++
+[source, cli]
+----
+system node autosupport invoke -node * -type all -message '<message_name>'
+----
+
+
+
+
+. [[remove-power-cables]]Entfernen Sie die Halterungen der Stromkabel und ziehen Sie dann die Kabel von den Netzteilen ab.
+. Lösen Sie den Klettverschluss am Kabelmanagement-Gerät.  Trennen Sie die Systemkabel und gegebenenfalls die SFP/QSFP-Module vom Controller-Modul.  Notieren Sie sich die Position jedes Kabels.
 +
 Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation des Kabelverwaltungsgeräts die Kabel organisiert sind.
 
@@ -36,7 +75,7 @@ Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation
 Das Controller-Modul wird leicht aus dem Chassis entfernt.
 
 +
-image::../media/drw_a800_pcm_remove.png[Lösen Sie das Controller-Modul]
+image::../media/drw_a800_pcm_remove.png[Entfernen des Controller-Moduls]
 
 +
 [cols="1,4"]
@@ -58,42 +97,7 @@ Sicherungsstift
 |===
 . Schieben Sie das Controller-Modul aus dem Gehäuse und legen Sie es auf eine stabile, flache Oberfläche.
 +
-Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen, während Sie es aus dem Gehäuse schieben. .
-
-. Stellen Sie das Controller-Modul auf eine stabile, flache Oberfläche.
-. Öffnen Sie den Luftkanal des Steuermoduls:
-+
-.. Drücken Sie die Verriegelungslaschen an den Seiten des Luftkanals in Richtung der Mitte des Controller-Moduls.
-.. Schieben Sie den Luftkanal in Richtung der Lüftermodule, und drehen Sie ihn dann nach oben in die vollständig geöffnete Position.
-+
-image::../media/drw_a800_open_air_duct.png[Öffnen Sie den Luftkanal]
-
-+
-[cols="1,4"]
-|===
-
-
- a| 
-image:../media/icon_round_1.png["Legende Nummer 1"]
- a| 
-Verriegelungsklammern für Luftkanäle
-
-
-
- a| 
-image:../media/icon_round_2.png["Legende Nummer 2"]
- a| 
-Schieben Sie den Luftkanal in Richtung Lüftermodule
-
-
-
- a| 
-image:../media/icon_round_3.png["Legende Nummer 3"]
- a| 
-Luftkanal in Richtung Lüftermodule drehen
-
-|===
-
+Stützen Sie das Controllermodul an der Unterseite ab, während Sie es aus dem Gehäuse herausschieben.
 
 
 
@@ -101,8 +105,9 @@ Luftkanal in Richtung Lüftermodule drehen
 
 == Schritt 2: Bewegen Sie die Netzteile
 
-Wenn Sie ein Controller-Modul ersetzen, müssen Sie die Netzteile vom Controller-Modul mit eingeschränkter Betriebsfähigkeit in das Ersatzcontrollermodul verschieben.
+Schließen Sie die Netzteile an das Ersatzsteuergerät an.
 
+.Schritte
 . Drehen Sie den Nockengriff so, dass er verwendet werden kann, um die Stromversorgung aus dem Controller-Modul zu ziehen, während Sie die Verriegelungslasche drücken.
 +
 
@@ -144,8 +149,9 @@ NOTE: Um Schäden am internen Stecker zu vermeiden, sollten Sie beim Einschieben
 
 == Schritt 3: Bewegen Sie die Lüfter
 
-Sie müssen die Lüfter vom beeinträchtigten Controller-Modul in das Ersatzmodul verschieben, wenn ein ausgefallenes Controller-Modul ersetzt wird.
+Bauen Sie die Lüftermodule in das Ersatzsteuermodul ein.
 
+.Schritte
 . Entfernen Sie das Lüftermodul, indem Sie die Verriegelungslaschen an der Seite des Lüftermoduls einklemmen und dann das Lüftermodul gerade aus dem Controller-Modul herausheben.
 +
 image::../media/drw_a800_replace_fan.png[Entfernen Sie den Lüfter]
@@ -176,8 +182,9 @@ Lüftermodul
 
 == Schritt 4: Bewegen Sie den NVDIMM-Akku
 
-Beim Austausch des Controller-Moduls müssen Sie den NVRAM-Akku vom beeinträchtigten Controller-Modul auf das Ersatzcontrollermodul verschieben
+Setzen Sie die NVDIMM-Batterie in das Ersatz-Controllermodul ein.
 
+.Schritte
 . Öffnen Sie die Luftkanalabdeckung, und suchen Sie den NVDIMM-Akku im Riser.
 +
 image::../media/drw_a800_nvdimm_battery_replace.png[Tauschen Sie die NVDIMM-Batterie aus]
@@ -224,8 +231,9 @@ NVDIMM-Akkupack
 
 == Schritt 5: Entfernen Sie die PCIe Riser
 
-Im Rahmen des Controller-Austauschprozesses müssen Sie die PCIe-Module aus dem beeinträchtigten Controller-Modul entfernen. Sobald NVDIMMs und DIMMs in das Ersatzcontroller-Modul verschoben wurden, müssen Sie sie am selben Ort im Ersatzcontroller-Modul installieren.
+Entfernen Sie die PCIe-Riser-Leitungen vom defekten Controller-Modul.
 
+.Schritte
 . Entfernen Sie den PCIe-Riser aus dem Controller-Modul:
 +
 .. Entfernen Sie alle SFP- oder QSFP-Module, die sich möglicherweise in den PCIe-Karten enthalten haben.
@@ -265,8 +273,9 @@ Riserkarte 1 (linker Riser), Riserkarte 2 (mittlere Riser) und 3 (rechter Riser)
 
 == Schritt 6: System-DIMMs verschieben
 
-Um die DIMMs zu verschieben, suchen und verschieben Sie sie vom beeinträchtigten Controller in den Ersatz-Controller und befolgen Sie die spezifischen Schritte.
+Setzen Sie die System-DIMMs in das Ersatz-Controllermodul ein.
 
+.Schritte
 . Beachten Sie die Ausrichtung des DIMM-Moduls in den Sockel, damit Sie das DIMM-Modul in die richtige Ausrichtung einsetzen können.
 . Werfen Sie das DIMM aus dem Steckplatz, indem Sie die beiden DIMM-Auswerferlaschen auf beiden Seiten des DIMM langsam auseinander drücken und dann das DIMM aus dem Steckplatz schieben.
 +
@@ -290,8 +299,9 @@ NOTE: Prüfen Sie das DIMM visuell, um sicherzustellen, dass es gleichmäßig au
 
 == Schritt 7: Verschieben Sie die NVDIMMs
 
-Um die NVDIMMs zu verschieben, suchen und verschieben Sie sie vom beeinträchtigten Controller in den Ersatzcontroller und befolgen Sie die entsprechenden Schritte.
+Setzen Sie die NVDIMMs in das Ersatz-Controllermodul ein.
 
+.Schritte
 . Suchen Sie die NVDIMMs auf dem Controller-Modul.
 +
 image::../media/drw_a800_no_risers_nvdimm_move.svg[NVDIMMs verschieben]
@@ -337,11 +347,10 @@ NOTE: Sichtprüfung des NVDIMM, um sicherzustellen, dass es gleichmäßig ausger
 
 == Schritt 8: Verschieben Sie die Startmedien
 
-Sie müssen das Startmediengerät vom gestörten Controller entfernen und in den Ersatz-Controller einsetzen.
+Verlegen Sie das Bootmedium auf das Ersatz-Controllermodul.
 
-Das Boot-Medium befindet sich unter Riser 3.
-
-. Suchen Sie das Startmedium:
+.Schritte
+. Suchen Sie das Bootmedium unter Riser 3.
 +
 image::../media/drw_a800_pcm_replace_only_boot_media.png[Entfernen Sie das Startmedium]
 
@@ -406,8 +415,9 @@ Ziehen Sie die Schraube nicht zu fest, oder beschädigen Sie die Bootsmedien mö
 
 == Schritt 9: Installieren Sie die PCIe Riser
 
-Nach dem Verschieben der DIMMs, NVDIMMs und Boot-Medien installieren Sie die PCIe-Risers im Ersatzcontroller-Modul.
+Installieren Sie die Steigleitungen im Ersatz-Steuergerät.
 
+.Schritte
 . Installieren Sie den Riser in das Ersatzcontrollermodul:
 +
 .. Richten Sie die Lippe des Riser an der Unterseite der Bleche des Controller-Moduls aus.
@@ -426,45 +436,17 @@ Bei der Verriegelung ist die Verriegelung bündig mit der Oberseite des Riser un
 
 == Schritt 10: Installieren Sie das Controller-Modul
 
-Nachdem alle Komponenten vom beeinträchtigten Controller-Modul in das Ersatzcontrollermodul verschoben wurden, müssen Sie das Ersatzcontrollermodul in das Gehäuse installieren und in den Wartungsmodus starten.
+Installieren Sie das Controller-Modul neu, und starten Sie es neu.
 
-. Wenn Sie dies noch nicht getan haben, schließen Sie den Luftkanal:
-+
-.. Schwenken Sie den Luftkanal bis nach unten zum Controller-Modul.
-.. Schieben Sie den Luftkanal in Richtung der Steigleitungen, bis die Verriegelungslaschen einrasten.
-.. Überprüfen Sie den Luftkanal, um sicherzustellen, dass er richtig sitzt und fest sitzt.
-+
-image::../media/drw_a800_close_air_duct.png[Schließen Sie den Luftkanal]
-
-+
-[cols="1,4"]
-|===
-
-
- a| 
-image:../media/icon_round_1.png["Legende Nummer 1"]
- a| 
-Verriegelungslaschen
-
-
-
- a| 
-image:../media/icon_round_2.png["Legende Nummer 2"]
- a| 
-Stößel schieben
-
-|===
-
-
+.Schritte
 . Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
 +
 
 NOTE: Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein, wenn Sie dazu aufgefordert werden.
 
-. Verkabeln Sie nur die Management- und Konsolen-Ports, sodass Sie auf das System zugreifen können, um die Aufgaben in den folgenden Abschnitten auszuführen.
+. Das System nach Bedarf neu einsetzen.
 +
-
-NOTE: Sie schließen die übrigen Kabel später in diesem Verfahren an das Controller-Modul an.
+Wenn Sie die Medienkonverter (QSFPs oder SFPs) entfernt haben, sollten Sie diese erneut installieren, wenn Sie Glasfaserkabel verwenden.
 
 . Führen Sie die Neuinstallation des Controller-Moduls durch:
 +
@@ -477,15 +459,26 @@ Die Verriegelungen steigen, wenn das Controller-Modul voll eingesetzt ist.
 NOTE: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige Kraft verwenden, um Schäden an den Anschlüssen zu vermeiden.
 
 .. Drehen Sie die Verriegelungsriegel nach oben, und kippen Sie sie so, dass sie die Sicherungsstifte entfernen und dann in die verriegelte Position absenken.
-
-
-. Schließen Sie die Systemkabel und die Transceiver-Module an das Controller-Modul an, und installieren Sie das Kabelmanagement-Gerät neu.
-. Schließen Sie die Stromkabel an die Netzteile an, und setzen Sie die Netzkabelhalter wieder ein.
+.. Schließen Sie die Netzkabel an die Netzteile an, setzen Sie die Sicherungsmanschette des Netzkabels wieder ein, und schließen Sie dann die Netzteile an die Stromquelle an.
 +
-Das Controller-Modul startet, sobald es an die Stromversorgung angeschlossen ist. Bereiten Sie sich darauf vor, den Bootvorgang zu unterbrechen.
+Das Controller-Modul startet, sobald die Stromversorgung wiederhergestellt ist. Bereiten Sie sich darauf vor, den Bootvorgang zu unterbrechen.
 
+.. Wenn Sie dies noch nicht getan haben, installieren Sie das Kabelverwaltungsgerät neu.
+
+
+. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben:
 +
+`storage failover giveback -ofnode _impaired_node_name_`.
 
-NOTE: Wenn Ihr System über Gleichstromnetzteile verfügt, stellen Sie sicher, dass die Rändelschrauben des Netzteilkabels fest angezogen sind.
+. Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut:
++
+`storage failover modify -node local -auto-giveback true`.
+
+. Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung wiederherstellen/zurücknehmen:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`.
 
 
+
+.Was kommt als Nächstes?
+Nachdem Sie den defekten A800-Controller ausgetauscht haben, müssen Sie Folgendes tun:link:controller-replace-system-config-restore-and-verify.html["Stellen Sie die Systemkonfiguration wieder her"]

@@ -11,11 +11,13 @@ summary: Sie müssen das Controller-Modul aus dem Gehäuse entfernen, wenn Sie e
 
 
 [role="lead"]
-Entfernen Sie zum Austauschen eines Lüfters das fehlerhafte Lüftermodul und ersetzen Sie es durch ein neues Lüftermodul.
+Tauschen Sie ein Lüftermodul in Ihrem ASA C800 -System aus, wenn ein Lüfter ausfällt oder nicht effizient arbeitet, da dies die Systemkühlung und die Gesamtleistung beeinträchtigen kann.  Der Austauschprozess umfasst das Abschalten des defekten Controllers, dessen Ausbau, den Austausch des Lüftermoduls, den Wiedereinbau des Controllers und die anschließende Rücksendung des defekten Teils an NetApp.
 
 
 
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
+
+Schalten Sie den beeinträchtigten Regler aus
 
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 
@@ -84,16 +86,55 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 
 == Schritt 2: Entfernen Sie das Controller-Modul
 
-Sie müssen das Controller-Modul aus dem Gehäuse entfernen, wenn Sie ein Lüftermodul ersetzen.
+Sie müssen das Controller-Modul aus dem Chassis entfernen, wenn Sie das Controller-Modul ersetzen oder eine Komponente im Controller-Modul ersetzen.
 
+.Schritte
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Stellen Sie sicher, dass alle Laufwerke im Gehäuse fest auf der Mittelplatine sitzen, indem Sie mit den Daumen auf die einzelnen Laufwerke drücken, bis Sie einen positiven Anschlag spüren.
 +
-image::../media/drw_a800_drive_seated_IEOPS-960.svg[Festplattenlaufwerke einsetzen]
+.Video – Fahrersitz bestätigen
+video::2c46e4af-2c21-4f12-b065-b38b003d0ea2[panopto]
++
+image::../media/drw_a800_drive_seated_IEOPS-960.svg[Setzen Sie die Antriebe ein]
 
-. Trennen Sie die Netzteile des Controller-Moduls von der Quelle.
-. Lösen Sie die Netzkabelhalter, und ziehen Sie anschließend die Kabel von den Netzteilen ab.
-. Lösen Sie den Haken und den Schlaufenriemen, mit dem die Kabel am Kabelführungsgerät befestigt sind, und ziehen Sie dann die Systemkabel vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren.
+. Überprüfen Sie die Controller-Laufwerke anhand des Systemstatus:
++
+.. Überprüfen Sie auf dem fehlerfreien Controller, ob sich eine aktive RAID-Gruppe in einem beeinträchtigten Zustand, einem Fehlerzustand oder beidem befindet:
++
+[source, cli]
+----
+storage aggregate show -raidstatus !*normal*
+----
++
+*** Wenn der Befehl zurückkehrt `There are no entries matching your query.` weiter<<Check-missing-drives,Fahren Sie mit dem nächsten Teilschritt fort, um nach fehlenden Laufwerken zu suchen.>> Die
+*** Falls der Befehl andere Ergebnisse liefert, erfassen Sie die AutoSupport Daten von beiden Controllern und wenden Sie sich an den NetApp -Support, um weitere Unterstützung zu erhalten.
++
+[source, cli]
+----
+system node autosupport invoke -node * -type all -message '<message_name>'
+----
+
+
+.. [[Check-missing-drives]]Prüfen Sie, ob sowohl das Dateisystem als auch Ersatzlaufwerke auf fehlende Laufwerke überprüft werden:
++
+[source, cli]
+----
+event log show -severity * -node * -message-name *disk.missing*
+----
++
+*** Wenn der Befehl zurückkehrt `There are no entries matching your query.` weiter<<remove-power-cables,zum nächsten Schritt>> Die
+*** Falls der Befehl andere Ergebnisse liefert, erfassen Sie die AutoSupport Daten von beiden Controllern und wenden Sie sich an den NetApp -Support, um weitere Unterstützung zu erhalten.
++
+[source, cli]
+----
+system node autosupport invoke -node * -type all -message '<message_name>'
+----
+
+
+
+
+. [[remove-power-cables]]Entfernen Sie die Halterungen der Stromkabel und ziehen Sie dann die Kabel von den Netzteilen ab.
+. Lösen Sie den Klettverschluss am Kabelmanagement-Gerät.  Trennen Sie die Systemkabel und gegebenenfalls die SFP/QSFP-Module vom Controller-Modul.  Notieren Sie sich die Position jedes Kabels.
 +
 Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation des Kabelverwaltungsgeräts die Kabel organisiert sind.
 
@@ -103,7 +144,7 @@ Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation
 Das Controller-Modul wird leicht aus dem Chassis entfernt.
 
 +
-image::../media/drw_a800_pcm_remove.png[Lösen des Controller-Moduls]
+image::../media/drw_a800_pcm_remove.png[Entfernen des Controller-Moduls]
 
 +
 [cols="1,4"]
@@ -112,7 +153,9 @@ image::../media/drw_a800_pcm_remove.png[Lösen des Controller-Moduls]
 
  a| 
 image:../media/icon_round_1.png["Legende Nummer 1"]
-| Verriegelungsverschluss 
+ a| 
+Verriegelungsverschluss
+
 
 
  a| 
@@ -121,19 +164,19 @@ image:../media/icon_round_2.png["Legende Nummer 2"]
 Sicherungsstift
 
 |===
-. Schieben Sie das Controller-Modul aus dem Gehäuse.
+. Schieben Sie das Controller-Modul aus dem Gehäuse und legen Sie es auf eine stabile, flache Oberfläche.
 +
-Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen, während Sie es aus dem Gehäuse schieben.
+Stützen Sie das Controllermodul an der Unterseite ab, während Sie es aus dem Gehäuse herausschieben.
 
-. Stellen Sie das Controller-Modul an einem sicheren Ort beiseite.
 
 
 
 
 == Schritt 3: Ersetzen Sie einen Lüfter
 
-Entfernen Sie zum Austauschen eines Lüfters das fehlerhafte Lüftermodul und ersetzen Sie es durch ein neues Lüftermodul.
+Suchen Sie das defekte Lüftermodul und ersetzen Sie es durch ein neues Lüftermodul.
 
+.Schritte
 . Identifizieren Sie das Lüftermodul, das Sie ersetzen müssen, indem Sie die Fehlermeldungen der Konsole überprüfen oder die LED für das Lüftermodul auf der Hauptplatine aufleuchten.
 . Entfernen Sie das Lüftermodul, indem Sie die Verriegelungslaschen an der Seite des Lüftermoduls einklemmen und dann das Lüftermodul gerade aus dem Controller-Modul herausheben.
 +
@@ -161,14 +204,18 @@ Lüftermodul
 
 == Schritt 4: Installieren Sie das Controller-Modul neu
 
-Nachdem Sie eine Komponente im Controller-Modul ausgetauscht haben, müssen Sie das Controller-Modul im Systemgehäuse neu installieren und starten.
+Installieren Sie das Controller-Modul neu, und starten Sie es neu.
 
+.Schritte
 . Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
 +
 
 NOTE: Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein, wenn Sie dazu aufgefordert werden.
 
 . Das System nach Bedarf neu einsetzen.
++
+Wenn Sie die Medienkonverter (QSFPs oder SFPs) entfernt haben, sollten Sie diese erneut installieren, wenn Sie Glasfaserkabel verwenden.
+
 . Führen Sie die Neuinstallation des Controller-Moduls durch:
 +
 .. Drücken Sie das Controller-Modul fest in das Gehäuse, bis es auf die Mittelebene trifft und vollständig sitzt.
@@ -187,8 +234,18 @@ Das Controller-Modul startet, sobald die Stromversorgung wiederhergestellt ist. 
 .. Wenn Sie dies noch nicht getan haben, installieren Sie das Kabelverwaltungsgerät neu.
 
 
-. Wiederherstellung des normalen Betriebs des Controllers durch Zurückgeben des Speichers: `storage failover giveback -ofnode _impaired_node_name_`
-. Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut: `storage failover modify -controller local -auto-giveback true`
+. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben:
++
+`storage failover giveback -ofnode _impaired_node_name_`.
+
+. Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut:
++
+`storage failover modify -node local -auto-giveback true`.
+
+. Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung wiederherstellen/zurücknehmen:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`.
+
 
 
 

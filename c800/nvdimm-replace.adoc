@@ -11,15 +11,18 @@ summary: Sie müssen das NVDIMM im Controller-Modul ersetzen, wenn sich Ihr Syst
 
 
 [role="lead"]
-Sie müssen das NVDIMM im Controller-Modul ersetzen, wenn sich Ihr System registriert, dass die Flashlebensdauer fast am Ende liegt oder dass das identifizierte NVDIMM im Allgemeinen nicht ordnungsgemäß ist. Andernfalls kommt es zu einer Systempanik.
+Tauschen Sie das NVDIMM in Ihrem AFF C800 -System aus, wenn Ihr System erkennt, dass die Lebensdauer des Flash-Speichers fast erreicht ist oder dass das identifizierte NVDIMM generell nicht in Ordnung ist; andernfalls kommt es zu einem Systemabsturz.
 
-Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+.Bevor Sie beginnen
+* Stellen Sie sicher, dass Sie das von NetApp erhaltene Ersatz-NVDIMM-Modul besitzen und dass es mit Ihrem AFF C800 -System kompatibel ist.
+* Stellen Sie sicher, dass alle anderen Komponenten des Speichersystems ordnungsgemäß funktionieren; falls nicht, wenden Sie sich an den NetApp -Support.
 
-Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
 
 
 
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
+
+Schalten Sie den außer Betrieb genommenen Controller aus oder übernehmen Sie ihn.
 
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 
@@ -90,14 +93,53 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 
 Sie müssen das Controller-Modul aus dem Chassis entfernen, wenn Sie das Controller-Modul ersetzen oder eine Komponente im Controller-Modul ersetzen.
 
+.Schritte
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Stellen Sie sicher, dass alle Laufwerke im Gehäuse fest auf der Mittelplatine sitzen, indem Sie mit den Daumen auf die einzelnen Laufwerke drücken, bis Sie einen positiven Anschlag spüren.
 +
-image::../media/drw_a800_drive_seated_IEOPS-960.svg[Festplattenlaufwerke einsetzen]
+.Video – Fahrersitz bestätigen
+video::2c46e4af-2c21-4f12-b065-b38b003d0ea2[panopto]
++
+image::../media/drw_a800_drive_seated_IEOPS-960.svg[Setzen Sie die Antriebe ein]
 
-. Trennen Sie die Netzteile des Controller-Moduls von der Quelle.
-. Lösen Sie die Netzkabelhalter, und ziehen Sie anschließend die Kabel von den Netzteilen ab.
-. Lösen Sie den Haken- und Schlaufenriemen, mit dem die Kabel an das Kabelmanagement-Gerät gebunden sind, und ziehen Sie dann die Systemkabel und SFP- und QSFP-Module (falls erforderlich) vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren.
+. Überprüfen Sie die Controller-Laufwerke anhand des Systemstatus:
++
+.. Überprüfen Sie auf dem fehlerfreien Controller, ob sich eine aktive RAID-Gruppe in einem beeinträchtigten Zustand, einem Fehlerzustand oder beidem befindet:
++
+[source, cli]
+----
+storage aggregate show -raidstatus !*normal*
+----
++
+*** Wenn der Befehl zurückkehrt `There are no entries matching your query.` weiter<<Check-missing-drives,Fahren Sie mit dem nächsten Teilschritt fort, um nach fehlenden Laufwerken zu suchen.>> Die
+*** Falls der Befehl andere Ergebnisse liefert, erfassen Sie die AutoSupport Daten von beiden Controllern und wenden Sie sich an den NetApp -Support, um weitere Unterstützung zu erhalten.
++
+[source, cli]
+----
+system node autosupport invoke -node * -type all -message '<message_name>'
+----
+
+
+.. [[Check-missing-drives]]Prüfen Sie, ob sowohl das Dateisystem als auch Ersatzlaufwerke auf fehlende Laufwerke überprüft werden:
++
+[source, cli]
+----
+event log show -severity * -node * -message-name *disk.missing*
+----
++
+*** Wenn der Befehl zurückkehrt `There are no entries matching your query.` weiter<<remove-power-cables,zum nächsten Schritt>> Die
+*** Falls der Befehl andere Ergebnisse liefert, erfassen Sie die AutoSupport Daten von beiden Controllern und wenden Sie sich an den NetApp -Support, um weitere Unterstützung zu erhalten.
++
+[source, cli]
+----
+system node autosupport invoke -node * -type all -message '<message_name>'
+----
+
+
+
+
+. [[remove-power-cables]]Entfernen Sie die Halterungen der Stromkabel und ziehen Sie dann die Kabel von den Netzteilen ab.
+. Lösen Sie den Klettverschluss am Kabelmanagement-Gerät.  Trennen Sie die Systemkabel und gegebenenfalls die SFP/QSFP-Module vom Controller-Modul.  Notieren Sie sich die Position jedes Kabels.
 +
 Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation des Kabelverwaltungsgeräts die Kabel organisiert sind.
 
@@ -107,7 +149,7 @@ Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation
 Das Controller-Modul wird leicht aus dem Chassis entfernt.
 
 +
-image::../media/drw_a800_pcm_remove.png[Lösen Sie das Controller-Modul]
+image::../media/drw_a800_pcm_remove.png[Entfernen des Controller-Moduls]
 
 +
 [cols="1,4"]
@@ -127,53 +169,20 @@ image:../media/icon_round_2.png["Legende Nummer 2"]
 Sicherungsstift
 
 |===
-. Schieben Sie das Controller-Modul aus dem Gehäuse.
+. Schieben Sie das Controller-Modul aus dem Gehäuse und legen Sie es auf eine stabile, flache Oberfläche.
 +
-Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen, während Sie es aus dem Gehäuse schieben.
+Stützen Sie das Controllermodul an der Unterseite ab, während Sie es aus dem Gehäuse herausschieben.
 
-. Das Steuermodul auf eine stabile, flache Oberfläche legen und den Luftkanal öffnen:
-+
-.. Drücken Sie die Verriegelungslaschen an den Seiten des Luftkanals in Richtung der Mitte des Controller-Moduls.
-.. Schieben Sie den Luftkanal in Richtung der Lüftermodule, und drehen Sie ihn dann nach oben in die vollständig geöffnete Position.
-+
-image::../media/drw_a800_open_air_duct.png[Öffnen des Luftkanals]
-
-
-
-+
-[cols="1,4"]
-|===
-
-
- a| 
-image:../media/icon_round_1.png["Legende Nummer 1"]
- a| 
-Verriegelungsklammern für Luftkanäle
-
-
-
- a| 
-image:../media/icon_round_2.png["Legende Nummer 2"]
- a| 
-Schieben Sie den Luftkanal in Richtung Lüftermodule
-
-
-
- a| 
-image:../media/icon_round_3.png["Legende Nummer 3"]
- a| 
-Luftkanal in Richtung Lüftermodule drehen
-
-|===
 
 
 
 
 == Schritt 3: Ersetzen Sie das NVDIMM
 
-Zum Austauschen des NVDIMM müssen Sie das NVDIMM im Controller-Modul mithilfe des NVDIMM-Kartenetiketts oben am Luftkanal lokalisieren und es anschließend gemäß den jeweiligen Schritten austauschen.
+Suchen Sie das NVDIMM im Controller-Modul anhand der NVDIMM-Beschriftung oben auf dem Luftkanal und tauschen Sie es anschließend aus.
 
-. Wenn Sie ein NVDIMM entfernen oder verschieben, entsperren Sie die Verriegelung am Riser und entfernen Sie dann den entsprechenden Riser.
+.Schritte
+. Um auf das NVDIMM zuzugreifen, entriegeln Sie die Verriegelung an der entsprechenden Riser-Karte und entfernen Sie anschließend die Riser-Karte.
 +
 image::../media/drw_A800_nvdimm_replace_ieops-1953.svg[Ersetzen Sie ein NVDIMM]
 
@@ -230,36 +239,9 @@ NOTE: Sichtprüfung des NVDIMM, um sicherzustellen, dass es gleichmäßig ausger
 
 == Schritt 4: Installieren Sie das Controller-Modul neu und starten Sie das System
 
-Nachdem Sie eine FRU im Controller-Modul ersetzt haben, müssen Sie das Controller-Modul neu installieren und neu starten.
+Installieren Sie das Controller-Modul neu, und starten Sie es neu.
 
-. Wenn Sie dies noch nicht getan haben, schließen Sie den Luftkanal:
-+
-.. Schwenken Sie den Luftkanal bis nach unten zum Controller-Modul.
-.. Schieben Sie den Luftkanal in Richtung der Steigleitungen, bis die Verriegelungslaschen einrasten.
-.. Überprüfen Sie den Luftkanal, um sicherzustellen, dass er richtig sitzt und fest sitzt.
-+
-image::../media/drw_a700s_close_air_duct.png[Schließen Sie den Luftkanal]
-
-+
-[cols="1,4"]
-|===
-
-
- a| 
-image:../media/icon_round_1.png["Legende Nummer 1"]
- a| 
-Verriegelungslaschen
-
-
-
- a| 
-image:../media/icon_round_2.png["Legende Nummer 2"]
- a| 
-Stößel schieben
-
-|===
-
-
+.Schritte
 . Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
 +
 
@@ -287,10 +269,22 @@ Das Controller-Modul startet, sobald die Stromversorgung wiederhergestellt ist. 
 .. Wenn Sie dies noch nicht getan haben, installieren Sie das Kabelverwaltungsgerät neu.
 
 
+. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben:
++
+`storage failover giveback -ofnode _impaired_node_name_`.
+
+. Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut:
++
+`storage failover modify -node local -auto-giveback true`.
+
+. Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung wiederherstellen/zurücknehmen:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`.
 
 
 
 
-== Schritt 4: Senden Sie das fehlgeschlagene Teil an NetApp zurück
+
+== Schritt 5: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

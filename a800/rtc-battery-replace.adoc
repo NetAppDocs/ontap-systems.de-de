@@ -11,17 +11,18 @@ summary: 'Sie ersetzen den Echtzeituhr-Akku (RTC) im Controller-Modul, sodass di
 
 
 [role="lead"]
-Sie ersetzen den Echtzeituhr-Akku (RTC) im Controller-Modul, sodass die Dienste und Anwendungen Ihres Systems, die von der genauen Zeitsynchronisierung abhängen, weiterhin funktionieren.
+Tauschen Sie die Echtzeituhrbatterie (RTC-Batterie), allgemein bekannt als Knopfzellenbatterie, in Ihrem AFF A800 -System aus, um sicherzustellen, dass Dienste und Anwendungen, die auf eine genaue Zeitsynchronisation angewiesen sind, weiterhin betriebsbereit bleiben.
 
-* Sie können dieses Verfahren bei allen Versionen von ONTAP verwenden, die von Ihrem System unterstützt werden
-* Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+.Bevor Sie beginnen
+* Verstehen Sie, dass Sie dieses Verfahren mit allen Versionen von ONTAP verwenden können, die von Ihrem System unterstützt werden.
+* Stellen Sie sicher, dass alle anderen Komponenten im System ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
 
-
-Sie müssen eine zugelassene RTC-Batterie verwenden.
 
 
 
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
+
+Schalten Sie den außer Betrieb genommenen Controller aus oder übernehmen Sie ihn.
 
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 
@@ -92,14 +93,53 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 
 Sie müssen das Controller-Modul aus dem Chassis entfernen, wenn Sie das Controller-Modul ersetzen oder eine Komponente im Controller-Modul ersetzen.
 
+.Schritte
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Stellen Sie sicher, dass alle Laufwerke im Gehäuse fest auf der Mittelplatine sitzen, indem Sie mit den Daumen auf die einzelnen Laufwerke drücken, bis Sie einen positiven Anschlag spüren.
 +
-image::../media/drw_a800_drive_seated_IEOPS-960.svg[Festplattenlaufwerke einsetzen]
+.Video – Fahrersitz bestätigen
+video::2c46e4af-2c21-4f12-b065-b38b003d0ea2[panopto]
++
+image::../media/drw_a800_drive_seated_IEOPS-960.svg[Setzen Sie die Antriebe ein]
 
-. Trennen Sie die Netzteile des Controller-Moduls von der Quelle.
-. Lösen Sie die Netzkabelhalter, und ziehen Sie anschließend die Kabel von den Netzteilen ab.
-. Lösen Sie den Haken- und Schlaufenriemen, mit dem die Kabel an das Kabelmanagement-Gerät gebunden sind, und ziehen Sie dann die Systemkabel und SFP- und QSFP-Module (falls erforderlich) vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren.
+. Überprüfen Sie die Controller-Laufwerke anhand des Systemstatus:
++
+.. Überprüfen Sie auf dem fehlerfreien Controller, ob sich eine aktive RAID-Gruppe in einem beeinträchtigten Zustand, einem Fehlerzustand oder beidem befindet:
++
+[source, cli]
+----
+storage aggregate show -raidstatus !*normal*
+----
++
+*** Wenn der Befehl zurückkehrt `There are no entries matching your query.` weiter<<Check-missing-drives,Fahren Sie mit dem nächsten Teilschritt fort, um nach fehlenden Laufwerken zu suchen.>> Die
+*** Falls der Befehl andere Ergebnisse liefert, erfassen Sie die AutoSupport Daten von beiden Controllern und wenden Sie sich an den NetApp -Support, um weitere Unterstützung zu erhalten.
++
+[source, cli]
+----
+system node autosupport invoke -node * -type all -message '<message_name>'
+----
+
+
+.. [[Check-missing-drives]]Prüfen Sie, ob sowohl das Dateisystem als auch Ersatzlaufwerke auf fehlende Laufwerke überprüft werden:
++
+[source, cli]
+----
+event log show -severity * -node * -message-name *disk.missing*
+----
++
+*** Wenn der Befehl zurückkehrt `There are no entries matching your query.` weiter<<remove-power-cables,zum nächsten Schritt>> Die
+*** Falls der Befehl andere Ergebnisse liefert, erfassen Sie die AutoSupport Daten von beiden Controllern und wenden Sie sich an den NetApp -Support, um weitere Unterstützung zu erhalten.
++
+[source, cli]
+----
+system node autosupport invoke -node * -type all -message '<message_name>'
+----
+
+
+
+
+. [[remove-power-cables]]Entfernen Sie die Halterungen der Stromkabel und ziehen Sie dann die Kabel von den Netzteilen ab.
+. Lösen Sie den Klettverschluss am Kabelmanagement-Gerät.  Trennen Sie die Systemkabel und gegebenenfalls die SFP/QSFP-Module vom Controller-Modul.  Notieren Sie sich die Position jedes Kabels.
 +
 Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation des Kabelverwaltungsgeräts die Kabel organisiert sind.
 
@@ -109,10 +149,9 @@ Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation
 Das Controller-Modul wird leicht aus dem Chassis entfernt.
 
 +
-image::../media/drw_a800_pcm_remove.png[Lösen Sie das Controller-Modul]
+image::../media/drw_a800_pcm_remove.png[Entfernen des Controller-Moduls]
 
-
-
++
 [cols="1,4"]
 |===
 
@@ -130,43 +169,9 @@ image:../media/icon_round_2.png["Legende Nummer 2"]
 Sicherungsstift
 
 |===
-. Schieben Sie das Controller-Modul aus dem Gehäuse.
+. Schieben Sie das Controller-Modul aus dem Gehäuse und legen Sie es auf eine stabile, flache Oberfläche.
 +
-Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen, während Sie es aus dem Gehäuse schieben.
-
-. Das Steuermodul auf eine stabile, flache Oberfläche legen und den Luftkanal öffnen:
-+
-.. Drücken Sie die Verriegelungslaschen an den Seiten des Luftkanals in Richtung der Mitte des Controller-Moduls.
-.. Schieben Sie den Luftkanal in Richtung der Lüftermodule, und drehen Sie ihn dann nach oben in die vollständig geöffnete Position.
-+
-image::../media/drw_a800_open_air_duct.png[Öffnen Sie den Luftkanal]
-
-+
-[cols="1,4"]
-|===
-
-
- a| 
-image:../media/icon_round_1.png["Legende Nummer 1"]
- a| 
-Verriegelungsklammern für Luftkanäle
-
-
-
- a| 
-image:../media/icon_round_2.png["Legende Nummer 2"]
- a| 
-Schieben Sie den Luftkanal in Richtung Lüftermodule
-
-
-
- a| 
-image:../media/icon_round_3.png["Legende Nummer 3"]
- a| 
-Luftkanal in Richtung Lüftermodule drehen
-
-|===
-
+Stützen Sie das Controllermodul an der Unterseite ab, während Sie es aus dem Gehäuse herausschieben.
 
 
 
@@ -174,10 +179,18 @@ Luftkanal in Richtung Lüftermodule drehen
 
 == Schritt 3: Ersetzen Sie die RTC-Batterie
 
+Tauschen Sie die RTC-Batterie aus.
+
+Die Vorgehensweise zum Austausch der RTC-Batterie unterscheidet sich je nachdem, ob es sich bei Ihrem Controller um ein Original- oder ein VER2-Modell handelt.  Nutzen Sie die unten stehenden Registerkarten, um die passenden Anweisungen für Ihr Controller-Modell auszuwählen.
+
+.Über diese Aufgabe
+Die Batterie befindet sich bei Original-Controllern unter Riser 2 (dem mittleren Riser) und bei VER2-Controllern in der Nähe der DIMMs.
+
 [role="tabbed-block"]
 ====
 .Original-Controller
 --
+.Schritte
 . Entfernen Sie den PCIe-Riser 2 (mittlere Riserkarte) vom Controller-Modul:
 +
 .. Entfernen Sie alle SFP- oder QSFP-Module, die sich möglicherweise in den PCIe-Karten enthalten haben.
@@ -262,6 +275,7 @@ Bei der Verriegelung ist die Verriegelung bündig mit der Oberseite des Riser un
 --
 .VER2-Controller
 --
+.Schritte
 . Suchen Sie die RTC-Batterie in der Nähe der DIMMs.
 +
 image::../media/drw_a800_rtc_battery_replace_v2.png[Entfernen und ersetzen Sie die RTC-Batterie]
@@ -300,12 +314,13 @@ NOTE: Beachten Sie die Polarität der Batterie, während Sie sie aus dem Halter 
 
 == Schritt 4: Installieren Sie das Controller-Modul neu
 
-Nachdem Sie eine Komponente innerhalb des Controller-Moduls ersetzt haben, müssen Sie das Controller-Modul im Systemgehäuse neu installieren, die Uhrzeit und das Datum auf dem Controller zurücksetzen und es dann booten.
+Installieren Sie das Controller-Modul neu, und starten Sie es neu.
 
-. Wenn Sie dies noch nicht getan haben, schließen Sie den Luftkanal oder die Abdeckung des Controller-Moduls.
+.Schritte
 . Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
 +
-Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein, wenn Sie dazu aufgefordert werden.
+
+NOTE: Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein, wenn Sie dazu aufgefordert werden.
 
 . Das System nach Bedarf neu einsetzen.
 +
@@ -327,21 +342,20 @@ NOTE: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige
 Das Controller-Modul startet, sobald die Stromversorgung wiederhergestellt ist. Bereiten Sie sich darauf vor, den Bootvorgang zu unterbrechen.
 
 .. Wenn Sie dies noch nicht getan haben, installieren Sie das Kabelverwaltungsgerät neu.
-.. Halten Sie den Controller an der LOADER-Eingabeaufforderung an.
 
 
-. Uhrzeit und Datum auf dem Controller zurücksetzen:
+. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben:
 +
-.. Prüfen Sie Datum und Uhrzeit auf dem gesunden Controller mit dem `show date` Befehl.
-.. Überprüfen Sie an der LOADER-Eingabeaufforderung auf dem Ziel-Controller die Zeit und das Datum.
-.. Ändern Sie bei Bedarf das Datum mit dem `set date mm/dd/yyyy` Befehl.
-.. Stellen Sie bei Bedarf die Uhrzeit in GMT mithilfe des ein `set time hh:mm:ss` Befehl.
-.. Bestätigen Sie Datum und Uhrzeit auf dem Ziel-Controller.
+`storage failover giveback -ofnode _impaired_node_name_`.
 
+. Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut:
++
+`storage failover modify -node local -auto-giveback true`.
 
-. Geben Sie an der LOADER-Eingabeaufforderung ein `bye` Um die PCIe-Karten und andere Komponenten neu zu initialisieren und den Controller neu zu starten.
-. Wiederherstellung des normalen Betriebs des Controllers durch Zurückgeben des Speichers: `storage failover giveback -ofnode _impaired_node_name_`
-. Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut: `storage failover modify -node local -auto-giveback true`
+. Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung wiederherstellen/zurücknehmen:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`.
+
 
 
 

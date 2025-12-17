@@ -1,0 +1,40 @@
+---
+permalink: a800/controller-replace-requirements.html 
+sidebar: sidebar 
+keywords: aff a800, prerequisite, replace the controller module 
+summary: Bevor Sie die Steuerung Ihres AFF A800 -Systems austauschen, stellen Sie sicher, dass Sie die notwendigen Voraussetzungen für einen erfolgreichen Austausch erfüllen. Dazu gehört die Überprüfung, ob alle anderen Komponenten im System ordnungsgemäß funktionieren, die Überprüfung, ob Sie den richtigen Ersatzcontroller haben, und das Speichern der Konsolenausgabe des Controllers in einer Textprotokolldatei. 
+---
+= Anforderungen für den Austausch des Controllers - AFF A800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor Sie die Steuerung Ihres AFF A800 -Systems austauschen, stellen Sie sicher, dass Sie die notwendigen Voraussetzungen für einen erfolgreichen Austausch erfüllen. Dazu gehört die Überprüfung, ob alle anderen Komponenten im System ordnungsgemäß funktionieren, die Überprüfung, ob Sie den richtigen Ersatzcontroller haben, und das Speichern der Konsolenausgabe des Controllers in einer Textprotokolldatei.
+
+Überprüfen Sie die Anforderungen für den Austausch des Controller-Moduls.
+
+* Alle Festplatten-Shelfs müssen ordnungsgemäß funktionieren.
+* Der intakte Regler muss in der Lage sein, den zu ersetzenden Regler (im Folgenden als beeinträchtigter Regler bezeichnet) zu übernehmen.
+* Dieses Verfahren darf nicht für Controller-Upgrades verwendet werden.  Siehe https://docs.netapp.com/us-en/ontap-systems-upgrade/choose_controller_upgrade_procedure.html["Wählen Sie das Upgrade Ihrer Controller-Hardware aus"] zur Orientierung.
+* Wenn Ihr System in einer MetroCluster -Konfiguration vorliegt, überprüfen Sie https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/concept_choosing_the_correct_recovery_procedure_parent_concept.html["Auswahl des richtigen Wiederherstellungsverfahrens"] um zu entscheiden, ob dieses Verfahren angewendet werden soll.
+* Ersetzen Sie die defekte Komponente durch die von NetApp erhaltene vor Ort austauschbare Einheit (FRU).
+* Ersetzen Sie das Steuergerät durch ein Steuergerät desselben Modelltyps.  Ein Upgrade des Systems durch Austausch des Controller-Moduls ist nicht möglich.
+* Im Rahmen dieses Vorgangs dürfen Sie weder Laufwerke noch Laufwerksschächte austauschen.
+* Das Boot-Gerät befindet sich auf dem Systemverwaltungsmodul, das an der Rückseite des Systems installiert ist.  Beim Austausch eines Controllermoduls muss das Boot-Gerät nicht versetzt werden.
+* Machen Sie sich mit der in diesem Verfahren verwendeten Controller-Terminologie vertraut:
++
+** Der _beeinträchtigte_ Controller ist der Controller, der ersetzt wird.
+** Der _Ersatz_-Controller ist der neue Controller, der den defekten Controller ersetzt.
+** Der _Healthy_ Controller ist der überlebende Controller.
+
+
+* Die Konsolenausgabe des Controllers soll in einer Textprotokolldatei gespeichert werden.
++
+Dies dient der Dokumentation des Vorgehens zur Behebung von Problemen während des Austauschprozesses.
+
+
+
+.Was kommt als Nächstes?
+Nachdem Sie die Anforderungen für den Austausch Ihres AFF A800 Controllers geprüft haben, müssen Sie Folgendes tun:link:controller-replace-shutdown.html["Schalten Sie den außer Betrieb genommenen Controller aus"] Die

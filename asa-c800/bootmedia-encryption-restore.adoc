@@ -11,9 +11,9 @@ summary: 'Sobald Umgebungsvariablen geprüft werden, müssen Sie spezifische Sch
 
 
 [role="lead"]
-Stellen Sie die Verschlüsselung auf dem Ersatz-Startmedium wieder her.
+Stellen Sie die Verschlüsselung auf dem Ersatz-Bootmedium in Ihrem ASA C800 -System wieder her, um den fortlaufenden Datenschutz zu gewährleisten. Der Austauschprozess umfasst die Überprüfung der Schlüsselverfügbarkeit, die erneute Anwendung der Verschlüsselungseinstellungen und die Bestätigung des sicheren Zugriffs auf Ihre Daten.
 
-Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow.html["manuelle Boot-Wiederherstellung"]
+Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie das manuelle Boot-Wiederherstellungsverfahren verwenden.
 
 Führen Sie die entsprechenden Schritte zur Wiederherstellung der Verschlüsselung auf Ihrem System durch, abhängig von Ihrem Schlüsselverwaltungstyp.  Wenn Sie sich nicht sicher sind, welchen Key-Manager Ihr System verwendet, überprüfen Sie die Einstellungen, die Sie zu Beginn des Vorgangs zum Austausch des Startmediums erfasst haben.
 
@@ -432,3 +432,5 @@ Selection (1-11)? 1
 
 --
 ====
+.Was kommt als Nächstes?
+Nach dem Wiederherstellen der Verschlüsselung auf dem Boot-Medium müssen Sie link:bootmedia-complete-rma.html["Geben Sie das fehlerhafte Teil an NetApp zurück"].

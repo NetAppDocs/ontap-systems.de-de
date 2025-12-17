@@ -11,7 +11,7 @@ summary: Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des b
 
 
 [role="lead"]
-Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Controllers durchführen. Fahren Sie den Controller mit eingeschränkter Konfiguration herunter oder übernehmen Sie ihn entsprechend.
+Fahren Sie den beeinträchtigten Controller in Ihrem ASA A800 Speichersystem herunter, um Datenverlust zu verhindern und die Systemstabilität während des automatischen Wiederherstellungsprozesses des Bootmediums aufrechtzuerhalten.
 
 Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie das manuelle Boot-Wiederherstellungsverfahren verwenden.
 
@@ -107,3 +107,6 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 
 |===
 
+
+.Was kommt als Nächstes?
+Nach dem Herunterfahren des Controllers müssen Sie link:bootmedia-replace.html["Ersetzen Sie das Startmedium"].

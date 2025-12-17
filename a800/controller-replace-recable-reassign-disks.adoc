@@ -11,23 +11,19 @@ summary: Sie müssen den Speicher neu zuweisen und die Neuzuweisung der Festplat
 
 
 [role="lead"]
-Setzen Sie das Ersatzverfahren fort, indem Sie den Speicher neu zuweisen und die Neuzuweisung bestätigen.
+Übergeben Sie die Kontrolle über die Speicherressourcen wieder an den Ersatzcontroller, damit Ihr AFF A800 -System den normalen Betrieb wiederaufnehmen kann.  Das Rückgabeverfahren variiert je nach Art der von Ihrem System verwendeten Verschlüsselung: keine Verschlüsselung oder Onboard Key Manager (OKM)-Verschlüsselung.
 
 
 
 == Schritt 1: Das System erneut einsetzen
 
-Überprüfen Sie die Speicher- und Netzwerkverbindungen des Controller-Moduls.
+Überprüfen Sie die Speicher- und Netzwerkverbindungen des Controller-Moduls mithilfe von https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"] Die
 
 .Schritte
-. Überprüfen Sie anhand von, ob die Verkabelung korrekt ist https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"].
-+
-.. Laden Sie Config Advisor herunter und installieren Sie es.
-.. Geben Sie die Informationen für das Zielsystem ein, und klicken Sie auf Daten erfassen.
-.. Klicken Sie auf die Registerkarte Verkabelung, und überprüfen Sie die Ausgabe. Stellen Sie sicher, dass alle Festplatten-Shelfs angezeigt werden und alle Festplatten in der Ausgabe angezeigt werden. So beheben Sie mögliche Verkabelungsprobleme.
-.. Überprüfen Sie die andere Verkabelung, indem Sie auf die entsprechende Registerkarte klicken und dann die Ausgabe von Config Advisor überprüfen.
-
-
+. Laden Sie Config Advisor herunter und installieren Sie es.
+. Geben Sie die Informationen für das Zielsystem ein, und klicken Sie auf Daten erfassen.
+. Klicken Sie auf die Registerkarte Verkabelung, und überprüfen Sie die Ausgabe. Stellen Sie sicher, dass alle Festplatten-Shelfs angezeigt werden und alle Festplatten in der Ausgabe angezeigt werden. So beheben Sie mögliche Verkabelungsprobleme.
+. Überprüfen Sie die andere Verkabelung, indem Sie auf die entsprechende Registerkarte klicken und dann die Ausgabe von Config Advisor überprüfen.
 
 
 
@@ -36,8 +32,9 @@ Setzen Sie das Ersatzverfahren fort, indem Sie den Speicher neu zuweisen und die
 
 Wenn sich das Storage-System in einem HA-Paar befindet, wird die System-ID des neuen Controller-Moduls automatisch den Festplatten zugewiesen, wenn die Rückgabe am Ende des Verfahrens stattfindet. Sie müssen die Änderung der System-ID beim Booten des Controllers _Replacement_ bestätigen und anschließend überprüfen, ob die Änderung implementiert wurde.
 
-Diese Vorgehensweise gilt nur für Systeme, auf denen ONTAP in einem HA-Paar ausgeführt wird.
+Dieser Schritt gilt nur für Systeme, auf denen ONTAP in einem HA-Paar ausgeführt wird.
 
+.Schritte
 . Wenn sich der Controller _Replacement_ im Wartungsmodus befindet (zeigt das an `*>` Eingabeaufforderung, beenden Sie den Wartungsmodus und gehen Sie zur LOADER-Eingabeaufforderung: `halt`
 . Booten Sie an der LOADER-Eingabeaufforderung am _Replacement_-Controller den Controller, und geben Sie ein `y` Wenn Sie aufgrund einer nicht übereinstimmenden System-ID aufgefordert werden, die System-ID außer Kraft zu setzen:``boot_ontap``
 . Warten Sie, bis der `Waiting for giveback...` Die Meldung wird auf der Controller-Konsole „_Replacement_“ angezeigt und überprüfen Sie anschließend vom gesunden Controller, ob die neue Partner-System-ID automatisch zugewiesen wurde: `storage failover show`

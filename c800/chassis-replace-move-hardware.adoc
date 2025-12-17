@@ -4,19 +4,22 @@ sidebar: sidebar
 keywords: aff c800, move hardware components, replace the chassis 
 summary: Stellen Sie die Netzteile, Festplatten und Controller-Module oder Module vom beeinträchtigten Gehäuse in das neue Gehäuse und tauschen Sie das beeinträchtigte Gehäuse aus dem Geräterrack oder Systemschrank durch das neue Gehäuse des gleichen Modells aus wie das beeinträchtigte Gehäuse. 
 ---
-= Austausch und Austausch von Hardware – AFF C800
+= Ersetzen Sie das Gehäuse - AFF C800
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Verschieben Sie die Netzteile, Festplatten und das Controller-Modul vom Gehäuse für beeinträchtigte Störungen in das neue Gehäuse, und tauschen Sie das Gehäuse für beeinträchtigte Störungen durch das neue Gehäuse desselben Modells aus.
+Tauschen Sie das Gehäuse Ihres AFF C800 -Systems aus, wenn ein Hardwaredefekt dies erfordert.  Der Austauschprozess umfasst das Entfernen der Steuergeräte, das Umsetzen der Laufwerke in das Ersatzgehäuse, das Entfernen des defekten Gehäuses, den Einbau des Ersatzgehäuses und den Wiedereinbau der Gehäusekomponenten.
 
 
 
-== Schritt 1: Entfernen Sie die Controller-Module
+== Schritt 1: Entfernen Sie die Controller-Module aus dem alten Gehäuse
 
+Entfernen Sie die Controller-Module aus dem alten Chassis.
+
+.Schritte
 Um das Chassis auszutauschen, müssen Sie die Controller-Module aus dem alten Chassis entfernen.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
@@ -62,8 +65,9 @@ Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen,
 
 == Schritt 2: Fahren Sie die Laufwerke in das neue Gehäuse
 
-Sie müssen die Laufwerke von jeder Schachtöffnung im alten Chassis auf dieselbe Schachtöffnung im neuen Chassis verschieben.
+Bauen Sie die Laufwerke vom alten Gehäuse in das neue Gehäuse ein.
 
+.Schritte
 . Entfernen Sie vorsichtig die Blende von der Vorderseite des Systems.
 . Entfernen Sie die Laufwerke:
 +
@@ -98,8 +102,9 @@ Schließen Sie den Nockengriff langsam, damit er korrekt an der Vorderseite des 
 
 == Schritt 3: Ersetzen Sie ein Chassis aus dem Rack oder Systemschrank der Ausrüstung
 
-Sie müssen das vorhandene Chassis aus dem Rack oder dem Systemschrank entfernen, bevor Sie das Ersatzgehäuse installieren können.
+Ersetzen Sie das beschädigte Chassis im Geräteschrank oder Systemschrank durch das neue Chassis.
 
+.Schritte
 . Entfernen Sie die Schrauben von den Montagepunkten des Gehäuses.
 . Schieben Sie das alte Chassis bei zwei Personen von den Rack-Schienen in einem Systemschrank oder Ausrüstungs-Rack und legen Sie es dann beiseite.
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
@@ -111,12 +116,13 @@ Sie müssen das vorhandene Chassis aus dem Rack oder dem Systemschrank entfernen
 
 
 
-== Schritt 4: Installieren Sie die Controller-Module
+== Schritt 4: Installieren Sie die Controller-Module in das neue Gehäuse.
 
 Nachdem Sie die Controller-Module in das neue Gehäuse installiert haben, müssen Sie es booten.
 
 Bei HA-Paaren mit zwei Controller-Modulen im selben Chassis ist die Sequenz, in der Sie das Controller-Modul installieren, besonders wichtig, da sie versucht, neu zu booten, sobald Sie es vollständig im Chassis einsetzen.
 
+.Schritte
 . Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
 +
 
@@ -144,3 +150,6 @@ Das Controller-Modul startet, sobald die Stromversorgung wiederhergestellt ist. 
 
 . Wiederholen Sie die vorherigen Schritte, um den zweiten Controller im neuen Chassis zu installieren.
 
+
+.Was kommt als Nächstes?
+Nachdem Sie das defekte AFF C800 Gehäuse ausgetauscht und die Komponenten wieder eingebaut haben, müssen Sie Folgendes tun:link:chassis-replace-complete-system-restore-rma.html["Schließen Sie den Austausch des Gehäuses ab"]

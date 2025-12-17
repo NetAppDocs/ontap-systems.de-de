@@ -1,0 +1,38 @@
+---
+permalink: c800/controller-replace-workflow.html 
+sidebar: sidebar 
+keywords: aff c800, replace the controller workflow 
+summary: Beginnen Sie mit dem Austausch des Controllers in Ihrem AFF C800 Speichersystem, indem Sie den defekten Controller herunterfahren, den Controller entfernen und ersetzen, die Systemeinstellungen neu konfigurieren und die Systemfunktionen überprüfen. 
+---
+= Arbeitsablauf beim Controller-Austausch – AFF C800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ersetzen Sie den Controller in Ihrem AFF C800 -Speichersystem, indem Sie den defekten Controller herunterfahren, den neuen Controller ausbauen und ersetzen, die Systemkonfiguration wiederherstellen und die Kontrolle über die Speicherressourcen an den neuen Controller zurückgeben.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:controller-replace-requirements.html["Überprüfen Sie die Anforderungen für den Austausch des Controllers"]
+[role="quick-margin-para"]
+Prüfen Sie die Anforderungen an den Controller-Austausch, einschließlich Systemkompatibilität, benötigter Tools, ONTAP Zugangsdaten und Funktionsprüfung der Komponenten.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:controller-replace-shutdown.html["Schalten Sie den beeinträchtigten Regler aus"]
+[role="quick-margin-para"]
+Fahren Sie den beeinträchtigten Controller herunter oder übernehmen Sie ihn, damit der funktionsunzuverlässige Controller weiterhin Daten aus dem Speicher für den beeinträchtigten Controller bereitstellen kann.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:controller-replace-move-hardware.html["Ersetzen Sie den Controller"]
+[role="quick-margin-para"]
+Den defekten Controller ausbauen, die FRU-Komponenten auf das Ersatz-Controllermodul übertragen und das Ersatz-Controllermodul im Gehäuse installieren.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:controller-replace-system-config-restore-and-verify.html["Stellen Sie die Systemkonfiguration wieder her und überprüfen Sie sie"]
+[role="quick-margin-para"]
+Überprüfen Sie die Low-Level-Systemkonfiguration des Ersatz-Controllers und konfigurieren Sie die Systemeinstellungen nach Bedarf neu.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:controller-replace-recable-reassign-disks.html["Zurückholen und den Controller zurückgeben"]
+[role="quick-margin-para"]
+Neuzuführung des Controllers und Zurückübertragung der Speicherressourcen auf den Ersatz-Controller
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sechs"]link:controller-replace-restore-system-rma.html["Vollständiger Controller-Austausch"]
+[role="quick-margin-para"]
+Überprüfen Sie die LIFs, überprüfen Sie den Cluster-Zustand und senden Sie das fehlerhafte Teil an NetApp zurück.
