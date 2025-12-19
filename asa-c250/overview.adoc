@@ -11,7 +11,7 @@ summary: Wichtige Spezifikationen für die ASA-C250-Plattformgruppe
 
 
 [role="lead"]
-Im Folgenden finden Sie ausgewählte Spezifikationen für das ASA C250 -Speichersystem in einem einzelnen Hochverfügbarkeitspaar.  Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).
+Im Folgenden finden Sie ausgewählte Spezifikationen für das ASA C250 Speichersystem in einem einzelnen Hochverfügbarkeitspaar. Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).
 
 
 
@@ -23,7 +23,13 @@ Im Folgenden finden Sie ausgewählte Spezifikationen für das ASA C250 -Speicher
 * Formfaktor: 2U-Gehäuse mit 2 HA-Controllern und 24 Laufwerkssteckplätzen
 * ONTAP -Version: ONTAP: 9.16.1P2
 * PCIe-Erweiterungssteckplätze: 4
-* Mindest ONTAP -Version: ONTAP 9.13.1P1 == Scaleout-Maxima
+* Mindestversion von ONTAP : ONTAP 9.13.1P1
+
+
+
+
+== Skalierungsmaxima
+
 * Typ: NAS
 * Typ: SAN; HA-Paare: 6; Rohkapazität: 8,8 PB / 7,9 PiB; Max. Speicher: 768 GB
 * Typ: HA-Paar; Rohkapazität: 1,5 PB / 1,3 PiB; Max. Speicher: 128.0000
@@ -68,15 +74,21 @@ Im Folgenden finden Sie ausgewählte Spezifikationen für das ASA C250 -Speicher
 
 * FC
 * iSCSI
-* NVMe/FC == Systemumgebungsspezifikationen
+* NVMe/FC
+
+
+
+
+== Systemumgebungsspezifikationen
+
 * Typische Leistung: 2906 BTU/h
 * Leistung im schlimmsten Fall: 3750 BTU/h
 * Gewicht: 54.3 lb 24.6 kg
 * Höhe: 2U
 * Breite: 19 Zoll, IEC-Rack-kompatibel (17,6 Zoll, 44,7 cm)
 * Tiefe:
-* Betriebstemperatur/Höhe/Luftfeuchtigkeit: 10 °C bis 35 °C (50 °F bis 95 °F) bei 3048 m (10000 Fuß) Höhe; 8 % bis 80 % relative Luftfeuchtigkeit, nicht kondensierend
-* Temperatur/Luftfeuchtigkeit außerhalb des Betriebs: -40 °C bis 70 °C (-40 °F bis 158 °F) bis zu 12.192 m (40.000 Fuß) 10 % bis 95 % relative Luftfeuchtigkeit, nicht kondensierend, im Originalbehälter
+* Betriebstemperatur/Höhe/Luftfeuchtigkeit: 10 °C bis 35 °C (50 °F bis 95 °F) bis zu einer Höhe von 3048 m (10000 ft); 8 % bis 80 % relative Luftfeuchtigkeit, nicht kondensierend
+* Lagertemperatur/Luftfeuchtigkeit: -40 °C bis 70 °C (-40 °F bis 158 °F) bis zu 12192 m (40000 ft), 10 % bis 95 % relative Luftfeuchtigkeit, nicht kondensierend, im Originalbehälter
 * Akustisches Rauschen: Angegebene Schallleistung (LwAd): 7,2 Schalldruck (LpAm) (in der Nähe): 69,1 dB
 
 
@@ -98,5 +110,5 @@ Im Folgenden finden Sie ausgewählte Spezifikationen für das ASA C250 -Speicher
 
 * Ethernet-basierter Baseboard Management Controller (BMC) und ONTAP Verwaltungsschnittstelle
 * Redundante Hot-Swap-fähige Controller
-* Redundante Hot-Swap-fähige Netzteile [//] 2025-10-15 ontap-systems-internal/issues/1357
+* Redundante Hot-Swap-fähige Netzteile
 

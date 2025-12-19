@@ -11,7 +11,7 @@ summary: Wichtige Spezifikationen für die FAS2700-Plattformgruppe
 
 
 [role="lead"]
-Im Folgenden finden Sie ausgewählte Spezifikationen für das FAS2750 Speichersystem in einem einzelnen Hochverfügbarkeitspaar.  Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).
+Im Folgenden finden Sie ausgewählte Spezifikationen für das FAS2750 Speichersystem in einem einzelnen Hochverfügbarkeitspaar. Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).
 
 
 
@@ -23,7 +23,13 @@ Im Folgenden finden Sie ausgewählte Spezifikationen für das FAS2750 Speichersy
 * Formfaktor: 2U-Gehäuse mit 2 HA-Controllern und 24 Laufwerkssteckplätzen
 * ONTAP -Version: ONTAP: 9.16.1P2
 * PCIe-Erweiterungssteckplätze: 2
-* Mindest ONTAP -Version: ONTAP 9.4RC1 == Scaleout-Maxima
+* Mindestversion von ONTAP : ONTAP 9.4RC1
+
+
+
+
+== Skalierungsmaxima
+
 * Typ: NAS; HA-Paare: 12; Rohkapazität: 32,2 PB / 28,6 PiB; Max. Speicher: 768 GB
 * Typ: SAN; HA-Paare: 6; Rohkapazität: 16,1 PB / 14,3 PiB; Max. Speicher: 384 GB
 * Typ: HA-Paar; Rohkapazität: 2,7 PB / 2,4 PiB; Max. Speicher: 64.0000
@@ -79,15 +85,21 @@ Im Folgenden finden Sie ausgewählte Spezifikationen für das FAS2750 Speichersy
 * SMB 2.x
 * KMU 3.0
 * KMU 3.1
-* SMB 3.1.1 == Systemumgebungsspezifikationen
+* SMB 3.1.1
+
+
+
+
+== Systemumgebungsspezifikationen
+
 * Typische Leistung: 1209 BTU/h
 * Leistung im schlimmsten Fall: 1676 BTU/h
 * Gewicht: 60.8 lb 27.6 kg
 * Höhe: 2U
 * Breite: 19 Zoll, IEC-Rack-kompatibel (17,6 Zoll, 44,7 cm)
 * Tiefe: 19,0 Zoll (24,1 Zoll mit Kabelführungshalterung)
-* Betriebstemperatur/Höhe/Luftfeuchtigkeit: 5 °C bis 45 °C (41 °F bis 113 °F) bei <= 3048 m (<= 10000 ft) Höhe; 8 % bis 90 % relative Luftfeuchtigkeit, nicht kondensierend
-* Temperatur/Luftfeuchtigkeit außerhalb des Betriebs: -40 °C bis 70 °C (-40 °F bis 158 °F) bis zu 12.192 m (40.000 Fuß) 10 % bis 95 % relative Luftfeuchtigkeit, nicht kondensierend, im Originalbehälter
+* Betriebstemperatur/Höhe/Luftfeuchtigkeit: 5 °C bis 45 °C (41 °F bis 113 °F) bis zu einer Höhe von 3048 m (10000 ft); 8 % bis 90 % relative Luftfeuchtigkeit, nicht kondensierend
+* Lagertemperatur/Luftfeuchtigkeit: -40 °C bis 70 °C (-40 °F bis 158 °F) bis zu 12192 m (40000 ft), 10 % bis 95 % relative Luftfeuchtigkeit, nicht kondensierend, im Originalbehälter
 * Akustisches Rauschen: Angegebene Schallleistung (LwAd): 6,9 Schalldruck (LpAm) (in der Nähe): 51,0 dB
 
 
@@ -110,5 +122,5 @@ Im Folgenden finden Sie ausgewählte Spezifikationen für das FAS2750 Speichersy
 * Ethernet-basierter Baseboard Management Controller (BMC) und ONTAP Verwaltungsschnittstelle
 * Redundante Hot-Swap-fähige Controller
 * Redundante Hot-Swap-fähige Netzteile
-* SAS-In-Band-Management über SAS-Verbindungen für externe Regale [//] 2025-10-15 ontap-systems-internal/issues/1357
+* SAS-In-Band-Management über SAS-Verbindungen für externe Regale
 

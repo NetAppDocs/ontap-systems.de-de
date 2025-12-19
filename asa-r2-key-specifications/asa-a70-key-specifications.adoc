@@ -23,7 +23,13 @@ Im Folgenden finden Sie ausgewählte Spezifikationen für das ASA A70-Speichersy
 * Formfaktor: 4U-Gehäuse mit 2 HA-Controllern und 48 Laufwerkssteckplätzen
 * ONTAP -Version: ONTAP: 9.16.1P2
 * PCIe-Erweiterungssteckplätze: 18
-* Mindest- ONTAP -Version: ONTAP 9.16.0 == Scaleout-Maxima
+* Mindestversion von ONTAP : ONTAP 9.16.0
+
+
+
+
+== Skalierungsmaxima
+
 * Typ: NAS
 * Typ: SAN; HA-Paare: 6; Rohkapazität: 16,0 PB / 14,2 PiB; Max. Speicher: 1536 GB
 * Typ: HA-Paar; Rohkapazität: 2,7 PB / 2,4 PiB; Max. Speicher: 256.0000
@@ -68,15 +74,21 @@ Keine Onboard-E/A-Daten.
 * FC
 * iSCSI
 * NVMe/FC
-* NVMe/TCP == Systemumgebungsspezifikationen
+* NVMe/TCP
+
+
+
+
+== Systemumgebungsspezifikationen
+
 * Typische Leistung: 6938 BTU/h
 * Leistung im schlimmsten Fall: 9089 BTU/h
 * Gewicht: 170.4 lb 77.3 kg
 * Höhe: 4U
 * Breite: 19 Zoll, IEC-Rack-kompatibel (17,6 Zoll, 44,7 cm)
 * Tiefe: 34,5 Zoll (36,6 Zoll mit Kabelführungshalterung)
-* Betriebstemperatur/Höhe/Luftfeuchtigkeit: 10 °C bis 35 °C (50 °F bis 95 °F) bei 3048 m (10000 Fuß) Höhe; 8 % bis 80 % relative Luftfeuchtigkeit, nicht kondensierend
-* Temperatur/Luftfeuchtigkeit außerhalb des Betriebs: -40 °C bis 70 °C (-40 °F bis 158 °F) bis zu 12.192 m (40.000 Fuß) 10 % bis 95 % relative Luftfeuchtigkeit, nicht kondensierend, im Originalbehälter
+* Betriebstemperatur/Höhe/Luftfeuchtigkeit: 10 °C bis 35 °C (50 °F bis 95 °F) bis zu einer Höhe von 3048 m (10000 ft); 8 % bis 80 % relative Luftfeuchtigkeit, nicht kondensierend
+* Lagertemperatur/Luftfeuchtigkeit: -40 °C bis 70 °C (-40 °F bis 158 °F) bis zu 12192 m (40000 ft), 10 % bis 95 % relative Luftfeuchtigkeit, nicht kondensierend, im Originalbehälter
 * Akustisches Rauschen: Angegebene Schallleistung (LwAd): 8,6 Schalldruck (LpAm) (in der Nähe): 71,6 dB
 
 

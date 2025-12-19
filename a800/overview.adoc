@@ -11,7 +11,7 @@ summary: Wichtige Spezifikationen für die A800-Plattformgruppe
 
 
 [role="lead"]
-Im Folgenden finden Sie ausgewählte Spezifikationen für das AFF A800 Speichersystem in einem einzelnen Hochverfügbarkeitspaar.  Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).
+Im Folgenden finden Sie ausgewählte Spezifikationen für das AFF A800 Speichersystem in einem einzelnen Hochverfügbarkeitspaar. Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).
 
 
 
@@ -23,7 +23,13 @@ Im Folgenden finden Sie ausgewählte Spezifikationen für das AFF A800 Speichers
 * Formfaktor: 4U-Gehäuse mit 2 HA-Controllern und 48 Laufwerkssteckplätzen
 * ONTAP -Version: ONTAP: 9.16.1P2
 * PCIe-Erweiterungssteckplätze: 10
-* Mindest ONTAP -Version: ONTAP 9.4RC1 == Scaleout-Maxima
+* Mindestversion von ONTAP : ONTAP 9.4RC1
+
+
+
+
+== Skalierungsmaxima
+
 * Typ: NAS; HA-Paare: 12; Rohkapazität: 79,3 PB / 70,4 PiB; Max. Speicher: 15360 GB
 * Typ: SAN; HA-Paare: 6; Rohkapazität: 39,7 PB / 35,2 PiB; Max. Speicher: 7680 GB
 * Typ: HA-Paar; Rohkapazität: 6,6 PB / 5,9 PiB; Max. Speicher: 1280.0000
@@ -85,15 +91,21 @@ Im Folgenden finden Sie ausgewählte Spezifikationen für das AFF A800 Speichers
 * SMB 2.x
 * KMU 3.0
 * KMU 3.1
-* SMB 3.1.1 == Systemumgebungsspezifikationen
+* SMB 3.1.1
+
+
+
+
+== Systemumgebungsspezifikationen
+
 * Typische Leistung: 6626 BTU/h
 * Leistung im schlimmsten Fall: 8417 BTU/h
 * Gewicht: 132.5 lb 60.1 kg
 * Höhe: 4U
 * Breite: 19 Zoll, IEC-Rack-kompatibel (17,6 Zoll, 44,7 cm)
 * Tiefe: 34,5 Zoll (36,6 Zoll mit Kabelführungshalterung)
-* Betriebstemperatur/Höhe/Luftfeuchtigkeit: 5 °C bis 40 °C (41 °F bis 104 °F) bei 3048 m (10000 Fuß) Höhe; 8 % bis 90 % relative Luftfeuchtigkeit, nicht kondensierend
-* Temperatur/Luftfeuchtigkeit außerhalb des Betriebs: -40 °C bis 70 °C (-40 °F bis 158 °F) bis zu 12.192 m (40.000 Fuß) 10 % bis 95 % relative Luftfeuchtigkeit, nicht kondensierend, im Originalbehälter
+* Betriebstemperatur/Höhe/Luftfeuchtigkeit: 5 °C bis 40 °C (41 °F bis 104 °F) bis zu einer Höhe von 3048 m (10000 ft); 8 % bis 90 % relative Luftfeuchtigkeit, nicht kondensierend
+* Lagertemperatur/Luftfeuchtigkeit: -40 °C bis 70 °C (-40 °F bis 158 °F) bis zu 12192 m (40000 ft), 10 % bis 95 % relative Luftfeuchtigkeit, nicht kondensierend, im Originalbehälter
 * Akustisches Rauschen: Angegebene Schallleistung (LwAd): 8,0 Schalldruck (LpAm) (in der Nähe): 62,8 dB
 
 
@@ -116,5 +128,5 @@ Im Folgenden finden Sie ausgewählte Spezifikationen für das AFF A800 Speichers
 * Ethernet-basierter Baseboard Management Controller (BMC) und ONTAP Verwaltungsschnittstelle
 * Redundante Hot-Swap-fähige Controller
 * Redundante Hot-Swap-fähige Netzteile
-* SAS-In-Band-Management über SAS-Verbindungen für externe Regale [//] 2025-10-15 ontap-systems-internal/issues/1357
+* SAS-In-Band-Management über SAS-Verbindungen für externe Regale
 

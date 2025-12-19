@@ -11,7 +11,7 @@ summary: Wichtige Spezifikationen für die FAS2800-Plattformgruppe
 
 
 [role="lead"]
-Im Folgenden finden Sie ausgewählte Spezifikationen für das FAS2820 Speichersystem in einem einzelnen Hochverfügbarkeitspaar.  Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).
+Im Folgenden finden Sie ausgewählte Spezifikationen für das FAS2820 Speichersystem in einem einzelnen Hochverfügbarkeitspaar. Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).
 
 
 
@@ -23,7 +23,13 @@ Im Folgenden finden Sie ausgewählte Spezifikationen für das FAS2820 Speichersy
 * Formfaktor: 2U-Gehäuse mit 2 HA-Controllern und 12 Laufwerkssteckplätzen
 * ONTAP -Version: ONTAP: 9.16.1P2
 * PCIe-Erweiterungssteckplätze: 4
-* Mindest ONTAP -Version: ONTAP 9.13.1RC1 == Scaleout-Maxima
+* Mindestversion von ONTAP : ONTAP 9.13.1RC1
+
+
+
+
+== Skalierungsmaxima
+
 * Typ: NAS; HA-Paare: 12; Rohkapazität: 38,0 PB / 33,8 PiB; Max. Speicher: 1536 GB
 * Typ: SAN; HA-Paare: 6; Rohkapazität: 19,0 PB / 16,9 PiB; Max. Speicher: 768 GB
 * Typ: HA-Paar; Rohkapazität: 3,2 PB / 2,8 PiB; Max. Speicher: 128.0000
@@ -81,15 +87,21 @@ Im Folgenden finden Sie ausgewählte Spezifikationen für das FAS2820 Speichersy
 * SMB 2.x
 * KMU 3.0
 * KMU 3.1
-* SMB 3.1.1 == Systemumgebungsspezifikationen
+* SMB 3.1.1
+
+
+
+
+== Systemumgebungsspezifikationen
+
 * Typische Leistung: 1815 BTU/h
 * Leistung im schlimmsten Fall: 2339 BTU/h
 * Gewicht: 57.2 lb 25.9 kg
 * Höhe: 2U
 * Breite: 19 Zoll, IEC-Rack-kompatibel (17,6 Zoll, 44,7 cm)
 * Tiefe: 20,0 Zoll (25,1 Zoll mit Kabelführungshalterung)
-* Betriebstemperatur/Höhe/Luftfeuchtigkeit: 10 °C bis 35 °C (50 °F bis 95 °F) bei 3048 m (10000 Fuß) Höhe; 8 % bis 80 % relative Luftfeuchtigkeit, nicht kondensierend
-* Temperatur/Luftfeuchtigkeit außerhalb des Betriebs: -40 °C bis 70 °C (-40 °F bis 158 °F) bis zu 12.192 m (40.000 Fuß) 10 % bis 95 % relative Luftfeuchtigkeit, nicht kondensierend, im Originalbehälter
+* Betriebstemperatur/Höhe/Luftfeuchtigkeit: 10 °C bis 35 °C (50 °F bis 95 °F) bis zu einer Höhe von 3048 m (10000 ft); 8 % bis 80 % relative Luftfeuchtigkeit, nicht kondensierend
+* Lagertemperatur/Luftfeuchtigkeit: -40 °C bis 70 °C (-40 °F bis 158 °F) bis zu 12192 m (40000 ft), 10 % bis 95 % relative Luftfeuchtigkeit, nicht kondensierend, im Originalbehälter
 * Akustisches Rauschen: Angegebene Schallleistung (LwAd): 7,8 Schalldruck (LpAm) (in der Nähe): 68,4 dB
 
 
@@ -112,5 +124,5 @@ Im Folgenden finden Sie ausgewählte Spezifikationen für das FAS2820 Speichersy
 * Ethernet-basierter Baseboard Management Controller (BMC) und ONTAP Verwaltungsschnittstelle
 * Redundante Hot-Swap-fähige Controller
 * Redundante Hot-Swap-fähige Netzteile
-* SAS-In-Band-Management über SAS-Verbindungen für externe Regale [//] 2025-10-15 ontap-systems-internal/issues/1357
+* SAS-In-Band-Management über SAS-Verbindungen für externe Regale
 

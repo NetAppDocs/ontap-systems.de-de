@@ -11,7 +11,7 @@ summary: Wichtige Spezifikationen für die ASA-C400-Plattformgruppe
 
 
 [role="lead"]
-Im Folgenden finden Sie ausgewählte Spezifikationen für das ASA C400 Speichersystem in einem einzelnen Hochverfügbarkeitspaar.  Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).
+Im Folgenden finden Sie ausgewählte Spezifikationen für das ASA C400 Speichersystem in einem einzelnen Hochverfügbarkeitspaar. Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).
 
 
 
@@ -23,7 +23,13 @@ Im Folgenden finden Sie ausgewählte Spezifikationen für das ASA C400 Speichers
 * Formfaktor: 4U-Gehäuse mit 2 HA-Controllern
 * ONTAP -Version: ONTAP: 9.16.1P2
 * PCIe-Erweiterungssteckplätze: 10
-* Mindest ONTAP -Version: ONTAP 9.13.1P1 == Scaleout-Maxima
+* Mindestversion von ONTAP : ONTAP 9.13.1P1
+
+
+
+
+== Skalierungsmaxima
+
 * Typ: NAS
 * Typ: SAN; HA-Paare: 6; Rohkapazität: 17,7 PB / 15,7 PiB; Max. Speicher: 1536 GB
 * Typ: HA-Paar; Rohkapazität: 2,9 PB / 2,6 PiB; Max. Speicher: 256.0000
@@ -68,15 +74,21 @@ Im Folgenden finden Sie ausgewählte Spezifikationen für das ASA C400 Speichers
 
 * FC
 * iSCSI
-* NVMe/FC == Systemumgebungsspezifikationen
+* NVMe/FC
+
+
+
+
+== Systemumgebungsspezifikationen
+
 * Typische Leistung: 4209 BTU/h
 * Leistung im schlimmsten Fall: 5215 BTU/h
 * Gewicht: 110.0 lb 49.9 kg
 * Höhe: 4U
 * Breite: 19 Zoll, IEC-Rack-kompatibel (17,6 Zoll, 44,7 cm)
 * Tiefe: 32,6 Zoll (34,7 Zoll mit Kabelführungshalterung)
-* Betriebstemperatur/Höhe/Luftfeuchtigkeit: 10 °C bis 35 °C (50 °F bis 95 °F) bei 3048 m (10000 Fuß) Höhe; 8 % bis 80 % relative Luftfeuchtigkeit, nicht kondensierend
-* Temperatur/Luftfeuchtigkeit außerhalb des Betriebs: -40 °C bis 70 °C (-40 °F bis 158 °F) bis zu 12.192 m (40.000 Fuß) 10 % bis 95 % relative Luftfeuchtigkeit, nicht kondensierend, im Originalbehälter
+* Betriebstemperatur/Höhe/Luftfeuchtigkeit: 10 °C bis 35 °C (50 °F bis 95 °F) bis zu einer Höhe von 3048 m (10000 ft); 8 % bis 80 % relative Luftfeuchtigkeit, nicht kondensierend
+* Lagertemperatur/Luftfeuchtigkeit: -40 °C bis 70 °C (-40 °F bis 158 °F) bis zu 12192 m (40000 ft), 10 % bis 95 % relative Luftfeuchtigkeit, nicht kondensierend, im Originalbehälter
 * Akustisches Rauschen: Angegebene Schallleistung (LwAd): 8,5 Schalldruck (LpAm) (in der Nähe): 67,2 dB
 
 

@@ -23,7 +23,13 @@ Im Folgenden finden Sie ausgewählte Spezifikationen für das AFF A90 -Speichers
 * Formfaktor: 4U-Gehäuse mit 2 HA-Controllern und 48 Laufwerkssteckplätzen
 * ONTAP -Version: ONTAP: 9.16.1P2
 * PCIe-Erweiterungssteckplätze: 18
-* Mindestversion von ONTAP : ONTAP 9.15.1RC2 == Scaleout-Maxima
+* Mindestversion von ONTAP : ONTAP 9.15.1RC2
+
+
+
+
+== Skalierungsmaxima
+
 * Typ: NAS; HA-Paare: 12; Rohkapazität: 79,3 PB / 70,4 PiB; Max. Speicher: 24576 GB
 * Typ: SAN; HA-Paare: 6; Rohkapazität: 39,7 PB / 35,2 PiB; Max. Speicher: 12288 GB
 * Typ: HA-Paar; Rohkapazität: 6,6 PB / 5,9 PiB; Max. Speicher: 2048.0000
@@ -84,16 +90,22 @@ Keine Onboard-E/A-Daten.
 * SMB 2.x
 * KMU 3.0
 * KMU 3.1
-* SMB 3.1.1 == Systemumgebungsspezifikationen
+* SMB 3.1.1
+
+
+
+
+== Systemumgebungsspezifikationen
+
 * Typische Leistung: 8304 BTU/h
 * Leistung im schlimmsten Fall: 10948 BTU/h
-* Gewicht: 118.0 lb 53.5 kg
+* Gewicht: 118,0 lb, 53,5 kg
 * Höhe: 4U
-* Breite: 19 Zoll, IEC-Rack-kompatibel (17,6 Zoll, 44,7 cm)
-* Tiefe: 34,5 Zoll (36,6 Zoll mit Kabelführungshalterung)
-* Betriebstemperatur/Höhe/Luftfeuchtigkeit: 10 °C bis 35 °C (50 °F bis 95 °F) bei 3048 m (10000 Fuß) Höhe; 8 % bis 80 % relative Luftfeuchtigkeit, nicht kondensierend
-* Temperatur/Luftfeuchtigkeit außerhalb des Betriebs: -40 °C bis 70 °C (-40 °F bis 158 °F) bis zu 12.192 m (40.000 Fuß) 10 % bis 95 % relative Luftfeuchtigkeit, nicht kondensierend, im Originalbehälter
-* Akustisches Rauschen: Angegebene Schallleistung (LwAd): 8,6 Schalldruck (LpAm) (in der Nähe): 71,6 dB
+* Breite: 19" IEC-Rack-kompatibel (17,6" 44,7 cm)
+* Tiefe: 34,5 Zoll (36,6 Zoll mit Kabelmanagement-Halterung)
+* Betriebstemperatur/Höhe/Luftfeuchtigkeit: 10 °C bis 35 °C (50 °F bis 95 °F) bis zu einer Höhe von 3048 m (10000 ft); 8 % bis 80 % relative Luftfeuchtigkeit, nicht kondensierend
+* Lagertemperatur/Luftfeuchtigkeit: -40 °C bis 70 °C (-40 °F bis 158 °F) bis zu 12192 m (40000 ft); 10 % bis 95 % relative Luftfeuchtigkeit, nicht kondensierend, im Originalbehälter
+* Akustische Geräusche: Angegebene Schallleistung (LwAd): 8,6; Schalldruck (LpAm) (Positionen von Umstehenden): 71,6 dB
 
 
 
@@ -115,5 +127,5 @@ Keine Onboard-E/A-Daten.
 * Ethernet-basierter Baseboard Management Controller (BMC) und ONTAP Verwaltungsschnittstelle
 * Redundante Hot-Swap-fähige Controller
 * Redundante Hot-Swap-fähige Netzteile
-* SAS-In-Band-Management über SAS-Verbindungen für externe Regale [//] 2025-10-15 ontap-systems-internal/issues/1357
+* SAS-In-Band-Management über SAS-Verbindungen für externe Regale
 

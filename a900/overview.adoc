@@ -11,7 +11,7 @@ summary: Wichtige Spezifikationen für die A900-Plattformgruppe
 
 
 [role="lead"]
-Im Folgenden finden Sie ausgewählte Spezifikationen für das AFF A900 Speichersystem in einem einzelnen Hochverfügbarkeitspaar.  Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).
+Im Folgenden finden Sie ausgewählte Spezifikationen für das AFF A900 Speichersystem in einem einzelnen Hochverfügbarkeitspaar. Die vollständigen Spezifikationen für dieses Speichersystem finden Sie im NetApp Hardware Universe (HWU).
 
 
 
@@ -23,7 +23,13 @@ Im Folgenden finden Sie ausgewählte Spezifikationen für das AFF A900 Speichers
 * Formfaktor: 8U-Gehäuse mit 2 HA-Controllern
 * ONTAP -Version: ONTAP: 9.16.1P2
 * PCIe-Erweiterungssteckplätze: 20
-* Mindest ONTAP -Version: ONTAP 9.10.1RC2 == Scaleout-Maxima
+* Mindestversion von ONTAP : ONTAP 9.10.1RC2
+
+
+
+
+== Skalierungsmaxima
+
 * Typ: NAS; HA-Paare: 12; Rohkapazität: 176,3 PB / 156,5 PiB; Max. Speicher: 24576 GB
 * Typ: SAN; HA-Paare: 6; Rohkapazität: 88,1 PB / 78,3 PiB; Max. Speicher: 12288 GB
 * Typ: HA-Paar; Rohkapazität: 14,7 PB / 13,0 PiB; Max. Speicher: 2048.0000
@@ -81,15 +87,21 @@ Keine Onboard-E/A-Daten.
 * SMB 2.x
 * KMU 3.0
 * KMU 3.1
-* SMB 3.1.1 == Systemumgebungsspezifikationen
+* SMB 3.1.1
+
+
+
+
+== Systemumgebungsspezifikationen
+
 * Typische Leistung: 8004 BTU/h
 * Leistung im schlimmsten Fall: 9937 BTU/h
 * Gewicht: 220.5 lb 100.0 kg
 * Höhe: 8U
 * Breite: 19 Zoll, IEC-Rack-kompatibel (17,7 Zoll, 45,0 cm)
 * Tiefe: 28,8 Zoll (36,8 Zoll mit Kabelführungshalterung)
-* Betriebstemperatur/Höhe/Luftfeuchtigkeit: 10 °C bis 35 °C (50 °F bis 95 °F) bei 3048 m (10000 Fuß) Höhe; 8 % bis 80 % relative Luftfeuchtigkeit, nicht kondensierend
-* Temperatur/Luftfeuchtigkeit außerhalb des Betriebs: -40 °C bis 70 °C (-40 °F bis 158 °F) bis zu 12.192 m (40.000 Fuß) 10 % bis 95 % relative Luftfeuchtigkeit, nicht kondensierend, im Originalbehälter
+* Betriebstemperatur/Höhe/Luftfeuchtigkeit: 10 °C bis 35 °C (50 °F bis 95 °F) bis zu einer Höhe von 3048 m (10000 ft); 8 % bis 80 % relative Luftfeuchtigkeit, nicht kondensierend
+* Lagertemperatur/Luftfeuchtigkeit: -40 °C bis 70 °C (-40 °F bis 158 °F) bis zu 12192 m (40000 ft), 10 % bis 95 % relative Luftfeuchtigkeit, nicht kondensierend, im Originalbehälter
 * Akustisches Rauschen: Angegebene Schallleistung (LwAd): 7,4 Schalldruck (LpAm) (in der Nähe): 65,0 dB
 
 
@@ -112,5 +124,5 @@ Keine Onboard-E/A-Daten.
 * Ethernet-basierter Baseboard Management Controller (BMC) und ONTAP Verwaltungsschnittstelle
 * Redundante Hot-Swap-fähige Controller
 * Redundante Hot-Swap-fähige Netzteile
-* SAS-In-Band-Management über SAS-Verbindungen [//] 2025-10-15 ontap-systems-internal/issues/1357
+* SAS-In-Band-Verwaltung über SAS-Verbindungen
 
