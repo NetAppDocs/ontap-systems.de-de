@@ -1,8 +1,8 @@
 ---
 permalink: fas8200/bootmedia-2n-mcc-switchback.html 
 sidebar: sidebar 
-keywords: fas8200, switch back aggregate in a two-node metrocluster configuration 
-summary: 'Nachdem Sie in einer MetroCluster Konfiguration mit zwei Nodes den FRU-Austausch abgeschlossen haben, können Sie den MetroCluster SwitchBack-Vorgang durchführen. Damit wird die Konfiguration in ihren normalen Betriebszustand zurückversetzt, wobei die Synchronisations-Storage Virtual Machines (SVMs) auf dem ehemals beeinträchtigten Standort jetzt aktiv sind und Daten aus den lokalen Festplattenpools bereitstellen.' 
+keywords: fas8200, switch back aggregate in a two-node metrocluster configuration, manual, manual boot recovery 
+summary: Führen Sie den MetroCluster -Switchback-Vorgang auf einem FAS8200 System durch, nachdem der Austausch des Bootmediums in einer Zwei-Knoten MetroCluster Konfiguration abgeschlossen ist. Das FAS8200 -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt. 
 ---
 = Wechseln Sie Aggregate in einer MetroCluster Konfiguration mit zwei Nodes – FAS8200 – zurück
 :allow-uri-read: 
@@ -11,6 +11,10 @@ summary: 'Nachdem Sie in einer MetroCluster Konfiguration mit zwei Nodes den FRU
 
 
 [role="lead"]
+Führen Sie den MetroCluster -Switchback-Vorgang auf einem FAS8200 System durch, nachdem der Austausch des Bootmediums in einer Zwei-Knoten MetroCluster Konfiguration abgeschlossen ist. Dieses Verfahren beinhaltet die Überprüfung der Zustände von Knoten und Storage Virtual Machines (SVM), die Ausführung des Switchback-Befehls und die Bestätigung, dass die Konfiguration in den normalen Betriebszustand zurückkehrt, wobei Sync-Source-SVMs Daten aus lokalen Festplattenpools bereitstellen.
+
+Das FAS8200 -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt.
+
 Dieser Task gilt nur für MetroCluster-Konfigurationen mit zwei Nodes.
 
 .Schritte

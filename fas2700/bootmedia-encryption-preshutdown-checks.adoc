@@ -1,17 +1,19 @@
 ---
 permalink: fas2700/bootmedia-encryption-preshutdown-checks.html 
 sidebar: sidebar 
-keywords: fas2700, aff a220, shutdown, checks, onboard, encryption, keys, impaired controller, disable, automatic, feedback 
-summary: Bevor Sie den beeinträchtigten Controller herunterfahren und den Status der integrierten Verschlüsselungsschlüssel prüfen, müssen Sie den Status des beeinträchtigten Controllers überprüfen, die automatische Rückgabe deaktivieren und überprüfen, welche Version von ONTAP das System ausführt. 
+keywords: fas2700, aff a220, shutdown, checks, onboard, encryption, keys, impaired controller, disable, automatic, feedback, manual, manual boot recovery 
+summary: Überprüfen Sie die Unterstützung und den Status des Verschlüsselungsschlüssels, bevor Sie den betroffenen Controller auf einem FAS2700-System herunterfahren. Das FAS2700-System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt. 
 ---
-= Support und Status der Verschlüsselungsschlüssel prüfen – AFF A220 und FAS2700
+= Verschlüsselungsschlüsselunterstützung und -status prüfen – FAS2700
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Um die Datensicherheit auf Ihrem Speichersystem zu gewährleisten, müssen Sie die Unterstützung und den Status des Verschlüsselungsschlüssels auf Ihrem Boot-Medium überprüfen. Überprüfen Sie, ob Ihre ONTAP Version NetApp Volume Encryption (NVE) unterstützt und bevor Sie den Controller herunterfahren, ob der Schlüsselmanager aktiv ist.
+Überprüfen Sie die Unterstützung und den Status des Verschlüsselungsschlüssels, bevor Sie den betroffenen Controller auf einem FAS2700-System herunterfahren. Dieses Verfahren beinhaltet die Prüfung der ONTAP Versionskompatibilität mit NetApp Volume Encryption (NVE), die Überprüfung der Key-Manager-Konfiguration und die Sicherung von Verschlüsselungsinformationen, um die Datensicherheit während der Wiederherstellung des Bootmediums zu gewährleisten.
+
+Das FAS2700-System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt.
 
 
 

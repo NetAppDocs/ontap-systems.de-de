@@ -1,8 +1,8 @@
 ---
 permalink: a700s/bootmedia-shutdown.html 
 sidebar: sidebar 
-keywords: aff a700s, aff, a700s, completing, complete, nve, nse, shutdown, impair, controller, shut down the controller 
-summary: Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Controllers durchführen. 
+keywords: aff a700s, aff, a700s, completing, complete, nve, nse, shutdown, impair, controller, shut down the controller, manual, manual boot recovery 
+summary: Schalten Sie den beeinträchtigten Controller eines AFF A700s -Systems nach Abschluss der Verschlüsselungsprüfungen ab. Das AFF A700s -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt. 
 ---
 = Herunterfahren des Controllers - AFF A700s
 :allow-uri-read: 
@@ -11,6 +11,10 @@ summary: Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des b
 
 
 [role="lead"]
+Schalten Sie den beeinträchtigten Controller eines AFF A700s -Systems nach Abschluss der Verschlüsselungsprüfungen ab. Dieses Verfahren beinhaltet das Hochfahren des Controllers bis zur LOADER-Eingabeaufforderung, das Erfassen von Boot-Umgebungsvariablen zu Referenzzwecken und die Vorbereitung des Controllers auf den Austausch des Bootmediums.
+
+Das AFF A700s -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt.
+
 Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Controllers durchführen.
 
 .Schritte

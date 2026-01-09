@@ -1,8 +1,8 @@
 ---
 permalink: fas9000/bootmedia-replace-overview.html 
 sidebar: sidebar 
-keywords: aff a700, fas9000, replace, boot, media, primary, secondary, image, disruptive, nondisruptive 
-summary: 'Das Boot-Medium speichert einen primären und sekundären Satz von Systemdateien (Boot-Image), die das System beim Booten verwendet. Je nach Netzwerkkonfiguration können Sie entweder einen unterbrechungsfreien oder störenden Austausch durchführen.' 
+keywords: aff a700, fas9000, replace, boot, media, primary, secondary, image, disruptive, nondisruptive, manual, manual boot recovery 
+summary: 'Das Bootmedium speichert einen primären und einen sekundären Satz von Systemdateien (Bootabbilddateien), die das System beim Start verwendet. Je nach Netzwerkkonfiguration können Sie entweder einen unterbrechungsfreien oder einen unterbrechenden Austausch durchführen. Das FAS9000 System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien.' 
 ---
 = Überblick über den Austausch von Boot-Medien – FAS9000
 :allow-uri-read: 
@@ -11,6 +11,8 @@ summary: 'Das Boot-Medium speichert einen primären und sekundären Satz von Sys
 
 
 [role="lead"]
+Das Bootmedium speichert einen primären und einen sekundären Satz von Systemdateien (Bootabbilddateien), die das System beim Start verwendet. Das FAS9000 System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt.
+
 Das Boot-Medium speichert einen primären und sekundären Satz von Systemdateien (Boot-Image), die das System beim Booten verwendet. Je nach Netzwerkkonfiguration können Sie entweder einen unterbrechungsfreien oder störenden Austausch durchführen.
 
 Sie müssen über ein USB-Flash-Laufwerk verfügen, das auf FAT32 formatiert ist, und über die entsprechende Speichermenge, um die zu speichern `image_xxx.tgz`.

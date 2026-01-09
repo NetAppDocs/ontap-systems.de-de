@@ -1,8 +1,8 @@
 ---
 permalink: fas8200/bootmedia-replace-overview.html 
 sidebar: sidebar 
-keywords: fas8200, replace the boot media 
-summary: 'Das Boot-Medium speichert einen primären und sekundären Satz von System \(Boot Image\)-Dateien, die das System beim Booten verwendet. Je nach Netzwerkkonfiguration können Sie entweder einen unterbrechungsfreien oder störenden Austausch durchführen.' 
+keywords: fas8200, replace the boot media, manual, manual boot recovery 
+summary: Lernen Sie den Austausch des Bootmediums auf einem FAS8200 -System kennen und verstehen Sie die verschiedenen Austauschmethoden. Das FAS8200 -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt. 
 ---
 = Überblick über den Austausch von Boot-Medien – FAS8200
 :allow-uri-read: 
@@ -11,6 +11,10 @@ summary: 'Das Boot-Medium speichert einen primären und sekundären Satz von Sys
 
 
 [role="lead"]
+Lernen Sie den Austausch des Bootmediums auf einem FAS8200 -System kennen und verstehen Sie die verschiedenen Austauschmethoden. Das Bootmedium speichert primäre und sekundäre Boot-Image-Dateien, die das System beim Start verwendet. Je nach Netzwerkkonfiguration können Sie entweder einen unterbrechungsfreien Austausch (HA-Paar mit Netzwerk verbunden) oder einen unterbrechenden Austausch (erfordert zwei Neustarts) durchführen.
+
+Das FAS8200 -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt.
+
 Das Boot-Medium speichert einen primären und sekundären Satz von Systemdateien (Boot-Image), die das System beim Booten verwendet. Je nach Netzwerkkonfiguration können Sie entweder einen unterbrechungsfreien oder störenden Austausch durchführen.
 
 Sie müssen über ein USB-Flash-Laufwerk verfügen, das auf FAT32 formatiert ist, und über die entsprechende Speichermenge, um die zu speichern `image_xxx.tgz` Datei:

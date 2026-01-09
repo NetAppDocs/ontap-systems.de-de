@@ -1,8 +1,8 @@
 ---
 permalink: a700s/bootmedia-transfer-boot-image.html 
 sidebar: sidebar 
-keywords: aff a700s, aff, a700s, procedure, secondary, boot, media, restore, fail, image, tgz, file, trasnfer, usb, flash, drive, transfer the boot image to the boot medai using a usb flash drive 
-summary: Dieses Verfahren sollte nur verwendet werden, wenn die Wiederherstellung des sekundären Startmediums fehlgeschlagen ist oder wenn die Datei image.tgz auf dem sekundären Startmedium nicht gefunden wird. 
+keywords: aff a700s, aff, a700s, procedure, secondary, boot, media, restore, fail, image, tgz, file, trasnfer, usb, flash, drive, transfer the boot image to the boot medai using a usb flash drive, manual, manual boot recovery 
+summary: Übertragen Sie das Boot-Image auf das Ersatz-Bootmedium eines AFF A700s -Systems entweder mit dem sekundären Bootmedium oder mit einem USB-Stick. Das AFF A700s -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt. 
 ---
 = Übertragen Sie das Boot-Image auf das Boot-Medium AFF A700s
 :allow-uri-read: 
@@ -11,11 +11,13 @@ summary: Dieses Verfahren sollte nur verwendet werden, wenn die Wiederherstellun
 
 
 [role="lead"]
-Sie können das System-Image auf dem Ersatzstartmedium installieren. Verwenden Sie dazu entweder das Image auf dem zweiten Boot-Medium, das im Controller-Modul installiert ist, die primäre Methode zur Wiederherstellung des System-Images. Oder indem Sie das Boot-Image über ein USB-Flash-Laufwerk auf das Boot-Medium übertragen, wenn die Wiederherstellung des sekundären Startmediums fehlgeschlagen ist oder wenn die Datei image.tgz nicht auf dem sekundären Startmedium gefunden wurde.
+Übertragen Sie das Boot-Image auf das Ersatz-Bootmedium eines AFF A700s -Systems entweder mit dem sekundären Bootmedium oder mit einem USB-Stick. Dieses Verfahren beinhaltet die Wiederherstellung vom Image auf dem sekundären Bootmedium als primäre Methode oder die Verwendung eines USB-Flash-Laufwerks, falls die Wiederherstellung vom sekundären Bootmedium fehlschlägt oder die Datei image.tgz fehlt.
+
+Das AFF A700s -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt.
 
 
 
-== Option 1: Übertragen Sie Dateien auf das Boot-Medium mit Backup Recovery von dem zweiten Boot-Medium
+== Option 1: Dateien mithilfe der Sicherungswiederherstellung vom zweiten Startmedium übertragen
 
 Sie können das System-Image mithilfe des Images auf dem zweiten Boot-Medium installieren, das im Controller-Modul installiert ist. Dies ist die primäre Methode zur Übertragung der Boot-Mediendateien auf die Ersatz-Boot-Medien in Systemen mit zwei Boot-Medien im Controller-Modul.
 
@@ -84,7 +86,7 @@ Das Image wird von dem sekundären Boot-Medium heruntergeladen.
 
 
 
-== Option 2: Übertragen Sie das Startabbild über ein USB-Flash-Laufwerk auf das Startmedium
+== Option 2: Übertragen Sie das Boot-Image mithilfe eines USB-Sticks
 
 Dieses Verfahren sollte nur verwendet werden, wenn die Wiederherstellung des sekundären Startmediums fehlgeschlagen ist oder wenn die Datei image.tgz auf dem sekundären Startmedium nicht gefunden wird.
 

@@ -1,8 +1,8 @@
 ---
 permalink: a700/bootmedia-encryption-preshutdown-checks.html 
 sidebar: sidebar 
-keywords: aff a700, fas9000, shutdown, check, onboard, encryption, key 
-summary: Vor dem Herunterfahren des Node mit beeinträchtigten Funktionen und dem Überprüfen des Status der integrierten Verschlüsselungsschlüssel müssen Sie den Status des Node mit eingeschränkter Funktion überprüfen, die automatische Rückgabe deaktivieren und überprüfen, welche Version von ONTAP das System ausgeführt wird. 
+keywords: aff a700, shutdown, check, onboard, encryption, key, manual, manual boot recovery 
+summary: Bevor Sie den beeinträchtigten Knoten herunterfahren und den Status der Onboard-Verschlüsselungsschlüssel überprüfen, müssen Sie den Status des beeinträchtigten Knotens überprüfen, die automatische Rückgabe deaktivieren und überprüfen, welche Version von ONTAP auf dem System ausgeführt wird. Das AFF A700 -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. 
 ---
 = Prüfen Sie die Unterstützung und den Status der Verschlüsselungsschlüssel - AFF A700
 :allow-uri-read: 
@@ -11,7 +11,9 @@ summary: Vor dem Herunterfahren des Node mit beeinträchtigten Funktionen und de
 
 
 [role="lead"]
-Um die Datensicherheit auf Ihrem Speichersystem zu gewährleisten, müssen Sie die Unterstützung und den Status des Verschlüsselungsschlüssels auf Ihrem Boot-Medium überprüfen. Überprüfen Sie, ob Ihre ONTAP Version NetApp Volume Encryption (NVE) unterstützt und bevor Sie den Controller herunterfahren, ob der Schlüsselmanager aktiv ist.
+Um die Datensicherheit auf Ihrem Speichersystem zu gewährleisten, müssen Sie die Unterstützung und den Status des Verschlüsselungsschlüssels auf Ihrem Bootmedium überprüfen. Das AFF A700 -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt.
+
+Prüfen Sie, ob Ihre ONTAP Version NetApp Volume Encryption (NVE) unterstützt, und prüfen Sie vor dem Herunterfahren des Controllers, ob der Schlüsselmanager aktiv ist.
 
 
 

@@ -1,16 +1,20 @@
 ---
 permalink: a700/bootmedia-replace-overview.html 
 sidebar: sidebar 
-keywords: aff a700, replace, boot, media, primary, secondary, image, disruptive, nondisruptive 
-summary: 'Das Boot-Medium speichert einen primären und sekundären Satz von Systemdateien (Boot-Image), die das System beim Booten verwendet. Je nach Netzwerkkonfiguration können Sie entweder einen unterbrechungsfreien oder störenden Austausch durchführen.' 
+keywords: aff a700, replace, boot, media, primary, secondary, image, disruptive, nondisruptive, manual, manual boot recovery 
+summary: Lernen Sie den Austausch des Bootmediums auf einem AFF A700 -System kennen und verstehen Sie die verschiedenen Austauschmethoden. Das AFF A700 -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt. 
 ---
-= Überblick über den Austausch von Boot-Medien – AFF A700 und FAS9000
+= Übersicht zum Austausch des Bootmediums – AFF A700
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
+Lernen Sie den Austausch des Bootmediums auf einem AFF A700 -System kennen und verstehen Sie die verschiedenen Austauschmethoden. Das Bootmedium speichert primäre und sekundäre Boot-Image-Dateien, die das System beim Start verwendet. Je nach Ihrer Netzwerkkonfiguration können Sie entweder einen unterbrechungsfreien Austausch (über eine interne e0S-Verbindung) oder einen unterbrechenden Austausch (erfordert zwei Neustarts) durchführen.
+
+Das AFF A700 -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt.
+
 Das Boot-Medium speichert einen primären und sekundären Satz von Systemdateien (Boot-Image), die das System beim Booten verwendet. Je nach Netzwerkkonfiguration können Sie entweder einen unterbrechungsfreien oder störenden Austausch durchführen.
 
 Sie müssen über ein USB-Flash-Laufwerk verfügen, das auf FAT32 formatiert ist, und über die entsprechende Speichermenge, um die zu speichern `image_xxx.tgz`.

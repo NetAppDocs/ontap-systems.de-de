@@ -1,8 +1,8 @@
 ---
 permalink: a700s/bootmedia-replace-overview.html 
 sidebar: sidebar 
-keywords: aff a700s, aff, a700s, primary, boot, media, store, ontap, image, system, restore, primary, media, secondary, usb, flash, drive, replace, replace the boot media 
-summary: Das primäre Boot-Medium speichert das ONTAP Boot-Image, das das System beim Booten verwendet. Sie können das primäre Startmedienabbild wiederherstellen, indem Sie das ONTAP-Image auf dem sekundären Startmedium oder falls erforderlich über ein USB-Flash-Laufwerk verwenden. 
+keywords: aff a700s, aff, a700s, primary, boot, media, store, ontap, image, system, restore, primary, media, secondary, usb, flash, drive, replace, replace the boot media, manual, manual boot recovery 
+summary: Lernen Sie den Austausch des Bootmediums auf einem AFF A700s -System kennen und verstehen Sie die Wiederherstellungsmethoden. Das AFF A700s -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt. 
 ---
 = Überblick über den Austausch von Boot-Medien - AFF A700s
 :allow-uri-read: 
@@ -11,7 +11,9 @@ summary: Das primäre Boot-Medium speichert das ONTAP Boot-Image, das das System
 
 
 [role="lead"]
-Das primäre Boot-Medium speichert das ONTAP Boot-Image, das das System beim Booten verwendet. Sie können das primäre Startmedienabbild wiederherstellen, indem Sie das ONTAP-Image auf dem sekundären Startmedium oder falls erforderlich über ein USB-Flash-Laufwerk verwenden.
+Lernen Sie den Austausch des Bootmediums auf einem AFF A700s -System kennen und verstehen Sie die Wiederherstellungsmethoden. Das primäre Bootmedium speichert das ONTAP Bootabbild, das das System beim Start verwendet. Sie können das primäre Bootmedienabbild mithilfe des ONTAP Abbilds vom sekundären Bootmedium oder, falls erforderlich, von einem mit FAT32 formatierten USB-Stick wiederherstellen.
+
+Das AFF A700s -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt.
 
 Wenn das sekundäre Startmedium ausgefallen ist oder die Datei image.tgz fehlt, müssen Sie das primäre Startmedium über ein USB-Flash-Laufwerk wiederherstellen. Das Laufwerk muss in FAT32 formatiert sein und über die entsprechende Menge Speicherplatz verfügen, um die Datei image_xxx.tgz zu speichern.
 

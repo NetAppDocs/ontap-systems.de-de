@@ -1,8 +1,8 @@
 ---
 permalink: fas2700/bootmedia-recovery-image-boot-non-2n-mcc.html 
 sidebar: sidebar 
-keywords: fas2700, aff 220, boot, recovery, image, restore, file, system, environmental, varible 
-summary: Sie müssen das ONTAP-Image vom USB-Laufwerk starten, das Dateisystem wiederherstellen und die Umgebungsvariablen überprüfen. 
+keywords: fas2700, aff 220, boot, recovery, image, restore, file, system, environmental, varible, manual, manual boot recovery 
+summary: Starten Sie das ONTAP Wiederherstellungsimage vom USB-Laufwerk auf einem FAS2700-System, um die Startmedien wiederherzustellen. Das FAS2700-System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt. 
 ---
 = Starten Sie das Recovery-Image – FAS2700
 :allow-uri-read: 
@@ -11,6 +11,10 @@ summary: Sie müssen das ONTAP-Image vom USB-Laufwerk starten, das Dateisystem w
 
 
 [role="lead"]
+Starten Sie das ONTAP Wiederherstellungsimage vom USB-Laufwerk auf einem FAS2700-System, um die Startmedien wiederherzustellen. Dieses Verfahren umfasst das Booten vom USB-Flash-Laufwerk, das Wiederherstellen des Dateisystems, das Überprüfen der Umgebungsvariablen und das Zurückführen des Controllers in den Normalbetrieb nach dem Austausch des Bootmediums.
+
+Das FAS2700-System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt.
+
 Sie müssen das ONTAP-Image vom USB-Laufwerk starten, das Dateisystem wiederherstellen und die Umgebungsvariablen überprüfen.
 
 .Schritte

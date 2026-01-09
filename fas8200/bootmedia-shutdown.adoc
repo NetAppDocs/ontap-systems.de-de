@@ -1,8 +1,8 @@
 ---
 permalink: fas8200/bootmedia-shutdown.html 
 sidebar: sidebar 
-keywords: fas8200, shut down the impaired controller 
-summary: Sie können den beeinträchtigten Controller je nach Hardwarekonfiguration des Speichersystems mithilfe verschiedener Verfahren herunterfahren oder übernehmen. 
+keywords: fas8200, shut down the impaired controller, manual, manual boot recovery 
+summary: Schalten Sie den beeinträchtigten Controller eines FAS8200 -Systems nach Abschluss der Verschlüsselungsprüfungen ab. Das FAS8200 -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt. 
 ---
 = Fahren Sie den beeinträchtigten Controller herunter – FAS8200
 :allow-uri-read: 
@@ -15,7 +15,15 @@ summary: Sie können den beeinträchtigten Controller je nach Hardwarekonfigurat
 == Option 1: Die meisten Systeme
 
 [role="lead"]
-Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Controllers durchführen. Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Controllers durchführen.
+Schalten Sie den beeinträchtigten Controller eines FAS8200 -Systems nach Abschluss der Verschlüsselungsprüfungen ab. Dieses Verfahren beinhaltet das Hochfahren des Controllers bis zur LOADER-Eingabeaufforderung, das Erfassen von Boot-Umgebungsvariablen zu Referenzzwecken und die Vorbereitung des Controllers auf den Austausch des Bootmediums, wobei die einzelnen Schritte je nach Systemkonfiguration variieren.
+
+Das FAS8200 -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt.
+
+
+
+== Option 1: Die meisten Systeme
+
+Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Controllers durchführen.
 
 .Schritte
 . Nehmen Sie den beeinträchtigten Controller zur LOADER-Eingabeaufforderung:

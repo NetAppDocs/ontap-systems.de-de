@@ -1,16 +1,20 @@
 ---
 permalink: fas2700/bootmedia-replace-overview.html 
 sidebar: sidebar 
-keywords: fas2700, aff a220, replace, boot, media, image, nondisruptive, disruptive, replacement, fat32, usb 
-summary: 'Das Boot-Medium speichert einen primären und sekundären Satz von System \(Boot Image\)-Dateien, die das System beim Booten verwendet. Je nach Netzwerkkonfiguration können Sie entweder einen unterbrechungsfreien oder störenden Austausch durchführen.' 
+keywords: fas2700, aff a220, replace, boot, media, image, nondisruptive, disruptive, replacement, fat32, usb, manual, manual boot recovery 
+summary: 'Lernen Sie den Austausch des Bootmediums auf einem FAS2700-System kennen und verstehen Sie die verschiedenen Austauschmethoden. Das Bootmedium speichert primäre und sekundäre Boot-Image-Dateien, die das System beim Start verwendet. Je nach Netzwerkkonfiguration können Sie entweder einen unterbrechungsfreien Austausch (HA-Paar mit Netzwerk verbunden) oder einen unterbrechenden Austausch (erfordert zwei Neustarts) durchführen.' 
 ---
-= Überblick über den Austausch von Boot-Medien – AFF A220 und FAS2700
+= Übersicht zum Austausch des Bootmediums – FAS2700
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
+Lernen Sie den Austausch des Bootmediums auf einem FAS2700-System kennen und verstehen Sie die verschiedenen Austauschmethoden.
+
+Das Bootmedium speichert primäre und sekundäre Boot-Image-Dateien, die das System beim Start verwendet. Je nach Netzwerkkonfiguration können Sie entweder einen unterbrechungsfreien Austausch (HA-Paar mit Netzwerk verbunden) oder einen unterbrechenden Austausch (erfordert zwei Neustarts) durchführen.
+
 Das Boot-Medium speichert einen primären und sekundären Satz von Systemdateien (Boot-Image), die das System beim Booten verwendet. Je nach Netzwerkkonfiguration können Sie entweder einen unterbrechungsfreien oder störenden Austausch durchführen.
 
 Sie müssen über ein USB-Flash-Laufwerk verfügen, das auf FAT32 formatiert ist, und über die entsprechende Speichermenge, um die zu speichern `image_xxx.tgz` Datei:

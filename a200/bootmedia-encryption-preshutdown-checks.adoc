@@ -1,8 +1,8 @@
 ---
 permalink: a200/bootmedia-encryption-preshutdown-checks.html 
 sidebar: sidebar 
-keywords: aff a200, pre-shutdown checks for onboard encryption keys 
-summary: Bevor Sie den beeinträchtigten Controller herunterfahren und den Status der integrierten Verschlüsselungsschlüssel prüfen, müssen Sie den Status des beeinträchtigten Controllers überprüfen, die automatische Rückgabe deaktivieren und überprüfen, welche Version von ONTAP das System ausführt. 
+keywords: aff a200, pre-shutdown checks for onboard encryption keys, manual, manual boot recovery 
+summary: Bevor Sie den beeinträchtigten Controller herunterfahren und den Status der Onboard-Verschlüsselungsschlüssel überprüfen, müssen Sie den Status des beeinträchtigten Controllers überprüfen, die automatische Rückgabe deaktivieren und überprüfen, welche Version von ONTAP auf dem System ausgeführt wird. Das AFF A200 -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. 
 ---
 = Prüfen Sie die Unterstützung und den Status der Verschlüsselungsschlüssel - AFF A200
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Bevor Sie den beeinträchtigten Controller herunterfahren und den Statu
 
 
 [role="lead"]
-Um die Datensicherheit auf Ihrem Speichersystem zu gewährleisten, müssen Sie die Unterstützung und den Status des Verschlüsselungsschlüssels auf Ihrem Boot-Medium überprüfen. Überprüfen Sie, ob Ihre ONTAP Version NetApp Volume Encryption (NVE) unterstützt und bevor Sie den Controller herunterfahren, ob der Schlüsselmanager aktiv ist.
+Um die Datensicherheit auf Ihrem Speichersystem zu gewährleisten, müssen Sie die Unterstützung und den Status des Verschlüsselungsschlüssels auf Ihrem Bootmedium überprüfen. Prüfen Sie, ob Ihre ONTAP Version NetApp Volume Encryption (NVE) unterstützt, und prüfen Sie vor dem Herunterfahren des Controllers, ob der Schlüsselmanager aktiv ist. Das AFF A200 -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt.
 
 
 

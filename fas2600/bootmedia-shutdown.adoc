@@ -1,8 +1,8 @@
 ---
 permalink: fas2600/bootmedia-shutdown.html 
 sidebar: sidebar 
-keywords: fas2600, shut down the controller 
-summary: Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Controllers durchführen. 
+keywords: fas2600, shut down the controller, manual, manual boot recovery 
+summary: Schalten Sie den beeinträchtigten Controller eines FAS2600-Systems nach Abschluss der Verschlüsselungsprüfungen ab. Das FAS2600-System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt. 
 ---
 = Schalten Sie den beeinträchtigten Controller aus - FAS2600
 :allow-uri-read: 
@@ -11,6 +11,10 @@ summary: Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des b
 
 
 [role="lead"]
+Schalten Sie den beeinträchtigten Controller eines FAS2600-Systems nach Abschluss der Verschlüsselungsprüfungen ab. Dieses Verfahren beinhaltet das Hochfahren des Controllers bis zur LOADER-Eingabeaufforderung, das Erfassen von Boot-Umgebungsvariablen zu Referenzzwecken und die Vorbereitung des Controllers auf den Austausch des Bootmediums.
+
+Das FAS2600-System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt.
+
 Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Controllers durchführen.
 
 .Schritte

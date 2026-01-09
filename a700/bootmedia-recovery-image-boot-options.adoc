@@ -1,8 +1,8 @@
 ---
 permalink: a700/bootmedia-recovery-image-boot-options.html 
 sidebar: sidebar 
-keywords: aff a700, fas9000, boot, recovery, image, two, node, metrocluster, configuration 
-summary: Das Verfahren zum Booten des beeinträchtigten Knotens vom Wiederherstellungsabbild hängt davon ab, ob sich das System in einer MetroCluster-Konfiguration mit zwei Knoten befindet. 
+keywords: aff a700, boot, recovery, image, two, node, metrocluster, configuration, manual, manual boot recovery 
+summary: Starten Sie das ONTAP Wiederherstellungsimage vom USB-Laufwerk auf einem AFF A700 -System, um die Startmedien wiederherzustellen. Das AFF A700 -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt. 
 ---
 = Starten Sie das Wiederherstellungs-Image – AFF A700
 :allow-uri-read: 
@@ -11,6 +11,10 @@ summary: Das Verfahren zum Booten des beeinträchtigten Knotens vom Wiederherste
 
 
 [role="lead"]
+Starten Sie das ONTAP Wiederherstellungsimage vom USB-Laufwerk auf einem AFF A700 -System, um die Startmedien wiederherzustellen. Dieses Verfahren umfasst das Booten vom USB-Flash-Laufwerk, das Wiederherstellen des Dateisystems, das Überprüfen der Umgebungsvariablen und das Zurückführen des Controllers in den Normalbetrieb, wobei die spezifischen Schritte je nach Konfiguration des Systems (Zwei-Knoten MetroCluster) variieren.
+
+Das AFF A700 -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt.
+
 Das Verfahren zum Booten des beeinträchtigten Knotens vom Wiederherstellungsabbild hängt davon ab, ob sich das System in einer MetroCluster-Konfiguration mit zwei Knoten befindet.
 
 

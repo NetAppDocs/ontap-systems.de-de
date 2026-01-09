@@ -1,8 +1,8 @@
 ---
 permalink: a700s/bootmedia-recovery-image-boot-non-2n-mcc.html 
 sidebar: sidebar 
-keywords: aff a700s, aff, a700s, boot, ontap, image, usb, drive, restore, file, system, verify, environmental, variable 
-summary: Sie müssen das ONTAP-Image vom USB-Laufwerk starten, das Dateisystem wiederherstellen und die Umgebungsvariablen überprüfen. 
+keywords: aff a700s, aff, a700s, boot, ontap, image, usb, drive, restore, file, system, verify, environmental, variable, manual, manual boot recovery 
+summary: Starten Sie das ONTAP Wiederherstellungsimage vom USB-Laufwerk auf einem AFF A700s -System, um die Startmedien wiederherzustellen. Das AFF A700s -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt. 
 ---
 = Starten des Recovery-Images – AFF A700s
 :allow-uri-read: 
@@ -11,8 +11,11 @@ summary: Sie müssen das ONTAP-Image vom USB-Laufwerk starten, das Dateisystem w
 
 
 [role="lead"]
-Sie müssen das ONTAP-Image vom USB-Laufwerk starten, das Dateisystem wiederherstellen und die Umgebungsvariablen überprüfen.
+Starten Sie das ONTAP Wiederherstellungsimage vom USB-Laufwerk auf einem AFF A700s -System, um die Startmedien wiederherzustellen. Dieses Verfahren umfasst das Booten vom USB-Flash-Laufwerk, das Wiederherstellen des Dateisystems, das Überprüfen der Umgebungsvariablen und das Zurückführen des Controllers in den Normalbetrieb nach dem Austausch des Bootmediums.
 
+Das AFF A700s -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt.
+
+.Schritte
 . Starten Sie von der LOADER-Eingabeaufforderung das Recovery-Image vom USB-Flash-Laufwerk: `boot_recovery`
 +
 Das Bild wird vom USB-Flash-Laufwerk heruntergeladen.

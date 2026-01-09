@@ -1,8 +1,8 @@
 ---
 permalink: a700/bootmedia-encryption-restore.html 
 sidebar: sidebar 
-keywords: aff a700, fas9000, post, boot, media, replacement, steps, okm, nse, nve 
-summary: 'Sobald Umgebungsvariablen geprüft werden, müssen Sie spezifische Schritte für Systeme mit aktiviertem Onboard Key Manager (OKM), NetApp Storage Encryption (NSE) oder NetApp Volume Encryption (NVE) durchführen.' 
+keywords: aff a700, post, boot, media, replacement, steps, okm, nse, nve, manual, manual boot recovery 
+summary: 'Sobald die Umgebungsvariablen überprüft sind, müssen Sie Schritte durchführen, die speziell für Systeme gelten, bei denen Onboard Key Manager (OKM), NetApp Storage Encryption (NSE) oder NetApp Volume Encryption (NVE) aktiviert ist. Das AFF A700 -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien.' 
 ---
 = Wiederherstellung der Verschlüsselung – AFF A700
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 'Sobald Umgebungsvariablen geprüft werden, müssen Sie spezifische Sch
 
 
 [role="lead"]
-Stellen Sie die Verschlüsselung auf dem Ersatz-Startmedium wieder her.
+Die Verschlüsselung auf dem Ersatz-Bootmedium wiederherstellen. Das AFF A700 -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt.
 
 Führen Sie die entsprechenden Schritte zur Wiederherstellung der Verschlüsselung auf Ihrem System durch, abhängig von Ihrem Schlüsselverwaltungstyp.  Wenn Sie sich nicht sicher sind, welchen Key-Manager Ihr System verwendet, überprüfen Sie die Einstellungen, die Sie zu Beginn des Vorgangs zum Austausch des Startmediums erfasst haben.
 

@@ -1,8 +1,8 @@
 ---
 permalink: fas8200/bootmedia-replace.html 
 sidebar: sidebar 
-keywords: fas8200, replace the boot media 
-summary: Sie müssen das Startmedium im Controller finden und die Anweisungen befolgen, um es zu ersetzen. 
+keywords: fas8200, replace the boot media, manual, manual boot recovery 
+summary: Ersetzen Sie das defekte Bootmedium auf einem FAS8200 -Controllermodul. Das FAS8200 -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt. 
 ---
 = Ersetzen Sie das Boot-Medium FAS8200
 :allow-uri-read: 
@@ -11,7 +11,9 @@ summary: Sie müssen das Startmedium im Controller finden und die Anweisungen be
 
 
 [role="lead"]
-Zum Austauschen des Startmediums müssen Sie das beeinträchtigte Controller-Modul entfernen, das Ersatzstartmedium installieren und das Boot-Image auf ein USB-Flash-Laufwerk übertragen.
+Ersetzen Sie das defekte Bootmedium auf einem FAS8200 -Controllermodul. Dieses Verfahren umfasst das Entfernen des Controllermoduls aus dem Gehäuse, das physische Ersetzen der Bootmedienkomponente, das Übertragen des Boot-Images auf das Ersatzmedium mithilfe eines USB-Sticks und die Wiederherstellung des normalen Systembetriebs.
+
+Das FAS8200 -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt.
 
 
 

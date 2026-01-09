@@ -1,8 +1,8 @@
 ---
 permalink: c190/bootmedia-recovery-image-boot-non-2n-mcc.html 
 sidebar: sidebar 
-keywords: aff c190, verify environment variables, image, boot the recovery image 
-summary: Sie müssen das ONTAP-Image vom USB-Laufwerk starten, das Dateisystem wiederherstellen und die Umgebungsvariablen überprüfen. 
+keywords: aff c190, verify environment variables, image, boot the recovery image, manual, manual boot recovery 
+summary: Starten Sie das ONTAP Wiederherstellungsimage vom USB-Laufwerk auf einem AFF C190 -System, um die Startmedien wiederherzustellen. Das AFF C190 -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt. 
 ---
 = Starten Sie das Recovery-Image – AFF C190
 :allow-uri-read: 
@@ -11,7 +11,9 @@ summary: Sie müssen das ONTAP-Image vom USB-Laufwerk starten, das Dateisystem w
 
 
 [role="lead"]
-Sie müssen das ONTAP-Image vom USB-Laufwerk starten, das Dateisystem wiederherstellen und die Umgebungsvariablen überprüfen.
+Starten Sie das ONTAP Wiederherstellungsimage vom USB-Laufwerk auf einem AFF C190 -System, um die Startmedien wiederherzustellen. Dieses Verfahren umfasst das Booten vom USB-Flash-Laufwerk, das Wiederherstellen des Dateisystems, das Überprüfen der Umgebungsvariablen und das Zurückführen des Controllers in den Normalbetrieb nach dem Austausch des Bootmediums.
+
+Das AFF C190 -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt.
 
 .Schritte
 . Starten Sie von der LOADER-Eingabeaufforderung das Recovery-Image vom USB-Flash-Laufwerk:

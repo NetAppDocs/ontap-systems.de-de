@@ -1,8 +1,8 @@
 ---
 permalink: a700s/bootmedia-encryption-restore.html 
 sidebar: sidebar 
-keywords: aff a700s, aff, a700s, environment, variable, check, complete, onboard, key, manager, okm, netapp, storage, encryption, nse, volume, nve, enable, post, boot, replacement, post boot media replacement steps for okm nse and nve 
-summary: 'Sobald Umgebungsvariablen geprüft werden, müssen Sie spezifische Schritte für Systeme mit Onboard Key Manager \(OKM\), NetApp Storage Encryption \(NSE\) oder NetApp Volume Encryption \(NVE\) durchführen.' 
+keywords: aff a700s, aff, a700s, environment, variable, check, complete, onboard, key, manager, okm, netapp, storage, encryption, nse, volume, nve, enable, post, boot, replacement, post boot media replacement steps for okm nse and nve, manual, manual boot recovery 
+summary: Wiederherstellung der Verschlüsselungskonfiguration auf dem Ersatz-Bootmedium für ein AFF A700s -System. Das AFF A700s -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt. 
 ---
 = Wiederherstellung der Verschlüsselung – AFF A700s
 :allow-uri-read: 
@@ -11,7 +11,9 @@ summary: 'Sobald Umgebungsvariablen geprüft werden, müssen Sie spezifische Sch
 
 
 [role="lead"]
-Stellen Sie die Verschlüsselung auf dem Ersatz-Startmedium wieder her.
+Wiederherstellung der Verschlüsselungskonfiguration auf dem Ersatz-Bootmedium für ein AFF A700s -System. Dieses Verfahren umfasst die Durchführung von Nachbearbeitungsschritten für Systeme, bei denen Onboard Key Manager (OKM), NetApp Storage Encryption (NSE) oder NetApp Volume Encryption (NVE) aktiviert ist, um einen sicheren Datenzugriff und einen ordnungsgemäßen Systembetrieb zu gewährleisten.
+
+Das AFF A700s -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt.
 
 Führen Sie die entsprechenden Schritte zur Wiederherstellung der Verschlüsselung auf Ihrem System durch, abhängig von Ihrem Schlüsselverwaltungstyp.  Wenn Sie sich nicht sicher sind, welchen Key-Manager Ihr System verwendet, überprüfen Sie die Einstellungen, die Sie zu Beginn des Vorgangs zum Austausch des Startmediums erfasst haben.
 
