@@ -13,21 +13,19 @@ summary: Die Speichersysteme AFF A20, AFF A30 und AFF A50 bieten Flexibilität b
 [role="lead"]
 Die Speichersysteme AFF A20, AFF A30 und AFF A50 bieten Flexibilität bei der Erweiterung oder dem Austausch von E/A-Modulen zur Verbesserung der Netzwerkkonnektivität und -leistung. Das Hinzufügen, Hot-Swapping oder der Austausch eines E/A-Moduls ist unerlässlich, wenn die Netzwerkkapazität erweitert oder ein ausgefallenes Modul repariert werden soll.
 
-Sie können ein ausgefallenes E/A-Modul in Ihrem Speichersystem durch ein E/A-Modul desselben Typs oder durch ein anderes ersetzen. Sie können Cluster- und HA-E/A-Module im laufenden Betrieb austauschen, wenn Ihr Speichersystem bestimmte Anforderungen erfüllt. Sie können einem Speichersystem mit freien Steckplätzen auch ein E/A-Modul hinzufügen.
-
 * link:io-module-add.html["Fügen Sie ein I/O-Modul hinzu"]
 +
-Durch das Hinzufügen zusätzlicher I/O-Module kann die Redundanz verbessert werden, wodurch sichergestellt wird, dass das Speichersystem auch bei Ausfall eines I/O-Moduls betriebsbereit bleibt.
+Sie können E/A-Module hinzufügen, um die Redundanz zu erhöhen und so sicherzustellen, dass das Speichersystem auch dann betriebsbereit bleibt, wenn ein E/A-Modul ausfällt. Sie können E/A-Module hinzufügen, wenn Steckplätze verfügbar sind oder wenn alle Steckplätze vollständig belegt sind.
 
-* link:io-module-hotswap-ha-slot4.html["Hot-Swap eines Clusters und eines HA-E/A-Moduls"]
+* link:io-module-hotswap.html["Hot-Swap eines I/O-Moduls"]
 +
-Durch Hot-Swapping eines ausgefallenen Clusters und HA-E/A-Moduls kann das Speichersystem wieder in den optimalen Betriebszustand versetzt werden. Der Hot-Swapping-Vorgang erfolgt, ohne dass der defekte Controller manuell übernommen werden muss.
+Sie können bestimmte E/A-Module im Hot-Swap-Verfahren gegen ein gleichwertiges E/A-Modul austauschen, um das Speichersystem wieder in seinen optimalen Betriebszustand zu versetzen. Hot-Swap erfolgt, ohne dass eine manuelle Übernahme durchgeführt werden muss.
 
 +
-Um dieses Verfahren zu verwenden, muss auf Ihrem Speichersystem ONTAP 9.17.1 oder höher ausgeführt werden und bestimmte Speichersystemanforderungen erfüllen.
+Um dieses Verfahren anwenden zu können, muss auf Ihrem Speichersystem ONTAP 9.17.1 oder höher ausgeführt werden und es müssen bestimmte Anforderungen für die Version von ONTAP, die auf Ihrem System ausgeführt wird, erfüllt sein.
 
 * link:io-module-replace.html["Ersetzen Sie ein E/A-Modul"]
 +
-Durch das Ersetzen eines fehlerhaften I/O-Moduls kann das Speichersystem wieder in den optimalen Betriebszustand versetzt werden.
+Sie können ein defektes E/A-Modul austauschen, um das Speichersystem wieder in seinen optimalen Betriebszustand zu versetzen. Dieses Verfahren erfordert eine manuelle Übernahme des Controllers mit dem defekten E/A-Modul.
 
 

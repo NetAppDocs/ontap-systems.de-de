@@ -1,0 +1,59 @@
+= 
+:allow-uri-read: 
+
+
+Um dieses Verfahren anzuwenden, muss auf Ihrem Speichersystem ONTAP 9.17.1 oder höher ausgeführt werden, und Ihr Speichersystem muss alle Anforderungen für die Version von ONTAP erfüllen, die auf Ihrem Speichersystem ausgeführt wird.
+
+
+NOTE: Wenn auf Ihrem Speichersystem nicht ONTAP 9.17.1 oder höher läuft oder es nicht alle Anforderungen für die Version von ONTAP erfüllt, auf der Ihr Speichersystem läuft, können Sie dieses Verfahren nicht verwenden, Sie müssen das link:io-module-replace.html["Vorgehensweise zum Ersetzen eines E/A-Moduls"] verwenden.
+
+[role="tabbed-block"]
+====
+.ONTAP 9.17.1 oder 9.18.1RC
+--
+* Sie führen einen Hot-Swap eines ausgefallenen Cluster- und HA-E/A-Moduls in Steckplatz 4 mit einem gleichwertigen E/A-Modul durch. Sie können den Typ des E/A-Moduls nicht ändern.
+* Der Controller mit dem ausgefallenen Cluster- und HA-I/O-Modul (der beeinträchtigte Controller) muss den gesunden Partner-Controller bereits übernommen haben. Das Takeover sollte automatisch erfolgt sein, wenn das I/O-Modul ausgefallen ist.
++
+Bei Clustern mit zwei Knoten kann das Speichersystem nicht feststellen, welcher Controller das ausgefallene E/A-Modul besitzt, sodass entweder Controller die Übernahme einleiten könnte. Hot-Swap wird nur unterstützt, wenn der Controller mit dem ausgefallenen E/A-Modul (der beeinträchtigte Controller) das Takeover über den gesunden Controller durchgeführt hat. Das Hot-Swap des E/A-Moduls ist die einzige Möglichkeit, eine Wiederherstellung ohne Ausfall zu erreichen.
+
++
+Sie können überprüfen, ob der beeinträchtigte Controller den fehlerfreien Controller erfolgreich übernommen hat, indem Sie Folgendes eingeben:  `storage failover show` Befehl.
+
++
+Wenn Sie nicht sicher sind, bei welchem Controller sich das fehlerhafte E/A-Modul befindet, wenden Sie sich an  https://mysupport.netapp.com/site/global/dashboard["NetApp Support"] .
+
+* Ihre Speichersystemkonfiguration darf nur über ein Cluster- und HA-E/A-Modul in Steckplatz 4 verfügen, nicht über zwei Cluster- und HA-E/A-Module.
+* Ihr Speichersystem muss eine Clusterkonfiguration mit zwei Knoten (ohne oder mit Switch) sein.
+* Alle anderen Komponenten des Speichersystems müssen ordnungsgemäß funktionieren. Falls nicht, wenden Sie sich an https://mysupport.netapp.com/site/global/dashboard["NetApp Support"], bevor Sie mit diesem Verfahren fortfahren.
+
+
+--
+.ONTAP 9.18.1GA oder höher
+--
+* Sie führen einen Hot-Swap eines Ethernet-E/A-Moduls in einem beliebigen Steckplatz mit beliebiger Portkombination für Cluster, HA und Client gegen ein gleichwertiges E/A-Modul durch. Sie können den Typ des E/A-Moduls nicht ändern.
++
+Ethernet-I/O-Module mit Ports, die für Speicher oder MetroCluster verwendet werden, sind nicht Hot-Swap-fähig.
+
+* Ihr Speichersystem (schalterlose oder geschaltete Clusterkonfiguration) kann jede für Ihr Speichersystem unterstützte Anzahl von Knoten haben.
+* Alle Knoten im Cluster müssen die gleiche ONTAP Version (ONTAP 9.18.1GA oder höher) ausführen oder unterschiedliche Patch-Level derselben ONTAP Version ausführen.
++
+Wenn auf den Knoten in Ihrem Cluster unterschiedliche ONTAP Versionen ausgeführt werden, handelt es sich um ein Cluster mit gemischten Versionen, und Hot-Swap eines E/A-Moduls wird nicht unterstützt.
+
+
+
+* Die Controller in Ihrem Speichersystem können sich in einem der folgenden Zustände befinden:
++
+** Beide Controller können aktiv sein und I/O ausführen (Daten bereitstellen).
+** Jeder Controller kann sich im Takeover-Zustand befinden, wenn das Takeover durch das ausgefallene E/A-Modul verursacht wurde und die Controller ansonsten ordnungsgemäß funktionieren.
++
+In bestimmten Situationen kann ONTAP aufgrund eines ausgefallenen E/A-Moduls automatisch ein Takeover eines der beiden Controller durchführen. Wenn beispielsweise das ausgefallene E/A-Modul alle Cluster-Ports enthielt (alle Cluster-Verbindungen dieses Controllers ausfallen), führt ONTAP automatisch ein Takeover durch.
+
+
+
+
+
+* Alle anderen Komponenten des Speichersystems müssen ordnungsgemäß funktionieren. Falls nicht, wenden Sie sich an https://mysupport.netapp.com/site/global/dashboard["NetApp Support"], bevor Sie mit diesem Verfahren fortfahren.
+
+
+--
+====

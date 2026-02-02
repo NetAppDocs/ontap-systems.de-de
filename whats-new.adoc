@@ -15,82 +15,108 @@ Informieren Sie sich über die Neuerungen bei ONTAP Hardwaresystemen. Weitere Su
 
 
 
-== Oktober 2025
+== Januar 2026
 
 
 
-=== AFX -Speichersystem
+=== Hot-Swap-Verfahren für E/A-Module
 
+Hot-Swap-Verfahren sind jetzt für ausgewählte E/A-Module auf verschiedenen ONTAP-Hardwareplattformen und ONTAP-Versionen verfügbar.
+
+*Unterstützt mit ONTAP 9.18.1 GA oder höher:*
+
+Sie können ein ausgefallenes Ethernet-I/O-Modul als Hot-Swap in jedem Steckplatz austauschen, sofern dessen Ports für Cluster-, HA- oder Client-Verbindungen verwendet werden. Dieses Verfahren wird auf Systemen mit beliebiger Knotenanzahl unterstützt.
+
+
+NOTE: Sie können Ethernet-E/A-Module, deren Ports Speicher oder MetroCluster-Verbindungen zugewiesen sind, nicht im Hot-Swap-Verfahren austauschen.
+
+Folgende Plattformen werden unterstützt:
+
+* AFF A-Series: A1K, A20, A30, A50, A70 und A90
+* ASA r2: A1K, A20, A30, A50, A70, A90 und C30
+* AFF C-Series: C30, C60 und C80
+* FAS: FAS50, FAS70 und FAS90
+* AFX: AFX 1K
+
+
+*Unterstützt mit ONTAP 9.17.1 oder 9.18.1RC:*
+
+Um einen Ausfall in einem Zwei-Node-Cluster zu vermeiden, können Sie ein ausgefallenes Cluster- und HA-I/O-Modul in Steckplatz 4 nur dann im Hot-Swap-Verfahren austauschen, wenn der betroffene Controller (derjenige mit dem ausgefallenen Modul) bereits die Kontrolle über den funktionierenden Partner übernommen hat. Dies ist die einzige unterstützte Wiederherstellungsmethode, die keine Ausfallzeit erfordert.
+
+Folgende Plattformen werden unterstützt:
+
+* AFF A-Series: A20, A30 und A50
+* ASA r2: A20, A30, A50 und C30
+* AFF C-Series: C30 und C60
+* FAS: FS50
+
+
+
+
+=== AFF C800 End of Availability
+
+Das AFF C800-System wurde auf die Liste der nicht mehr verfügbaren Produkte gesetzt und ist für neue Bestellungen nicht mehr verfügbar.
+
+link:endofavail/index.html["Hardware mit eingestellter Verfügbarkeit anzeigen"].
+
+
+
+== 2025 Veröffentlichungen
+
+.Oktober 2025
+[%collapsible]
+====
+.AFX -Speichersystem
 Das neue NetApp AFX-Speichersystem bietet eine disaggregierte Lösung, die entwickelt wurde, um die strengen Anforderungen von Hochleistungs-NAS- und S3-Workloads, einschließlich KI/ML-Anwendungen, zu erfüllen. AFX-Systeme bieten spezielle Funktionen für Kunden, die skalierbaren Datei- und Objektspeicher mit hohem Durchsatz benötigen.
 
 link:https://docs.netapp.com/us-en/ontap-afx/get-started/ontap-afx-storage.html["Erfahren Sie mehr über das AFX-System"] .
 
-
-
-=== Neue Laufwerksregale für AFX
-
+.Neue Laufwerksregale für AFX
 Die neuen NXS224-Speicherregale für AFX verwenden Non-Volatile Memory Express over Fabrics (NVMe-oF) zum Anschluss von SSDs mit hoher Dichte. Die Festplatten kommunizieren über ein Fabric mit extrem geringer Latenz mithilfe von RDMA over Converged Ethernet (RoCE). Die Speicherregale, einschließlich der E/A-Module, Netzwerkkarten, Lüfter und Netzteile, sind vollständig redundant und weisen keine einzelne Fehlerquelle auf. Mithilfe selbstverwalteter Technologie werden alle Aspekte der RAID-Konfiguration und des Festplattenlayouts verwaltet und gesteuert.
 
-
-
-=== Neue Schalter für AFX
-
+.Neue Schalter für AFX
 Der Cisco 9364D-GX2A-Switch und der Cisco 9332D-GX2B-Switch verbinden die AFX-Controller-Knoten mit den Speicherregalen.  Mit diesen neuen Switches können Sie ONTAP -Cluster mit mehr als zwei Knoten erstellen. Zur Leistungsoptimierung werden erweiterte Protokolle verwendet. Das Design basiert auf VLAN-Tagging mit mehreren Netzwerkpfaden sowie Tech-Refresh-Konfigurationen, um einen kontinuierlichen Betrieb und einfache Upgrades zu gewährleisten.
 
-
-
-== September 2025
-
-
-
-=== Plattformspezifikationen
-
+====
+.September 2025
+[%collapsible]
+====
+.Plattformspezifikationen
 Die Dokumentation der ONTAP Hardwaresysteme enthält jetzt Spezifikationen, die auch inlink:https://hwu.netapp.com["Hardware Universe"] . Zum Beispiel,link:https://docs.netapp.com/us-en/ontap-systems/a1k/overview.html["Wichtige Spezifikationen für AFF A1K"] .
 
-
-
-=== Ersatzreferenz nach Plattformfamilie
-
+.Ersatzreferenz nach Plattformfamilie
 Die Dokumentation zu ONTAP -Hardwaresystemen enthält jetzt nach Plattformfamilien geordnete Verfahren zum Austausch Ihres NetApp Speichersystems.
 
 link:fru-reference/index.html["Ersatzverfahren finden"]für die vor Ort austauschbaren Einheiten (Field Replaceable Units, FRUs) Ihres Speichersystems.
 
-
-
-== Mai 2025
-
-
-
-=== ASA C30
-
+====
+.Mai 2025
+[%collapsible]
+====
+.ASA C30
 Das neue ASA C30-System erweitert leistungsstarke, intelligente und umfassende Datenverwaltungsfunktionen auf mehr Kunden und Workloads.
 
 link:https://docs.netapp.com/us-en/asa-r2/get-started/learn-about.html["Erfahren Sie mehr über die ASA r2-Systeme"^] .
 
-
-
-== April 2025
-
-
-
-=== FAS50
-
+====
+.April 2025
+[%collapsible]
+====
+.FAS50
 Das FAS50-System bietet die niedrigsten Kosten pro Gigabyte für sekundären Speicher und sicheren Cyber-Tresor sowie eine höhere Leistung für sekundäre Workloads mit schnelleren Backups, höheren IOPS und geringer Latenz von 5–10 ms.
 
 link:https://www.netapp.com/pdf.html?item=/media/7819-ds-4020.pdf["Erfahren Sie mehr über FAS Systeme"^] .
 
-
-
-== Februar 2025
-
-
-
-=== ASA A20, ASA A30 und ASA A50
-
+====
+.Februar 2025
+[%collapsible]
+====
+.ASA A20, ASA A30 und ASA A50
 Die Entry-Level Systeme ASA A20 und Midrange ASA A30 und A50 machen Block Storage für Unternehmen jeder Größe für geschäftskritische Applikationen wie Datenbanken und Virtual Machines verfügbar.
 
 link:https://docs.netapp.com/us-en/asa-r2/get-started/learn-about.html["Erfahren Sie mehr über die ASA r2-Systeme"^] .
 
+====
 
 
 == Veröffentlichungen 2024

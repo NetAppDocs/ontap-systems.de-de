@@ -7,30 +7,11 @@ Stellen Sie den Normalbetrieb Ihres Speichersystems wieder her, indem Sie den Sp
 .Schritte
 . Je nach Version von ONTAP, die auf Ihrem Speichersystem läuft, und dem Status der Controller geben Sie den Speicher zurück und stellen die automatische Rückgabe auf dem übernommenen Controller wieder her:
 +
-[cols="1,2,3"]
+[cols="1,2"]
 |===
-| ONTAP-Version | Wenn... | Dann... 
+| Wenn... | Dann... 
 
 
- a| 
-9.17.1 oder 9.18.1RC
- a| 
-Wenn der beeinträchtigte Controller den gesunden Controller automatisch übernommen hat
- a| 
-.. Stellen Sie den intakten Controller wieder in den Normalbetrieb her, indem Sie ihm seinen Storage zurückgeben:
-+
-`storage failover giveback -ofnode _healthy_node_name_`
-
-.. Stellen Sie das automatische Giveback von der Konsole des betroffenen Controllers wieder her:
-+
-`storage failover modify -node local -auto-giveback _true_`
-
-
-
-
-
- a| 
-9.18.1GA oder später
  a| 
 Wenn einer der beiden Controller automatisch das Takeover seines Partners durchführte
  a| 
@@ -47,14 +28,12 @@ Wenn einer der beiden Controller automatisch das Takeover seines Partners durchf
 
 
  a| 
-9.18.1GA oder später
- a| 
 Beide Controller sind betriebsbereit und führen E/A aus (liefern Daten)
  a| 
 Fahren Sie mit dem nächsten Schritt fort.
 
 |===
-. Vergewissern Sie sich, dass die logischen Schnittstellen ihrem Home-Server und ihren Ports Berichterstellung: `network interface show -is-home false`
+. Überprüfen Sie, ob die logischen Schnittstellen an ihren Heimatknoten und Ports melden: `network interface show -is-home false`
 +
 Wenn eine der LIFs als falsch aufgeführt ist, stellen Sie sie auf ihre Home-Ports zurück: `network interface revert -vserver * -lif *`
 

@@ -1,0 +1,33 @@
+= 
+:allow-uri-read: 
+
+
+Um dieses Verfahren anwenden zu können, muss auf Ihrem Speichersystem ONTAP 9.18.1 GA oder eine neuere Version laufen, und Ihr Speichersystem muss alle Anforderungen erfüllen.
+
+
+NOTE: Wenn auf Ihrem Speichersystem nicht ONTAP 9.18.1 GA oder höher ausgeführt wird, können Sie dieses Verfahren nicht verwenden, Sie müssen das link:io-module-replace.html["Vorgehensweise zum Ersetzen eines E/A-Moduls"] verwenden.
+
+* Sie führen einen Hot-Swap eines Ethernet-E/A-Moduls in einem beliebigen Steckplatz mit beliebiger Portkombination für Cluster, HA und Client gegen ein gleichwertiges E/A-Modul durch. Sie können den Typ des E/A-Moduls nicht ändern.
++
+Ethernet-I/O-Module mit Ports, die für Speicher oder MetroCluster verwendet werden, sind nicht Hot-Swap-fähig.
+
+* Ihr Speichersystem (schalterlose oder geschaltete Clusterkonfiguration) kann jede für Ihr Speichersystem unterstützte Anzahl von Knoten haben.
+* Alle Knoten im Cluster müssen die gleiche ONTAP Version (ONTAP 9.18.1GA oder höher) ausführen oder unterschiedliche Patch-Level derselben ONTAP Version ausführen.
++
+Wenn auf den Knoten in Ihrem Cluster unterschiedliche ONTAP Versionen ausgeführt werden, handelt es sich um ein Cluster mit gemischten Versionen, und Hot-Swap eines E/A-Moduls wird nicht unterstützt.
+
+
+
+* Die Controller in Ihrem Speichersystem können sich in einem der folgenden Zustände befinden:
++
+** Beide Controller können aktiv sein und I/O ausführen (Daten bereitstellen).
+** Jeder Controller kann sich im Takeover-Zustand befinden, wenn das Takeover durch das ausgefallene I/O-Modul verursacht wurde und die Nodes ansonsten ordnungsgemäß funktionieren.
++
+In bestimmten Situationen kann ONTAP aufgrund eines ausgefallenen E/A-Moduls automatisch ein Takeover eines der beiden Controller durchführen. Wenn beispielsweise das ausgefallene E/A-Modul alle Cluster-Ports enthielt (alle Cluster-Verbindungen dieses Controllers ausfallen), führt ONTAP automatisch ein Takeover durch.
+
+
+
+
+
+* Alle anderen Komponenten des Speichersystems müssen ordnungsgemäß funktionieren. Falls nicht, wenden Sie sich an https://mysupport.netapp.com/site/global/dashboard["NetApp Support"], bevor Sie mit diesem Verfahren fortfahren.
+

@@ -1,0 +1,108 @@
+= 
+:allow-uri-read: 
+
+
+Bereiten Sie das Speichersystem und den Steckplatz für das E/A-Modul so vor, dass das defekte E/A-Modul sicher entfernt werden kann:
+
+.Schritte
+. Richtig gemahlen.
+. Ziehen Sie die Kabel vom defekten E/A-Modul ab.
++
+Beschriften Sie die Kabel, damit Sie sie später in diesem Verfahren wieder an die gleichen Anschlüsse anschließen können.
+
++
+[NOTE]
+====
+Das E/A-Modul sollte ausgefallen sein (die Ports sollten sich im Link-down-Status befinden); wenn die Verbindungen jedoch noch aktiv sind und den letzten funktionierenden Cluster-Port enthalten, löst das Abziehen der Kabel ein automatisches Takeover aus.
+
+Warten Sie fünf Minuten nach dem Abziehen der Kabel, um sicherzustellen, dass alle Takeover oder LIF-Failover abgeschlossen sind, bevor Sie mit diesem Verfahren fortfahren.
+
+====
+. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung:
++
+`system node autosupport invoke -node * -type all -message MAINT=<number of hours down>h`
+
++
+Beispielsweise unterdrückt die folgende AutoSupport Meldung die automatische Fallerstellung für zwei Stunden:
+
++
+`node2::> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Je nach Version von ONTAP, die Ihr Speichersystem ausführt, und dem Status der Controller deaktivieren Sie das automatische Giveback:
++
+[cols="1,2,3"]
+|===
+| ONTAP-Version | Wenn... | Dann... 
+
+
+ a| 
+9.17.1 oder 9.18.1RC
+ a| 
+Wenn der beeinträchtigte Controller den gesunden Controller automatisch übernommen hat
+ a| 
+Automatische Rückgabe deaktivieren:
+
+.. Geben Sie den folgenden Befehl von der Konsole des beeinträchtigten Controllers ein
++
+`storage failover modify -node local -auto-giveback false`
+
+.. Eingeben `y` wenn die Eingabeaufforderung _Möchten Sie die automatische Rückgabe deaktivieren?_ angezeigt wird
+
+
+
+
+ a| 
+9.18.1GA oder später
+ a| 
+Wenn einer der beiden Controller automatisch das Takeover seines Partners durchführte
+ a| 
+Automatische Rückgabe deaktivieren:
+
+.. Geben Sie den folgenden Befehl in der Konsole des Controllers ein, der die Steuerung seines Partners übernommen hat:
++
+`storage failover modify -node local -auto-giveback false`
+
+.. Eingeben `y` wenn die Eingabeaufforderung _Möchten Sie die automatische Rückgabe deaktivieren?_ angezeigt wird
+
+
+
+
+ a| 
+9.18.1GA oder später
+ a| 
+Beide Controller sind betriebsbereit und führen E/A aus (liefern Daten)
+ a| 
+Fahren Sie mit dem nächsten Schritt fort.
+
+|===
+. Bereiten Sie das defekte E/A-Modul für die Entfernung vor, indem Sie es außer Betrieb nehmen und ausschalten:
++
+.. Geben Sie den folgenden Befehl ein:
++
+`system controller slot module remove -node _impaired_node_name_ -slot _slot_number_`
+
+.. Eingeben `y` wenn die Eingabeaufforderung _Möchten Sie fortfahren?_ angezeigt wird
++
+Beispielsweise bereitet der folgende Befehl das defekte Modul in Steckplatz 4 auf Knoten 2 (den beeinträchtigten Controller) für die Entfernung vor und zeigt eine Meldung an, dass es sicher entfernt werden kann:
+
++
+[listing]
+----
+node2::> system controller slot module remove -node node2 -slot 4
+
+Warning: IO_2X_100GBE_NVDA_NIC module in slot 4 of node node2 will be powered off for removal.
+
+Do you want to continue? {y|n}: y
+
+The module has been successfully removed from service and powered off. It can now be safely removed.
+----
+
+
+. Überprüfen Sie, ob das ausgefallene E/A-Modul ausgeschaltet ist:
++
+`system controller slot module show`
+
++
+Die Ausgabe sollte  `_powered-off_` in der  `_status_` Spalte für das ausgefallene Modul und dessen Steckplatznummer angezeigt werden.
+
+

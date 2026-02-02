@@ -2,18 +2,21 @@
 :allow-uri-read: 
 
 
-Bringen Sie den Ersatzcluster und das HA-E/A-Modul in Steckplatz 4 online, überprüfen Sie, ob die Modulports erfolgreich initialisiert wurden, überprüfen Sie, ob Steckplatz 4 eingeschaltet ist, und überprüfen Sie dann, ob das Modul online ist und erkannt wird.
+Schalten Sie das Ersatz-I/O-Modul online, überprüfen Sie, ob die I/O-Modul-Ports erfolgreich initialisiert wurden, überprüfen Sie, ob der Steckplatz mit Strom versorgt ist, und überprüfen Sie dann, ob das I/O-Modul online und erkannt ist.
+
+.Über diese Aufgabe
+Nachdem das E/A-Modul ausgetauscht wurde und die Ports wieder in einen fehlerfreien Zustand versetzt wurden, werden die LIFs auf das ausgetauschte E/A-Modul zurückgesetzt.
 
 .Schritte
-. Bringen Sie den Ersatzcluster und das HA-E/A-Modul online:
+. Schalten Sie das Ersatz-E/A-Modul online:
 +
 .. Geben Sie den folgenden Befehl ein:
 +
-`system controller slot module insert -node _impaired_node_name_ -slot _slot_name_`
+`system controller slot module insert -node _impaired_node_name_ -slot _slot_number_`
 
 .. Eingeben `y` wenn die Eingabeaufforderung „Möchten Sie fortfahren?“ angezeigt wird
 +
-Die Ausgabe sollte bestätigen, dass der Cluster und das HA-E/A-Modul erfolgreich online geschaltet wurden (eingeschaltet, initialisiert und in Betrieb genommen).
+Die Ausgabe sollte bestätigen, dass das I/O-Modul erfolgreich online geschaltet wurde (eingeschaltet, initialisiert und in Betrieb genommen).
 
 +
 Beispielsweise bringt der folgende Befehl Steckplatz 4 auf Knoten 2 (den beeinträchtigten Controller) online und zeigt eine Meldung an, dass der Vorgang erfolgreich war:
@@ -31,19 +34,21 @@ The module has been successfully powered on, initialized and placed into service
 ----
 
 
-. Überprüfen Sie, ob alle Ports im Cluster und HA-E/A-Modul erfolgreich initialisiert wurden:
+. Überprüfen Sie, ob jeder Port des E/A-Moduls erfolgreich initialisiert wurde:
++
+.. Geben Sie den folgenden Befehl von der Konsole des beeinträchtigten Controllers ein:
 +
 `event log show -event \*hotplug.init*`
 
 +
 
-NOTE: Es kann mehrere Minuten dauern, bis alle erforderlichen Firmware-Updates und die Port-Initialisierung durchgeführt werden.
+NOTE: Es kann mehrere Minuten dauern, bis erforderliche Firmware-Updates durchgeführt und Ports initialisiert sind.
 
 +
-Die Ausgabe sollte ein hotplug.init.success EMS-Ereignis anzeigen, das für jeden Port im Cluster und HA-E/A-Modul protokolliert wurde mit  `_hotplug.init.success:_` im  `_Event_` Spalte.
+Die Ausgabe sollte ein oder mehrere hotplug.init.success EMS-Ereignisse anzeigen, die darauf hinweisen, dass jeder Port auf dem E/A-Modul erfolgreich initialisiert wurde.
 
 +
-Die folgende Ausgabe zeigt beispielsweise, dass die Initialisierung für die Cluster- und HA-E/A-Modulports e4b und e4a erfolgreich war:
+Beispielsweise zeigt die folgende Ausgabe, dass die Initialisierung für die I/O-Ports e4b und e4a erfolgreich war:
 
 +
 [listing]
@@ -60,25 +65,28 @@ Time                Node             Severity      Event
 
 2 entries were displayed.
 ----
-. Überprüfen Sie, ob der E/A-Modulsteckplatz 4 eingeschaltet und betriebsbereit ist:
+.. Falls die Portinitialisierung fehlschlägt, überprüfen Sie das EMS-Log, um die nächsten Schritte zu ermitteln.
+
+
+. Überprüfen Sie, ob der I/O-Modul-Steckplatz eingeschaltet und betriebsbereit ist:
 +
 `system controller slot module show`
 
 +
-Die Ausgabe sollte den Status von Steckplatz 4 wie folgt anzeigen:  `_powered-on_` und somit betriebsbereit für den Ersatzcluster und das HA-E/A-Modul.
+Die Ausgabe sollte den Steckplatzstatus als  `_powered-on_` anzeigen und somit die Betriebsbereitschaft des E/A-Moduls signalisieren.
 
-. Überprüfen Sie, ob der Ersatzcluster und das HA-E/A-Modul online sind und erkannt werden.
+. Prüfen Sie, ob das I/O-Modul online und erkannt ist.
 +
 Geben Sie den Befehl von der Konsole des beeinträchtigten Controllers ein:
 
 +
-`system controller config show -node local -slot4`
+`system controller config show -node local -slot _slot_number_`
 
 +
-Wenn der Ersatzcluster und das HA-E/A-Modul erfolgreich online geschaltet wurden und erkannt werden, zeigt die Ausgabe E/A-Modulinformationen, einschließlich Portinformationen, für Steckplatz 4 an.
+Wenn das I/O-Modul erfolgreich online geschaltet wurde und erkannt wird, zeigt die Ausgabe Informationen zum I/O-Modul an, einschließlich Portinformationen für den Slot.
 
 +
-Sie sollten beispielsweise eine Ausgabe ähnlich der folgenden sehen:
+Beispielsweise sollten Sie eine Ausgabe ähnlich der folgenden für ein E/A-Modul in Steckplatz 4 sehen:
 
 +
 [listing]
