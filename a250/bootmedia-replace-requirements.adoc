@@ -1,0 +1,37 @@
+---
+permalink: a250/bootmedia-replace-requirements.html 
+sidebar: sidebar 
+keywords: a250, replace the boot media 
+summary: Bevor Sie das Bootmedium in Ihrem AFF A250-System austauschen, stellen Sie sicher, dass Sie alle Voraussetzungen für einen erfolgreichen Austausch erfüllen. Dazu gehört, dass Sie einen USB-Stick mit ausreichend Speicherplatz besitzen und überprüfen, ob Sie das richtige Ersatz-Bootmedium haben. 
+---
+= Anforderungen für die manuelle Wiederherstellung von Bootmedien - AFF A250
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor Sie das Bootmedium in Ihrem AFF A250-System austauschen, stellen Sie sicher, dass Sie alle Voraussetzungen für einen erfolgreichen Austausch erfüllen. Dazu gehört, dass Sie einen USB-Stick mit ausreichend Speicherplatz besitzen und überprüfen, ob Sie das richtige Ersatz-Bootmedium haben.
+
+Wenn auf Ihrem Speichersystem ONTAP 9.18.1 oder höher ausgeführt wird, verwenden Sie die link:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"]. Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie das manuelle Boot-Wiederherstellungsverfahren verwenden.
+
+.USB-Speicherstick
+* Stellen Sie sicher, dass Sie einen USB-Stick haben, der auf FAT32 formatiert ist.
+* Der USB-Stick muss über ausreichend Speicherkapazität verfügen, um die  `image_xxx.tgz` Datei.
+
+
+.Dateivorbereitung
+Kopieren Sie die  `image_xxx.tgz` Datei auf den USB-Stick. Diese Datei wird verwendet, wenn Sie das ONTAP Image mit dem USB-Stick übertragen.
+
+.Komponentenaustausch
+Ersetzen Sie die ausgefallene Komponente durch die von NetApp bereitgestellte Ersatzkomponente.
+
+.Controller-Identifikation
+Es ist wichtig, die Befehle auf den richtigen Controller anzuwenden, wenn Sie das beschädigte Startmedium ersetzen:
+
+* Der _beschädigte Controller_ ist der Controller, an dem Sie Wartungsarbeiten durchführen.
+* Der _gesunde Controller_ ist der HA-Partner des beeinträchtigten Controllers.
+
+
+.Was kommt als Nächstes?
+Nachdem Sie die Anforderungen für den Austausch des Boot-Mediums überprüft haben, müssen Sie link:bootmedia-encryption-preshutdown-checks.html["Prüfen Sie die Unterstützung und den Status der Verschlüsselungsschlüssel auf dem Startmedium"].

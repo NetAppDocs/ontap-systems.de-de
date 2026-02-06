@@ -1,0 +1,41 @@
+---
+permalink: asa-c250/bootmedia-replace-requirements-bmr.html 
+sidebar: sidebar 
+keywords: asa c250, replace the boot media 
+summary: Bevor Sie das Bootmedium in Ihrem ASA C250 System austauschen, stellen Sie sicher, dass Sie die notwendigen Voraussetzungen für einen erfolgreichen Austausch erfüllen. 
+---
+= Anforderungen für die automatisierte Wiederherstellung von Bootmedien - ASA C250
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor Sie das Bootmedium in Ihrer ASA C250 austauschen, stellen Sie sicher, dass Sie die notwendigen Voraussetzungen für einen erfolgreichen Austausch erfüllen. Dazu gehört die Überprüfung, ob Sie das richtige Ersatz-Bootmedium haben, die Bestätigung, dass der e0S (e0M wrench) Port am betroffenen Controller nicht defekt ist, und die Feststellung, ob Onboard Key Manager (OKM) oder External Key Manager (EKM) aktiviert ist.
+
+Die automatische Wiederherstellung des Startmediums wird nur in ONTAP 9.18.1 und höher unterstützt. Wenn auf Ihrem Speichersystem eine frühere Version von ONTAP ausgeführt wird, verwenden Sie die link:bootmedia-replace-workflow.html["manuelle Boot-Wiederherstellung"].
+
+* Sie müssen die ausgefallene Komponente durch eine FRU-Ersatz-Komponente ersetzen, die dieselbe Kapazität hat wie Sie von NetApp erhalten.
+* Stellen Sie sicher, dass der e0M-Anschluss (Schraubenschlüssel) am beeinträchtigten Controller angeschlossen und nicht fehlerhaft ist.
++
+Der e0M-Port wird während des automatisierten Boot-Wiederherstellungsprozesses zur Kommunikation zwischen den beiden Controllern verwendet.
+
+* Für OKM benötigen Sie die clusterweite Passphrase und auch die Sicherungsdaten.
+* Für EKM benötigen Sie Kopien der folgenden Dateien vom Partnerknoten:
++
+** Datei /cfcard/kmip/servers.cfg.
+** Datei /cfcard/kmip/certs/Client.crt.
+** Datei /cfcard/kmip/certs/client.key.
+** Datei /cfcard/kmip/certs/CA.pem.
+
+
+* Es ist wichtig, die Befehle auf den richtigen Controller anzuwenden, wenn Sie das beschädigte Startmedium ersetzen:
++
+** Der _beschädigte Controller_ ist der Controller, an dem Sie Wartungsarbeiten durchführen.
+** Der _gesunde Controller_ ist der HA-Partner des beeinträchtigten Controllers.
+
+
+
+
+.Wie es weiter geht
+Nachdem Sie die Anforderungen für die Startmedien überprüft haben, können Sie link:bootmedia-shutdown-bmr.html["Fahren Sie den Controller herunter"].

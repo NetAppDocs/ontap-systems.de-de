@@ -16,13 +16,30 @@ entries:
 - title: Wartung
   pdf-filename: AFF A250 warten
   entries:
-  - title: Überblick
+  - title: Wartungsübersicht
     url: "/a250/maintain-overview.html"
-  - title: Boot-Medien
-    pdf-filename: AFF A250 Bootmedium
+  - title: Bootmedium – automatisierte Wiederherstellung
+    pdf-filename: AFF A250 Boot-Medien automatisiert
     entries:
-    - title: Überblick
-      url: "/a250/bootmedia-replace-overview.html"
+    - title: Workflow für den Austausch von Startmedien
+      url: "/a250/bootmedia-replace-workflow-bmr.html"
+    - title: Prüfen Sie die Anforderungen
+      url: "/a250/bootmedia-replace-requirements-bmr.html"
+    - title: Fahren Sie den Controller herunter
+      url: "/a250/bootmedia-shutdown-bmr.html"
+    - title: Ersetzen Sie Startmedien
+      url: "/a250/bootmedia-replace-bmr.html"
+    - title: Image auf Startmedium wiederherstellen
+      url: "/a250/bootmedia-recovery-image-boot-bmr.html"
+    - title: Rückgabe fehlgeschlagen. Teil an NetApp
+      url: "/a250/bootmedia-complete-rma-bmr.html"
+  - title: Bootmedium - manuelle Wiederherstellung
+    pdf-filename: AFF 250 Boot Media manuell
+    entries:
+    - title: Workflow für den Austausch von Startmedien
+      url: "/a250/bootmedia-replace-workflow.html"
+    - title: Prüfen Sie die Anforderungen
+      url: "/a250/bootmedia-replace-requirements.html"
     - title: Überprüfen Sie die Verschlüsselung
       url: "/a250/bootmedia-encryption-preshutdown-checks.html"
     - title: Schalten Sie den beeinträchtigten Controller aus
@@ -38,9 +55,13 @@ entries:
   - title: Chassis
     pdf-filename: AFF A250-Gehäuse
     entries:
-    - title: Überblick
-      url: "/a250/chassis-replace-overview.html"
-    - title: Schalten Sie den beeinträchtigten Controller aus
+    - title: Workflow zum Austausch des Gehäuses
+      url: "/a250/chassis-replace-workflow.html"
+    - title: Prüfen Sie die Anforderungen
+      url: "/a250/chassis-replace-requirements.html"
+    - title: Austausch vorbereiten
+      url: "/a250/chassis-replace-prepare.html"
+    - title: Fahren Sie die Controller herunter
       url: "/a250/chassis-replace-shutdown.html"
     - title: Ersetzen Sie das Gehäuse
       url: "/a250/chassis-replace-move-hardware.html"
@@ -49,8 +70,10 @@ entries:
   - title: Controller
     pdf-filename: AFF A250 Controller-Modul
     entries:
-    - title: Überblick
-      url: "/a250/controller-replace-overview.html"
+    - title: Arbeitsablauf für den Controller-Austausch
+      url: "/a250/controller-replace-workflow.html"
+    - title: Prüfen Sie die Anforderungen
+      url: "/a250/controller-replace-requirements.html"
     - title: Schalten Sie den beeinträchtigten Controller aus
       url: "/a250/controller-replace-shutdown.html"
     - title: Controller austauschen
@@ -59,7 +82,7 @@ entries:
       url: "/a250/controller-replace-system-config-restore-and-verify.html"
     - title: System neu auffindbar
       url: "/a250/controller-replace-recable-reassign-disks.html"
-    - title: Vollständige Systemwiederherstellung
+    - title: Vollständiger Controller-Austausch
       url: "/a250/controller-replace-restore-system-rma.html"
   - title: DIMM
     url: "/a250/dimm-replace.html"

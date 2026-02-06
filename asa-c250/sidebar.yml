@@ -16,13 +16,30 @@ entries:
 - title: Wartung
   pdf-filename: ASA C250 Wartung
   entries:
-  - title: Überblick
+  - title: Wartungsübersicht
     url: "/asa-c250/maintain-overview.html"
-  - title: Boot-Medien
-    pdf-filename: ASA C250-Startmedium
+  - title: Bootmedium – automatisierte Wiederherstellung
+    pdf-filename: ASA C250 Boot Media automatisiert
     entries:
-    - title: Überblick
-      url: "/asa-c250/bootmedia-replace-overview.html"
+    - title: Workflow für den Austausch von Startmedien
+      url: "/asa-c250/bootmedia-replace-workflow-bmr.html"
+    - title: Prüfen Sie die Anforderungen
+      url: "/asa-c250/bootmedia-replace-requirements-bmr.html"
+    - title: Fahren Sie den Controller herunter
+      url: "/asa-c250/bootmedia-shutdown-bmr.html"
+    - title: Ersetzen Sie Startmedien
+      url: "/asa-c250/bootmedia-replace-bmr.html"
+    - title: Image auf Startmedium wiederherstellen
+      url: "/asa-c250/bootmedia-recovery-image-boot-bmr.html"
+    - title: Rückgabe fehlgeschlagen. Teil an NetApp
+      url: "/asa-c250/bootmedia-complete-rma-bmr.html"
+  - title: Bootmedium - manuelle Wiederherstellung
+    pdf-filename: ASA C250 Boot Media manuell
+    entries:
+    - title: Workflow für den Austausch von Startmedien
+      url: "/asa-c250/bootmedia-replace-workflow.html"
+    - title: Prüfen Sie die Anforderungen
+      url: "/asa-c250/bootmedia-replace-requirements.html"
     - title: Überprüfen Sie die Verschlüsselung
       url: "/asa-c250/bootmedia-encryption-preshutdown-checks.html"
     - title: Schalten Sie den beeinträchtigten Controller aus
@@ -38,9 +55,13 @@ entries:
   - title: Chassis
     pdf-filename: ASA C250-Gehäuse
     entries:
-    - title: Überblick
-      url: "/asa-c250/chassis-replace-overview.html"
-    - title: Schalten Sie den beeinträchtigten Controller aus
+    - title: Workflow zum Austausch des Gehäuses
+      url: "/asa-c250/chassis-replace-workflow.html"
+    - title: Prüfen Sie die Anforderungen
+      url: "/asa-c250/chassis-replace-requirements.html"
+    - title: Austausch vorbereiten
+      url: "/asa-c250/chassis-replace-prepare.html"
+    - title: Fahren Sie die Controller herunter
       url: "/asa-c250/chassis-replace-shutdown.html"
     - title: Ersetzen Sie das Gehäuse
       url: "/asa-c250/chassis-replace-move-hardware.html"
@@ -49,8 +70,10 @@ entries:
   - title: Controller
     pdf-filename: Controller-Modul ASA C250
     entries:
-    - title: Überblick
-      url: "/asa-c250/controller-replace-overview.html"
+    - title: Arbeitsablauf für den Controller-Austausch
+      url: "/asa-c250/controller-replace-workflow.html"
+    - title: Prüfen Sie die Anforderungen
+      url: "/asa-c250/controller-replace-requirements.html"
     - title: Schalten Sie den beeinträchtigten Controller aus
       url: "/asa-c250/controller-replace-shutdown.html"
     - title: Controller austauschen
@@ -59,7 +82,7 @@ entries:
       url: "/asa-c250/controller-replace-system-config-restore-and-verify.html"
     - title: System neu auffindbar
       url: "/asa-c250/controller-replace-recable-reassign-disks.html"
-    - title: Vollständige Systemwiederherstellung
+    - title: Vollständiger Controller-Austausch
       url: "/asa-c250/controller-replace-restore-system-rma.html"
   - title: DIMM
     url: "/asa-c250/dimm-replace.html"

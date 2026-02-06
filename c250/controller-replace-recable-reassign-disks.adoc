@@ -11,6 +11,8 @@ summary: Sie müssen den Speicher neu zuweisen und die Neuzuweisung der Festplat
 
 
 [role="lead"]
+Nach Abschluss der Wiederherstellung und Überprüfung der Systemkonfiguration des AFF C250 Systems müssen Sie das System neu verkabeln und die Festplatten neu zuweisen.
+
 Setzen Sie das Ersatzverfahren fort, indem Sie den Speicher neu zuweisen und die Neuzuweisung bestätigen.
 
 
@@ -144,3 +146,6 @@ dr-group-id            cluster node           configuration-state
 . Vergewissern Sie sich, dass die erwarteten Volumes für jeden Controller vorhanden sind: `vol show -node node-name`
 . Wenn Sie die automatische Übernahme beim Neustart deaktiviert haben, aktivieren Sie sie vom gesunden Controller: `storage failover modify -node replacement-node-name -onreboot true`
 
+
+.Was kommt als Nächstes?
+Nachdem Sie das System neu verkabelt und die Festplatten neu zugewiesen haben, müssen Sie link:controller-replace-restore-system-rma.html["Schließen Sie den Controller-Austausch ab"].

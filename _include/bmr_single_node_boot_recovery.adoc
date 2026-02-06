@@ -65,10 +65,7 @@ Die Verschlüsselung ist installiert. Gehe zu<<restore-key-manager,Wiederherstel
 
 NOTE: Kann das System die Konfiguration des Schlüsselmanagers nicht identifizieren, wird eine Fehlermeldung angezeigt, und Sie werden aufgefordert zu bestätigen, ob ein Schlüsselmanager konfiguriert ist und um welchen Typ es sich handelt (intern oder extern).  Beantworten Sie die Anweisungen, um fortzufahren.
 
-
-
-[[restore-key-manager]]
-. Stellen Sie den Schlüsselmanager mithilfe der für Ihre Konfiguration geeigneten Vorgehensweise wieder her:
+. [[restore-key-manager]] Stellen Sie den Schlüsselmanager mithilfe der für Ihre Konfiguration geeigneten Vorgehensweise wieder her:
 +
 [role="tabbed-block"]
 ====
@@ -280,8 +277,7 @@ Gehe zu <<reenable-auto-giveback,automatische Rückvergütung wieder aktivieren>
 ====
 
 
-[[reenable-auto-giveback]]
-. Wenn die automatische Rückübertragung deaktiviert wurde, aktivieren Sie sie erneut:
+. [[reenable-auto-giveback]]Falls die automatische Rückgabe deaktiviert war, aktivieren Sie sie wieder:
 +
 `storage failover modify -node local -auto-giveback true`
 

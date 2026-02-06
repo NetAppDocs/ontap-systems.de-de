@@ -1,20 +1,24 @@
 ---
 permalink: a250/bootmedia-shutdown.html 
 sidebar: sidebar 
-keywords: aff a250, shutdown 
+keywords: aff a250, shut down the controller 
 summary: Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Controllers durchführen. 
 ---
-= Schalten Sie den Controller aus - AFF A250
+= Controller für manuelle Wiederherstellung des Startmediums herunterfahren - AFF A250
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
+[role="lead"]
+Schalten Sie den defekten Controller in Ihrem AFF A250-Speichersystem ab, um Datenverlust zu verhindern und die Systemstabilität während des automatisierten Bootmedien-Wiederherstellungsprozesses aufrechtzuerhalten.
+
+Wenn auf Ihrem Speichersystem ONTAP 9.18.1 oder höher ausgeführt wird, verwenden Sie die link:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"]. Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie das manuelle Boot-Wiederherstellungsverfahren verwenden.
+
 
 
 == Option 1: Die meisten Systeme
 
-[role="lead"]
 Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Controllers durchführen.
 
 .Schritte
@@ -56,9 +60,7 @@ NOTE: Dieser Befehl funktioniert möglicherweise nicht, wenn das Startgerät bes
 
 
 
-== Option 2: Systeme in einem MetroCluster
-
-Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Controllers durchführen.
+== Option 2: Das System befindet sich in einem MetroCluster
 
 
 NOTE: Verwenden Sie dieses Verfahren nicht, wenn sich Ihr System in einer MetroCluster-Konfiguration mit zwei Knoten befindet.
@@ -105,3 +107,6 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 
 |===
 
+
+.Was kommt als Nächstes?
+Nach dem Herunterfahren des Controllers müssen Sie link:bootmedia-replace.html["Ersetzen Sie das Startmedium"].

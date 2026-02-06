@@ -4,14 +4,16 @@ sidebar: sidebar
 keywords: fas500f, move hardware components, replace the chassis 
 summary: Stellen Sie die Netzteile, Festplatten und Controller-Module oder Module vom beeinträchtigten Gehäuse in das neue Gehäuse und tauschen Sie das beeinträchtigte Gehäuse aus dem Geräterrack oder Systemschrank durch das neue Gehäuse des gleichen Modells aus wie das beeinträchtigte Gehäuse. 
 ---
-= Hardware verschieben und ersetzen - FAS500f
+= Chassis austauschen - FAS500f
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Stellen Sie die Netzteile, Festplatten und Controller-Module oder Module vom beeinträchtigten Gehäuse in das neue Gehäuse und tauschen Sie das beeinträchtigte Gehäuse aus dem Geräterrack oder Systemschrank durch das neue Gehäuse des gleichen Modells aus wie das beeinträchtigte Gehäuse.
+Tauschen Sie das Gehäuse Ihres FAS500f Systems aus, wenn ein Hardwaredefekt dies erfordert. Der Austauschvorgang umfasst das Entfernen der Controller und Netzteile (PSUs), das Entfernen der Laufwerke, den Einbau des Ersatzgehäuses und das Wiedereinbauen der Gehäusekomponenten.
+
+Um das Gehäuse auszutauschen, verschieben Sie die Netzteile, Festplatten und das Controller-Modul vom Gehäuse für beeinträchtigte Störungen in das neue Gehäuse und tauschen das Gehäuse für beeinträchtigte Störungen aus durch das neue Gehäuse desselben Modells wie das Gehäuse für beeinträchtigte Störungen aus.
 
 
 
@@ -19,7 +21,7 @@ Stellen Sie die Netzteile, Festplatten und Controller-Module oder Module vom bee
 
 Um das Chassis auszutauschen, müssen Sie die Controller-Module aus dem alten Chassis entfernen.
 
-Sie können das Gehäuse mit dem folgenden Video oder den tabellarischen Schritten ersetzen. Es wird davon ausgegangen, dass die Blende entfernt und ausgetauscht wird:
+Verwenden Sie zum Austauschen des Gehäuses das folgende Video oder die tabellarischen Schritte. Es wird davon ausgegangen, dass die Blende entfernt und ausgetauscht wird:
 
 .Animation: Ersetzen Sie das Gehäuse
 video::1f859217-fede-491a-896e-ac5b015c1a36[panopto]
@@ -35,6 +37,7 @@ NOTE: Wenn Sie Schwierigkeiten beim Entfernen des Controller-Moduls haben, setze
 image::../media/drw_a250_pcm_remove_install.png[Öffnen des Verriegelungsmechanismus]
 
 +
+[cols="1,3"]
 |===
 
 
@@ -108,7 +111,7 @@ Sie müssen das vorhandene Chassis aus dem Rack oder dem Systemschrank entfernen
 
 == Schritt 4: Installieren Sie die Controller-Module
 
-Nachdem Sie die Controller-Module in das neue Gehäuse installiert haben, müssen Sie es booten.
+Nachdem Sie die Controller-Module in das neue Gehäuse installiert haben, müssen Sie das System booten.
 
 Bei HA-Paaren mit zwei Controller-Modulen im selben Chassis ist die Sequenz, in der Sie das Controller-Modul installieren, besonders wichtig, da sie versucht, neu zu booten, sobald Sie es vollständig im Chassis einsetzen.
 
@@ -118,7 +121,6 @@ Bei HA-Paaren mit zwei Controller-Modulen im selben Chassis ist die Sequenz, in 
 NOTE: Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein, wenn Sie dazu aufgefordert werden.
 
 . Führen Sie die Konsole wieder mit dem Controller-Modul aus, und schließen Sie den Management-Port wieder an.
-. Schließen Sie die Stromkabel an die Netzteile an, und setzen Sie die Netzkabelhalter wieder ein.
 . Setzen Sie das Controller-Modul in das Chassis ein:
 +
 .. Stellen Sie sicher, dass die Arms des Verriegelungsmechanismus in der vollständig ausgestreckten Position verriegelt sind.
@@ -126,13 +128,20 @@ NOTE: Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein,
 .. Platzieren Sie Ihre Zeigefinger durch die Fingerlöcher von der Innenseite des Verriegelungsmechanismus.
 .. Drücken Sie die Daumen auf den orangefarbenen Laschen oben am Verriegelungsmechanismus nach unten, und schieben Sie das Controller-Modul vorsichtig über den Anschlag.
 .. Lösen Sie Ihre Daumen von oben auf den Verriegelungs-Mechanismen und drücken Sie weiter, bis die Verriegelungen einrasten.
-+
-Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt. Bereiten Sie sich darauf vor, den Bootvorgang zu unterbrechen.
-
 
 
 +
 Das Controller-Modul sollte vollständig eingesetzt und mit den Kanten des Gehäuses bündig sein.
 
++
+.. Schließen Sie die Netzkabel an die Netzteile an, setzen Sie die Sicherungsmanschette des Netzkabels wieder ein, und schließen Sie dann die Netzteile an die Stromquelle an.
++
+Das Controller-Modul startet, sobald die Stromversorgung wiederhergestellt ist. Bereiten Sie sich darauf vor, den Bootvorgang zu unterbrechen.
+
+
+
 . Wiederholen Sie die vorherigen Schritte, um den zweiten Controller im neuen Chassis zu installieren.
 
+
+.Was kommt als Nächstes?
+Nachdem Sie das defekte FAS500f Chassis ausgetauscht und die Komponenten wieder eingebaut haben, müssen Sie link:chassis-replace-complete-system-restore-rma.html["Schließen Sie den Austausch des Gehäuses ab"]

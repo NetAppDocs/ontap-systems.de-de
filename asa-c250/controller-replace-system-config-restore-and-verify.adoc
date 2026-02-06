@@ -11,6 +11,8 @@ summary: Nach dem Austausch und dem Booten der Hardware im Wartungsmodus überpr
 
 
 [role="lead"]
+Nach Abschluss des Hardwareaustauschs und dem Hochfahren Ihres ASA C250-Systems in den Wartungsmodus müssen Sie die Systemkonfiguration auf niedriger Ebene des Ersatzcontrollers überprüfen und die Systemeinstellungen bei Bedarf neu konfigurieren.
+
 Nach dem Austausch und dem Booten der Hardware im Wartungsmodus überprüfen Sie die Low-Level-Systemkonfiguration des Ersatz-Controllers und konfigurieren nach Bedarf die Systemeinstellungen neu.
 
 
@@ -68,3 +70,6 @@ Für den HA-Status kann einer der folgenden Werte vorliegen:
 . Wenn der angezeigte Systemzustand des Controller-Moduls nicht mit der Systemkonfiguration übereinstimmt, setzen Sie das ein `HA` Status für das Controller-Modul: `ha-config modify controller ha-state`
 . Bestätigen Sie, dass sich die Einstellung geändert hat: `ha-config show`
 
+
+.Was kommt als Nächstes?
+Nachdem Sie die Systemkonfiguration wiederhergestellt und überprüft haben, müssen Sie link:controller-replace-recable-reassign-disks.html["System neu verkabeln und Festplatten neu zuweisen"].

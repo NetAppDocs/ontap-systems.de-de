@@ -1,0 +1,29 @@
+= 
+:allow-uri-read: 
+
+
+.Schritte
+. Stellen Sie eine Verbindung zum seriellen Konsolenport mit der Schnittstelle mit her und überwachen Sie das System.
+. Schalten Sie die Standort-LED des Controllers ein:
++
+.. Verwenden Sie die `system controller location-led show` Befehl zur Anzeige des aktuellen Status der Standort-LED.
+.. Standort-LED einschalten:
++
+`system controller location-led modify -node _node1_ -state on`
+
++
+Die Standort-LED leuchtet 30 Minuten lang.
+
+
+
+. Prüfen Sie vor dem Öffnen der Verpackung das Verpackungsetikett und vergewissern Sie sich, dass Folgendes vorhanden ist:
++
+** Bauteilnummer
+** Teilebeschreibung
+** Menge in der Box
+
+
+. Nehmen Sie den Inhalt aus der Verpackung und bewahren Sie die Verpackung auf, um die defekte Komponente an NetApp zurückzusenden.
+. Beschriften Sie alle an das Speichersystem angeschlossenen Kabel.  Dadurch wird eine ordnungsgemäße Neuverkabelung im weiteren Verlauf dieses Verfahrens sichergestellt.
+. Erden Sie sich, falls Sie noch nicht geerdet sind.
+
