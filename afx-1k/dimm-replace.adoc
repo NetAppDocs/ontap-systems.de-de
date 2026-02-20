@@ -13,6 +13,9 @@ summary: Ersetzen Sie ein DIMM in Ihrem AFX 1K-Speichersystem, wenn übermäßig
 [role="lead"]
 Ersetzen Sie ein DIMM in Ihrem AFX 1K-Speichersystem, wenn übermäßig viele korrigierbare oder nicht korrigierbare Speicherfehler erkannt werden. Solche Fehler können verhindern, dass das Speichersystem ONTAP bootet. Der Austauschvorgang umfasst das Herunterfahren des beschädigten Controllers, dessen Entfernung, den Austausch des DIMM, die Neuinstallation des Controllers und die anschließende Rücksendung des defekten Teils an NetApp.
 
+
+CAUTION: Tragen Sie bei Installations- und Wartungsarbeiten stets ein geerdetes Armband, das mit einem geprüften Erdungspunkt verbunden ist. Die Nichtbeachtung der richtigen ESD-Schutzmaßnahmen kann zu dauerhaften Schäden an Controller-Knoten, Storage Shelves und Network Switches führen.
+
 .Bevor Sie beginnen
 * Stellen Sie sicher, dass Sie über die Ersatzkomponente verfügen, die Sie von NetApp erhalten haben.
 * Stellen Sie sicher, dass Sie die fehlerhafte Komponente durch eine von NetApp erhaltene Austauschkomponente ersetzen.
@@ -148,7 +151,9 @@ Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls stützen, wenn
 
 Sie müssen ein DIMM ersetzen, wenn das System einen permanenten Fehler für dieses DIMM meldet.
 
-. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+
+CAUTION: Tragen Sie bei Installations- und Wartungsarbeiten stets ein geerdetes Armband, das mit einem geprüften Erdungspunkt verbunden ist. Die Nichtbeachtung der richtigen ESD-Schutzmaßnahmen kann zu dauerhaften Schäden an Controller-Knoten, Storage Shelves und Network Switches führen.
+
 . Öffnen Sie den Luftkanal der Steuerung auf der Oberseite der Steuerung.
 +
 .. Stecken Sie Ihre Finger in die Aussparungen an den entfernten Enden des Luftkanals.
