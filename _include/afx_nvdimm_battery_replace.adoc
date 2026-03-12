@@ -10,7 +10,7 @@ Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Fall
 
 Schalten Sie den außer Betrieb genommenen Controller aus oder übernehmen Sie ihn.
 
-Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers ermitteln und gegebenenfalls eine Speicher-Failover-Übernahme des Controllers durchführen, damit der fehlerfreie Controller weiterhin Daten aus dem beeinträchtigten Controller-Speicher bereitstellt.
+Übernehmen Sie den fehlerhaften Controller und stoppen Sie ihn, damit der intakte Controller weiterhin Daten aus dem Speicher des fehlerhaften Controllers bereitstellt. Dazu unterdrücken Sie die automatische Fallerstellung in AutoSupport, deaktivieren die automatische Rückgabe und bringen den fehlerhaften Controller zur LOADER-Eingabeaufforderung. Die LOADER-Eingabeaufforderung ist der sichere, angehaltene Zustand, aus dem Sie die FRU ersetzen können.
 
 .Über diese Aufgabe
 * Wenn Sie einen Cluster mit mehr als vier Knoten haben, muss dieser im Quorum sein.  Um Clusterinformationen zu Ihren Knoten anzuzeigen, verwenden Sie die `cluster show` Befehl.  Weitere Informationen zum `cluster show` Befehl, siehelink:https://docs.netapp.com/us-en/ontap/system-admin/display-nodes-cluster-task.html["Anzeigen von Details auf Knotenebene in einem ONTAP Cluster"^] .

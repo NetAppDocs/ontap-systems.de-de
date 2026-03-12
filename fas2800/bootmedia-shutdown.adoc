@@ -15,7 +15,7 @@ Schalten Sie den außer Betrieb genommenen Controller aus oder übernehmen Sie i
 
 Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie das manuelle Boot-Wiederherstellungsverfahren verwenden.
 
-Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Controllers durchführen.
+Schließen Sie das Herunterfahren des beschädigten Controllers ab, indem Sie ihn bis zur LOADER-Eingabeaufforderung anhalten und die Boot-Umgebungsvariablen erfassen. Die LOADER-Eingabeaufforderung ist der sichere angehaltene Zustand, von dem aus Sie das Bootmedium austauschen können.
 
 .Schritte
 . Nehmen Sie den beeinträchtigten Controller zur LOADER-Eingabeaufforderung:
