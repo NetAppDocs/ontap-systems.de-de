@@ -19,17 +19,10 @@ Dieses Verfahren gilt für Systeme mit zwei-Knoten-Konfigurationen. Weitere Info
 * Stellen Sie sicher, dass Sie über die erforderlichen Berechtigungen und Anmeldeinformationen verfügen:
 +
 ** Lokale Administratoranmeldeinformationen für ONTAP.
-** BMC-Zugriff für jeden Controller.
+** BMC accessibility für jeden Controller.
 
 
 * Stellen Sie sicher, dass Sie über die erforderlichen Werkzeuge und Geräte für den Austausch verfügen.
-* Als Best Practice vor dem Herunterfahren sollten Sie:
-+
-** Zusätzliche Durchführung https://kb.netapp.com/onprem/ontap/os/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["Zustandsberichte zu Systemen"].
-** Führen Sie ein Upgrade von ONTAP auf eine empfohlene Version für das System durch.
-** Lösen Sie alle https://activeiq.netapp.com/["Active IQ Wellness-Alarme und Risiken"]. Notieren Sie sich alle derzeit auftretenden Fehler im System, z. B. LEDs an den Systemkomponenten.
-
-
 
 
 .Schritte
@@ -48,9 +41,11 @@ Dieses Verfahren gilt für Systeme mit zwei-Knoten-Konfigurationen. Weitere Info
 +
 `exit`
 
-. Melden Sie sich über SSH bei SP/BMC an und verwenden Sie dabei die IP-Adresse eines der in der Ausgabe des vorherigen Schritts aufgeführten Nodes, um den Fortschritt zu überwachen.
+. Melden Sie sich beim SP/BMC jedes Controllers mit der im vorherigen Schritt ermittelten IP-Adresse an:
 +
-Wenn Sie eine Konsole oder einen Laptop verwenden, melden Sie sich mit den gleichen Cluster-Administrator-Anmeldedaten am Controller an.
+** Wenn Sie sich vom BMC über SSH anmelden, stellen Sie die Verbindung über die SP/BMC-Adresse her (zum Beispiel  `ssh admin@<SP/BMC_address>`), geben Sie dann den Befehl  `system console` ein und authentifizieren Sie sich.
+** Wenn Sie eine lokale Konsole oder einen Laptop verwenden, der direkt mit dem Controller verbunden ist, melden Sie sich mit denselben Cluster Administrator-Anmeldeinformationen an.
+
 
 . Halten Sie die beiden Nodes im beeinträchtigten Chassis an:
 +
