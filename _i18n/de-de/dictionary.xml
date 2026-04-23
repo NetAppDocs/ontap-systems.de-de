@@ -5609,15 +5609,11 @@
 Siehe<block ref="087e4d006962c8ba6c4d8fdb71ff8e38" category="inline-link-rx"></block> Entnehmen.</block>
   <block id="0f844d6324319ebe9b4aabd24f1b88dd" category="list-text">Installieren Sie das Controller-Modul:</block>
   <block id="6bfde1459ef866428e3532004887b3b8" category="list-text">Controller-Modul wieder einsetzen.</block>
-  <block id="db5c04ca6cb958f296ff071cf8420f54" category="paragraph">Ersetzen Sie die Mezzanine-Karte, indem Sie die Kabel und alle SFP- und QSFP-Module von der Karte trennen, die fehlerhafte Mezzanine-Karte austauschen und die Karten wieder einsetzen.</block>
-  <block id="783de30113379b15fc6135387f11b7e6" category="video-title">Animation: Ersetzen Sie die Zusatzkarte</block>
   <block id="a0ff1a6d16d908c33e10409aed0ac623" category="paragraph">Entfernen Sie das Controller-Modul aus dem System, und entfernen Sie dann die Abdeckung des Controller-Moduls.</block>
   <block id="cf6800eb49ae54456676c105c115a1fa" category="section-title">Schritt 3: Ersetzen Sie die Zusatzkarte</block>
   <block id="6918dd1d1ecfa7a18a047a925c4f30ee" category="paragraph">Setzen Sie die Zusatzkarte wieder ein.</block>
   <block id="83b54898f0ac014b1e217ee413643205" category="paragraph">PCIe-Zusatzkarte</block>
   <block id="64016c063cf6b470fdcccc5a97f852b1" category="list-text">Lösen Sie die Rändelschrauben auf der Zusatzkarte, und heben Sie die Zusatzkarte gerade nach oben.</block>
-  <block id="4bca5310f65e82fe5c4eec2c7a1c6c17" category="list-text">Richten Sie den Anschluss am Ersatz-Zusatzkartenstecker an der Buchse auf der Hauptplatine aus, und setzen Sie die Karte vorsichtig in den Sockel ein.</block>
-  <block id="f2972968e044e6666c42c0182107b4f6" category="paragraph">Setzen Sie das Controller-Modul wieder ein.</block>
   <block id="f36f34bd21dc87823e156cd47c7d7440" category="list-text">Drehen Sie das Controller-Modul um und richten Sie das Ende an der Öffnung im Gehäuse aus.</block>
   <block id="3ab31ac30e2ad91e2f7e6a9ecd045f6e" category="list-text">Schieben Sie das Controller-Modul vorsichtig bis zur Hälfte in das System. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie das Controller-Modul vorsichtig bis zur Hälfte in das System.</block>
   <block id="d32890221c5529cefc96a956073d9844" category="list-text">Stellen Sie mithilfe der die automatische Rückgabe wieder her<block ref="6f0c6616b99fea33a3020e0e0dcbe3c6" prefix=" " category="inline-code"></block> Befehl.</block>
@@ -10896,7 +10892,6 @@ SFP+ (Target/Initiator)</block>
   <block id="56632d1795a7d32b89a455a3b633b7f5" category="list-text">Schalten Sie die Regalstromversorgung ein und legen Sie die Regal-IDs mithilfe der Animation am Anfang dieses Schritts fest.</block>
   <block id="6a3ffb8f58252e034e90b5eb7a9cc233" category="list-text">Schalten Sie die Regalstromversorgung ein und legen Sie die Regal-IDs mithilfe der Animation am Anfang dieses Schritts fest.</block>
   <block id="cb102c5c1eccde9b442d1de001f76cc3" category="image-alt">Entfernen Sie die Controller-Abdeckung</block>
-  <block id="8fca7d700183532fd08f68b674a86c60" category="image-alt">Öffnen Sie den Controller</block>
   <block id="6abebf9335209d6b986ad1d41e48f43b" category="image-alt">Ersetzen einer Zusatzkarte</block>
   <block id="9f8a96e46f0e86179108737100c29b9d" category="list-text">Bringen Sie die Controller-Abdeckung wieder an.</block>
   <block id="627450f7182bd50247300c6db6f17129" category="image-alt">Entfernen eines PCI-Moduls</block>
@@ -15016,4 +15011,48 @@ SFP+ (Target/Initiator)</block>
   <block id="284f3d864e67ec64454ad1382833e490" category="summary">Hier finden Sie Anleitungen zum Austausch von NVMe-Shelf-Modulen für Ihr NetApp Storage Shelf, organisiert nach Shelf-Modell. Diese Referenz bietet direkte Links zu Schritt-für-Schritt-NSM-Austausch-Workflows für NS224- und NX224-Shelfs, damit Sie schnell die richtige Vorgehensweise für Ihr spezifisches Shelf-Modell finden.</block>
   <block id="a461d5a3ec6eff00835d5b1479552285" category="doc">NVMEM- oder NVRAM-Batterieaustauschverfahren nach Plattformfamilie</block>
   <block id="66439d0b114daf635ee9ba53d5e8d568" category="summary">Der Systemschrank unterstützt verschiedene Arten von Stromverteilungseinheiten (PDUs). Die PDUs entsprechen NEMA oder IEC.</block>
+  <block id="bb67cf9a22f6bca036da3944f082f70d" category="admonition">Bevor Sie die Abdeckung des defekten Controllers schließen, vergewissern Sie sich, dass die Auswurfklappen an allen leeren DIMM-Steckplätzen vollständig in die verriegelte Position zurückgekehrt sind.</block>
+  <block id="669e934b15627ccb89dc33fcabeddbfb" category="paragraph">Tauschen Sie die Mezzanine-Karte in Ihrem FAS2820-System aus, wenn die Karte defekt ist, oder aktualisieren Sie sie auf ein anderes Protokoll, indem Sie eine neue Karte installieren.</block>
+  <block id="188325fb14c01076ac7986e006024318" category="list-text">Verwenden Sie dieses Verfahren mit jeder von Ihrem System unterstützten ONTAP-Version.</block>
+  <block id="ac252143999e21b283146112dd2be869" category="list-text">Ersetzen Sie die Mezzanine-Karte durch eine Karte desselben Typs oder eine Karte eines anderen Typs.</block>
+  <block id="fe8724291ba433d10b4fcf50b8fb75e8" category="list-text">Notieren Sie sich die ifgrp- und VLAN-Informationen, bevor Sie den Controller herunterfahren.</block>
+  <block id="f161beffd589a67ef92732e9b253cdd7" category="list-text">Wenn Sie die Mezzanine-Kartentypen ändern, ändern Sie die LIF- und Port-Einstellungen nach dem Neustart des Controllers.</block>
+  <block id="449e834456e7e68b70b454418fba97ab" category="list-text">Überprüfen Sie, ob alle anderen Systemkomponenten funktionieren. Sollte das Problem weiterhin bestehen, wenden Sie sich an den technischen Support.</block>
+  <block id="5bff8c12368fa11b6a921de13c7b88c4" category="list-text">Wenn Sie die Mezzanine-Kartentypen ändern, erfassen Sie die ifgrp- und VLAN-Informationen des betroffenen Knotens.</block>
+  <block id="f8d7ee81ae11933d89c54b63f5fadf14" category="paragraph">Entfernen Sie das Controller-Modul und dessen Abdeckung.</block>
+  <block id="209665c3ca401651aef828199962e8e6" category="list-text">Lösen Sie den Klettverschluss, merken Sie sich, wo die Kabel angeschlossen sind, und trennen Sie dann die Systemkabel und SFPs (falls erforderlich).</block>
+  <block id="3cd42af34b01ed058f7c2cd55e0996dd" category="paragraph">Lassen Sie die Kabel im Kabelmanagement-Gerät, damit sie organisiert bleiben.</block>
+  <block id="7b0ea8fe43bfe3b98d824632eff95227" category="list-text">Den Nockengriffverschluss lösen, vollständig öffnen und das Steuermodul aus dem Gehäuse herausziehen.</block>
+  <block id="98218aa7f65c228232e406628bf68c52" category="list-text">Drehen Sie den Controller um und legen Sie ihn auf eine ebene, stabile Oberfläche.</block>
+  <block id="c423597c377723410ddff79391c30184" category="list-text">Drücken Sie die blauen Knöpfe an den Seiten des Controllermoduls, um die Abdeckung zu entriegeln. Klappen Sie die Abdeckung nach oben und nehmen Sie sie vom Controllermodul ab.</block>
+  <block id="049bcfe9f533b1ce55e8c569103ad005" category="list-text">Richten Sie den Anschluss der Ersatz-Mezzaninekarte an der Buchse auf dem Motherboard aus und setzen Sie die Karte dann vorsichtig und gerade in die Buchse ein.</block>
+  <block id="9995c7de2e4f28bd5897f9cddbfb7fe2" category="list-text">Setzen Sie die Abdeckung des Controller-Moduls wieder auf und verriegeln Sie sie.</block>
+  <block id="8b9e2d3291c598b800be072b8afefa3b" category="section-title">Schritt 4: Controller-Modul installieren und neu starten</block>
+  <block id="df34b20e74975704c940ac43d85db1a0" category="paragraph">Installieren Sie das Controller-Modul neu und starten Sie es neu.</block>
+  <block id="aa8d1cbe476192b8bca04b6db3820a20" category="list-text">Schieben Sie das Steuermodul vorsichtig bis zur Hälfte in das Gehäuse.</block>
+  <block id="f537a6f2f3860f6a3385b2dba60ee50d" category="list-text">Schließen Sie die Systemkabel bei Bedarf wieder an.</block>
+  <block id="f44818abfdb464a54383bded154be7a6" category="list-text">Bei geöffnetem Nockengriff das Steuermodul fest hineindrücken, bis es vollständig eingerastet ist. Nockengriff zum Verriegeln schließen.</block>
+  <block id="3caa3f6c101dc917e6e89ed7e891e2e7" category="list-text">Befestigen Sie die Kabel mit dem Klettband am Kabelmanagement-Gerät. == Schritt 5: Konfigurieren Sie die Mezzanine-Karte neu (falls der Typ geändert wurde)</block>
+  <block id="e705f3e2e1683e9fdc37c829b76df435" category="paragraph">Nach dem Neustart des Controllers müssen die Einstellungen der Mezzanine-Karte an die neue Karte angepasst werden, falls Sie diese durch einen anderen Kartentyp ersetzt haben.</block>
+  <block id="4a75ad40a6302b2865f475233d3fb5e5" category="open-title">Option 1: Fibre Channel zu Ethernet Mezzanine-Karte</block>
+  <block id="3eab4e5e3f38a487e4c0ff8986b53620" category="paragraph">Konfigurieren Sie die Ethernet-Ersatz-Mezzanine-Karte, indem Sie die LIFs und Port-Einstellungen nach Bedarf aktualisieren.</block>
+  <block id="5f0a91ebda5419c9dae2884b55adbe74" category="list-text">Verwenden Sie den <block ref="838c4deb1e9c47dcd4c44b6e40276467" prefix=" " category="inline-code"></block> Befehl, um neue Portnamen und Verbindungszustände zu bestätigen.</block>
+  <block id="3efcada16cb2f3e01caddea484618416" category="list-text">Stellen Sie alle ifgrps und VLANs auf den neuen Ethernet-Mezzanine-Ports wieder her.</block>
+  <block id="6e2960cee1a644afd90e3d3b838fd123" category="list-text">Ordnen Sie die neuen Ports bzw. ifgrp/VLAN-Ports den korrekten Broadcast-Domänen und IPspaces zu und legen Sie die MTU-Werte fest.</block>
+  <block id="4c56c513928e3bd961610cfdc822c8d9" category="list-text">Aktualisieren Sie die betroffenen LIF-Heimatport- und Failover-Einstellungen.</block>
+  <block id="a795d709ecd423b1744a5ef88448d471" category="list-text">Löschen Sie nicht mehr benötigte LIFs.</block>
+  <block id="2379f006c7634c9a3930eb53207e352b" category="inline-link-macro">Erfahren Sie mehr über ONTAP Netzwerkportkonfiguration</block>
+  <block id="b98137e3a1d1b6f4b29e605a6485919a" category="paragraph">Siehe <block ref="cb17047b6380f83ae8de9ed3ea1a53d8" category="inline-link-macro-rx"></block> für weitere detaillierte Informationen zur Konfiguration von Ethernet in ONTAP.</block>
+  <block id="52a696c40ad570403490bdec6c48e094" category="open-title">Option 2: Ethernet-zu-Fibre-Channel-Mezzaninekarte</block>
+  <block id="e9e71980f309166c903d0c3d71389741" category="paragraph">Konfigurieren Sie die Ersatz-FC-Mezzanine-Karte, indem Sie die LIFs und Port-Einstellungen nach Bedarf aktualisieren.</block>
+  <block id="fea1b58373a99298346b2ee3c42f7a8e" category="list-text">Aktivieren Sie FCP auf den relevanten SVMs. Erstellen Sie neue Daten-LIFs.</block>
+  <block id="da9bb3b5a73b19eb3674470b3621051d" category="list-text">Aktualisieren Sie die Fabric-Zonierung und die Hostpfade. Aktualisieren Sie die Portset-, Initiatorgruppe- und LUN-Zuordnungen nach Bedarf.</block>
+  <block id="87160066c3c44a03aee7080e00432c64" category="list-text">Überprüfen Sie die Multipath-Konfiguration des Hosts. Stellen Sie sicher, dass keine veralteten Pfade vorhanden sind und dass die Pfade zwischen optimierten und nicht optimierten Pfaden ausgeglichen sind.</block>
+  <block id="062a9fa0f81c39da805029b15f680004" category="list-text">Prüfen Sie, ob keine LIFs an entfernten Ethernet-Ports angeschlossen sind, alle FC-LIFs aktiv sind und E/A-Operationen ausführen und die AutoSupport-Überwachung die neue Konfiguration widerspiegelt.</block>
+  <block id="563c6fa09f1e284ce85546393fc8feb8" category="inline-link-macro">SAN-Managementübersicht</block>
+  <block id="63018430f374d831226e536d0e46ce53" category="paragraph">Siehe <block ref="02b029a61c3a3a6905adcb1c22e947fd" category="inline-link-macro-rx"></block> für detailliertere Informationen zur Konfiguration von Fibre Channel in ONTAP.</block>
+  <block id="b677c618703db10bec968500a7722ccc" category="section-title">Schritt 6: Den Controller wieder in den Normalbetrieb versetzen</block>
+  <block id="21eb4ba3e07d5691bb2ca2aeeaea8fca" category="paragraph">Geben Sie dem betroffenen Controller den Speicherplatz zurück, stellen Sie die automatische Rückgabe wieder her und beenden Sie das AutoSupport Wartungsfenster.</block>
+  <block id="b0cf17c34e1e13a80699938c1fb9a3a1" category="list-text">Stellen Sie über die Eingabeaufforderung eines fehlerfreien Controllers oder eines Cluster-Administrators den normalen Betrieb des Controllers wieder her, indem Sie seinen Speicher wiederherstellen:<block ref="30edaf7c9fa43c78aeaf4b8fabb7af1a" prefix=" " category="inline-code"></block></block>
+  <block id="5a1c9794f830d65f2a212554cf798ab8" category="admonition">Bevor Sie die defekte NSM-Abdeckung schließen, vergewissern Sie sich, dass die Auswurfklappen an allen leeren DIMM-Steckplätzen vollständig in die verriegelte Position zurückgekehrt sind.</block>
 </blocks>
