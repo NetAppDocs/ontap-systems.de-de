@@ -13,6 +13,15 @@ summary: Lernen Sie den Austausch des Bootmediums auf einem AFF A700s -System ke
 [role="lead"]
 Lernen Sie den Austausch des Bootmediums auf einem AFF A700s -System kennen und verstehen Sie die Wiederherstellungsmethoden. Das primäre Bootmedium speichert das ONTAP Bootabbild, das das System beim Start verwendet. Sie können das primäre Bootmedienabbild mithilfe des ONTAP Abbilds vom sekundären Bootmedium oder, falls erforderlich, von einem mit FAT32 formatierten USB-Stick wiederherstellen.
 
+[NOTE]
+====
+NetApp empfiehlt dringend, die Protokollierung auf den Geräten, mit denen Sie arbeiten, zu aktivieren und bei der Durchführung dieses Verfahrens die folgenden Maßnahmen zu ergreifen:
+
+* Lassen Sie AutoSupport während Ihrer Wartung aktiviert. So kann der NetApp Support bei Problemen Diagnoseinformationen erhalten.
+* Aktivieren Sie die Protokollierung für alle CLI-Sitzungen. Dadurch wird ein vollständiges Protokoll aller Befehle und Systemausgaben während der Wartungsaktivität erstellt. Hinweise zur Aktivierung der Sitzungsprotokollierung finden Sie unter  https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_configure_PuTTY_for_optimal_connectivity_to_ONTAP_systems["Wie konfiguriert man PuTTY für eine optimale Verbindung zu ONTAP-Systemen"^].
+
+
+====
 Das AFF A700s -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt.
 
 Wenn das sekundäre Startmedium ausgefallen ist oder die Datei image.tgz fehlt, müssen Sie das primäre Startmedium über ein USB-Flash-Laufwerk wiederherstellen. Das Laufwerk muss in FAT32 formatiert sein und über die entsprechende Menge Speicherplatz verfügen, um die Datei image_xxx.tgz zu speichern.

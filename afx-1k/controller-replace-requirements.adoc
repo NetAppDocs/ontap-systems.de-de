@@ -15,6 +15,15 @@ Stellen Sie vor dem Austausch des Controllers in Ihrem AFX 1K-Speichersystem sic
 
 Überprüfen Sie die Anforderungen für den Austausch des Controllers.
 
+[NOTE]
+====
+NetApp empfiehlt dringend, die Protokollierung auf den Geräten, mit denen Sie arbeiten, zu aktivieren und bei der Durchführung dieses Verfahrens die folgenden Maßnahmen zu ergreifen:
+
+* Lassen Sie AutoSupport während Ihrer Wartung aktiviert. So kann der NetApp Support bei Problemen Diagnoseinformationen erhalten.
+* Aktivieren Sie die Protokollierung für alle CLI-Sitzungen. Dadurch wird ein vollständiges Protokoll aller Befehle und Systemausgaben während der Wartungsaktivität erstellt. Hinweise zur Aktivierung der Sitzungsprotokollierung finden Sie unter  https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_configure_PuTTY_for_optimal_connectivity_to_ONTAP_systems["Wie konfiguriert man PuTTY für eine optimale Verbindung zu ONTAP-Systemen"^].
+
+
+====
 * Es ist wichtig, dass Sie die Befehle in diesen Schritten auf die richtigen Systeme anwenden:
 +
 ** Die Steuerung _imired_ ist die Steuerung, die ersetzt wird.
@@ -27,10 +36,6 @@ Stellen Sie vor dem Austausch des Controllers in Ihrem AFX 1K-Speichersystem sic
 * Sie müssen die ausgefallene Komponente durch die Field-Replaceable Unit (FRU) ersetzen, die Sie von NetApp erhalten haben.
 * Ein Controller-Modul muss durch ein Controller-Modul desselben Modelltyps ersetzt werden. Sie können kein System-Upgrade durch einen Austausch des Controller-Moduls durchführen.
 * Im Rahmen dieses Verfahrens können Laufwerke oder Laufwerk-Shelfs nicht geändert werden.
-* Sie müssen immer die Konsolenausgabe des Controllers in einer Textprotokolldatei erfassen.
-+
-Auf diese Weise erhalten Sie eine Aufzeichnung des Verfahrens, damit Sie Probleme beheben können, die während des Austauschvorgangs auftreten können.
-
 
 
 .Was kommt als Nächstes?

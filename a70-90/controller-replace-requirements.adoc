@@ -15,6 +15,15 @@ Stellen Sie vor dem Austausch des Controllers des AFF A70 oder AFF A90-Systems s
 
 Überprüfen Sie die Anforderungen für den Austausch des Controller-Moduls.
 
+[NOTE]
+====
+NetApp empfiehlt dringend, die Protokollierung auf den Geräten, mit denen Sie arbeiten, zu aktivieren und bei der Durchführung dieses Verfahrens die folgenden Maßnahmen zu ergreifen:
+
+* Lassen Sie AutoSupport während Ihrer Wartung aktiviert. So kann der NetApp Support bei Problemen Diagnoseinformationen erhalten.
+* Aktivieren Sie die Protokollierung für alle CLI-Sitzungen. Dadurch wird ein vollständiges Protokoll aller Befehle und Systemausgaben während der Wartungsaktivität erstellt. Hinweise zur Aktivierung der Sitzungsprotokollierung finden Sie unter  https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_configure_PuTTY_for_optimal_connectivity_to_ONTAP_systems["Wie konfiguriert man PuTTY für eine optimale Verbindung zu ONTAP-Systemen"^].
+
+
+====
 * Alle Festplatten-Shelfs müssen ordnungsgemäß funktionieren.
 * Der intakte Regler muss in der Lage sein, den zu ersetzenden Regler (im Folgenden als beeinträchtigter Regler bezeichnet) zu übernehmen.
 * Dieses Verfahren darf nicht für Controller-Upgrades verwendet werden.  Siehe https://docs.netapp.com/us-en/ontap-systems-upgrade/choose_controller_upgrade_procedure.html["Wählen Sie das Upgrade Ihrer Controller-Hardware aus"] zur Orientierung.
@@ -29,10 +38,6 @@ Stellen Sie vor dem Austausch des Controllers des AFF A70 oder AFF A90-Systems s
 ** Der _Ersatz_-Controller ist der neue Controller, der den defekten Controller ersetzt.
 ** Der _Healthy_ Controller ist der überlebende Controller.
 
-
-* Die Konsolenausgabe des Controllers soll in einer Textprotokolldatei gespeichert werden.
-+
-Dies dient der Dokumentation des Vorgehens zur Behebung von Problemen während des Austauschprozesses.
 
 
 

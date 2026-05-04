@@ -54,7 +54,7 @@ In der folgenden Tabelle sind die Kabeltypen aufgeführt, die Sie möglicherweis
 +
 [cols="1,2,1,2"]
 |===
-| Kabeltyp... | Teilenummer und Länge | Steckverbindertyp | Für... .2+ 
+| Kabeltyp... | Teilenummer und Länge | Steckverbindertyp | Für... 
 
 
  a| 
@@ -62,7 +62,7 @@ In der folgenden Tabelle sind die Kabeltypen aufgeführt, die Sie möglicherweis
  a| 
 X66240A-05 (112-00595), 0,5 m;
 
-X66240-2 (112-00573), 2 m, 3+
+X66240-2 (112-00573), 2 m
  a| 
 image:../media/oie_cable100_gbe_qsfp28.png["100-GbE-QSFP28-Anschluss"]
  a| 
@@ -76,28 +76,31 @@ X66240A-2 (112-00598), 2 m;
 X66240A-5 (112-00600), 5 m
  a| 
 Daten
+
+
+
  a| 
 100-GbE-Kabel
  a| 
 X6211-2 (112-00574), 2 m;
 
 X6211-5 (112-00576), 5 m
-
-
-
  a| 
 Storage
+
+
+
  a| 
 RJ-45 (je nach Bestellung)
  a| 
 Keine Angabe
  a| 
 image:../media/oie_cable_rj45.png["RJ-45-Kabelanschluss"]
-
-
-
  a| 
 Managementnetzwerk (BMC und Port mit Schraubenschlüssel) und Ethernet-Daten (e0a und e0b)
+
+
+
  a| 
 Fibre Channel
  a| 
@@ -110,27 +113,29 @@ X66250-15 (112-00346) 15m;
 X66250-30 (112-00347) 30 m
  a| 
 image:../media/oie_cable_fc_optical.png["OIE Glasfaserkabel für Fibre Channel"]
-
-
-
  a| 
+
+
+
  a| 
 Micro-USB-Konsolenkabel
  a| 
 Keine Angabe
  a| 
 image:../media/oie_cable_micro_usb.png["Micro-USB-Anschluss"]
-
-
-
  a| 
 Konsolenverbindung während der Software-Einrichtung
+
+
+
  a| 
 Stromkabel
  a| 
 Keine Angabe
  a| 
 image:../media/oie_cable_power.png["Stromkabel"]
+ a| 
+System einschalten
 
 |===
 . Überprüfen Sie die link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["ONTAP Konfigurationsleitfaden"^] Und sammeln Sie die in diesem Handbuch aufgeführten erforderlichen Informationen.
@@ -188,7 +193,7 @@ video::beec3966-0a01-473c-a5de-ac68017fbf29[panopto]
 .Schritte
 . Verwenden Sie das 25-GbE-Cluster-Interconnect-Kabel, um die Cluster-Interconnect-Ports e0c mit e0c und e0d mit e0d zu verbinden.
 +
-image:../media/oie_cable_sfp_gbe_copper.png["GbE SFP Kupfer Connector"]:
+image:../media/oie_cable_sfp_gbe_copper.png["GbE SFP Kupfer Connector"]
 
 +
 image:../media/drw_affa250_tnsc_cabling.png["Cluster-Interconnect-Verkabelung in einem 2-Node-Cluster ohne Switches"]
@@ -244,7 +249,7 @@ image::../media/drw_affa250_mgmt_cabling.png[Verkabelung des Management-Ports]
 Sie verfügen über eine konfigurationsabhängige optionale Verkabelung mit den Fibre Channel- oder iSCSI-Hostnetzwerken oder dem Direct-Attached Storage. Diese Verkabelung ist nicht exklusiv; Sie können die Verkabelung zu einem Host-Netzwerk und Speicher haben.
 
 
-NOTE: link:https://hwu.netapp.com["NetApp Hardware Universe"^] Steckplatz-Priorität für Host-Netzwerkkarten (Fibre Channel oder 25 GbE) ist Steckplatz 2. Wenn Sie jedoch beide Karten haben, wird die Fibre Channel-Karte in Steckplatz 2 eingesetzt, und die 25GbE-Karte wird in Steckplatz 1 eingesetzt (wie in den Optionen unten gezeigt). Wenn Sie über ein externes Shelf verfügen, wird die Speicherkarte in Steckplatz 1 eingesetzt, der einzige unterstützte Steckplatz für Shelfs.
+NOTE: link:https://hwu.netapp.com["NetApp Hardware Universe"^] Die Priorität für Host-Netzwerkkarten (Fibre Channel oder 25 GbE) ist Steckplatz 2. Wenn jedoch beide Karten vorhanden sind, kommt die Fibre-Channel-Karte in Steckplatz 2 und die 25-GbE-Karte in Steckplatz 1 (wie in den untenstehenden Optionen gezeigt). Wenn Sie ein externes Shelf haben, kommt die Speicherkarte in Steckplatz 1, dem einzigen unterstützten Steckplatz für Shelves.
 
 [role="tabbed-block"]
 ====
@@ -275,9 +280,9 @@ image:../media/drw_affa250_fc_host_cabling.png["Fibre Channel-Hostverkabelung"]
 
 
 --
-.Option 2: Verkabelung zu 25 GbE Daten oder Host-Netzwerk
+.Option 2: Kabelverbindung zu 25-GbE-Daten- oder Hostnetzwerk
 --
-25-GbE-Ports auf den Controllern sind mit 25-GbE-Daten oder Host-Netzwerk-Switches verbunden.
+25-GbE-Ports an den Controllern sind mit 25-GbE-Daten- oder Host-Netzwerk-Switches verbunden.
 
 .Bevor Sie beginnen
 * Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.

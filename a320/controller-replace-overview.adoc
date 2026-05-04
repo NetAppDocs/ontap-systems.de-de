@@ -13,6 +13,15 @@ summary: Sie müssen die Voraussetzungen für den Austausch prüfen und die rich
 [role="lead"]
 Sie müssen die Voraussetzungen für den Austausch prüfen und die richtige für Ihre Version des ONTAP Betriebssystems auswählen.
 
+[NOTE]
+====
+NetApp empfiehlt dringend, die Protokollierung auf den Geräten, mit denen Sie arbeiten, zu aktivieren und bei der Durchführung dieses Verfahrens die folgenden Maßnahmen zu ergreifen:
+
+* Lassen Sie AutoSupport während Ihrer Wartung aktiviert. So kann der NetApp Support bei Problemen Diagnoseinformationen erhalten.
+* Aktivieren Sie die Protokollierung für alle CLI-Sitzungen. Dadurch wird ein vollständiges Protokoll aller Befehle und Systemausgaben während der Wartungsaktivität erstellt. Hinweise zur Aktivierung der Sitzungsprotokollierung finden Sie unter  https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_configure_PuTTY_for_optimal_connectivity_to_ONTAP_systems["Wie konfiguriert man PuTTY für eine optimale Verbindung zu ONTAP-Systemen"^].
+
+
+====
 * Alle Festplatten-Shelfs müssen ordnungsgemäß funktionieren.
 * Der gesunde Regler muss in der Lage sein, den zu ersetzenden Regler zu übernehmen (bezeichnet in diesem Verfahren als „`eingeschränkte Steuerung`“).
 * Wenn sich Ihr System in einer MetroCluster-Konfiguration befindet, müssen Sie den Abschnitt überprüfen https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/concept_choosing_the_correct_recovery_procedure_parent_concept.html["Auswahl des richtigen Wiederherstellungsverfahrens"] Um zu bestimmen, ob Sie dieses Verfahren verwenden sollten.
@@ -29,9 +38,5 @@ Beachten Sie, dass das Verfahren zum Austausch des Controllers bei einem Control
 ** Die Steuerung _Replacement_ ist die neue Steuerung, die die beeinträchtigte Steuerung ersetzt.
 ** Der _Healthy_ Controller ist der überlebende Controller.
 
-
-* Sie müssen die Konsolenausgabe der Controller immer in einer Textdatei erfassen.
-+
-Auf diese Weise erhalten Sie eine Aufzeichnung des Verfahrens, damit Sie Probleme beheben können, die während des Austauschvorgangs auftreten können.
 
 

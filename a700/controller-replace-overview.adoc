@@ -13,6 +13,15 @@ summary: Sie müssen die Voraussetzungen für den Austausch prüfen und die rich
 [role="lead"]
 Sie müssen die Voraussetzungen für den Austausch prüfen und die richtige für Ihre Version des ONTAP Betriebssystems auswählen.
 
+[NOTE]
+====
+NetApp empfiehlt dringend, die Protokollierung auf den Geräten, mit denen Sie arbeiten, zu aktivieren und bei der Durchführung dieses Verfahrens die folgenden Maßnahmen zu ergreifen:
+
+* Lassen Sie AutoSupport während Ihrer Wartung aktiviert. So kann der NetApp Support bei Problemen Diagnoseinformationen erhalten.
+* Aktivieren Sie die Protokollierung für alle CLI-Sitzungen. Dadurch wird ein vollständiges Protokoll aller Befehle und Systemausgaben während der Wartungsaktivität erstellt. Hinweise zur Aktivierung der Sitzungsprotokollierung finden Sie unter  https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_configure_PuTTY_for_optimal_connectivity_to_ONTAP_systems["Wie konfiguriert man PuTTY für eine optimale Verbindung zu ONTAP-Systemen"^].
+
+
+====
 * Alle Festplatten-Shelfs müssen ordnungsgemäß funktionieren.
 * Wenn Ihr System über eine V_StorageAttach-Lizenz verfügt, müssen Sie vor dem Ausführen dieses Verfahrens die zusätzlich erforderlichen Schritte beachten.
 * Wenn sich Ihr System in einem HA-Paar befindet, muss der gesunde Knoten den Knoten übernehmen können, der ersetzt wird (in diesem Verfahren wird „`beeinträchtigter Knoten`“ genannt).
@@ -30,9 +39,5 @@ Beachten Sie, dass das Verfahren zum Austausch des Controllers bei einem Node in
 ** Der Node _Replacement_ ist der neue Node, der den beeinträchtigten Knoten ersetzt.
 ** Der Node _Healthy_ ist der noch lebende Knoten.
 
-
-* Sie müssen die Konsolenausgabe des Knotens immer in einer Textdatei erfassen.
-+
-Auf diese Weise erhalten Sie eine Aufzeichnung des Verfahrens, damit Sie Probleme beheben können, die während des Austauschvorgangs auftreten können.
 
 

@@ -15,6 +15,15 @@ Bevor Sie das Bootmedium in Ihrem FAS500f-System austauschen, stellen Sie sicher
 
 Wenn auf Ihrem Speichersystem ONTAP 9.18.1 oder höher ausgeführt wird, verwenden Sie die link:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"]. Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie das manuelle Boot-Wiederherstellungsverfahren verwenden.
 
+[NOTE]
+====
+NetApp empfiehlt dringend, die Protokollierung auf den Geräten, mit denen Sie arbeiten, zu aktivieren und bei der Durchführung dieses Verfahrens die folgenden Maßnahmen zu ergreifen:
+
+* Lassen Sie AutoSupport während Ihrer Wartung aktiviert. So kann der NetApp Support bei Problemen Diagnoseinformationen erhalten.
+* Aktivieren Sie die Protokollierung für alle CLI-Sitzungen. Dadurch wird ein vollständiges Protokoll aller Befehle und Systemausgaben während der Wartungsaktivität erstellt. Hinweise zur Aktivierung der Sitzungsprotokollierung finden Sie unter  https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_configure_PuTTY_for_optimal_connectivity_to_ONTAP_systems["Wie konfiguriert man PuTTY für eine optimale Verbindung zu ONTAP-Systemen"^].
+
+
+====
 .USB-Speicherstick
 * Stellen Sie sicher, dass Sie einen USB-Stick haben, der auf FAT32 formatiert ist.
 * Der USB-Stick muss über ausreichend Speicherkapazität verfügen, um die  `image_xxx.tgz` Datei.

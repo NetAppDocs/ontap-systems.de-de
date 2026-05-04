@@ -15,6 +15,15 @@ Stellen Sie vor dem Austausch des Controllers in Ihrem AFF C30- oder AFF C60-Spe
 
 Überprüfen Sie die Anforderungen und Überlegungen beim Austausch des Controllers.
 
+[NOTE]
+====
+NetApp empfiehlt dringend, die Protokollierung auf den Geräten, mit denen Sie arbeiten, zu aktivieren und bei der Durchführung dieses Verfahrens die folgenden Maßnahmen zu ergreifen:
+
+* Lassen Sie AutoSupport während Ihrer Wartung aktiviert. So kann der NetApp Support bei Problemen Diagnoseinformationen erhalten.
+* Aktivieren Sie die Protokollierung für alle CLI-Sitzungen. Dadurch wird ein vollständiges Protokoll aller Befehle und Systemausgaben während der Wartungsaktivität erstellt. Hinweise zur Aktivierung der Sitzungsprotokollierung finden Sie unter  https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_configure_PuTTY_for_optimal_connectivity_to_ONTAP_systems["Wie konfiguriert man PuTTY für eine optimale Verbindung zu ONTAP-Systemen"^].
+
+
+====
 
 
 == Anforderungen
@@ -24,10 +33,6 @@ Stellen Sie vor dem Austausch des Controllers in Ihrem AFF C30- oder AFF C60-Spe
 * Wenn sich Ihr System in einer MetroCluster-Konfiguration befindet, müssen Sie den Abschnitt überprüfen https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/concept_choosing_the_correct_recovery_procedure_parent_concept.html["Auswahl des richtigen Wiederherstellungsverfahrens"] Um zu bestimmen, ob Sie dieses Verfahren verwenden sollten.
 * Sie müssen einen Controller durch einen Controller desselben Modelltyps ersetzen. Sie können Ihr System nicht aktualisieren, indem Sie einfach den Controller austauschen.
 * Im Rahmen dieses Verfahrens können keine Laufwerke oder Shelfs geändert werden.
-* Sie müssen immer die Konsolenausgabe des Controllers in einer Textprotokolldatei erfassen.
-+
-Die Konsolenausgabe enthält eine Aufzeichnung des Verfahrens, mit dem Sie Probleme beheben können, die während des Austauschvorgangs auftreten können.
-
 
 
 

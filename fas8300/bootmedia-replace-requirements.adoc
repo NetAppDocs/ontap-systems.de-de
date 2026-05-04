@@ -11,10 +11,19 @@ summary: Stellen Sie vor dem Austausch des Bootmediums in Ihrem FAS8300 und FAS8
 
 
 [role="lead"]
-Stellen Sie vor dem Austausch des Bootmediums in Ihrem FAS8300 oder FAS8700 -System sicher, dass Sie die notwendigen Voraussetzungen für einen erfolgreichen Austausch erfüllen. Stellen Sie dazu sicher, dass Sie über einen USB-Stick mit ausreichend Speicherplatz verfügen und dass Sie das richtige Ersatz-Bootmedium verwenden.
+Bevor Sie das Bootmedium in Ihrem FAS8300 oder FAS8700-System austauschen, stellen Sie sicher, dass alle Voraussetzungen für einen erfolgreichen Austausch erfüllt sind. Dazu gehört die Überprüfung, ob Sie das richtige Ersatz-Bootmedium verwenden, ob der e0S (e0M wrench) Port am betroffenen Controller nicht defekt ist und ob Onboard Key Manager (OKM) oder External Key Manager (EKM) aktiviert ist.
 
 Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie das manuelle Boot-Wiederherstellungsverfahren verwenden.
 
+[NOTE]
+====
+NetApp empfiehlt dringend, die Protokollierung auf den Geräten, mit denen Sie arbeiten, zu aktivieren und bei der Durchführung dieses Verfahrens die folgenden Maßnahmen zu ergreifen:
+
+* Lassen Sie AutoSupport während Ihrer Wartung aktiviert. So kann der NetApp Support bei Problemen Diagnoseinformationen erhalten.
+* Aktivieren Sie die Protokollierung für alle CLI-Sitzungen. Dadurch wird ein vollständiges Protokoll aller Befehle und Systemausgaben während der Wartungsaktivität erstellt. Hinweise zur Aktivierung der Sitzungsprotokollierung finden Sie unter  https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_configure_PuTTY_for_optimal_connectivity_to_ONTAP_systems["Wie konfiguriert man PuTTY für eine optimale Verbindung zu ONTAP-Systemen"^].
+
+
+====
 .USB-Speicherstick
 * Stellen Sie sicher, dass Sie einen USB-Stick haben, der auf FAT32 formatiert ist.
 * Der USB-Stick muss über ausreichend Speicherkapazität verfügen, um die  `image_xxx.tgz` Datei.

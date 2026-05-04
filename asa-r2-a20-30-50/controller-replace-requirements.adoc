@@ -15,6 +15,15 @@ Stellen Sie vor dem Austausch des Controllers in Ihrem ASA A20-, ASA A30- oder A
 
 Sie müssen die Anforderungen und Überlegungen für den Controller-Austausch überprüfen.
 
+[NOTE]
+====
+NetApp empfiehlt dringend, die Protokollierung auf den Geräten, mit denen Sie arbeiten, zu aktivieren und bei der Durchführung dieses Verfahrens die folgenden Maßnahmen zu ergreifen:
+
+* Lassen Sie AutoSupport während Ihrer Wartung aktiviert. So kann der NetApp Support bei Problemen Diagnoseinformationen erhalten.
+* Aktivieren Sie die Protokollierung für alle CLI-Sitzungen. Dadurch wird ein vollständiges Protokoll aller Befehle und Systemausgaben während der Wartungsaktivität erstellt. Hinweise zur Aktivierung der Sitzungsprotokollierung finden Sie unter  https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_configure_PuTTY_for_optimal_connectivity_to_ONTAP_systems["Wie konfiguriert man PuTTY für eine optimale Verbindung zu ONTAP-Systemen"^].
+
+
+====
 
 
 == Anforderungen
@@ -23,10 +32,6 @@ Sie müssen die Anforderungen und Überlegungen für den Controller-Austausch ü
 * Der gesunde Regler muss in der Lage sein, den zu ersetzenden Regler zu übernehmen (bezeichnet in diesem Verfahren als „`eingeschränkte Steuerung`“).
 * Sie müssen einen Controller durch einen Controller desselben Modelltyps ersetzen. Sie können Ihr System nicht aktualisieren, indem Sie einfach den Controller austauschen.
 * Im Rahmen dieses Verfahrens können keine Laufwerke oder Shelfs geändert werden.
-* Sie müssen immer die Konsolenausgabe des Controllers in einer Textprotokolldatei erfassen.
-+
-Die Konsolenausgabe enthält eine Aufzeichnung des Verfahrens, mit dem Sie Probleme beheben können, die während des Austauschvorgangs auftreten können.
-
 
 
 

@@ -66,12 +66,6 @@ Sie können den folgenden Befehl eingeben, um den Fortschritt des Befehls saveco
 .. Zurück zur Administratorberechtigungsebene: `set -privilege admin`
 
 
-. Wenn Ihr Storage- oder Volume Encryption-System konfiguriert ist, müssen Sie die Funktionen für Storage oder Volume Encryption mithilfe eines der folgenden Verfahren wiederherstellen: Je nachdem, ob Sie integriertes oder externes Verschlüsselungsmanagement verwenden:
-+
-** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-onboard-key-management-encryption-keys-task.html["Wiederherstellung der integrierten Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"^]
-** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-external-encryption-keys-93-later-task.html["Wiederherstellung der externen Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"^]
-
-
 . Geben Sie den Controller zurück:
 +
 .. Geben Sie von dem ordnungsgemäßen Controller den Storage des ersetzten Controllers wieder: `storage failover giveback -ofnode _replacement_node_name_`
@@ -92,6 +86,12 @@ http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62
 +
 Die Ausgabe von der `storage failover show` Befehl sollte nicht die in der Partnernachricht geänderte System-ID enthalten.
 
+
+
+. Wenn Ihr Storage- oder Volume Encryption-System konfiguriert ist, müssen Sie die Funktionen für Storage oder Volume Encryption mithilfe eines der folgenden Verfahren wiederherstellen: Je nachdem, ob Sie integriertes oder externes Verschlüsselungsmanagement verwenden:
++
+** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-onboard-key-management-encryption-keys-task.html["Wiederherstellung der integrierten Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"^]
+** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-external-encryption-keys-93-later-task.html["Wiederherstellung der externen Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"^]
 
 
 . Überprüfen Sie, ob die Festplatten ordnungsgemäß zugewiesen wurden: `storage disk show -ownership`

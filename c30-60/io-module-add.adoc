@@ -11,11 +11,17 @@ summary: Ergänzen Sie Ihr AFF C30- oder AFF C60-Speichersystem um ein E/A-Modul
 
 
 [role="lead"]
-Fügen Sie Ihrem AFF C30- oder AFF C60-Speichersystem ein E/A-Modul hinzu, um die Netzwerkkonnektivität zu verbessern und die Fähigkeit Ihres Systems zur Verarbeitung des Datenverkehrs zu erweitern.
+Erweitern Sie Ihr AFF C30- oder AFF C60-Speichersystem um ein I/O-Modul, um die Netzwerkanbindung zu verbessern und die Fähigkeit Ihres Systems zur Handhabung des Datenverkehrs zu erweitern. Mit diesem Verfahren können Sie ein I/O-Modul entweder im Rahmen eines geplanten Upgrades an einem betriebsbereiten Controller oder während der Wartung an einem beeinträchtigten Controller hinzufügen.
 
 Sie können Ihrem AFF C30- und AFF C60-Speichersystem ein I/O-Modul hinzufügen, wenn Steckplätze verfügbar sind oder wenn alle Steckplätze vollständig belegt sind.
 
 .Über diese Aufgabe
+Diese Prozedur kann auf jedem der beiden Controller des HA-Paares durchgeführt werden, unabhängig davon, ob der Controller aktuell betriebsbereit oder beeinträchtigt ist. Da ein E/A-Modul nicht zu einem laufenden Controller hinzugefügt werden kann, muss der Zielcontroller vor der Installation des Moduls heruntergefahren werden. Der HA-Partner übernimmt während der Prozedur die Speicheroperationen, sodass die Daten für Clients weiterhin verfügbar bleiben.
+
+* Wenn der Zielcontroller *betriebsbereit* ist (geplante Erweiterung), befolgen Sie die Abschaltschritte wie beschrieben und behandeln Sie den Zielcontroller in diesem Inhalt als den "beeinträchtigten" Controller.
+* Falls der Zielcontroller *beeinträchtigt* ist, befolgen Sie die beschriebenen Schritte zum Herunterfahren.
+
+
 Bei Bedarf können Sie die LEDs des Speichersystems (blau) einschalten, um das betroffene Speichersystem physisch zu lokalisieren. Melden Sie sich über SSH bei der BMC an und geben Sie den Befehl ein `system location-led _on_`.
 
 Ein Speichersystem verfügt über drei Standort-LEDs: Eine auf dem Bedienfeld und eine auf jedem Controller. Die Standort-LEDs leuchten 30 Minuten lang.
@@ -24,7 +30,9 @@ Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led
 
 
 
-== Schritt 1: Schalten Sie das Controller-Modul für die gestörte Steuerung aus
+== Schritt 1: Das Zielsteuerungsmodul herunterfahren
+
+Übernehmen Sie das Ziel-Controller-Modul und fahren Sie es herunter, damit dessen HA-Partner weiterhin Daten bereitstellt, während Sie das I/O-Modul hinzufügen. Die verlinkten Schritte beziehen sich auf den herunterzufahrenden Controller als „beeinträchtigten“ Controller; die gleichen Schritte gelten unabhängig davon, ob Sie einen betriebsbereiten Controller für eine geplante Erweiterung übernehmen oder einen bereits beeinträchtigten Controller herunterfahren.
 
 [role="tabbed-block"]
 ====
@@ -43,7 +51,10 @@ Jeder Prozess des SCSI-Blades sollte sich im Quorum mit den anderen Nodes im Clu
 .Schritte
 . Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung:
 +
-`system node autosupport invoke -node * -type all -message MAINT=<# of hours>h`
+`system node autosupport invoke -node * -type all -message MAINT=<number of hours down>h`
+
++
+Dies verhindert, dass während Ihres geplanten Wartungsfensters automatisch Supportfälle eröffnet werden. Die maximale Unterdrückungsdauer beträgt 72 Stunden. Falls Ihre Wartung vorzeitig abgeschlossen ist, können Sie die Fallerstellung wieder aktivieren, indem Sie eine AutoSupport-Nachricht mit  `MAINT=END` auslösen. Weitere Informationen finden Sie unter  https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU92["Wie man die automatische Fallerstellung während geplanter Wartungsfenster unterdrückt"^].
 
 +
 Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden:
@@ -108,7 +119,10 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 .Schritte
 . Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung:
 +
-`system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
+`system node autosupport invoke -node * -type all -message MAINT=<number of hours down>h`
+
++
+Dies verhindert, dass während Ihres geplanten Wartungsfensters automatisch Supportfälle eröffnet werden. Die maximale Unterdrückungsdauer beträgt 72 Stunden. Falls Ihre Wartung vorzeitig abgeschlossen ist, können Sie die Fallerstellung wieder aktivieren, indem Sie eine AutoSupport-Nachricht mit  `MAINT=END` auslösen. Weitere Informationen finden Sie unter  https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU92["Wie man die automatische Fallerstellung während geplanter Wartungsfenster unterdrückt"^].
 
 +
 Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Cases für zwei Stunden:

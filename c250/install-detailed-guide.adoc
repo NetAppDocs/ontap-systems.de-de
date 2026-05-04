@@ -191,7 +191,7 @@ Verwenden Sie die Animation oder die tabellarischen Schritte, um die Verkabelung
 .Animation – Verkabeln Sie einen 2-Node-Cluster ohne Switches
 video::beec3966-0a01-473c-a5de-ac68017fbf29[panopto]
 .Schritte
-. Verkabeln Sie die Cluster Interconnect-Ports e0c mit e0c und e0d mit e0d mit den 25-GbE-Cluster Interconnect-Kabeln.
+. Verbinden Sie die Cluster-Interconnect-Ports e0c mit e0c und e0d mit e0d mit den 25-GbE-Cluster-Interconnect-Kabeln.
 +
 image:../media/oie_cable_sfp_gbe_copper.png["GbE SFP Kupfer Connector"]:
 
@@ -252,7 +252,7 @@ IMPORTANT: Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
 Sie verfügen über eine konfigurationsabhängige optionale Verkabelung mit den Fibre Channel- oder iSCSI-Hostnetzwerken oder dem Direct-Attached Storage. Diese Verkabelung ist nicht exklusiv; Sie können die Verkabelung zu einem Host-Netzwerk und Speicher haben.
 
 
-NOTE: link:https://hwu.netapp.com["NetApp Hardware Universe"^] Steckplatz-Priorität für Host-Netzwerkkarten (Fibre Channel oder 25 GbE) ist Steckplatz 2. Wenn Sie jedoch beide Karten haben, wird die Fibre Channel-Karte in Steckplatz 2 eingesetzt, und die 25GbE-Karte wird in Steckplatz 1 eingesetzt (wie in den Optionen unten gezeigt). Wenn Sie über ein externes Shelf verfügen, wird die Speicherkarte in Steckplatz 1 eingesetzt, der einzige unterstützte Steckplatz für Shelfs.
+NOTE: link:https://hwu.netapp.com["NetApp Hardware Universe"^] Die Priorität für Host-Netzwerkkarten (Fibre Channel oder 25 GbE) ist Steckplatz 2. Wenn jedoch beide Karten vorhanden sind, kommt die Fibre-Channel-Karte in Steckplatz 2 und die 25-GbE-Karte in Steckplatz 1 (wie in den untenstehenden Optionen gezeigt). Wenn Sie ein externes Shelf haben, kommt die Speicherkarte in Steckplatz 1, dem einzigen unterstützten Steckplatz für Shelves.
 
 [role="tabbed-block"]
 ====
@@ -283,9 +283,9 @@ image:../media/drw_affa250_fc_host_cabling.png["Fibre Channel-Hostverkabelung"]
 
 
 --
-.Option 2: Kabel zu einem 25-GbE-Daten- oder Hostnetzwerk
+.Option 2: Kabelverbindung zu einem 25 GbE-Daten- oder Hostnetzwerk
 --
-25-GbE-Ports auf den Controllern sind mit 25-GbE-Daten oder Host-Netzwerk-Switches verbunden.
+25-GbE-Ports an den Controllern sind mit 25-GbE-Daten- oder Host-Netzwerk-Switches verbunden.
 
 .Bevor Sie beginnen
 * Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.

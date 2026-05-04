@@ -13,6 +13,15 @@ summary: Stellen Sie vor dem Austausch der Startmedien in Ihrem AFF A1K-System s
 [role="lead"]
 Stellen Sie vor dem Austausch der Startmedien in Ihrem AFF A1K-System sicher, dass Sie die erforderlichen Voraussetzungen für einen erfolgreichen Austausch erfüllen. Dazu gehört, dass Sie ein USB-Flash-Laufwerk mit der entsprechenden Speichermenge haben und überprüfen, ob Sie das richtige Ersatz-Boot-Gerät haben.
 
+[NOTE]
+====
+NetApp empfiehlt dringend, die Protokollierung auf den Geräten, mit denen Sie arbeiten, zu aktivieren und bei der Durchführung dieses Verfahrens die folgenden Maßnahmen zu ergreifen:
+
+* Lassen Sie AutoSupport während Ihrer Wartung aktiviert. So kann der NetApp Support bei Problemen Diagnoseinformationen erhalten.
+* Aktivieren Sie die Protokollierung für alle CLI-Sitzungen. Dadurch wird ein vollständiges Protokoll aller Befehle und Systemausgaben während der Wartungsaktivität erstellt. Hinweise zur Aktivierung der Sitzungsprotokollierung finden Sie unter  https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_configure_PuTTY_for_optimal_connectivity_to_ONTAP_systems["Wie konfiguriert man PuTTY für eine optimale Verbindung zu ONTAP-Systemen"^].
+
+
+====
 .USB-Speicherstick
 * Stellen Sie sicher, dass Sie einen USB-Stick haben, der auf FAT32 formatiert ist.
 * Der USB-Stick muss über ausreichend Speicherkapazität verfügen, um die  `image_xxx.tgz` Datei.
