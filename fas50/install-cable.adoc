@@ -44,48 +44,41 @@ Wenn Sie Ihre Konfiguration hier nicht sehen, finden Sie unter link:https://hwu.
 ====
 .Cluster-Verkabelung ohne Switch
 --
+Verwenden Sie diese Verkabelungsoption, wenn die beiden Controller direkt miteinander verbunden sind, ohne Netzwerk-Switches für das Cluster zu verwenden.
+
 .FAS50 mit einem 40/100 GbE I/O-Modul mit 2 Ports
-[%collapsible]
-=====
-.Schritte
-. Verkabeln der Cluster/HA Interconnect-Verbindungen:
-+
+Verkabeln Sie die Cluster/HA-Interconnect-Ports am I/O-Modul in Steckplatz 4.
+
 
 NOTE: Der Cluster-Interconnect-Verkehr und der HA-Verkehr teilen sich dieselben physischen Ports (auf dem I/O-Modul in Steckplatz 4). Die Ports sind 40/100 GbE.
 
-+
-.. Kabel-Controller A-Anschluss e4a zu Controller B-Anschluss e4a.
-.. Kabel Controller A-Port e4b zu Controller B-Port e4b.
-+
+.Schritte
+. Kabel-Controller A-Anschluss e4a zu Controller B-Anschluss e4a.
+. Kabel Controller A-Port e4b zu Controller B-Port e4b.
+
+
 *100 GbE Cluster/HA Interconnect-Kabel*
 
-+
 image::../media/oie_cable100_gbe_qsfp28.png[Cluster HA 100-GbE-Kabel]
 
-+
 image::../media/drw_isi_fas50_switchless_2p_100gbe_cabling_ieops-1937.svg[Diagramm der Switch-losen Cluster-Verkabelung mit einem 100-gbe-io-Modul]
 
-
-
-
-
-=====
 --
 .Switch-Cluster-Verkabelung
 --
+Verwenden Sie diese Verkabelungsoption, wenn die Controller an Cluster-Netzwerk-Switches angeschlossen sind, anstatt direkt miteinander verbunden zu sein.
+
 .FAS50 mit einem 40/100 GbE I/O-Modul mit 2 Ports
-[%collapsible]
-=====
-. Verkabeln Sie die Controller mit den Cluster-Netzwerk-Switches:
-+
+Verbinden Sie die Cluster/HA-Verbindungsports am E/A-Modul in Steckplatz 4 mit den Cluster-Netzwerk-Switches.
+
 
 NOTE: Der Cluster-Interconnect-Verkehr und der HA-Verkehr teilen sich dieselben physischen Ports (auf dem I/O-Modul in Steckplatz 4). Die Ports sind 40/100 GbE.
 
-+
-.. Verbinden Sie Controller A-Port e4a mit Cluster-Netzwerk-Switch A.
-.. Verbinden Sie den Controller A-Port e4b mit dem Cluster-Netzwerk-Switch B.
-.. Verbinden Sie Controller B-Port e4a mit Cluster-Netzwerk-Switch A.
-.. Verbinden Sie Controller B-Port e4b mit Cluster-Netzwerk-Switch B.
+.Schritte
+. Verbinden Sie Controller A-Port e4a mit Cluster-Netzwerk-Switch A.
+. Verbinden Sie den Controller A-Port e4b mit dem Cluster-Netzwerk-Switch B.
+. Verbinden Sie Controller B-Port e4a mit Cluster-Netzwerk-Switch A.
+. Verbinden Sie Controller B-Port e4b mit Cluster-Netzwerk-Switch B.
 +
 *40/100 GbE Cluster/HA Interconnect-Kabel*
 
@@ -97,9 +90,6 @@ image:../media/drw_isi_fas50_2p_100gbe_switched_cluster_cabling_ieops-1936.svg["
 
 
 
-
-
-=====
 --
 ====
 
@@ -119,62 +109,44 @@ Wenn Sie Ihre Konfiguration hier nicht sehen, finden Sie unter link:https://hwu.
 ====
 .Ethernet-Hostverkabelung
 --
+Verbinden Sie die Controller über die entsprechenden Ports gemäß Ihrer I/O-Modulkonfiguration mit Ihrem Ethernet-Hostnetzwerk.
+
 .FAS50 mit einem 10/25 GbE I/O-Modul mit 4 Ports
-[%collapsible]
-=====
-.Schritte
-. Verkabeln Sie bei jedem Controller die Ports e2a, e2b, e2c und e2d mit den Ethernet-Host-Netzwerk-Switches.
-+
+Verkabeln Sie bei jedem Controller die Ports e2a, e2b, e2c und e2d mit den Ethernet-Host-Netzwerk-Switches.
+
 *10/25-GbE-Kabel*
 
-+
 image:../media/oie_cable_sfp_gbe_copper.png["GbE SFP Kupfer Connector, Breite=100px"]
 
-+
 image::../media/drw_isi_fas50_4p_25gbe_optional_cabling_ieops-1934.svg[Kabel fas50 zu 10/25 GbE Ethernet-Host-Netzwerk-Switches]
 
-
-
-=====
 --
 .FC-Host-Verkabelung
 --
+Verbinden Sie die Controller über das FC I/O-Modul Ihres Systems mit Ihrem Fibre Channel-Hostnetzwerk.
+
 .FAS50 mit einem 64-Gbit/s-FC-I/O-Modul mit 4 Ports
-[%collapsible]
-=====
-.Schritte
-. Verbinden Sie an jedem Controller die Ports 2a, 2b, 2c und 2d mit den FC-Host-Netzwerk-Switches.
-+
+Verbinden Sie an jedem Controller die Ports 2a, 2b, 2c und 2d mit den FC-Host-Netzwerk-Switches.
+
 *64 Gbit/s FC-Kabel*
 
-+
 image:../media/oie_cable_sfp_gbe_copper.png["64-GB-fc-Kabel, Breite=100 px"]
 
-+
 image::../media/drw_isi_fas50_4p_64gb_fc_optional_cabling_ieops-1935.svg[Verkabelung zu 64 gb fc Host Netzwerk-Switches]
 
-
-
-=====
 --
 ====
 
 
 == Schritt 3: Verkabelung der Management-Netzwerkverbindungen
 
-Verkabeln Sie die Controller mit dem Managementnetzwerk.
+Verkabeln Sie die Managementports (Schraubenschlüssel) an jedem Controller mit den Managementnetzwerk-Switches.
 
-. Verkabeln Sie die Managementports (Schraubenschlüssel) an jedem Controller mit den Managementnetzwerk-Switches.
-+
 * 1000BASE-T RJ-45 KABEL*
 
-+
 image::../media/oie_cable_rj45.png[RJ-45-Kabel]
 
-+
 image::../media/drw_isi_fas50_wrench_cabling_ieops-1938.svg[Stellen Sie eine Verbindung mit dem Managementnetzwerk her]
-
-
 
 
 IMPORTANT: Stecken Sie die Netzkabel noch nicht ein.
@@ -201,26 +173,20 @@ image::../media/oie_cable_mini_sas_hd_to_mini_sas_hd.svg[Mini-SAS-HD-Kabel]
 
 
 
-[role="tabbed-block"]
-====
-.Option 1: Ein DS460C Shelf
---
+
+
+=== Ein DS460C-Regal
+
 Verkabeln Sie jeden Controller mit jedem IOM12-Modul im DS460C Shelf.
 
 .Schritte
-. Controller A am Shelf verkabeln:
-+
-.. Verbinden Sie Controller A-Port 3a mit IOMA-Port 1.
-.. Verbinden Sie Controller A-Port 3d mit IOMB-Port 3.
+. Verbinden Sie Controller A-Port 3a mit IOMA-Port 1.
+. Verbinden Sie Controller A-Port 3d mit IOMB-Port 3.
 +
 image:../media/drw_isi_fas50_1_ds460c_controller_a_cabling_ieops-2167.svg["Controller A-Ports 3a und 3d sind mit einem DS460C Shelf verbunden"]
 
-
-
-. Controller B am Shelf verkabeln:
-+
-.. Verbinden Sie Controller B-Port 3a mit IOMB-Port 1.
-.. Kabel Controller B Port 3d zu IOMA Port 3.
+. Verbinden Sie Controller B-Port 3a mit IOMB-Port 1.
+. Kabel Controller B Port 3d zu IOMA Port 3.
 +
 image:../media/drw_isi_fas50_1_ds460c_controller_b_cabling_ieops-2169.svg["Controller B-Ports 3a und 3d, die mit einem DS460C Shelf verbunden sind"]
 
@@ -228,41 +194,26 @@ image:../media/drw_isi_fas50_1_ds460c_controller_b_cabling_ieops-2169.svg["Contr
 
 
 
---
-.Option 2: Zwei DS460C Shelfs
---
+=== Zwei DS460C-Regale
+
 Schließen Sie jeden Controller an die IOM12-Module auf beiden DS460C Shelfs an.
 
-. Verkabeln Sie die Shelf-zu-Shelf-Verbindungen:
-+
-.. Verkabeln Sie Shelf 1 IOMA-Port 3 zu Shelf 2 IOMA-Port 1.
-.. Verkabeln Sie Shelf 1 IOMB-Port 3 zu Shelf 2 IOMB-Port 1.
+. Verkabeln Sie Shelf 1 IOMA-Port 3 zu Shelf 2 IOMA-Port 1.
+. Verkabeln Sie Shelf 1 IOMB-Port 3 zu Shelf 2 IOMB-Port 1.
 +
 image:../media/drw_isi_fas50_2_ds460c_shelf_to_shelf_ieops-2172.svg["Verkabelung von Shelf- zu Shelf-Verbindungen"]
 
-
-
-. Verbinden Sie Controller A mit den Shelfs:
-+
-.. Verkabeln Sie Controller A-Port 3a mit Shelf 1 IOMA-Port 1.
-.. Verbinden Sie Controller A-Port 3d mit Shelf 2 IOMB-Port 3.
+. Verkabeln Sie Controller A-Port 3a mit Shelf 1 IOMA-Port 1.
+. Verbinden Sie Controller A-Port 3d mit Shelf 2 IOMB-Port 3.
 +
 image:../media/drw_isi_fas50_2_ds460c_controller_a_cabling_ieops-2170.svg["Controller A-Ports 3a und 3d, verkabelt mit zwei DS460C Shelfs"]
 
-
-
-. Controller B mit den Shelfs verkabeln:
-+
-.. Verkabeln Sie Controller B, Port 3a, mit Shelf 1, IOMB-Port 1.
-.. Verbinden Sie Controller B-Port 3d mit Shelf 2 IOMA-Port 3.
+. Verkabeln Sie Controller B, Port 3a, mit Shelf 1, IOMB-Port 1.
+. Verbinden Sie Controller B-Port 3d mit Shelf 2 IOMA-Port 3.
 +
 image:../media/drw_isi_fas50_2_ds460c_controller_b_cabling_ieops-2171.svg["Controller B-Ports 3a und 3d, verkabelt mit zwei DS460C Shelfs"]
 
 
 
-
-
---
-====
 .Was kommt als Nächstes?
 Nachdem Sie die Hardware für Ihr Speichersystem verkabelt haben, können Sie link:install-power-hardware.html["Schalten Sie das Speichersystem ein"].
