@@ -1,0 +1,38 @@
+= 
+:allow-uri-read: 
+
+
+Wenn Sie einem A400- oder C400-HA-Paar ein zweites Shelf im laufenden Betrieb hinzufügen, müssen Sie das erste Shelf über zwei Sätze von RoCE-fähigen Ports an jedem Controller neu verkabeln.
+
+* Bei der A400 wird davon ausgegangen, dass das vorhandene Shelf mit den RoCE-fähigen Onboard-Ports e0c/e0d an jedem Controller verkabelt ist und dass Sie zwischen Onboard e0c/e0d und Steckplatz 5 umverkabeln.
+* Für den C400 wird davon ausgegangen, dass das vorhandene Shelf mit RoCE-fähigen Ports in Slot 4 an jedem Controller verkabelt ist und dass Sie zwischen Slot 4 und Slot 5 umverkabeln.
+
+
+.Schritte
+. Je nach System führen Sie einen der folgenden Schritte aus:
++
+** Auf der A400:
++
+Das erste Shelf kann auf jedem Controller über die beiden Sätze von RoCE-fähigen Ports hinweg, Onboard e0c/e0d und in Steckplatz 5, wieder verwendet werden.
+
++
+... Bewegen Sie das Kabel an Controller A von Port e0d nach Steckplatz 5 Port b (e5b).
+... Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
+
+
+** Auf der C400:
++
+Wiederbesorgen des ersten Shelf über die beiden RoCE-fähigen Ports in Steckplatz 4 und Steckplatz 5 auf jedem Controller
+
++
+... Bringen Sie das Kabel an Controller A von Steckplatz 4 Port A (e4a) in Steckplatz 5 Port b (e5b).
+... Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
+
+
+
+
+. Überprüfen Sie mit https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^].
++
+Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
+
+

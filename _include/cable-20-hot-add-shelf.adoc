@@ -2,12 +2,6 @@
 :allow-uri-read: 
 
 
-.Bevor Sie beginnen
-* Sie müssen die überprüft haben link:requirements-hot-add-shelf.html["Hot-Add-Anforderungen und Best Practices"].
-* Sie müssen die entsprechenden Verfahren in abgeschlossen haben link:prepare-hot-add-shelf.html["Bei laufendem Betrieb ein Shelf hinzufügen"].
-* Sie müssen die Shelfs installiert, eingeschaltet und die Shelf-IDs wie in festgelegt haben link:prepare-hot-add-shelf.html["Installieren Sie ein Shelf für ein Hot-Add-System"].
-
-
 .Über diese Aufgabe
 * Bei diesem Verfahren wird vorausgesetzt, dass das HA-Paar nur über internen Storage verfügt (keine externen Shelves) und dass Sie bei laufendem Betrieb zu einem zusätzlichen Shelf hinzufügen.
 * Dieses Verfahren behandelt die folgenden Hot-Add-Szenarien:
@@ -83,8 +77,3 @@ image::../media/drw_ns224_g_1shelf_2card_ieops-2005.svg[Verkabelung für AFF/ASA
 Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
 
 
-
-.Was kommt als Nächstes?
-Wenn Sie die automatische Laufwerkszuweisung als Teil der Vorbereitung für dieses Verfahren deaktiviert haben, müssen Sie manuell die Laufwerkseigentümer festlegen und die automatische Laufwerkszuweisung ggf. erneut aktivieren. Gehen Sie zu link:complete-hot-add-shelf.html["Füllen Sie das Hot Add aus"].
-
-Andernfalls müssen Sie das Hot-Add-Regal verwenden.

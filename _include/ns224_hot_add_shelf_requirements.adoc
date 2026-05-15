@@ -1,0 +1,30 @@
+= Anforderungen
+:allow-uri-read: 
+
+
+
+
+== Anforderungen
+
+Ihr HA-Paar muss die folgenden Anforderungen erfüllen, um ein NS224-Shelf im laufenden Betrieb hinzuzufügen.
+
+Unterstützte ONTAP Version:: Ihr Plattformmodell und Ihre ONTAP-Version müssen das NS224-Shelf und die Laufwerke, die Sie im laufenden Betrieb hinzufügen, unterstützen. Siehe  https://hwu.netapp.com["NetApp Hardware Universe"^].
+Anzahl der Regale:: Ihr HA-Paar muss mindestens ein zusätzliches Shelf über die aktuell installierte Anzahl hinaus unterstützen. Nach dem Hinzufügen weiterer Shelfs darf die maximale Anzahl der von Ihrem HA-Paar unterstützten Shelfs nicht überschritten werden. Siehe https://hwu.netapp.com["NetApp Hardware Universe"^].
+Verkabelung:: Sie benötigen die korrekte Anzahl und den richtigen Typ von Kabeln, um das Shelf anzuschließen. Wenn Sie ein Shelf zu einem HA-Paar hinzufügen, das bereits ein NS224 Shelf besitzt, muss Ihr HA-Paar als Multipath HA ohne Speicherverkabelungsfehler verkabelt sein.
++
+--
+Führen Sie  https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^] aus, um Fehlermeldungen zur Speicherverkabelung und entsprechende Korrekturmaßnahmen anzuzeigen. Siehe  https://hwu.netapp.com["NetApp Hardware Universe"^] für Kabelanforderungen.
+
+--
+
+
+
+
+== Best Practices in sich vereint
+
+Machen Sie sich mit den folgenden Best Practices vertraut, bevor Sie ein NS224-Shelf im laufenden Betrieb hinzufügen.
+
+Disk Qualification Package:: Installieren Sie die aktuelle Version des  https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["Disk Qualification Package"^] bevor Sie ein Shelf im laufenden Betrieb hinzufügen. Die Installation der aktuellen DQP-Version ermöglicht es Ihrem System, neu qualifizierte Laufwerke zu erkennen und zu verwenden, verhindert Systemmeldungen zu veralteten Laufwerksinformationen und beugt Partitionierungsfehlern aufgrund nicht erkannter Laufwerke vor. Das DQP benachrichtigt Sie außerdem über veraltete Laufwerksfirmware.
+Active IQ Config Advisor:: Führen Sie  https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^] vor und nach dem Hinzufügen eines Shelfs im laufenden Betrieb aus. Die Ausführung vor dem Hinzufügen liefert eine Momentaufnahme der bestehenden Shelf-Ethernet-Konnektivität, überprüft die NSM-Firmware-Versionen und identifiziert bereits verwendete Shelf-IDs. Die Ausführung nach dem Hinzufügen überprüft, ob die Shelfs korrekt verkabelt sind und die Shelf-IDs innerhalb des HA-Paares eindeutig sind.
+NSM- und Laufwerksfirmware:: Installieren Sie die aktuellen Versionen von  https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NSM-Firmware (NVMe-Shelf-Modul)"^] und  https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Festplatten-Firmware"^] auf Ihrem Speichersystem, bevor Sie ein neues Shelf hinzufügen. Setzen Sie die Firmware nicht auf eine Version zurück, die Ihr Shelf und dessen Komponenten nicht unterstützt.
+

@@ -1,0 +1,33 @@
+---
+permalink: ns224/hot-add-aff-cable-overview.html 
+sidebar: sidebar 
+keywords: ns224, shelves, shelf, ns224 shelves, hot-add, ha, pair, aff systems, cable 
+summary: Verbinden Sie Ihr NS224-Regal per Kabel mit Ihrem AFF System, um eine Dual-Path-Konnektivität zu gewährleisten, die Speicherredundanz und hohe Verfügbarkeit für das HA-Paar sicherstellt. 
+---
+= Verbinden Sie ein NS224-Regal per Kabel mit Ihrem AFF System
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Verbinden Sie Ihr NS224-Regal per Kabel mit Ihrem AFF System, um eine Dual-Path-Konnektivität zu gewährleisten, die Speicherredundanz und hohe Verfügbarkeit für das HA-Paar sicherstellt.
+
+
+
+== Verkabelungsübersicht für AFF-Systeme
+
+Die Verkabelung unterscheidet sich je nach AFF-Plattformmodell, da jedes System über einzigartige Portzuordnungen und E/A-Modulkonfigurationen verfügt.
+
+Beim Hot-Add-Verkabelungsvorgang verbinden Sie jedes NS224 Shelf mit beiden Controllern im HA-Paar:
+
+* Jedes Shelf-NSM-Modul ist mit einem dedizierten Speicherport an jedem Controller verbunden, wodurch pro Shelf zwei Pfade entstehen (einer über NSM A, einer über NSM B).
+* Diese Dual-Path-Konfiguration bietet Speicherredundanz und gewährleistet den fortgesetzten Datenzugriff, falls ein einzelner Pfad ausfällt.
+* Über Kabel werden die NSM e0a/e0b-Ports (NSM100) bzw. e1a/e1b-Ports (NSM100B) der Gehäuse mit den RoCE-fähigen Speicherports der Controller verbunden.
+
+
+
+
+== Zusätzliche Ressourcen
+
+Ihr Hardwaresystem ist möglicherweise sowohl mit NS224-Einschüben mit NSM100-Modulen als auch mit NS224-Einschüben mit NSM100B-Modulen kompatibel. Ausführliche Informationen zu den Portnamen und Konfigurationsdetails finden Sie unter  https://hwu.netapp.com["NetApp Hardware Universe"^].

@@ -1,0 +1,21 @@
+= 
+:allow-uri-read: 
+
+
+.Schritte
+. Verkabeln Sie das Shelf mit den Controllern.
++
+.. Verbinden Sie NSM A Port e0a mit Controller A Port e0e.
+.. Kabel NSM A Port e0b an Controller B Port e0b.
+.. Verbinden Sie den NSM B-Port e0a mit Controller B-Port e0e.
+.. Kabel NSM B Port e0b für Controller A Port e0b. + die folgende Abbildung zeigt die Verkabelung für das Hot-Added Shelf (Shelf 2):
++
+image::../media/drw_ns224_a320_2shelves_direct_attached.png[Verkabelung für einen AFF A320 mit zwei NS224-Shelfs und drei integrierten Ports]
+
+
+
+. Überprüfen Sie mit https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^].
++
+Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
+
+

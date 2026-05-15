@@ -1,0 +1,33 @@
+= 
+:allow-uri-read: 
+
+
+Wenn Sie im laufenden Betrieb weitere Shelfs zu einem A1K HA-Paar hinzufügen, müssen Sie die vorhandenen Shelfs neu verkabeln, um die Konnektivität über mehrere RoCE-fähige I/O-Module hinweg auszugleichen.
+
+* Wenn Sie ein zweites Shelf im laufenden Betrieb hinzufügen, muss das erste Shelf über die Steckplätze 11 und 10 neu verkabelt werden. Für ein zweites Shelf wird davon ausgegangen, dass das vorhandene Shelf an jedem Controller mit einem RoCE-fähigen E/A-Modul in Steckplatz 11 verkabelt ist.
+* Wenn Sie ein viertes Regal im laufenden Betrieb hinzufügen, muss das dritte Regal zwischen den Steckplätzen 9 und 8 neu verkabelt werden. Für ein viertes Regal wird davon ausgegangen, dass das dritte Regal an jedem Controller mit Steckplatz 9 verbunden ist.
+* Wenn Sie ein drittes Shelf im laufenden Betrieb hinzufügen und in jedem Controller ein drittes oder viertes RoCE-fähiges I/O-Modul installieren, wird das dritte Shelf nur mit dem dritten bzw. dem dritten und vierten I/O-Modul verkabelt. Sie müssen keine vorhandenen Shelfs neu verkabeln, daher können Sie dieses Verfahren überspringen.
+
+
+.Schritte
+. Führen Sie einen der folgenden Schritte aus, wenn Sie ein zweites oder ein viertes Shelf im laufenden Betrieb hinzufügen.
++
+** Wenn Sie während des laufenden Betriebs ein zweites Shelf hinzufügen, können Sie das erste Shelf über die RoCE-fähigen I/O-Module in Steckplatz 11 und Steckplatz 10 auf jedem Controller neu anschaffen.
++
+... Am Controller A verlegen Sie das Kabel von Steckplatz 11 Port b (e11b) zu Steckplatz 10 Port b (e10b).
+... Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
+
+
+** Wenn Sie ein viertes Shelf während des laufenden Betriebs hinzufügen, können Sie das dritte Shelf über die RoCE-fähigen I/O-Module in Steckplatz 9 und Steckplatz 8 auf jedem Controller umverteilen.
++
+... Verlegen Sie am Controller A das Kabel von Slot 9 Port b (e9b) zu Slot 8 Port b (e8b).
+... Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
+
+
+
+
+. Überprüfen Sie mit https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^].
++
+Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
+
+

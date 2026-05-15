@@ -1,0 +1,28 @@
+---
+permalink: ns224/hot-add-aff-prepare.html 
+sidebar: sidebar 
+keywords: ns224, shelves, shelf, ns224 shelves, hot-add, ha, pair, aff systems, preparation 
+summary: Bereiten Sie sich auf das Hot-Add eines NS224-Shelfs zu Ihrem AFF-System vor, indem Sie RoCE-fähige PCIe-Karten oder I/O-Module installieren, Ports konfigurieren, vorhandene Shelfs neu verkabeln und gegebenenfalls die automatische Laufwerkszuweisung deaktivieren. 
+---
+= Übersicht über die Vorbereitung zum Hot-Add eines NS224-Einschubs zu Ihrem AFF System
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bereiten Sie sich auf das Hinzufügen von NS224-Einschüben im laufenden Betrieb zu Ihrem AFF System vor, indem Sie sicherstellen, dass ausreichend RoCE-fähige Speicherports vorhanden sind, diese für die Speichernutzung konfigurieren und Ihre bestehende Konfiguration für den neuen Einschub optimieren.
+
+
+
+== Was ist vorzubereiten
+
+Die Vorbereitung des Hot-Add-Vorgangs von NS224-Einschüben zu Ihrem AFF-System umfasst die Überprüfung und Konfiguration der Speicherkonnektivitätsinfrastruktur vor der physischen Installation der neuen Einschübe. Diese Schritte gewährleisten, dass Ihr HA-Paar über die erforderlichen RoCE-fähigen Ethernet-Ports verfügt und Ihr System für die Unterstützung zusätzlicher Speicherkapazität konfiguriert ist.
+
+Die konkreten Vorbereitungsaufgaben, die Sie erledigen müssen, hängen von Ihrem Plattformmodell, Ihrer aktuellen Konfiguration und der Anzahl der Shelves ab, die Sie hinzufügen:
+
+Installieren Sie RoCE-fähige PCIe-Karten oder I/O-Module:: Stellen Sie sicher, dass Ihr System über ausreichend RoCE-fähige Ethernet-Ports verfügt (zwei pro Shelf an jedem Controller). Falls zusätzliche Ports benötigt werden, installieren Sie RoCE-fähige PCIe-Karten oder I/O-Module in den richtigen Controller-Steckplätzen.
+RoCE-fähige Ports für die Storage-Verwendung konfigurieren:: Wenn Sie nicht dedizierte RoCE-fähige Ports zum Anschluss des NS224-Einschubs verwenden, konfigurieren Sie diese Ports für die Speichernutzung anstatt für die Netzwerknutzung. Dies ist ein unterbrechungsfreies Verfahren.
+Wiederverskaufbarkeit vorhandener Shelves:: Bei einigen Plattformmodellen kann es erforderlich sein, ein vorhandenes Gehäuse über zwei Portgruppen in verschiedenen Steckplätzen neu zu verkabeln, um eine Ausfallsicherheit gegen Steckplatzausfälle nach der Installation zusätzlicher RoCE-fähiger PCIe-Karten oder I/O-Module zu gewährleisten.
+Automatische Laufwerkszuordnung deaktivieren:: Wenn Sie die Laufwerkszuordnung manuell vornehmen möchten, deaktivieren Sie die automatische Laufwerkszuordnung, bevor Sie Regale im laufenden Betrieb hinzufügen.
+

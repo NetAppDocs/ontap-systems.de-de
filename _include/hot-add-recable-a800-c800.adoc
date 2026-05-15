@@ -1,0 +1,20 @@
+= 
+:allow-uri-read: 
+
+
+Wenn Sie ein zweites Shelf im laufenden Betrieb zu einem A800- oder C800-HA-Paar hinzufügen, müssen Sie das erste Shelf über die beiden Sätze von RoCE-fähigen Ports in Steckplatz 5 und Steckplatz 3 an jedem Controller neu verkabeln.
+
+Bei diesem Verfahren wird davon ausgegangen, dass das vorhandene Shelf mit RoCE-fähigen PCIe-Karten in Steckplatz 5 jedes Controllers verkabelt ist.
+
+.Schritte
+. Verbinden Sie die erste Ablage über die beiden Sätze von RoCE-fähigen Ports in Slot 5 und Slot 3 an jedem Controller.
++
+.. Bewegen Sie das Kabel an Controller A von Steckplatz 5 Port b (e5b) in Steckplatz 3 Port b (e3b).
+.. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
+
+
+. Überprüfen Sie mit https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^].
++
+Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
+
+

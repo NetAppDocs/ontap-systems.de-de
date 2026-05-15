@@ -1,0 +1,19 @@
+= 
+:allow-uri-read: 
+
+
+Wenn Sie sich nicht sicher sind, ob Sie die Laufwerkseigentümer manuell zuweisen oder die automatische Zuweisung der Laufwerkseigentumsrichtlinien für Ihr Speichersystem verstehen möchten, gehen Sie zu https://docs.netapp.com/us-en/ontap/disks-aggregates/disk-autoassignment-policy-concept.html["Allgemeines zur automatischen Zuweisung der Festplatteneigentümer"^].
+
+.Schritte
+. Überprüfen Sie, ob die automatische Laufwerkszuweisung aktiviert ist: `storage disk option show`
++
+Sie können für beide Nodes den Befehl eingeben.
+
++
+Wenn die automatische Laufwerkszuordnung aktiviert ist, zeigt die Ausgabe  `on` in der  `Auto Assign` Spalte für jeden Knoten an.
+
+. Wenn die automatische Laufwerkszuweisung aktiviert ist, deaktivieren Sie sie: `storage disk option modify -node _node_name_ -autoassign off`
++
+Sie müssen die automatische Laufwerkszuweisung auf beiden Nodes deaktivieren.
+
+

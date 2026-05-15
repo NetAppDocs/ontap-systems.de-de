@@ -2,12 +2,6 @@
 :allow-uri-read: 
 
 
-.Bevor Sie beginnen
-* Sie müssen die überprüft haben link:requirements-hot-add-shelf.html["Hot-Add-Anforderungen und Best Practices"].
-* Sie müssen die entsprechenden Verfahren in abgeschlossen haben link:prepare-hot-add-shelf.html["Bei laufendem Betrieb ein Shelf hinzufügen"].
-* Sie müssen die Shelfs installiert, eingeschaltet und die Shelf-IDs wie in festgelegt haben link:prepare-hot-add-shelf.html["Installieren Sie ein Shelf für ein Hot-Add-System"].
-
-
 .Über diese Aufgabe
 * Bei diesem Verfahren wird vorausgesetzt, dass Ihr HA-Paar mindestens ein vorhandenes NS224-Shelf hat und dass Sie bis zu drei zusätzliche Shelves im laufenden Betrieb hinzufügen.
 * Wenn Ihr HA-Paar nur ein vorhandenes NS224-Shelf hat, wird bei diesem Verfahren vorausgesetzt, dass das Shelf über zwei RoCE-fähige 100-GbE-I/O-Module auf jedem Controller verkabelt ist.
@@ -70,8 +64,3 @@ image::../media/drw_ns224_a900_4shelves.png[Verkabelung für ein AFF/ASA A900 mi
 Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
 
 
-
-.Was kommt als Nächstes?
-Wenn Sie die automatische Laufwerkszuweisung als Teil der Vorbereitung für dieses Verfahren deaktiviert haben, müssen Sie manuell die Laufwerkseigentümer festlegen und die automatische Laufwerkszuweisung ggf. erneut aktivieren. Gehen Sie zu link:complete-hot-add-shelf.html["Füllen Sie das Hot Add aus"].
-
-Andernfalls müssen Sie das Hot-Add-Regal verwenden.

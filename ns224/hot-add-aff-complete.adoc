@@ -1,0 +1,35 @@
+---
+permalink: ns224/hot-add-aff-complete.html 
+sidebar: sidebar 
+keywords: ns224, shelves, shelf, ns224 shelves, hot-add, ha, pair, aff systems, complete, drive 
+summary: Wenn Sie die automatische Laufwerkszuordnung deaktiviert haben, weisen Sie die Laufwerkszuordnung manuell zu und aktivieren Sie die automatische Laufwerkszuordnung für Ihr AFF System wieder. 
+---
+= Schließen Sie das Hot-Add des NS224-Shelfs für Ihr AFF System ab
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie die automatische Laufwerkszuweisung im Rahmen der Vorbereitung auf das NS224-Shelf-Hot-Add deaktiviert haben, müssen Sie die Laufwerkseigentümerschaft manuell zuweisen und gegebenenfalls die automatische Laufwerkszuweisung erneut aktivieren.
+
+.Bevor Sie beginnen
+Sie müssen Ihr Shelf bereits wie für Ihr HA-Paar beschrieben verkabelt haben.
+
+.Schritte
+. Alle Laufwerke ohne Besitzer anzeigen: `storage disk show -container-type unassigned`
++
+Sie können bei beiden Controllern den Befehl eingeben.
+
+. Weisen Sie jedes Laufwerk zu: `storage disk assign -disk _disk_name_ -owner _owner_name_`
++
+Sie können bei beiden Controllern den Befehl eingeben.
+
++
+Mit dem Platzhalterzeichen können Sie mehr als ein Laufwerk gleichzeitig zuweisen.
+
+. Bei Bedarf die automatische Laufwerkszuweisung erneut aktivieren: `storage disk option modify -node _node_name_ -autoassign on`
++
+Sie müssen die automatische Laufwerkszuweisung auf beiden Controllern erneut aktivieren.
+
+

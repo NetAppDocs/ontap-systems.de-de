@@ -1,0 +1,24 @@
+= 
+:allow-uri-read: 
+
+
+.Bevor Sie beginnen
+Sie müssen Ihr Shelf bereits wie für Ihr HA-Paar beschrieben verkabelt haben.
+
+.Schritte
+. Alle Laufwerke ohne Besitzer anzeigen: `storage disk show -container-type unassigned`
++
+Sie können bei beiden Controllern den Befehl eingeben.
+
+. Weisen Sie jedes Laufwerk zu: `storage disk assign -disk _disk_name_ -owner _owner_name_`
++
+Sie können bei beiden Controllern den Befehl eingeben.
+
++
+Mit dem Platzhalterzeichen können Sie mehr als ein Laufwerk gleichzeitig zuweisen.
+
+. Bei Bedarf die automatische Laufwerkszuweisung erneut aktivieren: `storage disk option modify -node _node_name_ -autoassign on`
++
+Sie müssen die automatische Laufwerkszuweisung auf beiden Controllern erneut aktivieren.
+
+

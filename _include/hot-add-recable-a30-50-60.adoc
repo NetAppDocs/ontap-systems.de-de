@@ -1,0 +1,20 @@
+= 
+:allow-uri-read: 
+
+
+Wenn Sie ein zweites Shelf im laufenden Betrieb zu einem A30-, C30-, A50- oder C60-HA-Paar hinzufügen, müssen Sie das erste Shelf über die RoCE-fähigen E/A-Module in Steckplatz 3 und Steckplatz 1 an jedem Controller neu verkabeln.
+
+Bei diesem Verfahren wird davon ausgegangen, dass das vorhandene Shelf an ein RoCE-fähiges I/O-Modul in Steckplatz 3 jedes Controllers verkabelt ist.
+
+.Schritte
+. Verkabeln Sie das erste Shelf über die RoCE-fähigen I/O-Module in Steckplatz 3 und Steckplatz 1 an jedem Controller neu.
++
+.. Verlegen Sie am Controller A das Kabel von Steckplatz 3 Port b (e3b) zu Steckplatz 1 Port b (e1b).
+.. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
+
+
+. Überprüfen Sie mit https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^].
++
+Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
+
+

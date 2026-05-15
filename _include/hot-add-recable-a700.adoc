@@ -1,0 +1,20 @@
+= 
+:allow-uri-read: 
+
+
+Wenn Sie ein zweites Shelf im laufenden Betrieb zu einem A700 HA-Paar hinzufügen, müssen Sie das erste Shelf über die beiden Sätze von RoCE-fähigen Ports in Slot 3 und Slot 7 an jedem Controller neu verkabeln.
+
+Das Verfahren setzt voraus, dass das vorhandene Shelf mit RoCE-fähigen I/O-Modulen in Steckplatz 3 jedes Controllers verkabelt ist.
+
+.Schritte
+. Verkabeln Sie die erste Ablage über die beiden Sätze von RoCE-fähigen Ports in Slot 3 und Slot 7 an jedem Controller.
++
+.. Stellen Sie am Controller A das Kabel von Steckplatz 3 Port b (e3b) in Steckplatz 7 Port b (e7b) um.
+.. Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
+
+
+. Überprüfen Sie mit https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^].
++
+Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
+
+

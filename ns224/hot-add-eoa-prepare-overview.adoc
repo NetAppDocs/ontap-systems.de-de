@@ -1,0 +1,28 @@
+---
+permalink: ns224/hot-add-eoa-prepare-overview.html 
+sidebar: sidebar 
+keywords: ns224, shelves, shelf, ns224 shelves, hot-add, ha, pair, eoa systems, end-of-availability, preparation 
+summary: Bereiten Sie sich darauf vor, ein NS224-Shelf im laufenden Betrieb zu Ihrem End-of-Availability-System hinzuzufügen, indem Sie RoCE-fähige PCIe-Karten oder I/O-Module installieren, Ports konfigurieren und bei Bedarf die automatische Laufwerkszuweisung deaktivieren. 
+---
+= Übersicht über die Vorbereitung des Hot-Add-Vorgangs eines NS224-Einschubs zu Ihrem End-of-Availability-System
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bereiten Sie sich darauf vor, NS224-Einschübe im laufenden Betrieb zu Ihrem End-of-Availability-System hinzuzufügen, indem Sie sicherstellen, dass ausreichend RoCE-fähige Speicherports vorhanden sind, diese für die Speichernutzung konfigurieren und Ihre bestehende Konfiguration für den neuen Einschub optimieren.
+
+
+
+== Was ist vorzubereiten
+
+Die Vorbereitung des Hinzufügens von NS224-Einschüben zu Ihrem System mit End-of-Availability-Status umfasst die Überprüfung und Konfiguration der Speicherkonnektivitätsinfrastruktur vor der physischen Installation der neuen Einschübe. Diese Schritte gewährleisten, dass Ihr HA-Paar über die erforderlichen RoCE-fähigen Ethernet-Ports verfügt und Ihr System für die Unterstützung zusätzlicher Speicherkapazität konfiguriert ist.
+
+Die konkreten Vorbereitungsaufgaben, die Sie erledigen müssen, hängen von Ihrem Plattformmodell, Ihrer aktuellen Konfiguration und der Anzahl der Shelves ab, die Sie hinzufügen:
+
+Installieren Sie RoCE-fähige PCIe-Karten oder I/O-Module:: Stellen Sie sicher, dass Ihr System über ausreichend RoCE-fähige Ethernet-Ports verfügt (zwei pro Shelf an jedem Controller). Falls zusätzliche Ports benötigt werden, installieren Sie RoCE-fähige PCIe-Karten oder I/O-Module in den richtigen Controller-Steckplätzen.
+RoCE-fähige Ports für die Storage-Verwendung konfigurieren:: Wenn Sie nicht dedizierte RoCE-fähige Ports zum Anschluss des NS224-Einschubs verwenden, konfigurieren Sie diese Ports für die Speichernutzung anstatt für die Netzwerknutzung. Dies ist ein unterbrechungsfreies Verfahren.
+Wiederverskaufbarkeit vorhandener Shelves:: Bei einigen Plattformmodellen kann es erforderlich sein, ein vorhandenes Gehäuse über zwei Portgruppen in verschiedenen Steckplätzen neu zu verkabeln, um eine Ausfallsicherheit gegen Steckplatzausfälle nach der Installation zusätzlicher RoCE-fähiger PCIe-Karten oder I/O-Module zu gewährleisten.
+Automatische Laufwerkszuordnung deaktivieren:: Wenn Sie die Laufwerkszuordnung manuell vornehmen möchten, deaktivieren Sie die automatische Laufwerkszuordnung, bevor Sie Regale im laufenden Betrieb hinzufügen.
+

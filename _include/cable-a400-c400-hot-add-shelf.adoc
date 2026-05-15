@@ -1,16 +1,12 @@
-= 
+= Kabelablage zu einem A400 HA-Paar
 :allow-uri-read: 
 
 
-.Bevor Sie beginnen
-* Sie müssen die überprüft haben link:requirements-hot-add-shelf.html["Hot-Add-Anforderungen und Best Practices"].
-* Sie müssen die entsprechenden Verfahren in abgeschlossen haben link:prepare-hot-add-shelf.html["Bei laufendem Betrieb ein Shelf hinzufügen"].
-* Sie müssen die Shelfs installiert, eingeschaltet und die Shelf-IDs wie in festgelegt haben link:prepare-hot-add-shelf.html["Installieren Sie ein Shelf für ein Hot-Add-System"].
 
 
-*Kabel-Shelf zu einem AFF A400 HA-Paar*
+== Kabelablage zu einem A400 HA-Paar
 
-Bei einem AFF A400 HA-Paar können Sie bis zu zwei Shelves im laufenden Betrieb hinzufügen und Onboard Ports e0c/e0d und Ports in Steckplatz 5 je nach Bedarf verwenden.
+Bei einem A400 HA-Paar können Sie bis zu zwei Shelves im laufenden Betrieb hinzufügen und bei Bedarf die Onboard-Ports e0c/e0d und Ports in Slot 5 verwenden.
 
 .Schritte
 . Wenn Sie jedem Controller ein Shelf Hot-hinzufügen und dabei nur einen Satz RoCE-fähiger Ports (Onboard RoCE-fähige Ports) verwenden, und dies das einzige NS224-Shelf in Ihrem HA-Paar ist, führen Sie die folgenden Teilschritte durch.
@@ -70,15 +66,13 @@ image::../media/drw_ns224_a400_2shelves_IEOPS-983.svg[Verkabelung für ein /ASA 
 +
 Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
 
-. Wenn Sie die automatische Laufwerkszuweisung als Teil der Vorbereitung für dieses Verfahren deaktiviert haben, müssen Sie manuell die Laufwerkseigentümer festlegen und bei Bedarf die automatische Laufwerkszuweisung wieder aktivieren. Siehe link:complete-hot-add-shelf.html["Füllen Sie das Hot Add aus"].
-+
-Andernfalls werden Sie mit diesem Verfahren durchgeführt.
 
 
 
-*Kabel-Shelf zu einem AFF C400 HA-Paar*
 
-Bei einem AFF C400 HA-Paar können Sie bei Bedarf bis zu zwei Shelfs im laufenden Betrieb hinzufügen und Ports in Steckplatz 4 und 5 verwenden.
+== Kabelablage zu einem C400 HA Pair
+
+Bei einem C400 HA-Paar können Sie bis zu zwei Shelves im laufenden Betrieb hinzufügen und die Ports in Slot 4 und 5 nach Bedarf nutzen.
 
 .Schritte
 . Wenn Sie bei jedem Controller ein Shelf mit einem Satz RoCE-fähiger Ports hinzufügen und dies das einzige NS224-Shelf in Ihrem HA-Paar ist, führen Sie die folgenden Teilschritte durch.
@@ -139,8 +133,3 @@ image::../media/drw_ns224_c400_2shelves_IEOPS-984.svg[Verkabelung für ein AFF/A
 Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
 
 
-
-.Was kommt als Nächstes?
-Wenn Sie die automatische Laufwerkszuweisung als Teil der Vorbereitung für dieses Verfahren deaktiviert haben, müssen Sie manuell die Laufwerkseigentümer festlegen und die automatische Laufwerkszuweisung ggf. erneut aktivieren. Gehen Sie zu link:complete-hot-add-shelf.html["Füllen Sie das Hot Add aus"].
-
-Andernfalls müssen Sie das Hot-Add-Regal verwenden.

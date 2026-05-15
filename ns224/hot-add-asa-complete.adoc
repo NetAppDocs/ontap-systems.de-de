@@ -1,10 +1,10 @@
 ---
-permalink: ns224/complete-hot-add-shelf.html 
+permalink: ns224/hot-add-asa-complete.html 
 sidebar: sidebar 
-keywords: ns224, shelves, shelf, ns224 shelves, hot-add, ha, pair, complete, drive, hot-add an ns224 drive shelf 
-summary: Wenn Sie die automatische Laufwerkszuweisung im Rahmen der Vorbereitung auf das NS224-Festplatten-Shelf-Hot-Add deaktiviert haben, müssen Sie die Laufwerkseigentümer manuell zuweisen und bei Bedarf die automatische Laufwerkszuweisung erneut aktivieren. 
+keywords: ns224, shelves, shelf, ns224 shelves, hot-add, ha, pair, asa systems, complete, drive 
+summary: Wenn Sie die automatische Laufwerkszuweisung deaktiviert haben, weisen Sie die Laufwerkszuordnung manuell zu und aktivieren Sie die automatische Laufwerkszuweisung für Ihr ASA System wieder. 
 ---
-= Schließen Sie die NS224-Shelfs für den Hot-Add-Betrieb ab
+= Schließen Sie das Hot-Add des NS224 Shelfs für Ihr ASA System ab
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -14,7 +14,7 @@ summary: Wenn Sie die automatische Laufwerkszuweisung im Rahmen der Vorbereitung
 Wenn Sie die automatische Laufwerkszuweisung im Rahmen der Vorbereitung auf das NS224-Shelf-Hot-Add deaktiviert haben, müssen Sie die Laufwerkseigentümerschaft manuell zuweisen und gegebenenfalls die automatische Laufwerkszuweisung erneut aktivieren.
 
 .Bevor Sie beginnen
-Sie müssen das Shelf bereits wie angewiesen über Ihr HA-Paar angeschlossen haben. Siehe link:cable-overview-hot-add-shelf.html["Übersicht über die Verkabelung für Hot-Add"].
+Sie müssen Ihr Shelf bereits wie für Ihr HA-Paar beschrieben verkabelt haben.
 
 .Schritte
 . Alle Laufwerke ohne Besitzer anzeigen: `storage disk show -container-type unassigned`
@@ -26,7 +26,7 @@ Sie können bei beiden Controllern den Befehl eingeben.
 Sie können bei beiden Controllern den Befehl eingeben.
 
 +
-Sie können den Platzhalter verwenden, um mehr als ein Laufwerk gleichzeitig zuzuweisen.
+Mit dem Platzhalterzeichen können Sie mehr als ein Laufwerk gleichzeitig zuweisen.
 
 . Bei Bedarf die automatische Laufwerkszuweisung erneut aktivieren: `storage disk option modify -node _node_name_ -autoassign on`
 +

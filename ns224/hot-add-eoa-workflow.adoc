@@ -1,0 +1,39 @@
+---
+permalink: ns224/hot-add-eoa-workflow.html 
+sidebar: sidebar 
+keywords: ns224, shelves, shelf, ns224 shelves, hot-add, ha, pair, eoa systems, end-of-availability, workflow 
+summary: Befolgen Sie diese Workflow-Schritte, um ein NS224-Shelf im laufenden Betrieb zu Ihrem End-of-Availability-System hinzuzufügen. 
+---
+= Fügen Sie Ihrem End-of-Availability-System im laufenden Betrieb ein NS224-Gehäuse hinzu.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Befolgen Sie diese Workflow-Schritte, um ein NS224-Shelf im laufenden Betrieb zu Ihrem End-of-Availability-System hinzuzufügen.
+
+.Bevor Sie beginnen
+* Dieses Verfahren gilt nur für direkt angeschlossene Speichersysteme. Anweisungen für über Schalter angeschlossene Speichersysteme finden Sie hier link:cable-as-switch-attached.html["Switch-Attached-Verkabelungsleitfaden"].
+* Um ein NS224-Shelf im laufenden Betrieb hinzuzufügen, muss Ihr HA-Paar bestimmte Anforderungen erfüllen. Lesen Sie die link:hot-add-eoa-requirements.html["Hot-Add-Anforderungen und Best Practices"].
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:hot-add-eoa-requirements.html["Hot-Add-Anforderungen prüfen"]
+[role="quick-margin-para"]
+Prüfen Sie, ob Ihr End-of-Availability-System die Anforderungen für das Hot-Adding eines NS224-Shelfs erfüllt, einschließlich ONTAP-Version-Support, Anzahl der Shelfs und Verkabelungsanforderungen.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:hot-add-eoa-prepare-overview.html["Bereiten Sie sich darauf vor, Ihr Regal heiß hinzuzufügen"]
+[role="quick-margin-para"]
+Je nach Plattformmodell müssen Sie möglicherweise zusätzliche RoCE-fähige PCIe-Karten oder I/O-Module installieren, die nicht dedizierten RoCE-fähigen Ethernet-Ports für die Speichernutzung konfigurieren und die automatische Laufwerkszuweisung deaktivieren, wenn Sie die Laufwerkszuweisung manuell vornehmen.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:hot-add-eoa-install.html["Installieren Sie das Regal"]
+[role="quick-margin-para"]
+Montieren Sie das Schienenset für das Shelf, montieren und befestigen Sie Ihr Shelf im Telco-Rack oder -Schrank, schließen Sie die Stromkabel an, um das Shelf einzuschalten, und weisen Sie eine eindeutige Shelf-ID zu, um sicherzustellen, dass das Shelf innerhalb des HA-Paares unterscheidbar ist.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:hot-add-eoa-cable-overview.html["Verkabeln Sie das Regal"]
+[role="quick-margin-para"]
+Verkabeln Sie das Shelf, das Sie im laufenden Betrieb hinzufügen, so dass es über zwei Verbindungen mit jedem Controller im HA-Paar verfügt.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:hot-add-eoa-complete.html["Schließen Sie den Hot-Add ab"]
+[role="quick-margin-para"]
+Wenn Sie die automatische Laufwerkszuordnung im Rahmen der Vorbereitung für das Hot-add deaktiviert haben, müssen Sie manuell den Laufwerkseigentum zuweisen und gegebenenfalls die automatische Laufwerkszuordnung erneut aktivieren.

@@ -1,0 +1,144 @@
+---
+permalink: ns224/hot-add-aff-prepare-a900.html 
+sidebar: sidebar 
+keywords: ns224, shelves, shelf, ns224 shelves, hot-add, ha, pair, aff systems, preparation, roce, aff a900 
+summary: Bereiten Sie Ihr AFF A900-System für das Hot-Add eines NS224-Shelfs vor, indem Sie RoCE-fähige I/O-Module installieren, Ports konfigurieren, vorhandene Shelfs neu verkabeln und die automatische Laufwerkszuweisung deaktivieren. 
+---
+= Bereiten Sie Ihr AFF A900-System auf das Hot-Add eines NS224-Shelfs vor
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bereiten Sie Ihr AFF A900-System für das Hinzufügen eines NS224-Einschubs im laufenden Betrieb vor, indem Sie sicherstellen, dass ausreichend RoCE-fähige Speicheranschlüsse vorhanden sind, diese für die Speichernutzung konfigurieren, vorhandene Einschübe für eine optimale Konnektivität neu verkabeln und die automatische Laufwerkszuweisung deaktivieren.
+
+
+
+== Installieren Sie RoCE-fähige I/O-Module
+
+Wenn Ihr System die Verwendung von RoCE-fähigen PCIe-Karten oder E/A-Modulen unterstützt, muss Ihr HA-Paar über genügend verfügbare RoCE-fähige Ethernet-Ports verfügen, um die Anzahl der Shelves zu unterstützen, die Sie im laufenden Betrieb hinzufügen.
+
+.Schritte
+. Vergewissern Sie sich für jedes hinzuzufügendes Shelf, dass auf jedem Controller zwei RoCE-fähige Ports vorhanden sind.
++
+Diese Anschlüsse können sich auf den Controllern selbst, auf RoCE-fähigen PCIe-Karten, in einer Kombination aus beidem oder auf RoCE-fähigen E/A-Modulen befinden, je nach Unterstützung Ihres Systems.
+
+. Falls Ihr HA-Paar nicht über genügend verfügbare RoCE-fähige Ports verfügt, installieren Sie die zusätzlichen PCIe-Karten oder E/A-Module in die entsprechenden Controller-Steckplätze, wie von Ihrem System unterstützt.
++
+.. Ermitteln Sie die korrekten Controller-Steckplätze für Ihr System. Siehe  https://hwu.netapp.com["NetApp Hardware Universe"^].
+.. Die Installationsanweisungen für PCIe-Karten oder E/A-Module finden Sie in der Dokumentation Ihres Systems.
+
+
+
+
+
+
+== RoCE-fähige Ports für die Storage-Verwendung konfigurieren
+
+Bei manchen Systemen werden RoCE-fähige Ports automatisch standardmäßig für die Speichernutzung konfiguriert, sobald Sie eine RoCE-fähige PCIe-Karte oder ein E/A-Modul in einen unterstützten Controller-Steckplatz einbauen. Sie sollten dieses Verfahren jedoch durchführen, um sicherzustellen, dass die Ports korrekt für die Speichernutzung konfiguriert sind.
+
+Die Konfiguration nicht dedizierter RoCE-fähiger Ports für die Speichernutzung ist ein unterbrechungsfreies Verfahren. Sie müssen die Controller nicht neu starten, es sei denn, einer oder beide befinden sich im Wartungsmodus. Dieses Verfahren geht davon aus, dass sich keiner der Controller im Wartungsmodus befindet.
+
+Falls Sie die Ports in Zukunft von Speichernutzung auf Netzwerknutzung umstellen müssen, verwenden Sie den Befehl  `storage port modify -node _node_name_ -port _port_name_ -mode network`.
+
+.Schritte
+. Überprüfen Sie, ob Sie alle zusätzlichen RoCE-fähigen PCIe-Karten oder E/A-Module in jedem Controller installiert haben.
+. Melden Sie sich beim Cluster mit SSH oder dem seriellen Konsolen-Port an.
+. Überprüfen Sie, ob die nicht dedizierten Ports im HA-Paar für die Speichernutzung konfiguriert sind, indem Sie den Befehl  `storage port show` eingeben.
++
+Die Ausgabe des Befehls variiert je nach Ihrer ONTAP Version:
+
++
+** **ONTAP 9.8 oder höher:** Nicht dedizierte Ports, die für Speicherzwecke konfiguriert sind, zeigen  `storage` in der  `Mode` Spalte an. Ports, die nicht für Speicherzwecke konfiguriert sind, zeigen  `network` in der  `Mode` Spalte an.
+** **ONTAP 9.7:** Nicht dedizierte Ports, die für Speicherzwecke konfiguriert sind, zeigen  `false` in der  `Is Dedicated?` Spalte und  `enabled` in der  `State` Spalte an. Ports, die nicht für Speicherzwecke konfiguriert sind, zeigen  `false` in der  `Is Dedicated?` Spalte und  `disabled` in der  `State` Spalte an.
+
+
+. Wenn die nicht dedizierten Ports für die Speichernutzung konfiguriert sind, ist dieser Vorgang abgeschlossen. Andernfalls führen Sie die folgenden Schritte aus, um die Ports zu konfigurieren.
+. Konfigurieren Sie die nicht dedizierten Ports für die Speichernutzung an einem der Controller. Sie müssen den entsprechenden Befehl für jeden zu konfigurierenden Port wiederholen.
++
+[cols="1,3"]
+|===
+| Wenn Ihr HA-Paar läuft... | Befehl 
+
+
+ a| 
+ONTAP 9.8 oder höher
+ a| 
+`storage port modify -node _node_name_ -port _port_name_ -mode storage`
+
+
+
+ a| 
+ONTAP 9.7
+ a| 
+`storage port enable -node _node_name_ -port _port_name_`
+
+|===
+. Wiederholen Sie den vorherigen Schritt für den zweiten Controller.
+. Überprüfen Sie, ob die nicht dedizierten Ports an beiden Controllern für die Speichernutzung konfiguriert sind, indem Sie den Befehl  `storage port show` eingeben.
++
+Die Ausgabe des Befehls variiert je nach Ihrer ONTAP Version:
+
++
+** **ONTAP 9.8 oder höher:** Nicht dedizierte Ports, die für die Speichernutzung konfiguriert sind, zeigen  `storage` in der  `Mode` Spalte an.
+** **ONTAP 9.7:** Nicht dedizierte Ports, die für die Speichernutzung konfiguriert sind, zeigen  `false` in der  `Is Dedicated?` Spalte und  `enabled` in der  `State` Spalte an.
+
+
+
+
+
+
+== Wiederverskaufbarkeit vorhandener Shelves
+
+Wenn Sie im laufenden Betrieb weitere Shelfs zu einem A900 HA-Paar hinzufügen, müssen Sie die vorhandenen Shelfs neu verkabeln, um die Konnektivität über mehrere RoCE-fähige I/O-Module hinweg auszugleichen.
+
+* Wenn Sie ein zweites Shelf im laufenden Betrieb hinzufügen, muss das erste Shelf über die Steckplätze 2 und 10 neu verkabelt werden. Für ein zweites Shelf wird davon ausgegangen, dass das vorhandene Shelf an jedem Controller mit einem RoCE-fähigen I/O-Modul in Steckplatz 2 verkabelt ist.
+* Wenn Sie ein viertes Regal im laufenden Betrieb hinzufügen, muss das dritte Regal zwischen den Steckplätzen 1 und 11 neu verkabelt werden. Für ein viertes Regal wird davon ausgegangen, dass das dritte Regal an Steckplatz 1 jedes Controllers angeschlossen ist.
+
+
+.Schritte
+. Führen Sie einen der folgenden Schritte aus, wenn Sie ein zweites oder ein viertes Shelf im laufenden Betrieb hinzufügen.
++
+** Wenn Sie während des laufenden Betriebs ein zweites Shelf hinzufügen, können Sie das erste Shelf über die RoCE-fähigen I/O-Module in Steckplatz 2 und Steckplatz 10 auf jedem Controller neu anschaffen.
++
+... Verschieben Sie am Controller A das Kabel von Steckplatz 2 Port b (e2b) auf Steckplatz 10 Port b (e10b).
+... Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
+
+
+** Wenn Sie ein viertes Shelf während des laufenden Betriebs hinzufügen, können Sie das dritte Shelf über die RoCE-fähigen I/O-Module in Steckplatz 1 und Steckplatz 11 auf jedem Controller umverteilen.
++
+... Verschieben Sie am Controller A das Kabel von Steckplatz 1 Port b (e1b) zu Steckplatz 11 Port b (e11b).
+... Wiederholen Sie das gleiche Kabel, um es bei Controller B zu bewegen
+
+
+
+
+. Überprüfen Sie mit https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^].
++
+Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaßnahmen.
+
+
+
+
+
+== Automatische Laufwerkszuordnung deaktivieren
+
+Wenn Sie sich nicht sicher sind, ob Sie die Laufwerkseigentümer manuell zuweisen oder die automatische Zuweisung der Laufwerkseigentumsrichtlinien für Ihr Speichersystem verstehen möchten, gehen Sie zu https://docs.netapp.com/us-en/ontap/disks-aggregates/disk-autoassignment-policy-concept.html["Allgemeines zur automatischen Zuweisung der Festplatteneigentümer"^].
+
+.Schritte
+. Überprüfen Sie, ob die automatische Laufwerkszuweisung aktiviert ist: `storage disk option show`
++
+Sie können für beide Nodes den Befehl eingeben.
+
++
+Wenn die automatische Laufwerkszuordnung aktiviert ist, zeigt die Ausgabe  `on` in der  `Auto Assign` Spalte für jeden Knoten an.
+
+. Wenn die automatische Laufwerkszuweisung aktiviert ist, deaktivieren Sie sie: `storage disk option modify -node _node_name_ -autoassign off`
++
+Sie müssen die automatische Laufwerkszuweisung auf beiden Nodes deaktivieren.
+
+
+
+.Wie es weiter geht
+Gehen Sie zu link:hot-add-aff-install.html["Regal montieren"].

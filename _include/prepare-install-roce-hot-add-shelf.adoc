@@ -1,0 +1,18 @@
+= 
+:allow-uri-read: 
+
+
+Wenn Ihr System die Verwendung von RoCE-fähigen PCIe-Karten oder E/A-Modulen unterstützt, muss Ihr HA-Paar über genügend verfügbare RoCE-fähige Ethernet-Ports verfügen, um die Anzahl der Shelves zu unterstützen, die Sie im laufenden Betrieb hinzufügen.
+
+.Schritte
+. Vergewissern Sie sich für jedes hinzuzufügendes Shelf, dass auf jedem Controller zwei RoCE-fähige Ports vorhanden sind.
++
+Diese Anschlüsse können sich auf den Controllern selbst, auf RoCE-fähigen PCIe-Karten, in einer Kombination aus beidem oder auf RoCE-fähigen E/A-Modulen befinden, je nach Unterstützung Ihres Systems.
+
+. Falls Ihr HA-Paar nicht über genügend verfügbare RoCE-fähige Ports verfügt, installieren Sie die zusätzlichen PCIe-Karten oder E/A-Module in die entsprechenden Controller-Steckplätze, wie von Ihrem System unterstützt.
++
+.. Ermitteln Sie die korrekten Controller-Steckplätze für Ihr System. Siehe  https://hwu.netapp.com["NetApp Hardware Universe"^].
+.. Die Installationsanweisungen für PCIe-Karten oder E/A-Module finden Sie in der Dokumentation Ihres Systems.
+
+
+
