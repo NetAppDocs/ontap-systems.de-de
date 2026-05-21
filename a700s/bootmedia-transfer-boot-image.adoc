@@ -1,7 +1,7 @@
 ---
 permalink: a700s/bootmedia-transfer-boot-image.html 
 sidebar: sidebar 
-keywords: aff a700s, aff, a700s, procedure, secondary, boot, media, restore, fail, image, tgz, file, trasnfer, usb, flash, drive, transfer the boot image to the boot medai using a usb flash drive, manual, manual boot recovery 
+keywords: aff a700s, aff, a700s, procedure, secondary, boot, media, restore, fail, image, tgz, file, transfer, usb, flash, drive, transfer the boot image to the boot media using a usb flash drive, manual, manual boot recovery 
 summary: Übertragen Sie das Boot-Image auf das Ersatz-Bootmedium eines AFF A700s -Systems entweder mit dem sekundären Bootmedium oder mit einem USB-Stick. Das AFF A700s -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt. 
 ---
 = Übertragen Sie das Boot-Image auf das Boot-Medium AFF A700s
@@ -11,17 +11,17 @@ summary: Übertragen Sie das Boot-Image auf das Ersatz-Bootmedium eines AFF A700
 
 
 [role="lead"]
-Übertragen Sie das Boot-Image auf das Ersatz-Bootmedium eines AFF A700s -Systems entweder mit dem sekundären Bootmedium oder mit einem USB-Stick. Dieses Verfahren beinhaltet die Wiederherstellung vom Image auf dem sekundären Bootmedium als primäre Methode oder die Verwendung eines USB-Flash-Laufwerks, falls die Wiederherstellung vom sekundären Bootmedium fehlschlägt oder die Datei image.tgz fehlt.
+Übertragen Sie das Boot-Image auf das Ersatz-Bootmedium eines AFF A700s-Systems entweder mit dem sekundären Bootmedium (primäre Methode) oder mit einem USB-Stick (falls die Wiederherstellung mit dem sekundären Bootmedium fehlschlägt oder die  `image.tgz` Datei fehlt).
 
 Das AFF A700s -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt.
 
 
 
-== Option 1: Dateien mithilfe der Sicherungswiederherstellung vom zweiten Startmedium übertragen
+== Option 1: Übertragen Sie das Systemabbild mithilfe der Sicherungswiederherstellung vom zweiten Startmedium
 
-Sie können das System-Image mithilfe des Images auf dem zweiten Boot-Medium installieren, das im Controller-Modul installiert ist. Dies ist die primäre Methode zur Übertragung der Boot-Mediendateien auf die Ersatz-Boot-Medien in Systemen mit zwei Boot-Medien im Controller-Modul.
+Sie können das Systemabbild mithilfe des Abbilds auf dem zweiten Bootmedium im Controllermodul auf das Ersatz-Bootmedium installieren. Dies ist die primäre Methode für Systeme mit zwei Bootmedien im Controllermodul.
 
-Das Image auf dem sekundären Startmedium muss einen enthalten `image.tgz` Datei und darf keine Fehler melden. Wenn die Datei image.tgz fehlt oder das Boot-Medium Fehler meldet, können Sie dieses Verfahren nicht verwenden. Sie müssen das Startabbild mithilfe des Austauschvorgangs für das USB-Flash-Laufwerk auf das Ersatzmedium übertragen.
+Das Image auf dem sekundären Startmedium muss eine  `image.tgz` Datei enthalten und darf keine Fehler melden. Falls die  `image.tgz` Datei fehlt oder das Startmedium Fehler meldet, kann dieses Verfahren nicht angewendet werden. Verwenden Sie <<Option 2: Übertragen Sie das Boot-Image mithilfe eines USB-Sticks>> stattdessen.
 
 .Schritte
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
@@ -88,10 +88,10 @@ Das Image wird von dem sekundären Boot-Medium heruntergeladen.
 
 == Option 2: Übertragen Sie das Boot-Image mithilfe eines USB-Sticks
 
-Dieses Verfahren sollte nur verwendet werden, wenn die Wiederherstellung des sekundären Startmediums fehlgeschlagen ist oder wenn die Datei image.tgz auf dem sekundären Startmedium nicht gefunden wird.
+Dieses Verfahren sollte nur angewendet werden, wenn die Wiederherstellung über das sekundäre Startmedium fehlgeschlagen ist oder wenn die  `image.tgz` Datei auf dem sekundären Startmedium nicht gefunden wird.
 
 * Sie müssen über ein USB-Flash-Laufwerk verfügen, das auf FAT32 formatiert ist und eine Kapazität von mindestens 4 GB aufweist.
-* Eine Kopie der gleichen Bildversion von ONTAP wie der beeinträchtigte Controller. Das entsprechende Image können Sie im Abschnitt „Downloads“ auf der NetApp Support-Website herunterladen
+* Eine Kopie derselben Image-Version von ONTAP, die auf dem betroffenen Controller lief. Sie können das entsprechende Image im Downloadbereich der NetApp Support Site herunterladen.
 +
 ** Wenn NVE aktiviert ist, laden Sie das Image mit NetApp Volume Encryption herunter, wie in der Download-Schaltfläche angegeben.
 ** Wenn NVE nicht aktiviert ist, laden Sie das Image ohne NetApp Volume Encryption herunter, wie im Download-Button dargestellt.
@@ -176,7 +176,7 @@ Wenn Sie diese Meldung verpassen, drücken Sie Strg-C, wählen Sie die Option zu
 *** `bootarg.onboard_keymanager <value>`
 
 
-.. Speichern Sie die Umgebungsvariablen, die Sie mit dem geändert haben `savenv` Befehl
+.. Speichern Sie die mit dem  `savenv` Befehl geänderten Umgebungsvariablen.
 .. Bestätigen Sie Ihre Änderungen mit der `printenv _variable-name_` Befehl.
 
 
@@ -195,12 +195,11 @@ Das Bild wird vom USB-Flash-Laufwerk heruntergeladen.
 . Drücken Sie `y` Wenn Sie gefragt werden, ob Sie die wiederhergestellte Kopie verwenden möchten, drücken Sie dann `y` Wenn Sie dazu aufgefordert werden, den Controller neu zu booten.
 . Starten Sie vom Partner-Controller auf der erweiterten Berechtigungsebene die Konfigurationssynchronisierung mit der im vorherigen Schritt aufgezeichneten IP-Adresse: `system node restore-backup -node local -target-address _impaired_node_IP_address_`
 . Nachdem die Konfigurationssynchronisation fehlerfrei abgeschlossen ist, drücken Sie `y` Wenn Sie aufgefordert werden, zu bestätigen, dass der Sicherungsvorgang erfolgreich war.
-. Drücken Sie `y` Wenn Sie gefragt werden, ob Sie die wiederhergestellte Kopie verwenden möchten, drücken Sie dann `y` Wenn Sie dazu aufgefordert werden, den Controller neu zu booten.
-. Vergewissern Sie sich, dass die Umgebungsvariablen wie erwartet festgelegt sind.
+. Überprüfen Sie, ob die Umgebungsvariablen wie erwartet eingestellt sind.
 +
 .. Nehmen Sie den Controller zur LOADER-Eingabeaufforderung.
 +
-In der ONTAP-Eingabeaufforderung können Sie den Befehl „System Node halt -skip-lif-Migration-before-shutdown true -ignore-Quorum-Warns true -emmen-Takeover TRUE“ eingeben.
+Sie können den Befehl an der ONTAP-Eingabeaufforderung eingeben `system node halt -skip-lif-migration-before-shutdown true -ignore-quorum-warnings true -inhibit-takeover true`.
 
 .. Überprüfen Sie die Einstellungen der Umgebungsvariable mit dem `printenv` Befehl.
 .. Wenn eine Umgebungsvariable nicht wie erwartet festgelegt ist, ändern Sie sie mit dem `setenv __environment-variable-name__ __changed-value__` Befehl.

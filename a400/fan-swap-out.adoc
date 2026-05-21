@@ -53,17 +53,21 @@ image:../media/icon_round_4.png["Legende Nummer 4"]
 Status-LED
 
 |===
+.Schritte
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Entfernen Sie die Blende (falls erforderlich) mit zwei Händen, indem Sie die Öffnungen auf beiden Seiten der Blende fassen und dann zu Ihnen ziehen, bis sich die Blende von den Kugelknöpfen am Rahmen des Chassis löst.
 . Ermitteln Sie das Lüftermodul, das Sie ersetzen müssen, indem Sie die Konsolenfehlermeldungen überprüfen und die Warn-LED an jedem Lüftermodul betrachten.
++
+Verwenden Sie die BMC-Meldung oder die Attention-LED, um das auszutauschende Fan-Modul zu identifizieren. BMC ordnet Fan-Module dem Format Fan#_# zu, wobei die erste Zahl den Slot und die zweite die Row angibt (1=top, 2=bottom); zum Beispiel Slot 1, zweite Row = Fan1_2.
+
 . Drücken Sie die Freigabehebel am Nockengriff des Lüftermoduls nach unten, und drehen Sie dann den Nockengriff nach unten.
 +
-Das Lüftermodul bewegt sich ein wenig vom Gehäuse entfernt.
+Das Lüftermodul bewegt sich ein wenig vom Gehäuse weg.
 
 . Ziehen Sie das Lüftermodul gerade aus dem Gehäuse heraus. Stellen Sie sicher, dass Sie es mit der freien Hand unterstützen, damit es nicht aus dem Gehäuse herausschwingt.
 +
 
-NOTE: Die Lüftermodule sind kurz. Unterstützen Sie das Lüftermodul immer mit Ihrer freien Hand, damit es nicht plötzlich vom Gehäuse abfällt und Sie verletzt.
+CAUTION: Die Lüftermodule sind kurz. Unterstützen Sie das Lüftermodul immer mit Ihrer freien Hand, damit es nicht plötzlich vom Gehäuse abfällt und Sie verletzt.
 
 . Setzen Sie das Lüftermodul beiseite.
 . Setzen Sie das Ersatzlüftermodul in das Gehäuse ein, indem Sie es an der Öffnung ausrichten und dann in das Gehäuse schieben.
@@ -73,7 +77,7 @@ Der Nockengriff hebt sich leicht, wenn das Lüftermodul vollständig sitzt.
 
 . Schwenken Sie den Nockengriff in die geschlossene Position, und stellen Sie sicher, dass der Freigabehebel des Nockengriffs in die verriegelte Position einrastet.
 +
-Die Warn-LED darf nicht leuchten, wenn der Lüfter sitzt und sich auf die Betriebsgeschwindigkeit verdreht hat.
+Die Aufmerksamkeits-LED erlischt, sobald der Lüfter richtig positioniert ist und seine Betriebsdrehzahl erreicht hat.
 
 . Richten Sie die Blende an den Kugelknöpfen aus, und drücken Sie dann vorsichtig die Blende auf die Kugelbolzen.
 . Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"^]Weitere Informationen finden Sie auf der Seite.
