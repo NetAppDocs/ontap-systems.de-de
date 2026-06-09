@@ -1,8 +1,8 @@
 ---
 permalink: fas8300/controller-replace-shutdown.html 
 sidebar: sidebar 
-keywords: fas8300, fas8700, shut down the impair controller 
-summary: Sie können den beeinträchtigten Controller je nach Hardwarekonfiguration des Speichersystems mithilfe verschiedener Verfahren herunterfahren oder übernehmen. 
+keywords: fas8300, fas8700, shut down the impaired controller 
+summary: Schalten Sie den Controller in Ihrem FAS8300 und FAS8700-Speichersystem ab, um Datenverlust zu verhindern und die Systemstabilität beim Austausch des Controllers zu gewährleisten. 
 ---
 = Fahren Sie den beeinträchtigten Controller – FAS8300 und FAS8700 – herunter
 :allow-uri-read: 
@@ -11,7 +11,9 @@ summary: Sie können den beeinträchtigten Controller je nach Hardwarekonfigurat
 
 
 [role="lead"]
-Sie können den beeinträchtigten Controller je nach Hardwarekonfiguration des Speichersystems mithilfe verschiedener Verfahren herunterfahren oder übernehmen.
+Schalten Sie den Controller in Ihrem FAS8300 und FAS8700-Speichersystem ab, um Datenverlust zu verhindern und die Systemstabilität beim Austausch des Controllers zu gewährleisten.
+
+Fahren Sie das Controller-Modul mit einer der folgenden Optionen herunter.
 
 [role="tabbed-block"]
 ====
@@ -179,3 +181,5 @@ mcc1A::> metrocluster operation show
 
 --
 ====
+.Was kommt als Nächstes?
+Nachdem Sie die FAS8300 und FAS8700 Controller heruntergefahren haben, müssen Sie link:controller-replace-move-hardware.html["Ersetzen Sie den Controller"].

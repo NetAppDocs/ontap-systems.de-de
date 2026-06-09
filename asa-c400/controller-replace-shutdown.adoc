@@ -1,8 +1,8 @@
 ---
 permalink: asa-c400/controller-replace-shutdown.html 
 sidebar: sidebar 
-keywords: asa c400, shut down the impair controller 
-summary: Sie können den beeinträchtigten Controller je nach Hardwarekonfiguration des Speichersystems mithilfe verschiedener Verfahren herunterfahren oder übernehmen. 
+keywords: asa c400, shut down the impaired controller 
+summary: Schalten Sie den Controller in Ihrem ASA C400-Speichersystem ab, um Datenverlust zu verhindern und die Systemstabilität beim Austausch des Controllers zu gewährleisten. 
 ---
 = Schalten Sie den außer Betrieb genommenen Controller - ASA C400 aus
 :allow-uri-read: 
@@ -11,7 +11,9 @@ summary: Sie können den beeinträchtigten Controller je nach Hardwarekonfigurat
 
 
 [role="lead"]
-Fahren Sie den Controller mit eingeschränkter Konfiguration herunter oder übernehmen Sie ihn entsprechend.
+Schalten Sie den Controller in Ihrem ASA C400-Speichersystem ab, um Datenverlust zu verhindern und die Systemstabilität beim Austausch des Controllers zu gewährleisten.
+
+Fahren Sie das Controller-Modul mit einer der folgenden Optionen herunter.
 
 [role="tabbed-block"]
 ====
@@ -179,3 +181,5 @@ mcc1A::> metrocluster operation show
 
 --
 ====
+.Was kommt als Nächstes?
+Nachdem Sie den ASA C400 Controller heruntergefahren haben, müssen Sie link:controller-replace-move-hardware.html["Ersetzen Sie den Controller"].

@@ -15,7 +15,7 @@ Steuerung der Speicherressourcen wieder an den Ersatz-Controller zurückgeben, d
 
 [role="tabbed-block"]
 ====
-.Keine Verschlüsselung
+.Keine Verschlüsselung oder externer Schlüsselmanager (EKM)
 --
 Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie seinen Speicher zurückgeben.
 
@@ -35,11 +35,25 @@ Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrie
 --
 .Onboard-Verschlüsselung (OKM)
 --
-Setzt die integrierte Verschlüsselung zurück und setzt den Controller in den normalen Betrieb zurück.
+Die Onboard-Verschlüsselungsschlüssel für OKM wiederherstellen und neu versiegeln und den Controller wieder in den Normalbetrieb versetzen.
+
+.Bevor Sie beginnen
+Überprüfen Sie vor Beginn  https://docs.netapp.com/us-en/ontap-cli/security-key-manager-onboard-show-backup.html["security key-manager onboard show-backup"] oder kontaktieren Sie den NetApp Support.
 
 .Schritte
-. Geben Sie in der Loader-Eingabeaufforderung `boot_ontap maint` .
 . Starten Sie das ONTAP-Menü über die Loader-Eingabeaufforderung `boot_ontap menu`, und wählen Sie Option 10.
+. Rufen Sie die clusterweite Passphrase vom fehlerfreien Controller ab und überprüfen Sie sie.
++
+.. Führen Sie den folgenden Befehl aus, um die clusterweite Passphrase abzurufen:
++
+`security key-manager onboard show-backup`
+
+.. Überprüfen Sie die clusterweite Passphrase mit folgendem Befehl:
++
+`security key-manager onboard verify-backup`
+
+
+
 . Geben Sie die OKM-Passphrase ein.
 +
 
@@ -63,9 +77,9 @@ NOTE: Sie werden zweimal zur Eingabe der Passphrase aufgefordert.
 
 NOTE: Sie werden aufgefordert, die Cluster-weite Passphrase von OKM für das Cluster einzugeben.
 
-.. Überprüfen Sie den Status der Schlüssel: `security key-manager key query -restored _false_`
+.. Überprüfen Sie den Status der Schlüssel: `security key-manager key query -restored false`
 +
-Die Ausgabe sollte bei ordnungsgemäßer Synchronisierung keine Ergebnisse zeigen.
+Bei korrekter Synchronisierung sollte die Ausgabe keine Ergebnisse liefern.
 
 +
 Wenn in der Ausgabe Ergebnisse angezeigt werden (die Schlüssel-IDs von Schlüsseln, die nicht in der internen Schlüsseltabelle des Systems vorhanden sind), wenden Sie sich an https://support.netapp.com["NetApp Support"].
@@ -74,6 +88,10 @@ Wenn in der Ausgabe Ergebnisse angezeigt werden (die Schlüssel-IDs von Schlüss
 
 . Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`
 . Wenn das automatische Giveback deaktiviert wurde, aktivieren Sie es erneut: `storage failover modify -node local -auto-giveback _true_`
++
+
+NOTE: Das Veto gegen die Rückgabe fehlender Schlüssel darf nicht außer Kraft gesetzt werden. Wenden Sie sich an NetApp Support.
+
 . Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung wiederherstellen/zurücknehmen: `system node autosupport invoke -node * -type all -message MAINT=END`
 
 

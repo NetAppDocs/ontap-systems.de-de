@@ -2,7 +2,7 @@
 :allow-uri-read: 
 
 
-Bevor Sie den Node _Replacement_ zum Service zurücksenden, sollten Sie überprüfen, ob sich die LIFs auf ihren Home-Ports befinden, und bei aktiviertem AutoSupport die Seriennummer des Node _Replacement_ registrieren.
+Bevor Sie den _Ersatzknoten_ wieder in Betrieb nehmen, sollten Sie überprüfen, ob sich die LIFs an ihren Home-Ports befinden, und die Seriennummer des _Ersatzknotens_ registrieren, falls AutoSupport aktiviert ist, den Zustand Ihres Clusters überprüfen, alle Wartungsfenster schließen und die automatische Rückgabe zurücksetzen.
 
 .Schritte
 . Vergewissern Sie sich, dass die logischen Schnittstellen ihrem Home-Server und ihren Ports Berichterstellung: `network interface show -is-home false`

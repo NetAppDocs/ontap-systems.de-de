@@ -1,0 +1,53 @@
+= 
+:allow-uri-read: 
+
+
+Überprüfen Sie die HA-Konfigurationseinstellungen und die Festplattenliste, bevor Sie das System wieder in Betrieb nehmen.
+
+.Schritte
+. Booten im Wartungsmodus:
++
+`boot_ontap maint`
+
+. Geben Sie ein `y`, wenn _Continue with Boot?_ angezeigt wird.
++
+Wenn die Warnmeldung _System ID Mismatch_ angezeigt wird, geben Sie ein `y`.
+
+. Geben Sie den Inhalt der Anzeige ein `sysconfig -v` und erfassen Sie diesen.
++
+
+NOTE: Wenn Sie _PERSONALITY MISMATCH_ sehen, wenden Sie sich an den Kundendienst.
+
+. Vergleichen Sie in der `sysconfig -v` Ausgabe die Adapterkarteninformationen mit den Karten und Positionen im Ersatzcontroller.
+. Vergewissern Sie sich, dass alle Komponenten denselben `HA` Status aufweisen:
++
+`ha-config show`
+
++
+Der HA-Status sollte für alle Komponenten identisch sein.
+
+. Wenn der angezeigte Systemstatus des Controllermoduls nicht mit Ihrer Systemkonfiguration übereinstimmt, stellen Sie die `HA` Status des Controller-Moduls:
++
+`ha-config modify controller _ha-state_`
+
++
+Für den HA-Status kann einer der folgenden Werte verwendet werden:
+
++
+** `ha`
+** `mcc`
+** `mcc-2n`
+** `mccip`
+** `non-ha`
+
+
+. Bestätigen Sie, dass sich die Einstellung geändert hat:
++
+`ha-config show`
+
+. Überprüfen Sie, ob der Adapter die Pfade zu allen Datenträgern auflistet: `storage show disk -p`
++
+Wenn Sie Probleme sehen, überprüfen Sie die Verkabelung, und setzen Sie die Kabel wieder ein.
+
+. Beenden des Wartungsmodus: `halt`
+

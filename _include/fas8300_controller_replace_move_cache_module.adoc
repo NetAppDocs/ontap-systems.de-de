@@ -1,0 +1,27 @@
+= 
+:allow-uri-read: 
+
+
+Beim Austausch eines Controller-Moduls muss das Caching-Modul vom defekten Controller-Modul auf das Ersatz-Controller-Modul übertragen werden.
+
+
+NOTE: Das Ver2 Controller-Modul besitzt nur einen Cache-Modulsockel im FAS8300. FAS8700 verfügt nicht über ein VER2 Controller-Modul. Die Cache-Modul-Funktionalität wird durch das Entfernen des Sockets nicht beeinträchtigt.
+
+Sie können die folgenden Animationen, Abbildungen oder die geschriebenen Schritte verwenden, um Cache-Module in das neue Controller-Modul zu verschieben.
+
+.Animation - Verschieben der Caching-Module
+video::d6a43902-0e78-40c3-a2bd-aad9012f5b94[panopto]
+image::../media/drw_8300_Replace-flashcache.png[Entfernen Sie das Caching-Modul, und ersetzen Sie es]
+
+.Schritte
+. Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
+. Verschieben Sie die Cache-Module vom beeinträchtigten Controller-Modul auf das Ersatzcontrollermodul:
++
+.. Drücken Sie die blaue Freigabelasche am Ende des Cache-Moduls, drehen Sie das Modul nach oben und entfernen Sie das Modul aus dem Sockel.
+.. Verschieben Sie das Cache-Modul in denselben Sockel am Ersatzcontroller-Modul.
+.. Richten Sie die Kanten des Cache-Moduls an der Buchse aus, und setzen Sie das Modul vorsichtig so weit in den Sockel ein, wie es geht.
+.. Drehen Sie das Caching-Modul nach unten in Richtung der Hauptplatine.
+.. Platzieren Sie den Finger am Ende des Cache-Moduls mit der blauen Taste, drücken Sie das Ende des Cache-Moduls fest nach unten, und heben Sie dann die Verriegelungstaste an, um das Zwischenspeichermodul zu verriegeln.
+
+
+

@@ -1,0 +1,46 @@
+---
+permalink: a400/controller-replace-requirements.html 
+sidebar: sidebar 
+keywords: aff a400, prerequisite, replace the controller module 
+summary: Bevor Sie den Controller Ihres AFF A400 Systems austauschen, überprüfen Sie, ob alle anderen Komponenten im System ordnungsgemäß funktionieren, stellen Sie sicher, dass Sie den richtigen Ersatzcontroller haben, und speichern Sie die Konsolenausgabe des Controllers in einer Textprotokolldatei. 
+---
+= Anforderungen für den Austausch des Controllers - AFF A400
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor Sie den Controller Ihres AFF A400 Systems austauschen, überprüfen Sie, ob alle anderen Komponenten im System ordnungsgemäß funktionieren, stellen Sie sicher, dass Sie den richtigen Ersatzcontroller haben, und speichern Sie die Konsolenausgabe des Controllers in einer Textprotokolldatei.
+
+Überprüfen Sie die Anforderungen für den Austausch des Controller-Moduls.
+
+[NOTE]
+====
+NetApp empfiehlt dringend, die Protokollierung auf den Geräten, mit denen Sie arbeiten, zu aktivieren und bei der Durchführung dieses Verfahrens die folgenden Maßnahmen zu ergreifen:
+
+* Lassen Sie AutoSupport während Ihrer Wartung aktiviert. So kann der NetApp Support bei Problemen Diagnoseinformationen erhalten.
+* Aktivieren Sie die Protokollierung für alle CLI-Sitzungen. Dadurch wird ein vollständiges Protokoll aller Befehle und Systemausgaben während der Wartungsaktivität erstellt. Hinweise zur Aktivierung der Sitzungsprotokollierung finden Sie unter  https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_configure_PuTTY_for_optimal_connectivity_to_ONTAP_systems["Wie konfiguriert man PuTTY für eine optimale Verbindung zu ONTAP-Systemen"^].
+
+
+====
+* Alle Festplatten-Shelfs müssen ordnungsgemäß funktionieren.
+* Der intakte Regler muss in der Lage sein, den zu ersetzenden Regler (im Folgenden als beeinträchtigter Regler bezeichnet) zu übernehmen.
+* Dieses Verfahren darf nicht für Controller-Upgrades verwendet werden.  Siehe https://docs.netapp.com/us-en/ontap-systems-upgrade/choose_controller_upgrade_procedure.html["Wählen Sie das Upgrade Ihrer Controller-Hardware aus"] zur Orientierung.
+* Wenn Ihr System in einer MetroCluster -Konfiguration vorliegt, überprüfen Sie https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/concept_choosing_the_correct_recovery_procedure_parent_concept.html["Auswahl des richtigen Wiederherstellungsverfahrens"] um zu entscheiden, ob dieses Verfahren angewendet werden soll.
+* Ersetzen Sie die defekte Komponente durch die von NetApp erhaltene vor Ort austauschbare Einheit (FRU).
+* Ersetzen Sie das Steuergerät durch ein Steuergerät desselben Modelltyps.  Ein Upgrade des Systems durch Austausch des Controller-Moduls ist nicht möglich.
+* Im Rahmen dieses Vorgangs dürfen Sie weder Laufwerke noch Laufwerksschächte austauschen.
+* In diesem Verfahren wird das Startgerät vom beeinträchtigten Controller auf den Ersatzcontroller verschoben, so dass der Ersatzcontroller in derselben ONTAP-Version wie das alte Controller-Modul hochstartet.
+* Machen Sie sich mit der in diesem Verfahren verwendeten Controller-Terminologie vertraut:
++
+** Der _beeinträchtigte_ Controller ist der Controller, der ersetzt wird.
+** Der _Ersatz_-Controller ist der neue Controller, der den defekten Controller ersetzt.
+** Der _Healthy_ Controller ist der überlebende Controller.
+
+
+* Verwenden Sie  `security key-manager onboard show-key-store` , um zu prüfen, ob der Onboard Key Manager (OKM) konfiguriert ist. Falls ja, rufen Sie die clusterweite Passphrase mit  https://docs.netapp.com/us-en/ontap-cli/security-key-manager-onboard-show-backup.html["security key-manager onboard show-backup"] ab oder wenden Sie sich an NetApp Support, bevor Sie mit diesem Verfahren beginnen.
+
+
+.Was kommt als Nächstes?
+Nachdem Sie die Anforderungen für den Austausch Ihres AFF A400 Controllers geprüft haben, müssen Sie link:controller-replace-shutdown.html["Schalten Sie den außer Betrieb genommenen Controller aus"].

@@ -2,27 +2,30 @@
 permalink: a400/controller-replace-move-hardware.html 
 sidebar: sidebar 
 keywords: aff a400, move the controller module hardware 
-summary: Um die Hardware des Controller-Moduls zu ersetzen, müssen Sie den beeinträchtigten Controller entfernen, die FRU-Komponenten in das Ersatzcontrollermodul verschieben, das Ersatzcontrollermodul im Gehäuse installieren und das System dann in den Wartungsmodus booten. 
+summary: Tauschen Sie den Controller in Ihrem AFF A400-System aus, wenn ein Hardwaredefekt dies erfordert. Entfernen Sie den ausgefallenen Controller, übertragen Sie dessen Komponenten auf den Ersatzcontroller, installieren Sie den neuen Controller und starten Sie ihn neu. 
 ---
-= Ersetzen Sie die Controller-Modul-Hardware – AFF A400
+= Ersetzen Sie den Controller - AFF A400
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Um die Hardware des Controller-Moduls zu ersetzen, müssen Sie den beeinträchtigten Controller entfernen, die FRU-Komponenten in das Ersatzcontrollermodul verschieben, das Ersatzcontrollermodul im Gehäuse installieren und das System dann in den Wartungsmodus booten.
+Tauschen Sie den Controller in Ihrem AFF A400-System aus, wenn ein Hardwaredefekt dies erfordert. Entfernen Sie den ausgefallenen Controller, übertragen Sie dessen Komponenten auf den Ersatzcontroller, installieren Sie den neuen Controller und starten Sie ihn neu.
 
 
 
 == Schritt 1: Entfernen Sie das Controller-Modul
 
+Sie müssen das Controller-Modul aus dem Chassis entfernen, wenn Sie das Controller-Modul ersetzen oder eine Komponente im Controller-Modul ersetzen.
+
 Um auf Komponenten im Controller-Modul zuzugreifen, müssen Sie das Controller-Modul aus dem Gehäuse entfernen.
 
-Sie können das Controller-Modul mithilfe der folgenden, Abbildung oder der geschriebenen Schritte aus dem Gehäuse entfernen.
+Sie können das Controller-Modul mithilfe der folgenden Animation, Illustration oder der geschriebenen Schritte aus dem Gehäuse entfernen.
 
 .Animation - Entfernen Sie das Controller-Modul
 video::ca74d345-e213-4390-a599-aae10019ec82[panopto]
+.Schritte
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Lösen Sie die Netzkabelhalter, und ziehen Sie anschließend die Kabel von den Netzteilen ab.
 . Lösen Sie den Haken- und Schlaufenriemen, mit dem die Kabel am Kabelführungsgerät befestigt sind, und ziehen Sie dann die Systemkabel und SFPs (falls erforderlich) vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren.
@@ -35,7 +38,7 @@ Lassen Sie die Kabel im Kabelverwaltungs-Gerät so, dass bei der Neuinstallation
 Das Controller-Modul wird leicht aus dem Chassis entfernt.
 
 +
-image:../media/drw_A400_Remove_controller.png["Lösen Sie das Controller-Modul"]
+image::../media/drw_A400_Remove_controller.png[Lösen Sie das Controller-Modul]
 
 +
 [cols="10a,90a"]
@@ -88,12 +91,15 @@ Entriegelungsriegel für Riser
 
 == Schritt 2: Bewegen Sie die Netzteile
 
+Schließen Sie die Netzteile an das Ersatzsteuergerät an.
+
 Wenn Sie ein Controller-Modul ersetzen, müssen Sie das Netzteil vom beeinträchtigten Controller-Modul in das Ersatzcontrollermodul verschieben.
 
 Sie können die folgenden Animationen, Abbildungen oder die schriftlichen Schritte verwenden, um die Netzteile in das Ersatzcontrollermodul zu verschieben.
 
 .Animation - Verschieben der Netzteile
 video::92060115-1967-475b-b517-aad9012f130c[panopto]
+.Schritte
 . Entfernen Sie das Netzteil:
 +
 image::../media/drw_A400_psu.png[Ersetzen Sie das Netzteil]
@@ -138,6 +144,8 @@ NOTE: Um Schäden am internen Stecker zu vermeiden, sollten Sie beim Einschieben
 
 == Schritt 3: Bewegen Sie den NVDIMM-Akku
 
+Setzen Sie die NVDIMM-Batterie in das Ersatz-Controllermodul ein.
+
 Um den NVDIMM-Akku vom Controller-Modul mit eingeschränkter Betriebsdauer auf das Ersatzcontrollermodul zu verschieben, müssen Sie eine bestimmte Sequenz von Schritten durchführen.
 
 Sie können die folgende Animation, Abbildung oder die geschriebenen Schritte verwenden, um den NVDIMM-Akku vom beeinträchtigten Controller-Modul in das Ersatzcontrollermodul zu verschieben.
@@ -170,6 +178,7 @@ image:../media/icon_round_3.png["Legende Nummer 3"]
 NVDIMM-Batterie
 
 |===
+.Schritte
 . Öffnen Sie den Luftkanal:
 +
 .. Drücken Sie die Verriegelungslaschen an den Seiten des Luftkanals in Richtung der Mitte des Controller-Moduls.
@@ -180,7 +189,7 @@ NVDIMM-Batterie
 . Suchen Sie den Batteriestecker, und drücken Sie den Clip auf der Vorderseite des Batteriesteckers, um den Stecker aus der Steckdose zu lösen, und ziehen Sie dann das Akkukabel aus der Steckdose.
 . Fassen Sie den Akku an, und drücken Sie die blaue Verriegelungslasche, die mit DRUCKTASTE gekennzeichnet ist, und heben Sie den Akku aus dem Halter und dem Controller-Modul heraus.
 . Bringen Sie den Akku in das Ersatzcontrollermodul.
-. Richten Sie das Batteriemodul an der Öffnung für den Akku aus, und schieben Sie den Akku vorsichtig in den Steckplatz, bis er einrastet.
+. Richten Sie das Batteriemodul an der Öffnung für die Batterie aus und drücken Sie die Batterie dann vorsichtig in den Schlitz, bis sie einrastet.
 +
 
 NOTE: Schließen Sie das Akkukabel erst dann wieder an die Hauptplatine an, wenn Sie dazu aufgefordert werden.
@@ -190,6 +199,8 @@ NOTE: Schließen Sie das Akkukabel erst dann wieder an die Hauptplatine an, wenn
 
 
 == Schritt 4: Verschieben Sie die Startmedien
+
+Verlegen Sie das Bootmedium auf das Ersatz-Controllermodul.
 
 Sie müssen das Startmedium ausfindig machen und dann die Anweisungen befolgen, um es aus dem beeinträchtigten Controller-Modul zu entfernen und in das Ersatzcontrollermodul einzufügen.
 
@@ -216,6 +227,7 @@ image:../media/icon_round_2.png["Legende Nummer 2"]
 Boot-Medien
 
 |===
+.Schritte
 . Suchen und entfernen Sie die Startmedien aus dem Controller-Modul:
 +
 .. Drücken Sie die blaue Taste am Ende des Startmediums, bis der Lip auf dem Boot-Medium die blaue Taste löscht.
@@ -231,7 +243,7 @@ Entfernen Sie gegebenenfalls die Startmedien, und setzen Sie sie wieder in den S
 +
 .. Drehen Sie das Startmedium nach unten zur Hauptplatine.
 .. Drücken Sie die blaue Verriegelungstaste, damit sie sich in der geöffneten Position befindet.
-.. Setzen Sie die Finger am Ende des Startmediums mit der blauen Taste, drücken Sie fest nach unten auf das Boot-Medium-Ende, um die blaue Verriegelungstaste zu drücken.
+.. Platzieren Sie Ihre Finger am Ende des Bootmediums neben dem blauen Knopf und drücken Sie fest auf das Ende des Bootmediums, um den blauen Verriegelungsknopf zu betätigen.
 
 
 
@@ -239,6 +251,8 @@ Entfernen Sie gegebenenfalls die Startmedien, und setzen Sie sie wieder in den S
 
 
 == Schritt 5: Verschieben Sie die PCIe Riser und Mezzanine-Karte
+
+Verlegen Sie die PCIe-Riserkarten und die Mezzanine-Karte auf das Ersatz-Controllermodul.
 
 Im Rahmen des Controller-Austauschprozesses müssen Sie die PCIe Riser und die Mezzanine-Karte vom beeinträchtigten Controller-Modul auf das Ersatzcontrollermodul verschieben.
 
@@ -285,6 +299,7 @@ image:../media/icon_round_4.png["Legende Nummer 4"]
 PCI-Karte
 
 |===
+.Schritte
 . Verschieben Sie PCIe-Risers ein und zwei vom beeinträchtigten Controller-Modul auf das Ersatzcontrollermodul:
 +
 .. Entfernen Sie alle SFP- oder QSFP-Module, die sich möglicherweise in den PCIe-Karten enthalten haben.
@@ -315,6 +330,8 @@ Der Riser hebt sich leicht vom Controller-Modul auf.
 
 
 == Schritt 6: Verschieben Sie die DIMMs
+
+Bringen Sie die DIMMs an das Ersatz-Controller-Modul an.
 
 Sie müssen die DIMMs ausfindig machen und sie dann vom beeinträchtigten Controllermodul in das Ersatzcontrollermodul verschieben.
 
@@ -350,13 +367,14 @@ image:../media/icon_round_3.png["Legende Nummer 3"]
 DIMM-Sockel
 
 |===
+.Schritte
 . Suchen Sie die DIMMs auf dem Controller-Modul.
 . Beachten Sie die Ausrichtung des DIMM-Moduls in den Sockel, damit Sie das DIMM-Modul in die richtige Ausrichtung einsetzen können.
 . Vergewissern Sie sich, dass die NVDIMM-Batterie nicht an das neue Controller-Modul angeschlossen ist.
 . Verschieben Sie die DIMMs vom Controller mit eingeschränkter Bedieneinheit auf das Ersatzcontrollermodul:
 +
 
-NOTE: Stellen Sie sicher, dass Sie jedes DIMM in demselben Steckplatz einsetzen, in dem es im beeinträchtigten Controller-Modul belegt ist.
+NOTE: Stellen Sie sicher, dass Sie jedes DIMM in denselben Steckplatz einsetzen, den es im defekten Controllermodul belegt hat.
 
 +
 .. Werfen Sie das DIMM aus dem Steckplatz, indem Sie die DIMM-Auswerfer auf beiden Seiten des DIMM langsam auseinander drücken und dann das DIMM aus dem Steckplatz schieben.
@@ -383,6 +401,8 @@ Vergewissern Sie sich, dass der Stecker am Controller-Modul abhält.
 
 == Schritt 7: Installieren Sie das Controller-Modul
 
+Installieren Sie das Controller-Modul neu, und starten Sie es neu.
+
 Nachdem alle Komponenten vom beeinträchtigten Controller-Modul in das Ersatzcontrollermodul verschoben wurden, müssen Sie das Ersatzcontrollermodul in das Gehäuse installieren und es dann in den Wartungsmodus booten.
 
 Sie können die folgende Animation, Abbildung oder die geschriebenen Schritte zur Installation des Ersatzcontrollermoduls im Gehäuse verwenden.
@@ -408,6 +428,7 @@ image:../media/icon_round_2.png["Legende Nummer 2"]
 Verriegelungsriegel der Steuerung
 
 |===
+.Schritte
 . Wenn Sie dies noch nicht getan haben, schließen Sie den Luftkanal.
 . Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
 +
@@ -445,3 +466,6 @@ Wenn das System im Startmenü stoppt, wählen Sie die Option zum Booten in LOADE
 
 
 
+
+.Was kommt als Nächstes?
+Nachdem Sie den defekten AFF A400 Controller ausgetauscht haben, müssen Sie link:controller-replace-system-config-restore-and-verify.html["Stellen Sie die Systemkonfiguration wieder her"].

@@ -2,145 +2,100 @@
 permalink: asa400/controller-replace-recable-reassign-disks.html 
 sidebar: sidebar 
 keywords: asa a400, how to recable the system, how to reassign disks 
-summary: Sie müssen den Speicher neu zuweisen und die Neuzuweisung der Festplatte bestätigen. 
+summary: Übergeben Sie die Kontrolle über die Speicherressourcen an den Ersatzcontroller, damit Ihr ASA A400 System den normalen Betrieb wiederaufnehmen kann. 
 ---
-= System wieder einsetzen und Festplatten neu zuweisen - ASA A400
+= Geben Sie den Controller zurück – ASA A400
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Setzen Sie das Ersatzverfahren fort, indem Sie den Speicher neu zuweisen und die Neuzuweisung bestätigen.
+Übergeben Sie die Kontrolle über die Speicherressourcen an den Ersatzcontroller, damit Ihr ASA A400 System den normalen Betrieb wiederaufnehmen kann.
 
-
-
-== Schritt 1: Das System erneut einsetzen
-
-Überprüfen Sie die Speicher- und Netzwerkverbindungen des Controller-Moduls mithilfe von https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"] Die
+[role="tabbed-block"]
+====
+.Keine Verschlüsselung oder externer Schlüsselmanager (EKM)
+--
+Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie seinen Speicher zurückgeben.
 
 .Schritte
-. Laden Sie Config Advisor herunter und installieren Sie es.
-. Geben Sie die Informationen für das Zielsystem ein, und klicken Sie auf Daten erfassen.
-. Klicken Sie auf die Registerkarte Verkabelung, und überprüfen Sie die Ausgabe. Stellen Sie sicher, dass alle Festplatten-Shelfs angezeigt werden und alle Festplatten in der Ausgabe angezeigt werden. So beheben Sie mögliche Verkabelungsprobleme.
-. Überprüfen Sie die andere Verkabelung, indem Sie auf die entsprechende Registerkarte klicken und dann die Ausgabe von Config Advisor überprüfen.
-
-
-
-
-== Schritt 2: Festplatten neu zuweisen
-
-Wenn sich das Storage-System in einem HA-Paar befindet, wird die System-ID des neuen Controller-Moduls automatisch den Festplatten zugewiesen, wenn die Rückgabe am Ende des Verfahrens stattfindet. Sie müssen die Änderung der System-ID beim Booten des Controllers _Replacement_ bestätigen und anschließend überprüfen, ob die Änderung implementiert wurde.
-
-Diese Vorgehensweise gilt nur für Systeme, auf denen ONTAP in einem HA-Paar ausgeführt wird.
-
-. Wenn sich der Controller _Replacement_ im Wartungsmodus befindet (zeigt das an `*>` Eingabeaufforderung, beenden Sie den Wartungsmodus und gehen Sie zur LOADER-Eingabeaufforderung: `halt`
-. Booten Sie an der LOADER-Eingabeaufforderung am _Replacement_-Controller den Controller, und geben Sie ein `y` Wenn Sie aufgrund einer nicht übereinstimmenden System-ID aufgefordert werden, die System-ID außer Kraft zu setzen:``boot_ontap``
-. Warten Sie, bis der `Waiting for giveback...` Die Meldung wird auf der Controller-Konsole „_Replacement_“ angezeigt und überprüfen Sie anschließend vom gesunden Controller, ob die neue Partner-System-ID automatisch zugewiesen wurde: `storage failover show`
+. Geben Sie in der Loader-Eingabeaufforderung `boot_ontap` .
+. Drücken Sie <enter>, wenn die Konsolenmeldungen angehalten werden.
 +
-In der Befehlsausgabe sollte eine Meldung angezeigt werden, dass sich die System-ID auf dem beeinträchtigten Controller geändert hat und die korrekten alten und neuen IDs angezeigt werden. Im folgenden Beispiel wurde node2 ersetzt und hat eine neue System-ID von 151759706.
+** Wenn die Eingabeaufforderung _Login_ angezeigt wird, fahren Sie mit dem nächsten Schritt am Ende dieses Abschnitts fort.
+** Wenn „_waiting for Giveback_“ angezeigt wird, drücken Sie die Taste <enter>, melden Sie sich beim Partner-Node an und fahren Sie dann mit dem nächsten Schritt am Ende dieses Abschnitts fort.
 
+
+. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`
+. Wenn das automatische Giveback deaktiviert wurde, aktivieren Sie es erneut: `storage failover modify -node local -auto-giveback _true_`
+. Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung wiederherstellen/zurücknehmen: `system node autosupport invoke -node * -type all -message MAINT=END`
+
+
+--
+.Onboard-Verschlüsselung (OKM)
+--
+Die Onboard-Verschlüsselungsschlüssel für OKM wiederherstellen und neu versiegeln und den Controller wieder in den Normalbetrieb versetzen.
+
+.Bevor Sie beginnen
+Überprüfen Sie vor Beginn  https://docs.netapp.com/us-en/ontap-cli/security-key-manager-onboard-show-backup.html["security key-manager onboard show-backup"] oder kontaktieren Sie den NetApp Support.
+
+.Schritte
+. Starten Sie das ONTAP-Menü über die Loader-Eingabeaufforderung `boot_ontap menu`, und wählen Sie Option 10.
+. Rufen Sie die clusterweite Passphrase vom fehlerfreien Controller ab und überprüfen Sie sie.
 +
-[listing]
-----
-node1> `storage failover show`
-                                    Takeover
-Node              Partner           Possible     State Description
-------------      ------------      --------     -------------------------------------
-node1             node2             false        System ID changed on partner (Old:
-                                                  151759755, New: 151759706), In takeover
-node2             node1             -            Waiting for giveback (HA mailboxes)
-----
-. Vergewissern Sie sich beim ordnungsgemäßen Controller, dass alle Corestapy gespeichert sind:
+.. Führen Sie den folgenden Befehl aus, um die clusterweite Passphrase abzurufen:
 +
-.. Ändern Sie die erweiterte Berechtigungsebene: `set -privilege advanced`
+`security key-manager onboard show-backup`
+
+.. Überprüfen Sie die clusterweite Passphrase mit folgendem Befehl:
 +
-Sie können antworten `Y` Wenn Sie aufgefordert werden, den erweiterten Modus fortzusetzen. Die Eingabeaufforderung für den erweiterten Modus wird angezeigt (*>).
-
-.. Speichern von CoreDumps: `system node run -node _local-node-name_ partner savecore`
-.. Warten Sie, bis der Befehl `savecore`abgeschlossen ist, bevor Sie das Giveback ausgeben.
-+
-Sie können den folgenden Befehl eingeben, um den Fortschritt des Befehls savecore zu überwachen: `system node run -node _local-node-name_ partner savecore -s`
-
-.. Zurück zur Administratorberechtigungsebene: `set -privilege admin`
+`security key-manager onboard verify-backup`
 
 
-. Wenn Ihr Storage- oder Volume Encryption-System konfiguriert ist, müssen Sie die Funktionen für Storage oder Volume Encryption mithilfe eines der folgenden Verfahren wiederherstellen: Je nachdem, ob Sie integriertes oder externes Verschlüsselungsmanagement verwenden:
-+
-** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-onboard-key-management-encryption-keys-task.html["Wiederherstellung der integrierten Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"^]
-** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-external-encryption-keys-93-later-task.html["Wiederherstellung der externen Verschlüsselungsschlüssel für das Verschlüsselungsmanagement"^]
 
-
-. Geben Sie den Controller zurück:
-+
-.. Geben Sie von dem ordnungsgemäßen Controller den Storage des ersetzten Controllers wieder: `storage failover giveback -ofnode _replacement_node_name_`
-+
-Der _Replacement_ -Controller nimmt den Storage wieder in Anspruch und führt den Startvorgang durch.
-
-+
-Wenn Sie aufgrund einer nicht übereinstimmenden System-ID aufgefordert werden, die System-ID außer Kraft zu setzen, sollten Sie eingeben `y`.
-
+. Geben Sie die OKM-Passphrase ein.
 +
 
-NOTE: Wenn das Rückübertragung ein Vetorecht ist, können Sie erwägen, das Vetos außer Kraft zu setzen.
+NOTE: Sie werden zweimal zur Eingabe der Passphrase aufgefordert.
+
+. Geben Sie die Daten des Sicherungsschlüssels ein, wenn Sie dazu aufgefordert werden.
+. Geben Sie im Startmenü die Option für den normalen Start ein `1`.
+. Drücken Sie <enter>, wenn _Waiting for Giveback_ angezeigt wird.
+. Schieben Sie das Konsolenkabel zum Partner-Node und melden Sie sich als an `admin`.
+. Nur die CFO-Aggregate zurückgeben (das Root-Aggregat): `storage failover giveback -fromnode local -only-cfo-aggregates _true_`
++
+** Wenn Sie auf Fehler stoßen, wenden Sie sich an https://support.netapp.com["NetApp Support"].
+
+
+. Warten Sie 5 Minuten, nachdem der Giveback-Bericht abgeschlossen ist, und überprüfen Sie den Failover-Status und den Giveback-Status: `storage failover show` Und `storage failover show-giveback`.
+. Synchronisieren und überprüfen Sie den Status der Tasten:
++
+.. Bringen Sie das Konsolenkabel wieder zum Ersatzcontroller.
+.. Fehlende Schlüssel synchronisieren: `security key-manager onboard sync`
++
+
+NOTE: Sie werden aufgefordert, die Cluster-weite Passphrase von OKM für das Cluster einzugeben.
+
+.. Überprüfen Sie den Status der Schlüssel: `security key-manager key query -restored false`
++
+Bei korrekter Synchronisierung sollte die Ausgabe keine Ergebnisse liefern.
 
 +
-http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["Finden Sie die Inhalte zur Hochverfügbarkeitskonfiguration Ihrer Version von ONTAP 9"]
+Wenn in der Ausgabe Ergebnisse angezeigt werden (die Schlüssel-IDs von Schlüsseln, die nicht in der internen Schlüsseltabelle des Systems vorhanden sind), wenden Sie sich an https://support.netapp.com["NetApp Support"].
 
-.. Nachdem das Giveback abgeschlossen ist, bestätigen Sie, dass das HA-Paar sich gesund befindet und ein Takeover möglich ist: `storage failover show`
+
+
+. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben: `storage failover giveback -ofnode _impaired_node_name_`
+. Wenn das automatische Giveback deaktiviert wurde, aktivieren Sie es erneut: `storage failover modify -node local -auto-giveback _true_`
 +
-Die Ausgabe von der `storage failover show` Befehl sollte nicht die in der Partnernachricht geänderte System-ID enthalten.
+
+NOTE: Das Veto gegen die Rückgabe fehlender Schlüssel darf nicht außer Kraft gesetzt werden. Wenden Sie sich an NetApp Support.
+
+. Wenn AutoSupport aktiviert ist, können Sie die automatische Fallerstellung wiederherstellen/zurücknehmen: `system node autosupport invoke -node * -type all -message MAINT=END`
 
 
-
-. Überprüfen Sie, ob die Festplatten ordnungsgemäß zugewiesen wurden: `storage disk show -ownership`
-+
-Die Festplatten, die zum Controller _Replacement_ gehören, sollten die neue System-ID anzeigen. Im folgenden Beispiel zeigen die Festplatten von node1 jetzt die neue System-ID, 1873775277:
-
-+
-[listing]
-----
-node1> `storage disk show -ownership`
-
-Disk  Aggregate Home  Owner  DR Home  Home ID    Owner ID  DR Home ID Reserver  Pool
------ ------    ----- ------ -------- -------    -------    -------  ---------  ---
-1.0.0  aggr0_1  node1 node1  -        1873775277 1873775277  -       1873775277 Pool0
-1.0.1  aggr0_1  node1 node1           1873775277 1873775277  -       1873775277 Pool0
-.
-.
-.
-----
-. Wenn sich das System in einer MetroCluster-Konfiguration befindet, überwachen Sie den Status des Controllers: `metrocluster node show`
-+
-Die MetroCluster-Konfiguration dauert einige Minuten nach dem Austausch und kehrt in den normalen Zustand zurück. Zu diesem Zeitpunkt zeigt jeder Controller einen konfigurierten Status mit aktivierter DR-Spiegelung und einem normalen Modus an. Der `metrocluster node show -fields node-systemid` In der Befehlsausgabe wird die alte System-ID angezeigt, bis die MetroCluster-Konfiguration den normalen Status aufweist.
-
-. Wenn der Controller in einer MetroCluster-Konfiguration befindet, überprüfen Sie abhängig vom Status des MetroCluster, ob im Feld für die DR-Home-ID der ursprüngliche Eigentümer der Festplatte angezeigt wird, wenn der ursprüngliche Eigentümer ein Controller am Disaster-Standort ist.
-+
-Dies ist erforderlich, wenn beide der folgenden Werte erfüllt sind:
-
-+
-** Die MetroCluster Konfiguration befindet sich in einem Switchover-Zustand.
-** Der Controller _Replacement_ ist der aktuelle Besitzer der Festplatten am Notfallstandort.
-+
-https://docs.netapp.com/us-en/ontap-metrocluster/manage/concept_understanding_mcc_data_protection_and_disaster_recovery.html#disk-ownership-changes-during-ha-takeover-and-metrocluster-switchover-in-a-four-node-metrocluster-configuration["Änderungen am Festplattenbesitz während HA Takeover und MetroCluster Switchover in einer MetroCluster Konfiguration mit vier Nodes"]
-
-
-
-. Wenn sich das System in einer MetroCluster-Konfiguration befindet, vergewissern Sie sich, dass jeder Controller konfiguriert ist: `metrocluster node show - fields configuration-state`
-+
-[listing]
-----
-node1_siteA::> metrocluster node show -fields configuration-state
-
-dr-group-id            cluster node           configuration-state
------------            ---------------------- -------------- -------------------
-1 node1_siteA          node1mcc-001           configured
-1 node1_siteA          node1mcc-002           configured
-1 node1_siteB          node1mcc-003           configured
-1 node1_siteB          node1mcc-004           configured
-
-4 entries were displayed.
-----
-. Vergewissern Sie sich, dass die erwarteten Volumes für jeden Controller vorhanden sind: `vol show -node node-name`
-. Wenn Sie die automatische Übernahme beim Neustart deaktiviert haben, aktivieren Sie sie vom gesunden Controller: `storage failover modify -node replacement-node-name -onreboot true`
-
+--
+====
+.Was kommt als Nächstes?
+Nachdem Sie die Eigentümerschaft der Storage-Ressourcen wieder an den Ersatz-Controller übergeben haben, müssen Sie link:controller-replace-restore-system-rma.html["Schließen Sie den Controller-Austausch ab"]den Vorgang durchführen.

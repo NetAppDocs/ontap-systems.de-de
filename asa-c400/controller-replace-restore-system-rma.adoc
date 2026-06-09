@@ -2,16 +2,16 @@
 permalink: asa-c400/controller-replace-restore-system-rma.html 
 sidebar: sidebar 
 keywords: asa c400, how to restore NetApp Storage Encryption, how to complete the replacement process 
-summary: Um Ihr ASA C400-System wieder voll funktionsfähig zu machen, stellen Sie die NetApp Storage Encryption-Konfiguration gegebenenfalls wieder her, installieren Sie Lizenzen für den neuen Controller und senden Sie das defekte Teil an NetApp zurück. 
+summary: 'Schließen Sie den Controller-Austausch für Ihr ASA C400-System ab. Installieren Sie die Lizenzen für den Ersatzcontroller, überprüfen Sie, ob die logischen Schnittstellen (LIFs) an ihren Home-Ports melden, und führen Sie eine Cluster-Integritätsprüfung durch. Senden Sie das defekte Teil anschließend an NetApp zurück.' 
 ---
-= Vollständige Systemwiederherstellung - ASA C400
+= Kompletter Controller-Austausch - ASA C400
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Um den vollen Betrieb des Systems wiederherzustellen, müssen Sie die NetApp Storage Encryption-Konfiguration (falls erforderlich) wiederherstellen und Lizenzen für den neuen Controller installieren und das ausgefallene Teil an NetApp zurückgeben, wie in den mit dem Kit gelieferten RMA-Anweisungen beschrieben.
+Schließen Sie den Controller-Austausch für Ihr ASA C400-System ab. Installieren Sie die Lizenzen für den Ersatzcontroller, überprüfen Sie, ob die logischen Schnittstellen (LIFs) an ihren Home-Ports melden, und führen Sie eine Cluster-Integritätsprüfung durch. Senden Sie das defekte Teil anschließend an NetApp zurück.
 
 
 
@@ -49,9 +49,9 @@ NOTE: Die neuen Lizenzschlüssel, die Sie benötigen, werden automatisch generie
 
 
 
-== Schritt: LIFs überprüfen und Seriennummer registrieren
+== Schritt 2: LIFs überprüfen und die Seriennummer registrieren
 
-Bevor Sie den Node _Replacement_ zum Service zurücksenden, sollten Sie überprüfen, ob sich die LIFs auf ihren Home-Ports befinden, und bei aktiviertem AutoSupport die Seriennummer des Node _Replacement_ registrieren.
+Bevor Sie den _Ersatzknoten_ wieder in Betrieb nehmen, sollten Sie überprüfen, ob sich die LIFs an ihren Home-Ports befinden, und die Seriennummer des _Ersatzknotens_ registrieren, falls AutoSupport aktiviert ist, den Zustand Ihres Clusters überprüfen, alle Wartungsfenster schließen und die automatische Rückgabe zurücksetzen.
 
 .Schritte
 . Vergewissern Sie sich, dass die logischen Schnittstellen ihrem Home-Server und ihren Ports Berichterstellung: `network interface show -is-home false`

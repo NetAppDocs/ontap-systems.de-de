@@ -2,7 +2,7 @@
 permalink: fas8300/controller-replace-system-config-restore-and-verify.html 
 sidebar: sidebar 
 keywords: fas8300, fas8700, restore and verify the system configuration, verify and set the ha state of the controller module 
-summary: Nach dem Austausch und dem Booten der Hardware im Wartungsmodus überprüfen Sie die Low-Level-Systemkonfiguration des Ersatz-Controllers und konfigurieren nach Bedarf die Systemeinstellungen neu. 
+summary: Überprüfen Sie, ob die HA-Konfiguration des Controllers in Ihrem FAS8300 und FAS8700-Speichersystem aktiv ist und ordnungsgemäß funktioniert, und bestätigen Sie, dass die Speicherports des Systems alle Pfade zu den Festplatten auflisten. 
 ---
 = Stellen Sie die Systemkonfiguration – FAS8300 und FAS8700 – wieder her und überprüfen Sie sie
 :allow-uri-read: 
@@ -11,52 +11,38 @@ summary: Nach dem Austausch und dem Booten der Hardware im Wartungsmodus überpr
 
 
 [role="lead"]
-Nach dem Austausch und dem Booten der Hardware im Wartungsmodus überprüfen Sie die Low-Level-Systemkonfiguration des Ersatz-Controllers und konfigurieren nach Bedarf die Systemeinstellungen neu.
+Überprüfen Sie, ob die HA-Konfiguration des Controllers in Ihrem FAS8300 und FAS8700-Speichersystem aktiv ist und ordnungsgemäß funktioniert, und bestätigen Sie, dass die Speicherports des Systems alle Pfade zu den Festplatten auflisten.
 
-
-
-== Schritt 1: Stellen Sie die Systemzeit nach dem Austausch des Controllers ein und überprüfen Sie sie
-
-Sie sollten die Uhrzeit und das Datum auf dem Ersatzcontroller-Modul gegen das gesunde Controller-Modul in einem HA-Paar oder gegen einen zuverlässigen Zeitserver in einer eigenständigen Konfiguration überprüfen. Wenn Zeit und Datum nicht übereinstimmen, müssen Sie sie auf dem Ersatzcontroller-Modul zurücksetzen, um mögliche Ausfälle auf Clients aufgrund von Zeitunterschieden zu verhindern.
-
-.Über diese Aufgabe
-Es ist wichtig, dass Sie die Befehle in den Schritten auf den richtigen Systemen anwenden:
-
-* Der Node _Replacement_ ist der neue Node, der den beeinträchtigten Knoten im Rahmen dieses Verfahrens ersetzt.
-* Der Node _Healthy_ ist der HA-Partner des Node _Replacement_.
-
+Überprüfen Sie die HA-Konfigurationseinstellungen und die Festplattenliste, bevor Sie das System wieder in Betrieb nehmen.
 
 .Schritte
-. Wenn sich der Node _Replacement_ nicht an der LOADER-Eingabeaufforderung befindet, halten Sie das System an der LOADER-Eingabeaufforderung an.
-. Überprüfen Sie auf dem Node _Healthy_ die Systemzeit: `cluster date show`
+. Booten im Wartungsmodus:
 +
-Datum und Uhrzeit basieren auf der konfigurierten Zeitzone.
+`boot_ontap maint`
 
-. Prüfen Sie an der LOADER-Eingabeaufforderung Datum und Uhrzeit auf dem Node _Replacement_: `show date`
+. Geben Sie ein `y`, wenn _Continue with Boot?_ angezeigt wird.
 +
-Datum und Uhrzeit werden in GMT angegeben.
+Wenn die Warnmeldung _System ID Mismatch_ angezeigt wird, geben Sie ein `y`.
 
-. Legen Sie bei Bedarf das Datum in GMT auf dem Ersatzknoten fest: `set date _mm/dd/yyyy_`
-. Stellen Sie bei Bedarf die Zeit in GMT auf dem Ersatzknoten ein: `set time _hh:mm:ss_`
-. Bestätigen Sie an der LOADER-Eingabeaufforderung Datum und Uhrzeit am Node _Replacement_: `show date`
+. Geben Sie den Inhalt der Anzeige ein `sysconfig -v` und erfassen Sie diesen.
 +
-Datum und Uhrzeit werden in GMT angegeben.
 
+NOTE: Wenn Sie _PERSONALITY MISMATCH_ sehen, wenden Sie sich an den Kundendienst.
 
+. Vergleichen Sie in der `sysconfig -v` Ausgabe die Adapterkarteninformationen mit den Karten und Positionen im Ersatzcontroller.
+. Vergewissern Sie sich, dass alle Komponenten denselben `HA` Status aufweisen:
++
+`ha-config show`
 
-
-
-== Schritt: Überprüfen Sie den HA-Status des Controller-Moduls und legen Sie ihn fest
-
-Sie müssen die überprüfen `HA` Status des Controller-Moduls und, falls erforderlich, aktualisieren Sie den Status entsprechend Ihrer Systemkonfiguration.
-
-. Überprüfen Sie im Wartungsmodus des neuen Controller-Moduls, ob alle Komponenten gleich angezeigt werden `HA` Bundesland: `ha-config show`
 +
 Der HA-Status sollte für alle Komponenten identisch sein.
 
-. Wenn der angezeigte Systemzustand des Controller-Moduls nicht mit der Systemkonfiguration übereinstimmt, setzen Sie das ein `HA` Status für das Controller-Modul: `ha-config modify controller ha-state`
+. Wenn der angezeigte Systemstatus des Controllermoduls nicht mit Ihrer Systemkonfiguration übereinstimmt, stellen Sie die `HA` Status des Controller-Moduls:
 +
-Der Wert für `HA-state` Kann einer der folgenden sein:
+`ha-config modify controller _ha-state_`
+
++
+Für den HA-Status kann einer der folgenden Werte verwendet werden:
 
 +
 ** `ha`
@@ -66,6 +52,16 @@ Der Wert für `HA-state` Kann einer der folgenden sein:
 ** `non-ha`
 
 
-. Wenn der angezeigte Systemzustand des Controller-Moduls nicht mit der Systemkonfiguration übereinstimmt, setzen Sie das ein `HA` Status für das Controller-Modul: `ha-config modify controller ha-state`
-. Bestätigen Sie, dass sich die Einstellung geändert hat: `ha-config show`
+. Bestätigen Sie, dass sich die Einstellung geändert hat:
++
+`ha-config show`
 
+. Überprüfen Sie, ob der Adapter die Pfade zu allen Datenträgern auflistet: `storage show disk -p`
++
+Wenn Sie Probleme sehen, überprüfen Sie die Verkabelung, und setzen Sie die Kabel wieder ein.
+
+. Beenden des Wartungsmodus: `halt`
+
+
+.Was kommt als Nächstes?
+Nachdem Sie die Systemkonfiguration für Ihr FAS8300 und FAS8700-System wiederhergestellt und überprüft haben, müssen Sie link:controller-replace-recable-reassign-disks.html["Geben Sie den Controller zurück"].

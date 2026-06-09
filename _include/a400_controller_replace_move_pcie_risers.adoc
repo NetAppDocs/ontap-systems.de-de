@@ -1,0 +1,76 @@
+= 
+:allow-uri-read: 
+
+
+Im Rahmen des Controller-Austauschprozesses müssen Sie die PCIe Riser und die Mezzanine-Karte vom beeinträchtigten Controller-Modul auf das Ersatzcontrollermodul verschieben.
+
+Sie können die folgenden Animationen, Abbildungen oder die schriftlichen Schritte verwenden, um die PCIe-Risers und die Mezzanine-Karte vom Modul für beeinträchtigte Controller in das Ersatzcontroller-Modul zu verschieben.
+
+Verschieben von PCIe-Riser 1 und 2 (linke und mittlere Riser):
+
+.Animation - Verschieben von PCI-Riserern 1 und 2
+video::f4ee1d4d-6029-4fe6-a063-aad9012f170b[panopto]
+Verschieben der Mezzanine-Karte und des Riser 3 (Riser rechts):
+
+.Animation - Bewegen Sie die Mezzanine-Karte und Riser 3
+video::b0c3b575-3434-4e00-a421-aad9012f2e9e[panopto]
+image::../media/drw_A400_Replace-PCIe-cards.png[Entfernen Sie die PCIe-Karten]
+
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Legende Nummer 1"]
+ a| 
+Riserverriegelung
+
+
+
+ a| 
+image:../media/icon_round_2.png["Legende Nummer 2"]
+ a| 
+Verriegelung der PCI-Karte
+
+
+
+ a| 
+image:../media/icon_round_3.png["Legende Nummer 3"]
+ a| 
+PCI-Sperrplatte
+
+
+
+ a| 
+image:../media/icon_round_4.png["Legende Nummer 4"]
+ a| 
+PCI-Karte
+
+|===
+.Schritte
+. Verschieben Sie PCIe-Risers ein und zwei vom beeinträchtigten Controller-Modul auf das Ersatzcontrollermodul:
++
+.. Entfernen Sie alle SFP- oder QSFP-Module, die sich möglicherweise in den PCIe-Karten enthalten haben.
+.. Drehen Sie die Riserverriegelung auf der linken Seite des Steigrohrs nach oben und in Richtung Luftkanal.
++
+Der Riser hebt sich leicht vom Controller-Modul auf.
+
+.. Heben Sie den Riser an, und schieben Sie ihn dann zum Ersatzcontrollermodul.
+.. Richten Sie den Riser an den Stiften an der Seite des Riser-Sockels aus, senken Sie den Riser an den Stiften nach unten, schieben Sie den Riser in den Sockel auf dem Motherboard und drehen Sie dann den Riegel bündig mit dem Blech des Riser nach unten.
+.. Wiederholen Sie diesen Schritt für die Risernummer 2.
+
+
+. Entfernen Sie die Riser-Nummer 3, entfernen Sie die Mezzanine-Karte, und installieren Sie beide in das Ersatzcontrollermodul:
++
+.. Entfernen Sie alle SFP- oder QSFP-Module, die sich möglicherweise in den PCIe-Karten enthalten haben.
+.. Drehen Sie die Riserverriegelung auf der linken Seite des Steigrohrs nach oben und in Richtung Luftkanal.
++
+Der Riser hebt sich leicht vom Controller-Modul auf.
+
+.. Heben Sie den Riser an und legen Sie ihn auf eine stabile, flache Oberfläche.
+.. Lösen Sie die Rändelschrauben auf der Mezzanine-Karte, und heben Sie die Karte vorsichtig direkt aus dem Sockel, und schieben Sie sie dann zum Ersatzcontroller-Modul.
+.. Setzen Sie den Zwischenboden in den Ersatzcontroller ein, und befestigen Sie ihn mit den Rändelschrauben.
+.. Installieren Sie den dritten Riser in das Ersatzcontrollermodul.
+
+
+
