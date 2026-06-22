@@ -992,7 +992,6 @@
   <block id="c08617576b470c531fa6946e0863ed35" category="paragraph">Sie können fortfahren, nachdem Sie die folgenden Meldungen angezeigt haben:</block>
   <block id="34a4ecb461cfb36d2012f0c5b69f96be" category="list-text">Wenn eine Umgebungsvariable nicht wie erwartet festgelegt ist, ändern Sie sie mit dem<block ref="9065882215d4a8221fe75c4a7e40b529" prefix=" " category="inline-code"></block> Befehl.</block>
   <block id="8b4eefcd8e93a21d1bcd9ddea95d0b29" category="list-text">Speichern Sie Ihre Änderungen mit dem<block ref="c1a29cc79fbc441f23fa8d5d10961fd8" prefix=" " category="inline-code"></block> Befehl.</block>
-  <block id="3b1cae4630f47c8bafa2138c896b9e8d" category="list-text">Geben Sie den Controller mithilfe des zurück<block ref="e23a9f1c6189f372292c98d844a0895f" prefix=" " category="inline-code"></block> Befehl</block>
   <block id="12abc0287f5162e3fd98e6515d1cc063" category="doc">Das System neu zuordnen und Festplatten neu zuweisen – AFF A800</block>
   <block id="6e831181b071042488de60792bba5661" category="paragraph">Wenn sich das Storage-System in einem HA-Paar befindet, wird die System-ID des neuen Controller-Moduls automatisch den Festplatten zugewiesen, wenn die Rückgabe am Ende des Verfahrens stattfindet. Sie müssen die Änderung der System-ID beim Booten des Controllers _Replacement_ bestätigen und anschließend überprüfen, ob die Änderung implementiert wurde.</block>
   <block id="38c6311b7d9271edd32d4452d105b150" category="list-text">Booten Sie an der LOADER-Eingabeaufforderung am _Replacement_-Controller den Controller, und geben Sie ein<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> Wenn Sie aufgrund einer nicht übereinstimmenden System-ID aufgefordert werden, die System-ID außer Kraft zu setzen:<block ref="ce54ef17bebf280339d340bd40dff593" prefix="" category="inline-code"></block></block>
@@ -3283,85 +3282,19 @@
   <block id="e568219783dc2975662f32e6665b9312" category="paragraph">Der Update-Flash-Vorgang läuft einige Minuten lang und startet das System anschließend neu.</block>
   <block id="64c7b7b950f686aaa9399673582360b1" category="list-text">Wenn Sie zur Bestätigung der Diskrepanz bei der System-ID aufgefordert werden, geben Sie ein<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block>.</block>
   <block id="e4c1c828d40a575431492bab6401d8ae" category="paragraph">Die Startsequenz wird normal fortgesetzt.</block>
-  <block id="cfd2431baff6fc4122f2c8fed540c128" category="paragraph">Während des Upgrades durch Verschiebung des Storage schalten Sie node3 und node4 ein, starten das Software-Image und konfigurieren die Nodes. Zwischen Original und neuen Nodes kann das physische Port-Layout abweichen. Um das richtige Layout von Ports und Verbindungen zu identifizieren, sollten Ports zwischen Original- und Ersatz-Nodes zugeordnet werden.</block>
-  <block id="cc32105596984688d6ab5fee199bc645" category="list-text">Schalten Sie den Netzschalter auf node3 ein, und drücken Sie dann sofort Strg-C an der Konsole, um auf die LOADER-Eingabeaufforderung zuzugreifen.</block>
-  <block id="25870cbb4fe9afef5797b531420b7012" category="paragraph">Wenn sich Node3 und node4 im selben Chassis befinden, fahren Sie mit Schritt 2 fort. Falls nicht, fahren Sie mit Schritt 3 fort.</block>
-  <block id="6c43e0670806fec2f9b82e002c3d44d5" category="list-text">Wenn sich Node3 und node4 in einer Einzel-Chassis-Konfiguration befinden (mit Controllern im selben Chassis):</block>
-  <block id="d486515e741f0bde35c2fd426a867b3d" category="list-text">Schließen Sie eine serielle Konsole an node4 an.</block>
-  <block id="bab144c0a8977d9f14b3ec5a34769bb7" category="list-text">Schalten Sie node4 ein, wenn er nicht bereits EINGESCHALTET ist, und unterbrechen Sie den Bootvorgang, indem Sie am Konsolenterminal Strg-C drücken, um auf die LOADER-Eingabeaufforderung zuzugreifen.</block>
-  <block id="7f3fbfaad92df530efc5e2c935feab6d" category="paragraph">Die Stromversorgung sollte bereits EINGESCHALTET sein, wenn sich beide Controller im gleichen Chassis befinden.</block>
-  <block id="b55b1fdf790245853aab84a6f6dd8662" category="paragraph">Verlassen sie node4 an DER LOADER-Eingabeaufforderung. Sie kehren zu diesem Verfahren zurück und wiederholen Sie diese Schritte, nachdem node3 installiert wurde.</block>
-  <block id="f48f19368f0b14f420b24f2ef271b455" category="list-text">Geben Sie an der LOADER-Eingabeaufforderung den folgenden Befehl ein:<block ref="b33e24759706adbdd475faecf8fa12dd" prefix=" " category="inline-code"></block></block>
-  <block id="f1115a4ee76c827e3baf90e4fccb2989" category="list-text">Konfigurieren Sie an der Eingabeaufforderung DES LOADERS die Netzboot-Verbindung für eine Management-LIF:</block>
-  <block id="d28de6877e1c71b43aa9dbe62d9bc5a1" category="cell">Wenn IP-Adresse...</block>
-  <block id="54201c55d2bdc7a9e19d9e032d8c0ede" category="paragraph">DHCP</block>
-  <block id="34fa36e7cbe88693048d104245a7ad12" category="paragraph"><block ref="910e8145592a2ef4eaf5e3c21b90a5e1" prefix="" category="inline-code"></block></block>
-  <block id="8e6e6006ec999664feafadd20f497a0e" category="paragraph"><block ref="f25dfb72f16dee7b2d5d9ae7416ce91e" prefix="" category="inline-code"></block><block ref="175d3dd01e5d16ef9b830b22b0914782" prefix=" " category="inline-code"></block></block>
-  <block id="fc77134b1cf9bee36efeff8c4e7ff00d" category="list-text">Führen Sie an der Loader-Eingabeaufforderung einen Netzboot auf der Knoten 3 aus:</block>
-  <block id="a6d12afddb580faaf04d9a073325f914" category="paragraph">*SYSTEME DER FAS2200, FAS2500, FAS3200, FAS6200, FAS/AFF8000 SERIE*</block>
-  <block id="935d002e70e8bae5172c906d561c2c9e" category="paragraph"><block ref="461505a825167d6b66e648674621319f" prefix="" category="inline-code"></block></block>
-  <block id="339dbbf2e3919abe2381758c4b54e24c" category="paragraph">*Alle anderen Systeme*</block>
-  <block id="a7cb2d731b29707bf9c40c8d88a0c732" category="admonition">Wenn Sie die neuen Controller nicht als Netzboot senden können, wenden Sie sich an den technischen Support.</block>
-  <block id="9a8c20fab9267090fe0211c579b8d259" category="list-text">Wählen Sie im Startmenü die Option *(7) Neue Software zuerst installieren* aus, um das neue Software-Image auf das Boot-Gerät herunterzuladen und zu installieren.</block>
-  <block id="071501038eea1d369bfa271bfc4c7ff9" category="paragraph">Ignorieren Sie die folgende Meldung: „Dieses Verfahren wird nicht für Non-Disruptive Upgrade auf einem HA-Paar unterstützt“. Dies gilt für unterbrechungsfreie Software-Upgrades, nicht für Controller-Upgrades.</block>
-  <block id="647f982b341b67a165ac63d735784a54" category="paragraph">Geben Sie ggf. Benutzernamen/Passwort ein, oder drücken Sie die Eingabetaste, um fortzufahren.</block>
-  <block id="a01beec0f6ce0a2dd45c8f1d5aa3e76c" category="list-text">Eingabe<block ref="7b8b965ad4bca0e41ab51de7b31363a1" prefix=" " category="inline-code"></block> So überspringen Sie die Backup-Recovery, wenn eine Eingabeaufforderung wie die folgende angezeigt wird:</block>
-  <block id="4c311f4de89068c42d4731e90025eefc" category="list-text">Starten Sie den Neustart durch Eingabe<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> Wenn eine Eingabeaufforderung wie die folgende angezeigt wird:</block>
-  <block id="3772c3f3ea70d5c6527c33a07c35e34b" category="list-text">Unterbrechen Sie den Neubootvorgang, indem Sie Strg-C drücken, um das Boot-Menü anzuzeigen, wenn das System Sie dazu auffordert.</block>
-  <block id="6854e023bbdb323be06c87482d9b3a73" category="list-text">Wählen Sie im Startmenü *(5) Boot-Modus* aus, um auf den Wartungsmodus zuzugreifen.</block>
-  <block id="2e17578ed57b4217f0fff6fb665fb7db" category="list-text">Nehmen Sie gegebenenfalls Änderungen an den FC- oder CNA-Ports am Node vor, und booten Sie den Node im Wartungsmodus neu.</block>
-  <block id="1988e9c8cf124cb346a67d52ea613567" category="inline-link">ONTAP 9 – Systemadministrationshandbuch</block>
-  <block id="18c7e0e75e3812f51b2d0d056bba571f" category="paragraph"><block ref="18c7e0e75e3812f51b2d0d056bba571f" category="inline-link-rx"></block></block>
-  <block id="fac8856b7deb46986e1adf9adfcd8760" category="inline-link">Im SAN Administration Guide finden Sie die Version von Data ONTAP 8</block>
-  <block id="80d64ccaef61f3ad09c88667c74bd5f0" category="paragraph"><block ref="80d64ccaef61f3ad09c88667c74bd5f0" category="inline-link-rx"></block></block>
-  <block id="4fc3840b98010fad05789a6f15af7d01" category="list-text">Sie sollten überprüfen, ob in der Befehlsausgabe HA angezeigt wird:</block>
-  <block id="39b29886f880d41a4124d49c7d84425f" category="paragraph">Systeme zeichnen sich in EINEM PROM auf, ob sie in einem HA-Paar oder einer eigenständigen Konfiguration sind. Der Status muss auf allen Komponenten im Standalone-System oder im HA-Paar der gleiche sein</block>
-  <block id="f1d3befb93f2448e5fed337b4f43a25b" category="paragraph">Mit dem ha-config modify-Controller ha-Befehl wird ha für die Controller-Einstellung konfiguriert. Der ha-config modify Chassis ha-Befehl konfiguriert ha für die Chassis-Einstellung.</block>
-  <block id="d221362a63e7ae50e83d35a15224dfbc" category="inline-link">Finden Sie den Hochverfügbarkeits-Leitfaden für Ihre Version von Data ONTAP 8</block>
-  <block id="fdb5e3795d932923cacf5ee53c989cbb" category="paragraph"><block ref="fdb5e3795d932923cacf5ee53c989cbb" category="inline-link-rx"></block></block>
-  <block id="8b641292568e892fbb88f218a413255c" category="paragraph">Das System wird an der LOADER-Eingabeaufforderung angehalten.</block>
-  <block id="8d5222cdfab2ef87317118b2f5929210" category="cell">Plattformen (mit Links zu Datenblättern)</block>
   <block id="198fc1af468509094e8d40e07916c836" category="cell">Verfügbar ab</block>
   <block id="756d409209ace98589705774b5011aa0" category="inline-link">FAS9500</block>
-  <block id="777fd6d7388769d3f60adc007c4390a4" category="paragraph"><block ref="777fd6d7388769d3f60adc007c4390a4" category="inline-link-rx"></block></block>
-  <block id="801fb2644ef002c15826950c6197b174" category="paragraph">ONTAP 9.10.1P3 und 9.11.1</block>
   <block id="ec5e81cea4c5ee83d635778e86350e80" category="inline-link">AFF A900</block>
-  <block id="ca4b82b36a4dc81f4031a7b488d4b39f" category="paragraph"><block ref="ca4b82b36a4dc81f4031a7b488d4b39f" category="inline-link-rx"></block></block>
   <block id="ab8296c5ef7a7b056b384680f89a9379" category="paragraph">ONTAP 9.10.1</block>
-  <block id="7a5c1b3b42cd33e030fad3a09cb47892" category="inline-link">AFF A250/AFF ASA A250</block>
-  <block id="9c592efb6951109c06abfa313c448910" category="paragraph"><block ref="9c592efb6951109c06abfa313c448910" category="inline-link-rx"></block></block>
   <block id="2abfff2974f589f7a217325f304e0ec5" category="paragraph">ONTAP 9.8</block>
   <block id="9cce52969ddef317310e7d9d1c259895" category="inline-link">FAS500f</block>
-  <block id="972a6d8ca1f22a603149f7918e94b4b5" category="paragraph"><block ref="972a6d8ca1f22a603149f7918e94b4b5" category="inline-link-rx"></block></block>
-  <block id="fc7ee7d68ea47bebe0d5a0d9f09a0db6" category="inline-link">AFF ASA A800</block>
-  <block id="d08e349865d8a611a4efa0b375aa9a53" category="paragraph"><block ref="d08e349865d8a611a4efa0b375aa9a53" category="inline-link-rx"></block></block>
   <block id="1752b126dd5e4219fbf53c09ee63d51e" category="inline-link">FAS8300</block>
-  <block id="f3226db0bedff5ebe7d408b5769cc3a1" category="paragraph"><block ref="f3226db0bedff5ebe7d408b5769cc3a1" category="inline-link-rx"></block></block>
   <block id="0588c4f1b58eac9f5062dc1da6e8435a" category="inline-link">FAS8700</block>
-  <block id="3b3ba73020e2a1c395088d82f035a824" category="paragraph"><block ref="3b3ba73020e2a1c395088d82f035a824" category="inline-link-rx"></block></block>
   <block id="540dacfeb5577ce4282c41e9c7518680" category="inline-link">AFF A400</block>
-  <block id="1e88c1b0eef3bd8731168448839c607e" category="paragraph"><block ref="1e88c1b0eef3bd8731168448839c607e" category="inline-link-rx"></block></block>
-  <block id="d82ff6a667a08641467a53a4dd90ba99" category="inline-link">AFF ASA A220</block>
-  <block id="fc8a74184b0a6f06b20122b246aebb3b" category="paragraph"><block ref="fc8a74184b0a6f06b20122b246aebb3b" category="inline-link-rx"></block></block>
-  <block id="8aad31d89be54b8bac4e5fd542398209" category="inline-link">AFF ASA A700</block>
-  <block id="55d66a8c57f020bf7f89ebbe23192880" category="paragraph"><block ref="55d66a8c57f020bf7f89ebbe23192880" category="inline-link-rx"></block></block>
   <block id="b6000f9eed7f8ea9ee4632bd2f77961a" category="inline-link">AFF C 190</block>
   <block id="73ab298c8e00d66d28156892903a39ce" category="inline-link">AFF A320</block>
-  <block id="d031966d3750279e57bedf297cc882ab" category="paragraph"><block ref="d031966d3750279e57bedf297cc882ab" category="inline-link-rx"></block></block>
-  <block id="e7e0038bb30579a3120d266861982881" category="cell">Funktionalität</block>
-  <block id="3100460fa3d7ba2ea001abefda93f3bc" category="cell">Beschreibung und wo man mehr erfahren kann</block>
-  <block id="77a5cc80abc33195772f4153e3373440" category="paragraph">Erweiterte Plattformunterstützung für NS224 Festplatten-Shelfs</block>
-  <block id="97f5affc0c506da7179d6bff20940da1" category="paragraph">Die folgenden Plattformen unterstützen NS224 Laufwerk-Shelfs:</block>
   <block id="fe3922b3af83dfb6ba506bb4b7969408" category="list-text">AFF A800/AFF ASA A800</block>
   <block id="040a43f160d19358d6aaa58c129061c6" category="list-text">AFF A700/AFF ASA A700</block>
-  <block id="08eed4f274ea307f3e2eea8d2970b57e" category="paragraph">Hot-zusätzliche 12-GB-SAS-Shelfs zu 6-GB-SAS-Storage-Stacks</block>
-  <block id="9dc812e3ee72f2236c9121a61ac67152" category="paragraph">Ein einziger Wechsel von 6 GB zu 12 GB in einem SAS-Storage-Stack wird jetzt unterstützt. Somit können bestehende 6-GB-Stacks mit 12-GB-Shelfs erweitert werden.</block>
-  <block id="420766222a929fd9b32b65dbb060314b" category="inline-link">Hot-Adding-Shelfs mit IOM12-Modulen werden in einem Shelf-Stack mit IOM6-Modulen ausgeführt</block>
-  <block id="1f1c067ab37a0e7d7639b39f2c4a9863" category="paragraph"><block ref="1f1c067ab37a0e7d7639b39f2c4a9863" category="inline-link-rx"></block></block>
-  <block id="7ebd8d0d42466b09b19073ae00f72945" category="paragraph">ONTAP 9.7P4</block>
-  <block id="6f2977e3ee99fb8e3f9058e09374bdac" category="paragraph">ONTAP 9.6P9</block>
-  <block id="11f1d8b1ae01cc9ffc60cebf4b24af37" category="paragraph">ONTAP 9.5P14</block>
-  <block id="302f8678c032e39790505ccc892157d6" category="doc">Unterstützung für neue Adapter</block>
   <block id="24f29c7fbb4c8e016166824caf65cde6" category="cell">Teilenummer des Adapters</block>
   <block id="3adbdb3ac060038aa0e6e6c138ef9873" category="cell">Kategorie</block>
   <block id="f08a499816d36838908b782ddbffd503" category="inline-link">X91148A</block>
@@ -3375,7 +3308,6 @@
   <block id="dfd3db7fdc1a7e88e6e8d964ce5bed7b" category="paragraph"><block ref="dfd3db7fdc1a7e88e6e8d964ce5bed7b" category="inline-link-rx"></block></block>
   <block id="8ed5851faf32cc00c77e732fa7ccd048" category="paragraph">NVMe-SSD-Modul (1 TB)</block>
   <block id="7cf14d1ebaa748e0c979614ac964b725" category="paragraph">Core Dump-Gerät</block>
-  <block id="925214212b01eccbe569020ac0ec7569" category="section-title">Unterstützung für neue Switches</block>
   <block id="d580be6c6f7c3c0fa749d81a5cd7cd95" category="inline-link">100 GbE Cisco Switch mit 36 Ports (X190200)</block>
   <block id="deb0a21917c7eb0c3c9938d678ab438a" category="paragraph"><block ref="deb0a21917c7eb0c3c9938d678ab438a" category="inline-link-rx"></block></block>
   <block id="123e4b878b0b13297b19666d44ad9918" category="paragraph">Unterstützung einer Shared IT-Infrastruktur (Cluster, HA und Switch-Attached Storage) auf demselben Paar Cisco Nexus 9336C-FX2 Switches, einschließlich Unterstützung für MetroCluster IP-Konfigurationen.</block>
@@ -3391,37 +3323,9 @@
   <block id="856f27e361c1b2c9da2793619e1bea84" category="paragraph">Cisco Nexus 100 GbE Switch kann als dedizierter Storage-Switch verwendet werden, um NS224 NVMe Laufwerk-Shelfs mit folgenden Plattformen zu verbinden:</block>
   <block id="a2830a8a6b7415efd3d60ab3af3c1b02" category="list-text">AFF A400/AFF ASA A400</block>
   <block id="afa798215d91c0ee616815befa600f66" category="paragraph">ONTAP 9.5P8</block>
-  <block id="ad30bda50ee1d84821c1e37d140d5779" category="section-title">Unterstützung für neue Plattformen</block>
-  <block id="8fb3915f86fbc4fd2aabaf4ff9cd2391" category="section-title">Neue Shelf-Unterstützung</block>
   <block id="0a10ffb3d8f2b29b2aed44120c4b52ee" category="paragraph">NS224</block>
-  <block id="35658b297cf9ed96b6caf7fb1fa6e9b8" category="section-title">Neue Hardware-Updates</block>
-  <block id="d2ce523f68b472a867f3bd2b22235971" category="section-title">Neue Hardware-Verbesserungen</block>
-  <block id="25bb4e4a069ff20f27f5a435822dd06e" category="paragraph">Die Hardware-Upgrade-Verfahren wurden in ONTAP 9.8 mit der Einführung der automatischen Port-Platzierung vereinfacht. Wenn Sie ein System mit ONTAP 9.8 aktualisieren, müssen Sie die korrekte Vorgehensweise verwenden, um die Funktion zur Anbringung von Ports zu berücksichtigen.</block>
-  <block id="fe2331c22be633c0221229b4b8251766" category="paragraph">Lesen Sie die folgende Tabelle, um die verfügbaren Upgrade-Verfahren zu sehen. Weitere Einzelheiten finden Sie in den einzelnen Anleitungen, um festzustellen, ob das Verfahren angemessen ist.</block>
-  <block id="301e2a674920a7bb1b220a6ccd88ce36" category="inline-link">Wahl einer Upgrade- oder Aktualisierungsmethode</block>
-  <block id="8e39b9aa91b065e9d66d9c539e9dee09" category="paragraph">Weitere MetroCluster-spezifische Verfahren finden Sie unter<block ref="2c4f45f6db308a425e052afade2ba656" category="inline-link-rx"></block>.</block>
   <block id="3b2a75ebc087c7f3c4fa9ac0e2a92ebe" category="cell">ONTAP-Version</block>
   <block id="ce5bf551379459c1c61d2a204061c455" category="cell">Standort</block>
-  <block id="b8910962b1d031cc1eb8e8ad588c4c48" category="cell">Unterbrechungsfrei</block>
-  <block id="6a4e2fb80a022a097095074de0872ba8" category="cell">Unterstützung von MetroCluster</block>
-  <block id="e4fca24933722ffa2a9b1722f5b7c98b" category="paragraph">9.8 auf 9.0.x</block>
-  <block id="a2539e65a13fda0a8ce497ac0baa63a7" category="inline-link">Controller Hardware Upgrade Express Guide</block>
-  <block id="102701de9cd91bb85d0be0b827e7249c" category="paragraph"><block ref="976e9ef467c15e49d11b0c7b029246aa" category="inline-link-rx"></block> (Vorhandener physischer Storage wird verschoben)</block>
-  <block id="bafd7322c6e97d25b6299b5d6fe8920b" category="paragraph">Nein</block>
-  <block id="1bae30ddf0085229a83e78a9a81e702d" category="paragraph"><block ref="976e9ef467c15e49d11b0c7b029246aa" category="inline-link-rx"></block> (Verschieben von Volumes in neuen Storage)</block>
-  <block id="93cba07454f06a4a960172bbd6e2a435" category="paragraph">Ja.</block>
-  <block id="4f7dd0fe0940df4a5fda327a4ee4ddbd" category="paragraph">9.8</block>
-  <block id="6e0e0f332bfb66d274b91109411b3f32" category="inline-link">Verwenden von Befehlen „`sSystem Controller replace`“ zum Upgrade der Controller-Hardware unter ONTAP 9.8</block>
-  <block id="7d7b5e7e6f18571263a6102de668df97" category="paragraph"><block ref="7d7b5e7e6f18571263a6102de668df97" category="inline-link-rx"></block></block>
-  <block id="581517cb09027ad76c00869dee6ebc72" category="paragraph">Ja (FC)</block>
-  <block id="0da585fbf16ad6857f399de508f7bd98" category="inline-link">Verwenden Sie Aggregate Relocation, um Controller Hardware mit ONTAP 9.8 oder höher manuell zu aktualisieren</block>
-  <block id="4e3ad587dedcb205e51c2c68fea2b06c" category="paragraph"><block ref="4e3ad587dedcb205e51c2c68fea2b06c" category="inline-link-rx"></block></block>
-  <block id="be19b2cc956046248e1ef8386533881c" category="paragraph">9.7 bis 9.5</block>
-  <block id="95c2e51299e797320f63ebcb8537047d" category="inline-link">Verwenden von Befehlen „`sSystem Controller replace`“ zum Aktualisieren der Controller-Hardware unter ONTAP 9.5 auf ONTAP 9.7</block>
-  <block id="ab874cc6c54612fa57c8de133e3a234d" category="paragraph"><block ref="ab874cc6c54612fa57c8de133e3a234d" category="inline-link-rx"></block></block>
-  <block id="4b8a576fb64d5b6a41905d5d9b5d1568" category="paragraph">9.7 und früher</block>
-  <block id="2f92df8531df1f2b3292aaca0327afca" category="inline-link">Aktualisieren von Controllern mit Aggregatverschiebung, um die Controller-Hardware mit ONTAP 9.7 und früher manuell zu aktualisieren</block>
-  <block id="9cd2ad15fd6e17e2089c3e6d267284e8" category="paragraph"><block ref="9cd2ad15fd6e17e2089c3e6d267284e8" category="inline-link-rx"></block></block>
   <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="doc">Versionshinweise</block>
   <block id="616fd6518ea3af054114db97fda5ce99" category="section-title">Schritt 2: Verschieben Sie den NVMEM-Akku</block>
   <block id="b6790ed19ee7185948334edd9ddcca05" category="section-title">Schritt 3: Verschieben Sie die Startmedien</block>
@@ -6964,15 +6868,6 @@ SFP+ (Target/Initiator)</block>
   <block id="7b71c8c5341c95139930e1f1748956d7" category="list-text">Richten Sie das Modul an den Kanten der Öffnung des Gehäusesteckplatzes aus.</block>
   <block id="0169e44348295d5766b174aa4c296a62" category="list-text">Wiederholen Sie die Schritte zum Entfernen und Installieren, um zusätzliche Module für den Controller zu ersetzen.</block>
   <block id="7c99497119e4bb81fd50dbd906dfde72" category="list-text">Booten Sie den Controller über die LOADER-Eingabeaufforderung:_bye_ neu</block>
-  <block id="66e5f5f877412d7578e6bec4d8f933b5" category="list-text">Drücken Sie auf der außer Betrieb genommenen Steuerung _Y_, wenn angezeigt wird<block ref="aa48693d0248bb57512e373cd7f7eebc" prefix=" " category="inline-code"></block></block>
-  <block id="3578391379ba5c5411207a0793afef71" category="list-text">Drücken Sie auf dem Controller für beeinträchtigte Störungen _Y_, wenn Sie zum Überschreiben aufgefordert werden<block ref="295b4ac77f4e1c5f93c6894df85fd86d" prefix=" " category="inline-code"></block>.</block>
-  <block id="61dad7d5cf7f4e4b7469b097ac35485f" category="list-text">Drücken Sie auf dem Controller für beeinträchtigte Störungen _y_, wenn angezeigt wird<block ref="dff08971c5acbbdac6642922fde20608" prefix=" " category="inline-code"></block>.</block>
-  <block id="e9636d3f8e24f08b43c5d1ed71e065ea" category="list-text">Drücken Sie auf dem Controller für beeinträchtigte Störungen _y_, wenn angezeigt wird<block ref="396e369cf75815ba643925818d3ec37e" prefix=" " category="inline-code"></block>.</block>
-  <block id="976af5aa217f6c1b1dbf16e0ed0a4bde" category="list-text">Drücken Sie auf dem beeinträchtigten Controller bei Aufforderung _y_, um den beeinträchtigten Controller neu zu starten, und drücken Sie _Ctrl-c_ für das Startmenü.</block>
-  <block id="29d550bee6b8b18ca38f7642778d8dad" category="inline-link-macro">Wiederherstellung von Schlüsselmanagern</block>
-  <block id="55f7c3a98a49a2f2d96cb2d21b95d947" category="list-text">Geben Sie den Controller mithilfe des Befehls „_Storage Failover Giveback -fromnode local_“ zurück.</block>
-  <block id="4c6b53c8ce9f5900a70a994f21a32c6b" category="list-text">Stellen Sie das automatische Giveback wieder her, wenn Sie es mithilfe des Befehls _Storage Failover modify -Node local -Auto-Giveback true_ deaktiviert haben.</block>
-  <block id="85ef34c14131c3f446c3d96330659ce7" category="list-text">Wenn AutoSupport aktiviert ist, stellen Sie die automatische Fallerstellung mithilfe des Befehls _System Node AutoSupport Invoke -Node * -type all -message MAINT=END_ wieder her.</block>
   <block id="4e3d3d75dd1d92ce7fd5a7cb8fbca06f" category="doc">Schritt 1: Ersetzen Sie die Startmedien</block>
   <block id="40137b2ef5d6219999ccbff7acc4080e" category="paragraph">Das Startmedium befindet sich im System Management-Modul und kann durch Entfernen des Moduls aus dem System aufgerufen werden.</block>
   <block id="c7e42b88c75788e5a4dd44ffee425837" category="image-alt">Startmedien ersetzen Grafik</block>
@@ -7333,9 +7228,6 @@ SFP+ (Target/Initiator)</block>
   <block id="d60b517023845eb33535660ac501cf18" category="list-text">Die Adresse des KMIP-Servers.</block>
   <block id="70b8d21a07e70130ed6b262a91c18626" category="list-text">Der KMIP-Port.</block>
   <block id="e43680b19a57600cbf0bc788265754c7" category="list-text">Wählen Sie Option 11 aus dem ONTAP-Startmenü.</block>
-  <block id="b719e721c62569ed8b97aaf7ac03691a" category="paragraph">Multi-Cluster Interconnect-Switch</block>
-  <block id="237cf241ea2c39cca38863cb459577d8" category="paragraph">Multi-Cluster-Konfigurationen ermöglichen es mehreren Clustern, denselben Cluster-Switch zu nutzen, bereitgestellt durch zwei neue Referenzkonfigurationsdateien für 4x4- und 2x8-Node-Konfigurationen.</block>
-  <block id="8020ad245e7cbc2ac49c84b7f4ace684" category="paragraph">ONTAP 9.14.1</block>
   <block id="0be7ecaeb710959e64858a36fa1f8783" category="inline-link">AFF A1K</block>
   <block id="c61e96543ff55077f64d8dd03940c2c6" category="inline-link">AFF A70</block>
   <block id="8cd7d5cbedf290a9b729cc263d9b289c" category="paragraph">ONTAP 9.15.1</block>
@@ -7689,7 +7581,6 @@ SFP+ (Target/Initiator)</block>
   <block id="0861a4c5524aee3e491db29774dd89a8" category="sidebar">Fahren Sie die Controller herunter</block>
   <block id="cada3ae8b9b850f4721595b91f8ab383" category="doc">Schritt 1: Den Controller wieder zurücknehmen</block>
   <block id="f4c083c41633c63a72a1bbce7db1c159" category="sidebar">Controller zurückgeben</block>
-  <block id="a39e0fbfb2db42a80ba7546850d8b5c6" category="paragraph"><block ref="a39e0fbfb2db42a80ba7546850d8b5c6" category="inline-link-rx"></block></block>
   <block id="3512d92434ff4ef9e4eb4253b21a863e" category="image-alt">Die Kabel werden mit der Zuglasche des Steckers nach oben verlegt</block>
   <block id="21631ea576ae592d82bfa53578687d4b" category="image-alt">Betriebsanzeige-LED des Bedienfelds</block>
   <block id="98d01cf184fc8b875e89cd5e6234e36c" category="image-alt">Warnungs-LED des Bedienfelds</block>
@@ -7825,10 +7716,7 @@ SFP+ (Target/Initiator)</block>
   <block id="d17bb023ab45bd18aad4108bff14bf1e" category="list-text">Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück. <block ref="672892c7f98df9ad95d0024f72bc4b95" category="inline-link-rx"></block>Weitere Informationen finden Sie auf der Seite.</block>
   <block id="66a35db4b6d963b540c6a3d31a9d39e6" category="paragraph">Schalten Sie das Controller-Modul außer Betrieb, oder übernehmen Sie es.</block>
   <block id="011b6189f470beb455ff657e2d7f7a63" category="list-text">Drehen Sie die Nockenverriegelung so weit wie möglich vom Modul weg.</block>
-  <block id="5ad3ca057c7fdbeb9a29c3682785baa3" category="cell">Wenn Ihr System ausgeführt wird...</block>
   <block id="2e8e8fd780cc78a14b825cad663b2611" category="paragraph">ONTAP 9.16.0 oder früher</block>
-  <block id="607ae42cd8348594bc8bfa6a3c380eba" category="paragraph">*HINWEIS:* Wenn Sie eine andere Nachricht als eine erfolgreiche Wiederherstellung sehen, kontaktieren Sie<block ref="dac6ef02422de09259cb8cc562a669a7" category="inline-link-rx"></block>.</block>
-  <block id="d9cbafff040793241dffd17bc8129532" category="paragraph">*HINWEIS:* Wenn der Prozess fehlschlägt, kontaktieren Sie<block ref="dac6ef02422de09259cb8cc562a669a7" category="inline-link-rx"></block>.</block>
   <block id="54d6f7773c4a60500d049c396202a23d" category="list-text">Drücken Sie die CAM-Taste für die Systemverwaltung.</block>
   <block id="e3f95753aace3276fa0375074c45c988" category="list-text">Es dürfen keine fehlerhaften Cluster-Ports auf dem gestörten Controller vorhanden sein.</block>
   <block id="9a55c0fdded61a1e549c1b9afbfc5023" category="list-text"><block ref="32b858596eeb9351eca27c2906a21da4" prefix="" category="inline-code"></block> (In ASA Systemen nicht unterstützt)</block>
@@ -8255,20 +8143,15 @@ SFP+ (Target/Initiator)</block>
   <block id="2fbf4b96b341ff3cf1fd1fb73e8899c8" category="paragraph"><block ref="2fbf4b96b341ff3cf1fd1fb73e8899c8" category="inline-image-macro-rx" type="image"></block></block>
   <block id="feb4f24fd90c865c8c1692c9529598c6" category="paragraph">Bild:[Callout number 1] drw_a900_Power-on_IEOPS-941.svg[width=500px]</block>
   <block id="cbb5640a4c423d549c9eb57b27dbd4ea" category="image-alt">Symbol Quadrat 1 grün</block>
-  <block id="0b9a61d1a01d980aaf6ca850e1b286f5" category="paragraph"><block ref="0b9a61d1a01d980aaf6ca850e1b286f5" category="inline-link-macro-rx"></block></block>
   <block id="96a5f900d6bd8337209c17fce1a47ae5" category="image-alt">Legende Nummer 3]</block>
   <block id="cd5ec5f3586869573f3f0b3112426052" category="sidebar">TR-4290 - SAP HANA auf NetApp FAS Systemen mit NFS</block>
   <block id="1e4893fc6c634f02ace3ba7beb78d669" category="inline-link-macro">Quorum-Status</block>
   <block id="8df1727c16aa446d0622abe8cab177ae" category="list-text">Wenn Sie über ein SAN-System verfügen, müssen Sie Event-Meldungen ) für den beeinträchtigten Controller SCSI Blade überprüft haben <block ref="090678c8ba0a25df800d3d4eeaf19522" prefix="(" category="inline-code"></block>. Mit dem<block ref="090678c8ba0a25df800d3d4eeaf19522" prefix=" " category="inline-code"></block> Befehl (im erweiterten Modus von priv) werden der Knotenname,  der Node, der Verfügbarkeitsstatus dieses Node und der Betriebsstatus dieses Node angezeigt<block ref="8650efa63daff32c831511388978454c" category="inline-link-macro-rx"></block>.</block>
-  <block id="8ad44b8e0ede0abb18fd1d9732ea1fec" category="list-text">Führen Sie auf dem gesunden Partner-Controller den Wiederherstellungsbefehl aus:<block ref="44d388b27236c791c5fe1d30cc29bc43" prefix=" " category="inline-code"></block>.</block>
-  <block id="3fef721e9c365db9acdcf0c6462afc1d" category="list-text">Setzen Sie auf dem gesunden Partner-Controller den beeinträchtigten Controller auf Admin-Ebene zurück:<block ref="0a654c13d63710f829bc02c4cbec79ee" prefix=" " category="inline-code"></block>.</block>
-  <block id="eb907bd5c32aa1799bf0e27e04819907" category="list-text">Wenn das System keine Codierung verwendet, wählen Sie _Option 1 Normal Boot._, andernfalls gehen Sie zu <block ref="9946ce0c7c3feb5cc0b8738324cc4807" category="inline-link-macro-rx"></block>.</block>
   <block id="3a7af7582257ad98ccfd3cbcc0364cd8" category="paragraph">Sie müssen das Controller-Modul trennen, das Controller-Modul entfernen und öffnen, das Boot-Medium im Controller suchen und austauschen und dann das Image auf das Ersatz-Boot-Medium übertragen.</block>
   <block id="f6c81a45317596483196cae1aac0011e" category="list-text">Laden Sie eine Kopie der gleichen Bildversion von ONTAP herunter, die den Betrieb des beeinträchtigten Controllers enthält. Sie können das entsprechende Bild im Abschnitt „Downloads“ auf der NetApp Support-Website herunterladen. Verwenden Sie den<block ref="86722c94aea996cb23c11ba144dd63ed" prefix=" " category="inline-code"></block> Befehl, um anzuzeigen, ob Ihre Version von ONTAP NVE unterstützt. Wenn die Befehlsausgabe angezeigt wird<block ref="59f048302db4763b254cbef2bbb5405b" prefix=" " category="inline-code"></block>, unterstützt Ihre Version von ONTAP NVE nicht.</block>
   <block id="ec5c21fc20fa1ebbd12fbf29e42dcf81" category="list-text">Wenn NVE von Ihrer Version von ONTAP unterstützt wird, laden Sie das Image mit NetApp Volume Encryption herunter, wie auf der Download-Schaltfläche angegeben.</block>
   <block id="2cab3e1385544356e4037fa5d28c957d" category="list-text">Wenn Sie dies nicht getan haben, laden Sie das entsprechende Service-Image vom auf das USB-Flash-Laufwerk herunter, und kopieren<block ref="0ecdd602ef5a1e7a11a81dad2433ccb0" category="inline-link-rx"></block> Sie es.</block>
   <block id="ef51e881e425fd477358e8d9bc291f26" category="list-text">Sie müssen die ausgefallene Komponente durch eine FRU-Ersatzkomponente ersetzen, die Sie von NetApp erhalten haben.</block>
-  <block id="2fab3e35d3a8ad1baf526d01c455141e" category="list-text">Führen Sie auf dem gesunden Partner-Controller den Wiederherstellungsbefehl aus:<block ref="44d388b27236c791c5fe1d30cc29bc43" prefix=" " category="inline-code"></block> .</block>
   <block id="b393e0589b34195adda4ab7dea81ba99" category="paragraph">Das von Ihnen installierte Ersatzstartmedium ist ohne ein ONTAP-Image. Sie können das ONTAP-Image auf das Ersatz-Startmedium übertragen, indem Sie das entsprechende ONTAP-Service-Image vom auf ein USB-Flash-Laufwerk und anschließend auf das Ersatz-Startmedium herunterladen<block ref="0ecdd602ef5a1e7a11a81dad2433ccb0" category="inline-link-rx"></block>.</block>
   <block id="b53660f761dc53e7b68aefd5edbbae44" category="paragraph">Gehen Sie zum nächsten Abschnitt.</block>
   <block id="f9a9052b778475b675b5a664c20b88b5" category="paragraph"><block ref="86722c94aea996cb23c11ba144dd63ed" prefix="" category="inline-code"></block></block>
@@ -8322,8 +8205,6 @@ SFP+ (Target/Initiator)</block>
   <block id="2d5a952fbb91c4ae00f6cf700a7a8912" category="sidebar">ASA A1K-Controller</block>
   <block id="de6146d3d2df55568fb2490009341fe7" category="inline-link-macro">EFI-Ordner fehlt in Service-Image-Download-Datei verwendet für Boot-Gerät Recovery für FAS-und AFF-Modelle^</block>
   <block id="08bb41e143a5dbcb1f95809650758d5d" category="admonition">Wenn das Service-Image keinen efi-Ordner hat, siehe <block ref="ff41085fda5f8dca9d0e49c279b90ce2" category="inline-link-macro-rx"></block>.</block>
-  <block id="fb187e830be89fc21d44062ee3e0783a" category="list-text">Starten Sie von der Loader-Eingabeaufforderung aus das Wiederherstellungs-Image vom USB-Flash-Laufwerk:<block ref="199329b95897fa5b91256fa51b2186ce" prefix=" " category="inline-code"></block></block>
-  <block id="9f4b6474b2791f1e18fb394e0a9d5749" category="list-text">Setzen Sie auf dem funktionierenden Partner-Controller den beeinträchtigten Controller auf die erweiterte Berechtigungsebene:<block ref="0581d0d071ad835f74bf419081ce5d75" prefix=" " category="inline-code"></block>.</block>
   <block id="852fee667b0218d56efb26732593192d" category="inline-link-macro">Post-Motherboard-Austauschprozess zur Aktualisierung der Lizenzierung auf einem AFF/FAS-System</block>
   <block id="77464f13a7bfd5b5de3f6d6592b43344" category="admonition">Wenn auf Ihrem System zunächst ONTAP 9.10.1 oder höher ausgeführt wurde, gehen Sie wie in beschrieben <block ref="396f3a939b9056719487db53e0cdf43e" category="inline-link-macro-rx"></block>vor. Wenn Sie sich nicht sicher sind, wie die erste ONTAP-Version für Ihr System ist, finden Sie weitere Informationen unter<block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>.</block>
   <block id="8137cc3da5d92cb60020874c492d8701" category="list-text">Nach Bedarf Neuvernötigen des Storage-Systems</block>
@@ -8492,17 +8373,6 @@ SFP+ (Target/Initiator)</block>
   <block id="b5507fd73a4983529ea95a333b70737d" category="paragraph">Wenn Sie Probleme sehen, überprüfen Sie die Verkabelung, und setzen Sie die Kabel wieder ein.</block>
   <block id="b9b95d927da2cee98d985b1a328995c6" category="list-text">Beenden Sie den Wartungsmodus:<block ref="4a1bde0ea8bcda2a591f42646813c477" prefix=" " category="inline-code"></block>.</block>
   <block id="f1d532893d42eeecb43413920b6d1769" category="list-text">Installieren Sie die Kabelmanagement-ARM neu, falls sie entfernt wurde, aber schließen Sie keine Kabel wieder an den Ersatzcontroller an.</block>
-  <block id="f97ccb05cf3baac7ac118d1817e2a5fd" category="open-title">Option 1: ONTAP 9.16.0 oder früher</block>
-  <block id="46656bb1c59aea0ac10f1105bf4c8b13" category="list-text">Drücken Sie auf der außer Betrieb genommenen Steuerung<block ref="57cec4137b614c87cb4e24a3d003a3e0" prefix=" " category="inline-code"></block>, wenn angezeigt wird<block ref="aa48693d0248bb57512e373cd7f7eebc" prefix=" " category="inline-code"></block></block>
-  <block id="19a9f99a071bb48abc6e83f398b20a0e" category="list-text">Drücken Sie auf dem Controller für beeinträchtigte Störungen<block ref="57cec4137b614c87cb4e24a3d003a3e0" prefix=" " category="inline-code"></block>, wenn Sie dazu aufgefordert werden, _/etc/ssh/ssh_Host_ecdsa_Key_ zu überschreiben.</block>
-  <block id="d116a6f9fb96c43c15019792cd4a1fe9" category="list-text">Drücken Sie auf der außer Betrieb genommenen Steuerung<block ref="57cec4137b614c87cb4e24a3d003a3e0" prefix=" " category="inline-code"></block>, wenn angezeigt wird<block ref="dff08971c5acbbdac6642922fde20608" prefix=" " category="inline-code"></block>.</block>
-  <block id="c724a78d41a5f05bc3f7a2f2993c497c" category="list-text">Drücken Sie auf der außer Betrieb genommenen Steuerung<block ref="57cec4137b614c87cb4e24a3d003a3e0" prefix=" " category="inline-code"></block>, wenn angezeigt wird<block ref="396e369cf75815ba643925818d3ec37e" prefix=" " category="inline-code"></block>.</block>
-  <block id="6b65eb3b3f603ad188b614f3f50a9d13" category="list-text">Drücken Sie auf dem Controller für beeinträchtigte<block ref="57cec4137b614c87cb4e24a3d003a3e0" prefix=" " category="inline-code"></block> Störungen, wenn Sie dazu aufgefordert werden, den Controller für beeinträchtigte Störungen neu zu starten, und drücken Sie<block ref="1b10a0464da1409d5026aa8b4f098be8" prefix=" " category="inline-code"></block> für das Startmenü.</block>
-  <block id="d955df273d2c08375d51dc9da0fe5684" category="open-title">Option 2: ONTAP 9.16.1 oder höher</block>
-  <block id="5f711b3cd97054c3fbee1821e742da6d" category="paragraph">Nachdem der Wiederherstellungsvorgang erfolgreich war, wird diese Meldung auf der Konsole - angezeigt<block ref="92080c75f9b065e263d7fea155b1d733" prefix=" " category="inline-code"></block>.</block>
-  <block id="9959e1ea8c67446c566e6a371f9e14cb" category="list-text">Drücken Sie auf dem Controller für beeinträchtigte<block ref="57cec4137b614c87cb4e24a3d003a3e0" prefix=" " category="inline-code"></block> Vorgänge, wenn Sie dazu aufgefordert werden, um zu bestätigen, ob die Wiederherstellung erfolgreich war.</block>
-  <block id="b883391d9dfbf834ff0bda07a53554f5" category="list-text">Drücken Sie auf dem Controller für beeinträchtigte Störungen<block ref="57cec4137b614c87cb4e24a3d003a3e0" prefix=" " category="inline-code"></block>, wenn Sie dazu aufgefordert werden, die wiederhergestellte Konfiguration zu verwenden.</block>
-  <block id="d0ec0afe83814a07fcdbf02b0d2e2e8b" category="list-text">Drücken Sie auf dem Controller für beeinträchtigte Störungen<block ref="57cec4137b614c87cb4e24a3d003a3e0" prefix=" " category="inline-code"></block> bei der Aufforderung, um den Node neu zu booten.</block>
   <block id="4250e5b5781f94ff901cc1822461f6ae" category="doc">Ersetzen Sie das System-Management-Modul – AFF A1K</block>
   <block id="b1b14a007e6d27cacb6cbf9837dd5e7e" category="doc">Geben Sie den Controller zurück – AFF A70 und AFF A90</block>
   <block id="4443f66d8d4febc600e0d4d0b3b0db91" category="doc">Geben Sie die Steuerung zurück - ASA A70 und ASA A90</block>
@@ -8590,7 +8460,6 @@ SFP+ (Target/Initiator)</block>
   <block id="fc201f3061cf0fb0ac92be830093fe44" category="paragraph">Sie können dem AFF A900 Storage-System ein I/O-Modul hinzufügen, wenn leere Steckplätze verfügbar sind oder wenn alle Steckplätze voll belegt sind.</block>
   <block id="94aa992895c11cf963b2b749b84aa267" category="paragraph">Sie können Ihrem FAS70 und FAS90 Storage-System ein I/O-Modul hinzufügen, wenn leere Steckplätze verfügbar sind oder wenn alle Steckplätze vollständig belegt sind.</block>
   <block id="bc049e4428d592b69605104cc85d56bc" category="section-title">Schritt 2: Fügen Sie die neuen I/O-Module hinzu</block>
-  <block id="92ba658b9a66d0825f0f084b7da309b7" category="list-text">Wenn das System keine Verschlüsselung verwendet, wählen Sie _Option 1 Normal Boot._, andernfalls gehen Sie zu <block ref="d767082d20397ebb99e586749eda3a08" category="inline-link-macro-rx"></block>.</block>
   <block id="efd2f4952f00033a0e6fc35f4c287446" category="paragraph">Wenn das Speichersystem über freie Steckplätze verfügt, installieren Sie das neue I/O-Modul in einem der verfügbaren Steckplätze. Wenn alle Steckplätze belegt sind, entfernen Sie ein vorhandenes E/A-Modul, um Platz zu schaffen, und installieren Sie dann das neue.</block>
   <block id="6d65586ee736e7deb557e0892d29cb10" category="open-title">Fügen Sie ein E/A-Modul zu einem verfügbaren Steckplatz hinzu</block>
   <block id="49a08f00572d73e2840b5619c89ab1e1" category="paragraph">Sie können ein neues I/O-Modul zu einem Speichersystem mit verfügbaren Steckplätzen hinzufügen.</block>
@@ -8682,11 +8551,6 @@ SFP+ (Target/Initiator)</block>
   <block id="13a20619b6dc3827356a336b68087987" category="doc">NVE oder NSE auf Systemen prüfen</block>
   <block id="d1614290531967ae3b3623d71b4ed961" category="paragraph">Bevor Sie den beeinträchtigten Controller herunterfahren und den Status der integrierten Verschlüsselungsschlüssel prüfen, müssen Sie den Status des beeinträchtigten Controllers überprüfen, das automatische Giveback deaktivieren und die Version von ONTAP prüfen, die ausgeführt wird.</block>
   <block id="4aea9830dd1ec942aefd31d27eb4cfa4" category="paragraph">Ungelöste Direktive in &lt;stdin&gt; - include:../_include/Encryption_Check_915_later.adoc[]</block>
-  <block id="7f1dab55b896652272852d94aadf9413" category="list-text">Starten Sie von der LOADER-Eingabeaufforderung aus das Wiederherstellungs-Image vom USB-Flashlaufwerk: _Boot_Recovery_</block>
-  <block id="496e1cf89cb904a9a2ceccd873c325c5" category="list-text">Setzen Sie auf dem funktionierenden Partner-Controller den beeinträchtigten Controller auf die erweiterte Berechtigungsebene: _Set -Privilege Advanced_.</block>
-  <block id="f0cfaabee28943cffa398d23cd5ca41f" category="list-text">Führen Sie auf dem funktionierenden Partner-Controller den Befehl restore Backup aus: _System Node restore-Backup -Node local -target-address Impaired_Node_IP_address_.</block>
-  <block id="271ca74eba5af203102f7ab7c6dd3191" category="list-text">Geben Sie auf dem funktionstüchtigen Partner-Controller den beeinträchtigten Controller auf die Admin-Ebene: _Set -Privilege admin_ zurück.</block>
-  <block id="4b3c12bbe5968bc5c9fa03a5ac899f32" category="list-text">Wenn das System keine Verschlüsselung verwendet, wählen Sie _Option 1 Normal Boot._, andernfalls gehen Sie zu <block ref="f2abf47fd75193a34b6b143e08f5b248" category="inline-link-macro-rx"></block>.</block>
   <block id="8649285006757f990d3664b8a1a05dae" category="paragraph">Sie müssen den Controller aus dem Chassis entfernen, wenn Sie den Controller austauschen oder eine Komponente im Controller austauschen.</block>
   <block id="c3c54a7de3abd69cdf6b5e38f3461126" category="list-text">Stellen Sie am Controller für beeinträchtigte Störungen sicher, dass die NV-LED nicht leuchtet.</block>
   <block id="799b1784122bd715c8030adadf135114" category="paragraph">Wenn die NV-LED ausgeschaltet ist, ist die Entrampung abgeschlossen, und es ist sicher, den außer Betrieb genommenen Controller zu entfernen.</block>
@@ -9030,31 +8894,6 @@ SFP+ (Target/Initiator)</block>
   <block id="61c05ca68a6ca538f3473986616103f2" category="paragraph">Festplatten-Shelfs sind ab den folgenden ONTAP Versionen verfügbar.</block>
   <block id="5c7fb5a9cab188683ddf4f0991a21e1c" category="list-text">NS224 mit NSM100B-Modulen</block>
   <block id="e9fc04f90ca55de311ddb1dfba04ecbc" category="list-text">NS224-Shelf mit NSM100-Modulen</block>
-  <block id="83fdc9d6e9b033ff2a42dd905fc7f5c3" category="inline-link-macro">Erfahren Sie mehr über die AFF Systeme</block>
-  <block id="5f8d4b7a8c1c75224fafa18bd03c63ba" category="paragraph">Die Modelle der AFF A-Series und C-Series sind eine robuste, horizontal skalierbare Plattform für virtualisierte Umgebungen und können als unabhängiges System oder als High-Performance-Tier in einer NetApp ONTAP Konfiguration implementiert werden. <block ref="aad502ddc86b92770183faad95fed542" category="inline-link-macro-rx"></block>.</block>
-  <block id="994764637988d1351b296cda22d369ea" category="paragraph-title">AFF A20, AFF A30, AFF A50</block>
-  <block id="3da8ff4a83211912f1ae260ce140f034" category="paragraph">Verfügbar ab ONTAP 9.16.1</block>
-  <block id="b1a7d02f89c62c97fedf60bb09caa4bc" category="paragraph-title">AFF C30, AFF C60</block>
-  <block id="0c93143e3b5b66573a36bc5c766b4d1b" category="paragraph-title">AFF A1K, AFF A70 und AFF A90</block>
-  <block id="f3744dc1f6d5cc67fed28d243d0c1338" category="paragraph">Verfügbar ab ONTAP 9.15.1</block>
-  <block id="2c2b5c212932fcf8dc05bd69ef835e7c" category="paragraph">Verfügbar ab ONTAP 9.13.1, ONTAP 9.12.1P1, ONTAP 9.11.1P8, ONTAP 9.10.1P12</block>
-  <block id="12569b56e0e133b1cea35a6f452d6f86" category="paragraph">Verfügbar ab ONTAP 9.10.1</block>
-  <block id="6f6e22cc680fe5294b2fba3d18e39bf4" category="paragraph-title">AFF A250 und AFF A800</block>
-  <block id="43d7e13da5ae0938fa6ad92b41ed8460" category="paragraph">Verfügbar ab ONTAP 9.8</block>
-  <block id="d5c2a431dee6833b78aebc2e32547e6a" category="paragraph">Verfügbar ab ONTAP 9.7</block>
-  <block id="7c3d41bb91a832b194d140ed72b101e7" category="paragraph-title">AFF C250, AFF C400, AFF C800</block>
-  <block id="6fb32e5383e35c9bfa172ad464e47773" category="paragraph">Verfügbar ab ONTAP 9.12.1P1, ONTAP 9.13.1 GA</block>
-  <block id="0d0429c921864c91828015d2d88d2e3e" category="paragraph">ASA r2 Systeme bieten eine einheitliche Hardware- und Softwarelösung, die eine vereinfachte Erfahrung speziell für die Anforderungen reiner SAN-Kunden bietet. <block ref="b6c90a1c7c4faaf50533b742223e9ddb" category="inline-link-macro-rx"></block>.</block>
-  <block id="715204d8d6cf425886f04e9045060465" category="paragraph-title">ASA A1K, ASA A70, ASA A90</block>
-  <block id="90189e5df25cf911e094a465dbca7f83" category="paragraph">Verfügbar ab ONTAP 9.16.0</block>
-  <block id="384655d001afee87a242e9705f1e0cd2" category="paragraph">Die ASA Modelle der A-Series und C-Series bieten ein vereinfachtes, dediziertes SAN-Arbeitsumfeld mit kontinuierlicher Datenverfügbarkeit für geschäftskritische Enterprise-Datenbanken und sonstige SAN-Workloads unter Verwendung von FCP oder iSCSI. <block ref="e67f02f5763cc902b286935d96953fb5" category="inline-link-macro-rx"></block>.</block>
-  <block id="e2f934d1afb1936d07efe383d05425f3" category="paragraph-title">ASA A150, ASA A250, ASA A400, ASA A900</block>
-  <block id="1959453885f5e4cf533cbc4b80873cbd" category="paragraph">Verfügbar ab ONTAP 9.13.1</block>
-  <block id="6353d59231fc7dff9da59dcc228a3976" category="paragraph-title">ASA C250, C400, C800</block>
-  <block id="e965f5a5a4e1cf2d6e9deff577a63a6a" category="paragraph">Verfügbar ab ONTAP 9.13.1P1</block>
-  <block id="b877d145e35085b8ba01a6ca75363cc8" category="paragraph">FAS Systeme bieten effizienten und sicheren Sekundärspeicher – die ultimative Lösung für Tiering, Backup und Disaster Recovery. <block ref="82b380dc590efac04a9c3bd2b73112bc" category="inline-link-macro-rx"></block>.</block>
-  <block id="97d4ef7f205f270235992c169dc813ba" category="paragraph">Verfügbar ab ONTAP 9.11.1, ONTAP 9.10.1P3</block>
-  <block id="ce8d881695231451316062f987d97224" category="paragraph-title">FAS8300 und FAS700</block>
   <block id="51ebd7e87b91a4e1790a23e2c6d804e4" category="paragraph"><block ref="452f0bcbdc18ce90fa720a4884350565" prefix="" category="inline-code"></block></block>
   <block id="caa56aca0f722badc7ef4f565531c4cb" category="admonition">Bei Clustern mit SnapMirror Synchronous-Betrieb im StructSync-Modus:<block ref="a5814e4961e25934eebf8d77c96e5206" prefix=" " category="inline-code"></block></block>
   <block id="56e4cf19d3d41173fe280655d99c6aa4" category="list-text">Setzen Sie den NSM in das Regal ein:</block>
@@ -9631,15 +9470,6 @@ SFP+ (Target/Initiator)</block>
   <block id="acb2cdf0e044cb8e41dd9dbe163d56cb" category="example-title">Beispiel für den Inhalt der Serverkonfigurationsdatei anzeigen</block>
   <block id="b06a9a7481d8f3ca792e2636ad34a5f6" category="list-text">Wenn der Node neu gebootet wird, überprüfen Sie, ob die Boot-Medien erfolgreich wiederhergestellt wurden, indem Sie bestätigen, dass das System wieder online und funktionsfähig ist.</block>
   <block id="5f24aaf8b32f780fce1ea44bd659a2f1" category="list-text">Wiederherstellung des normalen Betriebs des Controllers durch Zurückgeben des Speichers:</block>
-  <block id="e531efa1ffce94331d0abc4548448cac" category="list-text">Konfigurieren Sie an der Loader-Eingabeaufforderung des außer Betrieb genommenen Controllers die IP-Adresse des außer Betrieb genommenen Controller-Moduls:</block>
-  <block id="9674c99b013ac8cdab6eb0df64e77028" category="paragraph"><block ref="83ed86e403dd4a24d2825f48008e5af3" prefix="" category="inline-code"></block></block>
-  <block id="8c58ea9784c7fa6869b22626814be32c" category="list-text">An der Loader-Eingabeaufforderung wird der beeinträchtigte Knoten netboot gestartet:</block>
-  <block id="682c67c386e9533bb90087e13557b0aa" category="list-text">Wählen Sie im Boot-Menü die Option<block ref="8f14e45fceea167a5a36dedd4bea2543" prefix=" " category="inline-code"></block>.</block>
-  <block id="a0ea840e423d2247bf566acde2c201ab" category="list-text">Geben Sie ein<block ref="7b8b965ad4bca0e41ab51de7b31363a1" prefix=" " category="inline-code"></block>, wenn Sie aufgefordert werden, die Backup-Konfiguration wiederherzustellen.</block>
-  <block id="3115cf8c3646a9861bf194086219616c" category="list-text">Geben Sie ein<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block>, wenn Sie zum Neubooten des Node aufgefordert werden.</block>
-  <block id="f2922cd1bfa5d6f04d27f02d20080042" category="list-text">Drücken Sie<block ref="1b10a0464da1409d5026aa8b4f098be8" prefix=" " category="inline-code"></block>, um zum Startmenü zurückzukehren.</block>
-  <block id="acd0b9b64f818fbc1776d56da41a8e95" category="paragraph">Wenn die Verschlüsselung aktiviert ist, müssen Sie sie wiederherstellen, bevor Sie das Startabbild wiederherstellen. Gehen Sie zu <block ref="d767082d20397ebb99e586749eda3a08" category="inline-link-macro-rx"></block>.</block>
-  <block id="c8d49d03a62a2aaa6d3002fec3a650ea" category="list-text">Wählen Sie Die Option<block ref="1679091c5a880faf6fb5e6087eb1b2dc" prefix=" " category="inline-code"></block>.</block>
   <block id="fe5f4b926efaec8f9797da6b1b0b6c71" category="list-text">Drücken Sie auf<block ref="57cec4137b614c87cb4e24a3d003a3e0" prefix=" " category="inline-code"></block>, wenn Sie dazu aufgefordert werden, die Sicherungskonfiguration wiederherzustellen.</block>
   <block id="c22df67eafdbaec72d1c041a4f36d374" category="list-text">Sie müssen das ausgefallene Boot-Medium durch ein Ersatz-Boot-Medium ersetzen, das Sie von NetApp erhalten haben.</block>
   <block id="01e12de62fa77fda2815719aed8ff892" category="paragraph-title">Wie es weiter geht</block>
@@ -9770,11 +9600,6 @@ SFP+ (Target/Initiator)</block>
   <block id="76341fe070bb8baf145cd67f5221a7ed" category="list-text">Verstehen Sie, dass Sie dieses Verfahren mit allen Versionen von ONTAP verwenden können, die von Ihrem System unterstützt werden.</block>
   <block id="4564e5afb25f1ffe83d0d3ac84e6cb52" category="paragraph">Das System-Management-Modul, das sich auf der Rückseite des Controllers in Steckplatz 8 befindet, enthält integrierte Komponenten für die Systemverwaltung sowie Ports für die externe Verwaltung. Der Ziel-Controller muss heruntergefahren werden, um ein funktionsunes System Management-Modul zu ersetzen oder das Startmedium zu ersetzen.</block>
   <block id="8715aa093d3bd0ff3589f26f08de5eda" category="list-text">Stellen Sie sicher, dass der Partner-Controller den beeinträchtigten Controller übernehmen kann.</block>
-  <block id="bf5a59710d5b5e8b78221799e840dc18" category="paragraph"><block ref="d21ecc516ee16c13faec7e470282a04d" prefix="" category="inline-code"></block></block>
-  <block id="6e724374a7f94186bf150ad3f2518ad5" category="paragraph">Wenn sich die auf den neuen Knoten ausgeführte ONTAP-Version von der Version auf den ursprünglichen Nodes unterscheidet, müssen Sie die korrekte &lt;xxx_image.tgz&gt;-Datei von der NetApp-Support-Website in ein Verzeichnis heruntergeladen haben, das über das Internet zugänglich ist (siehe Schritt 4). Sie benötigen die &lt;xxx_image.tgz&gt;-Datei, um einen Netzboot Ihres Systems auszuführen.</block>
-  <block id="d40530e10631f437f94d6f1fef14cd53" category="paragraph"><block ref="17adc220b188022ae9f0e1b23b988522" prefix="" category="inline-code"></block></block>
-  <block id="4f77b2dcd560973ee59e2f123323c869" category="paragraph">Das Verzeichnis path_to_the_Web-accessible_Directory ist der Speicherort der heruntergeladenen &lt;xxx_image.tgz&gt;-Datei.</block>
-  <block id="716023d4600a7c0e1d8be69651c1702f" category="list-text">Wenn Sie dazu aufgefordert werden, den Vorgang fortzusetzen, geben Sie, ein<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block>, und wenn Sie zur Eingabe des Pakets aufgefordert werden, geben Sie die URL der Bilddatei ein:<block ref="87c1a3418135883a8a235fe337372005" prefix=" " category="inline-code"></block>.</block>
   <block id="091fa7b82bf6559b6079bd7650861afb" category="summary">Das NVRAM Modul besteht aus den NVRAM12 und DIMMs und bis zu zwei NVMe SSD Flash Cache Modulen (Flash Cache oder Caching-Module) pro NVRAM Modul.</block>
   <block id="eefb5accf7d4ad2229c3cc4e823f76b3" category="paragraph">Um die Datensicherheit auf Ihrem AFF A70 oder AFF A90 Storage-System zu gewährleisten, müssen Sie die Unterstützung und den Status der Verschlüsselungsschlüssel auf Ihren Boot-Medien überprüfen. Überprüfen Sie, ob Ihre ONTAP Version NetApp Volume Encryption (NVE) unterstützt und bevor Sie den Controller herunterfahren, ob der Schlüsselmanager aktiv ist.</block>
   <block id="9cd2a6b6bdd086af956c7e27d3059067" category="inline-link-macro">Fahren Sie den Controller herunter</block>
@@ -11002,7 +10827,6 @@ SFP+ (Target/Initiator)</block>
   <block id="25e1a2b7bc684f223e8dad0adb741e5d" category="admonition">Dieses Verfahren gilt für den Hot-Swap oder Austausch identischer IOMs. Das bedeutet, dass Sie nur ein IOM12-Modul durch ein anderes IOM12-Modul oder ein IOM12B-Modul durch ein anderes IOM12B-Modul ersetzen können.</block>
   <block id="df3550302c1d598914df1dab151ca6a5" category="list-text">Die Module IOM12 bzw. IOM12B lassen sich anhand ihres Aussehens unterscheiden:</block>
   <block id="1b48c93b7dbdd93c9ce5cac0675787a2" category="inline-link-macro">Überwachung der Festplatten-Shelf-LEDs</block>
-  <block id="a5dd55402b6693c242408b9b9e33ab8a" category="list-text">Bei Bedarf können Sie sich an die <block ref="656373589b513431dfa2b073da15ba87" category="inline-link-macro-rx"></block> Informationen zur Bedeutung und Position der Festplatten-Einbau-LEDs auf dem Bedienfeld und den FRU-Komponenten finden Sie im Handbuch.</block>
   <block id="1de88d9e7c40d2819c39a96a3793569d" category="doc">Hot-Swap eines Netzteils – DS212C, DS224C oder DS460C</block>
   <block id="2ac9e2133062b2b4551875f4ba7f547f" category="paragraph">Dieses Verfahren gilt für Regale mit IOM12- oder IOM12B-Modulen.</block>
   <block id="6a5389852eab8501c03b71d72821d04a" category="paragraph">Wenn Sie ein DS224C- oder DS212C-Festplattenfach besitzen, schwenkt beim Entfernen des Netzteils eine Klappe ein, um den leeren Schacht zu verschließen. Dies trägt zur Aufrechterhaltung der Luftzirkulation und Kühlung bei.</block>
@@ -13089,9 +12913,7 @@ SFP+ (Target/Initiator)</block>
   <block id="0d10beeaffa344cce91789b4d6bdd9ac" category="inline-link-macro">AFX-Schalter</block>
   <block id="723bc0a77490c392225673a06e79300c" category="list-text"><block ref="723bc0a77490c392225673a06e79300c" category="inline-link-macro-rx"></block></block>
   <block id="f267a68fd1c8bddcc992701898021398" category="inline-link-macro">Cluster-Switches</block>
-  <block id="cfa57c7a144e70924e4204730542a65f" category="list-text"><block ref="cfa57c7a144e70924e4204730542a65f" category="inline-link-macro-rx"></block></block>
   <block id="403284bd44beda112195a484c8a76421" category="inline-link-macro">Speicherschalter</block>
-  <block id="435e29710768f14877fe952337b92b8b" category="list-text"><block ref="435e29710768f14877fe952337b92b8b" category="inline-link-macro-rx"></block></block>
   <block id="bc8a2cd252a5beb1dbf4f209baea67eb" category="inline-link-macro">Gemeinsam genutzte Switches</block>
   <block id="f7c018fd044f09965acb0f8a145df757" category="list-text"><block ref="f7c018fd044f09965acb0f8a145df757" category="inline-link-macro-rx"></block></block>
   <block id="8800e4103adfd5822468b330e33ee741" category="list-text"><block ref="8800e4103adfd5822468b330e33ee741" category="inline-link-macro-rx"></block></block>
@@ -15209,4 +15031,8 @@ SFP+ (Target/Initiator)</block>
   <block id="9503755300c52aec4490e33c653bfc3f" category="list-text"><block ref="9503755300c52aec4490e33c653bfc3f" category="inline-link-macro-rx"></block></block>
   <block id="f570bacc2bcfa586cbbc915a822ba186" category="sidebar">AFF A400 NVDIMM-Batterie</block>
   <block id="a11b9a2e6ec144b9081801e3c74c0349" category="sidebar">AFF A400 NVDIMM</block>
+  <block id="be5ccdfb6161eac64c36ad208035f6dc" category="paragraph"><block ref="be5ccdfb6161eac64c36ad208035f6dc" category="inline-link-macro-rx"></block></block>
+  <block id="f737d8a0dc47e7e8a9b0f5abfa3860af" category="list-text"><block ref="f737d8a0dc47e7e8a9b0f5abfa3860af" category="inline-link-macro-rx"></block></block>
+  <block id="27a5298e202f9398189a8d32478b42af" category="list-text"><block ref="27a5298e202f9398189a8d32478b42af" category="inline-link-macro-rx"></block></block>
+  <block id="90febc09387b629e9422a756b365dc0a" category="list-text">Bei Bedarf finden Sie im <block ref="326b7cccdaf5a8d7e0688a93629b446c" category="inline-link-macro-rx"></block> Handbuch Informationen zur Bedeutung und Position der LEDs der Festplattenablagen auf dem Bedienerdisplay und den FRU-Komponenten.</block>
 </blocks>
