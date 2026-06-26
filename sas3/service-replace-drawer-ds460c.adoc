@@ -1,10 +1,10 @@
 ---
 permalink: sas3/service-replace-drawer-ds460c.html 
 sidebar: sidebar 
-keywords: I O activity, power, off, shelf, replacing, replace, drive, drawer, disk, replace a drive drawer in a ds460c disk shelf, dcm2, dcm 
-summary: 'Wenn Sie eine Laufwerksschublade in einem Shelf ersetzen, müssen Sie entweder das gesamte Storage-System (HA-Paar) anhalten. Auf diese Weise können Sie Datenaggregate auf dem Shelf aufbewahren. Alternativ können Sie das HA-Paar aktiv halten. Allerdings müssen sämtliche Daten aus den Datenaggregaten auf den Festplattenlaufwerken verschoben und offline sein sowie die Datenaggregate löschen. Wenn jedoch das Regal ein Wurzelaggregat enthält, müssen Sie das HA-Paar anhalten.' 
+keywords: shelf, sas, replace, drive, drawer, disk, dcm2, dcm, ds460c 
+summary: 'Beim Austausch einer Laufwerksschublade in einem Regal kann entweder das gesamte Speichersystem (HA-Paar) angehalten werden oder das HA-Paar bleibt in Betrieb.' 
 ---
-= Ersetzen einer Laufwerksschublade - DS460C
+= Austausch einer DS460C-Laufwerksschublade
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,7 +13,7 @@ summary: 'Wenn Sie eine Laufwerksschublade in einem Shelf ersetzen, müssen Sie 
 [role="lead"]
 Um eine Laufwerksschublade in einem Shelf auszutauschen, können Sie das gesamte Speichersystem (HA-Paar) anhalten. Dadurch bleiben die Datenaggregate im Shelf erhalten. Alternativ können Sie das HA-Paar aktiv halten. Dazu müssen Sie alle Daten aus den Datenaggregaten auf die Festplatten des Shelfs verschieben und diese anschließend offline löschen. Enthält das Shelf ein Root-Aggregat, müssen Sie das HA-Paar anhalten.
 
-Dieses Verfahren gilt für Regale mit IOM12- oder IOM12B-Modulen.
+Dieses Verfahren gilt für Regale mit IOM12, IOM12B oder IOM12C Modulen.
 
 .Bevor Sie beginnen
 Sie benötigen folgende Elemente für dieses Verfahren:
@@ -29,7 +29,7 @@ NOTE: *Möglicher Hardwareschaden:* um elektrostatische Entladungsschäden am La
 
 
 .Über diese Aufgabe
-* Dieses Verfahren gilt für Regale mit DCM-Laufwerksschubladen und/oder DCM2- oder DCM3-Laufwerksschubladen. (Regale können auch zwei IOM12-Module oder zwei IOM12B-Module enthalten.)
+* Dieses Verfahren gilt für Regale mit DCM Laufwerksschubladen und/oder DCM2 oder DCM3 Laufwerksschubladen. (Die Regale verfügen außerdem über zwei IOM12 Module, zwei IOM12B Module oder zwei IOM12C Module.)
 +
 Wenn eine DCM-, DCM2- oder DCM3-Laufwerksschublade ausfällt, erhalten Sie als Ersatz eine DCM-, DCM2- oder DCM3-Laufwerksschublade.
 
@@ -37,9 +37,9 @@ Wenn eine DCM-, DCM2- oder DCM3-Laufwerksschublade ausfällt, erhalten Sie als E
 
 [NOTE]
 ====
-Wenn Sie eine ausgefallene Laufwerksschublade durch eine neuere DCM2- oder DCM3-Laufwerksschublade ersetzen, stellen Sie sicher, dass die ONTAP -Software und die Firmware des IOM12- oder IOM12B-Moduls die Mindestversionen ausführen, die zur Unterstützung von DCM2- oder DCM3-Schubladen erforderlich sind.
+Wenn ein defekter Laufwerksschacht durch einen neueren DCM2 oder DCM3 Laufwerksschacht ersetzt wird, ist sicherzustellen, dass die ONTAP Software und die Firmware des IOM12, IOM12B oder IOM12C Moduls die Mindestversionen ausführen, die zur Unterstützung von DCM2 oder DCM3 Laufwerksschächten erforderlich sind.
 
-Das IOM12 FW Upgrade kann vor oder nach dem Austausch einer Laufwerkschublade durchgeführt werden. Bei diesem Verfahren wird die FW im Rahmen der Vorbereitung für den Austausch der Schublade aktualisiert.
+Das Firmware-Upgrade für IOM12, IOM12B oder IOM12C kann vor oder nach dem Austausch einer Laufwerksschublade erfolgen. In diesem Verfahren wird das Firmware-Upgrade als Teil der Vorbereitung für den Austausch der Schublade durchgeführt.
 
 ====
 * Die Laufwerksschubladen DCM, DCM2 und DCM3 können anhand ihres Aussehens unterschieden werden:
@@ -81,7 +81,7 @@ Bevor Sie ein Laufwerk austauschen, müssen Sie bei Bedarf die IOM-Firmware und 
 +
 Bei Bedarf können Sie auf der NetApp Support-Site nach  https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Laden Sie aktuelle Versionen der Disk Shelf-Firmware herunter"] . Andernfalls fahren Sie mit dem nächsten Schritt fort.
 
-. Wenn Ihr Shelf eine Kombination aus IOM12- oder IOM12B-Modulen mit einer beliebigen Anzahl von DCM3-Laufwerksschubladen enthält, muss auf Ihrem System mindestens die folgenden ONTAP-Versionen ausgeführt werden:
+. Wenn Ihr Shelf eine Kombination aus IOM12-, IOM12B- oder IOM12C-Modulen mit einer beliebigen Anzahl von DCM3-Laufwerksschächten enthält, muss Ihr System mindestens die folgenden Versionen von ONTAP ausführen:
 +
 ** ONTAP 9.17.1RC1
 ** ONTAP 9.16.1P3

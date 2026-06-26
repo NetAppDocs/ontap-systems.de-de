@@ -1,10 +1,10 @@
 ---
 permalink: sas3/service-monitor-leds.html 
 sidebar: sidebar 
-keywords: monitor, health, disk, shelf, location, status, condition, led, component, operator, display, panel, iom12, power, supply, fan, ds460c, shelves, drive, monitor disk shelf leds, operator display panel leds, iom12 module leds, power supply leds, fan leds on ds460c disk shelves, disk drive leds 
+keywords: monitor, health, disk, shelf, location, status, led, iom12, iom12b, iom12c, drive, ds212c, ds224c, ds460c 
 summary: Sie können den Zustand Ihres Festplatten-Shelf überwachen, indem Sie die Standort- und Statusbedingungen der LEDs an den Festplatten-Shelf-Komponenten verstehen. 
 ---
-= Monitorregal-LEDs – DS212C, DS224C oder DS460C
+= DS212C, DS224C oder DS460C Shelf-LEDs überwachen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -40,7 +40,7 @@ Mindestens ein Netzteil liefert Strom für das Festplatten-Shelf.
 .2+| image:../media/drw_sas_fault_icon.svg["Achtung-Symbol, Breite=5px"] .2+| Achtung  a| 
 Leuchtet gelb
  a| 
-Bei der Funktion einer weiteren FRU ist ein Fehler aufgetreten: Das Platten-Shelf, die Laufwerke, IOM12/IOM12B-Module oder die Netzteile.
+Bei einer oder mehreren FRUs ist ein Fehler in der Funktion aufgetreten: dem Festplattengehäuse, den Festplattenlaufwerken, den IOM12-, IOM12B- oder IOM12C-Modulen oder den Netzteilen.
 
 Überprüfen Sie Ereignismeldungen, um zu ermitteln, welche Korrekturmaßnahmen ergriffen werden müssen.
 
@@ -64,7 +64,7 @@ Leuchtet blau
  a| 
 Der Systemadministrator aktivierte diese LED-Funktion, um die physische Suche nach dem zu serviceenden Festplatten-Shelf zu erleichtern.
 
-Wenn diese LED-Funktion aktiviert ist, leuchten die Standort-LED auf dem Bedienfeld und beide IOM12/IOM12B-Module auf. Nach 30 Minuten schalten sich die Standort-LEDs automatisch aus.
+Die Standort-LED am Bedienerdisplay und an den Modulen IOM12, IOM12B oder IOM12C leuchten auf, wenn diese LED-Funktion aktiviert ist. Die Standort-LEDs schalten sich nach 30 Minuten automatisch aus.
 
 |===
 Je nach Ihrem Festplatten-Shelf-Modell sieht die Bedieneranzeige anders aus; die drei LEDs sind jedoch in der gleichen Weise angeordnet.
@@ -75,13 +75,13 @@ image::../media/drw_opd.gif[Bedieneranzeige Endkappe]
 
 
 
-== LEDs für IOM12/IOM12B-Modul
+== LEDs des Moduls IOM12, IOM12B oder IOM12C
 
-Die LEDs am IOM12/IOM12B-Modul zeigen an, ob das Modul normal funktioniert, ob es für I/O-Datenverkehr bereit ist und ob es Probleme mit der Hardware gibt.
+Die LEDs am IOM12, IOM12B oder IOM12C Modul zeigen an, ob das Modul normal funktioniert, ob es für E/A-Datenverkehr bereit ist und ob Hardwareprobleme vorliegen.
 
-In der folgenden Tabelle werden die LEDs des IOM12/IOM12B-Moduls beschrieben, die mit der Funktion des Moduls und der Funktion der einzelnen SAS-Ports auf dem Modul verbunden sind.
+Die folgende Tabelle beschreibt die LEDs der Module IOM12, IOM12B oder IOM12C, die mit der Funktion des Moduls und der Funktion jedes SAS Ports am Modul verbunden sind.
 
-Das IOM12/IOM12B Modul wird in den Festplatten-Shelfs DS460C, DS224C und DS212C verwendet.
+Das Modul IOM12, IOM12B oder IOM12C wird in den Festplattengehäusen DS460C, DS224C und DS212C verwendet.
 
 [cols="4*"]
 |===
@@ -95,7 +95,7 @@ Achtung
  a| 
 Leuchtet gelb
  a| 
-Funktion des IOM12/IOM12B-Moduls: Bei der Funktion des IOM12/IOM12B-Moduls ist ein Fehler aufgetreten.
+Funktion des Moduls IOM12, IOM12B oder IOM12C: Bei der Funktion des Moduls IOM12, IOM12B oder IOM12C ist ein Fehler aufgetreten.
 
 SAS-Port-Funktion: Weniger als alle vier SAS-Lanes haben einen Link eingerichtet (mit einem Adapter oder einem anderen Festplatten-Shelf).
 
@@ -121,18 +121,22 @@ Standort
  a| 
 Leuchtet blau
  a| 
-Der Systemadministrator hat diese LED-Funktion aktiviert, um das Festplatten-Shelf mit dem ausgefallenen IOM12/IOM12B Modul physisch zu lokalisieren.
+Der Systemadministrator hat diese LED-Funktion aktiviert, um das Festplattengehäuse mit dem ausgefallenen IOM12, IOM12B oder IOM12C Modul physisch zu lokalisieren.
 
-Wenn diese LED-Funktion aktiviert ist, leuchten die Standort-LED auf dem Bedienfeld und beide IOM12/IOM12B-Module auf. Nach 30 Minuten schalten sich die Standort-LEDs automatisch aus.
+Die Standort-LED am Bedienerdisplay und an den Modulen IOM12, IOM12B oder IOM12C leuchten auf, wenn diese LED-Funktion aktiviert ist. Die Standort-LEDs schalten sich nach 30 Minuten automatisch aus.
 
 |===
 Die folgende Abbildung ist für ein IOM12-Modul dargestellt:
 
-image::../media/drw_iom12.gif[IOM12-Modul]
+image::../media/drw_iom12.gif[IOM12-Modul,828px,147px]
 
 Die IOM12B-Module zeichnen sich durch einen blauen Streifen und ein „IOM12B“-Label aus:
 
-image::../media/iom12b.png[IOM12B-Modul]
+image::../media/iom12b.png[IOM12B-Modul,828px,147px]
+
+Die IOM12C Module sind durch einen blauen und grauen Streifen sowie die Aufschrift "IOM12C" gekennzeichnet:
+
+image::../media/drw_iom12c_ieops-2175.svg[IOM12C Modul,828px,147px]
 
 
 

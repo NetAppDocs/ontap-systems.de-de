@@ -1,25 +1,25 @@
 ---
 permalink: sas3/service-hot-swap-iom.html 
 sidebar: sidebar 
-keywords: system, configuration, whether, perform, nondisruptive, iom12, module, hot-swap, disruptive, replacement, hot-swap or replace an iom12 iom12b module, iom12b 
-summary: Ihre Systemkonfiguration legt fest, ob Sie ein unterbrechungsfreies Hot-Swap-Modul IOM12/IOM12B oder einen störenden Austausch von IOM12/IOM12B-Modulen durchführen können, wenn ein IOM12/IOM12B-Modul ausfällt. 
+keywords: module, hot-swap, replace, iom12, iom12b, iom12c, ds212c, ds224c, ds460c 
+summary: Die Systemkonfiguration bestimmt, ob ein unterbrechungsfreier Shelf IOM Hot-Swap oder ein unterbrechender Shelf IOM Austausch durchgeführt werden kann, wenn ein IOM12, IOM12B oder IOM12C Shelf IOM ausfällt. 
 ---
-= Hot-Swapping oder Austausch eines IOM-Moduls – DS212C, DS224C oder DS460C
+= Ein DS212C, DS224C oder DS460C IOM-Modul kann im laufenden Betrieb ausgetauscht oder ersetzt werden.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Ihre Systemkonfiguration bestimmt, ob Sie einen unterbrechungsfreien Hot-Swap des Shelf-IOM oder einen unterbrechungsfreien Shelf-IOM-Austausch durchführen können, wenn ein Shelf-IOM IOM12 oder IOM12B ausfällt.
+Die Systemkonfiguration bestimmt, ob ein unterbrechungsfreier Shelf IOM Hot-Swap oder ein unterbrechender Shelf IOM Austausch durchgeführt werden kann, wenn ein IOM12, IOM12B oder IOM12C Shelf IOM ausfällt.
 
 .Über diese Aufgabe
-* Dieses Verfahren gilt für Regale mit IOM12- oder IOM12B-Modulen.
+* Dieses Verfahren gilt für Regale mit IOM12, IOM12B oder IOM12C Modulen.
 +
 
-NOTE: Dieses Verfahren gilt für den Hot-Swap oder Austausch identischer IOMs. Das bedeutet, dass Sie nur ein IOM12-Modul durch ein anderes IOM12-Modul oder ein IOM12B-Modul durch ein anderes IOM12B-Modul ersetzen können.
+NOTE: Dieses Verfahren ist für gleichwertige Shelf-IOM-Hot-Swaps oder -Austausche vorgesehen. Das bedeutet, dass ein IOM12-Modul nur durch ein anderes IOM12-Modul, ein IOM12B-Modul nur durch ein anderes IOM12B-Modul oder ein IOM12C-Modul nur durch ein anderes IOM12C-Modul ersetzt werden kann.
 
-* Die Module IOM12 bzw. IOM12B lassen sich anhand ihres Aussehens unterscheiden:
+* Die Module IOM12, IOM12B oder IOM12C lassen sich anhand ihres Aussehens unterscheiden:
 +
 Die IOM12-Module zeichnen sich durch ein "IOM12"-Label aus:
 
@@ -32,9 +32,14 @@ Die IOM12B-Module zeichnen sich durch einen blauen Streifen und ein „IOM12B“
 +
 image::../media/iom12b.png[Vorderseite des IOM12B]
 
++
+Die IOM12C Module sind durch einen blauen und grauen Streifen sowie die Aufschrift "IOM12C" gekennzeichnet:
+
++
+image::../media/drw_iom12c_ieops-2175.svg[Vorderseite von IOM12C]
+
 * Bei Multipath (Multipath HA oder Multipath), Tri-Path-HA und Quad-Pathed (Quad Path HA oder Quad Path) Konfigurationen können Sie ein Shelf IOM im laufenden Betrieb austauschen (unterbrechungsfreies Ersetzen eines Shelf IOM in einem System, das eingeschaltet ist und Daten bereitstellt – I/O wird ausgeführt).
-* Bei HA-Konfigurationen der FAS2600 Serie und der FAS2700 Serie müssen Sie ein Takeover- und Giveback-Vorgang durchführen, um ein Shelf-IOM in einem System zu ersetzen, das eingeschaltet ist und Daten bereitstellt - I/O läuft.
-* Bei Single-Path-Konfigurationen der FAS2600 Serie müssen Sie das System anhalten, um ein Shelf-IOM zu ersetzen.
+* Für FAS2700 Serie Single-Path HA-Konfigurationen ist eine Übernahme- und Rückgabeoperation erforderlich, um ein Shelf-IOM in einem eingeschalteten System zu ersetzen, das Daten bereitstellt und bei dem E/A-Vorgänge im Gange sind.
 +
 
 CAUTION: Wenn Sie versuchen, ein Shelf-IOM auf einem Festplatten-Shelf durch eine Single-Path-Verbindung zu tauschen, gehen alle Zugriffe auf die Festplattenlaufwerke im Festplatten-Shelf und alle darunter liegenden Festplatten-Shelfs verloren. Sie könnten auch Ihr gesamtes System herunterbringen.
@@ -51,7 +56,7 @@ Ein Festplatten-Shelf verfügt über drei Standort-LEDs: Eine auf der Bedieneran
 
 
 .Bevor Sie beginnen
-* Alle anderen Komponenten im System - einschließlich des anderen IOM12/IOM12B-Moduls - müssen ordnungsgemäß funktionieren.
+* Alle anderen Komponenten im System, einschließlich des anderen IOM12, IOM12B oder IOM12C Moduls, müssen ordnungsgemäß funktionieren.
 * *Best Practice*: Stellen Sie sicher, dass Ihr System über die aktuelle Version der Disk Shelf (IOM)-Firmware und der Festplatten-Firmware verfügt, bevor Sie neue Disk Shelfs, Shelf-FRU-Komponenten oder SAS-Kabel hinzufügen. Besuchen Sie die NetApp Support-Website, um  https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Disk Shelf-Firmware herunterladen"] Und  https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Laden Sie die Firmware für das Festplattenlaufwerk herunter"] .
 
 
@@ -77,22 +82,13 @@ Fahren Sie mit dem nächsten Schritt fort.
 
 
  a| 
-FAS2600 Series und FAS2700 HA-Single-Path-Konfiguration
+FAS2700 Serie Single Path HA Konfiguration
  a| 
 .. Ermitteln Sie den Ziel-Node (der Node, zu dem das ausgefallene Shelf-IOM gehört).
 +
 IOM A gehört zu Controller 1. IOM B gehört zu Controller 2.
 
 .. Übernehmen des Ziel-Node: `storage failover takeover -bynode _partner HA node_`
-
-
-
-
- a| 
-FAS2600 Series – Single-Path-Konfiguration
- a| 
-.. Fahren Sie das System von der Systemkonsole aus herunter: `halt`
-.. Überprüfen Sie, ob Ihr System angehalten wurde, indem Sie die Konsole des Speichersystems prüfen.
 
 
 |===
@@ -140,16 +136,9 @@ Fahren Sie mit dem nächsten Schritt fort.
 
 
  a| 
-FAS2600 Series und FAS2700 HA-Single-Path-Konfiguration
+FAS2700 Serie Single Path HA Konfiguration
  a| 
 Geben Sie den Ziel-Node zurück: `storage failover giveback -fromnode partner_HA_node`
-
-
-
- a| 
-FAS2600 Series – Single-Path-Konfiguration
- a| 
-Starten Sie das System neu.
 
 |===
 . Vergewissern Sie sich, dass die Links für den Shelf-IOM-Port eingerichtet wurden.

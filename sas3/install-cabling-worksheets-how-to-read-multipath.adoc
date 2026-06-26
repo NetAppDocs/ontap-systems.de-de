@@ -1,17 +1,17 @@
 ---
 permalink: sas3/install-cabling-worksheets-how-to-read-multipath.html 
 sidebar: sidebar 
-keywords: example, guide, read, apply, complete, worksheet, cable, controller-to-stack, connection, disk, shelves, shelf, iom12, multipathed, connectivity, hot to read a worksheet to cable controller-to-stack connections for multipathed connectivity 
-summary: Anhand dieses Beispiels können Sie erfahren, wie Sie ein ausgefülltes Arbeitsblatt lesen und anwenden, um Controller-to-Stack-Verbindungen für Platten-Shelves mit IOM12-Modulen für multipathed Konnektivität zu verkabeln. 
+keywords: cable, controller, stack, connection, disk, shelves, shelf, iom12, multipathed, connectivity, ds212c, ds224c, ds460c 
+summary: Dieses Beispiel dient als Orientierung beim Lesen und Anwenden eines ausgefüllten Arbeitsblatts für Controller-zu-Stack-Verbindungen von Festplatten-Shelfs zur multipath Konnektivität. 
 ---
-= So lesen Sie ein Arbeitsblatt zum Verkabeln von Controller-zu-Stack-Verbindungen für Mehrwegekonnektivität – DS212C, DS224C oder DS460C
+= Ein Verkabelungsarbeitsblatt für DS212C, DS224C oder DS460C Multipath-Controller-zu-Stack-Verbindungen einsehen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Mit diesem Beispiel können Sie die Vorgehensweise beim Lesen und Anwenden eines ausgefüllten Arbeitsblatts erläutern, um Controller-zu-Stack-Verbindungen für Platten-Shelves mit IOM12/IOM12B-Modulen für Multipath-Konnektivität zu verkabeln.
+Dieses Beispiel dient als Orientierung, wie ein ausgefülltes Arbeitsblatt gelesen und angewendet wird, um Controller-zu-Stack-Verbindungen für Festplatten-Shelfs mit IOM12, IOM12B oder IOM12C Modulen für multipathfähige Konnektivität zu konfigurieren.
 
 .Bevor Sie beginnen
 Wenn Sie über eine Plattform mit internem Speicher verfügen, verwenden Sie das folgende Arbeitsblatt:
@@ -21,7 +21,7 @@ link:install-cabling-worksheets-examples-fas2600.html["Verkabelungsarbeitsblätt
 .Über diese Aufgabe
 * Gehen Sie wie folgt vor, um ein Arbeitsblatt und eine Verkabelung zu lesen, um Verbindungen zwischen Controller und Stack zu verkabeln.
 +
-Die in diesem Beispiel verwendete Konfiguration ist eine Multipath HA-Konfiguration mit zwei Quad-Port SAS HBAs (acht SAS-Ports) auf jedem Controller und zwei Platten-Shelfs mit IOM12/IOM12B-Modulen. Port-Paare werden verkabelt, indem sie jedes andere Port-Paar im Arbeitsblatt überspringen.
+Die in diesem Beispiel verwendete Konfiguration ist eine Multipath HA-Konfiguration mit zwei quad-port SAS-HBAs (acht SAS-Ports) pro Controller und zwei Stacks von Disk Shelves mit IOM12, IOM12B oder IOM12C Modulen. Portpaare werden verkabelt, indem im Arbeitsblatt jedes zweite Portpaar übersprungen wird.
 
 +
 

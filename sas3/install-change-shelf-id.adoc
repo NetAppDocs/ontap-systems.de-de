@@ -1,17 +1,19 @@
 ---
 permalink: sas3/install-change-shelf-id.html 
 sidebar: sidebar 
-keywords: change, shelf, id, system, ontap, run, hot-add, ontap, controller, module, available, serve, data, unown, spare, offline, aggregate 
-summary: 'Sie können eine Shelf-ID in einem System ändern, wenn ONTAP noch nicht ausgeführt wird oder wenn Sie ein Shelf im laufenden Betrieb hinzufügen, bevor Sie es mit dem System verbunden werden. Sie können auch eine Shelf-ID ändern, wenn ONTAP in Betrieb ist (Controller-Module sind für Daten verfügbar) und alle Laufwerke im Shelf ohne Besitzer, Ersatzteile oder einen Teil des Offline-Aggregats sind.' 
+keywords: change, shelf, id, system, ontap, controller, module, ds212c, ds224c, ds460c 
+summary: Eine Shelf-ID in einem System kann geändert werden, wenn ONTAP noch nicht läuft, wenn ein Shelf im laufenden Betrieb hinzugefügt wird, bevor es mit dem System verkabelt ist, oder wenn ONTAP bereits läuft und alle Laufwerke im Shelf unzugeordnet, als Ersatzteile vorhanden oder Teil offline genommener Aggregate sind. 
 ---
-= Ändern einer Regal-ID – DS212C, DS224C oder DS460C
+= DS212C-, DS224C- oder DS460C-Regal-ID ändern
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie können die Shelf-ID in einem System mit IOM12/IOM12B-Modulen ändern, wenn ONTAP noch nicht läuft oder wenn Sie ein Shelf im laufenden Betrieb hinzufügen, bevor es an das System angeschlossen wird. Sie können die Shelf-ID auch ändern, wenn ONTAP betriebsbereit ist (Controller-Module zur Datenbereitstellung verfügbar sind) und alle Laufwerke im Shelf unbenutzt, Ersatzlaufwerke oder Teil eines oder mehrerer offline geschalteter Aggregate sind.
+Sie können die Shelf ID in einem DS212C, DS224C oder DS460C Shelf ändern, wenn ONTAP noch nicht ausgeführt wird oder wenn ein Shelf im laufenden Betrieb hinzugefügt wird, bevor es mit dem System verbunden wird. Die Shelf ID kann auch geändert werden, wenn ONTAP betriebsbereit ist (Controller-Module zur Datenbereitstellung verfügbar sind) und alle Laufwerke im Shelf nicht zugeordnet, Ersatzteile oder Teil eines oder mehrerer offline genommener Aggregate sind.
+
+Dieses Verfahren gilt für Regale mit IOM12, IOM12B oder IOM12C Modulen.
 
 .Über diese Aufgabe
 * Gültige Shelf-ID: 00 bis 99.

@@ -1,17 +1,19 @@
 ---
 permalink: sas3/hot-remove-shelf.html 
 sidebar: sidebar 
-keywords: hot-remove, disk, shelf, iom12, module, nondisruptive, module-nondisruptively, system, power, serving, data, I O, progress, hot-remove, stack, shelves, hot-remove a disk shelf with iom12 modules, DS460C, transport DS460C, move DS460C, remove drives from DS460C, DS460C drive handling, iom12b 
-summary: 'Sie können ein Platten-Shelf in Betrieb nehmen mit IOM12-Modulen (ein Platten-Shelf wird unterbrechungsfrei von einem eingeschalteten System entfernt und die I/O wird gerade ausgeführt), wenn Sie das Platten-Shelf verschieben oder ersetzen müssen. Sie können ein oder mehrere Platten-Shelfs innerhalb eines Stacks mit Platten-Shelfs Hot-entfernen oder einen Stack von Festplatten-Shelfs entfernen.' 
+keywords: hot-remove, remove, disk, shelf, sas3, iom12, iom12b, iom12c, stack, ds460c, transport, move, ds212c, ds224c 
+summary: Ein Disk Shelf kann im laufenden Betrieb entfernt oder ersetzt werden, wenn es aus einem eingeschalteten System entfernt oder ersetzt werden muss und I/O-Vorgänge stattfinden. 
 ---
-= Ein Regal im laufenden Betrieb entfernen – DS212C, DS224C und DS460C
+= Ein DS212C, DS224C oder DS460C Shelf im laufenden Betrieb entfernen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie können ein Festplattenregal mit IOM12- oder IOM12B-Modulen im laufenden Betrieb entfernen (unterbrechungsfrei aus einem eingeschalteten System mit laufenden E/A-Vorgängen entfernen), wenn Sie ein Festplattenregal verschieben oder ersetzen müssen. Sie können ein oder mehrere Festplattenregale im laufenden Betrieb von einer beliebigen Stelle innerhalb eines Stapels entfernen oder einen Stapel von Festplattenregalen entfernen.
+Sie können ein Disk Shelf im laufenden Betrieb entfernen, wenn es aus einem eingeschalteten System, bei dem E/A-Vorgänge stattfinden, entfernt oder ersetzt werden muss. Sie können ein oder mehrere Disk Shelves an beliebiger Stelle innerhalb eines Stapels von Disk Shelves entfernen oder einen Stapel von Disk Shelves ausbauen.
+
+Dieses Verfahren gilt für Regale mit IOM12, IOM12B oder IOM12C Modulen.
 
 .Über diese Aufgabe
 * Wenn Sie ein Platten-Shelf im laufenden Betrieb aus einem Stapel entfernen (jedoch den Stack behalten), können Sie erneut einen Pfad nach nacheinander überprüfen (Pfad A dann Pfad B), um das Festplatten-Shelf, das Sie entfernen, zu umgehen, damit Sie stets die Single-Path-Verbindung von den Controllern zum Stack aufrechterhalten.
@@ -175,7 +177,7 @@ Ein Platten-Shelf aus der Mitte des Stacks Ist Ein Festplatten-Shelf in der Mitt
 Sie können sich die folgenden Verkabelungsbeispiele nennen, wenn Sie ein Festplatten-Shelf aus einem Ende eines Stacks oder der Mitte eines Stacks entfernen. Beachten Sie die folgenden Verkabelungsbeispiele:
 
 +
-** Die IOM12/IOM12B Module sind nebeneinander wie in einem DS224C oder DS212C Festplatten-Shelf angeordnet; bei einem DS460C sind die IOM12/IOM12B Module übereinander angeordnet.
+** Die Module IOM12, IOM12B oder IOM12C sind wie in einem DS224C oder DS212C Disk Shelf nebeneinander angeordnet; bei einem DS460C sind die Module IOM12, IOM12B oder IOM12C übereinander angeordnet.
 ** Der Stack in den einzelnen Beispielen wird über Standard-Shelf-zu-Shelf-Kabel verkabelt, die in Stacks mit Multipath HA, Tri-Path HA oder Multipath-Konnektivität verwendet werden.
 +
 Sie können die Neuaufteilung beschreiben, wenn der Stack über HA mit Quad-Path oder Quad-Path-Konnektivität verbunden ist, wobei doppelt breite Shelf-to-Shelf-Verkabelung verwendet wird.

@@ -1,10 +1,10 @@
 ---
 permalink: sas3/install-new-system.html 
 sidebar: sidebar 
-keywords: install, cabling, cable, disk, shelves, shelf, iom12, module, system, installation, system, ha, pair, single-controller, configuration, cabinet, rack, requirement, install and cable disk shelves with iom12 modules for a new system installation, requirements for installing and cabling disk shelves with iom12 modules for a new system installation, considerations for installing and cabling disk shelves with iom12 modules for a new system installation, install disk shelves with iom12 modules for a new system installation, cable disk shelves with iom12 modules for a new system installation, DS460C, transport DS460C, move DS460C, remove drives from DS460C, DS460C drive handling, iom12b 
-summary: Wenn die neue System--HA-Paar- oder Single-Controller-Konfiguration nicht in einem Rack installiert wurde, müssen Sie die Festplatten-Shelfs in einem Rack installieren und verkabeln. 
+keywords: install, cable, disk, shelf, iom12, module, system, ha, pair, single-controller, configuration, iom12b, iom12c, ds212c, ds224c, ds460c 
+summary: Falls Ihr neues System nicht in einem Schrank installiert ist, müssen die Festplattengehäuse in einem Rack installiert und verkabelt werden. 
 ---
-= Regale installieren und verkabeln – DS212C, DS224C oder DS460C
+= Ein DS212C, DS224C oder DS460C Shelf installieren und verkabeln
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -14,7 +14,7 @@ summary: Wenn die neue System--HA-Paar- oder Single-Controller-Konfiguration nic
 Wenn das neue System--HA-Paar oder die Single-Controller-Konfiguration nicht in einem Rack installiert wurde, können Sie die Festplatten-Shelfs in einem Rack installieren und verkabeln.
 
 .Über diese Aufgabe
-* Platten-Shelfs mit IOM12/IOM12B Modulen werden mit voreingestellten Shelf-IDs auf 00 geliefert.
+* Disk Shelves mit IOM12, IOM12B oder IOM12C Modulen werden mit auf 00 voreingestellten Shelf-IDs ausgeliefert.
 +
 
 NOTE: Wenn Sie ein HA-Paar mit mindestens zwei Stacks haben, ist das Festplatten-Shelf mit den Root-Aggregaten für den zweiten Stack die Shelf-ID auf 10 voreingestellt.
@@ -26,7 +26,7 @@ Sie müssen Shelf-IDs festlegen, sodass sie innerhalb des HA-Paars oder der Sing
 +
 Auf den Etiketten wird die Stapelnummer angezeigt, z. B. *Loop oder Stack #: 1* und *Loop oder Stack #: 2*. Bei Festplatten-Shelfs, die keine Root-Aggregate enthalten, wird nur die Festplatten-Shelf-Seriennummer auf den Etiketten angezeigt.
 
-* Wenn Sie bei der Systemeinrichtung und -konfiguration das System nicht für die automatische Zuweisung von Datenträgereigentumsrechten konfigurieren, müssen Sie die Datenträgereigentumsrechte manuell zuweisen.
+* Wenn das System bei der Einrichtung und Konfiguration nicht für die automatische Zuweisung der Festplattenbesitzrechte konfiguriert wird, ist eine manuelle Zuweisung der Festplattenbesitzrechte erforderlich.
 * IBACP (in-Band Alternate Control Path) wird automatisch aktiviert.
 +
 IBACP wird nicht bei Single-Path-HA- oder Single-Path-Konfigurationen unterstützt.

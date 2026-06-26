@@ -1,22 +1,22 @@
 ---
 permalink: sas3/install-cabling-rules.html 
 sidebar: sidebar 
-keywords: disk, shelves, shelf, iom12, module, single-controller, configuration, support, platform, sas, cabling, cable, rule, controller, shelf-to-shelf, connection, rule, controller-to-stack, mini-sas, hd, optical, cable, rule, sas cabling rules, iom12b, concepts 
-summary: 'Platten-Shelfs mit IOM12/IOM12B Modulen können in HA-Paar- und Single-Controller-Konfigurationen (für unterstützte Plattformen) verkabelt werden.' 
+keywords: disk, shelf, iom12, module, iom12b, iom12c, configuration, support, platform, sas, cabling, cable, rule, controller, connection, mini-sas optical, ds212c, ds224c, ds460c 
+summary: 'Disk Shelves mit IOM12, IOM12B oder IOM12C Modulen können in HA-Paar- und Einzelcontroller-Konfigurationen verkabelt werden (für unterstützte Plattformen).' 
 ---
-= SAS-Verkabelungsregeln und -Konzepte – DS212C, DS224C oder DS460C
+= SAS-Verkabelungsregeln und Konzepte für DS212C, DS224C oder DS460C Shelves
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Platten-Shelfs mit IOM12/IOM12B-Modulen können unter Anwendung der SAS-Verkabelungsregeln in HA-Paar- und Single-Controller-Konfigurationen (für unterstützte Plattformen) verkabelt werden: Konfigurationsregeln, Controller-Slot-Nummerierungsregeln, Shelf-to-Shelf-Verbindungsregeln, Controller-to-Stack-Verbindungsregeln und gegebenenfalls optische Kabelregeln für Mini-SAS HD SAS.
+DS212C, DS224C und DS460C Shelves mit IOM12, IOM12B oder IOM12C Modulen können in HA Pair und Single-Controller Konfigurationen (für unterstützte Plattformen) durch Anwendung der SAS-Verkabelungsregeln verbunden werden: Konfigurationsregeln, Controller-Slot-Nummerierungsregeln, Shelf-zu-Shelf-Verbindungsregeln, Controller-zu-Stack-Verbindungsregeln und, falls zutreffend, Mini-SAS HD SAS-Optikkabelregeln.
 
 
-NOTE: Die in diesem Handbuch beschriebenen SAS-Verkabelungsregeln hinsichtlich der Nummerierung von Controller-Steckplätzen, der Verbindungen zwischen Einschüben und der Verbindungen zwischen Controllern und Stapeln gelten für alle SAS-Festplatteneinschübe, unabhängig davon, ob sie mit IOM12- oder IOM12B-Modulen ausgestattet sind. Die Informationen in diesem Handbuch beziehen sich jedoch speziell auf die besonderen Merkmale von Festplatteneinschüben mit IOM12/IOM12B-Modulen und deren Verwendung in unterstützten Konfigurationen.
+NOTE: Die in diesem Leitfaden beschriebenen SAS-Verkabelungsregeln bezüglich Controller-Steckplatznummerierung, Shelf-zu-Shelf-Verbindungen und Controller-zu-Stack-Verbindungen gelten für alle SAS Disk Shelfs, unabhängig davon, ob sie IOM12, IOM12B oder IOM12C Module verwenden. Die Informationen in diesem Leitfaden beziehen sich jedoch speziell auf die besonderen Eigenschaften von Disk Shelfs mit IOM12, IOM12B oder IOM12C Modulen und deren Verwendung in unterstützten Konfigurationen.
 
-Die in diesem Leitfaden beschriebenen SAS-Verkabelungsregeln zu Konfigurationsregeln und optischen Mini-SAS-HD-SAS-SAS-Kabelregeln gelten speziell für Platten-Shelves mit IOM12/IOM12B-Modulen.
+Die in diesem Leitfaden beschriebenen SAS-Verkabelungsregeln bezüglich Konfigurationsregeln und mini-SAS HD SAS-Lichtwellenleiterregeln gelten speziell für Festplattengehäuse mit IOM12, IOM12B oder IOM12C Modulen.
 
 Die in diesem Leitfaden beschriebenen SAS-Verkabelungsregeln ausgleichen SAS-Ports zwischen integrierten SAS-Ports und SAS-Ports für Host Bus Adapter, um hochverfügbare Storage Controller-Konfigurationen bereitzustellen und folgende Ziele zu erreichen:
 
@@ -32,7 +32,7 @@ Sie sollten vermeiden, von den Regeln zu abweichen; Abweichungen können Zuverl�
 
 == Konfigurationsregeln
 
-Festplatten-Shelfs mit IOM12/IOM12B Modulen werden in bestimmten HA-Paar- und Single-Controller-Konfigurationen unterstützt.
+Disk Shelfs mit IOM12, IOM12B oder IOM12C Modulen werden auf bestimmten HA Pair und Einzelcontroller Konfigurationen unterstützt.
 
 [NOTE]
 ====

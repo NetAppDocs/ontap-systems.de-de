@@ -1,17 +1,17 @@
 ---
 permalink: sas3/install-cabling-worksheet-template-multipath.html 
 sidebar: sidebar 
-keywords: complete, completing, worksheet, template, controller, sas, port, pair, cable, controller, disk, shelves, iom12, module, achieve, multipathed, connectivity, ha, pair, single-controller, configuration, worksheet, connection, controller-to-stack cabling worksheet template for multipathed connectivity, iom12b 
-summary: Durch Ausfüllen der Worksheet-Vorlage können Sie die SAS-Port-Paare des Controllers definieren, mit denen Controller mit IOM12/IOM12B-Modulen verbunden werden können. So wird eine Multipath-Konnektivität in einem HA-Paar oder einer Single-Controller-Konfiguration erreicht. Sie können auch das ausgefüllte Arbeitsblatt verwenden, um sich durch die multipathed Verbindungen für Ihre Konfiguration zu führen. 
+keywords: controller, sas, port, cable, disk, shelf, iom12, module, multipathed, ha, pair, iom12b, iom12c, ds212c, ds224c, ds460c 
+summary: Ein Verkabelungsarbeitsblatt kann verwendet werden, um die Controller-SAS-Portpaare zu definieren, die für die Verkabelung von Controllern mit Stapeln von Festplattengehäusen zur Erreichung einer multipathed Konnektivität genutzt werden können. 
 ---
-= Verkabelungsarbeitsblatt für Mehrwegekonnektivität – DS212C, DS224C oder DS460C
+= Verkabelungsübersicht für DS212C, DS224C oder DS460C Multipath-Konnektivität
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Durch Ausfüllen der Worksheet-Vorlage können Sie die SAS-Port-Paare des Controllers definieren, mit denen Controller mit IOM12/IOM12B-Modulen verbunden werden können. So wird eine Multipath-Konnektivität in einem HA-Paar oder einer Single-Controller-Konfiguration erreicht. Sie können auch das ausgefüllte Arbeitsblatt verwenden, um sich durch die multipathed Verbindungen für Ihre Konfiguration zu führen.
+Mithilfe eines Verkabelungsplans können die SAS-Portpaare der Controller definiert werden, die zur Verkabelung von Controllern mit Stacks von Festplatten-Shelfs verwendet werden können, um eine multipath-fähige Konnektivität in einer HA-Paar- oder Einzelcontroller-Konfiguration zu erreichen. Der ausgefüllte Plan kann außerdem dazu verwendet werden, die Verkabelung der multipath-fähigen Verbindungen für die jeweilige Konfiguration Schritt für Schritt nachzuvollziehen.
 
 .Bevor Sie beginnen
 Wenn Sie über eine Plattform mit internem Speicher verfügen, verwenden Sie das folgende Arbeitsblatt:
@@ -24,7 +24,7 @@ link:install-cabling-worksheets-examples-fas2600.html["Verkabelungsarbeitsblätt
 Beispiele für abgeschlossene Worksheets finden Sie für Multipath HA- und Multipath-Konfigurationen.
 
 +
-Für die Arbeitsblattbeispiele wird eine Konfiguration mit zwei Quad-Port-SAS-HBAs und zwei Stacks an Platten-Shelfs mit IOM12/IOM12B-Modulen verwendet.
+Für die Beispiele im Arbeitsblatt wird eine Konfiguration mit zwei quad-port SAS-HBAs und zwei Stapeln von Disk Shelves mit IOM12, IOM12B oder IOM12C Modulen verwendet.
 
 * Die Arbeitsblattvorlage ermöglicht bis zu sechs Stapel. Bei Bedarf müssen weitere Spalten hinzugefügt werden.
 * Bei Bedarf können Sie sich auf die beziehen link:install-cabling-rules.html["SAS-Verkabelungsregeln und -Konzepte"] Weitere Informationen zu unterstützten Konfigurationen finden Sie auf der Konvention zur Nummerierung von Controller-Steckplätzen, Shelf-to-Shelf-Konnektivität und Controller/Shelf-Konnektivität (einschließlich Verwendung von Port-Paaren).

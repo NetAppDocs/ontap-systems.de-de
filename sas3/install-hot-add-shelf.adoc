@@ -1,22 +1,24 @@
 ---
 permalink: sas3/install-hot-add-shelf.html 
 sidebar: sidebar 
-keywords: hot-add, disk, shelves, shelf, iom12, exist, stack, module, sas, hba, onboard, sas, port, controller, DS460C, transport DS460C, move DS460C, remove drives from DS460C, DS460C drive handling, iom12b 
-summary: Mit IOM12/IOM12B-Modulen können Sie ein oder mehrere Platten-Shelfs in Betrieb nehmen und mit IOM12/IOM12B-Modulen einen Stack oder mehrere Platten-Shelfs mit IOM12/IOM12B-Modulen direkt an einen SAS HBA oder einen integrierten SAS-Port am Controller hinzufügen. 
+keywords: hot-add, add, disk, shelf, iom12, stack, sas, hba, port, controller, iom12b, iom12c, ds212c, ds224c, ds460c 
+summary: Sie können ein oder mehrere Disk Shelves im laufenden Betrieb zu einem bestehenden Stapel von Disk Shelves hinzufügen oder einen Stapel von einem oder mehreren Disk Shelves direkt an eine SAS HBA oder einen Onboard SAS Port des Controllers anschließen. 
 ---
-= Hot-Add-Regale – DS212C, DS224C oder DS460C
+= DS212C, DS224C oder DS460C Shelf im laufenden Betrieb hinzufügen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Mit IOM12/IOM12B-Modulen können Sie ein oder mehrere Platten-Shelfs in Betrieb nehmen und mit IOM12/IOM12B-Modulen einen Stack oder mehrere Platten-Shelfs mit IOM12/IOM12B-Modulen direkt an einen SAS HBA oder einen integrierten SAS-Port am Controller hinzufügen.
+Sie können ein oder mehrere Disk Shelves im laufenden Betrieb zu einem bestehenden Stapel von Disk Shelves hinzufügen oder einen Stapel von einem oder mehreren Disk Shelves direkt an eine SAS HBA oder einen Onboard SAS Port des Controllers anschließen.
+
+Dieses Verfahren gilt für Regale mit IOM12, IOM12B oder IOM12C Modulen.
 
 .Bevor Sie beginnen
 Sie müssen bestimmte Anforderungen erfüllen und sich mit den Best Practices und Überlegungen zu diesem Verfahren vertraut machen, bevor Sie Disk-Shelves im laufenden Betrieb hinzufügen.
 
-* Stellen Sie sicher, dass Ihr System bestimmte Anforderungen erfüllt, bevor Sie Disk Shelves mit IOM12/IOM12B-Modulen im laufenden Betrieb hinzufügen:
+* Stellen Sie sicher, dass Ihr System bestimmte Anforderungen erfüllt, bevor im laufenden Betrieb Festplattengehäuse mit IOM12, IOM12B oder IOM12C Modulen hinzugefügt werden:
 +
 ** Ihr System und Ihre ONTAP -Version müssen die Festplatten-Shelves unterstützen, die Sie im laufenden Betrieb hinzufügen, einschließlich der IOMs, Festplattenlaufwerke und SAS-Kabel. Welche ONTAP -Version Sie für Ihre Shelves benötigen, erfahren Sie im  https://hwu.netapp.com["NetApp Hardware Universe"^] .
 ** Ihr System muss mindestens die maximale Anzahl unterstützter Festplattenlaufwerke aufweisen, um die Anzahl der Festplatten-Shelfs, die Sie hinzufügen möchten.
@@ -52,11 +54,11 @@ Nachdem Sie das Festplatten-Shelf im laufenden Betrieb hinzugefügt haben, müss
 
 * Machen Sie sich mit den allgemeinen Überlegungen zur Durchführung dieses Verfahrens vertraut:
 +
-** Wenn Sie ein Platten-Shelf mit IOM12/IOM12B-Modulen im laufenden Betrieb einem vorhandenen Stack hinzufügen (von Platten-Shelfs mit IOM12/IOM12B-Modulen), können Sie das Platten-Shelf entweder am Ende des logischen ersten oder letzten Platten-Shelfs hinzufügen.
+** Wenn Sie ein Disk Shelf mit IOM12, IOM12B oder IOM12C Modulen im laufenden Betrieb zu einem bestehenden Stack (von Disk Shelfs mit IOM12, IOM12B oder IOM12C Modulen) hinzufügen, kann das Disk Shelf an einem der beiden Enden, dem logischen ersten oder letzten Disk Shelf, des Stacks im laufenden Betrieb hinzugefügt werden.
 +
 Für HA- und Single-Path-Konfigurationen, die für AFF A200, AFF A220, FAS2600 Series und FAS2700 Systeme anwendbar sind, können Sie Festplatten-Shelfs am Ende des Stacks hinzufügen, ohne dass Controller-Verbindungen vorhanden sind.
 
-** Festplattenregale mit IOM12/IOM12B-Modulen müssen sich in einem eigenen Stapel befinden.
+** Disk Shelfs mit IOM12, IOM12B oder IOM12C Modulen müssen in einem eigenen eindeutigen Stack untergebracht sein.
 ** Bei diesem Verfahren wird vorausgesetzt, dass Ihre Konfiguration die in-Band ACP verwendet.
 +
 Bei Konfigurationen, bei denen ACP in der Band aktiviert ist, wird ACP in-Band automatisch auf Platten-Shelfs aktiviert, die im laufenden Betrieb hinzugefügt werden können. Bei Konfigurationen, bei denen in-Band-ACP nicht aktiviert ist, funktionieren Hot-zusätzliche Festplatten-Shelfs ohne ACP-Funktionen.
