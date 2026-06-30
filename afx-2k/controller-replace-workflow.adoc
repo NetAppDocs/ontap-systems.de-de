@@ -1,0 +1,38 @@
+---
+permalink: afx-2k/controller-replace-workflow.html 
+sidebar: sidebar 
+keywords: afx 2k, replace the controller 
+summary: Der Austausch des Controllers in Ihrem afx 2k Storage-System beginnt mit dem Herunterfahren des defekten Controllers, dem Entfernen und Ersetzen des Controllers, der Neukonfiguration der Systemeinstellungen und der Überprüfung des Systembetriebs. 
+---
+= Controller-Austausch-Workflow AFX 2K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der Austausch des Controllers in Ihrem AFX 2K-Speichersystem erfolgt durch das Herunterfahren des defekten Controllers, das Entfernen und Ersetzen des Controllers, das Wiederherstellen der Systemkonfiguration und das Überprüfen der Systemfunktionen.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:controller-replace-requirements.html["Überprüfen Sie die Anforderungen für den Austausch des Controllers"]
+[role="quick-margin-para"]
+Um das Controller-Modul auszutauschen, müssen Sie bestimmte Anforderungen erfüllen.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:controller-replace-shutdown.html["Schalten Sie den beeinträchtigten Regler aus"]
+[role="quick-margin-para"]
+Fahren Sie den beeinträchtigten Controller herunter oder übernehmen Sie ihn, damit der funktionsunzuverlässige Controller weiterhin Daten aus dem Speicher für den beeinträchtigten Controller bereitstellen kann.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:controller-replace-move-hardware.html["Ersetzen Sie den Controller"]
+[role="quick-margin-para"]
+Ersetzen Sie den Controller, indem Sie den beschädigten Controller entfernen, die FRU-Komponenten in das Ersatzmodul verschieben und das Ersatzmodul im Gehäuse installieren.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:controller-replace-system-config-restore-and-verify.html["Stellen Sie die Systemkonfiguration wieder her und überprüfen Sie sie"]
+[role="quick-margin-para"]
+Überprüfen Sie die Low-Level-Systemkonfiguration des Ersatzcontrollers und aktualisieren Sie die Systemeinstellungen bei Bedarf.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:controller-replace-recable-reassign-disks.html["Geben Sie den Controller zurück"]
+[role="quick-margin-para"]
+Übertragen Sie die Eigentumsrechte an Storage-Ressourcen zurück an den Ersatz-Controller.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sechs"]link:controller-replace-restore-system-rma.html["Vollständiger Controller-Austausch"]
+[role="quick-margin-para"]
+Überprüfen Sie die logischen Schnittstellen (LIFs), prüfen Sie die Clusterintegrität und senden Sie das ausgefallene Teil an NetApp zurück.

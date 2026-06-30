@@ -1,0 +1,34 @@
+---
+permalink: afx-2k/bootmedia-replace-workflow.html 
+sidebar: sidebar 
+keywords: afx 2k, replace the boot media 
+summary: Der Austausch des Bootmediums in Ihrem afx 2k Speichersystem umfasst das Prüfen der Austauschvoraussetzungen, das Überprüfen des Verschlüsselungsstatus, das Herunterfahren des Controllers, das Ersetzen des Bootmediums, das Starten des Wiederherstellungsabbilds, das Wiederherstellen der Verschlüsselung und das Überprüfen der Systemfunktionalität. 
+---
+= Ablauf zum Austausch des Bootmediums, AFX 2K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der Austausch des Bootmediums in Ihrem AFX 2K-Speichersystem umfasst das Prüfen der Austauschvoraussetzungen, das Kontrollieren des Verschlüsselungsstatus, das Herunterfahren des Controllers, das Ersetzen des Bootmediums, das Starten des Wiederherstellungsabbilds, das Wiederherstellen der Verschlüsselung und das Überprüfen der Systemfunktionalität.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:bootmedia-replace-requirements.html["Überprüfen Sie die Anforderungen der Startmedien"]
+[role="quick-margin-para"]
+Überprüfen Sie die Anforderungen für den Austausch von Boot-Medien.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:bootmedia-shutdown.html["Fahren Sie den Controller herunter"]
+[role="quick-margin-para"]
+Fahren Sie den Controller in Ihrem Speichersystem herunter, wenn Sie das Startmedium ersetzen müssen.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:bootmedia-replace.html["Ersetzen Sie das Startmedium"]
+[role="quick-margin-para"]
+Entfernen Sie das fehlerhafte Startmedium aus dem System Management-Modul, und installieren Sie das Ersatz-Startmedium.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:bootmedia-recovery-image-boot.html["Stellen Sie das Image auf dem Startmedium wieder her"]
+[role="quick-margin-para"]
+Stellen Sie das ONTAP-Image vom Partner-Controller wieder her.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:bootmedia-complete-rma.html["Senden Sie das fehlerhafte Teil an NetApp zurück"]
+[role="quick-margin-para"]
+Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.

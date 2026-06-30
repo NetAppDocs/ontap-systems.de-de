@@ -1,0 +1,110 @@
+---
+permalink: afx-2k/maintain-overview.html 
+sidebar: sidebar 
+keywords: afx 2k maintenance, maintenance, repairing a1k, repairing afx 2k, replace afx 2k components, replace afx 2k components 
+summary: Die Hardware Ihres afx 2k Storage-Systems wird gepflegt, um langfristige Zuverlässigkeit und optimale Performance sicherzustellen. Regelmäßige Wartungsaufgaben wie der Austausch fehlerhafter Komponenten tragen dazu bei, Ausfallzeiten und Datenverlust zu vermeiden. 
+---
+= Übersicht der Wartungsverfahren – AFX 2K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Hardware Ihres AFX 2K Storage-Systems wird gepflegt, um langfristige Zuverlässigkeit und optimale Leistung sicherzustellen. Regelmäßige Wartungsaufgaben wie der Austausch fehlerhafter Komponenten tragen dazu bei, Ausfallzeiten und Datenverlust zu vermeiden.
+
+Die Wartungsverfahren setzen voraus, dass das AFX 2K Speichersystem bereits als Speicherknoten in der ONTAP Umgebung eingesetzt wurde.
+
+
+
+== Systemkomponenten
+
+Für das AFX 2K Speichersystem sind Wartungsarbeiten an den folgenden Komponenten möglich.
+
+[cols="25,65"]
+|===
+
+
+ a| 
+link:bootmedia-replace-workflow.html["Boot-Medien"]
+ a| 
+Das Bootmedium speichert einen primären und einen sekundären Satz von ONTAP Imagedateien, die das System beim Booten verwendet.
+
+
+
+ a| 
+link:chassis-replace-workflow.html["Chassis"]
+ a| 
+Das Chassis ist das physische Gehäuse, in dem alle Controller-Komponenten wie Controller-/CPU-Einheit, Stromversorgung und I/O-Vorgänge untergebracht sind
+
+
+
+ a| 
+link:controller-replace-workflow.html["Controller"]
+ a| 
+Ein Controller besteht aus einer Hauptplatine, Firmware und Software. Er steuert die Laufwerke und führt die ONTAP-Betriebssystemsoftware aus.
+
+
+
+ a| 
+link:dimm-replace.html["DIMM"]
+ a| 
+Ein duales Inline-Speichermodul (DIMM) ist eine Art von Computerspeicher. Sie sind installiert, um einem Controller-Motherboard Systemspeicher hinzuzufügen.
+
+
+
+ a| 
+link:fan-replace.html["Ventilator"]
+ a| 
+Ein Lüfter kühlt den Controller.
+
+
+
+ a| 
+link:nvram-replace.html["NVRAM-Modul"]
+ a| 
+Das NVRAM Modul (Non-Volatile Random Access Memory) ermöglicht dem Controller, während des Flugs gespeicherte Daten zu schützen und zu speichern, falls das System die Stromversorgung verliert.  Die System-ID wird im NVRAM -Modul gespeichert.  Beim Austausch verwendet der Controller die neue System-ID vom Ersatz NVRAM -Modul.
+
+
+
+ a| 
+link:nv12l-replace.html["NVRAM12-EX Modul"]
+ a| 
+Das NVRAM12-EX ist das zweite NVRAM (Non-Volatile Random Access Memory) Modul für den AFX 2K Controller. Das NVRAM12-EX Modul ermöglicht dem Controller, in Bearbeitung befindliche Daten zu schützen und zu speichern, falls das System die Stromversorgung verliert.
+
+
+
+ a| 
+link:nvdimm-battery-replace.html["NV-Batterie"]
+ a| 
+Die NV-Batterie ist dafür verantwortlich, das NVRAM-Modul mit Strom zu versorgen, während die aktiven Daten nach einem Stromausfall in den Flash-Speicher ausgelagert werden.
+
+
+
+ a| 
+link:io-module-overview.html["I/O-Modul"]
+ a| 
+Das E/A-Modul (Eingangs-/Ausgangsmodul) ist eine Hardwarekomponente, die als Vermittler zwischen dem Controller und verschiedenen Geräten oder Systemen dient, die Daten mit dem Controller austauschen müssen.
+
+
+
+ a| 
+link:power-supply-replace.html["Stromversorgung"]
+ a| 
+Ein Netzteil stellt eine redundante Stromquelle in einem Controller bereit.
+
+
+
+ a| 
+link:rtc-battery-replace.html["Akku in Echtzeit"]
+ a| 
+Bei ausgeschaltetem Gerät bleiben Datum und Uhrzeit über eine Echtzeitbatterie erhalten.
+
+
+
+ a| 
+link:system-management-replace.html["Systemmanagement-Modul"]
+ a| 
+Das Systemmanagementmodul stellt die Schnittstelle zwischen dem Controller und einer Konsole oder einem Laptop für Controller- oder Systemwartungszwecke bereit. Das Systemmanagementmodul enthält das Startmedium und speichert die Seriennummer des Systems (SSN).
+
+|===

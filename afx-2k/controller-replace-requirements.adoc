@@ -1,0 +1,42 @@
+---
+permalink: afx-2k/controller-replace-requirements.html 
+sidebar: sidebar 
+keywords: afx 2k, prerequisite, replace the controller module 
+summary: Bevor der Controller in Ihrem afx 2k Storage-System ausgetauscht wird, sollten die notwendigen Voraussetzungen für einen erfolgreichen Austausch erfüllt sein. Dazu zählen der richtige Ersatzcontroller, eine Sicherung Ihrer Systemkonfiguration sowie der Zugang zu allen erforderlichen Tools und der Firmware. 
+---
+= Anforderungen für den Austausch des Controllers - AFX 2K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor der Controller in Ihrem AFX 2K Storage System ausgetauscht wird, sollten die notwendigen Voraussetzungen für einen erfolgreichen Austausch erfüllt sein. Dazu zählt die Überprüfung, dass alle anderen Komponenten im System ordnungsgemäß funktionieren, dass der richtige Ersatzcontroller vorhanden ist und dass die Konsolenausgabe des Controllers in einer Textprotokolldatei gespeichert wird.
+
+Überprüfen Sie die Anforderungen für den Austausch des Controllers.
+
+[NOTE]
+====
+NetApp empfiehlt dringend, die Protokollierung auf den Geräten, mit denen Sie arbeiten, zu aktivieren und bei der Durchführung dieses Verfahrens die folgenden Maßnahmen zu ergreifen:
+
+* Lassen Sie AutoSupport während Ihrer Wartung aktiviert. So kann der NetApp Support bei Problemen Diagnoseinformationen erhalten.
+* Aktivieren Sie die Protokollierung für alle CLI-Sitzungen. Dadurch wird ein vollständiges Protokoll aller Befehle und Systemausgaben während der Wartungsaktivität erstellt. Hinweise zur Aktivierung der Sitzungsprotokollierung finden Sie unter  https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_configure_PuTTY_for_optimal_connectivity_to_ONTAP_systems["Wie konfiguriert man PuTTY für eine optimale Verbindung zu ONTAP-Systemen"^].
+
+
+====
+* Es ist wichtig, dass Sie die Befehle in diesen Schritten auf die richtigen Systeme anwenden:
++
+** Die Steuerung _imired_ ist die Steuerung, die ersetzt wird.
+** Die Steuerung _Replacement_ ist die neue Steuerung, die die beeinträchtigte Steuerung ersetzt.
+** Der _Healthy_ Controller ist der überlebende Controller.
+
+
+* Alle Festplatten-Shelfs müssen ordnungsgemäß funktionieren.
+* Der gesunde Regler muss in der Lage sein, den zu ersetzenden Regler zu übernehmen (bezeichnet in diesem Verfahren als „`eingeschränkte Steuerung`“).
+* Sie müssen die ausgefallene Komponente durch die Field-Replaceable Unit (FRU) ersetzen, die Sie von NetApp erhalten haben.
+* Ein Controller-Modul muss durch ein Controller-Modul desselben Modelltyps ersetzt werden. Sie können kein System-Upgrade durch einen Austausch des Controller-Moduls durchführen.
+* Im Rahmen dieses Verfahrens können Laufwerke oder Laufwerk-Shelfs nicht geändert werden.
+
+
+.Was kommt als Nächstes?
+Nach Prüfung der Voraussetzungen für den Austausch Ihres AFX 2K Controllers link:controller-replace-shutdown.html["schalte die Controller aus"].

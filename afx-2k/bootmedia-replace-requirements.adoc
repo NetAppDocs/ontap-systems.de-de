@@ -1,0 +1,38 @@
+---
+permalink: afx-2k/bootmedia-replace-requirements.html 
+sidebar: sidebar 
+keywords: afx 2k, replace the boot media 
+summary: Bevor das Bootmedium in Ihrem afx 2k Storage System ausgetauscht wird, sollten die notwendigen Voraussetzungen für einen erfolgreichen Austausch erfüllt sein. Dazu gehört die Überprüfung, ob das richtige Ersatz-Bootmedium vorhanden ist, ob keine defekten Cluster-Ports am Controller bestehen und ob Onboard Key Manager oder External Key Manager aktiviert ist. 
+---
+= Anforderungen zum Ersetzen des Bootmediums - AFX 2K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor das Bootmedium in Ihrem AFX 2K Speichersystem ersetzt wird, müssen die notwendigen Voraussetzungen für einen erfolgreichen Austausch erfüllt sein. Dazu zählt die Überprüfung, ob das korrekte Ersatz-Bootmedium vorhanden ist, die Bestätigung, dass keine defekten Cluster-Ports am Controller vorhanden sind, sowie die Feststellung, ob Onboard Key Manager (OKM) oder External Key Manager (EKM) aktiviert ist.
+
+Überprüfen Sie vor dem Austauschen des Startmediums die folgenden Anforderungen.
+
+[NOTE]
+====
+NetApp empfiehlt dringend, die Protokollierung auf den Geräten, mit denen Sie arbeiten, zu aktivieren und bei der Durchführung dieses Verfahrens die folgenden Maßnahmen zu ergreifen:
+
+* Lassen Sie AutoSupport während Ihrer Wartung aktiviert. So kann der NetApp Support bei Problemen Diagnoseinformationen erhalten.
+* Aktivieren Sie die Protokollierung für alle CLI-Sitzungen. Dadurch wird ein vollständiges Protokoll aller Befehle und Systemausgaben während der Wartungsaktivität erstellt. Hinweise zur Aktivierung der Sitzungsprotokollierung finden Sie unter  https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_configure_PuTTY_for_optimal_connectivity_to_ONTAP_systems["Wie konfiguriert man PuTTY für eine optimale Verbindung zu ONTAP-Systemen"^].
+
+
+====
+* Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
+* Es ist wichtig, dass Sie die Befehle in diesen Schritten auf dem richtigen Controller anwenden:
++
+** Der Controller _Impared_ ist der Controller, an dem Sie Wartungsarbeiten durchführen.
+** Der _Healthy_ Controller ist der HA-Partner des beeinträchtigten Controllers.
+
+
+* Es dürfen keine fehlerhaften Cluster-Ports auf dem gestörten Controller vorhanden sein.
+
+
+.Was kommt als Nächstes?
+Nachdem Sie die Voraussetzungen für den Austausch des Bootmediums überprüft haben, müssen Sielink:bootmedia-shutdown.html["Fahren Sie den Controller herunter"] .
