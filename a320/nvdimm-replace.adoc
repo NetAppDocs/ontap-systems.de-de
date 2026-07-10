@@ -19,6 +19,7 @@ Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
 Übernehmen Sie den fehlerhaften Controller und stoppen Sie ihn, damit der intakte Controller weiterhin Daten aus dem Speicher des fehlerhaften Controllers bereitstellt. Dazu unterdrücken Sie die automatische Fallerstellung in AutoSupport, deaktivieren die automatische Rückgabe und bringen den fehlerhaften Controller zur LOADER-Eingabeaufforderung. Die LOADER-Eingabeaufforderung ist der sichere, angehaltene Zustand, aus dem Sie die FRU ersetzen können.
@@ -89,6 +90,7 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 
 
 
+[[step-2-remove-the-controller-module]]
 == Schritt 2: Entfernen Sie das Controller-Modul
 
 Um auf Komponenten im Controller-Modul zuzugreifen, müssen Sie das Controller-Modul aus dem Gehäuse entfernen.
@@ -121,6 +123,7 @@ Der Haken des Verriegelungsmechanismus sollte fast senkrecht sein und sich vom C
 
 
 
+[[step-3-replace-the-nvdimm]]
 == Schritt 3: Ersetzen Sie das NVDIMM
 
 Zum Austauschen des NVDIMM müssen Sie das NVDIMM im Controller-Modul mithilfe des NVDIMM-Kartenetiketts oben am Luftkanal lokalisieren und es anschließend gemäß den jeweiligen Schritten austauschen.
@@ -157,6 +160,7 @@ NOTE: Sichtprüfung des NVDIMM, um sicherzustellen, dass es gleichmäßig ausger
 
 
 
+[[step-4-install-the-controller-module]]
 == Schritt 4: Installieren Sie das Controller-Modul
 
 Nachdem Sie die Komponente im Controller-Modul ersetzt haben, müssen Sie das Controller-Modul wieder in das Gehäuse einsetzen.
@@ -194,6 +198,7 @@ Das Controller-Modul beginnt zu booten, sobald es vollständig im Gehäuse sitzt
 
 
 
+[[step-5-restore-the-controller-module-to-operation]]
 == Schritt 5: Stellen Sie das Controller-Modul wieder in Betrieb
 
 Sie müssen das System neu verstellen, das Controller-Modul zurückgeben und dann das automatische Giveback erneut aktivieren.
@@ -208,6 +213,7 @@ Wenn Sie die Medienkonverter (QSFPs oder SFPs) entfernt haben, sollten Sie diese
 
 
 
+[[step-6-return-the-failed-part-to-netapp]]
 == Schritt 6: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

@@ -15,6 +15,7 @@ Es sollte überprüft werden, ob die logischen Schnittstellen (LIFs) an ihren He
 
 
 
+[[step-1-verify-lifs-and-check-cluster-health]]
 == Schritt 1: Verifizieren von LIFs und Überprüfen des Clusterzustands
 
 Bevor Sie den Ersatzknoten wieder in Betrieb nehmen, stellen Sie sicher, dass sich die logischen Schnittstellen auf ihren Home-Ports befinden, überprüfen Sie die Clusterintegrität und setzen Sie die automatische Rückgabe zurück.
@@ -35,6 +36,7 @@ Wenn logische Schnittstellen als „false“ aufgeführt sind, kehren Sie zu ihr
 
 
 
+[[step-2-return-the-failed-part-to-netapp]]
 == Schritt 2: Rückgabe des fehlerhaften Teils an NetApp
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

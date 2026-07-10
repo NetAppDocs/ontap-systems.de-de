@@ -15,6 +15,7 @@ Bereiten Sie Ihr AFF A800 oder C800-System für das Hot-Add eines NS224-Shelfs v
 
 
 
+[[install-roce-capable-pcie-cards]]
 == Installieren Sie RoCE-fähige PCIe-Karten
 
 Wenn Ihr System die Verwendung von RoCE-fähigen PCIe-Karten oder E/A-Modulen unterstützt, muss Ihr HA-Paar über genügend verfügbare RoCE-fähige Ethernet-Ports verfügen, um die Anzahl der Shelves zu unterstützen, die Sie im laufenden Betrieb hinzufügen.
@@ -34,6 +35,7 @@ Diese Anschlüsse können sich auf den Controllern selbst, auf RoCE-fähigen PCI
 
 
 
+[[configure-roce-capable-ports-for-storage-use]]
 == RoCE-fähige Ports für die Storage-Verwendung konfigurieren
 
 Bei manchen Systemen werden RoCE-fähige Ports automatisch standardmäßig für die Speichernutzung konfiguriert, sobald Sie eine RoCE-fähige PCIe-Karte oder ein E/A-Modul in einen unterstützten Controller-Steckplatz einbauen. Sie sollten dieses Verfahren jedoch durchführen, um sicherzustellen, dass die Ports korrekt für die Speichernutzung konfiguriert sind.
@@ -89,6 +91,7 @@ Die Ausgabe des Befehls variiert je nach Ihrer ONTAP Version:
 
 
 
+[[recable-existing-shelves]]
 == Wiederverskaufbarkeit vorhandener Shelves
 
 Wenn Sie ein zweites Shelf im laufenden Betrieb zu einem A800- oder C800-HA-Paar hinzufügen, müssen Sie das erste Shelf über die beiden Sätze von RoCE-fähigen Ports in Steckplatz 5 und Steckplatz 3 an jedem Controller neu verkabeln.
@@ -110,6 +113,7 @@ Wenn Verkabelungsfehler auftreten, befolgen Sie die entsprechenden Korrekturmaß
 
 
 
+[[disable-automatic-drive-assignment]]
 == Automatische Laufwerkszuordnung deaktivieren
 
 Wenn Sie sich nicht sicher sind, ob Sie die Laufwerkseigentümer manuell zuweisen oder die automatische Zuweisung der Laufwerkseigentumsrichtlinien für Ihr Speichersystem verstehen möchten, gehen Sie zu https://docs.netapp.com/us-en/ontap/disks-aggregates/disk-autoassignment-policy-concept.html["Allgemeines zur automatischen Zuweisung der Festplatteneigentümer"^].

@@ -15,6 +15,7 @@ Um die Hardware des Controller-Moduls zu ersetzen, müssen Sie den beeinträchti
 
 
 
+[[step-1-remove-controller-module]]
 == Schritt 1: Controller-Modul entfernen
 
 Zum Austauschen des Controller-Moduls müssen Sie zuerst das alte Controller-Modul aus dem Chassis entfernen.
@@ -42,6 +43,7 @@ image::../media/drw_2600_opening_pcm_cover.png[Öffnen oder Schließen des Contr
 
 
 
+[[step-2-move-the-nvmem-battery]]
 == Schritt 2: Verschieben Sie den NVMEM-Akku
 
 Um die NVMEM-Batterie vom alten Controller-Modul in das neue Controller-Modul zu verschieben, müssen Sie eine bestimmte Sequenz von Schritten durchführen.
@@ -81,6 +83,7 @@ image::../media/drw_2600_nvmem_battery_move_animated_gif.png[Austausch der NVMEM
 
 
 
+[[step-3-move-the-boot-media]]
 == Schritt 3: Verschieben Sie die Startmedien
 
 Sie müssen das Bootmedium ausfindig machen und die Anweisungen befolgen, um es aus dem alten Controller-Modul zu entfernen und in das neue Controller-Modul einzufügen.
@@ -104,6 +107,7 @@ Entfernen Sie gegebenenfalls die Startmedien, und setzen Sie sie wieder in den S
 
 
 
+[[step-4-move-the-dimms]]
 == Schritt 4: Verschieben Sie die DIMMs
 
 Um die DIMMs zu verschieben, müssen Sie die Anweisungen befolgen, um sie vom alten Controller-Modul in das Ersatzcontrollermodul zu finden und zu verschieben.
@@ -146,6 +150,7 @@ Vergewissern Sie sich, dass der Stecker am Controller-Modul abhält.
 
 
 
+[[step-5-move-a-caching-module-if-present]]
 == Schritt 5: Verschieben Sie ggf. ein Caching-Modul
 
 Wenn Ihr AFF A220 oder FAS2700 System über ein Caching-Modul verfügt, müssen Sie das Caching-Modul vom alten Controller-Modul in das Ersatz-Controller-Modul verschieben. Das Caching-Modul wird auf dem Controller-Modul-Label als „`M.2 PCIe Card`“ bezeichnet.
@@ -173,6 +178,7 @@ Entfernen Sie gegebenenfalls das Cache-Modul, und setzen Sie es wieder in den So
 
 
 
+[[step-6-install-the-controller]]
 == Schritt 6: Installieren Sie den Controller
 
 Nachdem Sie die Komponenten aus dem alten Controller-Modul in das neue Controller-Modul installiert haben, müssen Sie das neue Controller-Modul im Systemgehäuse installieren und das Betriebssystem booten.

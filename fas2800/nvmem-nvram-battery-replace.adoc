@@ -17,6 +17,7 @@ Alle anderen Komponenten im System müssen ordnungsgemäß funktionieren. Andern
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
 Übernehmen Sie den fehlerhaften Controller und stoppen Sie ihn, damit der intakte Controller weiterhin Daten aus dem Speicher des fehlerhaften Controllers bereitstellt. Dazu unterdrücken Sie die automatische Fallerstellung in AutoSupport, deaktivieren die automatische Rückgabe und bringen den fehlerhaften Controller zur LOADER-Eingabeaufforderung. Die LOADER-Eingabeaufforderung ist der sichere, angehaltene Zustand, aus dem Sie die FRU ersetzen können.
@@ -71,6 +72,7 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 
 
 
+[[step-2-remove-and-open-the-controller-module]]
 == Schritt 2: Entfernen und öffnen Sie das Controller-Modul
 
 Entfernen und öffnen Sie das Controller-Modul.
@@ -107,6 +109,7 @@ NOTE: Die grüne NV-LED auf der Frontplatte beginnt zu blinken, wenn die Stromve
 
 
 
+[[step-3-replace-the-nvmem-battery]]
 == Schritt 3: Ersetzen Sie die NVMEM-Batterie
 
 Entfernen Sie die fehlerhafte NVMEM-Batterie aus dem System und ersetzen Sie sie durch eine neue NVMEM-Batterie.
@@ -167,6 +170,7 @@ Vergewissern Sie sich, dass der Stecker in der Akkubuchse auf der Hauptplatine e
 
 
 
+[[step-4-reinstall-the-controller-module]]
 == Schritt 4: Installieren Sie das Controller-Modul neu
 
 Nachdem Sie die Komponenten im Controller-Modul ausgetauscht haben, setzen Sie sie wieder in das Gehäuse ein.
@@ -212,6 +216,7 @@ NOTE: Während des Bootens werden möglicherweise die folgenden Eingabeaufforder
 
 
 
+[[step-5-restore-automatic-giveback-and-autsupport]]
 == Schritt 5: Automatisches Giveback und AutSupport wiederherstellen
 
 Stellen Sie automatische Giveback und AutoSupport wieder her, wenn sie deaktiviert wurden.
@@ -222,6 +227,7 @@ Stellen Sie automatische Giveback und AutoSupport wieder her, wenn sie deaktivie
 
 
 
+[[step-6-return-the-failed-part-to-netapp]]
 == Schritt 6: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

@@ -30,6 +30,7 @@ Sie sollten vermeiden, von den Regeln zu abweichen; Abweichungen können Zuverl�
 
 
 
+[[configuration-rules]]
 == Konfigurationsregeln
 
 Disk Shelfs mit IOM12, IOM12B oder IOM12C Modulen werden auf bestimmten HA Pair und Einzelcontroller Konfigurationen unterstützt.
@@ -71,6 +72,7 @@ Da der interne Storage Single Path-Konnektivität verwendet, gibt ONTAP gelegent
 
 
 
+[[controller-slot-numbering-rules]]
 == Regeln für die Nummerierung von Controller-Steckplätzen
 
 Zum Einsatz von Verkabelungsregeln für alle unterstützten HA-Paare und Single Controller-Konfigurationen wird eine Nummerierungskonvention für Controller-Steckplätze verwendet.
@@ -95,12 +97,14 @@ image::../media/slot0_rules.png[Slot und Slot [Port Convensions]
 
 
 
+[[shelf-to-shelf-connection-rules]]
 == Verbindungsregeln für Shelf-zu-Shelf
 
 Wenn Sie mehr als ein Platten-Shelf in einem Stapel an Platten-Shelfs haben, werden diese über die jeweiligen SAS-Domänen (IOM A und IOM B) mit den entsprechenden Shelf-to-Shelf-Kabeln „`standard`“ oder „`double-wide`“ miteinander verbunden. Ihre Verwendung von Shelf-to-Shelf-Verkabelungen zwischen "`standard`" oder "`double-wide`" hängt von der Konfiguration ab.
 
 
 
+[[standard-shelf-to-shelf-connectivity]]
 === Standard-Shelf-zu-Shelf-Konnektivität
 
 * Standardmäßige Shelf-to-Shelf-Konnektivität wird in jedem Stack von Festplatten-Shelfs mit mehr als einem Festplatten-Shelf verwendet.
@@ -117,6 +121,7 @@ image::../media/drw_shelf_to_shelf_standard.gif[Standard-Shelf-zu-Shelf-Konnekti
 
 
 
+[[double-wide-shelf-to-shelf-connectivity]]
 === Doppelte breite Shelf-to-Shelf-Konnektivität
 
 * Die doppelte Shelf-to-Shelf-Konnektivität wird in Quad-Pathed-Konfigurationen (Quad-Path HA und Quad-Path) verwendet.
@@ -133,12 +138,14 @@ image::../media/drw_shelf_to_shelf_double_wide.gif[Doppelte Konnektivität von S
 
 
 
+[[controller-to-stack-connection-rules]]
 == Verbindungsregeln für Controller zu Stack
 
 Sie können die SAS-Verbindungen von jedem Controller korrekt mit jedem Stack in einem HA-Paar oder in einer Single-Controller-Konfiguration verkabeln, indem Sie verstehen, dass SAS-Platten-Shelves softwarebasierte Platten-Ownership verwenden, wie die Controller-Ports A/C und B/D mit Stacks verbunden sind, Wie die Controller-Ports A/C und B/D in Port-Paaren organisiert sind und wie Plattformen mit internem Storage ihre Controller-Ports mit Stacks verbunden haben.
 
 
 
+[[sas-disk-shelf-software-based-disk-ownership-rule]]
 === Softwarebasierte Platten-Shelf-Besitzregel für die SAS-Festplatten
 
 SAS-Festplatten-Shelfs verwenden softwarebasierte Platten-Eigentumsrechte (keine hardwarebasierte Eigentumsrechte). Das bedeutet, dass das Festplatteneigentum auf dem Festplattenlaufwerk gespeichert wird und nicht durch die Topologie der physischen Verbindungen des Storage-Systems bestimmt wird (wie es sich um Hardware-basierte Festplattenbesitzer handelt). Insbesondere wird die Eigentümerschaft der Festplatte von ONTAP (automatisch oder über CLI-Befehle) zugewiesen, nicht indem Sie die Controller-zu-Stack-Verbindungen verkabeln.
@@ -147,6 +154,7 @@ SAS-Festplatten-Shelfs sollten niemals über das hardwarebasierte Eigentumsschem
 
 
 
+[[controller-a-and-c-port-connection-rules-for-platforms-without-internal-storage]]
 === Regeln für die Verbindung von Controller A und C Ports (für Plattformen ohne internen Speicher)
 
 * A- und C-Ports sind immer die primären Pfade zu einem Stack.
@@ -165,6 +173,7 @@ image::../media/drw_controller_to_stack_rules_ports_a_and_c_example.gif[Verbindu
 
 
 
+[[controller-b-and-d-port-connection-rules-for-platforms-without-internal-storage]]
 === Regeln für die Verbindung von Controller B und D-Ports (für Plattformen ohne internen Storage)
 
 * B- und D-Ports sind immer die sekundären Pfade zu einem Stack.
@@ -184,6 +193,7 @@ image::../media/drw_controller_to_stack_rules_ports_b_and_d_example.gif[Verbindu
 
 
 
+[[port-pair-connection-rules-for-platforms-without-internal-storage]]
 === Verbindungsregeln für Port-Paare (für Plattformen ohne internen Speicher)
 
 Controller SAS-Ports A, B, C und D werden mithilfe einer Methode in Port-Paare organisiert, die alle SAS-Ports für Systemstabilität und -Konsistenz nutzt, wenn Sie Controller-zu-Stack-Verbindungen in HA-Paar- und Single-Controller-Konfigurationen verkabeln.
@@ -255,6 +265,7 @@ link:install-cabling-worksheet-template-quadpath.html["Vorlage für Verkabelungs
 
 
 
+[[controller-0b0b1-and-0a-port-connection-rules-for-platforms-with-internal-storage]]
 === Controller 0b/0b1 und 0a-Port-Anschlussregeln für Plattformen mit internem Speicher
 
 Plattformen mit internem Speicher verfügen über einen eindeutigen Satz von Verbindungsregeln, da jeder Controller die gleiche Domänenkonnektivität zwischen dem internen Speicher (Port 0b/0b1) und dem Stack aufrechterhalten muss. Das bedeutet, dass sich ein Controller im Steckplatz A des Chassis (Controller 1) in Domäne A (IOM A) befindet und somit Port 0b/0b1 mit IOM A im Stack verbunden werden muss. Wenn sich ein Controller im Steckplatz B des Chassis (Controller 2) befindet, befindet er sich in Domäne B (IOM B) und somit muss Port 0b/0b1 mit IOM B im Stack verbunden werden.
@@ -291,6 +302,7 @@ image::../media/drw_fas2600_mpha_domain_example_IEOPS-1172.svg[Interner Speicher
 
 
 
+[[tri-path-ha-connectivity]]
 === Tri-Path-HA-Konnektivität
 
 Tri-Path-HA-Konnektivität ist auf FAS2820 HA-Paaren verfügbar. Tri-Path-HA-Konnektivität verfügt über drei Pfade von jedem Controller zu internen (IOM12G) und externen Shelfs:
@@ -319,6 +331,7 @@ Beispiele für die Verkabelung des FAS2820 HA-Paars finden Sie im link:install-c
 
 
 
+[[mini-sas-hd-sas-optical-cable-rules]]
 == Kabelregeln für optische Mini-SAS-HD-SAS-Kabel
 
 Sie können Mini-SAS-HD-SAS-optische Kabel verwenden - Multimode-Aktivkabel (AOC) mit Mini-SAS-HD-zu-Mini-SAS-HD-Anschlüssen und OM4-Breakout-Kabeln mit Mini-SAS-HD-zu-LC-Anschlüssen - für SAS-Verbindungen über große Entfernungen bei bestimmten Konfigurationen mit Platten-Shelves mit IOM12-Modulen.

@@ -8,6 +8,7 @@ Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Fall
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
 Sie können den beeinträchtigten Controller je nach Hardwarekonfiguration des Speichersystems mithilfe verschiedener Verfahren herunterfahren oder übernehmen.
@@ -180,6 +181,7 @@ mcc1A::> metrocluster operation show
 ====
 
 
+[[step-2-remove-the-controller-module]]
 == Schritt 2: Entfernen Sie das Controller-Modul
 
 Um auf Komponenten im Controller-Modul zuzugreifen, müssen Sie das Controller-Modul aus dem Gehäuse entfernen.
@@ -225,6 +227,7 @@ Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen,
 
 
 
+[[step-3-replace-the-nvdimm-battery]]
 == Schritt 3: Ersetzen Sie den NVDIMM-Akku
 
 Zum Austauschen der NVDIMM-Batterie müssen Sie eine fehlerhafte Batterie aus dem Controller-Modul entfernen und die Ersatzbatterie in das Controller-Modul installieren. Informationen zum Auffinden der NVDIMM-Batterie finden Sie in der FRU-Zuordnung im Controller-Modul.
@@ -277,6 +280,7 @@ NVDIMM-Batterie
 
 
 
+[[step-4-install-the-controller-module]]
 == Schritt 4: Installieren Sie das Controller-Modul
 
 Nachdem Sie die Komponente im Controller-Modul ersetzt haben, müssen Sie das Controller-Modul wieder in das Gehäuse einsetzen und dann im Wartungsmodus booten.
@@ -340,6 +344,7 @@ Wenn das System im Startmenü stoppt, wählen Sie die Option zum Booten in LOADE
 
 
 
+[[step-5-restore-the-controller-module-to-operation]]
 == Schritt 5: Stellen Sie das Controller-Modul wieder in Betrieb
 
 Sie müssen das System neu verstellen, das Controller-Modul zurückgeben und dann das automatische Giveback erneut aktivieren.
@@ -354,6 +359,7 @@ Wenn Sie die Medienkonverter (QSFPs oder SFPs) entfernt haben, sollten Sie diese
 
 
 
+[[step-6-switch-back-aggregates-in-a-two-node-metrocluster-configuration]]
 == Schritt 6: Aggregate in einer MetroCluster Konfiguration mit zwei Nodes zurückwechseln
 
 Dieser Task gilt nur für MetroCluster-Konfigurationen mit zwei Nodes.
@@ -410,6 +416,7 @@ Wenn ein Wechsel eine lange Zeit in Anspruch nimmt, können Sie den Status der i
 
 
 
+[[step-7-return-the-failed-part-to-netapp]]
 == Schritt 7: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

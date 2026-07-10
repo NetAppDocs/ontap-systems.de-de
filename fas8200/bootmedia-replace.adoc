@@ -17,6 +17,7 @@ Das FAS8200 -System unterstützt ausschließlich manuelle Wiederherstellungsverf
 
 
 
+[[step-1-remove-the-controller]]
 == Schritt 1: Entfernen Sie die Steuerung
 
 Um auf Komponenten innerhalb des Controllers zuzugreifen, müssen Sie zuerst das Controller-Modul aus dem System entfernen und dann die Abdeckung am Controller-Modul entfernen.
@@ -65,6 +66,7 @@ Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen,
 
 
 
+[[step-2-replace-the-boot-media]]
 == Schritt 2: Ersetzen Sie die Startmedien
 
 Sie müssen das Startmedium im Controller finden und die Anweisungen befolgen, um es zu ersetzen.
@@ -90,6 +92,7 @@ Entfernen Sie gegebenenfalls die Startmedien, und setzen Sie sie wieder in den S
 
 
 
+[[step-3-transfer-the-boot-image-to-the-boot-media]]
 == Schritt 3: Übertragen Sie das Startabbild auf das Startmedium
 
 Sie können das System-Image über ein USB-Flash-Laufwerk, auf dem das Image installiert ist, auf dem Ersatzstartmedium installieren. Sie müssen das var-Dateisystem jedoch während dieses Vorgangs wiederherstellen.

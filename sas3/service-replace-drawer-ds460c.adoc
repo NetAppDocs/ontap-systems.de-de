@@ -65,6 +65,8 @@ image::../media/drw_dcm3_ieops-2176.svg[Vorderansicht eines DCM3-Laufwerksregals
 
 
 
+[[step-1-prepare-to-replace-a-drive-drawer]]
+[[prepare_to_replace_drive_drawer]]
 == Schritt 1: Vorbereiten des Austauschs einer Laufwerksschublade
 
 Bevor Sie ein Laufwerk austauschen, müssen Sie bei Bedarf die IOM-Firmware und ONTAP aktualisieren und entweder das HA-Paar anhalten, um die Datenaggregate im Shelf zu behalten, oder das HA-Paar am Laufen halten. Dazu müssen Sie alle Daten aus den Datenaggregaten auf den Festplatten verschieben. Anschließend müssen Sie die Datenaggregate offline schalten und löschen. Enthält das Shelf jedoch ein Root-Aggregat, müssen Sie das HA-Paar anhalten. Abschließend müssen Sie das Shelf ausschalten.
@@ -143,6 +145,8 @@ NOTE: Wenn Sie Festplattenlaufwerke im Shelf ausgefallen sind, `broken` Wird im 
 
 
 
+[[step-2-remove-the-cable-chains]]
+[[remove_cable_chains]]
 == Schritt 2: Entfernen Sie die Kabelketten
 
 Die linken und rechten Kabelketten für jede Laufwerksschublade im DS460C-Laufwerkseinschub ermöglichen es, die Schubladen ein- und auszuschieben. Bevor Sie eine Laufwerksschublade entfernen können, müssen Sie beide Kabelketten entfernen.
@@ -291,6 +295,7 @@ Die Abbildung zeigt den orangefarbenen Ring an der horizontalen Halterung, der n
 
 
 
+[[step-3-remove-a-drive-drawer]]
 == Schritt 3: Entfernen einer Laufwerksschublade
 
 Nachdem Sie die rechten und linken Kabelketten entfernt haben, können Sie die Laufwerksschublade aus dem Laufwerk-Shelf entfernen. Durch das Entfernen einer Laufwerkschublade kann der Schubladenteil des Ausschubs herausgezogen, die Laufwerke entfernt und die Laufwerkschublade entfernt werden.
@@ -346,6 +351,7 @@ image:../media/icon_round_1.png["Legende Nummer 1"]
 
 
 
+[[step-4-install-a-drive-drawer]]
 == Schritt 4: Installieren einer Laufwerksschublade
 
 Wenn Sie eine Laufwerksschublade in ein Laufwerk-Shelf einbauen, schieben Sie die Schublade in den leeren Steckplatz, installieren Sie die Laufwerke und ersetzen Sie die Frontblende.
@@ -442,6 +448,7 @@ NOTE: *Gefahr einer Gerätestörung:* Verschließen Sie die Antriebsschublade du
 
 
 
+[[step-5-attach-the-cable-chains]]
 == Schritt 5: Befestigen Sie die Kabelketten
 
 Der letzte Schritt beim Einbau einer Laufwerkschublade ist das Befestigen der linken und rechten Ersatzkabelketten am Laufwerk-Shelf. Beim Anschließen einer Kabelkette die Reihenfolge umkehren, die Sie beim Trennen der Kabelkette verwendet haben. Sie müssen den horizontalen Stecker der Kette in die horizontale Halterung im Gehäuse stecken, bevor Sie den vertikalen Anschluss der Kette in die vertikale Halterung im Gehäuse einsetzen.

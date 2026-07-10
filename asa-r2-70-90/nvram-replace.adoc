@@ -22,6 +22,7 @@ Das NVRAM-Modul besteht aus der NVRAM12-Hardware und vor Ort austauschbaren DIMM
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
 Schalten Sie den außer Betrieb genommenen Controller aus oder übernehmen Sie ihn.
@@ -94,9 +95,13 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 
 
 
+[[step-2-replace-the-nvram-module-or-nvram-dimm]]
 == Schritt 2: Ersetzen Sie das NVRAM-Modul oder das NVRAM-DIMM
 
 Ersetzen Sie das NVRAM Modul oder die NVRAM -DIMMs mithilfe der entsprechenden Option.
+
+
+WARNING: Das NVRAM Modul ist nicht Hot-Swap-fähig. Vor dem Austausch sollten die Laufwerke neu eingesetzt, der Node heruntergefahren, die Stromversorgung des Controllers getrennt und der Controller einige Zentimeter aus dem Gehäuse herausgezogen werden.
 
 [role="tabbed-block"]
 ====
@@ -263,6 +268,7 @@ NOTE: Wenn Sie über Gleichstromnetzteile verfügen, schließen Sie den Stromblo
 ====
 
 
+[[step-3-verify-controller-state]]
 == Schritt 3: Überprüfen Sie den Controller-Status
 
 Beim Booten des Controllers müssen Sie den Controller-Status der mit dem Laufwerk-Pool verbundenen Controller bestätigen.
@@ -333,6 +339,7 @@ Disk                   Size Shelf Bay Type    Type        Name
 
 
 
+[[step-4-return-the-failed-part-to-netapp]]
 == Schritt 4: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

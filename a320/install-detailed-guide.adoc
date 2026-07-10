@@ -15,6 +15,7 @@ Dieser Leitfaden enthält detaillierte Schritt-für-Schritt-Anleitungen zur Inst
 
 
 
+[[prepare-for-installation]]
 == Installation vorbereiten
 
 Um Ihr AFF A320-System zu installieren, müssen Sie ein Konto erstellen, das System registrieren und Lizenzschlüssel abrufen. Außerdem müssen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp für Ihr System inventarisieren und bestimmte Netzwerkinformationen erfassen.
@@ -175,6 +176,7 @@ https://library.netapp.com/ecm/ecm_download_file/ECMLP2839002["Cluster-Konfigura
 
 
 
+[[install-the-hardware]]
 == Installieren Sie die Hardware
 
 Sie müssen das System je nach Bedarf in einem 4-Säulen-Rack oder NetApp Systemschrank installieren.
@@ -197,12 +199,14 @@ image::../media/drw_a320_cable_management_arms.png[Entfernen oder installieren S
 
 
 
+[[cable-controllers-to-your-network]]
 == Controller mit dem Netzwerk verkabeln
 
 Sie können die Controller mithilfe der Switch-freien Cluster-Methode mit zwei Nodes oder des Cluster Interconnect-Netzwerks mit dem Netzwerk verkabeln.
 
 
 
+[[option-1-cable-a-two-node-switchless-cluster]]
 === Option 1: Verkabeln eines 2-Node-Clusters ohne Switches
 
 Die optionalen Daten-Ports, optionalen NIC-Karten und Management-Ports der Controller-Module werden mit Switches verbunden. Die Cluster Interconnect/HA-Ports sind an beiden Controller-Modulen verkabelt.
@@ -276,6 +280,7 @@ Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
 
 
 
+[[option-2-cabling-a-switched-cluster]]
 === Option 2: Verkabelung eines Switch Clusters
 
 Die optionalen Daten-Ports, optionalen NIC-Karten und Management-Ports der Controller-Module werden mit Switches verbunden. Die Cluster Interconnect/HA-Ports sind mit dem Cluster/HA-Switch verbunden.
@@ -349,12 +354,14 @@ Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
 
 
 
+[[cable-controllers-to-drive-shelves]]
 == Controller mit Laufwerk-Shelfs verkabeln
 
 Sie müssen die Controller mithilfe der integrierten Storage-Ports mit den Shelfs verkabeln.
 
 
 
+[[option-1-cable-the-controllers-to-a-single-drive-shelf]]
 === Option 1: Controller mit einem einzelnen Festplatten-Shelf verkabeln
 
 Sie müssen jeden Controller mit den NSM-Modulen am NS224-Laufwerk-Shelf verkabeln.
@@ -394,6 +401,7 @@ Kabel-Controller B zum Shelf: image:../media/drw_a320_storage_cabling_controller
 
 
 
+[[option-2-cable-the-controllers-to-two-drive-shelves]]
 === Option 2: Controller mit zwei Festplatten-Shelfs verkabeln
 
 Sie müssen jeden Controller an beiden NS224 Laufwerk-Shelfs mit den NSM-Modulen verkabeln.
@@ -433,12 +441,14 @@ Kabel-Controller B zu den Shelfs: image:../media/drw_a320_2_shelves_cabling_cont
 
 
 
+[[complete-system-setup-and-configuration]]
 == Führen Sie die Einrichtung und Konfiguration des Systems durch
 
 Die Einrichtung und Konfiguration des Systems kann mithilfe der Cluster-Erkennung nur mit einer Verbindung zum Switch und Laptop abgeschlossen werden. Sie können auch direkt eine Verbindung zu einem Controller im System herstellen und dann eine Verbindung zum Management Switch herstellen.
 
 
 
+[[option-1-completing-system-setup-and-configuration-if-network-discovery-is-enabled]]
 === Option 1: Abschluss der Systemeinrichtung und -Konfiguration bei aktivierter Netzwerkerkennung
 
 Wenn die Netzwerkerkennung auf Ihrem Laptop aktiviert ist, können Sie das System mit der automatischen Cluster-Erkennung einrichten und konfigurieren.
@@ -482,6 +492,7 @@ https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["ONTAP Konfigurati
 
 
 
+[[option-2-completing-system-setup-and-configuration-if-network-discovery-is-not-enabled]]
 === Option 2: Abschluss der Systemeinrichtung und -Konfiguration, falls die Netzwerkerkennung nicht aktiviert ist
 
 Wenn die Netzwerkerkennung auf Ihrem Laptop nicht aktiviert ist, müssen Sie die Konfiguration und das Setup mit dieser Aufgabe abschließen.

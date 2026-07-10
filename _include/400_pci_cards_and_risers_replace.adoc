@@ -10,6 +10,7 @@ Um eine PCIe- oder Mezzanine-Karte zu ersetzen, müssen Sie die Kabel und alle S
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
 [role="lead"]
@@ -185,6 +186,7 @@ mcc1A::> metrocluster operation show
 ====
 
 
+[[step-2-remove-the-controller-module]]
 == Schritt 2: Entfernen Sie das Controller-Modul
 
 [role="lead"]
@@ -231,6 +233,7 @@ Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen,
 
 
 
+[[step-3-replace-a-pcie-card]]
 == Schritt 3: Ersetzen Sie eine PCIe-Karte
 
 [role="lead"]
@@ -311,6 +314,7 @@ NOTE: Wenn Sie eine Karte in den unteren Steckplatz einsetzen und den Kartenstec
 
 
 
+[[step-4-replace-the-mezzanine-card]]
 == Schritt 4: Tauschen Sie die Mezzanine-Karte aus
 
 [role="lead"]
@@ -380,6 +384,7 @@ NOTE: Ziehen Sie die Rändelschrauben der Mezzanine-Karte vollständig fest. Sin
 
 
 
+[[step-5-install-the-controller-module]]
 == Schritt 5: Installieren Sie das Controller-Modul
 
 Nachdem Sie die Komponente im Controller-Modul ersetzt haben, müssen Sie das Controller-Modul wieder in das Gehäuse einsetzen und dann im Wartungsmodus booten.
@@ -424,6 +429,7 @@ NOTE: Wenn das System im Startmenü stoppt, wählen Sie die Option zum Booten in
 
 
 
+[[step-6-restore-the-controller-module-to-operation]]
 == Schritt 6: Stellen Sie das Controller-Modul wieder in Betrieb
 
 Um den Controller wiederherzustellen, müssen Sie das System erneut einspielen, das Controller-Modul zurückgeben und dann das automatische Giveback wieder aktivieren.
@@ -438,6 +444,7 @@ Wenn Sie die Medienkonverter (QSFPs oder SFPs) entfernt haben, sollten Sie diese
 
 
 
+[[step-7-switch-back-aggregates-in-a-two-node-metrocluster-configuration]]
 == Schritt 7: Aggregate in einer MetroCluster Konfiguration mit zwei Nodes zurückwechseln
 
 Dieser Task gilt nur für MetroCluster-Konfigurationen mit zwei Nodes.
@@ -494,6 +501,7 @@ Wenn ein Wechsel eine lange Zeit in Anspruch nimmt, können Sie den Status der i
 
 
 
+[[step-8-return-the-failed-part-to-netapp]]
 == Schritt 8: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

@@ -4,6 +4,9 @@
 
 Ersetzen Sie das NVRAM Modul oder die NVRAM -DIMMs mithilfe der entsprechenden Option.
 
+
+WARNING: Das NVRAM Modul ist nicht Hot-Swap-fähig. Vor dem Austausch sollten die Laufwerke neu eingesetzt, der Node heruntergefahren, die Stromversorgung des Controllers getrennt und der Controller einige Zentimeter aus dem Gehäuse herausgezogen werden.
+
 [role="tabbed-block"]
 ====
 .Option 1: Ersetzen Sie das NVRAM-Modul
@@ -169,6 +172,7 @@ NOTE: Wenn Sie über Gleichstromnetzteile verfügen, schließen Sie den Stromblo
 ====
 
 
+[[step-3-verify-controller-state]]
 == Schritt 3: Überprüfen Sie den Controller-Status
 
 Beim Booten des Controllers müssen Sie den Controller-Status der mit dem Laufwerk-Pool verbundenen Controller bestätigen.

@@ -22,6 +22,7 @@ Das NVRAM-Modul besteht aus der NVRAM12-Hardware und vor Ort austauschbaren DIMM
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
 Fahren Sie den Regler herunter oder übernehmen Sie ihn mit einer der folgenden Optionen.
@@ -168,12 +169,16 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 ====
 
 
+[[step-2-replace-the-nvram-module-or-nvram-dimm]]
 == Schritt 2: Ersetzen Sie das NVRAM-Modul oder das NVRAM-DIMM
 
 Ersetzen Sie das NVRAM Modul oder die NVRAM -DIMMs mithilfe der entsprechenden Option.
 
 
 CAUTION: Tragen Sie bei Installations- und Wartungsarbeiten stets ein geerdetes Armband, das mit einem geprüften Erdungspunkt verbunden ist. Die Nichtbeachtung der richtigen ESD-Schutzmaßnahmen kann zu dauerhaften Schäden an Controller-Knoten, Storage Shelves und Network Switches führen.
+
+
+WARNING: Das NVRAM Modul ist nicht Hot-Swap-fähig. Vor dem Austausch sollten die Laufwerke neu eingesetzt, der Node heruntergefahren, die Stromversorgung des Controllers getrennt und der Controller einige Zentimeter aus dem Gehäuse herausgezogen werden.
 
 [role="tabbed-block"]
 ====
@@ -298,7 +303,7 @@ NOTE: Wenn Sie über Gleichstromnetzteile verfügen, schließen Sie den Stromblo
 --
 .Option 2: Ersetzen Sie das NVRAM-DIMM
 --
-Um NVRAM-DIMMs im NVRAM-Modul zu ersetzen, müssen Sie zuerst das NVRAM-Modul entfernen und dann das Ziel-DIMM austauschen.
+Um NVRAM DIMMs im NVRAM Modul auszutauschen, muss zuerst das NVRAM Modul entfernt und anschließend das Ziel-DIMM ersetzt werden.
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Stellen Sie sicher, dass alle Laufwerke im Gehäuse fest auf der Mittelplatine sitzen, indem Sie mit den Daumen auf die einzelnen Laufwerke drücken, bis Sie einen positiven Anschlag spüren.
@@ -370,7 +375,9 @@ image::../media/drw_a70-90_nvram12_remove_replace_ieops-1370.svg[Entfernen Sie d
 
  a| 
 image:../media/icon_round_1.png["Legende Nummer 1"]
-| Nockenverriegelungstaste 
+ a| 
+Nockenverriegelungstaste
+
 
 
  a| 
@@ -422,6 +429,7 @@ NOTE: Wenn Sie über Gleichstromnetzteile verfügen, schließen Sie den Stromblo
 ====
 
 
+[[step-3-reassign-disks]]
 == Schritt 3: Festplatten neu zuweisen
 
 Sie müssen die Änderung der System-ID bestätigen, wenn Sie den Controller booten, und dann überprüfen, ob die Änderung implementiert wurde.
@@ -455,8 +463,10 @@ node2             node1             -            Waiting for giveback (HA mailbo
 ----
 . Geben Sie den Controller zurück:
 +
-.. Geben Sie vom fehlerfreien Controller den Speicher des ersetzten Controllers zurück: +
+.. Vom intakten Controller aus den Speicher des ausgetauschten Controllers zurückgeben:
++
 `storage failover giveback -ofnode replacement_node_name`
+
 +
 Der Controller nimmt seinen Storage wieder auf und schließt den Bootvorgang ab.
 
@@ -547,6 +557,7 @@ dr-group-id            cluster node           configuration-state
 
 
 
+[[step-4-return-the-failed-part-to-netapp]]
 == Schritt 4: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

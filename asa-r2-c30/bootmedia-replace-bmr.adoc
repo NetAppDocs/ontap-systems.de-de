@@ -15,6 +15,7 @@ Das Bootmedium in Ihrem ASA C30-Speichersystem speichert wichtige Firmware- und 
 
 
 
+[[about-this-task]]
 == Über diese Aufgabe
 
 Bei Bedarf können Sie die (blauen) LEDs für die Position des Plattformgehäuses einschalten, um die physische Lokalisierung der betroffenen Plattform zu erleichtern. Melden Sie sich über SSH bei der BMC an und geben Sie den Befehl ein `system location-led _on_`.
@@ -25,6 +26,7 @@ Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led
 
 
 
+[[step-1-remove-the-controller]]
 == Schritt 1: Entfernen Sie die Steuerung
 
 Sie müssen den Controller aus dem Chassis entfernen, wenn Sie den Controller austauschen oder eine Komponente im Controller austauschen.
@@ -137,6 +139,7 @@ Drehen Sie die Griffe bei Bedarf aufrecht (neben den Laschen), um sie aus dem We
 
 
 
+[[step-2-replace-the-boot-media]]
 == Schritt 2: Ersetzen Sie die Startmedien
 
 Um das Boot-Medium auszutauschen, suchen Sie es im Controller, und befolgen Sie die Schritte in der entsprechenden Reihenfolge.
@@ -191,6 +194,7 @@ Ziehen Sie das linke Ende des Trägermediums vorsichtig aus dem Sockel.
 
 
 
+[[step-3-reinstall-the-controller]]
 == Schritt 3: Installieren Sie den Controller neu
 
 Setzen Sie den Controller wieder in das Gehäuse ein und starten Sie ihn neu.

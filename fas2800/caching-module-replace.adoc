@@ -18,6 +18,7 @@ Sie müssen das Caching-Modul im Controller-Modul ersetzen, wenn das System eine
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
@@ -86,6 +87,7 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 
 
 
+[[step-2-remove-controller-module]]
 == Schritt 2: Controller-Modul entfernen
 
 Entfernen Sie das Controller-Modul aus dem System, und entfernen Sie dann die Abdeckung des Controller-Moduls.
@@ -120,6 +122,7 @@ Entriegelungstaste der Steuermodulabdeckung
 |===
 
 
+[[step-3-replace-a-caching-module]]
 == Schritt 3: Ein Caching-Modul ersetzen
 
 Suchen Sie das Caching-Modul im Controller, entfernen Sie das fehlerhafte Caching-Modul und ersetzen Sie es.
@@ -166,6 +169,7 @@ Entfernen Sie gegebenenfalls das Cache-Modul, und setzen Sie es wieder in den So
 
 
 
+[[step-4-reinstall-the-controller-module]]
 == Schritt 4: Installieren Sie das Controller-Modul neu
 
 Setzen Sie das Controller-Modul wieder in das Gehäuse ein.
@@ -201,6 +205,7 @@ Der Controller startet, sobald er vollständig im Gehäuse eingesetzt ist.
 
 
 
+[[step-5-restore-automatic-giveback-and-autosupport]]
 == Schritt 5: Automatisches Giveback und AutoSupport wiederherstellen
 
 Stellen Sie automatische Giveback und AutoSupport wieder her, wenn sie deaktiviert wurden.
@@ -211,6 +216,7 @@ Stellen Sie automatische Giveback und AutoSupport wieder her, wenn sie deaktivie
 
 
 
+[[step-6-return-the-failed-part-to-netapp]]
 == Schritt 6: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

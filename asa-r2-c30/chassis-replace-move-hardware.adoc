@@ -15,6 +15,7 @@ Ersetzen Sie das Gehäuse Ihres ASA C30-Speichersystems, wenn ein Hardwarefehler
 
 
 
+[[about-this-task]]
 == Über diese Aufgabe
 
 Bei Bedarf können Sie die LEDs des Speichersystems (blau) einschalten, um das betroffene Speichersystem physisch zu lokalisieren. Melden Sie sich über SSH bei der BMC an und geben Sie den Befehl ein `system location-led _on_`.
@@ -25,6 +26,7 @@ Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led
 
 
 
+[[step-1-remove-the-controller]]
 == Schritt 1: Entfernen Sie die Steuerung
 
 Sie müssen den Controller aus dem Chassis entfernen, wenn Sie den Controller austauschen oder eine Komponente im Controller austauschen.
@@ -136,6 +138,7 @@ Drehen Sie die Griffe bei Bedarf aufrecht (neben den Laschen), um sie aus dem We
 
 
 
+[[step-2-remove-the-drives-from-the-impaired-chassis]]
 == Schritt 2: Entfernen Sie die Laufwerke aus dem Gehäuse für beeinträchtigte Störungen
 
 Sie müssen alle Laufwerke und alle Laufwerkplatzhalter aus dem Gehäuse für beeinträchtigte Störungen entfernen, damit Sie sie später im Ersatzgehäuse installieren können.
@@ -184,6 +187,7 @@ NOTE: Da Laufwerke zerbrechlich sind, minimieren Sie die Handhabung, um sie nich
 
 
 
+[[step-2-replace-the-chassis-from-within-the-equipment-rack-or-system-cabinet]]
 == Schritt 2: Ersetzen Sie das Chassis aus dem Geräte-Rack oder Systemschrank heraus
 
 Sie entfernen das Gehäuse für beeinträchtigte Störungen aus dem Geräte-Rack oder Systemschrank, installieren das Ersatzgehäuse, installieren die Laufwerke, alle Laufwerkplatzhalter und installieren dann die Blende.
@@ -203,6 +207,7 @@ NOTE: Wenn das Speichersystem in einem NetApp-Systemschrank geliefert wurde, mü
 
 
 
+[[step-4-install-the-controllers-and-drives]]
 == Schritt 4: Installieren Sie die Controller und Laufwerke
 
 Installieren Sie die Controller und Laufwerke im Ersatzgehäuse und starten Sie die Controller neu.

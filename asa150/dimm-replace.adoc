@@ -19,6 +19,7 @@ Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
 Übernehmen Sie den fehlerhaften Controller und stoppen Sie ihn, damit der intakte Controller weiterhin Daten aus dem Speicher des fehlerhaften Controllers bereitstellt. Dazu unterdrücken Sie die automatische Fallerstellung in AutoSupport, deaktivieren die automatische Rückgabe und bringen den fehlerhaften Controller zur LOADER-Eingabeaufforderung. Die LOADER-Eingabeaufforderung ist der sichere, angehaltene Zustand, aus dem Sie die FRU ersetzen können.
@@ -90,6 +91,7 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 
 
 
+[[step-2-remove-controller-module]]
 == Schritt 2: Controller-Modul entfernen
 
 Um auf Komponenten innerhalb des Controllers zuzugreifen, müssen Sie zuerst das Controller-Modul aus dem System entfernen und dann die Abdeckung am Controller-Modul entfernen.
@@ -117,6 +119,7 @@ image::../media/drw_2600_opening_pcm_cover.png[Öffnen oder Schließen des Contr
 
 
 
+[[step-3-replace-the-dimms]]
 == Schritt 3: Ersetzen Sie die DIMMs
 
 Um die DIMMs auszutauschen, suchen Sie sie im Controller und befolgen Sie die Schritte in der jeweiligen Reihenfolge.
@@ -182,6 +185,7 @@ Vergewissern Sie sich, dass der Stecker am Controller-Modul abhält.
 
 
 
+[[step-4-reinstall-the-controller-module]]
 == Schritt 4: Installieren Sie das Controller-Modul neu
 
 Nachdem Sie die Komponenten im Controller-Modul ausgetauscht haben, setzen Sie sie wieder in das Gehäuse ein.
@@ -242,6 +246,7 @@ NOTE: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige
 
 
 
+[[step-5-switch-back-aggregates-in-a-two-node-metrocluster-configuration]]
 == Schritt 5: Aggregate in einer MetroCluster Konfiguration mit zwei Nodes zurückwechseln
 
 Dieser Task gilt nur für MetroCluster-Konfigurationen mit zwei Nodes.
@@ -298,6 +303,7 @@ Wenn ein Wechsel eine lange Zeit in Anspruch nimmt, können Sie den Status der i
 
 
 
+[[step-6-return-the-failed-part-to-netapp]]
 == Schritt 6: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

@@ -31,19 +31,19 @@ Die Onboard-Verschlüsselungsschlüssel für OKM wiederherstellen und neu versie
 
 .Schritte
 . Starten Sie das ONTAP-Menü über die Loader-Eingabeaufforderung `boot_ontap menu`, und wählen Sie Option 10.
-. Rufen Sie die clusterweite Passphrase vom fehlerfreien Controller ab und überprüfen Sie sie.
+. Die wichtigsten Sicherungsinformationen für das Cluster werden angezeigt.
 +
-.. Führen Sie den folgenden Befehl aus, um die clusterweite Passphrase abzurufen:
+.. Führen Sie den folgenden Befehl aus, um die Sicherungsinformationen für die Schlüsselverwaltung des Clusters anzuzeigen:
 +
 `security key-manager onboard show-backup`
 
-.. Überprüfen Sie die clusterweite Passphrase mit folgendem Befehl:
+.. Führen Sie den folgenden Befehl aus, um die Sicherung des Onboard Key Managers zu überprüfen:
 +
 `security key-manager onboard verify-backup`
 
 
 
-. Geben Sie die OKM-Passphrase ein.
+. Geben Sie die OKM Passphrase ein und bestätigen Sie die erfolgreiche Verifizierung.
 +
 
 NOTE: Sie werden zweimal zur Eingabe der Passphrase aufgefordert.

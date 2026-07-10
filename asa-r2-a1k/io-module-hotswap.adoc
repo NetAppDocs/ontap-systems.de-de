@@ -34,6 +34,7 @@ Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led
 
 
 
+[[step-1-ensure-the-storage-system-meets-the-procedure-requirements]]
 == Schritt 1: Sicherstellen, dass das Speichersystem die Verfahrensanforderungen erfüllt
 
 Um dieses Verfahren anwenden zu können, muss auf Ihrem Speichersystem ONTAP 9.18.1 GA oder eine neuere Version laufen, und Ihr Speichersystem muss alle Anforderungen erfüllen.
@@ -68,6 +69,7 @@ In bestimmten Situationen kann ONTAP aufgrund eines ausgefallenen E/A-Moduls aut
 
 
 
+[[step-2-prepare-the-storage-system-and-io-module-slot]]
 == Schritt 2: Bereiten Sie das Speichersystem und den Steckplatz für das I/O-Modul vor
 
 Bereiten Sie das Speichersystem und den Steckplatz für das E/A-Modul so vor, dass das defekte E/A-Modul sicher entfernt werden kann:
@@ -154,6 +156,7 @@ Die Ausgabe sollte  `_powered-off_` in der  `_status_` Spalte für das ausgefall
 
 
 
+[[step-3-replace-the-failed-io-module]]
 == Schritt 3: Ersetzen Sie das defekte E/A-Modul
 
 Ersetzen Sie das ausgefallene E/A-Modul durch ein gleichwertiges E/A-Modul.
@@ -202,6 +205,7 @@ Behalten Sie im Auge, in welchem Steckplatz sich das I/O-Modul befand.
 
 
 
+[[step-4-bring-the-replacement-io-module-online]]
 == Schritt 4: Bringen Sie das Ersatz-E/A-Modul online
 
 Schalten Sie das Ersatz-I/O-Modul online, überprüfen Sie, ob die I/O-Modul-Ports erfolgreich initialisiert wurden, überprüfen Sie, ob der Steckplatz mit Strom versorgt ist, und überprüfen Sie dann, ob das I/O-Modul online und erkannt ist.
@@ -318,6 +322,7 @@ Slot slot Information
 
 
 
+[[step-5-restore-the-storage-system-to-normal-operation]]
 == Schritt 5: Wiederherstellen des Normalbetriebs des Speichersystems
 
 Stellen Sie den Normalbetrieb Ihres Speichersystems wieder her, indem Sie den Speicher dem übernommenen Controller zurückgeben (falls erforderlich), die automatische Rückgabe wiederherstellen (falls erforderlich), überprüfen, ob sich die LIFs an ihren Heimatports befinden, und die automatische Fallerstellung von AutoSupport wieder aktivieren.
@@ -363,6 +368,7 @@ Wenn eine der LIFs als falsch aufgeführt ist, stellen Sie sie auf ihre Home-Por
 
 
 
+[[step-6-return-the-failed-part-to-netapp]]
 == Schritt 6: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

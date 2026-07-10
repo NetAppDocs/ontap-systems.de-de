@@ -11,6 +11,7 @@ Sie können dieses Verfahren mit allen Versionen von ONTAP verwenden, die von Ih
 
 
 
+[[step-1-shut-down-the-impaired-node]]
 == Schritt 1: Fahren Sie den Knoten mit beeinträchtigten Knoten herunter
 
 Schalten Sie den außer Betrieb genommenen Controller aus oder übernehmen Sie ihn.
@@ -68,6 +69,7 @@ Der Parameter _-halt true_ bringt den beeinträchtigten Knoten zur LOADER-Eingab
 
 
 
+[[step-2-replace-a-failed-io-module]]
 == Schritt 2: Ersetzen Sie ein fehlerhaftes I/O-Modul
 
 Um ein E/A-Modul zu ersetzen, suchen Sie es im Gehäuse und befolgen Sie die entsprechenden Schritte.
@@ -125,6 +127,7 @@ Stellen Sie sicher, dass Sie den Steckplatz verfolgen, in dem sich das I/O-Modul
 
 
 
+[[step-3-reboot-the-controller]]
 == Schritt 3: Starten Sie den Controller neu
 
 Nachdem Sie ein I/O-Modul ersetzt haben, müssen Sie den Controller neu starten.
@@ -182,6 +185,7 @@ NOTE: Der folgende Befehl ist nur auf der Berechtigungsebene „Diagnosemodus“
 
 
 
+[[step-4-return-the-failed-part-to-netapp]]
 == Schritt 4: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

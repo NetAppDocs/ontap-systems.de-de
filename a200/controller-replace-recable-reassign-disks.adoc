@@ -15,6 +15,7 @@ Setzen Sie das Verfahren zum Austausch fort, indem Sie den Speicher neu verkabel
 
 
 
+[[step-1-re-cable-the-system]]
 == Schritt 1: Das System erneut verkabeln
 
 Überprüfen Sie die Speicher- und Netzwerkverbindungen des Controller-Moduls mithilfe von https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"] Die
@@ -28,12 +29,14 @@ Setzen Sie das Verfahren zum Austausch fort, indem Sie den Speicher neu verkabel
 
 
 
+[[step-2-reassign-disks]]
 == Schritt 2: Festplatten neu zuweisen
 
 Wenn sich das Storage-System in einem HA-Paar befindet, wird die System-ID des neuen Controller-Moduls automatisch den Festplatten zugewiesen, wenn die Rückgabe am Ende des Verfahrens stattfindet. In einem eigenständigen System müssen Sie die ID manuell den Festplatten zuweisen. Sie müssen das richtige Verfahren für Ihre Konfiguration verwenden.
 
 
 
+[[option-1-verify-the-system-id-change-on-an-ha-system]]
 === Option 1: Überprüfen Sie die Änderung der System-ID bei einem HA-System
 
 Sie müssen die Änderung der System-ID beim Booten des Controllers _Replacement_ bestätigen und anschließend überprüfen, ob die Änderung implementiert wurde.
@@ -124,6 +127,7 @@ Disk  Aggregate Home  Owner  DR Home  Home ID    Owner ID  DR Home ID Reserver  
 
 
 
+[[option-2-manually-reassign-the-system-id-on-a-stand-alone-system-in-ontap]]
 === Option 2: Manuelle Zuordnung der System-ID auf einem eigenständigen System in ONTAP
 
 In einem eigenständigen System müssen Sie Festplatten manuell der System-ID des neuen Controllers zuweisen, bevor Sie den normalen Betrieb des Systems wieder herstellen.

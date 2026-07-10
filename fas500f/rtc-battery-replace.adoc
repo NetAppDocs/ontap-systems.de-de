@@ -19,6 +19,7 @@ Sie ersetzen den Echtzeituhr-Akku (RTC) im Controller-Modul, sodass die Dienste 
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
 Übernehmen Sie den fehlerhaften Controller und stoppen Sie ihn, damit der intakte Controller weiterhin Daten aus dem Speicher des fehlerhaften Controllers bereitstellt. Dazu unterdrücken Sie die automatische Fallerstellung in AutoSupport, deaktivieren die automatische Rückgabe und bringen den fehlerhaften Controller zur LOADER-Eingabeaufforderung. Die LOADER-Eingabeaufforderung ist der sichere, angehaltene Zustand, aus dem Sie die FRU ersetzen können.
@@ -89,6 +90,7 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 
 
 
+[[step-2-remove-the-controller-module]]
 == Schritt 2: Entfernen Sie das Controller-Modul
 
 Sie müssen das Controller-Modul aus dem Chassis entfernen, wenn Sie eine Komponente im Controller-Modul ersetzen.
@@ -149,6 +151,7 @@ image::../media/drw_a250_remove_airduct_cover.png[Anheben der Abdeckung des Luft
 
 
 
+[[step-3-replace-the-rtc-battery]]
 == Schritt 3: Ersetzen Sie die RTC-Batterie
 
 Um die RTC-Batterie zu ersetzen, suchen Sie sie im Controller, und befolgen Sie die einzelnen Schritte.
@@ -217,6 +220,7 @@ CAUTION: Wenn Sie ihn aggressiv einschieben, kann sich der Akku erneut auswerfen
 
 
 
+[[step-4-reinstall-the-controller-module-and-set-timedate-after-rtc-battery-replacement]]
 == Schritt 4: Das Controllermodul wieder einbauen und Zeit/Datum nach dem RTC-Batterieaustausch einstellen
 
 Nachdem Sie eine Komponente innerhalb des Controller-Moduls ersetzt haben, müssen Sie das Controller-Modul im Systemgehäuse neu installieren, die Uhrzeit und das Datum auf dem Controller zurücksetzen und es dann booten.
@@ -264,6 +268,7 @@ Das Controller-Modul sollte vollständig eingesetzt und mit den Kanten des Gehä
 
 
 
+[[step-5-complete-the-replacement-process]]
 == Schritt 5: Führen Sie den Ersatzprozess durch
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

@@ -17,6 +17,7 @@ Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Fall
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
 Übernehmen Sie den fehlerhaften Controller und stoppen Sie ihn, damit der intakte Controller weiterhin Daten aus dem Speicher des fehlerhaften Controllers bereitstellt. Dazu unterdrücken Sie die automatische Fallerstellung in AutoSupport, deaktivieren die automatische Rückgabe und bringen den fehlerhaften Controller zur LOADER-Eingabeaufforderung. Die LOADER-Eingabeaufforderung ist der sichere, angehaltene Zustand, aus dem Sie die FRU ersetzen können.
@@ -71,6 +72,7 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 
 
 
+[[step-2-remove-the-controller-module]]
 == Schritt 2: Entfernen Sie das Controller-Modul
 
 Sie müssen das Controller-Modul aus dem Chassis entfernen, wenn Sie das Controller-Modul ersetzen oder eine Komponente im Controller-Modul ersetzen.
@@ -116,6 +118,7 @@ Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen,
 
 
 
+[[step-3-replace-the-nvram-battery]]
 == Schritt 3: Tauschen Sie die NVRAM-Batterie aus
 
 Um die NVRAM-Batterie auszutauschen, müssen Sie den fehlerhaften NVRAM-Akku aus dem Controller-Modul entfernen und die Ersatz-NVRAM-Batterie in das Controller-Modul installieren.
@@ -152,6 +155,7 @@ Blaue Verriegelungslasche für NVRAM-Batterien
 
 
 
+[[step-4-reinstall-the-controller-module]]
 == Schritt 4: Installieren Sie das Controller-Modul neu
 
 Nachdem Sie eine Komponente im Controller-Modul ausgetauscht haben, müssen Sie das Controller-Modul im Systemgehäuse neu installieren und starten.
@@ -223,6 +227,7 @@ NOTE: Achten Sie darauf, den Wartungsmodus nach Abschluss der Konvertierung zu b
 
 
 
+[[step-5-return-the-failed-part-to-netapp]]
 == Schritt 5: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

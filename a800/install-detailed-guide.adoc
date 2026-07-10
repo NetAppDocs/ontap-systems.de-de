@@ -15,6 +15,7 @@ Dieser Abschnitt enthält detaillierte Schritt-für-Schritt-Anleitungen zur Inst
 
 
 
+[[step-1-prepare-for-installation]]
 == Schritt 1: Installation vorbereiten
 
 Um Ihr AFF A800 System zu installieren, müssen Sie ein Konto erstellen und das System registrieren. Außerdem müssen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp für Ihr System inventarisieren und bestimmte Netzwerkinformationen erfassen.
@@ -165,6 +166,7 @@ Anschließen der Netzteileinheiten an die Stromquelle
 
 
 
+[[step-2-install-the-hardware]]
 == Schritt 2: Installieren Sie die Hardware
 
 Sie müssen das System je nach Bedarf in einem 4-Säulen-Rack oder NetApp Systemschrank installieren.
@@ -191,12 +193,14 @@ image::../media/drw_affa800_install_cable_mgmt.png[Anschließen des Kabelverwalt
 
 
 
+[[step-3-cable-controllers]]
 == Schritt 3: Kabelcontroller
 
 Die Cluster Ihrer Plattform müssen über die Switch-Methode mit zwei Nodes oder die Netzwerkmethode für Cluster Interconnect verkabelt werden. Optional ist die Verkabelung zu den Fibre Channel- oder iSCSI-Hostnetzwerken oder Direct-Attached Storage möglich. Diese Verkabelung ist nicht exklusiv; Sie können Kabel zu einem Host-Netzwerk und Speicher haben.
 
 
 
+[[required-cabling-cable-controllers-to-a-cluster]]
 === Erforderliche Verkabelung: Controller mit einem Cluster verkabeln
 
 Verkabeln Sie die Controller über eine Switch-Methode mit zwei Nodes oder über das Cluster Interconnect-Netzwerk mit einem Cluster.
@@ -357,6 +361,7 @@ Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
 
 
 
+[[optional-cabling-cable-configuration-dependent-options]]
 === Optionale Verkabelung: Kabelkonfigurationsabhängige Optionen
 
 Sie verfügen über eine konfigurationsabhängige optionale Verkabelung mit den Fibre Channel- oder iSCSI-Hostnetzwerken oder dem Direct-Attached Storage. Diese Verkabelung ist nicht exklusiv; Sie können die Verkabelung zu einem Host-Netzwerk und Speicher haben.
@@ -529,12 +534,14 @@ Informationen zum Abschließen der Einrichtung des Systems finden Sie unter link
 
 
 
+[[step-4-complete-system-setup-and-configuration]]
 == Schritt 4: System-Setup und -Konfiguration abschließen
 
 Führen Sie die Systemeinrichtung und -Konfiguration mithilfe der Cluster-Erkennung mit nur einer Verbindung zum Switch und Laptop durch, oder indem Sie direkt einen Controller im System verbinden und dann eine Verbindung zum Management-Switch herstellen.
 
 
 
+[[option-1-complete-system-setup-and-configuration-if-network-discovery-is-enabled]]
 === Option 1: Führen Sie die Systemeinrichtung und -Konfiguration durch, wenn die Netzwerkerkennung aktiviert ist
 
 Wenn die Netzwerkerkennung auf Ihrem Laptop aktiviert ist, können Sie das System mit der automatischen Cluster-Erkennung einrichten und konfigurieren.
@@ -576,6 +583,7 @@ System Manager wird geöffnet.
 
 
 
+[[option-2-complete-system-setup-and-configuration-if-network-discovery-is-not-enabled]]
 === Option 2: Führen Sie die Systemeinrichtung und -Konfiguration durch, wenn die Netzwerkerkennung nicht aktiviert ist
 
 Wenn die Netzwerkerkennung auf Ihrem Laptop nicht aktiviert ist, müssen Sie die Konfiguration und das Setup mit dieser Aufgabe abschließen.

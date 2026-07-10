@@ -27,6 +27,7 @@ Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
 Übernehmen Sie den fehlerhaften Controller und stoppen Sie ihn, damit der intakte Controller weiterhin Daten aus dem Speicher des fehlerhaften Controllers bereitstellt. Dazu unterdrücken Sie die automatische Fallerstellung in AutoSupport, deaktivieren die automatische Rückgabe und bringen den fehlerhaften Controller zur LOADER-Eingabeaufforderung. Die LOADER-Eingabeaufforderung ist der sichere, angehaltene Zustand, aus dem Sie die FRU ersetzen können.
@@ -97,6 +98,7 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 
 
 
+[[step-2-remove-the-controller]]
 == Schritt 2: Entfernen Sie die Steuerung
 
 Sie müssen den Controller aus dem Chassis entfernen, wenn Sie den Controller austauschen oder eine Komponente im Controller austauschen.
@@ -208,6 +210,7 @@ Drehen Sie die Griffe bei Bedarf aufrecht (neben den Laschen), um sie aus dem We
 
 
 
+[[step-3-replace-the-nv-battery]]
 == Schritt 3: Tauschen Sie die NV-Batterie aus
 
 Entfernen Sie die fehlerhafte NV-Batterie aus dem Controller, und setzen Sie die neue NV-Batterie ein.
@@ -264,6 +267,7 @@ Die NV-Batterie sollte bündig im Fach sitzen.
 
 
 
+[[step-4-reinstall-the-controller]]
 == Schritt 4: Installieren Sie den Controller neu
 
 Setzen Sie den Controller wieder in das Gehäuse ein und starten Sie ihn neu.
@@ -370,6 +374,7 @@ DC-NETZTEIL
 
 
 
+[[step-5-return-the-failed-part-to-netapp]]
 == Schritt 5: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

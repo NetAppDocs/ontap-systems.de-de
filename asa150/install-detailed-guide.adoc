@@ -19,6 +19,7 @@ Wenn Sie über eine MetroCluster-Konfiguration verfügen, verwenden Sie die http
 
 
 
+[[step-1-prepare-for-installation]]
 == Schritt 1: Installation vorbereiten
 
 Um Ihr System zu installieren, erstellen Sie ein Konto auf der NetApp Support-Website, registrieren Sie Ihr System und erhalten Sie Ihre Lizenzschlüssel. Außerdem müssen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp für Ihr System inventarisieren und bestimmte Netzwerkinformationen erfassen.
@@ -159,6 +160,7 @@ System einschalten
 
 
 
+[[step-2-install-the-hardware]]
 == Schritt 2: Installieren Sie die Hardware
 
 Installieren Sie Ihr System gegebenenfalls in einem 4-Säulen-Rack oder NetApp Systemschrank.
@@ -182,6 +184,7 @@ image::../media/drw_cable_management_arm_install.png[Anschließen von Kabelverwa
 
 
 
+[[step-3-cable-controllers-to-network]]
 == Schritt 3: Controller mit Netzwerk verbinden
 
 Verkabeln Sie die Controller entweder mit der Cluster-Methode ohne zwei Nodes oder mit der Cluster Interconnect-Netzwerkmethode mit dem Netzwerk.
@@ -332,6 +335,7 @@ IMPORTANT: Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
 ====
 
 
+[[step-4-cable-controllers-to-drive-shelves]]
 == Schritt 4: Controller mit Laufwerk-Shelfs verkabeln
 
 Verkabeln Sie die Controller mit den Shelfs mithilfe der integrierten Storage Ports. NetApp empfiehlt MP-HA-Verkabelung für Systeme mit externem Storage.
@@ -384,6 +388,7 @@ Weitere Informationen zur Verkabelung finden Sie unter link:../sas3/install-new-
 
 
 
+[[step-5-complete-system-setup]]
 == Schritt 5: System-Setup abschließen
 
 Die Einrichtung und Konfiguration des Systems kann mithilfe der Cluster-Erkennung nur mit einer Verbindung zum Switch und Laptop abgeschlossen werden. Sie können auch direkt eine Verbindung zu einem Controller im System herstellen und dann eine Verbindung zum Management Switch herstellen.

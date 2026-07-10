@@ -29,6 +29,7 @@ image:../media/drw_cable_pull_tab_direction_ieops-1699.svg["Richtung der Zuglasc
 
 
 
+[[step-1-cable-the-clusterha-connections]]
 == Schritt 1: Cluster/HA-Verbindungen verkabeln
 
 Erstellen Sie die ONTAP-Cluster-Verbindungen. Bei Clustern ohne Switch verbinden Sie die Controller miteinander. Verbinden Sie bei geswitchten Clustern die Controller mit den Cluster-Netzwerk-Switches.
@@ -94,6 +95,7 @@ image:../media/drw_isi_fas50_2p_100gbe_switched_cluster_cabling_ieops-1936.svg["
 ====
 
 
+[[step-2-cable-the-host-network-connections]]
 == Schritt 2: Verkabeln Sie die Host-Netzwerkverbindungen
 
 Verkabeln Sie die Controller mit dem Ethernet- oder FC-Hostnetzwerk.
@@ -138,6 +140,7 @@ image::../media/drw_isi_fas50_4p_64gb_fc_optional_cabling_ieops-1935.svg[Verkabe
 ====
 
 
+[[step-3-cable-the-management-network-connections]]
 == Schritt 3: Verkabelung der Management-Netzwerkverbindungen
 
 Verkabeln Sie die Managementports (Schraubenschlüssel) an jedem Controller mit den Managementnetzwerk-Switches.
@@ -153,6 +156,7 @@ IMPORTANT: Stecken Sie die Netzkabel noch nicht ein.
 
 
 
+[[step-4-cable-the-shelf-connections]]
 == Schritt 4: Verkabeln Sie die Shelf-Verbindungen
 
 Die folgenden Verfahren zeigen, wie die Controller mit einem oder zwei DS460C Shelfs verkabelt werden.
@@ -175,6 +179,7 @@ image::../media/oie_cable_mini_sas_hd_to_mini_sas_hd.svg[Mini-SAS-HD-Kabel]
 
 
 
+[[one-ds460c-shelf]]
 === Ein DS460C-Regal
 
 Verkabeln Sie jeden Controller mit jedem IOM12-Modul im DS460C Shelf.
@@ -194,6 +199,7 @@ image:../media/drw_isi_fas50_1_ds460c_controller_b_cabling_ieops-2169.svg["Contr
 
 
 
+[[two-ds460c-shelves]]
 === Zwei DS460C-Regale
 
 Schließen Sie jeden Controller an die IOM12-Module auf beiden DS460C Shelfs an.

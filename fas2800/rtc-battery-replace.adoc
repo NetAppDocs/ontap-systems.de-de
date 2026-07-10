@@ -19,6 +19,7 @@ Sie ersetzen den Echtzeituhr-Akku (RTC) im Controller-Modul, sodass die Dienste 
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
 Übernehmen Sie den fehlerhaften Controller und stoppen Sie ihn, damit der intakte Controller weiterhin Daten aus dem Speicher des fehlerhaften Controllers bereitstellt. Dazu unterdrücken Sie die automatische Fallerstellung in AutoSupport, deaktivieren die automatische Rückgabe und bringen den fehlerhaften Controller zur LOADER-Eingabeaufforderung. Die LOADER-Eingabeaufforderung ist der sichere, angehaltene Zustand, aus dem Sie die FRU ersetzen können.
@@ -89,6 +90,7 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 
 
 
+[[step-2-remove-controller-module]]
 == Schritt 2: Controller-Modul entfernen
 
 Entfernen Sie das Controller-Modul aus dem System, und entfernen Sie dann die Abdeckung des Controller-Moduls.
@@ -112,6 +114,7 @@ image::../media/drw_2850_open_controller_module_cover_IEOPS-695.svg[Entfernen Si
 
 
 
+[[step-3-replace-the-rtc-battery]]
 == Schritt 3: Ersetzen Sie die RTC-Batterie
 
 Tauschen Sie die RTC-Batterie aus, indem Sie sie in der Steuerung einsetzen und die entsprechenden Schritte befolgen.
@@ -136,6 +139,7 @@ NOTE: Beachten Sie die Polarität der Batterie, während Sie sie aus dem Halter 
 
 
 
+[[step-4-reinstall-the-controller-module]]
 == Schritt 4: Installieren Sie das Controller-Modul neu
 
 Installieren Sie das Controller-Modul neu, und starten Sie es bis zur LOADER-Eingabeaufforderung.
@@ -171,6 +175,7 @@ Der Controller beginnt zu booten, sobald er im Gehäuse sitzt.
 
 
 
+[[step-5-set-timedate-after-rtc-battery-replacement]]
 == Schritt 5: Stellen Sie die Uhrzeit/das Datum nach dem Austausch der RTC-Batterie ein
 
 . Uhrzeit und Datum auf dem Controller zurücksetzen:
@@ -190,6 +195,7 @@ Der Controller beginnt zu booten, sobald er im Gehäuse sitzt.
 
 
 
+[[step-6-return-the-failed-part-to-netapp]]
 == Schritt 6: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

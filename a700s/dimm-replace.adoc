@@ -19,6 +19,7 @@ Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
@@ -62,6 +63,7 @@ Wenn der Regler „beeinträchtigt“ angezeigt wird `Waiting for giveback...`Dr
 
 
 
+[[step-2-remove-the-controller-module]]
 == Schritt 2: Entfernen Sie das Controller-Modul
 
 Sie müssen das Controller-Modul aus dem Chassis entfernen, wenn Sie das Controller-Modul ersetzen oder eine Komponente im Controller-Modul ersetzen.
@@ -139,6 +141,7 @@ Luftkanal
 
 
 
+[[step-3-replace-a-dimm]]
 == Schritt 3: Ersetzen Sie ein DIMM
 
 Um ein DIMM auszutauschen, müssen Sie es im Controller-Modul mithilfe der DIMM-Karte auf der Innenseite des Controller-Moduls lokalisieren und es anschließend nach den entsprechenden Schritten ersetzen.
@@ -214,6 +217,7 @@ Wenn Sie den NVRAM-Riser, Riser 1, entfernt haben, stellen Sie sicher, dass Sie 
 
 
 
+[[step-4-reinstall-the-controller-module-and-boot-the-system]]
 == Schritt 4: Installieren Sie das Controller-Modul neu und starten Sie das System
 
 Nachdem Sie eine FRU im Controller-Modul ersetzt haben, müssen Sie das Controller-Modul neu installieren und neu starten.
@@ -252,6 +256,7 @@ Das Controller-Modul startet, sobald die Stromversorgung wiederhergestellt ist. 
 
 
 
+[[step-5return-the-failed-part-to-netapp]]
 == Schritt 5:Zurückgeben des fehlerhaften Teils an NetApp
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

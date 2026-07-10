@@ -17,6 +17,7 @@ link:https://youtu.be/2_uWRt_iJqk["Video: AFF FAS2600 Controller-Austausch"]
 
 
 
+[[step-1-remove-controller-module]]
 == Schritt 1: Controller-Modul entfernen
 
 Zum Austauschen des Controller-Moduls müssen Sie zuerst das alte Controller-Modul aus dem Chassis entfernen.
@@ -45,6 +46,7 @@ image::../media/drw_2600_opening_pcm_cover.png[Öffnen oder Schließen des Contr
 
 
 
+[[step-2-move-the-boot-media]]
 == Schritt 2: Verschieben Sie die Startmedien
 
 Sie müssen das Bootmedium ausfindig machen und die Anweisungen befolgen, um es aus dem alten Controller-Modul zu entfernen und in das neue Controller-Modul einzufügen.
@@ -69,6 +71,7 @@ Entfernen Sie gegebenenfalls die Startmedien, und setzen Sie sie wieder in den S
 
 
 
+[[step-3-move-the-nvmem-battery]]
 == Schritt 3: Verschieben Sie die NVMEM-Batterie
 
 Um die NVMEM-Batterie vom alten Controller-Modul in das neue Controller-Modul zu verschieben, müssen Sie eine bestimmte Sequenz von Schritten durchführen.
@@ -109,6 +112,7 @@ image::../media/drw_2600_nvmem_battery_move_animated_gif.png[Austausch der NVMEM
 
 
 
+[[step-4-move-the-dimms]]
 == Schritt 4: Verschieben Sie die DIMMs
 
 Um die DIMMs zu verschieben, müssen Sie die Anweisungen befolgen, um sie vom alten Controller-Modul in das Ersatzcontrollermodul zu finden und zu verschieben.
@@ -152,6 +156,7 @@ Vergewissern Sie sich, dass der Stecker am Controller-Modul abhält.
 
 
 
+[[step-5-move-the-caching-module]]
 == Schritt 5: Verschieben Sie das Caching-Modul
 
 Um ein Caching-Modul, das als M.2 PCIe-Karte bezeichnet wird, auf dem Etikett des Controllers zu verschieben, suchen und verschieben Sie es vom alten Controller in den Ersatz-Controller und befolgen Sie die spezifischen Schritte.
@@ -180,6 +185,7 @@ Entfernen Sie gegebenenfalls das Cache-Modul, und setzen Sie es wieder in den So
 
 
 
+[[step-6-install-the-controller]]
 == Schritt 6: Installieren Sie den Controller
 
 Nachdem Sie die Komponenten aus dem alten Controller-Modul in das neue Controller-Modul installiert haben, müssen Sie das neue Controller-Modul im Systemgehäuse installieren und das Betriebssystem booten.

@@ -15,6 +15,7 @@ Dieser Leitfaden enthält detaillierte Schritt-für-Schritt-Anleitungen zur Inst
 
 
 
+[[step-1-prepare-for-installation]]
 == Schritt 1: Installation vorbereiten
 
 Um Ihr System zu installieren, müssen Sie ein Konto erstellen, das System registrieren und Lizenzschlüssel abrufen. Außerdem müssen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp für Ihr System inventarisieren und bestimmte Netzwerkinformationen erfassen.
@@ -163,6 +164,7 @@ https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["ONTAP Konfigurati
 
 
 
+[[step-2-install-the-hardware]]
 == Schritt 2: Installieren Sie die Hardware
 
 Sie müssen das System je nach Bedarf in einem 4-Säulen-Rack oder NetApp Systemschrank installieren.
@@ -186,6 +188,7 @@ image::../media/drw_a320_cable_management_arms.png[Entfernen oder Installieren d
 
 
 
+[[step-3-cable-controllers-to-your-network]]
 == Schritt 3: Controller mit Ihrem Netzwerk verbinden
 
 Sie können die Controller mithilfe der Switch-freien Cluster-Methode mit zwei Nodes oder des Cluster Interconnect-Netzwerks mit dem Netzwerk verkabeln.
@@ -195,6 +198,7 @@ NOTE: Wenn die Port-Etiketten auf der Karte nicht sichtbar sind, überprüfen Si
 
 
 
+[[option-1-cable-a-two-node-switchless-cluster]]
 === Option 1: Verkabeln eines 2-Node-Clusters ohne Switches
 
 Die optionalen Daten-Ports, optionalen NIC-Karten und Management-Ports der Controller-Module werden mit Switches verbunden. Die Cluster Interconnect- und HA-Ports sind an beiden Controller-Modulen verkabelt.
@@ -223,6 +227,7 @@ image::../media/drw_fas8300_TNSC_network_cabling.png[Verkabelungsdiagramm für C
 
 
 
+[[option-2-cable-a-switched-cluster]]
 === Option 2: Kabel ein geschalteter Cluster
 
 Die optionalen Daten-Ports, optionale NIC-Karten, Mezzanine-Karten und Management-Ports der Controller-Module sind mit den Switches verbunden. Die Cluster Interconnect- und HA-Ports sind mit dem Cluster/HA-Switch verbunden.
@@ -251,10 +256,12 @@ image::../media/drw_fas8300_switched_network_cabling.png[Verkabelungsdiagramm f�
 
 
 
+[[step-4-cable-controllers-to-drive-shelves]]
 == Schritt 4: Controller mit Laufwerk-Shelfs verkabeln
 
 
 
+[[option-1-cable-the-controllers-to-sas-drive-shelves]]
 === Option 1: Controller mit SAS-Laufwerk-Shelfs verkabeln
 
 Sie müssen jeden Controller mit den IOM-Modulen an beiden SAS-Laufwerk-Shelfs verkabeln.
@@ -279,12 +286,14 @@ image::../media/drw_fas8300_three-ds224c_shelves.png[Drei DS224C Shelf-Verkabelu
 
 
 
+[[step-5-complete-system-setup-and-configuration]]
 == Schritt 5: System-Setup und -Konfiguration abschließen
 
 Die Einrichtung und Konfiguration des Systems kann mithilfe der Cluster-Erkennung nur mit einer Verbindung zum Switch und Laptop abgeschlossen werden. Sie können auch direkt eine Verbindung zu einem Controller im System herstellen und dann eine Verbindung zum Management Switch herstellen.
 
 
 
+[[option-1-completing-system-setup-and-configuration-if-network-discovery-is-enabled]]
 === Option 1: Abschluss der Systemeinrichtung und -Konfiguration bei aktivierter Netzwerkerkennung
 
 Wenn die Netzwerkerkennung auf Ihrem Laptop aktiviert ist, können Sie das System mit der automatischen Cluster-Erkennung einrichten und konfigurieren.
@@ -346,6 +355,7 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 
 
 
+[[option-2-completing-system-setup-and-configuration-if-network-discovery-is-not-enabled]]
 === Option 2: Abschluss der Systemeinrichtung und -Konfiguration, falls die Netzwerkerkennung nicht aktiviert ist
 
 Wenn die Netzwerkerkennung auf Ihrem Laptop nicht aktiviert ist, müssen Sie die Konfiguration und das Setup mit dieser Aufgabe abschließen.

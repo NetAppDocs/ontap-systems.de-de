@@ -15,6 +15,7 @@ Auf dieser Seite finden Sie detaillierte Schritt-für-Schritt-Anleitungen zur In
 
 
 
+[[step-1-prepare-for-installation]]
 == Schritt 1: Installation vorbereiten
 
 Um Ihr AFF A220-System zu installieren, müssen Sie ein Konto auf der NetApp Support-Website erstellen, Ihr System registrieren und Lizenzschlüssel erhalten. Außerdem müssen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp für Ihr System inventarisieren und bestimmte Netzwerkinformationen erfassen.
@@ -167,6 +168,7 @@ https://library.netapp.com/ecm/ecm_download_file/ECMLP2839002["Cluster-Konfigura
 
 
 
+[[step-2-install-the-hardware]]
 == Schritt 2: Installieren Sie die Hardware
 
 Sie müssen das System je nach Bedarf in einem 4-Säulen-Rack oder NetApp Systemschrank installieren.
@@ -190,12 +192,14 @@ image::../media/drw_cable_management_arm_install.png[Anschließen von Kabelverwa
 
 
 
+[[step-3-cable-controllers-to-your-network]]
 == Schritt 3: Controller mit Ihrem Netzwerk verbinden
 
 Sie können die Controller mithilfe der Switch-freien Cluster-Methode mit zwei Nodes oder des Cluster Interconnect-Netzwerks mit dem Netzwerk verkabeln.
 
 
 
+[[option-1-cable-a-two-node-switchless-cluster-unified-network-configuration]]
 === Option 1: Verkabeln eines 2-Node-Clusters ohne Switches, Unified Network-Konfiguration
 
 Managementnetzwerk, UTA2-Datennetzwerk und Management-Ports auf den Controllern werden mit Switches verbunden. Die Cluster Interconnect-Ports sind an beiden Controllern verkabelt.
@@ -272,6 +276,7 @@ Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
 
 
 
+[[option-2-cable-a-switched-cluster-unified-network-configuration]]
 === Option 2: Verkabelung eines Switch-Clusters, Unified-Netzwerk-Konfiguration
 
 Managementnetzwerk, UTA2-Datennetzwerk und Management-Ports auf den Controllern werden mit Switches verbunden. Die Cluster-Interconnect-Ports sind mit den Cluster-Interconnect-Switches verbunden.
@@ -349,6 +354,7 @@ Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
 
 
 
+[[option-3-cable-a-two-node-switchless-cluster-ethernet-network-configuration]]
 === Option 3: Verkabelung eines 2-Node-Clusters ohne Switches, Ethernet-Netzwerkkonfiguration
 
 Managementnetzwerk, Ethernet-Datennetzwerk und Management-Ports auf den Controllern sind mit Switches verbunden. Die Cluster Interconnect-Ports sind an beiden Controllern verkabelt.
@@ -413,6 +419,7 @@ Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
 
 
 
+[[option-4-cable-a-switched-cluster-ethernet-network-configuration]]
 === Option 4: Kabel ein Switch-Cluster, Ethernet-Netzwerk-Konfiguration
 
 Managementnetzwerk, Ethernet-Datennetzwerk und Management-Ports auf den Controllern sind mit Switches verbunden. Die Cluster-Interconnect-Ports sind mit den Cluster-Interconnect-Switches verbunden.
@@ -475,12 +482,14 @@ Schließen Sie die Stromkabel AN dieser Stelle NICHT an.
 
 
 
+[[step-4-cable-controllers-to-drive-shelves]]
 == Schritt 4: Controller mit Laufwerk-Shelfs verkabeln
 
 Sie müssen die Controller mithilfe der integrierten Storage-Ports mit den Shelfs verkabeln. NetApp empfiehlt MP-HA-Verkabelung für Systeme mit externem Storage. Wenn Sie ein SAS-Bandlaufwerk haben, können Sie Single-Path-Verkabelung verwenden. Wenn Sie keine externen Shelfs haben, ist die MP-HA-Verkabelung zu internen Laufwerken optional (nicht abgebildet), wenn die SAS-Kabel zusammen mit dem System bestellt werden.
 
 
 
+[[option-1-cable-storage-on-an-ha-pair-with-external-drive-shelves]]
 === Option 1: Kabelspeicherung auf einem HA-Paar mit externen Festplatten-Shelfs
 
 Sie müssen die Shelf-Verbindungen verkabeln und dann beide Controller mit den Laufwerk-Shelfs verkabeln.
@@ -551,12 +560,14 @@ Wenn Sie über mehr als einen Festplatten-Shelf-Stack verfügen, lesen Sie die �
 
 
 
+[[step-5-complete-system-setup-and-configuration]]
 == Schritt 5: System-Setup und -Konfiguration abschließen
 
 Die Einrichtung und Konfiguration des Systems kann mithilfe der Cluster-Erkennung nur mit einer Verbindung zum Switch und Laptop abgeschlossen werden. Sie können auch direkt eine Verbindung zu einem Controller im System herstellen und dann eine Verbindung zum Management Switch herstellen.
 
 
 
+[[option-1-complete-system-setup-if-network-discovery-is-enabled]]
 === Option 1: Schließen Sie das System-Setup ab, wenn die Netzwerkerkennung aktiviert ist
 
 Wenn die Netzwerkerkennung auf Ihrem Laptop aktiviert ist, können Sie das System mit der automatischen Cluster-Erkennung einrichten und konfigurieren.
@@ -610,6 +621,7 @@ https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["ONTAP Konfigurati
 
 
 
+[[option-2-completing-system-setup-and-configuration-if-network-discovery-is-not-enabled]]
 === Option 2: Abschluss der Systemeinrichtung und -Konfiguration, falls die Netzwerkerkennung nicht aktiviert ist
 
 Wenn die Netzwerkerkennung auf Ihrem Laptop nicht aktiviert ist, müssen Sie die Konfiguration und das Setup mit dieser Aufgabe abschließen.

@@ -15,6 +15,7 @@ Dieser Leitfaden enthält detaillierte Schritt-für-Schritt-Anleitungen zur Inst
 
 
 
+[[step-1-prepare-for-installation]]
 == Schritt 1: Installation vorbereiten
 
 Um Ihr System zu installieren, müssen Sie auf der NetApp Support Site ein Konto erstellen, Ihr System registrieren und Lizenzschlüssel abrufen. Außerdem müssen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp für Ihr System inventarisieren und bestimmte Netzwerkinformationen erfassen.
@@ -178,6 +179,7 @@ https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["ONTAP Konfigurati
 
 
 
+[[step-2-install-the-hardware]]
 == Schritt 2: Installieren Sie die Hardware
 
 Sie müssen das System je nach Bedarf in einem 4-Säulen-Rack oder NetApp Systemschrank installieren.
@@ -205,12 +207,14 @@ image::../media/drw_9000_cable_management_arms.png[Anschließen von Kabelverwalt
 
 
 
+[[step-3-cable-controllers-to-your-network]]
 == Schritt 3: Controller mit Ihrem Netzwerk verbinden
 
 Sie können die Controller mithilfe der Switch-freien Cluster-Methode mit zwei Nodes oder des Cluster Interconnect-Netzwerks mit dem Netzwerk verkabeln.
 
 
 
+[[option-1-two-node-switchless-cluster]]
 === Option 1: Cluster mit zwei Nodes ohne Switches
 
 Managementnetzwerk, Datennetzwerk und Management-Ports auf den Controllern sind mit Switches verbunden. Die Cluster Interconnect-Ports sind an beiden Controllern verkabelt.
@@ -237,6 +241,7 @@ image::../media/drw_9000_TNSC_composite_cabling.png[Composite-Verkabelung mit zw
 
 
 
+[[option-2-switched-cluster]]
 === Option 2: Cluster mit Switch
 
 Managementnetzwerk, Datennetzwerk und Management-Ports auf den Controllern sind mit Switches verbunden. Die Cluster Interconnect- und HA-Ports sind mit dem Cluster/HA-Switch verbunden.
@@ -263,12 +268,14 @@ image:../media/drw_9000_switched_cluster_cabling.png["Switched Cluster Composite
 
 
 
+[[step-4-cable-controllers-to-drive-shelves]]
 == Schritt 4: Controller mit Laufwerk-Shelfs verkabeln
 
 Je nachdem, ob es sich um ein AFF- oder FAS-System handelt, können neue Systeme an DS212C-, DS224C- oder NS224-Shelfs angeschlossen werden.
 
 
 
+[[option-1-cable-the-controllers-to-ds212c-or-ds224c-drive-shelves]]
 === Option 1: Controller mit DS212C- oder DS224C-Laufwerk-Shelfs verkabeln
 
 Sie müssen die Shelf-zu-Shelf-Verbindungen verkabeln und dann beide Controller mit dem DS212C oder DS224C Laufwerk-Shelfs verkabeln.
@@ -320,6 +327,7 @@ image:../media/Cable_shelves_new_system_IOM12_shelves.png["Verkabelung des Stora
 
 
 
+[[option-2-cable-the-controllers-to-a-single-ns224-drive-shelf-in-aff-a700-and-asa-aff-a700-systems-running-ontap-9-8-and-later-only]]
 === Option 2: Verbinden Sie die Controller mit einem einzigen NS224-Festplatten-Shelf in AFF A700 und ASA AFF A700 Systemen, die nur mit ONTAP 9.8 und höher ausgeführt werden
 
 Sie müssen jeden Controller bei einer AFF A700 oder ASA AFF A700 mit System ONTAP 9.8 oder höher mit den NSM-Modulen am NS224 Drive-Shelf verkabeln.
@@ -355,6 +363,7 @@ image::../media/single_NS224_shelf.png[Einzel-Shelf-Verkabelung]
 
 
 
+[[option-3-cable-the-controllers-to-two-ns224-drive-shelves-in-aff-a700-and-asa-aff-a700-systems-running-ontap-9-8-and-later-only]]
 === Option 3: Verkabeln Sie die Controller mit zwei NS224-Laufwerk-Shelfs in AFF A700 und ASA AFF A700 Systemen, die nur mit ONTAP 9.8 und höher ausgeführt werden
 
 Sie müssen jeden Controller bei einer AFF A700 oder ASA AFF A700 mit System ONTAP 9.8 oder höher mit den NSM-Modulen der NS224 Laufwerk-Shelfs verkabeln.
@@ -390,12 +399,14 @@ image::../media/two_NS224_shelves.png[Duale Shelf-Verkabelung]
 
 
 
+[[step-5-complete-system-setup-and-configuration]]
 == Schritt 5: System-Setup und -Konfiguration abschließen
 
 Die Einrichtung und Konfiguration des Systems kann mithilfe der Cluster-Erkennung nur mit einer Verbindung zum Switch und Laptop abgeschlossen werden. Sie können auch direkt eine Verbindung zu einem Controller im System herstellen und dann eine Verbindung zum Management Switch herstellen.
 
 
 
+[[option-1-completing-system-setup-and-configuration-if-network-discovery-is-enabled]]
 === Option 1: Abschluss der Systemeinrichtung und -Konfiguration bei aktivierter Netzwerkerkennung
 
 Wenn die Netzwerkerkennung auf Ihrem Laptop aktiviert ist, können Sie das System mit der automatischen Cluster-Erkennung einrichten und konfigurieren.
@@ -468,6 +479,7 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 
 
 
+[[option-2-completing-system-setup-and-configuration-if-network-discovery-is-not-enabled]]
 === Option 2: Abschluss der Systemeinrichtung und -Konfiguration, falls die Netzwerkerkennung nicht aktiviert ist
 
 Wenn die Netzwerkerkennung auf Ihrem Laptop nicht aktiviert ist, müssen Sie die Konfiguration und das Setup mit dieser Aufgabe abschließen.

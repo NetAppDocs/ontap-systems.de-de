@@ -34,6 +34,7 @@ Bei diesem Verfahren wird die folgende Terminologie verwendet:
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
 Schalten Sie den außer Betrieb genommenen Controller aus oder übernehmen Sie ihn.
@@ -91,6 +92,7 @@ Der Parameter _-halt true_ bringt den beeinträchtigten Knoten zur LOADER-Eingab
 
 
 
+[[step-2-replace-the-impaired-system-management-module]]
 == Schritt 2: Ersetzen Sie das Modul für die Systemverwaltung für beeinträchtigte Störungen
 
 Ersetzen Sie das Management-Modul für beeinträchtigte Systeme.
@@ -178,6 +180,7 @@ Boot-Medien
 
 
 
+[[step-3-reboot-the-controller-module]]
 == Schritt 3: Starten Sie das Controller-Modul neu
 
 Starten Sie das Controller-Modul neu.
@@ -222,6 +225,7 @@ NOTE: Der folgende Befehl ist nur auf der Berechtigungsebene „Diagnosemodus“
 
 
 
+[[step-4-install-licenses-and-register-serial-number]]
 == Schritt 4: Installieren Sie Lizenzen und registrieren Sie die Seriennummer
 
 Wenn Sie das Systemverwaltungsmodul austauschen, ändert sich die Systemseriennummer (SSN) des Controllers.  Sie müssen neue Lizenzen für den Knoten installieren, wenn der beeinträchtigte Knoten ONTAP Funktionen verwendet hat, für die eine Standardlizenz (knotengebunden) erforderlich ist.  Bei Funktionen mit Standardlizenzen sollte jeder Knoten im Cluster über einen eigenen Schlüssel für die Funktion verfügen.
@@ -263,6 +267,7 @@ Weitere Informationen finden Sie unter link:https://docs.netapp.com/us-en/ontap/
 
 
 
+[[step-5-return-the-failed-part-to-netapp]]
 == Schritt 5: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

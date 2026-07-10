@@ -17,6 +17,7 @@ Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielin
 
 
 
+[[option-1-most-configurations]]
 == Option 1: Die meisten Konfigurationen
 
 Schließen Sie das Herunterfahren des beschädigten Controllers ab, indem Sie ihn bis zur LOADER-Eingabeaufforderung anhalten und die Boot-Umgebungsvariablen erfassen. Die LOADER-Eingabeaufforderung ist der sichere angehaltene Zustand, von dem aus Sie das Bootmedium austauschen können.
@@ -60,6 +61,7 @@ NOTE: Dieser Befehl funktioniert möglicherweise nicht, wenn das Startgerät bes
 
 
 
+[[option-2-controller-is-in-a-metrocluster-configuration]]
 == Option 2: Controller befindet sich in einer MetroCluster-Konfiguration
 
 
@@ -119,6 +121,7 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 
 
 
+[[option-3-controller-is-in-a-two-node-metrocluster]]
 == Option 3: Controller befindet sich in einem MetroCluster mit zwei Nodes
 
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller umschalten, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.

@@ -19,6 +19,7 @@ Um ein E/A-Modul zu ersetzen, müssen Sie eine bestimmte Sequenz von Aufgaben au
 
 
 
+[[step-1-shut-down-the-impaired-node]]
 == Schritt 1: Fahren Sie den Knoten mit beeinträchtigten Knoten herunter
 
 Übernehmen Sie den fehlerhaften Controller und stoppen Sie ihn, damit der intakte Controller weiterhin Daten aus dem Speicher des fehlerhaften Controllers bereitstellt. Dazu unterdrücken Sie die automatische Fallerstellung in AutoSupport, deaktivieren die automatische Rückgabe und bringen den fehlerhaften Controller zur LOADER-Eingabeaufforderung. Die LOADER-Eingabeaufforderung ist der sichere, angehaltene Zustand, aus dem Sie die FRU ersetzen können.
@@ -84,6 +85,7 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 
 
 
+[[step-2-replace-io-modules]]
 == Schritt 2: E/A-Module ersetzen
 
 Um ein E/A-Modul zu ersetzen, suchen Sie es im Gehäuse und befolgen Sie die spezifischen Schritte.
@@ -141,6 +143,7 @@ E/A-Nockenverriegelung vollständig entriegelt
 
 
 
+[[step-3-reboot-the-controller-after-io-module-replacement]]
 == Schritt 3: Starten Sie den Controller nach dem Austausch des E/A-Moduls neu
 
 Nachdem Sie ein I/O-Modul ersetzt haben, müssen Sie das Controller-Modul neu starten.
@@ -171,6 +174,7 @@ NOTE: Achten Sie darauf, den Wartungsmodus nach Abschluss der Konvertierung zu b
 
 
 
+[[step-4-return-the-failed-part-to-netapp]]
 == Schritt 4: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

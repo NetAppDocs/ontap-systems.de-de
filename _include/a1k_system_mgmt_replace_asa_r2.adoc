@@ -34,6 +34,7 @@ Bei diesem Verfahren wird die folgende Terminologie verwendet:
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
 Schalten Sie den außer Betrieb genommenen Controller aus oder übernehmen Sie ihn.
@@ -106,6 +107,7 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 
 
 
+[[step-2-replace-the-impaired-system-management-module]]
 == Schritt 2: Ersetzen Sie das Modul für die Systemverwaltung für beeinträchtigte Störungen
 
 Ersetzen Sie das Management-Modul für beeinträchtigte Systeme.
@@ -194,6 +196,7 @@ Boot-Medien
 
 
 
+[[step-3-reboot-the-controller-module]]
 == Schritt 3: Starten Sie das Controller-Modul neu
 
 Starten Sie das Controller-Modul neu.
@@ -211,6 +214,7 @@ Das System wird neu gebootet, normalerweise bis zur LOADER-Eingabeaufforderung.
 
 
 
+[[step-4-install-licenses-and-register-serial-number]]
 == Schritt 4: Installieren Sie Lizenzen und registrieren Sie die Seriennummer
 
 Sie müssen neue Lizenzen für den Node installieren, wenn der beeinträchtigte Node ONTAP-Funktionen verwendet, für die eine standardmäßige (Node-locked) Lizenz erforderlich ist. Bei Standardlizenzen sollte jeder Node im Cluster über seinen eigenen Schlüssel für die Funktion verfügen.
@@ -249,6 +253,7 @@ NOTE: Die neuen Lizenzschlüssel, die Sie benötigen, werden automatisch generie
 
 
 
+[[step-5-return-the-failed-part-to-netapp]]
 == Schritt 5: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

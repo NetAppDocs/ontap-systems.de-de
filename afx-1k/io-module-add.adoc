@@ -17,6 +17,7 @@ Sie können Ihrem AFX 1K-Speichersystem ein E/A-Modul hinzufügen, wenn leere St
 
 
 
+[[step-1-shut-down-the-impaired-controller-module]]
 == Schritt 1: Schalten Sie das Controller-Modul für die gestörte Steuerung aus
 
 Übernehmen Sie den fehlerhaften Controller und stoppen Sie ihn, damit der intakte Controller weiterhin Daten aus dem Speicher des fehlerhaften Controllers bereitstellt. Dazu unterdrücken Sie die automatische Fallerstellung in AutoSupport, deaktivieren die automatische Rückgabe und bringen den fehlerhaften Controller zur LOADER-Eingabeaufforderung. Die LOADER-Eingabeaufforderung ist der sichere, angehaltene Zustand, aus dem Sie die FRU ersetzen können.
@@ -77,6 +78,7 @@ Der `-halt true` Der Parameter bringt Sie zur LOADER-Eingabeaufforderung.
 
 
 
+[[step-2-add-the-new-io-module]]
 == Schritt 2: Fügen Sie das neue E/A-Modul hinzu
 
 Wenn das Speichersystem über freie Steckplätze verfügt, installieren Sie das neue I/O-Modul in einem der verfügbaren Steckplätze. Wenn alle Steckplätze belegt sind, entfernen Sie ein vorhandenes E/A-Modul, um Platz zu schaffen, und installieren Sie dann das neue.

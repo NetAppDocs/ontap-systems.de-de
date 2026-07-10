@@ -19,6 +19,7 @@ https://docs.netapp.com/us-en/ontap-metrocluster/index.html["MetroCluster-Dokume
 
 
 
+[[step-1-prepare-for-installation]]
 == Schritt 1: Installation vorbereiten
 
 Um Ihr System zu installieren, müssen Sie ein Konto erstellen, das System registrieren und Lizenzschlüssel abrufen. Außerdem müssen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp für Ihr System inventarisieren und bestimmte Netzwerkinformationen erfassen.
@@ -157,6 +158,7 @@ https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["ONTAP Konfigurati
 
 
 
+[[step-2-install-the-hardware]]
 == Schritt 2: Installieren Sie die Hardware
 
 Sie müssen das System je nach Bedarf in einem 4-Säulen-Rack oder NetApp Systemschrank installieren.
@@ -179,6 +181,7 @@ image::../media/drw_c400_cable_tray_IEOPS-1208.svg[drw c400 Kabeleinschub IEOPS 
 
 
 
+[[step-3-cable-controllers-to-your-network]]
 == Schritt 3: Controller mit Ihrem Netzwerk verbinden
 
 Sie können die Controller mit dem Netzwerk verbinden, indem Sie die Cluster-Methode ohne zwei Nodes oder die Cluster-Methode mit Switches verwenden.
@@ -245,12 +248,14 @@ image::../media/drw_c400_switched_network_cabling_IEOPS-1190.svg[drw c400 geswit
 ====
 
 
+[[step-4-cable-controllers-to-drive-shelves]]
 == Schritt 4: Controller mit Laufwerk-Shelfs verkabeln
 
 Die folgenden Optionen zeigen, wie Sie ein oder zwei NS224-Laufwerk-Shelfs mit Ihrem System verkabeln.
 
 
 
+[[option-1-cable-the-controllers-to-a-single-drive-shelf]]
 === Option 1: Controller mit einem einzelnen Festplatten-Shelf verkabeln
 
 Sie müssen jeden Controller mit den NSM-Modulen am NS224-Laufwerk-Shelf verkabeln.
@@ -273,6 +278,7 @@ image::../media/drw_c400_one_ns224_shelf_IEOPS-1191.svg[drw c400 ein ns224-Shelf
 
 
 
+[[option-2-cable-the-controllers-to-two-drive-shelves]]
 === Option 2: Controller mit zwei Festplatten-Shelfs verkabeln
 
 Sie müssen jeden Controller an beiden NS224 Laufwerk-Shelfs mit den NSM-Modulen verkabeln.
@@ -295,12 +301,14 @@ image::../media/drw_c400_two_ns224_shelves_IEOPS-1192.svg[drw c400 zwei ns224-Sh
 
 
 
+[[step-5-complete-system-setup-and-configuration]]
 == Schritt 5: System-Setup und -Konfiguration abschließen
 
 Die Einrichtung und Konfiguration des Systems kann mithilfe der Cluster-Erkennung nur mit einer Verbindung zum Switch und Laptop abgeschlossen werden. Sie können auch direkt eine Verbindung zu einem Controller im System herstellen und dann eine Verbindung zum Management Switch herstellen.
 
 
 
+[[option-1-completing-system-setup-and-configuration-if-network-discovery-is-enabled]]
 === Option 1: Abschluss der Systemeinrichtung und -Konfiguration bei aktivierter Netzwerkerkennung
 
 Wenn die Netzwerkerkennung auf Ihrem Laptop aktiviert ist, können Sie das System mit der automatischen Cluster-Erkennung einrichten und konfigurieren.
@@ -364,6 +372,7 @@ https://mysupport.netapp.com/site/tools["NetApp Downloads: Config Advisor"]
 
 
 
+[[option-2-completing-system-setup-and-configuration-if-network-discovery-is-not-enabled]]
 === Option 2: Abschluss der Systemeinrichtung und -Konfiguration, falls die Netzwerkerkennung nicht aktiviert ist
 
 Wenn die Netzwerkerkennung auf Ihrem Laptop nicht aktiviert ist, müssen Sie die Konfiguration und das Setup mit dieser Aufgabe abschließen.

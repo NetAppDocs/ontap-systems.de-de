@@ -22,6 +22,7 @@ Das NVRAM-Modul besteht aus der NVRAM12-Hardware und vor Ort austauschbaren DIMM
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
 Schalten Sie den außer Betrieb genommenen Controller aus oder übernehmen Sie ihn.
@@ -79,6 +80,7 @@ Der Parameter _-halt true_ bringt den beeinträchtigten Knoten zur LOADER-Eingab
 
 
 
+[[step-2-replace-the-nvram-module-or-nvram-dimm]]
 == Schritt 2: Ersetzen Sie das NVRAM-Modul oder das NVRAM-DIMM
 
 Ersetzen Sie das NVRAM-Modul oder die NVRAM-DIMMs mit der entsprechenden Option.
@@ -180,6 +182,7 @@ NOTE: Verwenden Sie das FRU-Kartenetikett auf der Seite des NVRAM-Moduls, um die
 ====
 
 
+[[step-3-reboot-the-controller]]
 == Schritt 3: Starten Sie den Controller neu
 
 Nachdem Sie die FRU ersetzt haben, müssen Sie das Controller-Modul neu booten.
@@ -193,6 +196,7 @@ Das System wird neu gebootet, normalerweise bis zur LOADER-Eingabeaufforderung.
 
 
 
+[[step-4-complete-nvram-replacement]]
 == Schritt 4: Kompletter NVRAM -Austausch
 
 Führen Sie die folgenden Schritte aus, um den NVRAM Austausch abzuschließen.
@@ -276,6 +280,7 @@ NOTE: Der folgende Befehl ist nur auf der Berechtigungsebene „Diagnosemodus“
 
 
 
+[[step-5-return-the-failed-part-to-netapp]]
 == Schritt 5: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

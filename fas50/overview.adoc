@@ -15,6 +15,7 @@ Nachfolgend sind ausgewählte Spezifikationen für den FAS50 aufgeführt.  Besuc
 
 
 
+[[key-specifications-for-fas50]]
 === Wichtige Spezifikationen für FAS50
 
 Plattformkonfiguration: FAS50 Single Chassis HA-Paar
@@ -33,6 +34,7 @@ Mindestens erforderliche ONTAP -Version: ONTAP 9.16.1
 
 
 
+[[scaleout-maximums]]
 === Scaleout-Maximalwerte
 
 |===
@@ -51,6 +53,7 @@ Mindestens erforderliche ONTAP -Version: ONTAP 9.16.1
 |===
 
 
+[[io]]
 === IO
 
 
@@ -109,12 +112,14 @@ Keine Onboard-E/A-Daten.
 |===
 
 
+[[storage-networking-supported]]
 === Unterstützte Speichernetzwerke
 
 CIFS; FC; iSCSI; NFS v3; NFS v4.0; NFS v4.1; NFS v4.2; NVMe/FC; NVMe/TCP; S3; S3 mit NAS; SMB 2.0; SMB 2.1; SMB 2.x; SMB 3.0; SMB 3.1; SMB 3.1.1;
 
 
 
+[[system-environment-specifications]]
 === Spezifikationen der Systemumgebung
 
 * Typische Leistung: 2319 BTU/h
@@ -130,6 +135,7 @@ CIFS; FC; iSCSI; NFS v3; NFS v4.0; NFS v4.1; NFS v4.2; NVMe/FC; NVMe/TCP; S3; S3
 
 
 
+[[compliance]]
 === Einhaltung
 
 * Zertifizierungen EMC/EMI: AMCA, FCC, ICES, KC, Marokko, VCCI
@@ -142,6 +148,7 @@ CIFS; FC; iSCSI; NFS v3; NFS v4.0; NFS v4.1; NFS v4.2; NVMe/FC; NVMe/TCP; S3; S3
 
 
 
+[[high-availability]]
 === Hohe Verfügbarkeit
 
 Ethernet-basierter Baseboard Management Controller (BMC) und ONTAP Verwaltungsschnittstelle; redundante Hot-Swap-fähige Controller; redundante Hot-Swap-fähige Netzteile; SAS-In-Band-Verwaltung über SAS-Verbindungen für externe Shelves;

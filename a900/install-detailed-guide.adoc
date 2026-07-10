@@ -15,6 +15,7 @@ Dieser Artikel enthält Schritt-für-Schritt-Anleitungen zur Installation eines 
 
 
 
+[[step-1-prepare-for-installation]]
 == Schritt 1: Installation vorbereiten
 
 Um Ihr System zu installieren, müssen Sie auf der NetApp Support Site ein Konto erstellen, Ihr System registrieren und Lizenzschlüssel abrufen. Außerdem müssen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp für Ihr System inventarisieren und bestimmte Netzwerkinformationen erfassen.
@@ -170,6 +171,7 @@ System einschalten
 
 
 
+[[step-2-install-the-hardware]]
 == Schritt 2: Installieren Sie die Hardware
 
 Sie müssen das System je nach Bedarf in einem 4-Säulen-Rack oder NetApp Systemschrank installieren.
@@ -196,6 +198,7 @@ image::../media/drw_a900_controller_in_chassis_ID_IEOPS-856.svg[Typische Cluster
 
 
 
+[[step-3-cable-controllers-to-your-network]]
 == Schritt 3: Controller mit Ihrem Netzwerk verbinden
 
 Sie können die Controller mithilfe der Switch-freien Cluster-Methode mit zwei Nodes oder des Cluster Interconnect-Netzwerks mit dem Netzwerk verkabeln.
@@ -387,6 +390,7 @@ image::../media/drw_a900fas9500_power_icon_IEOPS-1142.svg[Stromanschlüsse]
 ====
 
 
+[[step-4-cable-controllers-to-drive-shelves]]
 == Schritt 4: Controller mit Laufwerk-Shelfs verkabeln
 
 Verkabeln Sie entweder ein einzelnes NS224 Laufwerk-Shelf oder zwei NS224 Laufwerk-Shelfs mit Ihren Controllern.
@@ -515,6 +519,7 @@ image:../media/oie_cable100_gbe_qsfp28.png["GbE Kupfer SFP"]
 ====
 
 
+[[step-5-complete-system-setup-and-configuration]]
 == Schritt 5: System-Setup und -Konfiguration abschließen
 
 Die Einrichtung und Konfiguration des Systems kann mithilfe der Cluster-Erkennung nur mit einer Verbindung zum Switch und Laptop abgeschlossen werden. Sie können auch direkt eine Verbindung zu einem Controller im System herstellen und dann eine Verbindung zum Management Switch herstellen.

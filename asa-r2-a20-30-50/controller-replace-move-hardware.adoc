@@ -15,6 +15,7 @@ Ersetzen Sie den Controller in Ihrem ASA A20-, ASA A30- oder ASA A50-Speichersys
 
 
 
+[[about-this-task]]
 == Über diese Aufgabe
 
 Bei Bedarf können Sie die LEDs des Speichersystems (blau) einschalten, um das betroffene Speichersystem physisch zu lokalisieren. Melden Sie sich über SSH bei der BMC an und geben Sie den Befehl ein `system location-led _on_`.
@@ -25,6 +26,7 @@ Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led
 
 
 
+[[step-1-remove-the-controller]]
 == Schritt 1: Entfernen Sie die Steuerung
 
 Sie müssen den Controller aus dem Chassis entfernen, wenn Sie den Controller austauschen oder eine Komponente im Controller austauschen.
@@ -136,6 +138,7 @@ Drehen Sie die Griffe bei Bedarf aufrecht (neben den Laschen), um sie aus dem We
 
 
 
+[[step-2-move-the-power-supply]]
 == Schritt 2: Das Netzteil bewegen
 
 Setzen Sie das Netzteil (PSU) auf den Ersatz-Controller.
@@ -273,6 +276,7 @@ NOTE: Um eine Beschädigung des internen Anschlusses zu vermeiden, verwenden Sie
 ====
 
 
+[[step-3-move-the-fans]]
 == Schritt 3: Bewegen Sie die Lüfter
 
 Bringen Sie die Lüfter zum Ersatzcontroller.
@@ -301,6 +305,7 @@ image::../media/icon_round_2.png[Legende Nummer 2]
 
 
 
+[[step-4-move-the-nv-battery]]
 == Schritt 4: Verschieben Sie den NV-Akku
 
 Bringen Sie die NV-Batterie in die Ersatzsteuerung.
@@ -353,6 +358,7 @@ Die NV-Batterie sollte bündig im Fach sitzen.
 
 
 
+[[step-5-move-system-dimms]]
 == Schritt 5: System-DIMMs verschieben
 
 Bringen Sie die DIMMs an den Ersatzcontroller.
@@ -420,6 +426,7 @@ CAUTION: Bevor Sie die Abdeckung des defekten Controllers schließen, vergewisse
 
 
 
+[[step-6-move-the-boot-media]]
 == Schritt 6: Verschieben Sie die Startmedien
 
 Bringen Sie das Startmedium auf den Ersatzcontroller.
@@ -470,6 +477,7 @@ Ziehen Sie das linke Ende des Trägermediums vorsichtig aus dem Sockel.
 
 
 
+[[step-7-move-the-io-modules]]
 == Schritt 7: Verschieben Sie die E/A-Module
 
 Bringen Sie die E/A-Module und alle E/A-Blindmodule auf den Ersatz-Controller.
@@ -521,6 +529,7 @@ Sie können die Lasche auf der linken Seite und die Flügelschraube verwenden, u
 
 
 
+[[step-8-install-the-controller]]
 == Schritt 8: Installieren Sie den Controller
 
 Setzen Sie den Controller wieder in das Gehäuse ein und starten Sie ihn neu.

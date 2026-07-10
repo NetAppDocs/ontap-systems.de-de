@@ -23,6 +23,7 @@ Je nachdem, welche Komponente Sie ersetzen müssen, können Sie einen der folgen
 
 
 
+[[replace-the-flash-cache-module-carrier]]
 == Ersetzen Sie den Flash Cache-Modulträger
 
 Der Flash Cache Modulträger befindet sich in Steckplatz 6 und beherbergt bis zu zwei Flash Cache Module. Sie können den Flash Cache Modulträger nicht im laufenden Betrieb austauschen
@@ -34,6 +35,7 @@ Der Flash Cache Modulträger befindet sich in Steckplatz 6 und beherbergt bis zu
 
 
 
+[[step-1-shut-down-the-impaired-node]]
 === Schritt 1: Fahren Sie den Knoten mit beeinträchtigten Knoten herunter
 
 Fahren Sie den Regler herunter oder übernehmen Sie ihn mit einer der folgenden Optionen.
@@ -180,6 +182,7 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 ====
 
 
+[[step-2-replace-the-flash-cache-module-carrier]]
 === Schritt 2: Ersetzen Sie den Flash Cache Modulträger
 
 Führen Sie die folgenden Schritte durch, um den Flash Cache Modulträger zu ersetzen.
@@ -249,6 +252,7 @@ Fehler-LED für Flash Cache-Modulträger
 
 
 
+[[step-3-reboot-the-controller]]
 === Schritt 3: Starten Sie den Controller neu
 
 Nachdem Sie den Flash Cache-Modulträger ersetzt haben, müssen Sie das Controller-Modul neu starten.
@@ -265,12 +269,14 @@ NOTE: Dadurch werden die I/O-Karten und andere Komponenten neu initialisiert und
 
 
 
+[[step-4-return-the-failed-part-to-netapp]]
 === Schritt 4: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.
 
 
 
+[[replace-the-caching-module]]
 == Ersetzen Sie das Caching-Modul
 
 Die Flash Cache Module (Caching-Module) befinden sich in Steckplatz 6-1 oder in Steckplatz 6-2 oder sowohl in Steckplatz 6-1 als auch in Steckplatz 6-2.

@@ -15,6 +15,7 @@ Setzen Sie das Ersatzverfahren fort, indem Sie den Speicher neu zuweisen und die
 
 
 
+[[step-1-recable-the-system]]
 == Schritt 1: Das System erneut einsetzen
 
 Überprüfen Sie die Speicher- und Netzwerkverbindungen des Controller-Moduls mithilfe von https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"] Die
@@ -28,6 +29,7 @@ Setzen Sie das Ersatzverfahren fort, indem Sie den Speicher neu zuweisen und die
 
 
 
+[[step-2-reassign-disks]]
 == Schritt 2: Festplatten neu zuweisen
 
 Wenn sich das Storage-System in einem HA-Paar befindet, wird die System-ID des neuen Controller-Moduls automatisch den Festplatten zugewiesen, wenn die Rückgabe am Ende des Verfahrens stattfindet. Sie müssen die Änderung der System-ID beim Booten des Controllers _Replacement_ bestätigen und anschließend überprüfen, ob die Änderung implementiert wurde.

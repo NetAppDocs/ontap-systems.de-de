@@ -15,6 +15,7 @@ Um die Hardware des Controller-Moduls zu ersetzen, müssen Sie den beeinträchti
 
 
 
+[[step-1-open-the-controller-module]]
 == Schritt 1: Öffnen Sie das Controller-Modul
 
 Zum Austauschen des Controller-Moduls müssen Sie zuerst das alte Controller-Modul aus dem Chassis entfernen.
@@ -56,6 +57,7 @@ Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen,
 
 
 
+[[step-2-move-the-boot-device]]
 == Schritt 2: Bewegen Sie das Startgerät
 
 Sie müssen das Bootmedium ausfindig machen und die Anweisungen befolgen, um es aus dem alten Controller zu entfernen und in den neuen Controller einzufügen.
@@ -79,6 +81,7 @@ Entfernen Sie gegebenenfalls die Startmedien, und setzen Sie sie wieder in den S
 
 
 
+[[step-3-move-the-nvmem-battery]]
 == Schritt 3: Verschieben Sie die NVMEM-Batterie
 
 Um die NVMEM-Batterie vom alten Controller-Modul in das neue Controller-Modul zu verschieben, müssen Sie eine bestimmte Sequenz von Schritten durchführen.
@@ -129,6 +132,7 @@ NVMEM-Akku
 
 
 
+[[step-4-move-the-dimms]]
 == Schritt 4: Verschieben Sie die DIMMs
 
 Um die DIMMs zu bewegen, suchen und bewegen Sie sie vom alten Controller in den Ersatz-Controller und befolgen Sie die entsprechenden Schritte.
@@ -165,6 +169,7 @@ NOTE: Prüfen Sie das DIMM visuell, um sicherzustellen, dass es gleichmäßig au
 
 
 
+[[step-5-move-a-pcie-card]]
 == Schritt 5: Verschieben Sie eine PCIe-Karte
 
 Um PCIe-Karten zu verschieben, suchen und verschieben Sie sie vom alten Controller in den Ersatz-Controller und befolgen Sie die spezifischen Schritte.
@@ -214,6 +219,7 @@ Achten Sie darauf, dass Sie die Karte richtig im Steckplatz ausrichten und sogar
 
 
 
+[[step-6-install-the-controller]]
 == Schritt 6: Installieren Sie den Controller
 
 Nachdem Sie die Komponenten aus dem alten Controller-Modul in das neue Controller-Modul installiert haben, müssen Sie das neue Controller-Modul im Systemgehäuse installieren und das Betriebssystem booten.

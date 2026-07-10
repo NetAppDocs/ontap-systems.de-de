@@ -15,6 +15,7 @@ Um die Hardware des Controller-Moduls zu ersetzen, müssen Sie den beeinträchti
 
 
 
+[[step-1-remove-the-controller-module]]
 == Schritt 1: Entfernen Sie das Controller-Modul
 
 Sie müssen das Controller-Modul aus dem Chassis entfernen, wenn Sie das Controller-Modul ersetzen oder eine Komponente im Controller-Modul ersetzen.
@@ -93,6 +94,7 @@ Luftkanal
 
 
 
+[[step-2-move-the-nvram-card]]
 == Schritt 2: Verschieben Sie die NVRAM-Karte
 
 Im Rahmen des Controlleraustauschs müssen Sie die NVRAM-Karte vom Riser 1 im Modul für beeinträchtigte Controller entfernen und die Karte in Riser 1 des Ersatzcontrollermoduls installieren. Sie sollten Riser 1 erst wieder in das Ersatzcontrollermodul einsetzen, nachdem Sie die DIMMs vom beeinträchtigten Controller-Modul in das Ersatzcontrollermodul verschoben haben.
@@ -173,6 +175,7 @@ NOTE: Stellen Sie sicher, dass die Karte vollständig und quadratische Position 
 
 
 
+[[step-3-move-pcie-cards]]
 == Schritt 3: PCIe-Karten verschieben
 
 Im Rahmen des Controller-Austauschprozesses müssen Sie beide PCIe-Riser-Module, Riser 2 (mittlere Riserkarte) und Riser 3 (Riser ganz rechts), vom beeinträchtigten Controller-Modul entfernen und die PCIe-Karten von den Riser-Modulen entfernen. Und installieren Sie die Karten in den gleichen Riser-Modulen im Ersatz-Controller-Modul. Sobald die DIMMs in das Ersatzcontrollermodul verschoben wurden, installieren Sie die Riser-Module im Ersatzcontrollermodul.
@@ -248,6 +251,7 @@ Stellen Sie sicher, dass die Karte vollständig und quadratische Position im Ris
 
 
 
+[[step-4-move-the-boot-media]]
 == Schritt 4: Verschieben Sie die Startmedien
 
 Die AFF A700s enthält zwei Boot-Medien: Einen primären und einen sekundären oder Backup-Boot-Medium. Sie müssen sie vom beeinträchtigten Controller in den _Replacement_ Controller verschieben und in die entsprechenden Steckplätze im _Replacement_ Controller einbauen.
@@ -319,6 +323,7 @@ Ziehen Sie die Schraube nicht zu fest, oder beschädigen Sie die Bootsmedien mö
 
 
 
+[[step-5-move-the-fans]]
 == Schritt 5: Bewegen Sie die Lüfter
 
 Sie müssen die Lüfter vom beeinträchtigten Controller-Modul in das Ersatzmodul verschieben, wenn ein ausgefallenes Controller-Modul ersetzt wird.
@@ -351,6 +356,7 @@ Lüftermodul
 
 
 
+[[step-6-move-system-dimms]]
 == Schritt 6: System-DIMMs verschieben
 
 Um die DIMMs zu verschieben, suchen und verschieben Sie sie vom beeinträchtigten Controller in den Ersatz-Controller und befolgen Sie die spezifischen Schritte.
@@ -412,6 +418,7 @@ NOTE: Prüfen Sie das DIMM visuell, um sicherzustellen, dass es gleichmäßig au
 
 
 
+[[step-7-install-the-nvram-module]]
 == Schritt 7: Installieren Sie das NVRAM-Modul
 
 Zur Installation des NVRAM-Moduls müssen Sie die entsprechende Sequenz von Schritten befolgen.
@@ -431,6 +438,7 @@ Bei der Verriegelung ist die Verriegelung bündig mit der Oberseite des Riser un
 
 
 
+[[step-8-move-the-nvram-battery]]
 == Schritt 8: Bewegen Sie den NVRAM-Akku
 
 Beim Austausch des Controller-Moduls müssen Sie den NVRAM-Akku vom beeinträchtigten Controller-Modul auf das Ersatzcontrollermodul verschieben
@@ -470,6 +478,7 @@ Blaue Verriegelungslasche für NVRAM-Batterien
 
 
 
+[[step-9-install-a-pcie-riser]]
 == Schritt 9: Installieren Sie einen PCIe-Riser
 
 Um einen PCIe-Riser zu installieren, müssen Sie eine bestimmte Sequenz von Schritten befolgen.
@@ -491,6 +500,7 @@ Bei der Verriegelung ist die Verriegelung bündig mit der Oberseite des Riser un
 
 
 
+[[step-10-move-the-power-supply]]
 == Schritt 10: Das Netzteil bewegen
 
 Sie müssen den Netzteilplatzhalter und den Netzteilplatzhalter vom beeinträchtigten Controller-Modul in das Ersatzcontrollermodul verschieben, wenn Sie ein Controller-Modul ersetzen.
@@ -536,6 +546,7 @@ NOTE: Um Schäden am internen Stecker zu vermeiden, sollten Sie beim Einschieben
 
 
 
+[[step-11-install-the-controller-module]]
 == Schritt 11: Installieren Sie das Controller-Modul
 
 Nachdem alle Komponenten vom beeinträchtigten Controller-Modul in das Ersatzcontrollermodul verschoben wurden, müssen Sie das Ersatzcontrollermodul in das Gehäuse installieren und in den Wartungsmodus starten.

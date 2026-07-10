@@ -15,6 +15,7 @@ Setzen Sie das Ersatzverfahren fort, indem Sie die Speicher- und Netzwerkkonsign
 
 
 
+[[step-1-recable-the-system]]
 == Schritt 1: Das System erneut einsetzen
 
 Sie müssen die Speicher- und Netzwerkverbindungen des Controller-Moduls neu aufbauen.
@@ -36,6 +37,7 @@ NOTE: Die Informationen zur System-ID und Festplattenzuordnung befinden sich im 
 
 
 
+[[step-2-reassign-disks]]
 == Schritt 2: Festplatten neu zuweisen
 
 Wenn sich das Storage-System in einem HA-Paar befindet, wird die System-ID des neuen Controller-Moduls automatisch den Festplatten zugewiesen, wenn die Rückgabe am Ende des Verfahrens stattfindet. Sie müssen die Änderung der System-ID beim Booten des Node _Replacement_ bestätigen und anschließend überprüfen, ob die Änderung implementiert wurde.

@@ -34,6 +34,7 @@ Da die System-ID vom NVRAM-Modul abgeleitet wird, werden beim Ersetzen des Modul
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
 Übernehmen Sie den fehlerhaften Controller und stoppen Sie ihn, damit der intakte Controller weiterhin Daten aus dem Speicher des fehlerhaften Controllers bereitstellt. Dazu unterdrücken Sie die automatische Fallerstellung in AutoSupport, deaktivieren die automatische Rückgabe und bringen den fehlerhaften Controller zur LOADER-Eingabeaufforderung. Die LOADER-Eingabeaufforderung ist der sichere, angehaltene Zustand, aus dem Sie die FRU ersetzen können.
@@ -99,6 +100,7 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 
 
 
+[[step-2-replace-the-nvram-module]]
 == Schritt 2: Ersetzen Sie das NVRAM-Modul
 
 Um das NVRAM-Modul auszutauschen, befindet es sich in Steckplatz 6 im Gehäuse und befolgen Sie die Schritte in der angegebenen Reihenfolge.
@@ -176,6 +178,7 @@ DIMM- und DIMM-Auswurfklammern
 
 
 
+[[step-3-replace-a-nvram-dimm]]
 == Schritt 3: Ersetzen Sie ein NVRAM-DIMM
 
 Um NVRAM-DIMMs im NVRAM-Modul zu ersetzen, müssen Sie das NVRAM-Modul entfernen, das Modul öffnen und dann das Ziel-DIMM ersetzen.
@@ -254,6 +257,7 @@ DIMM- und DIMM-Auswurfklammern
 
 
 
+[[step-4-reboot-the-controller-after-fru-replacement]]
 == Schritt 4: Starten Sie den Controller nach dem FRU-Austausch neu
 
 Nachdem Sie die FRU ersetzt haben, müssen Sie das Controller-Modul neu booten.
@@ -262,6 +266,7 @@ Um ONTAP von der LOADER-Eingabeaufforderung zu booten, geben Sie ein `bye`.
 
 
 
+[[step-5-reassigning-disks]]
 == Schritt 5: Festplatten neu zuweisen
 
 Sie müssen die Änderung der System-ID beim Booten des Ersatz-Controllers bestätigen und anschließend überprüfen, ob die Änderung implementiert wurde.
@@ -364,6 +369,7 @@ dr-group-id            cluster node           configuration-state
 
 
 
+[[step-6-return-the-failed-part-to-netapp]]
 == Schritt 6: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

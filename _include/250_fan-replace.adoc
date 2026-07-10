@@ -6,6 +6,7 @@ Entfernen Sie zum Austauschen eines Lüfters das fehlerhafte Lüftermodul und er
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
 Übernehmen Sie den fehlerhaften Controller und stoppen Sie ihn, damit der intakte Controller weiterhin Daten aus dem Speicher des fehlerhaften Controllers bereitstellt. Dazu unterdrücken Sie die automatische Fallerstellung in AutoSupport, deaktivieren die automatische Rückgabe und bringen den fehlerhaften Controller zur LOADER-Eingabeaufforderung. Die LOADER-Eingabeaufforderung ist der sichere, angehaltene Zustand, aus dem Sie die FRU ersetzen können.
@@ -76,6 +77,7 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 
 
 
+[[step-2-remove-the-controller-module]]
 == Schritt 2: Entfernen Sie das Controller-Modul
 
 Sie müssen das Controller-Modul aus dem Chassis entfernen, wenn Sie eine Komponente im Controller-Modul ersetzen.
@@ -136,6 +138,7 @@ Controller-Modulabdeckung
 
 
 
+[[step-3-replace-a-fan]]
 == Schritt 3: Ersetzen Sie einen Lüfter
 
 Entfernen Sie zum Austauschen eines Lüfters das fehlerhafte Lüftermodul und ersetzen Sie es durch ein neues Lüftermodul.
@@ -163,6 +166,7 @@ image:../media/icon_round_1.png["Legende Nummer 1"]
 
 
 
+[[step-4-reinstall-the-controller-module]]
 == Schritt 4: Installieren Sie das Controller-Modul neu
 
 Nachdem Sie eine Komponente im Controller-Modul ausgetauscht haben, müssen Sie das Controller-Modul im Systemgehäuse neu installieren und starten.
@@ -210,6 +214,7 @@ Das Controller-Modul startet, sobald die Stromversorgung wiederhergestellt ist. 
 
 
 
+[[step-5-return-the-failed-part-to-netapp]]
 == Schritt 5: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

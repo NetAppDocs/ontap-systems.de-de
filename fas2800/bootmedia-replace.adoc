@@ -17,6 +17,7 @@ Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielin
 
 
 
+[[step-1-remove-the-controller-module]]
 == Schritt 1: Entfernen Sie das Controller-Modul
 
 .Schritte
@@ -47,6 +48,7 @@ Entriegelungstaste der Steuermodulabdeckung
 |===
 
 
+[[step-2-replace-the-boot-media]]
 == Schritt 2: Ersetzen Sie die Startmedien
 
 Suchen Sie die Startmedien im Controller-Modul unter der Zusatzkarte, und befolgen Sie die Anweisungen zum Austauschen.
@@ -100,6 +102,7 @@ NOTE: Drehen oder ziehen Sie die Boot-Medien nicht gerade nach oben, da dadurch 
 
 
 
+[[step-3-transfer-the-boot-image-to-the-boot-media]]
 == Schritt 3: Übertragen Sie das Startabbild auf das Startmedium
 
 Installieren Sie das System-Image auf dem Ersatz-Startmedium mit einem USB-Flash-Laufwerk, auf dem das Image installiert ist. Während dieses Vorgangs müssen Sie das var-Dateisystem wiederherstellen.

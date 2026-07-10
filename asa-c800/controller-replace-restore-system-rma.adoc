@@ -15,6 +15,7 @@ Um den vollen Betrieb des Systems wiederherzustellen, müssen Sie die NetApp Sto
 
 
 
+[[step-1-install-licenses-for-the-replacement-controller-in-ontap]]
 == Schritt 1: Installieren Sie Lizenzen für den Ersatz-Controller in ONTAP
 
 Sie müssen neue Lizenzen für den Node _Replacement_ installieren, wenn der beeinträchtigte Knoten ONTAP-Funktionen verwendete, die eine Standard-Lizenz (Node-locked) erfordern. Bei Standardlizenzen sollte jeder Node im Cluster über seinen eigenen Schlüssel für die Funktion verfügen.
@@ -49,6 +50,7 @@ NOTE: Die neuen Lizenzschlüssel, die Sie benötigen, werden automatisch generie
 
 
 
+[[step-2-verify-lifs-and-registering-the-serial-number]]
 == Schritt: LIFs überprüfen und Seriennummer registrieren
 
 Bevor Sie den _Ersatzknoten_ wieder in Betrieb nehmen, sollten Sie überprüfen, ob sich die LIFs an ihren Home-Ports befinden, und die Seriennummer des _Ersatzknotens_ registrieren, falls AutoSupport aktiviert ist, den Zustand Ihres Clusters überprüfen, alle Wartungsfenster schließen und die automatische Rückgabe zurücksetzen.
@@ -71,6 +73,7 @@ Wenn eine der LIFs als falsch aufgeführt ist, stellen Sie sie auf ihre Home-Por
 
 
 
+[[step-3-return-the-failed-part-to-netapp]]
 == Schritt 3: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

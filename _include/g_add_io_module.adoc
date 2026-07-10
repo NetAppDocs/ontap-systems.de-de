@@ -24,12 +24,14 @@ Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led
 
 
 
+[[option-1-add-io-modules-to-a-storage-system-with-available-slots]]
 == Option 1: Hinzufügen von I/O-Modulen zu einem Speichersystem mit verfügbaren Steckplätzen
 
 Sie können ein I/O-Modul zu einem verfügbaren Steckplatz in jedem Controller hinzufügen.
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 === Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
 Fahren Sie den Regler herunter oder übernehmen Sie ihn mit einer der folgenden Optionen.
@@ -161,6 +163,7 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 ====
 
 
+[[step-2-add-io-modules-to-available-slots]]
 === Schritt 2: Fügen Sie E/A-Module zu verfügbaren Steckplätzen hinzu
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
@@ -215,6 +218,7 @@ Dadurch werden die PCIe-Geräte und andere Komponenten neu initialisiert und der
 
 
 
+[[option-2-add-io-modules-in-a-storage-system-with-unavailable-slots]]
 == Option 2: Fügen Sie I/O-Module in einem Speichersystem mit nicht verfügbaren Steckplätzen hinzu
 
 Sie können einem vollständig bestückten Speichersystem I/O-Module hinzufügen, indem Sie vorhandene I/O-Module entfernen und durch verschiedene I/O-Module ersetzen.
@@ -250,6 +254,7 @@ Verwenden Sie System Manager, um die LIFs dauerhaft zu verschiedenen Home Ports 
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 === Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
 Fahren Sie den Regler herunter oder übernehmen Sie ihn mit einer der folgenden Optionen.
@@ -381,6 +386,7 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 ====
 
 
+[[step-2-add-io-modules-to-unavailable-slots]]
 === Schritt 2: E/A-Module zu nicht verfügbaren Steckplätzen hinzufügen
 
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.

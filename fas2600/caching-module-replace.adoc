@@ -20,6 +20,7 @@ link:https://youtu.be/LaMzvnAwM_I["Video zum Austausch des AFF FAS2600 Caching-M
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
 Sie können den beeinträchtigten Controller je nach Hardwarekonfiguration des Speichersystems mithilfe verschiedener Verfahren herunterfahren oder übernehmen.
@@ -81,6 +82,7 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 
 
 
+[[step-2-remove-controller-module]]
 == Schritt 2: Controller-Modul entfernen
 
 Um auf Komponenten innerhalb des Controllers zuzugreifen, müssen Sie zuerst das Controller-Modul aus dem System entfernen und dann die Abdeckung am Controller-Modul entfernen.
@@ -107,6 +109,7 @@ image::../media/drw_2600_opening_pcm_cover.png[Öffnen oder Schließen des Contr
 
 
 
+[[step-3-replace-a-caching-module]]
 == Schritt 3: Ein Caching-Modul ersetzen
 
 Um ein Caching-Modul, das als M.2 PCIe-Karte auf dem Etikett des Controllers bezeichnet wird, zu ersetzen, suchen Sie den Steckplatz innerhalb des Controllers und folgen Sie den entsprechenden Schritten.
@@ -143,6 +146,7 @@ Entfernen Sie gegebenenfalls das Cache-Modul, und setzen Sie es wieder in den So
 
 
 
+[[step-4-reinstall-the-controller-module]]
 == Schritt 4: Installieren Sie das Controller-Modul neu
 
 Nachdem Sie die Komponenten im Controller-Modul ausgetauscht haben, setzen Sie sie wieder in das Gehäuse ein.
@@ -204,6 +208,7 @@ Der Controller beginnt zu booten, sobald er im Gehäuse sitzt.
 
 
 
+[[step-5-return-the-failed-part-to-netapp]]
 == Schritt 5: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.

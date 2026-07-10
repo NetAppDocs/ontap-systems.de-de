@@ -6,6 +6,7 @@ Um die Hardware des Controller-Moduls zu ersetzen, müssen Sie den beeinträchti
 
 
 
+[[step-1-remove-the-controller-module]]
 == Schritt 1: Entfernen Sie das Controller-Modul
 
 Um auf Komponenten im Controller-Modul zuzugreifen, müssen Sie das Controller-Modul aus dem Gehäuse entfernen.
@@ -74,6 +75,7 @@ Riser-Verriegelungen
 
 
 
+[[step-2-move-the-power-supplies]]
 == Schritt 2: Bewegen Sie die Netzteile
 
 Wenn Sie ein Controller-Modul ersetzen, müssen Sie das Netzteil vom beeinträchtigten Controller-Modul in das Ersatzcontrollermodul verschieben.
@@ -125,6 +127,7 @@ NOTE: Um Schäden am internen Stecker zu vermeiden, sollten Sie beim Einschieben
 
 
 
+[[step-3-move-the-nvdimm-battery]]
 == Schritt 3: Bewegen Sie den NVDIMM-Akku
 
 Um den NVDIMM-Akku vom Controller-Modul mit eingeschränkter Betriebsdauer auf das Ersatzcontrollermodul zu verschieben, müssen Sie eine bestimmte Sequenz von Schritten durchführen.
@@ -178,6 +181,7 @@ NOTE: Schließen Sie das Akkukabel erst dann wieder an die Hauptplatine an, wenn
 
 
 
+[[step-4-move-the-boot-media]]
 == Schritt 4: Verschieben Sie die Startmedien
 
 Sie müssen das Startmedium ausfindig machen und dann die Anweisungen befolgen, um es aus dem beeinträchtigten Controller-Modul zu entfernen und in das Ersatzcontrollermodul einzufügen.
@@ -227,6 +231,7 @@ Entfernen Sie gegebenenfalls die Startmedien, und setzen Sie sie wieder in den S
 
 
 
+[[step-5-move-the-pcie-risers-and-mezzanine-card]]
 == Schritt 5: Verschieben Sie die PCIe Riser und Mezzanine-Karte
 
 Im Rahmen des Controller-Austauschprozesses müssen Sie die PCIe Riser und die Mezzanine-Karte vom beeinträchtigten Controller-Modul auf das Ersatzcontrollermodul verschieben.
@@ -303,6 +308,7 @@ Der Riser hebt sich leicht vom Controller-Modul auf.
 
 
 
+[[step-6-move-the-dimms]]
 == Schritt 6: Verschieben Sie die DIMMs
 
 Sie müssen die DIMMs ausfindig machen und sie dann vom beeinträchtigten Controllermodul in das Ersatzcontrollermodul verschieben.
@@ -370,6 +376,7 @@ Vergewissern Sie sich, dass der Stecker am Controller-Modul abhält.
 
 
 
+[[step-7-install-the-controller-module]]
 == Schritt 7: Installieren Sie das Controller-Modul
 
 Nachdem alle Komponenten vom beeinträchtigten Controller-Modul in das Ersatzcontrollermodul verschoben wurden, müssen Sie das Ersatzcontrollermodul in das Gehäuse installieren und es dann in den Wartungsmodus booten.
