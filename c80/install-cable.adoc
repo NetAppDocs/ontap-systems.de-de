@@ -1,7 +1,7 @@
 ---
 permalink: c80/install-cable.html 
 sidebar: sidebar 
-keywords: aff c80, prepare installation 
+keywords: aff c80, prepare installation, cable the hardware 
 summary: Management-Netzwerk-Ports auf den Controllern sind mit Switches verbunden. Die HA Interconnect- und Cluster Interconnect-Ports sind an beiden Controllern verkabelt. Die Controller-Module werden bei Bestellung mit einem externen Speicher verbunden. 
 ---
 = Verkabeln Sie die Hardware - AFF C80
@@ -58,7 +58,7 @@ Verwenden Sie das Cluster/HA-Verbindungskabel, um die Ports e1a mit e1a und die 
 image::../media/oie_cable_25Gb_Ethernet_SFP28_ieops-1069.png[Cluster HA-Kabel]
 
 +
-image::../media/drw_a1k_tnsc_cluster_cabling_ieops-1648.svg[Verkabelungsdiagramm für Cluster mit zwei Nodes ohne Switches]
+image::../media/drw_70-90_tnsc_cluster_cabling_ieops-1653.svg[Verkabelungsdiagramm für Cluster mit zwei Nodes ohne Switches]
 
 
 
@@ -73,9 +73,10 @@ Verwenden Sie das 100-GbE-Kabel, um die Ports e1a und e7a der Controller A und B
 +
 *100-GbE-Kabel*
 
-
-
++
 image::../media/oie_cable100_gbe_qsfp28.png[100-GB-Kabel]
+
+
 
 image::../media/drw_70-90_switched_cluster_cabling_ieops-1657.svg[Verkabeln Sie Cluster-Verbindungen mit dem Cluster-Netzwerk]
 
@@ -88,13 +89,13 @@ image::../media/drw_70-90_switched_cluster_cabling_ieops-1657.svg[Verkabeln Sie 
 
 Verbinden Sie die Ethernet-Modulports mit Ihrem Hostnetzwerk.
 
-Im Folgenden finden Sie einige typische Beispiele für eine Verkabelung im Host-Netzwerk. Informationen zu Ihrer spezifischen Systemkonfiguration finden Sie unter link:https://hwu.netapp.com["NetApp Hardware Universe"^] .
+Nachfolgend finden Sie einige typische Beispiele für die Verkabelung des Host-Netzwerks. Siehe link:https://hwu.netapp.com["NetApp Hardware Universe"^] für Ihre spezifische Systemkonfiguration.
 
 .Schritte
 . Verbinden Sie die Ports e9a und e9b mit dem Ethernet-Datennetzwerk-Switch.
 +
 
-NOTE: Verwenden Sie die Ports e1b und e7b nicht für Host-Netzwerkverbindungen. Verwenden Sie eine separate Hostkarte.
+NOTE: Ports e1b und e7b sollten nicht für Host-Netzwerkverbindungen verwendet werden. Eine separate Host-Karte ist zu verwenden.
 
 +
 *100-GbE-Kabel*
@@ -105,7 +106,7 @@ image::../media/oie_cable_sfp_gbe_copper.png[100-GB-Ethernet-Kabel]
 +
 image::../media/drw_70-90_network_cabling1_ieops-1654.svg[Kabel zum 100-GB-Ethernet-Netzwerk]
 
-. Verbinden Sie Ihre 10/25 GbE Host-Netzwerk-Switches.
+. Schließen Sie Ihre 10/25 GbE-Karten an Ihre Host-Netzwerk-Switches an.
 +
 *4 Ports, 10/25 GbE Host*
 
@@ -142,6 +143,15 @@ Die folgenden Verkabelungsverfahren zeigen, wie Sie Ihre Controller mit einem St
 
 Die maximale Anzahl der unterstützten Einschübe für Ihr Speichersystem und alle Verkabelungsoptionen finden Sie unter link:https://hwu.netapp.com["NetApp Hardware Universe"^].
 
+.Über diese Aufgabe
+Das AFF C80 Speichersystem unterstützt NS224 Shelves mit entweder dem NSM100 oder dem NSM100B Modul. Die wichtigsten Unterschiede zwischen den Modulen sind:
+
+* NSM100-Regalmodule verwenden die integrierten Ports e0a und e0b.
+* NSM100B-Shelf-Module verwenden die Ports e1a und e1b in Steckplatz 1.
+
+
+Das folgende Verkabelungsbeispiel zeigt NSM100-Module in den NS224-Schränken, wenn auf die Anschlüsse der Regalmodule verwiesen wird.
+
 [role="tabbed-block"]
 ====
 .Option 1: Ein NS224 Storage-Shelf
@@ -154,7 +164,7 @@ image::../media/oie_cable100_gbe_qsfp28.png[100-GbE-QSFP28-Kupferkabel]
 
 .Schritte
 . Verbinden Sie den Controller A-Port e11a mit dem NSM A-Port e0a.
-. Verbinden Sie den Controller A-Port e11b mit dem Port NSM B Port e0b.
+. Verbinden Sie Controller A Port e11b mit NSM B Port e0b.
 +
 image:../media/drw_a70-90_1shelf_cabling_a_ieops-1731.svg["Controller A e11a und e11b zu einem einzelnen NS224 Shelf"]
 
@@ -178,9 +188,9 @@ image::../media/oie_cable100_gbe_qsfp28.png[100-GbE-QSFP28-Kupferkabel]
 . Verbinden Sie auf Controller A die folgenden Ports:
 +
 .. Verbinden Sie Port e11a mit Shelf 1, NSM A Port e0a.
-.. Verbinden Sie den Port e11b mit Shelf 2, den NSM B Port e0b.
-.. Verbinden Sie Port e8a mit Shelf 2, NSM A Port e0a.
 .. Verbinden Sie Port e8b mit Shelf 1, NSM B Port e0b.
+.. Verbinden Sie Port e8a mit Shelf 2, NSM A Port e0a.
+.. Verbinden Sie den Port e11b mit Shelf 2, den NSM B Port e0b.
 +
 image:../media/drw_a70-90_2shelf_cabling_a_ieops-1733.svg["Controller-zu-Shelf-Verbindungen für Controller A"]
 
@@ -189,9 +199,9 @@ image:../media/drw_a70-90_2shelf_cabling_a_ieops-1733.svg["Controller-zu-Shelf-V
 . Verbinden Sie an Controller B die folgenden Ports:
 +
 .. Verbinden Sie Port e11a mit Shelf 1, NSM B Port e0a.
-.. Verbinden Sie Port e11b mit Shelf 2, NSM A Port e0b.
-.. Verbinden Sie Port e8a mit Shelf 2, NSM B Port e0a.
 .. Verbinden Sie Port e8b mit Shelf 1, NSM A Port e0b.
+.. Verbinden Sie Port e8a mit Shelf 2, NSM B Port e0a.
+.. Port e11b mit Shelf 2, NSM A Port e0b verbinden.
 +
 image:../media/drw_a70-90_2shelf_cabling_b_ieops-1734.svg["Controller-zu-Shelf-Verbindungen für Controller B"]
 

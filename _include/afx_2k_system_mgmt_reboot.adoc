@@ -1,0 +1,44 @@
+= 
+:allow-uri-read: 
+
+
+Nach dem Austausch des Systemmanagement-Moduls wird der Controller neu gestartet, damit der normale HA-Paarbetrieb wiederhergestellt wird. Der Controller muss eingeschaltet, ein partieller Giveback durchgeführt werden, um das Root-Aggregat bereitzustellen, und anschließend wird der vollständige Giveback abgeschlossen, damit der beeinträchtigte Controller wieder in Betrieb genommen wird.
+
+.Schritte
+. Stecken Sie die Stromkabel wieder in das Netzteil.
++
+Das System wird neu gestartet, normalerweise bis zur LOADER-Eingabeaufforderung.
+
+. Geben Sie an der LOADER-Eingabeaufforderung _bye_ ein.
+. Drücken Sie <enter>, wenn die Konsolenmeldungen angehalten werden.
++
+** Wenn die _Anmeldeaufforderung_ angezeigt wird, fahren Sie mit dem nächsten Schritt fort.
+** Wenn keine Anmeldeaufforderung angezeigt wird, melden Sie sich beim Partnerknoten an.
+
+
+. Geben Sie nur die Wurzel mit der Option „override-destination-checks“ zurück:
++
+`storage failover giveback -ofnode impaired-node -only-root true -override -destination-checks true`
+
++
+
+NOTE: Der folgende Befehl ist nur auf der Berechtigungsebene „Diagnosemodus“ verfügbar.  Weitere Informationen zu Berechtigungsstufen finden Sie unterlink:https://docs.netapp.com/us-en/ontap/system-admin/administrative-privilege-levels-concept.html["Verstehen Sie die Berechtigungsstufen für ONTAP CLI-Befehle"^] .
+
++
+Wenn Sie auf Fehler stoßen, wenden Sie sich an https://support.netapp.com["NetApp Support"].
+
+. Warten Sie 5 Minuten, nachdem der Giveback-Bericht abgeschlossen ist, und überprüfen Sie dann den Failover- und Giveback-Status:
++
+`storage failover show`Und `storage failover show-giveback`
+
++
+
+NOTE: Der folgende Befehl ist nur auf der Berechtigungsebene „Diagnosemodus“ verfügbar.
+
+. Stellen Sie den funktionsbeeinträchtigten Controller wieder in den Normalbetrieb ein, indem Sie den Speicher zurückgeben:
++
+`storage failover giveback -ofnode _impaired_node_name_`
+
+. Wenn die automatische Rückgabe deaktiviert war, aktivieren Sie sie erneut: `storage failover modify -node local -auto-giveback-of true` .
+. Wenn AutoSupport aktiviert ist, kann die automatische Fallerstellung wiederhergestellt/aufgehoben werden: `system node autosupport invoke -node * -type all -message MAINT=END`.
+

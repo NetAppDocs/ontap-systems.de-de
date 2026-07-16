@@ -13,7 +13,7 @@ summary: Das Systemmanagementmodul im afx 2k Storage-System wird ersetzt, wenn e
 [role="lead"]
 Das Systemmanagement-Modul im AFX 2K Storage-System ist auszutauschen, wenn es defekt ist oder seine Firmware beschädigt ist. Der Austauschprozess umfasst das Herunterfahren des Controllers, den Austausch des ausgefallenen Systemmanagement-Moduls, den Neustart des Controllers, die Aktualisierung der Lizenzschlüssel und die Rücksendung des ausgefallenen Teils an NetApp.
 
-Das Systemverwaltungsmodul, das sich auf der Rückseite des Controllers links neben Steckplatz 8 befindet, enthält integrierte Komponenten für die Systemverwaltung sowie Anschlüsse für die externe Verwaltung.  Um ein beschädigtes Systemverwaltungsmodul oder das Startmedium auszutauschen, muss der Zielcontroller heruntergefahren und ausgeschaltet werden.
+Das Systemmanagement-Modul, das sich an der Rückseite des Controllers links neben Steckplatz 8 befindet, enthält integrierte Komponenten für das Systemmanagement sowie Ports für das externe Management. Der Zielcontroller muss heruntergefahren und ausgeschaltet sein, um ein defektes Systemmanagement-Modul oder das Bootmedium auszutauschen.
 
 Das System-Management-Modul verfügt über die folgenden integrierten Komponenten:
 
@@ -47,8 +47,6 @@ Bei diesem Verfahren wird die folgende Terminologie verwendet:
 
 [[step-1-shut-down-the-impaired-controller]]
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
-
-Schalten Sie den außer Betrieb genommenen Controller aus oder übernehmen Sie ihn.
 
 Übernehmen Sie den fehlerhaften Controller und stoppen Sie ihn, damit der intakte Controller weiterhin Daten aus dem Speicher des fehlerhaften Controllers bereitstellt. Dazu unterdrücken Sie die automatische Fallerstellung in AutoSupport, deaktivieren die automatische Rückgabe und bringen den fehlerhaften Controller zur LOADER-Eingabeaufforderung. Die LOADER-Eingabeaufforderung ist der sichere, angehaltene Zustand, aus dem Sie die FRU ersetzen können.
 
@@ -106,12 +104,13 @@ Der Parameter _-halt true_ bringt den beeinträchtigten Knoten zur LOADER-Eingab
 [[step-2-replace-the-impaired-system-management-module]]
 == Schritt 2: Ersetzen Sie das Modul für die Systemverwaltung für beeinträchtigte Störungen
 
-Ersetzen Sie das Management-Modul für beeinträchtigte Systeme.
+Das Systemmanagementmodul enthält das Bootmedium und stellt Systemmanagementfunktionen bereit. Das defekte Systemmanagementmodul muss entfernt, das Bootmedium auf das Ersatzmodul übertragen und das Ersatzmodul wieder im Gehäuse installiert werden.
 
+.Schritte
 . Entfernen Sie das System Management-Modul:
 +
 
-NOTE: Stellen Sie sicher, dass der NVRAM-Speicher vollständig ist, bevor Sie fortfahren. Wenn die LED am NV-Modul aus ist, wird NVRAM abgestapft. Wenn die LED blinkt, warten Sie, bis das Blinken beendet ist. Wenn das Blinken länger als 5 Minuten andauert, wenden Sie sich an den technischen Support, um Unterstützung zu erhalten.
+NOTE: Stellen Sie sicher, dass die NVRAM-Destage abgeschlossen ist, bevor Sie fortfahren. Wenn die LED am NV-Modul aus ist, ist die NVRAM-Destage abgeschlossen. Wenn die LED blinkt, sollte gewartet werden, bis das Blinken aufhört. Falls das Blinken länger als 5 Minuten andauert, sollte der Technical Support kontaktiert werden.
 
 +
 image::../media/drw_afx_2k_sys_mgmt_remove_replace_ieops-2880.svg[Ersetzen Sie das System Management-Modul]
@@ -194,8 +193,9 @@ Boot-Medien
 [[step-3-reboot-the-controller-module]]
 == Schritt 3: Starten Sie das Controller-Modul neu
 
-Starten Sie das Controller-Modul neu.
+Nach dem Austausch des Systemmanagement-Moduls wird der Controller neu gestartet, damit der normale HA-Paarbetrieb wiederhergestellt wird. Der Controller muss eingeschaltet, ein partieller Giveback durchgeführt werden, um das Root-Aggregat bereitzustellen, und anschließend wird der vollständige Giveback abgeschlossen, damit der beeinträchtigte Controller wieder in Betrieb genommen wird.
 
+.Schritte
 . Stecken Sie die Stromkabel wieder in das Netzteil.
 +
 Das System wird neu gestartet, normalerweise bis zur LOADER-Eingabeaufforderung.

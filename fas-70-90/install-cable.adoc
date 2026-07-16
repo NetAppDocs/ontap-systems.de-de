@@ -90,13 +90,13 @@ image::../media/drw_a1k_switched_cluster_cabling_ieops-1652.svg[Verkabeln Sie Cl
 
 Verbinden Sie die Ethernet-Modulports mit Ihrem Hostnetzwerk.
 
-Im Folgenden finden Sie einige typische Beispiele für eine Verkabelung im Host-Netzwerk. Informationen zu Ihrer spezifischen Systemkonfiguration finden Sie unter link:https://hwu.netapp.com["NetApp Hardware Universe"^] .
+Nachfolgend finden Sie einige typische Beispiele für die Verkabelung des Host-Netzwerks. Siehe link:https://hwu.netapp.com["NetApp Hardware Universe"^] für Ihre spezifische Systemkonfiguration.
 
 .Schritte
 . Verbinden Sie die Ports e9a und e9b mit dem Ethernet-Datennetzwerk-Switch.
 +
 
-NOTE: Verwenden Sie die Ports e1b und e7b nicht für Host-Netzwerkverbindungen. Verwenden Sie eine separate Hostkarte.
+NOTE: Ports e1b und e7b sollten nicht für Host-Netzwerkverbindungen verwendet werden. Eine separate Host-Karte ist zu verwenden.
 
 +
 *100-GbE-Kabel*
@@ -147,7 +147,7 @@ Die maximale Anzahl der unterstützten Einschübe für Ihr Speichersystem und al
 Weitere Informationen zur Verkabelung des SAS-Shelfs finden Sie unter link:https://docs.netapp.com/us-en/ontap-systems/sas3/install-cabling-rules.html["SAS-Verkabelungsregeln und -Konzepte – Shelfs mit IOM12/IOM12B-Modulen"].
 
 .Über diese Aufgabe
-Die Speichersysteme FAS70 und FAS90 unterstützen DS212C-, DS224C-, DS460C- und NS224-Shelves entweder mit dem Modul NSM100 oder NSM100B.
+Die FAS70 und FAS90 Speichersysteme unterstützen DS212C, DS224C, DS460C und NS224 Shelves mit entweder dem NSM100 oder NSM100B Modul.
 
 Die Hauptunterschiede zwischen den NS224-Modulen sind:
 
@@ -171,7 +171,7 @@ image::../media/oie_cable100_gbe_qsfp28.png[100-GbE-QSFP28-Kupferkabel]
 . Verbinden Sie auf Controller A die folgenden Ports:
 +
 .. Verbinden Sie Port e11a mit NSM A Port e0a.
-.. Verbinden Sie Port e11b mit Port NSM B Port e0b.
+.. Verbinden Sie Port e11b mit NSM B Port e0b.
 +
 image:../media/drw_a1k_1shelf_cabling_a_ieops-1703.svg["Controller A e11a und e11b zu einem einzelnen NS224 Shelf"]
 
@@ -201,24 +201,24 @@ image::../media/oie_cable100_gbe_qsfp28.png[100-GbE-QSFP28-Kupferkabel]
 . Verbinden Sie auf Controller A die folgenden Ports:
 +
 .. Verbinden Sie Port e11a mit Shelf 1 NSM A Port e0a.
-.. Verbinden Sie den Port e11b mit dem Shelf 2 NSM B-Port e0b.
-.. Verbinden Sie Port e10a mit Shelf 2 NSM A Port E0a.
 .. Verbinden Sie Port e10b mit Port e0b von Shelf 1 NSM B.
-
-
+.. Verbinden Sie Port e10a mit Shelf 2 NSM A Port E0a.
+.. Verbinden Sie den Port e11b mit dem Shelf 2 NSM B-Port e0b.
 +
 image:../media/drw_a1k_2shelf_cabling_a_ieops-1705.svg["Kabel-Controller A-Ports e11a e11b e10a und e10b zu zwei NS224-Einschüben"]
+
+
 
 . Verbinden Sie an Controller B die folgenden Ports:
 +
 .. Verbinden Sie Port e11a mit Shelf 1 NSM B Port e0a.
-.. Verbinden Sie Port e11b mit Shelf 2 NSM A Port e0b.
-.. Verbinden Sie Port e10a mit Shelf 2 NSM B Port e0a.
 .. Verbinden Sie Port e10b mit Shelf 1 NSM A Port e0b.
-
-
+.. Verbinden Sie Port e10a mit Shelf 2 NSM B Port e0a.
+.. Verbinden Sie Port e11b mit Shelf 2 NSM A Port e0b.
 +
 image:../media/drw_a1k_2shelf_cabling_b_ieops-1706.svg["Kabel-Controller B-Anschlüsse e11a e11b e10a und e10b zu zwei NS224-Einschüben"]
+
+
 
 
 
