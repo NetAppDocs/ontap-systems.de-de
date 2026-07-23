@@ -4,13 +4,15 @@ sidebar: sidebar
 keywords: aff a250, replace a dimm 
 summary: Tauschen Sie ein DIMM in Ihrem AFF A250 Controller aus, wenn das System aufgrund von Health Monitor-Warnungen übermäßig viele CECC-Fehler oder nicht korrigierbare ECC-Fehler feststellt, die das Speichersystem am Starten von ONTAP hindern. 
 ---
-= Ersetzen Sie ein DIMM - AFF A250
+= Ein DIMM-Modul im AFF A250-System ersetzen, um Speicherfehler zu beheben
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
+Ein DIMM in Ihrem AFF A250 System sollte ersetzt werden, wenn das Speichersystem eine übermäßige Anzahl korrigierbarer (CECC) oder nicht korrigierbarer Speicherfehler feststellt. Solche Fehler können verhindern, dass das Speichersystem ONTAP startet.
+
 Sie müssen ein DIMM im Controller ersetzen, wenn das Speichersystem auf Fehler wie übermäßige CECC-Fehler (korrigierbare Fehlerkorrekturcodes) stößt, die auf Warnmeldungen der Systemzustandsüberwachung oder nicht korrigierbaren ECC-Fehlern basieren, die normalerweise durch einen einzelnen DIMM-Fehler verursacht werden, der das Starten von ONTAP verhindert.
 
 .Über diese Aufgabe

@@ -4,13 +4,15 @@ sidebar: sidebar
 keywords: aff a400, aff, a400, boot, media, store, primary, secondary, set, system, boot, image, file, replace, replace the boot media 
 summary: Das Bootmedium speichert einen primären und einen sekundären Satz von Systemdateien, die das System beim Start verwendet. 
 ---
-= Übersicht über den Austausch von Bootmedien - AFF A400
+= Anforderungen für den Austausch des Bootmediums in Ihrem AFF A400 System
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
+Bevor das Bootmedium in Ihrem AFF A400 System ausgetauscht wird, sollten die notwendigen Voraussetzungen für eine erfolgreiche Entfernung erfüllt sein. Dazu gehört ein mit FAT32 formatierter USB-Stick mit ausreichend Speicherplatz für das ONTAP Recovery-Image sowie die Kenntnis darüber, ob eine unterbrechungsfreie oder eine unterbrechende Entfernung durchgeführt wird.
+
 Das Boot-Medium speichert einen primären und sekundären Satz von Systemdateien (Boot-Image), die das System beim Booten verwendet. Je nach Netzwerkkonfiguration können Sie entweder einen unterbrechungsfreien oder störenden Austausch durchführen.
 
 [NOTE]

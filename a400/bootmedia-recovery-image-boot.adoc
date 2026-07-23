@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: aff a400, aff, a400, procedure, boot, impair, controller, recovery, image, system, two-node, metrocluster, configuration, boot the recovery image 
 summary: Das Verfahren zum Booten des beeinträchtigten Controllers über das Recovery-Image hängt davon ab, ob sich das System in einer MetroCluster-Konfiguration mit zwei Knoten befindet. 
 ---
-= Manuelle Wiederherstellung eines Bootmediums von einem USB-Laufwerk – AFF A400
+= Das Wiederherstellungsimage auf Ihrem AFF A400 System wird mithilfe des manuellen Boot-Recovery-Prozesses gestartet.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Nach der Installation des neuen Startmediengeräts im System können Sie das Wiederherstellungsabbild von einem USB-Laufwerk starten und die Konfiguration vom Partnerknoten wiederherstellen.
+Nach der Installation des neuen Bootmediums in Ihrem AFF A400 System wird das ONTAP Wiederherstellungsimage von einem USB-Laufwerk gestartet, um die Konfiguration vom Partnerknoten wiederherzustellen.
 
 Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie den manuellen Boot-Wiederherstellungsprozess verwenden.
 

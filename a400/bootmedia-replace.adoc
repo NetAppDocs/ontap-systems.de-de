@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: aff a400, aff, a400, locate, boot, media, controller, module, fre, map, direction, replace, replace the boot media 
 summary: Sie müssen das Bootmedium im Controllermodul lokalisieren und dann die Anweisungen zum Austausch befolgen. 
 ---
-= Ersetzen Sie das Startmedium und bereiten Sie die manuelle Startwiederherstellung vor - AFF A400
+= Das Bootmedium im AFF A400-System kann mithilfe des manuellen Boot-Wiederherstellungsprozesses ersetzt werden.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Zum Austauschen des Startmediums müssen Sie das beeinträchtigte Controller-Modul entfernen, das Ersatzstartmedium installieren und das Boot-Image auf ein USB-Flash-Laufwerk übertragen.
+Das Bootmedium in Ihrem AFF A400 System speichert wichtige Firmware- und Konfigurationsdaten. Der Austauschvorgang umfasst die Entfernung des Controllermoduls, die Entfernung des defekten Bootmediums, das Einsetzen des Ersatz-Bootmediums und anschließend die Übertragung des ONTAP Image auf das Ersatz-Bootmedium mithilfe eines USB-Flash-Laufwerks.
 
 Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie den manuellen Boot-Wiederherstellungsprozess verwenden.
 

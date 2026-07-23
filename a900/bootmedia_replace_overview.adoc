@@ -4,13 +4,15 @@ sidebar: sidebar
 keywords: AFF A900 
 summary: Das Startmedium enthält einen primären und einen sekundären Satz von Systemdateien, die das System beim Start verwendet. Je nach Netzwerkkonfiguration können Sie entweder einen unterbrechungsfreien oder einen unterbrechenden Austausch durchführen. 
 ---
-= Ersetzen Sie den Startdatenträger - AFF A900
+= Anforderungen für den Austausch des Bootmediums in Ihrem AFF A900 System prüfen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
+Bevor das Bootmedium in Ihrem AFF A900 System ausgetauscht wird, sollten die notwendigen Voraussetzungen für einen erfolgreichen Austausch erfüllt sein. Dazu gehört ein mit FAT32 formatierter USB-Stick mit ausreichend Speicherplatz für das ONTAP Recovery Image sowie das Verständnis, ob ein unterbrechungsfreier oder unterbrechender Austausch durchgeführt wird.
+
 Das Boot-Medium speichert einen primären und sekundären Satz von Systemdateien (Boot-Image), die das System beim Booten verwendet. Je nach Netzwerkkonfiguration können Sie entweder einen unterbrechungsfreien oder störenden Austausch durchführen.
 
 [NOTE]

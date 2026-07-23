@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: aff a400, replace the boot media 
 summary: Beginnen Sie mit dem Ersetzen des Bootmediums in Ihrem AFF A400 Speichersystem, indem Sie die Anforderungen für den Austausch überprüfen, den Verschlüsselungsstatus prüfen, den Controller herunterfahren, das Bootmedium ersetzen, das Wiederherstellungsimage booten, die Verschlüsselung wiederherstellen und die Systemfunktionalität überprüfen. 
 ---
-= Manueller Wiederherstellungsworkflow für Bootmedien – AFF A400
+= Ablauf für den Austausch des Bootmediums beim AFF A400 mithilfe des manuellen Boot-Wiederherstellungsprozesses
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Bei der automatischen Wiederherstellung des Boot-Images erkennt und wählt das System automatisch die entsprechende Boot-Menüoption aus. Es verwendet das Boot-Image auf dem Partnerknoten, um ONTAP auf dem Ersatz-Boot-Medium in Ihrem AFF A400 Speichersystem neu zu installieren.
+Der Austausch des Bootmediums in Ihrem AFF A400 System kann mit dem manuellen Boot-Recovery-Prozess begonnen werden. Das entsprechende ONTAP Recovery-Image muss von der NetApp Support Site heruntergeladen und auf ein USB-Laufwerk kopiert werden, um die Wiederherstellung durchzuführen und das System wieder in den Betriebszustand zu versetzen.
 
 Der automatisierte Boot-Medien-Wiederherstellungsprozess wird nur in ONTAP 9.17.1 und höher unterstützt. Wenn Ihr Speichersystem eine frühere Version von ONTAP verwendet, verwenden Sie die link:bootmedia-replace-workflow.html["manuelle Boot-Wiederherstellung"] .
 

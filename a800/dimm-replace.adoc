@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: aff a800, replace a dimm 
 summary: Tauschen Sie ein DIMM in Ihrem AFF A800 Controller-Modul aus, wenn das System eine zunehmende Anzahl von korrigierbaren Fehlerkorrekturcodes oder nicht korrigierbaren ECC-Fehlern registriert. Wenn ein fehlerhaftes DIMM nicht ersetzt wird, kann dies zu einem Systemabsturz führen. 
 ---
-= Ersetzen Sie ein DIMM – AFF A800
+= Ein DIMM im AFF A800 System ersetzen, um Speicherfehler zu beheben.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Tauschen Sie ein DIMM in Ihrem AFF A800 -System aus, wenn übermäßig viele korrigierbare oder nicht korrigierbare Speicherfehler festgestellt werden. Solche Fehler können verhindern, dass das Speichersystem ONTAP bootet. Der Austauschvorgang umfasst das Herunterfahren des beschädigten Controllers, dessen Entfernung, den Austausch des DIMM, die Neuinstallation des Controllers und die anschließende Rücksendung des defekten Teils an NetApp.
+Ein DIMM in Ihrem AFF A800 System sollte ersetzt werden, wenn das Speichersystem eine übermäßige Anzahl korrigierbarer (CECC) oder nicht korrigierbarer Speicherfehler feststellt. Solche Fehler können verhindern, dass das Speichersystem ONTAP startet.
 
 .Bevor Sie beginnen
 * Stellen Sie sicher, dass alle anderen Komponenten im System ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
