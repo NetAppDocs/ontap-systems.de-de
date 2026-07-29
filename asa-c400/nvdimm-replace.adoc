@@ -4,13 +4,15 @@ sidebar: sidebar
 keywords: asa c400, asa, c400, replace, nvdimm, controller, module, system, register, flash, lifetime, healthy, system, panic, shut, down, impair, two-node, metrocluster, complete, replacement, process, replace an nvdimm, shut down the impaired controller, remove the controller module, replace the nvdimm, install the controller module, restore the controller module to operation, switch back aggregates in a two-node metrocluster configuration, complete the replacement process 
 summary: Sie müssen das NVDIMM im Controllermodul austauschen, sobald Ihr System erkennt, dass die Lebensdauer des Flash-Speichers fast abgelaufen ist oder das identifizierte NVDIMM allgemein nicht in Ordnung ist. Andernfalls kommt es zu einem Systemabsturz. 
 ---
-= Ersetzen Sie ein NVDIMM - ASA C400
+= Ein NVDIMM in Ihrem ASA C400 System ersetzen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
+Ein NVDIMM in Ihrem ASA C400 System sollte ersetzt werden, wenn das Speichersystem übermäßig viele korrigierbare ECC-Fehler oder nicht korrigierbare ECC-Fehler feststellt, die typischerweise durch einen einzelnen NVDIMM-Ausfall verursacht werden.
+
 Sie müssen das NVDIMM im Controller-Modul ersetzen, wenn sich Ihr System registriert, dass die Flashlebensdauer fast am Ende liegt oder dass das identifizierte NVDIMM im Allgemeinen nicht ordnungsgemäß ist. Andernfalls kommt es zu einer Systempanik.
 
 Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
