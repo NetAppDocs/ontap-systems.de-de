@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: asa c30, hot swap a cluster ha card, hot swap ethernet client io module, hotswap io module, hot swap io module 
 summary: Sie können ein Ethernet-E/A-Modul in Ihrem ASA C30-Speichersystem per Hot-Swap austauschen, wenn ein Modul ausfällt und Ihr Speichersystem alle ONTAP-Versionanforderungen erfüllt. 
 ---
-= Hot-Swap eines E/A-Moduls - ASA C30
+= Ein E/A-Modul kann in Ihrem ASA C30 System Hot-Swap-fähig ausgetauscht werden, ohne dass ein Herunterfahren erforderlich ist.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -207,7 +207,7 @@ Die Ausgabe sollte  `_powered-off_` in der  `_status_` Spalte für das ausgefall
 [[step-3-hot-swap-the-failed-io-module]]
 == Schritt 3: Das defekte E/A-Modul per Hot-Swap austauschen
 
-Tauschen Sie das defekte E/A-Modul im Hot-Swap-Verfahren gegen ein gleichwertiges E/A-Modul aus:
+Das defekte E/A-Modul kann im laufenden Betrieb gegen ein gleichwertiges E/A-Modul ausgetauscht werden:
 
 .Schritte
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
