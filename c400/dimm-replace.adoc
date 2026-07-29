@@ -4,13 +4,15 @@ sidebar: sidebar
 keywords: aff c400, aff, c400, replace, dimm, controller, module, system, register, correctable, error, correction, code, ecc, system, panic, shut, down, impair, remove, controller, module, system, module, aggregate, two-node, metrocluster, configuration, replace a dimm, shut down the impaired controller, remove the controller module, replace system dimms, install the controller module, restore the controller module to operation, switch back aggregates in a two-node metrocluster configuration 
 summary: 'Sie müssen ein DIMM im Controllermodul austauschen, wenn Ihr System eine zunehmende Anzahl korrigierbarer Fehlerkorrekturcodes (ECC) registriert, oder wenn das Unterlassen zu einem Systemabsturz führt.' 
 ---
-= Ersetzen Sie ein DIMM-Modul – AFF C400
+= Ein DIMM in Ihrem AFF C400 Speichersystem kann ausgetauscht werden, um Speicherfehler zu beheben.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
+Ein DIMM in Ihrem AFF C400 Speichersystem sollte ersetzt werden, wenn das System auf übermäßig viele korrigierbare ECC-Fehler oder einen nicht korrigierbaren ECC-Fehler stößt, was typischerweise durch den Ausfall eines einzelnen DIMM verursacht wird.
+
 Sie müssen ein DIMM im Controller-Modul ersetzen, wenn Ihr System eine steigende Anzahl korrigierbarer Fehlerkorrekturcodes (ECC) registriert; andernfalls wird eine Systempanik verursacht.
 
 Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.

@@ -4,16 +4,16 @@ sidebar: sidebar
 keywords: aff c400, aff, c400, fru, replacement, two-node, metrocluster, configuration, switchback, operation, operating, system, sync-source, storage,virtual, machine, svm, impair, site, serving, data, local, disk, pool, switch, aggregate, switch back aggregates in a two-node metrocluster configuration 
 summary: 'Nachdem Sie in einer MetroCluster Konfiguration mit zwei Nodes den FRU-Austausch abgeschlossen haben, können Sie den MetroCluster SwitchBack-Vorgang durchführen. Damit wird die Konfiguration in ihren normalen Betriebszustand zurückversetzt, wobei die Synchronisations-Storage Virtual Machines (SVMs) auf dem ehemals beeinträchtigten Standort jetzt aktiv sind und Daten aus den lokalen Festplattenpools bereitstellen.' 
 ---
-= Switch back von Aggregaten in einer MetroCluster-Konfiguration mit zwei Nodes – AFF C400
+= Aggregate in einer Zwei-Knoten-MetroCluster-Konfiguration in Ihrem AFF C400 Storage-System zurückwechseln
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Nachdem Sie in einer MetroCluster Konfiguration mit zwei Nodes den FRU-Austausch abgeschlossen haben, können Sie den MetroCluster SwitchBack-Vorgang durchführen. Damit wird die Konfiguration in ihren normalen Betriebszustand zurückversetzt, wobei die Synchronisations-Storage Virtual Machines (SVMs) auf dem ehemals beeinträchtigten Standort jetzt aktiv sind und Daten aus den lokalen Festplattenpools bereitstellen.
+Nach Abschluss des Austauschs der Bootmedien in Ihrem AFF C400-Speichersystem in einer Zwei-Knoten MetroCluster Konfiguration ist die MetroCluster Switchback-Operation durchzuführen, um die Konfiguration in ihren normalen Betriebszustand zurückzusetzen.
 
-Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow.html["manuelle Boot-Wiederherstellung"]
+Wenn auf Ihrem Speichersystem ONTAP 9.17.1 oder höher läuft, kann die link:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] verwendet werden.
 
 Dieser Task gilt nur für MetroCluster-Konfigurationen mit zwei Nodes.
 

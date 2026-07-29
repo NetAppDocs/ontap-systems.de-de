@@ -22,14 +22,12 @@ Um eine PCIe- oder Mezzanine-Karte zu ersetzen, müssen Sie die Kabel und alle S
 [[step-1-shut-down-the-impaired-controller]]
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
-[role="lead"]
 Sie können den beeinträchtigten Controller je nach Hardwarekonfiguration des Speichersystems mithilfe verschiedener Verfahren herunterfahren oder übernehmen.
 
 [role="tabbed-block"]
 ====
 .Option 1: Die meisten Konfigurationen
 --
-[role="lead"]
 Übernehmen Sie den fehlerhaften Controller und stoppen Sie ihn, damit der intakte Controller weiterhin Daten aus dem Speicher des fehlerhaften Controllers bereitstellt. Dazu unterdrücken Sie die automatische Fallerstellung in AutoSupport, deaktivieren die automatische Rückgabe und bringen den fehlerhaften Controller zur LOADER-Eingabeaufforderung. Die LOADER-Eingabeaufforderung ist der sichere, angehaltene Zustand, aus dem Sie die FRU ersetzen können.
 
 .Über diese Aufgabe
@@ -99,7 +97,6 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 --
 .Option 2: Controller befindet sich in einem MetroCluster mit zwei Nodes
 --
-[role="lead"]
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller umschalten, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 
 .Über diese Aufgabe
@@ -198,9 +195,9 @@ mcc1A::> metrocluster operation show
 [[step-2-remove-the-controller-module]]
 == Schritt 2: Entfernen Sie das Controller-Modul
 
-[role="lead"]
 Um auf Komponenten im Controller-Modul zuzugreifen, müssen Sie das Controller-Modul aus dem Gehäuse entfernen.
 
+.Schritte
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Lösen Sie die Netzkabelhalter, und ziehen Sie anschließend die Kabel von den Netzteilen ab.
 . Lösen Sie den Haken- und Schlaufenriemen, mit dem die Kabel am Kabelführungsgerät befestigt sind, und ziehen Sie dann die Systemkabel und SFPs (falls erforderlich) vom Controller-Modul ab, um zu verfolgen, wo die Kabel angeschlossen waren.
@@ -245,7 +242,6 @@ Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen,
 [[step-3-replace-a-pcie-card]]
 == Schritt 3: Ersetzen Sie eine PCIe-Karte
 
-[role="lead"]
 Um eine PCIe-Karte zu ersetzen, müssen Sie die ausgefallene PCIe-Karte ausfindig machen, den Riser, der die Karte enthält, aus dem Controller-Modul entfernen, die Karte austauschen und dann den PCIe-Riser im Controller-Modul wieder einsetzen.
 
 Sie können die folgende Animation, Illustration oder die geschriebenen Schritte zum Ersetzen einer PCIe-Karte verwenden.
@@ -285,6 +281,7 @@ image:../media/icon_round_4.png["Legende Nummer 4"]
 PCI-Karte
 
 |===
+.Schritte
 . Entfernen Sie den Riser mit der auszutauschenden Karte:
 +
 .. Öffnen Sie den Luftkanal, indem Sie die Verriegelungslaschen an den Seiten des Luftkanals drücken, ihn zur Rückseite des Controller-Moduls schieben und dann in seine vollständig geöffnete Position drehen.
@@ -326,7 +323,6 @@ NOTE: Wenn Sie eine Karte in den unteren Steckplatz einsetzen und den Kartenstec
 [[step-4-replace-the-mezzanine-card]]
 == Schritt 4: Tauschen Sie die Mezzanine-Karte aus
 
-[role="lead"]
 Die Mezzanine-Karte befindet sich unter der Risernummer 3 (Steckplatz 4 und 5). Sie müssen diesen Riser entfernen, um auf die Mezzanine-Karte zuzugreifen, die Mezzanine-Karte austauschen und dann die Riser-Nummer 3 neu installieren. Weitere Informationen finden Sie in der FRU-Zuordnung des Controller-Moduls.
 
 Sie können die Mezzanine-Karte mit der folgenden Animation, Illustration oder den schriftlichen Schritten ersetzen.
@@ -359,6 +355,7 @@ image:../media/icon_round_3.png["Legende Nummer 3"]
 Riserkarte
 
 |===
+.Schritte
 . Entfernen Sie die Risernummer 3 (Steckplätze 4 und 5):
 +
 .. Öffnen Sie den Luftkanal, indem Sie die Verriegelungslaschen an den Seiten des Luftkanals drücken, ihn zur Rückseite des Controller-Moduls schieben und dann in seine vollständig geöffnete Position drehen.
@@ -398,6 +395,7 @@ NOTE: Ziehen Sie die Rändelschrauben der Mezzanine-Karte vollständig fest. Sin
 
 Nachdem Sie die Komponente im Controller-Modul ersetzt haben, müssen Sie das Controller-Modul wieder in das Gehäuse einsetzen und dann im Wartungsmodus booten.
 
+.Schritte
 . Wenn Sie dies noch nicht getan haben, schließen Sie den Luftkanal.
 . Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
 +
@@ -443,6 +441,7 @@ NOTE: Wenn das System im Startmenü stoppt, wählen Sie die Option zum Booten in
 
 Um den Controller wiederherzustellen, müssen Sie das System erneut einspielen, das Controller-Modul zurückgeben und dann das automatische Giveback wieder aktivieren.
 
+.Schritte
 . Das System nach Bedarf neu einsetzen.
 +
 Wenn Sie die Medienkonverter (QSFPs oder SFPs) entfernt haben, sollten Sie diese erneut installieren, wenn Sie Glasfaserkabel verwenden.

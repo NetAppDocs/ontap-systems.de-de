@@ -22,7 +22,6 @@ Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Fall
 [[step-1-shut-down-the-impaired-controller]]
 == Schritt 1: Schalten Sie den beeinträchtigten Regler aus
 
-[role="lead"]
 Übernehmen Sie den fehlerhaften Controller und stoppen Sie ihn, damit der intakte Controller weiterhin Daten aus dem Speicher des fehlerhaften Controllers bereitstellt. Dazu unterdrücken Sie die automatische Fallerstellung in AutoSupport, deaktivieren die automatische Rückgabe und bringen den fehlerhaften Controller zur LOADER-Eingabeaufforderung. Die LOADER-Eingabeaufforderung ist der sichere, angehaltene Zustand, aus dem Sie die FRU ersetzen können.
 
 .Über diese Aufgabe
@@ -95,7 +94,6 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 [[step-2-remove-controller-module]]
 == Schritt 2: Controller-Modul entfernen
 
-[role="lead"]
 Um auf Komponenten innerhalb des Controllers zuzugreifen, müssen Sie zuerst das Controller-Modul aus dem System entfernen und dann die Abdeckung am Controller-Modul entfernen.
 
 .Schritte
@@ -121,7 +119,6 @@ image::../media/drw_2240_x_opening_cam_latch.png[Öffnen der Nockenhebelverriege
 [[step-3-replace-the-nvmem-battery]]
 == Schritt 3: Ersetzen Sie die NVMEM-Batterie
 
-[role="lead"]
 Um die NVMEM-Batterie in Ihrem System zu ersetzen, müssen Sie die ausgefallene NVMEM-Batterie aus dem System entfernen und durch eine neue NVMEM-Batterie ersetzen.
 
 .Schritte
@@ -165,7 +162,6 @@ image::../media/drw_2600_nvmem_batt_repl_animated_gif.png[Austausch der NVMEM-Ba
 [[step-4-reinstall-the-controller-module]]
 == Schritt 4: Installieren Sie das Controller-Modul neu
 
-[role="lead"]
 Nachdem Sie die Komponenten im Controller-Modul ausgetauscht haben, setzen Sie sie wieder in das Gehäuse ein.
 
 .Schritte
@@ -227,7 +223,6 @@ NOTE: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige
 [[step-5-switch-back-aggregates-in-a-two-node-metrocluster-configuration]]
 == Schritt 5: Aggregate in einer MetroCluster Konfiguration mit zwei Nodes zurückwechseln
 
-[role="lead"]
 Dieser Task gilt nur für MetroCluster-Konfigurationen mit zwei Nodes.
 
 .Schritte
@@ -285,5 +280,4 @@ Wenn ein Wechsel eine lange Zeit in Anspruch nimmt, können Sie den Status der i
 [[step-6-return-the-failed-part-to-netapp]]
 == Schritt 6: Senden Sie das fehlgeschlagene Teil an NetApp zurück
 
-[role="lead"]
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.
