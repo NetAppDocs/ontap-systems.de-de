@@ -29,12 +29,16 @@ Nachdem Sie das neue Boot-Mediengerät in Ihrem AFF C30- oder AFF C60-Speichersy
 Das Wiederherstellungsabbild wird vom USB-Stick heruntergeladen.
 
 . Geben Sie bei Aufforderung den Namen des Bildes ein oder drücken Sie die *Eingabetaste*, um das in Klammern angezeigte Standardbild zu übernehmen.
-. Stellen Sie das var-Dateisystem gemäß der für Ihre ONTAP Version geltenden Vorgehensweise wieder her:
+. Stellen Sie das var-Dateisystem wieder her:
 +
-[role="tabbed-block"]
-====
-.ONTAP 9.16.0 oder früher
---
+[cols="1,2"]
+|===
+| Wenn Ihr System... | Dann... 
+
+
+ a| 
+Eine Netzwerkverbindung besteht und es wird ONTAP 9.16.0 oder eine frühere Version ausgeführt
+ a| 
 Führen Sie die folgenden Schritte sowohl für den beeinträchtigten Steuermann als auch für den Partnersteuermann durch:
 
 .. *Auf dem beeinträchtigten Controller:* Drücken Sie `Y` wenn du siehst `Do you want to restore the backup configuration now?`
@@ -66,9 +70,11 @@ NOTE: Sollten Sie eine andere Meldung als eine erfolgreiche Wiederherstellung er
 
 
 
---
-.ONTAP 9.16.1 oder höher
---
+
+
+ a| 
+Eine Netzwerkverbindung besteht und ONTAP 9.16.1 oder höher wird ausgeführt
+ a| 
 Führen Sie die folgenden Schritte auf dem beeinträchtigten Steuergerät durch:
 
 .. Drücken Sie auf `Y`, wenn Sie dazu aufgefordert werden, die Sicherungskonfiguration wiederherzustellen.
@@ -87,8 +93,59 @@ Nach erfolgreichem Wiederherstellungsvorgang wird folgende Meldung angezeigt: `s
 
 
 
---
-====
+
+
+ a| 
+Keine Netzwerkverbindung
+ a| 
+.. Drücken Sie  `N`, wenn Sie dazu aufgefordert werden, um die Backup-Konfiguration wiederherzustellen.
+.. Starten Sie das System neu, wenn Sie dazu aufgefordert werden.
+.. Wählen Sie im angezeigten Menü die Option *Flash aktualisieren aus Backup config* (Flash synchronisieren) aus.
++
+Wenn Sie aufgefordert werden, mit dem Update fortzufahren, drücken Sie  `Y`.
+
+.. Drücken Sie  `Ctrl-C`, wenn das Boot-Menü angezeigt wird.
+.. Führen Sie einen der folgenden Schritte aus:
++
+*** Wenn das System keine Verschlüsselung verwendet, wählen Sie im Bootmenü _Option 1 Normal Boot_ aus.
+*** Wenn das System Verschlüsselung verwendet, gehen Sie zulink:bootmedia-encryption-restore.html["Wiederherstellung der Verschlüsselung"] Die
+
+
+
+
+
+
+ a| 
+Keine Netzwerkverbindung und befindet sich in einer MetroCluster IP-Konfiguration
+ a| 
+.. Drücken Sie  `N`, wenn Sie dazu aufgefordert werden, um die Backup-Konfiguration wiederherzustellen.
+.. Starten Sie das System neu, wenn Sie dazu aufgefordert werden.
+.. Warten Sie, bis die iSCSI-Speicherverbindungen verbunden sind.
++
+Sie können fortfahren, nachdem Sie die folgenden Meldungen angezeigt haben:
+
++
+[listing]
+----
+date-and-time [node-name:iscsi.session.stateChanged:notice]: iSCSI session state is changed to Connected for the target iSCSI-target (type: dr_auxiliary, address: ip-address).
+date-and-time [node-name:iscsi.session.stateChanged:notice]: iSCSI session state is changed to Connected for the target iSCSI-target (type: dr_partner, address: ip-address).
+date-and-time [node-name:iscsi.session.stateChanged:notice]: iSCSI session state is changed to Connected for the target iSCSI-target (type: dr_auxiliary, address: ip-address).
+date-and-time [node-name:iscsi.session.stateChanged:notice]: iSCSI session state is changed to Connected for the target iSCSI-target (type: dr_partner, address: ip-address).
+----
+.. Wählen Sie im angezeigten Menü die Option *Flash aktualisieren aus Backup config* (Flash synchronisieren) aus.
++
+Wenn Sie aufgefordert werden, mit dem Update fortzufahren, drücken Sie  `Y`.
+
+.. Drücken Sie  `Ctrl-C`, wenn das Boot-Menü angezeigt wird.
+.. Führen Sie einen der folgenden Schritte aus:
++
+*** Wenn das System keine Verschlüsselung verwendet, wählen Sie im Bootmenü _Option 1 Normal Boot_ aus.
+*** Wenn das System Verschlüsselung verwendet, gehen Sie zulink:bootmedia-encryption-restore.html["Wiederherstellung der Verschlüsselung"] Die
+
+
+
+
+|===
 . Schließen Sie das Konsolenkabel an den Partner Controller an.
 . Wiederherstellung des normalen Betriebs des Controllers durch Zurückgeben des Speichers:
 +
