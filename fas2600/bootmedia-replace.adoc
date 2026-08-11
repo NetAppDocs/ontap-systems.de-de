@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fas2600, locate, boot, media, controller, direction, replace, manual, manual boot recovery 
 summary: Ersetzen Sie das defekte Bootmedium auf einem FAS2600-Controllermodul. Das FAS2600-System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt. 
 ---
-= Ersetzen Sie das Boot-Medium FAS2600
+= Das Bootmedium in Ihrem FAS2600 System ersetzen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -81,7 +81,7 @@ Sie können das System-Image über ein USB-Flash-Laufwerk, auf dem das Image ins
 
 
 * Wenn Ihr System ein HA-Paar ist, müssen Sie eine Netzwerkverbindung haben.
-* Wenn es sich bei Ihrem System um ein eigenständiges System handelt, benötigen Sie keine Netzwerkverbindung, Sie müssen jedoch beim Wiederherstellen des var-Dateisystems einen zusätzlichen Neustart durchführen.
+* Wenn es sich bei Ihrem System um ein Standalone System handelt, ist keine Netzwerkverbindung erforderlich, jedoch ist beim Wiederherstellen des var-Dateisystems ein zusätzlicher Neustart durchzuführen.
 
 
 .Schritte
@@ -111,7 +111,7 @@ Das System beginnt mit dem Booten und wird bei DER LOADER-Eingabeaufforderung an
 ** Wenn Sie DHCP konfigurieren: `ifconfig e0a -auto`
 +
 
-NOTE: Der von Ihnen konfigurierte Zielport ist der Zielport, über den Sie während der Wiederherstellung des var-Dateisystems mit dem beeinträchtigten Controller über den gesunden Controller kommunizieren. Sie können in diesem Befehl auch den Port E0M verwenden.
+NOTE: Der konfigurierte Zielport ist der Port, über den während der Wiederherstellung des VAR-Dateisystems über eine Netzwerkverbindung vom intakten Controller mit dem beeinträchtigten Controller kommuniziert wird. Auch der e0M Port kann in diesem Befehl verwendet werden.
 
 ** Wenn Sie manuelle Verbindungen konfigurieren: `ifconfig e0a -addr=filer_addr -mask=netmask -gw=gateway-dns=dns_addr-domain=dns_domain`
 +

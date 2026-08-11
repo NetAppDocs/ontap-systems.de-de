@@ -2,16 +2,16 @@
 permalink: fas50/bootmedia-replace-workflow-bmr.html 
 sidebar: sidebar 
 keywords: fas50, replace the boot media 
-summary: Bei der automatischen Wiederherstellung des Boot-Images erkennt und wählt das System automatisch die entsprechende Boot-Menüoption aus. Es verwendet das Boot-Image auf dem Partnerknoten, um ONTAP auf dem Ersatz-Boot-Medium in Ihrem FAS50-Speichersystem neu zu installieren. 
+summary: Die automatische Wiederherstellung des Startabbilds beinhaltet das automatische Erkennen und Auswählen der passenden Startmenüoption durch das System. Es verwendet das Startabbild auf dem Partnerknoten, um ONTAP auf dem Ersatzstartmedium in Ihrem FAS50 Storage-System neu zu installieren. 
 ---
-= Workflow zur automatischen Wiederherstellung von Bootmedien – FAS50
+= Ablauf für den Austausch des FAS50 Boot-Mediums mithilfe des automatisierten Boot-Wiederherstellungsprozesses
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Bei der automatischen Wiederherstellung des Boot-Images erkennt und wählt das System automatisch die entsprechende Boot-Menüoption aus. Es verwendet das Boot-Image auf dem Partnerknoten, um ONTAP auf dem Ersatz-Boot-Medium in Ihrem FAS50-Speichersystem neu zu installieren.
+Die automatische Wiederherstellung des Startabbilds beinhaltet das automatische Erkennen und Auswählen der passenden Startmenüoption durch das System. Es verwendet das Startabbild auf dem Partnerknoten, um ONTAP auf dem Ersatzstartmedium in Ihrem FAS50 Storage-System neu zu installieren.
 
 Der automatisierte Boot-Medien-Wiederherstellungsprozess wird nur in ONTAP 9.17.1 und höher unterstützt. Wenn Ihr Speichersystem eine frühere Version von ONTAP verwendet, verwenden Sie die link:bootmedia-replace-workflow.html["manuelle Boot-Wiederherstellung"] .
 
@@ -23,7 +23,7 @@ Der automatisierte Boot-Medien-Wiederherstellungsprozess wird nur in ONTAP 9.17.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:bootmedia-shutdown-bmr.html["Fahren Sie den Controller herunter"]
 [role="quick-margin-para"]
-Fahren Sie den Controller in Ihrem Storage-System herunter, wenn Sie die Boot-Medien austauschen müssen.
+Fahren Sie den Controller in Ihrem Speichersystem herunter, wenn Sie das Startmedium ersetzen müssen.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:bootmedia-replace-bmr.html["Ersetzen Sie das Startmedium"]
 [role="quick-margin-para"]

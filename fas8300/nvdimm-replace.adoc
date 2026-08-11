@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fas8300, fas8700, replace, nvmem, battery, remove, controller, module, controller, metrocluster, configuration, aggregate, configuration, reinstall, run, system, switch, shut, down 
 summary: Sie müssen das NVDIMM im Controllermodul austauschen, wenn Ihr System erkennt, dass die Lebensdauer des Flash-Speichers fast abgelaufen ist oder dass das identifizierte NVDIMM generell nicht in einwandfreiem Zustand ist. 
 ---
-= Ersetzen Sie ein NVDIMM – FAS8300 und FAS8700
+= Das NVDIMM in Ihrem FAS8300 oder FAS8700 System ersetzen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,7 +13,7 @@ summary: Sie müssen das NVDIMM im Controllermodul austauschen, wenn Ihr System 
 [role="lead"]
 Sie müssen das NVDIMM im Controller-Modul ersetzen, wenn sich Ihr System registriert, dass die Flashlebensdauer fast am Ende liegt oder dass das identifizierte NVDIMM im Allgemeinen nicht ordnungsgemäß ist. Andernfalls kommt es zu einer Systempanik.
 
-Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+Alle anderen Systemkomponenten müssen einwandfrei funktionieren. Falls dies nicht der Fall ist, ist der technische Support zu kontaktieren.
 
 Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
 
@@ -197,7 +197,7 @@ mcc1A::> metrocluster operation show
 
 Um auf Komponenten im Controller-Modul zuzugreifen, müssen Sie das Controller-Modul aus dem Gehäuse entfernen.
 
-Sie können das Controller-Modul mithilfe der folgenden, Abbildung oder der geschriebenen Schritte aus dem Gehäuse entfernen.
+Sie können das Controller-Modul mithilfe der folgenden Animation, Illustration oder der geschriebenen Schritte aus dem Gehäuse entfernen.
 
 .Animation - Entfernen Sie das Controller-Modul
 video::75b6fa91-96b9-4323-b156-aae10007c9a5[panopto]
@@ -227,10 +227,10 @@ Stellen Sie sicher, dass Sie die Unterseite des Controller-Moduls unterstützen,
 [[step-3-replace-the-nvdimm]]
 == Schritt 3: Ersetzen Sie das NVDIMM
 
-Um das NVDIMM auszutauschen, müssen Sie es im Controller-Modul mithilfe der FRU-Karte oben im Luftkanal der FRU-Karte oben am Steckplatz 1-Riser suchen.
+Um das NVDIMM auszutauschen, muss es im Controller-Modul mithilfe der FRU-Karte auf der Oberseite des Steckplatz-1-Risers lokalisiert werden.
 
 * Die NVDIMM-LED blinkt während des Destaging der Inhalte, wenn Sie das System anhalten. Nach Abschluss der Abscheidungen schaltet sich die LED aus.
-* Obwohl der Inhalt des NVDIMM verschlüsselt ist, empfiehlt es sich, den Inhalt des NVDIMM vor dem Ersetzen zu löschen. Weitere Informationen finden Sie im https://mysupport.netapp.com/info/web/ECMP1132988.html["Angaben zu flüchtigem Speicher"] Auf der NetApp Support Site
+* Obwohl der Inhalt des NVDIMM verschlüsselt ist, ist es eine bewährte Methode, den Inhalt des NVDIMM vor dem Austausch zu löschen. Weitere Informationen sind im  https://mysupport.netapp.com/info/web/ECMP1132988.html["Angaben zu flüchtigem Speicher"] auf der NetApp Support Site verfügbar.
 +
 
 NOTE: Sie müssen sich auf der NetApp Support Site anmelden, um das _Statement of Volatility_ für Ihr System anzuzeigen.
@@ -264,7 +264,7 @@ Die Kerbe zwischen den Stiften am NVDIMM sollte mit der Lasche im Sockel auflieg
 . Suchen Sie den Steckplatz, in dem Sie das NVDIMM installieren.
 . Setzen Sie den NVDIMM in den Steckplatz ein.
 +
-Das NVDIMM passt eng in den Steckplatz, sollte aber leicht in gehen. Falls nicht, bauen Sie das NVDIMM mit dem Steckplatz aus und setzen Sie es wieder ein.
+Das NVDIMM sitzt stramm im Steckplatz, sollte sich aber leicht einsetzen lassen. Falls dies nicht der Fall ist, das NVDIMM erneut am Steckplatz ausrichten und wieder einsetzen.
 
 +
 

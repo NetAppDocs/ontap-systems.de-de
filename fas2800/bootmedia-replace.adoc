@@ -1,17 +1,17 @@
 ---
 permalink: fas2800/bootmedia-replace.html 
 sidebar: sidebar 
-keywords: fas2800, replace, boot, media, controller, module, fru map 
-summary: Sie müssen das Startmedium im Controller finden und die Anweisungen befolgen, um es zu ersetzen. 
+keywords: fas2820, replace, boot, media, controller, module, fru map 
+summary: Das Bootmedium in Ihrem FAS2820 System speichert wichtige Firmware- und Konfigurationsdaten. Für den Austausch werden das defekte Controller-Modul entfernt und geöffnet, das Bootmedium lokalisiert und ersetzt, das Boot-Image auf ein USB-Laufwerk übertragen und anschließend der Controller gestartet. 
 ---
-= Ersetzen Sie das Startmedium und bereiten Sie die manuelle Startwiederherstellung vor – FAS2820
+= Das Bootmedium im FAS2820 System mithilfe des manuellen Boot-Wiederherstellungsprozesses ersetzen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie müssen das beschädigte Controllermodul entfernen und öffnen, das Bootmedium im Controller suchen und ersetzen, das Boot-Image auf ein USB-Laufwerk übertragen, das USB-Laufwerk in den Controller einstecken und dann den Controller booten.
+Das Bootmedium in Ihrem FAS2820 System speichert wichtige Firmware- und Konfigurationsdaten. Für den Austausch wird das defekte Controller-Modul entfernt und geöffnet, das Bootmedium lokalisiert und ersetzt, das Boot-Image auf ein USB-Laufwerk übertragen, das USB-Laufwerk in den Controller eingesetzt und anschließend der Controller gestartet.
 
 Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie das manuelle Boot-Wiederherstellungsverfahren verwenden.
 
@@ -51,7 +51,7 @@ Entriegelungstaste der Steuermodulabdeckung
 [[step-2-replace-the-boot-media]]
 == Schritt 2: Ersetzen Sie die Startmedien
 
-Suchen Sie die Startmedien im Controller-Modul unter der Zusatzkarte, und befolgen Sie die Anweisungen zum Austauschen.
+Das Bootmedium befindet sich unter der Mezzanine-Karte im Controller-Modul. Die Anweisungen zum Austausch sind zu befolgen.
 
 image:../media/drw_2850_replace_boot_media_IEOPS-696.svg["Ersetzen Sie das Startmedium"]
 

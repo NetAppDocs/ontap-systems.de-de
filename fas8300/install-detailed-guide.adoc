@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: fas8300, fas8700, install, detailed, guide, prepare, hardware, cable, controller, switchless, cluster, sas, drive, two, node, configuration 
 summary: Dieser Leitfaden enthält detaillierte Schritt-für-Schritt-Anleitungen zur Installation eines typischen NetApp Systems. In diesem Handbuch finden Sie weitere detaillierte Installationsanweisungen. 
 ---
-= Detaillierter Leitfaden – FAS8300 und FAS8700
+= Das FAS8300 oder FAS8700 System mithilfe detaillierter Anweisungen installieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Dieser Leitfaden enthält detaillierte Schritt-für-Schritt-Anleitungen zur Installation eines typischen NetApp Systems. In diesem Handbuch finden Sie weitere detaillierte Installationsanweisungen.
+Diese detaillierte Schritt-für-Schritt-Anleitung führt Sie durch die Installation Ihres FAS8300 oder FAS8700 Systems, von der Montage und Verkabelung bis zur Ersteinrichtung. Diese Schritte bieten eine ausführlichere Installationsanleitung als die Kurzanleitung.
 
 
 
@@ -156,7 +156,7 @@ image:../media/oie_cable_power.png["Stromkabel"]
 System einschalten
 
 |===
-. Lesen Sie den _NetApp Leitfaden zur ONTAP-Konkuratierung_ und sammeln Sie die in diesem Leitfaden aufgeführten Informationen.
+. Lesen Sie den _NetApp ONTAP Configuration Guide_ und sammeln Sie die in diesem Leitfaden aufgeführten Informationen.
 +
 https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["ONTAP Konfigurationsleitfaden"]
 
@@ -194,7 +194,7 @@ image::../media/drw_a320_cable_management_arms.png[Entfernen oder Installieren d
 Sie können die Controller mithilfe der Switch-freien Cluster-Methode mit zwei Nodes oder des Cluster Interconnect-Netzwerks mit dem Netzwerk verkabeln.
 
 
-NOTE: Wenn die Port-Etiketten auf der Karte nicht sichtbar sind, überprüfen Sie die Ausrichtung der Karteninstallation (der PCIe-Steckersockel befindet sich auf der linken Seite des Kartensteckplatzes in den A400 und FAS8300/8700), und suchen Sie dann nach der Karte, und suchen Sie im nach der Teilenummer https://hwu.netapp.com["NetApp Hardware Universe"^] Für eine Grafik der Blende, in der die Port-Bezeichnungen angezeigt werden. Die Teilenummer der Karte kann über gefunden werden `sysconfig -a` Befehl oder auf der Packliste des Systems.
+NOTE: Sind die Portbezeichnungen auf der Karte nicht sichtbar, sollte die Einbaurichtung der Karte überprüft werden (der PCIe-Anschluss befindet sich bei den Modellen A400 und FAS8300/8700 links im Kartensteckplatz). Anschließend kann anhand der Teilenummer in der  https://hwu.netapp.com["NetApp Hardware Universe"^]Abbildung der Blende, die die Portbezeichnungen zeigt, nach der Karte gesucht werden. Die Teilenummer der Karte kann mit dem  `sysconfig -a`Befehl oder auf der Systemlieferliste gefunden werden.
 
 
 
@@ -318,11 +318,11 @@ image::../media/drw_autodiscovery_controler_select_ieops-1849.svg[Wählen Sie ei
 
 +
 .. Öffnen Sie Den Datei-Explorer.
-.. Klicken Sie im linken Fensterbereich auf *Netzwerk*, klicken Sie mit der rechten Maustaste und wählen Sie *Aktualisieren*.
+.. Im linken Bereich *Netzwerk* auswählen, mit der rechten Maustaste auf *Netzwerk* klicken und anschließend *Aktualisieren* auswählen.
 .. Doppelklicken Sie auf das ONTAP-Symbol, und akzeptieren Sie alle auf dem Bildschirm angezeigten Zertifikate.
 +
 
-NOTE: XXXXX ist die Seriennummer des Systems für den Ziel-Node.
+NOTE: In diesem Beispiel steht XXXXX für die Systemseriennummer des Zielknotens.
 
 +
 System Manager wird geöffnet.
@@ -385,7 +385,7 @@ FAS8300 und FAS8700 dargestellt.
 video::50cdf200-ede1-45a9-b4b5-ab1b006698d7[panopto]
 +
 
-NOTE: Das erste Booten kann bis zu acht Minuten dauern.
+NOTE: Der erste Startvorgang kann bis zu acht Minuten dauern.
 
 . Weisen Sie einem der Nodes eine erste Node-Management-IP-Adresse zu.
 +

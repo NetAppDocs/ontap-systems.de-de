@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: FAS9500 
 summary: Sie müssen die Voraussetzungen für den Austausch prüfen und die richtige für Ihre Version des ONTAP Betriebssystems auswählen. 
 ---
-= Ersetzen Sie das Controller-Modul FAS9500
+= Vor dem Austausch des Controllers im FAS9500 System sollten die Anforderungen überprüft werden.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -35,7 +35,7 @@ Beachten Sie, dass das Verfahren zum Austausch des Controllers bei einem Node in
 * Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
 * Sie müssen ein Controller-Modul durch ein Controller-Modul desselben Modelltyps ersetzen. Sie können kein System-Upgrade durch einen Austausch des Controller-Moduls durchführen.
 * Im Rahmen dieses Verfahrens können Laufwerke oder Laufwerk-Shelfs nicht geändert werden.
-* In diesem Verfahren wird das Startgerät vom beeinträchtigten Knoten auf den Ersatzknoten verschoben, sodass der Ersatzknoten in derselben ONTAP-Version wie das alte Controller-Modul gestartet wird.
+* Bei diesem Verfahren wird das Boot-Gerät vom defekten Node auf den Ersatz-Node verschoben, sodass der Ersatz-Node in derselben Version von ONTAP wie das alte Controller-Modul startet.
 * Es ist wichtig, dass Sie die Befehle in diesen Schritten auf die richtigen Systeme anwenden:
 +
 ** Der Knoten „beeinträchtigt“ ist der Knoten, der ersetzt wird.

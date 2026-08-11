@@ -1,19 +1,19 @@
 ---
 permalink: fas2800/dimm-replace.html 
 sidebar: sidebar 
-keywords: fas2800, replace, dimm, shut, down, impaired, controller, controller, metrocluster, replace, system, reinstall, module, filed, part, aggregates, 
-summary: Sie müssen ein DIMM im Controller austauschen, wenn in Ihrem Speichersystem Fehler auftreten, wie z. B. übermäßig viele korrigierbare ECC-Fehler basierend auf Health Monitor-Warnungen oder nicht korrigierbare ECC-Fehler, die das Booten von ONTAP im Speichersystem verhindern. 
+keywords: fas2820, replace, dimm, shut, down, impaired, controller, controller, metrocluster, replace, system, reinstall, module, filed, part, aggregates, 
+summary: 'Ein DIMM im Controller Ihres FAS2820 Systems ist auszutauschen, wenn Fehler wie übermäßige CECC (Correctable Error Correction Codes) Fehler auf Grundlage von Health Monitor Warnmeldungen oder nicht korrigierbare ECC Fehler auftreten, was typischerweise durch einen einzelnen DIMM-Ausfall verursacht wird, der das Speichersystem am Starten von ONTAP hindert.' 
 ---
-= Ersetzen Sie ein DIMM - FAS2820
+= Ein DIMM im FAS2820 System ersetzen, um Speicherfehler zu beheben
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie müssen ein DIMM im Controller ersetzen, wenn das Speichersystem auf Fehler wie übermäßige CECC-Fehler (korrigierbare Fehlerkorrekturcodes) stößt, die auf Warnmeldungen der Systemzustandsüberwachung oder nicht korrigierbaren ECC-Fehlern basieren, die normalerweise durch einen einzelnen DIMM-Fehler verursacht werden, der das Starten von ONTAP verhindert.
+Ein DIMM im Controller Ihres FAS2820 Systems ist auszutauschen, wenn Fehler wie übermäßige CECC (Correctable Error Correction Codes) Fehler auf Grundlage von Health Monitor Warnmeldungen oder nicht korrigierbare ECC Fehler auftreten, was typischerweise durch einen einzelnen DIMM-Ausfall verursacht wird, der das Speichersystem am Starten von ONTAP hindert.
 
-Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+Falls andere Systemkomponenten nicht ordnungsgemäß funktionieren, sollte der technische Support kontaktiert werden.
 
 Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
 
@@ -142,7 +142,7 @@ image::../media/drw_hw_nvram_icon.svg[NV-Symbol]
 . Achten Sie auf die Ausrichtung und Position des DIMM im Sockel, damit Sie das Ersatz-DIMM in die richtige Ausrichtung einsetzen können.
 . Werfen Sie das DIMM aus dem Steckplatz, indem Sie die beiden DIMM-Auswerferlaschen auf beiden Seiten des DIMM langsam auseinander drücken und dann das DIMM aus dem Steckplatz schieben.
 +
-Das DIMM dreht sich ein wenig nach oben.
+Das DIMM dreht sich ein Stück nach oben.
 
 . Drehen Sie das DIMM-Modul so weit wie möglich, und schieben Sie es dann aus dem Sockel.
 +
@@ -190,14 +190,14 @@ Die Kerbe zwischen den Stiften am DIMM sollte mit der Lasche im Sockel aufliegen
 
 . Setzen Sie das DIMM-Modul in den Steckplatz ein.
 +
-Das DIMM passt eng in den Steckplatz, sollte aber leicht einpassen. Falls nicht, richten Sie das DIMM-Modul mit dem Steckplatz aus und setzen Sie es wieder ein.
+Der DIMM sitzt stramm im Steckplatz, sollte sich aber leicht einsetzen lassen. Falls dies nicht der Fall ist, den DIMM erneut am Steckplatz ausrichten und wieder einsetzen.
 
 +
 
 NOTE: Prüfen Sie das DIMM visuell, um sicherzustellen, dass es gleichmäßig ausgerichtet und vollständig in den Steckplatz eingesetzt ist.
 
 . Drücken Sie vorsichtig, aber fest auf die Oberseite des DIMM, bis die Auswurfklammern über den Kerben an den Enden des DIMM einrasten.
-. NVRM-Batterie wieder anschließen:
+. Die NVRAM Batterie wieder anschließen:
 +
 .. Schließen Sie die NVRAM-Batterie an.
 +
@@ -221,7 +221,7 @@ Setzen Sie das Controller-Modul wieder in das Gehäuse ein.
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
 . Wenn dies noch nicht geschehen ist, bringen Sie die Abdeckung am Controller-Modul wieder an.
 . Drehen Sie das Controller-Modul um und richten Sie das Ende an der Öffnung im Gehäuse aus.
-. Schieben Sie das Controller-Modul vorsichtig bis zur Hälfte in das System. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie das Controller-Modul vorsichtig bis zur Hälfte in das System.
+. Drücken Sie das Controller-Modul vorsichtig bis zur Hälfte in das System.
 +
 
 NOTE: Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein, wenn Sie dazu aufgefordert werden.
@@ -258,8 +258,8 @@ NOTE: Während des Bootens werden möglicherweise die folgenden Eingabeaufforder
 
 
 
-[[step-5-restore-automatic-giveback-and-autsupport]]
-== Schritt 5: Automatisches Giveback und AutSupport wiederherstellen
+[[step-5-restore-automatic-giveback-and-autosupport]]
+== Schritt 5: Automatisches Giveback und AutoSupport wiederherstellen
 
 Stellen Sie automatische Giveback und AutoSupport wieder her, wenn sie deaktiviert wurden.
 

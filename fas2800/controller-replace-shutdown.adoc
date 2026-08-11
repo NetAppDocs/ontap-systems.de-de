@@ -1,16 +1,18 @@
 ---
 permalink: fas2800/controller-replace-shutdown.html 
 sidebar: sidebar 
-keywords: fas2800, shut down the impaired controller 
-summary: Sie können den beeinträchtigten Controller je nach Hardwarekonfiguration des Speichersystems mithilfe verschiedener Verfahren herunterfahren oder übernehmen. 
+keywords: fas2820, shut down the impaired controller 
+summary: Vor dem Austausch ist der defekte Controller in Ihrem FAS2820 System herunterzufahren. Das verwendete Verfahren hängt von der Hardwarekonfiguration Ihres Speichersystems ab. 
 ---
-= Fahren Sie den beeinträchtigten Controller herunter - FAS2820
+= Vor dem Austausch ist der defekte Controller in Ihrem FAS2820 System herunterzufahren.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
+Vor dem Austausch ist der defekte Controller in Ihrem FAS2820 System herunterzufahren. Das verwendete Verfahren hängt von der Hardwarekonfiguration Ihres Speichersystems ab.
+
 Übernehmen Sie den fehlerhaften Controller und stoppen Sie ihn, damit der intakte Controller weiterhin Daten aus dem Speicher des fehlerhaften Controllers bereitstellt. Dazu unterdrücken Sie die automatische Fallerstellung in AutoSupport, deaktivieren die automatische Rückgabe und bringen den fehlerhaften Controller zur LOADER-Eingabeaufforderung. Die LOADER-Eingabeaufforderung ist der sichere, angehaltene Zustand, aus dem Sie die FRU ersetzen können.
 
 Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE anzeigt, um die Berechtigung und den Zustand zu erhalten, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^].

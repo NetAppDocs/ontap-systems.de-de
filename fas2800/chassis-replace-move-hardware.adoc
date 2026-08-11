@@ -1,17 +1,17 @@
 ---
 permalink: fas2800/chassis-replace-move-hardware.html 
 sidebar: sidebar 
-keywords: fas2800, replace, chassis, shut down, controller, metrocluster, power, supply, ha, state, controller, configuration, switch, aggregates, replace, move, remove, swap 
-summary: Verschieben Sie die Netzteile, Festplatten und Controller-Module oder -Module vom Gehäuse für beeinträchtigte Störungen in das Ersatzgehäuse, und ersetzen Sie das Gehäuse für beeinträchtigte Störungen aus dem Geräte-Rack oder Systemschrank durch das Ersatzgehäuse desselben Modells wie das Gehäuse für beeinträchtigte Störungen. 
+keywords: fas2820, replace, chassis, shut down, controller, metrocluster, power, supply, ha, state, controller, configuration, switch, aggregates, replace, move, remove, swap 
+summary: 'In Ihrem FAS2820-System werden die Netzteile, Festplatten und das/die Controllermodul(e) vom defekten Gehäuse in das Ersatzgehäuse umgesetzt, und das defekte Gehäuse wird im Geräteschrank oder Systemschrank durch das Ersatzgehäuse desselben Modells wie das defekte Gehäuse ersetzt.' 
 ---
-= Verschieben und ersetzen Sie Hardware – FAS2820
+= Das Chassis im FAS2820 System austauschen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Verschieben Sie die Netzteile, Festplatten und Controller-Module oder -Module vom Gehäuse für beeinträchtigte Störungen in das Ersatzgehäuse, und ersetzen Sie das Gehäuse für beeinträchtigte Störungen aus dem Geräte-Rack oder Systemschrank durch das Ersatzgehäuse desselben Modells wie das Gehäuse für beeinträchtigte Störungen.
+In Ihrem FAS2820-System werden die Netzteile, Festplatten und das/die Controllermodul(e) vom defekten Gehäuse in das Ersatzgehäuse umgesetzt, und das defekte Gehäuse wird im Geräteschrank oder Systemschrank durch das Ersatzgehäuse desselben Modells wie das defekte Gehäuse ersetzt.
 
 
 
@@ -35,7 +35,7 @@ Wenn Sie ein Netzteil entfernen, wenn Sie ein Gehäuse ersetzen, müssen Sie das
 CAUTION: Wenn Sie ein Netzteil entfernen, verwenden Sie immer zwei Hände, um sein Gewicht zu stützen.
 
 . Wiederholen Sie die vorherigen Schritte für alle weiteren Netzteile.
-. Halten und richten Sie die Kanten des Netzteils mit beiden Händen an der Öffnung im Systemgehäuse aus, und drücken Sie dann vorsichtig das Netzteil mithilfe des Nockengriffs in das Gehäuse.
+. Die Kanten des Netzteils mit beiden Händen an der Öffnung im Systemgehäuse abstützen und ausrichten, anschließend das Netzteil vorsichtig mit dem Nockengriff in das Gehäuse schieben.
 +
 Die Netzteile sind codiert und können nur auf eine Weise installiert werden.
 
@@ -103,7 +103,7 @@ Der Nockengriff rastet ein und beginnt sich in die geschlossene Position zu dreh
 
 . Schieben Sie den Antrieb ganz fest in das Gehäuse, und verriegeln Sie dann den Nockengriff, indem Sie ihn gegen den Antriebshalter drücken.
 +
-Schließen Sie den Nockengriff langsam, damit er korrekt an der Vorderseite des Laufwerkträgers ausgerichtet ist. Klicken Sie auf, wenn es sicher ist.
+Schließen Sie den Nockengriff langsam, damit er korrekt an der Vorderseite des Laufwerkträgers ausgerichtet ist. Zum sicheren Zeitpunkt klickt er.
 
 . Wiederholen Sie den Vorgang für die übrigen Laufwerke im System.
 
@@ -116,9 +116,9 @@ Schließen Sie den Nockengriff langsam, damit er korrekt an der Vorderseite des 
 Entfernen Sie das vorhandene Chassis aus dem Geräte-Rack oder Systemschrank und installieren Sie das Ersatzgehäuse im Geräte-Rack oder Systemschrank.
 
 . Entfernen Sie die Schrauben von den Montagepunkten des Gehäuses.
-. Schieben Sie mit Hilfe von zwei oder drei Personen das Gehäuse für beeinträchtigte Personen von den Rack-Schienen in einem Systemschrank oder _L_ Halterungen in einem Geräterahmen und legen Sie es dann beiseite.
+. Das beschädigte Chassis mit Hilfe von zwei oder drei Personen von den Schienen im Systemschrank oder von den L-Winkeln im Geräteschrank herunterschieben und anschließend beiseitelegen.
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
-. Installieren Sie das Ersatzgehäuse mithilfe von zwei oder drei Personen in das Rack oder den Systemschrank des Geräts, indem Sie das Chassis an die Rack-Schienen in einem Systemschrank oder _L_ -Halterungen in einem Rack führen.
+. Das Ersatzchassis wird mit Hilfe von zwei oder drei Personen in das Geräterack oder den Systemschrank eingesetzt, wobei das Chassis in einem Systemschrank auf die Rackschienen oder in einem Geräterack auf die L-Winkel geführt wird.
 . Schieben Sie das Chassis vollständig in das Rack oder den Systemschrank der Ausrüstung.
 . Befestigen Sie die Vorderseite des Gehäuses mit den Schrauben, die Sie aus dem Gehäuse für beeinträchtigte Geräte entfernt haben, am Geräte-Rack oder Systemschrank.
 . Falls noch nicht geschehen, befestigen Sie die Blende.
@@ -129,7 +129,7 @@ Entfernen Sie das vorhandene Chassis aus dem Geräte-Rack oder Systemschrank und
 [[step-5-install-the-controller]]
 == Schritt 5: Installieren Sie den Controller
 
-Installieren Sie das Controller-Modul und alle anderen Komponenten in das Ersatzgehäuse, und booten Sie es im Wartungsmodus.
+Das Controller-Modul und alle weiteren Komponenten werden in das Ersatzgehäuse eingesetzt und anschließend im Wartungsmodus gestartet.
 
 Bei HA-Paaren mit zwei Controller-Modulen im selben Chassis ist die Sequenz, in der Sie das Controller-Modul installieren, besonders wichtig, da sie versucht, neu zu booten, sobald Sie es vollständig im Chassis einsetzen.
 
@@ -155,7 +155,7 @@ NOTE: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige
 . Schließen Sie die Netzteile an verschiedene Stromquellen an, und schalten Sie sie dann ein.
 . Booten jedes Controllers in den Wartungsmodus:
 +
-.. Drücken Sie, wenn der Boot-Vorgang von jedem Controller gestartet wird `Ctrl-C` Um den Bootvorgang zu unterbrechen, wenn die Meldung angezeigt wird `Press Ctrl-C for Boot Menu`.
+.. Sobald jeder Controller mit dem Booten beginnt,  `Ctrl-C`drücken, um den Bootvorgang zu unterbrechen, wenn die Meldung  `Press Ctrl-C for Boot Menu` angezeigt wird.
 +
 
 NOTE: Wenn die Eingabeaufforderung nicht angezeigt wird und die Controller-Module beim ONTAP booten, geben Sie ein `halt`, Und geben Sie an der LOADER-Eingabeaufforderung ein `boot_ontap`, Drücken Sie `Ctrl-C` Wenn Sie dazu aufgefordert werden, und wiederholen Sie diesen Schritt.

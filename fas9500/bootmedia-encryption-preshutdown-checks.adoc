@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: fas9500, pre-shutdown checks for onboard encryption keys 
 summary: Vor dem Herunterfahren des Node mit beeinträchtigten Funktionen und dem Überprüfen des Status der integrierten Verschlüsselungsschlüssel müssen Sie den Status des Node mit eingeschränkter Funktion überprüfen, die automatische Rückgabe deaktivieren und überprüfen, welche Version von ONTAP das System ausgeführt wird. 
 ---
-= Prüfen Sie Support und Status der Verschlüsselungsschlüssel - FAS9500
+= Die Verschlüsselungsunterstützung auf dem Startmedium im FAS9500 System prüfen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Um die Datensicherheit auf Ihrem Speichersystem zu gewährleisten, müssen Sie die Unterstützung und den Status des Verschlüsselungsschlüssels auf Ihrem Boot-Medium überprüfen. Überprüfen Sie, ob Ihre ONTAP Version NetApp Volume Encryption (NVE) unterstützt und bevor Sie den Controller herunterfahren, ob der Schlüsselmanager aktiv ist.
+Um die Datensicherheit auf Ihrem Speichersystem zu gewährleisten, müssen Sie die Unterstützung und den Status des Verschlüsselungsschlüssels auf Ihrem Boot-Medium überprüfen. Es sollte geprüft werden, ob Ihre ONTAP Version NetApp Volume Encryption (NVE) unterstützt. Vor dem Herunterfahren des Controllers sollte geprüft werden, ob der Schlüsselmanager aktiv ist.
 
 Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie das manuelle Boot-Wiederherstellungsverfahren verwenden.
 

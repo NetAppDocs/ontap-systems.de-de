@@ -2,16 +2,16 @@
 permalink: fas8300/bootmedia-replace-requirements.html 
 sidebar: sidebar 
 keywords: fas8300, fas8700, replace the boot media 
-summary: Stellen Sie vor dem Austausch des Bootmediums in Ihrem FAS8300 und FAS8700 -System sicher, dass Sie die notwendigen Voraussetzungen für einen erfolgreichen Austausch erfüllen. Stellen Sie dazu sicher, dass Sie über einen USB-Stick mit ausreichend Speicherplatz verfügen und dass Sie das richtige Ersatz-Bootmedium verwenden. 
+summary: Bevor das Bootmedium in Ihrem FAS8300 oder FAS8700 System ausgetauscht wird, sollte überprüft werden, ob alle notwendigen Voraussetzungen für eine erfolgreiche Entfernung erfüllt sind. Dazu zählt, dass ein USB-Flash-Laufwerk mit ausreichender Speicherkapazität vorhanden ist und das korrekte Ersatz-Bootmedium bereitliegt. 
 ---
-= Voraussetzungen für die manuelle Wiederherstellung per Bootmedium – FAS8300 und FAS8700
+= Anforderungen für die manuelle Wiederherstellung von Bootmedien in Ihrem FAS8300 oder FAS8700 System prüfen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Bevor Sie das Bootmedium in Ihrem FAS8300 oder FAS8700-System austauschen, stellen Sie sicher, dass alle Voraussetzungen für einen erfolgreichen Austausch erfüllt sind. Dazu gehört die Überprüfung, ob Sie das richtige Ersatz-Bootmedium verwenden, ob der e0S (e0M wrench) Port am betroffenen Controller nicht defekt ist und ob Onboard Key Manager (OKM) oder External Key Manager (EKM) aktiviert ist.
+Bevor das Bootmedium in Ihrem FAS8300 oder FAS8700 System ersetzt wird, sollte überprüft werden, ob alle notwendigen Voraussetzungen für einen erfolgreichen Austausch erfüllt sind. Dazu gehört die Überprüfung, ob das korrekte Ersatz-Bootmedium vorhanden ist, ob der e0S (e0M wrench) Port am beeinträchtigten Controller funktionsfähig ist und ob Onboard Key Manager (OKM) oder External Key Manager (EKM) aktiviert ist.
 
 Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie das manuelle Boot-Wiederherstellungsverfahren verwenden.
 

@@ -1,25 +1,25 @@
 ---
 permalink: fas2800/power-supply-swap-out.html 
 sidebar: sidebar 
-keywords: fas2800, swap, power, supply, turn off, disconnect, remove, install, connect, turn on, replacement 
-summary: Beim Austausch eines Netzteils muss das funktionsunbestimmte Netzteil ausgeschaltet, getrennt und entfernt werden. Außerdem muss das Ersatznetzteil installiert, angeschlossen und eingeschaltet werden. 
+keywords: fas2820, swap, power, supply, turn off, disconnect, remove, install, connect, turn on, replacement 
+summary: Der Hot-Swap eines Netzteils in Ihrem FAS2820 System umfasst das Ausschalten, Trennen und Entfernen des defekten Netzteils sowie das Installieren, Anschließen und Einschalten des Ersatznetzteils. 
 ---
-= Austausch eines Netzteils - FAS2820
+= Netzteil im laufenden Betrieb in Ihrem FAS2820 System austauschen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Beim Austausch eines Netzteils muss das funktionsunbestimmte Netzteil ausgeschaltet, getrennt und entfernt werden. Außerdem muss das Ersatznetzteil installiert, angeschlossen und eingeschaltet werden.
+Ein Netzteil in Ihrem FAS2820 System kann im laufenden Betrieb im Hot-Swap-Verfahren ausgetauscht werden, falls es ausfällt oder an Leistung verliert, ohne den Systembetrieb zu unterbrechen. Dieses Verfahren umfasst das Ausschalten und Entfernen des defekten Netzteils sowie das Installieren und Einschalten des Ersatzteils.
 
-Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+Falls andere Systemkomponenten nicht ordnungsgemäß funktionieren, sollte der technische Support kontaktiert werden.
 
 * Die Netzteile sind redundant und Hot-Swap-fähig.
 * Dieses Verfahren ist für den Austausch eines Netzteils nach dem anderen beschrieben.
 +
 
-NOTE: Als Best Practice empfiehlt es sich, das Netzteil innerhalb von zwei Minuten vom Gehäuse zu ersetzen. Das System funktioniert weiterhin, aber ONTAP sendet Meldungen an die Konsole über das beeinträchtigte Netzteil, bis das Netzteil ersetzt wird.
+NOTE: Das Netzteil sollte innerhalb von zwei Minuten nach dem Ausbau aus dem Gehäuse ersetzt werden. Das System bleibt weiterhin funktionsfähig, jedoch sendet ONTAP Meldungen über die beeinträchtigte Stromversorgung an die Konsole, bis das Netzteil ersetzt wurde.
 
 * Die Netzteile haben einen automatischen Bereich.
 
@@ -46,7 +46,7 @@ image::../media/drw_2850_replace_PSU_IEOPS-702.svg[Ersetzen Sie ein Netzteil]
 CAUTION: Wenn Sie ein Netzteil entfernen, verwenden Sie immer zwei Hände, um sein Gewicht zu stützen.
 
 . Stellen Sie sicher, dass sich der ein-/Ausschalter des neuen Netzteils in der Stellung aus befindet.
-. Halten und richten Sie die Kanten des Netzteils mit beiden Händen an der Öffnung im Systemgehäuse aus, und drücken Sie dann vorsichtig das Netzteil mithilfe des Nockengriffs in das Gehäuse.
+. Die Kanten des Netzteils mit beiden Händen an der Öffnung im Systemgehäuse abstützen und ausrichten, anschließend das Netzteil vorsichtig mit dem Nockengriff in das Gehäuse schieben.
 +
 Die Netzteile sind codiert und können nur auf eine Weise installiert werden.
 
@@ -62,7 +62,7 @@ NOTE: Beim Einschieben des Netzteils in das System keine übermäßige Kraft ver
 
 
 +
-Sobald die Stromversorgung wiederhergestellt ist, sollte die Status-LED grün leuchten.
+Nach Wiederherstellung der Stromversorgung sollte die Status-LED grün leuchten.
 
 . Schalten Sie das neue Netzteil ein, und überprüfen Sie dann den Betrieb der Aktivitäts-LEDs für das Netzteil.
 +

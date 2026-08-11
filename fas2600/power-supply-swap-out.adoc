@@ -2,24 +2,24 @@
 permalink: fas2600/power-supply-swap-out.html 
 sidebar: sidebar 
 keywords: fas2600, power supply replacement 
-summary: Beim Austausch eines Netzteils müssen Sie das alte Netzteil ausschalten, trennen und entfernen sowie das neue Netzteil installieren, anschließen und einschalten. 
+summary: Das Netzteil Ihres FAS2600 Systems kann im laufenden Betrieb ausgetauscht werden, indem das defekte Gerät ausgeschaltet, vom Stromnetz getrennt und entfernt wird, danach wird das Ersatzgerät installiert und wieder angeschlossen. 
 ---
-= Tauschen Sie ein Netzteil aus – FAS2600
+= Netzteil im laufenden Betrieb in Ihrem FAS2600 System austauschen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Beim Austausch eines Netzteils müssen Sie das alte Netzteil ausschalten, trennen und entfernen sowie das neue Netzteil installieren, anschließen und einschalten.
+Das Netzteil in Ihrem FAS2600 System kann im laufenden Betrieb ausgetauscht werden, indem das alte Netzteil ausgeschaltet, abgeklemmt und entfernt und anschließend das Ersatznetzteil installiert, angeschlossen und eingeschaltet wird.
 
-Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+Falls andere Systemkomponenten nicht ordnungsgemäß funktionieren, sollte der technische Support kontaktiert werden.
 
 * Die Netzteile sind redundant und Hot-Swap-fähig.
 * Dieses Verfahren ist für den Austausch eines Netzteils nach dem anderen beschrieben.
 +
 
-NOTE: Die Kühlung ist in das Netzteil integriert, sodass Sie das Netzteil innerhalb von zwei Minuten nach dem Entfernen austauschen müssen, um eine Überhitzung durch einen verringerten Luftstrom zu vermeiden. Da das Chassis eine gemeinsame Kühlungskonfiguration für die beiden HA-Nodes bereitstellt, werden alle Controller-Module im Chassis mit einer Verzögerung von mehr als zwei Minuten heruntergefahren. Wenn beide Controller-Module heruntergefahren werden, stellen Sie sicher, dass beide Netzteile eingesetzt sind, schalten Sie beide für 30 Sekunden aus und schalten Sie beide ein.
+NOTE: Die Kühlung ist in das Netzteil integriert, daher muss das Netzteil innerhalb von zwei Minuten nach der Entfernung ersetzt werden, um eine Überhitzung durch reduzierten Luftstrom zu verhindern. Da das Gehäuse eine gemeinsame Kühlkonfiguration für die beiden HA-Knoten bereitstellt, führt eine Verzögerung von mehr als zwei Minuten zum Herunterfahren aller Controller-Module im Gehäuse. Falls beide Controller-Module tatsächlich heruntergefahren werden, ist sicherzustellen, dass beide Netzteile eingesetzt sind, beide für 30 Sekunden ausgeschaltet und anschließend wieder eingeschaltet werden.
 
 * Die Anzahl der Netzteile im System hängt vom Modell ab.
 * Die Netzteile haben einen automatischen Bereich.
@@ -62,7 +62,7 @@ NOTE: Beim Einschieben des Netzteils in das System keine übermäßige Kraft ver
 
 
 +
-Sobald die Stromversorgung wiederhergestellt ist, sollte die Status-LED grün leuchten.
+Nach Wiederherstellung der Stromversorgung sollte die Status-LED grün leuchten.
 
 . Schalten Sie das neue Netzteil ein, und überprüfen Sie dann den Betrieb der Aktivitäts-LEDs für das Netzteil.
 +

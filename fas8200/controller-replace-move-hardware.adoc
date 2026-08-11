@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fas8200, move the controller module hardware 
 summary: Um die Hardware des Controller-Moduls zu ersetzen, müssen Sie den beeinträchtigten Controller entfernen, die FRU-Komponenten in das Ersatzcontrollermodul verschieben, das Ersatzcontrollermodul im Gehäuse installieren und das System dann in den Wartungsmodus booten. 
 ---
-= Ersetzen Sie die Controller-Modul-Hardware – FAS8200
+= Den Controller in Ihrem FAS8200 System ersetzen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -67,7 +67,7 @@ Sie müssen das Bootmedium ausfindig machen und die Anweisungen befolgen, um es 
 
 . Suchen Sie das Boot-Medium mithilfe der folgenden Abbildung oder der FRU-Zuordnung auf dem Controller-Modul:
 +
-image::../media/drw_rxl_boot_media.png[Startmedien werden entfernt]
+image::../media/drw_rxl_boot_media.png[Entfernen des Startmediums]
 
 . Drücken Sie die blaue Taste am Startmediengehäuse, um die Startmedien aus dem Gehäuse zu lösen, und ziehen Sie sie vorsichtig gerade aus der Buchse des Boot-Mediums heraus.
 +
@@ -162,7 +162,7 @@ image::../media/drw_rxl_dimms.png[Ersetzen von DIMMs]
 . Suchen Sie den Steckplatz, in dem Sie das DIMM installieren.
 . Vergewissern Sie sich, dass sich die DIMM-Auswerferlaschen am Anschluss in der geöffneten Position befinden und setzen Sie das DIMM-Auswerfer anschließend in den Steckplatz ein.
 +
-Das DIMM passt eng in den Steckplatz, sollte aber leicht einpassen. Falls nicht, richten Sie das DIMM-Modul mit dem Steckplatz aus und setzen Sie es wieder ein.
+Der DIMM sitzt fest im Steckplatz, sollte sich aber leicht einsetzen lassen. Falls dies nicht der Fall ist, den DIMM am Steckplatz neu ausrichten und erneut einsetzen.
 
 +
 
@@ -233,7 +233,7 @@ Beim Austausch eines Controller-Moduls müssen Sie die Cache-Module von den beei
 Das Speichersystem verfügt über zwei Steckplätze für das Caching-Modul und standardmäßig ist nur ein Steckplatz belegt.
 
 +
-image::../media/drw_rxl_fcache.png[Entfernen Sie das Cache-Modul und bauen Sie es wieder ein]
+image::../media/drw_rxl_fcache.png[Entfernen Sie das Caching-Modul, und ersetzen Sie es]
 
 
 
@@ -265,7 +265,7 @@ NOTE: Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein,
 . Verkabeln Sie nur die Management- und Konsolen-Ports, sodass Sie auf das System zugreifen können, um die Aufgaben in den folgenden Abschnitten auszuführen.
 +
 
-NOTE: Sie schließen die übrigen Kabel später in diesem Verfahren an das Controller-Modul an.
+NOTE: Die restlichen Kabel werden im weiteren Verlauf dieses Verfahrens an das Controller-Modul angeschlossen.
 
 . Führen Sie die Neuinstallation des Controller-Moduls durch:
 +
@@ -278,7 +278,7 @@ NOTE: Sie schließen die übrigen Kabel später in diesem Verfahren an das Contr
 Ein HA-Paar
  a| 
  The controller module begins to boot as soon as it is fully seated in the chassis. Be prepared to interrupt the boot process.
-.. Schieben Sie das Steuermodul fest in die offene Position, bis es auf die Mittelebene trifft und vollständig sitzt, und schließen Sie dann den Nockengriff in die verriegelte Position. Ziehen Sie die Flügelschraube am Nockengriff auf der Rückseite des Controller-Moduls fest.
+.. Bei geöffnetem Nockenhebel das Controller-Modul fest hineindrücken, bis es an der Mittelebene anliegt und vollständig sitzt, und dann den Nockenhebel in die verriegelte Position bringen. Die Rändelschraube am Nockenhebel auf der Rückseite des Controller-Moduls festziehen.
 +
 
 NOTE: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige Kraft verwenden, um Schäden an den Anschlüssen zu vermeiden.
@@ -301,7 +301,7 @@ NOTE: Wenn die Eingabeaufforderung nicht angezeigt wird und das Controller-Modul
  a| 
 Eine eigenständige Konfiguration
  a| 
-.. Schieben Sie das Steuermodul fest in die offene Position, bis es auf die Mittelebene trifft und vollständig sitzt, und schließen Sie dann den Nockengriff in die verriegelte Position. Ziehen Sie die Flügelschraube am Nockengriff auf der Rückseite des Controller-Moduls fest.
+.. Bei geöffnetem Nockenhebel das Controller-Modul fest hineindrücken, bis es an der Mittelebene anliegt und vollständig sitzt, und dann den Nockenhebel in die verriegelte Position bringen. Die Rändelschraube am Nockenhebel auf der Rückseite des Controller-Moduls festziehen.
 +
 
 NOTE: Beim Einschieben des Controller-Moduls in das Gehäuse keine übermäßige Kraft verwenden, um Schäden an den Anschlüssen zu vermeiden.

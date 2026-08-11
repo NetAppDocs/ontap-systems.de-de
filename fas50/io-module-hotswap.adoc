@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fas50, hot swap a cluster ha card, hot swap ethernet client io module, hotswap io module, hot swap io module 
 summary: Sie können ein Ethernet-E/A-Modul in Ihrem FAS50-Speichersystem per Hot-Swap austauschen, wenn ein Modul ausfällt und Ihr Speichersystem alle ONTAP-Versionanforderungen erfüllt. 
 ---
-= Hot-Swap eines E/A-Moduls - FAS50
+= Hot-Swap eines E/A-Moduls in Ihrem FAS50 System
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,7 +13,7 @@ summary: Sie können ein Ethernet-E/A-Modul in Ihrem FAS50-Speichersystem per Ho
 [role="lead"]
 Sie können ein Ethernet-E/A-Modul in Ihrem FAS50-Speichersystem per Hot-Swap austauschen, wenn ein Modul ausfällt und Ihr Speichersystem alle ONTAP-Versionanforderungen erfüllt.
 
-Um ein E/A-Modul per Hot-Swap auszutauschen, stellen Sie sicher, dass Ihr Speichersystem die ONTAP-Versionsanforderungen erfüllt, bereiten Sie Ihr Speichersystem und das E/A-Modul vor, führen Sie den Hot-Swap des defekten Moduls durch, nehmen Sie das Ersatzmodul in Betrieb, stellen Sie den normalen Betrieb des Speichersystems wieder her und senden Sie das defekte Modul an NetApp zurück.
+Für den Hot-Swap eines E/A-Moduls ist sicherzustellen, dass das Speichersystem die ONTAP-Versionsanforderungen erfüllt, das Speichersystem und das E/A-Modul vorbereitet werden, das ausgefallene Modul im Hot-Swap-Verfahren ersetzt wird, das Ersatzmodul online geschaltet wird, der normale Betrieb des Speichersystems wiederhergestellt wird und das ausgefallene Modul an NetApp zurückgegeben wird.
 
 .Über diese Aufgabe
 * Hot-Swap des E/A-Moduls bedeutet, dass Sie kein manuelles Takeover durchführen müssen, bevor Sie das ausgefallene E/A-Modul ersetzen.
@@ -34,8 +34,8 @@ Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led
 
 
 
-[[step-1-ensure-the-storage-system-meets-the-procedure-requirements]]
-== Schritt 1: Sicherstellen, dass das Speichersystem die Verfahrensanforderungen erfüllt
+[[step-1-verify-the-storage-system-meets-the-procedure-requirements]]
+== Schritt 1: Überprüfung, ob das Speichersystem die Verfahrensanforderungen erfüllt
 
 Um dieses Verfahren anzuwenden, muss auf Ihrem Speichersystem ONTAP 9.17.1 oder höher ausgeführt werden, und Ihr Speichersystem muss alle Anforderungen für die Version von ONTAP erfüllen, die auf Ihrem Speichersystem ausgeführt wird.
 

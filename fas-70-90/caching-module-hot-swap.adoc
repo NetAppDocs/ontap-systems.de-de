@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fas70, fas90, hot swap, replace, Flash Cache module carrier, caching module, Flash Cache 
 summary: 'Der NVMe SSD Flash Cache Modulträger in Ihrem FAS70 oder FAS90 System enthält ein oder zwei Flash Cache Module (Caching-Module) mit einem einzelnen SSD Flash Cache Laufwerk, das in jedes Caching-Modul integriert ist.' 
 ---
-= Ersetzen Sie den Flash Cache Modulträger oder ein Caching-Modul – FAS70 und FAS90
+= Den Flash Cache Modulträger oder das Caching-Modul im FAS70 oder FAS90 System ersetzen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -29,8 +29,8 @@ Je nachdem, welche Komponente Sie ersetzen müssen, können Sie einen der folgen
 Der Flash Cache Modulträger befindet sich in Steckplatz 6 und beherbergt bis zu zwei Flash Cache Module. Sie können den Flash Cache Modulträger nicht im laufenden Betrieb austauschen
 
 .Bevor Sie beginnen
-* Stellen Sie sicher, dass Ihr Storage-System über das geeignete Betriebssystem für den Flash Cache Ersatzmodulträger verfügt.
-* Vergewissern Sie sich, dass alle anderen Komponenten ordnungsgemäß funktionieren. Falls nicht, wenden Sie sich an den technischen Support.
+* Es sollte geprüft werden, ob Ihr Speichersystem über das geeignete Betriebssystem für den Ersatz Flash Cache Modulträger verfügt.
+* Es sollte bestätigt werden, dass alle anderen Komponenten ordnungsgemäß funktionieren. Ist dies nicht der Fall, ist der technische Support zu kontaktieren.
 
 
 
@@ -284,8 +284,8 @@ Die Flash Cache Module (Caching-Module) befinden sich in Steckplatz 6-1 oder in 
 Sie können die einzelnen Caching-Module im laufenden Betrieb durch Caching-Module ersetzen, die dieselbe Kapazität vom selben Anbieter oder von einem anderen unterstützten Anbieter haben.
 
 .Bevor Sie beginnen
-* Stellen Sie sicher, dass das Ersatz-Caching-Modul dieselbe Kapazität wie das ausgefallene Cache hat, vom selben Anbieter oder von einem anderen unterstützten Anbieter.
-* Vergewissern Sie sich, dass alle anderen Komponenten ordnungsgemäß funktionieren. Falls nicht, wenden Sie sich an den technischen Support.
+* Es ist zu überprüfen, ob das Ersatz-Caching-Modul die gleiche Kapazität wie das ausgefallene Modul hat, entweder vom selben Hersteller oder von einem anderen unterstützten Hersteller.
+* Es sollte bestätigt werden, dass alle anderen Komponenten ordnungsgemäß funktionieren. Ist dies nicht der Fall, ist der technische Support zu kontaktieren.
 * Die Laufwerke in den Caching-Modulen sind keine Field Replaceable Units (FRU). Sie müssen das gesamte Cache-Modul ersetzen.
 
 
@@ -341,7 +341,7 @@ Fehler-LED des Caching-Moduls
 .. Drehen Sie das Kabelführungs-Fach nach unten, indem Sie die Tasten an beiden Seiten an der Innenseite des Kabelführungs-Fachs ziehen und das Fach dann nach unten drehen.
 .. Drücken Sie die Entriegelungstaste Terra Cotta auf der Vorderseite des Cache-Moduls.
 .. Drehen Sie den Nockengriff so weit wie möglich.
-.. Entfernen Sie das Caching-Modul aus dem Gehäuse, indem Sie den Finger in die Öffnung des Nockenhebels stecken und das Modul aus dem Flash Cache-Modulträger ziehen.
+.. Das Cache-Modul wird aus dem Gehäuse entfernt, indem der Finger in die Öffnung des Nockenhebels eingehakt und das Modul aus dem Flash Cache Modulträger herausgezogen wird.
 +
 Achten Sie darauf, das Caching-Modul zu unterstützen, wenn Sie es aus dem Flash Cache Modulträger entfernen.
 
@@ -371,7 +371,7 @@ The module has been successfully powered on, initialized and placed into service
 ----
 . Überprüfen Sie den Steckplatzstatus mithilfe der `system controller slot module show` Befehl.
 +
-Stellen Sie sicher, dass die Befehlsausgabe den Status für das meldet `powered-on` Und einsatzbereit.
+Stellen Sie sicher, dass die Befehlsausgabe den Status als  `powered-on` und betriebsbereit meldet.
 
 . Vergewissern Sie sich, dass das Ersatz-Cache-Modul online ist und erkannt wird, und bestätigen Sie anschließend visuell, dass die gelbe Warnungs-LED nicht leuchtet: `sysconfig -av slot_number`
 +

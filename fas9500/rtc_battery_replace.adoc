@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fas9500, replace the real-time clock battery 
 summary: Tauschen Sie die Echtzeituhr-Batterie im Controllermodul aus. 
 ---
-= Ersetzen Sie den Echtzeitakku FAS9500
+= Die Echtzeit-Batterie der Echtzeituhr in Ihrem FAS9500 System austauschen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -14,7 +14,7 @@ summary: Tauschen Sie die Echtzeituhr-Batterie im Controllermodul aus.
 Sie ersetzen den Echtzeituhr-Akku (RTC) im Controller-Modul, sodass die Dienste und Anwendungen Ihres Systems, die von der genauen Zeitsynchronisierung abhängen, weiterhin funktionieren.
 
 * Sie können dieses Verfahren bei allen Versionen von ONTAP verwenden, die von Ihrem System unterstützt werden
-* Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+* Alle anderen Systemkomponenten müssen ordnungsgemäß funktionieren; falls dies nicht der Fall ist, müssen Sie den technischen Support kontaktieren.
 
 
 
@@ -196,7 +196,7 @@ NOTE: Beachten Sie die Polarität der Batterie, während Sie sie aus dem Halter 
 [[step-4-reinstall-the-controller-module-and-set-timedate]]
 == Schritt 4: Installieren Sie das Controller-Modul neu und stellen Sie Uhrzeit/Datum ein
 
-Nachdem Sie den RTC-Akku ersetzt haben, müssen Sie das Controller-Modul neu installieren. Wenn der RTC-Akku länger als 10 Minuten aus dem Controller-Modul entfernt wurde, müssen Sie die Uhrzeit und das Datum möglicherweise zurücksetzen.
+Nach dem Austausch der RTC-Batterie muss das Steuermodul wieder eingebaut werden. Wenn die RTC-Batterie länger als 10 Minuten aus dem Steuermodul entfernt war, müssen Datum und Uhrzeit möglicherweise neu eingestellt werden.
 
 .Schritte
 . Wenn Sie dies noch nicht getan haben, schließen Sie den Luftkanal oder die Abdeckung des Controller-Moduls.

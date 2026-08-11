@@ -1,17 +1,17 @@
 ---
 permalink: fas2800/bootmedia-recovery-image-boot-bmr.html 
 sidebar: sidebar 
-keywords: fas2800, boot the recovery image 
-summary: Stellen Sie das ONTAP Image auf dem Ersatz-Bootmedium in Ihrem fas2800-System wieder her.  Der Vorgang umfasst das Starten des Boot-Wiederherstellungsprozesses von der LOADER-Eingabeaufforderung aus und das Überwachen des Wiederherstellungsprozesses, bis dieser abgeschlossen ist und der Knoten neu gestartet wird. 
+keywords: fas2820, boot the recovery image 
+summary: Das ONTAP Image wird auf dem Ersatz-Bootmedium in Ihrem FAS2820 System wiederhergestellt. Dabei wird der Boot-Wiederherstellungsprozess über die LOADER-Eingabeaufforderung gestartet und der Wiederherstellungsprozess bis zum Abschluss und dem Neustart des Knotens überwacht. 
 ---
-= Automatisierte Boot-Medienwiederherstellung vom Partnerknoten - FAS2800
+= Das Startabbild auf Ihrem FAS2820 System kann mit dem automatisierten Boot-Wiederherstellungsprozess wiederhergestellt werden.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Nachdem Sie das neue Boot-Mediengerät in Ihrem FAS2800-System installiert haben, können Sie den automatisierten Boot-Medien-Wiederherstellungsprozess starten, um die Konfiguration vom Partnerknoten wiederherzustellen. Während des Wiederherstellungsprozesses prüft das System, ob die Verschlüsselung aktiviert ist und ermittelt den verwendeten Schlüsselverschlüsselungstyp. Wenn die Schlüsselverschlüsselung aktiviert ist, führt Sie das System durch die entsprechenden Schritte zur Wiederherstellung.
+Nach dem Einbau des neuen Bootmediums in Ihr FAS2820-System können Sie den automatischen Bootmedien-Wiederherstellungsprozess starten, um die Konfiguration vom Partnerknoten wiederherzustellen. Während des Wiederherstellungsprozesses prüft das System, ob die Verschlüsselung aktiviert ist und ermittelt den verwendeten Typ der Schlüsselverschlüsselung. Wenn die Schlüsselverschlüsselung aktiviert ist, führt das System durch die entsprechenden Schritte zur Wiederherstellung.
 
 Der automatisierte Boot-Medien-Wiederherstellungsprozess wird nur in ONTAP 9.17.1 und höher unterstützt. Wenn Ihr Speichersystem eine frühere Version von ONTAP verwendet, verwenden Sie die link:bootmedia-replace-workflow.html["manuelle Boot-Wiederherstellung"] .
 

@@ -4,17 +4,17 @@ sidebar: sidebar
 keywords: fas9500, replace a dimm 
 summary: Sie müssen ein DIMM im Controller austauschen, wenn in Ihrem Speichersystem Fehler auftreten, wie z. B. übermäßige CECC-Fehler, die auf Health Monitor-Warnungen basieren, oder nicht korrigierbare ECC-Fehler, die typischerweise durch einen einzelnen DIMM-Ausfall verursacht werden, der das Speichersystem am Booten von ONTAP hindert. 
 ---
-= Ersetzen Sie ein DIMM - FAS9500
+= Ein DIMM im FAS9500 System ersetzen, um Speicherfehler zu beheben
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie müssen ein DIMM im Controller ersetzen, wenn das Speichersystem auf Fehler wie übermäßige CECC-Fehler (korrigierbare Fehlerkorrekturcodes) stößt, die auf Warnmeldungen der Systemzustandsüberwachung oder nicht korrigierbaren ECC-Fehlern basieren, die normalerweise durch einen einzelnen DIMM-Fehler verursacht werden, der das Starten von ONTAP verhindert.
+Ein DIMM im Controller ist auszutauschen, wenn das Speichersystem Fehler wie übermäßige CECC-Fehler (Correctable Error Correction Codes) basierend auf Health Monitor-Warnmeldungen oder nicht korrigierbare ECC-Fehler aufweist. Solche Fehler werden typischerweise durch einen einzelnen DIMM-Ausfall verursacht, der das Booten von ONTAP im Speichersystem verhindert.
 
 .Bevor Sie beginnen
-Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+Alle anderen Systemkomponenten müssen ordnungsgemäß funktionieren; falls eine Komponente nicht ordnungsgemäß funktioniert, ist der technische Support zu kontaktieren.
 
 Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
 
@@ -264,7 +264,7 @@ NOTE: Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein,
 . Verkabeln Sie nur die Management- und Konsolen-Ports, sodass Sie auf das System zugreifen können, um die Aufgaben in den folgenden Abschnitten auszuführen.
 +
 
-NOTE: Sie schließen die übrigen Kabel später in diesem Verfahren an das Controller-Modul an.
+NOTE: Die restlichen Kabel werden im weiteren Verlauf dieses Verfahrens an das Controller-Modul angeschlossen.
 
 . Führen Sie die Neuinstallation des Controller-Moduls durch:
 +

@@ -2,9 +2,9 @@
 permalink: fas8200/rtc-battery-replace.html 
 sidebar: sidebar 
 keywords: fas8200, replace the rtc battery 
-summary: Sie tauschen die Echtzeit-Batterie im Steuermodul aus, damit die Dienste und Anwendungen Ihres Systems, die auf eine genaue Zeitsynchronisation angewiesen sind, weiterhin funktionieren. 
+summary: Sie tauschen die Echtzeit-Batterie im Controller-Modul aus, damit Ihre Dienste und Anwendungen, die auf eine genaue Zeitsynchronisation angewiesen sind, weiterhin funktionieren. 
 ---
-= Ersetzen Sie den Echtzeitbatterie FAS8200
+= Die Echtzeit-Batterie der Echtzeituhr im FAS8200 System ersetzen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -14,7 +14,7 @@ summary: Sie tauschen die Echtzeit-Batterie im Steuermodul aus, damit die Dienst
 Sie ersetzen den Echtzeituhr-Akku (RTC) im Controller-Modul, sodass die Dienste und Anwendungen Ihres Systems, die von der genauen Zeitsynchronisierung abhängen, weiterhin funktionieren.
 
 * Sie können dieses Verfahren bei allen Versionen von ONTAP verwenden, die von Ihrem System unterstützt werden
-* Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+* Alle anderen Systemkomponenten müssen ordnungsgemäß funktionieren; falls dies nicht der Fall ist, müssen Sie den technischen Support kontaktieren.
 
 
 
@@ -259,8 +259,8 @@ NOTE: Beachten Sie die Polarität der Batterie, während Sie sie aus dem Halter 
 
 
 
-[[step-4-reinstall-the-controller-module-and-setting-timedate-after-rtc-battery-replacement]]
-== Schritt 4: Setzen Sie das Controller-Modul wieder ein und setzen Sie Zeit/Datum nach dem RTC-Batterieaustausch ein
+[[step-4-reinstall-the-controller-module-and-reset-the-time-and-date-after-rtc-battery-replacement]]
+== Schritt 4: Das Controller-Modul wird nach dem Austausch der RTC-Batterie wieder eingebaut und Zeit sowie Datum werden zurückgesetzt.
 
 Nachdem Sie eine Komponente innerhalb des Controller-Moduls ersetzt haben, müssen Sie das Controller-Modul im Systemgehäuse neu installieren, die Uhrzeit und das Datum auf dem Controller zurücksetzen und es dann booten.
 

@@ -4,16 +4,16 @@ sidebar: sidebar
 keywords: fas500f, replace dimms 
 summary: Sie müssen ein DIMM im Controllermodul austauschen, wenn Ihr System eine zunehmende Anzahl korrigierbarer Fehlerkorrekturcodes registriert. Andernfalls kommt es zu einem Systemabsturz. 
 ---
-= Ersetzen Sie ein DIMM - FAS500f
+= Ein DIMM-Modul im FAS500f-System ersetzen, um Speicherfehler zu beheben
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie müssen ein DIMM im Controller ersetzen, wenn das Speichersystem auf Fehler wie übermäßige CECC-Fehler (korrigierbare Fehlerkorrekturcodes) stößt, die auf Warnmeldungen der Systemzustandsüberwachung oder nicht korrigierbaren ECC-Fehlern basieren, die normalerweise durch einen einzelnen DIMM-Fehler verursacht werden, der das Starten von ONTAP verhindert.
+Sie müssen ein DIMM im Controller austauschen, wenn Ihr Speichersystem Fehler wie übermäßige CECC-Fehler (korrigierbare Fehlerkorrekturcodes) aufgrund von Health Monitor-Warnmeldungen oder nicht korrigierbare ECC-Fehler aufweist. Diese Fehler werden typischerweise durch den Ausfall eines einzelnen DIMM verursacht, der das Booten von ONTAP im Speichersystem verhindert.
 
-Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+Falls andere Systemkomponenten nicht ordnungsgemäß funktionieren, sollte der technische Support kontaktiert werden.
 
 Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
 
@@ -123,7 +123,7 @@ image:../media/icon_round_2.png["Legende Nummer 2"]
 Verriegelungsmechanismus
 
 |===
-. Fassen Sie die Seiten des Controller-Moduls mit beiden Händen an, ziehen Sie es vorsichtig aus dem Gehäuse heraus und legen Sie es auf eine flache, stabile Oberfläche.
+. Das Controllermodul mit beiden Händen greifen und vorsichtig aus dem Gehäuse herausziehen, anschließend auf eine ebene, stabile Oberfläche legen.
 . Drehen Sie die Daumenschraube auf der Vorderseite des Controller-Moduls gegen den Uhrzeigersinn, und öffnen Sie die Abdeckung des Controller-Moduls.
 +
 image::../media/drw_a250_open_controller_module_cover.png[Öffnen der Abdeckung des Controller-Moduls]
@@ -177,7 +177,7 @@ NOTE: Halten Sie das DIMM an den Kanten, um einen Druck auf die Komponenten auf 
 
 . Setzen Sie das Ersatz-DIMM in den Steckplatz ein.
 +
-Die DIMMs passen eng in die Steckdose. Falls nicht, setzen Sie das DIMM erneut ein, um es mit dem Sockel neu auszurichten.
+Die DIMMs müssen fest im Sockel sitzen. Falls ein DIMM nicht fest sitzt, sollte es erneut eingesetzt werden, um es richtig im Sockel auszurichten.
 
 . Prüfen Sie das DIMM visuell, um sicherzustellen, dass es gleichmäßig ausgerichtet und vollständig in den Sockel eingesetzt ist.
 
@@ -216,8 +216,8 @@ Flügelschraube
 |===
 . Setzen Sie das Controller-Modul in das Chassis ein:
 +
-.. Stellen Sie sicher, dass die Arms des Verriegelungsmechanismus in der vollständig ausgestreckten Position verriegelt sind.
-.. Richten Sie das Controller-Modul mit beiden Händen aus und schieben Sie es vorsichtig in die Arms des Verriegelungsmechanismus, bis es anhält.
+.. Es sollte überprüft werden, ob die Verriegelungsarme des Verriegelungsmechanismus in der vollständig ausgefahrenen Position eingerastet sind.
+.. Mit beiden Händen das Steuermodul ausrichten und vorsichtig in die Verriegelungsarme des Arretiermechanismus schieben, bis es stoppt.
 .. Platzieren Sie Ihre Zeigefinger durch die Fingerlöcher von der Innenseite des Verriegelungsmechanismus.
 .. Drücken Sie die Daumen auf den orangefarbenen Laschen oben am Verriegelungsmechanismus nach unten, und schieben Sie das Controller-Modul vorsichtig über den Anschlag.
 .. Lösen Sie Ihre Daumen von oben auf den Verriegelungs-Mechanismen und drücken Sie weiter, bis die Verriegelungen einrasten.
@@ -232,7 +232,7 @@ Das Controller-Modul sollte vollständig eingesetzt und mit den Kanten des Gehä
 . Verkabeln Sie nur die Management- und Konsolen-Ports, sodass Sie auf das System zugreifen können, um die Aufgaben in den folgenden Abschnitten auszuführen.
 +
 
-NOTE: Sie schließen die übrigen Kabel später in diesem Verfahren an das Controller-Modul an.
+NOTE: Die restlichen Kabel werden im weiteren Verlauf dieses Verfahrens an das Controller-Modul angeschlossen.
 
 
 

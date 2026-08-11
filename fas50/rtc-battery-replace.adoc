@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fas50, replace the real-time clock battery 
 summary: Tauschen Sie die Echtzeituhr-Batterie, die üblicherweise als Knopfzelle bezeichnet wird, in Ihrem FAS50-Speichersystem aus, um sicherzustellen, dass Dienste und Anwendungen, die auf eine genaue Zeitsynchronisation angewiesen sind, weiterhin betriebsbereit bleiben. 
 ---
-= Ersetzen Sie die Echtzeituhr-Batterie - FAS50
+= Die Echtzeit-Uhr-Batterie in Ihrem FAS50 System ersetzen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -283,7 +283,7 @@ image::../media/icon_round_3.png[Legende Nummer 3]
 Drehen Sie die Griffe bei Bedarf aufrecht (neben den Laschen), um sie aus dem Weg zu bewegen.
 
 |===
-. Öffnen Sie die Controllerabdeckung, indem Sie die Flügelschraube gegen den Uhrzeigersinn drehen, um sie zu lösen, und öffnen Sie dann die Abdeckung.
+. Die Rändelschraube wird gegen den Uhrzeigersinn gedreht, bis sie gelockert ist, anschließend wird die Abdeckung des Controllers geöffnet.
 
 
 
@@ -445,9 +445,9 @@ DC-NETZTEIL
 == Schritt 5: Setzen Sie die Uhrzeit und das Datum auf dem Controller zurück
 
 
-NOTE: Nach dem Austauschen der RTC-Batterie, dem Einsetzen des Controllers und dem Einschalten des ersten BIOS-Reset werden folgende Fehlermeldungen angezeigt:
+NOTE: Nachdem Sie die RTC-Batterie ausgetauscht, den Controller eingesetzt und ihn zum ersten BIOS-Reset eingeschaltet haben, werden die folgenden Fehlermeldungen angezeigt:
 `RTC date/time error. Reset date/time to default`
-`RTC power failure error` Diese Meldungen werden erwartet und Sie können mit diesem Verfahren fortfahren.
+`RTC power failure error` Diese Meldungen sind zu erwarten und es kann mit diesem Vorgang fortgefahren werden.
 
 . Überprüfen Sie auf dem fehlerfreien Controller Datum und Uhrzeit:
 +
@@ -455,7 +455,7 @@ NOTE: Nach dem Austauschen der RTC-Batterie, dem Einsetzen des Controllers und d
 
 +
 
-NOTE: Wenn Ihr Speichersystem im Boot-Menü stoppt, wählen Sie die Option für  `Reboot node` und antworten Sie bei Aufforderung _y_, und starten Sie dann zu Loader, indem Sie _Strg-C_ drücken.
+NOTE: Wenn das Speichersystem im Bootmenü anhält, die Option für  `Reboot node` auswählen und bei Aufforderung mit _y_ antworten, anschließend durch Drücken von _Strg+C_ zum LOADER booten.
 
 . Überprüfen Sie auf dem fehlerhaften Controller bei der LOADER-Eingabeaufforderung Uhrzeit und Datum:
 +

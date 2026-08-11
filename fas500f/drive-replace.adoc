@@ -2,15 +2,17 @@
 permalink: fas500f/drive-replace.html 
 sidebar: sidebar 
 keywords: fas500f, replace the drives 
-summary: Sie müssen ein Laufwerk ersetzen, wenn die Plattform eine Warnmeldung an die Systemkonsole protokolliert, die darauf hinweist, dass ein Laufwerk ausgefallen ist. Darüber hinaus leuchten die Fehler-LED auf der Bedieneranzeige und die Fehler-LED am ausgefallenen Laufwerk. 
+summary: Ein defektes Laufwerk im FAS500f Speichersystem kann unterbrechungsfrei ausgetauscht werden, während I/O-Vorgänge laufen. Die Plattform protokolliert eine Warnmeldung und aktiviert die Fehler-LEDs, wenn ein Laufwerk ausfällt. Das Austauschverfahren unterscheidet sich geringfügig, je nachdem, ob das Laufwerk eine SSD oder eine HDD ist. 
 ---
-= Tauschen Sie SSD- oder HDD-Laufwerk aus – AFF C190
+= Ein Laufwerk im laufenden Betrieb in Ihrem FAS500f System austauschen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
+Ein defektes Laufwerk im FAS500f Speichersystem kann unterbrechungsfrei ausgetauscht werden, während I/O-Vorgänge laufen. Die Plattform protokolliert eine Warnmeldung und aktiviert die Fehler-LEDs, wenn ein Laufwerk ausfällt. Das Austauschverfahren unterscheidet sich geringfügig, je nachdem, ob das Laufwerk eine SSD oder eine HDD ist.
+
 Sie können ein ausgefallenes Laufwerk unterbrechungsfrei ersetzen, während I/O gerade läuft. Das Verfahren zum Austausch einer SSD gilt für nicht rotierende Laufwerke, und das Verfahren zum Austausch einer Festplatte betrifft rotierende Laufwerke.
 
 Wenn ein Laufwerk ausfällt, meldet die Plattform eine Warnmeldung an die Systemkonsole und gibt an, welches Laufwerk ausgefallen ist. Darüber hinaus leuchten die Fehler-LED auf der Bedieneranzeige und die Fehler-LED am ausgefallenen Laufwerk.

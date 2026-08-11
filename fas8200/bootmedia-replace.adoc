@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fas8200, replace the boot media, manual, manual boot recovery 
 summary: Ersetzen Sie das defekte Bootmedium auf einem FAS8200 -Controllermodul. Das FAS8200 -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt. 
 ---
-= Ersetzen Sie das Boot-Medium FAS8200
+= Das Bootmedium im FAS8200 System ersetzen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -100,7 +100,7 @@ Sie können das System-Image über ein USB-Flash-Laufwerk, auf dem das Image ins
 * Sie müssen über ein USB-Flash-Laufwerk verfügen, das auf FAT32 formatiert ist und eine Kapazität von mindestens 4 GB aufweist.
 +
 
-NOTE: Die Datei tar.gz muss auf einer FAT32-formatierten Partition mit mindestens 4 GB abgelegt werden. Während FAT32-Partitionen bis zu 2 TB groß sein können, können integrierte Windows-Tools (z. B. DiskPart) FAT32-Partitionen nicht formatieren, die größer als 32 GB sind.
+NOTE: Die tar.gz-Datei muss auf einer FAT32-formatierten Partition mit mindestens 4GB abgelegt werden. FAT32-Partitionen können bis zu 2TB groß sein, jedoch können die in Windows integrierten Tools (zum Beispiel DiskPart) keine FAT32-Partitionen größer als 32GB formatieren.
 
 * Eine Kopie der gleichen Bildversion von ONTAP wie der beeinträchtigte Controller. Das entsprechende Image können Sie im Abschnitt „Downloads“ auf der NetApp Support-Website herunterladen
 +
@@ -167,6 +167,6 @@ NOTE: Andere Parameter können für Ihre Schnittstelle erforderlich sein. Sie k�
 
 
 +
-Die Änderungen werden implementiert, wenn das System gestartet wird.
+Das System implementiert die Änderungen beim Systemstart.
 
 

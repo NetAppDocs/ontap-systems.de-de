@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: aff a700, fas9000, shut, down, impaired, controller, take, over, manual, manual boot recovery 
 summary: Je nach Hardwarekonfiguration des Speichersystems können Sie den beeinträchtigten Controller mit verschiedenen Verfahren herunterfahren oder übernehmen. Das FAS9000 System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. 
 ---
-= Schalten Sie den Controller für die Außerbetriebnahme - FAS9000 aus
+= Der defekte Controller in Ihrem FAS9000 System wird während des manuellen Boot-Wiederherstellungsprozesses heruntergefahren.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -62,7 +62,7 @@ NOTE: Dieser Befehl funktioniert möglicherweise nicht, wenn das Startgerät bes
 [[option-2-controller-is-in-a-metrocluster]]
 === Option 2: Controller befindet sich in einem MetroCluster
 
-Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Nodes durchführen. HINWEIS: Verwenden Sie diese Vorgehensweise nicht, wenn sich Ihr System in einer MetroCluster-Konfiguration mit zwei Knoten befindet.
+Nach Abschluss der NVE- oder NSE-Aufgaben wird der betroffene Knoten heruntergefahren. HINWEIS: Dieses Verfahren ist nicht anzuwenden, wenn das System in einer Zwei-Knoten MetroCluster Konfiguration betrieben wird.
 
 Übernehmen Sie den fehlerhaften Controller und stoppen Sie ihn, damit der intakte Controller weiterhin Daten aus dem Speicher des fehlerhaften Controllers bereitstellt. Dazu unterdrücken Sie die automatische Fallerstellung in AutoSupport, deaktivieren die automatische Rückgabe und bringen den fehlerhaften Controller zur LOADER-Eingabeaufforderung. Die LOADER-Eingabeaufforderung ist der sichere, angehaltene Zustand, aus dem Sie die FRU ersetzen können.
 
@@ -121,7 +121,7 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 [[option-3-controller-is-in-a-two-node-metrocluster]]
 == Option 3: Controller befindet sich in einem MetroCluster mit zwei Nodes
 
-Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Nodes durchführen.
+Nach Abschluss der NVE- oder NSE-Aufgaben den betroffenen Knoten herunterfahren.
 
 
 NOTE: Verwenden Sie dieses Verfahren nicht, wenn sich Ihr System in einer MetroCluster-Konfiguration mit zwei Knoten befindet.

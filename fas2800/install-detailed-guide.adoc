@@ -1,17 +1,17 @@
 ---
 permalink: fas2800/install-detailed-guide.html 
 sidebar: sidebar 
-keywords: fas2800, detailed, guide, prepare, install, hardware, cable, controllers, node, switchless, cluster, network, configuration, system, storage system, setup, discovery 
-summary: Dieses Verfahren enthält detaillierte Schritt-für-Schritt-Anleitungen zur Installation eines typischen NetApp Storage-Systems. 
+keywords: fas2820, detailed, guide, prepare, install, hardware, cable, controllers, node, switchless, cluster, network, configuration, system, storage system, setup, discovery 
+summary: Dieses Verfahren enthält detaillierte Schritt-für-Schritt-Anweisungen zur Installation Ihres FAS2820 Storage-Systems. 
 ---
-= Detaillierte Schritte - FAS2820
+= Das FAS2820 System kann anhand detaillierter Anweisungen installiert werden.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Dieses Verfahren enthält detaillierte Schritt-für-Schritt-Anweisungen zur Installation eines typischen NetApp-Speichersystems. Gehen Sie wie folgt vor, wenn Sie ausführlichere Installationsanweisungen wünschen.
+Dieses Verfahren enthält detaillierte Schritt-für-Schritt-Anweisungen zur Vorbereitung, Installation, Verkabelung und Inbetriebnahme Ihres FAS2820 Storage-Systems. Diese Schritte sind geeignet, wenn ausführliche Erklärungen der Kurzanleitung vorgezogen werden.
 
 
 
@@ -45,8 +45,8 @@ IMPORTANT: Kunden mit speziellen Anforderungen an die Stromversorgung müssen di
 
 . Auf das zugreifen https://docs.netapp.com/us-en/ontap/task_configure_ontap.html#assign-a-node-management-ip-address["Konfigurieren Sie ONTAP mit System Manager in einem neuen Cluster"^]
 +
-.. Lesen Sie die amd-Verfahrensschritte zu den Anforderungen.
-.. Erfassen Sie Informationen über Ihr Storage-System, indem Sie das abschließen https://docs.netapp.com/us-en/ontap/task_configure_ontap.html["Arbeitsblatt einrichten^ (URL zum Arbeitsblatt erforderlich)"].
+.. Die Anforderungen und Verfahrensschritte werden überprüft.
+.. Informationen über Ihr Speichersystem werden durch das Ausfüllen des Einrichtungsarbeitsblatts gesammelt.
 .. Notieren Sie die Seriennummer des Storage-Systems von den Controllern.
 +
 image::../media/drw_ssn_label.svg[Beispiel für die Seriennummer des Systems]
@@ -478,7 +478,7 @@ image::../media/dwr-2800_controller2-to shelves_IEOPS-897.svg[Verbindung von Con
 [[step-5-complete-storage-system-setup-and-configuration]]
 == Schritt 5: Vollständige Einrichtung und Konfiguration des Storage-Systems
 
-Führen Sie die Einrichtung und Konfiguration des Speichersystems mit einer der folgenden Optionen durch: Wenn die Netzwerkerkennung aktiviert ist, oder mit Option 2: Wenn die Netzwerkerkennung nicht aktiviert ist.
+Die Einrichtung und Konfiguration des Speichersystems kann entweder mit Option 1 abgeschlossen werden, wenn die Netzwerkerkennung aktiviert ist, oder mit Option 2, wenn die Netzwerkerkennung nicht aktiviert ist.
 
 Verwenden Sie die folgende Animation in beiden Optionen, wenn die Einstellung der Regal-ID erforderlich ist:
 
@@ -488,17 +488,17 @@ video::c600f366-4d30-481a-89d9-ab1b0066589b[panopto]
 ====
 .Option 1: Wenn die Netzwerkerkennung aktiviert ist
 --
-Wenn die Netzwerkerkennung auf Ihrem Laptop aktiviert ist, schließen Sie die Einrichtung und Konfiguration des Storage-Systems mithilfe der automatischen Cluster-Erkennung ab.
+Wenn die Netzwerkerkennung auf Ihrem Laptop aktiviert ist, kann die Einrichtung und Konfiguration des Speichersystems mithilfe der automatischen Clustererkennung abgeschlossen werden.
 
 .Schritte
-. Schalten Sie die Regalstromversorgung ein und legen Sie die Regal-IDs mithilfe der Animation am Anfang dieses Schritts fest.
+. Die Stromversorgung des Regals wird eingeschaltet und die Regal-IDs mithilfe der Animation am Anfang dieses Schritts festgelegt.
 . Schalten Sie die Controller ein
 +
 .. Schließen Sie die Stromkabel an die Controller-Netzteile an, und schließen Sie sie dann an Stromquellen auf verschiedenen Stromkreisen an.
 .. Schalten Sie die Netzschalter an beide Knoten ein.
 +
 
-NOTE: Das erste Booten kann bis zu acht Minuten dauern.
+NOTE: Der erste Startvorgang kann bis zu acht Minuten dauern.
 
 +
 image::../media/dwr_2800_turn_on_power_IEOPS-898.svg[Schalten Sie das Gerät ein]
@@ -510,13 +510,13 @@ image::../media/dwr_2800_turn_on_power_IEOPS-898.svg[Schalten Sie das Gerät ein
 Weitere Informationen finden Sie in der Online-Hilfe Ihres Notebooks.
 
 . Schließen Sie Ihren Laptop an den Management-Switch an.
-. Verwenden Sie die Grafik oder die Schritte, um den Storage-System-Node zu ermitteln und Folgendes zu konfigurieren:
+. Die Grafik oder die Schritte geben Aufschluss darüber, welcher Speichersystemknoten zu konfigurieren ist:
 +
 image::../media/drw_autodiscovery_controler_select_ieops-1849.svg[Automatische Erkennung des Systems]
 
 +
 .. Öffnen Sie Den Datei-Explorer.
-.. Klicken Sie im linken Fensterbereich auf *Netzwerk*, klicken Sie mit der rechten Maustaste und wählen Sie *Aktualisieren*.
+.. Mit der rechten Maustaste auf *Netzwerk* im linken Bereich klicken und *Aktualisieren* auswählen.
 .. Doppelklicken Sie auf das ONTAP-Symbol, und akzeptieren Sie alle auf dem Bildschirm angezeigten Zertifikate.
 +
 
@@ -530,8 +530,8 @@ System Manager wird geöffnet.
 . Konfigurieren Sie mithilfe der von System Manager gesteuerten Einrichtung Ihr Storage-System mithilfe der in erfassten Daten <<Schritt 1: Installation vorbereiten>>.
 . Erstellen Sie ein Konto oder melden Sie sich bei Ihrem Konto an.
 +
-.. Klicken Sie Auf https://mysupport.netapp.com["mysupport.netapp.com"]
-.. Klicken Sie auf _Konto erstellen_, wenn Sie ein Konto erstellen oder sich bei Ihrem Konto anmelden müssen.
+.. Wählen https://mysupport.netapp.com["mysupport.netapp.com"]
+.. „Konto erstellen“ auswählen, falls ein Konto erstellt oder in das eigene Konto eingeloggt werden muss.
 
 
 . Herunterladen und installieren https://mysupport.netapp.com/site/tools["Active IQ Config Advisor"]
@@ -571,7 +571,7 @@ image::../media/dwr_2800_turn_on_power_IEOPS-898.svg[Schalten Sie das Gerät ein
 
 +
 
-NOTE: Das erste Booten kann bis zu acht Minuten dauern.
+NOTE: Der erste Startvorgang kann bis zu acht Minuten dauern.
 
 . Weisen Sie einem der Nodes eine erste Node-Management-IP-Adresse zu.
 +
@@ -606,13 +606,13 @@ NOTE: Überprüfen Sie die Online-Hilfe Ihres Laptops oder Ihrer Konsole, wenn S
 
 NOTE: Das Format für die Adresse ist +https://x.x.x.x.+
 
-.. Konfigurieren Sie das Speichersystem mithilfe der in erfassten Daten <<Schritt 1: Installation vorbereiten>>..
+.. Das Speichersystem wird mit den Daten konfiguriert, die in <<Schritt 1: Installation vorbereiten>> gesammelt wurden.
 
 
 . Erstellen Sie ein Konto oder melden Sie sich bei Ihrem Konto an.
 +
-.. Klicken Sie Auf https://mysupport.netapp.com["mysupport.netapp.com"]
-.. Klicken Sie auf _Konto erstellen_, wenn Sie ein Konto erstellen oder sich bei Ihrem Konto anmelden müssen.
+.. Wählen https://mysupport.netapp.com["mysupport.netapp.com"]
+.. „Konto erstellen“ auswählen, falls ein Konto erstellt oder in das eigene Konto eingeloggt werden muss.
 
 
 . Herunterladen und installieren https://mysupport.netapp.com/site/tools["Active IQ Config Advisor"]

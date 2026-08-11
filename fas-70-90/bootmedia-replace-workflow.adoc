@@ -2,16 +2,16 @@
 permalink: fas-70-90/bootmedia-replace-workflow.html 
 sidebar: sidebar 
 keywords: fas70, fas90, replace the boot media 
-summary: Die manuelle Wiederherstellung des Boot-Images erfordert die Verwendung eines USB-Laufwerks, um ONTAP auf dem Ersatz-Boot-Medium des FAS70- oder FAS90-Systems neu zu installieren. Laden Sie das entsprechende ONTAP Wiederherstellungsimage von der NetApp Support-Website herunter und kopieren Sie es auf ein USB-Laufwerk. Dieses vorbereitete USB-Laufwerk wird dann verwendet, um die Wiederherstellung durchzuführen und das System wieder betriebsbereit zu machen. 
+summary: Dieser Workflow verwendet ein USB-Laufwerk, um ONTAP auf dem Ersatz-Bootmedium Ihres FAS70 oder FAS90 Systems neu zu installieren. Das passende ONTAP Recovery-Image kann von der NetApp Support Site heruntergeladen, auf das USB-Laufwerk kopiert und zur Wiederherstellung des Systems in den Betriebszustand verwendet werden. 
 ---
-= Workflow zur manuellen Wiederherstellung des Bootmediums – FAS70 und FAS90
+= Arbeitsablauf zum Austausch der Bootmedien für FAS70 und FAS90 mithilfe des manuellen Boot-Wiederherstellungsprozesses
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Die manuelle Wiederherstellung des Boot-Images erfordert die Verwendung eines USB-Laufwerks, um ONTAP auf dem Ersatz-Boot-Medium des FAS70- oder FAS90-Systems neu zu installieren. Laden Sie das entsprechende ONTAP Wiederherstellungsimage von der NetApp Support-Website herunter und kopieren Sie es auf ein USB-Laufwerk. Dieses vorbereitete USB-Laufwerk wird dann verwendet, um die Wiederherstellung durchzuführen und das System wieder betriebsbereit zu machen.
+Dieser Workflow verwendet ein USB-Laufwerk, um ONTAP auf dem Ersatz-Bootmedium Ihres FAS70 oder FAS90 Systems neu zu installieren. Das passende ONTAP Recovery-Image kann von der NetApp Support Site heruntergeladen, auf das USB-Laufwerk kopiert und zur Wiederherstellung des Systems in den Betriebszustand verwendet werden.
 
 Wenn Ihr System unter ONTAP 9.17.1 oder höher läuft, verwenden Sie die link:bootmedia-replace-workflow-bmr.html["automatische Boot-Wiederherstellung"] .
 
@@ -27,7 +27,7 @@ Prüfen Sie, ob der Sicherheitsschlüsselmanager aktiviert oder die Laufwerke ve
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:bootmedia-shutdown.html["Schalten Sie den beeinträchtigten Regler aus"]
 [role="quick-margin-para"]
-Fahren Sie den Controller herunter, wenn Sie die Boot-Medien austauschen müssen.
+Fahren Sie den Controller herunter, wenn Sie das Startmedium ersetzen müssen.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:bootmedia-replace.html["Ersetzen Sie das Startmedium"]
 [role="quick-margin-para"]

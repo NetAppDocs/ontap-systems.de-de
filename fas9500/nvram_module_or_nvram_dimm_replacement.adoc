@@ -4,16 +4,18 @@ sidebar: sidebar
 keywords: fas9500, replace nvram 
 summary: 'Das NVRAM Modul besteht aus den NVRAM11- und DIMMs sowie bis zu zwei NVMe SSD Flash Cache-Modulen (Flash Cache oder Caching-Module) pro NVRAM Modul.' 
 ---
-= Ersetzen Sie das NVRAM-Modul und/oder NVRAM DIMMs - FAS9500
+= Das NVRAM Modul oder das NVRAM DIMM im FAS9500 System ersetzen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Das NVRAM-Modul besteht aus NVRAM11 und DIMMs. Ein ausgefallenes NVRAM-Modul oder die DIMMs im NVRAM-Modul können Sie ersetzen. Um ein ausgefallenes NVRAM-Modul zu ersetzen, müssen Sie es aus dem Chassis entfernen, die DIMMs in das Ersatzmodul verschieben und das Ersatz-NVRAM-Modul im Chassis installieren.
+Das NVRAM Modul in Ihrem FAS9500 System besteht aus dem NVRAM11 und den DIMMs. Ein ausgefallenes NVRAM Modul oder ein NVRAM DIMM kann ersetzt werden, damit Ihr System weiterhin normal funktioniert.
 
-Zum Austauschen und NVRAM-DIMM müssen Sie das NVRAM-Modul aus dem Chassis entfernen, das fehlerhafte DIMM im Modul ersetzen und dann das NVRAM-Modul neu installieren.
+Um ein defektes NVRAM Modul zu ersetzen, muss es aus dem Gehäuse entfernt, die DIMMs in das Ersatzmodul umgesetzt und das Ersatz NVRAM Modul in das Gehäuse eingesetzt werden.
+
+Um ein NVRAM DIMM auszutauschen, muss das NVRAM Modul aus dem Gehäuse entfernt, das defekte DIMM im Modul ersetzt und anschließend das NVRAM Modul wieder eingebaut werden.
 
 .Über diese Aufgabe
 Da die System-ID vom NVRAM-Modul abgeleitet wird, werden beim Ersetzen des Moduls Festplatten, die zum System gehören, einer neuen System-ID neu zugewiesen.
@@ -103,7 +105,7 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 [[step-2-replace-the-nvram-module]]
 == Schritt 2: Ersetzen Sie das NVRAM-Modul
 
-Um das NVRAM-Modul auszutauschen, befindet es sich in Steckplatz 6 im Gehäuse und befolgen Sie die Schritte in der angegebenen Reihenfolge.
+Zum Austauschen des NVRAM-Moduls suchen Sie es in Steckplatz 6 im Chassis und befolgen die spezifische Sequenz von Schritten.
 
 .Schritte
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
@@ -266,10 +268,10 @@ Um ONTAP von der LOADER-Eingabeaufforderung zu booten, geben Sie ein `bye`.
 
 
 
-[[step-5-reassigning-disks]]
+[[step-5-reassign-disks]]
 == Schritt 5: Festplatten neu zuweisen
 
-Sie müssen die Änderung der System-ID beim Booten des Ersatz-Controllers bestätigen und anschließend überprüfen, ob die Änderung implementiert wurde.
+Sie müssen die Änderung der System-ID bestätigen, wenn Sie den Ersatzcontroller starten, und anschließend überprüfen, ob die Änderung korrekt ist.
 
 
 CAUTION: Eine Neuzuweisung der Festplatte ist nur erforderlich, wenn das NVRAM-Modul ersetzt wird. Dies gilt nicht für den Austausch des NVRAM-DIMM.
@@ -333,7 +335,7 @@ Disk  Aggregate Home  Owner  DR Home  Home ID    Owner ID  DR Home ID Reserver  
 ----
 . Wenn sich das System in einer MetroCluster-Konfiguration befindet, überwachen Sie den Status des Controllers: `metrocluster node show`
 +
-Die MetroCluster-Konfiguration dauert einige Minuten nach dem Austausch und kehrt in den normalen Zustand zurück. Zu diesem Zeitpunkt zeigt jeder Controller einen konfigurierten Status mit aktivierter DR-Spiegelung und einem normalen Modus an. Der `metrocluster node show -fields node-systemid` In der Befehlsausgabe wird die alte System-ID angezeigt, bis die MetroCluster-Konfiguration den normalen Status aufweist.
+Die MetroCluster Konfiguration benötigt nach dem Austausch einige Minuten, um wieder den Normalzustand zu erreichen, zu welchem Zeitpunkt jeder Controller den konfigurierten Status anzeigt, mit aktiviertem DR Mirroring und dem Modus „Normal“. Die  `metrocluster node show -fields node-systemid` Befehlsausgabe zeigt die alte System-ID an, bis die MetroCluster Konfiguration wieder den Normalzustand erreicht.
 
 . Wenn der Controller in einer MetroCluster-Konfiguration befindet, überprüfen Sie abhängig vom Status des MetroCluster, ob im Feld für die DR-Home-ID der ursprüngliche Eigentümer der Festplatte angezeigt wird, wenn der ursprüngliche Eigentümer ein Controller am Disaster-Standort ist.
 +

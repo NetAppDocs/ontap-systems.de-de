@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: FAS9500 
 summary: 'Um ein Destage-Controller-Leistungsmodul (DCPM), das die NVRAM11-Batterie enthält, per Hot-Swap auszutauschen, müssen Sie das defekte DCPM-Modul lokalisieren, es aus dem Gehäuse entfernen und das Ersatz-DCPM-Modul installieren.' 
 ---
-= Ersetzen Sie das Leistungsmodul der Zielsteuerung, das den NVRAM11-Akku FAS9500 enthält
+= Das DCPM-Modul und die NVRAM11-Batterie im FAS9500 System ersetzen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,7 +13,7 @@ summary: 'Um ein Destage-Controller-Leistungsmodul (DCPM), das die NVRAM11-Batte
 [role="lead"]
 Zum Hot-Swap eines Destage-Controller-Stromversorgungsmoduls (DCPM), das den NVRAM11-Akku enthält, müssen Sie das fehlerhafte DCPM-Modul ausfindig machen, es aus dem Gehäuse entfernen und das Ersatzmodul DCPM installieren.
 
-Vor dem Entfernen des ausgefallenen Moduls aus dem Gehäuse müssen Sie ein Ersatzmodul FÜR DEN DCPM haben und dieses innerhalb von fünf Minuten nach dem Ausbau ersetzen. Sobald das DCPM-Modul aus dem Gehäuse entfernt wird, gibt es keinen Abschaltschutz für das Controller-Modul, das das DCPM-Modul besitzt, außer Failover zum anderen Controller-Modul.
+Sie müssen ein Ersatz-DCPM-Modul bereithalten, bevor Sie das defekte Modul aus dem Gehäuse entfernen. Es muss innerhalb von fünf Minuten nach der Entfernung ersetzt werden. Nach dem Entfernen des DCPM-Moduls aus dem Gehäuse besteht kein Abschaltschutz mehr für das Controller-Modul, dem das DCPM-Modul zugeordnet ist, außer dem Failover auf das andere Controller-Modul.
 
 
 

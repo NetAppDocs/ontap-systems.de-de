@@ -2,16 +2,16 @@
 permalink: fas8300/bootmedia-replace-workflow.html 
 sidebar: sidebar 
 keywords: fas8700, fas8300, replace the boot media 
-summary: Beginnen Sie mit dem Ersetzen des Startmediums in Ihrem FAS8300 Speichersystem, indem Sie die Anforderungen für den Austausch überprüfen, den Verschlüsselungsstatus prüfen, den Controller herunterfahren, das Startmedium ersetzen, das Wiederherstellungsimage starten, die Verschlüsselung wiederherstellen und die Systemfunktionalität überprüfen. 
+summary: Der Austausch des Bootmediums in Ihrem FAS8300 oder FAS8700 Storage-System erfolgt durch Überprüfung der Austauschvoraussetzungen, Kontrolle des Verschlüsselungsstatus, Herunterfahren des Controllers, Austausch des Bootmediums, Starten des Wiederherstellungsabbilds, Wiederherstellung der Verschlüsselung und Überprüfung der Systemfunktionalität. 
 ---
-= Workflow zur manuellen Wiederherstellung des Bootmediums – FAS8300 und FAS8700
+= FAS8300 und FAS8700 Arbeitsablauf zum Austausch der Bootmedien mithilfe des manuellen Boot-Wiederherstellungsprozesses
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Beginnen Sie mit dem Ersetzen des Startmediums in Ihrem FAS8300 Speichersystem, indem Sie die Anforderungen für den Austausch überprüfen, den Verschlüsselungsstatus prüfen, den Controller herunterfahren, das Startmedium ersetzen, das Wiederherstellungsimage starten, die Verschlüsselung wiederherstellen und die Systemfunktionalität überprüfen.
+Der Austausch des Bootmediums in Ihrem FAS8300 oder FAS8700 Storage-System erfolgt durch Überprüfung der Austauschvoraussetzungen, Kontrolle des Verschlüsselungsstatus, Herunterfahren des Controllers, Austausch des Bootmediums, Starten des Wiederherstellungsabbilds, Wiederherstellung der Verschlüsselung und Überprüfung der Systemfunktionalität.
 
 Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie das manuelle Boot-Wiederherstellungsverfahren verwenden.
 
@@ -25,7 +25,7 @@ Prüfen Sie, ob der Sicherheitsschlüsselmanager aktiviert oder die Laufwerke ve
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:bootmedia-shutdown.html["Fahren Sie den Controller herunter"]
 [role="quick-margin-para"]
-Fahren Sie den Controller herunter, wenn Sie die Boot-Medien austauschen müssen.
+Fahren Sie den Controller herunter, wenn Sie das Startmedium ersetzen müssen.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:bootmedia-replace.html["Ersetzen Sie das Startmedium"]
 [role="quick-margin-para"]
@@ -37,7 +37,7 @@ Starten Sie das ONTAP-Image vom USB-Laufwerk, stellen Sie das Dateisystem wieder
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sechs"]link:bootmedia-encryption-restore.html["Wiederherstellung der Verschlüsselung"]
 [role="quick-margin-para"]
-Stellen Sie die Konfiguration des integrierten Schlüsselmanagers oder des externen Schlüsselmanagers über das ONATP Startmenü wieder her.
+Stellen Sie die Konfiguration des integrierten Schlüsselmanagers oder des externen Schlüsselmanagers über das ONTAP Startmenü wieder her.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["Sieben"]link:bootmedia-complete-rma.html["Senden Sie das fehlerhafte Teil an NetApp zurück"]
 [role="quick-margin-para"]

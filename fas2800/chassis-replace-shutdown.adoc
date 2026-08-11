@@ -1,16 +1,18 @@
 ---
 permalink: fas2800/chassis-replace-shutdown.html 
 sidebar: sidebar 
-keywords: fas2800, replace, chassis, shut down, controller, metrocluster, power, supply, ha, state, controller, configuration, switch, aggregates, replace, move, remove, swap 
-summary: Zum Austausch des Chassis müssen Sie die Controller herunterfahren. 
+keywords: fas2820, replace, chassis, shut down, controller, metrocluster, power, supply, ha, state, controller, configuration, switch, aggregates, replace, move, remove, swap 
+summary: Bevor das Chassis in Ihrem FAS2820 System ausgetauscht wird, müssen die Controller ordnungsgemäß heruntergefahren werden, um Datenverlust zu verhindern und die Systemstabilität zu gewährleisten. 
 ---
-= Fahren Sie die Controller herunter - FAS2820
+= FAS2820 Controller zum Austausch des Chassis herunterfahren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
+Bevor das Chassis in Ihrem FAS2820 System ausgetauscht wird, müssen die Controller ordnungsgemäß heruntergefahren werden, um Datenverlust zu verhindern und die Systemstabilität zu gewährleisten.
+
 Dieses Verfahren gilt für Systeme mit zwei-Knoten-Konfigurationen. Weitere Informationen über das ordnungsgemäßes Herunterfahren beim Warten eines Clusters finden Sie unter https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/What_is_the_procedure_for_graceful_shutdown_and_power_up_of_a_storage_system_during_scheduled_power_outage["Anleitung zur Problemlösung für das Speichersystem – NetApp Knowledge Base"].
 
 .Bevor Sie beginnen

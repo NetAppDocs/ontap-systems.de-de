@@ -2,16 +2,16 @@
 permalink: fas2600/controller-replace-move-hardware.html 
 sidebar: sidebar 
 keywords: fas2600, move the components 
-summary: Um die Hardware des Controller-Moduls zu ersetzen, müssen Sie den beeinträchtigten Controller entfernen, die FRU-Komponenten in das Ersatzcontrollermodul verschieben, das Ersatzcontrollermodul im Gehäuse installieren und das System dann in den Wartungsmodus booten. 
+summary: Der Controller in Ihrem FAS2600-System wird ersetzt, indem der defekte Controller entfernt, die FRU-Komponenten in das Ersatz-Controllermodul übertragen, dieses in das Gehäuse eingesetzt und das System im Wartungsmodus gestartet wird. 
 ---
-= Ersetzen Sie die Controller-Modul-Hardware - FAS2600
+= Den Controller in Ihrem FAS2600 System ersetzen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Um das Controller-Modul auszutauschen, müssen Sie den beeinträchtigten Controller entfernen, FRU-Komponenten in das Ersatzcontrollermodul verschieben, das Ersatzcontrollermodul im Gehäuse installieren und das System dann in den Wartungsmodus booten.
+Der Controller in Ihrem FAS2600-System wird ersetzt, indem der defekte Controller entfernt, die FRU-Komponenten in das Ersatz-Controllermodul übertragen, das Ersatz-Controllermodul in das Gehäuse eingesetzt und das System anschließend im Wartungsmodus gestartet wird.
 
 link:https://youtu.be/2_uWRt_iJqk["Video: AFF FAS2600 Controller-Austausch"]
 
@@ -141,7 +141,7 @@ image::../media/drw_2600_dimms.png[Position der System-DIMMs]
 . Suchen Sie den Steckplatz, in dem Sie das DIMM installieren.
 . Vergewissern Sie sich, dass sich die DIMM-Auswerferlaschen am Anschluss in der geöffneten Position befinden und setzen Sie das DIMM-Auswerfer anschließend in den Steckplatz ein.
 +
-Das DIMM passt eng in den Steckplatz, sollte aber leicht einpassen. Falls nicht, richten Sie das DIMM-Modul mit dem Steckplatz aus und setzen Sie es wieder ein.
+Der DIMM sitzt stramm im Steckplatz, sollte sich aber leicht einsetzen lassen. Falls dies nicht der Fall ist, den DIMM erneut am Steckplatz ausrichten und wieder einsetzen.
 
 +
 
@@ -159,9 +159,9 @@ Vergewissern Sie sich, dass der Stecker am Controller-Modul abhält.
 [[step-5-move-the-caching-module]]
 == Schritt 5: Verschieben Sie das Caching-Modul
 
-Um ein Caching-Modul, das als M.2 PCIe-Karte bezeichnet wird, auf dem Etikett des Controllers zu verschieben, suchen und verschieben Sie es vom alten Controller in den Ersatz-Controller und befolgen Sie die spezifischen Schritte.
+Um das Caching-Modul, das auf dem Controller-Etikett als M.2 PCIe Karte bezeichnet wird, vom alten Controller Modul auf das Ersatz Controller Modul zu übertragen, ist folgende Schrittfolge einzuhalten.
 
-Sie müssen das neue Controller-Modul bereit haben, damit Sie das Caching-Modul direkt vom alten Controller-Modul in den entsprechenden Steckplatz im neuen verschieben können. Alle anderen Komponenten des Storage-Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+Das neue Controller-Modul muss bereitstehen, damit das Caching-Modul direkt vom alten Controller-Modul in den entsprechenden Steckplatz des neuen Moduls eingesetzt werden kann. Alle anderen Komponenten im Storage-System müssen ordnungsgemäß funktionieren. Ist dies nicht der Fall, sollte der technische Support kontaktiert werden.
 
 .Schritte
 . Suchen Sie das Caching-Modul auf der Rückseite des Controller-Moduls, und entfernen Sie es.
@@ -190,7 +190,7 @@ Entfernen Sie gegebenenfalls das Cache-Modul, und setzen Sie es wieder in den So
 
 Nachdem Sie die Komponenten aus dem alten Controller-Modul in das neue Controller-Modul installiert haben, müssen Sie das neue Controller-Modul im Systemgehäuse installieren und das Betriebssystem booten.
 
-Bei HA-Paaren mit zwei Controller-Modulen im selben Chassis ist die Sequenz, in der Sie das Controller-Modul installieren, besonders wichtig, da sie versucht, neu zu booten, sobald Sie es vollständig im Chassis einsetzen.
+Bei HA-Paaren mit zwei Controller-Modulen im selben Chassis ist die Reihenfolge, in der die Controller-Module installiert werden, besonders wichtig, da ein Controller-Modul versucht, neu zu starten, sobald es vollständig im Chassis sitzt.
 
 
 NOTE: Möglicherweise wird die System-Firmware beim Booten des Systems aktualisiert. Diesen Vorgang nicht abbrechen. Das Verfahren erfordert, dass Sie den Bootvorgang unterbrechen, den Sie in der Regel jederzeit nach der entsprechenden Aufforderung durchführen können. Wenn das System jedoch beim Booten der System die System-Firmware aktualisiert, müssen Sie nach Abschluss der Aktualisierung warten, bevor Sie den Bootvorgang unterbrechen.
@@ -206,7 +206,7 @@ NOTE: Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein,
 . Verkabeln Sie nur die Management- und Konsolen-Ports, sodass Sie auf das System zugreifen können, um die Aufgaben in den folgenden Abschnitten auszuführen.
 +
 
-NOTE: Sie schließen die übrigen Kabel später in diesem Verfahren an das Controller-Modul an.
+NOTE: Die restlichen Kabel werden im weiteren Verlauf dieses Verfahrens an das Controller-Modul angeschlossen.
 
 . Führen Sie die Neuinstallation des Controller-Moduls durch:
 +

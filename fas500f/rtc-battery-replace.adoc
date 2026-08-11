@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fas500f, replace real-time clock battery 
 summary: Sie tauschen die Echtzeit-Batterie im Steuermodul aus, damit die Dienste und Anwendungen Ihres Systems, die auf eine genaue Zeitsynchronisation angewiesen sind, weiterhin funktionieren. 
 ---
-= Tauschen Sie den Echtzeitbatterie aus
+= Die Echtzeit Batterie der Echtzeituhr im FAS500f System ersetzen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -14,7 +14,7 @@ summary: Sie tauschen die Echtzeit-Batterie im Steuermodul aus, damit die Dienst
 Sie ersetzen den Echtzeituhr-Akku (RTC) im Controller-Modul, sodass die Dienste und Anwendungen Ihres Systems, die von der genauen Zeitsynchronisierung abhängen, weiterhin funktionieren.
 
 * Sie können dieses Verfahren bei allen Versionen von ONTAP verwenden, die von Ihrem System unterstützt werden
-* Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+* Alle anderen Systemkomponenten müssen ordnungsgemäß funktionieren. Falls dies nicht der Fall ist, ist der technische Support zu kontaktieren.
 
 
 
@@ -203,7 +203,7 @@ image::../media/drw_a250_install_rtc_batt.png[Einsetzen der RTC-Batterie]
 
  a| 
 image:../media/icon_round_1.png["Legende Nummer 1"]
-| Schieben Sie die Batterie mit der positiven Polarität nach oben unter die Lasche des Batteriegehäuses. 
+| Die Batterie mit dem Pluspol nach oben unter die Lasche des Akkugehäuses schieben. 
 
 
  a| 
@@ -238,7 +238,7 @@ Wenn Sie die Medienkonverter (QSFPs oder SFPs) entfernt haben, sollten Sie diese
 . Wenn die Netzteile nicht angeschlossen waren, schließen Sie sie wieder an, und setzen Sie die Netzkabelhalter wieder ein.
 . Setzen Sie das Controller-Modul in das Chassis ein:
 +
-.. Stellen Sie sicher, dass die Arms des Verriegelungsmechanismus in der vollständig ausgestreckten Position verriegelt sind.
+.. Es ist zu prüfen, ob die Verriegelungsarme des Verriegelungsmechanismus in der vollständig ausgefahrenen Position verriegelt sind.
 .. Richten Sie das Controller-Modul mit beiden Händen aus und schieben Sie es vorsichtig in die Arms des Verriegelungsmechanismus, bis es anhält.
 .. Platzieren Sie Ihre Zeigefinger durch die Fingerlöcher von der Innenseite des Verriegelungsmechanismus.
 .. Drücken Sie die Daumen auf den orangefarbenen Laschen oben am Verriegelungsmechanismus nach unten, und schieben Sie das Controller-Modul vorsichtig über den Anschlag.

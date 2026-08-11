@@ -2,22 +2,22 @@
 permalink: fas-70-90/io-module-hotswap.html 
 sidebar: sidebar 
 keywords: fas70, fas90, hot swap a cluster ha card, hot swap ethernet client io module, hotswap io module, hot swap io module 
-summary: Sie können ein Ethernet-E/A-Modul in Ihrem FAS 70 oder FAS 90-Speichersystem per Hot-Swap austauschen, wenn ein Modul ausfällt und Ihr Speichersystem alle ONTAP-Versionanforderungen erfüllt. 
+summary: Ein Ethernet-E/A-Modul kann per Hot-Swap in Ihrem FAS70 oder FAS90 Speichersystem ausgetauscht werden, wenn ein Modul ausfällt und Ihr Speichersystem alle ONTAP Versionsanforderungen erfüllt. 
 ---
-= Hot-Swap eines E/A-Moduls - FAS 70 und FAS 90
+= Ein I/O-Modul kann in Ihrem FAS70 oder FAS90 System im Hot-Swap-Verfahren ausgetauscht werden, ohne dass das System heruntergefahren werden muss.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie können ein Ethernet-E/A-Modul in Ihrem FAS 70 oder FAS 90-Speichersystem per Hot-Swap austauschen, wenn ein Modul ausfällt und Ihr Speichersystem alle ONTAP-Versionanforderungen erfüllt.
+Ein Ethernet-E/A-Modul kann per Hot-Swap in Ihrem FAS70 oder FAS90 Speichersystem ausgetauscht werden, wenn ein Modul ausfällt und Ihr Speichersystem alle ONTAP Versionsanforderungen erfüllt.
 
 Um ein E/A-Modul per Hot-Swap auszutauschen, stellen Sie sicher, dass auf Ihrem Speichersystem ONTAP 9.18.1 GA oder höher ausgeführt wird, bereiten Sie Ihr Speichersystem und das E/A-Modul vor, führen Sie den Hot-Swap des defekten Moduls durch, nehmen Sie das Ersatzmodul in Betrieb, stellen Sie den normalen Betrieb des Speichersystems wieder her und senden Sie das defekte Modul an NetApp zurück.
 
 .Über diese Aufgabe
 * Sie müssen kein manuelles Takeover durchführen, bevor Sie das ausgefallene E/A-Modul ersetzen.
-* Wenden Sie die Befehle auf den richtigen Controller und E/A-Steckplatz während des Hot-Swaps an:
+* Stellen Sie sicher, dass die Befehle während des Hot-Swap dem richtigen Controller und E/A-Steckplatz zugeordnet werden:
 +
 ** Der _beeinträchtigte Controller_ ist der Controller, bei dem Sie das I/O-Modul austauschen.
 ** Der _gesunde Controller_ ist der HA-Partner des beeinträchtigten Controllers.

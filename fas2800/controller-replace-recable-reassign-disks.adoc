@@ -1,17 +1,17 @@
 ---
 permalink: fas2800/controller-replace-recable-reassign-disks.html 
 sidebar: sidebar 
-keywords: fas2800, how to recable the system, how to reassign disks 
-summary: Sie müssen den Speicher neu zuweisen und die Neuzuweisung der Festplatte bestätigen. 
+keywords: fas2820, how to recable the system, how to reassign disks 
+summary: 'Um den Controller-Austausch abzuschließen und Ihr FAS2820 System wieder voll funktionsfähig zu machen, müssen der Speicher neu verkabelt, die Neuzuordnung der Festplatten bestätigt, die NetApp Storage Encryption Konfiguration wiederhergestellt (falls erforderlich) und Lizenzen für den neuen Controller installiert werden.' 
 ---
-= System neu zuordnen und Festplatten neu zuweisen – FAS2820
+= Der Controller in Ihrem FAS2820 System wird zurückgegeben, damit der normale Betrieb fortgesetzt werden kann.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Um das Austauschverfahren abzuschließen und die Betriebsbereitschaft Ihres Systems wiederherzustellen, müssen Sie den Storage neu zuweisen, die Neuzuweisung von Festplatten bestätigen, die NetApp Storage Encryption Konfiguration (falls erforderlich) wiederherstellen und die Lizenzen für den neuen Controller installieren. Vor der Wiederherstellung des Systembetriebs müssen Sie eine Reihe von Aufgaben ausführen.
+Um den Austauschvorgang abzuschließen und Ihr FAS2820 System wieder voll funktionsfähig zu machen, müssen der Speicher neu verkabelt, die Neuzuordnung der Festplatten bestätigt, die NetApp Storage Encryption Konfiguration (falls erforderlich) wiederhergestellt und Lizenzen für den neuen Controller installiert werden.
 
 
 
@@ -34,7 +34,7 @@ Um das Austauschverfahren abzuschließen und die Betriebsbereitschaft Ihres Syst
 
 Sie müssen die Änderung der System-ID beim Booten des Controllers _Replacement_ bestätigen und anschließend überprüfen, ob die Änderung implementiert wurde.
 
-. Wenn sich der Controller _Replacement_ im Wartungsmodus befindet (zeigt das an `*>` Eingabeaufforderung, beenden Sie den Wartungsmodus und gehen Sie zur LOADER-Eingabeaufforderung: `halt`
+. Wenn sich der Controller _Replacement_ im Wartungsmodus befindet (zeigt das an `*>` Eingabeaufforderung), beenden Sie den Wartungsmodus und gehen Sie zur LOADER-Eingabeaufforderung: `halt`
 . Booten Sie an der LOADER-Eingabeaufforderung am _Replacement_-Controller den Controller, und geben Sie ein `y` Wenn Sie aufgrund einer nicht übereinstimmenden System-ID aufgefordert werden, die System-ID außer Kraft zu setzen:``boot_ontap``
 . Warten Sie, bis der `Waiting for giveback...` Die Meldung wird auf der Controller-Konsole „_Replacement_“ angezeigt und überprüfen Sie anschließend vom gesunden Controller, ob die neue Partner-System-ID automatisch zugewiesen wurde: `storage failover show`
 +

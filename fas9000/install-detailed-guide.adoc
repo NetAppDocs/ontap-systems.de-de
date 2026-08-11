@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: aff a700, fas9000, detailed, guide, prepare, install, hardware, two, node, switchless, cluster, cable, controller, ds212c, ds224c, ns224, drive, shelf, complete, system, setup, configuration, network, discovery 
 summary: Dieser Leitfaden enthält detaillierte Schritt-für-Schritt-Anleitungen zur Installation eines typischen NetApp Systems. 
 ---
-= Detaillierter Leitfaden - FAS9000
+= Das FAS9000 System mithilfe detaillierter Anweisungen installieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Dieser Leitfaden enthält detaillierte Schritt-für-Schritt-Anleitungen zur Installation eines typischen NetApp Systems. In diesem Handbuch finden Sie weitere detaillierte Installationsanweisungen.
+Diese detaillierte Schritt-für-Schritt-Anleitung führt Sie durch die Installation Ihres FAS9000 Systems, von der Montage und Verkabelung bis zur Ersteinrichtung. Diese Schritte bieten eine ausführlichere Installationsanleitung als die Kurzanleitung.
 
 
 
@@ -171,7 +171,7 @@ image:../media/oie_cable_power.png["Stromkabel"]
 System einschalten
 
 |===
-. Lesen Sie den _NetApp Leitfaden zur ONTAP-Konkuratierung_ und sammeln Sie die in diesem Leitfaden aufgeführten Informationen.
+. Lesen Sie den _NetApp ONTAP Configuration Guide_ und sammeln Sie die in diesem Leitfaden aufgeführten Informationen.
 +
 https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["ONTAP Konfigurationsleitfaden"]
 
@@ -219,7 +219,7 @@ Sie können die Controller mithilfe der Switch-freien Cluster-Methode mit zwei N
 
 Managementnetzwerk, Datennetzwerk und Management-Ports auf den Controllern sind mit Switches verbunden. Die Cluster Interconnect-Ports sind an beiden Controllern verkabelt.
 
-Sie müssen sich an den Netzwerkadministrator wenden, um Informationen über das Anschließen des Systems an die Switches zu erhalten.
+Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.
 
 Achten Sie beim Einsetzen der Kabel in die Anschlüsse darauf, die Richtung der Kabelabziehlaschen zu überprüfen. Die Kabelabziehlaschen sind für alle Netzwerkmodulanschlüsse nach oben.
 
@@ -246,7 +246,7 @@ image::../media/drw_9000_TNSC_composite_cabling.png[Composite-Verkabelung des Cl
 
 Managementnetzwerk, Datennetzwerk und Management-Ports auf den Controllern sind mit Switches verbunden. Die Cluster Interconnect- und HA-Ports sind mit dem Cluster/HA-Switch verbunden.
 
-Sie müssen sich an den Netzwerkadministrator wenden, um Informationen über das Anschließen des Systems an die Switches zu erhalten.
+Wenden Sie sich an den Netzwerkadministrator, um Informationen zum Anschließen des Systems an die Switches zu erhalten.
 
 Achten Sie beim Einsetzen der Kabel in die Anschlüsse darauf, die Richtung der Kabelabziehlaschen zu überprüfen. Die Kabelabziehlaschen sind für alle Netzwerkmodulanschlüsse nach oben.
 
@@ -271,7 +271,7 @@ image:../media/drw_9000_switched_cluster_cabling.png["Verbundkabelplan für Swit
 [[step-4-cable-controllers-to-drive-shelves]]
 == Schritt 4: Controller mit Laufwerk-Shelfs verkabeln
 
-Je nachdem, ob es sich um ein AFF- oder FAS-System handelt, können neue Systeme an DS212C-, DS224C- oder NS224-Shelfs angeschlossen werden.
+Sie können Ihr neues System an DS212C, DS224C oder NS224 Shelves anschließen, je nachdem, ob es sich um ein AFF oder FAS System handelt.
 
 
 
@@ -330,10 +330,10 @@ image:../media/Cable_shelves_new_system_IOM12_shelves.png["Verkabelung des Stora
 [[option-2-cable-the-controllers-to-a-single-ns224-drive-shelf-in-asa-aff-a700-systems-running-ontap-9-8-and-later-only]]
 === Option 2: Verkabeln Sie die Controller nur mit einem einzelnen NS224-Festplatten-Shelf in ASA AFF A700 Systemen mit ONTAP 9.8 und höher
 
-Sie müssen jeden Controller bei einer AFF A700 oder ASA AFF A700 mit System ONTAP 9.8 oder höher mit den NSM-Modulen am NS224 Drive-Shelf verkabeln.
+Jeder Controller ist mit den NSM-Modulen auf dem NS224-Laufwerksshelf eines AFF A700 oder ASA AFF A700 Systems zu verkabeln, das mit ONTAP 9.8 oder höher betrieben wird.
 
 * Dieser Vorgang gilt nur für ASA AFF A700 mit ONTAP 9.8 oder höher.
-* Für die Systeme muss mindestens ein X91148A-Modul in den Steckplätzen 3 und/oder 7 pro Controller installiert sein. Die Animation oder Abbildungen zeigen, dass dieses Modul in den Steckplätzen 3 und 7 installiert ist.
+* Die Systeme müssen mindestens ein X91148A-Modul in Steckplatz 3 oder 7 für jeden Controller installiert haben. Die Animation oder die Abbildungen zeigen dieses Modul in beiden Steckplätzen 3 und 7.
 * Prüfen Sie unbedingt den Abbildungspfeil, um die richtige Ausrichtung des Kabelanschlusses zu prüfen. Die Kabelabzieher für die Storage-Module sind nach oben und die Abziehlaschen an den Shelves sind nach unten.
 +
 image::../media/oie_cable_pull_tab_up.png[Kabelanschluss mit Zuglasche oben]
@@ -366,7 +366,7 @@ image::../media/single_NS224_shelf.png[Einzel-Shelf-Verkabelung]
 [[option-3-cable-the-controllers-to-two-ns224-drive-shelves-in-asa-aff-a700-systems-running-ontap-9-8-and-later-only]]
 === Option 3: Verkabeln Sie die Controller nur mit zwei NS224-Laufwerk-Shelfs in ASA AFF A700 Systemen mit ONTAP 9.8 und höher
 
-Sie müssen jeden Controller bei einer AFF A700 oder ASA AFF A700 mit System ONTAP 9.8 oder höher mit den NSM-Modulen der NS224 Laufwerk-Shelfs verkabeln.
+Jeder Controller ist mit den NSM-Modulen auf den NS224-Laufwerksgehäusen eines AFF A700 oder ASA AFF A700 Systems zu verkabeln, das unter ONTAP 9.8 oder höher läuft.
 
 * Dieser Vorgang gilt nur für ASA AFF A700 mit ONTAP 9.8 oder höher.
 * Die Systeme müssen zwei X91148A-Module pro Controller in den Steckplätzen 3 und 7 installiert sein.
@@ -414,7 +414,7 @@ Wenn die Netzwerkerkennung auf Ihrem Laptop aktiviert ist, können Sie das Syste
 .Schritte
 . Mithilfe der folgenden Animation können Sie eine oder mehrere Laufwerk-Shelf-IDs festlegen:
 +
-Wenn das System über NS224-Laufwerk-Shelfs verfügt, sind die Shelfs voreingestellt auf die Shelf-ID 00 und 01. Wenn Sie die Shelf-IDs ändern möchten, müssen Sie ein Werkzeug erstellen, um in die Öffnung einzufügen, an der sich die Schaltfläche befindet.
+Wenn Ihr System über NS224-Laufwerksschächte verfügt, sind diese standardmäßig auf die Schacht-IDs 00 und 01 voreingestellt. Wenn die Schacht-IDs geändert werden sollen, ist ein Werkzeug anzufertigen, das in die Öffnung eingeführt wird, in der sich der Knopf befindet.
 
 +
 .Animation – legt SAS- oder NVMe-Laufwerk-Shelf-IDs fest
@@ -426,7 +426,7 @@ video::95a29da1-faa3-4ceb-8a0b-ac7600675aa6[panopto]
 video::bb04eb23-aa0c-4821-a87d-ab2300477f8b[panopto]
 +
 
-NOTE: Das erste Booten kann bis zu acht Minuten dauern.
+NOTE: Der erste Startvorgang kann bis zu acht Minuten dauern.
 
 . Stellen Sie sicher, dass die Netzwerkerkennung auf Ihrem Laptop aktiviert ist.
 +
@@ -442,11 +442,11 @@ image::../media/drw_autodiscovery_controler_select.png[Wählen Sie ein ONTAP-Sym
 
 +
 .. Öffnen Sie Den Datei-Explorer.
-.. Klicken Sie im linken Fensterbereich auf *Netzwerk*, klicken Sie mit der rechten Maustaste und wählen Sie *Aktualisieren*.
+.. Im linken Bereich *Netzwerk* auswählen, mit der rechten Maustaste auf *Netzwerk* klicken und anschließend *Aktualisieren* auswählen.
 .. Doppelklicken Sie auf das ONTAP-Symbol, und akzeptieren Sie alle auf dem Bildschirm angezeigten Zertifikate.
 +
 
-NOTE: XXXXX ist die Seriennummer des Systems für den Ziel-Node.
+NOTE: Der angezeigte Wert ist die Systemseriennummer des Zielknotens.
 
 +
 System Manager wird geöffnet.
@@ -501,7 +501,7 @@ image::../media/drw_9000_cable_console_switch_controller.png[Verkabelung der Kon
 
 . Mithilfe der folgenden Animation können Sie eine oder mehrere Laufwerk-Shelf-IDs festlegen:
 +
-Wenn das System über NS224-Laufwerk-Shelfs verfügt, sind die Shelfs voreingestellt auf die Shelf-ID 00 und 01. Wenn Sie die Shelf-IDs ändern möchten, müssen Sie ein Werkzeug erstellen, um in die Öffnung einzufügen, an der sich die Schaltfläche befindet.
+Wenn Ihr System über NS224-Laufwerksschächte verfügt, sind diese standardmäßig auf die Schacht-IDs 00 und 01 voreingestellt. Wenn die Schacht-IDs geändert werden sollen, ist ein Werkzeug anzufertigen, das in die Öffnung eingeführt wird, in der sich der Knopf befindet.
 
 +
 .Animation – legt SAS- oder NVMe-Laufwerk-Shelf-IDs fest
@@ -513,7 +513,7 @@ video::95a29da1-faa3-4ceb-8a0b-ac7600675aa6[panopto]
 video::bb04eb23-aa0c-4821-a87d-ab2300477f8b[panopto]
 +
 
-NOTE: Das erste Booten kann bis zu acht Minuten dauern.
+NOTE: Der erste Startvorgang kann bis zu acht Minuten dauern.
 
 . Weisen Sie einem der Nodes eine erste Node-Management-IP-Adresse zu.
 +

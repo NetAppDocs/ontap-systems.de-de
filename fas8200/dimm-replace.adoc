@@ -2,18 +2,18 @@
 permalink: fas8200/dimm-replace.html 
 sidebar: sidebar 
 keywords: fas8200, replace a dimm 
-summary: Sie müssen ein DIMM im Controllermodul austauschen, wenn Ihr System eine zunehmende Anzahl korrigierbarer Fehlerkorrekturcodes registriert. Andernfalls kommt es zu einem Systemabsturz. 
+summary: 'Ein DIMM im Controller-Modul ist auszutauschen, wenn das Speichersystem übermäßig viele korrigierbare Fehlerkorrekturcode-Fehler (CECC) meldet, die durch Health Monitor-Warnungen identifiziert werden, oder wenn nicht korrigierbare ECC-Fehler durch einen einzelnen DIMM-Ausfall verursacht werden, der das Starten von ONTAP im Speichersystem verhindert.' 
 ---
-= Ersetzen Sie ein DIMM – FAS8200
+= Ein DIMM im FAS8200 System ersetzen, um Speicherfehler zu beheben
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie müssen ein DIMM im Controller ersetzen, wenn das Speichersystem auf Fehler wie übermäßige CECC-Fehler (korrigierbare Fehlerkorrekturcodes) stößt, die auf Warnmeldungen der Systemzustandsüberwachung oder nicht korrigierbaren ECC-Fehlern basieren, die normalerweise durch einen einzelnen DIMM-Fehler verursacht werden, der das Starten von ONTAP verhindert.
+Ein DIMM im Controller-Modul ist auszutauschen, wenn das Speichersystem übermäßig viele korrigierbare Fehlerkorrekturcode-Fehler (CECC) meldet, die durch Health Monitor-Warnungen identifiziert werden, oder wenn nicht korrigierbare ECC-Fehler durch einen einzelnen DIMM-Ausfall verursacht werden, der das Starten von ONTAP im Speichersystem verhindert.
 
-Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+Alle anderen Systemkomponenten müssen einwandfrei funktionieren. Falls dies nicht der Fall ist, ist der technische Support zu kontaktieren.
 
 Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
 
@@ -306,7 +306,7 @@ Die Kerbe zwischen den Stiften am DIMM sollte mit der Lasche im Sockel aufliegen
 
 . Vergewissern Sie sich, dass sich die DIMM-Auswerferlaschen am Anschluss in der geöffneten Position befinden und setzen Sie das DIMM-Auswerfer anschließend in den Steckplatz ein.
 +
-Das DIMM passt eng in den Steckplatz, sollte aber leicht einpassen. Falls nicht, richten Sie das DIMM-Modul mit dem Steckplatz aus und setzen Sie es wieder ein.
+Der DIMM sitzt stramm im Steckplatz, sollte sich aber leicht einsetzen lassen. Falls dies nicht der Fall ist, den DIMM erneut am Steckplatz ausrichten und wieder einsetzen.
 
 +
 

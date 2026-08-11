@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: aff fas9500, verify and set HA state, complete the replacement process 
 summary: Sie müssen den HA-Status des Gehäuses überprüfen und das fehlerhafte Teil an NetApp zurücksenden, wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben. 
 ---
-= Wiederherstellen und Überprüfen der Konfiguration - FAS9500
+= Den Chassis-Austausch für Ihr FAS9500 System abschließen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Um den Austausch des Chassis abzuschließen, müssen Sie bestimmte Aufgaben durchführen.
+Um den Chassis-Austausch in Ihrem FAS9500-System abzuschließen, müssen der HA-Status des Chassis überprüft und eingestellt, das System wieder in Betrieb genommen und das defekte Chassis an NetApp zurückgesendet werden, wie in den mit dem Kit gelieferten RMA-Anweisungen beschrieben.
 
 
 
@@ -47,9 +47,9 @@ Für den HA-Status kann einer der folgenden Werte vorliegen:
 == Schritt 2: Das System hochfahren
 
 . Wenn Sie dies nicht getan haben, schließen Sie die Netzkabel wieder an die Netzteile an.
-. Schalten Sie die Netzteileinheiten ein, indem Sie den Wippschalter auf *EIN* stellen und warten, bis die Controller vollständig hochgefahren sind.
+. Die Netzteile werden eingeschaltet, indem der Kippschalter auf *EIN* gestellt wird, anschließend ist abzuwarten, bis die Controller vollständig hochgefahren sind.
 . Überprüfen Sie nach dem Einschalten die Vorder- und Rückseite des Chassis und der Controller auf Fehler-LEDs.
-. Stellen Sie über SSH eine Verbindung mit der SP- oder BMC-IP-Adresse der Nodes her. Dies ist dieselbe Adresse, die zum Herunterfahren der Nodes verwendet wird.
+. Stellen Sie über SSH eine Verbindung zur SP- oder BMC-IP-Adresse der Knoten her. Dies ist dieselbe Adresse, die zum Herunterfahren der Knoten verwendet wird.
 . Führen Sie zusätzliche Zustandsprüfungen durch, wie in beschrieben https://kb.netapp.com/onprem/ontap/os/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["Wie_ein_Cluster_Health_Check_with_a_script_in_ONTAP_durchführen"^]
 . Schalten Sie AutoSupport wieder ein (beenden Sie die Meldung zum Wartungsfenster):
 `system node autosupport invoke -node * -type all -message MAINT=end`

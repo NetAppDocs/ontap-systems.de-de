@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fas70, fas90, Installation, deployment, Install, deploy, Installing, deploying 
 summary: Führen Sie diese grundlegenden Schritte aus, um Ihr FAS70 und FAS90 Storage-System zu installieren und einzurichten und als Node in Ihrem ONTAP System zu implementieren. 
 ---
-= Installations- und Konfigurations-Workflow – FAS70 und FAS90
+= Installations- und Konfigurations-Workflow für FAS70 und FAS90
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -15,11 +15,11 @@ Zum Installieren und Konfigurieren Ihres FAS70 oder FAS90 Systems überprüfen S
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:install-requirements.html["Installationsanforderungen prüfen"]
 [role="quick-margin-para"]
-Sehen Sie sich die Geräte und Werkzeuge an, die für die Installation des Speichersystems und der Lagerregale erforderlich sind, und lesen Sie die Hebe- und Sicherheitsvorkehrungen durch.
+Überblick über die für die Installation Ihres Storage-Systems und der Storage-Shelfs benötigte Ausrüstung und Werkzeuge. Ebenso Überblick über die Hebe- und Sicherheitsvorkehrungen.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:install-prepare.html["Bereiten Sie die Installation des FAS70 oder FAS90 Storage-Systems vor"]
 [role="quick-margin-para"]
-Um die Installation des Systems vorzubereiten, müssen Sie den Standort vorbereiten, die Umgebung und die elektrischen Anforderungen prüfen und sicherstellen, dass genügend Rack-Platz vorhanden ist. Packen Sie dann das Gerät aus, vergleichen Sie dessen Inhalt mit dem Packzettel, und registrieren Sie die Hardware, um auf Support-Vorteile zuzugreifen.
+Zur Vorbereitung der Systeminstallation muss der Aufstellungsort vorbereitet, die Umgebungs- und Stromanforderungen geprüft und sichergestellt werden, dass ausreichend Rackplatz vorhanden ist. Anschließend werden die Geräte entpackt, der Inhalt mit dem Lieferschein verglichen und die Hardware registriert, um Supportleistungen in Anspruch nehmen zu können.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:install-hardware.html["Installieren Sie die Hardware für das FAS70 oder FAS90 Storage-System"]
 [role="quick-margin-para"]
@@ -31,7 +31,7 @@ Um die Hardware zu verkabeln, verbinden Sie zuerst die Storage Controller mit de
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:install-power-hardware.html["Schalten Sie das FAS70 oder FAS90 Storage-System ein"]
 [role="quick-margin-para"]
-Bevor Sie die Controller einschalten, schalten Sie jedes NS224-Shelf ein und weisen eine eindeutige Shelf-ID zu. So wird sichergestellt, dass jedes Shelf im Setup eindeutig identifiziert wird. Der Laptop oder die Konsole wird mit dem Controller verbunden. Anschließend werden die Controller mit den Stromquellen verbunden.
+Bevor die Controller eingeschaltet werden, sollte jedes NS224 Shelf eingeschaltet und eine eindeutige Shelf-ID zugewiesen werden, sodass jedes Shelf eindeutig identifiziert ist. Anschließend wird der Laptop oder die Konsole mit dem Controller verbunden und die Controller werden mit den Stromquellen verbunden.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sechs"]/
 [role="quick-margin-para"]

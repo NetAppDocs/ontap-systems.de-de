@@ -2,16 +2,16 @@
 permalink: fas9500/bootmedia-encryption-restore.html 
 sidebar: sidebar 
 keywords: fas9500, post boot media replacement steps for okm, nse, and nve 
-summary: Sobald die Umgebungsvariablen überprüft wurden, müssen Sie Schritte durchführen, die speziell für Systeme gelten, bei denen Onboard Key Manager OKM, NetApp Storage Encryption NSE oder NetApp Volume Encryption NVE aktiviert sind. 
+summary: Nachdem Sie die Umgebungsvariablen überprüft haben, müssen Schritte durchgeführt werden, die speziell für Systeme gelten, bei denen Onboard Key Manager OKM, NetApp Storage Encryption NSE oder NetApp Volume Encryption NVE aktiviert sind. 
 ---
-= Wiederherstellung der Verschlüsselung – FAS9500
+= Die Verschlüsselung auf dem Startmedium Ihres FAS9500 Systems wird nach dem manuellen Boot-Wiederherstellungsprozess wiederhergestellt.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Stellen Sie die Verschlüsselung auf dem Ersatz-Startmedium wieder her.
+Nachdem das Bootmedium in Ihrem FAS9500-System ausgetauscht wurde, kann die Verschlüsselung wiederhergestellt werden, indem die Schritte für den jeweiligen Schlüsselmanagertyp, wie zum Beispiel den Onboard Key Manager (OKM), abgeschlossen werden.
 
 Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie das manuelle Boot-Wiederherstellungsverfahren verwenden.
 

@@ -1,19 +1,19 @@
 ---
 permalink: fas2800/nvmem-nvram-battery-replace.html 
 sidebar: sidebar 
-keywords: fas2800, replace, nvmem, battery, shut, down, impaired, controller, controller, system, aggregates, metrocluster, configuration, reinstall 
-summary: Um eine NVMEM-Batterie im System zu ersetzen, müssen Sie das Controller-Modul aus dem System entfernen, öffnen, die Batterie ersetzen, und das Controller-Modul schließen und ersetzen. 
+keywords: fas2820, replace, nvmem, battery, shut, down, impaired, controller, controller, system, aggregates, metrocluster, configuration, reinstall 
+summary: Um eine NVMEM Batterie in Ihrem FAS2820 System zu ersetzen, ist es erforderlich, das Controller-Modul zu entfernen, es zu öffnen, die Batterie zu ersetzen und anschließend das Controller-Modul wieder zu schließen und einzubauen. 
 ---
-= Ersetzen Sie die NVMEM-Batterie – FAS2820
+= Die NVMEM Batterie in Ihrem FAS2820 System ersetzen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Um eine NVMEM-Batterie im System zu ersetzen, müssen Sie das Controller-Modul aus dem System entfernen, öffnen, die Batterie ersetzen, und das Controller-Modul schließen und ersetzen.
+Um eine NVMEM Batterie in Ihrem FAS2820 System zu ersetzen, ist es erforderlich, das Controller-Modul zu entfernen, es zu öffnen, die Batterie zu ersetzen und anschließend das Controller-Modul wieder zu schließen und einzubauen.
 
-Alle anderen Komponenten im System müssen ordnungsgemäß funktionieren. Andernfalls müssen Sie sich an den entsprechenden Kontakt wenden https://mysupport.netapp.com/site/global/dashboard["NetApp Support"].
+Falls andere Komponenten im System nicht ordnungsgemäß funktionieren, kontaktieren Sie  https://mysupport.netapp.com/site/global/dashboard["NetApp Support"].
 
 
 
@@ -94,15 +94,15 @@ image::../media/drw_hw_nvram_icon.svg[NV-Symbol]
 
 +
 
-NOTE: Die grüne NV-LED auf der Frontplatte beginnt zu blinken, wenn die Stromversorgung vom Controller entfernt wird, wenn sich das System im Status „Warten auf Rückgabe“ befand oder das System nicht übernommen oder ordnungsgemäß angehalten wurde (nicht belegte Daten).  Wenn das beeinträchtigte Controller-Modul nicht erfolgreich vom Partner-Controller-Modul übernommen wurde, wenden Sie sich an https://mysupport.netapp.com/site/global/dashboard["NetApp Support"]
+NOTE: Die grüne NV-LED auf der Frontplatte beginnt zu blinken, wenn die Stromversorgung des Controllers entfernt wird, falls sich das System im Zustand „Warten auf Rückgabe“ befand oder das System nicht ordnungsgemäß übernommen oder angehalten wurde (nicht übertragene Daten). Falls das betroffene Controller-Modul nicht erfolgreich vom Partner-Controller-Modul übernommen wurde, kontaktieren Sie https://mysupport.netapp.com/site/global/dashboard["NetApp Support"]
 
 +
 ** Wenn die grüne NV-Status-LED zu blinken beginnt, wenn das Controller-Modul aus dem Gehäuse entfernt wird:
 +
-*** Vergewissern Sie sich, dass der Controller durch das Partner-Controller-Modul eine saubere Übernahme durch das Partner-Controller-Modul hatte oder dass der beeinträchtigte Controller _Warten auf Giveback_ anzeigt. Die blinkende LED kann ignoriert werden und Sie können den beeinträchtigten Controller vollständig aus dem Chassis entfernen.
+*** Bestätigen Sie, dass das Controller-Modul vom Partner-Controller-Modul ordnungsgemäß übernommen wurde oder dass der beeinträchtigte Controller _waiting for giveback_ anzeigt. Ist dies der Fall, kann die blinkende LED ignoriert und der beeinträchtigte Controller aus dem Chassis entfernt werden.
 
 
-** Wenn die grüne NV-LED aus ist, können Sie das Entfernen des außer Betrieb genommenen Controllers aus dem Gehäuse abschließen.
+** Wenn die grüne NV-LED aus ist, lässt sich der defekte Controller vollständig aus dem Gehäuse entfernen.
 
 
 
@@ -116,7 +116,7 @@ Entfernen Sie die fehlerhafte NVMEM-Batterie aus dem System und ersetzen Sie sie
 
 .Schritte
 . Wenn Sie nicht bereits geerdet sind, sollten Sie sich richtig Erden.
-. Entfernen Sie das Steuermodul aus dem Gehäuse.
+. Das Steuergerät wird aus dem Gehäuse entfernt.
 . Drehen Sie das Controller-Modul um und legen Sie es auf eine flache, stabile Oberfläche.
 . Öffnen Sie die Abdeckung, indem Sie die blauen Tasten an den Seiten des Controller-Moduls drücken, um die Abdeckung zu lösen, und drehen Sie dann die Abdeckung nach oben und von dem Controller-Modul.
 +
@@ -155,13 +155,13 @@ Batterieanschluss
 
 
 . Entfernen Sie den Ersatzakku aus der Verpackung.
-Setzen Sie den Ersatzakku ein:
+. Die Ersatzbatterie einbauen:
 +
 .. Stecken Sie den Batteriestecker wieder in die Buchse am Controller-Modul.
 +
 Vergewissern Sie sich, dass der Stecker in der Akkubuchse auf der Hauptplatine einrastet.
 
-.. Ausrichten der Batterie an den Haltehalterungen an der Blechseitenwand.
+.. Richten Sie die Batterie an den Haltehalterungen an der Blechseitenwand aus.
 .. Schieben Sie den Akku nach unten, bis die Akkuverriegelung einrastet und in die Öffnung an der Seitenwand einrastet.
 
 
@@ -216,8 +216,8 @@ NOTE: Während des Bootens werden möglicherweise die folgenden Eingabeaufforder
 
 
 
-[[step-5-restore-automatic-giveback-and-autsupport]]
-== Schritt 5: Automatisches Giveback und AutSupport wiederherstellen
+[[step-5-restore-automatic-giveback-and-autosupport]]
+== Schritt 5: Automatisches Giveback und AutoSupport wiederherstellen
 
 Stellen Sie automatische Giveback und AutoSupport wieder her, wenn sie deaktiviert wurden.
 

@@ -4,18 +4,18 @@ sidebar: sidebar
 keywords: fas9500, add io module 
 summary: Sie können Ihrem System ein I/O-Modul hinzufügen, indem Sie ein vorhandenes I/O-Modul durch ein neues I/O-Modul in einem vollständig bestückten System ersetzen oder ein neues I/O-Modul in einen leeren Steckplatz im Gehäuse hinzufügen. 
 ---
-= Fügen Sie ein I/O-Modul hinzu: FAS9500
+= Ein E/A-Modul zu Ihrem FAS9500 System hinzufügen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie können Ihrem System ein I/O-Modul hinzufügen, indem Sie entweder einen NIC oder einen Speicheradapter durch einen neuen in einem vollständig bestückten System ersetzen oder einen neuen NIC- oder Speicheradapter in einen leeren Gehäusesteckplatz Ihres Systems hinzufügen.
+Sie können Ihrem FAS9500 System ein E/A-Modul hinzufügen, indem entweder in einem vollständig bestückten System eine NIC oder ein Storage-Adapter durch einen neuen ersetzt wird oder indem eine neue NIC oder ein neuer Storage-Adapter in einen leeren Chassis-Slot eingesetzt wird.
 
 .Bevor Sie beginnen
 * Prüfen Sie die https://hwu.netapp.com/["NetApp Hardware Universe"] Vergewissern Sie sich, dass das neue I/O-Modul mit Ihrem System und Ihrer Version von ONTAP kompatibel ist.
-* Wenn mehrere Steckplätze verfügbar sind, überprüfen Sie die Steckplatzprioritäten in https://hwu.netapp.com/["NetApp Hardware Universe"] Und verwenden Sie die beste für Ihr I/O-Modul verfügbare Lösung.
+* Wenn mehrere Steckplätze verfügbar sind, sollten die Steckplatzprioritäten in  https://hwu.netapp.com/["NetApp Hardware Universe"] überprüft und der beste verfügbare für Ihr E/A-Modul verwendet werden.
 * Damit ein I/O-Modul unterbrechungsfrei hinzugefügt werden kann, müssen Sie den Zielcontroller übernehmen, die Abdeckung für die Steckplatzabdeckung im Zielsteckplatz entfernen oder ein vorhandenes I/O-Modul entfernen, das neue oder das neue I/O-Modul hinzufügen und dann den Zielcontroller zurückgeben.
 * Stellen Sie sicher, dass alle anderen Komponenten ordnungsgemäß funktionieren.
 
@@ -184,7 +184,7 @@ Sie können ein neues I/O-Modul zu einem Speichersystem mit verfügbaren leeren 
 . Wenn es sich bei dem Ersatz-E/A-Modul um eine NIC handelt, verkabeln Sie das Modul mit den Datenschaltern.
 +
 
-NOTE: Stellen Sie sicher, dass alle nicht verwendeten I/O-Steckplätze leer sind, um mögliche thermische Probleme zu vermeiden.
+NOTE: Stellen Sie sicher, dass Sie Blindabdeckungen in alle ungenutzten I/O-Steckplätze einsetzen, um mögliche thermische Probleme zu vermeiden.
 
 . Starten Sie den Controller von der LOADER-Eingabeaufforderung neu: _Bye_
 +
@@ -193,7 +193,7 @@ NOTE: Dadurch werden die PCIe-Karten und andere Komponenten neu initialisiert un
 
 . Geben Sie den Node vom Partner-Node zurück. `storage failover giveback -ofnode target_node_name`
 . Automatisches Giveback aktivieren, falls deaktiviert: `storage failover modify -node local -auto-giveback true`
-. Wenn Sie die Steckplätze 3 und/oder 7 für Netzwerke verwenden, verwenden Sie den `storage port modify -node __<node name>__ -port __<port name>__ -mode network` Befehl zum Konvertieren des Steckplatzes für die Netzwerkverwendung.
+. Wenn Sie Steckplatz 3 oder 7 für die Netzwerkverbindung verwenden, kann der Steckplatz mit dem  `storage port modify -node __<node name>__ -port __<port name>__ -mode network` Befehl für die Netzwerknutzung umgewandelt werden.
 . Wiederholen Sie diese Schritte für Controller B.
 . Wenn Sie ein Storage-I/O-Modul installiert haben, installieren und verkabeln Sie die SAS-Shelfs, wie unter beschrieben.link:../sas3/install-hot-add-shelf.html["Hot-Adding eines SAS-Shelfs"]
 
@@ -214,7 +214,7 @@ Stellen Sie sicher, dass Sie die folgenden Szenarien kennen, um ein neues I/O-Mo
  a| 
 NIC zu NIC (gleiche Anzahl von Ports)
  a| 
-Die LIFs werden automatisch migriert, wenn das Controller-Modul heruntergefahren wird.
+Die LIFs migrieren automatisch, wenn das Controller-Modul heruntergefahren wird.
 
 
 

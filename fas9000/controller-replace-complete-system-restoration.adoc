@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: aff a700, fas9000, storage encryption, licenses, storage encryption, volume encryption, serial number, metrocluster, switchback 
 summary: Um den Austauschvorgang abzuschließen und Ihr System wieder voll funktionsfähig zu machen, müssen Sie den Speicher neu verkabeln, die NetApp Storage Encryption-Konfiguration gegebenenfalls wiederherstellen und Lizenzen für den neuen Controller installieren. 
 ---
-= Vollständige Systemwiederherstellung - FAS9000
+= Den Controller-Austausch für Ihr FAS9000 System abschließen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Um den Ersatzvorgang abzuschließen und den Betrieb des Systems wiederherzustellen, müssen Sie den Storage erneut herstellen, die NetApp Storage Encryption Konfiguration (falls erforderlich) wiederherstellen und die Lizenzen für den neuen Controller installieren. Vor der Wiederherstellung des Systembetriebs müssen Sie eine Reihe von Aufgaben ausführen.
+Um den Controller-Austausch für Ihr FAS9000 System abzuschließen, den Speicher neu verkabeln, die NetApp Storage Encryption Konfiguration gegebenenfalls wiederherstellen und Lizenzen für den neuen Controller installieren.
 
 
 
@@ -50,8 +50,8 @@ NOTE: Die neuen Lizenzschlüssel, die Sie benötigen, werden automatisch generie
 
 
 
-[[step-2-verifying-lifs-and-registering-the-serial-number]]
-== Schritt 2: LIFs werden überprüft und die Seriennummer wird registriert
+[[step-2-verify-lifs-and-register-the-serial-number]]
+== Schritt 2: LIFs überprüfen und die Seriennummer registrieren
 
 Bevor Sie den _Ersatzknoten_ wieder in Betrieb nehmen, sollten Sie überprüfen, ob sich die LIFs an ihren Home-Ports befinden, und die Seriennummer des _Ersatzknotens_ registrieren, falls AutoSupport aktiviert ist, den Zustand Ihres Clusters überprüfen, alle Wartungsfenster schließen und die automatische Rückgabe zurücksetzen.
 
@@ -73,8 +73,8 @@ Wenn eine der LIFs als falsch aufgeführt ist, stellen Sie sie auf ihre Home-Por
 
 
 
-[[step-3-metrocluster-only-switching-back-aggregates-in-a-two-node-metrocluster-configuration]]
-== Schritt 3: (Nur MetroCluster): Zurückwechseln von Aggregaten in einer MetroCluster-Konfiguration mit zwei Nodes
+[[step-3-metrocluster-only-switch-back-aggregates-in-a-two-node-metrocluster-configuration]]
+== Schritt 3 (MetroCluster nur): Aggregate in einer Zwei-Knoten MetroCluster Konfiguration zurückwechseln
 
 Dieser Task gilt nur für MetroCluster-Konfigurationen mit zwei Nodes.
 

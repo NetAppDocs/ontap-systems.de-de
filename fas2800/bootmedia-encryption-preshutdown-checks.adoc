@@ -1,17 +1,17 @@
 ---
 permalink: fas2800/bootmedia-encryption-preshutdown-checks.html 
 sidebar: sidebar 
-keywords: fas2800, shutdown, checks, onboard, encryption, keys, impaired controller, disable, automatic, feedback 
-summary: Bevor Sie den beeinträchtigten Controller herunterfahren und den Status der integrierten Verschlüsselungsschlüssel prüfen, müssen Sie den Status des beeinträchtigten Controllers überprüfen, die automatische Rückgabe deaktivieren und überprüfen, welche Version von ONTAP das System ausführt. 
+keywords: fas2820, shutdown, checks, onboard, encryption, keys, impaired controller, disable, automatic, feedback 
+summary: Um die Datensicherheit auf Ihrem FAS2820 Storage-System zu gewährleisten, muss die Unterstützung und der Status des Verschlüsselungsschlüssels auf Ihrem Boot-Medium überprüft werden. Es sollte geprüft werden, ob Ihre ONTAP Version NetApp Volume Encryption unterstützt, und vor dem Herunterfahren des Controllers sollte überprüft werden, ob der Key Manager aktiv ist. 
 ---
-= Prüfen Sie Support und Status der Verschlüsselungsschlüssel - FAS2820
+= Die Verschlüsselungsunterstützung auf dem Startmedium im FAS2820 System prüfen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Um die Datensicherheit auf Ihrem Speichersystem zu gewährleisten, müssen Sie die Unterstützung und den Status des Verschlüsselungsschlüssels auf Ihrem Boot-Medium überprüfen. Überprüfen Sie, ob Ihre ONTAP Version NetApp Volume Encryption (NVE) unterstützt und bevor Sie den Controller herunterfahren, ob der Schlüsselmanager aktiv ist.
+Um die Datensicherheit auf Ihrem FAS2820-Speichersystem zu gewährleisten, die Unterstützung und den Status des Verschlüsselungsschlüssels auf Ihrem Boot-Medium überprüfen. Es ist zu prüfen, ob Ihre ONTAP Version NetApp Volume Encryption (NVE) unterstützt. Vor dem Herunterfahren des Controllers ist zu prüfen, ob der Schlüsselmanager aktiv ist.
 
 Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie den manuellen Boot-Wiederherstellungsprozess verwenden.
 

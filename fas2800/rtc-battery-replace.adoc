@@ -1,20 +1,20 @@
 ---
 permalink: fas2800/rtc-battery-replace.html 
 sidebar: sidebar 
-keywords: fas2800, replace, real, time, clock, battery, impaired, controller, shut, down, controller, system, rtc, date, time, controller, module, reinstall, replace, open 
-summary: 'Sie tauschen die Echtzeit-Batterie (RTC) im Controller-Modul aus, damit die Dienste und Anwendungen Ihres Systems, die auf eine genaue Zeitsynchronisation angewiesen sind, weiterhin funktionieren.' 
+keywords: fas2820, replace, real, time, clock, battery, impaired, controller, shut, down, controller, system, rtc, date, time, controller, module, reinstall, replace, open 
+summary: Der Austausch der Echtzeit-Uhr-Batterie im Controller-Modul des FAS2820-Systems stellt sicher, dass Dienste und Anwendungen, die auf eine präzise Zeitsynchronisierung angewiesen sind, weiterhin funktionieren. 
 ---
-= Ersetzen Sie die Echtzeituhr-Batterie - FAS2820
+= Die Echtzeit-Uhr-Batterie in Ihrem FAS2820 System ersetzen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie ersetzen den Echtzeituhr-Akku (RTC) im Controller-Modul, sodass die Dienste und Anwendungen Ihres Systems, die von der genauen Zeitsynchronisierung abhängen, weiterhin funktionieren.
+Der Austausch der Echtzeit-Uhr-Batterie (RTC) im Controller-Modul des FAS2820 Systems stellt sicher, dass Dienste und Anwendungen, die auf eine genaue Zeitsynchronisierung angewiesen sind, weiterhin funktionieren.
 
 * Sie können dieses Verfahren bei allen Versionen von ONTAP verwenden, die von Ihrem System unterstützt werden
-* Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+* Alle anderen Systemkomponenten müssen einwandfrei funktionieren. Falls dies nicht der Fall ist, sollte der technische Support kontaktiert werden.
 
 
 
@@ -117,7 +117,7 @@ image::../media/drw_2850_open_controller_module_cover_IEOPS-695.svg[Entfernen Si
 [[step-3-replace-the-rtc-battery]]
 == Schritt 3: Ersetzen Sie die RTC-Batterie
 
-Tauschen Sie die RTC-Batterie aus, indem Sie sie in der Steuerung einsetzen und die entsprechenden Schritte befolgen.
+Die RTC-Batterie wird ersetzt, indem sie im Inneren des Controllers lokalisiert und die spezifische Abfolge von Schritten eingehalten wird.
 
 .Animation - Ersetzen der RTC-Batterie
 video::7420d100-23b1-4213-a8da-af4701725622[panopto]
@@ -142,10 +142,10 @@ NOTE: Beachten Sie die Polarität der Batterie, während Sie sie aus dem Halter 
 [[step-4-reinstall-the-controller-module]]
 == Schritt 4: Installieren Sie das Controller-Modul neu
 
-Installieren Sie das Controller-Modul neu, und starten Sie es bis zur LOADER-Eingabeaufforderung.
+Das Controller-Modul wird erneut installiert und bis zur LOADER-Eingabeaufforderung gestartet.
 
 . Drehen Sie das Controller-Modul um und richten Sie das Ende an der Öffnung im Gehäuse aus.
-. Schieben Sie das Controller-Modul vorsichtig bis zur Hälfte in das System. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie das Controller-Modul vorsichtig bis zur Hälfte in das System.
+. Richten Sie das Ende des Controller-Moduls an der Öffnung im Gehäuse aus, und drücken Sie dann vorsichtig das Controller-Modul zur Hälfte in das System.
 +
 Setzen Sie das Controller-Modul erst dann vollständig in das Chassis ein, wenn Sie dazu aufgefordert werden.
 

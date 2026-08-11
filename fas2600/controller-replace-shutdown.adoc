@@ -2,15 +2,17 @@
 permalink: fas2600/controller-replace-shutdown.html 
 sidebar: sidebar 
 keywords: fas2600, shut down, impaired controller, take over 
-summary: Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann. 
+summary: Vor dem Austausch des defekten Controllers in Ihrem FAS2600-System sollte dessen Status ermittelt und der Controller gegebenenfalls übernommen werden, damit der intakte Controller weiterhin Daten bereitstellt. 
 ---
-= Herunterfahren des Controllers – FAS2600
+= Vor dem Austausch ist der defekte Controller in Ihrem FAS2600 System herunterzufahren.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
+Vor dem Austausch des defekten Controllers in Ihrem FAS2600-System wird dessen Status ermittelt und er bei Bedarf übernommen, sodass der intakte Controller weiterhin Daten aus dem Speicher des defekten Controllers bereitstellt.
+
 Übernehmen Sie den fehlerhaften Controller und stoppen Sie ihn, damit der intakte Controller weiterhin Daten aus dem Speicher des fehlerhaften Controllers bereitstellt. Dazu unterdrücken Sie die automatische Fallerstellung in AutoSupport, deaktivieren die automatische Rückgabe und bringen den fehlerhaften Controller zur LOADER-Eingabeaufforderung. Die LOADER-Eingabeaufforderung ist der sichere, angehaltene Zustand, aus dem Sie die FRU ersetzen können.
 
 Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE anzeigt, um die Berechtigung und den Zustand zu erhalten, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren; siehe link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^].

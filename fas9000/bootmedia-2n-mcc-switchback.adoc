@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: fas9000, aff a700, metrocluster, switchback, manual, manual boot recovery 
 summary: 'Nach Abschluss des FRU-Austauschs in einer Zwei-Knoten-MetroCluster-Konfiguration können Sie die MetroCluster-Rückschaltung durchführen. Dadurch wird die Konfiguration in ihren normalen Betriebszustand zurückversetzt, wobei die Sync-Source Storage Virtual Machines (SVMs) am zuvor beeinträchtigten Standort nun aktiv sind und Daten aus den lokalen Festplattenpools bereitstellen. Das FAS9000 System unterstützt ausschließlich manuelle Boot-Medien-Wiederherstellungsverfahren.' 
 ---
-= Wechseln Sie Aggregate in einer MetroCluster Konfiguration mit zwei Nodes zurück – FAS9000
+= Aggregate in einer Zwei-Knoten MetroCluster Konfiguration für Ihr FAS9000 System zurückwechseln
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Nach Abschluss des Austauschs der Startmedien muss die MetroCluster -Umschaltung durchgeführt werden. Das FAS9000 System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt.
+Nach dem Austausch des Startmediums ist die MetroCluster Switchback-Operation auf Ihrem FAS9000 System durchzuführen. Mit diesem Verfahren wird die Konfiguration in den normalen Betriebszustand zurückversetzt, wobei die Sync-Source Storage Virtual Machines (SVMs) am zuvor beeinträchtigten Standort nun aktiv sind und Daten aus den lokalen Festplattenpools bereitstellen. Das FAS9000 System unterstützt ausschließlich manuelle Verfahren zur Wiederherstellung des Startmediums.
 
 Dieser Task gilt nur für MetroCluster-Konfigurationen mit zwei Nodes.
 

@@ -2,16 +2,16 @@
 permalink: fas2600/caching-module-replace.html 
 sidebar: sidebar 
 keywords: fas2600, replace the caching module 
-summary: Sie müssen das Caching-Modul im Controller-Modul austauschen, sobald Ihr System eine AutoSupport-Meldung über den Ausfall des Moduls registriert. Andernfalls kommt es zu Leistungseinbußen. 
+summary: Das Caching-Modul in Ihrem FAS2600-System sollte ersetzt werden, wenn Ihr System eine einzelne AutoSupport-Meldung registriert, dass das Modul offline gegangen ist. Andernfalls kommt es zu Leistungseinbußen. 
 ---
-= Ersetzen Sie das Caching-Modul, FAS2600
+= Das Caching-Modul im FAS2600 System ersetzen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie müssen das Caching-Modul im Controller-Modul ersetzen, wenn das System eine einzelne AutoSupport-Meldung (ASUP) registriert, dass das Modul offline geschaltet wurde; andernfalls kommt es zu Performance-Einbußen.
+Das Caching-Modul in Ihrem FAS2600-System ist auszutauschen, wenn Ihr System eine einzelne AutoSupport (ASUP) Meldung registriert, dass das Modul offline gegangen ist. Andernfalls kommt es zu Leistungseinbußen.
 
 * Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
 
@@ -29,8 +29,6 @@ Sie können den beeinträchtigten Controller je nach Hardwarekonfiguration des S
 Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE für die Berechtigung und den Zustand anzeigt, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren.
 
 link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^]
-
-Möglicherweise möchten Sie den Inhalt Ihres Cache-Moduls löschen, bevor Sie es ersetzen.
 
 . Obwohl die Daten im Cache-Modul verschlüsselt sind, sollten Sie möglicherweise alle Daten aus dem beeinträchtigten Cache-Modul löschen und überprüfen, ob das Caching-Modul keine Daten hat:
 +
@@ -112,7 +110,7 @@ image::../media/drw_2600_opening_pcm_cover.png[Öffnen oder Schließen des Contr
 [[step-3-replace-a-caching-module]]
 == Schritt 3: Ein Caching-Modul ersetzen
 
-Um ein Caching-Modul, das als M.2 PCIe-Karte auf dem Etikett des Controllers bezeichnet wird, zu ersetzen, suchen Sie den Steckplatz innerhalb des Controllers und folgen Sie den entsprechenden Schritten.
+Das Caching-Modul wird auf dem Controller-Etikett als M.2 PCIe-Karte bezeichnet. Im Controller befindet sich ein Steckplatz, dem diese Schrittfolge zugeordnet ist.
 
 Ihr Storage-System muss je nach Ihrer Situation bestimmte Kriterien erfüllen:
 

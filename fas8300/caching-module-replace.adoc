@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fas8300, fas8700, fas8200, replace, caching, module, shut, down, impaired, controller, fru, metrocluster, add, aggregates, switch, reinstall 
 summary: Sie müssen das Caching-Modul im Controller-Modul austauschen, sobald Ihr System eine AutoSupport-Meldung registriert, dass das Modul offline gegangen ist. 
 ---
-= Ersetzen Sie das Caching-Modul FAS8300 und FAS8700
+= Das Caching-Modul in Ihrem FAS8300 oder FAS8700 System ersetzen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -14,7 +14,7 @@ summary: Sie müssen das Caching-Modul im Controller-Modul austauschen, sobald I
 Sie müssen das Caching-Modul im Controller-Modul ersetzen, wenn das System eine einzelne AutoSupport-Meldung (ASUP) registriert, dass das Modul offline geschaltet wurde; andernfalls kommt es zu Performance-Einbußen.
 
 
-NOTE: Das Ver2 Controller-Modul besitzt nur einen Cache-Modulsockel im FAS8300. FAS8700 verfügt nicht über ein VER2 Controller-Modul. Die Cache-Modul-Funktionalität wird durch das Entfernen des Sockets nicht beeinträchtigt.
+NOTE: Das VER2 Controllermodul verfügt im FAS8300 nur über einen Caching-Modul-Sockel. FAS8700 besitzt kein VER2 Controllermodul. Die Funktionalität des Caching-Moduls wird durch die Entfernung des Sockels nicht beeinträchtigt.
 
 * Sie müssen die fehlerhafte Komponente durch eine vom Anbieter empfangene Ersatz-FRU-Komponente ersetzen.
 
@@ -32,7 +32,7 @@ Sie können den beeinträchtigten Controller je nach Hardwarekonfiguration des S
 --
 Um den beeinträchtigten Controller herunterzufahren, müssen Sie den Status des Controllers bestimmen und gegebenenfalls den Controller übernehmen, damit der gesunde Controller weiterhin Daten aus dem beeinträchtigten Reglerspeicher bereitstellen kann.
 
-.Informationen zu diesen Aufgaben
+.Über diese Aufgabe
 Wenn Sie über ein Cluster mit mehr als zwei Nodes verfügen, muss es sich im Quorum befinden. Wenn sich das Cluster nicht im Quorum befindet oder ein gesunder Controller FALSE für die Berechtigung und den Zustand anzeigt, müssen Sie das Problem korrigieren, bevor Sie den beeinträchtigten Controller herunterfahren.
 
 link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Synchronisieren eines Node mit dem Cluster"^]
@@ -226,12 +226,12 @@ Ihr Storage-System muss je nach Ihrer Situation bestimmte Kriterien erfüllen:
 
 * Sie muss über das entsprechende Betriebssystem für das zu installierenden Cache-Modul verfügen.
 * Es muss die Caching-Kapazität unterstützen.
-* Obwohl der Inhalt des Cache-Moduls verschlüsselt ist, empfiehlt es sich, den Inhalt des Moduls vor dem Ersetzen zu löschen. Weitere Informationen finden Sie im https://mysupport.netapp.com/info/web/ECMP1132988.html["Angaben zu flüchtigem Speicher"] Für Ihr System auf der NetApp Support Site.
+* Obwohl der Inhalt des Caching-Moduls verschlüsselt ist, ist es eine bewährte Methode, den Inhalt des Moduls vor dem Austausch zu löschen. Weitere Informationen finden sich in der  https://mysupport.netapp.com/info/web/ECMP1132988.html["Angaben zu flüchtigem Speicher"] für Ihr System auf der NetApp Support Site.
 +
 
 NOTE: Sie müssen sich auf der NetApp Support Site anmelden, um das _Statement of Volatility_ für Ihr System anzuzeigen.
 
-* Alle anderen Komponenten des Storage-Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
+* Alle anderen Komponenten des Speichersystems müssen einwandfrei funktionieren. Wenn dies nicht der Fall ist, sollte der technische Support kontaktiert werden.
 
 
 Sie können die folgende Animation, Illustration oder die geschriebenen Schritte verwenden, um ein Caching-Modul zu ersetzen.
@@ -248,9 +248,9 @@ image::../media/drw_8300_Replace-flashcache.png[Entfernen Sie das Caching-Modul,
 .. Schieben Sie den Luftkanal zur Rückseite des Controller-Moduls, und drehen Sie ihn dann nach oben in seine vollständig geöffnete Position.
 
 
-. Suchen Sie mithilfe der FRU-Zuordnung im Controller-Modul das fehlerhafte Caching-Modul und entfernen Sie es:
+. Das defekte Caching-Modul lässt sich mithilfe der FRU-Übersicht auf dem Controller-Modul lokalisieren und anschließend entfernen:
 +
-Je nach Konfiguration können null, ein oder zwei Caching-Module im Controller-Modul eingesetzt werden. Verwenden Sie die FRU-Zuordnung im Controller-Modul, um das Caching-Modul zu finden.
+Je nach Konfiguration kann es im Controller-Modul null, ein oder zwei Caching-Module geben. Die FRU-Übersicht im Controller-Modul hilft bei der Lokalisierung des Caching-Moduls.
 
 +
 .. Drücken Sie die blaue Freigabelasche.
@@ -341,8 +341,8 @@ Wenn Sie die Medienkonverter (QSFPs oder SFPs) entfernt haben, sollten Sie diese
 
 
 
-[[step-7-switch-back-aggregates-in-a-two-node-metrocluster-configuration]]
-== Schritt 7: Aggregate in einer MetroCluster Konfiguration mit zwei Nodes zurückwechseln
+[[step-6-switch-back-aggregates-in-a-two-node-metrocluster-configuration]]
+== Schritt 6: Aggregate in einer MetroCluster Konfiguration mit zwei Nodes zurückwechseln
 
 Dieser Task gilt nur für MetroCluster-Konfigurationen mit zwei Nodes.
 
@@ -398,7 +398,7 @@ Wenn ein Wechsel eine lange Zeit in Anspruch nimmt, können Sie den Status der i
 
 
 
-[[step-8-complete-the-replacement-process]]
-== Schritt 8: Führen Sie den Ersatzprozess durch
+[[step-7-complete-the-replacement-process]]
+== Schritt 7: Abschluss des Austauschprozesses
 
 Senden Sie das fehlerhafte Teil wie in den dem Kit beiliegenden RMA-Anweisungen beschrieben an NetApp zurück.  https://mysupport.netapp.com/site/info/rma["Rückgabe und Austausch von Teilen"]Weitere Informationen finden Sie auf der Seite.
