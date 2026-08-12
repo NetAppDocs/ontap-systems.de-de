@@ -2,7 +2,7 @@
 permalink: a150/bootmedia-shutdown.html 
 sidebar: sidebar 
 keywords: aff a150, a150, aff, shut, down, impaired, controller, take, over 
-summary: Sie können den beeinträchtigten Controller je nach Hardwarekonfiguration des Speichersystems mithilfe verschiedener Verfahren herunterfahren oder übernehmen. 
+summary: Der Controller im AFF A150-Speichersystem wird heruntergefahren, um Datenverlust zu verhindern und die Systemstabilität während des manuellen Boot-Medien-Wiederherstellungsprozesses zu gewährleisten. 
 ---
 = Den Controller im AFF A150 System während des manuellen Boot-Wiederherstellungsprozesses herunterfahren
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Sie können den beeinträchtigten Controller je nach Hardwarekonfigurat
 
 
 [role="lead"]
-Der defekte Controller in Ihrem AFF A150-Speichersystem wird heruntergefahren, um Datenverlust zu verhindern und die Systemstabilität während des manuellen Boot-Wiederherstellungsprozesses aufrechtzuerhalten.
+Der Controller im AFF A150-Speichersystem wird heruntergefahren, um Datenverlust zu verhindern und die Systemstabilität während des manuellen Boot-Medien-Wiederherstellungsprozesses zu gewährleisten.
 
 
 
@@ -62,7 +62,7 @@ NOTE: Dieser Befehl funktioniert möglicherweise nicht, wenn das Startgerät bes
 [[option-2-controller-is-in-a-metrocluster]]
 == Option 2: Controller befindet sich in einem MetroCluster
 
-Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Controllers durchführen.
+Nach Abschluss der NVE- oder NSE-Aufgaben wird der Controller heruntergefahren.
 
 
 NOTE: Verwenden Sie dieses Verfahren nicht, wenn sich Ihr System in einer MetroCluster-Konfiguration mit zwei Knoten befindet.

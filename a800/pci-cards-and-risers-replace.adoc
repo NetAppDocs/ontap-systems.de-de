@@ -15,9 +15,8 @@ Eine PCIe-Karte in Ihrem AFF A800 System wird ersetzt, wenn die Karte defekt ist
 
 .Bevor Sie beginnen
 * Sie benötigen ein neues oder Ersatzteil von NetApp .
-* Stellen Sie sicher, dass alle anderen Komponenten des Speichersystems ordnungsgemäß funktionieren. Wenden Sie sich andernfalls an den technischen Support.
+* Stellen Sie sicher, dass alle anderen Komponenten des Speichersystems ordnungsgemäß funktionieren. Falls nicht, wenden Sie sich an den technischen Support.
 * Sie können dieses Verfahren bei allen Versionen von ONTAP verwenden, die von Ihrem System unterstützt werden.
-* Alle anderen Komponenten des Systems müssen ordnungsgemäß funktionieren. Falls nicht, müssen Sie sich an den technischen Support wenden.
 
 
 
@@ -187,7 +186,7 @@ Stützen Sie das Controllermodul an der Unterseite ab, während Sie es aus dem G
 [[step-3-replace-the-pcie-card]]
 == Schritt 3: Ersetzen Sie die PCIe-Karte
 
-Eine PCIe-Karte wird ausgetauscht, indem die Verkabelung sowie alle QSFPs und SFPs von den Ports der PCIe-Karten im Ziel-Riser entfernt werden, der Riser vom Controller-Modul abgenommen wird, die PCIe-Karte entfernt und ersetzt wird, der Riser und alle QSFPs und SFPs wieder an den Ports installiert und die Ports neu verkabelt werden.
+Eine PCIe-Karte wird ersetzt, indem die Verkabelung sowie alle QSFPs und SFPs von den Ports der PCIe-Karten im Zielriser entfernt werden, der Riser aus dem Controller-Modul entnommen wird, die PCIe-Karte entfernt und ersetzt wird, der Riser sowie alle QSFPs und SFPs wieder an den Ports installiert und die Ports neu verkabelt werden.
 
 .Schritte
 . Stellen Sie fest, ob die Karte, die Sie austauschen, von Riser 1 stammt oder von Riser 2 oder 3 stammt.

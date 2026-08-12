@@ -2,7 +2,7 @@
 permalink: asa250/bootmedia-shutdown.html 
 sidebar: sidebar 
 keywords: asa a250, shutdown 
-summary: Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Controllers durchführen. 
+summary: Der Controller im ASA A250-Speichersystem wird heruntergefahren, um Datenverlust zu verhindern und die Systemstabilität während des manuellen Boot-Medien-Wiederherstellungsprozesses zu gewährleisten. 
 ---
 = Der Controller im ASA A250 System ist vor dem Austausch des Bootmediums herunterzufahren.
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des b
 
 
 [role="lead"]
-Fahren Sie den Controller mit eingeschränkter Konfiguration herunter oder übernehmen Sie ihn entsprechend.
+Der Controller im ASA A250-Speichersystem wird heruntergefahren, um Datenverlust zu verhindern und die Systemstabilität während des manuellen Boot-Medien-Wiederherstellungsprozesses zu gewährleisten.
 
 
 
@@ -62,7 +62,7 @@ NOTE: Dieser Befehl funktioniert möglicherweise nicht, wenn das Startgerät bes
 [[option-2-systems-in-a-metrocluster]]
 == Option 2: Systeme in einem MetroCluster
 
-Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Controllers durchführen.
+Nach Abschluss der NVE- oder NSE-Aufgaben ist das Herunterfahren des Controllers abzuschließen.
 
 
 NOTE: Verwenden Sie dieses Verfahren nicht, wenn sich Ihr System in einer MetroCluster-Konfiguration mit zwei Knoten befindet.

@@ -2,16 +2,16 @@
 permalink: fas2700/bootmedia-shutdown.html 
 sidebar: sidebar 
 keywords: fas2700, shut, down, impaired, controller, take, over, manual, manual boot recovery 
-summary: Je nach Hardwarekonfiguration des Speichersystems können Sie den beeinträchtigten Controller mit verschiedenen Verfahren herunterfahren oder übernehmen. Das FAS2700-System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. 
+summary: Der Controller im FAS2700-Speichersystem wird heruntergefahren, um Datenverlust zu verhindern und die Systemstabilität während des manuellen Boot-Medien-Wiederherstellungsprozesses zu gewährleisten. 
 ---
-= Den defekten Controller in Ihrem FAS2700 System während der Wiederherstellung des Bootmediums herunterfahren
+= Den Controller im FAS2700 System während der Wiederherstellung des Boot-Mediums herunterfahren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Schalten Sie den betroffenen Controller gemäß der für Ihre Konfiguration geeigneten Vorgehensweise ab oder übernehmen Sie ihn. Das FAS2700-System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt.
+Der Controller im FAS2700-Speichersystem wird heruntergefahren, um Datenverlust zu verhindern und die Systemstabilität während des manuellen Boot-Medien-Wiederherstellungsprozesses zu gewährleisten.
 
 
 
@@ -62,7 +62,7 @@ NOTE: Dieser Befehl funktioniert möglicherweise nicht, wenn das Startgerät bes
 [[option-2-controller-is-in-a-metrocluster]]
 == Option 2: Controller befindet sich in einem MetroCluster
 
-Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Controllers durchführen.
+Nach Abschluss der NVE- oder NSE-Aufgaben ist das Herunterfahren des Controllers abzuschließen.
 
 
 NOTE: Verwenden Sie dieses Verfahren nicht, wenn sich Ihr System in einer MetroCluster-Konfiguration mit zwei Knoten befindet.

@@ -2,16 +2,16 @@
 permalink: fas9500/bootmedia-shutdown-bmr.html 
 sidebar: sidebar 
 keywords: fas9500, shut down the controller 
-summary: Fahren Sie den beeinträchtigten Controller in Ihrem FAS9500 Speichersystem herunter, um Datenverlust zu verhindern und die Systemstabilität beim Austausch des Startmediums sicherzustellen. 
+summary: Der Controller im FAS9500-Speichersystem wird heruntergefahren, um Datenverlust zu vermeiden und die Systemstabilität beim Austausch des Bootmediums sicherzustellen. 
 ---
-= Den defekten Controller in Ihrem FAS9500 System während des automatisierten Boot-Wiederherstellungsprozesses herunterfahren
+= Den Controller im FAS9500 System während des automatisierten Boot-Wiederherstellungsprozesses herunterfahren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Fahren Sie den beeinträchtigten Controller in Ihrem FAS9500 Speichersystem herunter, um Datenverlust zu verhindern und die Systemstabilität während des automatischen Boot-Medienwiederherstellungsprozesses aufrechtzuerhalten.
+Der Controller im FAS9500 Speichersystem wird heruntergefahren, um Datenverlust zu vermeiden und die Systemstabilität während des automatisierten Wiederherstellungsprozesses des Bootmediums zu gewährleisten.
 
 Der automatisierte Boot-Medien-Wiederherstellungsprozess wird nur in ONTAP 9.17.1 und höher unterstützt. Wenn Ihr Speichersystem eine frühere Version von ONTAP verwendet, verwenden Sie die link:bootmedia-replace-workflow.html["manuelle Boot-Wiederherstellung"] .
 
@@ -82,4 +82,4 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 
 
 .Wie es weiter geht
-Nach dem Herunterfahren des außer Betrieb genommenen Controllers, Sie link:bootmedia-replace-bmr.html["Ersetzen Sie das Startmedium"].
+Nachdem Sie den Controller heruntergefahren haben, link:bootmedia-replace-bmr.html["Ersetzen Sie das Startmedium"].

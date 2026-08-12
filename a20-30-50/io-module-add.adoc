@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: aff a20, aff a30, aff a50, add IO module 
 summary: Fügen Sie Ihrem AFF A20, AFF A30 oder AFF A50 ein I/O-Modul hinzu, um die Netzwerkkonnektivität zu verbessern und die Fähigkeit Ihres Systems zu erweitern, den Datenverkehr zu bewältigen. 
 ---
-= Ein E/A-Modul kann zu Ihrem AFF A20, AFF A30 oder AFF A50 System hinzugefügt werden, um die Netzwerkverbindung zu verbessern.
+= Ein E/A-Modul zu Ihrem AFF A20, AFF A30 oder AFF A50 System hinzufügen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,7 +13,7 @@ summary: Fügen Sie Ihrem AFF A20, AFF A30 oder AFF A50 ein I/O-Modul hinzu, um 
 [role="lead"]
 Fügen Sie Ihrem AFF A20-, AFF A30- oder AFF A50-Speichersystem ein E/A-Modul hinzu, um die Netzwerkkonnektivität zu verbessern und die Fähigkeit Ihres Systems zur Verarbeitung des Datenverkehrs zu erweitern.
 
-Der Hinzufügevorgang umfasst das Herunterfahren eines Controllers, das Hinzufügen des neuen E/A-Moduls, das Neustarten des Controllers, das Herunterfahren des anderen Controllers, das Hinzufügen des neuen E/A-Moduls und das Neustarten des Controllers.
+Das Hinzufügen des E/A-Moduls umfasst das Herunterfahren eines Controllers, das Hinzufügen des Moduls und dessen Neustart, anschließend werden diese Schritte für den anderen Controller wiederholt.
 
 .Über diese Aufgabe
 * Sie können ein E/A-Modul zu Ihren Speichersystemen hinzufügen, wenn Steckplätze verfügbar sind oder wenn alle Steckplätze vollständig belegt sind.
@@ -22,7 +22,7 @@ Der Hinzufügevorgang umfasst das Herunterfahren eines Controllers, das Hinzufü
 Ein Speichersystem verfügt über drei Standort-LEDs: Eine auf dem Bedienfeld und eine auf jedem Controller. Die Standort-LEDs leuchten 30 Minuten lang.
 
 +
-Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led _off_`. Wenn Sie sich nicht sicher sind, ob die LEDs leuchten oder nicht, können Sie ihren Status überprüfen, indem Sie den Befehl eingeben `system location-led show`.
+Sie können sie durch Eingabe des  `system location-led _off_` Befehls ausschalten. Wenn Sie sich nicht sicher sind, ob die LEDs ein- oder ausgeschaltet sind, kann ihr Status durch Eingabe des  `system location-led show` Befehls überprüft werden.
 
 
 

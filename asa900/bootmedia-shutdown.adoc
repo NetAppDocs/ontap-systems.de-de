@@ -2,7 +2,7 @@
 permalink: asa900/bootmedia-shutdown.html 
 sidebar: sidebar 
 keywords: asa a900, shut down the controller 
-summary: Sie können den beeinträchtigten Controller je nach Hardwarekonfiguration des Speichersystems mithilfe verschiedener Verfahren herunterfahren oder übernehmen. 
+summary: Der Controller im ASA A900-Speichersystem wird heruntergefahren, um Datenverlust zu verhindern und die Systemstabilität während des manuellen Boot-Medien-Wiederherstellungsprozesses zu gewährleisten. 
 ---
 = Den Controller im ASA A900 System während des manuellen Boot-Wiederherstellungsprozesses herunterfahren
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Sie können den beeinträchtigten Controller je nach Hardwarekonfigurat
 
 
 [role="lead"]
-Fahren Sie den Controller mit eingeschränkter Konfiguration herunter oder übernehmen Sie ihn entsprechend.
+Der Controller im ASA A900-Speichersystem wird heruntergefahren, um Datenverlust zu verhindern und die Systemstabilität während des manuellen Boot-Medien-Wiederherstellungsprozesses zu gewährleisten.
 
 Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie das manuelle Boot-Wiederherstellungsverfahren verwenden.
 
@@ -19,7 +19,7 @@ Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielin
 ====
 .In den meisten Konfigurationen
 --
-Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Controllers durchführen.
+Nach Abschluss der NVE- oder NSE-Aufgaben ist das Herunterfahren des Controllers abzuschließen.
 
 Übernehmen Sie den fehlerhaften Controller und stoppen Sie ihn, damit der intakte Controller weiterhin Daten aus dem Speicher des fehlerhaften Controllers bereitstellt. Dazu unterdrücken Sie die automatische Fallerstellung in AutoSupport, deaktivieren die automatische Rückgabe und bringen den fehlerhaften Controller zur LOADER-Eingabeaufforderung. Die LOADER-Eingabeaufforderung ist der sichere, angehaltene Zustand, aus dem Sie die FRU ersetzen können.
 
@@ -90,7 +90,7 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 --
 .Controller befindet sich in einem MetroCluster
 --
-Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Controllers durchführen.
+Nach Abschluss der NVE- oder NSE-Aufgaben ist das Herunterfahren des Controllers abzuschließen.
 
 
 NOTE: Verwenden Sie dieses Verfahren nicht, wenn sich Ihr System in einer MetroCluster-Konfiguration mit zwei Knoten befindet.

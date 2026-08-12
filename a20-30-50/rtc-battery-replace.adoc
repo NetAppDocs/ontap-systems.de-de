@@ -14,7 +14,7 @@ summary: Tauschen Sie die Echtzeituhrbatterie, allgemein bekannt als Knopfzellen
 Ersetzen Sie die Echtzeituhrbatterie (RTC), allgemein als Knopfzellenbatterie bekannt, in Ihrem AFF A20-, AFF A30- oder AFF A50-Speichersystem, um sicherzustellen, dass Dienste und Anwendungen, die auf eine genaue Zeitsynchronisierung angewiesen sind, weiterhin betriebsbereit bleiben.
 
 .Bevor Sie beginnen
-Alle anderen Komponenten des Speichersystems müssen ordnungsgemäß funktionieren. Falls nicht, wenden Sie sich an https://mysupport.netapp.com/site/global/dashboard["NetApp Support"], bevor Sie mit diesem Verfahren fortfahren.
+Alle anderen Komponenten des Speichersystems müssen einwandfrei funktionieren. Wenn dies nicht der Fall ist, wenden Sie sich an  https://mysupport.netapp.com/site/global/dashboard["NetApp Support"] bevor Sie mit diesem Verfahren fortfahren.
 
 .Über diese Aufgabe
 * Sie können dieses Verfahren mit allen Versionen von ONTAP verwenden, die von Ihrem Speichersystem unterstützt werden.
@@ -283,7 +283,7 @@ image::../media/icon_round_3.png[Legende Nummer 3]
 Drehen Sie die Griffe bei Bedarf aufrecht (neben den Laschen), um sie aus dem Weg zu bewegen.
 
 |===
-. Öffnen Sie die Controllerabdeckung, indem Sie die Flügelschraube gegen den Uhrzeigersinn drehen, um sie zu lösen, und öffnen Sie dann die Abdeckung.
+. Die Rändelschraube wird gegen den Uhrzeigersinn gedreht, bis sie gelockert ist, anschließend wird die Abdeckung des Controllers geöffnet.
 
 
 
@@ -445,9 +445,9 @@ DC-NETZTEIL
 == Schritt 5: Setzen Sie die Uhrzeit und das Datum auf dem Controller zurück
 
 
-NOTE: Nach dem Austauschen der RTC-Batterie, dem Einsetzen des Controllers und dem Einschalten des ersten BIOS-Reset werden folgende Fehlermeldungen angezeigt:
+NOTE: Nachdem Sie die RTC-Batterie ausgetauscht, den Controller eingesetzt und das System zum ersten BIOS-Reset eingeschaltet haben, werden die folgenden Fehlermeldungen angezeigt:
 `RTC date/time error. Reset date/time to default`
-`RTC power failure error` Diese Meldungen werden erwartet und Sie können mit diesem Verfahren fortfahren.
+`RTC power failure error` Diese Meldungen sind zu erwarten und Sie können mit diesem Vorgang fortfahren.
 
 . Überprüfen Sie auf dem fehlerfreien Controller Datum und Uhrzeit:
 +
@@ -455,7 +455,7 @@ NOTE: Nach dem Austauschen der RTC-Batterie, dem Einsetzen des Controllers und d
 
 +
 
-NOTE: Wenn Ihr Speichersystem im Boot-Menü stoppt, wählen Sie die Option für  `Reboot node` und antworten Sie bei Aufforderung _y_, und starten Sie dann zu Loader, indem Sie _Strg-C_ drücken.
+NOTE: Wenn das Speichersystem im Bootmenü anhält, die Option für  `Reboot node` auswählen und bei Aufforderung mit _y_ antworten, anschließend durch Drücken von _Strg+C_ zum LOADER booten.
 
 . Überprüfen Sie auf dem fehlerhaften Controller bei der LOADER-Eingabeaufforderung Uhrzeit und Datum:
 +
@@ -473,7 +473,7 @@ NOTE: Wenn Ihr Speichersystem im Boot-Menü stoppt, wählen Sie die Option für 
 .. Bestätigen Sie Datum und Uhrzeit.
 
 
-. Geben Sie an der Eingabeaufforderung des Loader ein `bye`, um die I/O-Module und andere Komponenten neu zu initialisieren, und lassen Sie den Controller neu starten.
+. An der LOADER-Eingabeaufforderung  `bye`eingeben, um die E/A-Module und andere Komponenten neu zu initialisieren und den Controller neu zu starten.
 
 
 

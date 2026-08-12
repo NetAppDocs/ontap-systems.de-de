@@ -11,7 +11,7 @@ summary: Um die Datensicherheit auf Ihrem AFF C30- oder AFF C60-Speichersystem z
 
 
 [role="lead"]
-Um die Datensicherheit auf Ihrem AFF C30 oder AFF C60 Storage-System zu gewährleisten, müssen Sie die Unterstützung und den Status der Verschlüsselungsschlüssel auf Ihren Boot-Medien überprüfen. Überprüfen Sie, ob Ihre ONTAP Version NetApp Volume Encryption (NVE) unterstützt und bevor Sie den Controller herunterfahren, ob der Schlüsselmanager aktiv ist.
+Um die Datensicherheit auf Ihrem AFF C30 oder AFF C60 Storage-System zu gewährleisten, ist die Unterstützung und der Status des Verschlüsselungsschlüssels auf Ihrem Boot-Medium zu überprüfen. Es sollte geprüft werden, ob Ihre ONTAP Version NetApp Volume Encryption (NVE) unterstützt. Vor dem Herunterfahren des Controllers ist zu prüfen, ob der Schlüsselmanager aktiv ist.
 
 
 
@@ -45,7 +45,7 @@ NOTE: Laden Sie das ONTAP Image von der NetApp -Support-Website auf Ihren HTTP- 
 [[step-2-verify-key-manager-status-and-back-up-configuration]]
 == Schritt 2: Überprüfen Sie den Status des Schlüsselmanagers und sichern Sie die Konfiguration.
 
-Bevor Sie den betroffenen Controller herunterfahren, überprüfen Sie die Konfiguration des Schlüsselmanagers und sichern Sie die notwendigen Informationen.
+Vor dem Herunterfahren des Controllers mit dem beschädigten Bootmedium sollte die Konfiguration des Schlüsselmanagers überprüft und die notwendigen Informationen gesichert werden.
 
 .Schritte
 . Bestimmen Sie, welcher Schlüsselmanager auf Ihrem System aktiviert ist:

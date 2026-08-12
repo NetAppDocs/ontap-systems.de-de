@@ -2,7 +2,7 @@
 permalink: a900/bootmedia-shutdown.html 
 sidebar: sidebar 
 keywords: aff a900, shut down the controller 
-summary: Sie können den beeinträchtigten Controller je nach Hardwarekonfiguration des Speichersystems mithilfe verschiedener Verfahren herunterfahren oder übernehmen. 
+summary: Der Controller im AFF A900-Speichersystem wird heruntergefahren, um Datenverlust zu vermeiden und die Systemstabilität während des manuellen Bootmedien-Wiederherstellungsprozesses zu gewährleisten. 
 ---
 = Den Controller im AFF A900 System während des manuellen Boot-Wiederherstellungsprozesses herunterfahren
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Sie können den beeinträchtigten Controller je nach Hardwarekonfigurat
 
 
 [role="lead"]
-Der defekte Controller in Ihrem AFF A900-Speichersystem wird heruntergefahren, um Datenverlust zu verhindern und die Systemstabilität während des manuellen Boot-Wiederherstellungsprozesses aufrechtzuerhalten.
+Der Controller im AFF A900-Speichersystem wird heruntergefahren, um Datenverlust zu vermeiden und die Systemstabilität während des manuellen Bootmedien-Wiederherstellungsprozesses zu gewährleisten.
 
 Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie das manuelle Boot-Wiederherstellungsverfahren verwenden.
 
@@ -19,7 +19,7 @@ Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielin
 ====
 .In den meisten Konfigurationen
 --
-Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Controllers durchführen.
+Nach Abschluss der NVE- oder NSE-Aufgaben ist das Herunterfahren des Controllers abzuschließen.
 
 Wenn auf Ihrem Speichersystem ONTAP 9.17.1 oder höher ausgeführt wird, verwenden Sie das automatisierte Boot-Wiederherstellungsverfahren.  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie den manuellen Boot-Wiederherstellungsprozess verwenden.
 
@@ -92,7 +92,7 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 --
 .Controller befindet sich in einem MetroCluster
 --
-Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Controllers durchführen.
+Nach Abschluss der NVE- oder NSE-Aufgaben ist das Herunterfahren des Controllers abzuschließen.
 
 
 NOTE: Verwenden Sie dieses Verfahren nicht, wenn sich Ihr System in einer MetroCluster-Konfiguration mit zwei Knoten befindet.

@@ -2,7 +2,7 @@
 permalink: asa-r2-a20-30-50/bootmedia-shutdown-bmr.html 
 sidebar: sidebar 
 keywords: asa a20, asa a30, asa a50, shut down the controller 
-summary: Fahren Sie den außer Betrieb genommenen Controller des Speichersystems ASA A20, ASA A30 oder ASA A50 herunter, um Datenverlust zu vermeiden und die Systemstabilität beim Austausch des Startmediums sicherzustellen. 
+summary: Der Controller im ASA A20, ASA A30 oder ASA A50-Speichersystem wird heruntergefahren, um Datenverlust zu vermeiden und die Systemstabilität beim Austausch des Bootmediums zu gewährleisten. 
 ---
 = Den Controller im ASA A20, ASA A30 oder ASA A50 System während des automatisierten Boot-Wiederherstellungsprozesses herunterfahren
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Fahren Sie den außer Betrieb genommenen Controller des Speichersystems
 
 
 [role="lead"]
-Fahren Sie den außer Betrieb genommenen Controller des Speichersystems ASA A20, ASA A30 oder ASA A50 herunter, um Datenverlust zu vermeiden und die Systemstabilität beim Austausch des Startmediums sicherzustellen.
+Der Controller im ASA A20, ASA A30 oder ASA A50-Speichersystem wird heruntergefahren, um Datenverlust zu vermeiden und die Systemstabilität beim Austausch des Bootmediums zu gewährleisten.
 
 Übernehmen Sie den fehlerhaften Controller und stoppen Sie ihn, damit der intakte Controller weiterhin Daten aus dem Speicher des fehlerhaften Controllers bereitstellt. Dazu unterdrücken Sie die automatische Fallerstellung in AutoSupport, deaktivieren die automatische Rückgabe und bringen den fehlerhaften Controller zur LOADER-Eingabeaufforderung. Die LOADER-Eingabeaufforderung ist der sichere, angehaltene Zustand, aus dem Sie die FRU ersetzen können.
 
@@ -80,4 +80,4 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 
 
 .Wie es weiter geht
-Nach dem Herunterfahren des außer Betrieb genommenen Controllers, Sie link:bootmedia-replace-bmr.html["Ersetzen Sie das Startmedium"].
+Nachdem Sie den Controller heruntergefahren haben, link:bootmedia-replace-bmr.html["Ersetzen Sie das Startmedium"].

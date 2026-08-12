@@ -2,16 +2,16 @@
 permalink: a700/bootmedia-shutdown.html 
 sidebar: sidebar 
 keywords: aff a700, shut, down, impaired, controller, take, over, manual, manual boot recovery 
-summary: Schalten Sie den beeinträchtigten Controller eines AFF A700 -Systems nach Abschluss der Verschlüsselungsprüfungen ab. Das AFF A700 -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt. 
+summary: Der Controller im AFF A700-Speichersystem wird heruntergefahren, um Datenverlust zu vermeiden und die Systemstabilität während des manuellen Boot-Medien-Wiederherstellungsprozesses zu gewährleisten. 
 ---
-= Der defekte Controller in Ihrem AFF A700 System wird während des manuellen Boot-Wiederherstellungsprozesses heruntergefahren.
+= Den Controller im AFF A700 System während des manuellen Boot-Wiederherstellungsprozesses herunterfahren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Schalten Sie den beeinträchtigten Controller eines AFF A700 -Systems nach Abschluss der Verschlüsselungsprüfungen ab. Dieses Verfahren beinhaltet das Hochfahren des Controllers bis zur LOADER-Eingabeaufforderung, das Erfassen von Boot-Umgebungsvariablen zu Referenzzwecken und die Vorbereitung des Controllers auf den Austausch des Bootmediums, wobei die einzelnen Schritte je nach Systemkonfiguration variieren.
+Der Controller im AFF A700-Speichersystem wird heruntergefahren, um Datenverlust zu vermeiden und die Systemstabilität während des manuellen Boot-Medien-Wiederherstellungsprozesses zu gewährleisten.
 
 Das AFF A700 -System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt.
 
@@ -64,7 +64,7 @@ NOTE: Dieser Befehl funktioniert möglicherweise nicht, wenn das Startgerät bes
 [[option-2-controller-is-in-a-metrocluster]]
 === Option 2: Controller befindet sich in einem MetroCluster
 
-Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Nodes durchführen. HINWEIS: Verwenden Sie diese Vorgehensweise nicht, wenn sich Ihr System in einer MetroCluster-Konfiguration mit zwei Knoten befindet.
+Nach Abschluss der NVE- oder NSE-Aufgaben muss der Knoten heruntergefahren werden. HINWEIS: Dieses Verfahren ist nicht zu verwenden, wenn das System in einer Zwei-Knoten MetroCluster Konfiguration betrieben wird.
 
 Übernehmen Sie den fehlerhaften Controller und stoppen Sie ihn, damit der intakte Controller weiterhin Daten aus dem Speicher des fehlerhaften Controllers bereitstellt. Dazu unterdrücken Sie die automatische Fallerstellung in AutoSupport, deaktivieren die automatische Rückgabe und bringen den fehlerhaften Controller zur LOADER-Eingabeaufforderung. Die LOADER-Eingabeaufforderung ist der sichere, angehaltene Zustand, aus dem Sie die FRU ersetzen können.
 
@@ -123,7 +123,7 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 [[option-3-controller-is-in-a-two-node-metrocluster]]
 == Option 3: Controller befindet sich in einem MetroCluster mit zwei Nodes
 
-Nach Abschluss der NVE oder NSE-Aufgaben müssen Sie den Shutdown des beeinträchtigten Nodes durchführen.
+Nach Abschluss der NVE- oder NSE-Aufgaben ist das Herunterfahren des Knotens abzuschließen.
 
 
 NOTE: Verwenden Sie dieses Verfahren nicht, wenn sich Ihr System in einer MetroCluster-Konfiguration mit zwei Knoten befindet.

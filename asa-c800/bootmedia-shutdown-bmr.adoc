@@ -2,7 +2,7 @@
 permalink: asa-c800/bootmedia-shutdown-bmr.html 
 sidebar: sidebar 
 keywords: asa c800, shut down the controller 
-summary: Fahren Sie den beeinträchtigten Controller in Ihrem ASA C800 Speichersystem herunter, um Datenverlust zu verhindern und die Systemstabilität beim Austausch des Startmediums sicherzustellen. 
+summary: Das Herunterfahren des Controllers im ASA C800-Speichersystem verhindert Datenverlust und sorgt für Systemstabilität beim Austausch des Bootmediums. 
 ---
 = Der Controller im ASA C800 System wird während des automatisierten Boot-Wiederherstellungsprozesses heruntergefahren.
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Fahren Sie den beeinträchtigten Controller in Ihrem ASA C800 Speichers
 
 
 [role="lead"]
-Fahren Sie den beschädigten Controller in Ihrem ASA C800 Speichersystem herunter, um Datenverlust zu verhindern und die Systemstabilität während des automatischen Boot-Medienwiederherstellungsprozesses aufrechtzuerhalten.
+Der Controller im ASA C800 Storage-System sollte heruntergefahren werden, um Datenverlust zu verhindern und die Systemstabilität während des automatisierten Boot-Medien-Wiederherstellungsprozesses zu gewährleisten.
 
 Der automatisierte Boot-Medien-Wiederherstellungsprozess wird nur in ONTAP 9.17.1 und höher unterstützt. Wenn Ihr Speichersystem eine frühere Version von ONTAP verwendet, verwenden Sie die link:bootmedia-replace-workflow.html["manuelle Boot-Wiederherstellung"] .
 
@@ -82,4 +82,4 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 
 
 .Wie es weiter geht
-Nach dem Herunterfahren des außer Betrieb genommenen Controllers, Sie link:bootmedia-replace-bmr.html["Ersetzen Sie das Startmedium"].
+Nachdem Sie den Controller heruntergefahren haben, link:bootmedia-replace-bmr.html["Ersetzen Sie das Startmedium"].

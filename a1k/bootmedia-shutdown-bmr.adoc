@@ -2,7 +2,7 @@
 permalink: a1k/bootmedia-shutdown-bmr.html 
 sidebar: sidebar 
 keywords: aff a1k, shut down the controller 
-summary: Fahren Sie den außer Betrieb genommenen Controller in Ihrem AFF A1K-Speichersystem herunter, um Datenverlust zu vermeiden und die Systemstabilität beim Austausch des Startmediums sicherzustellen. 
+summary: Der Controller im AFF A1K Speichersystem sollte heruntergefahren werden, um Datenverlust zu vermeiden und die Systemstabilität beim Austausch des Bootmediums sicherzustellen. 
 ---
 = Den Controller in Ihrem AFF A1K System während des automatisierten Boot-Wiederherstellungsprozesses herunterfahren
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Fahren Sie den außer Betrieb genommenen Controller in Ihrem AFF A1K-Sp
 
 
 [role="lead"]
-Fahren Sie den beschädigten Controller in Ihrem AFF A1K Speichersystem herunter, um Datenverlust zu verhindern und die Systemstabilität während des automatischen Boot-Medienwiederherstellungsprozesses aufrechtzuerhalten.
+Der Controller im AFF A1K Storage-System sollte heruntergefahren werden, um Datenverlust zu verhindern und die Systemstabilität während des automatisierten Bootmedien-Wiederherstellungsprozesses zu gewährleisten.
 
 Der automatisierte Boot-Medien-Wiederherstellungsprozess wird nur in ONTAP 9.17.1 und höher unterstützt. Wenn Ihr Speichersystem eine frühere Version von ONTAP verwendet, verwenden Sie die link:bootmedia-replace-workflow.html["manuelle Boot-Wiederherstellung"] .
 
@@ -82,4 +82,4 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 
 
 .Wie es weiter geht
-Nach dem Herunterfahren des außer Betrieb genommenen Controllers, Sie link:bootmedia-replace-bmr.html["Ersetzen Sie das Startmedium"].
+Nachdem Sie den Controller heruntergefahren haben, link:bootmedia-replace-bmr.html["Ersetzen Sie das Startmedium"].

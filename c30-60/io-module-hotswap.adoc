@@ -13,14 +13,14 @@ summary: Sie können ein Ethernet-E/A-Modul in Ihrem AFF C30 oder AFF C60-Speich
 [role="lead"]
 Sie können ein Ethernet-E/A-Modul in Ihrem AFF C30 oder AFF C60-Speichersystem per Hot-Swap austauschen, wenn ein Modul ausfällt und Ihr Speichersystem alle ONTAP-Versionserfordernisse erfüllt.
 
-Um ein E/A-Modul per Hot-Swap auszutauschen, stellen Sie sicher, dass Ihr Speichersystem die ONTAP-Versionsanforderungen erfüllt, bereiten Sie Ihr Speichersystem und das E/A-Modul vor, führen Sie den Hot-Swap des defekten Moduls durch, nehmen Sie das Ersatzmodul in Betrieb, stellen Sie den normalen Betrieb des Speichersystems wieder her und senden Sie das defekte Modul an NetApp zurück.
+Für den Hot-Swap eines E/A-Moduls ist sicherzustellen, dass das Speichersystem die ONTAP-Versionsanforderungen erfüllt, das Speichersystem und das E/A-Modul vorbereitet werden, das ausgefallene Modul im Hot-Swap-Verfahren ersetzt wird, das Ersatzmodul online geschaltet wird, der normale Betrieb des Speichersystems wiederhergestellt wird und das ausgefallene Modul an NetApp zurückgegeben wird.
 
 .Über diese Aufgabe
 * Hot-Swap des E/A-Moduls bedeutet, dass Sie kein manuelles Takeover durchführen müssen, bevor Sie das ausgefallene E/A-Modul ersetzen.
 * Wenden Sie die Befehle auf den richtigen Controller und den richtigen E/A-Steckplatz an, wenn Sie das E/A-Modul im Hot-Swap-Verfahren austauschen:
 +
-** Der _beeinträchtigte Controller_ ist der Controller, an dem Sie das I/O-Modul im laufenden Betrieb austauschen.
-** Der _gesunde Controller_ ist der HA-Partner des beeinträchtigten Controllers.
+** Der _Controller mit dem defekten E/A-Modul_ ist der Controller, bei dem das E/A-Modul im laufenden Betrieb ausgetauscht wird.
+** Der _gesunde Controller_ ist der HA-Partner des Controllers mit dem beeinträchtigten E/A-Modul.
 
 
 * Sie können die Standort-LEDs (blau) des Speichersystems einschalten, um das betroffene Speichersystem leichter zu finden. Melden Sie sich mit SSH beim BMC an und geben Sie den  `system location-led _on_` Befehl ein.
@@ -34,8 +34,8 @@ Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led
 
 
 
-[[step-1-ensure-the-storage-system-meets-the-procedure-requirements]]
-== Schritt 1: Sicherstellen, dass das Speichersystem die Verfahrensanforderungen erfüllt
+[[step-1-verify-the-storage-system-meets-the-procedure-requirements]]
+== Schritt 1: Überprüfung, ob das Speichersystem die Verfahrensanforderungen erfüllt
 
 Um dieses Verfahren anzuwenden, muss auf Ihrem Speichersystem ONTAP 9.17.1 oder höher ausgeführt werden, und Ihr Speichersystem muss alle Anforderungen für die Version von ONTAP erfüllen, die auf Ihrem Speichersystem ausgeführt wird.
 

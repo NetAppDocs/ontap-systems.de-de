@@ -16,7 +16,7 @@ Tauschen Sie ein E/A-Modul in Ihrem AFF A20, AFF A30 oder AFF A50 Storage-System
 Der Austauschprozess umfasst das Herunterfahren des Controllers, den Austausch des defekten E/A-Moduls, den Neustart des Controllers und die Rücksendung des defekten Teils an NetApp.
 
 .Bevor Sie beginnen
-Alle anderen Komponenten des Speichersystems müssen ordnungsgemäß funktionieren. Falls nicht, wenden Sie sich an https://mysupport.netapp.com/site/global/dashboard["NetApp Support"], bevor Sie mit diesem Verfahren fortfahren.
+Alle anderen Komponenten des Speichersystems müssen einwandfrei funktionieren. Wenn dies nicht der Fall ist, wenden Sie sich an  https://mysupport.netapp.com/site/global/dashboard["NetApp Support"] bevor Sie mit diesem Verfahren fortfahren.
 
 .Über diese Aufgabe
 Bei Bedarf können Sie die LEDs des Speichersystems (blau) einschalten, um das betroffene Speichersystem physisch zu lokalisieren. Melden Sie sich über SSH bei der BMC an und geben Sie den Befehl ein `system location-led _on_`.

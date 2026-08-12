@@ -4,22 +4,22 @@ sidebar: sidebar
 keywords: aff c30, aff c60, add IO module 
 summary: Ergänzen Sie Ihr AFF C30- oder AFF C60-Speichersystem um ein E/A-Modul, um die Netzwerkanbindung zu verbessern und die Fähigkeit Ihres Systems zur Verarbeitung von Datenverkehr zu erweitern. 
 ---
-= Ein E/A-Modul kann zu Ihrem AFF C30 oder AFF C60 Speichersystem hinzugefügt werden, um die Netzwerkkonnektivität zu verbessern
+= Ein E/A-Modul zu Ihrem AFF C30 oder AFF C60 Storage-System hinzufügen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Erweitern Sie Ihr AFF C30- oder AFF C60-Speichersystem um ein I/O-Modul, um die Netzwerkanbindung zu verbessern und die Fähigkeit Ihres Systems zur Handhabung des Datenverkehrs zu erweitern. Mit diesem Verfahren können Sie ein I/O-Modul entweder im Rahmen eines geplanten Upgrades an einem betriebsbereiten Controller oder während der Wartung an einem beeinträchtigten Controller hinzufügen.
+Fügen Sie Ihrem AFF C30 oder AFF C60 Speichersystem ein I/O-Modul hinzu, um die Netzwerkkonnektivität zu verbessern und die Fähigkeit Ihres Systems zur Verarbeitung von Datenverkehr zu erweitern. Mit diesem Verfahren kann ein I/O-Modul entweder als geplantes Upgrade an einem betriebsbereiten Controller oder während der Wartung an einem Controller mit einem beeinträchtigten I/O-Modul hinzugefügt werden.
 
 Sie können Ihrem AFF C30- und AFF C60-Speichersystem ein I/O-Modul hinzufügen, wenn Steckplätze verfügbar sind oder wenn alle Steckplätze vollständig belegt sind.
 
 .Über diese Aufgabe
-Diese Prozedur kann auf jedem der beiden Controller des HA-Paares durchgeführt werden, unabhängig davon, ob der Controller aktuell betriebsbereit oder beeinträchtigt ist. Da ein E/A-Modul nicht zu einem laufenden Controller hinzugefügt werden kann, muss der Zielcontroller vor der Installation des Moduls heruntergefahren werden. Der HA-Partner übernimmt während der Prozedur die Speicheroperationen, sodass die Daten für Clients weiterhin verfügbar bleiben.
+Diese Prozedur kann auf jedem der beiden Controller im HA-Paar durchgeführt werden, unabhängig davon, ob das I/O-Modul des Controllers aktuell betriebsbereit oder beeinträchtigt ist. Da ein I/O-Modul nicht zu einem laufenden Controller hinzugefügt werden kann, muss der Zielcontroller vor der Installation des Moduls heruntergefahren werden. Der HA-Partner übernimmt während der Prozedur die Speicheroperationen, sodass die Daten für Clients weiterhin verfügbar bleiben.
 
-* Wenn der Zielcontroller *betriebsbereit* ist (geplante Erweiterung), befolgen Sie die Abschaltschritte wie beschrieben und behandeln Sie den Zielcontroller in diesem Inhalt als den "beeinträchtigten" Controller.
-* Falls der Zielcontroller *beeinträchtigt* ist, befolgen Sie die beschriebenen Schritte zum Herunterfahren.
+* Wenn der Zielcontroller betriebsbereit ist (geplante Erweiterung), sind die Abschaltschritte wie beschrieben zu befolgen, wobei der Zielcontroller in diesem Verfahren so zu behandeln ist, als ob er ein beeinträchtigtes E/A-Modul hätte.
+* Wenn der Zielcontroller ein defektes E/A-Modul hat, sind die Abschaltschritte wie beschrieben auszuführen.
 
 
 Bei Bedarf können Sie die LEDs des Speichersystems (blau) einschalten, um das betroffene Speichersystem physisch zu lokalisieren. Melden Sie sich über SSH bei der BMC an und geben Sie den Befehl ein `system location-led _on_`.
@@ -33,7 +33,7 @@ Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led
 [[step-1-shut-down-the-target-controller-module]]
 == Schritt 1: Das Zielsteuerungsmodul herunterfahren
 
-Übernehmen Sie das Ziel-Controller-Modul und fahren Sie es herunter, damit dessen HA-Partner weiterhin Daten bereitstellt, während Sie das I/O-Modul hinzufügen. Die verlinkten Schritte beziehen sich auf den herunterzufahrenden Controller als „beeinträchtigten“ Controller; die gleichen Schritte gelten unabhängig davon, ob Sie einen betriebsbereiten Controller für eine geplante Erweiterung übernehmen oder einen bereits beeinträchtigten Controller herunterfahren.
+Den Zielcontroller übernehmen und herunterfahren, sodass sein HA-Partner weiterhin Daten bereitstellt, während das I/O-Modul hinzugefügt wird. Die verlinkten Schritte beziehen sich auf den Controller, der heruntergefahren wird und das beeinträchtigte I/O-Modul hostet. Diese Schritte gelten sowohl für die Übernahme eines Controllers im Rahmen einer geplanten Erweiterung als auch für das Herunterfahren eines Controllers, der bereits ein beeinträchtigtes I/O-Modul besitzt.
 
 [role="tabbed-block"]
 ====

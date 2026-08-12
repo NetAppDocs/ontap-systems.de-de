@@ -11,7 +11,7 @@ summary: Bevor Sie den beeinträchtigten Controller herunterfahren und den Statu
 
 
 [role="lead"]
-Um die Datensicherheit auf Ihrem AFF A400 Storage-System zu gewährleisten, muss die Unterstützung und der Status des Verschlüsselungsschlüssels auf Ihrem Boot-Medium überprüft werden. Es sollte geprüft werden, ob Ihre ONTAP Version NetApp Volume Encryption (NVE) unterstützt, und vor dem Herunterfahren des Controllers sollte überprüft werden, ob der Key Manager aktiv ist.
+Um die Datensicherheit auf Ihrem AFF A400 Storage-System zu gewährleisten, sollte die Unterstützung und der Status des Verschlüsselungsschlüssels auf Ihrem Boot-Medium vor dem Herunterfahren des Controllers überprüft werden. Es ist zu prüfen, ob Ihre ONTAP Version NetApp Volume Encryption (NVE) unterstützt und ob der Schlüsselmanager aktiv ist.
 
 Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie den manuellen Boot-Wiederherstellungsprozess verwenden.
 

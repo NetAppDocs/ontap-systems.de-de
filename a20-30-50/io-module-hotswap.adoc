@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: aff a20, aff a30, aff a50, hot swap a cluster ha card, hot swap ethernet client io module, hotswap io module, hot swap io module 
 summary: Sie können ein Ethernet-E/A-Modul in Ihrem AFF A20, AFF A30 oder AFF A50 Speichersystem per Hot-Swap austauschen, wenn ein Modul ausfällt und Ihr Speichersystem alle ONTAP Versionserfordernisse erfüllt. 
 ---
-= Ein E/A-Modul kann in Ihrem AFF A20, AFF A30 oder AFF A50 System im laufenden Betrieb ausgetauscht werden, ohne das System herunterzufahren.
+= Hot-Swap eines I/O-Moduls in Ihrem AFF A20, AFF A30 oder AFF A50 System
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,7 +13,7 @@ summary: Sie können ein Ethernet-E/A-Modul in Ihrem AFF A20, AFF A30 oder AFF A
 [role="lead"]
 Sie können ein Ethernet-E/A-Modul in Ihrem AFF A20, AFF A30 oder AFF A50 Speichersystem per Hot-Swap austauschen, wenn ein Modul ausfällt und Ihr Speichersystem alle ONTAP Versionserfordernisse erfüllt.
 
-Um ein E/A-Modul per Hot-Swap auszutauschen, stellen Sie sicher, dass Ihr Speichersystem die ONTAP-Versionsanforderungen erfüllt, bereiten Sie Ihr Speichersystem und das E/A-Modul vor, führen Sie den Hot-Swap des defekten Moduls durch, nehmen Sie das Ersatzmodul in Betrieb, stellen Sie den normalen Betrieb des Speichersystems wieder her und senden Sie das defekte Modul an NetApp zurück.
+Für den Hot-Swap eines E/A-Moduls ist sicherzustellen, dass das Speichersystem die ONTAP-Versionsanforderungen erfüllt, das Speichersystem und das E/A-Modul vorbereitet werden, das ausgefallene Modul im Hot-Swap-Verfahren ersetzt wird, das Ersatzmodul online geschaltet wird, der normale Betrieb des Speichersystems wiederhergestellt wird und das ausgefallene Modul an NetApp zurückgegeben wird.
 
 .Über diese Aufgabe
 * Hot-Swap des E/A-Moduls bedeutet, dass Sie kein manuelles Takeover durchführen müssen, bevor Sie das ausgefallene E/A-Modul ersetzen.
@@ -28,7 +28,7 @@ Um ein E/A-Modul per Hot-Swap auszutauschen, stellen Sie sicher, dass Ihr Speich
 Ein Speichersystem verfügt über drei Standort-LEDs: Eine auf dem Bedienfeld und eine auf jedem Controller. Die Standort-LEDs leuchten 30 Minuten lang.
 
 +
-Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led _off_`. Wenn Sie sich nicht sicher sind, ob die LEDs leuchten oder nicht, können Sie ihren Status überprüfen, indem Sie den Befehl eingeben `system location-led show`.
+Sie können sie durch Eingabe des  `system location-led _off_` Befehls ausschalten. Wenn Sie sich nicht sicher sind, ob die LEDs ein- oder ausgeschaltet sind, kann ihr Status durch Eingabe des  `system location-led show` Befehls überprüft werden.
 
 
 

@@ -2,7 +2,7 @@
 permalink: c250/bootmedia-shutdown-bmr.html 
 sidebar: sidebar 
 keywords: c250, shut down the controller 
-summary: Schalten Sie den defekten Controller in Ihrem AFF C250-Speichersystem ab, um Datenverlust zu verhindern und die Systemstabilität beim Austausch des Bootmediums zu gewährleisten. 
+summary: Der Controller im AFF C250-Speichersystem wird heruntergefahren, um Datenverlust zu vermeiden und die Systemstabilität beim Austausch des Bootmediums sicherzustellen. 
 ---
 = Den Controller im AFF C250 Storage-System während des automatisierten Boot-Wiederherstellungsprozesses herunterfahren
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Schalten Sie den defekten Controller in Ihrem AFF C250-Speichersystem a
 
 
 [role="lead"]
-Schalten Sie den defekten Controller in Ihrem AFF C250-Speichersystem ab, um Datenverlust zu verhindern und die Systemstabilität während des automatisierten Bootmedien-Wiederherstellungsprozesses aufrechtzuerhalten.
+Der Controller im AFF C250 Storage-System wird heruntergefahren, um Datenverlust zu verhindern und die Systemstabilität während des automatisierten Boot-Medien-Wiederherstellungsprozesses zu gewährleisten.
 
 Die automatische Wiederherstellung des Startmediums wird nur in ONTAP 9.18.1 und höher unterstützt. Wenn auf Ihrem Speichersystem eine frühere Version von ONTAP ausgeführt wird, verwenden Sie die link:bootmedia-replace-workflow.html["manuelle Boot-Wiederherstellung"].
 
@@ -82,4 +82,4 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 
 
 .Wie es weiter geht
-Nach dem Herunterfahren des außer Betrieb genommenen Controllers, Sie link:bootmedia-replace-bmr.html["Ersetzen Sie das Startmedium"].
+Nachdem Sie den Controller heruntergefahren haben, link:bootmedia-replace-bmr.html["Ersetzen Sie das Startmedium"].

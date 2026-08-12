@@ -14,7 +14,7 @@ summary: Ersetzen Sie die NV-Batterie in Ihrem AFF A20-, AFF A30- oder AFF A50-S
 Ersetzen Sie die NV-Batterie in Ihrem AFF A20-, AFF A30- oder AFF A50-Speichersystem, wenn die Batterie an Ladung verliert oder ausfällt, da sie für die Erhaltung kritischer Systemdaten bei Stromausfällen verantwortlich ist.  Der Austauschvorgang umfasst das Herunterfahren des beschädigten Controllers, das Entfernen des Controllermoduls, das Ersetzen der NV-Batterie, das Neuinstallieren des Controllermoduls und die Rücksendung des defekten Teils an NetApp.
 
 .Bevor Sie beginnen
-Alle anderen Komponenten des Speichersystems müssen ordnungsgemäß funktionieren. Falls nicht, wenden Sie sich an https://mysupport.netapp.com/site/global/dashboard["NetApp Support"], bevor Sie mit diesem Verfahren fortfahren.
+Alle anderen Komponenten des Speichersystems müssen einwandfrei funktionieren. Wenn dies nicht der Fall ist, wenden Sie sich an  https://mysupport.netapp.com/site/global/dashboard["NetApp Support"] bevor Sie mit diesem Verfahren fortfahren.
 
 .Über diese Aufgabe
 Bei Bedarf können Sie die LEDs des Speichersystems (blau) einschalten, um das betroffene Speichersystem physisch zu lokalisieren. Melden Sie sich über SSH bei der BMC an und geben Sie den Befehl ein `system location-led _on_`.

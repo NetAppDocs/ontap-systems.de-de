@@ -14,7 +14,7 @@ summary: Tauschen Sie die Echtzeituhrbatterie, allgemein bekannt als Knopfzellen
 Ersetzen Sie die Echtzeituhrbatterie (RTC), allgemein als Knopfzellenbatterie bekannt, in Ihrem AFF C30- oder AFF C60-Speichersystem, um sicherzustellen, dass Dienste und Anwendungen, die auf eine genaue Zeitsynchronisierung angewiesen sind, weiterhin betriebsbereit bleiben.
 
 .Bevor Sie beginnen
-Alle anderen Komponenten des Speichersystems müssen ordnungsgemäß funktionieren. Falls nicht, wenden Sie sich an https://mysupport.netapp.com/site/global/dashboard["NetApp Support"], bevor Sie mit diesem Verfahren fortfahren.
+Alle anderen Komponenten des Speichersystems müssen einwandfrei funktionieren. Falls dies nicht der Fall ist, wenden Sie sich an  https://mysupport.netapp.com/site/global/dashboard["NetApp Support"] bevor Sie mit diesem Verfahren fortfahren.
 
 .Über diese Aufgabe
 * Sie können dieses Verfahren mit allen Versionen von ONTAP verwenden, die von Ihrem Speichersystem unterstützt werden.
@@ -23,7 +23,7 @@ Alle anderen Komponenten des Speichersystems müssen ordnungsgemäß funktionier
 Ein Speichersystem verfügt über drei Standort-LEDs: Eine auf dem Bedienfeld und eine auf jedem Controller. Die Standort-LEDs leuchten 30 Minuten lang.
 
 +
-Sie können sie deaktivieren, indem Sie den Befehl eingeben `system location-led _off_`. Wenn Sie sich nicht sicher sind, ob die LEDs leuchten oder nicht, können Sie ihren Status überprüfen, indem Sie den Befehl eingeben `system location-led show`.
+Sie können sie durch Eingabe des  `system location-led _off_` Befehls ausschalten. Wenn Sie sich nicht sicher sind, ob die LEDs ein- oder ausgeschaltet sind, lässt sich ihr Status durch Eingabe des  `system location-led show` Befehls überprüfen.
 
 
 
@@ -283,7 +283,7 @@ image::../media/icon_round_3.png[Legende Nummer 3]
 Drehen Sie die Griffe bei Bedarf aufrecht (neben den Laschen), um sie aus dem Weg zu bewegen.
 
 |===
-. Öffnen Sie die Controllerabdeckung, indem Sie die Flügelschraube gegen den Uhrzeigersinn drehen, um sie zu lösen, und öffnen Sie dann die Abdeckung.
+. Die Controller-Abdeckung wird geöffnet, indem die Rändelschraube gegen den Uhrzeigersinn gedreht wird.
 
 
 
@@ -445,9 +445,9 @@ DC-NETZTEIL
 == Schritt 5: Setzen Sie die Uhrzeit und das Datum auf dem Controller zurück
 
 
-NOTE: Nach dem Austauschen der RTC-Batterie, dem Einsetzen des Controllers und dem Einschalten des ersten BIOS-Reset werden folgende Fehlermeldungen angezeigt:
+NOTE: Nach dem Austausch der RTC-Batterie, dem Einsetzen des Controllers und dem Einschalten werden beim ersten BIOS-Reset möglicherweise die folgenden Fehlermeldungen angezeigt:
 `RTC date/time error. Reset date/time to default`
-`RTC power failure error` Diese Meldungen werden erwartet und Sie können mit diesem Verfahren fortfahren.
+`RTC power failure error` Diese Meldungen sind zu erwarten und der Vorgang kann fortgesetzt werden.
 
 . Überprüfen Sie auf dem fehlerfreien Controller Datum und Uhrzeit:
 +

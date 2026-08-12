@@ -197,7 +197,7 @@ image::../media/drw_a320_cable_management_arms.png[Entfernen oder Installieren d
 Sie können die Controller mithilfe der Switch-freien Cluster-Methode mit zwei Nodes oder des Cluster Interconnect-Netzwerks mit dem Netzwerk verkabeln.
 
 
-NOTE: Wenn die Port-Etiketten auf der Karte nicht sichtbar sind, überprüfen Sie die Ausrichtung der Karteninstallation (der PCIe-Anschluss befindet sich auf der linken Seite des Kartensteckplatzes in den Karten A400 und FAS8300/8700), und suchen Sie dann nach der Karte nach der Teilenummer im https://hwu.netapp.com["NetApp Hardware Universe"^] Für eine Grafik der Blende, in der die Port-Bezeichnungen angezeigt werden. Die Teilenummer der Karte kann über gefunden werden `sysconfig -a` Befehl oder auf der Packliste des Systems.
+NOTE: Sind die Portbezeichnungen auf der Karte nicht sichtbar, sollte die Einbaurichtung der Karte überprüft werden. Der PCIe-Anschluss befindet sich bei den Modellen A400 und FAS8300/8700 auf der linken Seite des Kartensteckplatzes. Anschließend kann die Karte anhand der Teilenummer im  https://hwu.netapp.com["NetApp Hardware Universe"^] für eine Abbildung der Blende mit den Portbezeichnungen nachgeschlagen werden. Die Teilenummer der Karte lässt sich mit dem  `sysconfig -a` Befehl oder auf der Systemverpackung finden.
 
 
 NOTE: Wenn Sie eine MetroCluster IP-Konfiguration verkabeln, sind die Ports e0a/e0b zum Hosten von Daten-LIFs verfügbar (normalerweise im standardmäßigen IPSpace).
@@ -265,7 +265,7 @@ image::../media/drw_a400_switched_network_cabling.png[Verkabelung des Switched C
 [[step-4-cable-controllers-to-drive-shelves]]
 == Schritt 4: Controller mit Laufwerk-Shelfs verkabeln
 
-Sie können entweder NSS224- oder SAS-Shelfs mit Ihrem System verkabeln.
+Es können entweder NS224 oder SAS Shelves an das System angeschlossen werden.
 
 
 
@@ -378,7 +378,7 @@ image::../media/drw_autodiscovery_controler_select_ieops-1849.svg[Wählen Sie ei
 
 +
 .. Öffnen Sie Den Datei-Explorer.
-.. Klicken Sie im linken Fensterbereich auf *Netzwerk*, klicken Sie mit der rechten Maustaste und wählen Sie *Aktualisieren*.
+.. Im linken Bereich *Netzwerk* auswählen, mit der rechten Maustaste klicken und *Aktualisieren* wählen.
 .. Doppelklicken Sie auf das ONTAP-Symbol, und akzeptieren Sie alle auf dem Bildschirm angezeigten Zertifikate.
 +
 
@@ -451,7 +451,7 @@ NOTE: FAS8300 und FAS8700 dargestellt.
 video::50cdf200-ede1-45a9-b4b5-ab1b006698d7[panopto]
 +
 
-NOTE: Das erste Booten kann bis zu acht Minuten dauern.
+NOTE: Der erste Startvorgang kann bis zu acht Minuten dauern.
 
 . Weisen Sie einem der Nodes eine erste Node-Management-IP-Adresse zu.
 +

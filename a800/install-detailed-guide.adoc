@@ -196,7 +196,7 @@ image::../media/drw_affa800_install_cable_mgmt.png[Anschließen des Kabelverwalt
 [[step-3-cable-controllers]]
 == Schritt 3: Kabelcontroller
 
-Die Cluster Ihrer Plattform müssen über die Switch-Methode mit zwei Nodes oder die Netzwerkmethode für Cluster Interconnect verkabelt werden. Optional ist die Verkabelung zu den Fibre Channel- oder iSCSI-Hostnetzwerken oder Direct-Attached Storage möglich. Diese Verkabelung ist nicht exklusiv; Sie können Kabel zu einem Host-Netzwerk und Speicher haben.
+Für den Cluster Ihrer Plattform ist eine Verkabelung erforderlich, entweder im Zwei-Knoten Cluster ohne Switches Verfahren oder über das Cluster-Interconnect-Netzwerk. Optional kann eine Verkabelung zu Fibre Channel- oder iSCSI-Hostnetzwerken oder direkt angeschlossenem Speicher erfolgen. Diese Verkabelung schließt sich nicht aus, es kann sowohl eine Verkabelung zu einem Hostnetzwerk als auch zu Speicher vorhanden sein.
 
 
 
@@ -549,7 +549,7 @@ Wenn die Netzwerkerkennung auf Ihrem Laptop aktiviert ist, können Sie das Syste
 .Schritte
 . Schließen Sie die Stromkabel an die Controller-Netzteile an, und schließen Sie sie dann an Stromquellen auf verschiedenen Stromkreisen an.
 +
-Das System beginnt zu booten. Das erste Booten kann bis zu acht Minuten dauern.
+Das System beginnt zu booten. Das erste Starten kann bis zu acht Minuten dauern.
 
 . Stellen Sie sicher, dass die Netzwerkerkennung auf Ihrem Laptop aktiviert ist.
 +
@@ -565,7 +565,7 @@ image::../media/drw_autodiscovery_controler_select_ieops-1849.svg[Wählen Sie ei
 
 +
 .. Öffnen Sie Den Datei-Explorer.
-.. Klicken Sie im linken Fensterbereich auf *Netzwerk*, klicken Sie mit der rechten Maustaste und wählen Sie *Aktualisieren*.
+.. Im linken Bereich *Netzwerk* auswählen, mit der rechten Maustaste klicken und *Aktualisieren* wählen.
 .. Doppelklicken Sie auf das ONTAP-Symbol, und akzeptieren Sie alle auf dem Bildschirm angezeigten Zertifikate.
 +
 
@@ -609,7 +609,7 @@ image::../media/drw_client_mgmt_subnet_affa800.png[Verbinden eines Laptops oder 
 
 . Schließen Sie die Stromkabel an die Controller-Netzteile an, und schließen Sie sie dann an Stromquellen auf verschiedenen Stromkreisen an.
 +
-Das System beginnt zu booten. Das erste Booten kann bis zu acht Minuten dauern.
+Das System beginnt zu booten. Das erste Starten kann bis zu acht Minuten dauern.
 
 . Weisen Sie einem der Nodes eine erste Node-Management-IP-Adresse zu.
 +

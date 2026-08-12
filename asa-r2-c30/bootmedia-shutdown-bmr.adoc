@@ -2,7 +2,7 @@
 permalink: asa-r2-c30/bootmedia-shutdown-bmr.html 
 sidebar: sidebar 
 keywords: asa c30, shut down the controller 
-summary: Fahren Sie den beschädigten Controller in Ihrem ASA C30-Speichersystem herunter, um Datenverlust zu verhindern und die Systemstabilität beim Austausch des Startmediums sicherzustellen. 
+summary: Der Controller im ASA C30-Speichersystem sollte heruntergefahren werden, um Datenverlust zu vermeiden und die Systemstabilität beim Austausch des Bootmediums sicherzustellen. 
 ---
 = Der Controller im ASA C30 System wird während des automatisierten Boot-Wiederherstellungsprozesses heruntergefahren.
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Fahren Sie den beschädigten Controller in Ihrem ASA C30-Speichersystem
 
 
 [role="lead"]
-Fahren Sie den beschädigten Controller in Ihrem ASA C30-Speichersystem herunter, um Datenverlust zu verhindern und die Systemstabilität beim Austausch des Startmediums sicherzustellen.
+Der Controller im ASA C30-Speichersystem sollte heruntergefahren werden, um Datenverlust zu vermeiden und die Systemstabilität beim Austausch des Bootmediums sicherzustellen.
 
 Übernehmen Sie den fehlerhaften Controller und stoppen Sie ihn, damit der intakte Controller weiterhin Daten aus dem Speicher des fehlerhaften Controllers bereitstellt. Dazu unterdrücken Sie die automatische Fallerstellung in AutoSupport, deaktivieren die automatische Rückgabe und bringen den fehlerhaften Controller zur LOADER-Eingabeaufforderung. Die LOADER-Eingabeaufforderung ist der sichere, angehaltene Zustand, aus dem Sie die FRU ersetzen können.
 
@@ -80,4 +80,4 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 
 
 .Wie es weiter geht
-Nach dem Herunterfahren des außer Betrieb genommenen Controllers, Sie link:bootmedia-replace-bmr.html["Ersetzen Sie das Startmedium"].
+Nachdem Sie den Controller heruntergefahren haben, link:bootmedia-replace-bmr.html["Ersetzen Sie das Startmedium"].

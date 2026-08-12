@@ -13,7 +13,7 @@ summary: Bei der manuellen Wiederherstellung des Boot-Images wird ONTAP mithilfe
 [role="lead"]
 Bei der manuellen Wiederherstellung des Boot-Images wird ONTAP mithilfe eines USB-Laufwerks auf dem Ersatz-Boot-Medium des Speichersystems AFF A20, AFF A30 oder AFF A50 neu installiert. Laden Sie das entsprechende ONTAP Wiederherstellungsimage von der NetApp Support-Website herunter und kopieren Sie es auf ein USB-Laufwerk. Dieses vorbereitete USB-Laufwerk wird dann verwendet, um die Wiederherstellung durchzuführen und das System wieder betriebsbereit zu machen.
 
-Wenn Ihr System unter ONTAP 9.17.1 oder höher läuft, verwenden Sie die link:bootmedia-replace-workflow-bmr.html["automatische Boot-Wiederherstellung"] .
+Wenn auf Ihrem System ONTAP 9.17.1 oder höher ausgeführt wird, die link:bootmedia-replace-workflow-bmr.html["automatische Boot-Wiederherstellung"] verwenden.
 
 Überprüfen Sie zunächst die Wiederherstellungsanforderungen, fahren Sie den Controller herunter, ersetzen Sie das Startmedium, verwenden Sie das USB-Laufwerk zum Wiederherstellen des Images und wenden Sie die Verschlüsselungseinstellungen bei Bedarf erneut an.
 
@@ -27,7 +27,7 @@ Prüfen Sie, ob der Sicherheitsschlüsselmanager aktiviert oder die Laufwerke ve
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Zwei"]link:bootmedia-shutdown.html["Fahren Sie den Controller herunter"]
 [role="quick-margin-para"]
-Fahren Sie den Controller herunter, wenn Sie die Boot-Medien austauschen müssen.
+Fahren Sie den Controller herunter, wenn Sie das Startmedium ersetzen müssen.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Drittens"]link:bootmedia-replace.html["Ersetzen Sie das Startmedium"]
 [role="quick-margin-para"]

@@ -2,18 +2,18 @@
 permalink: fas9500/bootmedia-shutdown.html 
 sidebar: sidebar 
 keywords: fas9500, shut down the controller 
-summary: Sie können den beeinträchtigten Controller je nach Hardwarekonfiguration des Speichersystems mithilfe verschiedener Verfahren herunterfahren oder übernehmen. 
+summary: Das Herunterfahren des Controllers im FAS9500 Speichersystem verhindert Datenverlust und erhält die Systemstabilität während des manuellen Boot-Medien-Wiederherstellungsprozesses. 
 ---
-= Den defekten Controller in Ihrem FAS9500 System während des manuellen Boot-Wiederherstellungsprozesses herunterfahren
+= Den Controller im FAS9500-System während des manuellen Boot-Wiederherstellungsprozesses herunterfahren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Fahren Sie den Regler herunter oder übernehmen Sie ihn mit einer der folgenden Optionen.
+Das Herunterfahren des Controllers im FAS9500 Speichersystem verhindert Datenverlust und erhält die Systemstabilität während des manuellen Boot-Medien-Wiederherstellungsprozesses.
 
-Nach Abschluss der NVE- oder NSE-Aufgaben den betroffenen Knoten herunterfahren.
+Nach Abschluss der NVE- oder NSE-Aufgaben den Knoten herunterfahren.
 
 Wenn Ihr Speichersystem ONTAP 9.17.1 oder höher ausführt, verwenden Sie dielink:bootmedia-replace-workflow-bmr.html["automatisiertes Boot-Wiederherstellungsverfahren"] .  Wenn auf Ihrem System eine frühere Version von ONTAP ausgeführt wird, müssen Sie das manuelle Boot-Wiederherstellungsverfahren verwenden.
 

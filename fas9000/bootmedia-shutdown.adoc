@@ -2,16 +2,16 @@
 permalink: fas9000/bootmedia-shutdown.html 
 sidebar: sidebar 
 keywords: aff a700, fas9000, shut, down, impaired, controller, take, over, manual, manual boot recovery 
-summary: Je nach Hardwarekonfiguration des Speichersystems können Sie den beeinträchtigten Controller mit verschiedenen Verfahren herunterfahren oder übernehmen. Das FAS9000 System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. 
+summary: Der Controller im FAS9000 Speichersystem wird heruntergefahren, um Datenverlust zu verhindern und die Systemstabilität während des manuellen Bootmedien-Wiederherstellungsprozesses zu gewährleisten. 
 ---
-= Der defekte Controller in Ihrem FAS9000 System wird während des manuellen Boot-Wiederherstellungsprozesses heruntergefahren.
+= Den Controller im FAS9000 System während des manuellen Boot-Wiederherstellungsprozesses herunterfahren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Schalten Sie den betroffenen Controller gemäß der für Ihre Konfiguration geeigneten Vorgehensweise ab oder übernehmen Sie ihn. Das FAS9000 System unterstützt ausschließlich manuelle Wiederherstellungsverfahren über Bootmedien. Die automatische Wiederherstellung über Bootmedien wird nicht unterstützt.
+Der Controller im FAS9000 Speichersystem wird heruntergefahren, um Datenverlust zu verhindern und die Systemstabilität während des manuellen Bootmedien-Wiederherstellungsprozesses zu gewährleisten.
 
 
 
@@ -62,7 +62,7 @@ NOTE: Dieser Befehl funktioniert möglicherweise nicht, wenn das Startgerät bes
 [[option-2-controller-is-in-a-metrocluster]]
 === Option 2: Controller befindet sich in einem MetroCluster
 
-Nach Abschluss der NVE- oder NSE-Aufgaben wird der betroffene Knoten heruntergefahren. HINWEIS: Dieses Verfahren ist nicht anzuwenden, wenn das System in einer Zwei-Knoten MetroCluster Konfiguration betrieben wird.
+Nach Abschluss der NVE- oder NSE-Aufgaben wird der Knoten heruntergefahren. HINWEIS: Dieses Verfahren ist nicht anzuwenden, wenn das System in einer Zwei-Knoten MetroCluster Konfiguration betrieben wird.
 
 Übernehmen Sie den fehlerhaften Controller und stoppen Sie ihn, damit der intakte Controller weiterhin Daten aus dem Speicher des fehlerhaften Controllers bereitstellt. Dazu unterdrücken Sie die automatische Fallerstellung in AutoSupport, deaktivieren die automatische Rückgabe und bringen den fehlerhaften Controller zur LOADER-Eingabeaufforderung. Die LOADER-Eingabeaufforderung ist der sichere, angehaltene Zustand, aus dem Sie die FRU ersetzen können.
 
@@ -121,7 +121,7 @@ Wenn der Regler „beeinträchtigt“ auf Zurückgeben wartet... anzeigt, drück
 [[option-3-controller-is-in-a-two-node-metrocluster]]
 == Option 3: Controller befindet sich in einem MetroCluster mit zwei Nodes
 
-Nach Abschluss der NVE- oder NSE-Aufgaben den betroffenen Knoten herunterfahren.
+Nach Abschluss der NVE- oder NSE-Aufgaben den Knoten herunterfahren.
 
 
 NOTE: Verwenden Sie dieses Verfahren nicht, wenn sich Ihr System in einer MetroCluster-Konfiguration mit zwei Knoten befindet.

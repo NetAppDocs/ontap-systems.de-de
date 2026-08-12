@@ -15,7 +15,7 @@ Das AFF A150 Speichersystem kann mit diesen detaillierten Schritt-für-Schritt-A
 
 Wenn Sie über eine MetroCluster-Konfiguration verfügen, verwenden Sie die https://docs.netapp.com/us-en/ontap-metrocluster/index.html["MetroCluster-Dokumentation"^].
 
-*Warnung:* Wenn Ihr System mit ONTAP 9.13.1P8 - 9.13.1P11, ONTAP 9.14.1P1 - 9.14.1P7 oder ONTAP 9.15.1 - 9.15.1P2 installiert wird und Ihr System 10 oder mehr interne Solid-State-Laufwerke enthält, müssen Sie zusätzliche Schritte zur Vorbereitung des Systems auf die Installation durchführen. Siehe Ausgabe  https://mysupport.netapp.com/site/bugs-online/product/ONTAP/JiraNgage/CONTAP-285173["CONTAP-285173 - ADP hinterlässt keine freie Root-Partition auf einer AFF A150 mit 10 oder mehr internen Laufwerken"^].
+*Warnung:* Wenn ONTAP 9.13.1P8 bis 9.13.1P11, ONTAP 9.14.1P1 bis 9.14.1P7 oder ONTAP 9.15.1 bis 9.15.1P2 installiert wird und das System 10 oder mehr interne Solid-State-Laufwerke enthält, sind zusätzliche Schritte zur Vorbereitung des Systems auf die Installation erforderlich. Siehe Problem  https://mysupport.netapp.com/site/bugs-online/product/ONTAP/JiraNgage/CONTAP-285173["CONTAP-285173 - ADP hinterlässt keine freie Root-Partition auf einer AFF A150 mit 10 oder mehr internen Laufwerken"^].
 
 
 
@@ -32,8 +32,8 @@ Um Ihr AFF A150-System zu installieren, erstellen Sie ein Konto auf der NetApp S
 +
 ** Rack-Platz für das Storage-System
 ** Kreuzschlitzschraubendreher #2
-** Zusätzliche Netzwerkkabel zum Anschließen des Systems an den Netzwerk-Switch und Laptop oder die Konsole über einen Webbrowser
-** Ein Laptop oder eine Konsole mit einer RJ-45-Verbindung und Zugriff auf einen Webbrowser
+** Zusätzliche Netzwerkkabel zum Verbinden Ihres Systems mit Ihrem Netzwerk-Switch und Laptop oder Konsole mit Webbrowser
+** Ein Laptop oder eine Konsole mit RJ-45-Anschluss und Zugriff auf einen Webbrowser
 
 
 
@@ -163,7 +163,7 @@ System einschalten
 [[step-2-install-the-hardware]]
 == Schritt 2: Installieren Sie die Hardware
 
-Sie installieren Ihr System gegebenenfalls in einem 4-Säulen-Rack oder NetApp-Systemschrank.
+Das System wird in einem Vier-Pfosten-Rack oder, falls zutreffend, in einem NetApp Systemschrank installiert.
 
 .Schritte
 . Installieren Sie die Schienensatz nach Bedarf.
@@ -251,7 +251,7 @@ Sie können ein Port-Paar als CNA und ein Port-Paar als FC verbinden, oder Sie k
 
 
 --
-Ethernet-Netzwerkkonfigurationen:: Verwenden Sie das Cat 6 RJ45-Kabel, um die e0c- über e0f-Ports mit Ihrem Hostnetzwerk zu verkabeln. In der folgenden Abbildung.
+Ethernet-Netzwerkkonfigurationen:: Das Cat 6 RJ45-Kabel dient dazu, die Ports e0c bis e0f mit Ihrem Host-Netzwerk zu verbinden, wie in der folgenden Abbildung dargestellt.
 +
 --
 image:../media/drw_c190_e_rj45_cbling.png["Host-Netzwerkverkabelung"]
@@ -414,7 +414,7 @@ image::../media/drw_autodiscovery_controler_select_ieops-1849.svg[Wählen Sie ei
 
 +
 .. Öffnen Sie Den Datei-Explorer.
-.. Klicken Sie im linken Fensterbereich auf *Netzwerk*, klicken Sie mit der rechten Maustaste und wählen Sie *Aktualisieren*.
+.. Im linken Bereich *Network* auswählen, mit der rechten Maustaste klicken und *refresh* auswählen.
 .. Doppelklicken Sie auf das ONTAP-Symbol, und akzeptieren Sie alle auf dem Bildschirm angezeigten Zertifikate.
 +
 
