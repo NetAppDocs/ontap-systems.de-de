@@ -4,15 +4,13 @@ sidebar: sidebar
 keywords: aff c800, replace a pcie card 
 summary: Um eine PCIe-Karte zu ersetzen, müssen Sie die Kabel von den Karten trennen, die SFP- und QSFP-Module von den Karten entfernen, bevor Sie den Riser entfernen, den Riser neu installieren und dann die SFP- und QSFP-Module neu installieren, bevor Sie die Karten verkabeln. 
 ---
-= Austausch einer PCIe-Karte in Ihrem AFF C800 System
+= Austausch einer PCIe-Karte in einem AFF C800 System
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
-[role="lead"]
-Ersetzen oder ergänzen Sie ein E/A-Modul in Ihrem AFF C800 -System, wenn das Modul ausfällt, ein Upgrade zur Unterstützung höherer Leistung oder zusätzlicher Funktionen erforderlich ist. Der Austauschprozess umfasst das Herunterfahren des Controllers, den Austausch des ausgefallenen I/O-Moduls, den Neustart des Controllers und die Rücksendung des ausgefallenen Moduls an NetApp.
-
+ Replace a PCIe card in your AFF C800 system when the card fails or when an upgrade is required to support higher performance or additional features. The replacement process involves shutting down the controller, replacing the failed PCIe card, rebooting the controller, and returning the failed part to NetApp.
 .Bevor Sie beginnen
 * Sie benötigen ein neues oder Ersatzteil von NetApp .
 * Stellen Sie sicher, dass alle anderen Komponenten des Speichersystems ordnungsgemäß funktionieren. Wenden Sie sich andernfalls an den technischen Support.
