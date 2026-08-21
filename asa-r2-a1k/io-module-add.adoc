@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: asa r2 a1k, add io module 
 summary: Fügen Sie Ihrem ASA A1K-System ein I/O-Modul hinzu, um die Netzwerkkonnektivität zu verbessern und die Fähigkeit Ihres Systems zu erweitern, den Datenverkehr zu bewältigen. 
 ---
-= Ein E/A-Modul kann dem ASA A1K-System hinzugefügt werden, um die Netzwerkverbindungen zu verbessern.
+= Ein E/A-Modul kann zu einem ASA A1K System hinzugefügt werden, um die Netzwerkverbindung zu verbessern.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -102,8 +102,8 @@ Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 Wenn das Speichersystem über freie Steckplätze verfügt, installieren Sie das neue I/O-Modul in einem der verfügbaren Steckplätze. Wenn alle Steckplätze belegt sind, entfernen Sie ein vorhandenes E/A-Modul, um Platz zu schaffen, und installieren Sie dann das neue.
 
 .Bevor Sie beginnen
-* Überprüfen Sie die https://hwu.netapp.com/["NetApp Hardware Universe"^] und stellen Sie sicher, dass das neue I/O-Modul mit Ihrem Storage-System und Ihrer Version von ONTAP kompatibel ist.
-* Wenn mehrere Steckplätze verfügbar sind, überprüfen Sie die Steckplatzprioritäten in https://hwu.netapp.com/["NetApp Hardware Universe"^] Und verwenden Sie die beste für Ihr I/O-Modul verfügbare Lösung.
+* Überprüfung des  https://hwu.netapp.com["NetApp Hardware Universe"^] zur Sicherstellung, dass das neue E/A-Modul mit Ihrem Speichersystem und der von Ihnen verwendeten ONTAP-Version kompatibel ist.
+* Wenn mehrere Steckplätze verfügbar sind, sollten die Steckplatzprioritäten in  https://hwu.netapp.com["NetApp Hardware Universe"^] überprüft und der beste verfügbare für Ihr E/A-Modul verwendet werden.
 * Stellen Sie sicher, dass alle anderen Komponenten ordnungsgemäß funktionieren.
 * Stellen Sie sicher, dass Sie über die Ersatzkomponente verfügen, die Sie von NetApp erhalten haben.
 

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: afx 2k, add IO module 
 summary: Ein E/A-Modul kann dem AFX 2K Speichersystem hinzugefügt werden, um die Netzwerkkonnektivität zu verbessern und die Fähigkeit des Systems zur Verarbeitung von Datenverkehr zu erweitern. 
 ---
-= Ein E/A-Modul kann dem AFX 2K Speichersystem hinzugefügt werden, um die Netzwerk-Konnektivität zu verbessern.
+= Ein E/A-Modul kann zu einem AFX 2K-System hinzugefügt werden, um die Netzwerk-Konnektivität zu verbessern.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -84,8 +84,8 @@ Der `-halt true` Der Parameter bringt Sie zur LOADER-Eingabeaufforderung.
 Wenn das Speichersystem über freie Steckplätze verfügt, installieren Sie das neue I/O-Modul in einem der verfügbaren Steckplätze. Wenn alle Steckplätze belegt sind, entfernen Sie ein vorhandenes E/A-Modul, um Platz zu schaffen, und installieren Sie dann das neue.
 
 .Bevor Sie beginnen
-* Überprüfen Sie die https://hwu.netapp.com/["NetApp Hardware Universe"^] um sicherzustellen, dass das neue E/A-Modul mit Ihrem Speichersystem und ONTAP -Version kompatibel ist.
-* Wenn mehrere Steckplätze verfügbar sind, überprüfen Sie die Steckplatzprioritäten in https://hwu.netapp.com/["NetApp Hardware Universe"^] Und verwenden Sie die beste für Ihr I/O-Modul verfügbare Lösung.
+* Die  https://hwu.netapp.com["NetApp Hardware Universe"^] sollte geprüft werden, um sicherzustellen, dass das neue E/A-Modul mit Ihrem Speichersystem und der ONTAP Version kompatibel ist.
+* Wenn mehrere Steckplätze verfügbar sind, sollten die Steckplatzprioritäten in  https://hwu.netapp.com["NetApp Hardware Universe"^] überprüft und der beste verfügbare für Ihr E/A-Modul verwendet werden.
 * Stellen Sie sicher, dass alle anderen Komponenten ordnungsgemäß funktionieren.
 * Stellen Sie sicher, dass Sie über die Ersatzkomponente verfügen, die Sie von NetApp erhalten haben.
 

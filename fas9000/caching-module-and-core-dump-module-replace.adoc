@@ -2,15 +2,17 @@
 permalink: fas9000/caching-module-and-core-dump-module-replace.html 
 sidebar: sidebar 
 keywords: aff a700, fas9000, replace caching module 
-summary: Sie müssen das Caching-Modul im Controller-Modul austauschen, sobald Ihr System eine AutoSupport ASUP-Meldung empfängt, die anzeigt, dass das Modul offline gegangen ist. Andernfalls kommt es zu Leistungseinbußen. 
+summary: 'Das Caching-Modul oder das Core-Dump-Modul in einem FAS9000-System ist zu ersetzen, wenn das System eine einzelne AutoSupport (ASUP)-Meldung registriert, die meldet, dass das Modul offline gegangen ist. Ein unterlassener Austausch führt zu Leistungseinbußen.' 
 ---
-= Das Caching-Modul oder das Core-Dump-Modul im FAS9000 System ersetzen
+= Das Caching-Modul oder das Core-Dump-Modul in einem FAS9000 System ersetzen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
+Das Caching-Modul oder das Core-Dump-Modul in einem FAS9000-System ist zu ersetzen, wenn das System eine einzelne AutoSupport (ASUP)-Meldung registriert, die meldet, dass das Modul offline gegangen ist. Ein unterlassener Austausch führt zu Leistungseinbußen.
+
 Sie müssen das Caching-Modul im Controller-Modul ersetzen, wenn das System eine einzelne AutoSupport-Meldung (ASUP) registriert, dass das Modul offline geschaltet wurde; andernfalls kommt es zu Performance-Einbußen. Wenn AutoSupport nicht aktiviert ist, können Sie das fehlerhafte Cache-Modul mithilfe der Fehler-LED an der Vorderseite des Moduls finden. Sie können auch das 1-TB-, X9170A-Core Dump-Modul hinzufügen oder ersetzen. Dies ist erforderlich, wenn Sie NS224-Laufwerk-Shelfs in einem AFF A700 System installieren.
 
 .Bevor Sie beginnen

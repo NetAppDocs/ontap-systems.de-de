@@ -2,16 +2,16 @@
 permalink: fas50/fan-replace.html 
 sidebar: sidebar 
 keywords: fas50, aff, swap, out, fan, module, interrupt, service, sequence, task, hot-swap, hot-swap a fan module 
-summary: Ersetzen Sie ein Lüftermodul in Ihrem FAS50-System, wenn ein Lüfter ausfällt oder nicht effizient arbeitet, da dies die Systemkühlung und die Gesamtleistung beeinträchtigen kann. Beim Austausch werden der Controller heruntergefahren, der Controller entfernt, der Lüfter ersetzt, der Controller neu installiert und das fehlerhafte Teil an den NetApp zurückgegeben. 
+summary: Das Lüftermodul in Ihrem FAS50-System sollte ausgetauscht werden, wenn ein Lüfter ausfällt oder nicht effizient arbeitet, da dies die Systemkühlung und die Gesamtleistung beeinträchtigen kann. Der Austauschvorgang umfasst das Herunterfahren des Controllers, das Entfernen des Controllers, das Ersetzen des Lüfters, das Wiedereinsetzen des Controllers und die Rücksendung des defekten Teils an NetApp. 
 ---
-= Ein Lüfter in Ihrem FAS50 System kann ersetzt werden.
+= Das Lüftermodul in einem FAS50 System ersetzen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Ersetzen Sie ein Lüftermodul in Ihrem FAS50-System, wenn ein Lüfter ausfällt oder nicht effizient arbeitet, da dies die Systemkühlung und die Gesamtleistung beeinträchtigen kann. Beim Austausch werden der Controller heruntergefahren, der Controller entfernt, der Lüfter ersetzt, der Controller neu installiert und das fehlerhafte Teil an den NetApp zurückgegeben.
+Das Lüftermodul in Ihrem FAS50-System sollte ausgetauscht werden, wenn ein Lüfter ausfällt oder nicht effizient arbeitet, da dies die Systemkühlung und die Gesamtleistung beeinträchtigen kann. Der Austauschvorgang umfasst das Herunterfahren des Controllers, das Entfernen des Controllers, das Ersetzen des Lüfters, das Wiedereinsetzen des Controllers und die Rücksendung des defekten Teils an NetApp.
 
 .Über diese Aufgabe
 Bei Bedarf können Sie die LEDs des Speichersystems (blau) einschalten, um das betroffene Speichersystem physisch zu lokalisieren. Melden Sie sich über SSH bei der BMC an und geben Sie den Befehl ein `system location-led _on_`.

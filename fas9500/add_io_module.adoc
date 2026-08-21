@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fas9500, add io module 
 summary: Sie können Ihrem System ein I/O-Modul hinzufügen, indem Sie ein vorhandenes I/O-Modul durch ein neues I/O-Modul in einem vollständig bestückten System ersetzen oder ein neues I/O-Modul in einen leeren Steckplatz im Gehäuse hinzufügen. 
 ---
-= Ein E/A-Modul zu Ihrem FAS9500 System hinzufügen
+= Ein E/A-Modul zu einem FAS9500 System hinzufügen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -14,8 +14,8 @@ summary: Sie können Ihrem System ein I/O-Modul hinzufügen, indem Sie ein vorha
 Sie können Ihrem FAS9500 System ein E/A-Modul hinzufügen, indem entweder in einem vollständig bestückten System eine NIC oder ein Storage-Adapter durch einen neuen ersetzt wird oder indem eine neue NIC oder ein neuer Storage-Adapter in einen leeren Chassis-Slot eingesetzt wird.
 
 .Bevor Sie beginnen
-* Prüfen Sie die https://hwu.netapp.com/["NetApp Hardware Universe"] Vergewissern Sie sich, dass das neue I/O-Modul mit Ihrem System und Ihrer Version von ONTAP kompatibel ist.
-* Wenn mehrere Steckplätze verfügbar sind, sollten die Steckplatzprioritäten in  https://hwu.netapp.com/["NetApp Hardware Universe"] überprüft und der beste verfügbare für Ihr E/A-Modul verwendet werden.
+* Überprüfung des  https://hwu.netapp.com["NetApp Hardware Universe"] zur Sicherstellung, dass das neue E/A-Modul mit Ihrem System und der von Ihnen verwendeten ONTAP-Version kompatibel ist.
+* Wenn mehrere Steckplätze verfügbar sind, sollten die Steckplatzprioritäten in  https://hwu.netapp.com["NetApp Hardware Universe"] überprüft und der beste verfügbare für Ihr E/A-Modul verwendet werden.
 * Damit ein I/O-Modul unterbrechungsfrei hinzugefügt werden kann, müssen Sie den Zielcontroller übernehmen, die Abdeckung für die Steckplatzabdeckung im Zielsteckplatz entfernen oder ein vorhandenes I/O-Modul entfernen, das neue oder das neue I/O-Modul hinzufügen und dann den Zielcontroller zurückgeben.
 * Stellen Sie sicher, dass alle anderen Komponenten ordnungsgemäß funktionieren.
 

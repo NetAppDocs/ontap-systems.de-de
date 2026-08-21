@@ -2,16 +2,16 @@
 permalink: fas9500/dimm_replace.html 
 sidebar: sidebar 
 keywords: fas9500, replace a dimm 
-summary: Sie müssen ein DIMM im Controller austauschen, wenn in Ihrem Speichersystem Fehler auftreten, wie z. B. übermäßige CECC-Fehler, die auf Health Monitor-Warnungen basieren, oder nicht korrigierbare ECC-Fehler, die typischerweise durch einen einzelnen DIMM-Ausfall verursacht werden, der das Speichersystem am Booten von ONTAP hindert. 
+summary: Das DIMM in einem FAS9500-System ist auszutauschen, wenn das System über Health Monitor-Warnmeldungen übermäßig viele korrigierbare ECC-Speicherfehler oder nicht korrigierbare ECC-Fehler meldet. Ein defektes DIMM kann verhindern, dass das Speichersystem ONTAP startet, daher stellt der Austausch den stabilen Betrieb wieder her. 
 ---
-= Ein DIMM im FAS9500 System ersetzen, um Speicherfehler zu beheben
+= Austausch eines DIMM in einem FAS9500 System zur Behebung von Speicherfehlern
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Ein DIMM im Controller ist auszutauschen, wenn das Speichersystem Fehler wie übermäßige CECC-Fehler (Correctable Error Correction Codes) basierend auf Health Monitor-Warnmeldungen oder nicht korrigierbare ECC-Fehler aufweist. Solche Fehler werden typischerweise durch einen einzelnen DIMM-Ausfall verursacht, der das Booten von ONTAP im Speichersystem verhindert.
+Das DIMM in einem FAS9500-System ist auszutauschen, wenn das System über Health Monitor-Warnmeldungen übermäßig viele korrigierbare ECC-Speicherfehler oder nicht korrigierbare ECC-Fehler meldet. Ein defektes DIMM kann verhindern, dass das Speichersystem ONTAP startet, daher stellt der Austausch den stabilen Betrieb wieder her.
 
 .Bevor Sie beginnen
 Alle anderen Systemkomponenten müssen ordnungsgemäß funktionieren; falls eine Komponente nicht ordnungsgemäß funktioniert, ist der technische Support zu kontaktieren.
