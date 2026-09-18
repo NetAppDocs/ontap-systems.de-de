@@ -64,6 +64,36 @@ NOTE: Die Kabel sollten zu Beginn dieses Verfahrens beschriftet worden sein.
 [[step-2-remove-the-io-cards-nvram12-and-system-management-module]]
 == Schritt 2: Entfernen Sie die E/A-Karten, NVRAM12 und das Systemverwaltungsmodul
 
+. Überprüfen Sie die NVRAM-Status-LED in Steckplatz 4/5 des Systems. An der Vorderseite des Controller-Moduls befindet sich außerdem eine NVRAM-LED. Suchen Sie nach dem NV-Symbol:
++
+image::../media/drw_a1K-70-90_nvram-led_ieops-1463.svg[Grafik für die NVRAM-Warnungs- und Status-LED zur Lage]
+
++
+[cols="1,4"]
+|===
+
+
+2+| *NVRAM* 
+
+
+ a| 
+image:../media/icon_round_1.png["Legende Nummer 1"]
+ a| 
+NVRAM-Status-LED
+
+
+
+ a| 
+image:../media/icon_round_2.png["Legende Nummer 2"]
+ a| 
+LED für NVRAM-Warnung
+
+|===
++
+** Wenn die NV-LED aus ist, mit dem nächsten Schritt fortfahren.
+** Wenn die NV-LED blinkt, warten Sie, bis das Blinken beendet ist. Wenn das Blinken länger als 5 Minuten andauert, wenden Sie sich an den technischen Support, um Unterstützung zu erhalten.
+
+
 . Entfernen Sie das Ziel-I/O-Modul aus dem Gehäuse:
 +
 image:../media/drw_a1k_io_remove_replace_ieops-1382.svg["Entfernen Sie das E/A-Modul"]
@@ -84,7 +114,8 @@ E/A-Nockenverriegelung
 .. Drehen Sie die Nockenverriegelung so weit wie möglich vom Modul weg.
 .. Entfernen Sie das Modul aus dem Gehäuse, indem Sie Ihren Finger in die Öffnung des Nockenhebels einhaken und das Modul aus dem Gehäuse ziehen.
 +
-Stellen Sie sicher, dass Sie den Steckplatz verfolgen, in dem sich das I/O-Modul befand.
+
+NOTE: Stellen Sie sicher, dass Sie den Steckplatz verfolgen, in dem sich das I/O-Modul befand.
 
 .. Legen Sie das E/A-Modul beiseite und wiederholen Sie diese Schritte für alle anderen E/A-Module.
 
@@ -202,6 +233,10 @@ Nachdem das Ersatzgehäuse installiert wurde, müssen Sie das Controllermodul in
 . Installieren Sie die E/A-Karten an der Rückseite des Gehäuses:
 +
 .. Richten Sie das Ende des E/A-Moduls am gleichen Steckplatz im Ersatzgehäuse aus wie im beschädigten Gehäuse und drücken Sie das Modul dann vorsichtig ganz in das Gehäuse hinein.
++
+
+NOTE: Stellen Sie sicher, dass die I/O-Module in denselben Steckplätzen installiert werden wie im defekten Gehäuse.
+
 .. Drehen Sie den Nockenriegel nach oben in die verriegelte Position.
 .. Wiederholen Sie diese Schritte für alle anderen E/A-Module.
 
