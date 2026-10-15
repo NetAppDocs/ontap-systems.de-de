@@ -1,7 +1,7 @@
 ---
 permalink: fas50/fan-replace.html 
 sidebar: sidebar 
-keywords: fas50, aff, swap, out, fan, module, interrupt, service, sequence, task, hot-swap, hot-swap a fan module 
+keywords: fas50, aff, swap, out, fan, module, interrupt, service, sequence, task 
 summary: Das Lüftermodul in Ihrem FAS50-System sollte ausgetauscht werden, wenn ein Lüfter ausfällt oder nicht effizient arbeitet, da dies die Systemkühlung und die Gesamtleistung beeinträchtigen kann. Der Austauschvorgang umfasst das Herunterfahren des Controllers, das Entfernen des Controllers, das Ersetzen des Lüfters, das Wiedereinsetzen des Controllers und die Rücksendung des defekten Teils an NetApp. 
 ---
 = Das Lüftermodul in einem FAS50 System ersetzen
@@ -59,7 +59,7 @@ Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Ca
 +
 .. Geben Sie den folgenden Befehl von der Konsole des fehlerfreien Controllers ein:
 +
-`storage failover modify -node _impaired_node_name_ -auto-giveback false`
+`storage failover modify -node local -auto-giveback false`
 
 .. Eingeben `y` wenn die Eingabeaufforderung _Möchten Sie die automatische Rückgabe deaktivieren?_ angezeigt wird
 

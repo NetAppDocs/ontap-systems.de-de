@@ -2,16 +2,16 @@
 permalink: a250/fan-replace.html 
 sidebar: sidebar 
 keywords: aff a250, replace a fan 
-summary: Entfernen Sie zum Austauschen eines Lüfters das fehlerhafte Lüftermodul und ersetzen Sie es durch ein neues Lüftermodul. 
+summary: Das Lüftermodul in Ihrem AFF A250 System wird ersetzt, wenn ein Lüfter ausfällt oder nicht effizient arbeitet. Der Austausch umfasst das Herunterfahren des beeinträchtigten Controllers, das Entfernen des Controller Moduls, den Austausch des Lüfters, den Wiedereinbau des Controller Moduls und die Rücksendung des defekten Teils an NetApp. 
 ---
-= Lüfter im laufenden Betrieb in einem AFF A250 System austauschen
+= Einen Lüfter in einem AFF A250 System austauschen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Ein defektes Lüftermodul in Ihrem AFF A250 System sollte ersetzt werden, um eine ordnungsgemäße Kühlung aufrechtzuerhalten und Leistungsprobleme zu vermeiden. Lüftermodule sind Hot-Swap-fähig und können ohne Herunterfahren des Systems ersetzt werden.
+Das Lüftermodul in Ihrem AFF A250 System wird ersetzt, wenn ein Lüfter ausfällt oder nicht effizient arbeitet. Der Austausch umfasst das Herunterfahren des beeinträchtigten Controllers, das Entfernen des Controller Moduls, den Austausch des Lüfters, den Wiedereinbau des Controller Moduls und die Rücksendung des defekten Teils an NetApp.
 
 
 
@@ -46,7 +46,7 @@ Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Ca
 +
 .. Geben Sie den folgenden Befehl von der Konsole des fehlerfreien Controllers ein:
 +
-`storage failover modify -node _impaired_node_name_ -auto-giveback false`
+`storage failover modify -node local -auto-giveback false`
 
 .. Eingeben `y` wenn die Eingabeaufforderung _Möchten Sie die automatische Rückgabe deaktivieren?_ angezeigt wird
 

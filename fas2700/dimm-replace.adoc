@@ -52,7 +52,7 @@ Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Ca
 +
 .. Geben Sie den folgenden Befehl von der Konsole des fehlerfreien Controllers ein:
 +
-`storage failover modify -node _impaired_node_name_ -auto-giveback false`
+`storage failover modify -node local -auto-giveback false`
 
 .. Eingeben `y` wenn die Eingabeaufforderung _Möchten Sie die automatische Rückgabe deaktivieren?_ angezeigt wird
 
@@ -88,6 +88,8 @@ Eingabeaufforderung für das System oder Passwort
 Der Parameter _-stop true_ führt Sie zur Loader-Eingabeaufforderung.
 
 |===
+
+
 . Wenn das System nur über ein Controller-Modul im Gehäuse verfügt, schalten Sie die Netzteile aus und ziehen Sie dann die Netzkabel des beeinträchtigten Controllers von der Stromquelle ab.
 
 

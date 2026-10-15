@@ -8468,7 +8468,6 @@ SFP+ (Target/Initiator)</block>
   <block id="dcac0d4d44ce3609f70b9f6817380eb7" category="summary">Überprüfen Sie, ob die HA-Konfiguration des Controllers in Ihrem FAS70 oder FAS90 Storage-System aktiv ist und ordnungsgemäß funktioniert, und vergewissern Sie sich, dass die Systemadapter alle Pfade zu den Festplatten aufgelistet sind.</block>
   <block id="8f15a6b55f9d40c8f4779330981502f5" category="paragraph">Nachdem Sie die Systemkonfiguration für Ihr FAS70 oder FAS90 System wiederhergestellt und verifiziert haben, müssen Sie <block ref="f96992113d4cc080f9d372523b7a919c" category="inline-link-macro-rx"></block>.</block>
   <block id="17e4dd018a5a20b5b198058502e171bc" category="summary">Wechseln Sie den Controller Ihres FAS70 oder FAS90 Storage-Systems, indem Sie den beeinträchtigten Controller herunterfahren, den Controller entfernen und austauschen, die Systemeinstellungen neu konfigurieren und die Systemvorgänge überprüfen.</block>
-  <block id="0d9cd1cb3839e926bde7f75246162365" category="summary">Ersetzen Sie ein Lüftermodul in Ihrem FAS70- oder FAS90-System, wenn ein Lüfter ausfällt oder nicht effizient arbeitet, da dies die Systemkühlung und die Gesamtleistung beeinträchtigen kann. Beim Austausch werden der Controller heruntergefahren, der Controller entfernt, der Lüfter ersetzt, der Controller neu installiert und das fehlerhafte Teil an den NetApp zurückgegeben.</block>
   <block id="86cfd8171cc9d13fd6ba34c5f4b8560b" category="summary">Das FAS70- oder FAS90-System bietet Flexibilität beim erweitern oder Ersetzen von I/O-Modulen, um die Netzwerkkonnektivität und -Performance zu verbessern. Das Hinzufügen oder Austauschen eines E/A-Moduls ist wichtig, wenn die Netzwerkfunktionen aktualisiert oder ein fehlerhaftes Modul behandelt werden soll.</block>
   <block id="7b96b7e6eb8df75ce5aff9a62ce657e2" category="paragraph">Sie können ein ausgefallenes I/O-Modul in Ihrem FAS70- oder FAS90-Storage-System durch dasselbe I/O-Modul oder ein anderes I/O-Modul ersetzen. Sie können auch ein I/O-Modul zu einem System mit leeren Steckplätzen hinzufügen.</block>
   <block id="55658611693e2dfb5ae95b1b317d553f" category="summary">Ersetzen Sie ein I/O-Modul in Ihrem FAS70- oder FAS90-System, wenn das Modul ausfällt oder ein Upgrade erfordert, um höhere Leistung oder zusätzliche Funktionen zu unterstützen. Beim Austausch werden der Controller heruntergefahren, das fehlerhafte I/O-Modul ersetzt, der Controller neu gebootet und das fehlerhafte Teil an NetApp zurückgegeben.</block>
@@ -9554,7 +9553,6 @@ SFP+ (Target/Initiator)</block>
   <block id="b283de4e13a7d5b68dec3f041941e3bc" category="sidebar">FAS8300 und FAS8700 Echtzeituhrbatterie</block>
   <block id="49083f96e824487850956b55d36a363f" category="sidebar">FAS9500 Boot-Medien automatisiert</block>
   <block id="92e1f12178f27a238b4b86215c5615af" category="sidebar">FAS9500 Boot Media-Handbuch</block>
-  <block id="3bce4848ee8babd978a1eed14ffb0657" category="paragraph"><block ref="e5d0e758897049635b8f9c5e676046ce" prefix="" category="inline-code"></block></block>
   <block id="08ff655980adcc7a622e1807b2ce15c0" category="list-text">Wenn die automatische Rückgabe deaktiviert war, aktivieren Sie sie erneut:<block ref="07d94d90bbf940cf95f9dbba0029631f" prefix=" " category="inline-code"></block></block>
   <block id="23d2a44e582b0f47f51ad61543f2784a" category="paragraph">Sie müssen die beiden Netzteile (PSUs) entfernen, bevor Sie den Controller entfernen.</block>
   <block id="754bdcb9d2a9982ca84863ebead5a9e8" category="list-text">Entfernen Sie die Netzteile:</block>
@@ -12915,7 +12913,6 @@ SFP+ (Target/Initiator)</block>
   <block id="ae1e8d45dcecc0989481acfc809cb589" category="paragraph">Um den Controller-Austausch für Ihr AFF A250 System abzuschließen, die NetApp Storage Encryption-Konfiguration (falls erforderlich) wiederherstellen, bestätigen, dass die logischen Schnittstellen (LIFs) an ihren Home-Ports melden, eine Cluster-Integritätsprüfung durchführen und das defekte Teil an NetApp zurücksenden.</block>
   <block id="e6b508d3ad0bda4467669b6873e4af10" category="doc">Arbeitsablauf zum Austausch des AFF A250 Controllers</block>
   <block id="156d802f0d77e677afd46ac3c4607a0d" category="paragraph">Ein DIMM in Ihrem AFF A250 System sollte ersetzt werden, wenn das Speichersystem eine übermäßige Anzahl korrigierbarer (CECC) oder nicht korrigierbarer Speicherfehler feststellt. Solche Fehler können verhindern, dass das Speichersystem ONTAP startet.</block>
-  <block id="49aeb0bb5d496401d4bde171b38b4ab5" category="paragraph">Ein defektes Lüftermodul in Ihrem AFF A250 System sollte ersetzt werden, um eine ordnungsgemäße Kühlung aufrechtzuerhalten und Leistungsprobleme zu vermeiden. Lüftermodule sind Hot-Swap-fähig und können ohne Herunterfahren des Systems ersetzt werden.</block>
   <block id="0d4e62f22088395485a3f549e175fd99" category="paragraph">Das AFF A250 Speichersystem kann anhand dieser detaillierten Schritt-für-Schritt-Anleitung installiert werden, von der Vorbereitung des Standorts bis zur Inbetriebnahme des ONTAP Clusters.</block>
   <block id="79fae8e27cc6142558d9fcc883b06a74" category="paragraph">Das AFF A250 Speichersystem kann mithilfe der kurzen grafischen Anleitung installiert und verkabelt werden.</block>
   <block id="ab71e54a3fb4e946810032444c082b73" category="paragraph">Wählen Sie Ihr bevorzugtes Format für die Installation Ihres AFF A250 Storage-Systems: detaillierte Schritt-für-Schritt-Anleitung, grafische Kurzanleitung oder Videoanleitung.</block>
@@ -14017,7 +14014,6 @@ SFP+ (Target/Initiator)</block>
   <block id="e6b6e212a0094ee9b8cb07a680e14557" category="doc">Den Controller in einem AFF A20, AFF A30 oder AFF A50 System ersetzen</block>
   <block id="0f82cd5236663c6e94ef8c7f9728153e" category="doc">Den Controller-Austausch für ein AFF A20, AFF A30 oder AFF A50 System abschließen</block>
   <block id="74e6f08c422d59cbb3a512c69842af19" category="doc">Die Controller-Konfiguration in einem AFF A20, AFF A30 oder AFF A50 System wiederherstellen und überprüfen</block>
-  <block id="4495cc2cb1d64fab3f6960c395b15b0f" category="doc">Ein Lüftermodul kann im laufenden Betrieb in einem AFF A20, AFF A30 oder AFF A50 System ausgetauscht werden.</block>
   <block id="93d133d3204b7024fba921363fd8d874" category="doc">Die Hardware AFF A20, AFF A30 oder AFF A50 für Netzwerk- und Speicherverbindungen verkabeln</block>
   <block id="a2c478f19f67784c8f43c028d4448e35" category="doc">Die AFF A20, AFF A30 oder AFF A50 Hardware in einem Schrank oder Rack installieren</block>
   <block id="dde55a04d1203238613898d6b23d625c" category="doc">Einschalten eines AFF A20, AFF A30 oder AFF A50 Storage-Systems</block>
@@ -14089,7 +14085,6 @@ SFP+ (Target/Initiator)</block>
   <block id="8af5278a7646ad11549695aac6717f1e" category="doc">Das System neu verkabeln und die Datenträger in einem AFF A250 System neu zuweisen</block>
   <block id="045ae4735d5c98bd9cda880ef7a88c0b" category="doc">Den Controller-Austausch für ein AFF A250 System abschließen</block>
   <block id="ee970a6cb2e4caa63bb5a3bfd363a983" category="doc">Wiederherstellung und Überprüfung der Controller-Konfiguration in einem AFF A250 System</block>
-  <block id="070ffbd86ec310d2991ee8589f585061" category="doc">Lüfter im laufenden Betrieb in einem AFF A250 System austauschen</block>
   <block id="b7accb8b14ac5f3ea9b18848c60524f1" category="doc">Ein AFF A250 System mit detaillierten Schritt-für-Schritt-Anweisungen installieren</block>
   <block id="559d4c9ae378606b453ec096608835fd" category="doc">Installation eines AFF A250 Systems mithilfe der kurzen grafischen Anleitung</block>
   <block id="bcf286d5537d6f9439072d7b535a8c1f" category="doc">Installationsoptionen für ein AFF A250 Storage-System</block>
@@ -15685,4 +15680,9 @@ SFP+ (Target/Initiator)</block>
   <block id="36ff1b0cf056d6ead654398301edbbc1" category="inline-link-macro">_ENERGY STAR-zertifizierte Datacenter Storage Produkte_</block>
   <block id="be4049092eb4f116ae37997b11912f3e" category="list-text">Dieses Produkt ist ENERGY STAR zertifiziert. Weitere Informationen finden Sie unter <block ref="435b6d0174c4d003719c270181300a75" category="inline-link-macro-rx"></block>.</block>
   <block id="33ba153f9c27104ac9c370d6c06d5f5e" category="image-alt">ENERGY STAR zertifiziertes Logo</block>
+  <block id="191a1145acb5161a93983cb67bc7ac6d" category="doc">Ein Lüftermodul in einem AFF A20, AFF A30 oder AFF A50 System austauschen</block>
+  <block id="f5d2aeabd722753506bdc837f15883a8" category="summary">Das Lüftermodul in Ihrem AFF A250 System wird ersetzt, wenn ein Lüfter ausfällt oder nicht effizient arbeitet. Der Austausch umfasst das Herunterfahren des beeinträchtigten Controllers, das Entfernen des Controller Moduls, den Austausch des Lüfters, den Wiedereinbau des Controller Moduls und die Rücksendung des defekten Teils an NetApp.</block>
+  <block id="ed3a1c751fa8ade111c8b6d1be8b8c5f" category="doc">Einen Lüfter in einem AFF A250 System austauschen</block>
+  <block id="2784a8192eaeb23d47dae9485279e807" category="summary">Ein Lüftermodul in Ihrem FAS70 oder FAS90 System muss ersetzt werden, wenn ein Lüfter ausfällt oder nicht effizient arbeitet, da dies die Systemkühlung und die allgemeine Performance beeinträchtigen kann. Lüftermodule in FAS70 und FAS90 Systemen sind Hot-Swap-fähig. Der Austausch umfasst das Ermitteln des defekten Lüftermoduls, dessen Ausbau, den Einbau des Ersatzlüftermoduls und die Rücksendung des defekten Teils an NetApp.</block>
+  <block id="cedf051c7874b86bf8685dbb501a4e9a" category="sidebar">Wichtigste Spezifikationen von AFF A20, AFF A30 und AFF A50</block>
 </blocks>

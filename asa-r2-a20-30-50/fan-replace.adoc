@@ -1,7 +1,7 @@
 ---
 permalink: asa-r2-a20-30-50/fan-replace.html 
 sidebar: sidebar 
-keywords: asa a20, asa a30, asa a50, asa, swap, out, fan, module, interrupt, service, sequence, task, hot-swap, hot-swap a fan module 
+keywords: asa a20, asa a30, asa a50, asa, swap, out, fan, module, interrupt, service, sequence, task 
 summary: Ersetzen Sie ein Lüftermodul in Ihrem ASA A20-, ASA A30- oder ASA A50-Speichersystem, wenn ein Lüfter ausfällt oder nicht effizient arbeitet, da dies die Systemkühlung und die Gesamtleistung beeinträchtigen kann.  Der Austauschvorgang umfasst das Herunterfahren des Controllers, das Entfernen des Controllers, das Ersetzen des Lüfters, die Neuinstallation des Controllers und die Rücksendung des ausgefallenen Teils an NetApp. 
 ---
 = Ein Lüftermodul in einem ASA A20, ASA A30 oder ASA A50 System austauschen
@@ -53,7 +53,7 @@ Die folgende AutoSupport Meldung unterdrückt die automatische Erstellung von Ca
 +
 .. Geben Sie den folgenden Befehl von der Konsole des fehlerfreien Controllers ein:
 +
-`storage failover modify -node _impaired_node_name_ -auto-giveback false`
+`storage failover modify -node local -auto-giveback false`
 
 .. Eingeben `y` wenn die Eingabeaufforderung _Möchten Sie die automatische Rückgabe deaktivieren?_ angezeigt wird
 
