@@ -65,6 +65,16 @@ In bestimmten Situationen kann ONTAP aufgrund eines ausgefallenen E/A-Moduls aut
 
 
 * Alle anderen Komponenten des Speichersystems müssen ordnungsgemäß funktionieren. Falls nicht, wenden Sie sich an https://mysupport.netapp.com/site/global/dashboard["NetApp Support"], bevor Sie mit diesem Verfahren fortfahren.
+* Im Cluster muss entweder IPsec offload deaktiviert sein, oder die zu ersetzende Ethernet I/O-Karte darf IPsec offload nicht unterstützen.
++
+Wenn IPsec Offload aktiviert ist und die E/A-Karte IPsec Offload unterstützt, ist das Hot Swapping des E/A-Moduls nicht möglich.
+
++
+Sie können dies überprüfen, indem Sie den  `security ipsec config show` Befehl eingeben und prüfen, ob das Ergebnis  `Offload Enabled: false` enthält.
+
++
+Wenn IPsec Offload aktiviert ist, lässt sich unter link:https://docs.netapp.com/us-en/ontap/networking/ipsec-prepare.html#requirements-and-recommendations["Informationen zur IP-Sicherheit im ONTAP Netzwerk"^] prüfen, ob das Ethernet I/O Modul IPsec Offload unterstützt.
+
 
 
 
